@@ -58,6 +58,17 @@ ul.news { list-style: none; padding: 0; }
 ul.news li { padding: 10px 0; border-bottom: 1px solid var(--line); }
 ul.news li a { font-weight: 600; }
 
+/* Consent banner (audience measurement, loaded only after acceptance) */
+#consent { position: fixed; left: 16px; right: 16px; bottom: 16px; max-width: 640px; margin: 0 auto; z-index: 20;
+  background: var(--paper); border: 1px solid var(--line); border-top: 4px solid var(--link); border-radius: 8px;
+  box-shadow: 0 6px 24px rgba(23,37,54,.18); padding: 14px 16px; font-size: .95rem; }
+#consent p { margin: 0 0 10px; }
+.consent-btns { display: flex; gap: 10px; justify-content: flex-end; flex-wrap: wrap; }
+.consent-btns button { font: inherit; padding: 7px 16px; border-radius: 6px; border: 1px solid var(--link); background: var(--paper); color: var(--link); cursor: pointer; }
+.consent-btns button.primary { background: var(--link); color: #fff; }
+.consent-btns button:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+footer .cookies { font-size: .85rem; }
+
 /* Footer */
 footer p { margin: .4em 0; }
 .thread-foot { font-style: italic; }
