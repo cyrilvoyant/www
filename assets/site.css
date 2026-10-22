@@ -96,7 +96,7 @@ section.thread { scroll-margin-top: 16px; }
 .links-box table { display: table; width: 100%; table-layout: fixed; }
 .links-box td, .links-box th { overflow-wrap: anywhere; }
 .links-box th { width: 11em; background: var(--soft); }
-@media (max-width: 600px) { .theory dl { grid-template-columns: 1fr; } .links-box th { width: auto; } }
+@media (max-width: 600px) { .theory dl { grid-template-columns: 1fr; } .links-box th { width: auto; } .katex-display { font-size: .84em; } .theory { padding: 4px 12px 14px; } }
 
 @media (max-width: 600px) {
   body { font-size: 16px; }
