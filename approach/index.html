@@ -12,21 +12,21 @@
 <section class="brief">
 <p><strong>In brief</strong></p>
 <ul>
-<li>Compute directly when the link between inputs and outputs is known. When an intelligible model falls short, <strong>hybridise</strong>: keep the model and learn only what is missing. When no model exists, climb the complexity ladder one step at a time, and only as far as it pays.</li>
+<li>Compute directly when the link between inputs and outputs is known. When an explicit model falls short, <strong>hybridise</strong>: keep the model and learn only what is missing. When the useful relations are not known well enough, evaluate what the data can teach, one step of complexity at a time, and only as far as it pays.</li>
 <li>Simpler is often no worse, and sometimes better: a learning machine that reads only its own satellite cell forecasts better than the same model reading the whole map, with a thousand times fewer parameters, and better than the deep networks tested.</li>
 <li>AI belongs in every toolbox, not in every solution: a language model may prepare a calculation, never guess it.</li>
 </ul>
 </section>
-<figure><img src="/assets/approach/concentric-map-en.png" alt="Concentric modelling: people at the centre, the model in the middle ring, the tools around" loading="lazy"><figcaption>Concentric modelling: people at the centre, the model in the middle ring, the tools around</figcaption></figure>
+<figure><img src="/assets/approach/concentric-map-en.png" alt="Map of the work: the question at the centre, understood models in the middle ring, hybrid works on the boundary, tools in the outer ring" loading="lazy"><figcaption>Map of the work: the question at the centre, understood models in the middle ring, hybrid works on the boundary, tools in the outer ring</figcaption></figure>
 <h2>One method, every field</h2>
 <p>Cyril Voyant works on the dose of a radiotherapy treatment, the response of thyroid cancer to radioactive iodine, the output of a solar plant, the electricity mix of an island, the load of a road tunnel, and requests written in plain language. Medicine, energy and language are treated the same way. The domain changes; the method does not.</p>
 <h2>1. Start with the direct approach</h2>
 <p>When the link is known, compute it. Radiobiological dose equivalence follows an explicit model, checked on 4,438 treatment schedules (LQL-Equiv). When no measurements exist, the electricity demand of a tunnel is simulated from what is known about it (Tunnel Load Simulator). Before forecasting the sun, describe how variable and how forecastable a site is (sCV and F).</p>
 <h2>2. When the model falls short, hybridise</h2>
-<p>This is the route Cyril Voyant prefers. When a model is intelligible, artificial intelligence is not needed. When it falls short, it is completed, not replaced: learning informed by physics, medicine or mathematics estimates only what the model does not capture.
+<p>This is the route Cyril Voyant prefers. When an explicit model meets the need well enough, no learning is added without reason. When it falls short, it is completed, not replaced: learning informed by physics, medicine or mathematics estimates only what the model does not capture.
 - <strong>Thyroid cancer</strong>: a compartmental model by <strong>Marie Fusella Giuntini and Dominique Barbolosi</strong>, with Cyril Voyant and David Taieb, is the base of a hybrid digital twin now in progress (<em>Scientific Reports</em>, 2026).
 - <strong>Solar forecasting</strong>: hybrid forecasts combined a numerical weather model with ARMA and neural networks as early as 2012 (<em>Energy</em>, 2012); cyclostationary references write the symmetry of the signal into the forecast (<em>Applied Mathematical Modelling</em>, 2026).</p>
-<h2>3. When no model exists, climb the ladder, only as far as it pays</h2>
+<h2>3. When relations are not known well enough, learn, only as far as it pays</h2>
 <p>Persistence, then structured references (BLEND, CLIPER, ARTU), statistical models, frugal learning machines (ELM), and only then deep networks or foundation models. Each step is kept only if it beats the previous one under the same protocol.
 - One ELM forecasts seven signals of the Corsican grid at once, one hour ahead, with nRMSE 0.179 for solar and 0.051 for thermal (<em>Applied Energy</em>, 2026).
 - Removing the clear-sky model makes the forecasting chain simpler, and the ELM matches or outperforms the classical references (<em>Solar Energy</em>, 2025).</p>

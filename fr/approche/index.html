@@ -12,21 +12,21 @@
 <section class="brief">
 <p><strong>En bref</strong></p>
 <ul>
-<li>Calculer directement quand le lien entre les entrées et les sorties est connu. Quand un modèle intelligible ne suffit pas, <strong>hybrider</strong> : garder le modèle et n'apprendre que ce qui manque. Quand aucun modèle n'existe, monter l'échelle de la complexité une marche à la fois, et seulement tant qu'elle paie.</li>
+<li>Calculer directement quand le lien entre les entrées et les sorties est connu. Quand un modèle explicite ne suffit pas, <strong>hybrider</strong> : garder le modèle et n'apprendre que ce qui manque. Quand les relations utiles ne sont pas suffisamment connues, évaluer ce que les données permettent d'apprendre, une marche de complexité à la fois, et seulement tant que cela paie.</li>
 <li>Plus simple n'est souvent pas pire, et parfois mieux : une machine à apprentissage qui lit seulement sa propre maille satellite prévoit mieux que le même modèle lisant toute la carte, avec mille fois moins de paramètres, et mieux que les réseaux profonds testés.</li>
 <li>L'IA : indispensable dans la boîte à outils, jamais obligatoire dans la solution. Un modèle de langage peut préparer un calcul, jamais le deviner.</li>
 </ul>
 </section>
-<figure><img src="/assets/approach/concentric-map-fr.png" alt="La modélisation concentrique : l&#x27;humain au centre, le modèle dans l&#x27;anneau du milieu, les outils autour" loading="lazy"><figcaption>La modélisation concentrique : l&#x27;humain au centre, le modèle dans l&#x27;anneau du milieu, les outils autour</figcaption></figure>
+<figure><img src="/assets/approach/concentric-map-fr.png" alt="Carte des travaux : la question au centre, les modèles compris dans l&#x27;anneau du milieu, les travaux hybrides sur la frontière, les outils dans l&#x27;anneau extérieur" loading="lazy"><figcaption>Carte des travaux : la question au centre, les modèles compris dans l&#x27;anneau du milieu, les travaux hybrides sur la frontière, les outils dans l&#x27;anneau extérieur</figcaption></figure>
 <h2>Une méthode, tous les domaines</h2>
 <p>Cyril Voyant travaille sur la dose d'un traitement de radiothérapie, la réponse d'un cancer de la thyroïde à l'iode radioactif, la production d'une centrale solaire, le mix électrique d'une île, la consommation d'un tunnel routier, et des demandes écrites en langage courant. La médecine, l'énergie et le langage sont traités de la même façon. Le domaine change ; la méthode, non.</p>
 <h2>1. Commencer par l'approche directe</h2>
 <p>Quand le lien est connu, on le calcule. L'équivalence de dose radiobiologique suit un modèle explicite, vérifié sur 4 438 schémas de traitement (LQL-Equiv). Quand aucune mesure n'existe, la consommation d'un tunnel est simulée à partir de ce que l'on sait de lui (Tunnel Load Simulator). Avant de prévoir le soleil, on décrit la variabilité et la prévisibilité d'un site (sCV et F).</p>
 <h2>2. Quand le modèle ne suffit pas, on hybride</h2>
-<p>C'est la voie que Cyril Voyant préfère. Quand un modèle est intelligible, l'intelligence artificielle n'est pas nécessaire. Quand il ne suffit pas, on le complète, on ne le remplace pas : un apprentissage guidé par la physique, la médecine ou les mathématiques estime seulement ce que le modèle ne capture pas.
+<p>C'est la voie que Cyril Voyant préfère. Quand un modèle explicite répond suffisamment au besoin, on n'ajoute pas d'apprentissage sans raison. Quand il ne suffit pas, on le complète, on ne le remplace pas : un apprentissage guidé par la physique, la médecine ou les mathématiques estime seulement ce que le modèle ne capture pas.
 - <strong>Cancer de la thyroïde</strong> : un modèle compartimental de <strong>Marie Fusella Giuntini et Dominique Barbolosi</strong>, avec Cyril Voyant et David Taieb, est la base d'un jumeau numérique hybride en cours (<em>Scientific Reports</em>, 2026).
 - <strong>Prévision solaire</strong> : des prévisions hybrides combinaient déjà en 2012 un modèle météorologique numérique avec ARMA et des réseaux de neurones (<em>Energy</em>, 2012) ; les références cyclostationnaires inscrivent la symétrie du signal dans la prévision (<em>Applied Mathematical Modelling</em>, 2026).</p>
-<h2>3. Quand aucun modèle n'existe, monter l'échelle, seulement tant qu'elle paie</h2>
+<h2>3. Quand les relations sont mal connues, apprendre, seulement tant que cela paie</h2>
 <p>La persistance, puis des références structurées (BLEND, CLIPER, ARTU), des modèles statistiques, des machines à apprentissage frugales (ELM), et seulement ensuite les réseaux profonds ou les modèles de fondation. Chaque marche n'est gardée que si elle bat la précédente sur le même protocole.
 - Une seule ELM prévoit sept signaux du réseau corse à la fois ; à une heure, nRMSE 0,179 pour le solaire et 0,051 pour le thermique (<em>Applied Energy</em>, 2026).
 - Retirer le modèle de ciel clair simplifie la chaîne de prévision, et l'ELM fait aussi bien ou mieux que les références classiques (<em>Solar Energy</em>, 2025).</p>
