@@ -1,0 +1,59 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Compute, don&#x27;t learn: radiobiological dose equivalence with LQL-Equiv | Cyril Voyant</title><meta name="description" content="When the link between a radiotherapy schedule and its biological effect is known, it is computed directly. No data and no artificial intelligence are needed: only a model we understand, checked case by case."><meta name="author" content="Cyril Voyant">
+<link rel="canonical" href="https://www.cyrilvoyant.com/stories/lql-equiv/"><link rel="alternate" hreflang="en" href="https://www.cyrilvoyant.com/stories/lql-equiv/"><link rel="alternate" hreflang="fr" href="https://www.cyrilvoyant.com/fr/recits/lql-equiv/"><link rel="alternate" hreflang="x-default" href="https://www.cyrilvoyant.com/stories/lql-equiv/">
+<meta property="og:type" content="article"><meta property="og:title" content="Compute, don&#x27;t learn: radiobiological dose equivalence with LQL-Equiv"><meta property="og:description" content="When the link between a radiotherapy schedule and its biological effect is known, it is computed directly. No data and no artificial intelligence are needed: only a model we understand, checked case by case."><meta property="og:url" content="https://www.cyrilvoyant.com/stories/lql-equiv/">
+<link rel="icon" href="/assets/favicon.svg"><link rel="stylesheet" href="/assets/site.css"><link rel="stylesheet" href="/assets/www.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "@id": "https://www.cyrilvoyant.com/stories/lql-equiv#page", "url": "https://www.cyrilvoyant.com/stories/lql-equiv/", "name": "Compute, don't learn: radiobiological dose equivalence with LQL-Equiv", "description": "When the link between a radiotherapy schedule and its biological effect is known, it is computed directly. No data and no artificial intelligence are needed: only a model we understand, checked case by case.", "inLanguage": "en", "isPartOf": {"@id": "https://www.cyrilvoyant.com/#website"}, "author": {"@id": "https://person.cyrilvoyant.com/#cyril-voyant"}, "publisher": {"@id": "https://person.cyrilvoyant.com/#cyril-voyant"}, "about": [{"@id": "https://cyrilvoyant.github.io/approach.html#principle-2"}], "keywords": ["Compute directly", "Medicine"], "workTranslation": {"@id": "https://www.cyrilvoyant.com/fr/recits/lql-equiv#page"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.cyrilvoyant.com/"}, {"@type": "ListItem", "position": 2, "name": "Stories", "item": "https://www.cyrilvoyant.com/stories/"}, {"@type": "ListItem", "position": 3, "name": "Compute, don't learn: radiobiological dose equivalence with LQL-Equiv", "item": "https://www.cyrilvoyant.com#"}]}]}</script></head>
+<body><a class="skip" href="#main">Skip to content</a>
+<header><div class="site-id"><strong><a href="/">Cyril Voyant</a></strong><span class="motto">Understand before you compute</span></div>
+<nav aria-label="Main navigation"><a href="/approach/">The approach</a><a href="/stories/">Stories</a><a href="/latest-publications-and-news/">News</a><a href="/teaching/">Teaching</a><a href="https://cyrilvoyant.github.io/">Methods and code</a><a href="/about/">About</a><a href="/fr/recits/lql-equiv/" lang="fr" class="lang">Français</a></nav><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/stories/">Stories</a> › <span>Compute, don&#x27;t learn: radiobiological dose equivalence with LQL-Equiv</span></nav></header>
+<main id="main"><h1>Compute, don&#x27;t learn: radiobiological dose equivalence with LQL-Equiv</h1><aside class="thread step" style="--c:#07569a"><span class="principle">Step of the story · Compute directly</span><a href="/approach/">The approach</a><p>When the link is known, compute it: no data and no AI where an explicit model exists. Principle 2: The model at the core.</p></aside><p class="lead">When the link between a radiotherapy schedule and its biological effect is known, it is computed directly. No data and no artificial intelligence are needed: only a model we understand, checked case by case.</p>
+<p><strong>Cyril Voyant</strong>, with <strong>Daniel Julian</strong> · Mines Paris – PSL, Centre O.I.E.</p>
+<section class="brief">
+<p><strong>In brief</strong></p>
+<ul>
+<li>One fraction of 15 Gy to the rectum has a biologically effective dose of <strong>72.7 Gy</strong> under the linear-quadratic (LQ) model, but <strong>59.4 Gy</strong> under the linear-quadratic-linear (LQL) model: <strong>18 % lower</strong>.</li>
+<li>LQL-Equiv computes these equivalences directly from an explicit model. Its 2026 version reproduces the 2014 software on <strong>4,438 treatment schedules</strong> (69,125 of 69,131 values agree, 99.991 %).</li>
+<li>It is a research and teaching tool, <strong>not a medical device</strong>.</li>
+</ul>
+</section>
+<h2>The finding</h2>
+<p>The answer to "are these two schedules equivalent?" does not need to be learned from data: it follows from a radiobiological model whose parameters are documented. Computing it directly is exact, explainable and reproducible, and the choice of model matters: at high doses per fraction, LQ and LQL differ by tens of grays.</p>
+<h2>The question</h2>
+<p>Two treatments can deliver the same total dose very differently: 39 fractions of 2 Gy, or 5 fractions of 7 Gy. Are they equivalent for the tumour, and for the healthy organs around it? Radiotherapy answers with the <strong>biologically effective dose</strong> (BED) and its translation into a dose given in 2 Gy fractions (<strong>EQD2</strong>).</p>
+<h2>The theory, in plain words</h2>
+<p>For <em>n</em> fractions of dose <em>d</em>, the linear-quadratic model gives</p>
+<p><strong>BED = n · d · (1 + d / (α/β))</strong></p>
+<p>where <strong>α/β</strong> describes how sensitive a tissue is to the size of each fraction (about 3.9 Gy for the rectum). The term <em>d/(α/β)</em> is why large fractions count for more than their dose. The equivalent dose in 2 Gy fractions is then <strong>EQD2 = BED / (1 + 2/(α/β))</strong>.</p>
+<p>The LQ curve keeps bending upward as the dose per fraction grows, which overstates the effect of very large fractions. The <strong>LQL</strong> model keeps the LQ curve up to a <strong>transition dose d_T</strong> (7.8 Gy for the rectum) and continues it as a straight line beyond. LQL-Equiv also handles gaps, two fractions a day and tumour repopulation; the full equations are on the technical page.</p>
+<h2>Where it sits on the complexity ladder</h2>
+<figure><img src="/assets/articles/ladder-lql-equiv-en.png" alt="Complexity ladder: LQL-Equiv stops at the first rung, direct calculation" loading="lazy"><figcaption>Complexity ladder: LQL-Equiv stops at the first rung, direct calculation</figcaption></figure>
+<p>First rung: <strong>direct calculation</strong>. The link between inputs and outputs is known, so climbing further, to statistics or machine learning, would add data needs and uncertainty without adding anything. AI belongs in every toolbox, not in every solution.</p>
+<h2>The example in figures</h2>
+<figure><img src="/assets/articles/lql-curve-en.png" alt="BED per fraction for the rectum, LQ and LQL" loading="lazy"><figcaption>BED per fraction for the rectum, LQ and LQL</figcaption></figure>
+<p>One fraction of 15 Gy to the rectum:
+- LQ: 15 × (1 + 15/3.9) = <strong>72.7 Gy</strong>;
+- LQL: 7.8 × (1 + 7.8/3.9) + 5 × (15 − 7.8) = 23.4 + 36.0 = <strong>59.4 Gy</strong>.</p>
+<p>The gap grows with the dose per fraction. This is why the choice of model must be stated when hypofractionated and conventional schedules are compared. The calculator then adds the time and repair corrections of each tissue.</p>
+<h2>What it brings, and its limits</h2>
+<ul>
+<li><strong>Brings</strong>: a transparent calculation, documented parameters for 34 organs at risk and 20 tumour sites, case-by-case validation against the original software, and a free calculator that runs in the browser (nothing entered leaves the page).</li>
+<li><strong>Limits</strong>: the result is only as good as the model and its parameters (α/β, d_T, slope of the linear tail), which remain uncertain. Complication and control probabilities (NTCP, TCP) are model illustrations, never validated against clinical outcomes. <strong>Not for choosing or changing a prescription.</strong></li>
+<li>Two companion articles go further: a comparison of LQ and LQL for clinical decision-making (<em>Clinical Oncology</em>, 2025), and a call for standardising dose-equivalence calculations (<em>Medical Dosimetry</em>, 2026).</li>
+</ul>
+<h2>Go further</h2>
+<ul>
+<li><strong>Full theory, runnable code and validation</strong>: <a href="https://cyrilvoyant.github.io/tools/lql-equiv.html">https://cyrilvoyant.github.io/tools/lql-equiv.html</a></li>
+<li><strong>The calculator</strong>: <a href="https://cyrilvoyant.github.io/LQL-Equiv-web/">https://cyrilvoyant.github.io/LQL-Equiv-web/</a></li>
+<li><strong>Articles</strong>:</li>
+<li>C. Voyant, D. Julian, <em>SoftwareX</em> 36, 103085 (2026), doi:10.1016/j.softx.2026.103085;</li>
+<li>C. Voyant, D. Julian, <em>Medical Dosimetry</em> (2026), doi:10.1016/j.meddos.2026.08.002;</li>
+<li>C. Voyant, D. Julian et al., <em>Clinical Oncology</em> 45, 103893 (2025), doi:10.1016/j.clon.2025.103893;</li>
+<li>C. Voyant et al., <em>Reports of Practical Oncology and Radiotherapy</em> (2014), doi:10.1016/j.rpor.2013.08.004.</li>
+<li><strong>Code</strong>: github.com/cyrilvoyant/LQL-Equiv-web · archive doi:10.5281/zenodo.21948623</li>
+<li><strong>The approach behind this work</strong>: <a href="https://cyrilvoyant.github.io/approach.html">Understand before you compute</a></li>
+</ul></main>
+<footer><div class="brand"><a href="https://www.minesparis.psl.eu/annuaire-de-la-recherche/chercheur/cyril-voyant/"><img src="/assets/mines-paris-psl-logo.png" alt="Mines Paris – PSL" width="110" height="68"></a>
+<span>Centre O.I.E. — Observation, Impacts, Energy · Mines Paris – PSL</span></div>
+<p><strong>Cyril Voyant</strong>, Research Director (HDR, PhD), Mines Paris – PSL, <em>Department of Energy and Process Engineering</em> · Centre Observation, Impacts, Energy (O.I.E.), Campus Pierre Laffitte, 1 rue Claude Daunesse, CS 10207, F-06904 Sophia Antipolis Cedex, France</p><p><a href="mailto:cyril.voyant@minesparis.psl.eu">cyril.voyant@minesparis.psl.eu</a> · (+33) 7 86 82 68 63 · <a href="https://www.linkedin.com/in/cyril-voyant-2a7767192/">LinkedIn</a> · <a href="https://www.researchgate.net/profile/Cyril-Voyant">ResearchGate</a> · <a href="https://scholar.google.com/citations?user=aUlP6agAAAAJ">Google Scholar</a> · <a href="https://orcid.org/0000-0003-0242-7377">ORCID</a> · <a href="https://cv.hal.science/cyril-voyant">HAL</a> · <a href="https://github.com/cyrilvoyant">GitHub</a> · <a href="https://person.cyrilvoyant.com/">person.cyrilvoyant.com</a></p><p class="thread-foot"><a href="/approach/">People at the centre, the model at the core, tools around.</a></p></footer>
+</body></html>

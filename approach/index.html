@@ -1,0 +1,54 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Understand before you compute: the approach of Cyril Voyant | Cyril Voyant</title><meta name="description" content="Medicine, energy, language: very different questions, one method. People and their question at the centre; a model we understand at the core; every tool, artificial intelligence included, around it. Complexity is added only when it brings a measurable gain."><meta name="author" content="Cyril Voyant">
+<link rel="canonical" href="https://www.cyrilvoyant.com/approach/"><link rel="alternate" hreflang="en" href="https://www.cyrilvoyant.com/approach/"><link rel="alternate" hreflang="fr" href="https://www.cyrilvoyant.com/fr/approche/"><link rel="alternate" hreflang="x-default" href="https://www.cyrilvoyant.com/approach/">
+<meta property="og:type" content="website"><meta property="og:title" content="Understand before you compute: the approach of Cyril Voyant"><meta property="og:description" content="Medicine, energy, language: very different questions, one method. People and their question at the centre; a model we understand at the core; every tool, artificial intelligence included, around it. Complexity is added only when it brings a measurable gain."><meta property="og:url" content="https://www.cyrilvoyant.com/approach/">
+<link rel="icon" href="/assets/favicon.svg"><link rel="stylesheet" href="/assets/site.css"><link rel="stylesheet" href="/assets/www.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "AboutPage", "@id": "https://www.cyrilvoyant.com/approach#page", "url": "https://www.cyrilvoyant.com/approach/", "name": "Understand before you compute: the approach of Cyril Voyant", "description": "Medicine, energy, language: very different questions, one method. People and their question at the centre; a model we understand at the core; every tool, artificial intelligence included, around it. Complexity is added only when it brings a measurable gain.", "inLanguage": "en", "isPartOf": {"@id": "https://www.cyrilvoyant.com/#website"}, "author": {"@id": "https://person.cyrilvoyant.com/#cyril-voyant"}, "publisher": {"@id": "https://person.cyrilvoyant.com/#cyril-voyant"}, "about": [{"@id": "https://cyrilvoyant.github.io/approach.html#principle-2"}], "workTranslation": {"@id": "https://www.cyrilvoyant.com/fr/approche#page"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.cyrilvoyant.com/"}, {"@type": "ListItem", "position": 2, "name": "The approach", "item": "https://www.cyrilvoyant.com#"}]}]}</script></head>
+<body><a class="skip" href="#main">Skip to content</a>
+<header><div class="site-id"><strong><a href="/">Cyril Voyant</a></strong><span class="motto">Understand before you compute</span></div>
+<nav aria-label="Main navigation"><a href="/approach/" aria-current=page>The approach</a><a href="/stories/">Stories</a><a href="/latest-publications-and-news/">News</a><a href="/teaching/">Teaching</a><a href="https://cyrilvoyant.github.io/">Methods and code</a><a href="/about/">About</a><a href="/fr/approche/" lang="fr" class="lang">Français</a></nav><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <span>The approach</span></nav></header>
+<main id="main"><h1>Understand before you compute: the approach of Cyril Voyant</h1><p class="lead">Medicine, energy, language: very different questions, one method. People and their question at the centre; a model we understand at the core; every tool, artificial intelligence included, around it. Complexity is added only when it brings a measurable gain.</p>
+<p><strong>Cyril Voyant</strong> · Research Director, Mines Paris – PSL, Centre O.I.E.</p>
+<section class="brief">
+<p><strong>In brief</strong></p>
+<ul>
+<li>Compute directly when the link between inputs and outputs is known. When an intelligible model falls short, <strong>hybridise</strong>: keep the model and learn only what is missing. When no model exists, climb the complexity ladder one step at a time, and only as far as it pays.</li>
+<li>Simpler is often no worse, and sometimes better: a learning machine that reads only its own satellite cell forecasts better than the same model reading the whole map, with a thousand times fewer parameters, and better than the deep networks tested.</li>
+<li>AI belongs in every toolbox, not in every solution: a language model may prepare a calculation, never guess it.</li>
+</ul>
+</section>
+<figure><img src="/assets/approach/concentric-map-en.png" alt="Concentric modelling: people at the centre, the model in the middle ring, the tools around" loading="lazy"><figcaption>Concentric modelling: people at the centre, the model in the middle ring, the tools around</figcaption></figure>
+<h2>One method, every field</h2>
+<p>Cyril Voyant works on the dose of a radiotherapy treatment, the response of thyroid cancer to radioactive iodine, the output of a solar plant, the electricity mix of an island, the load of a road tunnel, and requests written in plain language. Medicine, energy and language are treated the same way. The domain changes; the method does not.</p>
+<h2>1. Start with the direct approach</h2>
+<p>When the link is known, compute it. Radiobiological dose equivalence follows an explicit model, checked on 4,438 treatment schedules (LQL-Equiv). When no measurements exist, the electricity demand of a tunnel is simulated from what is known about it (Tunnel Load Simulator). Before forecasting the sun, describe how variable and how forecastable a site is (sCV and F).</p>
+<h2>2. When the model falls short, hybridise</h2>
+<p>This is the route Cyril Voyant prefers. When a model is intelligible, artificial intelligence is not needed. When it falls short, it is completed, not replaced: learning informed by physics, medicine or mathematics estimates only what the model does not capture.
+- <strong>Thyroid cancer</strong>: a compartmental model by <strong>Marie Fusella Giuntini and Dominique Barbolosi</strong>, with Cyril Voyant and David Taieb, is the base of a hybrid digital twin now in progress (<em>Scientific Reports</em>, 2026).
+- <strong>Solar forecasting</strong>: hybrid forecasts combined a numerical weather model with ARMA and neural networks as early as 2012 (<em>Energy</em>, 2012); cyclostationary references write the symmetry of the signal into the forecast (<em>Applied Mathematical Modelling</em>, 2026).</p>
+<h2>3. When no model exists, climb the ladder, only as far as it pays</h2>
+<p>Persistence, then structured references (BLEND, CLIPER, ARTU), statistical models, frugal learning machines (ELM), and only then deep networks or foundation models. Each step is kept only if it beats the previous one under the same protocol.
+- One ELM forecasts seven signals of the Corsican grid at once, one hour ahead, with nRMSE 0.179 for solar and 0.051 for thermal (<em>Applied Energy</em>, 2026).
+- Removing the clear-sky model makes the forecasting chain simpler, and the ELM matches or outperforms the classical references (<em>Solar Energy</em>, 2025).</p>
+<h2>4. Artificial intelligence, in its place</h2>
+<p>Machine learning, deep learning and language models are valuable and used every day. They remain tools around an understood, validated core. In WebSemantic, a language model reads the request, a validator asks whenever an input is missing, and a validated code computes every number.</p>
+<h2>5. Trust is demonstrated</h2>
+<p>Every result is judged against a reference with metrics that match the question (NICE, the temporal γ-index), and published with its code, data and limits, archived with a DOI. Research must be found, trusted and reused: this is the point of the RTVACOS framework on research excellence.</p>
+<h2>The five principles</h2>
+<ol>
+<li><strong>People at the centre</strong>: forecasts and calculations serve a human decision.</li>
+<li><strong>The model at the core</strong>: understand first; compute directly; hybridise when the model falls short.</li>
+<li><strong>Complexity only if it pays</strong>: no a priori on the method; start simple.</li>
+<li><strong>Every tool, at the periphery</strong>: AI included, often in hybrid form.</li>
+<li><strong>Trust is demonstrated</strong>: evaluation, open code, data and limits.</li>
+</ol>
+<h2>Go further</h2>
+<ul>
+<li><strong>The reference page, with every source</strong> (for researchers and machines): <a href="https://cyrilvoyant.github.io/approach.html">https://cyrilvoyant.github.io/approach.html</a></li>
+<li><strong>Methods and code</strong>, with full theory and runnable examples: <a href="https://cyrilvoyant.github.io/">https://cyrilvoyant.github.io/</a></li>
+<li><strong>Author profile</strong>: person.cyrilvoyant.com · ORCID 0000-0003-0242-7377</li>
+</ul></main>
+<footer><div class="brand"><a href="https://www.minesparis.psl.eu/annuaire-de-la-recherche/chercheur/cyril-voyant/"><img src="/assets/mines-paris-psl-logo.png" alt="Mines Paris – PSL" width="110" height="68"></a>
+<span>Centre O.I.E. — Observation, Impacts, Energy · Mines Paris – PSL</span></div>
+<p><strong>Cyril Voyant</strong>, Research Director (HDR, PhD), Mines Paris – PSL, <em>Department of Energy and Process Engineering</em> · Centre Observation, Impacts, Energy (O.I.E.), Campus Pierre Laffitte, 1 rue Claude Daunesse, CS 10207, F-06904 Sophia Antipolis Cedex, France</p><p><a href="mailto:cyril.voyant@minesparis.psl.eu">cyril.voyant@minesparis.psl.eu</a> · (+33) 7 86 82 68 63 · <a href="https://www.linkedin.com/in/cyril-voyant-2a7767192/">LinkedIn</a> · <a href="https://www.researchgate.net/profile/Cyril-Voyant">ResearchGate</a> · <a href="https://scholar.google.com/citations?user=aUlP6agAAAAJ">Google Scholar</a> · <a href="https://orcid.org/0000-0003-0242-7377">ORCID</a> · <a href="https://cv.hal.science/cyril-voyant">HAL</a> · <a href="https://github.com/cyrilvoyant">GitHub</a> · <a href="https://person.cyrilvoyant.com/">person.cyrilvoyant.com</a></p><p class="thread-foot"><a href="/approach/">People at the centre, the model at the core, tools around.</a></p></footer>
+</body></html>

@@ -1,0 +1,59 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Simulate what you cannot yet measure: the electricity demand of road tunnels | Cyril Voyant</title><meta name="description" content="A tunnel&#x27;s operator rarely has detailed load measurements, especially at the design stage. The Tunnel Load Simulator builds the demand from what is known about the tunnel, says how uncertain it is, and states its limits."><meta name="author" content="Cyril Voyant">
+<link rel="canonical" href="https://www.cyrilvoyant.com/stories/tunnel-load-simulator/"><link rel="alternate" hreflang="en" href="https://www.cyrilvoyant.com/stories/tunnel-load-simulator/"><link rel="alternate" hreflang="fr" href="https://www.cyrilvoyant.com/fr/recits/tunnel-load-simulator/"><link rel="alternate" hreflang="x-default" href="https://www.cyrilvoyant.com/stories/tunnel-load-simulator/">
+<meta property="og:type" content="article"><meta property="og:title" content="Simulate what you cannot yet measure: the electricity demand of road tunnels"><meta property="og:description" content="A tunnel&#x27;s operator rarely has detailed load measurements, especially at the design stage. The Tunnel Load Simulator builds the demand from what is known about the tunnel, says how uncertain it is, and states its limits."><meta property="og:url" content="https://www.cyrilvoyant.com/stories/tunnel-load-simulator/">
+<link rel="icon" href="/assets/favicon.svg"><link rel="stylesheet" href="/assets/site.css"><link rel="stylesheet" href="/assets/www.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "@id": "https://www.cyrilvoyant.com/stories/tunnel-load-simulator#page", "url": "https://www.cyrilvoyant.com/stories/tunnel-load-simulator/", "name": "Simulate what you cannot yet measure: the electricity demand of road tunnels", "description": "A tunnel's operator rarely has detailed load measurements, especially at the design stage. The Tunnel Load Simulator builds the demand from what is known about the tunnel, says how uncertain it is, and states its limits.", "inLanguage": "en", "isPartOf": {"@id": "https://www.cyrilvoyant.com/#website"}, "author": {"@id": "https://person.cyrilvoyant.com/#cyril-voyant"}, "publisher": {"@id": "https://person.cyrilvoyant.com/#cyril-voyant"}, "about": [{"@id": "https://cyrilvoyant.github.io/approach.html#principle-2"}], "keywords": ["Compute directly", "Energy"], "workTranslation": {"@id": "https://www.cyrilvoyant.com/fr/recits/tunnel-load-simulator#page"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.cyrilvoyant.com/"}, {"@type": "ListItem", "position": 2, "name": "Stories", "item": "https://www.cyrilvoyant.com/stories/"}, {"@type": "ListItem", "position": 3, "name": "Simulate what you cannot yet measure: the electricity demand of road tunnels", "item": "https://www.cyrilvoyant.com#"}]}]}</script></head>
+<body><a class="skip" href="#main">Skip to content</a>
+<header><div class="site-id"><strong><a href="/">Cyril Voyant</a></strong><span class="motto">Understand before you compute</span></div>
+<nav aria-label="Main navigation"><a href="/approach/">The approach</a><a href="/stories/">Stories</a><a href="/latest-publications-and-news/">News</a><a href="/teaching/">Teaching</a><a href="https://cyrilvoyant.github.io/">Methods and code</a><a href="/about/">About</a><a href="/fr/recits/tunnel-load-simulator/" lang="fr" class="lang">Français</a></nav><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/stories/">Stories</a> › <span>Simulate what you cannot yet measure: the electricity demand of road tunnels</span></nav></header>
+<main id="main"><h1>Simulate what you cannot yet measure: the electricity demand of road tunnels</h1><aside class="thread step" style="--c:#07569a"><span class="principle">Step of the story · Compute directly</span><a href="/approach/">The approach</a><p>When the link is known, compute it: no data and no AI where an explicit model exists. Principle 2: The model at the core.</p></aside><p class="lead">A tunnel's operator rarely has detailed load measurements, especially at the design stage. The Tunnel Load Simulator builds the demand from what is known about the tunnel, says how uncertain it is, and states its limits.</p>
+<p><strong>Haytham El-Houari</strong> and <strong>Cyril Voyant</strong> · SmartTunnel project, Université Sidi Mohamed Ben Abdellah (Fès) and Mines Paris – PSL</p>
+<section class="brief">
+<p><strong>In brief</strong></p>
+<ul>
+<li>With no measurements at all, the electricity demand of a road tunnel can be simulated from its geometry, traffic, lighting and ventilation: <strong>one year at 10-minute resolution in about 150 ms</strong>.</li>
+<li>For a 1.5 km peri-urban tunnel with two tubes, the public example gives a median of <strong>3,233 MWh per year</strong> and a peak of <strong>873 kW</strong> over 20 Monte Carlo runs.</li>
+<li>It is a first-order generator: <strong>calibrate it on measurements before any engineering use</strong>.</li>
+</ul>
+</section>
+<h2>The finding</h2>
+<p>Where a tunnel has no measurements yet, no model can be trained or validated for it, but a great deal can be simulated. A simple model, whose every coefficient is visible, gives credible orders of magnitude, their variability, and the effect of each design choice, provided its assumptions are stated.</p>
+<h2>The question</h2>
+<p>How much electricity does a road tunnel use, hour by hour, and how uncertain is that figure? The answer matters for sizing connections, choosing lighting and ventilation technologies, or studying local energy storage. Measured series are rare and site-specific.</p>
+<h2>The theory, in plain words</h2>
+<p>The power drawn at each moment is the sum of four parts, plus a small random fluctuation:
+- a <strong>fixed base</strong> (control, safety systems);
+- <strong>auxiliaries</strong> (pumps, equipment), proportional to the tunnel's length and depth;
+- <strong>lighting</strong>, which depends on daylight at the portals and on traffic;
+- <strong>ventilation</strong>, which follows traffic with its morning and evening peaks, and increases with slope and altitude. It jumps during random <strong>pollution episodes</strong> and <strong>accidents</strong>.</p>
+<p>Each year is simulated many times with different random draws (<strong>Monte Carlo</strong>). The result is a median and a P10–P90 band, rather than a single curve.</p>
+<h2>Where it sits on the complexity ladder</h2>
+<figure><img src="/assets/articles/ladder-tls-en.png" alt="Complexity ladder: the simulator stops at the second rung, simulation from what is known" loading="lazy"><figcaption>Complexity ladder: the simulator stops at the second rung, simulation from what is known</figcaption></figure>
+<p>Second rung: <strong>simulation from what is known</strong>. Without local measurements, nothing can be calibrated or validated for this tunnel, and nothing is pretended: the parameters are engineering orders of magnitude, shown and adjustable.</p>
+<h2>The example in figures</h2>
+<figure><img src="/assets/articles/tls-components-en.png" alt="One weekday: fixed base, auxiliaries, lighting and ventilation stacked" loading="lazy"><figcaption>One weekday: fixed base, auxiliaries, lighting and ventilation stacked</figcaption></figure>
+<p>On a January weekday, ventilation carries the two traffic peaks; lighting rises at night and at the edges of the day.</p>
+<figure><img src="/assets/articles/tls-curve-en.png" alt="One week: median and P10–P90 band over 20 runs" loading="lazy"><figcaption>One week: median and P10–P90 band over 20 runs</figcaption></figure>
+<p>Over a year, the 1.5 km tunnel of the public example gives:
+- a median of 3,233 MWh (P10 3,230, P90 3,237);
+- a peak of 873 kW and a mean of 369 kW, i.e. a load factor of 0.42;
+- 2,156 kWh per metre and per year.</p>
+<h2>What it brings, and its limits</h2>
+<ul>
+<li><strong>Brings</strong>: fast and transparent pre-design studies (lighting technology, ventilation type, traffic level); synthetic load profiles for research on energy management and renewables in tunnels; a clear teaching case for Monte Carlo uncertainty.</li>
+<li><strong>Limits</strong>: the P10–P90 band is <strong>narrow because it only reflects the random events and noise of the model</strong>, not the uncertainty on its parameters. The coefficients are orders of magnitude, not measurements of a given tunnel. Calibrate against measured data before any engineering use or comparison with a real site.</li>
+</ul>
+<h2>Go further</h2>
+<ul>
+<li><strong>Full equations, runnable example and results</strong>: <a href="https://cyrilvoyant.github.io/tools/tunnel-load-simulator.html">https://cyrilvoyant.github.io/tools/tunnel-load-simulator.html</a></li>
+<li><strong>The web app</strong>: tunnel-load-simulator.onrender.com (free hosting: may take a minute to wake up)</li>
+<li><strong>Article</strong>: H. El-Houari, C. Voyant, <em>SoftwareX</em> 35, 102946 (2026), doi:10.1016/j.softx.2026.102946</li>
+<li><strong>Code</strong>: github.com/cyrilvoyant/tunnel-load-simulator · archive doi:10.5281/zenodo.20080042</li>
+<li>The simulator can also be driven in plain language through <strong>WebSemantic</strong>.</li>
+<li><strong>The approach behind this work</strong>: <a href="https://cyrilvoyant.github.io/approach.html">Understand before you compute</a></li>
+</ul></main>
+<footer><div class="brand"><a href="https://www.minesparis.psl.eu/annuaire-de-la-recherche/chercheur/cyril-voyant/"><img src="/assets/mines-paris-psl-logo.png" alt="Mines Paris – PSL" width="110" height="68"></a>
+<span>Centre O.I.E. — Observation, Impacts, Energy · Mines Paris – PSL</span></div>
+<p><strong>Cyril Voyant</strong>, Research Director (HDR, PhD), Mines Paris – PSL, <em>Department of Energy and Process Engineering</em> · Centre Observation, Impacts, Energy (O.I.E.), Campus Pierre Laffitte, 1 rue Claude Daunesse, CS 10207, F-06904 Sophia Antipolis Cedex, France</p><p><a href="mailto:cyril.voyant@minesparis.psl.eu">cyril.voyant@minesparis.psl.eu</a> · (+33) 7 86 82 68 63 · <a href="https://www.linkedin.com/in/cyril-voyant-2a7767192/">LinkedIn</a> · <a href="https://www.researchgate.net/profile/Cyril-Voyant">ResearchGate</a> · <a href="https://scholar.google.com/citations?user=aUlP6agAAAAJ">Google Scholar</a> · <a href="https://orcid.org/0000-0003-0242-7377">ORCID</a> · <a href="https://cv.hal.science/cyril-voyant">HAL</a> · <a href="https://github.com/cyrilvoyant">GitHub</a> · <a href="https://person.cyrilvoyant.com/">person.cyrilvoyant.com</a></p><p class="thread-foot"><a href="/approach/">People at the centre, the model at the core, tools around.</a></p></footer>
+</body></html>

@@ -1,0 +1,104 @@
+/* Shared stylesheet — Cyril Voyant sites (github.io guides, approach page, person). Charter of 22 October 2026.
+   One file for every page: same colours, type, width, navigation, thread box, figures, sources and footer. */
+
+:root {
+  --ink: #172536;          /* text */
+  --muted: #46586a;        /* secondary text */
+  --bg: #fbfcfe;           /* page */
+  --paper: #ffffff;        /* boxes */
+  --line: #ccd6e0;         /* rules and borders */
+  --link: #07569a;         /* links and accents */
+  --focus: #ad5200;        /* keyboard focus */
+  --soft: #edf4fa;         /* tinted boxes */
+  /* one colour per principle (also used in the three-circle diagram) */
+  --p1: #b4513a;           /* people at the centre */
+  --p2: #07569a;           /* the model at the core */
+  --p3: #3c8d5a;           /* complexity only if it pays */
+  --p4: #7a5aa6;           /* every tool, at the periphery */
+  --p5: #b07d12;           /* trust is demonstrated */
+  --width: 900px;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.7 system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+header, main, footer { max-width: var(--width); margin: 0 auto; padding: 20px 16px; }
+a { color: var(--link); text-decoration: underline; text-underline-offset: 3px; }
+a:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+img, svg { max-width: 100%; height: auto; }
+
+/* Header: identity line + one navigation */
+.site-id { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: baseline; font-size: .95rem; }
+.site-id strong { font-size: 1.05rem; }
+.site-id .motto { color: var(--muted); font-style: italic; }
+nav { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 8px; padding-bottom: 12px; border-bottom: 1px solid var(--line); font-size: .95rem; }
+nav a[lang] { margin-left: auto; }
+
+/* Banner line, title, lead */
+.eyebrow { color: #526273; font-size: .9rem; margin: 18px 0 4px; }
+h1 { font-size: clamp(1.7rem, 4vw, 2.5rem); line-height: 1.2; margin: .2em 0 .4em; }
+h2 { line-height: 1.3; margin-top: 2em; }
+h3 { line-height: 1.35; }
+.lead { font-size: 1.18rem; }
+
+/* The thread box ("chapeau"): which principle this page illustrates */
+.thread { margin: 18px 0 24px; padding: 14px 16px; background: var(--paper); border: 1px solid var(--line); border-left: 6px solid var(--link); border-radius: 6px; }
+.thread .principle { display: inline-block; font-size: .85rem; font-weight: 600; color: #fff; background: var(--link); border-radius: 999px; padding: 2px 10px; margin-right: 6px; }
+.thread.p1 { border-left-color: var(--p1); } .thread.p1 .principle { background: var(--p1); }
+.thread.p2 { border-left-color: var(--p2); } .thread.p2 .principle { background: var(--p2); }
+.thread.p3 { border-left-color: var(--p3); } .thread.p3 .principle { background: var(--p3); }
+.thread.p4 { border-left-color: var(--p4); } .thread.p4 .principle { background: var(--p4); }
+.thread.p5 { border-left-color: var(--p5); } .thread.p5 .principle { background: var(--p5); }
+.thread p { margin: .4em 0 0; }
+
+/* "In brief": short, sourced statements (easy to quote for people and for language models) */
+.brief { padding: 14px 18px; background: var(--soft); border-radius: 6px; }
+.brief h2 { margin-top: 0; font-size: 1.1rem; }
+.brief ul { margin: .3em 0 0; padding-left: 1.2em; }
+
+/* Figures, tables, code */
+figure { margin: 24px 0; }
+figcaption { color: var(--muted); font-size: .92rem; margin-top: 6px; }
+table { border-collapse: collapse; display: block; overflow-x: auto; font-size: .95rem; }
+th, td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; }
+pre { background: #edf2f7; padding: 14px; overflow-x: auto; border-radius: 6px; }
+code { font-size: .9em; }
+.note { padding: 14px 16px; border-left: 4px solid var(--link); background: var(--soft); }
+.actions a { display: inline-block; margin: 6px 12px 6px 0; padding: 9px 15px; border: 1px solid var(--link); border-radius: 6px; text-decoration: none; }
+
+/* Sources and related pages: every page ends with them */
+.sources ol { padding-left: 1.3em; font-size: .95rem; }
+.related p { font-size: .98rem; }
+
+/* Footer: identical everywhere */
+footer { border-top: 1px solid var(--line); font-size: .9em; color: var(--muted); }
+footer .brand { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+
+/* Classes already used by existing pages (kept so that they render unchanged with this file) */
+.muted { color: var(--muted); }
+.cite-lede { font-size: 1.02rem; border-left: 3px solid currentColor; padding-left: .8rem; margin: .6rem 0; }
+.steps { display: flex; gap: 12px; flex-wrap: wrap; margin: 24px 0; }
+.steps span { padding: 12px 16px; background: #e5eef7; border-radius: 8px; }
+.thread h3 { margin: .5em 0 .2em; }
+section.thread { scroll-margin-top: 16px; }
+.institutional-brand { margin: 20px 0; padding: 12px; background: #fff; color: var(--ink); }
+
+/* The theory, Run it, Links: the three technical blocks of every github.io guide (22 October 2026) */
+.theory { margin: 28px 0; padding: 6px 18px 16px; background: var(--paper); border: 1px solid var(--line); border-top: 4px solid var(--p2); border-radius: 6px; }
+.theory > h2 { margin-top: .7em; }
+.theory h3 { margin-bottom: .3em; }
+.theory dl { display: grid; grid-template-columns: max-content 1fr; gap: 4px 14px; margin: .4em 0; }
+.theory dt { font-weight: 600; }
+.theory dd { margin: 0; }
+.katex-display { overflow-x: auto; overflow-y: hidden; padding: 4px 0; }
+.run, .links-box { margin: 28px 0; }
+.run .out { background: #f6f8fa; border-left: 4px solid var(--p3); }
+.links-box table { display: table; width: 100%; table-layout: fixed; }
+.links-box td, .links-box th { overflow-wrap: anywhere; }
+.links-box th { width: 11em; background: var(--soft); }
+@media (max-width: 600px) { .theory dl { grid-template-columns: 1fr; } .links-box th { width: auto; } }
+
+@media (max-width: 600px) {
+  body { font-size: 16px; }
+  nav a[lang] { margin-left: 0; }
+}

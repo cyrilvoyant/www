@@ -1,0 +1,70 @@
+/* www.cyrilvoyant.com — additions to the shared charter (site.css). 22 October 2026.
+   Same colours, type and widths as github.io; adds the hero, the step cards, the breadcrumb and the news list. */
+
+:root { --width: 980px; }
+.skip { position: absolute; left: -999px; }
+.skip:focus { left: 16px; top: 8px; background: var(--paper); padding: 6px 10px; z-index: 10; }
+header { padding-bottom: 6px; }
+nav a[aria-current] { font-weight: 700; text-decoration-thickness: 2px; }
+nav a.lang { margin-left: auto; }
+.crumbs { font-size: .85rem; color: var(--muted); margin: 10px 0 0; border: 0; padding: 0; display: block; }
+.crumbs a { color: var(--muted); }
+
+/* Hero */
+.hero { display: grid; grid-template-columns: 1fr 180px; gap: 32px; align-items: center; margin: 28px 0 8px; }
+.hero img { width: 180px; height: 180px; object-fit: cover; border-radius: 50%; border: 4px solid var(--paper); box-shadow: 0 2px 12px rgba(23,37,54,.14); }
+.hero h1 { margin: 0 0 .15em; }
+.hero .motto-big { font-size: 1.35rem; color: var(--link); font-weight: 600; margin: 0 0 .6em; }
+.hero.small { grid-template-columns: 1fr 120px; } .hero.small img { width: 120px; height: 120px; }
+.btns { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+.btns a { padding: 9px 16px; border-radius: 6px; text-decoration: none; border: 1px solid var(--link); background: var(--paper); }
+.btns a.primary { background: var(--link); color: #fff; }
+.domains { display: flex; flex-wrap: wrap; gap: 8px; }
+.domains span { font-size: .85rem; padding: 3px 11px; border-radius: 999px; background: var(--soft); }
+
+/* Cards: a figure is always shown whole, never cropped */
+.steps4 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin: 18px 0 8px; }
+.cards3 { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; margin: 12px 0; }
+.card { background: var(--paper); border: 1px solid var(--line); border-top: 5px solid var(--c, var(--link)); border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; }
+.card img { width: 100%; aspect-ratio: 16 / 9; object-fit: contain; padding: 10px 12px; background: #fff; border-bottom: 1px solid var(--line); }
+.card .body { padding: 12px 16px 16px; }
+.card .tag { font-size: .76rem; font-weight: 700; letter-spacing: .03em; text-transform: uppercase; color: var(--c, var(--link)); }
+.card h3 { margin: .3em 0 .3em; font-size: 1.08rem; line-height: 1.35; }
+.card h3 a { text-decoration: none; color: var(--ink); }
+.card h3 a:hover { text-decoration: underline; }
+.card p { margin: 0 0 .45em; font-size: .95rem; }
+.card .step-d { font-weight: 600; }
+.ex { font-size: .92rem; color: var(--muted); }
+
+/* Step sections on the stories index */
+.jump { font-size: .95rem; }
+.step-sec { margin-top: 2.2em; padding-top: .4em; border-top: 3px solid var(--c); }
+.step-sec h2 { color: var(--c); margin-top: .4em; }
+
+/* Step box on every story (same family as the github.io thread box) */
+.thread.step { border-left-color: var(--c); }
+.thread.step .principle { background: var(--c); }
+
+/* Story layout */
+.byline { color: var(--muted); font-size: .92rem; margin: .2em 0 1em; }
+.go { margin-top: 2em; font-size: .95rem; }
+figure img { display: block; margin: 0 auto; border: 1px solid var(--line); border-radius: 6px; background: #fff; }
+.split { display: grid; grid-template-columns: 1.15fr 1fr; gap: 28px; align-items: center; margin-top: 1.5em; }
+.figs2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.brief { margin: 18px 0; }
+
+/* News list */
+ul.news { list-style: none; padding: 0; }
+ul.news li { padding: 10px 0; border-bottom: 1px solid var(--line); }
+ul.news li a { font-weight: 600; }
+
+/* Footer */
+footer p { margin: .4em 0; }
+.thread-foot { font-style: italic; }
+
+@media (max-width: 720px) {
+  .hero, .hero.small { grid-template-columns: 1fr; }
+  .hero img { order: -1; width: 120px; height: 120px; }
+  .steps4, .split, .figs2 { grid-template-columns: 1fr; }
+  nav a.lang { margin-left: 0; }
+}
