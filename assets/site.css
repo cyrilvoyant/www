@@ -143,3 +143,6 @@ section.thread { scroll-margin-top: 16px; }
 .cta-text { color: var(--muted); font-size: .93rem; }
 .cta-action { margin-top: auto; font-weight: 700; color: var(--link); }
 @media (prefers-reduced-motion: reduce) { .cta-card { transition: none; } .cta-card:hover { transform: none; } }
+
+/* L8: images served as WebP inside <picture>, the original PNG/JPEG as fallback */
+picture { display: block; }
