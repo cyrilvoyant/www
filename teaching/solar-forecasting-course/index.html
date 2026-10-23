@@ -1,0 +1,453 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Solar forecasting course: forecasting the intermittent solar resource | Cyril Voyant</title><meta name="description" content="A 59-slide course on forecasting solar irradiance one hour ahead, taught in the UE14 applied research project of the Mines Paris – PSL engineering curriculum, built on ten years of hourly measurements from Ajaccio (Corsica)."><meta name="author" content="Cyril Voyant">
+<link rel="canonical" href="https://www.cyrilvoyant.com/teaching/solar-forecasting-course/"><link rel="alternate" hreflang="en" href="https://www.cyrilvoyant.com/teaching/solar-forecasting-course/"><link rel="alternate" hreflang="fr" href="https://www.cyrilvoyant.com/fr/enseignement/cours-prevision-solaire/"><link rel="alternate" hreflang="x-default" href="https://www.cyrilvoyant.com/teaching/solar-forecasting-course/">
+<meta property="og:type" content="website"><meta property="og:title" content="Solar forecasting course: forecasting the intermittent solar resource"><meta property="og:description" content="A 59-slide course on forecasting solar irradiance one hour ahead, taught in the UE14 applied research project of the Mines Paris – PSL engineering curriculum, built on ten years of hourly measurements from Ajaccio (Corsica)."><meta property="og:url" content="https://www.cyrilvoyant.com/teaching/solar-forecasting-course/">
+<link rel="icon" href="/assets/favicon.svg"><link rel="stylesheet" href="/assets/site.css"><link rel="stylesheet" href="/assets/www.css"><link rel="stylesheet" href="/assets/nav.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "LearningResource", "@id": "https://www.cyrilvoyant.com/teaching/solar-forecasting-course#page", "url": "https://www.cyrilvoyant.com/teaching/solar-forecasting-course/", "name": "Solar forecasting course: forecasting the intermittent solar resource", "description": "A 59-slide course on forecasting solar irradiance one hour ahead, taught in the UE14 applied research project of the Mines Paris – PSL engineering curriculum, built on ten years of hourly measurements from Ajaccio (Corsica).", "inLanguage": "en", "isPartOf": {"@id": "https://www.cyrilvoyant.com/#website"}, "author": {"@id": "https://person.cyrilvoyant.com/#cyril-voyant"}, "publisher": {"@id": "https://person.cyrilvoyant.com/#cyril-voyant"}, "about": [{"@id": "https://cyrilvoyant.github.io/approach.html#principle-2"}], "workTranslation": {"@id": "https://www.cyrilvoyant.com/fr/enseignement/cours-prevision-solaire#page"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.cyrilvoyant.com/"}, {"@type": "ListItem", "position": 2, "name": "Teaching", "item": "https://www.cyrilvoyant.com/teaching/"}, {"@type": "ListItem", "position": 3, "name": "Course", "item": "https://www.cyrilvoyant.com#"}]}, {"@type": "Course", "@id": "https://www.cyrilvoyant.com/teaching/solar-forecasting-course/#course", "name": "Solar forecasting course: forecasting the intermittent solar resource", "description": "A 59-slide course on forecasting solar irradiance one hour ahead, taught in the UE14 applied research project of the Mines Paris – PSL engineering curriculum, built on ten years of hourly measurements from Ajaccio (Corsica). It goes from the solar signal and the clear-sky index to autoregressive models fitted by least squares, then to Extreme Learning Machines, online learning and frugality, every model judged against persistence; on the 2007 test year, the daytime nRMSE is 22.0 % for smart persistence, 21.3 % for AR(2) and 20.5 % for an ELM.", "inLanguage": "en", "courseCode": "UE14", "educationalLevel": "Engineering curriculum (Mines Paris – PSL)", "license": "https://creativecommons.org/licenses/by/4.0/", "author": {"@id": "https://person.cyrilvoyant.com/#cyril-voyant"}, "provider": {"@type": "CollegeOrUniversity", "name": "Mines Paris – PSL", "url": "https://www.minesparis.psl.eu/"}, "isBasedOn": "https://cyrilvoyant.github.io/teaching/solar-forecasting-basics.html", "hasPart": [{"@type": "LearningResource", "name": "Solar forecasting course: forecasting the intermittent solar resource (PowerPoint)", "encodingFormat": "application/vnd.openxmlformats-officedocument.presentationml.presentation", "contentUrl": "https://www.cyrilvoyant.com/assets/course/Forecasting-the-Intermittent-Solar-Resource_EN.pptx"}, {"@type": "LearningResource", "name": "Solar forecasting course: forecasting the intermittent solar resource (PDF)", "encodingFormat": "application/pdf", "contentUrl": "https://www.cyrilvoyant.com/assets/course/Forecasting-the-Intermittent-Solar-Resource_EN.pdf"}], "teaches": ["clear-sky index", "autoregressive model", "least squares", "persistence", "forecast evaluation (nRMSE, skill score, NICE)", "Extreme Learning Machine", "online learning", "frugality"]}]}</script></head>
+<body><a class="skip" href="#main">Skip to content</a><div class="xs-bar" role="navigation" aria-label="Cyril Voyant sites"><div class="xs-in"><a class="xs-name" href="/">Cyril Voyant</a><a class="xs-here" href="/" aria-current="true">The story</a><a href="https://cyrilvoyant.github.io/">Methods and code</a><a href="https://person.cyrilvoyant.com/">Profile</a><a class="xs-lang" href="/fr/enseignement/cours-prevision-solaire/" lang="fr" hreflang="fr">Français</a></div></div>
+<header><div class="site-id"><strong><a href="/">Cyril Voyant</a></strong><span class="motto">Understand before you compute</span></div>
+<nav aria-label="Main navigation"><a href="/approach/">The approach</a><a href="/stories/">Stories</a><a href="/latest-publications-and-news/">News</a><a href="/teaching/">Teaching</a><a href="https://cyrilvoyant.github.io/">Methods and code</a><a href="/about/">About</a></nav><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/teaching/">Teaching</a> › <span>Course</span></nav></header>
+<main id="main"><h1>Solar forecasting course: forecasting the intermittent solar resource</h1><p class="lead">Every slide of the course, with its text, in the order it is taught. Use the arrow keys (← →) to move from slide to slide.</p><section id="brief" class="brief"><h2>In brief</h2><ul><li>A 59-slide course on forecasting solar irradiance one hour ahead, taught in the UE14 applied research project of the Mines Paris – PSL engineering curriculum, built on ten years of hourly measurements from Ajaccio (Corsica).</li><li>It goes from the solar signal and the clear-sky index to autoregressive models fitted by least squares, then to Extreme Learning Machines, online learning and frugality, every model judged against persistence; on the 2007 test year, the daytime nRMSE is 22.0 % for smart persistence, 21.3 % for AR(2) and 20.5 % for an ELM.</li><li>Course by Cyril Voyant, license CC BY 4.0, downloadable as PowerPoint and PDF; the worked example with equations and code is on cyrilvoyant.github.io.</li></ul></section><p class="actions"><a href="/assets/course/Forecasting-the-Intermittent-Solar-Resource_EN.pptx" download>Download the slides (PowerPoint, 3.5 MB)</a><a href="/assets/course/Forecasting-the-Intermittent-Solar-Resource_EN.pdf" download>PDF (2.4 MB)</a><a href="/fr/enseignement/cours-prevision-solaire/" lang="fr">Version française</a></p><nav class="course-toc" aria-label="Course outline"><h2>Course outline</h2><ol><li><a href="#part-1">Introduction</a> <span class="muted">(slides 1–4)</span></li><li><a href="#part-2">1 · Why forecast solar power?</a> <span class="muted">(slides 5–7)</span></li><li><a href="#part-3">2 · Solar radiation</a> <span class="muted">(slides 8–11)</span></li><li><a href="#part-4">3 · Time series and forecasting</a> <span class="muted">(slides 12–17)</span></li><li><a href="#part-5">4 · Clear sky and clear-sky index</a> <span class="muted">(slides 18–25)</span></li><li><a href="#part-6">5 · AR model and least squares</a> <span class="muted">(slides 26–34)</span></li><li><a href="#part-7">6 · Evaluation, ELM and online learning</a> <span class="muted">(slides 35–53)</span></li><li><a href="#part-8">Project, glossary and references</a> <span class="muted">(slides 54–56)</span></li><li><a href="#part-9">Appendices</a> <span class="muted">(slides 57–59)</span></li></ol></nav><h2 id="part-1">Introduction</h2><section class="slide" id="slide-1" aria-label="Slide 1"><h3><span class="num">1</span> Forecasting the intermittent solar resource</h3><figure><img src="/assets/course/en/slide-01.webp" srcset="/assets/course/en/slide-01-640.webp 640w, /assets/course/en/slide-01.webp 1280w" sizes="(max-width: 900px) 100vw, 868px" width="1280" height="720" alt="Slide 1: Forecasting the intermittent solar resource"></figure><details class="slide-text"><summary>Text of the slide</summary><p><strong>Cyril Voyant</strong>, Research Director, Mines Paris – PSL, Centre O.I.E., Sophia Antipolis</p>
+<p>UE14, Mines Paris engineering curriculum (English version of the 2026 course)</p>
+<p>Applied research project: modeling and forecasting global solar irradiance</p>
+<p>MINES PARIS – PSL</p>
+<p>Center O.I.E.</p>
+<p>Cite as: Voyant, C. (2026). Forecasting the intermittent solar resource (UE14 course, English version). Mines Paris – PSL. License CC BY 4.0.</p>
+<p>Web companion with the worked example: cyrilvoyant.github.io/teaching/solar-forecasting-basics.html</p>
+<p>SOPHIA ANTIPOLIS</p></details></section><section class="slide" id="slide-2" aria-label="Slide 2"><h3><span class="num">2</span> Course outline</h3><figure><img src="/assets/course/en/slide-02.webp" srcset="/assets/course/en/slide-02-640.webp 640w, /assets/course/en/slide-02.webp 1280w" sizes="(max-width: 900px) 100vw, 868px" width="1280" height="720" alt="Slide 2: Course outline"></figure><details class="slide-text"><summary>Text of the slide</summary><p>01</p>
+<p>Why forecast solar power?</p>
+<p>Grid issues, units, the Ajaccio data</p>
+<p>04</p>
+<p>Clear sky and clear-sky index</p>
+<p>Solis model, CSI, stationarity</p>
+<p>Appendices: wide-sense stationarity, conditional expectation, AIC/BIC criteria. Glossary and references at the end.</p>
+<p>02 · Solar radiation</p>
+<p>Direct, diffuse, atmosphere, Sun position</p>
+<p>05</p>
+<p>AR model and least squares</p>
+<p>Building X and y, least squares, choosing p</p>
+<p>03</p>
+<p>Time series and forecasting</p>
+<p>Components, horizon, a first AR(1) model</p>
+<p>06</p>
+<p>Evaluation, ELM and online learning</p>
+<p>Persistence, metrics, ELM, sliding window, frugality</p></details></section><section class="slide" id="slide-3" aria-label="Slide 3"><h3><span class="num">3</span> Project objectives</h3><figure><img src="/assets/course/en/slide-03.webp" srcset="/assets/course/en/slide-03-640.webp 640w, /assets/course/en/slide-03.webp 1280w" sizes="(max-width: 900px) 100vw, 868px" width="1280" height="720" alt="Slide 3: Project objectives" loading=lazy></figure><details class="slide-text"><summary>Text of the slide</summary><p>Context</p>
+<p>Solar irradiance is <strong>intermittent</strong> (clouds).</p>
+<p>The power grid must anticipate photovoltaic production.</p>
+<p>Need: <strong>reliable short-term</strong> forecasts (here 1 h).</p>
+<p>The full chain we will build</p>
+<p>1 · 2 · 3 · GHI · measurements · Clear sky · GHI<sup>cs</sup> · CSI index · (difference)</p>
+<p>This chain comes back in every chapter; the current step is highlighted.</p>
+<p>By the end, you will be able to</p>
+<p>compute a <strong>clear-sky index</strong> (CSI);</p>
+<p>build and estimate an <strong>AR(p)</strong> model by least squares;</p>
+<p>build an <strong>ELM</strong> and measure its variability;</p>
+<p>compare models with <strong>persistence</strong> (MAE, RMSE, skill score);</p>
+<p>update a model <strong>online</strong> and judge its <strong>frugality</strong>.</p>
+<p>4 · 5 · 6 · 7 · Centring</p>
+<p>y = CSI − μ</p>
+<p>Chronological · split · Model</p>
+<p>P · AR · ELM</p>
+<p>Forecast · ŷ<sub>t+h</sub> · 8 · 9 · Forecast GHI</p>
+<p>ŷ + μ + GHI<sup>cs</sup></p>
+<p>Evaluation · day · day+night</p></details></section><section class="slide" id="slide-4" aria-label="Slide 4"><h3><span class="num">4</span> Notation (used throughout the course)</h3><figure><img src="/assets/course/en/slide-04.webp" srcset="/assets/course/en/slide-04-640.webp 640w, /assets/course/en/slide-04.webp 1280w" sizes="(max-width: 900px) 100vw, 868px" width="1280" height="720" alt="Slide 4: Notation (used throughout the course)" loading=lazy></figure><details class="slide-text"><summary>Text of the slide</summary><table class="slide-table"><tr><th>Symbol</th><th>Meaning</th></tr><tr><td>GHIt</td><td>global horizontal irradiance measured at hour t (Wh/m²)</td></tr><tr><td>GHIcst</td><td>clear-sky GHI (Solis model)</td></tr><tr><td>CSIt</td><td>clear-sky index: GHIt − GHIcst (Wh/m²)</td></tr><tr><td>yt</td><td>centred CSI, the modeled series: yt = CSIt − μ</td></tr><tr><td>ŷt+h</td><td>forecast of y made at t for t + h</td></tr><tr><td>h</td><td>horizon, in number of steps (1 step = 1 h)</td></tr><tr><td>p</td><td>number of lags (past values used)</td></tr><tr><td>GHIfct+h</td><td>ŷt+h + μ + GHIcst+h; 0 at night or if negative</td></tr><tr><td>et</td><td>forecast error: GHIfct − GHIt</td></tr><tr><td>μ</td><td>mean CSI (training period)</td></tr></table>
+<p>Convention: <strong>bold lower case</strong> = vector, <strong>bold upper case</strong> = matrix, plain = number. Time is always a subscript: y<sub>t</sub>, y<sub>t−1</sub>, CSI<sub>t+h</sub>.</p>
+<table class="slide-table"><tr><th>Symbol</th><th>Meaning</th></tr><tr><td>X, y</td><td>input matrix, target vector</td></tr><tr><td>w</td><td>AR model coefficients</td></tr><tr><td>εt</td><td>error (unpredictable part)</td></tr><tr><td>Win, b</td><td>random ELM weights and biases</td></tr><tr><td>H, β, L</td><td>hidden outputs, output weights, number of neurons</td></tr><tr><td>θz, δ, ω, φ</td><td>zenith angle, declination, hour angle, latitude</td></tr><tr><td>α; W</td><td>ridge regularization; sliding-window length</td></tr><tr><td>N</td><td>number of examples (rows of X)</td></tr><tr><td>Δt</td><td>time step (here 1 h)</td></tr></table></details></section><h2 id="part-2">1 · Why forecast solar power?</h2><section class="slide" id="slide-5" aria-label="Slide 5"><h3><span class="num">5</span> Why forecast? Grid and solar production</h3><figure><img src="/assets/course/en/slide-05.webp" srcset="/assets/course/en/slide-05-640.webp 640w, /assets/course/en/slide-05.webp 1280w" sizes="(max-width: 900px) 100vw, 868px" width="1280" height="720" alt="Slide 5: Why forecast? Grid and solar production" loading=lazy></figure><details class="slide-text"><summary>Text of the slide</summary><p>The grid operator balances PV, storage, other plants and consumers.</p>
+<p>Solar output varies with clouds. To integrate it into the grid, it must be <strong>anticipated</strong>.</p>
+<p>Grid stability</p>
+<p>Anticipate production drops to keep the frequency stable.</p>
+<p>Supply / demand balance</p>
+<p>Adjust the other plants (hydro, pumped storage*, gas…).</p>
+<p>* Pumped-storage hydropower: a reversible dam that stores energy by pumping water uphill.</p>
+<p>Storage</p>
+<p>Charge or discharge batteries at the right time.</p>
+<p>Economic value</p>
+<p>Sell production at the best price and cut operating costs.</p></details></section><section class="slide" id="slide-6" aria-label="Slide 6"><h3><span class="num">6</span> Irradiance, irradiation and photovoltaic output</h3><figure><img src="/assets/course/en/slide-06.webp" srcset="/assets/course/en/slide-06-640.webp 640w, /assets/course/en/slide-06.webp 1280w" sizes="(max-width: 900px) 100vw, 868px" width="1280" height="720" alt="Slide 6: Irradiance, irradiation and photovoltaic output" loading=lazy></figure><details class="slide-text"><summary>Text of the slide</summary><p>Irradiance (W/m²)</p>
+<p><strong>Power</strong> received per m² at a given instant. Example: 1,000 W/m² in full sun at noon.</p>
+<p>From irradiance to electrical power</p>
+<p>P ≈ η · S · G</p>
+<p>Output is proportional to irradiance: <strong>forecasting GHI is forecasting production.</strong></p>
+<p>Irradiation (Wh/m²)</p>
+<p><strong>Energy</strong> received per m² over a duration. Over one hour: hourly irradiation in Wh/m² = mean irradiance in W/m².</p>
+<p>η: module efficiency (≈ 20 %), S: area (m²), G: irradiance on the module (W/m²).</p>
+<p>Example: 10 m² under 800 W/m² → P ≈ 0.20 × 10 × 800 = 1.6 kW.</p>
+<p>Our data</p>
+<p><strong>Hourly</strong> GHI in Wh/m². Météo-France files are in J/cm²: 1 J/cm² = 2.78 Wh/m², so Wh/m² = J/cm² / 0.36.</p></details></section><section class="slide" id="slide-7" aria-label="Slide 7"><h3><span class="num">7</span> The dataset: Ajaccio, 1998–2007</h3><figure><img src="/assets/course/en/slide-07.webp" srcset="/assets/course/en/slide-07-640.webp 640w, /assets/course/en/slide-07.webp 1280w" sizes="(max-width: 900px) 100vw, 868px" width="1280" height="720" alt="Slide 7: The dataset: Ajaccio, 1998–2007" loading=lazy></figure><details class="slide-text"><summary>Text of the slide</summary><p>Hourly GHI measured at Ajaccio in 2007 (Météo-France).</p>
+<p>Ten years of measurements: 8 years to <strong>learn</strong>, 1 year to <strong>tune</strong> the model, 1 year to <strong>test</strong> it (chapter 5).</p>
+<p><strong>Site</strong>: Ajaccio (Corsica), 41.9° N, 8.8° E, 4 m.</p>
+<p><strong>Variable</strong>: hourly GHI (Wh/m²).</p>
+<p><strong>Period</strong>: 1998–2007, i.e. 87,600 hours.</p>
+<p><strong>Maximum</strong>: 1,025 Wh/m².</p>
+<p><strong>Daytime mean</strong>: 368 Wh/m².</p></details></section><h2 id="part-3">2 · Solar radiation</h2><section class="slide" id="slide-8" aria-label="Slide 8"><h3><span class="num">8</span> Components of global radiation</h3><figure><img src="/assets/course/en/slide-08.webp" srcset="/assets/course/en/slide-08-640.webp 640w, /assets/course/en/slide-08.webp 1280w" sizes="(max-width: 900px) 100vw, 868px" width="1280" height="720" alt="Slide 8: Components of global radiation" loading=lazy></figure><details class="slide-text"><summary>Text of the slide</summary><p>θ<sub>z</sub>: zenith angle (between the Sun and the vertical). GHI = Global Horizontal Irradiance.</p>
+<p>Direct (DNI)</p>
+<p>Received straight from the Sun, measured on a surface perpendicular to the rays (direct normal). Dominant under clear sky.</p>
+<p>Diffuse (DHI)</p>
+<p>Scattered by air, aerosols and clouds. Dominant under overcast sky.</p>
+<p>Reflected (albedo)</p>
+<p>Sent back by the ground. Counts only for a <strong>tilted surface</strong>, not for GHI.</p></details></section><section class="slide" id="slide-9" aria-label="Slide 9"><h3><span class="num">9</span> Crossing the atmosphere</h3><figure><img src="/assets/course/en/slide-09.webp" srcset="/assets/course/en/slide-09-640.webp 640w, /assets/course/en/slide-09.webp 1280w" sizes="(max-width: 900px) 100vw, 868px" width="1280" height="720" alt="Slide 9: Crossing the atmosphere" loading=lazy></figure><details class="slide-text"><summary>Text of the slide</summary><p>Through the atmosphere, radiation is attenuated by four mechanisms.</p>
+<p>Absorption · Rayleigh scattering</p>
+<p>Water vapour, ozone, CO₂: part of the energy is absorbed.</p>
+<p>By air molecules: it makes the sky blue.</p>
+<p>Mie scattering · Clouds</p>
+<p>By aerosols (dust, sea salt, pollution): depends on turbidity.</p>
+<p>Reflection, scattering and absorption: <strong>main cause of intermittency</strong>.</p>
+<p>Ajaccio, 2007: a clear day and an overcast day.</p>
+<p>Under overcast sky, GHI drops here to <strong>about 20 %</strong> of its clear-sky value.</p></details></section><section class="slide" id="slide-10" aria-label="Slide 10"><h3><span class="num">10</span> The position of the Sun</h3><figure><img src="/assets/course/en/slide-10.webp" srcset="/assets/course/en/slide-10-640.webp 640w, /assets/course/en/slide-10.webp 1280w" sizes="(max-width: 900px) 100vw, 868px" width="1280" height="720" alt="Slide 10: The position of the Sun" loading=lazy></figure><details class="slide-text"><summary>Text of the slide</summary><p>Solar elevation over the day at Ajaccio, by season.</p>
+<p><strong>Zenith angle</strong> θ<sub>z</sub>: between the Sun and the vertical. The larger it is, the thicker the atmosphere crossed.</p>
+<p><strong>Declination</strong> δ: angle between the Sun&#x27;s direction and the equatorial plane; from −23.45° to +23.45° over the year.</p>
+<p><strong>Hour angle</strong> ω: 15° per hour, zero at solar noon. <strong>Latitude</strong> φ: 41.9° at Ajaccio.</p>
+<p>cos θ<sub>z</sub> = sin φ · sin δ + cos φ · cos δ · cos ω</p>
+<p>G<sub>0</sub> = I<sub>0</sub> · (d<sub>0</sub>/d)<sup>2</sup> · cos θ<sub>z</sub></p>
+<p>G<sub>0</sub>: extraterrestrial radiation; I<sub>0</sub> ≈ 1361 W/m² (solar constant; 1367 in older codes).</p>
+<p>The Earth–Sun distance d varies by ±1.7 %, so (d<sub>0</sub>/d)<sup>2</sup> varies by ±3.3 %.</p></details></section><section class="slide" id="slide-11" aria-label="Slide 11"><h3><span class="num">11</span> The double seasonality of GHI</h3><figure><img src="/assets/course/en/slide-11.webp" srcset="/assets/course/en/slide-11-640.webp 640w, /assets/course/en/slide-11.webp 1280w" sizes="(max-width: 900px) 100vw, 868px" width="1280" height="720" alt="Slide 11: The double seasonality of GHI" loading=lazy></figure><details class="slide-text"><summary>Text of the slide</summary><p>Hourly GHI in 2007: hours of the day × days of the year (Ajaccio).</p>
+<p>Daily seasonality</p>
+<p>Zero at night, maximum around solar noon: a <strong>24-h</strong> cycle well described by the clear-sky model.</p>
+<p>Annual seasonality</p>
+<p>The amplitude of the daily cycle changes with the season (declination, day length): a <strong>365-day</strong> cycle.</p>
+<p>Raw GHI is <strong>not stationary</strong>: its mean depends on the hour and the month. Both cycles must be removed before modeling.</p></details></section><h2 id="part-4">3 · Time series and forecasting</h2><section class="slide" id="slide-12" aria-label="Slide 12"><h3><span class="num">12</span> What is a time series?</h3><figure><img src="/assets/course/en/slide-12.webp" srcset="/assets/course/en/slide-12-640.webp 640w, /assets/course/en/slide-12.webp 1280w" sizes="(max-width: 900px) 100vw, 868px" width="1280" height="720" alt="Slide 12: What is a time series?" loading=lazy></figure><details class="slide-text"><summary>Text of the slide</summary><p>A sequence of measurements y<sub>1</sub>, y<sub>2</sub>, …, y<sub>N</sub> of one quantity, taken at a <strong>constant time step</strong> Δt. Here Δt = 1 h.</p>
+<p>Three properties</p>
+<p><strong>Regularity</strong>: measurements are equally spaced.</p>
+<p><strong>Dependence</strong>: the past informs the future.</p>
+<p><strong>Randomness</strong>: each value has an unpredictable part.</p>
+<p>What we want for modeling</p>
+<p><strong>Stationarity</strong>: stable mean and variance over time.</p>
+<p><strong>Complete series</strong>: no missing values.</p>
+<p>Ajaccio: one week of hourly GHI.</p>
+<p>Raw GHI is <strong>not</strong> stationary (day/night and seasonal cycles): that is the whole point of chapter 4.</p></details></section><section class="slide" id="slide-13" aria-label="Slide 13"><h3><span class="num">13</span> Components of a time series</h3><figure><img src="/assets/course/en/slide-13.webp" srcset="/assets/course/en/slide-13-640.webp 640w, /assets/course/en/slide-13.webp 1280w" sizes="(max-width: 900px) 100vw, 868px" width="1280" height="720" alt="Slide 13: Components of a time series" loading=lazy></figure><details class="slide-text"><summary>Text of the slide</summary><p>Trend T<sub>t</sub></p>
+<p>Slow long-term change: increasing, decreasing or none.</p>
+<p>Cycle C<sub>t</sub></p>
+<p>Long, not strictly periodic oscillations (climate phenomena).</p>
+<p><strong>For GHI</strong>: seasonality dominates, with two cycles (daily and annual).</p>
+<p>Seasonality S<sub>t</sub></p>
+<p>Regular, repeatable cycles (day, year). Very strong for GHI.</p>
+<p>Residual R<sub>t</sub></p>
+<p>Unexplained random part. Ideally <strong>white noise</strong> (independent values, zero mean).</p></details></section><section class="slide" id="slide-14" aria-label="Slide 14"><h3><span class="num">14</span> Decomposing a time series</h3><figure><img src="/assets/course/en/slide-14.webp" srcset="/assets/course/en/slide-14-640.webp 640w, /assets/course/en/slide-14.webp 1280w" sizes="(max-width: 900px) 100vw, 868px" width="1280" height="720" alt="Slide 14: Decomposing a time series" loading=lazy></figure><details class="slide-text"><summary>Text of the slide</summary><p>Additive model</p>
+<p>y<sub>t</sub> = T<sub>t</sub> + S<sub>t</sub> + C<sub>t</sub> + R<sub>t</sub></p>
+<p>When the amplitude of fluctuations stays constant.</p>
+<p>Multiplicative model</p>
+<p>y<sub>t</sub> = T<sub>t</sub> × S<sub>t</sub> × C<sub>t</sub> × R<sub>t</sub></p>
+<p>When the amplitude grows with the level (GHI: small in winter, large in summer).</p>
+<p>Why decompose?</p>
+<p>Remove trend and seasonality (the part <strong>predictable without effort</strong>);</p>
+<p>keep a residual that is easier to model;</p>
+<p>check that this residual looks like white noise.</p>
+<p><strong>Link with what follows</strong>: subtracting clear-sky GHI, CSI<sub>t</sub> = GHI<sub>t</sub> − GHI<sup>cs</sup><sub>t</sub>, applies the <strong>additive model</strong>: both cycles go at once. The ratio (multiplicative model) also exists: chapter 4.</p></details></section><section class="slide" id="slide-15" aria-label="Slide 15"><h3><span class="num">15</span> Horizon, time step and types of forecast</h3><figure><img src="/assets/course/en/slide-15.webp" srcset="/assets/course/en/slide-15-640.webp 640w, /assets/course/en/slide-15.webp 1280w" sizes="(max-width: 900px) 100vw, 868px" width="1280" height="720" alt="Slide 15: Horizon, time step and types of forecast" loading=lazy></figure><details class="slide-text"><summary>Text of the slide</summary><p>Usual methods by horizon (orders of magnitude).</p>
+<p><strong>Time step</strong> Δt = 1 h; <strong>horizon</strong> h in steps: h = 1 → 1 h, h = 3 → 3 h.</p>
+<p><strong>Direct forecast</strong>: one model trained for each horizon h.</p>
+<p><strong>Recursive forecast</strong>: forecast t + 1, then feed that forecast back to forecast t + 2, and so on.</p>
+<p><strong>In this course</strong>: 1-h horizon, direct forecast.</p></details></section><section class="slide" id="slide-16" aria-label="Slide 16"><h3><span class="num">16</span> Forecasting: a predictable part and an error</h3><figure><img src="/assets/course/en/slide-16.webp" srcset="/assets/course/en/slide-16-640.webp 640w, /assets/course/en/slide-16.webp 1280w" sizes="(max-width: 900px) 100vw, 868px" width="1280" height="720" alt="Slide 16: Forecasting: a predictable part and an error" loading=lazy></figure><details class="slide-text"><summary>Text of the slide</summary><p>y<sub>t+1</sub> = f(y<sub>t</sub>, y<sub>t−1</sub>, …, y<sub>t−p+1</sub>) + ε<sub>t+1</sub></p>
+<p>The predictable part</p>
+<p>f sums up what the past tells us about the future. The forecast is ŷ<sub>t+1</sub> = f(y<sub>t</sub>, …, y<sub>t−p+1</sub>).</p>
+<p>The framework suits GHI: regular measurements and strong hour-to-hour dependence (cloud inertia). Further reading: appendix B.</p>
+<p>The error</p>
+<p>ε<sub>t+1</sub> = y<sub>t+1</sub> − ŷ<sub>t+1</sub> is the unpredictable part. If the model is good, ε looks like white noise.</p>
+<p>The goal</p>
+<p>Choose f so that errors are <strong>as small as possible</strong> in mean square.</p></details></section><section class="slide" id="slide-17" aria-label="Slide 17"><h3><span class="num">17</span> A first example: the AR(1) model, with numbers</h3><figure><img src="/assets/course/en/slide-17.webp" srcset="/assets/course/en/slide-17-640.webp 640w, /assets/course/en/slide-17.webp 1280w" sizes="(max-width: 900px) 100vw, 868px" width="1280" height="720" alt="Slide 17: A first example: the AR(1) model, with numbers" loading=lazy></figure><details class="slide-text"><summary>Text of the slide</summary><p>y<sub>t+1</sub> = w · y<sub>t</sub> + ε<sub>t+1</sub></p>
+<p>y<sub>t</sub> = CSI<sub>t</sub> − μ: gap of the CSI to its mean; w: weight of the last gap.</p>
+<p>|w| &lt; 1: the series always returns to its mean.</p>
+<p>ŷ<sub>t+h</sub> = w<sup>h</sup> · y<sub>t</sub></p>
+<p><strong>Ajaccio</strong>: μ ≈ −33 Wh/m² and w ≈ 0.84. A cloud: CSI<sub>t</sub> = −300 Wh/m², so y<sub>t</sub> = −267.</p>
+<p>ŷ<sub>t+1</sub> = 0.84 × (−267) = −224: forecast CSI = −257 Wh/m²; then −221 and −191 at 2 h and 3 h.</p>
+<p>The forecast CSI returns to its mean as h grows.</p></details></section><h2 id="part-5">4 · Clear sky and clear-sky index</h2><section class="slide" id="slide-18" aria-label="Slide 18"><h3><span class="num">18</span> The clear-sky model</h3><figure><img src="/assets/course/en/slide-18.webp" srcset="/assets/course/en/slide-18-640.webp 640w, /assets/course/en/slide-18.webp 1280w" sizes="(max-width: 900px) 100vw, 868px" width="1280" height="720" alt="Slide 18: The clear-sky model" loading=lazy></figure><details class="slide-text"><summary>Text of the slide</summary><p>What is it?</p>
+<p>The GHI one would measure <strong>without clouds</strong>, given the Sun&#x27;s position and a clear atmosphere.</p>
+<p>Inputs</p>
+<p>site position (latitude, longitude, altitude);</p>
+<p>Sun position (θ<sub>z</sub>);</p>
+<p>water vapour and aerosols (AOD: aerosol optical depth).</p>
+<p><strong>Role</strong>: GHI<sup>cs</sup><sub>t</sub> is the reference used to remove the day/night and seasonal cycles.</p>
+<p>Beer–Lambert law: intensity decays exponentially with the path length crossed.</p></details></section><section class="slide" id="slide-19" aria-label="Slide 19"><h3><span class="num">19</span> The Solis model</h3><figure><img src="/assets/course/en/slide-19.webp" srcset="/assets/course/en/slide-19-640.webp 640w, /assets/course/en/slide-19.webp 1280w" sizes="(max-width: 900px) 100vw, 868px" width="1280" height="720" alt="Slide 19: The Solis model" loading=lazy></figure><details class="slide-text"><summary>Text of the slide</summary><p>Solis (Ineichen, 2008) is a simplified version of a radiative-transfer model. It starts from the Beer–Lambert law:</p>
+<p>GHI<sup>cs</sup> ≈ I<sub>0</sub> · exp(−τ / cos θ<sub>z</sub>) · cos θ<sub>z</sub></p>
+<p>τ: optical depth (air, water vapour, aerosols);</p>
+<p>Solis adjusts τ and the exponent for water vapour, aerosols and altitude.</p>
+<p><strong>Settings</strong>: rural zone, water column 3.79 cm, AOD 0.16, I<sub>0</sub> = 1367 W/m².</p>
+<p>The hourly value is the <strong>mean of the past hour</strong>: the Sun is computed <strong>at mid-hour</strong>, ω = (i − 12.5) × 15°.</p>
+<p>Mean clear-sky error at Ajaccio: ≈ 32 Wh/m².</p>
+<p>Ajaccio, 2007: Solis and measurement under clear sky.</p></details></section><section class="slide" id="slide-20" aria-label="Slide 20"><h3><span class="num">20</span> Stationarizing: the clear-sky index (CSI)</h3><figure><img src="/assets/course/en/slide-20.webp" srcset="/assets/course/en/slide-20-640.webp 640w, /assets/course/en/slide-20.webp 1280w" sizes="(max-width: 900px) 100vw, 868px" width="1280" height="720" alt="Slide 20: Stationarizing: the clear-sky index (CSI)" loading=lazy></figure><details class="slide-text"><summary>Text of the slide</summary><p>CSI<sub>t</sub> = GHI<sub>t</sub> − GHI<sup>cs</sup><sub>t</sub></p>
+<p><strong>≈ 0</strong> under clear sky, and <strong>0 at night</strong>;</p>
+<p><strong>negative</strong> under clouds (down to −GHI<sup>cs</sup>);</p>
+<p>mean μ ≈ −33 Wh/m²: we <strong>center</strong> it, y<sub>t</sub> = CSI<sub>t</sub> − μ.</p>
+<p>The procedure</p>
+<ul>
+<li>compute GHI<sup>cs</sup>, then the CSI;</li>
+<li>center: y<sub>t</sub> = CSI<sub>t</sub> − μ;</li>
+<li>forecast ŷ<sub>t+h</sub>;</li>
+<li>rebuild GHI<sup>fc</sup><sub>t+h</sub> = ŷ<sub>t+h</sub> + μ + GHI<sup>cs</sup><sub>t+h</sub> (0 at night, never negative).</li>
+</ul>
+<p>Ajaccio, 2007: top, GHI; bottom, CSI. The daily cycle has gone from the CSI.</p></details></section><section class="slide" id="slide-21" aria-label="Slide 21"><h3><span class="num">21</span> Two ways to stationarize</h3><figure><img src="/assets/course/en/slide-21.webp" srcset="/assets/course/en/slide-21-640.webp 640w, /assets/course/en/slide-21.webp 1280w" sizes="(max-width: 900px) 100vw, 868px" width="1280" height="720" alt="Slide 21: Two ways to stationarize" loading=lazy></figure><details class="slide-text"><summary>Text of the slide</summary><p>The Solis model removes the cycles in two ways:</p>
+<p>Difference (additive model), this course</p>
+<p>CSI<sub>t</sub> = GHI<sub>t</sub> − GHI<sup>cs</sup><sub>t</sub>, in Wh/m²;</p>
+<p>no division: valid <strong>day and night</strong> (at night, 0 − 0 = 0);</p>
+<p>all hours are kept, no filtering.</p>
+<p>For hourly data with nights, the ratio is <strong>poorly suited</strong>: we use the <strong>difference</strong>. The ratio is also very sensitive to small timestamp offsets and to the filtering thresholds chosen (Voyant et al., 2025a; 2026).</p>
+<p>Ratio (multiplicative model)</p>
+<p>k<sub>t</sub> = GHI<sub>t</sub> / GHI<sup>cs</sup><sub>t</sub>, unitless (≈ 1 under clear sky); widely used in the literature;</p>
+<p>at night: <strong>0 / 0</strong>, undefined; at sunrise and sunset, GHI<sup>cs</sup> ≈ 0: values explode;</p>
+<p>requires <strong>filtering on solar elevation</strong> (for instance keep h &gt; 10°).</p></details></section><section class="slide" id="slide-22" aria-label="Slide 22"><h3><span class="num">22</span> Is the CSI stationary?</h3><figure><img src="/assets/course/en/slide-22.webp" srcset="/assets/course/en/slide-22-640.webp 640w, /assets/course/en/slide-22.webp 1280w" sizes="(max-width: 900px) 100vw, 868px" width="1280" height="720" alt="Slide 22: Is the CSI stationary?" loading=lazy></figure><details class="slide-text"><summary>Text of the slide</summary><p>Mean ± standard deviation by month, daytime hours, Ajaccio 1998–2007.</p>
+<p>The CSI is <strong>approximately stationary</strong>: much more than GHI, though not perfectly. Formal definition: appendix A.</p>
+<p><strong>GHI</strong>: the mean ranges from 163 to 521 Wh/m² depending on the month.</p>
+<p><strong>CSI</strong>: the mean stays between −105 and −43 Wh/m², close to 0.</p>
+<p>The CSI standard deviation still varies (97 to 185 Wh/m²): more clouds in spring.</p></details></section><section class="slide" id="slide-23" aria-label="Slide 23"><h3><span class="num">23</span> Site variability: the sCV</h3><figure><img src="/assets/course/en/slide-23.webp" srcset="/assets/course/en/slide-23-640.webp 640w, /assets/course/en/slide-23.webp 1280w" sizes="(max-width: 900px) 100vw, 868px" width="1280" height="720" alt="Slide 23: Site variability: the sCV" loading=lazy></figure><details class="slide-text"><summary>Text of the slide</summary><p>How far does GHI depart, on average, from clear sky? We measure the gap ε<sub>t</sub> = GHI<sub>t</sub> − GHI<sup>cs</sup><sub>t</sub> (the CSI):</p>
+<p>sCV = (√2 / (1 − d)) · √[ Σ<sub>t</sub> (GHI<sub>t</sub> − GHI<sup>cs</sup><sub>t</sub>)<sup>2</sup> / Σ<sub>t</sub> (GHI<sup>cs</sup><sub>t</sub>)<sup>2</sup> ]</p>
+<p><strong>Numerator</strong>: typical size of the gaps to clear sky (the clouds).</p>
+<p><strong>Denominator</strong>: typical size of clear-sky GHI.</p>
+<p>√2 / (1 − d) scales the worst case to 1: clear sky, then very overcast, every other hour (d = 0.2: even under overcast sky, at least 20 % of clear sky remains).</p>
+<p>sCV = 0: always clear; sCV = 1: maximum variability. <strong>It does not depend on the horizon</strong>: it is a property of the site.</p>
+<p>Ajaccio 1998–2007: sCV and F at 1 h, month by month (Voyant et al., 2026).</p>
+<p><strong>Ajaccio</strong>: sCV = 0.52 over 1998–2007.</p>
+<p>Winter: 0.8 (changeable sky); July: 0.3 (often clear sky).</p></details></section><section class="slide" id="slide-24" aria-label="Slide 24"><h3><span class="num">24</span> Forecastability: F depends on the horizon</h3><figure><img src="/assets/course/en/slide-24.webp" srcset="/assets/course/en/slide-24-640.webp 640w, /assets/course/en/slide-24.webp 1280w" sizes="(max-width: 900px) 100vw, 868px" width="1280" height="720" alt="Slide 24: Forecastability: F depends on the horizon" loading=lazy></figure><details class="slide-text"><summary>Text of the slide</summary><p>A variable series is not necessarily unpredictable: if the gaps to clear sky <strong>last</strong>, they can be anticipated.</p>
+<p>ρ(k): correlation between the clear-sky gap now, ε<sub>t</sub>, and k hours later, ε<sub>t+k</sub> (the <strong>memory</strong> of clouds).</p>
+<p>ρ<sub>max</sub>(h): the strongest of these correlations for k between h and 12 h: the memory left when forecasting at horizon h.</p>
+<p>F(h) = 1 − sCV · (1 − ρ<sub>max</sub>(h))</p>
+<p>perfect memory (ρ<sub>max</sub> = 1): F = 1, everything is predictable;</p>
+<p>no memory (ρ<sub>max</sub> = 0): F = 1 − sCV.</p>
+<p>Ajaccio 1998–2007: F and remaining memory by horizon (Voyant et al., 2026).</p>
+<p>F = 0.92 at 1 h, 0.74 at 3 h, 0.53 at 6 h.</p>
+<p>The atmosphere is <strong>chaotic</strong>: cloud memory fades within a few hours. sCV does not move.</p></details></section><section class="slide" id="slide-25" aria-label="Slide 25"><h3><span class="num">25</span> Pre-processing step by step</h3><figure><img src="/assets/course/en/slide-25.webp" srcset="/assets/course/en/slide-25-640.webp 640w, /assets/course/en/slide-25.webp 1280w" sizes="(max-width: 900px) 100vw, 868px" width="1280" height="720" alt="Slide 25: Pre-processing step by step" loading=lazy></figure><details class="slide-text"><summary>Text of the slide</summary><p>1 · 2 · 3 · GHI · measurements · Clear sky · GHI<sup>cs</sup> · CSI index · (difference) · 1 · Measurements</p>
+<p>2 · Clear sky</p>
+<p>Hourly GHI, converted from J/cm² to Wh/m² (÷ 0.36).</p>
+<p>GHI<sup>cs</sup> by Solis, Sun at mid-hour, over a typical year.</p>
+<p>With the difference, nights cause no problem (0 − 0 = 0): <strong>no filtering on solar elevation</strong>, unlike the ratio.</p>
+<p>4 · 5 · 6 · 7 · Centring</p>
+<p>y = CSI − μ</p>
+<p>Chronological · split · Model</p>
+<p>P · AR · ELM</p>
+<p>Forecast · ŷ<sub>t+h</sub> · 3 · CSI</p>
+<p>CSI<sub>t</sub> = GHI<sub>t</sub> − GHI<sup>cs</sup><sub>t</sub>, every hour.</p>
+<p>8 · 9 · Forecast GHI</p>
+<p>ŷ + μ + GHI<sup>cs</sup></p>
+<p>Evaluation · day · day+night · 4 · Centring</p>
+<p>y<sub>t</sub> = CSI<sub>t</sub> − μ with μ ≈ −33 Wh/m²: series ready for AR and ELM.</p></details></section><h2 id="part-6">5 · AR model and least squares</h2><section class="slide" id="slide-26" aria-label="Slide 26"><h3><span class="num">26</span> From the AR model to linear regression</h3><figure><img src="/assets/course/en/slide-26.webp" srcset="/assets/course/en/slide-26-640.webp 640w, /assets/course/en/slide-26.webp 1280w" sizes="(max-width: 900px) 100vw, 868px" width="1280" height="720" alt="Slide 26: From the AR model to linear regression" loading=lazy></figure><details class="slide-text"><summary>Text of the slide</summary><p>An <strong>AR(p)</strong> model forecasts the next value from the last p values:</p>
+<p>y<sub>t+1</sub> = w<sub>1</sub> y<sub>t</sub> + w<sub>2</sub> y<sub>t−1</sub> + … + w<sub>p</sub> y<sub>t−p+1</sub> + ε<sub>t+1</sub></p>
+<p>Matrix form</p>
+<p><strong>y</strong> = <strong>X</strong> <strong>w</strong> + <strong>ε</strong></p>
+<p>It is a <strong>multiple linear regression</strong>. Since y is centred, <strong>no intercept is needed</strong>.</p>
+<p><strong>y</strong> (N × 1): the values to forecast;</p>
+<p><strong>X</strong> (N × p): one row per example, with the p lags;</p>
+<p><strong>w</strong> (p × 1): the coefficients to estimate;</p>
+<p><strong>ε</strong> (N × 1): the errors.</p></details></section><section class="slide" id="slide-27" aria-label="Slide 27"><h3><span class="num">27</span> Building X and y: a worked example</h3><figure><img src="/assets/course/en/slide-27.webp" srcset="/assets/course/en/slide-27-640.webp 640w, /assets/course/en/slide-27.webp 1280w" sizes="(max-width: 900px) 100vw, 868px" width="1280" height="720" alt="Slide 27: Building X and y: a worked example" loading=lazy></figure><details class="slide-text"><summary>Text of the slide</summary><p>Five centred CSI values (Wh/m²): y<sub>1</sub> = −10; y<sub>2</sub> = −25; y<sub>3</sub> = −240; y<sub>4</sub> = −180; y<sub>5</sub> = −30. Take p = 2.</p>
+<table class="slide-table"><tr><th>Row</th><th>yt</th><th>yt−1</th><th>Target yt+1</th></tr><tr><td>t = 2</td><td>−25</td><td>−10</td><td>−240</td></tr><tr><td>t = 3</td><td>−240</td><td>−25</td><td>−180</td></tr><tr><td>t = 4</td><td>−180</td><td>−240</td><td>−30</td></tr></table>
+<p>The two middle columns form <strong>X</strong> (3 × 2), the last one forms <strong>y</strong> (3 × 1).</p>
+<p>Each row shifts the previous one by one step.</p>
+<p><strong>In practice</strong>: <strong>all hours</strong> are kept, nights included (at night, y = −μ ≈ 33). At Ajaccio: 8 years, about 70,000 rows for training.</p></details></section><section class="slide" id="slide-28" aria-label="Slide 28"><h3><span class="num">28</span> Ordinary least squares (OLS)</h3><figure><img src="/assets/course/en/slide-28.webp" srcset="/assets/course/en/slide-28-640.webp 640w, /assets/course/en/slide-28.webp 1280w" sizes="(max-width: 900px) 100vw, 868px" width="1280" height="720" alt="Slide 28: Ordinary least squares (OLS)" loading=lazy></figure><details class="slide-text"><summary>Text of the slide</summary><p>We look for the <strong>w</strong> that minimizes the sum of squared errors:</p>
+<p>J(<strong>w</strong>) = ‖<strong>y</strong> − <strong>X</strong><strong>w</strong>‖<sup>2</sup> = Σ<sub>i</sub> (y<sub>i</sub> − <strong>x</strong><sub>i</sub><sup>T</sup> <strong>w</strong>)<sup>2</sup></p>
+<p>At the minimum, the derivative is zero:</p>
+<p>−2 <strong>X</strong><sup>T</sup>(<strong>y</strong> − <strong>X</strong><strong>w</strong>) = 0 ⟹ <strong>X</strong><sup>T</sup><strong>X</strong> <strong>w</strong> = <strong>X</strong><sup>T</sup><strong>y</strong></p>
+<p>Conditions: many more examples than coefficients (N ≫ p);</p>
+<p>columns of <strong>X</strong> not proportional to each other.</p>
+<p>ŵ = (<strong>X</strong><sup>T</sup><strong>X</strong>)<sup>−1</sup> <strong>X</strong><sup>T</sup><strong>y</strong></p>
+<p><strong>Exact solution, in one step</strong>: no iteration, a single minimum.</p>
+<p><strong>Ajaccio</strong>, AR(2): ŵ = (0.97; −0.15), computed in 5 ms.</p>
+<p>The last gap y<sub>t</sub> weighs by far the most.</p></details></section><section class="slide" id="slide-29" aria-label="Slide 29"><h3><span class="num">29</span> Geometric interpretation</h3><figure><img src="/assets/course/en/slide-29.webp" srcset="/assets/course/en/slide-29-640.webp 640w, /assets/course/en/slide-29.webp 1280w" sizes="(max-width: 900px) 100vw, 868px" width="1280" height="720" alt="Slide 29: Geometric interpretation" loading=lazy></figure><details class="slide-text"><summary>Text of the slide</summary><p><strong>X</strong>ŵ is the point of the “plane of the columns of X” <strong>closest</strong> to <strong>y</strong>: its orthogonal projection.</p>
+<p>The error <strong>ε</strong> = <strong>y</strong> − <strong>X</strong>ŵ is <strong>perpendicular</strong> to this plane.</p>
+<p>Pythagoras: ‖<strong>y</strong>‖<sup>2</sup> = ‖ŷ‖<sup>2</sup> + ‖<strong>ε</strong>‖<sup>2</sup>. This is the basis of the R<sup>2</sup> coefficient.</p>
+<p>OLS does not “guess” anything: it projects the measurements onto what the inputs can explain.</p></details></section><section class="slide" id="slide-30" aria-label="Slide 30"><h3><span class="num">30</span> Training, validation, test</h3><figure><img src="/assets/course/en/slide-30.webp" srcset="/assets/course/en/slide-30-640.webp 640w, /assets/course/en/slide-30.webp 1280w" sizes="(max-width: 900px) 100vw, 868px" width="1280" height="720" alt="Slide 30: Training, validation, test" loading=lazy></figure><details class="slide-text"><summary>Text of the slide</summary><p>Training · 1998 – 2005 · Training</p>
+<p>Coefficients are estimated (<strong>w</strong>, <strong>β</strong>).</p>
+<p><strong>Chronological</strong> split, never shuffled: the past is not forecast with the future. After validation, re-estimate on training + validation.</p>
+<p>Validation</p>
+<p><strong>Hyperparameters</strong> (p, L) are chosen without touching the test.</p>
+<p>Validation · 2006 · Test · 2007 · time · Test</p>
+<p>Performance is measured <strong>once</strong>, on data never seen.</p></details></section><section class="slide" id="slide-31" aria-label="Slide 31"><h3><span class="num">31</span> Choosing p (1/3): autocorrelation (ACF)</h3><figure><img src="/assets/course/en/slide-31.webp" srcset="/assets/course/en/slide-31-640.webp 640w, /assets/course/en/slide-31.webp 1280w" sizes="(max-width: 900px) 100vw, 868px" width="1280" height="720" alt="Slide 31: Choosing p (1/3): autocorrelation (ACF)" loading=lazy></figure><details class="slide-text"><summary>Text of the slide</summary><p>ACF of the centred CSI, Ajaccio 1998–2005, all hours.</p>
+<p><strong>ACF(k)</strong>: correlation between y<sub>t</sub> and y<sub>t−k</sub>, the value k hours earlier.</p>
+<p>Here ACF(1) = 0.84, ACF(2) = 0.67, ACF(3) = 0.50: it decays slowly.</p>
+<p>But this correlation <strong>propagates step by step</strong>: if y<sub>t</sub> depends on y<sub>t−1</sub>, which depends on y<sub>t−2</sub>, then y<sub>t</sub> and y<sub>t−2</sub> are correlated even without a direct link.</p>
+<p>The ACF therefore does not tell how many lags are <strong>really useful</strong>. The PACF is needed.</p></details></section><section class="slide" id="slide-32" aria-label="Slide 32"><h3><span class="num">32</span> Choosing p (2/3): partial autocorrelation (PACF)</h3><figure><img src="/assets/course/en/slide-32.webp" srcset="/assets/course/en/slide-32-640.webp 640w, /assets/course/en/slide-32.webp 1280w" sizes="(max-width: 900px) 100vw, 868px" width="1280" height="720" alt="Slide 32: Choosing p (2/3): partial autocorrelation (PACF)" loading=lazy></figure><details class="slide-text"><summary>Text of the slide</summary><p>PACF of the centred CSI, Ajaccio 1998–2005, all hours.</p>
+<p><strong>PACF(k)</strong>: once y<sub>t−1</sub>, …, y<sub>t−k+1</sub> are known, what does y<sub>t−k</sub> <strong>add</strong>? It is the last coefficient w<sub>k</sub> of an AR(k).</p>
+<p>A bar <strong>outside the blue band</strong>: this lag brings direct information.</p>
+<p>For a true AR(p), the PACF vanishes after lag p.</p>
+<p>Here PACF(1) = <strong>0.84</strong>, PACF(2) = −0.15, then values below 0.08: the PACF suggests <strong>p ≈ 2</strong>.</p>
+<p>But with N ≈ 70,000 points, the ±0.007 threshold is tiny: almost everything is “significant”. Significant ≠ useful.</p></details></section><section class="slide" id="slide-33" aria-label="Slide 33"><h3><span class="num">33</span> Choosing p (3/3): filter or wrapper approach</h3><figure><img src="/assets/course/en/slide-33.webp" srcset="/assets/course/en/slide-33-640.webp 640w, /assets/course/en/slide-33.webp 1280w" sizes="(max-width: 900px) 100vw, 868px" width="1280" height="720" alt="Slide 33: Choosing p (3/3): filter or wrapper approach" loading=lazy></figure><details class="slide-text"><summary>Text of the slide</summary><p>Filter</p>
+<p>look at <strong>the data alone</strong>, before any model: PACF, AIC / BIC criteria (appendix C);</p>
+<p>fast, but indirect.</p>
+<p>Wrapper</p>
+<p><strong>train</strong> an AR(p) for p = 1 to 12 on 1998–2005;</p>
+<p>measure the <strong>forecast error</strong> on validation (2006);</p>
+<p>driven by the real objective, but more costly.</p>
+<p>Wrapper approach: validation RMSE (2006, daytime hours) versus p.</p>
+<p>p = 1: 78.0; p = 2: 77.7; p = 12: 77.3 Wh/m². <strong>Parsimony</strong>: the smallest p within 0.5 % of the best, i.e. <strong>p = 2</strong>.</p></details></section><section class="slide" id="slide-34" aria-label="Slide 34"><h3><span class="num">34</span> Summary: forecasting GHI with an AR(p)</h3><figure><img src="/assets/course/en/slide-34.webp" srcset="/assets/course/en/slide-34-640.webp 640w, /assets/course/en/slide-34.webp 1280w" sizes="(max-width: 900px) 100vw, 868px" width="1280" height="720" alt="Slide 34: Summary: forecasting GHI with an AR(p)" loading=lazy></figure><details class="slide-text"><summary>Text of the slide</summary><p>1 · 2 · 3 · GHI · measurements · Clear sky · GHI<sup>cs</sup> · CSI index · (difference)</p>
+<ul>
+<li>Compute GHI<sup>cs</sup> (Solis), then CSI<sub>t</sub> = GHI<sub>t</sub> − GHI<sup>cs</sup><sub>t</sub>; center it: y<sub>t</sub> = CSI<sub>t</sub> − μ.</li>
+<li>Split: training / validation / test.</li>
+<li>Choose p on validation.</li>
+<li>Build <strong>X</strong> and <strong>y</strong>; estimate ŵ = (<strong>X</strong><sup>T</sup><strong>X</strong>)<sup>−1</sup><strong>X</strong><sup>T</sup><strong>y</strong>.</li>
+<li>Forecast ŷ<sub>t+1</sub> = ŵ<sup>T</sup> <strong>x</strong><sub>t</sub> with <strong>x</strong><sub>t</sub> = (y<sub>t</sub>, …, y<sub>t−p+1</sub>).</li>
+<li>Rebuild GHI<sup>fc</sup><sub>t+1</sub> = ŷ<sub>t+1</sub> + μ + GHI<sup>cs</sup><sub>t+1</sub>; set <strong>0 at night</strong> (Sun below the horizon) and <strong>0 if the forecast is negative</strong>.</li>
+<li>Evaluate on 2007: daytime, then day + night.</li>
+</ul>
+<p>4 · 5 · 6 · 7 · Centring</p>
+<p>y = CSI − μ</p>
+<p>Chronological · split · Model</p>
+<p>P · AR · ELM</p>
+<p>Forecast · ŷ<sub>t+h</sub> · 8 · 9 · Forecast GHI</p>
+<p>ŷ + μ + GHI<sup>cs</sup></p>
+<p>Evaluation · day · day+night</p>
+<p>Simple, fast, interpretable: it is the <strong>linear reference</strong> to beat.</p></details></section><h2 id="part-7">6 · Evaluation, ELM and online learning</h2><section class="slide" id="slide-35" aria-label="Slide 35"><h3><span class="num">35</span> Reference models</h3><figure><img src="/assets/course/en/slide-35.webp" srcset="/assets/course/en/slide-35-640.webp 640w, /assets/course/en/slide-35.webp 1280w" sizes="(max-width: 900px) 100vw, 868px" width="1280" height="720" alt="Slide 35: Reference models" loading=lazy></figure><details class="slide-text"><summary>Text of the slide</summary><p>Every model must be compared with a simple reference. If it does not do better, it adds nothing.</p>
+<p>Simple persistence</p>
+<p>“It will be as it is now.”</p>
+<p>GHI<sup>fc</sup><sub>t+1</sub> = GHI<sub>t</sub></p>
+<p>Ignores the Sun&#x27;s course.</p>
+<p>Clear sky</p>
+<p>“It will be sunny.”</p>
+<p>GHI<sup>fc</sup><sub>t+1</sub> = GHI<sup>cs</sup><sub>t+1</sub></p>
+<p>Ignores clouds.</p>
+<p>Smart persistence</p>
+<p>“The sky will stay the same.”</p>
+<p>GHI<sup>fc</sup><sub>t+1</sub> = GHI<sub>t</sub> − GHI<sup>cs</sup><sub>t</sub> + GHI<sup>cs</sup><sub>t+1</sub></p>
+<p>Keeps the same gap to clear sky.</p>
+<p>Smart persistence = AR(1) with w = 1: <strong>the reference of the skill score</strong> SS.</p>
+<p><strong>Two rules, for every model</strong>: 1) at night (Sun below the horizon, θ<sub>z</sub> &gt; 90°), forecast = 0; 2) a negative forecast is replaced by 0.</p></details></section><section class="slide" id="slide-36" aria-label="Slide 36"><h3><span class="num">36</span> Measuring the error</h3><figure><img src="/assets/course/en/slide-36.webp" srcset="/assets/course/en/slide-36-640.webp 640w, /assets/course/en/slide-36.webp 1280w" sizes="(max-width: 900px) 100vw, 868px" width="1280" height="720" alt="Slide 36: Measuring the error" loading=lazy></figure><details class="slide-text"><summary>Text of the slide</summary><p>e<sub>t</sub> = GHI<sup>fc</sup><sub>t</sub> − GHI<sub>t</sub>   (forecast error)</p>
+<p>nMBE = [(1/N) Σ e<sub>t</sub>] / mean(GHI<sub>t</sub>)</p>
+<p>MAE = (1/N) Σ |e<sub>t</sub>|</p>
+<p>RMSE = √[(1/N) Σ e<sub>t</sub><sup>2</sup>]  ;  nRMSE = RMSE / mean(GHI<sub>t</sub>)</p>
+<p><strong>Essential check</strong>: if |nMBE| &gt; 1 %, there is probably a problem, or a very poor model. The bias can be removed, provided this is tested; we do not do it here.</p>
+<p>Errors are computed on the <strong>rebuilt GHI</strong>, over the <strong>test</strong> year (2007): first on <strong>daytime hours</strong>, then <strong>day + night</strong>. Always say which!</p>
+<p><strong>nMBE</strong> (bias): &gt; 0 if the model <strong>over-estimates</strong> on average, &lt; 0 if it <strong>under-estimates</strong>. Errors of opposite sign cancel: it is <strong>not</strong> a score for ranking models.</p>
+<p><strong>MAE</strong>: mean error, in Wh/m², easy to interpret.</p>
+<p><strong>RMSE</strong>: penalizes large errors more (sudden cloud). Always ≥ MAE.</p>
+<p><strong>nRMSE</strong>: RMSE as % of mean GHI, to compare sites.</p></details></section><section class="slide" id="slide-37" aria-label="Slide 37"><h3><span class="num">37</span> Comparing with persistence: SS and NICEΣ</h3><figure><img src="/assets/course/en/slide-37.webp" srcset="/assets/course/en/slide-37-640.webp 640w, /assets/course/en/slide-37.webp 1280w" sizes="(max-width: 900px) 100vw, 868px" width="1280" height="720" alt="Slide 37: Comparing with persistence: SS and NICEΣ" loading=lazy></figure><details class="slide-text"><summary>Text of the slide</summary><p>SS = 1 − RMSE<sub>model</sub> / RMSE<sub>smart persistence</sub></p>
+<p><strong>Skill score</strong>: &gt; 0 if smart persistence is beaten, &lt; 0 otherwise.</p>
+<p>Looks only at the RMSE.</p>
+<p>Two different references: SS compares with <strong>smart</strong> persistence, NICE<sup>Σ</sup> with <strong>simple</strong> persistence (Voyant et al., 2025b).</p>
+<p>NICE<sup>k</sup> = L<sup>k</sup>(model) / L<sup>k</sup>(simple persistence)</p>
+<p>L<sup>k</sup> = ((1/N) Σ |e<sub>t</sub>|<sup>k</sup>)<sup>1/k</sup> ;  NICE<sup>Σ</sup> = (NICE<sup>1</sup> + NICE<sup>2</sup> + NICE<sup>3</sup>) / 3</p>
+<p>e<sub>t</sub> = GHI<sup>fc</sup><sub>t</sub> − GHI<sub>t</sub>: the forecast error (previous slide).</p>
+<p>k = 1: average errors (MAE); k = 2: RMSE; k = 3: large errors;</p>
+<p><strong>NICE</strong><strong><sup>Σ</sup></strong><strong> &lt; 1</strong>: the model beats simple persistence on all three norms at once.</p></details></section><section class="slide" id="slide-38" aria-label="Slide 38"><h3><span class="num">38</span> Results at Ajaccio: 1-hour forecast</h3><figure><img src="/assets/course/en/slide-38.webp" srcset="/assets/course/en/slide-38-640.webp 640w, /assets/course/en/slide-38.webp 1280w" sizes="(max-width: 900px) 100vw, 868px" width="1280" height="720" alt="Slide 38: Results at Ajaccio: 1-hour forecast" loading=lazy></figure><details class="slide-text"><summary>Text of the slide</summary><table class="slide-table"><tr><th>Model</th><th>RMSE day</th><th>nRMSE day</th><th>nRMSE day + night</th><th>nMBE day</th><th>SS</th><th>NICEΣ</th></tr><tr><td>Simple persistence</td><td>135</td><td>36.4 %</td><td>51.5 %</td><td>−0.9 %</td><td>−0.66</td><td>1.00</td></tr><tr><td>Clear sky</td><td>148</td><td>39.9 %</td><td>56.4 %</td><td>+16.4 %</td><td>−0.82</td><td>1.06</td></tr><tr><td>Smart persistence</td><td>82</td><td>22.0 %</td><td>31.0 %</td><td>+1.3 %</td><td>0.00</td><td>0.59</td></tr><tr><td>AR(2)</td><td>79</td><td>21.3 %</td><td>30.1 %</td><td>+2.0 %</td><td>+0.03</td><td>0.58</td></tr><tr><td>ELM (L = 50, best draw)</td><td>76</td><td>20.5 %</td><td>28.9 %</td><td>+1.1 %</td><td>+0.07</td><td>0.55</td></tr></table>
+<p>Test 2007. Daytime: 4380 hours, mean GHI 372 Wh/m². Day + night: 8759 hours, mean GHI 186 Wh/m². RMSE in Wh/m²; SS and NICE computed on daytime hours.</p>
+<p>Smart persistence divides the RMSE of simple persistence by 1.7. AR gains <strong>3 %</strong> over it, ELM <strong>7 %</strong>.</p></details></section><section class="slide" id="slide-39" aria-label="Slide 39"><h3><span class="num">39</span> Daytime only, or day + night?</h3><figure><img src="/assets/course/en/slide-39.webp" srcset="/assets/course/en/slide-39-640.webp 640w, /assets/course/en/slide-39.webp 1280w" sizes="(max-width: 900px) 100vw, 868px" width="1280" height="720" alt="Slide 39: Daytime only, or day + night?" loading=lazy></figure><details class="slide-text"><summary>Text of the slide</summary><p>79 → 56 · AR RMSE (Wh/m²)</p>
+<p>At night (Sun below the horizon), every model forecasts 0 by construction and is right: adding these hours <strong>lowers the RMSE</strong> (≈ ÷ √2).</p>
+<p>But the mean GHI is <strong>halved</strong>: the nRMSE <strong>increases</strong>.</p>
+<p>The ranking of models does not change.</p>
+<p>An error figure without the list of hours used means nothing: <strong>always state daytime or day + night</strong>.</p>
+<p>372 → 186</p>
+<p>21 → 30 %</p>
+<p>Mean GHI (Wh/m²) · AR nRMSE</p></details></section><section class="slide" id="slide-40" aria-label="Slide 40"><h3><span class="num">40</span> The bias (nMBE): effect of the two rules</h3><figure><img src="/assets/course/en/slide-40.webp" srcset="/assets/course/en/slide-40-640.webp 640w, /assets/course/en/slide-40.webp 1280w" sizes="(max-width: 900px) 100vw, 868px" width="1280" height="720" alt="Slide 40: The bias (nMBE): effect of the two rules" loading=lazy></figure><details class="slide-text"><summary>Text of the slide</summary><p><strong>Rule 1 (night)</strong>: when the Sun is below the horizon (θ<sub>z</sub> &gt; 90°), the forecast is 0.  <strong>Rule 2</strong>: a negative forecast is replaced by 0.</p>
+<p>nMBE: mean bias, as % of mean GHI (see “Measuring the error”). Test 2007.</p>
+<table class="slide-table"><tr><th>Model</th><th>nMBE no rules, day</th><th>nMBE no rules, day + night</th><th>nMBE with rules, day</th><th>nMBE with rules, day + night</th></tr><tr><td>Simple persistence</td><td>−0.88 %</td><td>0.00 %</td><td>−0.88 %</td><td>−1.02 %</td></tr><tr><td>Clear sky</td><td>+16.44 %</td><td>+16.28 %</td><td>+16.44 %</td><td>+16.28 %</td></tr><tr><td>Smart persistence</td><td>+0.35 %</td><td>0.00 %</td><td>+1.25 %</td><td>+1.11 %</td></tr><tr><td>AR(2)</td><td>+1.49 %</td><td>−0.24 %</td><td>+2.02 %</td><td>+1.87 %</td></tr><tr><td>ELM</td><td>+0.69 %</td><td>−0.38 %</td><td>+1.13 %</td><td>+0.99 %</td></tr></table>
+<p>An nMBE depends on how it is computed: <strong>always state</strong> daytime or day + night, with or without rules.</p>
+<p>How to read this table</p>
+<p><strong>No rules, day + night</strong>: both persistences have an nMBE of <strong>exactly zero</strong>.</p>
+<p><strong>Rule 2</strong>: setting negative forecasts to 0 <strong>raises</strong> the mean (smart persistence: +0.35 % → +1.25 % in daytime).</p>
+<p><strong>Rule 1</strong>: the nMBE of simple persistence goes from 0 to <strong>−1.02 %</strong> over day + night (next slide).</p>
+<p><strong>Clear sky</strong>: +16 %: it always forecasts sunshine.</p></details></section><section class="slide" id="slide-41" aria-label="Slide 41"><h3><span class="num">41</span> Why does persistence go from 0 to −1 %?</h3><figure><img src="/assets/course/en/slide-41.webp" srcset="/assets/course/en/slide-41-640.webp 640w, /assets/course/en/slide-41.webp 1280w" sizes="(max-width: 900px) 100vw, 868px" width="1280" height="720" alt="Slide 41: Why does persistence go from 0 to −1 %?" loading=lazy></figure><details class="slide-text"><summary>Text of the slide</summary><p>second-to-last · daytime hour · last · daytime hour · 150 · 43 · Measurement · … · 150 · Persistence, no rules · … · 150</p>
+<p>With rule 1 (night)</p>
+<p>Values in Wh/m²; 43 Wh/m² = 2007 mean of the last daytime hour.</p>
+<p>A single hour per day, but it weighs heavily: the day + night mean is only 186 Wh/m², because night hours count as zero.</p>
+<p>first · night hour</p>
+<p><strong>No rules</strong>: persistence copies the previous hour&#x27;s measurement. Over the year, each measurement is used once as measurement and once as forecast: the two sums are equal, <strong>nMBE = 0</strong>.</p>
+<p><strong>With rule 1 (night)</strong>: at the first night hour the Sun is below the horizon, so the forecast 43 is replaced by 0. Every day, a forecast of about 43 Wh/m² disappears.</p>
+<p>Over the year: 365 × 43 ≈ 15,642 Wh/m², plus 1,008 Wh/m² of small values measured at night: <strong>16,650 Wh/m²</strong> are missing.</p>
+<p>Relative to the GHI measured over the year (1,630,161 Wh/m²): <strong>1.02 %</strong>, hence a day + night nMBE of −1.02 %.</p>
+<p>0 · 43 · 0</p>
+<p>The rule is physically right (no Sun at night), but it changes the bias.</p></details></section><section class="slide" id="slide-42" aria-label="Slide 42"><h3><span class="num">42</span> Forecast and measurement, hour by hour</h3><figure><img src="/assets/course/en/slide-42.webp" srcset="/assets/course/en/slide-42-640.webp 640w, /assets/course/en/slide-42.webp 1280w" sizes="(max-width: 900px) 100vw, 868px" width="1280" height="720" alt="Slide 42: Forecast and measurement, hour by hour" loading=lazy></figure><details class="slide-text"><summary>Text of the slide</summary><p>Ajaccio, October 2007: 1-h forecast.</p>
+<p>Both models follow regular days and miss sudden changes: an arriving cloud cannot be seen in the past.</p></details></section><section class="slide" id="slide-43" aria-label="Slide 43"><h3><span class="num">43</span> Limits of the AR model</h3><figure><img src="/assets/course/en/slide-43.webp" srcset="/assets/course/en/slide-43-640.webp 640w, /assets/course/en/slide-43.webp 1280w" sizes="(max-width: 900px) 100vw, 868px" width="1280" height="720" alt="Slide 43: Limits of the AR model" loading=lazy></figure><details class="slide-text"><summary>Text of the slide</summary><p>AR(p) assumes a <strong>linear</strong> relation between the CSI and its lags. Often enough at short horizons, but not always.</p>
+<p>Difficult situations</p>
+<p>fast clear / overcast transitions (cloud fronts);</p>
+<p>cloud-edge effects (GHI &gt; GHI<sup>cs</sup>);</p>
+<p>very variable sky (cumulus);</p>
+<p>nonlinear links between lags.</p>
+<p>Under-fitting</p>
+<p>A linear model cannot capture a curved relation, even with many lags.</p>
+<p>Saturation</p>
+<p>Beyond some p, adding lags no longer improves anything (slide “Choosing p”).</p>
+<p><strong>Idea</strong>: transform the inputs nonlinearly, then keep least squares. That is the <strong>ELM</strong>.</p></details></section><section class="slide" id="slide-44" aria-label="Slide 44"><h3><span class="num">44</span> Extreme Learning Machine (ELM): the principle</h3><figure><img src="/assets/course/en/slide-44.webp" srcset="/assets/course/en/slide-44-640.webp 640w, /assets/course/en/slide-44.webp 1280w" sizes="(max-width: 900px) 100vw, 868px" width="1280" height="720" alt="Slide 44: Extreme Learning Machine (ELM): the principle" loading=lazy></figure><details class="slide-text"><summary>Text of the slide</summary><p>One-hidden-layer ELM (Huang et al., 2006).</p>
+<p>A neural network with <strong>a single hidden layer</strong>.</p>
+<p>Input weights <strong>W</strong><sub>in</sub> and biases <strong>b</strong> are <strong>drawn at random, then frozen</strong>.</p>
+<p>Each neuron applies a nonlinear function g (tanh, sigmoid…).</p>
+<p>Only the output weights <strong>β</strong> are learnt, <strong>by least squares</strong>.</p>
+<p>No gradient back-propagation: training is done <strong>in a single solve</strong>.</p></details></section><section class="slide" id="slide-45" aria-label="Slide 45"><h3><span class="num">45</span> ELM: the formulation</h3><figure><img src="/assets/course/en/slide-45.webp" srcset="/assets/course/en/slide-45-640.webp 640w, /assets/course/en/slide-45.webp 1280w" sizes="(max-width: 900px) 100vw, 868px" width="1280" height="720" alt="Slide 45: ELM: the formulation" loading=lazy></figure><details class="slide-text"><summary>Text of the slide</summary><p>The p lags of each row go through the hidden layer:</p>
+<p><strong>H</strong> = g(<strong>X</strong> <strong>W</strong><sub>in</sub> + <strong>b</strong>)   (N × L)</p>
+<table class="slide-table"><tr><th></th><th>Model</th><th>Least-squares solution</th><th>Columns used</th></tr><tr><td>AR</td><td>y = Xw + ε</td><td>ŵ = (XTX)−1XTy</td><td>lags of the centred CSI</td></tr><tr><td>ELM</td><td>y = Hβ + ε</td><td>β̂ = (HTH + αI)−1HTy</td><td>outputs of the L neurons</td></tr></table>
+<p><strong>Same equation, only the columns change.</strong> The small term α<strong>I</strong> (ridge regression) stabilizes the solve when L is large; at Ajaccio, α = 10<sup>−3</sup>.</p></details></section><section class="slide" id="slide-46" aria-label="Slide 46"><h3><span class="num">46</span> ELM: choosing the number of neurons L</h3><figure><img src="/assets/course/en/slide-46.webp" srcset="/assets/course/en/slide-46-640.webp 640w, /assets/course/en/slide-46.webp 1280w" sizes="(max-width: 900px) 100vw, 868px" width="1280" height="720" alt="Slide 46: ELM: choosing the number of neurons L" loading=lazy></figure><details class="slide-text"><summary>Text of the slide</summary><p>Validation RMSE (2006, daytime hours) versus L, for p = 2.</p>
+<p>L = 5: 85.2 Wh/m² → <strong>under-fitting</strong>.</p>
+<p>L = 50: 75.9 Wh/m².</p>
+<p>Beyond, no further gain: 75.8 at L = 200, 75.9 at L = 500 (risk of <strong>over-fitting</strong>).</p>
+<p>As for p: test a few values (5 to 500) on validation and keep the smallest near-optimal one. Here <strong>L = 50</strong>.</p></details></section><section class="slide" id="slide-47" aria-label="Slide 47"><h3><span class="num">47</span> ELM: a result that depends on the draw</h3><figure><img src="/assets/course/en/slide-47.webp" srcset="/assets/course/en/slide-47-640.webp 640w, /assets/course/en/slide-47.webp 1280w" sizes="(max-width: 900px) 100vw, 868px" width="1280" height="720" alt="Slide 47: ELM: a result that depends on the draw" loading=lazy></figure><details class="slide-text"><summary>Text of the slide</summary><p>Input weights are random: two trainings give two different models.</p>
+<p><strong>Candidate search</strong>: make 20 draws and keep the one with the smallest <strong>validation</strong> error (2006).</p>
+<p>The test (2007) is used only at the end, for the selected draw.</p>
+<p>Selected draw: test nRMSE <strong>20.46 %</strong>.</p>
+<p>The 20 draws: from 20.37 to 20.51 % (mean 20.45 %).</p>
+<p>The best on validation is not necessarily the best on test: the gap is small here, but it must be checked.</p>
+<p>Each point: one draw. Validation 2006 (horizontal), test 2007 (vertical).</p></details></section><section class="slide" id="slide-48" aria-label="Slide 48"><h3><span class="num">48</span> Giving the model the time: sin / cos encoding</h3><figure><img src="/assets/course/en/slide-48.webp" srcset="/assets/course/en/slide-48-640.webp 640w, /assets/course/en/slide-48.webp 1280w" sizes="(max-width: 900px) 100vw, 868px" width="1280" height="720" alt="Slide 48: Giving the model the time: sin / cos encoding" loading=lazy></figure><details class="slide-text"><summary>Text of the slide</summary><p>Idea: add <strong>calendar variables</strong> known in advance to the lags: the hour h and the day of year j.</p>
+<p>Problem: coded as a number, 23:00 is “far” from 00:00, although they are neighbouring hours.</p>
+<p>Solution: place the hour on a <strong>circle</strong>, with two variables:</p>
+<p>(sin(2π h / 24); cos(2π h / 24))   and   (sin(2π j / 365); cos(2π j / 365))</p>
+<p>4 more columns in <strong>X</strong>. The model then “knows” the hour and the season (Voyant et al., 2025a).</p></details></section><section class="slide" id="slide-49" aria-label="Slide 49"><h3><span class="num">49</span> Stationarize or give the time? AR and ELM</h3><figure><img src="/assets/course/en/slide-49.webp" srcset="/assets/course/en/slide-49-640.webp 640w, /assets/course/en/slide-49.webp 1280w" sizes="(max-width: 900px) 100vw, 868px" width="1280" height="720" alt="Slide 49: Stationarize or give the time? AR and ELM" loading=lazy></figure><details class="slide-text"><summary>Text of the slide</summary><p>Daytime nRMSE, test 2007, same protocol for the 8 variants. “No clear-sky” approach: Voyant et al., 2025a.</p>
+<table class="slide-table"><tr><th>Inputs</th><th>AR(2) nRMSE</th><th>AR NICEΣ</th><th>ELM nRMSE</th><th>ELM NICEΣ</th></tr><tr><td>raw GHI</td><td>27.6 %</td><td>0.76</td><td>24.3 %</td><td>0.66</td></tr><tr><td>GHI + sin/cos</td><td>24.6 %</td><td>0.68</td><td>19.7 %</td><td>0.54</td></tr><tr><td>CSI</td><td>21.3 %</td><td>0.58</td><td>20.5 %</td><td>0.55</td></tr><tr><td>CSI + sin/cos</td><td>21.0 %</td><td>0.57</td><td>19.9 %</td><td>0.54</td></tr></table>
+<p><strong>AR (linear)</strong>: needs the CSI. On raw GHI, even with sin/cos, it does worse than smart persistence.</p>
+<p><strong>ELM (nonlinear)</strong>: with sin/cos, it learns the Sun&#x27;s cycle by itself, from raw GHI.</p>
+<p>nRMSE and NICE<sup>Σ</sup> give the same ranking.</p></details></section><section class="slide" id="slide-50" aria-label="Slide 50"><h3><span class="num">50</span> AR or ELM? The verdict</h3><figure><img src="/assets/course/en/slide-50.webp" srcset="/assets/course/en/slide-50-640.webp 640w, /assets/course/en/slide-50.webp 1280w" sizes="(max-width: 900px) 100vw, 868px" width="1280" height="720" alt="Slide 50: AR or ELM? The verdict" loading=lazy></figure><details class="slide-text"><summary>Text of the slide</summary><p>ELM strengths</p>
+<p>fast training, a single solve;</p>
+<p>captures nonlinear relations;</p>
+<p>same method (OLS) as AR.</p>
+<p>About <strong>100 times more coefficients</strong> (learnt + random) for 4 more points of skill score. Is the gain worth the complexity?</p>
+<p>ELM limits</p>
+<p>L must be chosen;</p>
+<p>result varies with the draw;</p>
+<p>less interpretable than AR;</p>
+<p>over-fits if L grows large;</p>
+<p>needs a lot of data.</p>
+<p>At Ajaccio, 1 h ahead</p>
+<p>AR(2): 2 coefficients; nRMSE 21.3 %.</p>
+<p>ELM: 51 learnt + 150 random; nRMSE 20.5 %.</p>
+<p>Skill score SS: +0.03 (AR) versus +0.07 (ELM).</p></details></section><section class="slide" id="slide-51" aria-label="Slide 51"><h3><span class="num">51</span> Online learning (1/2): the sliding window</h3><figure><img src="/assets/course/en/slide-51.webp" srcset="/assets/course/en/slide-51-640.webp 640w, /assets/course/en/slide-51.webp 1280w" sizes="(max-width: 900px) 100vw, 868px" width="1280" height="720" alt="Slide 51: Online learning (1/2): the sliding window" loading=lazy></figure><details class="slide-text"><summary>Text of the slide</summary><p>Forecast · Observe · hour t</p>
+<p>hour t + 1</p>
+<p>blue: the W training hours; pink: the hour to forecast</p>
+<p>Matrix <strong>X</strong> <strong>always keeps W rows</strong>: the last W hours.</p>
+<p>Every hour, the newest row is <strong>added</strong> and the oldest <strong>removed</strong>, then ridge is re-estimated:</p>
+<p>ŵ = (<strong>X</strong><sup>T</sup><strong>X</strong> + α<strong>I</strong>)<sup>−1</sup><strong>X</strong><sup>T</sup><strong>y</strong></p>
+<p>Update</p>
+<p>Trick: no need to recompute everything. <strong>X</strong><sup>T</sup><strong>X</strong> ← <strong>X</strong><sup>T</sup><strong>X</strong> + <strong>x</strong><sub>new</sub><strong>x</strong><sub>new</sub><sup>T</sup> − <strong>x</strong><sub>old</sub><strong>x</strong><sub>old</sub><sup>T</sup>.</p>
+<p>Same for the ELM, with <strong>H</strong> instead of <strong>X</strong>.</p>
+<p>Update: 11 µs for AR, 38 µs for the ELM, per hour.</p>
+<p>Useful when the system <strong>changes</strong> (drifting sensor, soiled panel, new site): the model forgets the distant past.</p></details></section><section class="slide" id="slide-52" aria-label="Slide 52"><h3><span class="num">52</span> Online learning (2/2): which window length?</h3><figure><img src="/assets/course/en/slide-52.webp" srcset="/assets/course/en/slide-52-640.webp 640w, /assets/course/en/slide-52.webp 1280w" sizes="(max-width: 900px) 100vw, 868px" width="1280" height="720" alt="Slide 52: Online learning (2/2): which window length?" loading=lazy></figure><details class="slide-text"><summary>Text of the slide</summary><p>Test 2007: every hour, ridge re-estimated on the last W hours, from 1 month to 2 years.</p>
+<p>Short window: follows recent changes… but learns from little data.</p>
+<table class="slide-table"><tr><th>Window W</th><th>AR(2)</th><th>ELM (L = 50)</th></tr><tr><td>1 month</td><td>21.5 %</td><td>25.6 %</td></tr><tr><td>3 months</td><td>21.3 %</td><td>21.9 %</td></tr><tr><td>6 months</td><td>21.3 %</td><td>21.2 %</td></tr><tr><td>1 year</td><td>21.3 %</td><td>20.9 %</td></tr><tr><td>2 years</td><td>21.3 %</td><td>20.7 %</td></tr><tr><td>8 years (fixed)</td><td>21.3 %</td><td>20.5 %</td></tr></table>
+<p>Daytime nRMSE over 2007 versus window length.</p>
+<p>AR (2 coefficients) works even with 1 month. The ELM (51 coefficients) <strong>degrades clearly</strong> with a short window: the more parameters a model has, the more data it needs.</p></details></section><section class="slide" id="slide-53" aria-label="Slide 53"><h3><span class="num">53</span> Frugality</h3><figure><img src="/assets/course/en/slide-53.webp" srcset="/assets/course/en/slide-53-640.webp 640w, /assets/course/en/slide-53.webp 1280w" sizes="(max-width: 900px) 100vw, 868px" width="1280" height="720" alt="Slide 53: Frugality" loading=lazy></figure><details class="slide-text"><summary>Text of the slide</summary><p>A <strong>frugal</strong> model reaches good accuracy with little computation, little data and little maintenance.</p>
+<table class="slide-table"><tr><th>Model</th><th>Learnt coefficients</th><th>Training cost</th><th>Data needed</th><th>nRMSE day (test)</th></tr><tr><td>Smart persistence</td><td>0</td><td>none</td><td>1 hour</td><td>22.0 %</td></tr><tr><td>AR(2)</td><td>2</td><td>5 ms</td><td>1 month is enough</td><td>21.3 %</td></tr><tr><td>ELM (L = 50)</td><td>51 (+ 150 random)</td><td>68 ms per draw</td><td>several years</td><td>20.5 %</td></tr><tr><td>AR, 1-month sliding window</td><td>2</td><td>11 µs per hour</td><td>720 hours</td><td>21.5 %</td></tr></table>
+<p>Timings measured on a laptop: only the orders of magnitude matter.</p>
+<p>The right question is not “which model is best?” but “<strong>does the gain justify the cost?</strong>” (computation, data, maintenance, monitoring).</p></details></section><h2 id="part-8">Project, glossary and references</h2><section class="slide" id="slide-54" aria-label="Slide 54"><h3><span class="num">54</span> Thank you, your turn: the project</h3><figure><img src="/assets/course/en/slide-54.webp" srcset="/assets/course/en/slide-54-640.webp 640w, /assets/course/en/slide-54.webp 1280w" sizes="(max-width: 900px) 100vw, 868px" width="1280" height="720" alt="Slide 54: Thank you, your turn: the project" loading=lazy></figure><details class="slide-text"><summary>Text of the slide</summary><p>Grid and units</p>
+<p>Forecasting GHI is forecasting production.</p>
+<p>Clear sky and CSI</p>
+<p>Solis; CSI = GHI − GHI<sup>cs</sup>, centred.</p>
+<p><strong>Cyril Voyant</strong> (cyril.voyant@minesparis.psl.eu) Mines Paris – PSL, Centre O.I.E.</p>
+<p>Worked example on the web: cyrilvoyant.github.io/teaching/solar-forecasting-basics.html</p>
+<p>Radiation</p>
+<p>Direct, diffuse; Sun position; clouds.</p>
+<p>AR and OLS</p>
+<p>ŵ = (<strong>X</strong><sup>T</sup><strong>X</strong>)<sup>−1</sup><strong>X</strong><sup>T</sup><strong>y</strong>, choice of p.</p>
+<p>Time series</p>
+<p>Components, horizon, AR(1).</p>
+<p>Evaluation, ELM, online</p>
+<p>Day / day + night, sliding window, frugality.</p></details></section><section class="slide" id="slide-55" aria-label="Slide 55"><h3><span class="num">55</span> Glossary</h3><figure><img src="/assets/course/en/slide-55.webp" srcset="/assets/course/en/slide-55-640.webp 640w, /assets/course/en/slide-55.webp 1280w" sizes="(max-width: 900px) 100vw, 868px" width="1280" height="720" alt="Slide 55: Glossary" loading=lazy></figure><details class="slide-text"><summary>Text of the slide</summary><table class="slide-table"><tr><th>Acronym</th><th>Meaning</th></tr><tr><td>AR(p)</td><td>autoregressive model of order p</td></tr><tr><td>ACF / PACF</td><td>autocorrelation / partial autocorrelation</td></tr><tr><td>AIC / BIC</td><td>Akaike / Bayesian information criteria</td></tr><tr><td>AOD</td><td>aerosol optical depth</td></tr><tr><td>CSI</td><td>clear-sky index</td></tr><tr><td>DHI</td><td>diffuse horizontal irradiance</td></tr><tr><td>DNI</td><td>direct normal irradiance</td></tr><tr><td>ELM</td><td>Extreme Learning Machine</td></tr><tr><td>GHI</td><td>global horizontal irradiance</td></tr><tr><td>MAE</td><td>mean absolute error</td></tr><tr><td>OLS</td><td>ordinary least squares</td></tr></table>
+<table class="slide-table"><tr><th>Acronym</th><th>Meaning</th></tr><tr><td>NWP</td><td>numerical weather prediction</td></tr><tr><td>nRMSE</td><td>RMSE normalized by mean GHI</td></tr><tr><td>RMSE</td><td>root mean square error</td></tr><tr><td>MBE</td><td>mean bias error</td></tr><tr><td>sCV</td><td>stochastic coefficient of variation</td></tr><tr><td>F</td><td>forecastability</td></tr><tr><td>NICE</td><td>score relative to simple persistence</td></tr><tr><td>sin / cos</td><td>circular encoding of hour and day</td></tr><tr><td>SS</td><td>skill score</td></tr><tr><td>PHS</td><td>pumped-storage hydropower</td></tr></table></details></section><section class="slide" id="slide-56" aria-label="Slide 56"><h3><span class="num">56</span> References</h3><figure><img src="/assets/course/en/slide-56.webp" srcset="/assets/course/en/slide-56-640.webp 640w, /assets/course/en/slide-56.webp 1280w" sizes="(max-width: 900px) 100vw, 868px" width="1280" height="720" alt="Slide 56: References" loading=lazy></figure><details class="slide-text"><summary>Text of the slide</summary><p>Huang G.-B., Zhu Q.-Y., Siew C.-K. (2006). Extreme learning machine: theory and applications. Neurocomputing, 70, 489–501. doi:10.1016/j.neucom.2005.12.126</p>
+<p>Ineichen P. (2008). A broadband simplified version of the Solis clear sky model. Solar Energy, 82(8), 758–762. doi:10.1016/j.solener.2008.02.009</p>
+<p>Voyant C. et al. (2017). Machine learning methods for solar radiation forecasting: a review. Renewable Energy, 105, 569–582. doi:10.1016/j.renene.2016.12.095</p>
+<p>Voyant C. et al. (2022). Benchmarks for solar radiation time series forecasting. Renewable Energy, 191, 747–762. doi:10.1016/j.renene.2022.04.065</p>
+<p>Voyant C. et al. (2026). Stochastic coefficient of variation: assessing the variability and forecastability of solar irradiance. Renewable Energy, 256, 123913. doi:10.1016/j.renene.2025.123913</p>
+<p>Voyant C., Despotovic M., Notton G., Saint-Drenan Y.-M., Asloune M., Garcia-Gutierrez L. (2025a). On the importance of clearsky model in short-term solar radiation forecasting. Solar Energy, 289, 113490. doi:10.1016/j.solener.2025.113490</p>
+<p>Voyant C. et al. (2025b). NICEk metrics: unified and multidimensional framework for evaluating deterministic solar forecasting accuracy. Sustainable Energy Technologies and Assessments, 81, 104588. doi:10.1016/j.seta.2025.104588</p>
+<p>Hyndman R. J., Athanasopoulos G. (2021). Forecasting: Principles and Practice, 3rd ed. OTexts. otexts.com/fpp3</p>
+<p>Box G. E. P., Jenkins G. M., Reinsel G. C., Ljung G. M. (2015). Time Series Analysis: Forecasting and Control, 5th ed. Wiley.</p>
+<p>Data: Météo-France, Ajaccio station. All figures and schematics drawn by the author.</p></details></section><h2 id="part-9">Appendices</h2><section class="slide" id="slide-57" aria-label="Slide 57"><h3><span class="num">57</span> Appendix A, Wide-sense stationarity</h3><figure><img src="/assets/course/en/slide-57.webp" srcset="/assets/course/en/slide-57-640.webp 640w, /assets/course/en/slide-57.webp 1280w" sizes="(max-width: 900px) 100vw, 868px" width="1280" height="720" alt="Slide 57: Appendix A, Wide-sense stationarity" loading=lazy></figure><details class="slide-text"><summary>Text of the slide</summary><p>A process (z<sub>t</sub>) is <strong>wide-sense stationary</strong> if:</p>
+<p>E[z<sub>t</sub>] = μ (constant)   and   Cov(z<sub>t</sub>, z<sub>t+k</sub>) = γ(k) (depends only on the lag k)</p>
+<p>In practice</p>
+<p>the mean is constant over time;</p>
+<p>the variance is finite and constant;</p>
+<p>the dependence between two instants depends only on their gap.</p>
+<p><strong>Simple check</strong>: plot the mean and standard deviation month by month (slide “Is the CSI stationary?”). Statistical tests exist but are not needed here.</p></details></section><section class="slide" id="slide-58" aria-label="Slide 58"><h3><span class="num">58</span> Appendix B, The best possible forecast</h3><figure><img src="/assets/course/en/slide-58.webp" srcset="/assets/course/en/slide-58-640.webp 640w, /assets/course/en/slide-58.webp 1280w" sizes="(max-width: 900px) 100vw, 868px" width="1280" height="720" alt="Slide 58: Appendix B, The best possible forecast" loading=lazy></figure><details class="slide-text"><summary>Text of the slide</summary><p>ŷ<sub>t+h</sub> = E[y<sub>t+h</sub> | y<sub>t</sub>, y<sub>t−1</sub>, …, y<sub>t−p+1</sub>]</p>
+<p>Among all forecasts built from the past, the one that minimizes the mean squared error is the <strong>conditional expectation</strong>: the mean of possible futures, given the past.</p>
+<p>We then write y<sub>t+h</sub> = ŷ<sub>t+h</sub> + ε<sub>t+h</sub>: predictable part + error, with a zero-mean error.</p>
+<p>An AR(p) model is a <strong>linear</strong> approximation of this expectation; the ELM, a <strong>nonlinear</strong> one.</p>
+<p>If the model errors form white noise (non-significant error ACF), no usable information is left in the past.</p></details></section><section class="slide" id="slide-59" aria-label="Slide 59"><h3><span class="num">59</span> Appendix C, Choosing p with AIC or BIC</h3><figure><img src="/assets/course/en/slide-59.webp" srcset="/assets/course/en/slide-59-640.webp 640w, /assets/course/en/slide-59.webp 1280w" sizes="(max-width: 900px) 100vw, 868px" width="1280" height="720" alt="Slide 59: Appendix C, Choosing p with AIC or BIC" loading=lazy></figure><details class="slide-text"><summary>Text of the slide</summary><p>AIC ≈ N · ln(σ̂<sup>2</sup>) + 2(p+1)</p>
+<p>BIC ≈ N · ln(σ̂<sup>2</sup>) + (p+1) · ln N</p>
+<p>σ̂<sup>2</sup>: variance of the training errors;</p>
+<p>keep the p that gives the smallest criterion.</p>
+<p>The first term falls as the model fits better; the second <strong>penalizes</strong> each added coefficient.</p>
+<p>BIC penalizes more than AIC: it picks smaller models.</p>
+<p>Advantage: no validation period needed. Drawback: assumes Gaussian errors.</p></details></section><h2>Go further</h2><ul><li><a href="https://cyrilvoyant.github.io/teaching/solar-forecasting-basics.html">Solar forecasting basics</a>: the whole course as a worked example, with equations, real numbers and code.</li><li><a href="https://cyrilvoyant.github.io/teaching/solar-forecasting-course.html">Course summary and questions answered</a> on the methods site.</li><li>Worked examples: <a href="https://cyrilvoyant.github.io/teaching/stochastic-persistence-worked-example.html">stochastic persistence</a> · <a href="https://cyrilvoyant.github.io/teaching/blend-worked-example.html">BLEND</a> · <a href="https://cyrilvoyant.github.io/teaching/reference-model-comparison.html">persistence, AR and ELM compared</a>.</li><li>Research behind the course: <a href="https://cyrilvoyant.github.io/methods/solar-variability-scv.html">sCV and F</a> · <a href="https://cyrilvoyant.github.io/methods/nice-metrics.html">NICE metrics</a> · <a href="https://cyrilvoyant.github.io/methods/persistence-blend.html">BLEND</a> · <a href="/stories/">all stories</a>.</li></ul><div class="course-nav" aria-label="Slide navigation"><button type="button" data-step="-1" aria-label="Previous slide">←</button><span id="course-pos">1 / 59</span><button type="button" data-step="1" aria-label="Next slide">→</button></div><script>(function(){var s=[].slice.call(document.querySelectorAll('section.slide')),pos=document.getElementById('course-pos'),cur=0;function at(){var y=window.innerHeight*0.35,k=0;s.forEach(function(e,i){if(e.getBoundingClientRect().top<y)k=i;});return k;}function upd(){cur=at();pos.textContent=(cur+1)+' / '+s.length;}function go(d){var i=Math.max(0,Math.min(s.length-1,at()+d));s[i].scrollIntoView({behavior:'smooth',block:'start'});history.replaceState(null,'','#'+s[i].id);}document.querySelectorAll('.course-nav button').forEach(function(b){b.addEventListener('click',function(){go(+b.dataset.step);});});document.addEventListener('keydown',function(e){if(e.altKey||e.ctrlKey||e.metaKey||/INPUT|TEXTAREA|SELECT/.test(e.target.tagName))return;if(e.key==='ArrowRight'||e.key==='j'){e.preventDefault();go(1);}if(e.key==='ArrowLeft'||e.key==='k'){e.preventDefault();go(-1);}});window.addEventListener('scroll',upd,{passive:true});upd();})();</script></main>
+<footer><div class="brand"><a href="https://www.minesparis.psl.eu/annuaire-de-la-recherche/chercheur/cyril-voyant/"><img src="/assets/mines-paris-psl-logo.png" alt="Mines Paris – PSL" width="110" height="68"></a>
+<span>Centre O.I.E., Observation, Impacts, Energy · Mines Paris – PSL</span></div>
+<p><strong>Cyril Voyant</strong>, Research Director (HDR, PhD), Mines Paris – PSL · Centre Observation, Impacts, Energy (O.I.E.), Campus Pierre Laffitte, 1 rue Claude Daunesse, CS 10207, F-06904 Sophia Antipolis Cedex, France</p><p><a href="mailto:cyril.voyant@minesparis.psl.eu">cyril.voyant@minesparis.psl.eu</a> · (+33) 7 86 82 68 63 · <a href="https://www.linkedin.com/in/cyril-voyant-2a7767192/">LinkedIn</a> · <a href="https://www.researchgate.net/profile/Cyril-Voyant">ResearchGate</a> · <a href="https://scholar.google.com/citations?user=aUlP6agAAAAJ">Google Scholar</a> · <a href="https://orcid.org/0000-0003-0242-7377">ORCID</a> · <a href="https://cv.hal.science/cyril-voyant">HAL</a> · <a href="https://github.com/cyrilvoyant">GitHub</a> · <a href="https://person.cyrilvoyant.com/">person.cyrilvoyant.com</a></p><p class="cookies"><a href="#" data-consent-open>Cookies and audience measurement</a></p><p class="thread-foot"><a href="/approach/">People at the center, the model at the core, tools around.</a></p></footer>
+<script src="/assets/consent.js" defer></script>
+</body></html>

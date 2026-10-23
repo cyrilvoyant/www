@@ -84,6 +84,27 @@ ul.news li a { font-weight: 600; }
 .news-list .post-body figure img { max-height: 420px; object-fit: contain; }
 .feed { white-space: nowrap; }
 
+/* The course, slide by slide (L4, 23 October 2026) */
+.course-toc ol { columns: 2; column-gap: 28px; padding-left: 1.3em; }
+.course-toc li { break-inside: avoid; margin-bottom: 4px; }
+section.slide { margin: 26px 0 30px; scroll-margin-top: 12px; }
+section.slide h3 { font-size: 1.05rem; margin: 0 0 8px; }
+section.slide h3 .num { display: inline-block; min-width: 2.1em; padding: 1px 7px; margin-right: 6px; border-radius: 4px; background: var(--soft); color: var(--link); font-variant-numeric: tabular-nums; text-align: center; }
+section.slide figure { margin: 0; }
+section.slide figure img { width: 100%; height: auto; border: 1px solid var(--line); border-radius: 6px; background: #fff; }
+.slide-text { margin-top: 6px; font-size: .95rem; }
+.slide-text summary { cursor: pointer; color: var(--link); font-size: .9rem; }
+.slide-text[open] { padding: 4px 14px 8px; background: var(--paper); border-left: 3px solid var(--line); }
+.slide-table { display: table; margin: 8px 0; font-size: .9rem; }
+.course-nav { position: fixed; right: 16px; bottom: 16px; z-index: 10; display: flex; align-items: center; gap: 8px; padding: 6px 10px;
+  background: var(--paper); border: 1px solid var(--line); border-radius: 999px; box-shadow: 0 4px 14px rgba(23,37,54,.14); font-size: .88rem; }
+.course-nav button { font: inherit; width: 34px; height: 30px; border: 1px solid var(--line); border-radius: 999px; background: var(--bg); color: var(--ink); cursor: pointer; }
+.course-nav button:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+#course-pos { font-variant-numeric: tabular-nums; min-width: 4.2em; text-align: center; }
+.course-card { display: grid; grid-template-columns: 300px 1fr; gap: 20px; align-items: center; margin: 22px 0; padding: 16px; background: var(--paper); border: 1px solid var(--line); border-radius: 8px; }
+.course-card img { width: 100%; height: auto; border: 1px solid var(--line); border-radius: 4px; }
+.course-card h2 { margin: 0 0 6px; font-size: 1.2rem; }
+
 /* Consent banner (audience measurement, loaded only after acceptance) */
 #consent { position: fixed; left: 16px; right: 16px; bottom: 16px; max-width: 640px; margin: 0 auto; z-index: 20;
   background: var(--paper); border: 1px solid var(--line); border-top: 4px solid var(--link); border-radius: 8px;
@@ -100,6 +121,8 @@ footer p { margin: .4em 0; }
 .thread-foot { font-style: italic; }
 
 @media (max-width: 720px) {
+  .course-toc ol { columns: 1; }
+  .course-card { grid-template-columns: 1fr; }
   .news-list article.post { grid-template-columns: 96px 1fr; gap: 12px; }
   .news-list .thumb { width: 96px; height: 72px; }
   .hero, .hero.small { grid-template-columns: 1fr; }
