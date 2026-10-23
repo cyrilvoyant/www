@@ -102,3 +102,6 @@ section.thread { scroll-margin-top: 16px; }
   body { font-size: 16px; }
   nav a[lang] { margin-left: 0; }
 }
+
+/* Subtitle under the H1: the question the page answers */
+.subtitle { font-size: 1.15rem; color: var(--muted); margin: -.2em 0 .8em; font-style: italic; }
