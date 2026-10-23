@@ -105,3 +105,41 @@ section.thread { scroll-margin-top: 16px; }
 
 /* Subtitle under the H1: the question the page answers */
 .subtitle { font-size: 1.15rem; color: var(--muted); margin: -.2em 0 .8em; font-style: italic; }
+
+/* Interactive tools (L6, 23 October 2026): assets/tools/cv-tools.js, checked on /tools/js-tests.html */
+.try { margin: 28px 0; padding: 6px 18px 14px; background: var(--paper); border: 1px solid var(--line); border-top: 4px solid var(--p3); border-radius: 6px; }
+.cvt { margin-top: 8px; }
+.cvt-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 10px 26px; margin: 10px 0; }
+.cvt-row { display: grid; grid-template-columns: 1fr auto auto; align-items: center; gap: 2px 10px; font-size: .95rem; }
+.cvt-row span { grid-column: 1 / -1; }
+.cvt-row span, .cvt-num span, .cvt-data span { font-weight: 600; }
+.cvt-row input[type=range] { width: 100%; accent-color: var(--link); }
+.cvt-row output { min-width: 3em; font-variant-numeric: tabular-nums; font-weight: 600; color: var(--link); }
+.cvt-num { display: flex; align-items: center; gap: 8px; font-size: .95rem; }
+.cvt-num input { width: 6.5em; font: inherit; padding: 3px 6px; border: 1px solid var(--line); border-radius: 4px; }
+.cvt select { font: inherit; padding: 3px 6px; border: 1px solid var(--line); border-radius: 4px; background: var(--paper); }
+.cvt-data { display: block; margin: 8px 0; font-size: .92rem; }
+.cvt-data textarea { display: block; width: 100%; margin-top: 4px; font: .85rem/1.4 ui-monospace, Consolas, monospace; padding: 8px; border: 1px solid var(--line); border-radius: 4px; }
+.cvt-out { margin: 8px 0; padding: 8px 12px; background: var(--soft); border-radius: 6px; }
+.cvt-out p { margin: .3em 0; }
+.cvt-hint, .cvt-note { font-size: .88rem; color: var(--muted); }
+.cvt-table { display: table; font-size: .92rem; margin: 6px 0; }
+.cvt-table tr.fail td { background: #fbe9e7; }
+.cvt-chart { width: 100%; height: auto; max-width: 680px; display: block; }
+.cvt-chart .grid { stroke: #e3e9ef; stroke-width: 1; }
+.cvt-chart text { font-size: 12px; fill: var(--muted); }
+.cvt-chart text.ax { fill: var(--ink); font-size: 13px; }
+.cvt-legend { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: .88rem; margin: 6px 0 0; }
+.cvt-legend i { display: inline-block; width: 18px; height: 3px; margin-right: 6px; vertical-align: middle; }
+
+/* Entry points by reader (home pages) */
+.audience-cta { margin: 26px 0 30px; }
+.audience-cta h2 { margin-top: 0; }
+.cta-grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); }
+.cta-card { display: flex; flex-direction: column; gap: 6px; padding: 16px; border: 1px solid var(--line); border-radius: 8px; text-decoration: none; color: inherit; background: var(--paper); transition: border-color .15s ease, transform .15s ease; }
+.cta-card:hover, .cta-card:focus-visible { border-color: var(--link); transform: translateY(-2px); }
+.cta-kicker { font-size: .78rem; text-transform: uppercase; letter-spacing: .06em; color: var(--link); font-weight: 700; }
+.cta-title { font-size: 1.08rem; font-weight: 700; }
+.cta-text { color: var(--muted); font-size: .93rem; }
+.cta-action { margin-top: auto; font-weight: 700; color: var(--link); }
+@media (prefers-reduced-motion: reduce) { .cta-card { transition: none; } .cta-card:hover { transform: none; } }
