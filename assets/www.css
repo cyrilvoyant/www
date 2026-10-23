@@ -178,3 +178,4 @@ ol.steps li::before { content: counter(s); position: absolute; left: 12px; top: 
 .collab-form .f-msg.wait { background: #eef4fa; color: #172536; }
 .collab-form .f-msg a { color: inherit; }
 .collab-form button[disabled] { opacity: .6; cursor: wait; }
+.news-list article.post > .post-text:first-child { grid-column: 1 / -1; }   /* a post without a thumbnail uses the full width */
