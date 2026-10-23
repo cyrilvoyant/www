@@ -146,3 +146,19 @@ section.thread { scroll-margin-top: 16px; }
 
 /* L8: images served as WebP inside <picture>, the original PNG/JPEG as fallback */
 picture { display: block; }
+
+/* ARTU explorer (teaching/artu-worked-example.html) */
+.cvt-seg { border: 0; padding: 0; margin: 10px 0; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; font-size: .95rem; }
+.cvt-seg legend { font-weight: 600; margin-bottom: 4px; width: 100%; }
+.cvt-seg.small { font-size: .88rem; margin: 0 0 6px; }
+.cvt-btn { font: inherit; font-size: .9rem; padding: 4px 12px; border: 1px solid var(--link); color: var(--link); background: var(--paper); border-radius: 999px; cursor: pointer; }
+.cvt-btn[aria-pressed="true"] { background: var(--link); color: #fff; }
+.cvt-artu { display: grid; grid-template-columns: minmax(220px, 340px) 1fr; gap: 18px; align-items: start; margin-top: 8px; }
+.cvt-mapbox { position: relative; width: 100%; aspect-ratio: 1; border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
+.cvt-mapbox canvas, .cvt-over { position: absolute; inset: 0; width: 100%; height: 100%; }
+.cvt-mapbox canvas { image-rendering: auto; }
+.cvt-over { cursor: crosshair; touch-action: none; }
+.cvt-scale { display: flex; align-items: center; gap: 8px; font-size: .82rem; color: var(--muted); margin: 6px 0; }
+.cvt-scale i { flex: 1; height: 8px; border-radius: 4px; background: linear-gradient(90deg, rgb(7,86,154), #fff, rgb(180,81,58)); border: 1px solid var(--line); }
+.cvt-eq { font-size: 1.05rem; font-variant-numeric: tabular-nums; }
+@media (max-width: 640px) { .cvt-artu { grid-template-columns: 1fr; } }
