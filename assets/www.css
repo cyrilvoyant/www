@@ -76,6 +76,7 @@ ul.news li a { font-weight: 600; }
 .news-list h2 a { text-decoration: none; color: var(--ink); }
 .news-list h2 a:hover { text-decoration: underline; }
 .news-list .authors { font-size: .9rem; margin: 0 0 6px; }
+.news-list .orig { font-size: .85rem; color: var(--muted); font-style: italic; margin: 0 0 4px; }
 .news-list .summary { margin: 0 0 6px; }
 .news-list article.post:has(details[open]) .summary { display: none; }   /* the full text repeats it */
 .news-list details summary { cursor: pointer; color: var(--link); font-size: .95rem; }
