@@ -59,6 +59,30 @@ ul.news { list-style: none; padding: 0; }
 ul.news li { padding: 10px 0; border-bottom: 1px solid var(--line); }
 ul.news li a { font-weight: 600; }
 
+/* Single news page (L3, 23 October 2026): filters, cards with thumbnail, full text opened in place */
+.news-filters { display: flex; flex-wrap: wrap; gap: 6px 8px; align-items: center; margin: 18px 0 6px; }
+.news-filters .lab { font-size: .85rem; font-weight: 600; color: var(--muted); margin: 0 2px 0 8px; }
+.news-filters .lab:first-child { margin-left: 0; }
+.news-filters button { font: inherit; font-size: .88rem; padding: 4px 11px; border: 1px solid var(--line); border-radius: 999px; background: var(--paper); color: var(--ink); cursor: pointer; }
+.news-filters button[aria-pressed="true"] { background: var(--link); border-color: var(--link); color: #fff; }
+.news-filters button:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.news-count { font-size: .88rem; color: var(--muted); margin: 4px 0 10px; }
+.news-list article.post { display: grid; grid-template-columns: 168px 1fr; gap: 18px; padding: 20px 0; border-top: 1px solid var(--line); scroll-margin-top: 16px; }
+.news-list article.post:target { background: var(--soft); }
+.news-list .thumb { width: 168px; height: 112px; object-fit: contain; background: #fff; border: 1px solid var(--line); border-radius: 6px; }
+.news-list .meta { font-size: .85rem; color: var(--muted); margin: 0 0 2px; }
+.news-list .meta .theme { text-transform: none; }
+.news-list h2 { font-size: 1.12rem; margin: 0 0 4px; line-height: 1.35; }
+.news-list h2 a { text-decoration: none; color: var(--ink); }
+.news-list h2 a:hover { text-decoration: underline; }
+.news-list .authors { font-size: .9rem; margin: 0 0 6px; }
+.news-list .summary { margin: 0 0 6px; }
+.news-list article.post:has(details[open]) .summary { display: none; }   /* the full text repeats it */
+.news-list details summary { cursor: pointer; color: var(--link); font-size: .95rem; }
+.news-list .post-body { margin-top: 10px; }
+.news-list .post-body figure img { max-height: 420px; object-fit: contain; }
+.feed { white-space: nowrap; }
+
 /* Consent banner (audience measurement, loaded only after acceptance) */
 #consent { position: fixed; left: 16px; right: 16px; bottom: 16px; max-width: 640px; margin: 0 auto; z-index: 20;
   background: var(--paper); border: 1px solid var(--line); border-top: 4px solid var(--link); border-radius: 8px;
@@ -75,6 +99,8 @@ footer p { margin: .4em 0; }
 .thread-foot { font-style: italic; }
 
 @media (max-width: 720px) {
+  .news-list article.post { grid-template-columns: 96px 1fr; gap: 12px; }
+  .news-list .thumb { width: 96px; height: 72px; }
   .hero, .hero.small { grid-template-columns: 1fr; }
   .hero img { order: -1; width: 120px; height: 120px; }
   .steps4, .split, .figs2 { grid-template-columns: 1fr; }
