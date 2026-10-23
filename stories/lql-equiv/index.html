@@ -26,10 +26,10 @@
 <p>where <strong>α/β</strong> describes how sensitive a tissue is to the size of each fraction (about 3.9 Gy for the rectum). The term <em>d/(α/β)</em> is why large fractions count for more than their dose. The equivalent dose in 2 Gy fractions is then <strong>EQD2 = BED / (1 + 2/(α/β))</strong>.</p>
 <p>The LQ curve keeps bending upward as the dose per fraction grows, which overstates the effect of very large fractions. The <strong>LQL</strong> model keeps the LQ curve up to a <strong>transition dose d_T</strong> (7.8 Gy for the rectum) and continues it as a straight line beyond. LQL-Equiv also handles gaps, two fractions a day and tumour repopulation; the full equations are on the technical page.</p>
 <h2>Where it sits on the complexity ladder</h2>
-<figure><img src="/assets/articles/ladder-lql-equiv-en.png" alt="Complexity ladder: LQL-Equiv stops at the first rung, direct calculation" loading="lazy"><figcaption>Complexity ladder: LQL-Equiv stops at the first rung, direct calculation</figcaption></figure>
+<figure><picture><source srcset="/assets/articles/ladder-lql-equiv-en.webp" type="image/webp"><img src="/assets/articles/ladder-lql-equiv-en.png" alt="Complexity ladder: LQL-Equiv stops at the first rung, direct calculation" loading="lazy" width="1218" height="702"></picture><figcaption>Complexity ladder: LQL-Equiv stops at the first rung, direct calculation</figcaption></figure>
 <p>First rung: <strong>direct calculation</strong>. The link between inputs and outputs is known, so climbing further, to statistics or machine learning, would add data needs and uncertainty without adding anything. AI belongs in every toolbox, not in every solution.</p>
 <h2>The example in figures</h2>
-<figure><img src="/assets/articles/lql-curve-en.png" alt="BED per fraction for the rectum, LQ and LQL" loading="lazy"><figcaption>BED per fraction for the rectum, LQ and LQL</figcaption></figure>
+<figure><picture><source srcset="/assets/articles/lql-curve-en.webp" type="image/webp"><img src="/assets/articles/lql-curve-en.png" alt="BED per fraction for the rectum, LQ and LQL" loading="lazy" width="1301" height="798"></picture><figcaption>BED per fraction for the rectum, LQ and LQL</figcaption></figure>
 <p>One fraction of 15 Gy to the rectum:</p>
 <ul>
 <li>LQ: 15 × (1 + 15/3.9) = <strong>72.7 Gy</strong>;</li>
@@ -58,7 +58,7 @@
 </li>
 <li><strong>The approach behind this work</strong>: <a href="https://cyrilvoyant.github.io/approach.html">Understand before you compute</a></li>
 </ul></main>
-<footer><div class="brand"><a href="https://www.minesparis.psl.eu/annuaire-de-la-recherche/chercheur/cyril-voyant/"><img src="/assets/mines-paris-psl-logo.png" alt="Mines Paris – PSL" width="110" height="68"></a>
+<footer><div class="brand"><a href="https://www.minesparis.psl.eu/annuaire-de-la-recherche/chercheur/cyril-voyant/"><picture><source srcset="/assets/mines-paris-psl-logo.webp" type="image/webp"><img src="/assets/mines-paris-psl-logo.png" alt="Mines Paris – PSL" width="110" height="68"></picture></a>
 <span>Centre O.I.E. (Observation, Impacts, Energy) · Mines Paris – PSL</span></div>
 <p><strong>Cyril Voyant</strong>, Research Director (HDR, PhD), Mines Paris – PSL · Centre Observation, Impacts, Energy (O.I.E.), Campus Pierre Laffitte, 1 rue Claude Daunesse, CS 10207, F-06904 Sophia Antipolis Cedex, France</p><p><a href="mailto:cyril.voyant@minesparis.psl.eu">cyril.voyant@minesparis.psl.eu</a> · (+33) 7 86 82 68 63 · <a href="https://www.linkedin.com/in/cyril-voyant-2a7767192/">LinkedIn</a> · <a href="https://www.researchgate.net/profile/Cyril-Voyant">ResearchGate</a> · <a href="https://scholar.google.com/citations?user=aUlP6agAAAAJ">Google Scholar</a> · <a href="https://orcid.org/0000-0003-0242-7377">ORCID</a> · <a href="https://cv.hal.science/cyril-voyant">HAL</a> · <a href="https://github.com/cyrilvoyant">GitHub</a> · <a href="https://person.cyrilvoyant.com/">person.cyrilvoyant.com</a></p><p class="cookies"><a href="#" data-consent-open>Cookies and audience measurement</a></p><p class="thread-foot"><a href="/approach/">People at the center, the model at the core, tools around.</a></p></footer>
 <script src="/assets/consent.js" defer></script>

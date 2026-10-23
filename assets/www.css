@@ -140,3 +140,6 @@ main details[id] table { display: table; width: 100%; font-size: .9rem; }
 dl.glossary dt { font-weight: 700; margin-top: 10px; scroll-margin-top: 12px; }
 dl.glossary dd { margin: 2px 0 0 0; }
 dl.glossary dt:target, dl.glossary dt:target + dd { background: var(--soft); }
+
+/* L8: images served as WebP inside <picture>, the original PNG/JPEG as fallback */
+picture { display: block; }
