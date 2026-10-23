@@ -21,19 +21,23 @@
 <h2>The question</h2>
 <p>Metastatic differentiated thyroid cancer is often treated with repeated sessions of radioactive iodine. Some tumours respond; others become refractory. Thyroglobulin (Tg), measured in the blood, follows the tumour burden. Which protocol, and for which patient profile?</p>
 <h2>The theory, in plain words</h2>
-<p>Three quantities evolve over the months:
-- the <strong>activity</strong> of the administered iodine decreases over time, and each session adds a new dose to what remains;
-- the <strong>tumour cells</strong> grow at a rate set by their doubling time <em>T_d</em>, and are killed in proportion to the activity present;
-- <strong>thyroglobulin</strong> is produced by the tumour cells and cleared by the body.</p>
+<p>Three quantities evolve over the months:</p>
+<ul>
+<li>the <strong>activity</strong> of the administered iodine decreases over time, and each session adds a new dose to what remains;</li>
+<li>the <strong>tumour cells</strong> grow at a rate set by their doubling time <em>T_d</em>, and are killed in proportion to the activity present;</li>
+<li><strong>thyroglobulin</strong> is produced by the tumour cells and cleared by the body.</li>
+</ul>
 <p>The equations are solved session by session, so a whole protocol can be simulated in seconds. A short doubling time means a fast-growing tumour: that is what separates a refractory profile from a responding one.</p>
 <h2>Where it sits on the complexity ladder</h2>
 <figure><img src="/assets/articles/ladder-thyroid-en.png" alt="Complexity ladder: the thyroid model stops at the second rung, simulation from what is known" loading="lazy"><figcaption>Complexity ladder: the thyroid model stops at the second rung, simulation from what is known</figcaption></figure>
 <p>Second rung: <strong>simulation from a model we understand</strong>. The next step is a <strong>hybrid digital twin</strong>: keep the model, and let a learning method (a frugal extreme learning machine, for example) estimate only what the model does not capture. This is mathematics- and medicine-informed learning, not a black box replacing the model. No learning added where the model meets the need; learning, in hybrid form, where it helps.</p>
 <h2>The example in figures</h2>
 <figure><img src="/assets/articles/thyroid-tg-en.png" alt="Thyroglobulin over 80 months for 1, 2, 4 and 8 sessions, refractory and responding profiles" loading="lazy"><figcaption>Thyroglobulin over 80 months for 1, 2, 4 and 8 sessions, refractory and responding profiles</figcaption></figure>
-<p>With the public demonstrator parameters, 3.7 GBq per session every 3 months:
-- <strong>Refractory profile</strong> (<em>T_d</em> = 9.8 months): thyroglobulin reaches about <strong>1,386 ng/mL</strong> at 79 months after one session, and stays near <strong>12 ng/mL</strong> after eight.
-- <strong>Responding profile</strong> (<em>T_d</em> = 66.6 months): about <strong>14 ng/mL</strong> after one session, and <strong>0.13 ng/mL</strong> after eight.</p>
+<p>With the public demonstrator parameters, 3.7 GBq per session every 3 months:</p>
+<ul>
+<li><strong>Refractory profile</strong> (<em>T_d</em> = 9.8 months): thyroglobulin reaches about <strong>1,386 ng/mL</strong> at 79 months after one session, and stays near <strong>12 ng/mL</strong> after eight.</li>
+<li><strong>Responding profile</strong> (<em>T_d</em> = 66.6 months): about <strong>14 ng/mL</strong> after one session, and <strong>0.13 ng/mL</strong> after eight.</li>
+</ul>
 <p>These are model outputs for two archetypes, not predictions for a patient.</p>
 <h2>What it brings, and its limits</h2>
 <ul>

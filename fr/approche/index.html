@@ -22,13 +22,17 @@
 <h2>1. Commencer par l'approche directe</h2>
 <p>Quand le lien est connu, on le calcule. L'équivalence de dose radiobiologique suit un modèle explicite, vérifié sur 4 438 schémas de traitement (LQL-Equiv). Quand aucune mesure n'existe, la consommation d'un tunnel est simulée à partir de ce que l'on sait de lui (Tunnel Load Simulator). Avant de prévoir le soleil, on décrit la variabilité et la prévisibilité d'un site (sCV et F).</p>
 <h2>2. Quand le modèle ne suffit pas, on hybride</h2>
-<p>C'est la voie que Cyril Voyant préfère. Quand un modèle explicite répond suffisamment au besoin, on n'ajoute pas d'apprentissage sans raison. Quand il ne suffit pas, on le complète, on ne le remplace pas : un apprentissage guidé par la physique, la médecine ou les mathématiques estime seulement ce que le modèle ne capture pas.
-- <strong>Cancer de la thyroïde</strong> : un modèle compartimental de <strong>Marie Fusella Giuntini et Dominique Barbolosi</strong>, avec Cyril Voyant et David Taieb, est la base d'un jumeau numérique hybride en cours (<em>Scientific Reports</em>, 2026).
-- <strong>Prévision solaire</strong> : des prévisions hybrides combinaient déjà en 2012 un modèle météorologique numérique avec ARMA et des réseaux de neurones (<em>Energy</em>, 2012) ; les références cyclostationnaires inscrivent la symétrie du signal dans la prévision (<em>Applied Mathematical Modelling</em>, 2026).</p>
+<p>C'est la voie que Cyril Voyant préfère. Quand un modèle explicite répond suffisamment au besoin, on n'ajoute pas d'apprentissage sans raison. Quand il ne suffit pas, on le complète, on ne le remplace pas : un apprentissage guidé par la physique, la médecine ou les mathématiques estime seulement ce que le modèle ne capture pas.</p>
+<ul>
+<li><strong>Cancer de la thyroïde</strong> : un modèle compartimental de <strong>Marie Fusella Giuntini et Dominique Barbolosi</strong>, avec Cyril Voyant et David Taieb, est la base d'un jumeau numérique hybride en cours (<em>Scientific Reports</em>, 2026).</li>
+<li><strong>Prévision solaire</strong> : des prévisions hybrides combinaient déjà en 2012 un modèle météorologique numérique avec ARMA et des réseaux de neurones (<em>Energy</em>, 2012) ; les références cyclostationnaires inscrivent la symétrie du signal dans la prévision (<em>Applied Mathematical Modelling</em>, 2026).</li>
+</ul>
 <h2>3. Quand les relations sont mal connues, apprendre, seulement tant que cela paie</h2>
-<p>La persistance, puis des références structurées (BLEND, CLIPER, ARTU), des modèles statistiques, des machines à apprentissage frugales (ELM), et seulement ensuite les réseaux profonds ou les modèles de fondation. Chaque marche n'est gardée que si elle bat la précédente sur le même protocole.
-- Une seule ELM prévoit sept signaux du réseau corse à la fois ; à une heure, nRMSE 0,179 pour le solaire et 0,051 pour le thermique (<em>Applied Energy</em>, 2026).
-- Retirer le modèle de ciel clair simplifie la chaîne de prévision, et l'ELM fait aussi bien ou mieux que les références classiques (<em>Solar Energy</em>, 2025).</p>
+<p>La persistance, puis des références structurées (BLEND, CLIPER, ARTU), des modèles statistiques, des machines à apprentissage frugales (ELM), et seulement ensuite les réseaux profonds ou les modèles de fondation. Chaque marche n'est gardée que si elle bat la précédente sur le même protocole.</p>
+<ul>
+<li>Une seule ELM prévoit sept signaux du réseau corse à la fois ; à une heure, nRMSE 0,179 pour le solaire et 0,051 pour le thermique (<em>Applied Energy</em>, 2026).</li>
+<li>Retirer le modèle de ciel clair simplifie la chaîne de prévision, et l'ELM fait aussi bien ou mieux que les références classiques (<em>Solar Energy</em>, 2025).</li>
+</ul>
 <h2>4. L'intelligence artificielle, à sa place</h2>
 <p>L'apprentissage automatique, l'apprentissage profond et les modèles de langage sont précieux et utilisés tous les jours. Ils restent des outils autour d'un cœur compris et validé. Dans WebSemantic, un modèle de langage lit la demande, un validateur interroge dès qu'une entrée manque, et un code validé calcule chaque nombre.</p>
 <h2>5. La confiance se démontre</h2>

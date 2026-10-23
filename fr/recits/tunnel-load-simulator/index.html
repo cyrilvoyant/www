@@ -21,11 +21,13 @@
 <h2>La question</h2>
 <p>Combien d'électricité consomme un tunnel routier, heure par heure, et avec quelle incertitude ? La réponse compte pour dimensionner un raccordement, choisir les technologies d'éclairage et de ventilation, ou étudier un stockage local d'énergie. Les séries mesurées sont rares et propres à chaque site.</p>
 <h2>La théorie, en clair</h2>
-<p>La puissance appelée à chaque instant est la somme de quatre parts, plus une petite fluctuation aléatoire :
-- une <strong>base fixe</strong> (contrôle, systèmes de sécurité) ;
-- les <strong>auxiliaires</strong> (pompes, équipements), proportionnels à la longueur et à la profondeur du tunnel ;
-- l'<strong>éclairage</strong>, qui dépend de la lumière du jour aux têtes et du trafic ;
-- la <strong>ventilation</strong>, qui suit le trafic avec ses pointes du matin et du soir, et augmente avec la pente et l'altitude. Elle bondit lors d'<strong>épisodes de pollution</strong> et d'<strong>accidents</strong> tirés au hasard.</p>
+<p>La puissance appelée à chaque instant est la somme de quatre parts, plus une petite fluctuation aléatoire :</p>
+<ul>
+<li>une <strong>base fixe</strong> (contrôle, systèmes de sécurité) ;</li>
+<li>les <strong>auxiliaires</strong> (pompes, équipements), proportionnels à la longueur et à la profondeur du tunnel ;</li>
+<li>l'<strong>éclairage</strong>, qui dépend de la lumière du jour aux têtes et du trafic ;</li>
+<li>la <strong>ventilation</strong>, qui suit le trafic avec ses pointes du matin et du soir, et augmente avec la pente et l'altitude. Elle bondit lors d'<strong>épisodes de pollution</strong> et d'<strong>accidents</strong> tirés au hasard.</li>
+</ul>
 <p>Chaque année est simulée de nombreuses fois avec des tirages aléatoires différents (<strong>Monte Carlo</strong>). On obtient une médiane et une bande P10–P90 plutôt qu'une seule courbe.</p>
 <h2>Où l'on se situe sur l'échelle de la complexité</h2>
 <figure><img src="/assets/articles/ladder-tls-fr.png" alt="Échelle de la complexité : le simulateur s&#x27;arrête à la deuxième marche, la simulation à partir de ce que l&#x27;on sait" loading="lazy"><figcaption>Échelle de la complexité : le simulateur s&#x27;arrête à la deuxième marche, la simulation à partir de ce que l&#x27;on sait</figcaption></figure>
@@ -34,10 +36,12 @@
 <figure><img src="/assets/articles/tls-components-fr.png" alt="Un jour de semaine : base fixe, auxiliaires, éclairage et ventilation empilés" loading="lazy"><figcaption>Un jour de semaine : base fixe, auxiliaires, éclairage et ventilation empilés</figcaption></figure>
 <p>Un jour de semaine de janvier, la ventilation porte les deux pointes de trafic ; l'éclairage monte la nuit et aux heures de transition.</p>
 <figure><img src="/assets/articles/tls-curve-fr.png" alt="Une semaine : médiane et bande P10–P90 sur 20 tirages" loading="lazy"><figcaption>Une semaine : médiane et bande P10–P90 sur 20 tirages</figcaption></figure>
-<p>Sur une année, le tunnel de 1,5 km de l'exemple public donne :
-- une médiane de 3 233 MWh (P10 3 230, P90 3 237) ;
-- une pointe de 873 kW et une moyenne de 369 kW, soit un facteur de charge de 0,42 ;
-- 2 156 kWh par mètre et par an.</p>
+<p>Sur une année, le tunnel de 1,5 km de l'exemple public donne :</p>
+<ul>
+<li>une médiane de 3 233 MWh (P10 3 230, P90 3 237) ;</li>
+<li>une pointe de 873 kW et une moyenne de 369 kW, soit un facteur de charge de 0,42 ;</li>
+<li>2 156 kWh par mètre et par an.</li>
+</ul>
 <h2>Ce que cela apporte, et les limites</h2>
 <ul>
 <li><strong>Apports</strong> : des études d'avant-projet rapides et transparentes (technologie d'éclairage, type de ventilation, niveau de trafic) ; des profils de charge synthétiques pour la recherche sur la gestion de l'énergie et les renouvelables en tunnel ; un cas d'enseignement clair de l'incertitude Monte Carlo.</li>

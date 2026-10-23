@@ -26,11 +26,13 @@
 <p><strong>Un score honnête.</strong> Les erreurs sont cumulées sur toutes les mailles, toutes les échéances de 1 à 24 heures et toutes les heures de test où le Soleil est à plus de 5° au-dessus de l'horizon. Le nRMSE est divisé par la moyenne des observations retenues de l'année de test, 407,9 W/m².</p>
 <h2>L'exemple en chiffres</h2>
 <figure><img src="/assets/articles/satellite-tradeoff-fr.png" alt="Erreur cumulée en fonction du nombre de paramètres stockés par chaque modèle (échelle log) : l&#x27;ELM par maille est le point le plus bas ; lire tout le champ déplace les modèles vers la droite sans les faire descendre" loading="lazy"><figcaption>Erreur cumulée en fonction du nombre de paramètres stockés par chaque modèle (échelle log) : l&#x27;ELM par maille est le point le plus bas ; lire tout le champ déplace les modèles vers la droite sans les faire descendre</figcaption></figure>
-<p>Les données sont le rayonnement HelioClim-3 (méthode Heliosat-2, images Meteosat, service SoDa) sur 1 148 points au-dessus de la Corse, au pas horaire, avec 2005 pour l'apprentissage et 2006 pour le test.
-- L'ELM par maille atteint un nRMSE de 0,308 avec environ 100 000 paramètres stockés ; l'ELM sur tout le champ atteint 0,355 avec environ 100 millions.
-- En W/m² : 0,308 × 407,9 ≈ 126 W/m², contre environ 145 W/m² pour l'ELM sur tout le champ.
-- Un voisinage 3 × 3 n'aide pas non plus (0,3087 contre 0,3077 pour une seule maille).
-- La persistance 24 h obtient 0,396 et BLEND 0,376 : tous les modèles appris les battent.</p>
+<p>Les données sont le rayonnement HelioClim-3 (méthode Heliosat-2, images Meteosat, service SoDa) sur 1 148 points au-dessus de la Corse, au pas horaire, avec 2005 pour l'apprentissage et 2006 pour le test.</p>
+<ul>
+<li>L'ELM par maille atteint un nRMSE de 0,308 avec environ 100 000 paramètres stockés ; l'ELM sur tout le champ atteint 0,355 avec environ 100 millions.</li>
+<li>En W/m² : 0,308 × 407,9 ≈ 126 W/m², contre environ 145 W/m² pour l'ELM sur tout le champ.</li>
+<li>Un voisinage 3 × 3 n'aide pas non plus (0,3087 contre 0,3077 pour une seule maille).</li>
+<li>La persistance 24 h obtient 0,396 et BLEND 0,376 : tous les modèles appris les battent.</li>
+</ul>
 <h2>Ce que cela apporte, et les limites</h2>
 <ul>
 <li><strong>Apports</strong> : un protocole où seule l'entrée change, pour que la valeur de l'information spatiale soit mesurée et non supposée ; un nombre de paramètres à côté de chaque erreur, dans l'esprit de la démarche frugale ; un code qui reconstruit les tableaux en quelques secondes.</li>

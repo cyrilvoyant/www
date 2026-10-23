@@ -21,14 +21,16 @@
 <h2>La question</h2>
 <p>Un modèle de langage peut-il lancer une simulation scientifique pour quelqu'un ? Il le peut, mais il comble volontiers ce qui n'a pas été dit : « un faible courant ascendant » devient 0,1 m/s, « la dose habituelle » devient 3 Gy, et le code tourne sur des valeurs que personne n'a données. Le résultat paraît précis et peut être faux.</p>
 <h2>La théorie, en clair</h2>
-<p>Chaque code est décrit une fois, dans un <strong>contrat</strong> : ce que signifie chaque variable, son unité, ce qui peut être supposé par défaut et ce qui doit être demandé. Chaque entrée d'un scénario porte sa valeur, son unité, son origine (dite par la personne, conversion d'unité, défaut déclaré, hypothèse) et l'accord de la personne. La règle est simple :
-- <strong>exécuter</strong> seulement si chaque entrée nécessaire est donnée, ou est une hypothèse sourcée que la personne a acceptée, et si chaque unité et chaque contrainte sont respectées ;
-- <strong>clarifier</strong> si une entrée manque, est ambiguë ou n'est pas acceptée ;
-- <strong>refuser</strong> si la demande sort du domaine du code, ou si les fichiers du code ne correspondent pas à leur empreinte.</p>
+<p>Chaque code est décrit une fois, dans un <strong>contrat</strong> : ce que signifie chaque variable, son unité, ce qui peut être supposé par défaut et ce qui doit être demandé. Chaque entrée d'un scénario porte sa valeur, son unité, son origine (dite par la personne, conversion d'unité, défaut déclaré, hypothèse) et l'accord de la personne. La règle est simple :</p>
+<ul>
+<li><strong>exécuter</strong> seulement si chaque entrée nécessaire est donnée, ou est une hypothèse sourcée que la personne a acceptée, et si chaque unité et chaque contrainte sont respectées ;</li>
+<li><strong>clarifier</strong> si une entrée manque, est ambiguë ou n'est pas acceptée ;</li>
+<li><strong>refuser</strong> si la demande sort du domaine du code, ou si les fichiers du code ne correspondent pas à leur empreinte.</li>
+</ul>
 <p>Le validateur n'invente jamais de valeur. Le code scientifique est figé sur une version précise, vérifié avant chaque exécution, et rend ses résultats avec la trace complète de l'origine de chaque nombre.</p>
 <h2>Où l'on se situe sur l'échelle de la complexité</h2>
-<figure><img src="/assets/articles/ladder-websemantic-fr.png" alt="Échelle de la complexité : les codes restent sur les marches basses ; le modèle de langage est une interface à côté" loading="lazy"><figcaption>Échelle de la complexité : les codes restent sur les marches basses ; le modèle de langage est une interface à côté</figcaption></figure>
-<p>Les codes restent sur les marches basses : calcul direct et simulation. Le modèle de langage est une <strong>interface à côté de l'échelle</strong>, pas une marche qui calcule. L'IA : indispensable dans la boîte à outils, jamais obligatoire dans la solution.</p>
+<figure><img src="/assets/articles/ladder-websemantic-fr.png" alt="Échelle de la complexité : un modèle de langage, réseau profond sur la marche du haut, lit la demande ; les variables validées descendent vers les marches basses, où le calcul reste" loading="lazy"><figcaption>Échelle de la complexité : un modèle de langage, réseau profond sur la marche du haut, lit la demande ; les variables validées descendent vers les marches basses, où le calcul reste</figcaption></figure>
+<p>WebSemantic utilise bien la marche du haut : un grand modèle de langage, un réseau profond, <strong>lit la demande</strong>. Mais il ne calcule rien : il transmet des variables validées aux marches basses, calcul direct et simulation, où les <strong>codes validés calculent</strong>. L'IA : indispensable dans la boîte à outils, jamais obligatoire dans la solution.</p>
 <figure><img src="/assets/articles/websemantic-flow-fr.png" alt="La chaîne : demande, modèle de langage, validateur, code validé, résultat" loading="lazy"><figcaption>La chaîne : demande, modèle de langage, validateur, code validé, résultat</figcaption></figure>
 <h2>L'exemple en chiffres</h2>
 <p>Un scénario complet de recherche en radiothérapie (rectum et prostate, 39 fractions de 2 Gy, chaque entrée donnée et acceptée) : le validateur répond <strong>exécuter</strong>, et LQL-Equiv renvoie une EQD2 de 78,0 Gy. Retirez la dose par fraction du même scénario : la réponse devient <strong>clarifier</strong>, « une valeur explicite ou une hypothèse acceptée est nécessaire », et rien n'est calculé.</p>
@@ -45,8 +47,12 @@
 <li><strong>Code</strong> : github.com/cyrilvoyant/websemantic · archive doi :10.5281/zenodo.23238902 · <code>pip install websemantic</code> · instructions pour les agents dans <code>llm.md</code></li>
 <li><strong>Les codes pilotés</strong> :</li>
 <li>Tunnel Load Simulator, <em>SoftwareX</em> 35, 102946 (2026) ;</li>
-<li>LQL-Equiv-web, <em>SoftwareX</em> 36, 103085 (2026).</li>
-<li><strong>La démarche derrière ce travail</strong> : <a href="https://cyrilvoyant.github.io/approche.html">Comprendre avant de calculer</a></li>
+<li>
+<p>LQL-Equiv-web, <em>SoftwareX</em> 36, 103085 (2026).</p>
+</li>
+<li>
+<p><strong>La démarche derrière ce travail</strong> : <a href="https://cyrilvoyant.github.io/approche.html">Comprendre avant de calculer</a></p>
+</li>
 </ul></main>
 <footer><div class="brand"><a href="https://www.minesparis.psl.eu/annuaire-de-la-recherche/chercheur/cyril-voyant/"><img src="/assets/mines-paris-psl-logo.png" alt="Mines Paris – PSL" width="110" height="68"></a>
 <span>Centre O.I.E., Observation, Impacts, Énergie · Mines Paris – PSL</span></div>

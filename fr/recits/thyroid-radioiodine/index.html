@@ -21,19 +21,23 @@
 <h2>La question</h2>
 <p>Le cancer différencié de la thyroïde métastatique est souvent traité par des séances répétées d'iode radioactif. Certaines tumeurs répondent, d'autres deviennent réfractaires. La thyroglobuline (Tg), dosée dans le sang, suit la masse tumorale. Quel protocole, et pour quel profil de patient ?</p>
 <h2>La théorie, en clair</h2>
-<p>Trois grandeurs évoluent au fil des mois :
-- l'<strong>activité</strong> de l'iode administré décroît avec le temps, et chaque séance ajoute une nouvelle dose à ce qui reste ;
-- les <strong>cellules tumorales</strong> croissent à un rythme fixé par leur temps de doublement <em>T_d</em>, et sont détruites en proportion de l'activité présente ;
-- la <strong>thyroglobuline</strong> est produite par les cellules tumorales et éliminée par l'organisme.</p>
+<p>Trois grandeurs évoluent au fil des mois :</p>
+<ul>
+<li>l'<strong>activité</strong> de l'iode administré décroît avec le temps, et chaque séance ajoute une nouvelle dose à ce qui reste ;</li>
+<li>les <strong>cellules tumorales</strong> croissent à un rythme fixé par leur temps de doublement <em>T_d</em>, et sont détruites en proportion de l'activité présente ;</li>
+<li>la <strong>thyroglobuline</strong> est produite par les cellules tumorales et éliminée par l'organisme.</li>
+</ul>
 <p>Les équations sont résolues séance par séance : un protocole entier se simule en quelques secondes. Un temps de doublement court signifie une tumeur qui croît vite ; c'est ce qui distingue un profil réfractaire d'un profil répondeur.</p>
 <h2>Où l'on se situe sur l'échelle de la complexité</h2>
 <figure><img src="/assets/articles/ladder-thyroid-fr.png" alt="Échelle de la complexité : le modèle thyroïde s&#x27;arrête à la deuxième marche, la simulation à partir de ce que l&#x27;on sait" loading="lazy"><figcaption>Échelle de la complexité : le modèle thyroïde s&#x27;arrête à la deuxième marche, la simulation à partir de ce que l&#x27;on sait</figcaption></figure>
 <p>Deuxième marche : la <strong>simulation à partir d'un modèle que l'on comprend</strong>. L'étape suivante est un <strong>jumeau numérique hybride</strong> : garder le modèle, et laisser une méthode d'apprentissage (une machine à apprentissage extrême frugale, par exemple) estimer seulement ce que le modèle ne capture pas. C'est un apprentissage guidé par les mathématiques et la médecine, pas une boîte noire à la place du modèle. Pas d'apprentissage ajouté quand le modèle répond au besoin ; de l'apprentissage, en hybride, là où il aide.</p>
 <h2>L'exemple en chiffres</h2>
 <figure><img src="/assets/articles/thyroid-tg-fr.png" alt="Thyroglobuline sur 80 mois pour 1, 2, 4 et 8 séances, profils réfractaire et répondeur" loading="lazy"><figcaption>Thyroglobuline sur 80 mois pour 1, 2, 4 et 8 séances, profils réfractaire et répondeur</figcaption></figure>
-<p>Avec les paramètres des démonstrateurs publics, 3,7 GBq par séance tous les 3 mois :
-- <strong>Profil réfractaire</strong> (<em>T_d</em> = 9,8 mois) : la thyroglobuline atteint environ <strong>1 386 ng/mL</strong> à 79 mois après une séance, et reste vers <strong>12 ng/mL</strong> après huit.
-- <strong>Profil répondeur</strong> (<em>T_d</em> = 66,6 mois) : environ <strong>14 ng/mL</strong> après une séance, et <strong>0,13 ng/mL</strong> après huit.</p>
+<p>Avec les paramètres des démonstrateurs publics, 3,7 GBq par séance tous les 3 mois :</p>
+<ul>
+<li><strong>Profil réfractaire</strong> (<em>T_d</em> = 9,8 mois) : la thyroglobuline atteint environ <strong>1 386 ng/mL</strong> à 79 mois après une séance, et reste vers <strong>12 ng/mL</strong> après huit.</li>
+<li><strong>Profil répondeur</strong> (<em>T_d</em> = 66,6 mois) : environ <strong>14 ng/mL</strong> après une séance, et <strong>0,13 ng/mL</strong> après huit.</li>
+</ul>
 <p>Ce sont des sorties du modèle pour deux archétypes, pas des prédictions pour un patient.</p>
 <h2>Ce que cela apporte, et les limites</h2>
 <ul>

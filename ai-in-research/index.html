@@ -1,0 +1,160 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI in research: the AI Act, a lab charter and a toolbox for researchers | Cyril Voyant</title><meta name="description" content="Generative AI now writes code, drafts papers and reviews data in every laboratory. The European AI Act sets rules for what we build and what we transfer. Here is what changes for researchers, the timeline in Europe and in France, how the rest of the world compares, who is responsible when research code becomes a product, and a toolbox a lab can adopt in a few hours per project."><meta name="author" content="Cyril Voyant">
+<link rel="canonical" href="https://www.cyrilvoyant.com/ai-in-research/"><link rel="alternate" hreflang="en" href="https://www.cyrilvoyant.com/ai-in-research/"><link rel="alternate" hreflang="fr" href="https://www.cyrilvoyant.com/fr/ia-dans-la-recherche/"><link rel="alternate" hreflang="x-default" href="https://www.cyrilvoyant.com/ai-in-research/">
+<meta property="og:type" content="article"><meta property="og:title" content="AI in research: the AI Act, a lab charter and a toolbox for researchers"><meta property="og:description" content="Generative AI now writes code, drafts papers and reviews data in every laboratory. The European AI Act sets rules for what we build and what we transfer. Here is what changes for researchers, the timeline in Europe and in France, how the rest of the world compares, who is responsible when research code becomes a product, and a toolbox a lab can adopt in a few hours per project."><meta property="og:url" content="https://www.cyrilvoyant.com/ai-in-research/">
+<link rel="icon" href="/assets/favicon.svg"><link rel="stylesheet" href="/assets/site.css"><link rel="stylesheet" href="/assets/www.css"><link rel="stylesheet" href="/assets/nav.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "@id": "https://www.cyrilvoyant.com/ai-in-research#page", "url": "https://www.cyrilvoyant.com/ai-in-research/", "name": "AI in research: the AI Act, a lab charter and a toolbox for researchers", "description": "Generative AI now writes code, drafts papers and reviews data in every laboratory. The European AI Act sets rules for what we build and what we transfer. Here is what changes for researchers, the timeline in Europe and in France, how the rest of the world compares, who is responsible when research code becomes a product, and a toolbox a lab can adopt in a few hours per project.", "inLanguage": "en", "isPartOf": {"@id": "https://www.cyrilvoyant.com/#website"}, "author": {"@id": "https://person.cyrilvoyant.com/#cyril-voyant"}, "publisher": {"@id": "https://person.cyrilvoyant.com/#cyril-voyant"}, "about": [{"@id": "https://cyrilvoyant.github.io/approach.html#principle-5"}], "keywords": ["Demonstrate trust", "Research practice"], "workTranslation": {"@id": "https://www.cyrilvoyant.com/fr/ia-dans-la-recherche#page"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.cyrilvoyant.com/"}, {"@type": "ListItem", "position": 2, "name": "Stories", "item": "https://www.cyrilvoyant.com/stories/"}, {"@type": "ListItem", "position": 3, "name": "AI in research: the AI Act, a lab charter and a toolbox for researchers", "item": "https://www.cyrilvoyant.com#"}]}]}</script></head>
+<body><a class="skip" href="#main">Skip to content</a><div class="xs-bar" role="navigation" aria-label="Main navigation"><div class="xs-in"><a class="xs-name" href="/">Cyril Voyant</a><a href="/stories/" class="xs-here" aria-current="page">The story</a><a href="/latest-publications-and-news/">News</a><a href="/teaching/">Teaching</a><a href="https://cyrilvoyant.github.io/">Methods & Codes</a><a href="/about/">About</a><a class="xs-lang" href="/fr/ia-dans-la-recherche/" lang="fr" hreflang="fr">Français</a></div></div>
+<header><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/stories/">Stories</a> › <span>AI in research: the AI Act, a lab charter and a toolbox for researchers</span></nav></header>
+<main id="main"><h1>AI in research: the AI Act, a lab charter and a toolbox for researchers</h1><aside class="thread step" style="--c:#b07d12"><span class="principle">Step of the story · Demonstrate trust</span><a href="/approach/">The approach</a><p>Judge against a reference, publish code, data and limits, make research findable and reusable. Principle 5: Trust is demonstrated.</p></aside><p class="lead">Generative AI now writes code, drafts papers and reviews data in every laboratory. The European AI Act sets rules for what we build and what we transfer. Here is what changes for researchers, the timeline in Europe and in France, how the rest of the world compares, who is responsible when research code becomes a product, and a toolbox a lab can adopt in a few hours per project.</p>
+<p><strong>Cyril Voyant</strong>, Mines Paris – PSL, Centre O.I.E. · status on 23 October 2026 · not legal advice: check with your institution's legal service</p>
+<section class="brief">
+<p><strong>In brief</strong></p>
+<ul>
+<li>Research done only for research is <strong>outside the AI Act</strong> (art. 2(6) and 2(8)). The rules start when a model is <strong>placed on the market or put into service</strong>, for example when a partner deploys it in an energy system, which the Act classes as high-risk (Annex III).</li>
+<li>The deadlines moved in 2026: transparency rules apply since <strong>2 August 2026</strong>, high-risk systems of Annex III from <strong>2 December 2027</strong>, AI in regulated products from <strong>2 August 2028</strong> (Regulation (EU) 2026/1744).</li>
+<li>A lab does not need a compliance department: a one-page <strong>charter</strong>, a <strong>data card and a model card</strong>, a <strong>minimal test plan</strong> and <strong>six extra fields in the data management plan</strong> make a project audit-ready in about two hours, six to eight for a transfer to industry.</li>
+</ul>
+</section>
+<h2>What AI changes in research</h2>
+<p>AI speeds up what used to take days: writing code, summarizing literature, cleaning data, drafting text. It also creates new risks for science itself: invented references, fluent but wrong code, papers produced at industrial scale, models nobody can reproduce, and results that depend on a tool whose version changes without notice. The answer is the same as for any scientific tool: <strong>say what was used, check it, document it, and make it reproducible</strong>. Trust is not claimed, it is demonstrated (see <a href="/stories/questioning-research/">questioning how we do research</a>).</p>
+<h2>The AI Act in plain words</h2>
+<ul>
+<li><strong>One logic: the risk of the use.</strong> Some uses are banned (manipulation, social scoring), some are high-risk and strictly regulated (critical infrastructure such as energy, medical devices, education, employment), some carry transparency duties (chatbots, synthetic content), and the rest is free.</li>
+<li><strong>Two main roles.</strong> The <strong>provider</strong> develops a system and places it on the market or puts it into service under its own name (art. 3(3), 16). The <strong>deployer</strong> uses it under its authority (art. 26). Anyone who puts their name on a system, substantially modifies it or changes its purpose can become the provider (art. 25).</li>
+<li><strong>Research is exempt, under conditions.</strong> Systems and models developed and put into service <strong>for the sole purpose of scientific research</strong> are outside the Act (art. 2(6)), and so are research, testing and development <strong>before</strong> placing on the market, except tests in real-world conditions (art. 2(8)). Free and open-source components are largely exempt unless they are high-risk, banned, or subject to transparency duties (art. 2(12)).</li>
+<li><strong>Generative AI.</strong> The obligations of August 2025 bind the <strong>providers</strong> of general-purpose models (OpenAI, Mistral, Google...), not the researchers who use them. Labeling synthetic content (art. 50) mainly binds providers and, for published deepfakes or texts informing the public without human editorial control, deployers. Declaring AI use in a paper or a thesis is required by <strong>publishers, funders and research-integrity rules</strong> (no AI as an author, disclosure of use), more than by the Act itself.</li>
+<li><strong>AI literacy (art. 4).</strong> Organizations that provide or deploy AI systems take measures so that their staff understand them; the 2026 amendment softened this into a duty of means, with support from the Commission and Member States.</li>
+</ul>
+<h2>The timeline in Europe and in France</h2>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>What applies</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 August 2024</td>
+<td>The AI Act (Regulation (EU) 2024/1689) enters into force</td>
+</tr>
+<tr>
+<td>2 February 2025</td>
+<td>Banned practices; AI literacy</td>
+</tr>
+<tr>
+<td>2 August 2025</td>
+<td>Obligations of providers of general-purpose AI models; governance; penalties</td>
+</tr>
+<tr>
+<td>27 July 2026</td>
+<td>Digital omnibus on AI (Regulation (EU) 2026/1744) in force: high-risk deadlines postponed</td>
+</tr>
+<tr>
+<td>2 August 2026</td>
+<td>Transparency obligations (art. 50) and most other provisions; national market surveillance</td>
+</tr>
+<tr>
+<td>2 December 2026</td>
+<td>End of the grace period for marking synthetic content of systems already on the market (art. 50(2))</td>
+</tr>
+<tr>
+<td>9 December 2026</td>
+<td>New Product Liability Directive (EU) 2024/2853: software is a product</td>
+</tr>
+<tr>
+<td>2 December 2027</td>
+<td>High-risk systems of Annex III (energy, education, employment...)</td>
+</tr>
+<tr>
+<td>2 August 2028</td>
+<td>High-risk AI embedded in regulated products (Annex I: machinery, medical devices...)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>In France</strong>, a bill adapting national law to EU law (adopted by the Senate on 18 February 2026, examined by the National Assembly in autumn 2026) organizes supervision: the <strong>DGCCRF</strong> as coordinator and single point of contact, the <strong>CNIL</strong> for banned practices and part of the high-risk uses, <strong>Arcom</strong> for synthetic content, the <strong>ACPR</strong> for finance, with technical support from ANSSI and PEReN. Until the law is passed, the European rules apply directly; the designation of authorities is what remains to be settled.</p>
+<h2>Elsewhere: no equivalent of the AI Act, but rules everywhere</h2>
+<table>
+<thead>
+<tr>
+<th>Region</th>
+<th>Approach (October 2026)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>United States</strong></td>
+<td>No federal AI law. A December 2025 executive order pushes for a national framework that would override state laws, but Congress has not passed it. State laws apply: California (frontier model transparency) and Texas since January 2026, Colorado from January 2027.</td>
+</tr>
+<tr>
+<td><strong>China</strong></td>
+<td>Rules by use case: generative AI services (2023), algorithm filing, mandatory labeling of AI-generated content since 1 September 2025, enforced by the Cyberspace Administration.</td>
+</tr>
+<tr>
+<td><strong>South Korea</strong></td>
+<td>The closest equivalent: a horizontal AI Basic Act in force since 22 January 2026 (high-impact AI, transparency, local representative for foreign firms), with a one-year grace period on fines.</td>
+</tr>
+<tr>
+<td><strong>Japan</strong></td>
+<td>AI Promotion Act (2025): a framework to promote and coordinate, without penalties; guidelines for businesses.</td>
+</tr>
+<tr>
+<td><strong>Canada, Brazil</strong></td>
+<td>Canada's federal AI bill lapsed in 2025; Brazil's bill, close to the European model, passed the Senate in December 2024 and was still before the Chamber at our last check.</td>
+</tr>
+</tbody>
+</table>
+<p>What it means for a European lab: partners abroad work under different, often lighter rules, but <strong>the AI Act reaches any system whose output is used in the EU</strong> (art. 2(1)). A shared framework is what makes collaboration safe: without it, nobody knows who answers for a model once it leaves the lab.</p>
+<h2>Who is responsible when research code becomes a product?</h2>
+<figure><img src="/assets/articles/ai-responsibility-en.png" alt="A model written by three labs, one of them an Asian partner, shared under a licence and a consortium agreement; an EU industrial company integrates it into an energy management system and becomes its provider; the grid operator deploys it; the partner deploys it in its own country under local law; civil liability and contracts cover the whole chain" loading="lazy"><figcaption>A model written by three labs, one of them an Asian partner, shared under a license and a consortium agreement; an EU industrial company integrates it into an energy management system and becomes its provider; the grid operator deploys it; the partner deploys it in its own country under local law; civil liability and contracts cover the whole chain</figcaption></figure>
+<p>A typical case: a forecasting model written in part by three laboratories, one in France, one elsewhere in the EU and one at an Asian partner, within a joint project. An industrial company reuses the code in an energy management system sold in Europe.</p>
+<ul>
+<li><strong>While the code serves research</strong>, the three labs are outside the AI Act. They remain answerable for scientific integrity, for the documentation they deliver and for the terms of the license and the consortium agreement.</li>
+<li><strong>When the company puts the system into service under its name</strong>, it becomes the <strong>provider</strong>: risk management, technical file, conformity assessment and CE marking, since energy management is high-risk (Annex III, from 2 December 2027). The grid operator that uses it is the <strong>deployer</strong>: human oversight, monitoring, logs.</li>
+<li><strong>If the partner deploys the model in its own country</strong>, local law applies (for example the Korean Basic Act or the Chinese labeling rules); the AI Act applies only if the output is used in the EU.</li>
+<li><strong>Civil liability</strong> follows the new Product Liability Directive from 9 December 2026: software counts as a product, but free and open-source software supplied outside a commercial activity is excluded. Everything else is settled by <strong>contracts</strong>: who may reuse the code, for what purpose, with which warranties and which duty to inform.</li>
+</ul>
+<p>The practical lesson: <strong>write the transfer into the contract before the code leaves the lab</strong>, and hand over a documented, tested model. A model without documentation leaves its new owner with a risk nobody can measure.</p>
+<h2>What a lab can do: the example of the O.I.E. framework</h2>
+<p>At the Centre O.I.E. (Mines Paris – PSL, about 30 people), a FAIR + AI framework has been drafted since 2025 and is being finalized, for deployment from 2027. Its main lines:</p>
+<ul>
+<li><strong>A one-page charter signed by every member</strong>: generative AI allowed as an assistant for writing, code and figures, with explicit mention of its use; human review of everything it produces; minimal documentation (data card, model card, versioned Git repository with README); every AI project in a register, reassessed when it moves from research to industry; a data management plan with six AI fields.</li>
+<li><strong>Light roles, about 0.3 full-time equivalent in total</strong>: an AI compliance lead (register, regulatory watch, partners), a FAIR data steward (data management plans, data cards, licences, GDPR) and an MLOps and quality referent (model cards, test plans, drift), plus an ethics committee of four people meeting each quarter for sensitive projects.</li>
+<li><strong>Six steps per project</strong>: register (5 minutes); data management plan with AI fields (1 hour); data card and model card (2 hours); minimal test plan (2 to 3 hours); README with the AI-use statement (30 minutes); for a transfer, an audit-ready file (one day).</li>
+<li><strong>Indicators</strong>: at least 95 % of projects documented, less than five days between project start and an enriched plan, partner satisfaction above 8/10.</li>
+</ul>
+<p>At the institution level, Mines Paris – PSL's legal service has built, with the research centers, a <strong>self-assessment decision tree</strong>: who is the actor and in which role, the essential questions, the impacts, the qualification of the AI system in the risk pyramid, the conditions of use and of making it available. Its purpose is to find the <strong>tipping point</strong> where a project enters the scope of the AI Act, and to adapt the contract and its technical annex in time. It is a good example of what an institution can offer its researchers.</p>
+<h2>The toolbox</h2>
+<p><strong>1. Situate the project.</strong> Research only, transfer, or deployment? Who will be provider and deployer? Which risk class? Real-world tests are not covered by the research exemption.</p>
+<p><strong>2. State the use of AI.</strong> In a paper, a thesis, a report or a README: which tool, which version, for what, checked by whom and when. Example: <em>"Parts of the data-loading code were drafted with GitHub Copilot (2026); all functions were reviewed and unit-tested by A. Author on 12 March 2026."</em></p>
+<p><strong>3. Keep a human in charge.</strong> No AI as an author; every reference, equation and line of code checked by a named person.</p>
+<p><strong>4. Document the data (data card).</strong> Origin, period, volume, variables and units, preprocessing, quality, known biases, license or legal basis, transfers outside the EU, conditions of reuse.</p>
+<p><strong>5. Document the model (model card).</strong> Name and version, architecture, training and test data with the split, intended use, metrics against an explicit reference (persistence, for example with <a href="https://cyrilvoyant.github.io/methods/nice-metrics.html">NICE metrics</a>), limits, human oversight, link to the code version.</p>
+<p><strong>6. Test before sharing.</strong> Reproducibility (fixed seed, same results), robustness (cross-validation, subsamples), stress tests (extreme or missing values), drift on recent data.</p>
+<p><strong>7. Add six fields to the data management plan.</strong> Legal basis; human oversight; AI transparency; conditions of reuse; international transfers; impact assessment (DPIA if personal data, FRIA for some high-risk deployments).</p>
+<p><strong>8. Keep a register</strong> of AI projects, uses and partners, and reassess when a project changes purpose.</p>
+<p><strong>9. Before any transfer, write the contract and prepare the file.</strong> Who becomes provider; license and intellectual property; warranties and liability; duty to report incidents; data transfers; the technical file (README, data card, model card, test plan and results, change log, monitoring plan).</p>
+<p><strong>10. Train everyone.</strong> A short session for PhD students and staff each year covers AI literacy and the lab's charter.</p>
+<h2>Official resources</h2>
+<ul>
+<li>AI Act: <a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj">Regulation (EU) 2024/1689 on EUR-Lex</a> and the European Commission's <a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai">AI policy page</a></li>
+<li>European Commission: <a href="https://research-and-innovation.ec.europa.eu/document/2b6cf7e5-36ac-41cb-aab5-0d32050143dc_en">living guidelines on the responsible use of generative AI in research</a></li>
+<li>CNIL: <a href="https://www.cnil.fr/fr/intelligence-artificielle">AI and personal data</a> and the <a href="https://www.cnil.fr/fr/RGPD-analyse-impact-protection-des-donnees-aipd">DPIA guide</a></li>
+<li>Data management plans: <a href="https://dmp.opidor.fr/">DMP OPIDoR</a></li>
+<li>Standards: ISO/IEC 42001:2023 (AI management system) and ISO/IEC 23894:2023 (AI risk management)</li>
+<li>Publishing ethics: <a href="https://publicationethics.org/guidance/cope-position/authorship-and-ai-tools">COPE position on authorship and AI tools</a></li>
+</ul>
+<h2>Limits</h2>
+<p>This page summarizes public texts and the work of one laboratory; it is not legal advice. National laws, guidance and standards are still moving: dates are given as checked on 23 October 2026. For a real project, ask your institution's legal service.</p>
+<h2>Go further</h2>
+<ul>
+<li><a href="/stories/questioning-research/">Questioning how we do research: influence, integrity, excellence</a></li>
+<li><a href="/stories/websemantic/">Let the language model read, let the validated code compute: WebSemantic</a></li>
+<li><a href="/approach/">The approach: AI in its place, trust demonstrated</a></li>
+</ul></main>
+<footer><div class="brand"><a href="https://www.minesparis.psl.eu/annuaire-de-la-recherche/chercheur/cyril-voyant/"><img src="/assets/mines-paris-psl-logo.png" alt="Mines Paris – PSL" width="110" height="68"></a>
+<span>Centre O.I.E., Observation, Impacts, Energy · Mines Paris – PSL</span></div>
+<p><strong>Cyril Voyant</strong>, Research Director (HDR, PhD), Mines Paris – PSL · Centre Observation, Impacts, Energy (O.I.E.), Campus Pierre Laffitte, 1 rue Claude Daunesse, CS 10207, F-06904 Sophia Antipolis Cedex, France</p><p><a href="mailto:cyril.voyant@minesparis.psl.eu">cyril.voyant@minesparis.psl.eu</a> · (+33) 7 86 82 68 63 · <a href="https://www.linkedin.com/in/cyril-voyant-2a7767192/">LinkedIn</a> · <a href="https://www.researchgate.net/profile/Cyril-Voyant">ResearchGate</a> · <a href="https://scholar.google.com/citations?user=aUlP6agAAAAJ">Google Scholar</a> · <a href="https://orcid.org/0000-0003-0242-7377">ORCID</a> · <a href="https://cv.hal.science/cyril-voyant">HAL</a> · <a href="https://github.com/cyrilvoyant">GitHub</a> · <a href="https://person.cyrilvoyant.com/">person.cyrilvoyant.com</a></p><p class="cookies"><a href="#" data-consent-open>Cookies and audience measurement</a></p><p class="thread-foot"><a href="/approach/">People at the center, the model at the core, tools around.</a></p></footer>
+<script src="/assets/consent.js" defer></script>
+</body></html>

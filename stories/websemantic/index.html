@@ -21,14 +21,16 @@
 <h2>The question</h2>
 <p>Can a language model run a scientific simulation on someone's behalf? It can, but it will happily fill in what was not said: "a weak updraft" becomes 0.1 m/s, "the usual dose" becomes 3 Gy, and the code runs on values nobody stated. The result looks precise and may be wrong.</p>
 <h2>The theory, in plain words</h2>
-<p>Each code is described once, in a <strong>contract</strong>: what each variable means, its unit, what may be assumed by default and what must be asked. Every input of a scenario carries its value, its unit, its origin (stated by the person, unit conversion, declared default, assumption) and whether the person accepted it. The rule is simple:
-- <strong>execute</strong> only if every required input is stated, or is a sourced assumption the person accepted, and every unit and constraint is satisfied;
-- <strong>clarify</strong> if an input is missing, ambiguous or not accepted;
-- <strong>refuse</strong> if the request is outside the code's domain, or if the code's files do not match their fingerprint.</p>
+<p>Each code is described once, in a <strong>contract</strong>: what each variable means, its unit, what may be assumed by default and what must be asked. Every input of a scenario carries its value, its unit, its origin (stated by the person, unit conversion, declared default, assumption) and whether the person accepted it. The rule is simple:</p>
+<ul>
+<li><strong>execute</strong> only if every required input is stated, or is a sourced assumption the person accepted, and every unit and constraint is satisfied;</li>
+<li><strong>clarify</strong> if an input is missing, ambiguous or not accepted;</li>
+<li><strong>refuse</strong> if the request is outside the code's domain, or if the code's files do not match their fingerprint.</li>
+</ul>
 <p>The validator never invents a value. The scientific code is pinned to a precise version, checked before each run, and returns its results with a full record of where every number came from.</p>
 <h2>Where it sits on the complexity ladder</h2>
-<figure><img src="/assets/articles/ladder-websemantic-en.png" alt="Complexity ladder: the codes stay on the low rungs; the language model is an interface beside them" loading="lazy"><figcaption>Complexity ladder: the codes stay on the low rungs; the language model is an interface beside them</figcaption></figure>
-<p>The codes stay on the low rungs: direct calculation and simulation. The language model is an <strong>interface beside the ladder</strong>, not a rung that computes. AI belongs in every toolbox, not in every solution.</p>
+<figure><img src="/assets/articles/ladder-websemantic-en.png" alt="Complexity ladder: a language model, a deep network on the top rung, reads the request; the validated variables go down to the low rungs, where the calculation stays" loading="lazy"><figcaption>Complexity ladder: a language model, a deep network on the top rung, reads the request; the validated variables go down to the low rungs, where the calculation stays</figcaption></figure>
+<p>WebSemantic does use the top rung: a large language model, a deep network, <strong>reads the request</strong>. But it computes nothing: it hands validated variables down to the low rungs, direct calculation and simulation, where the <strong>validated codes compute</strong>. AI belongs in every toolbox, not in every solution.</p>
 <figure><img src="/assets/articles/websemantic-flow-en.png" alt="The chain: request, language model, validator, validated code, result" loading="lazy"><figcaption>The chain: request, language model, validator, validated code, result</figcaption></figure>
 <h2>The example in figures</h2>
 <p>A complete radiotherapy research scenario (rectum and prostate, 39 fractions of 2 Gy, every input stated and accepted): the validator answers <strong>execute</strong>, and LQL-Equiv returns an EQD2 of 78.0 Gy. Remove the dose per fraction from the same scenario: the answer becomes <strong>clarify</strong>, "an explicit value or accepted assumption is required", and nothing is computed.</p>
@@ -45,8 +47,12 @@
 <li><strong>Code</strong>: github.com/cyrilvoyant/websemantic · archive doi:10.5281/zenodo.23238902 · <code>pip install websemantic</code> · instructions for agents in <code>llm.md</code></li>
 <li><strong>Codes it drives</strong>:</li>
 <li>Tunnel Load Simulator, <em>SoftwareX</em> 35, 102946 (2026);</li>
-<li>LQL-Equiv-web, <em>SoftwareX</em> 36, 103085 (2026).</li>
-<li><strong>The approach behind this work</strong>: <a href="https://cyrilvoyant.github.io/approach.html">Understand before you compute</a></li>
+<li>
+<p>LQL-Equiv-web, <em>SoftwareX</em> 36, 103085 (2026).</p>
+</li>
+<li>
+<p><strong>The approach behind this work</strong>: <a href="https://cyrilvoyant.github.io/approach.html">Understand before you compute</a></p>
+</li>
 </ul></main>
 <footer><div class="brand"><a href="https://www.minesparis.psl.eu/annuaire-de-la-recherche/chercheur/cyril-voyant/"><img src="/assets/mines-paris-psl-logo.png" alt="Mines Paris – PSL" width="110" height="68"></a>
 <span>Centre O.I.E., Observation, Impacts, Energy · Mines Paris – PSL</span></div>

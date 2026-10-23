@@ -21,11 +21,13 @@
 <h2>The question</h2>
 <p>How much electricity does a road tunnel use, hour by hour, and how uncertain is that figure? The answer matters for sizing connections, choosing lighting and ventilation technologies, or studying local energy storage. Measured series are rare and site-specific.</p>
 <h2>The theory, in plain words</h2>
-<p>The power drawn at each moment is the sum of four parts, plus a small random fluctuation:
-- a <strong>fixed base</strong> (control, safety systems);
-- <strong>auxiliaries</strong> (pumps, equipment), proportional to the tunnel's length and depth;
-- <strong>lighting</strong>, which depends on daylight at the portals and on traffic;
-- <strong>ventilation</strong>, which follows traffic with its morning and evening peaks, and increases with slope and altitude. It jumps during random <strong>pollution episodes</strong> and <strong>accidents</strong>.</p>
+<p>The power drawn at each moment is the sum of four parts, plus a small random fluctuation:</p>
+<ul>
+<li>a <strong>fixed base</strong> (control, safety systems);</li>
+<li><strong>auxiliaries</strong> (pumps, equipment), proportional to the tunnel's length and depth;</li>
+<li><strong>lighting</strong>, which depends on daylight at the portals and on traffic;</li>
+<li><strong>ventilation</strong>, which follows traffic with its morning and evening peaks, and increases with slope and altitude. It jumps during random <strong>pollution episodes</strong> and <strong>accidents</strong>.</li>
+</ul>
 <p>Each year is simulated many times with different random draws (<strong>Monte Carlo</strong>). The result is a median and a P10–P90 band, rather than a single curve.</p>
 <h2>Where it sits on the complexity ladder</h2>
 <figure><img src="/assets/articles/ladder-tls-en.png" alt="Complexity ladder: the simulator stops at the second rung, simulation from what is known" loading="lazy"><figcaption>Complexity ladder: the simulator stops at the second rung, simulation from what is known</figcaption></figure>
@@ -34,10 +36,12 @@
 <figure><img src="/assets/articles/tls-components-en.png" alt="One weekday: fixed base, auxiliaries, lighting and ventilation stacked" loading="lazy"><figcaption>One weekday: fixed base, auxiliaries, lighting and ventilation stacked</figcaption></figure>
 <p>On a January weekday, ventilation carries the two traffic peaks; lighting rises at night and at the edges of the day.</p>
 <figure><img src="/assets/articles/tls-curve-en.png" alt="One week: median and P10–P90 band over 20 runs" loading="lazy"><figcaption>One week: median and P10–P90 band over 20 runs</figcaption></figure>
-<p>Over a year, the 1.5 km tunnel of the public example gives:
-- a median of 3,233 MWh (P10 3,230, P90 3,237);
-- a peak of 873 kW and a mean of 369 kW, i.e. a load factor of 0.42;
-- 2,156 kWh per meter and per year.</p>
+<p>Over a year, the 1.5 km tunnel of the public example gives:</p>
+<ul>
+<li>a median of 3,233 MWh (P10 3,230, P90 3,237);</li>
+<li>a peak of 873 kW and a mean of 369 kW, i.e. a load factor of 0.42;</li>
+<li>2,156 kWh per meter and per year.</li>
+</ul>
 <h2>What it brings, and its limits</h2>
 <ul>
 <li><strong>Brings</strong>: fast and transparent pre-design studies (lighting technology, ventilation type, traffic level); synthetic load profiles for research on energy management and renewables in tunnels; a clear teaching case for Monte Carlo uncertainty.</li>
