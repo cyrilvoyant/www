@@ -69,6 +69,7 @@ ul.news li a { font-weight: 600; }
 .news-count { font-size: .88rem; color: var(--muted); margin: 4px 0 10px; }
 .news-list article.post { display: grid; grid-template-columns: 168px 1fr; gap: 18px; padding: 20px 0; border-top: 1px solid var(--line); scroll-margin-top: 16px; }
 .news-list article.post:target { background: var(--soft); }
+.news-list article.post[hidden] { display: none; }   /* filters: display:grid above would otherwise override [hidden] */
 .news-list .thumb { width: 168px; height: 112px; object-fit: contain; background: #fff; border: 1px solid var(--line); border-radius: 6px; }
 .news-list .meta { font-size: .85rem; color: var(--muted); margin: 0 0 2px; }
 .news-list .meta .theme { text-transform: none; }
@@ -130,3 +131,12 @@ footer p { margin: .4em 0; }
   .steps4, .split, .figs2 { grid-template-columns: 1fr; }
   nav a.lang { margin-left: 0; }
 }
+
+/* AI in research page: examples that open in place, glossary (23 October 2026) */
+main details[id] { margin: 6px 0 16px; padding: 4px 14px; background: var(--paper); border: 1px solid var(--line); border-left: 4px solid var(--p5); border-radius: 6px; scroll-margin-top: 12px; }
+main details[id] > summary { cursor: pointer; color: var(--link); font-weight: 600; padding: 6px 0; }
+main details[id][open] { padding-bottom: 12px; }
+main details[id] table { display: table; width: 100%; font-size: .9rem; }
+dl.glossary dt { font-weight: 700; margin-top: 10px; scroll-margin-top: 12px; }
+dl.glossary dd { margin: 2px 0 0 0; }
+dl.glossary dt:target, dl.glossary dt:target + dd { background: var(--soft); }

@@ -119,23 +119,310 @@
 <h2>What a lab can do: the example of the O.I.E. framework</h2>
 <p>At the Centre O.I.E. (Mines Paris – PSL, about 30 people), a FAIR + AI framework has been drafted since 2025 and is being finalized, for deployment from 2027. Its main lines:</p>
 <ul>
-<li><strong>A one-page charter signed by every member</strong>: generative AI allowed as an assistant for writing, code and figures, with explicit mention of its use; human review of everything it produces; minimal documentation (data card, model card, versioned Git repository with README); every AI project in a register, reassessed when it moves from research to industry; a data management plan with six AI fields.</li>
-<li><strong>Light roles, about 0.3 full-time equivalent in total</strong>: an AI compliance lead (register, regulatory watch, partners), a FAIR data steward (data management plans, data cards, licences, GDPR) and an MLOps and quality referent (model cards, test plans, drift), plus an ethics committee of four people meeting each quarter for sensitive projects.</li>
-<li><strong>Six steps per project</strong>: register (5 minutes); data management plan with AI fields (1 hour); data card and model card (2 hours); minimal test plan (2 to 3 hours); README with the AI-use statement (30 minutes); for a transfer, an audit-ready file (one day).</li>
+<li><strong>A <a href="#ex-charter">one-page charter</a> signed by every member</strong>: generative AI allowed as an assistant for writing, code and figures, with explicit mention of its use; human review of everything it produces; minimal documentation (<a href="#ex-data-card">data card</a>, <a href="#ex-model-card">model card</a>, versioned Git repository with README); every AI project in a <a href="#ex-register">register</a>, reassessed when it moves from research to industry; a <a href="#g-dmp">data management plan</a> with <a href="#ex-dmp">six AI fields</a>.</li>
+<li><strong>Light roles, about 0.3 full-time equivalent in total</strong>: an AI compliance lead (register, regulatory watch, partners), a FAIR data steward (data management plans, data cards, licences, <a href="#g-gdpr">GDPR</a>) and an <a href="#g-mlops">MLOps</a> and quality referent (model cards, test plans, drift), plus an ethics committee of four people meeting each quarter for sensitive projects.</li>
+<li><strong>Six steps per project</strong>: register (5 minutes); data management plan with AI fields (1 hour); data card and model card (2 hours); <a href="#ex-tests">minimal test plan</a> (2 to 3 hours); <a href="#ex-readme">README with the AI-use statement</a> (30 minutes); for a transfer, an <a href="#ex-transfer">audit-ready file</a> (one day).</li>
 <li><strong>Indicators</strong>: at least 95 % of projects documented, less than five days between project start and an enriched plan, partner satisfaction above 8/10.</li>
 </ul>
 <p>At the institution level, Mines Paris – PSL's legal service has built, with the research centers, a <strong>self-assessment decision tree</strong>: who is the actor and in which role, the essential questions, the impacts, the qualification of the AI system in the risk pyramid, the conditions of use and of making it available. Its purpose is to find the <strong>tipping point</strong> where a project enters the scope of the AI Act, and to adapt the contract and its technical annex in time. It is a good example of what an institution can offer its researchers.</p>
 <h2>The toolbox</h2>
+<p>Each tool opens on a filled example, taken from the O.I.E. templates (values marked <em>illustrative</em> are not results).</p>
 <p><strong>1. Situate the project.</strong> Research only, transfer, or deployment? Who will be provider and deployer? Which risk class? Real-world tests are not covered by the research exemption.</p>
 <p><strong>2. State the use of AI.</strong> In a paper, a thesis, a report or a README: which tool, which version, for what, checked by whom and when. Example: <em>"Parts of the data-loading code were drafted with GitHub Copilot (2026); all functions were reviewed and unit-tested by A. Author on 12 March 2026."</em></p>
+<details id="ex-readme">
+<p><summary>Example: README with the AI-use statement</summary></p>
+<p><strong>Project: MLP, global horizontal irradiance (GHI) forecasting</strong> · Author: First Last · Supervisor: First Last · O.I.E., Mines Paris – PSL</p>
+<ul>
+<li><strong>Purpose</strong>: train a multilayer perceptron to forecast hourly GHI from weather data.</li>
+<li><strong>Use of AI</strong>: occasional help from a generative AI assistant (name and version) for boilerplate code and debugging. Every suggestion was reviewed by the author (unit tests, validation by the supervisor), name and date.</li>
+<li><strong>Data</strong>: SIAR network (Spain), 2005–2015; normalization, gap handling; public, non-personal data; license stated.</li>
+<li><strong>Tests</strong>: fixed seed, identical results on repeated runs; cross-validation (k &gt; 3 folds); stress test on irradiance peaks and missing values; drift checked with nRMSE and NICE on recent data.</li>
+<li><strong>Reuse</strong>: academic research; any industrial use must be agreed with the laboratory.</li>
+</ul>
+</details>
 <p><strong>3. Keep a human in charge.</strong> No AI as an author; every reference, equation and line of code checked by a named person.</p>
-<p><strong>4. Document the data (data card).</strong> Origin, period, volume, variables and units, preprocessing, quality, known biases, license or legal basis, transfers outside the EU, conditions of reuse.</p>
-<p><strong>5. Document the model (model card).</strong> Name and version, architecture, training and test data with the split, intended use, metrics against an explicit reference (persistence, for example with <a href="https://cyrilvoyant.github.io/methods/nice-metrics.html">NICE metrics</a>), limits, human oversight, link to the code version.</p>
+<p><strong>4. Document the data (<a href="#ex-data-card">data card</a>).</strong> Origin, period, volume, variables and units, preprocessing, quality, known biases, license or legal basis, transfers outside the EU, conditions of reuse.</p>
+<details id="ex-data-card">
+<p><summary>Example: data card (one page)</summary></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What to write</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dataset name</td>
+<td>Name used in the project</td>
+<td>SIAR_GHI_ES_2005_2015</td>
+</tr>
+<tr>
+<td>Origin</td>
+<td>Provider or station network</td>
+<td>SIAR network (Spain)</td>
+</tr>
+<tr>
+<td>Period, volume</td>
+<td>Dates covered and size</td>
+<td>2005–2015, 10 stations, 50k records</td>
+</tr>
+<tr>
+<td>Variables</td>
+<td>Main variables and units</td>
+<td>GHI (W/m²), temperature (°C), humidity (%)</td>
+</tr>
+<tr>
+<td>Preprocessing</td>
+<td>Steps applied</td>
+<td>Min-max normalization, gap interpolation</td>
+</tr>
+<tr>
+<td>Quality</td>
+<td>Quick assessment</td>
+<td>3 % missing values, calibrated sensors</td>
+</tr>
+<tr>
+<td>Known biases</td>
+<td>Points of attention</td>
+<td>Uneven geographical coverage</td>
+</tr>
+<tr>
+<td>License, legal basis (<a href="#g-gdpr">GDPR</a>)</td>
+<td>License or legal ground</td>
+<td>CC BY 4.0, public data</td>
+</tr>
+<tr>
+<td>Transfers outside the EU</td>
+<td>Yes or no, and safeguards</td>
+<td>No (storage in the EU only)</td>
+</tr>
+<tr>
+<td>Reuse</td>
+<td>Free, contract or restricted</td>
+<td>Free for academic purposes</td>
+</tr>
+</tbody>
+</table>
+</details>
+<p><strong>5. Document the model (<a href="#ex-model-card">model card</a>).</strong> Name and version, architecture, training and test data with the split, intended use, metrics against an explicit reference (persistence, for example with <a href="https://cyrilvoyant.github.io/methods/nice-metrics.html">NICE metrics</a>), limits, human oversight, link to the code version.</p>
+<details id="ex-model-card">
+<p><summary>Example: model card (under two pages)</summary></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What to write</th>
+<th>Example (<em>illustrative</em>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name, version</td>
+<td>Unique identifier</td>
+<td>MLP_GHI_v1.2</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Architecture</td>
+<td>MLP, 3 layers of 64 neurons</td>
+</tr>
+<tr>
+<td>Data</td>
+<td>Datasets, period, split</td>
+<td>SIAR (Spain), 2005–2015, 70/15/15 %</td>
+</tr>
+<tr>
+<td>Intended use</td>
+<td>Research, simulation or deployment</td>
+<td>Academic research, hourly GHI forecasting</td>
+</tr>
+<tr>
+<td>Metrics</td>
+<td>Against an explicit reference</td>
+<td>nRMSE, nMAE, NICE² against persistence</td>
+</tr>
+<tr>
+<td>Key results</td>
+<td>By station, horizon, season</td>
+<td>Table by station</td>
+</tr>
+<tr>
+<td>Subgroups</td>
+<td>Results by climate or season</td>
+<td>Weaker in Mediterranean climate</td>
+</tr>
+<tr>
+<td>Known limits</td>
+<td>What the model does not cover</td>
+<td>Sensor failures, strong cloud variability</td>
+</tr>
+<tr>
+<td>Human oversight</td>
+<td>Who validates the outputs</td>
+<td>Thesis supervisor, AI committee review</td>
+</tr>
+<tr>
+<td>Traceability</td>
+<td>Technical references</td>
+<td>Git commit, model archived with a DOI</td>
+</tr>
+<tr>
+<td>Reuse</td>
+<td>Free, license or contract</td>
+<td>Free for research; industrial use under agreement</td>
+</tr>
+</tbody>
+</table>
+</details>
 <p><strong>6. Test before sharing.</strong> Reproducibility (fixed seed, same results), robustness (cross-validation, subsamples), stress tests (extreme or missing values), drift on recent data.</p>
-<p><strong>7. Add six fields to the data management plan.</strong> Legal basis; human oversight; AI transparency; conditions of reuse; international transfers; impact assessment (DPIA if personal data, FRIA for some high-risk deployments).</p>
-<p><strong>8. Keep a register</strong> of AI projects, uses and partners, and reassess when a project changes purpose.</p>
+<details id="ex-tests">
+<p><summary>Example: minimal test plan (checklist, half a day)</summary></p>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>How</th>
+<th>Why</th>
+<th>Who validates</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Reproducibility</td>
+<td>Fixed seed, identical results; hash of weights and dataset</td>
+<td>A third party can reproduce the results</td>
+<td>PhD student and supervisor</td>
+</tr>
+<tr>
+<td>Robustness</td>
+<td>k-fold cross-validation or subsamples</td>
+<td>The model does not overfit one dataset</td>
+<td>PhD student</td>
+</tr>
+<tr>
+<td>Stress test</td>
+<td>Extreme data: irradiance peaks, gaps, sensor anomalies</td>
+<td>Stable behavior outside normal conditions</td>
+<td>Supervisor</td>
+</tr>
+<tr>
+<td>Drift</td>
+<td>nRMSE and NICE on recent versus older data, with thresholds</td>
+<td>Anticipate loss of performance</td>
+<td>MLOps and quality referent</td>
+</tr>
+<tr>
+<td>Licences</td>
+<td>Every dataset and code reused respects its license</td>
+<td>Legal compliance</td>
+<td>FAIR data steward</td>
+</tr>
+<tr>
+<td>README and AI statement</td>
+<td>Use of generative AI stated</td>
+<td>Transparency</td>
+<td>PhD student</td>
+</tr>
+<tr>
+<td>Final review</td>
+<td>Scientific and technical reading</td>
+<td>Quality before release</td>
+<td>Responsible supervisor</td>
+</tr>
+</tbody>
+</table>
+<p>For a model in operation, a <strong>monitoring plan</strong> adds thresholds, for example: nRMSE checked monthly, alert above +0.05 and critical above +0.10, then analysis and retraining; data coverage checked weekly, alert below 95 %; more than three incidents a month triggers an urgent diagnosis.</p>
+</details>
+<p><strong>7. Add six fields to the <a href="#g-dmp">data management plan</a>.</strong> Legal basis; human oversight; AI transparency; conditions of reuse; international transfers; impact assessment (<a href="#g-dpia">DPIA</a> if personal data, <a href="#g-fria">FRIA</a> for some high-risk deployments).</p>
+<details id="ex-dmp">
+<p><summary>Example: the six AI fields of a data management plan</summary></p>
+<ol>
+<li><strong>Legal basis</strong>: license CC BY, industrial agreement or consent (<a href="#g-gdpr">GDPR</a>).</li>
+<li><strong>Human oversight</strong>: who validates the results, when, at which level (in, on or outside the loop).</li>
+<li><strong>AI transparency</strong>: whether content or code was generated with AI, and how it is stated.</li>
+<li><strong>Conditions of reuse</strong>: free, under license, or reserved to a contract.</li>
+<li><strong>International transfers</strong>: whether data leave the EU (non-European cloud, partner abroad) and the safeguards.</li>
+<li><strong>Impact assessment</strong>: <a href="#g-dpia">DPIA</a> if personal data; <a href="#g-fria">FRIA</a> for some high-risk public deployments; otherwise, why neither applies.</li>
+</ol>
+</details>
+<details id="ex-dpia">
+<p><summary>Example: DPIA and FRIA screening, two contrasting projects</summary></p>
+<p>Six yes/no questions, scored 0 or 1. <strong>DPIA</strong>: personal data? legal basis needed? privacy risk (identifiers, fine location, health, habits)? <strong>FRIA</strong>: public body or high-risk use (Annex III)? risk of discrimination or exclusion? human oversight absent?</p>
+<ul>
+<li><strong>Weather-based irradiance forecasting for a thesis</strong>: DPIA 0/3, FRIA 0/3. Weather data only, academic use, systematic validation by the supervisor: neither is required, and the screening is kept as proof that it was considered.</li>
+<li><strong>Household load forecasting deployed by a grid operator</strong>: DPIA 3/3 (consumption profiles reveal habits), FRIA 2/3 (critical infrastructure; risk of favoring some areas or profiles), human oversight present. Both assessments are run jointly by the laboratory (scientific supplier) and the operator (deployer and legal owner), with pseudonymization, human oversight, monitoring and an audit-ready file.</li>
+</ul>
+</details>
+<p><strong>8. Keep a <a href="#ex-register">register</a></strong> of AI projects, uses and partners, and reassess when a project changes purpose.</p>
+<details id="ex-register">
+<p><summary>Example: one line of the AI register</summary></p>
+<table>
+<thead>
+<tr>
+<th>Project</th>
+<th>Model</th>
+<th>Use of generative AI</th>
+<th>Status</th>
+<th>Partners</th>
+<th>Data</th>
+<th>Last review</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GHI forecasting, thesis 2026</td>
+<td>ELM, MLP</td>
+<td>Code assistant, stated in README</td>
+<td>Research only</td>
+<td>None</td>
+<td>Public weather data</td>
+<td>Project start; on any change of purpose</td>
+</tr>
+</tbody>
+</table>
+</details>
 <p><strong>9. Before any transfer, write the contract and prepare the file.</strong> Who becomes provider; license and intellectual property; warranties and liability; duty to report incidents; data transfers; the technical file (README, data card, model card, test plan and results, change log, monitoring plan).</p>
-<p><strong>10. Train everyone.</strong> A short session for PhD students and staff each year covers AI literacy and the lab's charter.</p>
+<details id="ex-transfer">
+<p><summary>Example: content of an audit-ready file</summary></p>
+<ul>
+<li>README with the use of generative AI and the licences of data and code;</li>
+<li>data card (origin, biases, legal basis, reuse) and model card (type, data, metrics, limits, human oversight, Git traceability);</li>
+<li>test plan and its results, validated by the supervisor;</li>
+<li>data management plan with the six AI fields;</li>
+<li>change log: versions of the model, Git commits, changes of the dataset;</li>
+<li>for a high-risk deployment: monitoring plan (nRMSE, NICE, drift, thresholds) and an incident procedure (reporting channel, named person, time to fix).</li>
+</ul>
+</details>
+<p><strong>10. Train everyone.</strong> A short session for PhD students and staff each year covers AI literacy and the lab's <a href="#ex-charter">charter</a>.</p>
+<details id="ex-charter">
+<p><summary>Example: a one-page laboratory charter</summary></p>
+<p><em>As a member of the laboratory, I commit to the following principles for using and developing artificial intelligence, in line with the AI Act and the FAIR principles.</em></p>
+<ol>
+<li><strong>Generative AI</strong> (chat assistants, code assistants) is allowed as an aid for writing, code and figures, and its use is always stated (report, paper, README).</li>
+<li><strong>Human review</strong>: everything produced with AI is checked by a person; technical and bibliographic review before any release. The author remains responsible.</li>
+<li><strong>Minimal documentation</strong> for every project: a data card, a model card, a versioned Git repository with a README (the institution's platform; projects may stay private).</li>
+<li><strong>AI register</strong>: every project using AI is listed; moving from research to industry triggers a new assessment.</li>
+<li><strong>Data management plan</strong> with the six AI fields: legal basis, human oversight, AI transparency, reuse, international transfers, impact assessment.</li>
+</ol>
+<p><em>Name, role, date, signature.</em></p>
+</details>
+<h2>Glossary</h2>
+<dl class="glossary">
+<dt id="g-gdpr">GDPR</dt>
+<p><dd>General Data Protection Regulation, Regulation (EU) 2016/679: the European law on personal data. See the <a href="https://www.cnil.fr/en/gdpr-developers-guide">CNIL guide</a>.</dd></p>
+<dt id="g-dpia">DPIA</dt>
+<p><dd>Data Protection Impact Assessment (art. 35 GDPR): required when processing personal data is likely to result in a high risk for people. <a href="https://www.cnil.fr/fr/RGPD-analyse-impact-protection-des-donnees-aipd">CNIL method and tool</a>.</dd></p>
+<dt id="g-fria">FRIA</dt>
+<p><dd>Fundamental Rights Impact Assessment (art. 27 AI Act): required from some deployers of high-risk AI systems, mainly public bodies and private entities providing public services, before first use.</dd></p>
+<dt id="g-mlops">MLOps</dt>
+<p><dd>Machine-learning operations: the practices that keep a model reproducible and reliable once in use: versioning of data and code, automated tests, monitoring of performance and drift, controlled retraining.</dd></p>
+<dt id="g-dmp">Data management plan (DMP)</dt>
+<p><dd>A document describing how a project collects, documents, stores, shares and archives its data, required by ANR and Horizon Europe; written in France with <a href="https://dmp.opidor.fr/">DMP OPIDoR</a>.</dd></p>
+<dt id="g-cards">Data card, model card</dt>
+<p><dd>One- to two-page sheets that describe a dataset or a trained model: origin, content, intended use, metrics, limits. The format follows the "model cards" and "datasheets for datasets" proposals of the machine-learning community.</dd></p>
+</dl>
 <h2>Official resources</h2>
 <ul>
 <li>AI Act: <a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj">Regulation (EU) 2024/1689 on EUR-Lex</a> and the European Commission's <a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai">AI policy page</a></li>
@@ -152,7 +439,7 @@
 <li><a href="/stories/questioning-research/">Questioning how we do research: influence, integrity, excellence</a></li>
 <li><a href="/stories/websemantic/">Let the language model read, let the validated code compute: WebSemantic</a></li>
 <li><a href="/approach/">The approach: AI in its place, trust demonstrated</a></li>
-</ul><section class="note"><h2>Frequently asked questions</h2><h3>Is scientific research exempt from the AI Act?</h3><p>The exclusions depend on the system&#x27;s purpose and stage, not simply on the user&#x27;s status as a researcher. Article 2 covers systems specifically developed and put into service solely for scientific research, and certain pre-market research activities. Real-world testing is outside the latter exclusion. Reassess the scope before transfer or deployment.</p><p><a href="https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-2">Official source</a></p><h3>Which high-risk AI deadlines should a laboratory track?</h3><p>As checked on October 23, 2026, the revised timeline provides December 2, 2027 for Annex III high-risk uses and August 2, 2028 for high-risk AI embedded in regulated products under Annex I. Other obligations have their own dates. Identify the relevant system and provision before applying a deadline.</p><p><a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai">Official source</a></p><h3>Who is responsible when laboratory code is transferred?</h3><p>Identify the provider, deployer and other actors for the actual system. For high-risk systems, Article 25 specifies circumstances in which rebranding, substantial modification or a changed intended purpose can make another actor the provider. Contracts should document roles; they do not replace the applicable statutory obligations.</p><p><a href="https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-25">Official source</a></p><h3>What should a laboratory document first?</h3><p>Record the purpose, people responsible, data provenance, model and code versions, validation results and limits. Use data and model cards, an AI-use statement and a project register. Before a transfer, review roles and documentation with the institution&#x27;s legal service. These are practical recommendations, not a compliance certification.</p></section></main>
+</ul><script>(function(){function o(){var h=decodeURIComponent(location.hash.slice(1)),e=h&&document.getElementById(h);if(!e)return;var d=e.tagName==="DETAILS"?e:e.closest("details");if(d){d.open=true;setTimeout(function(){window.scrollTo(0,e.getBoundingClientRect().top+window.scrollY-10);},60);}}window.addEventListener("hashchange",o);o();})();</script><section class="note"><h2>Frequently asked questions</h2><h3>Is scientific research exempt from the AI Act?</h3><p>The exclusions depend on the system&#x27;s purpose and stage, not simply on the user&#x27;s status as a researcher. Article 2 covers systems specifically developed and put into service solely for scientific research, and certain pre-market research activities. Real-world testing is outside the latter exclusion. Reassess the scope before transfer or deployment.</p><p><a href="https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-2">Official source</a></p><h3>Which high-risk AI deadlines should a laboratory track?</h3><p>As checked on October 23, 2026, the revised timeline provides December 2, 2027 for Annex III high-risk uses and August 2, 2028 for high-risk AI embedded in regulated products under Annex I. Other obligations have their own dates. Identify the relevant system and provision before applying a deadline.</p><p><a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai">Official source</a></p><h3>Who is responsible when laboratory code is transferred?</h3><p>Identify the provider, deployer and other actors for the actual system. For high-risk systems, Article 25 specifies circumstances in which rebranding, substantial modification or a changed intended purpose can make another actor the provider. Contracts should document roles; they do not replace the applicable statutory obligations.</p><p><a href="https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-25">Official source</a></p><h3>What should a laboratory document first?</h3><p>Record the purpose, people responsible, data provenance, model and code versions, validation results and limits. Use data and model cards, an AI-use statement and a project register. Before a transfer, review roles and documentation with the institution&#x27;s legal service. These are practical recommendations, not a compliance certification.</p></section></main>
 <footer><div class="brand"><a href="https://www.minesparis.psl.eu/annuaire-de-la-recherche/chercheur/cyril-voyant/"><img src="/assets/mines-paris-psl-logo.png" alt="Mines Paris – PSL" width="110" height="68"></a>
 <span>Centre O.I.E., Observation, Impacts, Energy · Mines Paris – PSL</span></div>
 <p><strong>Cyril Voyant</strong>, Research Director (HDR, PhD), Mines Paris – PSL · Centre Observation, Impacts, Energy (O.I.E.), Campus Pierre Laffitte, 1 rue Claude Daunesse, CS 10207, F-06904 Sophia Antipolis Cedex, France</p><p><a href="mailto:cyril.voyant@minesparis.psl.eu">cyril.voyant@minesparis.psl.eu</a> · (+33) 7 86 82 68 63 · <a href="https://www.linkedin.com/in/cyril-voyant-2a7767192/">LinkedIn</a> · <a href="https://www.researchgate.net/profile/Cyril-Voyant">ResearchGate</a> · <a href="https://scholar.google.com/citations?user=aUlP6agAAAAJ">Google Scholar</a> · <a href="https://orcid.org/0000-0003-0242-7377">ORCID</a> · <a href="https://cv.hal.science/cyril-voyant">HAL</a> · <a href="https://github.com/cyrilvoyant">GitHub</a> · <a href="https://person.cyrilvoyant.com/">person.cyrilvoyant.com</a></p><p class="cookies"><a href="#" data-consent-open>Cookies and audience measurement</a></p><p class="thread-foot"><a href="/approach/">People at the center, the model at the core, tools around.</a></p></footer>

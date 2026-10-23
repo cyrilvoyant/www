@@ -119,23 +119,310 @@
 <h2>Ce qu'un laboratoire peut faire : l'exemple du cadre O.I.E.</h2>
 <p>Au centre O.I.E. (Mines Paris – PSL, une trentaine de personnes), un cadre FAIR + IA est en rédaction depuis 2025 et en cours de finalisation, pour un déploiement à partir de 2027. Ses grandes lignes :</p>
 <ul>
-<li><strong>Une charte d'une page signée par chaque membre</strong> : IA générative autorisée comme assistant pour la rédaction, le code et les figures, avec mention explicite de son usage ; relecture humaine de tout ce qu'elle produit ; documentation minimale (fiche données, fiche modèle, dépôt Git versionné avec README) ; chaque projet IA dans un registre, réévalué quand il passe de la recherche à l'industrie ; un plan de gestion des données avec six champs IA.</li>
-<li><strong>Des rôles légers, environ 0,3 équivalent temps plein au total</strong> : un référent conformité IA (registre, veille, partenaires), un responsable des données FAIR (plans de gestion, fiches données, licences, RGPD) et un référent MLOps et qualité (fiches modèle, plans de test, dérive), plus un comité d'éthique de quatre personnes réuni chaque trimestre pour les projets sensibles.</li>
-<li><strong>Six étapes par projet</strong> : registre (5 minutes) ; plan de gestion des données avec les champs IA (1 heure) ; fiche données et fiche modèle (2 heures) ; plan de test minimal (2 à 3 heures) ; README avec la mention d'usage de l'IA (30 minutes) ; pour un transfert, un dossier prêt pour l'audit (une journée).</li>
+<li><strong>Une <a href="#ex-charter">charte d'une page</a> signée par chaque membre</strong> : IA générative autorisée comme assistant pour la rédaction, le code et les figures, avec mention explicite de son usage ; relecture humaine de tout ce qu'elle produit ; documentation minimale (<a href="#ex-data-card">fiche données</a>, <a href="#ex-model-card">fiche modèle</a>, dépôt Git versionné avec README) ; chaque projet IA dans un <a href="#ex-register">registre</a>, réévalué quand il passe de la recherche à l'industrie ; un <a href="#g-dmp">plan de gestion des données</a> avec <a href="#ex-dmp">six champs IA</a>.</li>
+<li><strong>Des rôles légers, environ 0,3 équivalent temps plein au total</strong> : un référent conformité IA (registre, veille, partenaires), un responsable des données FAIR (plans de gestion, fiches données, licences, <a href="#g-gdpr">RGPD</a>) et un référent <a href="#g-mlops">MLOps</a> et qualité (fiches modèle, plans de test, dérive), plus un comité d'éthique de quatre personnes réuni chaque trimestre pour les projets sensibles.</li>
+<li><strong>Six étapes par projet</strong> : registre (5 minutes) ; plan de gestion des données avec les champs IA (1 heure) ; fiche données et fiche modèle (2 heures) ; <a href="#ex-tests">plan de test minimal</a> (2 à 3 heures) ; <a href="#ex-readme">README avec la mention d'usage de l'IA</a> (30 minutes) ; pour un transfert, un <a href="#ex-transfer">dossier prêt pour l'audit</a> (une journée).</li>
 <li><strong>Indicateurs</strong> : au moins 95 % des projets documentés, moins de cinq jours entre le lancement et le plan enrichi, satisfaction des partenaires supérieure à 8/10.</li>
 </ul>
 <p>À l'échelle de l'établissement, le service juridique de Mines Paris – PSL a construit avec les centres de recherche un <strong>arbre de décision d'autoévaluation</strong> : quel acteur et dans quel rôle, les questions essentielles, les impacts, la qualification du système dans la pyramide des risques, les conditions d'usage et de mise à disposition. Son but est de repérer le <strong>point de bascule</strong> où un projet entre dans le champ de l'AI Act, et d'adapter à temps le contrat et son annexe technique. C'est un bon exemple de ce qu'un établissement peut offrir à ses chercheurs.</p>
 <h2>La boîte à outils</h2>
+<p>Chaque outil s'ouvre sur un exemple rempli, tiré des modèles du centre O.I.E. (les valeurs marquées <em>illustratives</em> ne sont pas des résultats).</p>
 <p><strong>1. Situer le projet.</strong> Recherche seule, transfert ou déploiement ? Qui sera fournisseur, qui déployeur ? Quelle classe de risque ? Les essais en conditions réelles ne sont pas couverts par l'exemption recherche.</p>
 <p><strong>2. Déclarer l'usage de l'IA.</strong> Dans un article, une thèse, un rapport ou un README : quel outil, quelle version, pour quoi faire, vérifié par qui et quand. Exemple : <em>« Une partie du code de lecture des données a été rédigée avec GitHub Copilot (2026) ; toutes les fonctions ont été relues et testées par A. Auteur le 12 mars 2026. »</em></p>
+<details id="ex-readme">
+<p><summary>Exemple : README avec la mention d'usage de l'IA</summary></p>
+<p><strong>Projet : MLP, prévision du rayonnement global horizontal (GHI)</strong> · Auteur : Prénom Nom · Encadrant : Prénom Nom · O.I.E., Mines Paris – PSL</p>
+<ul>
+<li><strong>Objet</strong> : entraîner un perceptron multicouche pour prévoir le GHI horaire à partir de données météorologiques.</li>
+<li><strong>Usage de l'IA</strong> : aide ponctuelle d'un assistant d'IA générative (nom et version) pour du code standard et du débogage. Toutes les suggestions ont été revérifiées par l'auteur (tests unitaires, validation par l'encadrant), nom et date.</li>
+<li><strong>Données</strong> : réseau SIAR (Espagne), 2005–2015 ; normalisation, gestion des manques ; données publiques non personnelles ; licence indiquée.</li>
+<li><strong>Tests</strong> : graine fixée, résultats identiques sur des exécutions répétées ; validation croisée (k &gt; 3) ; test de stress sur les pics d'éclairement et les valeurs manquantes ; dérive suivie par le nRMSE et NICE sur des données récentes.</li>
+<li><strong>Réutilisation</strong> : recherche académique ; toute utilisation industrielle doit être validée par le laboratoire.</li>
+</ul>
+</details>
 <p><strong>3. Garder un humain aux commandes.</strong> Pas d'IA autrice ; chaque référence, équation et ligne de code vérifiée par une personne nommée.</p>
-<p><strong>4. Documenter les données (fiche données).</strong> Origine, période, volume, variables et unités, prétraitements, qualité, biais connus, licence ou base légale, transferts hors UE, conditions de réutilisation.</p>
-<p><strong>5. Documenter le modèle (fiche modèle).</strong> Nom et version, architecture, données d'apprentissage et de test avec le découpage, usage prévu, métriques contre une référence explicite (la persistance, par exemple avec les <a href="/fr/actualites/nice-forecast-evaluation/">métriques NICE</a>), limites, supervision humaine, lien vers la version du code.</p>
+<p><strong>4. Documenter les données (<a href="#ex-data-card">fiche données</a>).</strong> Origine, période, volume, variables et unités, prétraitements, qualité, biais connus, licence ou base légale, transferts hors UE, conditions de réutilisation.</p>
+<details id="ex-data-card">
+<p><summary>Exemple : fiche données (une page)</summary></p>
+<table>
+<thead>
+<tr>
+<th>Champ</th>
+<th>À renseigner</th>
+<th>Exemple</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nom du jeu de données</td>
+<td>Nom utilisé dans le projet</td>
+<td>SIAR_GHI_ES_2005_2015</td>
+</tr>
+<tr>
+<td>Origine</td>
+<td>Fournisseur ou réseau de stations</td>
+<td>Réseau SIAR (Espagne)</td>
+</tr>
+<tr>
+<td>Période, volume</td>
+<td>Dates couvertes et taille</td>
+<td>2005–2015, 10 stations, 50 000 enregistrements</td>
+</tr>
+<tr>
+<td>Variables</td>
+<td>Variables principales et unités</td>
+<td>GHI (W/m²), température (°C), humidité ( %)</td>
+</tr>
+<tr>
+<td>Prétraitements</td>
+<td>Étapes appliquées</td>
+<td>Normalisation min-max, interpolation des manques</td>
+</tr>
+<tr>
+<td>Qualité</td>
+<td>Évaluation rapide</td>
+<td>3 % de valeurs manquantes, capteurs étalonnés</td>
+</tr>
+<tr>
+<td>Biais connus</td>
+<td>Points de vigilance</td>
+<td>Répartition géographique non homogène</td>
+</tr>
+<tr>
+<td>Licence, base légale (<a href="#g-gdpr">RGPD</a>)</td>
+<td>Licence de diffusion ou base juridique</td>
+<td>CC BY 4.0, données publiques</td>
+</tr>
+<tr>
+<td>Transferts hors UE</td>
+<td>Oui ou non, et garanties</td>
+<td>Non (stockage dans l'UE uniquement)</td>
+</tr>
+<tr>
+<td>Réutilisation</td>
+<td>Libre, contrat ou restriction</td>
+<td>Libre à des fins académiques</td>
+</tr>
+</tbody>
+</table>
+</details>
+<p><strong>5. Documenter le modèle (<a href="#ex-model-card">fiche modèle</a>).</strong> Nom et version, architecture, données d'apprentissage et de test avec le découpage, usage prévu, métriques contre une référence explicite (la persistance, par exemple avec les <a href="/fr/actualites/nice-forecast-evaluation/">métriques NICE</a>), limites, supervision humaine, lien vers la version du code.</p>
+<details id="ex-model-card">
+<p><summary>Exemple : fiche modèle (moins de deux pages)</summary></p>
+<table>
+<thead>
+<tr>
+<th>Champ</th>
+<th>À renseigner</th>
+<th>Exemple (<em>illustratif</em>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nom, version</td>
+<td>Identifiant unique</td>
+<td>MLP_GHI_v1.2</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Architecture</td>
+<td>MLP, 3 couches de 64 neurones</td>
+</tr>
+<tr>
+<td>Données</td>
+<td>Jeux de données, période, découpage</td>
+<td>SIAR (Espagne), 2005–2015, 70/15/15 %</td>
+</tr>
+<tr>
+<td>Usage prévu</td>
+<td>Recherche, simulation ou déploiement</td>
+<td>Recherche académique, prévision horaire du GHI</td>
+</tr>
+<tr>
+<td>Métriques</td>
+<td>Contre une référence explicite</td>
+<td>nRMSE, nMAE, NICE² par rapport à la persistance</td>
+</tr>
+<tr>
+<td>Résultats clés</td>
+<td>Par station, horizon, saison</td>
+<td>Tableau par station</td>
+</tr>
+<tr>
+<td>Sous-groupes</td>
+<td>Résultats par climat ou saison</td>
+<td>Moins bon en climat méditerranéen</td>
+</tr>
+<tr>
+<td>Limites connues</td>
+<td>Ce que le modèle ne couvre pas</td>
+<td>Pannes de capteurs, forte variabilité nuageuse</td>
+</tr>
+<tr>
+<td>Supervision humaine</td>
+<td>Qui valide les sorties</td>
+<td>Encadrant de thèse, relecture du comité IA</td>
+</tr>
+<tr>
+<td>Traçabilité</td>
+<td>Références techniques</td>
+<td>Commit Git, modèle archivé avec un DOI</td>
+</tr>
+<tr>
+<td>Réutilisation</td>
+<td>Libre, licence ou contrat</td>
+<td>Libre pour la recherche ; usage industriel sous accord</td>
+</tr>
+</tbody>
+</table>
+</details>
 <p><strong>6. Tester avant de partager.</strong> Reproductibilité (graine fixée, mêmes résultats), robustesse (validation croisée, sous-échantillons), tests de stress (valeurs extrêmes ou manquantes), dérive sur des données récentes.</p>
-<p><strong>7. Ajouter six champs au plan de gestion des données.</strong> Base légale ; supervision humaine ; transparence IA ; conditions de réutilisation ; transferts internationaux ; analyse d'impact (AIPD si données personnelles, FRIA pour certains déploiements à haut risque).</p>
-<p><strong>8. Tenir un registre</strong> des projets, usages et partenaires IA, et réévaluer quand un projet change de destination.</p>
+<details id="ex-tests">
+<p><summary>Exemple : plan de test minimal (liste de contrôle, une demi-journée)</summary></p>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Comment</th>
+<th>Pourquoi</th>
+<th>Qui valide</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Reproductibilité</td>
+<td>Graine fixée, résultats identiques ; empreinte des poids et du jeu de données</td>
+<td>Un tiers peut reproduire les résultats</td>
+<td>Doctorant et encadrant</td>
+</tr>
+<tr>
+<td>Robustesse</td>
+<td>Validation croisée k-fold ou sous-échantillons</td>
+<td>Le modèle n'est pas sur-ajusté à un seul jeu</td>
+<td>Doctorant</td>
+</tr>
+<tr>
+<td>Test de stress</td>
+<td>Données extrêmes : pics d'éclairement, manques, anomalies de capteurs</td>
+<td>Stabilité hors conditions normales</td>
+<td>Encadrant</td>
+</tr>
+<tr>
+<td>Dérive</td>
+<td>nRMSE et NICE sur données récentes contre anciennes, avec seuils</td>
+<td>Anticiper la perte de performance</td>
+<td>Référent MLOps et qualité</td>
+</tr>
+<tr>
+<td>Licences</td>
+<td>Chaque donnée et code réutilisé respecte sa licence</td>
+<td>Conformité juridique</td>
+<td>Responsable des données FAIR</td>
+</tr>
+<tr>
+<td>README et mention IA</td>
+<td>Usage de l'IA générative indiqué</td>
+<td>Transparence</td>
+<td>Doctorant</td>
+</tr>
+<tr>
+<td>Validation finale</td>
+<td>Relecture scientifique et technique</td>
+<td>Qualité avant diffusion</td>
+<td>Encadrant responsable</td>
+</tr>
+</tbody>
+</table>
+<p>Pour un modèle en service, un <strong>plan de surveillance</strong> ajoute des seuils, par exemple : nRMSE contrôlé chaque mois, alerte au-delà de +0,05 et critique au-delà de +0,10, puis analyse et réapprentissage ; couverture des données contrôlée chaque semaine, alerte sous 95 % ; plus de trois incidents par mois déclenchent un diagnostic urgent.</p>
+</details>
+<p><strong>7. Ajouter six champs au <a href="#g-dmp">plan de gestion des données</a>.</strong> Base légale ; supervision humaine ; transparence IA ; conditions de réutilisation ; transferts internationaux ; analyse d'impact (<a href="#g-dpia">AIPD</a> si données personnelles, <a href="#g-fria">FRIA</a> pour certains déploiements à haut risque).</p>
+<details id="ex-dmp">
+<p><summary>Exemple : les six champs IA d'un plan de gestion des données</summary></p>
+<ol>
+<li><strong>Base légale</strong> : licence CC BY, convention industrielle ou consentement (<a href="#g-gdpr">RGPD</a>).</li>
+<li><strong>Supervision humaine</strong> : qui valide les résultats, quand, à quel niveau (dans, sur ou hors de la boucle).</li>
+<li><strong>Transparence IA</strong> : si un contenu ou un code a été produit avec une IA, et comment c'est signalé.</li>
+<li><strong>Conditions de réutilisation</strong> : libre, sous licence, ou réservée à un contrat.</li>
+<li><strong>Transferts internationaux</strong> : si des données sortent de l'UE (nuage non européen, partenaire étranger) et les garanties.</li>
+<li><strong>Analyse d'impact</strong> : <a href="#g-dpia">AIPD</a> si données personnelles ; <a href="#g-fria">FRIA</a> pour certains déploiements publics à haut risque ; sinon, pourquoi aucune ne s'applique.</li>
+</ol>
+</details>
+<details id="ex-dpia">
+<p><summary>Exemple : criblage AIPD et FRIA, deux projets contrastés</summary></p>
+<p>Six questions oui/non, notées 0 ou 1. <strong>AIPD</strong> : données personnelles ? base légale nécessaire ? risque pour la vie privée (identifiants, localisation fine, santé, habitudes) ? <strong>FRIA</strong> : organisme public ou usage à haut risque (annexe III) ? risque de discrimination ou d'exclusion ? supervision humaine absente ?</p>
+<ul>
+<li><strong>Prévision d'éclairement à partir de données météorologiques, pour une thèse</strong> : AIPD 0/3, FRIA 0/3. Données météorologiques seulement, usage académique, validation systématique par l'encadrant : aucune n'est requise, et le criblage est conservé comme preuve qu'elle a été envisagée.</li>
+<li><strong>Prévision de consommation des foyers déployée par un gestionnaire de réseau</strong> : AIPD 3/3 (les profils de consommation révèlent des habitudes), FRIA 2/3 (infrastructure critique ; risque de favoriser certaines zones ou certains profils), supervision humaine présente. Les deux analyses sont menées conjointement par le laboratoire (fournisseur scientifique) et l'opérateur (déployeur et responsable légal), avec pseudonymisation, supervision humaine, surveillance et dossier prêt pour l'audit.</li>
+</ul>
+</details>
+<p><strong>8. Tenir un <a href="#ex-register">registre</a></strong> des projets, usages et partenaires IA, et réévaluer quand un projet change de destination.</p>
+<details id="ex-register">
+<p><summary>Exemple : une ligne du registre IA</summary></p>
+<table>
+<thead>
+<tr>
+<th>Projet</th>
+<th>Modèle</th>
+<th>Usage d'IA générative</th>
+<th>Statut</th>
+<th>Partenaires</th>
+<th>Données</th>
+<th>Dernière revue</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Prévision GHI, thèse 2026</td>
+<td>ELM, MLP</td>
+<td>Assistant de code, indiqué dans le README</td>
+<td>Recherche seule</td>
+<td>Aucun</td>
+<td>Données météorologiques publiques</td>
+<td>Lancement ; à tout changement de destination</td>
+</tr>
+</tbody>
+</table>
+</details>
 <p><strong>9. Avant tout transfert, écrire le contrat et préparer le dossier.</strong> Qui devient fournisseur ; licence et propriété intellectuelle ; garanties et responsabilité ; obligation de signaler les incidents ; transferts de données ; le dossier technique (README, fiches données et modèle, plan de test et résultats, journal des versions, plan de surveillance).</p>
-<p><strong>10. Former tout le monde.</strong> Une courte session annuelle pour les doctorants et les personnels couvre la maîtrise de l'IA et la charte du laboratoire.</p>
+<details id="ex-transfer">
+<p><summary>Exemple : contenu d'un dossier prêt pour l'audit</summary></p>
+<ul>
+<li>README avec l'usage de l'IA générative et les licences des données et du code ;</li>
+<li>fiche données (origine, biais, base légale, réutilisation) et fiche modèle (type, données, métriques, limites, supervision humaine, traçabilité Git) ;</li>
+<li>plan de test et ses résultats, validés par l'encadrant ;</li>
+<li>plan de gestion des données avec les six champs IA ;</li>
+<li>journal des versions : versions du modèle, commits Git, évolutions du jeu de données ;</li>
+<li>pour un déploiement à haut risque : plan de surveillance (nRMSE, NICE, dérive, seuils) et procédure d'incident (canal de remontée, responsable nommé, délai de correction).</li>
+</ul>
+</details>
+<p><strong>10. Former tout le monde.</strong> Une courte session annuelle pour les doctorants et les personnels couvre la maîtrise de l'IA et la <a href="#ex-charter">charte</a> du laboratoire.</p>
+<details id="ex-charter">
+<p><summary>Exemple : une charte de laboratoire d'une page</summary></p>
+<p><em>En tant que membre du laboratoire, je m'engage à respecter les principes suivants pour l'utilisation et le développement de systèmes d'intelligence artificielle, conformément à l'AI Act et aux principes FAIR.</em></p>
+<ol>
+<li><strong>IA générative</strong> (assistants conversationnels, assistants de code) : autorisée comme aide à la rédaction, au code et aux figures, avec mention systématique de son usage (rapport, article, README).</li>
+<li><strong>Relecture humaine</strong> : tout ce qui est produit avec une IA est vérifié par une personne ; relecture technique et bibliographique avant toute diffusion. L'auteur reste responsable.</li>
+<li><strong>Documentation minimale</strong> pour chaque projet : une fiche données, une fiche modèle, un dépôt Git versionné avec un README (plateforme de l'établissement ; les projets peuvent rester privés).</li>
+<li><strong>Registre IA</strong> : chaque projet utilisant l'IA y est inscrit ; le passage de la recherche à l'industrie déclenche une réévaluation.</li>
+<li><strong>Plan de gestion des données</strong> avec les six champs IA : base légale, supervision humaine, transparence IA, réutilisation, transferts internationaux, analyse d'impact.</li>
+</ol>
+<p><em>Nom, fonction, date, signature.</em></p>
+</details>
+<h2>Glossaire</h2>
+<dl class="glossary">
+<dt id="g-gdpr">RGPD</dt>
+<p><dd>Règlement général sur la protection des données, règlement (UE) 2016/679 : le droit européen des données personnelles. Voir le <a href="https://www.cnil.fr/fr/reglement-europeen-protection-donnees">texte et les explications de la CNIL</a>.</dd></p>
+<dt id="g-dpia">AIPD (DPIA en anglais)</dt>
+<p><dd>Analyse d'impact relative à la protection des données (art. 35 du RGPD) : obligatoire quand un traitement de données personnelles est susceptible d'engendrer un risque élevé pour les personnes. <a href="https://www.cnil.fr/fr/RGPD-analyse-impact-protection-des-donnees-aipd">Méthode et outil de la CNIL</a>.</dd></p>
+<dt id="g-fria">FRIA</dt>
+<p><dd>Analyse d'impact sur les droits fondamentaux (art. 27 de l'AI Act) : exigée de certains déployeurs de systèmes à haut risque, surtout les organismes publics et les entités privées qui fournissent un service public, avant la première utilisation.</dd></p>
+<dt id="g-mlops">MLOps</dt>
+<p><dd>Ensemble des pratiques qui gardent un modèle reproductible et fiable une fois en service : versionnement des données et du code, tests automatisés, suivi des performances et de la dérive, réapprentissage maîtrisé.</dd></p>
+<dt id="g-dmp">Plan de gestion des données (PGD, DMP)</dt>
+<p><dd>Document qui décrit comment un projet collecte, documente, stocke, partage et archive ses données, exigé par l'ANR et Horizon Europe ; rédigé en France avec <a href="https://dmp.opidor.fr/">DMP OPIDoR</a>.</dd></p>
+<dt id="g-cards">Fiche données, fiche modèle</dt>
+<p><dd>Fiches d'une ou deux pages qui décrivent un jeu de données ou un modèle entraîné : origine, contenu, usage prévu, métriques, limites. Le format reprend les propositions « model cards » et « datasheets for datasets » de la communauté de l'apprentissage automatique.</dd></p>
+</dl>
 <h2>Ressources officielles</h2>
 <ul>
 <li>AI Act : <a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj">règlement (UE) 2024/1689 sur EUR-Lex</a> et la <a href="https://digital-strategy.ec.europa.eu/fr/policies/regulatory-framework-ai">page de la Commission européenne</a></li>
@@ -152,7 +439,7 @@
 <li><a href="/fr/recits/questioning-research/">Se questionner sur nos façons de faire de la recherche : influence, intégrité, excellence</a></li>
 <li><a href="/fr/recits/websemantic/">Au modèle de langage la lecture, au code validé le calcul : WebSemantic</a></li>
 <li><a href="/fr/approche/">La démarche : l'IA à sa place, la confiance démontrée</a></li>
-</ul><section class="note"><h2>Questions fréquentes</h2><h3>La recherche scientifique est-elle exemptée de l&#x27;AI Act ?</h3><p>Les exclusions dépendent de la finalité du système et de son stade, pas seulement du statut de chercheur. L&#x27;article 2 vise les systèmes développés et mis en service à la seule fin de recherche scientifique, ainsi que certaines activités de recherche avant commercialisation. Les essais en conditions réelles sont exclus de cette seconde exemption. Le périmètre doit être réévalué avant un transfert ou un déploiement.</p><p><a href="https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-2">Source officielle</a></p><h3>Quelles échéances pour l&#x27;IA à haut risque faut-il suivre au laboratoire ?</h3><p>Au 23 octobre 2026, le calendrier révisé prévoit le 2 décembre 2027 pour les usages à haut risque de l&#x27;annexe III et le 2 août 2028 pour l&#x27;IA à haut risque intégrée aux produits réglementés de l&#x27;annexe I. D&#x27;autres obligations ont leur propre calendrier. Il faut identifier le système et la disposition concernés avant de retenir une échéance.</p><p><a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai">Source officielle</a></p><h3>Qui est responsable quand un code de laboratoire est transféré ?</h3><p>Il faut identifier le fournisseur, le déployeur et les autres acteurs du système réel. Pour les systèmes à haut risque, l&#x27;article 25 précise les circonstances dans lesquelles un changement de marque, une modification substantielle ou un changement de finalité peut faire d&#x27;un autre acteur le fournisseur. Le contrat documente les rôles sans remplacer les obligations légales applicables.</p><p><a href="https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-25">Source officielle</a></p><h3>Que documenter en premier au laboratoire ?</h3><p>Consigner la finalité, les responsables, l&#x27;origine des données, les versions du modèle et du code, les tests et les limites. Préparer des fiches de données et de modèle, une déclaration d&#x27;usage de l&#x27;IA et un registre des projets. Avant un transfert, revoir les rôles et le dossier avec le service juridique. Ce sont des recommandations pratiques, pas une certification de conformité.</p></section></main>
+</ul><script>(function(){function o(){var h=decodeURIComponent(location.hash.slice(1)),e=h&&document.getElementById(h);if(!e)return;var d=e.tagName==="DETAILS"?e:e.closest("details");if(d){d.open=true;setTimeout(function(){window.scrollTo(0,e.getBoundingClientRect().top+window.scrollY-10);},60);}}window.addEventListener("hashchange",o);o();})();</script><section class="note"><h2>Questions fréquentes</h2><h3>La recherche scientifique est-elle exemptée de l&#x27;AI Act ?</h3><p>Les exclusions dépendent de la finalité du système et de son stade, pas seulement du statut de chercheur. L&#x27;article 2 vise les systèmes développés et mis en service à la seule fin de recherche scientifique, ainsi que certaines activités de recherche avant commercialisation. Les essais en conditions réelles sont exclus de cette seconde exemption. Le périmètre doit être réévalué avant un transfert ou un déploiement.</p><p><a href="https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-2">Source officielle</a></p><h3>Quelles échéances pour l&#x27;IA à haut risque faut-il suivre au laboratoire ?</h3><p>Au 23 octobre 2026, le calendrier révisé prévoit le 2 décembre 2027 pour les usages à haut risque de l&#x27;annexe III et le 2 août 2028 pour l&#x27;IA à haut risque intégrée aux produits réglementés de l&#x27;annexe I. D&#x27;autres obligations ont leur propre calendrier. Il faut identifier le système et la disposition concernés avant de retenir une échéance.</p><p><a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai">Source officielle</a></p><h3>Qui est responsable quand un code de laboratoire est transféré ?</h3><p>Il faut identifier le fournisseur, le déployeur et les autres acteurs du système réel. Pour les systèmes à haut risque, l&#x27;article 25 précise les circonstances dans lesquelles un changement de marque, une modification substantielle ou un changement de finalité peut faire d&#x27;un autre acteur le fournisseur. Le contrat documente les rôles sans remplacer les obligations légales applicables.</p><p><a href="https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-25">Source officielle</a></p><h3>Que documenter en premier au laboratoire ?</h3><p>Consigner la finalité, les responsables, l&#x27;origine des données, les versions du modèle et du code, les tests et les limites. Préparer des fiches de données et de modèle, une déclaration d&#x27;usage de l&#x27;IA et un registre des projets. Avant un transfert, revoir les rôles et le dossier avec le service juridique. Ce sont des recommandations pratiques, pas une certification de conformité.</p></section></main>
 <footer><div class="brand"><a href="https://www.minesparis.psl.eu/annuaire-de-la-recherche/chercheur/cyril-voyant/"><img src="/assets/mines-paris-psl-logo.png" alt="Mines Paris – PSL" width="110" height="68"></a>
 <span>Centre O.I.E., Observation, Impacts, Énergie · Mines Paris – PSL</span></div>
 <p><strong>Cyril Voyant</strong>, directeur de recherche MINES Paris – PSL (HDR, Dr) · Centre Observation, Impacts, Énergie (O.I.E.), Campus Pierre Laffitte, 1 rue Claude Daunesse, CS 10207, F-06904 Sophia Antipolis Cedex</p><p><a href="mailto:cyril.voyant@minesparis.psl.eu">cyril.voyant@minesparis.psl.eu</a> · (+33) 7 86 82 68 63 · <a href="https://www.linkedin.com/in/cyril-voyant-2a7767192/">LinkedIn</a> · <a href="https://www.researchgate.net/profile/Cyril-Voyant">ResearchGate</a> · <a href="https://scholar.google.com/citations?user=aUlP6agAAAAJ">Google Scholar</a> · <a href="https://orcid.org/0000-0003-0242-7377">ORCID</a> · <a href="https://cv.hal.science/cyril-voyant">HAL</a> · <a href="https://github.com/cyrilvoyant">GitHub</a> · <a href="https://person.cyrilvoyant.com/">person.cyrilvoyant.com</a></p><p class="cookies"><a href="#" data-consent-open>Cookies et mesure d'audience</a></p><p class="thread-foot"><a href="/fr/approche/">L'humain au centre, le modèle au cœur, les outils autour.</a></p></footer>
