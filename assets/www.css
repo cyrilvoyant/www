@@ -143,3 +143,38 @@ dl.glossary dt:target, dl.glossary dt:target + dd { background: var(--soft); }
 
 /* L8: images served as WebP inside <picture>, the original PNG/JPEG as fallback */
 picture { display: block; }
+
+/* Collaborate page */
+.collab-hero { margin: 24px 0 8px; padding: 28px 28px 22px; border-radius: 12px; background: linear-gradient(135deg, #eef4fa 0%, #f7f3ee 100%); border: 1px solid var(--line); }
+.collab-hero .kicker { text-transform: uppercase; letter-spacing: .08em; font-size: .8rem; font-weight: 700; color: var(--link); margin: 0 0 6px; }
+.collab-hero h1 { margin: 0 0 .25em; }
+.collab-hero .motto-big { font-size: 1.3rem; color: var(--link); font-weight: 600; margin: 0 0 .6em; }
+.ways .card .num { display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--c); color: #fff; font-weight: 700; margin-bottom: 6px; }
+.proofs .card { border-top-color: #172536; }
+.proofs .tag { font-size: .78rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 700; }
+ol.steps { counter-reset: s; list-style: none; padding: 0; display: grid; gap: 10px; }
+ol.steps li { counter-increment: s; position: relative; padding: 10px 14px 10px 52px; background: var(--paper); border: 1px solid var(--line); border-radius: 8px; }
+ol.steps li::before { content: counter(s); position: absolute; left: 12px; top: 50%; transform: translateY(-50%); width: 28px; height: 28px; border-radius: 50%; background: var(--link); color: #fff; display: grid; place-items: center; font-weight: 700; font-size: .9rem; }
+.collab-cta { margin: 28px 0 8px; padding: 24px 28px; border-radius: 12px; background: #172536; color: #fff; }
+.collab-cta h2 { color: #fff; margin-top: 0; }
+.collab-cta p { color: #dbe4ee; }
+.collab-cta .btns a.primary { background: #fff; color: #172536; border-color: #fff; }
+@media (max-width: 640px) { .collab-hero, .collab-cta { padding: 20px 16px; } }
+.collab-form { display: grid; gap: 12px; margin-top: 12px; }
+.collab-form .f2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.collab-form label { display: grid; gap: 4px; font-weight: 600; font-size: .92rem; color: #fff; }
+.collab-form input, .collab-form select, .collab-form textarea { font: inherit; font-weight: 400; padding: 9px 11px; border-radius: 6px; border: 1px solid #50657a; background: #fff; color: #172536; }
+.collab-form textarea { resize: vertical; }
+.collab-form button.primary { font: inherit; font-weight: 600; padding: 10px 18px; border-radius: 6px; border: 0; background: #fff; color: #172536; cursor: pointer; }
+.collab-form .btns a { color: #fff; border-color: #8aa0b5; background: transparent; }
+.collab-form .f-note { font-size: .84rem; margin: 0; }
+.collab-form .f-err { background: #fbe9e7; color: #8a2a17; padding: 8px 12px; border-radius: 6px; margin: 0; }
+@media (max-width: 640px) { .collab-form .f2 { grid-template-columns: 1fr; } }
+.collab-form ::placeholder { color: #8a99a8; font-style: italic; }
+.collab-form .f-hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.collab-form .f-msg { padding: 9px 12px; border-radius: 6px; margin: 0; }
+.collab-form .f-msg.err { background: #fbe9e7; color: #8a2a17; }
+.collab-form .f-msg.ok { background: #e6f4ea; color: #1e5631; }
+.collab-form .f-msg.wait { background: #eef4fa; color: #172536; }
+.collab-form .f-msg a { color: inherit; }
+.collab-form button[disabled] { opacity: .6; cursor: wait; }

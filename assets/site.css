@@ -162,3 +162,6 @@ picture { display: block; }
 .cvt-scale i { flex: 1; height: 8px; border-radius: 4px; background: linear-gradient(90deg, rgb(7,86,154), #fff, rgb(180,81,58)); border: 1px solid var(--line); }
 .cvt-eq { font-size: 1.05rem; font-variant-numeric: tabular-nums; }
 @media (max-width: 640px) { .cvt-artu { grid-template-columns: 1fr; } }
+
+/* link to the Collaborate page of www, at the end of each guide */
+.collab-note { margin: 24px 0 12px; padding: 12px 16px; border-left: 4px solid var(--link); background: var(--soft, #f2f6fa); border-radius: 0 8px 8px 0; }
