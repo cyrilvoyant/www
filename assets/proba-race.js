@@ -1,8 +1,8 @@
 /* ELM vs persistence, probabilistic forecasts over three days (www home, 24/10/2026).
    Point forecasts: validated PV_ELM_pred code (ridge ELM) and simple persistence, precomputed (proba-race.json).
-   Here, live: the look-up table turns each point forecast into quantiles 5-25-50-75-95 %, and the CRPS is accumulated
-   as the cursor moves. At the end, the scores must equal json.check (computed by make_proba_anim.py).
-   Canvas 2D, no library; loads only when visible; still image when the reader prefers reduced motion. */
+   Appendix C: intervals forecast +/- k(coverage)*sigma. Symmetric 50/90% bands,
+   NOT conditional quantiles. Accumulate the proper 90% interval score, PICP and MIL.
+   Canvas 2D, no library; loads only when visible; playback only on user request. */
 (function () {
   "use strict";
   var box = document.getElementById("proba-race");
@@ -24,18 +24,11 @@
           elm: css("--link", "#07569a"), pers: css("--focus", "#ad5200"), soft: css("--soft", "#edf4fa"), paper: css("--paper", "#fff") };
   }
 
-  /* LUT: interpolate the quantiles between bin centres (same as the Python test) */
+  /* Appendix C LUT: empirical factor per coverage, model and horizon. */
   function quant(m, h, f) {
-    var e = D.edges, x = f / D.pmax, t = D.lut[m][h], n = t.length, c = [], i, k, r = [];
-    for (i = 0; i < n; i++) c.push((e[i] + Math.min(e[i + 1], 1)) / 2);
-    for (k = 0; k < D.q.length; k++) {
-      var y;
-      if (x <= c[0]) y = t[0][k];
-      else if (x >= c[n - 1]) y = t[n - 1][k];
-      else { for (i = 0; x > c[i + 1]; i++); var a = (x - c[i]) / (c[i + 1] - c[i]); y = t[i][k] + a * (t[i + 1][k] - t[i][k]); }
-      r.push(y * D.pmax);
-    }
-    return r;
+    var t = D.lut[m], s = t.sigma[h], k = t.k[h];
+    // lower bounds clipped at 0: a PV plant never produces negative power (the observation is >= 0, so PICP is unchanged; MIL shrinks)
+    return [Math.max(0, f - k[90] * s), Math.max(0, f - k[50] * s), f, f + k[50] * s, f + k[90] * s];
   }
   function prep() {                    // quantiles of every forecast, once
     ["elm", "pers"].forEach(function (m) {
@@ -43,16 +36,16 @@
       for (var h = 0; h < D.H; h++) { var row = []; for (var i = 0; i < D.obs.length; i++) row.push(D.day[i] ? quant(m, h, D[m][h][i]) : [0, 0, 0, 0, 0]); Q[m].push(row); }
     });
   }
-  /* CRPS from the five quantiles (mean pinball loss x 2), daytime targets <= i, all horizons; coverage of the 90 % band */
+  /* Proper interval score: width + 2/alpha * distance outside (alpha=.1). */
   function scores(upto) {
     var s = { elm: [0, 0, 0, 0], pers: [0, 0, 0, 0] };
     ["elm", "pers"].forEach(function (m) {
       for (var i = 0; i <= upto; i++) {
         if (!D.day[i]) continue;
         for (var h = 0; h < D.H; h++) {
-          var q = Q[m][h][i], o = D.obs[i], p = 0;
-          for (var k = 0; k < 5; k++) { var e = o - q[k]; p += 2 * Math.max(D.q[k] * e, (D.q[k] - 1) * e); }
-          s[m][0] += p / 5; s[m][1] += 1; s[m][2] += (o >= q[0] && o <= q[4]) ? 1 : 0;
+          var q = Q[m][h][i], o = D.obs[i];
+          var p = q[4] - q[0] + 20 * Math.max(q[0] - o, 0) + 20 * Math.max(o - q[4], 0);
+          s[m][0] += p; s[m][1] += 1; s[m][2] += (o >= q[0] && o <= q[4]) ? 1 : 0;
           s[m][3] += q[4] - q[0];
         }
       }
@@ -69,7 +62,7 @@
 
   var PADL = 8, PADR = 8, PADT = 12, PADB = 22;
   function X(i) { return PADL + (W - PADL - PADR) * i / (D.obs.length - 1); }
-  function Y(v) { return PADT + (Hh - PADT - PADB) * (1 - v / (D.pmax * 1.05)); }
+  function Y(v) { return PADT + (Hh - PADT - PADB) * (1 - (v - D.ymin) / (D.ymax - D.ymin)); }
 
   function band(m, c, lo, hi, col, alpha) {
     var h, i, n = Math.min(D.H, D.obs.length - 1 - c);
@@ -129,20 +122,20 @@
     out.elm.textContent = fmt(e); out.pers.textContent = fmt(p);
     out.bElm.style.width = (mx ? 100 * e / mx : 0) + "%"; out.bPers.style.width = (mx ? 100 * p / mx : 0) + "%";
     var g = Math.round(100 * (1 - e / p));
-    out.gain.textContent = (fr ? "ELM : erreur probabiliste " : "ELM: probabilistic error ") + (g >= 0 ? "−" + g : "+" + (-g)) + (fr ? " % par rapport à la persistance" : "% vs persistence");
+    out.gain.textContent = (fr ? "ELM : score d’intervalle " : "ELM: interval score ") + (g >= 0 ? "−" + g : "+" + (-g)) + (fr ? " % par rapport à la persistance" : "% vs persistence");
     if (!p) out.gain.textContent = fr ? "Comparaison relative indéfinie : score de référence nul." : "Relative comparison undefined: reference score is zero.";
     out.cov.textContent = (fr ? "PICP — bande nominale à 90 % : " : "PICP — nominal 90% band: ") +
       Math.round(100 * s.elm[2] / s.elm[1]) + (fr ? " % du temps (ELM), " : "% of the time (ELM), ") +
       Math.round(100 * s.pers[2] / s.pers[1]) + (fr ? " % (persistance)" : "% (persistence)");
     out.mil.textContent = "MIL — " + fmt(s.elm[3] / s.elm[1]) + " (ELM), " + fmt(s.pers[3] / s.pers[1]) + (fr ? " (persistance). N = " : " (persistence). N = ") + s.elm[1];
-    if (c === D.obs.length - 1) box.setAttribute("data-check", (Math.abs(e - D.check.crps_elm) < 0.5 && Math.abs(p - D.check.crps_pers) < 0.5) ? "ok" : "fail");
+    if (c === D.obs.length - 1) box.setAttribute("data-check", (Math.abs(e - D.check.interval_score90_elm) < 0.5 && Math.abs(p - D.check.interval_score90_pers) < 0.5) ? "ok" : "fail");
   }
 
   function tick(ts) {
     if (!playing || !visible) { last = 0; return; }
     if (last) cur += SPEED * Math.min(0.1, (ts - last) / 1000);
     last = ts;
-    if (cur >= D.obs.length - 1) { cur = D.obs.length - 1; draw(); playing = false; setBtn(); setTimeout(function () { if (!playing && cur >= D.obs.length - 1 && !box.dataset.user) { cur = 0; lastC = -1; play(); } }, 2500); return; }
+    if (cur >= D.obs.length - 1) { cur = D.obs.length - 1; draw(); playing = false; setBtn(); return; }
     draw(); requestAnimationFrame(tick);
   }
   function setBtn() { btn.textContent = playing ? (fr ? "Pause" : "Pause") : (fr ? "Lecture" : "Play"); btn.setAttribute("aria-pressed", playing ? "true" : "false"); }
@@ -154,7 +147,7 @@
       dayFmt = new Intl.DateTimeFormat(fr ? "fr-FR" : "en-GB", { weekday: "short", day: "numeric", month: "short", timeZone: "Europe/Paris" });
       colours(); prep(); size(); rng.max = String(D.obs.length - 1);
       box.classList.add("ready");
-      if (still) { cur = D.obs.length - 1; draw(); setBtn(); } else { cur = 0; draw(); play(); }
+      cur = D.obs.length - 1; draw(); setBtn();
     }).catch(function () { box.classList.add("failed"); });
   }
   btn.addEventListener("click", function () {
