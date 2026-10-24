@@ -205,7 +205,7 @@ URL: https://www.cyrilvoyant.com/tools/
 Interactive tools: choose a question, explore a method
  Calculators, teaching experiments and research applications, organized by domain and language.
  Start with an example, change an input and examine what changes. Research calculators and medical applications are for research and education; their assumptions and limitations are stated in the linked pages.
- Languages: the seven technical calculators have French and English interfaces. The course tools (ROC, normal distribution, regression, attenuation, cooling, freezing, COP) are in French. Dedicated applications and the comparison tool retain their existing interfaces; filter by language before opening a tool.
+ Languages: the seven technical calculators have French and English interfaces. The course tools (ROC, normal distribution, regression, attenuation, cooling, freezing, COP) are in French. The forecast comparison exists in French and English; dedicated applications retain their existing interfaces; filter by language before opening a tool.
  Find a tool Field Interface language
  Browser calculator · French and English
  Compare a forecast with persistence, NICE
@@ -227,9 +227,9 @@ Interactive tools: choose a question, explore a method
  Explore ARTU coefficients and lookup table
  Vary autocorrelations and measurement quality; read the coefficients.
  Open this tool →
- Explorable demonstration · English interface
- Compare persistence, AR and ELM
- Explore the existing comparison on public Palaiseau data.
+ Explorable demonstration · French and English
+ Compare forecasts: persistence, AR and ELM against horizon
+ Five models on public Palaiseau data, 30 min to 6 h: error against horizon, NICE, curves; computed by the PV_ELM_pred code.
  Open this tool →
  Browser calculator · French and English
  Compare LQ and LQL biological doses
@@ -250,6 +250,10 @@ Interactive tools: choose a question, explore a method
  Server-backed application · English interface
  Simulate tunnel electricity demand, TLS
  Hosted application: synthetic demand from geometry, ventilation and lighting. The server may need to wake up.
+ Open this tool →
+ Explorable demonstration · French and English
+ Complex-valued forecasting: set α and the interval width
+ A complex autoregression forecasts irradiance and its volatility; α slider, Gaussian or calibrated multiplier μ, results of the paper (2022).
  Open this tool →
  Explorable demonstration · French and English
  Watch probabilistic forecasting and its lookup table
@@ -295,6 +299,22 @@ Interactive tools: choose a question, explore a method
  Explore a licensing choice
  Follow an example decision tree, to be adapted to context and content rights.
  Open this tool →
+ Course tool · French interface
+ Student: difference, p-value and confidence interval
+ Visualize rejection regions; compare one sample with a reference, paired differences or two independent groups.
+ Open this tool →
+ Course tool · French interface
+ Significance and R²: how much variation does the line explain?
+ Vary r and n; distinguish the theoretical p-value from variation explained in a constructed teaching example.
+ Open this tool →
+ Course tool · French interface
+ Chi-square: observed, expected and contributions
+ Explore equal-probability goodness of fit or a 2×2 table; visualize cell contributions and small expected counts.
+ Open this tool →
+ Course tool · French interface
+ Regression: confidence or prediction interval?
+ Compare both bands, move x₀ and recognize extrapolation.
+ Open this tool →
  Technical guides, equations and code · Numerical checks of the seven calculators
 
 ---
@@ -303,7 +323,7 @@ URL: https://www.cyrilvoyant.com/fr/outils/
 Outils interactifs : choisir une question, essayer une méthode
  Calculateurs, expériences pédagogiques et applications de recherche, réunis par domaine et langue.
  Commencez avec un exemple, modifiez une entrée et examinez ce qui change. Les calculateurs de recherche et les applications médicales sont destinés à la recherche et à l’enseignement ; leurs hypothèses et limites figurent dans les pages liées.
- Langues : les sept calculateurs techniques ont des interfaces françaises et anglaises. Les outils des cours (ROC, loi normale, régression, atténuation, refroidissement, congélation, COP) sont en français. Les applications dédiées et le comparateur conservent leur interface actuelle ; le filtre précise la langue avant ouverture.
+ Langues : les sept calculateurs techniques ont des interfaces françaises et anglaises. Les outils des cours (ROC, loi normale, régression, atténuation, refroidissement, congélation, COP) sont en français. Le comparateur de prévisions existe en français et en anglais ; les applications dédiées conservent leur interface actuelle ; le filtre précise la langue avant ouverture.
  Rechercher un outil Domaine Langue de l’interface
  Calculateur dans le navigateur · Français et anglais
  Comparer une prévision à la persistance, NICE
@@ -325,9 +345,9 @@ Outils interactifs : choisir une question, essayer une méthode
  Explorer les coefficients et la table ARTU
  Faire varier les autocorrélations et la qualité de mesure ; lire les coefficients.
  Ouvrir cet outil →
- Démonstration à explorer · Interface en anglais
- Comparer persistance, AR et ELM
- Explorer le comparateur existant sur les données publiques de Palaiseau.
+ Démonstration à explorer · Français et anglais
+ Comparer des prévisions : persistance, AR et ELM selon l’horizon
+ Cinq modèles sur les données publiques de Palaiseau, de 30 min à 6 h : erreur selon l’horizon, NICE, courbes ; calculs du code PV_ELM_pred.
  Ouvrir cet outil →
  Calculateur dans le navigateur · Français et anglais
  Comparer les doses biologiques LQ et LQL
@@ -348,6 +368,10 @@ Outils interactifs : choisir une question, essayer une méthode
  Application avec serveur · Interface en anglais
  Simuler la demande électrique d’un tunnel, TLS
  Application hébergée : demande synthétique selon géométrie, ventilation et éclairage. Démarrage du serveur parfois nécessaire.
+ Ouvrir cet outil →
+ Démonstration à explorer · Français et anglais
+ Prévision complexe : régler α et la largeur des intervalles
+ Une autorégression complexe prévoit l’éclairement et sa volatilité ; curseur α, multiplicateur μ gaussien ou calibré, résultats de l’article (2022).
  Ouvrir cet outil →
  Démonstration à explorer · Français et anglais
  Observer la prévision probabiliste et sa lookup table
@@ -392,6 +416,22 @@ Outils interactifs : choisir une question, essayer une méthode
  Arbre de réflexion · Français et anglais
  Explorer un choix de licence
  Suivre un exemple d’arbre de décision, à adapter au contexte et aux droits sur les contenus.
+ Ouvrir cet outil →
+ Outil de cours · Interface en français
+ Student : différence, p-value et intervalle de confiance
+ Visualiser les zones de rejet ; comparer un échantillon à une référence, des différences appariées ou deux groupes indépendants.
+ Ouvrir cet outil →
+ Outil de cours · Interface en français
+ Significativité et R² : quelle variation explique la droite ?
+ Faire varier r et n ; distinguer la p-value théorique et la variation expliquée dans un nuage pédagogique construit.
+ Ouvrir cet outil →
+ Outil de cours · Interface en français
+ χ² : observés, attendus et contributions
+ Explorer un ajustement équiprobable ou un tableau 2×2 ; visualiser les cellules qui pèsent et les faibles effectifs.
+ Ouvrir cet outil →
+ Outil de cours · Interface en français
+ Régression : intervalle de confiance ou de prévision ?
+ Comparer les deux bandes, déplacer x₀ et reconnaître une extrapolation.
  Ouvrir cet outil →
  Guides techniques, équations et codes (en anglais) · Contrôles numériques des sept calculateurs
 
@@ -1035,6 +1075,59 @@ The RTVACOS tree: where can your work break?
  Scientific publishing: no verification, no trust
 
 ---
+URL: https://www.cyrilvoyant.com/tools/forecast-comparison/
+
+Compare forecasts: when is a more complex model worth it?
+ Five forecasts of a photovoltaic plant's output, from the simplest to the most elaborate, compared on the same targets. Choose the horizon and the metric: the curve shows where each model wins, and by how much.
+ JavaScript Reading the comparison
+ Persistence
+ the last observed value; the minimal reference of any forecast.
+ Cyclic persistence
+ the value observed 24 hours earlier at the same time; it follows the daily cycle.
+ BLEND
+ a mix of the two persistences, with a weight learned for each time of day.
+ AR
+ a linear autoregression on the last 24 hours, estimated by least squares.
+ ELM
+ a neural network with one random hidden layer (Extreme Learning Machine), whose output weights alone are learned, by regularized least squares.
+ NICE₁, NICE₂, NICE₃
+ error norms divided by those of raw simple persistence (last observation, without a night mask) at the same horizon: NICE₁ = MAE/MAEₚ, NICE₂ = RMSE/RMSEₚ; NICE₃ uses the cube root of the mean cubed absolute error. Below 1 beats the reference; above 1 is worse.
+ Daytime / day and night
+ "daytime" counts only the times when the sun is up; predictions are set to zero at night. Including night changes the evaluated population and normalization; state the scope alongside results.
+ Protocol: public Palaiseau data (AC power, 30-minute steps, first two years); models trained on the first half, evaluated on the second; 24 hours of lags plus time of day and of year as inputs; forecasts set to zero at night. nRMSE and nMAE divide RMSE and MAE by the observed mean on the selected scope. The published PV_ELM_pred solvers are used, with lag scaling fitted on training rows only in this demonstration. The displayed persistence is night-masked, unlike the raw NICE reference: its day-and-night NICE may be below 1. One ELM setup (200 neurons, 8 draws, seed 42) is studied here, not a universal model ranking. A teaching calculation on public data, not the result of an article. For the uncertainty around a forecast, see complex-valued forecasting and the probabilistic animation .
+ Software and protocol
+ Martin Leiva, Xavier Silvani , Gilles Notton , Cyril Voyant , Alan Julien . PV_ELM_pred (Zenodo). Code and data : github.com/cyrilvoyant/PV_ELM_pred .
+
+---
+URL: https://www.cyrilvoyant.com/complex-valued-forecasting/
+
+Forecasting irradiance and its uncertainty with complex numbers
+ A single complex autoregression, six coefficients, forecasts irradiance and its volatility at once. For a target coverage of 80%, the observed coverage stays between 79.5 and 80.7% up to six hours, and its intervals are narrower than those of quantile regression at every horizon.
+ The idea
+ Compute the clear-sky index κ = GHI/GHI CS , then its volatility σ τ : the standard deviation of its hour-to-hour changes over the last 30 hours. Instead of forecasting one and then the other, put them in a single complex number, z(t) = κ(t) + j·σ τ (t) , and fit an autoregression of order p to z: ẑ(t+1) = Σ ω i ·z(t−i) , with complex coefficients ω i . The real part predicts κ; multiplying it by GHI CS recovers predicted irradiance. The imaginary part predicts the volatility of κ. The coefficients come from complex least squares, ω = (I H I + λ·1) −1 I H o , with p = 6 and λ = 3.74 for Ajaccio.
+ Setting α
+ The 1 − α prediction interval is ĜHI ± μ·GHI CS ·σ̂ . Everything lies in the multiplier μ. Under a Gaussian assumption, μ = erf −1 (1 − α)/√(1 − β) ; but irradiance is not Gaussian, and the paper recommends calibrating μ on training data, μ = f 1 ·e f 2 ·α , one pair (f 1 , f 2 ) per horizon. Move α: the blue curve is the calibrated μ at the chosen horizon, the dashed orange curve the Gaussian μ at 1 h.
+ α Horizon
+ The paper's results (target coverage 80%, test year 2018)
+ Horizon nRMSE PICP Gauss PICP Quant PICP Compl MIL Gauss MIL Quant MIL Compl
+ 1 h 0.196 83.8 79.7 80.0 51.2 42.2 41.2
+ 2 h 0.252 81.4 79.9 80.7 64.6 58.7 56.7
+ 3 h 0.282 80.7 80.1 80.1 71.0 67.3 63.1
+ 4 h 0.303 80.4 80.6 80.0 75.4 74.5 67.1
+ 5 h 0.317 81.0 80.8 79.5 78.7 79.1 69.3
+ 6 h 0.325 81.4 81.4 79.7 81.4 82.7 70.0
+ PICP (Prediction Interval Coverage Probability): share of measurements inside the interval (target 80%). MIL (Mean Interval Length): mean interval width, normalized. nRMSE of the complex method. Gauss: residual variance; Quant: ridge quantile regression. Source: Table II of the paper.
+ What to keep in mind
+ The slider evaluates μ, not a new observed coverage at each α. Table results remain those at α=0.2.
+ One site, Ajaccio, hourly daytime data; training 2008–2017, test 2018.
+ Point accuracy is of a similar order of magnitude to the other methods (nRMSE 0.196 to 0.325): the gain is in the interval.
+ On CRPS and MSIS, quantile regression remains best (MSIS 0.89 versus 0.95).
+ The appendix suggests replacing the μ(α) curve by a lookup table, an idea taken up in the probabilistic animation on the home page.
+ To compare point forecasts on public data: the forecast comparison .
+ The paper
+ Cyril Voyant , Philippe Lauret , Gilles Notton , Jean-Laurent Duchaud , Luis Garcia-Gutierrez , Ghjuvan Antone Faggianelli . Complex-valued time series based solar irradiance forecast . Journal of Renewable and Sustainable Energy 14, 066502 (2022). HAL · arXiv .
+
+---
 URL: https://www.cyrilvoyant.com/teaching/
 
 Teaching
@@ -1521,31 +1614,9 @@ Flux thermique
 Loi de Fourier :
 φ = −λ dT/dx
  ; le signe moins dit que la chaleur va du chaud vers le froid.
-Pour une paroi d'épaisseur e :
-Φ = λ S (T
-2
- − T
-1
-)/e
-, et une résistance thermique de conduction
-R = e/λ
- (K·m²·W
-−1
-), par analogie avec l'électricité.
-Convection, libre ou forcée :
-φ = h (T
-p
- − T
-∞
-)
-, avec une résistance externe
-R = 1/h
-.
-Nombre de Biot :
-Bi = h L
-c
-/λ
-, rapport des résistances interne et de surface ; s'il est petit (Bi < 0,1), la température de l'aliment reste pratiquement uniforme.
+Paroi plane, régime stationnaire et λ constant : |Φ| = λ S (Tchaud − Tfroid)/e. Résistance totale : R = e/(λS), en K/W ; résistance surfacique : R″ = e/λ, en m²·K/W.
+Convection : φ = h (Tp − T∞). La résistance surfacique vaut 1/h ; la résistance totale vaut 1/(hS). Il faut conserver la même convention pour additionner les résistances.
+Nombre de Biot : Bi = hLc/λ, avec Lc = V/S pour le modèle uniforme. Bi < 0,1 est un critère usuel pour négliger les gradients internes, à apprécier selon la géométrie et la précision voulue.
 Les propriétés thermiques d'un aliment dépendent d'abord de sa teneur en eau, avant et après congélation ; la congélation commence sous 0 °C car l'eau contient des solutés.
 Puissance de refroidissement :
 P = m c
@@ -1559,20 +1630,7 @@ f
 P = m Δh/Δt
  où Δh additionne le refroidissement du produit frais, la chaleur latente de l'eau congelée et le refroidissement du produit congelé.
 Toute l'eau ne gèle pas : la relation de Chen donne la teneur en glace, et l'eau non congelable doit entrer dans le bilan.
-Bilan énergétique : avec une température uniforme,
-T(t) = T
-∞
- + (T
-i
- − T
-∞
-) e
-−t/τ
-,
-τ = m c
-p
-/(h S)
- ; des formules dédiées traitent la cuisson et le refroidissement au cœur et en surface.
+Modèle uniforme, sans changement de phase, milieu extérieur et propriétés constants : T(t) = T∞ + (Ti − T∞) exp(−t/τ), τ = mcp/(hS). Sinon, une résolution de conduction et un bilan de phase peuvent être nécessaires.
 Pour aller plus loin : questions et réponses
 Que change concrètement un nombre de Biot élevé ?
 La résistance interne domine : la surface suit vite le fluide tandis que le cœur traîne ; la loi exponentielle à température uniforme ne vaut plus, il faut une solution de conduction transitoire et surveiller la température à cœur, qui fixe la sécurité sanitaire.
@@ -1640,28 +1698,31 @@ b
 1
  x̄
  ; elle sert à prévoir y à partir de x.
-Coefficient de détermination
-r²
- : part de la variance de y expliquée par la droite.
-Significativité de r :
-t = r √(n − 2)/√(1 − r²)
-, loi de Student à n − 2 degrés de liberté.
+En régression linéaire simple par moindres carrés avec constante, R² = r² mesure la part de variation de y expliquée dans l’échantillon ; cette égalité ne se généralise pas à tout modèle.
+Sous H0 : ρ = 0, pour des couples indépendants issus d’une loi normale bivariée, t = r√(n − 2)/√(1 − r²) suit une Student à n − 2 ddl. Un lien non linéaire peut échapper à Pearson.
 Résidus, tests sur la pente et l'ordonnée à l'origine, et intervalle de prévision à 95 % autour d'une valeur prévue.
 Variables qualitatives :
 χ² = Σ (O − E)²/E
 , observés contre attendus.
-χ² d'ajustement à k − 1 degrés de liberté : avec les sacs de bonbons, 52,75 > 9,488 (α = 0,05, 4 ddl), les saveurs ne sont pas équiréparties.
+χ² d’ajustement : k − 1 ddl pour k probabilités fixées à l’avance ; l’estimation de m paramètres peut ramener les ddl à k − 1 − m sous les conditions du test. Exemple du support : 52,75 dépasse 9,488 pour 4 ddl au seuil de 5 %.
 χ² d'indépendance sur un tableau de contingence, à (l − 1)(c − 1) degrés de liberté : traitement et guérison, nationalité et marque, sexe et localisation d'un cancer.
 Les exercices de synthèse enchaînent comparaison de moyennes, corrélation, droite de régression et intervalle de prévision sur des données de fumeurs.
+Pour vérifier les conditions des modèles :
+NIST : moindres carrés et variance résiduelle
+ ·
+NIST : intervalles de confiance et de prévision
+ ·
+NIST : conditions du χ² d’ajustement
+.
 Pour aller plus loin : questions et réponses
-Quelle différence entre intervalle de confiance et intervalle de prévision en régression ?
-Le premier encadre la valeur moyenne de y pour un x donné, il se resserre quand n grandit ; le second encadre une nouvelle observation individuelle et garde la variance résiduelle : il ne descend jamais sous ±1,96 fois l'écart-type des résidus.
+Quelle différence entre intervalle de confiance et de prévision ?
+Dans une régression linéaire simple à erreurs indépendantes normales de variance constante : IC95 de la moyenne = ŷ0 ± t(n−2;0,975) se √[1/n + (x0−x̄)²/Sxx]. Pour une future observation, ajouter 1 sous la racine. Ici Sxx = Σ(xi−x̄)² et se² = Σrésidu²/(n−2). L’intervalle de prévision conserve donc la dispersion individuelle ; 1,96 n’est qu’une approximation asymptotique du quantile.
 Un r significatif suffit-il à rendre une prévision utile ?
-Non : avec 1000 sujets, r = 0,1 est significatif mais n'explique que 1 % de la variance. La significativité dit que le lien existe, r² et l'erreur de prévision disent s'il sert.
+Non : avec 1000 couples, r = 0,1 peut être significatif tout en n’expliquant que 1 % de la variation dans une régression simple avec constante. Rejeter ρ = 0 sous un modèle ne démontre ni causalité, ni utilité prédictive ; celle-ci se mesure aussi sur des données non utilisées pour ajuster le modèle.
 Pourquoi une seule valeur aberrante peut-elle tout changer ?
 Les moindres carrés pèsent le carré des écarts : un point éloigné en x a un bras de levier qui tire la pente et gonfle ou crée r. On regarde toujours le nuage et les résidus avant de conclure.
-Quand le χ² n'est-il plus valable ?
-Quand des effectifs attendus sont trop petits (en pratique moins de 5) : l'approximation par la loi du χ² se dégrade ; on regroupe des classes, on applique la correction de Yates sur un tableau 2×2, ou le test exact de Fisher.
+Que faire lorsque les effectifs attendus du χ² sont faibles ?
+L’approximation asymptotique peut être médiocre ; examiner la taille et la structure du tableau. Un regroupement justifié ou une méthode exacte peuvent convenir, notamment Fisher pour un tableau 2×2 dans son cadre. La correction de continuité de Yates ne garantit pas de résoudre le problème des faibles effectifs.
 
 ---
 URL: https://www.cyrilvoyant.com/fr/enseignement/biostatistique/probabilites/
@@ -1670,11 +1731,7 @@ Chapitre 1 : probabilités, probabilités conditionnelles, tableaux de contingen
 Le chapitre en 10 points
 La statistique sert à définir la normalité, mesurer la variabilité (entre patients, entre mesures) et ajuster les traitements : la concentration d'un médicament varie fortement d'un patient à l'autre pour une même dose.
 Corrélation n'est pas causalité : une variable cachée peut créer un lien apparent, et la formulation d'une question change la probabilité cherchée (paradoxe des deux enfants).
-Une probabilité est une fréquence limite ; pour des événements quelconques
-P(A ∪ B) = P(A) + P(B) − P(A ∩ B)
-, et
-P(Ā) = 1 − P(A)
-.
+Une probabilité se modélise ; la fréquence limite en est l’interprétation fréquentiste. P(A ∪ B) = P(A) + P(B) − P(A ∩ B) et P(Ā) = 1 − P(A).
 Sous l'hypothèse d'équiprobabilité, on compte : cas favorables sur cas possibles, avec les outils du dénombrement.
 Probabilité conditionnelle :
 P(A | B) = P(A ∩ B)/P(B)
@@ -1694,15 +1751,15 @@ VPP = Se·p / [Se·p + (1 − Sp)(1 − p)]
 ,
 VPN = Sp(1 − p) / [Sp(1 − p) + (1 − Se) p]
 .
-La courbe ROC trace Se en fonction de 1 − Sp quand le seuil varie ; l'aire sous la courbe (AUC) résume le pouvoir discriminant, 0,5 pour un test inutile.
-Le seuil se choisit sur la courbe, par exemple au point le plus proche du coin idéal (0, 1), comme pour le BNP.
+La ROC trace Se en fonction de 1 − Sp lorsque le seuil varie. Une AUC de 0,5 correspond à une absence de discrimination moyenne par le classement du score ; elle ne décrit pas à elle seule l’utilité d’une décision.
+Le choix du seuil dépend de l’usage, de la prévalence et des conséquences des erreurs. Maximiser Youden (Se + Sp − 1) et minimiser la distance au coin (0, 1) sont deux critères distincts.
 Pour aller plus loin : questions et réponses
-Pourquoi un test excellent donne-t-il tant de faux positifs dans une maladie rare ?
-La VPP dépend de la prévalence : avec Se = Sp = 99 % et p = 1/1000, les faux positifs (1 % de 999 personnes) sont dix fois plus nombreux que les vrais positifs ; c'est pourquoi un dépistage positif se confirme par un second test, plus spécifique.
-Que signifie exactement une AUC de 0,8 ?
-C'est la probabilité qu'un malade tiré au hasard ait un résultat plus élevé qu'un non-malade tiré au hasard ; elle ne dit rien d'un seuil particulier, et deux tests de même AUC peuvent différer nettement dans la zone de haute spécificité utile en pratique.
-Le meilleur seuil est-il toujours celui qui maximise Se + Sp ?
-Non : l'indice de Youden ou le point le plus proche de (0, 1) supposent que faux positifs et faux négatifs coûtent autant. Pour un dépistage on privilégie la sensibilité, pour une confirmation avant traitement lourd la spécificité.
+Pourquoi la prévalence modifie-t-elle la valeur prédictive ?
+Avec Se = Sp = 99 % et une prévalence de 1/1000, sur 1000 personnes on attend 0,99 vrai positif et 9,99 faux positifs, soit une VPP proche de 9 %. C’est une illustration de Bayes ; la conduite clinique dépend du contexte et du protocole.
+Que signifie une AUC de 0,8 ?
+Avec un score orienté vers la présence de la maladie, AUC = P(score malade > score non-malade) + 0,5 P(égalité). Une AUC de 0,8 décrit ce classement, pas la probabilité individuelle d’être malade ni la qualité à un seuil précis.
+Le meilleur seuil maximise-t-il toujours Se + Sp ?
+Non. Youden et la distance au coin idéal optimisent des critères différents ; ils ne codent pas automatiquement le coût clinique des erreurs. Une décision demande notamment la prévalence et les conséquences respectives des faux positifs et faux négatifs.
 Pourquoi l'approche bayésienne sert-elle à ajuster une posologie ?
 Elle combine la connaissance de la population (distribution a priori des paramètres pharmacocinétiques) et les dosages du patient : quelques prélèvements suffisent pour une estimation individuelle, que l'on affine à chaque nouvelle mesure.
 
@@ -1718,44 +1775,26 @@ s² = Σ(x
 i
  − x̄)²/(n − 1)
 , écart-type s, étendue, quantiles.
-Loi normale
-N(μ, σ)
-, décrite aussi par ses moments d'ordre 3 (asymétrie) et 4 (aplatissement).
-Tests de normalité, dont Jarque-Bera
-JB = (n/6)[S² + (K − 3)²/4]
-, comparé à 5,99 (χ² à 2 degrés de liberté).
+Notation utilisée ici : N(μ, σ²), où μ est la moyenne, σ l’écart-type et σ² la variance. Asymétrie et aplatissement décrivent d’autres aspects de la forme de la distribution.
+Jarque-Bera : JB = (n/6)[S² + (K − 3)²/4], avec K l’aplatissement non centré sur 3. Sous les conditions asymptotiques du test, le seuil à 5 % est environ 5,99 (χ² à 2 ddl).
 Variable centrée réduite
 z = (x − μ)/σ
  et table de N(0, 1) ; environ 95 % des valeurs entre μ − 1,96σ et μ + 1,96σ.
 Intervalle de confiance à 95 % de la moyenne :
 x̄ ± 1,96 · s/√n
  pour n grand.
-Distribution d'échantillonnage et théorème central limite : la moyenne d'un échantillon suit approximativement une loi normale d'écart-type σ/√n.
+Théorème central limite : pour des observations indépendantes de même loi et de variance finie, la moyenne standardisée tend vers une normale ; son erreur-type est σ/√n. Une dépendance exige des conditions supplémentaires.
 Test d'hypothèses : H₀, H₁, test uni- ou bilatéral, risque α, statistique de test et p-value ; exemple : un seul de trois scores de lecture est significativement inférieur à la référence.
-Comparaison de moyennes : test z, puis test de Student
-t = (x̄
-1
- − x̄
-2
-)/√(s
-1
-²/n
-1
- + s
-2
-²/n
-2
-)
-, apparié ou non, à variances égales ou non.
+Deux échantillons indépendants : t = (x̄1 − x̄2)/√(s1²/n1 + s2²/n2) est la statistique de Welch, avec ddl approchés de Welch-Satterthwaite. Le test apparié porte sur les différences ; le Student à variances égales utilise une variance commune.
 Pour aller plus loin : questions et réponses
 Pourquoi diviser par n − 1 et non par n ?
 Les écarts sont mesurés à la moyenne de l'échantillon, qui leur est la plus proche possible : diviser par n sous-estime systématiquement la variance. n − 1 corrige ce biais, car un degré de liberté a servi à estimer la moyenne.
-Une p-value de 0,03 signifie-t-elle que H₀ a 3 % de chances d'être vraie ?
-Non : c'est la probabilité d'observer un écart au moins aussi grand si H₀ était vraie. La probabilité de H₀ elle-même demande un raisonnement bayésien, avec une probabilité a priori.
-Quand le test de Student remplace-t-il le test z ?
-Quand σ est inconnu et estimé par s sur un petit échantillon : la statistique suit une loi de Student à n − 1 degrés de liberté, aux queues plus épaisses ; pour n grand, les deux se confondent.
-Faut-il se fier à un test de normalité sur un grand échantillon ?
-Avec beaucoup de données, le moindre écart devient significatif alors que le test de Student reste robuste grâce au théorème central limite ; le graphique (histogramme, droite de Henry) et la question posée comptent plus que la p-value du test de normalité.
+Une p-value de 0,03 donne-t-elle la probabilité que H0 soit vraie ?
+Non. Sous H0 et les hypothèses du modèle, c’est la probabilité d’une statistique au moins aussi extrême que celle observée, selon le test choisi. Ce n’est ni P(H0 | données), ni une mesure de l’importance pratique de l’effet.
+Quand utilise-t-on la loi de Student pour une moyenne ?
+Pour des observations indépendantes normales avec variance inconnue, (x̄ − μ0)/(s/√n) suit exactement une Student à n − 1 ddl, même à grand n. Sans normalité, l’approximation dépend de la taille et de la distribution ; les tests à deux groupes ou appariés ont leurs propres conditions.
+Un test de normalité suffit-il à choisir une méthode ?
+Non : un grand échantillon détecte de faibles écarts et un petit échantillon manque de puissance. Il faut examiner les graphiques, les valeurs extrêmes, l’indépendance et la question d’inférence ; le théorème central limite ne répare pas une collecte biaisée ou toute dépendance.
 
 ---
 URL: https://www.cyrilvoyant.com/fr/enseignement/cours-prevision-solaire/
@@ -1815,7 +1854,7 @@ Chapitre 5 : les cycles frigorifiques
 Le chapitre en 10 points
 Une machine frigorifique fonctionne en quatre étapes : compression, condensation, détente, évaporation ; le fluide absorbe la chaleur en s'évaporant à basse pression et la rejette en se condensant à haute pression.
 On suit le cycle sur le diagramme de Mollier (ln p, h) : enthalpie en abscisse, pression absolue en ordonnée, avec isothermes, isentropes, isochores et isotitres.
-Dans la zone de mélange, pression et température sont liées ; ailleurs, elles sont indépendantes.
+Pour un corps pur à l’équilibre liquide-vapeur, p et T sont liées par la saturation. Un mélange zéotrope peut présenter un glissement de température à pression constante.
 Machine idéale : compression 1-2 isentropique, échanges sans perte de charge (isobares 2-3 et 5-1), détente 4-5 isenthalpe.
 Bilan d'énergie :
 |q
@@ -1840,27 +1879,17 @@ th
 1
 )
 .
-Borne de Carnot du cycle inverse :
-COP
-C
- = T
-f
-/(T
-c
- − T
-f
-)
-.
-Pour augmenter q₀ : surchauffe (évaporateur plus grand ou échangeur interne) et sous-refroidissement (condenseur plus grand ou échangeur).
+Borne de Carnot du COP frigorifique : COPC = Tf/(Tc − Tf), avec températures des deux sources en kelvins et Tc > Tf.
+Le sous-refroidissement peut augmenter l’effet frigorifique massique. La surchauffe ne produit du froid utile que si la chaleur est absorbée dans le volume à refroidir ; une surchauffe de la conduite d’aspiration n’est pas un gain utile.
 Les fluides frigorigènes se choisissent selon leurs propriétés thermodynamiques, leur sécurité et leur impact sur l'environnement.
-La réglementation encadre la mise en service, l'entretien, le contrôle d'étanchéité et la récupération des fluides, impose attestations de capacité et d'aptitude, et a interdit les CFC puis les HCFC.
+Les obligations applicables aux fluides et aux équipements évoluent : les éléments réglementaires des supports historiques doivent être vérifiés dans les textes en vigueur avant une décision professionnelle.
 Pour aller plus loin : questions et réponses
 Pourquoi le COP chute-t-il quand l'écart entre chambre froide et extérieur augmente ?
 La borne de Carnot T_f/(T_c − T_f) diminue quand l'écart grandit : congeler à −30 °C en été coûte bien plus de travail par kilojoule extrait que conserver à +4 °C ; d'où l'intérêt de condenser le plus froid possible et des cycles étagés pour les grands écarts.
-Pourquoi le sous-refroidissement augmente-t-il le COP sans coût de compression ?
-Il déplace le point d'entrée de la détente vers les faibles enthalpies, donc augmente q₀ = h₁ − h₅, tandis que le travail du compresseur, fixé par les points 1 et 2, ne change pas.
-La surchauffe à l'aspiration est-elle un gain ou une nécessité ?
-D'abord une protection : le compresseur ne doit jamais aspirer de liquide. Elle augmente q₀ mais déplace la compression vers des volumes massiques plus grands ; son réglage, par le détendeur, est un compromis entre sécurité et efficacité.
+Dans quelles conditions le sous-refroidissement augmente-t-il le COP ?
+À pressions et état d’aspiration inchangés, il diminue l’enthalpie à l’entrée du détendeur et augmente q0 sans changer le travail massique du compresseur. Le bilan réel doit aussi compter les auxiliaires et les éventuels changements du fonctionnement.
+La surchauffe à l’aspiration est-elle toujours utile ?
+Elle protège le compresseur contre une arrivée de liquide. Elle augmente la chaleur utile seulement si elle se produit dans la zone à refroidir ; dans la conduite extérieure, elle ajoute une charge parasite. Son effet sur le COP dépend du fluide et du cycle.
 Pourquoi la détente est-elle isenthalpe et que perd-on ?
 Le détendeur lamine le fluide sans échange de travail ni de chaleur : h se conserve, mais la détente est irréversible ; le travail qu'une turbine de détente aurait récupéré est perdu, ce qui justifie les éjecteurs ou les détendeurs à récupération sur les grandes installations, notamment au CO₂.
 
@@ -1869,16 +1898,10 @@ URL: https://www.cyrilvoyant.com/fr/enseignement/physique-industrielle/cycles-mo
 
 Chapitre 4 : les cycles thermodynamiques moteurs
 Le chapitre en 10 points
-Premier principe, conservation :
-ΔU = Q + W
- pour un système fermé ; sur un cycle
-ΔU = 0
-, donc le travail fourni équilibre la chaleur nette reçue.
-Second principe, évolution : toute transformation réelle crée de l'entropie ; la chaleur va spontanément du chaud vers le froid, un gaz se détend spontanément de la haute vers la basse pression, jamais l'inverse.
+Premier principe pour un système fermé immobile : ΔU = Q + W (échanges reçus positifs). Sur un cycle ΔU = 0 : le travail net fourni égale la chaleur nette reçue.
+Second principe : la production d’entropie est positive ou nulle, strictement positive pour un processus irréversible. Un transfert spontané de chaleur va du chaud vers le froid ; l’inverser exige une compensation.
 Conséquence (Carnot) : un moteur en contact avec une seule source ne fournit aucun travail ; il faut une source chaude et une source froide, et la conversion intégrale de chaleur en travail est impossible.
-Inégalité de Clausius :
-ΔS ≥ ∫ δQ/T
-, avec égalité pour une transformation réversible.
+Bilan d’entropie d’un système fermé : ΔS ≥ ∫ δQ/Tfrontière, avec Q reçu positif et la température absolue au lieu de l’échange ; égalité en l’absence de production d’entropie.
 Rendement maximal d'un moteur ditherme :
 η
 C
@@ -1912,14 +1935,14 @@ c
 2
 )
 .
-Cycles complexes : la resurchauffe entre deux étages de détente et la régénération par soutirages améliorent le rendement.
+Resurchauffe et régénération modifient le cycle : leurs effets sur rendement, travail et humidité en sortie de turbine se quantifient par un bilan, sans supposer un gain identique pour toute configuration.
 Pour aller plus loin : questions et réponses
 Pourquoi aucun moteur réel n'atteint-il le rendement de Carnot ?
 Le cycle de Carnot suppose des échanges de chaleur réversibles, donc à écart de température nul et infiniment lents ; un moteur réel échange sous des écarts finis, avec frottements et détentes irréversibles, qui créent de l'entropie et dégradent le travail récupérable.
 Pourquoi la régénération améliore-t-elle le rendement d'un cycle à vapeur ?
 Préchauffer l'eau d'alimentation avec de la vapeur soutirée élève la température moyenne à laquelle la chaudière apporte la chaleur ; le cycle se rapproche d'un cycle de Carnot entre des températures plus élevées.
-Pourquoi le moteur Diesel a-t-il un rapport de compression plus élevé que le moteur à essence ?
-Il n'a pas de bougie : la compression doit porter l'air au-delà de la température d'auto-inflammation du gazole ; à l'inverse l'essence, qui s'enflamme plus facilement, imposerait le cliquetis à de tels rapports.
+Pourquoi comprimer fortement l’air dans un moteur Diesel ?
+La compression chauffe l’air avant l’injection, afin de permettre l’auto-inflammation du carburant injecté. Dans un moteur à allumage commandé, l’auto-inflammation du mélange non brûlé peut provoquer du cliquetis ; il ne s’agit pas de classer simplement les carburants par facilité d’inflammation.
 Pourquoi l'eau est-elle le fluide de travail des grandes centrales ?
 Elle est abondante, non toxique, stable, et sa chaleur latente de vaporisation est élevée : on transporte beaucoup d'énergie par kilogramme, et la pompe, qui comprime un liquide, consomme très peu de travail.
 
@@ -1931,10 +1954,10 @@ Le chapitre en 10 points
 Le gaz parfait est un gaz dilué de molécules sans interaction :
 p V = n R T
 .
-Pour un gaz parfait, les chaleurs massiques sont constantes, l'énergie interne et l'enthalpie ne dépendent que de T, linéairement ; pour un gaz semi-parfait elles dépendent de T sans être linéaires.
-Les gaz réels s'écartent de cette loi quand la pression monte : on ne les décrit plus par une équation simple mais par des diagrammes et des tables.
-Pour un corps pur, deux grandeurs d'état suffisent à fixer l'état ; les autres (T, p, v, h, s…) se lisent sur un diagramme.
-Le diagramme de Clapeyron (p, v) montre la courbe de saturation en cloche : au-dessus de la température critique le fluide reste gazeux, en dessous il se liquéfie à pression constante.
+Pour un gaz parfait, u et h ne dépendent que de T. Les capacités thermiques peuvent dépendre de T ; les supposer constantes définit ici l’approximation de gaz caloriquement parfait.
+Les gaz réels peuvent s’écarter de pV = nRT, notamment à forte densité et près de la saturation ; des équations d’état, tables ou diagrammes décrivent ces écarts.
+Deux propriétés intensives indépendantes fixent l’état d’un corps pur simple compressible à l’équilibre. Dans le mélange liquide-vapeur, p et T sont liées : il faut aussi le titre massique de vapeur.
+Sur le diagramme (p, v), une isotherme sous-critique traverse le domaine liquide-vapeur à pression de saturation constante. Au-dessus de Tc, une compression isotherme ne rencontre plus cette transition.
 Dans la zone diphasique, le titre
 x
  est la fraction de vapeur (
@@ -1995,43 +2018,18 @@ rel
  + p
 atm
 .
-Température : la mesure de l'agitation moléculaire,
-E
-c
- = (3/2) k T
- avec
-k = 1,38·10
-−23
- J·K
-−1
-.
-Premier principe :
-ΔU = Q + W
- ; la chaleur est un transfert désordonné, le travail un transfert ordonné.
-Chaleur sensible :
-Q = m c ΔT
- (eau :
-c ≈ 4186 J·kg
-−1
-·°C
-−1
-) ; chaleur latente :
-Q = m L
- à température constante (glace :
-L
-f
- ≈ 333 kJ·kg
-−1
-).
+La température absolue T se mesure en kelvins ; pour un gaz parfait monatomique, l’énergie cinétique moyenne de translation par particule vaut ⟨Ec⟩ = (3/2) kT, avec k = 1,380649·10⁻²³ J/K.
+Premier principe pour un système fermé immobile : ΔU = Q + W, avec chaleur Q et travail W comptés positivement lorsqu’ils sont reçus par le système.
+Chaleur sensible : Q = m c ΔT si c est constant ; changement de phase d’un corps pur à pression fixée : Q = m L. Pour un aliment, la congélation s’étale généralement sur une plage de températures.
 Ordres de grandeur : fondre 1 kg de glace (334 kJ) coûte presque autant que chauffer 1 kg d'eau de 0 à 100 °C (421 kJ) ; la vaporisation coûte bien davantage.
 Évaporation (en surface, à toute température) et ébullition (dans la masse, à une température fixée par la pression) ; la surfusion maintient un liquide sous sa température de solidification.
-Le diagramme de phases de l'eau situe le point triple (trois états coexistent) et le point critique (au-delà, fluide supercritique).
-La condensation s'obtient en comprimant jusqu'à la pression de vapeur saturante ou en refroidissant jusqu'à la température de saturation : c'est le principe même du froid industriel.
+Le diagramme de phases situe le point triple et le point critique. Un fluide est supercritique lorsque sa température ET sa pression dépassent leurs valeurs critiques.
+Sous la température critique, refroidir une vapeur jusqu’à saturation ou la comprimer à température constante peut provoquer sa condensation : les tables précisent les conditions du changement de phase.
 Pour aller plus loin : questions et réponses
-Pourquoi la chaleur latente commande-t-elle le dimensionnement d'une congélation ?
-Parce qu'elle pèse autant qu'un refroidissement d'environ 80 °C de l'eau liquide (333 kJ/kg contre 4,19 kJ/kg par °C) : la puissance frigorifique et la durée se jouent au palier de changement d'état, pas sur les degrés gagnés avant ou après.
-Pourquoi un fluide frigorigène doit-il bouillir très en dessous de 0 °C à la pression atmosphérique ?
-La température d'ébullition est fixée par la pression : un fluide comme le R22 (−40,8 °C sous 1 atm) s'évapore à basse température sous une pression raisonnable, ce qui permet d'absorber la chaleur de la chambre froide sans faire le vide dans l'évaporateur.
+Pourquoi la chaleur latente compte-t-elle dans une congélation ?
+Pour l’eau pure, 333 kJ/kg de glace formée représentent environ 80 °C de chaleur sensible de l’eau liquide. Dans un aliment, il faut multiplier par la masse d’eau effectivement congelée et ajouter les autres échanges ; la durée dépend aussi des résistances thermiques et de la géométrie.
+Quelle température d’évaporation faut-il choisir pour un fluide frigorigène ?
+Elle doit être inférieure à celle du milieu à refroidir. La pression de saturation correspondante, la sécurité, l’impact environnemental et le cycle guident le choix ; bouillir sous 0 °C à pression atmosphérique n’est pas une condition universelle.
 La surfusion a-t-elle une conséquence pratique pour les aliments ?
 Oui : un produit peut rester liquide sous sa température de congélation puis cristalliser brusquement ; la température mesurée remonte alors au palier, ce qui fausse une lecture naïve des courbes de congélation et influe sur la taille des cristaux.
 Pourquoi raisonner en pression absolue alors que les manomètres affichent une pression relative ?
@@ -2042,9 +2040,9 @@ URL: https://www.cyrilvoyant.com/fr/enseignement/physique-industrielle/vapeur-d-
 
 Chapitre 3 : la vapeur d'eau
 Le chapitre en 10 points
-Un gaz qui se détend se refroidit (pneu qui se dégonfle, extincteur à CO₂) ; un gaz que l'on comprime s'échauffe (pompe à vélo, compresseur).
-Une bulle d'air qui s'élève rencontre des pressions plus faibles, se détend et se refroidit : c'est l'origine de la baisse de la température avec l'altitude, et de la baisse de la température d'ébullition en montagne.
-La vapeur d'eau est invisible ; l'air le plus sec en contient toujours. L'humidité mesure cette quantité.
+Le changement de température d’un gaz dépend du procédé : une détente adiabatique avec travail tend à le refroidir ; la détente libre d’un gaz parfait conserve sa température. Un laminage réel dépend aussi du gaz et de l’état initial.
+Une parcelle d’air ascendante peut se refroidir par détente adiabatique. En montagne, l’eau bout à plus basse température parce que la pression extérieure est plus faible : c’est une autre conséquence de la baisse de pression.
+La vapeur d’eau est invisible ; l’air atmosphérique en contient une quantité variable. Les gouttelettes visibles d’un brouillard sont de l’eau liquide, et non de la vapeur.
 Dans l'air humide,
 P = p
 a
@@ -2075,15 +2073,15 @@ s
  ≈ 100 · r / r
 s
  ; la sensation d'humidité dépend de l'écart à la saturation, pas de la quantité d'eau seule.
-Exemple : à Ajaccio en hiver, T = 8 °C et r = 6,4 g/kg donnent HR ≈ 96 %.
+Exemple du support : à environ 1013 hPa, T = 8 °C et r = 6,4 g/kg donnent une humidité relative voisine de 96 % ; la pression doit être précisée pour convertir r en pression partielle.
 La chaleur latente absorbée par la fusion et la vaporisation est restituée exactement par la solidification et la condensation.
 Pour aller plus loin : questions et réponses
-Pourquoi l'humidité relative monte-t-elle la nuit alors que l'air ne gagne pas d'eau ?
-Le rapport de mélange r reste le même, mais e_s(T) chute avec la température : HR = r/r_s augmente jusqu'à 100 % au point de rosée, où la condensation commence (rosée, brouillard, givre).
+Pourquoi l’humidité relative peut-elle monter la nuit sans apport d’eau ?
+À pression et rapport de mélange approximativement constants, la baisse de température réduit la pression de saturation : HR = 100 e/es augmente. À saturation, de l’eau peut se condenser ; sous zéro, une déposition de glace est également possible.
 D'où vient le coefficient 0,622 ?
 C'est le rapport des masses molaires de l'eau et de l'air sec, 18,0/28,96 : il convertit un rapport de pressions partielles en rapport de masses.
-Pourquoi les évaporateurs des chambres froides givrent-ils ?
-Leur surface est bien en dessous du point de rosée de l'air de la chambre, et sous 0 °C : la vapeur s'y condense directement en glace, ce qui isole l'échangeur et impose des dégivrages, d'autant plus fréquents que l'on ouvre souvent les portes.
+Pourquoi un évaporateur peut-il givrer ?
+Sur une surface froide sous 0 °C, de la vapeur peut se déposer en glace ou des gouttelettes se condenser puis geler. Le dépôt ajoute une résistance thermique et perturbe l’écoulement de l’air ; l’humidité entrante joue donc sur le besoin de dégivrage.
 Pourquoi la chaleur latente intéresse-t-elle autant les procédés ?
 Elle permet de transporter beaucoup d'énergie à température constante : condenser de la vapeur chauffe fortement une paroi sans la surchauffer, ce qui explique l'usage de la vapeur en cuisson et en stérilisation, et des fluides diphasiques en froid.
 
@@ -2117,31 +2115,16 @@ Archivé et citable sur Zenodo, DOI
 URL: https://www.cyrilvoyant.com/fr/enseignement/physique-pass/ed1-corrige/
 
 Exercices dirigés 1 : les ondes électromagnétiques, corrigé
-Le chapitre en 7 points
-Passer de l'énergie à la longueur d'onde :
-E = hc/λ
- ; un photon de 3 eV est à la frontière visible-UV, loin du seuil d'ionisation de l'hydrogène (13,6 eV).
+Le chapitre en 10 points
+E = hc/λ : un photon de 3 eV a une longueur d’onde d’environ 413 nm, dans le violet visible. Le seuil de 13,6 eV concerne l’ionisation de l’hydrogène dans son état fondamental, pas toute matière.
 Lier les paramètres d'une onde : période, pulsation
 ω = 2πν
 , longueur d'onde dans le vide et dans un milieu où la célérité change (
 λ = v/ν
 ).
-Énergie de masse (
-E = mc²
-) et longueur d'onde de de Broglie d'un électron (
-λ = h/(mv)
-).
-Lire l'équation d'une onde : direction et sens de propagation, monochromaticité, polarisation ; intensité
-I = ⟨E²⟩ = E
-0
-²/2
-.
-Transmittance et absorbance :
-T = I/I
-0
-,
-A = −log T
- (loi de Beer-Lambert).
+Énergie de masse au repos : E0 = mc². Longueur d’onde de de Broglie : λ = h/p ; l’approximation λ = h/(mv) s’utilise seulement lorsque v est petit devant c.
+Lire une onde : propagation, fréquence et polarisation. Pour une onde plane sinusoïdale dans le vide, l’intensité moyenne est I = ε0 c E0²/2 ; ⟨E²⟩ = E0²/2 est proportionnel à I, sans avoir les mêmes unités.
+Transmittance T = I/I0 ; absorbance décimale A = −log10(T). Dans le modèle de Beer-Lambert homogène à coefficient constant, doubler l’épaisseur double A et élève T au carré.
 Atténuation par couches de demi-atténuation : n CDA transmettent
 I
 0
@@ -2149,24 +2132,29 @@ I
 n
 , ce qui donne le coefficient μ et le contraste entre deux trajets.
 Électron Compton : énergie cinétique maximale en rétrodiffusion.
+Application du TD : à 10 MHz, T = 100 ns et ω ≈ 6,28·10⁷ rad/s. Toujours convertir MHz en Hz avant le calcul.
+À fréquence 500 THz, λ vaut 600 nm dans le vide et 400 nm dans un verre de célérité 2·10⁸ m/s ; la fréquence se conserve au passage de l’interface.
+Pour un photon incident de 255,5 keV (α = E/(mec²) = 0,5), le transfert Compton maximal vaut E·2α/(1+2α) = 127,75 keV, atteint en rétrodiffusion.
 Pour aller plus loin : questions et réponses
 Pourquoi raisonner en nombre de CDA plutôt qu'avec l'exponentielle ?
 Parce que les traversées successives se composent par multiplication : 2 CDA de tumeur puis 3 CDA de tissu sain transmettent 1/2⁵ = 1/32, sans calculatrice ; l'exponentielle n'est nécessaire que pour une épaisseur qui n'est pas un multiple simple de la CDA.
-L'intensité d'une onde dépend-elle de sa phase ?
-Non : elle est la moyenne temporelle de E², et la moyenne de cos² sur un temps long vaut 1/2 quelle que soit la phase ; seule l'amplitude E₀ compte, I = E₀²/2.
+L’intensité d’une onde dépend-elle de sa phase ?
+Pour une onde plane sinusoïdale isolée, moyennée sur de nombreuses périodes, ⟨E²⟩ = E0²/2 ne dépend pas de la phase initiale et I = ε0 c E0²/2 dans le vide. En superposition, les phases relatives interviennent dans les interférences.
+Pourquoi préciser les unités avant un calcul d’atténuation ?
+L’exposant μx doit être sans dimension. Si μ est en cm⁻¹, exprimer x en cm ; une épaisseur en millimètres non convertie introduit un facteur dix dans l’exposant.
 
 ---
 URL: https://www.cyrilvoyant.com/fr/enseignement/physique-pass/ed2-corrige/
 
 Exercices dirigés 2 : les ondes électromagnétiques, corrigé
-Le chapitre en 6 points
+Le chapitre en 10 points
 Niveaux de l'atome hydrogénoïde :
 E
 n
  = −13,6 Z²/n² eV
  ; énergies d'excitation entre couches et énergie minimale d'ionisation.
 L'ionisation par un photon assez énergétique est possible mais pas systématique : l'interaction est probabiliste.
-Photons de fluorescence : selon la transition, dans l'UV (2 → 1) ou dans le visible (3 → 2) ; séries de raies et leurs longueurs d'onde.
+Pour l’hydrogène, les transitions 2 → 1 et 3 → 2 émettent respectivement dans l’UV et le visible. Pour un autre Z ou un atome multiélectronique, recalculer ΔE et λ = hc/ΔE.
 Électron Auger après une lacune K :
 E
 c
@@ -2179,11 +2167,20 @@ L
  quand un électron L comble la lacune et qu'un autre électron L est éjecté.
 Tube à rayons X : la tension fixe l'énergie maximale, le courant le nombre de photons, la filtration durcit le faisceau et protège le patient.
 Atténuation dans le plomb et l'aluminium : domaines du photoélectrique et du Compton, et remontée du coefficient massique à très haute énergie par création de paires.
+Un ion hydrogénoïde possède un seul électron : pour He⁺, l’ionisation depuis l’état fondamental demande 54,4 eV. Ne pas appliquer cette valeur à la première ionisation de l’hélium neutre.
+Tube idéal : Emax = eU et λmin = hc/(eU). Avec Emax en keV et U en kV, leurs valeurs numériques coïncident.
+Dans l’approximation du support F = KiZU², doubler U et diviser i par quatre conserve la puissance rayonnée F ; cela ne garantit pas un même nombre de photons ni une même dose absorbée.
+Passer de μ/ρ au coefficient linéique : μ = (μ/ρ)ρ. Ainsi cm²/g multiplié par g/cm³ donne cm⁻¹ ; la transmission exp(−μx) demande alors x en cm.
+Pour vérifier les conditions des modèles :
+NIST XCOM : atténuation massique et interactions
+.
 Pour aller plus loin : questions et réponses
 Pourquoi le coefficient d'atténuation massique du plomb remonte-t-il au-delà de quelques MeV ?
 La création de paires, nulle sous 1,022 MeV, croît avec l'énergie et avec Z² ; dans le plomb (Z = 82) elle devient dominante et rend un faisceau de 100 MeV moins pénétrant qu'un faisceau de quelques MeV.
 Un photon d'énergie supérieure à l'énergie d'ionisation ionise-t-il forcément l'atome ?
 Non : l'énergie est une condition nécessaire, pas suffisante ; l'interaction a une probabilité (section efficace) qui dépend de l'énergie et de la couche, d'où une lecture statistique de l'atténuation.
+Pourquoi distinguer He et He⁺ dans un modèle hydrogénoïde ?
+La loi −13,6 Z²/n² eV décrit un système à un électron. He⁺ en possède un ; He neutre en possède deux et les interactions électroniques empêchent d’utiliser directement cette formule pour sa première ionisation.
 
 ---
 URL: https://www.cyrilvoyant.com/fr/enseignement/physique-pass/ondes-electromagnetiques/
@@ -2216,17 +2213,7 @@ p = h/λ
 −19
  J
 .
-Niveaux d'énergie atomiques :
-E
-n
- = −E
-0
- (Z − b)²/n²
-,
-E
-0
- = 13,6 eV
- ; au plus 2n² électrons par couche (Pauli).
+Modèle hydrogénoïde approché : En = −13,6 (Z − b)²/n² eV ; le paramètre d’écran b ne constitue pas une description exacte d’un atome multiélectronique. Une couche de nombre quantique n contient au plus 2n² électrons.
 L'absorption ionise ou excite ; le réarrangement émet un photon de fluorescence ou un électron Auger,
 E
 c
@@ -2250,28 +2237,18 @@ R = K Z U
 min
  = hc/(eU)
 .
-Atténuation :
-N(x) = N
-0
- e
-−μx
-, couche de demi-atténuation
-CDA = ln 2/μ
- ; 10 CDA laissent passer environ un photon sur mille.
-Trois interactions : effet photoélectrique (probabilité en
-Z³/E³
-), effet Compton, création de paires au-delà de
-2 m
-e
-c² = 1,022 MeV
+Faisceau monoénergétique étroit, milieu homogène et coefficient μ constant : N(x) = N0 exp(−μx), CDA = ln(2)/μ. Dix CDA transmettent 1/1024 ; un faisceau polychromatique peut se durcir au cours du trajet.
+Interactions : photoélectrique (dépendance approximative en Z³/E³ loin des seuils), Compton, création de paires dans le champ nucléaire au-dessus de 1,022 MeV.
+Les domaines de prédominance des interactions dépendent du matériau et de l’énergie ; les frontières simplifiées du support sont des repères, pas des seuils universels.
+En imagerie, le contraste dépend des différences d’atténuation ; le scanner reconstruit des coefficients exprimés en unités Hounsfield. Les tensions citées dans le support illustrent des ordres de grandeur, pas un protocole clinique.
+Pour vérifier les conditions des modèles :
+NIST XCOM : coefficients d’interaction et limites des tables
 .
-Dans l'eau : photoélectrique sous 50 keV, Compton de 50 keV à 20 MeV, matérialisation au-delà.
-Imagerie : le contraste naît de différences d'atténuation ; la tension se règle selon l'examen (25-50 kV en mammographie, 100-130 kV pour le thorax) ; le scanner reconstruit des coupes en unités Hounsfield, avec fenêtrage.
 Pour aller plus loin : questions et réponses
 Pourquoi l'os est-il si contrasté à basse tension et beaucoup moins à haute tension ?
 À basse énergie l'effet photoélectrique domine, en Z³/E³ : le calcium de l'os absorbe beaucoup plus que les tissus mous. À haute énergie l'effet Compton domine, qui dépend surtout de la densité électronique, presque identique d'un tissu à l'autre.
-Comment doubler l'énergie maximale des photons d'un tube sans changer la puissance rayonnée ?
-Puisque F = K i Z U², doubler U multiplie F par quatre : il faut diviser le courant par quatre. L'énergie maximale suit U, le nombre de photons suit i.
+Comment doubler l’énergie maximale sans changer la puissance rayonnée du tube ?
+Dans l’approximation F = KiZU², à matériau et coefficient K inchangés, doubler U et diviser i par quatre conserve F. L’énergie maximale double ; le spectre et le rendement changent aussi. La proportionnalité du nombre de photons au courant vaut à tension et durée fixées.
 Pourquoi l'électron Compton n'emporte-t-il jamais toute l'énergie du photon ?
 La conservation de l'énergie et de la quantité de mouvement impose un photon diffusé ; l'énergie transférée est maximale en rétrodiffusion, E_c,max = E₀ · 2α/(1 + 2α) avec α = E₀/(m_e c²), toujours inférieure à E₀.
 Pourquoi filtrer le faisceau à la sortie du tube ?

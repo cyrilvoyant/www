@@ -34,6 +34,7 @@ Cyril Voyant connects medical physics and energy forecasting through modelling f
 - [Understand before you compute: the approach of Cyril Voyant](https://www.cyrilvoyant.com/approach/)
 - [Cite and reuse our work](https://www.cyrilvoyant.com/cite/)
 - [Collaborate: research projects, studies and adaptation of the tools](https://www.cyrilvoyant.com/collaborate/)
+- [Forecasting irradiance and its uncertainty with complex numbers](https://www.cyrilvoyant.com/complex-valued-forecasting/)
 - [Curriculum vitae](https://www.cyrilvoyant.com/cv/)
 - [Models live in the data: qualify, certify, license](https://www.cyrilvoyant.com/data/)
 - [News: publications, software and essays](https://www.cyrilvoyant.com/latest-publications-and-news/)
@@ -57,6 +58,7 @@ Cyril Voyant connects medical physics and energy forecasting through modelling f
 - [Open courses in French: biostatistics, medical physics, industrial physics and food heat transfer](https://www.cyrilvoyant.com/teaching/open-courses/)
 - [Solar forecasting course: forecasting the intermittent solar resource](https://www.cyrilvoyant.com/teaching/solar-forecasting-course/)
 - [Interactive tools: choose a question, explore a method](https://www.cyrilvoyant.com/tools/)
+- [Compare forecasts: when is a more complex model worth it?](https://www.cyrilvoyant.com/tools/forecast-comparison/)
 
 ### fr
 
@@ -95,11 +97,13 @@ Cyril Voyant connects medical physics and energy forecasting through modelling f
 - [Outils interactifs : choisir une question, essayer une méthode](https://www.cyrilvoyant.com/fr/outils/)
 - [Explorer les coefficients et la table ARTU](https://www.cyrilvoyant.com/fr/outils/artu/)
 - [Calculer les poids de BLEND](https://www.cyrilvoyant.com/fr/outils/blend/)
+- [Comparer des prévisions : quand un modèle plus complexe vaut-il la peine ?](https://www.cyrilvoyant.com/fr/outils/comparateur-previsions/)
 - [Comparer les doses biologiques LQ et LQL](https://www.cyrilvoyant.com/fr/outils/doses-lq-lql/)
 - [Déplacer une prévision et observer l’indice γ](https://www.cyrilvoyant.com/fr/outils/indice-gamma/)
 - [Explorer les profils du modèle thyroïde](https://www.cyrilvoyant.com/fr/outils/modele-thyroide/)
 - [Comparer une prévision à la persistance : NICE](https://www.cyrilvoyant.com/fr/outils/nice/)
 - [Mesurer variabilité et prévisibilité : sCV et F](https://www.cyrilvoyant.com/fr/outils/variabilite-previsibilite/)
+- [Prévoir l'éclairement et son incertitude avec des nombres complexes](https://www.cyrilvoyant.com/fr/prevision-complexe/)
 - [Recherche : questions, résultats et méthodes](https://www.cyrilvoyant.com/fr/recits/)
 - [Calculer plutôt qu'apprendre : l'équivalence de dose en radiothérapie avec LQL-Equiv](https://www.cyrilvoyant.com/fr/recits/lql-equiv/)
 - [Se questionner sur nos façons de faire de la recherche : influence, intégrité, excellence](https://www.cyrilvoyant.com/fr/recits/questioning-research/)

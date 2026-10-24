@@ -95,18 +95,18 @@
       "id": "comparison",
       "domain": "energy",
       "kind": "demo",
-      "interface_language": "en",
+      "interface_language": "both",
       "name": {
-        "fr": "Comparer persistance, AR et ELM",
-        "en": "Compare persistence, AR and ELM"
+        "fr": "Comparer des prévisions : persistance, AR et ELM selon l’horizon",
+        "en": "Compare forecasts: persistence, AR and ELM against horizon"
       },
       "task": {
-        "fr": "Explorer le comparateur existant sur les données publiques de Palaiseau.",
-        "en": "Explore the existing comparison on public Palaiseau data."
+        "fr": "Cinq modèles sur les données publiques de Palaiseau, de 30 min à 6 h : erreur selon l’horizon, NICE, courbes ; calculs du code PV_ELM_pred.",
+        "en": "Five models on public Palaiseau data, 30 min to 6 h: error against horizon, NICE, curves; computed by the PV_ELM_pred code."
       },
       "url": {
-        "fr": "https://cyrilvoyant.github.io/teaching/reference-model-comparison.html",
-        "en": "https://cyrilvoyant.github.io/teaching/reference-model-comparison.html"
+        "fr": "https://www.cyrilvoyant.com/fr/outils/comparateur-previsions/",
+        "en": "https://www.cyrilvoyant.com/tools/forecast-comparison/"
       }
     },
     {
@@ -197,6 +197,24 @@
       "url": {
         "fr": "https://tunnel-load-simulator.onrender.com/",
         "en": "https://tunnel-load-simulator.onrender.com/"
+      }
+    },
+    {
+      "id": "complex",
+      "domain": "energy",
+      "kind": "demo",
+      "interface_language": "both",
+      "name": {
+        "fr": "Prévision complexe : régler α et la largeur des intervalles",
+        "en": "Complex-valued forecasting: set α and the interval width"
+      },
+      "task": {
+        "fr": "Une autorégression complexe prévoit l’éclairement et sa volatilité ; curseur α, multiplicateur μ gaussien ou calibré, résultats de l’article (2022).",
+        "en": "A complex autoregression forecasts irradiance and its volatility; α slider, Gaussian or calibrated multiplier μ, results of the paper (2022)."
+      },
+      "url": {
+        "fr": "https://www.cyrilvoyant.com/fr/prevision-complexe/",
+        "en": "https://www.cyrilvoyant.com/complex-valued-forecasting/"
       }
     },
     {
@@ -395,6 +413,78 @@
       "url": {
         "fr": "https://www.cyrilvoyant.com/fr/donnees/#lic-tree",
         "en": "https://www.cyrilvoyant.com/data/#lic-tree"
+      }
+    },
+    {
+      "id": "student",
+      "domain": "learning",
+      "kind": "teaching",
+      "interface_language": "fr",
+      "name": {
+        "fr": "Student : différence, p-value et intervalle de confiance",
+        "en": "Student: difference, p-value and confidence interval"
+      },
+      "task": {
+        "fr": "Visualiser les zones de rejet ; comparer un échantillon à une référence, des différences appariées ou deux groupes indépendants.",
+        "en": "Visualize rejection regions; compare one sample with a reference, paired differences or two independent groups."
+      },
+      "url": {
+        "fr": "https://www.cyrilvoyant.com/fr/enseignement/biostatistique/statistiques-descriptives/#tool-student",
+        "en": "https://www.cyrilvoyant.com/fr/enseignement/biostatistique/statistiques-descriptives/#tool-student"
+      }
+    },
+    {
+      "id": "determination",
+      "domain": "learning",
+      "kind": "teaching",
+      "interface_language": "fr",
+      "name": {
+        "fr": "Significativité et R² : quelle variation explique la droite ?",
+        "en": "Significance and R²: how much variation does the line explain?"
+      },
+      "task": {
+        "fr": "Faire varier r et n ; distinguer la p-value théorique et la variation expliquée dans un nuage pédagogique construit.",
+        "en": "Vary r and n; distinguish the theoretical p-value from variation explained in a constructed teaching example."
+      },
+      "url": {
+        "fr": "https://www.cyrilvoyant.com/fr/enseignement/biostatistique/correlation-regression/#tool-determination",
+        "en": "https://www.cyrilvoyant.com/fr/enseignement/biostatistique/correlation-regression/#tool-determination"
+      }
+    },
+    {
+      "id": "chisquare",
+      "domain": "learning",
+      "kind": "teaching",
+      "interface_language": "fr",
+      "name": {
+        "fr": "χ² : observés, attendus et contributions",
+        "en": "Chi-square: observed, expected and contributions"
+      },
+      "task": {
+        "fr": "Explorer un ajustement équiprobable ou un tableau 2×2 ; visualiser les cellules qui pèsent et les faibles effectifs.",
+        "en": "Explore equal-probability goodness of fit or a 2×2 table; visualize cell contributions and small expected counts."
+      },
+      "url": {
+        "fr": "https://www.cyrilvoyant.com/fr/enseignement/biostatistique/correlation-regression/#tool-chisquare",
+        "en": "https://www.cyrilvoyant.com/fr/enseignement/biostatistique/correlation-regression/#tool-chisquare"
+      }
+    },
+    {
+      "id": "intervals",
+      "domain": "learning",
+      "kind": "teaching",
+      "interface_language": "fr",
+      "name": {
+        "fr": "Régression : intervalle de confiance ou de prévision ?",
+        "en": "Regression: confidence or prediction interval?"
+      },
+      "task": {
+        "fr": "Comparer les deux bandes, déplacer x₀ et reconnaître une extrapolation.",
+        "en": "Compare both bands, move x₀ and recognize extrapolation."
+      },
+      "url": {
+        "fr": "https://www.cyrilvoyant.com/fr/enseignement/biostatistique/correlation-regression/#tool-intervals",
+        "en": "https://www.cyrilvoyant.com/fr/enseignement/biostatistique/correlation-regression/#tool-intervals"
       }
     }
   ]

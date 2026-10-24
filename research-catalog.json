@@ -259,6 +259,35 @@
       ]
     },
     {
+      "url": "https://www.cyrilvoyant.com/complex-valued-forecasting/",
+      "title": "Forecasting irradiance and its uncertainty with complex numbers",
+      "language": "en",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "The idea",
+          "anchor": null
+        },
+        {
+          "title": "Setting α",
+          "anchor": null
+        },
+        {
+          "title": "The paper's results (target coverage 80%, test year 2018)",
+          "anchor": null
+        },
+        {
+          "title": "What to keep in mind",
+          "anchor": null
+        },
+        {
+          "title": "The paper",
+          "anchor": null
+        }
+      ]
+    },
+    {
       "url": "https://www.cyrilvoyant.com/cv/",
       "title": "Curriculum vitae",
       "language": "en",
@@ -1006,6 +1035,18 @@
           "anchor": null
         },
         {
+          "title": "Distinguer significativité et variation expliquée",
+          "anchor": null
+        },
+        {
+          "title": "χ² : comparer observés et attendus",
+          "anchor": null
+        },
+        {
+          "title": "Régression : moyenne ou future observation ?",
+          "anchor": null
+        },
+        {
           "title": "Support de Cours Introduction aux Biostatistiques Partie 3",
           "anchor": null
         },
@@ -1053,6 +1094,10 @@
       "sections": [
         {
           "title": "Le chapitre en 10 points",
+          "anchor": null
+        },
+        {
+          "title": "Tester une différence et lire son incertitude",
           "anchor": null
         },
         {
@@ -1313,7 +1358,7 @@
       "citations": [],
       "sections": [
         {
-          "title": "Le chapitre en 7 points",
+          "title": "Le chapitre en 10 points",
           "anchor": null
         },
         {
@@ -1338,7 +1383,7 @@
       "citations": [],
       "sections": [
         {
-          "title": "Le chapitre en 6 points",
+          "title": "Le chapitre en 10 points",
           "anchor": null
         },
         {
@@ -1489,7 +1534,7 @@
           "anchor": null
         },
         {
-          "title": "Comparer persistance, AR et ELM",
+          "title": "Comparer des prévisions : persistance, AR et ELM selon l’horizon",
           "anchor": null
         },
         {
@@ -1510,6 +1555,10 @@
         },
         {
           "title": "Simuler la demande électrique d’un tunnel, TLS",
+          "anchor": null
+        },
+        {
+          "title": "Prévision complexe : régler α et la largeur des intervalles",
           "anchor": null
         },
         {
@@ -1554,6 +1603,22 @@
         },
         {
           "title": "Explorer un choix de licence",
+          "anchor": null
+        },
+        {
+          "title": "Student : différence, p-value et intervalle de confiance",
+          "anchor": null
+        },
+        {
+          "title": "Significativité et R² : quelle variation explique la droite ?",
+          "anchor": null
+        },
+        {
+          "title": "χ² : observés, attendus et contributions",
+          "anchor": null
+        },
+        {
+          "title": "Régression : intervalle de confiance ou de prévision ?",
           "anchor": null
         }
       ]
@@ -1716,6 +1781,23 @@
         },
         {
           "title": "Travaux et équipes de référence",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/outils/comparateur-previsions/",
+      "title": "Comparer des prévisions : quand un modèle plus complexe vaut-il la peine ?",
+      "language": "fr",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Lire la comparaison",
+          "anchor": null
+        },
+        {
+          "title": "Logiciel et protocole",
           "anchor": null
         }
       ]
@@ -2144,6 +2226,35 @@
         },
         {
           "title": "Travaux et équipes de référence",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/prevision-complexe/",
+      "title": "Prévoir l'éclairement et son incertitude avec des nombres complexes",
+      "language": "fr",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "L'idée",
+          "anchor": null
+        },
+        {
+          "title": "Régler α",
+          "anchor": null
+        },
+        {
+          "title": "Les résultats de l'article (couverture visée 80 %, test 2018)",
+          "anchor": null
+        },
+        {
+          "title": "Ce qu'il faut garder en tête",
+          "anchor": null
+        },
+        {
+          "title": "L'article",
           "anchor": null
         }
       ]
@@ -3505,7 +3616,7 @@
           "anchor": null
         },
         {
-          "title": "Compare persistence, AR and ELM",
+          "title": "Compare forecasts: persistence, AR and ELM against horizon",
           "anchor": null
         },
         {
@@ -3526,6 +3637,10 @@
         },
         {
           "title": "Simulate tunnel electricity demand, TLS",
+          "anchor": null
+        },
+        {
+          "title": "Complex-valued forecasting: set α and the interval width",
           "anchor": null
         },
         {
@@ -3570,6 +3685,39 @@
         },
         {
           "title": "Explore a licensing choice",
+          "anchor": null
+        },
+        {
+          "title": "Student: difference, p-value and confidence interval",
+          "anchor": null
+        },
+        {
+          "title": "Significance and R²: how much variation does the line explain?",
+          "anchor": null
+        },
+        {
+          "title": "Chi-square: observed, expected and contributions",
+          "anchor": null
+        },
+        {
+          "title": "Regression: confidence or prediction interval?",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/tools/forecast-comparison/",
+      "title": "Compare forecasts: when is a more complex model worth it?",
+      "language": "en",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Reading the comparison",
+          "anchor": null
+        },
+        {
+          "title": "Software and protocol",
           "anchor": null
         }
       ]
