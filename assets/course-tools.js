@@ -284,7 +284,76 @@
     [cF, cC].forEach(function (c) { c.i.addEventListener("input", draw); }); draw();
   }
 
-  var T = { roc: roc, normal: normal, atten: atten, biot: biot, congel: congel, cop: cop };
+
+  /* ---- Regression and correlation (biostatistics, chapter 3). r = cov/(sx sy), b1 = cov/sx², b0 = ȳ − b1 x̄,
+     t = r √(n−2)/√(1−r²), two-sided p from Student's law with n − 2 df (regularized incomplete beta, Numerical Recipes betacf). */
+  function betacf(a, b, x) {
+    var qab = a + b, qap = a + 1, qam = a - 1, c = 1, d = 1 - qab * x / qap, m, m2, aa, del, h;
+    if (Math.abs(d) < 1e-30) d = 1e-30; d = 1 / d; h = d;
+    for (m = 1; m <= 200; m++) {
+      m2 = 2 * m; aa = m * (b - m) * x / ((qam + m2) * (a + m2));
+      d = 1 + aa * d; if (Math.abs(d) < 1e-30) d = 1e-30; c = 1 + aa / c; if (Math.abs(c) < 1e-30) c = 1e-30; d = 1 / d; h *= d * c;
+      aa = -(a + m) * (qab + m) * x / ((a + m2) * (qap + m2));
+      d = 1 + aa * d; if (Math.abs(d) < 1e-30) d = 1e-30; c = 1 + aa / c; if (Math.abs(c) < 1e-30) c = 1e-30; d = 1 / d; del = d * c; h *= del;
+      if (Math.abs(del - 1) < 3e-12) break;
+    }
+    return h;
+  }
+  function lgamma(z) {
+    var g = [76.18009172947146, -86.50532032941677, 24.01409824083091, -1.231739572450155, 0.1208650973866179e-2, -0.5395239384953e-5], x = z, y = z,
+        t = x + 5.5, s = 1.000000000190015;
+    t -= (x + 0.5) * Math.log(t);
+    for (var j = 0; j < 6; j++) s += g[j] / ++y;
+    return -t + Math.log(2.5066282746310005 * s / x);
+  }
+  CT.ibeta = function (a, b, x) {
+    if (x <= 0) return 0; if (x >= 1) return 1;
+    var bt = Math.exp(lgamma(a + b) - lgamma(a) - lgamma(b) + a * Math.log(x) + b * Math.log(1 - x));
+    return x < (a + 1) / (a + b + 2) ? bt * betacf(a, b, x) / a : 1 - bt * betacf(b, a, 1 - x) / b;
+  };
+  CT.tTwoSided = function (t, df) { return CT.ibeta(df / 2, 0.5, df / (df + t * t)); };
+  CT.regress = function (X, Y) {
+    var n = X.length, mx = 0, my = 0, sxx = 0, syy = 0, sxy = 0, i;
+    for (i = 0; i < n; i++) { mx += X[i]; my += Y[i]; } mx /= n; my /= n;
+    for (i = 0; i < n; i++) { sxx += (X[i] - mx) * (X[i] - mx); syy += (Y[i] - my) * (Y[i] - my); sxy += (X[i] - mx) * (Y[i] - my); }
+    var r = sxy / Math.sqrt(sxx * syy), b1 = sxy / sxx, b0 = my - b1 * mx, t = r * Math.sqrt(n - 2) / Math.sqrt(1 - r * r);
+    return { r: r, r2: r * r, b1: b1, b0: b0, t: t, p: CT.tTwoSided(t, n - 2), n: n };
+  };
+
+  function regr(box) {
+    box.appendChild(h("h3", {}, "Corrélation et régression : déplacez un point"));
+    box.appendChild(h("p", { "class": "muted" }, "Douze mesures (points bleus) et un point que vous déplacez (orange). r = cov(x, y)/(s<sub>x</sub>·s<sub>y</sub>), droite des moindres carrés y = b<sub>0</sub> + b<sub>1</sub>·x, test de r : t = r·√(n − 2)/√(1 − r²) à n − 2 degrés de liberté."));
+    var W = 320, H = 210, sv = el("svg", { viewBox: "0 0 " + W + " " + H, "class": "ct-svg", role: "img", "aria-label": "Nuage de points et droite de régression" }, box);
+    var BX = [1.2, 1.9, 2.4, 3.1, 3.6, 4.2, 4.9, 5.5, 6.1, 6.8, 7.4, 8.0],
+        BY = [2.6, 2.1, 3.5, 3.2, 4.4, 3.9, 5.1, 4.6, 5.9, 5.4, 6.6, 6.2];
+    var cX = slider("x du point orange", 0, 10, 0.1, 9.5, function (v) { return f(v, 1); }),
+        cY = slider("y du point orange", 0, 10, 0.1, 1, function (v) { return f(v, 1); }),
+        cOn = h("label", { "class": "ct-sl" }, '<span>Inclure le point orange</span>');
+    var chk = h("input", { type: "checkbox", checked: "" }); cOn.appendChild(chk);
+    var ctl = h("div", { "class": "ct-ctl" }); [cX, cY].forEach(function (c) { ctl.appendChild(c.w); }); ctl.appendChild(cOn); box.appendChild(ctl);
+    var out = h("p", { "class": "ct-out", "aria-live": "polite" }); box.appendChild(out);
+    var X = function (v) { return 30 + (W - 40) * v / 10; }, Y = function (v) { return H - 24 - (H - 34) * v / 10; };
+    el("line", { x1: 30, y1: Y(0), x2: W - 10, y2: Y(0), "class": "ct-ax" }, sv); el("line", { x1: 30, y1: Y(0), x2: 30, y2: Y(10), "class": "ct-ax" }, sv);
+    [0, 5, 10].forEach(function (v) { el("text", { x: X(v), y: H - 8, "class": "ct-axl", "text-anchor": "middle" }, sv).textContent = v; el("text", { x: 24, y: Y(v) + 4, "class": "ct-axl", "text-anchor": "end" }, sv).textContent = v; });
+    var base = el("line", { "class": "ct-l1" }, sv), line = el("line", { "class": "ct-l2" }, sv);
+    BX.forEach(function (x, i) { el("circle", { cx: X(x), cy: Y(BY[i]), r: 4, "class": "ct-dot" }, sv); });
+    var pt = el("circle", { r: 6, "class": "ct-pt" }, sv);
+    var r0 = CT.regress(BX, BY);
+    base.setAttribute("x1", X(0)); base.setAttribute("x2", X(10)); base.setAttribute("y1", Y(r0.b0)); base.setAttribute("y2", Y(r0.b0 + 10 * r0.b1));
+    function draw() {
+      var on = chk.checked, px = +cX.i.value, py = +cY.i.value;
+      var XS = on ? BX.concat([px]) : BX, YS = on ? BY.concat([py]) : BY, r = CT.regress(XS, YS);
+      line.setAttribute("x1", X(0)); line.setAttribute("x2", X(10)); line.setAttribute("y1", Y(r.b0)); line.setAttribute("y2", Y(r.b0 + 10 * r.b1));
+      pt.setAttribute("cx", X(px)); pt.setAttribute("cy", Y(py)); pt.style.opacity = on ? 1 : 0.25;
+      var pv = r.p < 1e-4 ? r.p.toExponential(1).replace(".", ",") : f(r.p, 4);
+      out.innerHTML = "n = " + r.n + " · r = <b>" + f(r.r, 3) + "</b> · r² = <b>" + f(r.r2, 3) + "</b> · droite y = " + f(r.b0, 2) + " + " + f(r.b1, 3) + "·x<br>t = " + f(r.t, 2) +
+        " (" + (r.n - 2) + " ddl) · p = <b>" + pv + "</b> " + (r.p < 0.05 ? "(lien significatif au risque 5 %)" : "(pas significatif au risque 5 %)") +
+        "<br>Sans le point orange : r = " + f(r0.r, 3) + ". Un seul point loin en x tire la droite (bras de levier) : regardez toujours le nuage avant de conclure.";
+    }
+    [cX, cY].forEach(function (c) { c.i.addEventListener("input", draw); }); chk.addEventListener("change", draw); draw();
+  }
+
+  var T = { roc: roc, normal: normal, atten: atten, biot: biot, congel: congel, cop: cop, regr: regr };
   function init() {
     var bs = document.querySelectorAll(".ctool[data-tool]");
     for (var i = 0; i < bs.length; i++) { var b = bs[i], fn = T[b.getAttribute("data-tool")]; if (fn && !b.childNodes.length) fn(b); }

@@ -205,7 +205,7 @@ URL: https://www.cyrilvoyant.com/tools/
 Interactive tools: choose a question, explore a method
  Calculators, teaching experiments and research applications, organized by domain and language.
  Start with an example, change an input and examine what changes. Research calculators and medical applications are for research and education; their assumptions and limitations are stated in the linked pages.
- Languages: the seven technical calculators have French and English interfaces. The course tools (ROC, normal distribution, attenuation, cooling, freezing, COP) are in French. Dedicated applications and the comparison tool retain their existing interfaces; filter by language before opening a tool.
+ Languages: the seven technical calculators have French and English interfaces. The course tools (ROC, normal distribution, regression, attenuation, cooling, freezing, COP) are in French. Dedicated applications and the comparison tool retain their existing interfaces; filter by language before opening a tool.
  Find a tool Field Interface language
  Browser calculator · French and English
  Compare a forecast with persistence, NICE
@@ -279,6 +279,10 @@ Interactive tools: choose a question, explore a method
  Refrigerator: Carnot bound of the COP
  Vary evaporation and condensation temperatures; see why the temperature lift is costly.
  Open this tool →
+ Course tool · French interface
+ Correlation and regression: move a point
+ Move an outlier and watch r, the least-squares line and the p-value change.
+ Open this tool →
  Reflection tree · French and English
  Prepare an RTVACOS action plan
  Explore a reflection framework on rigour, transparency, visibility and adoption; no excellence score.
@@ -299,7 +303,7 @@ URL: https://www.cyrilvoyant.com/fr/outils/
 Outils interactifs : choisir une question, essayer une méthode
  Calculateurs, expériences pédagogiques et applications de recherche, réunis par domaine et langue.
  Commencez avec un exemple, modifiez une entrée et examinez ce qui change. Les calculateurs de recherche et les applications médicales sont destinés à la recherche et à l’enseignement ; leurs hypothèses et limites figurent dans les pages liées.
- Langues : les sept calculateurs techniques ont des interfaces françaises et anglaises. Les outils des cours (ROC, loi normale, atténuation, refroidissement, congélation, COP) sont en français. Les applications dédiées et le comparateur conservent leur interface actuelle ; le filtre précise la langue avant ouverture.
+ Langues : les sept calculateurs techniques ont des interfaces françaises et anglaises. Les outils des cours (ROC, loi normale, régression, atténuation, refroidissement, congélation, COP) sont en français. Les applications dédiées et le comparateur conservent leur interface actuelle ; le filtre précise la langue avant ouverture.
  Rechercher un outil Domaine Langue de l’interface
  Calculateur dans le navigateur · Français et anglais
  Comparer une prévision à la persistance, NICE
@@ -372,6 +376,10 @@ Outils interactifs : choisir une question, essayer une méthode
  Outil de cours · Interface en français
  Machine frigorifique : borne de Carnot du COP
  Faire varier les températures d’évaporation et de condensation ; voir pourquoi l’écart coûte cher.
+ Ouvrir cet outil →
+ Outil de cours · Interface en français
+ Corrélation et régression : déplacer un point
+ Déplacer un point aberrant et voir r, la droite des moindres carrés et la p-value changer.
  Ouvrir cet outil →
  Arbre de réflexion · Français et anglais
  Préparer un plan d’action RTVACOS

@@ -326,6 +326,24 @@
       }
     },
     {
+      "id": "regr",
+      "domain": "learning",
+      "kind": "teaching",
+      "interface_language": "fr",
+      "name": {
+        "fr": "Corrélation et régression : déplacer un point",
+        "en": "Correlation and regression: move a point"
+      },
+      "task": {
+        "fr": "Déplacer un point aberrant et voir r, la droite des moindres carrés et la p-value changer.",
+        "en": "Move an outlier and watch r, the least-squares line and the p-value change."
+      },
+      "url": {
+        "fr": "https://www.cyrilvoyant.com/fr/enseignement/biostatistique/correlation-regression/#tool-regr",
+        "en": "https://www.cyrilvoyant.com/fr/enseignement/biostatistique/correlation-regression/#tool-regr"
+      }
+    },
+    {
       "id": "rtvacos",
       "domain": "research",
       "kind": "decision",
