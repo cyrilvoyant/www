@@ -673,6 +673,7 @@ Teaching
  Pearson correlation, linear regression, coefficient of determination and significance. 
  χ² goodness-of-fit and independence tests, with exercises. 
  Open the course (in French) → 
+ Part of the course comes from the work of Dominique Barbolosi, mathematician, Aix-Marseille Université. 
  Archived and citable on Zenodo, DOI 10.5281/zenodo.23620236 
  Physics for health studies: electromagnetic waves, X-rays and imaging (in French) 
  First-year health studies (PASS-PACES), physical bases of medical imaging · 110-slide lecture and 2 corrected exercise sessions · in French · CC BY 4.0 
@@ -687,6 +688,7 @@ Teaching
  Imaging: contrast, conventional radiography, CT scanning and windowing. 
  Two exercise sessions corrected step by step (18 exercises). 
  Open the course (in French) → 
+ Part of the course comes from the work of Professor Pierre Peretti, Université Pierre-et-Marie-Curie (Paris), now retired. 
  Industrial physics: thermodynamics, water vapor and refrigeration (in French) 
  B.U.T. biological engineering, food science and biotechnology, 2nd year · 5 chapters, 139 slides and handouts · in French · CC BY 4.0 
  The thermodynamics of a food-industry technician, up to how a refrigeration machine works. 
@@ -700,6 +702,7 @@ Teaching
  Refrigerants and their regulation (CFC, HCFC). 
  Five chapters of written handouts come with the slides. 
  Open the course (in French) → 
+ The part on industrial refrigeration was prepared with the help of Gilles Notton , Université de Corse. 
  Heat transfer for food engineering (in French) 
  B.U.T. biological engineering, food science and biotechnology, 1st year · 24 slides · in French · CC BY 4.0 
  How heat moves through a food, and what it takes to cool or freeze it. 
@@ -712,6 +715,7 @@ Teaching
  The refrigeration power of cooling and freezing, the amount of water to freeze. 
  Energy balance: core temperature (conduction) and surface temperature (convection) over time. 
  Open the course (in French) → 
+ The part on food freezing was prepared with the help of Gilles Notton , Université de Corse. 
  Teaching and research supervision 
  I supervise and co-supervise doctoral research on solar forecasting, satellite imagery, parsimonious models, energy-system control and radioiodine modeling. Previous doctoral work includes solar forecasting, air quality and solar-potential estimation. 
  At Mines Paris–PSL, my teaching includes solar resource forecasting and academic tutoring of international internships and gap years (UE45). Earlier teaching spans biostatistics, thermodynamics, biophysics and numerical modeling at the University of Corsica. 
@@ -1067,6 +1071,9 @@ Le nombre de Biot : comparer la résistance interne et la résistance de surface
 Les propriétés thermiques des aliments frais et congelés : capacité calorifique, température de début de congélation.
 La puissance frigorifique d'un refroidissement et d'une congélation, la quantité d'eau à congeler.
 Le bilan énergétique : température à cœur (conduction) et en surface (convection) au cours du temps.
+La partie sur la congélation des aliments a été préparée avec l'aide de 
+Gilles Notton
+, Université de Corse.
 
 ---
 URL: https://www.cyrilvoyant.com/fr/enseignement/bases-thermiques-aliments/cours/
@@ -1161,6 +1168,7 @@ La loi normale : centrage et réduction, table de l'écart réduit, intervalles.
 Les tests d'hypothèses : hypothèses nulle et alternative, risques, comparaison de moyennes.
 Corrélation de Pearson, régression linéaire, coefficient de détermination et significativité.
 Les tests du χ² d'ajustement et d'indépendance, avec des exercices.
+Une partie du cours est issue du travail de Dominique Barbolosi, mathématicien, Aix-Marseille Université.
 Archivé et citable sur Zenodo, DOI 
 10.5281/zenodo.23620236
 
@@ -1346,6 +1354,9 @@ Premier et second principes, machines thermiques, cycles moteurs et cycles des m
 Le cycle frigorifique en quatre étapes sur le diagramme de Mollier, son COP, le froid industriel.
 Les fluides frigorigènes et leur réglementation (CFC, HCFC).
 Un polycopié rédigé en cinq chapitres accompagne les diaporamas.
+La partie sur le froid industriel a été préparée avec l'aide de 
+Gilles Notton
+, Université de Corse.
 
 ---
 URL: https://www.cyrilvoyant.com/fr/enseignement/physique-industrielle/cycles-frigorifiques/
@@ -1642,6 +1653,7 @@ Les rayons X : tube de Coolidge, rayonnements de freinage et de fluorescence, sp
 Les interactions photons-matière : effet photoélectrique, effet Compton, création de paires, atténuation et couche de demi-atténuation.
 L'imagerie : contraste, radiologie conventionnelle, scanner X et fenêtrage.
 Deux séances d'exercices dirigés corrigées pas à pas (18 exercices).
+Une partie du cours est issue du travail du professeur Pierre Peretti, Université Pierre-et-Marie-Curie (Paris), aujourd'hui retraité.
 
 ---
 URL: https://www.cyrilvoyant.com/fr/enseignement/physique-pass/ed1-corrige/
