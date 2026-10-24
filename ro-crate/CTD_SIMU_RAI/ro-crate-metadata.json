@@ -1,0 +1,138 @@
+{
+ "@context": "https://w3id.org/ro/crate/1.1/context",
+ "@graph": [
+  {
+   "@id": "ro-crate-metadata.json",
+   "@type": "CreativeWork",
+   "conformsTo": {
+    "@id": "https://w3id.org/ro/crate/1.1"
+   },
+   "about": {
+    "@id": "./"
+   }
+  },
+  {
+   "@id": "./",
+   "@type": "Dataset",
+   "name": "RAIR-Sim: compartmental simulator of radioactive iodine therapy response in metastatic thyroid cancer (MATLAB)",
+   "description": "Simulates serum thyroglobulin under a radioiodine protocol (number of sessions, interval, activity per session) for a patient profile.",
+   "license": {
+    "@id": "https://creativecommons.org/licenses/by/4.0/"
+   },
+   "datePublished": "2026-10-24",
+   "author": [
+    {
+     "@id": "#marie-fusella-giuntini"
+    },
+    {
+     "@id": "https://orcid.org/0000-0003-0242-7377"
+    },
+    {
+     "@id": "#david-taieb"
+    },
+    {
+     "@id": "#dominique-barbolosi"
+    }
+   ],
+   "hasPart": [
+    {
+     "@id": "https://doi.org/10.5281/zenodo.21496197"
+    },
+    {
+     "@id": "https://doi.org/10.1038/s41598-026-56267-1"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/recits/thyroid-radioiodine/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/vue-d-ensemble/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/overview/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/stories/thyroid-radioiodine/"
+    }
+   ],
+   "keywords": [
+    "thyroid cancer",
+    "radioiodine therapy",
+    "compartmental model",
+    "thyroglobulin",
+    "medical physics"
+   ],
+   "url": "https://www.cyrilvoyant.com/ro-crate/CTD_SIMU_RAI/"
+  },
+  {
+   "@id": "https://doi.org/10.5281/zenodo.21496197",
+   "@type": "SoftwareSourceCode",
+   "name": "RAIR-Sim: compartmental simulator of radioactive iodine therapy response in metastatic thyroid cancer (MATLAB)",
+   "license": "MIT",
+   "codeRepository": "https://github.com/cyrilvoyant/CTD_SIMU_RAI",
+   "programmingLanguage": "MATLAB",
+   "author": [
+    {
+     "@id": "#marie-fusella-giuntini"
+    },
+    {
+     "@id": "https://orcid.org/0000-0003-0242-7377"
+    },
+    {
+     "@id": "#david-taieb"
+    },
+    {
+     "@id": "#dominique-barbolosi"
+    }
+   ],
+   "citation": {
+    "@id": "https://doi.org/10.1038/s41598-026-56267-1"
+   }
+  },
+  {
+   "@id": "#marie-fusella-giuntini",
+   "@type": "Person",
+   "name": "Marie Fusella Giuntini"
+  },
+  {
+   "@id": "https://orcid.org/0000-0003-0242-7377",
+   "@type": "Person",
+   "name": "Cyril Voyant"
+  },
+  {
+   "@id": "#david-taieb",
+   "@type": "Person",
+   "name": "David Taieb"
+  },
+  {
+   "@id": "#dominique-barbolosi",
+   "@type": "Person",
+   "name": "Dominique Barbolosi"
+  },
+  {
+   "@id": "https://doi.org/10.1038/s41598-026-56267-1",
+   "@type": "ScholarlyArticle",
+   "name": "M. Fusella Giuntini, C. Voyant, D. Taieb, D. Barbolosi. A computational framework for optimizing radioiodine therapy protocols in metastatic thyroid cancer. Scientific Reports 16 (2026) 27179",
+   "creativeWorkStatus": "published, open access"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/fr/recits/thyroid-radioiodine/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/fr/recits/thyroid-radioiodine/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/fr/vue-d-ensemble/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/fr/vue-d-ensemble/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/overview/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/overview/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/stories/thyroid-radioiodine/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/stories/thyroid-radioiodine/"
+  }
+ ]
+}

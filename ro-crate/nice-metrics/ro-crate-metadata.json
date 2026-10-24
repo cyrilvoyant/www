@@ -1,0 +1,137 @@
+{
+ "@context": "https://w3id.org/ro/crate/1.1/context",
+ "@graph": [
+  {
+   "@id": "ro-crate-metadata.json",
+   "@type": "CreativeWork",
+   "conformsTo": {
+    "@id": "https://w3id.org/ro/crate/1.1"
+   },
+   "about": {
+    "@id": "./"
+   }
+  },
+  {
+   "@id": "./",
+   "@type": "Dataset",
+   "name": "NICEᵏ: normalized forecast errors compared with simple persistence (MATLAB)",
+   "description": "Scores a deterministic forecast by dividing its Lᵏ error by the Lᵏ error of simple persistence on the same samples.",
+   "license": {
+    "@id": "https://creativecommons.org/licenses/by/4.0/"
+   },
+   "datePublished": "2026-10-24",
+   "author": [
+    {
+     "@id": "https://orcid.org/0000-0003-0242-7377"
+    }
+   ],
+   "hasPart": [
+    {
+     "@id": "https://doi.org/10.5281/zenodo.23562549"
+    },
+    {
+     "@id": "https://doi.org/10.1016/j.seta.2025.104588"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/actualites/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/actualites/nice-forecast-evaluation/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/enseignement/cours-prevision-solaire/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/vue-d-ensemble/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/latest-publications-and-news/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/latest-publications-and-news/nice-forecast-evaluation/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/overview/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/teaching/solar-forecasting-course/"
+    }
+   ],
+   "keywords": [
+    "solar forecasting",
+    "forecast evaluation",
+    "persistence",
+    "error metrics",
+    "NICE"
+   ],
+   "url": "https://www.cyrilvoyant.com/ro-crate/nice-metrics/"
+  },
+  {
+   "@id": "https://doi.org/10.5281/zenodo.23562549",
+   "@type": "SoftwareSourceCode",
+   "name": "NICEᵏ: normalized forecast errors compared with simple persistence (MATLAB)",
+   "license": "MIT",
+   "codeRepository": "https://github.com/cyrilvoyant/nice-metrics",
+   "programmingLanguage": "MATLAB",
+   "author": [
+    {
+     "@id": "https://orcid.org/0000-0003-0242-7377"
+    }
+   ],
+   "citation": {
+    "@id": "https://doi.org/10.1016/j.seta.2025.104588"
+   }
+  },
+  {
+   "@id": "https://orcid.org/0000-0003-0242-7377",
+   "@type": "Person",
+   "name": "Cyril Voyant"
+  },
+  {
+   "@id": "https://doi.org/10.1016/j.seta.2025.104588",
+   "@type": "ScholarlyArticle",
+   "name": "C. Voyant, M. Despotovic, L. Garcia-Gutierrez, R. Amaro e Silva, P. Lauret, T. Soubdhan, N. Bailek. NICEᵏ metrics: Unified and multidimensional framework for evaluating deterministic solar forecasting accuracy. Sustainable Energy Technologies and Assessments 83 (2025) 104588",
+   "creativeWorkStatus": "published; author version arXiv:2508.01457"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/fr/actualites/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/fr/actualites/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/fr/actualites/nice-forecast-evaluation/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/fr/actualites/nice-forecast-evaluation/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/fr/enseignement/cours-prevision-solaire/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/fr/enseignement/cours-prevision-solaire/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/fr/vue-d-ensemble/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/fr/vue-d-ensemble/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/latest-publications-and-news/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/latest-publications-and-news/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/latest-publications-and-news/nice-forecast-evaluation/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/latest-publications-and-news/nice-forecast-evaluation/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/overview/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/overview/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/teaching/solar-forecasting-course/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/teaching/solar-forecasting-course/"
+  }
+ ]
+}

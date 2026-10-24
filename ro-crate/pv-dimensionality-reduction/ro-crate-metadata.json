@@ -1,0 +1,143 @@
+{
+ "@context": "https://w3id.org/ro/crate/1.1/context",
+ "@graph": [
+  {
+   "@id": "ro-crate-metadata.json",
+   "@type": "CreativeWork",
+   "conformsTo": {
+    "@id": "https://w3id.org/ro/crate/1.1"
+   },
+   "about": {
+    "@id": "./"
+   }
+  },
+  {
+   "@id": "./",
+   "@type": "Dataset",
+   "name": "Filter and wrapper diagnostics of dimensionality reduction for endogenous PV power forecasting (MATLAB)",
+   "description": "Compresses the lagged history of a PV plant before an ELM reads it, and judges each reduction twice: does the reduced space keep the geometry (filter), and does it help the forecast (wrapper)?",
+   "license": {
+    "@id": "https://creativecommons.org/licenses/by/4.0/"
+   },
+   "datePublished": "2026-10-24",
+   "author": [
+    {
+     "@id": "#hassen-bouzgou"
+    },
+    {
+     "@id": "#gabriel-chesnoiu"
+    },
+    {
+     "@id": "#claudio-f-nicolosi"
+    },
+    {
+     "@id": "#adrien-chatel"
+    },
+    {
+     "@id": "https://orcid.org/0000-0002-6267-9632"
+    },
+    {
+     "@id": "https://orcid.org/0009-0002-2156-8538"
+    },
+    {
+     "@id": "https://orcid.org/0000-0003-0242-7377"
+    }
+   ],
+   "hasPart": [
+    {
+     "@id": "https://doi.org/10.5281/zenodo.21755938"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/vue-d-ensemble/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/overview/"
+    }
+   ],
+   "keywords": [
+    "dimensionality reduction",
+    "PV forecasting",
+    "extreme learning machine",
+    "manifold learning"
+   ],
+   "url": "https://www.cyrilvoyant.com/ro-crate/pv-dimensionality-reduction/"
+  },
+  {
+   "@id": "https://doi.org/10.5281/zenodo.21755938",
+   "@type": "SoftwareSourceCode",
+   "name": "Filter and wrapper diagnostics of dimensionality reduction for endogenous PV power forecasting (MATLAB)",
+   "license": "MIT",
+   "codeRepository": "https://github.com/cyrilvoyant/pv-dimensionality-reduction",
+   "programmingLanguage": "MATLAB",
+   "author": [
+    {
+     "@id": "#hassen-bouzgou"
+    },
+    {
+     "@id": "#gabriel-chesnoiu"
+    },
+    {
+     "@id": "#claudio-f-nicolosi"
+    },
+    {
+     "@id": "#adrien-chatel"
+    },
+    {
+     "@id": "https://orcid.org/0000-0002-6267-9632"
+    },
+    {
+     "@id": "https://orcid.org/0009-0002-2156-8538"
+    },
+    {
+     "@id": "https://orcid.org/0000-0003-0242-7377"
+    }
+   ],
+   "description": "H. Bouzgou, G. Chesnoiu, C. F. Nicolosi, A. Chatel, G. Notton, L. Menard, C. Voyant. Dimensionality reduction with redundancy awareness for parsimonious PV power time series forecasting (manuscript in preparation; no result of it is reported here)"
+  },
+  {
+   "@id": "#hassen-bouzgou",
+   "@type": "Person",
+   "name": "Hassen Bouzgou"
+  },
+  {
+   "@id": "#gabriel-chesnoiu",
+   "@type": "Person",
+   "name": "Gabriel Chesnoiu"
+  },
+  {
+   "@id": "#claudio-f-nicolosi",
+   "@type": "Person",
+   "name": "Claudio F. Nicolosi"
+  },
+  {
+   "@id": "#adrien-chatel",
+   "@type": "Person",
+   "name": "Adrien Chatel"
+  },
+  {
+   "@id": "https://orcid.org/0000-0002-6267-9632",
+   "@type": "Person",
+   "name": "Gilles Notton"
+  },
+  {
+   "@id": "https://orcid.org/0009-0002-2156-8538",
+   "@type": "Person",
+   "name": "Lionel Menard"
+  },
+  {
+   "@id": "https://orcid.org/0000-0003-0242-7377",
+   "@type": "Person",
+   "name": "Cyril Voyant"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/fr/vue-d-ensemble/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/fr/vue-d-ensemble/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/overview/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/overview/"
+  }
+ ]
+}

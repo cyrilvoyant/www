@@ -8,6 +8,8 @@
 - [Full text of the main pages](https://www.cyrilvoyant.com/llms-full.txt): one plain-text file, canonical URL before each page.
 - [Reading map](https://www.cyrilvoyant.com/llm.md) and [page catalog](https://www.cyrilvoyant.com/research-catalog.json).
 - [Atom feed](https://www.cyrilvoyant.com/feed.xml): news, publications and new pages.
+- [Knowledge graph](https://www.cyrilvoyant.com/graph.ttl) (Turtle; same graph as [JSON-LD](https://www.cyrilvoyant.com/graph.jsonld)): pages, people with ORCID, software, articles, glossaries (schema.org DefinedTermSet).
+- RO-Crate per study: https://www.cyrilvoyant.com/ro-crate/<study>/ro-crate-metadata.json (software DOI, article DOI and status, team, citing pages); each page signposts its crates with link rel="describedby".
 
 ## Identity and primary sources
 

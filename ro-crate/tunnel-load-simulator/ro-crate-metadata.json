@@ -1,0 +1,132 @@
+{
+ "@context": "https://w3id.org/ro/crate/1.1/context",
+ "@graph": [
+  {
+   "@id": "ro-crate-metadata.json",
+   "@type": "CreativeWork",
+   "conformsTo": {
+    "@id": "https://w3id.org/ro/crate/1.1"
+   },
+   "about": {
+    "@id": "./"
+   }
+  },
+  {
+   "@id": "./",
+   "@type": "Dataset",
+   "name": "Tunnel Load Simulator: synthetic electricity demand of road tunnels (Python, Streamlit)",
+   "description": "Generates the electricity demand of a road tunnel from its geometry, traffic, lighting and ventilation, with random pollution episodes and accidents, over Monte Carlo realizations.",
+   "license": {
+    "@id": "https://creativecommons.org/licenses/by/4.0/"
+   },
+   "datePublished": "2026-10-24",
+   "author": [
+    {
+     "@id": "#haytham-el-houari"
+    },
+    {
+     "@id": "https://orcid.org/0000-0003-0242-7377"
+    }
+   ],
+   "hasPart": [
+    {
+     "@id": "https://doi.org/10.5281/zenodo.20080042"
+    },
+    {
+     "@id": "https://doi.org/10.1016/j.softx.2026.102946"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/actualites/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/recits/tunnel-load-simulator/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/vue-d-ensemble/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/latest-publications-and-news/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/overview/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/stories/tunnel-load-simulator/"
+    }
+   ],
+   "keywords": [
+    "road tunnel",
+    "electricity demand",
+    "Monte Carlo",
+    "synthetic load profile",
+    "SmartTunnel"
+   ],
+   "url": "https://www.cyrilvoyant.com/ro-crate/tunnel-load-simulator/"
+  },
+  {
+   "@id": "https://doi.org/10.5281/zenodo.20080042",
+   "@type": "SoftwareSourceCode",
+   "name": "Tunnel Load Simulator: synthetic electricity demand of road tunnels (Python, Streamlit)",
+   "license": "MIT",
+   "codeRepository": "https://github.com/cyrilvoyant/tunnel-load-simulator",
+   "programmingLanguage": "Python",
+   "author": [
+    {
+     "@id": "#haytham-el-houari"
+    },
+    {
+     "@id": "https://orcid.org/0000-0003-0242-7377"
+    }
+   ],
+   "citation": {
+    "@id": "https://doi.org/10.1016/j.softx.2026.102946"
+   }
+  },
+  {
+   "@id": "#haytham-el-houari",
+   "@type": "Person",
+   "name": "Haytham El-Houari"
+  },
+  {
+   "@id": "https://orcid.org/0000-0003-0242-7377",
+   "@type": "Person",
+   "name": "Cyril Voyant"
+  },
+  {
+   "@id": "https://doi.org/10.1016/j.softx.2026.102946",
+   "@type": "ScholarlyArticle",
+   "name": "H. El-Houari, C. Voyant. Tunnel Load Simulator: an open-source generator for synthetic road-tunnel electricity demand. SoftwareX 35 (2026) 102946",
+   "creativeWorkStatus": "published"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/fr/actualites/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/fr/actualites/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/fr/recits/tunnel-load-simulator/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/fr/recits/tunnel-load-simulator/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/fr/vue-d-ensemble/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/fr/vue-d-ensemble/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/latest-publications-and-news/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/latest-publications-and-news/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/overview/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/overview/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/stories/tunnel-load-simulator/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/stories/tunnel-load-simulator/"
+  }
+ ]
+}

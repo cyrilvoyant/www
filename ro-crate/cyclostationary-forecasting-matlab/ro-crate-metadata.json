@@ -1,0 +1,193 @@
+{
+ "@context": "https://w3id.org/ro/crate/1.1/context",
+ "@graph": [
+  {
+   "@id": "ro-crate-metadata.json",
+   "@type": "CreativeWork",
+   "conformsTo": {
+    "@id": "https://w3id.org/ro/crate/1.1"
+   },
+   "about": {
+    "@id": "./"
+   }
+  },
+  {
+   "@id": "./",
+   "@type": "Dataset",
+   "name": "BLEND and CLIPER: persistence operators for cyclostationary energy processes (MATLAB)",
+   "description": "Analytical, training-free extensions of persistence for series whose statistics repeat with a cycle (solar irradiance, wind, load).",
+   "license": {
+    "@id": "https://creativecommons.org/licenses/by/4.0/"
+   },
+   "datePublished": "2026-10-24",
+   "author": [
+    {
+     "@id": "https://orcid.org/0000-0003-0242-7377"
+    },
+    {
+     "@id": "https://orcid.org/0009-0003-6656-8168"
+    },
+    {
+     "@id": "https://orcid.org/0000-0002-3480-1784"
+    },
+    {
+     "@id": "https://orcid.org/0000-0002-6267-9632"
+    },
+    {
+     "@id": "https://orcid.org/0000-0003-3144-5945"
+    },
+    {
+     "@id": "https://orcid.org/0000-0003-3344-214X"
+    }
+   ],
+   "hasPart": [
+    {
+     "@id": "https://doi.org/10.5281/zenodo.18812333"
+    },
+    {
+     "@id": "https://doi.org/10.1016/j.apm.2026.116988"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/about/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/actualites/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/actualites/forecasting-with-less/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/vue-d-ensemble/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/latest-publications-and-news/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/latest-publications-and-news/forecasting-with-less/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/overview/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/prevision-solaire-faire-simple/"
+    }
+   ],
+   "keywords": [
+    "persistence",
+    "cyclostationarity",
+    "solar forecasting",
+    "reference forecast",
+    "BLEND",
+    "CLIPER"
+   ],
+   "url": "https://www.cyrilvoyant.com/ro-crate/cyclostationary-forecasting-matlab/"
+  },
+  {
+   "@id": "https://doi.org/10.5281/zenodo.18812333",
+   "@type": "SoftwareSourceCode",
+   "name": "BLEND and CLIPER: persistence operators for cyclostationary energy processes (MATLAB)",
+   "license": "MIT",
+   "codeRepository": "https://github.com/cyrilvoyant/cyclostationary-forecasting-matlab",
+   "programmingLanguage": "MATLAB",
+   "author": [
+    {
+     "@id": "https://orcid.org/0000-0003-0242-7377"
+    },
+    {
+     "@id": "https://orcid.org/0009-0003-6656-8168"
+    },
+    {
+     "@id": "https://orcid.org/0000-0002-3480-1784"
+    },
+    {
+     "@id": "https://orcid.org/0000-0002-6267-9632"
+    },
+    {
+     "@id": "https://orcid.org/0000-0003-3144-5945"
+    },
+    {
+     "@id": "https://orcid.org/0000-0003-3344-214X"
+    }
+   ],
+   "citation": {
+    "@id": "https://doi.org/10.1016/j.apm.2026.116988"
+   }
+  },
+  {
+   "@id": "https://orcid.org/0000-0003-0242-7377",
+   "@type": "Person",
+   "name": "Cyril Voyant"
+  },
+  {
+   "@id": "https://orcid.org/0009-0003-6656-8168",
+   "@type": "Person",
+   "name": "Candice Banes"
+  },
+  {
+   "@id": "https://orcid.org/0000-0002-3480-1784",
+   "@type": "Person",
+   "name": "Luis Garcia-Gutierrez"
+  },
+  {
+   "@id": "https://orcid.org/0000-0002-6267-9632",
+   "@type": "Person",
+   "name": "Gilles Notton"
+  },
+  {
+   "@id": "https://orcid.org/0000-0003-3144-5945",
+   "@type": "Person",
+   "name": "Milan Despotovic"
+  },
+  {
+   "@id": "https://orcid.org/0000-0003-3344-214X",
+   "@type": "Person",
+   "name": "Zaher Mundher Yaseen"
+  },
+  {
+   "@id": "https://doi.org/10.1016/j.apm.2026.116988",
+   "@type": "ScholarlyArticle",
+   "name": "C. Voyant, C. Banes, L. Garcia-Gutierrez, G. Notton, M. Despotovic, Z. M. Yaseen. Symmetry-constrained forecasting of periodically correlated energy processes. Applied Mathematical Modelling 157 (2026) 116988",
+   "creativeWorkStatus": "published; author version arXiv:2602.18949"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/about/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/about/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/fr/actualites/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/fr/actualites/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/fr/actualites/forecasting-with-less/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/fr/actualites/forecasting-with-less/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/fr/vue-d-ensemble/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/fr/vue-d-ensemble/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/latest-publications-and-news/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/latest-publications-and-news/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/latest-publications-and-news/forecasting-with-less/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/latest-publications-and-news/forecasting-with-less/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/overview/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/overview/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/prevision-solaire-faire-simple/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/prevision-solaire-faire-simple/"
+  }
+ ]
+}

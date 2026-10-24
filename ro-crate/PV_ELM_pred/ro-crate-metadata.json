@@ -1,0 +1,153 @@
+{
+ "@context": "https://w3id.org/ro/crate/1.1/context",
+ "@graph": [
+  {
+   "@id": "ro-crate-metadata.json",
+   "@type": "CreativeWork",
+   "conformsTo": {
+    "@id": "https://w3id.org/ro/crate/1.1"
+   },
+   "about": {
+    "@id": "./"
+   }
+  },
+  {
+   "@id": "./",
+   "@type": "Dataset",
+   "name": "PV_ELM_pred: benchmark of persistence, BLEND, autoregression and ELM variants for PV forecasting (Python)",
+   "description": "Puts persistence, BLEND, a linear autoregression (AR-OLS) and 14 extreme learning machine variants through the same chronological splits, inputs and metrics.",
+   "license": {
+    "@id": "https://creativecommons.org/licenses/by/4.0/"
+   },
+   "datePublished": "2026-10-24",
+   "author": [
+    {
+     "@id": "#martin-leiva"
+    },
+    {
+     "@id": "https://orcid.org/0000-0002-0387-1667"
+    },
+    {
+     "@id": "https://orcid.org/0000-0002-6267-9632"
+    },
+    {
+     "@id": "https://orcid.org/0000-0003-0242-7377"
+    },
+    {
+     "@id": "https://orcid.org/0009-0003-0247-0663"
+    }
+   ],
+   "hasPart": [
+    {
+     "@id": "https://doi.org/10.5281/zenodo.21487267"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/actualites/nice-forecast-evaluation/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/vue-d-ensemble/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/latest-publications-and-news/nice-forecast-evaluation/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/overview/"
+    }
+   ],
+   "keywords": [
+    "PV forecasting",
+    "extreme learning machine",
+    "frugal AI",
+    "benchmark",
+    "persistence"
+   ],
+   "url": "https://www.cyrilvoyant.com/ro-crate/PV_ELM_pred/"
+  },
+  {
+   "@id": "https://doi.org/10.5281/zenodo.21487267",
+   "@type": "SoftwareSourceCode",
+   "name": "PV_ELM_pred: benchmark of persistence, BLEND, autoregression and ELM variants for PV forecasting (Python)",
+   "license": "MIT",
+   "codeRepository": "https://github.com/cyrilvoyant/PV_ELM_pred",
+   "programmingLanguage": "Python",
+   "author": [
+    {
+     "@id": "#martin-leiva"
+    },
+    {
+     "@id": "https://orcid.org/0000-0002-0387-1667"
+    },
+    {
+     "@id": "https://orcid.org/0000-0002-6267-9632"
+    },
+    {
+     "@id": "https://orcid.org/0000-0003-0242-7377"
+    },
+    {
+     "@id": "https://orcid.org/0009-0003-0247-0663"
+    }
+   ]
+  },
+  {
+   "@id": "#martin-leiva",
+   "@type": "Person",
+   "name": "Martin Leiva"
+  },
+  {
+   "@id": "https://orcid.org/0000-0002-0387-1667",
+   "@type": "Person",
+   "name": "Xavier Silvani"
+  },
+  {
+   "@id": "https://orcid.org/0000-0002-6267-9632",
+   "@type": "Person",
+   "name": "Gilles Notton"
+  },
+  {
+   "@id": "https://orcid.org/0000-0003-0242-7377",
+   "@type": "Person",
+   "name": "Cyril Voyant"
+  },
+  {
+   "@id": "https://orcid.org/0009-0003-0247-0663",
+   "@type": "Person",
+   "name": "Alan Julien"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/fr/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/fr/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/fr/actualites/nice-forecast-evaluation/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/fr/actualites/nice-forecast-evaluation/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/fr/vue-d-ensemble/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/fr/vue-d-ensemble/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/latest-publications-and-news/nice-forecast-evaluation/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/latest-publications-and-news/nice-forecast-evaluation/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/overview/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/overview/"
+  }
+ ]
+}

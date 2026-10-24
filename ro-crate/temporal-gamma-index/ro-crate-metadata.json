@@ -1,0 +1,137 @@
+{
+ "@context": "https://w3id.org/ro/crate/1.1/context",
+ "@graph": [
+  {
+   "@id": "ro-crate-metadata.json",
+   "@type": "CreativeWork",
+   "conformsTo": {
+    "@id": "https://w3id.org/ro/crate/1.1"
+   },
+   "about": {
+    "@id": "./"
+   }
+  },
+  {
+   "@id": "./",
+   "@type": "Dataset",
+   "name": "The γ-index: tolerance-based validation of spatio-temporal forecast fields (MATLAB)",
+   "description": "Accepts a forecast point when an observation agrees within joint tolerances in space (DTA), time (TTA) and intensity (IDT).",
+   "license": {
+    "@id": "https://creativecommons.org/licenses/by/4.0/"
+   },
+   "datePublished": "2026-10-24",
+   "author": [
+    {
+     "@id": "https://orcid.org/0000-0003-0242-7377"
+    }
+   ],
+   "hasPart": [
+    {
+     "@id": "https://doi.org/10.5281/zenodo.21755936"
+    },
+    {
+     "@id": "https://doi.org/10.1016/j.ijforecast.2026.03.002"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/about/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/actualites/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/actualites/gamma-index-forecast-validation/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/vue-d-ensemble/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/latest-publications-and-news/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/latest-publications-and-news/gamma-index-forecast-validation/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/overview/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/prevision-solaire-faire-simple/"
+    }
+   ],
+   "keywords": [
+    "forecast verification",
+    "gamma index",
+    "spatio-temporal",
+    "satellite irradiance",
+    "double penalty"
+   ],
+   "url": "https://www.cyrilvoyant.com/ro-crate/temporal-gamma-index/"
+  },
+  {
+   "@id": "https://doi.org/10.5281/zenodo.21755936",
+   "@type": "SoftwareSourceCode",
+   "name": "The γ-index: tolerance-based validation of spatio-temporal forecast fields (MATLAB)",
+   "license": "MIT",
+   "codeRepository": "https://github.com/cyrilvoyant/temporal-gamma-index",
+   "programmingLanguage": "MATLAB",
+   "author": [
+    {
+     "@id": "https://orcid.org/0000-0003-0242-7377"
+    }
+   ],
+   "citation": {
+    "@id": "https://doi.org/10.1016/j.ijforecast.2026.03.002"
+   }
+  },
+  {
+   "@id": "https://orcid.org/0000-0003-0242-7377",
+   "@type": "Person",
+   "name": "Cyril Voyant"
+  },
+  {
+   "@id": "https://doi.org/10.1016/j.ijforecast.2026.03.002",
+   "@type": "ScholarlyArticle",
+   "name": "C. Voyant. A tolerance-based framework for spatiotemporal forecast validation using the γ-index. International Journal of Forecasting 42(4) (2026) 1207–1214",
+   "creativeWorkStatus": "published; author version arXiv:2601.21004"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/about/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/about/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/fr/actualites/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/fr/actualites/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/fr/actualites/gamma-index-forecast-validation/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/fr/actualites/gamma-index-forecast-validation/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/fr/vue-d-ensemble/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/fr/vue-d-ensemble/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/latest-publications-and-news/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/latest-publications-and-news/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/latest-publications-and-news/gamma-index-forecast-validation/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/latest-publications-and-news/gamma-index-forecast-validation/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/overview/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/overview/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/prevision-solaire-faire-simple/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/prevision-solaire-faire-simple/"
+  }
+ ]
+}

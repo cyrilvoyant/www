@@ -1,0 +1,132 @@
+{
+ "@context": "https://w3id.org/ro/crate/1.1/context",
+ "@graph": [
+  {
+   "@id": "ro-crate-metadata.json",
+   "@type": "CreativeWork",
+   "conformsTo": {
+    "@id": "https://w3id.org/ro/crate/1.1"
+   },
+   "about": {
+    "@id": "./"
+   }
+  },
+  {
+   "@id": "./",
+   "@type": "Dataset",
+   "name": "MIMO-ELM forecasting of the Corsican electricity mix (MATLAB, Python, EDF open data)",
+   "description": "One extreme learning machine forecasts the seven signals of the Corsican grid at once (total, thermal, imports, hydropower, solar, wind, bioenergy).",
+   "license": {
+    "@id": "https://creativecommons.org/licenses/by/4.0/"
+   },
+   "datePublished": "2026-10-24",
+   "author": [
+    {
+     "@id": "https://orcid.org/0000-0003-0242-7377"
+    },
+    {
+     "@id": "#yoan-jheelan"
+    }
+   ],
+   "hasPart": [
+    {
+     "@id": "https://doi.org/10.5281/zenodo.23562559"
+    },
+    {
+     "@id": "https://doi.org/10.1016/j.apenergy.2026.127599"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/actualites/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/actualites/why-extreme-learning-machines/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/vue-d-ensemble/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/latest-publications-and-news/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/latest-publications-and-news/why-extreme-learning-machines/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/overview/"
+    }
+   ],
+   "keywords": [
+    "energy forecasting",
+    "extreme learning machine",
+    "MIMO",
+    "Corsica",
+    "electricity mix"
+   ],
+   "url": "https://www.cyrilvoyant.com/ro-crate/Data_Viz_2024/"
+  },
+  {
+   "@id": "https://doi.org/10.5281/zenodo.23562559",
+   "@type": "SoftwareSourceCode",
+   "name": "MIMO-ELM forecasting of the Corsican electricity mix (MATLAB, Python, EDF open data)",
+   "license": "GPL-3.0",
+   "codeRepository": "https://github.com/cyrilvoyant/Data_Viz_2024",
+   "programmingLanguage": "MATLAB; Python",
+   "author": [
+    {
+     "@id": "https://orcid.org/0000-0003-0242-7377"
+    },
+    {
+     "@id": "#yoan-jheelan"
+    }
+   ],
+   "citation": {
+    "@id": "https://doi.org/10.1016/j.apenergy.2026.127599"
+   }
+  },
+  {
+   "@id": "https://orcid.org/0000-0003-0242-7377",
+   "@type": "Person",
+   "name": "Cyril Voyant"
+  },
+  {
+   "@id": "#yoan-jheelan",
+   "@type": "Person",
+   "name": "Yoan Jheelan"
+  },
+  {
+   "@id": "https://doi.org/10.1016/j.apenergy.2026.127599",
+   "@type": "ScholarlyArticle",
+   "name": "C. Voyant, M. Despotovic, L. Garcia-Gutierrez, M. Asloune, Y.-M. Saint-Drenan, J.-L. Duchaud, G. A. Faggianelli, E. Magliaro. Short-term forecasting of energy production and consumption using extreme learning machine: A comprehensive MIMO based ELM approach. Applied Energy 410 (2026) 127599",
+   "creativeWorkStatus": "published; author version arXiv:2508.12764. The MIMO-MH extension of the Python pipeline belongs to a manuscript in submission: no result of it is reported here."
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/fr/actualites/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/fr/actualites/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/fr/actualites/why-extreme-learning-machines/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/fr/actualites/why-extreme-learning-machines/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/fr/vue-d-ensemble/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/fr/vue-d-ensemble/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/latest-publications-and-news/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/latest-publications-and-news/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/latest-publications-and-news/why-extreme-learning-machines/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/latest-publications-and-news/why-extreme-learning-machines/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/overview/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/overview/"
+  }
+ ]
+}

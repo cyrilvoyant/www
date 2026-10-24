@@ -1,0 +1,116 @@
+{
+ "@context": "https://w3id.org/ro/crate/1.1/context",
+ "@graph": [
+  {
+   "@id": "ro-crate-metadata.json",
+   "@type": "CreativeWork",
+   "conformsTo": {
+    "@id": "https://w3id.org/ro/crate/1.1"
+   },
+   "about": {
+    "@id": "./"
+   }
+  },
+  {
+   "@id": "./",
+   "@type": "Dataset",
+   "name": "Per-cell, spatial and compressed forecasters of satellite solar irradiance: benchmark code (MATLAB, Python)",
+   "description": "Holds the forecaster fixed and changes only what it reads (its own cell, a patch, the whole field, or a compressed field) to measure how much spatial information lowers the error.",
+   "license": {
+    "@id": "https://creativecommons.org/licenses/by/4.0/"
+   },
+   "datePublished": "2026-10-24",
+   "author": [
+    {
+     "@id": "https://orcid.org/0000-0003-0242-7377"
+    },
+    {
+     "@id": "https://orcid.org/0009-0005-6612-4991"
+    },
+    {
+     "@id": "https://orcid.org/0000-0003-4364-0211"
+    }
+   ],
+   "hasPart": [
+    {
+     "@id": "https://doi.org/10.5281/zenodo.23562557"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/recits/satellite-irradiance/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/vue-d-ensemble/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/overview/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/stories/satellite-irradiance/"
+    }
+   ],
+   "keywords": [
+    "satellite irradiance",
+    "solar forecasting",
+    "extreme learning machine",
+    "dimensionality",
+    "benchmark"
+   ],
+   "url": "https://www.cyrilvoyant.com/ro-crate/cell-vs-field-irradiance/"
+  },
+  {
+   "@id": "https://doi.org/10.5281/zenodo.23562557",
+   "@type": "SoftwareSourceCode",
+   "name": "Per-cell, spatial and compressed forecasters of satellite solar irradiance: benchmark code (MATLAB, Python)",
+   "license": "MIT",
+   "codeRepository": "https://github.com/cyrilvoyant/cell-vs-field-irradiance",
+   "programmingLanguage": "MATLAB; Python",
+   "author": [
+    {
+     "@id": "https://orcid.org/0000-0003-0242-7377"
+    },
+    {
+     "@id": "https://orcid.org/0009-0005-6612-4991"
+    },
+    {
+     "@id": "https://orcid.org/0000-0003-4364-0211"
+    }
+   ],
+   "description": "C. Voyant, A. Kazantzidis, J. Kleissl. How much space is enough for short-term satellite irradiance forecasting? (manuscript in preparation; no result of it is reported here)"
+  },
+  {
+   "@id": "https://orcid.org/0000-0003-0242-7377",
+   "@type": "Person",
+   "name": "Cyril Voyant"
+  },
+  {
+   "@id": "https://orcid.org/0009-0005-6612-4991",
+   "@type": "Person",
+   "name": "Andreas Kazantzidis"
+  },
+  {
+   "@id": "https://orcid.org/0000-0003-4364-0211",
+   "@type": "Person",
+   "name": "Jan Kleissl"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/fr/recits/satellite-irradiance/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/fr/recits/satellite-irradiance/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/fr/vue-d-ensemble/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/fr/vue-d-ensemble/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/overview/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/overview/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/stories/satellite-irradiance/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/stories/satellite-irradiance/"
+  }
+ ]
+}

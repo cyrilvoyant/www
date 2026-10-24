@@ -1,0 +1,160 @@
+{
+ "@context": "https://w3id.org/ro/crate/1.1/context",
+ "@graph": [
+  {
+   "@id": "ro-crate-metadata.json",
+   "@type": "CreativeWork",
+   "conformsTo": {
+    "@id": "https://w3id.org/ro/crate/1.1"
+   },
+   "about": {
+    "@id": "./"
+   }
+  },
+  {
+   "@id": "./",
+   "@type": "Dataset",
+   "name": "sCV and F: variability and forecastability of solar irradiance (MATLAB)",
+   "description": "Measures how much clouds move irradiance away from clear sky (sCV) and how much of it can be anticipated at a horizon (F).",
+   "license": {
+    "@id": "https://creativecommons.org/licenses/by/4.0/"
+   },
+   "datePublished": "2026-10-24",
+   "author": [
+    {
+     "@id": "https://orcid.org/0000-0003-0242-7377"
+    }
+   ],
+   "hasPart": [
+    {
+     "@id": "https://doi.org/10.5281/zenodo.23562553"
+    },
+    {
+     "@id": "https://doi.org/10.1016/j.renene.2025.123913"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/about/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/actualites/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/actualites/why-forecast-solar-power/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/enseignement/cours-prevision-solaire/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/vue-d-ensemble/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/latest-publications-and-news/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/latest-publications-and-news/why-forecast-solar-power/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/overview/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/prevision-solaire-faire-simple/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/research-projects/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/teaching/solar-forecasting-course/"
+    }
+   ],
+   "keywords": [
+    "solar irradiance",
+    "variability",
+    "forecastability",
+    "clear sky"
+   ],
+   "url": "https://www.cyrilvoyant.com/ro-crate/solar-variability-scv/"
+  },
+  {
+   "@id": "https://doi.org/10.5281/zenodo.23562553",
+   "@type": "SoftwareSourceCode",
+   "name": "sCV and F: variability and forecastability of solar irradiance (MATLAB)",
+   "license": "MIT",
+   "codeRepository": "https://github.com/cyrilvoyant/solar-variability-scv",
+   "programmingLanguage": "MATLAB",
+   "author": [
+    {
+     "@id": "https://orcid.org/0000-0003-0242-7377"
+    }
+   ],
+   "citation": {
+    "@id": "https://doi.org/10.1016/j.renene.2025.123913"
+   }
+  },
+  {
+   "@id": "https://orcid.org/0000-0003-0242-7377",
+   "@type": "Person",
+   "name": "Cyril Voyant"
+  },
+  {
+   "@id": "https://doi.org/10.1016/j.renene.2025.123913",
+   "@type": "ScholarlyArticle",
+   "name": "C. Voyant, A. Julien, M. Despotovic, G. Notton, L. A. Garcia-Gutierrez, C. F. Nicolosi, P. Blanc, J. Bright. Stochastic coefficient of variation: Assessing the variability and forecastability of solar irradiance. Renewable Energy 256 (2026) 123913",
+   "creativeWorkStatus": "published; author version arXiv:2506.21807"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/about/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/about/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/fr/actualites/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/fr/actualites/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/fr/actualites/why-forecast-solar-power/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/fr/actualites/why-forecast-solar-power/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/fr/enseignement/cours-prevision-solaire/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/fr/enseignement/cours-prevision-solaire/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/fr/vue-d-ensemble/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/fr/vue-d-ensemble/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/latest-publications-and-news/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/latest-publications-and-news/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/latest-publications-and-news/why-forecast-solar-power/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/latest-publications-and-news/why-forecast-solar-power/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/overview/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/overview/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/prevision-solaire-faire-simple/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/prevision-solaire-faire-simple/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/research-projects/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/research-projects/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/teaching/solar-forecasting-course/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/teaching/solar-forecasting-course/"
+  }
+ ]
+}

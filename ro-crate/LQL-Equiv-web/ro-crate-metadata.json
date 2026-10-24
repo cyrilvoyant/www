@@ -1,0 +1,117 @@
+{
+ "@context": "https://w3id.org/ro/crate/1.1/context",
+ "@graph": [
+  {
+   "@id": "ro-crate-metadata.json",
+   "@type": "CreativeWork",
+   "conformsTo": {
+    "@id": "https://w3id.org/ro/crate/1.1"
+   },
+   "about": {
+    "@id": "./"
+   }
+  },
+  {
+   "@id": "./",
+   "@type": "Dataset",
+   "name": "LQL-Equiv-web 3.0: biologically equivalent doses in radiotherapy (Python, browser)",
+   "description": "Computes BED, equivalent doses (EQD2), NTCP, TCP and radiation-induced cancer risk under the linear-quadratic-linear model, for 34 organs at risk and 20 tumour sites, over successive courses.",
+   "license": {
+    "@id": "https://creativecommons.org/licenses/by/4.0/"
+   },
+   "datePublished": "2026-10-24",
+   "author": [
+    {
+     "@id": "https://orcid.org/0000-0003-0242-7377"
+    },
+    {
+     "@id": "#daniel-julian"
+    }
+   ],
+   "hasPart": [
+    {
+     "@id": "https://doi.org/10.5281/zenodo.21948623"
+    },
+    {
+     "@id": "https://doi.org/10.1016/j.softx.2026.103085"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/recits/lql-equiv/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/vue-d-ensemble/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/overview/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/stories/lql-equiv/"
+    }
+   ],
+   "keywords": [
+    "radiotherapy",
+    "biologically effective dose",
+    "EQD2",
+    "linear-quadratic-linear",
+    "NTCP",
+    "TCP"
+   ],
+   "url": "https://www.cyrilvoyant.com/ro-crate/LQL-Equiv-web/"
+  },
+  {
+   "@id": "https://doi.org/10.5281/zenodo.21948623",
+   "@type": "SoftwareSourceCode",
+   "name": "LQL-Equiv-web 3.0: biologically equivalent doses in radiotherapy (Python, browser)",
+   "license": "MIT",
+   "codeRepository": "https://github.com/cyrilvoyant/LQL-Equiv-web",
+   "programmingLanguage": "Python",
+   "author": [
+    {
+     "@id": "https://orcid.org/0000-0003-0242-7377"
+    },
+    {
+     "@id": "#daniel-julian"
+    }
+   ],
+   "citation": {
+    "@id": "https://doi.org/10.1016/j.softx.2026.103085"
+   }
+  },
+  {
+   "@id": "https://orcid.org/0000-0003-0242-7377",
+   "@type": "Person",
+   "name": "Cyril Voyant"
+  },
+  {
+   "@id": "#daniel-julian",
+   "@type": "Person",
+   "name": "Daniel Julian"
+  },
+  {
+   "@id": "https://doi.org/10.1016/j.softx.2026.103085",
+   "@type": "ScholarlyArticle",
+   "name": "C. Voyant, D. Julian. LQL-Equiv. SoftwareX 36 (2026) 103085; and Voyant et al., Reports of Practical Oncology and Radiotherapy 19(1) (2014) 47–55",
+   "creativeWorkStatus": "published"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/fr/recits/lql-equiv/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/fr/recits/lql-equiv/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/fr/vue-d-ensemble/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/fr/vue-d-ensemble/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/overview/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/overview/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/stories/lql-equiv/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/stories/lql-equiv/"
+  }
+ ]
+}

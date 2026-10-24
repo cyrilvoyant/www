@@ -1,0 +1,121 @@
+{
+ "@context": "https://w3id.org/ro/crate/1.1/context",
+ "@graph": [
+  {
+   "@id": "ro-crate-metadata.json",
+   "@type": "CreativeWork",
+   "conformsTo": {
+    "@id": "https://w3id.org/ro/crate/1.1"
+   },
+   "about": {
+    "@id": "./"
+   }
+  },
+  {
+   "@id": "./",
+   "@type": "Dataset",
+   "name": "Make_Stationary: deseasonalization benchmark for renewable-energy time series (MATLAB)",
+   "description": "Tests whether removing the deterministic daily and annual cycle improves the final forecast of energy and weather series.",
+   "license": {
+    "@id": "https://creativecommons.org/licenses/by/4.0/"
+   },
+   "datePublished": "2026-10-24",
+   "author": [
+    {
+     "@id": "https://orcid.org/0000-0001-7537-4080"
+    },
+    {
+     "@id": "https://orcid.org/0000-0003-0242-7377"
+    },
+    {
+     "@id": "https://orcid.org/0000-0003-3144-5945"
+    },
+    {
+     "@id": "https://orcid.org/0000-0002-3480-1784"
+    },
+    {
+     "@id": "https://orcid.org/0000-0002-6267-9632"
+    }
+   ],
+   "hasPart": [
+    {
+     "@id": "https://doi.org/10.5281/zenodo.21490743"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/vue-d-ensemble/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/overview/"
+    }
+   ],
+   "keywords": [
+    "deseasonalization",
+    "stationarity",
+    "extreme learning machine",
+    "renewable energy forecasting"
+   ],
+   "url": "https://www.cyrilvoyant.com/ro-crate/Make_Stationary/"
+  },
+  {
+   "@id": "https://doi.org/10.5281/zenodo.21490743",
+   "@type": "SoftwareSourceCode",
+   "name": "Make_Stationary: deseasonalization benchmark for renewable-energy time series (MATLAB)",
+   "license": "GPL-3.0",
+   "codeRepository": "https://github.com/cyrilvoyant/Make_Stationary",
+   "programmingLanguage": "MATLAB",
+   "author": [
+    {
+     "@id": "https://orcid.org/0000-0001-7537-4080"
+    },
+    {
+     "@id": "https://orcid.org/0000-0003-0242-7377"
+    },
+    {
+     "@id": "https://orcid.org/0000-0003-3144-5945"
+    },
+    {
+     "@id": "https://orcid.org/0000-0002-3480-1784"
+    },
+    {
+     "@id": "https://orcid.org/0000-0002-6267-9632"
+    }
+   ],
+   "description": "M. Agoundedemba, C. Voyant, M. Despotović, L. A. Garcia-Gutierrez, G. Notton. Does stationarization help? A frugal benchmark of deseasonalization for renewable energy forecasting (manuscript submitted; no result of it is reported here beyond the repository README)"
+  },
+  {
+   "@id": "https://orcid.org/0000-0001-7537-4080",
+   "@type": "Person",
+   "name": "Maklewa Agoundedemba"
+  },
+  {
+   "@id": "https://orcid.org/0000-0003-0242-7377",
+   "@type": "Person",
+   "name": "Cyril Voyant"
+  },
+  {
+   "@id": "https://orcid.org/0000-0003-3144-5945",
+   "@type": "Person",
+   "name": "Milan Despotovic"
+  },
+  {
+   "@id": "https://orcid.org/0000-0002-3480-1784",
+   "@type": "Person",
+   "name": "Luis Antonio Garcia-Gutierrez"
+  },
+  {
+   "@id": "https://orcid.org/0000-0002-6267-9632",
+   "@type": "Person",
+   "name": "Gilles Notton"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/fr/vue-d-ensemble/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/fr/vue-d-ensemble/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/overview/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/overview/"
+  }
+ ]
+}
