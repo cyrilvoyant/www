@@ -660,6 +660,7 @@ Teaching
  Evaluation: nRMSE, nMAE, skill, NICE; test on the year 2007, daytime and day and night. 
  Online learning and frugality: how much model is really needed? 
  Open the course → 
+ Archived and citable on Zenodo, DOI 10.5281/zenodo.23620102 
  Biostatistics for health studies (in French) 
  First-year health studies (PASS, UE8) · 3 chapters, 246 slides · in French · CC BY 4.0 
  The statistical tools a future health professional needs to read a study, interpret a test and decide with data. 
@@ -1323,6 +1324,8 @@ Les modèles autorégressifs estimés par moindres carrés, l'ordre du modèle, 
 Les Extreme Learning Machines : principe, nombre de neurones, risque de sur-apprentissage.
 L'évaluation : nRMSE, nMAE, score, NICE ; test sur l'année 2007, de jour et jour et nuit.
 L'apprentissage en ligne et la frugalité : de combien de modèle a-t-on vraiment besoin ?
+Archivé et citable sur Zenodo, DOI 
+10.5281/zenodo.23620102
 
 ---
 URL: https://www.cyrilvoyant.com/fr/enseignement/physique-industrielle/
