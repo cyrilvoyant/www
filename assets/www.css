@@ -188,3 +188,25 @@ ol.steps li::before { content: counter(s); position: absolute; left: 12px; top: 
 .role-helper .rh-v { font-weight: 700; margin: 12px 0 4px; color: var(--link); }
 .role-helper .cvt-btn { font: inherit; font-size: .92rem; padding: 6px 16px; border: 1px solid var(--link); color: var(--link); background: var(--paper); border-radius: 999px; cursor: pointer; }
 .role-helper .cvt-btn.primary { background: var(--link); color: #fff; }
+
+/* Biostatistics course: one slide at a time */
+.bs-viewer { margin: 18px 0; padding: 14px 16px 16px; border: 1px solid var(--line); border-radius: 10px; background: var(--paper); scroll-margin-top: 12px; }
+.bs-viewer .bs-sec { margin: 0; font-size: .85rem; }
+.bs-viewer .bs-title { font-size: 1.15rem; margin: 2px 0 10px; }
+.bs-viewer figure { margin: 0; }
+.bs-viewer img { width: 100%; height: auto; border: 1px solid var(--line); border-radius: 6px; background: #fff; }
+.bs-ctrl { display: flex; align-items: center; gap: 10px; margin: 10px 0 6px; }
+.bs-ctrl button { font: inherit; font-size: 1.1rem; width: 44px; height: 36px; border: 1px solid var(--link); border-radius: 999px; background: var(--paper); color: var(--link); cursor: pointer; }
+.bs-ctrl button:hover { background: var(--link); color: #fff; }
+.bs-ctrl .bs-pos { font-variant-numeric: tabular-nums; font-weight: 600; min-width: 5.5em; text-align: center; }
+.bs-ctrl .bs-keys { font-size: .8rem; margin-left: auto; }
+.bs-text { font-size: .95rem; }
+.bs-text p { margin: .35em 0; }
+.bs-toc details.bs-part { border-top: 1px solid var(--line); padding: 6px 0; }
+.bs-toc summary { cursor: pointer; font-weight: 600; }
+.bs-toc ol { columns: 2; column-gap: 28px; margin: 6px 0; }
+.bs-toc li { break-inside: avoid; margin-bottom: 3px; }
+.bs-toc a.on { font-weight: 700; }
+.bs-chap-nav { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin: 16px 0; }
+.bs-card ol { margin: 6px 0; padding-left: 1.2em; font-size: .92rem; }
+@media (max-width: 640px) { .bs-toc ol { columns: 1; } .bs-ctrl .bs-keys { display: none; } }
