@@ -673,6 +673,7 @@ Teaching
  Pearson correlation, linear regression, coefficient of determination and significance. 
  χ² goodness-of-fit and independence tests, with exercises. 
  Open the course (in French) → 
+ Archived and citable on Zenodo, DOI 10.5281/zenodo.23620236 
  Physics for health studies: electromagnetic waves, X-rays and imaging (in French) 
  First-year health studies (PASS-PACES), physical bases of medical imaging · 110-slide lecture and 2 corrected exercise sessions · in French · CC BY 4.0 
  The physical bases of medical imaging, from the wave to the CT scanner. 
@@ -1160,6 +1161,8 @@ La loi normale : centrage et réduction, table de l'écart réduit, intervalles.
 Les tests d'hypothèses : hypothèses nulle et alternative, risques, comparaison de moyennes.
 Corrélation de Pearson, régression linéaire, coefficient de détermination et significativité.
 Les tests du χ² d'ajustement et d'indépendance, avec des exercices.
+Archivé et citable sur Zenodo, DOI 
+10.5281/zenodo.23620236
 
 ---
 URL: https://www.cyrilvoyant.com/fr/enseignement/biostatistique/correlation-regression/
