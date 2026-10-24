@@ -13,9 +13,16 @@ Use the canonical page, its cited paper and the versioned software together. Pre
 
 ## Reading paths
 
-- Modelling philosophy → /approach/ → /stories/ → linked methods and software.
+### The scientific thread
+
+Cyril Voyant connects medical physics and energy forecasting through modelling for real decisions. Start from the physical system, knowledge and available data. Compute an explicit relation when known, complement an incomplete model, and measure the value of learning when needed. Complexity is retained when its contribution is demonstrated. AI is one tool; evaluation and responsibility remain human.
+
+- Understand the research: https://www.cyrilvoyant.com/stories/ ; français : https://www.cyrilvoyant.com/fr/recits/ . Studies are grouped by subject before modelling approach.
+- Learn: https://www.cyrilvoyant.com/teaching/ ; français : https://www.cyrilvoyant.com/fr/enseignement/ . Course audience and level are specified; most courses are in French, solar course in both languages.
+- Use a tool: https://www.cyrilvoyant.com/tools/ ; français : https://www.cyrilvoyant.com/fr/outils/ . Interface languages are explicit. A translated catalog is not a translation of an English calculator.
+- Interactive resource inventory: https://www.cyrilvoyant.com/interactive-resources.json . Research calculators, teaching demonstrations and hosted applications have distinct purposes.
+- Understand the modelling decisions: https://www.cyrilvoyant.com/approach/ ; français : https://www.cyrilvoyant.com/fr/approche/ .
 - Research integrity → /data/ → /ai-in-research/ → /scientific-publishing-trust/ → /cite/.
-- Teaching → /teaching/ → /teaching/open-courses/ (courses are in French).
 
 ## Pages by language
 
@@ -39,7 +46,7 @@ Use the canonical page, its cited paper and the versioned software together. Pre
 - [The RTVACOS tree: where can your work break?](https://www.cyrilvoyant.com/research-excellence-rtvacos/)
 - [Research and projects](https://www.cyrilvoyant.com/research-projects/)
 - [Scientific publishing: no verification, no trust](https://www.cyrilvoyant.com/scientific-publishing-trust/)
-- [Stories](https://www.cyrilvoyant.com/stories/)
+- [Research: questions, findings and methods](https://www.cyrilvoyant.com/stories/)
 - [Compute, don't learn: radiobiological dose equivalence with LQL-Equiv](https://www.cyrilvoyant.com/stories/lql-equiv/)
 - [Questioning how we do research: influence, integrity, excellence](https://www.cyrilvoyant.com/stories/questioning-research/)
 - [Satellite irradiance forecasting: one cell, a patch or the whole field](https://www.cyrilvoyant.com/stories/satellite-irradiance/)
@@ -49,6 +56,7 @@ Use the canonical page, its cited paper and the versioned software together. Pre
 - [Teaching](https://www.cyrilvoyant.com/teaching/)
 - [Open courses in French: biostatistics, medical physics, industrial physics and food heat transfer](https://www.cyrilvoyant.com/teaching/open-courses/)
 - [Solar forecasting course: forecasting the intermittent solar resource](https://www.cyrilvoyant.com/teaching/solar-forecasting-course/)
+- [Interactive tools: choose a question, explore a method](https://www.cyrilvoyant.com/tools/)
 
 ### fr
 
@@ -84,7 +92,8 @@ Use the canonical page, its cited paper and the versioned software together. Pre
 - [Cours : les ondes électromagnétiques et les bases physiques de l'imagerie](https://www.cyrilvoyant.com/fr/enseignement/physique-pass/ondes-electromagnetiques/)
 - [L'arbre RTVACOS : où votre travail peut-il casser ?](https://www.cyrilvoyant.com/fr/excellence-rtvacos/)
 - [L'IA dans la recherche : AI Act, charte de laboratoire et boîte à outils](https://www.cyrilvoyant.com/fr/ia-dans-la-recherche/)
-- [Récits](https://www.cyrilvoyant.com/fr/recits/)
+- [Outils interactifs : choisir une question, essayer une méthode](https://www.cyrilvoyant.com/fr/outils/)
+- [Recherche : questions, résultats et méthodes](https://www.cyrilvoyant.com/fr/recits/)
 - [Calculer plutôt qu'apprendre : l'équivalence de dose en radiothérapie avec LQL-Equiv](https://www.cyrilvoyant.com/fr/recits/lql-equiv/)
 - [Se questionner sur nos façons de faire de la recherche : influence, intégrité, excellence](https://www.cyrilvoyant.com/fr/recits/questioning-research/)
 - [Prévision satellite du rayonnement : une maille, un voisinage ou tout le champ](https://www.cyrilvoyant.com/fr/recits/satellite-irradiance/)

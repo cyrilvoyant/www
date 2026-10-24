@@ -1,0 +1,329 @@
+{
+  "description": "Existing interactive resources; interface language and execution type are explicit. A catalog translation is not an interface translation.",
+  "items": [
+    {
+      "id": "nice",
+      "domain": "energy",
+      "kind": "calculator",
+      "interface_language": "en",
+      "name": {
+        "fr": "Comparer une prévision à la persistance — NICE",
+        "en": "Compare a forecast with persistence — NICE"
+      },
+      "task": {
+        "fr": "Coller observations et prévisions ; choisir l’horizon ; lire les erreurs et les ratios NICE.",
+        "en": "Paste observations and forecasts, choose a horizon, read absolute errors and NICE ratios."
+      },
+      "url": {
+        "fr": "https://cyrilvoyant.github.io/methods/nice-metrics.html#try-it",
+        "en": "https://cyrilvoyant.github.io/methods/nice-metrics.html#try-it"
+      }
+    },
+    {
+      "id": "blend",
+      "domain": "energy",
+      "kind": "calculator",
+      "interface_language": "en",
+      "name": {
+        "fr": "Calculer les poids de BLEND",
+        "en": "Compute BLEND weights"
+      },
+      "task": {
+        "fr": "Explorer les poids d’une référence périodique sur une série temporelle.",
+        "en": "Explore the weights of a periodic reference on a time series."
+      },
+      "url": {
+        "fr": "https://cyrilvoyant.github.io/methods/persistence-blend.html#try-it",
+        "en": "https://cyrilvoyant.github.io/methods/persistence-blend.html#try-it"
+      }
+    },
+    {
+      "id": "scv",
+      "domain": "energy",
+      "kind": "calculator",
+      "interface_language": "en",
+      "name": {
+        "fr": "Mesurer variabilité et prévisibilité — sCV et F",
+        "en": "Measure variability and forecastability — sCV and F"
+      },
+      "task": {
+        "fr": "Fournir éclairement mesuré et ciel clair, puis examiner les indicateurs à l’horizon choisi.",
+        "en": "Supply measured and clear-sky irradiance, then examine the indicators at your chosen horizon."
+      },
+      "url": {
+        "fr": "https://cyrilvoyant.github.io/methods/solar-variability-scv.html#try-it",
+        "en": "https://cyrilvoyant.github.io/methods/solar-variability-scv.html#try-it"
+      }
+    },
+    {
+      "id": "gamma",
+      "domain": "energy",
+      "kind": "calculator",
+      "interface_language": "en",
+      "name": {
+        "fr": "Déplacer une prévision et observer l’indice γ",
+        "en": "Displace a forecast and explore the γ-index"
+      },
+      "task": {
+        "fr": "Déplacer, retarder ou biaiser un nuage synthétique et régler les tolérances.",
+        "en": "Displace, delay or bias a synthetic cloud and adjust the tolerances."
+      },
+      "url": {
+        "fr": "https://cyrilvoyant.github.io/methods/gamma-index.html#try-it",
+        "en": "https://cyrilvoyant.github.io/methods/gamma-index.html#try-it"
+      }
+    },
+    {
+      "id": "artu",
+      "domain": "energy",
+      "kind": "calculator",
+      "interface_language": "en",
+      "name": {
+        "fr": "Explorer les coefficients et la table ARTU",
+        "en": "Explore ARTU coefficients and lookup table"
+      },
+      "task": {
+        "fr": "Faire varier les autocorrélations et la qualité de mesure ; lire les coefficients.",
+        "en": "Vary autocorrelations and measurement quality; read the coefficients."
+      },
+      "url": {
+        "fr": "https://cyrilvoyant.github.io/teaching/artu-worked-example.html#try-it",
+        "en": "https://cyrilvoyant.github.io/teaching/artu-worked-example.html#try-it"
+      }
+    },
+    {
+      "id": "comparison",
+      "domain": "energy",
+      "kind": "demo",
+      "interface_language": "en",
+      "name": {
+        "fr": "Comparer persistance, AR et ELM",
+        "en": "Compare persistence, AR and ELM"
+      },
+      "task": {
+        "fr": "Explorer le comparateur existant sur les données publiques de Palaiseau.",
+        "en": "Explore the existing comparison on public Palaiseau data."
+      },
+      "url": {
+        "fr": "https://cyrilvoyant.github.io/teaching/reference-model-comparison.html",
+        "en": "https://cyrilvoyant.github.io/teaching/reference-model-comparison.html"
+      }
+    },
+    {
+      "id": "lql",
+      "domain": "medicine",
+      "kind": "calculator",
+      "interface_language": "en",
+      "name": {
+        "fr": "Comparer les doses biologiques LQ et LQL",
+        "en": "Compare LQ and LQL biological doses"
+      },
+      "task": {
+        "fr": "Choisir les paramètres et faire varier la dose par fraction. Usage de recherche et d’enseignement.",
+        "en": "Choose parameters and vary dose per fraction. Research and education use."
+      },
+      "url": {
+        "fr": "https://cyrilvoyant.github.io/tools/lql-equiv.html#try-it",
+        "en": "https://cyrilvoyant.github.io/tools/lql-equiv.html#try-it"
+      }
+    },
+    {
+      "id": "thyroid",
+      "domain": "medicine",
+      "kind": "calculator",
+      "interface_language": "en",
+      "name": {
+        "fr": "Explorer les profils du modèle thyroïde",
+        "en": "Explore thyroid model profiles"
+      },
+      "task": {
+        "fr": "Choisir un profil et un protocole ; suivre la thyroglobuline simulée. Usage de recherche et d’enseignement.",
+        "en": "Choose a profile and protocol; follow simulated thyroglobulin. Research and education use."
+      },
+      "url": {
+        "fr": "https://cyrilvoyant.github.io/methods/thyroid-radioiodine.html#try-it",
+        "en": "https://cyrilvoyant.github.io/methods/thyroid-radioiodine.html#try-it"
+      }
+    },
+    {
+      "id": "lql-app",
+      "domain": "medicine",
+      "kind": "app",
+      "interface_language": "en",
+      "name": {
+        "fr": "Ouvrir l’application LQL-Equiv complète",
+        "en": "Open the full LQL-Equiv application"
+      },
+      "task": {
+        "fr": "Application dédiée d’équivalence de dose ; distincte du petit calculateur pédagogique.",
+        "en": "Dedicated dose-equivalence application; distinct from the small teaching calculator."
+      },
+      "url": {
+        "fr": "https://cyrilvoyant.github.io/LQL-Equiv-web/",
+        "en": "https://cyrilvoyant.github.io/LQL-Equiv-web/"
+      }
+    },
+    {
+      "id": "websemantic",
+      "domain": "research",
+      "kind": "app",
+      "interface_language": "en",
+      "name": {
+        "fr": "Dialoguer avec des codes — WebSemantic",
+        "en": "Use a dialogue interface to scientific codes — WebSemantic"
+      },
+      "task": {
+        "fr": "Ouvrir l’interface dédiée ; les entrées manquantes sont demandées selon le contrat du code.",
+        "en": "Open the dedicated interface; missing inputs are requested according to the code contract."
+      },
+      "url": {
+        "fr": "https://cyrilvoyant-websemantic.static.hf.space/index.html",
+        "en": "https://cyrilvoyant-websemantic.static.hf.space/index.html"
+      }
+    },
+    {
+      "id": "tls",
+      "domain": "energy",
+      "kind": "hosted",
+      "interface_language": "en",
+      "name": {
+        "fr": "Simuler la demande électrique d’un tunnel — TLS",
+        "en": "Simulate tunnel electricity demand — TLS"
+      },
+      "task": {
+        "fr": "Application hébergée : demande synthétique selon géométrie, ventilation et éclairage. Démarrage du serveur parfois nécessaire.",
+        "en": "Hosted application: synthetic demand from geometry, ventilation and lighting. The server may need to wake up."
+      },
+      "url": {
+        "fr": "https://tunnel-load-simulator.onrender.com/",
+        "en": "https://tunnel-load-simulator.onrender.com/"
+      }
+    },
+    {
+      "id": "proba",
+      "domain": "energy",
+      "kind": "demo",
+      "interface_language": "both",
+      "name": {
+        "fr": "Observer la prévision probabiliste et sa lookup table",
+        "en": "Watch probabilistic forecasting and its lookup table"
+      },
+      "task": {
+        "fr": "Lire les bandes ELM/persistance, la couverture PICP et la largeur MIL sur trois jours sélectionnés.",
+        "en": "Read ELM/persistence bands, PICP coverage and MIL width on three selected days."
+      },
+      "url": {
+        "fr": "https://www.cyrilvoyant.com/fr/#proba-race",
+        "en": "https://www.cyrilvoyant.com/#proba-race"
+      }
+    },
+    {
+      "id": "roc",
+      "domain": "learning",
+      "kind": "teaching",
+      "interface_language": "fr",
+      "name": {
+        "fr": "Comprendre sensibilité, spécificité et courbe ROC",
+        "en": "Understand sensitivity, specificity and ROC curves"
+      },
+      "task": {
+        "fr": "Changer le seuil, la séparation des distributions et la prévalence dans un exemple pédagogique.",
+        "en": "Change the threshold, distribution separation and prevalence in a teaching example."
+      },
+      "url": {
+        "fr": "https://www.cyrilvoyant.com/fr/enseignement/biostatistique/probabilites/#course-tool",
+        "en": "https://www.cyrilvoyant.com/fr/enseignement/biostatistique/probabilites/#course-tool"
+      }
+    },
+    {
+      "id": "normal",
+      "domain": "learning",
+      "kind": "teaching",
+      "interface_language": "fr",
+      "name": {
+        "fr": "Explorer la loi normale",
+        "en": "Explore the normal distribution"
+      },
+      "task": {
+        "fr": "Passer d’un écart réduit à une probabilité, ou l’inverse.",
+        "en": "Convert a standard score to a probability, or vice versa."
+      },
+      "url": {
+        "fr": "https://www.cyrilvoyant.com/fr/enseignement/biostatistique/statistiques-descriptives/#course-tool",
+        "en": "https://www.cyrilvoyant.com/fr/enseignement/biostatistique/statistiques-descriptives/#course-tool"
+      }
+    },
+    {
+      "id": "atten",
+      "domain": "learning",
+      "kind": "teaching",
+      "interface_language": "fr",
+      "name": {
+        "fr": "Explorer l’atténuation et la CDA",
+        "en": "Explore attenuation and half-value layers"
+      },
+      "task": {
+        "fr": "Faire varier l’épaisseur et la couche de demi-atténuation ; lire la fraction transmise.",
+        "en": "Vary thickness and half-value layer; read the transmitted fraction."
+      },
+      "url": {
+        "fr": "https://www.cyrilvoyant.com/fr/enseignement/physique-pass/ondes-electromagnetiques/#course-tool",
+        "en": "https://www.cyrilvoyant.com/fr/enseignement/physique-pass/ondes-electromagnetiques/#course-tool"
+      }
+    },
+    {
+      "id": "rtvacos",
+      "domain": "research",
+      "kind": "decision",
+      "interface_language": "both",
+      "name": {
+        "fr": "Préparer un plan d’action RTVACOS",
+        "en": "Prepare an RTVACOS action plan"
+      },
+      "task": {
+        "fr": "Parcourir une grille de réflexion sur rigueur, transparence, visibilité et adoption ; aucun score d’excellence.",
+        "en": "Explore a reflection framework on rigour, transparency, visibility and adoption; no excellence score."
+      },
+      "url": {
+        "fr": "https://www.cyrilvoyant.com/fr/excellence-rtvacos/#rtv",
+        "en": "https://www.cyrilvoyant.com/research-excellence-rtvacos/#rtv"
+      }
+    },
+    {
+      "id": "ai",
+      "domain": "research",
+      "kind": "decision",
+      "interface_language": "both",
+      "name": {
+        "fr": "S’orienter dans les responsabilités liées à l’IA",
+        "en": "Explore AI responsibility provisions"
+      },
+      "task": {
+        "fr": "Parcourir les questions d’orientation du laboratoire ; les références et limites juridiques restent à lire.",
+        "en": "Explore the lab orientation questions; legal references and limitations still need to be read."
+      },
+      "url": {
+        "fr": "https://www.cyrilvoyant.com/fr/ia-dans-la-recherche/#role-helper",
+        "en": "https://www.cyrilvoyant.com/ai-in-research/#role-helper"
+      }
+    },
+    {
+      "id": "licence",
+      "domain": "research",
+      "kind": "decision",
+      "interface_language": "both",
+      "name": {
+        "fr": "Explorer un choix de licence",
+        "en": "Explore a licensing choice"
+      },
+      "task": {
+        "fr": "Suivre un exemple d’arbre de décision, à adapter au contexte et aux droits sur les contenus.",
+        "en": "Follow an example decision tree, to be adapted to context and content rights."
+      },
+      "url": {
+        "fr": "https://www.cyrilvoyant.com/fr/donnees/#lic-tree",
+        "en": "https://www.cyrilvoyant.com/data/#lic-tree"
+      }
+    }
+  ]
+}

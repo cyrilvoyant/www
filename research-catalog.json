@@ -1,5 +1,24 @@
 {
   "description": "Navigation catalog derived from published page metadata. Page authorship is not authorship of every cited study. Teaching examples and draft work must not be reported as published study results.",
+  "reading_routes": {
+    "understand_research": {
+      "fr": "https://www.cyrilvoyant.com/fr/recits/",
+      "en": "https://www.cyrilvoyant.com/stories/"
+    },
+    "learn": {
+      "fr": "https://www.cyrilvoyant.com/fr/enseignement/",
+      "en": "https://www.cyrilvoyant.com/teaching/"
+    },
+    "use_tools": {
+      "fr": "https://www.cyrilvoyant.com/fr/outils/",
+      "en": "https://www.cyrilvoyant.com/tools/"
+    },
+    "modelling_approach": {
+      "fr": "https://www.cyrilvoyant.com/fr/approche/",
+      "en": "https://www.cyrilvoyant.com/approach/"
+    }
+  },
+  "interactive_catalog": "https://www.cyrilvoyant.com/interactive-resources.json",
   "identity": "https://person.cyrilvoyant.com/#cyril-voyant",
   "pages": [
     {
@@ -10,8 +29,16 @@
       "citations": [],
       "sections": [
         {
-          "title": "Forecasting the sun with its uncertainty: ELM against persistence, live",
-          "anchor": "pr-h"
+          "title": "Understand my research",
+          "anchor": null
+        },
+        {
+          "title": "Learn with the courses",
+          "anchor": null
+        },
+        {
+          "title": "Use an interactive tool",
+          "anchor": null
         },
         {
           "title": "One method, four complementary routes",
@@ -28,6 +55,10 @@
         {
           "title": "Watch and learn",
           "anchor": null
+        },
+        {
+          "title": "Forecasting the sun with its uncertainty: ELM against persistence, live",
+          "anchor": "pr-h"
         },
         {
           "title": "About",
@@ -301,8 +332,16 @@
       "citations": [],
       "sections": [
         {
-          "title": "Prévoir le soleil avec son incertitude : ELM contre persistance, en direct",
-          "anchor": "pr-h"
+          "title": "Comprendre mes recherches",
+          "anchor": null
+        },
+        {
+          "title": "Apprendre avec les cours",
+          "anchor": null
+        },
+        {
+          "title": "Utiliser un outil",
+          "anchor": null
         },
         {
           "title": "Une méthode, quatre voies complémentaires",
@@ -319,6 +358,10 @@
         {
           "title": "Voir et apprendre",
           "anchor": null
+        },
+        {
+          "title": "Prévoir le soleil avec son incertitude : ELM contre persistance, en direct",
+          "anchor": "pr-h"
         },
         {
           "title": "En bref",
@@ -1419,12 +1462,113 @@
       ]
     },
     {
-      "url": "https://www.cyrilvoyant.com/fr/recits/",
-      "title": "Récits",
+      "url": "https://www.cyrilvoyant.com/fr/outils/",
+      "title": "Outils interactifs : choisir une question, essayer une méthode",
       "language": "fr",
       "topics": [],
       "citations": [],
       "sections": [
+        {
+          "title": "Comparer une prévision à la persistance, NICE",
+          "anchor": null
+        },
+        {
+          "title": "Calculer les poids de BLEND",
+          "anchor": null
+        },
+        {
+          "title": "Mesurer variabilité et prévisibilité, sCV et F",
+          "anchor": null
+        },
+        {
+          "title": "Déplacer une prévision et observer l’indice γ",
+          "anchor": null
+        },
+        {
+          "title": "Explorer les coefficients et la table ARTU",
+          "anchor": null
+        },
+        {
+          "title": "Comparer persistance, AR et ELM",
+          "anchor": null
+        },
+        {
+          "title": "Comparer les doses biologiques LQ et LQL",
+          "anchor": null
+        },
+        {
+          "title": "Explorer les profils du modèle thyroïde",
+          "anchor": null
+        },
+        {
+          "title": "Ouvrir l’application LQL-Equiv complète",
+          "anchor": null
+        },
+        {
+          "title": "Dialoguer avec des codes, WebSemantic",
+          "anchor": null
+        },
+        {
+          "title": "Simuler la demande électrique d’un tunnel, TLS",
+          "anchor": null
+        },
+        {
+          "title": "Observer la prévision probabiliste et sa lookup table",
+          "anchor": null
+        },
+        {
+          "title": "Comprendre sensibilité, spécificité et courbe ROC",
+          "anchor": null
+        },
+        {
+          "title": "Explorer la loi normale",
+          "anchor": null
+        },
+        {
+          "title": "Explorer l’atténuation et la CDA",
+          "anchor": null
+        },
+        {
+          "title": "Préparer un plan d’action RTVACOS",
+          "anchor": null
+        },
+        {
+          "title": "S’orienter dans les responsabilités liées à l’IA",
+          "anchor": null
+        },
+        {
+          "title": "Explorer un choix de licence",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/recits/",
+      "title": "Recherche : questions, résultats et méthodes",
+      "language": "fr",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Le fil conducteur de mes recherches",
+          "anchor": null
+        },
+        {
+          "title": "Prévision solaire et énergétique",
+          "anchor": null
+        },
+        {
+          "title": "Physique médicale",
+          "anchor": null
+        },
+        {
+          "title": "IA et interfaces scientifiques",
+          "anchor": null
+        },
+        {
+          "title": "Pratiques et évaluation de la recherche",
+          "anchor": null
+        },
         {
           "title": "Calculer directement",
           "anchor": null
@@ -2346,11 +2490,31 @@
     },
     {
       "url": "https://www.cyrilvoyant.com/stories/",
-      "title": "Stories",
+      "title": "Research: questions, findings and methods",
       "language": "en",
       "topics": [],
       "citations": [],
       "sections": [
+        {
+          "title": "The thread connecting my research",
+          "anchor": null
+        },
+        {
+          "title": "Solar and energy forecasting",
+          "anchor": null
+        },
+        {
+          "title": "Medical physics",
+          "anchor": null
+        },
+        {
+          "title": "AI and scientific interfaces",
+          "anchor": null
+        },
+        {
+          "title": "Research practices and assessment",
+          "anchor": null
+        },
         {
           "title": "Compute directly",
           "anchor": null
@@ -2703,6 +2867,87 @@
         },
         {
           "title": "Go further",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/tools/",
+      "title": "Interactive tools: choose a question, explore a method",
+      "language": "en",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Compare a forecast with persistence, NICE",
+          "anchor": null
+        },
+        {
+          "title": "Compute BLEND weights",
+          "anchor": null
+        },
+        {
+          "title": "Measure variability and forecastability, sCV and F",
+          "anchor": null
+        },
+        {
+          "title": "Displace a forecast and explore the γ-index",
+          "anchor": null
+        },
+        {
+          "title": "Explore ARTU coefficients and lookup table",
+          "anchor": null
+        },
+        {
+          "title": "Compare persistence, AR and ELM",
+          "anchor": null
+        },
+        {
+          "title": "Compare LQ and LQL biological doses",
+          "anchor": null
+        },
+        {
+          "title": "Explore thyroid model profiles",
+          "anchor": null
+        },
+        {
+          "title": "Open the full LQL-Equiv application",
+          "anchor": null
+        },
+        {
+          "title": "Use a dialogue interface to scientific codes, WebSemantic",
+          "anchor": null
+        },
+        {
+          "title": "Simulate tunnel electricity demand, TLS",
+          "anchor": null
+        },
+        {
+          "title": "Watch probabilistic forecasting and its lookup table",
+          "anchor": null
+        },
+        {
+          "title": "Understand sensitivity, specificity and ROC curves",
+          "anchor": null
+        },
+        {
+          "title": "Explore the normal distribution",
+          "anchor": null
+        },
+        {
+          "title": "Explore attenuation and half-value layers",
+          "anchor": null
+        },
+        {
+          "title": "Prepare an RTVACOS action plan",
+          "anchor": null
+        },
+        {
+          "title": "Explore AI responsibility provisions",
+          "anchor": null
+        },
+        {
+          "title": "Explore a licensing choice",
           "anchor": null
         }
       ]

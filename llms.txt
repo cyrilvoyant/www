@@ -4,6 +4,9 @@
 
 ## Start here
 
+- [Research](https://www.cyrilvoyant.com/stories/) / [Recherche](https://www.cyrilvoyant.com/fr/recits/): questions and findings organized by field.
+- [Courses](https://www.cyrilvoyant.com/teaching/) / [Cours](https://www.cyrilvoyant.com/fr/enseignement/): subject, audience, level, chapters.
+- [Interactive tools](https://www.cyrilvoyant.com/tools/) / [Outils interactifs](https://www.cyrilvoyant.com/fr/outils/): a single catalog, with actual interface languages and execution types.
 - [At a glance](https://www.cyrilvoyant.com/overview/): research lines, software with DOIs and teams, open courses, tools, essays ([en français](https://www.cyrilvoyant.com/fr/vue-d-ensemble/)).
 - [Full text of the main pages](https://www.cyrilvoyant.com/llms-full.txt): one plain-text file, canonical URL before each page.
 - [Reading map](https://www.cyrilvoyant.com/llm.md) and [page catalog](https://www.cyrilvoyant.com/research-catalog.json).
@@ -20,6 +23,14 @@
 ## Reading and attribution
 
 Distinguish published papers, preprints, software and work in preparation. Attribute studies to their full author teams. Numerical teaching examples are not evidence of clinical or operational validation. Consult the linked paper and versioned code for definitions, units and limitations.
+
+## Choose a task / Choisir un parcours
+
+- [Understand the research](https://www.cyrilvoyant.com/stories/) / [Comprendre les recherches](https://www.cyrilvoyant.com/fr/recits/): questions, findings and limitations, by field.
+- [Courses](https://www.cyrilvoyant.com/teaching/) / [Cours](https://www.cyrilvoyant.com/fr/enseignement/): choose a topic and educational level, then a chapter.
+- [Interactive tools](https://www.cyrilvoyant.com/tools/) / [Outils interactifs](https://www.cyrilvoyant.com/fr/outils/): actual interface language and purpose are explicit; a catalog translation is not an application translation.
+- [The approach](https://www.cyrilvoyant.com/approach/) / [La démarche](https://www.cyrilvoyant.com/fr/approche/): the question, the physical model, the data, then the tools and demonstrated benefit of complexity.
+- [Interactive resources JSON](https://www.cyrilvoyant.com/interactive-resources.json): catalog with field, task, type and interface language.
 
 ## Pages
 
@@ -63,7 +74,8 @@ Distinguish published papers, preprints, software and work in preparation. Attri
 - [Cours : les ondes électromagnétiques et les bases physiques de l'imagerie](https://www.cyrilvoyant.com/fr/enseignement/physique-pass/ondes-electromagnetiques/): De l'onde au photon, du spectre aux niveaux d'énergie, de la spectroscopie aux rayons X, de l'atténuation au scanner.
 - [L'arbre RTVACOS : où votre travail peut-il casser ?](https://www.cyrilvoyant.com/fr/excellence-rtvacos/): Un miroir interactif du cadre RTVACOS : quatre fondations (rigueur, transparence, visibilité, adoption) comme racines, trois amplificateurs comme branches.
 - [L'IA dans la recherche : AI Act, charte de laboratoire et boîte à outils](https://www.cyrilvoyant.com/fr/ia-dans-la-recherche/): L'IA générative écrit du code, rédige des articles et trie des données dans tous les laboratoires.
-- [Récits](https://www.cyrilvoyant.com/fr/recits/): Chaque récit suit le même plan : le constat, la question, la théorie en clair, la place sur l'échelle de la complexité, un exemple chiffré, les apports et…
+- [Outils interactifs : choisir une question, essayer une méthode](https://www.cyrilvoyant.com/fr/outils/): Calculateurs, expériences pédagogiques et applications de recherche, réunis par domaine et langue.
+- [Recherche : questions, résultats et méthodes](https://www.cyrilvoyant.com/fr/recits/): Chaque récit suit le même plan : le constat, la question, la théorie en clair, la place sur l'échelle de la complexité, un exemple chiffré, les apports et…
 - [Calculer plutôt qu'apprendre : l'équivalence de dose en radiothérapie avec LQL-Equiv](https://www.cyrilvoyant.com/fr/recits/lql-equiv/): Quand le lien entre un schéma de radiothérapie et son effet biologique est connu, on le calcule directement.
 - [Se questionner sur nos façons de faire de la recherche : influence, intégrité, excellence](https://www.cyrilvoyant.com/fr/recits/questioning-research/): Dans un monde en pleine mutation, la recherche doit aussi examiner ses propres méthodes.
 - [Prévision satellite du rayonnement : une maille, un voisinage ou tout le champ](https://www.cyrilvoyant.com/fr/recits/satellite-irradiance/): Un satellite voit le rayonnement de toute une région, heure par heure. La tentation est de donner toute la carte au modèle de prévision.
@@ -84,7 +96,7 @@ Distinguish published papers, preprints, software and work in preparation. Attri
 - [The RTVACOS tree: where can your work break?](https://www.cyrilvoyant.com/research-excellence-rtvacos/): An interactive mirror of the RTVACOS framework: four foundations (rigour, transparency, visibility, adoption) as roots, three amplifiers as branches.
 - [Research and projects](https://www.cyrilvoyant.com/research-projects/): Research and projects of Cyril Voyant, Research Director at Mines Paris – PSL.
 - [Scientific publishing: no verification, no trust](https://www.cyrilvoyant.com/scientific-publishing-trust/): Too many articles, unpaid review, record retractions, generative AI: what exists (FAIR, OSTP, EU Council, CoARA, AI Act, French Digital Republic Act) and…
-- [Stories](https://www.cyrilvoyant.com/stories/): Every story follows the same plan: the finding, the question, the theory in plain words, where it sits on the complexity ladder, an example in figures, what…
+- [Research: questions, findings and methods](https://www.cyrilvoyant.com/stories/): Every story follows the same plan: the finding, the question, the theory in plain words, where it sits on the complexity ladder, an example in figures, what…
 - [Compute, don't learn: radiobiological dose equivalence with LQL-Equiv](https://www.cyrilvoyant.com/stories/lql-equiv/): When the link between a radiotherapy schedule and its biological effect is known, it is computed directly.
 - [Questioning how we do research: influence, integrity, excellence](https://www.cyrilvoyant.com/stories/questioning-research/): Research in a changing world also has to examine its own methods. The same approach applies: compare with an explicit reference, look at what a single…
 - [Satellite irradiance forecasting: one cell, a patch or the whole field](https://www.cyrilvoyant.com/stories/satellite-irradiance/): A satellite sees the irradiance of a whole region every hour. It is tempting to give a forecaster the whole map.
@@ -94,6 +106,7 @@ Distinguish published papers, preprints, software and work in preparation. Attri
 - [Teaching](https://www.cyrilvoyant.com/teaching/): Five open courses under CC BY 4.0: solar forecasting (Mines Paris – PSL), biostatistics and physics for health studies, industrial physics, heat transfer…
 - [Open courses in French: biostatistics, medical physics, industrial physics and food heat transfer](https://www.cyrilvoyant.com/teaching/open-courses/): Four complete courses in French under CC BY 4.0: biostatistics and physics for health studies, industrial physics and refrigeration, heat transfer for…
 - [Solar forecasting course: forecasting the intermittent solar resource](https://www.cyrilvoyant.com/teaching/solar-forecasting-course/): A 59-slide course on forecasting solar irradiance one hour ahead, taught in the UE14 applied research project of the Mines Paris – PSL engineering…
+- [Interactive tools: choose a question, explore a method](https://www.cyrilvoyant.com/tools/): Calculators, teaching experiments and research applications, organized by domain and language.
 
 ## Updates
 
