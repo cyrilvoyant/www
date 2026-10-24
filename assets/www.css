@@ -210,3 +210,10 @@ ol.steps li::before { content: counter(s); position: absolute; left: 12px; top: 
 .bs-chap-nav { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin: 16px 0; }
 .bs-card ol { margin: 6px 0; padding-left: 1.2em; font-size: .92rem; }
 @media (max-width: 640px) { .bs-toc ol { columns: 1; } .bs-ctrl .bs-keys { display: none; } }
+
+/* Cite and reuse */
+.cite-table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: .95rem; }
+.cite-table th, .cite-table td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+.cite-table th { background: var(--soft); }
+pre.cite-ex { white-space: pre-wrap; background: var(--soft); padding: 12px 14px; border-radius: 6px; font-size: .9rem; }
+@media (max-width: 640px) { .cite-table, .cite-table tbody, .cite-table tr, .cite-table td { display: block; } .cite-table thead { display: none; } .cite-table td { border: 0; padding: 4px 0; } .cite-table tr { border-bottom: 1px solid var(--line); padding: 8px 0; } }
