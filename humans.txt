@@ -1,0 +1,44 @@
+/* TEAM */
+Author and maintainer: Cyril Voyant
+Site: https://www.cyrilvoyant.com
+Identity: https://person.cyrilvoyant.com/
+ORCID: https://orcid.org/0000-0003-0242-7377
+Laboratory: Centre O.I.E. (Observation, Impacts, Energy), Mines Paris - PSL
+
+/* CO-AUTHORS AND CONTRIBUTORS CREDITED ON THIS SITE */
+Alan Julien: https://orcid.org/0009-0003-0247-0663
+Andreas Kazantzidis: https://orcid.org/0009-0005-6612-4991
+Candice Banes: https://orcid.org/0009-0003-6656-8168
+Claudio Francesco Nicolosi: https://orcid.org/0009-0001-2962-6643
+Dazhi Yang: https://orcid.org/0000-0003-2162-6873
+Ghjuvan Antone Faggianelli: https://orcid.org/0000-0002-9954-5910
+Gilles Notton: https://orcid.org/0000-0002-6267-9632
+Jamie Bright: https://orcid.org/0000-0002-9465-3453
+Jan Kleissl: https://orcid.org/0000-0003-4364-0211
+Jean-Laurent Duchaud: https://orcid.org/0000-0001-7490-7260
+Jeroen Baas: https://orcid.org/0000-0001-8005-4153
+John P. A. Ioannidis: https://orcid.org/0000-0003-3118-6859
+Lionel Ménard: https://orcid.org/0009-0002-2156-8538
+Luis Antonio Garcia-Gutierrez: https://orcid.org/0000-0002-3480-1784
+Milan Despotović: https://orcid.org/0000-0003-3144-5945
+Mohammed Asloune: https://orcid.org/0009-0004-0183-2156
+Nadjem Bailek: https://orcid.org/0000-0001-9051-8548
+Nicolas Fichaux: https://orcid.org/0009-0008-2824-0387
+Paolo Stringari: https://orcid.org/0000-0002-5403-9328
+Philippe Blanc: https://orcid.org/0000-0002-6345-0004
+Philippe Lauret: https://orcid.org/0000-0003-2959-6146
+Rodanthi-Elisavet Mamouri: https://orcid.org/0000-0003-4836-8560
+Rodrigo Amaro e Silva: https://orcid.org/0000-0002-2813-150X
+Roy Boverhof: https://orcid.org/0000-0002-7299-680X
+Sylvain Cros: https://orcid.org/0000-0002-7702-2123
+Ted Soubdhan: https://orcid.org/0000-0002-6402-8438
+Xavier Silvani: https://orcid.org/0000-0002-0387-1667
+Yves-Marie Saint-Drenan: https://orcid.org/0000-0003-1471-1092
+Zaher Mundher Yaseen: https://orcid.org/0000-0003-3344-214X
+
+/* SITE */
+Last update: 2026-10-24
+Language: English, French
+Licence of texts and courses: CC BY 4.0
+Standards: HTML5, schema.org JSON-LD, Atom, sitemap, llms.txt
+Tools declared: Python build scripts; AI assistants (Claude, Codex) used for code and drafts, checked by the author

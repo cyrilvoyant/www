@@ -1351,6 +1351,43 @@
       ]
     },
     {
+      "url": "https://www.cyrilvoyant.com/fr/heritage/",
+      "title": "Héritage scientifique : tout, au même endroit",
+      "language": "fr",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Les idées directrices",
+          "anchor": null
+        },
+        {
+          "title": "Les axes de recherche",
+          "anchor": null
+        },
+        {
+          "title": "Les logiciels, avec leur DOI et leur équipe",
+          "anchor": null
+        },
+        {
+          "title": "Les cours en accès libre (CC BY 4.0)",
+          "anchor": null
+        },
+        {
+          "title": "Les outils interactifs",
+          "anchor": null
+        },
+        {
+          "title": "Essais et positions",
+          "anchor": null
+        },
+        {
+          "title": "Collaborer, citer",
+          "anchor": null
+        }
+      ]
+    },
+    {
       "url": "https://www.cyrilvoyant.com/fr/ia-dans-la-recherche/",
       "title": "L'IA dans la recherche : AI Act, charte de laboratoire et boîte à outils",
       "language": "fr",
@@ -1932,6 +1969,43 @@
       "sections": [
         {
           "title": "Paper, authors and resources",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/legacy/",
+      "title": "Scientific legacy: everything in one place",
+      "language": "en",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Main ideas",
+          "anchor": null
+        },
+        {
+          "title": "Research lines",
+          "anchor": null
+        },
+        {
+          "title": "Software, with its DOI and its team",
+          "anchor": null
+        },
+        {
+          "title": "Open courses (CC BY 4.0)",
+          "anchor": null
+        },
+        {
+          "title": "Interactive tools",
+          "anchor": null
+        },
+        {
+          "title": "Essays and positions",
+          "anchor": null
+        },
+        {
+          "title": "Collaborate, cite",
           "anchor": null
         }
       ]

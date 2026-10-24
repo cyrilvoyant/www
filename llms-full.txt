@@ -1,0 +1,1802 @@
+# Cyril Voyant: full text of the main pages
+
+> Canonical URL before each page. Cite the page, the paper and the versioned software it links, with their full author teams. Courses are in French, under CC BY 4.0.
+
+
+---
+URL: https://www.cyrilvoyant.com/legacy/
+
+Scientific legacy: everything in one place 
+ More than twenty years of research in medical physics and energy forecasting, of teaching and of software. Everything public is here, linked to its source: paper, DOI, repository, team. Anyone may use it as they wish, on one condition: give credit. 
+ Main ideas 
+ Understand before you compute Start from the human question, model the system, then choose the tool. Beat a simple reference Every forecast is first compared with persistence; a model that does not beat it adds nothing. Complexity must pay A frugal model (ELM, autoregression) first; heavier only if the gain is shown. Trust is demonstrated Public code, data, licences and verification; AI is a tool, declared. Research lines 
+ Solar and energy forecasting Persistence, BLEND, ELM, dimensionality reduction, the Corsican electricity mix. 
+ Evaluating forecasts NICE, γ-index, sCV and forecastability, prediction intervals. 
+ Medical physics Biologically equivalent doses (LQL-Equiv), radioiodine therapy of the thyroid. 
+ AI and language Language models as interfaces to validated codes. 
+ Assessing research Influence index, the RTVACOS framework, scientific publishing. 
+ Software, with its DOI and its team 
+ NICEᵏ: normalized forecast errors compared with simple persistence (MATLAB) Cyril Voyant · repository · MIT 
+ sCV and F: variability and forecastability of solar irradiance (MATLAB) Cyril Voyant · repository · MIT 
+ The γ-index: tolerance-based validation of spatio-temporal forecast fields (MATLAB) Cyril Voyant · repository · MIT 
+ ARTU: second-order autoregressive reference method for solar radiation forecasting Cyril Voyant · repository · MIT 
+ BLEND and CLIPER: persistence operators for cyclostationary energy processes (MATLAB) Cyril Voyant , Candice Banes , Luis Garcia-Gutierrez , Gilles Notton , Milan Despotovic , Zaher Mundher Yaseen · repository · MIT 
+ Per-cell, spatial and compressed forecasters of satellite solar irradiance: benchmark code (MATLAB, Python) Cyril Voyant , Andreas Kazantzidis, Jan Kleissl · repository · MIT 
+ MIMO-ELM forecasting of the Corsican electricity mix (MATLAB, Python, EDF open data) Cyril Voyant , Yoan Jheelan · repository · GPL-3.0 
+ PV_ELM_pred: benchmark of persistence, BLEND, autoregression and ELM variants for PV forecasting (Python) Martin Leiva, Xavier Silvani , Gilles Notton , Cyril Voyant , Alan Julien · repository · MIT 
+ Make_Stationary: deseasonalization benchmark for renewable-energy time series (MATLAB) Maklewa Agoundedemba, Cyril Voyant , Milan Despotovic , Luis Antonio Garcia-Gutierrez , Gilles Notton · repository · GPL-3.0 
+ Filter and wrapper diagnostics of dimensionality reduction for endogenous PV power forecasting (MATLAB) Hassen Bouzgou, Gabriel Chesnoiu, Claudio F. Nicolosi, Adrien Chatel, Gilles Notton , Lionel Menard , Cyril Voyant · repository · MIT 
+ RAIR-Sim: compartmental simulator of radioactive iodine therapy response in metastatic thyroid cancer (MATLAB) Marie Fusella Giuntini, Cyril Voyant , David Taieb, Dominique Barbolosi · repository · MIT 
+ Influence Index: a log-based measure of research influence for institutions (MATLAB, processed data) Cyril Voyant , Jeroen Baas , Roy Boverhof , Paolo Stringari , Mathilde Marchand-Lasserre, John P. A. Ioannidis · repository · MIT 
+ LQL-Equiv 2014: biologically equivalent dose calculation in radiotherapy (MATLAB application) Cyril Voyant , Daniel Julian · repository · MIT 
+ Tunnel Load Simulator: synthetic electricity demand of road tunnels (Python, Streamlit) Haytham El-Houari, Cyril Voyant · repository · MIT 
+ LQL-Equiv-web 3.0: biologically equivalent doses in radiotherapy (Python, browser) Cyril Voyant , Daniel Julian · repository · MIT 
+ Open courses (CC BY 4.0) 
+ Forecasting the intermittent solar resource Mines Paris – PSL engineering curriculum, applied research project UE14 · 59 slides · English and French · CC BY 4.0 
+ Biostatistics for health studies (in French) First-year health studies (PASS, UE8) · 3 chapters, 246 slides · in French · CC BY 4.0 
+ Physics for health studies: electromagnetic waves, X-rays and imaging (in French) First-year health studies (PASS-PACES), physical bases of medical imaging · 110-slide lecture and 2 corrected exercise sessions · in French · CC BY 4.0 
+ Industrial physics: thermodynamics, water vapor and refrigeration (in French) B.U.T. biological engineering, food science and biotechnology, 2nd year · 5 chapters, 139 slides and handouts · in French · CC BY 4.0 
+ Heat transfer for food engineering (in French) B.U.T. biological engineering, food science and biotechnology, 1st year · 24 slides · in French · CC BY 4.0 
+ Interactive tools 
+ Live probabilistic forecast: ELM against persistence 
+ ROC curve, normal law, attenuation (courses, in French) 
+ The RTVACOS tree 
+ Who is responsible? (AI Act) 
+ Which licence? The decision tree 
+ LQ and LQL doses 
+ Thyroid protocol explorer 
+ NICE calculator 
+ BLEND step by step 
+ sCV and forecastability 
+ γ-index explorer 
+ ARTU and its table 
+ Essays and positions 
+ Scientific publishing: no verification, no trust 
+ AI in research: AI Act, charter and toolbox 
+ Models live in the data 
+ Research excellence in 2026 (talk) 
+ Collaborate, cite 
+ To extend a piece of work: collaborate . To reuse it: cite and reuse . Full publication list: HAL , ORCID . For machines: llms.txt , llms-full.txt , Atom feed .
+
+---
+URL: https://www.cyrilvoyant.com/approach/
+
+Understand before you compute: the approach of Cyril Voyant 
+ Medicine, energy, language: very different questions, one method. People and their question at the center; a model we understand at the core; every tool, artificial intelligence included, around it. Complexity is added only when it brings a measurable gain. 
+ Cyril Voyant · Research Director, Mines Paris – PSL, Centre O.I.E. 
+ In brief 
+ Compute directly when the link between inputs and outputs is known. When an explicit model falls short, hybridize : keep the model and learn only what is missing. When the useful relations are not known well enough, evaluate what the data can teach, one step of complexity at a time, and only as far as it pays. 
+ Simpler is often no worse, and sometimes better: a learning machine that reads only its own satellite cell forecasts better than the same model reading the whole map, with a thousand times fewer parameters, and better than the deep networks tested. 
+ AI belongs in every toolbox, not in every solution: a language model may prepare a calculation, never guess it. 
+ Map of the work: four columns for the steps of the approach (direct model; hybrid, model plus learning; frugal learning; heavy learning and language models) and three rows for the fields (medicine, energy, language), each published or open work written in its cell 
+ One method, every field 
+ Cyril Voyant works on the dose of a radiotherapy treatment, the response of thyroid cancer to radioactive iodine, the output of a solar plant, the electricity mix of an island, the load of a road tunnel, and requests written in plain language. Medicine, energy and language are treated the same way. The domain changes; the method does not. 
+ 1. Start with the direct approach 
+ When the link is known, compute it. Radiobiological dose equivalence follows an explicit model, checked on 4,438 treatment schedules (LQL-Equiv). When no measurements exist, the electricity demand of a tunnel is simulated from what is known about it (Tunnel Load Simulator). Before forecasting the sun, describe how variable and how forecastable a site is (sCV and F). 
+ 2. When the model falls short, hybridize 
+ This is the route Cyril Voyant prefers. When an explicit model meets the need well enough, no learning is added without reason. When it falls short, it is completed, not replaced: learning informed by physics, medicine or mathematics estimates only what the model does not capture. 
+ Thyroid cancer : a compartmental model by Marie Fusella Giuntini and Dominique Barbolosi , with Cyril Voyant and David Taieb, is the base of a hybrid digital twin now in progress ( Scientific Reports , 2026). 
+ Solar forecasting : hybrid forecasts combined a numerical weather model with ARMA and neural networks as early as 2012 ( Energy , 2012); cyclostationary references write the symmetry of the signal into the forecast ( Applied Mathematical Modelling , 2026). 
+ 3. When relations are not known well enough, learn, only as far as it pays 
+ Persistence, then structured references (BLEND, CLIPER, ARTU), statistical models, frugal learning machines (ELM), and only then deep networks or foundation models. Each step is kept only if it beats the previous one under the same protocol. 
+ One ELM forecasts seven signals of the Corsican grid at once, one hour ahead, with nRMSE 0.179 for solar and 0.051 for thermal ( Applied Energy , 2026). 
+ Removing the clear-sky model makes the forecasting chain simpler, and the ELM matches or outperforms the classical references ( Solar Energy , 2025). 
+ 4. Artificial intelligence, in its place 
+ Machine learning, deep learning and language models are valuable and used every day. They remain tools around an understood, validated core. In WebSemantic, a language model reads the request, a validator asks whenever an input is missing, and a validated code computes every number. Using AI in a lab also means rules: what the European AI Act asks of research, who is responsible when a model leaves the lab, and a toolbox for researchers ( AI in research ). 
+ 5. Trust is demonstrated 
+ Every result is judged against a reference with metrics that match the question (NICE, the γ-index), and published with its code, data and limits, archived with a DOI. Research must be found, trusted and reused: this is the point of the RTVACOS framework on research excellence. The same questioning applies to research itself: with J. P. A. Ioannidis (Stanford University), J. Baas and R. Boverhof (Elsevier), institutions are mapped by impact next to research-integrity proxies ( Royal Society Open Science , 2026), and influence is read against an explicit 2 % baseline rather than by volume ( questioning how we do research ). 
+ The five principles 
+ People at the center : forecasts and calculations serve a human decision. 
+ The model at the core : understand first; compute directly; hybridize when the model falls short. 
+ Complexity only if it pays : no a priori on the method; start simple. 
+ Every tool, at the periphery : AI included, often in hybrid form. 
+ Trust is demonstrated : evaluation, open code, data and limits. 
+ Go further 
+ The reference page, with every source (for researchers and machines): https://cyrilvoyant.github.io/approach.html 
+ Methods and code , with full theory and runnable examples: https://cyrilvoyant.github.io/ 
+ Author profile : person.cyrilvoyant.com · ORCID 0000-0003-0242-7377
+
+---
+URL: https://www.cyrilvoyant.com/scientific-publishing-trust/
+
+Scientific publishing: no verification, no trust 
+ How can verification become as visible as publication? The number of indexed articles grew by about 47% between 2016 and 2022 [1] , peer review relies on unpaid work, and generative AI makes plausible text almost free. The answer is not more journals: it is to check the data and code behind what is published, with the same rigour Europe now demands of AI systems. 
+ Four numbers, four sources 
+ Indexed articles (Scopus, Web of Science), 2016 = 100 
+ Hanson et al. 2024 [1] 
+ Share of papers published by the top five publishers 
+ Larivière et al. 2015 [2] 
+ Papers retracted in 2023, and those of one publisher 
+ Van Noorden 2023 [5] 
+ Peer-review time donated in 2020 
+ > 100 M h 
+ more than 15,000 years of work, unpaid 
+ Aczel et al. 2021 [4] 
+ Each value is the cited source's; bars are to scale within each card, not across cards. 
+ From publication to checkable evidence 
+ 01 Identify DOI · authors · version 
+ 02 Execute Data · code · environment 
+ 03 Compare Expected result · tolerance 
+ 04 Challenge Assumptions · limits · transfer 
+ Proposed methodological diagram: this workflow organizes evidence; it does not certify a study. 
+ Reproducing a number does not prove that the model describes the world correctly. These levels answer different questions: documenting them separately avoids turning a badge or a repository into a blanket guarantee. 
+ Documented state What is known Open question 
+ Accessible A reader can obtain the materials. Does the computation run? 
+ Executable The code runs in a described environment. Does it recover the reported results? 
+ Reproduced A documented run recovers a result within a stated tolerance. Are the assumptions and method appropriate? 
+ Validated for a use Scientific criteria and a domain of application have been examined. What happens outside that domain? 
+ Connect practices without confusing their purposes 
+ FAIR supports discovery and reuse; licences define permissions; reproducibility lets others check a computation; the AI Act regulates specified AI uses. RTVACOS connects this work to research excellence. These frameworks complement rather than replace one another. 
+ The global picture: too many articles, too little verification 
+ Output that outruns researchers. Articles indexed in Scopus and Web of Science rose by about 47% from 2016 to 2022, faster than the number of scientists; part of the growth came from special issues with shortened review times [1] . 
+ A concentrated market. Five publishers published more than half of all papers as early as 2013 [2] ; the group that owns the largest reported an adjusted operating margin of 34.8% in 2025 [3] . 
+ Invisible work. Reviewers gave more than 100 million hours in 2020 [4] , unpaid and almost unrecognized. 
+ Eroded trust. More than 10,000 papers were retracted in 2023, over 8,000 of them in one publisher's journals, mostly in special issues exploited by paper mills [5] . 
+ AI banned rather than framed. Rules say what not to do, for instance the ban on generative AI in US grant review [6] , rarely what to show. 
+ What already exists 
+ Level What exists What it covers 
+ International FAIR principles [8] ; OSTP memo [7] Findable, reusable data; immediate access to articles and data from US federally funded research. 
+ International JOSS [9] , CODECHECK [10] , ReScience C [11] , SoftwareX [20] Open software review; independent execution of an article's code; published replications; software articles and developer credit (SoftwareX). These initiatives provide different forms of review. 
+ Europe Council conclusions of May 2023 [12] ; Diamond Open Access action plan [13] ; Open Research Europe [14] Immediate open access as the norm for public research; publishing at no cost to authors or readers. 
+ Europe CoARA [15] Assessment reform: recognizing contributions other than article counts, peer review included. 
+ Europe AI Act [16] For high-risk AI systems: data, documentation, logs, quality, post-market monitoring. 
+ France Digital Republic Act, art. 30 [17] Right to post the accepted manuscript in open access after 6 months (12 in the humanities and social sciences). 
+ France National Plan for Open Science [18] ; HAL; Software Heritage [19] Target of 100% open-access articles by 2030; open research source code; code archiving. 
+ These texts open access . Almost none asks anyone to check that a published result can be reproduced from its data and code. 
+ Who checks what? The actors, and what each mechanism is designed to cover 
+ Classic peer review FAIR and repositories Licences JOSS, SoftwareX CODECHECK ReScience C AI Act (AI systems) CoARA 
+ Who checks? Reviewers and journal editor Repository and data curators No one: the author declares Software-journal reviewers An independent codechecker Another team, then reviewers The provider, often by self-assessment, under market-surveillance authorities Institutions that assess 
+ Text and reasoning ● · · ◐ · ◐ · · 
+ Data (find, reuse) ◐ ● · · ◐ ◐ ● · 
+ Reuse permissions · ◐ ● ◐ · · · · 
+ Code (quality, documentation) · · · ● ◐ ◐ ● · 
+ Re-running the computation · · · ◐ ● ● · · 
+ Result recovered by others · · · · ◐ ● · · 
+ Declared use of tools, AI included ◐ · · · · · ● · 
+ Follow-up after publication ◐ ◐ · · · · ● · 
+ Credit for checking work · · · · · · · ● 
+ ● designed for · ◐ partly, depending on venue · · not its purpose 
+ How to read: each column shows what the mechanism is for, according to its own texts, not how well it is applied. Highlighted rows have one mechanism, or none, designed for them. The AI Act covers high-risk AI systems, not articles: it is a point of comparison here. This is our reading, open to discussion row by row. 
+ The AI Act as a comparison, not a regulation of papers 
+ The AI Act requires providers of high-risk AI systems to govern their training, validation and test data (Art. 10), keep technical documentation (Art. 11), log events (Art. 12), run a quality management system (Art. 17) and monitor the system after it is placed on the market (Art. 72) [16] . These obligations overlap with some MLOps practices, without being equivalent. Scientific articles follow different editorial, scientific and sometimes regulatory rules; independent execution is not automatically guaranteed. 
+ The regulation also excludes AI developed solely for research (Art. 2(6)). A gap may open: European teams bear the cost of compliance as soon as they deploy, teams outside the regulation do not. The AI Act remains essential all the same: it provides one framework for traceability from data to result. The right answer is not to weaken it but to bring its spirit to publishing. 
+ France: editorial work that does not count 
+ France has one of the most open-access-friendly legal frameworks in Europe: a mandatory right to deposit, HAL, Software Heritage, a national plan that covers source code [17] [18] . Yet editing a journal, reviewing or checking code is almost absent from career assessment, which counts articles first. The work that guarantees quality is the work that pays least; editors and reviewers become hard to find, and others end up running the reference journals. 
+ What is missing 
+ Checking the data and code of every article that depends on them, as the AI Act does for AI systems: frozen versions, documented environment, independent execution, kept records. 
+ Declaring the tools used, AI included. Neither ban nor silence: a statement of what was used, for what, and what a human checked. 
+ Following the article after publication , as one monitors a deployed system: versions, errata, reports, links to corrected datasets. 
+ Recognizing editorial and review work in assessment, as CoARA proposes. 
+ Connecting the frameworks : code licences, FAIR data and the AI Act talk about the same thing, traceability, but do not cite each other. 
+ This is not necessarily about more journals, but about changing what we ask of the existing ones. On this site, every study links to its code and data; the page AI in research shows how to declare tools, the page Data how to choose a license, the page Cite and reuse how to give credit. 
+ No verification, no trust 
+ An article no one can redo is a claim, not a result. The tools to check exist, AI included; what is missing is making them normal, and recognizing the people who do that work. 
+ Glossary 
+ Diamond open access 
+ Journals free for both authors and readers, funded by institutions. 
+ APC (Article Processing Charge) 
+ Fee paid by authors, or their institution, to publish an article in open access. 
+ CODECHECK 
+ A third party runs an article's code and certifies that the reported figures and tables are regenerated; it does not judge scientific validity. 
+ CoARA 
+ European coalition to reform research assessment: recognize the diversity of contributions, not only article counts. 
+ DOI 
+ Persistent identifier of an article, a dataset or a software version. 
+ Paper mill 
+ Organization selling fabricated or falsified articles, often slipped into special issues. 
+ FAIR 
+ Findable, accessible, interoperable, reusable: principles for data, not a license. 
+ MLOps 
+ Engineering practices to version, trace, deploy and monitor learning models. 
+ Reproducibility 
+ Recovering a result with the same data and code; replication recovers it with new data. 
+ Retraction 
+ Official withdrawal of a published article for serious error or fraud; the article stays visible, marked as retracted. 
+ Questions and answers 
+ Is scientific publishing really in trouble? 
+ The number of indexed articles grew by about 47% between 2016 and 2022, faster than the number of researchers; unpaid peer review no longer keeps up, and more than 10,000 papers were retracted in 2023, a record. 
+ Should AI be banned from writing and reviewing? 
+ No: it should be declared. As with any other tool, authors state what was used and for what; what matters is that results are checked, data and code included. 
+ Why bring the AI Act into a discussion of articles? 
+ Because it requires of high-risk AI systems what articles lack: data governance, technical documentation, record-keeping, a quality management system and post-market monitoring. 
+ Do we need new journals? 
+ Not necessarily. What is missing is verification and recognition of editorial work, not more titles. 
+ Sources 
+ Hanson, Gómez Barreiro, Crosetto, Brockington (2024). The strain on scientific publishing. Quantitative Science Studies 5(4). doi.org/10.1162/qss_a_00327 
+ Larivière, Haustein, Mongeon (2015). The oligopoly of academic publishers in the digital era. PLoS ONE 10(6). doi.org/10.1371/journal.pone.0127502 
+ RELX (2026). RELX 2025 results. www.relx.com/media/press-releases/year-2026/relx-2025-result 
+ Aczel, Szaszi, Holcombe (2021). A billion-dollar donation: estimating the cost of researchers' time spent on peer review. Research Integrity and Peer Review 6. doi.org/10.1186/s41073-021-00118-2 
+ Van Noorden (2023). More than 10,000 research papers were retracted in 2023, a new record. Nature 624. doi.org/10.1038/d41586-023-03974-8 
+ NIH (2023). NOT-OD-23-149: generative AI prohibited in NIH peer review. grants.nih.gov/grants/guide/notice-files/NOT-OD-23-149.html 
+ OSTP (2022). Ensuring free, immediate, and equitable access to federally funded research. bidenwhitehouse.archives.gov/wp-content/uploads/2022/08/08-2 
+ Wilkinson et al. (2016). The FAIR Guiding Principles for scientific data management and stewardship. Scientific Data 3. doi.org/10.1038/sdata.2016.18 
+ Journal of Open Source Software: open review on GitHub. joss.readthedocs.io/ 
+ Nüst, Eglen (2021). CODECHECK: an open science initiative for the independent execution of computations. F1000Research 10. doi.org/10.12688/f1000research.51738.2 
+ ReScience C: reproducible replications in computational science. rescience.github.io/ 
+ Council of the EU (2023). Conclusions on high-quality, transparent, open, trustworthy and equitable scholarly publishing (9616/23). european-research-area.ec.europa.eu/documents/council-conclu 
+ Science Europe, cOAlition S, OPERAS, ANR (2022). Action Plan for Diamond Open Access. doi.org/10.5281/zenodo.6282402 
+ European Commission. Open Research Europe. open-research-europe.ec.europa.eu/ 
+ CoARA. Agreement on Reforming Research Assessment (2022). coara.eu/agreement/the-agreement-full-text/ 
+ Regulation (EU) 2024/1689 (AI Act). eur-lex.europa.eu/eli/reg/2024/1689/oj 
+ Loi n° 2016-1321 pour une République numérique, article 30 (art. L533-4 du code de la recherche). www.legifrance.gouv.fr/jorf/id/JORFTEXT000033202746 
+ Deuxième Plan national pour la science ouverte 2021-2024. www.enseignementsup-recherche.gouv.fr/fr/une-politique-ambit 
+ Software Heritage, l'archive universelle du code source. www.softwareheritage.org/ 
+ SoftwareX: research software publications and reuse. www.sciencedirect.com/journal/softwarex
+
+---
+URL: https://www.cyrilvoyant.com/ai-in-research/
+
+AI in research: the AI Act, a lab charter and a toolbox for researchers 
+ Step of the story · Demonstrate trust The approach Judge against a reference, publish code, data and limits, make research findable and reusable. Principle 5: Trust is demonstrated. 
+ Generative AI now writes code, drafts papers and reviews data in every laboratory. The European AI Act sets rules for what we build and what we transfer. Here is what changes for researchers, the timeline in Europe and in France, how the rest of the world compares, who is responsible when research code becomes a product, and a toolbox a lab can adopt in a few hours per project. 
+ Cyril Voyant , Mines Paris – PSL, Centre O.I.E. · status on 23 October 2026 · not legal advice: check with your institution's legal service 
+ In brief 
+ Two research exclusions, not one: systems developed and put into service for the sole purpose of scientific research (art. 2(6)), and research, testing and development before placing on the market , except testing in real-world conditions (art. 2(8)). The rules start when a model is placed on the market or put into service , for example when a partner deploys it in an energy system. It is high-risk when it serves as a safety component in the supply of electricity, gas or heating (Annex III, point 2); otherwise its class must be assessed case by case. 
+ The deadlines moved in 2026: transparency rules apply since 2 August 2026 , high-risk systems of Annex III from 2 December 2027 , AI in regulated products from 2 August 2028 (Regulation (EU) 2026/1744). 
+ A lab does not need a compliance department: a one-page charter , a data card and a model card , a minimal test plan and six extra fields in the data management plan give a project a documentation base that an audit can examine. The durations given below are indicative; none of this guarantees compliance. 
+ What AI changes in research 
+ AI speeds up what used to take days: writing code, summarizing literature, cleaning data, drafting text. It also creates new risks for science itself: invented references, fluent but wrong code, papers produced at industrial scale, models nobody can reproduce, and results that depend on a tool whose version changes without notice. The answer is the same as for any scientific tool: say what was used, check it, document it, and make it reproducible . Trust is not claimed, it is demonstrated (see questioning how we do research ). 
+ The AI Act in plain words 
+ One logic: the risk of the use. Some uses are banned (manipulation, social scoring), some are high-risk and strictly regulated (safety components of critical infrastructure such as electricity, gas or heating supply, medical devices, education, employment), some carry transparency duties (chatbots, synthetic content), and the rest is free. 
+ Two main roles. The provider develops a system and places it on the market or puts it into service under its own name (art. 3(3), 16). The deployer uses it under its authority (art. 26). Anyone who puts their name on a system, substantially modifies it or changes its purpose can become the provider (art. 25). 
+ Research is excluded, under conditions. Systems and models developed and put into service for the sole purpose of scientific research are outside the Act (art. 2(6)), and so are research, testing and development before placing on the market, except tests in real-world conditions (art. 2(8)). Free and open-source components are largely exempt unless they are high-risk, banned, or subject to transparency duties (art. 2(12)). 
+ Generative AI. The obligations of August 2025 bind the providers of general-purpose models (OpenAI, Mistral, Google...), not the researchers who use them. Labeling synthetic content (art. 50) mainly binds providers and, for published deepfakes or texts informing the public without human editorial control, deployers. Declaring AI use in a paper or a thesis is required by publishers, funders and research-integrity rules (no AI as an author, disclosure of use), more than by the Act itself. 
+ AI literacy (art. 4). Organizations that provide or deploy AI systems take measures so that their staff understand them; the 2026 amendment softened this into a duty of means, with support from the Commission and Member States. 
+ The timeline in Europe and in France 
+ Date 
+ What applies 
+ 1 August 2024 
+ The AI Act (Regulation (EU) 2024/1689) enters into force 
+ 2 February 2025 
+ Banned practices; AI literacy 
+ 2 August 2025 
+ Obligations of providers of general-purpose AI models; governance; penalties 
+ 27 July 2026 
+ Digital omnibus on AI (Regulation (EU) 2026/1744) in force: high-risk deadlines postponed 
+ 2 August 2026 
+ Transparency obligations (art. 50) and most other provisions; national market surveillance 
+ 2 December 2026 
+ End of the grace period for marking synthetic content of systems already on the market (art. 50(2)) 
+ 9 December 2026 
+ New Product Liability Directive (EU) 2024/2853: software is a product 
+ 2 December 2027 
+ High-risk systems of Annex III (safety components of critical infrastructure, education, employment...) 
+ 2 August 2028 
+ High-risk AI embedded in regulated products (Annex I: machinery, medical devices...) 
+ In France , a bill adapting national law to EU law (adopted by the Senate on 18 February 2026, examined by the National Assembly in autumn 2026) organizes supervision: the DGCCRF as coordinator and single point of contact, the CNIL for banned practices and part of the high-risk uses, Arcom for synthetic content, the ACPR for finance, with technical support from ANSSI and PEReN. Until the law is passed, the European rules apply directly; the designation of authorities is what remains to be settled. 
+ Elsewhere: no equivalent of the AI Act, but rules everywhere 
+ Region 
+ Approach (October 2026) 
+ United States 
+ No federal AI law. A December 2025 executive order pushes for a national framework that would override state laws, but Congress has not passed it. State laws apply: California (frontier model transparency) and Texas since January 2026, Colorado from January 2027. 
+ China 
+ Rules by use case: generative AI services (2023), algorithm filing, mandatory labeling of AI-generated content since 1 September 2025, enforced by the Cyberspace Administration. 
+ South Korea 
+ The closest equivalent: a horizontal AI Basic Act in force since 22 January 2026 (high-impact AI, transparency, local representative for foreign firms), with a one-year grace period on fines. 
+ Japan 
+ AI Promotion Act (2025): a framework to promote and coordinate, without penalties; guidelines for businesses. 
+ Canada, Brazil 
+ Canada's federal AI bill lapsed in 2025; Brazil's bill, close to the European model, passed the Senate in December 2024 and was still before the Chamber at our last check. 
+ What it means for a European lab: partners abroad work under different, often lighter rules, but the AI Act reaches any system whose output is used in the EU (art. 2(1)). A shared framework is what makes collaboration safe: without it, nobody knows who answers for a model once it leaves the lab. 
+ Who is responsible when research code becomes a product? 
+ A model written by three labs, one of them an Asian partner, shared under a license and a consortium agreement; an EU industrial company integrates it into an energy management system and becomes its provider; the grid operator deploys it; the partner deploys it in its own country under local law; civil liability and contracts cover the whole chain 
+ A typical case: a forecasting model written in part by three laboratories, one in France, one elsewhere in the EU and one at an Asian partner, within a joint project. An industrial company reuses the code in an energy management system sold in Europe. 
+ While the code serves research , the three labs are outside the AI Act. They remain answerable for scientific integrity, for the documentation they deliver and for the terms of the license and the consortium agreement. 
+ When the company puts the system into service under its name , it becomes the provider : if the system is a safety component of the electricity supply, it is high-risk (Annex III, point 2, from 2 December 2027): risk management, technical file, conformity assessment and CE marking. The grid operator that uses it is the deployer : human oversight, monitoring, logs. 
+ If the partner deploys the model in its own country , local law applies (for example the Korean Basic Act or the Chinese labeling rules); the AI Act applies only if the output is used in the EU. 
+ Civil liability follows the new Product Liability Directive from 9 December 2026: software counts as a product, but free and open-source software supplied outside a commercial activity is excluded. Everything else is settled by contracts : who may reuse the code, for what purpose, with which warranties and which duty to inform. 
+ The practical lesson: write the transfer into the contract before the code leaves the lab , and hand over a documented, tested model. A model without documentation leaves its new owner with a risk nobody can measure. 
+ Who is responsible? A one-minute orientation 
+ Answer a few questions about one AI system. The answers point to the articles of the AI Act that apply; they are an orientation, not legal advice. 
+ JavaScript is needed for this orientation. What a lab can do: the example of the O.I.E. framework 
+ At the Centre O.I.E. (Mines Paris – PSL, about 30 people), a FAIR + AI framework has been drafted since 2025 and is being finalized, for deployment from 2027. Its main lines: 
+ A one-page charter signed by every member : generative AI allowed as an assistant for writing, code and figures, with explicit mention of its use; human review of everything it produces; minimal documentation ( data card , model card , versioned Git repository with README); every AI project in a register , reassessed when it moves from research to industry; a data management plan with six AI fields . 
+ Light roles, about 0.3 full-time equivalent in total : an AI compliance lead (register, regulatory watch, partners), a FAIR data steward (data management plans, data cards, licences, GDPR ) and an MLOps and quality referent (model cards, test plans, drift), plus an ethics committee of four people meeting each quarter for sensitive projects. 
+ Six steps per project (indicative durations): register (5 minutes); data management plan with AI fields (1 hour); data card and model card (2 hours); minimal test plan (2 to 3 hours); README with the AI-use statement (30 minutes); for a transfer, an audit-ready file (one day). 
+ Indicators : at least 95 % of projects documented, less than five days between project start and an enriched plan, partner satisfaction above 8/10. 
+ At the institution level, Mines Paris – PSL's legal service has built, with the research centers, a self-assessment decision tree : who is the actor and in which role, the essential questions, the impacts, the qualification of the AI system in the risk pyramid, the conditions of use and of making it available. Its purpose is to find the tipping point where a project enters the scope of the AI Act, and to adapt the contract and its technical annex in time. It is a good example of what an institution can offer its researchers. 
+ The toolbox 
+ Each tool opens on a filled example, taken from the O.I.E. templates (values marked illustrative are not results). Download the nine templates as a kit (Markdown files in a zip, ready to fill in). 
+ 1. Situate the project. Research only, transfer, or deployment? Who will be provider and deployer? Which risk class? Real-world tests are not covered by the research exemption. 
+ 2. State the use of AI. In a paper, a thesis, a report or a README: which tool, which version, for what, checked by whom and when. Example: "Parts of the data-loading code were drafted with GitHub Copilot (2026); all functions were reviewed and unit-tested by A. Author on 12 March 2026." 
+ Example: README with the AI-use statement 
+ Project: MLP, global horizontal irradiance (GHI) forecasting · Author: First Last · Supervisor: First Last · O.I.E., Mines Paris – PSL 
+ Purpose : train a multilayer perceptron to forecast hourly GHI from weather data. 
+ Use of AI : occasional help from a generative AI assistant (name and version) for boilerplate code and debugging. Every suggestion was reviewed by the author (unit tests, validation by the supervisor), name and date. 
+ Data : SIAR network (Spain), 2005–2015; normalization, gap handling; public, non-personal data; license stated. 
+ Tests : fixed seed, identical results on repeated runs; cross-validation (k > 3 folds); stress test on irradiance peaks and missing values; drift checked with nRMSE and NICE on recent data. 
+ Reuse : academic research; any industrial use must be agreed with the laboratory. 
+ 3. Keep a human in charge. No AI as an author; every reference, equation and line of code checked by a named person. 
+ 4. Document the data ( data card ). Origin, period, volume, variables and units, preprocessing, quality, known biases, license or legal basis, transfers outside the EU, conditions of reuse. 
+ Example: data card (one page) 
+ Field 
+ What to write 
+ Example 
+ Dataset name 
+ Name used in the project 
+ SIAR_GHI_ES_2005_2015 
+ Origin 
+ Provider or station network 
+ SIAR network (Spain) 
+ Period, volume 
+ Dates covered and size 
+ 2005–2015, 10 stations, 50k records 
+ Variables 
+ Main variables and units 
+ GHI (W/m²), temperature (°C), humidity (%) 
+ Preprocessing 
+ Steps applied 
+ Min-max normalization, gap interpolation 
+ Quality 
+ Quick assessment 
+ 3 % missing values, calibrated sensors 
+ Known biases 
+ Points of attention 
+ Uneven geographical coverage 
+ License, legal basis ( GDPR ) 
+ License or legal ground 
+ CC BY 4.0, public data 
+ Transfers outside the EU 
+ Yes or no, and safeguards 
+ No (storage in the EU only) 
+ Reuse 
+ Free, contract or restricted 
+ Free for academic purposes 
+ 5. Document the model ( model card ). Name and version, architecture, training and test data with the split, intended use, metrics against an explicit reference (persistence, for example with NICE metrics ), limits, human oversight, link to the code version. 
+ Example: model card (under two pages) 
+ Field 
+ What to write 
+ Example ( illustrative ) 
+ Name, version 
+ Unique identifier 
+ MLP_GHI_v1.2 
+ Type 
+ Architecture 
+ MLP, 3 layers of 64 neurons 
+ Data 
+ Datasets, period, split 
+ SIAR (Spain), 2005–2015, 70/15/15 % 
+ Intended use 
+ Research, simulation or deployment 
+ Academic research, hourly GHI forecasting 
+ Metrics 
+ Against an explicit reference 
+ nRMSE, nMAE, NICE² against persistence 
+ Key results 
+ By station, horizon, season 
+ Table by station 
+ Subgroups 
+ Results by climate or season 
+ Weaker in Mediterranean climate 
+ Known limits 
+ What the model does not cover 
+ Sensor failures, strong cloud variability 
+ Human oversight 
+ Who validates the outputs 
+ Thesis supervisor, AI committee review 
+ Traceability 
+ Technical references 
+ Git commit, model archived with a DOI 
+ Reuse 
+ Free, license or contract 
+ Free for research; industrial use under agreement 
+ 6. Test before sharing. Reproducibility (fixed seed, same results), robustness (cross-validation, subsamples), stress tests (extreme or missing values), drift on recent data. 
+ Example: minimal test plan (checklist, half a day) 
+ Test 
+ How 
+ Why 
+ Who validates 
+ Reproducibility 
+ Fixed seed, identical results; hash of weights and dataset 
+ A third party can reproduce the results 
+ PhD student and supervisor 
+ Robustness 
+ k-fold cross-validation or subsamples 
+ The model does not overfit one dataset 
+ PhD student 
+ Stress test 
+ Extreme data: irradiance peaks, gaps, sensor anomalies 
+ Stable behavior outside normal conditions 
+ Supervisor 
+ Drift 
+ nRMSE and NICE on recent versus older data, with thresholds 
+ Anticipate loss of performance 
+ MLOps and quality referent 
+ Licences 
+ Every dataset and code reused respects its license 
+ Legal compliance 
+ FAIR data steward 
+ README and AI statement 
+ Use of generative AI stated 
+ Transparency 
+ PhD student 
+ Final review 
+ Scientific and technical reading 
+ Quality before release 
+ Responsible supervisor 
+ For a model in operation, a monitoring plan adds thresholds, for example: nRMSE checked monthly, alert above +0.05 and critical above +0.10, then analysis and retraining; data coverage checked weekly, alert below 95 %; more than three incidents a month triggers an urgent diagnosis. 
+ 7. Add six fields to the data management plan . Legal basis; human oversight; AI transparency; conditions of reuse; international transfers; impact assessment ( DPIA where personal-data processing is likely to create a high risk to people, FRIA for some high-risk deployments). 
+ Example: the six AI fields of a data management plan 
+ Legal basis : for personal data, identify the applicable basis under Article 6 GDPR , and Article 9 conditions where relevant. Record copyright licences and reuse agreements separately; they do not replace a GDPR legal basis. 
+ Human oversight : who validates the results, when, at which level (in, on or outside the loop). 
+ AI transparency : whether content or code was generated with AI, and how it is stated. 
+ Conditions of reuse : free, under license, or reserved to a contract. 
+ International transfers : whether data leave the EU (non-European cloud, partner abroad) and the safeguards. 
+ Impact assessment : DPIA where personal-data processing is likely to create a high risk to people; FRIA for some high-risk public deployments; otherwise, why neither applies. 
+ Example: DPIA and FRIA screening, two contrasting projects 
+ Document the decision and its justification; a numerical score does not determine a legal obligation. DPIA : the controller assesses whether personal-data processing is likely to pose a high risk, with advice from the DPO where designated ( CNIL ). FRIA : check the intended use, high-risk classification and deployer against Article 27 ; Annex III point 2 is excluded from this specific obligation. 
+ Weather-only forecasting for a thesis : in this stated scenario, no personal-data processing requiring a DPIA is identified. Record the research context and check applicability again before deployment. 
+ Household load forecasting for a grid operator : assess the privacy risks of consumption profiles with the controller and DPO. Do not infer a FRIA obligation from the energy sector alone. Document the intended use, applicable category and responsible parties; an assessment can also be undertaken voluntarily. 
+ 8. Keep a register of AI projects, uses and partners, and reassess when a project changes purpose. 
+ Example: one line of the AI register 
+ Project 
+ Model 
+ Use of generative AI 
+ Status 
+ Partners 
+ Data 
+ Last review 
+ GHI forecasting, thesis 2026 
+ ELM, MLP 
+ Code assistant, stated in README 
+ Research only 
+ None 
+ Public weather data 
+ Project start; on any change of purpose 
+ 9. Before any transfer, write the contract and prepare the file. Who becomes provider; license and intellectual property; warranties and liability; duty to report incidents; data transfers; the technical file (README, data card, model card, test plan and results, change log, monitoring plan). 
+ Example: content of an audit-ready file 
+ README with the use of generative AI and the licences of data and code; 
+ data card (origin, biases, legal basis, reuse) and model card (type, data, metrics, limits, human oversight, Git traceability); 
+ test plan and its results, validated by the supervisor; 
+ data management plan with the six AI fields; 
+ change log: versions of the model, Git commits, changes of the dataset; 
+ for a high-risk deployment: monitoring plan (nRMSE, NICE, drift, thresholds) and an incident procedure (reporting channel, named person, time to fix). 
+ 10. Train everyone. A short session for PhD students and staff each year covers AI literacy and the lab's charter . 
+ Example: a one-page laboratory charter 
+ As a member of the laboratory, I commit to the following principles for using and developing artificial intelligence, in line with the AI Act and the FAIR principles. 
+ Generative AI (chat assistants, code assistants) is allowed as an aid for writing, code and figures, and its use is always stated (report, paper, README). 
+ Human review : everything produced with AI is checked by a person; technical and bibliographic review before any release. The author remains responsible. 
+ Minimal documentation for every project: a data card, a model card, a versioned Git repository with a README (the institution's platform; projects may stay private). 
+ AI register : every project using AI is listed; moving from research to industry triggers a new assessment. 
+ Data management plan with the six AI fields: legal basis, human oversight, AI transparency, reuse, international transfers, impact assessment. 
+ Name, role, date, signature. 
+ Glossary 
+ GDPR 
+ General Data Protection Regulation, Regulation (EU) 2016/679: the European law on personal data. See the CNIL guide . 
+ DPIA 
+ Data Protection Impact Assessment (art. 35 GDPR): required when processing personal data is likely to result in a high risk for people. CNIL method and tool . 
+ FRIA 
+ Fundamental Rights Impact Assessment (art. 27 AI Act): required from some deployers of high-risk AI systems, mainly public bodies and private entities providing public services, before first use. 
+ MLOps 
+ Machine-learning operations: the practices that keep a model reproducible and reliable once in use: versioning of data and code, automated tests, monitoring of performance and drift, controlled retraining. 
+ Data management plan (DMP) 
+ A document describing how a project collects, documents, stores, shares and archives its data, required by ANR and Horizon Europe; written in France with DMP OPIDoR . 
+ Data card, model card 
+ One- to two-page sheets that describe a dataset or a trained model: origin, content, intended use, metrics, limits. The format follows the "model cards" and "datasheets for datasets" proposals of the machine-learning community. 
+ Official resources 
+ AI Act: Regulation (EU) 2024/1689 on EUR-Lex and the European Commission's AI policy page 
+ European Commission: living guidelines on the responsible use of generative AI in research 
+ CNIL: AI and personal data and the DPIA guide 
+ Data management plans: DMP OPIDoR 
+ Standards: ISO/IEC 42001:2023 (AI management system) and ISO/IEC 23894:2023 (AI risk management) 
+ Publishing ethics: COPE position on authorship and AI tools 
+ Limits 
+ This page summarizes public texts and the work of one laboratory; it is not legal advice. National laws, guidance and standards are still moving: dates are given as checked on 23 October 2026. For a real project, ask your institution's legal service. 
+ How to cite this page 
+ Voyant, C. (2026). AI in research: the AI Act, a lab charter and a toolbox for researchers , version 1.2, 24 October 2026. https://www.cyrilvoyant.com/ai-in-research/ 
+ Versions: 1.0 (23 October 2026), first publication; 1.1 (23 October 2026), the two research exclusions (art. 2(6) and 2(8)) and the high-risk scope of Annex III, point 2 (safety components) stated precisely, durations marked as indicative. 1.2 (24 October 2026): qualitative DPIA/FRIA screening and separation of GDPR legal basis from reuse licences. 
+ @misc{voyant2026airesearch,
+ author = {Voyant, Cyril},
+ title = {AI in research: the AI Act, a lab charter and a toolbox for researchers},
+ year = {2026},
+ note = {Version 1.2, 24 October 2026},
+ url = {https://www.cyrilvoyant.com/ai-in-research/}
+}
+ Go further 
+ Questioning how we do research: influence, integrity, excellence 
+ Let the language model read, let the validated code compute: WebSemantic 
+ The approach: AI in its place, trust demonstrated 
+ Frequently asked questions 
+ Is scientific research exempt from the AI Act? 
+ The exclusions depend on the system's purpose and stage, not simply on the user's status as a researcher. Article 2 covers systems specifically developed and put into service solely for scientific research, and certain pre-market research activities. Real-world testing is outside the latter exclusion. Reassess the scope before transfer or deployment. 
+ Official source 
+ Which high-risk AI deadlines should a laboratory track? 
+ As checked on October 23, 2026, the revised timeline provides December 2, 2027 for Annex III high-risk uses and August 2, 2028 for high-risk AI embedded in regulated products under Annex I. Other obligations have their own dates. Identify the relevant system and provision before applying a deadline. 
+ Official source 
+ Who is responsible when laboratory code is transferred? 
+ Identify the provider, deployer and other actors for the actual system. For high-risk systems, Article 25 specifies circumstances in which rebranding, substantial modification or a changed intended purpose can make another actor the provider. Contracts should document roles; they do not replace the applicable statutory obligations. 
+ Official source 
+ What should a laboratory document first? 
+ Record the purpose, people responsible, data provenance, model and code versions, validation results and limits. Use data and model cards, an AI-use statement and a project register. Before a transfer, review roles and documentation with the institution's legal service. These are practical recommendations, not a compliance certification. 
+ Read also: Scientific publishing: no verification of data and code, no trust
+
+---
+URL: https://www.cyrilvoyant.com/data/
+
+Models live in the data: qualify, certify, license 
+ With AI, anyone writes a forecasting model or a neural network in minutes. The method is no longer scarce; the data are . A model learns only what its data contain: if they are wrong, shifted in time or of unknown origin, so is the model, confidently. Data must therefore be qualified, certified and licensed before anything learns from them. 
+ The basic rules 
+ Findable, accessible, interoperable, reusable (FAIR principles), from acquisition onwards, not at the end of a project. 
+ Described : standard metadata (origin, instrument, units, time step, time zone, processing). 
+ Qualified : a written, traced quality control (physical bounds, stuck values, timestamps, comparison with a reference), whose result travels with the data. 
+ Identified : a persistent identifier (DOI) per dataset and per version. 
+ In open formats and services (NetCDF-CF, OGC standards) rather than isolated files. 
+ Under an explicit license : without one, nobody knows what they may do. 
+ An example: Webservice-Energy 
+ Webservice-Energy is the spatial data infrastructure of the O.I.E. centre (Observation, Impacts, Energy) of Mines Paris – PSL , developed and operated for almost twenty years for energy, the environment and Earth observation, "FAIR by design". Its main architects are Lionel Ménard ( ORCID ) and Raphaël Jolivet (contact: lionel.menard@minesparis.psl.eu , raphael.jolivet@minesparis.psl.eu ). 
+ Find : a metadata catalogue ( GeoNetwork , ISO 19115/19139, INSPIRE , OGC ) for data, services, publications and software. 
+ Access : a THREDDS server ( OPeNDAP , NetCDF Subset Service, WMS), OGC map services (WMS, WFS, WCS), remote processing (WPS) and a STAC catalog under development. 
+ Harmonize ground measurements : the open library libinsitu brings heterogeneous networks to the same NetCDF-CF format, with their quality control. 
+ Identify and license : DOIs assigned to datasets through DataCite , and a CC BY license. 
+ Connect : community portal of the Group on Earth Observations (GEO) , Copernicus data ( CAMS for the atmosphere, C3S for the climate), Horizon 2020 and Horizon Europe projects. 
+ Choosing a license for code and data 
+ After the reflection led at the O.I.E. center by Raphaël Jolivet . The usual practice is binary: close everything when commercial valorization is hoped for, open everything (CC BY, MIT, Apache, BSD) otherwise. It rests on an estimate made too early, and it limits the diffusion of the very work one wants to protect, while diffusion is often what creates opportunities. A middle way exists: non-commercial licences (CC BY-NC for data, PolyForm Noncommercial for code). They are not "open source" in the OSI sense, but they remain compatible with academic open access and reproducibility, and keep a future valorization possible. 
+ The tree below is an example, nothing fixed : each research center adapts it to its contracts, its partners and its institution's policy. 
+ Which license? The decision tree 
+ First: the agreement of every rights holder. 
+ JavaScript is needed for this tree. An example. A forecasting code developed on own funds, with no diffusion constraint, an industrial potential and no GPL dependency: "no" to confidentiality, "no" to imposed openness, "no" to a software journal, hence a non-commercial license . The same code published in SoftwareX would go under an open-source license. 
+ An orientation, not legal advice: the institution's policy and the contracts prevail. To cite or reuse our work: Cite and reuse . 
+ Glossary 
+ FAIR 
+ Findable, accessible, interoperable, reusable: four principles so that data serve beyond those who produced them. 
+ Metadata 
+ Data about the data: origin, instrument, units, period, time step, processing, license. 
+ DOI 
+ A persistent identifier for a digital object (article, dataset, software); the address remains valid even if the website changes. DataCite assigns them to research data. 
+ OGC 
+ Open Geospatial Consortium: open standards for geographic services, among them WMS (maps), WFS (features), WCS (grids) and WPS (remote processing). 
+ INSPIRE, ISO 19115 
+ The European directive on geographic information and the international standard for its metadata. 
+ THREDDS, OPeNDAP 
+ A scientific data server and the protocol that reads only the useful part (an area, a period) without downloading everything. 
+ NetCDF-CF 
+ A file format for scientific grids and series, with conventions (CF) that fix variable names, units and coordinates. 
+ STAC 
+ SpatioTemporal Asset Catalog: a standard way to catalog satellite imagery and cloud-native data. 
+ GEO, Copernicus, CAMS, C3S 
+ The Group on Earth Observations (an intergovernmental partnership), the European Earth observation program and two of its services: atmosphere (CAMS) and climate change (C3S). 
+ CC BY 
+ Creative Commons Attribution: anyone may copy, adapt and reuse, commercially too, provided the author is credited. Meant for texts, figures and data. 
+ CC BY-NC 
+ The same, for non-commercial uses only. 
+ MIT 
+ A very permissive software license: free use, modification, redistribution and sale, provided the copyright notice and the license text are kept; no warranty. 
+ Apache 2.0 
+ Permissive like MIT, plus an explicit patent license from contributors and a duty to flag modified files. 
+ BSD 
+ A family of permissive licences close to MIT; the three-clause version also forbids using the authors' names to promote a derived product. 
+ GPL 
+ A copyleft license: any derived software that is distributed must be under the GPL, with its source code. 
+ PolyForm Noncommercial 
+ A software license that allows any non-commercial use: personal use, research, experiment, teaching, and use by non-commercial organizations (educational institutions, public research, charities, government bodies). Commercial use needs another agreement with the author. The license must travel with redistributed code. 
+ Open source (OSI) 
+ The Open Source Initiative definition: an open-source license may not restrict any field of use; a non-commercial license is therefore not "open source", even if the code is open to read. 
+ Read also: Scientific publishing: no verification of data and code, no trust
+
+---
+URL: https://www.cyrilvoyant.com/cite/
+
+Cite and reuse our work 
+ Everything published here may be reused. The only request: credit the authors and their laboratory , the O.I.E. center (Observation, Impacts, Energy) of Mines Paris – PSL, and link to the source. 
+ Work License How to cite 
+ Articles The journal's (often CC BY when open access) The full reference with every co-author and the DOI; the list is on the news page , ORCID and HAL . 
+ Software The repository's ( LICENSE file: MIT, BSD, GPL…) The repository's "all versions" Zenodo DOI, or GitHub's "Cite this repository" button ( CITATION.cff ), plus the associated article when there is one. 
+ Courses (solar forecasting, biostatistics, industrial physics) CC BY 4.0 (lectures and exercise sessions) Voyant, C. (year). Course title . Mines Paris – PSL, O.I.E. center. Page address. 
+ Data The dataset's (for example CC BY on Webservice-Energy ) The dataset DOI and version, with its producers. 
+ Texts and figures of this site (stories, approach, AI page, data page) CC BY 4.0 Voyant, C. (2026). Page title . www.cyrilvoyant.com, page address, date accessed. 
+ An example 
+ Voyant, C. (2026). Solar forecasting course: forecasting the intermittent solar resource.
+Mines Paris – PSL, O.I.E. centre. Licence CC BY 4.0.
+https://www.cyrilvoyant.com/teaching/solar-forecasting-course/ Team work 
+ Much of this work is collective: cite every author in the order of the publication . For the laboratory's infrastructures, such as Webservice-Energy ( Lionel Ménard ( ORCID ), Raphaël Jolivet ), cite the infrastructure, its authors and the O.I.E. center. 
+ Logos, trademarks and third-party content shown on some pages keep their own rights. A question: write . 
+ Read also: Scientific publishing: no verification of data and code, no trust
+
+---
+URL: https://www.cyrilvoyant.com/collaborate/
+
+Collaborate 
+ Collaborate: research projects, studies and adaptation of the tools 
+ Your question, a method you can check, a result you can defend. 
+ Everything on these sites is open: the theory, the code, the limits. The next step is your data and your decision. Bring a real problem; we start from what is known about the system, beat an explicit reference, and add complexity only where it pays. 
+ Write to me Explore the methods and code Three ways to work together 
+ 1 Answer a call for projects 
+ National (ANR, ADEME), European (Horizon Europe) or regional calls, as partner or coordinator: energy forecasting, renewables on the grid, evaluation of models, medical physics, responsible AI in research. 
+ 2 Fund it directly with the school 
+ A collaborative research contract: a study, an internship, a co-supervised doctorate (for example under the French CIFRE scheme) or a postdoctoral project. 
+ 3 Explore a research direction together 
+ An academic collaboration to explore a research question together, compare approaches or open a new scientific direction. Each team’s objectives and contributions are defined from the outset, with a view to sharing or applying the work: a joint paper, open software, a dataset or transfer to practice. 
+ Collaborations that became results 
+ Medicine With Marie Fusella Giuntini, Dominique Barbolosi and David Taieb: three equations calibrated on 50 patients to explore radioiodine protocols before treating anyone ( Scientific Reports , 2026). 
+ Read the story → 
+ Research on research With John P. A. Ioannidis (Stanford University), Jeroen Baas and Roy Boverhof (Elsevier): a science-wide map of institutions, impact next to integrity ( Royal Society Open Science , 2026). 
+ Read the story → 
+ Energy With Andreas Kazantzidis (University of Patras) and Jan Kleissl (UC San Diego): does a satellite forecast need the whole field, or one cell? Open code and data, manuscript in preparation. 
+ Read the story → 
+ What can be adapted to your data 
+ Forecast evaluation : NICE metrics , γ-index for forecast fields. 
+ Reference forecasts : BLEND and CLIPER , ARTU , variability and forecastability with sCV and F . 
+ Frugal learning : MIMO-ELM for an energy mix, satellite irradiance forecasting. 
+ Medical physics : LQL-Equiv for dose equivalence, the radioiodine therapy model . 
+ Simulation and AI in practice : road tunnel loads , WebSemantic (a language model reads, validated code computes). 
+ How it works 
+ Write a short email: the question, the data, the decision it serves, the timeline. 
+ A first exchange frames the problem: what is known about the system, which reference to beat, what precision is really needed. 
+ Academic exploration develops directly between researchers. Depending on the project, a research contract or a service agreement (testing, targeted analysis) may be established. Where needed, the relevant departments at Mines Paris – PSL define the terms for intellectual property, confidentiality and publication. 
+ Once the framework is agreed, we define a clear research plan: objectives, methods, data, staffing and technical resources, milestones, schedule and deliverables. Evaluation criteria and decision points are set from the outset to track progress and make evidence-based adjustments. Results are shared under the terms of the agreement. 
+ A question and some data? Let's look at it together. 
+ Exploratory exchanges between researchers can begin directly. Research contracts and service agreements are established with Mines Paris – PSL. 
+ Name Organization Your email Kind of collaboration Your question, your data and your timeline Your message is delivered to cyril.voyant@minesparis.psl.eu through FormSubmit (formsubmit.co), a form-delivery service. Your details are used only to answer you; this site keeps nothing. 
+ cyril.voyant@minesparis.psl.eu 
+ Centre O.I.E. (Observation, Impacts, Energy), Mines Paris – PSL, Sophia Antipolis, France.
+
+---
+URL: https://www.cyrilvoyant.com/research-excellence-rtvacos/
+
+The RTVACOS tree: where can your work break? 
+ Research has an effect only if it is found, judged credible and reused. The RTVACOS framework describes this as a multiplicative system: four foundations, where a single weakness drags everything down, and three amplifiers, which scale a solid base but never replace it. 
+ Tick what your project already does. Roots are foundations, branches are amplifiers. A bare root turns the whole tree pale: that is the multiplicative logic. 
+ R · Rigour (foundation) A simple reference to beat (persistence, climatology…) Separate training and test data, without leakage Limits and domain of validity written down T · Transparency (foundation) Public code, with a license Data or their access described, with a license Tool use declared, AI included V · Visibility (foundation) An ORCID and DOIs (article, code, data) A clear page: the result, the method, how to cite Machine-readable metadata (CITATION.cff, JSON-LD) A · Adoption (foundation) An example that runs in minutes Documentation for a user who is not the author Real user feedback taken into account C · Collaboration (amplifier) Co-authors who strengthen a foundation, not only the list Credited contributions (CRediT, ORCID) O · Outreach (amplifier) A summary for non-specialists A talk, a course or a video S · Societal relevance (amplifier) An identified user or decision A partner outside academia A mirror for reflection, not a scoring instrument: the authors claim no empirical validation and discuss limits themselves, such as the risk of gamification and the unequal distribution of skills. 
+ The framework 
+ Cyril Voyant , Rodrigo Amaro e Silva , Nicolas Fichaux , Lionel Ménard , Sylvain Cros , Rodanthi-Elisavet Mamouri . Beyond Publish and Pray: Engineering Research Excellence . SSRN, 2026. 
+ The talk (45 min) and its questions 
+ Scientific publishing: no verification, no trust
+
+---
+URL: https://www.cyrilvoyant.com/teaching/
+
+Teaching 
+ Five courses, open to all under CC BY 4.0, from health studies to energy. The same habit runs through them: start from the signal or the data, compare with a simple reference, measure what a model adds. 
+ Open courses 
+ Most courses are in French; the English guide to the open courses describes each one, chapter by chapter. 
+ Forecasting the intermittent solar resource 
+ Mines Paris – PSL engineering curriculum, applied research project UE14 · 59 slides · English and French · CC BY 4.0 
+ How to forecast solar irradiance one hour ahead, on ten years of real measurements from Ajaccio, adding complexity only where it pays. 
+ The solar signal: geometry, clear sky and the clear-sky index (an additive deviation), what can and cannot be predicted. 
+ The data: ten years of hourly measurements, quality control, day and night. 
+ The references to beat: simple persistence, smart persistence, climatology. 
+ Autoregressive models fitted by least squares, the model order, the sliding window. 
+ Extreme Learning Machines: principle, number of neurons, the risk of overfitting. 
+ Evaluation: nRMSE, nMAE, skill, NICE; test on the year 2007, daytime and day and night. 
+ Online learning and frugality: how much model is really needed? 
+ Open the course → 
+ Biostatistics for health studies (in French) 
+ First-year health studies (PASS, UE8) · 3 chapters, 246 slides · in French · CC BY 4.0 
+ The statistical tools a future health professional needs to read a study, interpret a test and decide with data. 
+ Why statistics in health: variability, therapeutic adjustment, correlation and causation, hidden variables. 
+ Probabilities: random experiments, events, counting, conditional probabilities, the Bayesian approach. 
+ Diagnostic tests: contingency tables, sensitivity, specificity, predictive values, ROC curves. 
+ Descriptive statistics: measurement scales, graphs, central tendency, dispersion, skewness. 
+ The normal distribution: standardization, the z table, intervals. 
+ Hypothesis tests: null and alternative hypotheses, risks, comparison of means. 
+ Pearson correlation, linear regression, coefficient of determination and significance. 
+ χ² goodness-of-fit and independence tests, with exercises. 
+ Open the course (in French) → 
+ Physics for health studies: electromagnetic waves, X-rays and imaging (in French) 
+ First-year health studies (PASS-PACES), physical bases of medical imaging · 110-slide lecture and 2 corrected exercise sessions · in French · CC BY 4.0 
+ The physical bases of medical imaging, from the wave to the CT scanner. 
+ The nature of electromagnetic waves: speed, sinusoidal wave, wave vector. 
+ Wave-particle duality: photon energy E = hν, the electronvolt. 
+ The electromagnetic spectrum and its energy ranges. 
+ The energy levels of the atom and the case of hydrogen. 
+ Absorption, emission, fluorescence, Auger effect, spectroscopy; an application: pulse oximetry. 
+ X-rays: the Coolidge tube, bremsstrahlung and fluorescence radiation, spectrum, radiation protection. 
+ Photon-matter interactions: photoelectric effect, Compton effect, pair production, attenuation and half-value layer. 
+ Imaging: contrast, conventional radiography, CT scanning and windowing. 
+ Two exercise sessions corrected step by step (18 exercises). 
+ Open the course (in French) → 
+ Industrial physics: thermodynamics, water vapor and refrigeration (in French) 
+ B.U.T. biological engineering, food science and biotechnology, 2nd year · 5 chapters, 139 slides and handouts · in French · CC BY 4.0 
+ The thermodynamics of a food-industry technician, up to how a refrigeration machine works. 
+ Quantities: pressure, temperature, work and heat; sensible and latent heat. 
+ Changes of state: evaporation, boiling, triple point, condensation. 
+ Ideal and real gases; enthalpy and entropy. 
+ Clapeyron, entropy and Mollier diagrams; reading the P-h diagram of R134a; linear interpolation. 
+ Water vapor: expansion and compression, altitude, condensation, saturation vapor pressure, relative humidity. 
+ First and second laws, heat engines, engine cycles and steam cycles. 
+ The four-step refrigeration cycle on the Mollier diagram, its COP, industrial refrigeration. 
+ Refrigerants and their regulation (CFC, HCFC). 
+ Five chapters of written handouts come with the slides. 
+ Open the course (in French) → 
+ Heat transfer for food engineering (in French) 
+ B.U.T. biological engineering, food science and biotechnology, 1st year · 24 slides · in French · CC BY 4.0 
+ How heat moves through a food, and what it takes to cool or freeze it. 
+ The three modes of exchange: conduction, convection, radiation. 
+ Basic concepts: isothermal surfaces, heat flow and heat flux density. 
+ Conduction: Fourier's law, conduction thermal resistance. 
+ Free and forced convection: heat transfer coefficient h, convection resistance. 
+ The Biot number: comparing internal and surface resistances. 
+ Thermal properties of fresh and frozen foods: heat capacity, initial freezing temperature. 
+ The refrigeration power of cooling and freezing, the amount of water to freeze. 
+ Energy balance: core temperature (conduction) and surface temperature (convection) over time. 
+ Open the course (in French) → 
+ Teaching and research supervision 
+ I supervise and co-supervise doctoral research on solar forecasting, satellite imagery, parsimonious models, energy-system control and radioiodine modeling. Previous doctoral work includes solar forecasting, air quality and solar-potential estimation. 
+ At Mines Paris–PSL, my teaching includes solar resource forecasting and academic tutoring of international internships and gap years (UE45). Earlier teaching spans biostatistics, thermodynamics, biophysics and numerical modeling at the University of Corsica. 
+ Solar forecasting: the course starts from the signal 
+ Start from the signal: what is predictable in solar irradiance, and what is not. The figure shows why the course works on the deviation from clear sky. 
+ From signal to methods: three days in Ajaccio (2007), measured under clear, variable and overcast skies. Bottom: additive deviation from clear sky, not a ratio. Teaching illustration from the UE14 course, separate from the papers' results. Source: cyrilvoyant.github.io/teaching/solar-forecasting-basics.html 
+ The course page · Solar forecasting basics, with equations · BLEND · ARTU · Stochastic persistence 
+ Talks and teaching 
+ Research Excellence in 2026, watch my talk · YouTube channel Summary, references and associated preprint . 
+ Forecasting the intermittent solar resource, Mines Paris–PSL course UE14 A guided route through solar variability, statistical models, evaluation and frugal forecasting. 
+ Academic profile · Methods and code · Google Scholar
+
+---
+URL: https://www.cyrilvoyant.com/teaching/open-courses/
+
+Open courses in French: biostatistics, medical physics, industrial physics and food heat transfer 
+ Courses I taught to first-year health students and to food-science technicians, published in full: every slide with its text, one at a time, the decks and handouts as PDF, exercise sessions with their corrections. They are in French; the slide viewer works for everyone, and the formulas speak for themselves. 
+ First-year health studies (PASS, UE8) Biostatistics for health studies 
+ Probabilities and Bayesian reasoning, diagnostic tests (sensitivity, specificity, ROC curves), descriptive statistics, the normal distribution and hypothesis tests, correlation, linear regression and χ² tests, with medical examples. 
+ Probabilities, conditional probabilities, contingency tables and ROC curves 
+ Descriptive statistics, the normal distribution and hypothesis tests 
+ Correlation, linear regression and χ² tests 
+ Open the course (in French) 
+ First-year health studies (PASS-PACES), physical bases of medical imaging Physics for health studies: electromagnetic waves, X-rays and imaging 
+ The nature of electromagnetic waves and of the photon, the energy levels of the atom, absorption, emission and spectroscopy (up to pulse oximetry), the production of X-rays, their interactions with matter and attenuation, then radiography and CT scanning; two corrected exercise sessions. 
+ Course: electromagnetic waves and the physical bases of imaging 
+ Exercise session 1, corrected 
+ Exercise session 2, corrected 
+ Open the course (in French) 
+ University technology degree (B.U.T.) in biological engineering, food science and biotechnology, 2nd year Industrial physics: thermodynamics, water vapor and refrigeration 
+ Quantities and changes of state, ideal and real gases, Clapeyron, entropy and Mollier diagrams, water vapor and humidity, engine cycles, then the refrigeration cycle, its coefficient of performance and its refrigerants; with the handouts. 
+ General notions of thermodynamics 
+ Ideal gases, real gases and diagrams 
+ Water vapor 
+ Thermodynamic engine cycles 
+ Refrigeration cycles 
+ Open the course (in French) 
+ University technology degree (B.U.T.) in biological engineering, food science and biotechnology, 1st year Heat transfer for food engineering: cooling and freezing 
+ Conduction, convection and the Biot number, thermal properties of foods, refrigeration power and the amount of water to freeze, then the energy balance of cooling or freezing a product. 
+ Lecture: heat transfer, cooling and freezing of foods 
+ Open the course (in French) 
+ License CC BY 4.0 : free reuse, including modification and commercial use, with credit to the author (Cyril Voyant). How to cite: Cite and reuse . In English: the solar forecasting course .
+
+---
+URL: https://www.cyrilvoyant.com/stories/
+
+Stories 
+ Every story follows the same plan: the finding, the question, the theory in plain words, where it sits on the complexity ladder, an example in figures, what it brings and its limits. Technical details and code are on the methods site. 
+ Compute directly · Hybridize · Learn frugally · AI in its place · Demonstrate trust 
+ Compute directly 
+ When the link is known, compute it with an explicit model, calibrated and validated on data; learning is added only for a demonstrated benefit. 
+ Compute directly · Medicine Compute, don't learn: radiobiological dose equivalence 
+ One fraction of 15 Gy to the rectum: 72.7 Gy under LQ, 59.4 Gy under LQL. 
+ Compute directly · Energy Simulate what you cannot yet measure: road tunnels 
+ One year at 10-minute resolution in about 150 ms, with its limits stated. 
+ Compute directly · Energy How forecastable is the sun? 
+ sCV and F describe a site before any model is fitted. 
+ Hybridize 
+ When the model falls short, complete it: keep the model, learn only what is missing. 
+ Hybridize · Medicine Thyroid cancer and radioiodine: model first 
+ Marie Fusella Giuntini and Dominique Barbolosi: three equations, 50 patients, a hybrid twin in progress. 
+ Hybridize · Energy Better persistence, without training a neural network 
+ Symmetry-constrained forecasting: the structure of the signal written into the reference. 
+ Learn frugally 
+ When the useful relations are not known well enough, evaluate what the data can teach, with only as much complexity as pays. 
+ Learn frugally · Energy Seven signals, one ELM 
+ One frugal learner forecasts the whole Corsican electricity mix. 
+ Learn frugally · Energy Satellite forecasting: one cell or the whole field? 
+ A per-cell ELM beats the same ELM reading the whole field, with a thousand times fewer parameters. 
+ Learn frugally · Energy Frugal models for solar forecasting (in French) 
+ How much model a forecast really needs before it is deployed. 
+ Learn frugally · Energy Direct PV forecasting: reduce the dimension (in French) 
+ Compress the input only when the compression serves the forecast. 
+ AI in its place 
+ Language models help people use validated tools; the calculation, the checking and the responsibility stay with validated codes and people. 
+ AI in its place · Language Let the language model read, let the validated code compute 
+ Execute, clarify or refuse: never guess. 
+ Demonstrate trust 
+ Judge against a reference, publish code, data and limits, make research findable and reusable. 
+ Demonstrate trust · Research practice Questioning how we do research: influence, integrity, excellence 
+ With J. P. A. Ioannidis (Stanford), J. Baas and R. Boverhof (Elsevier): influence on a doubling scale, impact next to integrity, excellence as a system. 
+ Demonstrate trust · Research practice AI in research: the AI Act, a lab charter and a toolbox 
+ Research is excluded under conditions, transfers are not: timeline, who is responsible, and ten tools for a lab. 
+ Demonstrate trust · Energy When RMSE hides a difference 
+ NICE compares a model's errors with those of persistence. 
+ Demonstrate trust · Energy Beyond pointwise errors: the γ-index 
+ A tolerance-based test carried over from radiotherapy. 
+ Demonstrate trust · Research practice Academic visibility: why publishing isn't enough anymore 
+ A saturated ecosystem, and a practical toolkit for discoverable research. 
+ Demonstrate trust · Research practice Research excellence in the age of AI: from SEO to GEO (in French) 
+ The RTVACOS framework: rigour, transparency, visibility, adoption. 
+ Explore the results 
+ How forecastable is the sun? Solar forecastability evaluated at 68 weather stations, across ten models and 24 horizons. 
+ Better persistence An analytical cyclostationary reference that improves on classical persistence on the studied solar series. 
+ Seven signals, one ELM Seven energy outputs evaluated on six years of hourly data from Corsica. 
+ Beyond pointwise errors A synthetic experiment shows why small displacements can mislead a pointwise error metric. 
+ When RMSE hides a difference Two models with the same rounded nRMSE are distinguished by persistence-relative evaluation. 
+ These research stories explain results from papers on which I am first author. Each page includes the question, evidence, interpretation, limitations and full collective attribution, in English and French. 
+ Solar forecasting, made simple 
+ Explore the ideas, methods and evidence, Prévision solaire : faire simple 
+ Forecastability, useful baselines, error evaluation and frugal models: a guided route through our published studies, open code and ongoing research, with full attribution.
+
+---
+URL: https://www.cyrilvoyant.com/stories/lql-equiv/
+
+Compute, don't learn: radiobiological dose equivalence with LQL-Equiv 
+ Step of the story · Compute directly The approach When the link is known, compute it with an explicit model, calibrated and validated on data; learning is added only for a demonstrated benefit. Principle 2: The model at the core. 
+ When the link between a radiotherapy schedule and its biological effect is known, it is computed directly. No data and no artificial intelligence are needed: only a model we understand, checked case by case. 
+ Cyril Voyant , with Daniel Julian · Mines Paris – PSL, Centre O.I.E. 
+ In brief 
+ One fraction of 15 Gy to the rectum has a biologically effective dose of 72.7 Gy under the linear-quadratic (LQ) model, but 59.4 Gy under the linear-quadratic-linear (LQL) model: 18 % lower . 
+ LQL-Equiv computes these equivalences directly from an explicit model. Its 2026 version reproduces the 2014 software on 4,438 treatment schedules (69,125 of 69,131 values agree, 99.991 %). 
+ It is a research and teaching tool, not a medical device . 
+ The finding 
+ The answer to "are these two schedules equivalent?" does not need to be learned from data: it follows from a radiobiological model whose parameters are documented. Computing it directly is exact, explainable and reproducible, and the choice of model matters: at high doses per fraction, LQ and LQL differ by tens of grays. 
+ The question 
+ Two treatments can deliver the same total dose very differently: 39 fractions of 2 Gy, or 5 fractions of 7 Gy. Are they equivalent for the tumour, and for the healthy organs around it? Radiotherapy answers with the biologically effective dose (BED) and its translation into a dose given in 2 Gy fractions ( EQD2 ). 
+ The theory, in plain words 
+ For n fractions of dose d , the linear-quadratic model gives 
+ BED = n · d · (1 + d / (α/β)) 
+ where α/β describes how sensitive a tissue is to the size of each fraction (about 3.9 Gy for the rectum). The term d/(α/β) is why large fractions count for more than their dose. The equivalent dose in 2 Gy fractions is then EQD2 = BED / (1 + 2/(α/β)) . 
+ The LQ curve keeps bending upward as the dose per fraction grows, which overstates the effect of very large fractions. The LQL model keeps the LQ curve up to a transition dose d_T (7.8 Gy for the rectum) and continues it as a straight line beyond. LQL-Equiv also handles gaps, two fractions a day and tumour repopulation; the full equations are on the technical page. 
+ Where it sits on the complexity ladder 
+ Complexity ladder: LQL-Equiv stops at the first rung, direct calculation 
+ First rung: direct calculation . The link between inputs and outputs is known, so climbing further, to statistics or machine learning, would add data needs and uncertainty without adding anything. AI belongs in every toolbox, not in every solution. 
+ The example in figures 
+ BED per fraction for the rectum, LQ and LQL 
+ One fraction of 15 Gy to the rectum: 
+ LQ: 15 × (1 + 15/3.9) = 72.7 Gy ; 
+ LQL: 7.8 × (1 + 7.8/3.9) + 5 × (15 − 7.8) = 23.4 + 36.0 = 59.4 Gy . 
+ The gap grows with the dose per fraction. This is why the choice of model must be stated when hypofractionated and conventional schedules are compared. The calculator then adds the time and repair corrections of each tissue. 
+ What it brings, and its limits 
+ Brings : a transparent calculation, documented parameters for 34 organs at risk and 20 tumour sites, case-by-case validation against the original software, and a free calculator that runs in the browser (nothing entered leaves the page). 
+ Limits : the result is only as good as the model and its parameters (α/β, d_T, slope of the linear tail), which remain uncertain. Complication and control probabilities (NTCP, TCP) are model illustrations, never validated against clinical outcomes. Not for choosing or changing a prescription. 
+ Two companion articles go further: a comparison of LQ and LQL for clinical decision-making ( Clinical Oncology , 2025), and a call for standardizing dose-equivalence calculations ( Medical Dosimetry , 2026). 
+ Go further 
+ Full theory, runnable code and validation : https://cyrilvoyant.github.io/tools/lql-equiv.html 
+ The calculator : https://cyrilvoyant.github.io/LQL-Equiv-web/ 
+ Articles : 
+ C. Voyant, D. Julian, SoftwareX 36, 103085 (2026), doi: 10.1016/j.softx.2026.103085 ; 
+ C. Voyant, D. Julian, Medical Dosimetry (2026), doi: 10.1016/j.meddos.2026.08.002 ; 
+ C. Voyant, D. Julian et al., Clinical Oncology 45, 103893 (2025), doi: 10.1016/j.clon.2025.103893 ; 
+ C. Voyant et al., Reports of Practical Oncology and Radiotherapy (2014), doi: 10.1016/j.rpor.2013.08.004 . 
+ Code : github.com/cyrilvoyant/LQL-Equiv-web · archive doi: 10.5281/zenodo.21948623 
+ The approach behind this work : Understand before you compute
+
+---
+URL: https://www.cyrilvoyant.com/stories/questioning-research/
+
+Questioning how we do research: influence, integrity, excellence 
+ Step of the story · Demonstrate trust The approach Judge against a reference, publish code, data and limits, make research findable and reusable. Principle 5: Trust is demonstrated. 
+ Research in a changing world also has to examine its own methods. The same approach applies: compare with an explicit reference, look at what a single number hides, and state the limits. 
+ Who did what. The science-wide map of institutions: John P. A. Ioannidis (Meta-Research Innovation Center at Stanford, Stanford University), Jeroen Baas and Roy Boverhof (Elsevier, Amsterdam), with Cyril Voyant (Mines Paris – PSL, Centre O.I.E.). The Influence Index: Cyril Voyant , Jeroen Baas , Roy Boverhof , Paolo Stringari , Mathilde Marchand-Lasserre and John P. A. Ioannidis . The excellence framework: Cyril Voyant , Rodrigo Amaro e Silva , Nicolas Fichaux , Lionel Menard , Sylvain Cros and Rodanthi-Elisavet Mamouri . 
+ In brief 
+ Counting highly cited researchers mixes up size and concentration. A share compared with a neutral 2 % baseline , on a doubling scale, says how concentrated influence is, independently of the size of an institution. 
+ Impact alone is not enough: a science-wide map of institutions by J. P. A. Ioannidis (Stanford), J. Baas and R. Boverhof (Elsevier) and C. Voyant, in Royal Society Open Science (2026), puts it next to research-integrity proxies : retractions, extreme self-citation, publication in discontinued journals. 
+ Publishing is no longer enough either: in a saturated system, research must be found, trusted and reused . The RTVACOS framework treats excellence as a multiplicative system in which one weak foundation collapses the whole. 
+ The finding 
+ The tools we use to judge research deserve the same scrutiny as the models we use to forecast the sun or compute a dose. A volume indicator rewards size; a single score hides integrity problems; a good paper nobody finds has no impact. Each of these questions has the same answer as elsewhere in this work: an explicit reference, several complementary measures, and stated limits. 
+ The question 
+ How should an institution, a funder or a researcher read research performance at a time when output has grown fourfold since 2004 and AI writing tools accelerate it further? Which indicators measure what we think they measure? 
+ The theory, in plain words 
+ Influence, independently of size. With X highly cited authors among N eligible authors of an institution, the share is p = X/N . It is compared with the share expected by construction of the Top 2 % lists, p₀ = 0.02 : 
+ I = log₂(p / p₀) 
+ I = 0 means the baseline, I = +1 twice the baseline, I = −1 half of it. The scale is symmetric and does not depend on the size of the institution or on the performance of others. The idea is the same as comparing a forecast with persistence: a score means something only against a stated reference. 
+ Impact and integrity, side by side. The science-wide map published in Royal Society Open Science (2026) adds three proxies of possible integrity problems: authorships in papers retracted for reasons other than publisher errors, and the shares of top-cited authors with extreme self-citation or many publications in titles discontinued by Scopus. 
+ Excellence as a system. RTVACOS treats excellence as E ∝ (R × T × V × A) × (1 + C + O + S) : four foundations (Rigour, Transparency, Visibility, Adoption) that multiply each other, so that a zero in one collapses the whole, and three amplifiers (Collaboration, Outreach, Societal relevance) that scale a solid base but cannot replace it. 
+ The example in figures 
+ The Influence Index on a doubling scale: 1 % gives −1, 2 % gives 0, 4 % gives +1, 8 % gives +2 
+ An institution where 4 % of the eligible authors are in the Top 2 % lists has I = +1 : twice the baseline. One at 1 % has I = −1 . These shares are illustrative. 
+ What it brings, and its limits 
+ Brings : indicators that separate size from concentration; impact read together with integrity; open datasets that let anyone redo the analysis; a reflection framework for researchers and institutions on rigour, transparency, visibility and adoption. 
+ Limits : citation-based indicators are proxies, not judgments of individuals or of quality; integrity proxies flag patterns to examine, not misconduct. RTVACOS is a heuristic for reflection, not a scoring instrument, and claims no empirical validation. The application of the Influence Index to French universities is a manuscript in submission ( Scientometrics ); its results will be reported once published. 
+ Go further 
+ Article : J. P. A. Ioannidis, J. Baas, R. Boverhof, C. Voyant, Science-wide mapping of institutions based on affiliated authors' impact and research integrity proxies, Royal Society Open Science 13, 260870 (2026), doi:10.1098/rsos.260870 (open access) · preprint doi:10.64898/2025.12.16.694665 · data doi:10.17632/jn5j7gjpzj.1 
+ Influence Index, code and processed data : github.com/cyrilvoyant/influence-index-bibliometrics · doi:10.5281/zenodo.19706465 · manuscript A Log-Based Influence Index for Evaluating Research Institutions (C. Voyant, J. Baas, R. Boverhof, P. Stringari, M. Marchand-Lasserre, J. P. A. Ioannidis), in submission 
+ Excellence framework (RTVACOS) : C. Voyant, R. Amaro e Silva, N. Fichaux, L. Menard, S. Cros, R.-E. Mamouri, Beyond Publish and Pray: Engineering Research Excellence , SSRN preprint (2026), doi:10.2139/ssrn.6877118 · the talk, summary and references 
+ In French : op-ed in News Tank Éducation & Recherche (3 March 2026) and the post Excellence scientifique à l'ère de l'IA : du SEO au GEO on this site 
+ The approach behind this work : Understand before you compute
+
+---
+URL: https://www.cyrilvoyant.com/stories/satellite-irradiance/
+
+Satellite irradiance forecasting: one cell, a patch or the whole field 
+ Step of the story · Learn frugally The approach When the useful relations are not known well enough, evaluate what the data can teach, with only as much complexity as pays. Principle 3: Complexity only if it pays. 
+ A satellite sees the irradiance of a whole region every hour. It is tempting to give a forecaster the whole map. Holding the forecaster fixed and changing only what it reads shows how much of that map actually helps. 
+ Cyril Voyant (Mines Paris – PSL, Centre O.I.E.), with Andreas Kazantzidis (University of Patras) and Jan Kleissl (University of California San Diego) · manuscript in preparation, open code and data extract 
+ In brief 
+ Every model forecasts the next 24 hourly values of one satellite cell over Corsica from its 24 past values; only what it reads changes: its own cell, a patch, the whole field, or a compressed field . 
+ In the public repository, an extreme learning machine reading its own cell has the lowest pooled error ( nRMSE 0.308 ), ahead of the same model reading the whole field (0.355) with a thousand times fewer parameters , and of a U-Net (0.343) and an LSTM (0.326) reading the field. 
+ It is one region, one satellite product and one two-year split: a benchmark result, not a general law . 
+ The finding 
+ On this record, the hourly history of the cell itself carries most of what an hour-by-hour forecast of the next day can use. Reading the rest of the map adds parameters faster than it removes error: none of the seven compression methods tested and neither of the two deep networks reading the whole field reaches the per-cell model. 
+ The question 
+ Satellite irradiance comes as maps. Deep networks such as U-Nets and LSTMs read whole fields; compression methods shrink the field before a model reads it. Both add inputs and parameters. How much of that spatial information lowers the error of a forecast for each of the next 24 hours, and at what cost in stored parameters? 
+ The theory, in plain words 
+ One forecaster, several inputs. The forecaster is an extreme learning machine (ELM): a hidden layer of neurons drawn at random and never trained, and output weights fitted in one linear least-squares solve. Training takes seconds and the number of stored parameters is easy to count. The same forecaster reads either its own cell, a 3 × 3 patch, the whole field of 722 cells, or the field compressed by one of seven methods (Radon transform, DCT, wavelets, PCA, random projection, subsampling, autoencoder). 
+ Fair references. Persistence repeats the last hour, the 24-hour persistence repeats the same hour of the previous day, and BLEND mixes the two. A model is worth its parameters only if it beats them. 
+ Fair scoring. Errors are pooled over all cells, all lead times from 1 to 24 hours and all test hours where the Sun is more than 5° above the horizon. The nRMSE is divided by the mean scored observation of the test year, 407.9 W/m². 
+ The example in figures 
+ Pooled error against parameters stored by each model (log scale): the per-cell ELM is the lowest point; reading the whole field moves models to the right without moving them down 
+ The data are HelioClim-3 irradiance (Heliosat-2 method, Meteosat images, SoDa service) on 1,148 points over Corsica, hourly, with 2005 for training and 2006 for testing. 
+ The per-cell ELM reaches nRMSE 0.308 with about 100 thousand stored parameters; the whole-field ELM reaches 0.355 with about 100 million. 
+ In W/m²: 0.308 × 407.9 ≈ 126 W/m² against about 145 W/m² for the whole-field ELM. 
+ A 3 × 3 patch does not help either (0.3087 against 0.3077 for a single cell). 
+ The 24-hour persistence scores 0.396, BLEND 0.376: every learned model beats them. 
+ What it brings, and its limits 
+ Brings : a protocol where only the input changes, so that the value of spatial information is measured, not assumed; a parameter count next to every error, in line with the frugal approach; code that rebuilds the tables in seconds. 
+ Limits : one region, one satellite product (HelioClim-3), hourly steps and a single 2005/2006 split. Intra-hour nowcasting driven by cloud motion can behave differently. The manuscript is in preparation; only the numbers of the public repository are reported here. 
+ Go further 
+ Full theory, equations, results table and code : the technical guide 
+ Code and data extract : github.com/cyrilvoyant/cell-vs-field-irradiance · archive doi:10.5281/zenodo.23562557 · data HelioClim-3, SoDa service, under its terms of use 
+ Same idea elsewhere : MIMO-ELM, seven energy signals of Corsica forecast by one model · how much model is enough? 
+ The approach behind this work : Understand before you compute
+
+---
+URL: https://www.cyrilvoyant.com/stories/thyroid-radioiodine/
+
+Thyroid cancer and radioiodine: model first, learn only what is missing 
+ Step of the story · Hybridize The approach When the model falls short, complete it: keep the model, learn only what is missing. Principle 2: The model at the core. 
+ How many sessions of radioactive iodine, how far apart, and at what activity? An intelligible model of three equations explores these questions before any patient is treated. Learning will be added only where the model is not enough. 
+ Marie Fusella Giuntini and Dominique Barbolosi , with Cyril Voyant and David Taieb 
+ In brief 
+ Three equations (radioactive iodine activity, tumour cells, thyroglobulin) describe how metastatic thyroid cancer responds to radioiodine therapy; their parameters were calibrated on 50 patients . 
+ The tumour doubling time separates the profiles: about 9.8 months for a refractory profile and 66.6 months for a responding one in the published demonstrators. 
+ The model makes it possible to explore the number of sessions, the interval between them and the activity before treating. Learning is planned only where the model falls short, in a hybrid approach that keeps the model at its core. 
+ The finding 
+ The model and its simulator, RAIR-Sim, are the work of Marie Fusella Giuntini and Dominique Barbolosi, with Cyril Voyant and David Taieb ( Scientific Reports , 2026). When a disease can be described by an intelligible model, that model comes first: it explains, it can be calibrated on real patients, and it lets one test protocols in silico . Artificial intelligence is not needed to do what the model already does well. 
+ The question 
+ Metastatic differentiated thyroid cancer is often treated with repeated sessions of radioactive iodine. Some tumours respond; others become refractory. Thyroglobulin (Tg), measured in the blood, follows the tumour burden. Which protocol, and for which patient profile? 
+ The theory, in plain words 
+ Three quantities evolve over the months: 
+ the activity of the administered iodine decreases over time, and each session adds a new dose to what remains; 
+ the tumour cells grow at a rate set by their doubling time T_d , and are killed in proportion to the activity present; 
+ thyroglobulin is produced by the tumour cells and cleared by the body. 
+ The equations are solved session by session, so a whole protocol can be simulated in seconds. A short doubling time means a fast-growing tumour: that is what separates a refractory profile from a responding one. 
+ Where it sits on the complexity ladder 
+ Complexity ladder: the thyroid model stops at the second rung, simulation from what is known 
+ Second rung: simulation from a model we understand . The next step is a hybrid digital twin : keep the model, and let a learning method (a frugal extreme learning machine, for example) estimate only what the model does not capture. This is mathematics- and medicine-informed learning, not a black box replacing the model. No learning added where the model meets the need; learning, in hybrid form, where it helps. 
+ The example in figures 
+ Thyroglobulin over 80 months for 1, 2, 4 and 8 sessions, refractory and responding profiles 
+ With the public demonstrator parameters, 3.7 GBq per session every 3 months: 
+ Refractory profile ( T_d = 9.8 months): thyroglobulin reaches about 1,386 ng/mL at 79 months after one session, and stays near 12 ng/mL after eight. 
+ Responding profile ( T_d = 66.6 months): about 14 ng/mL after one session, and 0.13 ng/mL after eight. 
+ These are model outputs for two archetypes, not predictions for a patient. 
+ What it brings, and its limits 
+ Brings : an intelligible way to compare protocols before treating; a biomarker reading (the doubling time) that separates profiles; open code that anyone can run (MATLAB). 
+ Limits : two archetypes and population-calibrated parameters; it is not a clinical decision tool and needs prospective validation. The learning part of the hybrid twin is work in progress, separate from the published results. 
+ Go further 
+ Article : M. Fusella Giuntini, C. Voyant, D. Taieb, D. Barbolosi, A computational framework for optimizing radioiodine therapy protocols in metastatic thyroid cancer, Scientific Reports 16, 27179 (2026), doi: 10.1038/s41598-026-56267-1 
+ Full equations, results of the article and runnable code : https://cyrilvoyant.github.io/methods/thyroid-radioiodine.html 
+ Code (RAIR-Sim) : github.com/MarieFG49/CTD_SIMU_RAI (MIT) · documented fork archived at doi: 10.5281/zenodo.21496198 
+ Review : M. Fusella Giuntini, C. Voyant, D. Taieb, D. Barbolosi, Computational modeling and trends in RAI therapy for thyroid cancer, Biomedical Journal of Scientific & Technical Research 62(4) (2025), doi: 10.26717/BJSTR.2025.62.009789 
+ For everyone (in French): "IA et cancer de la thyroïde : demain, la fin des traitements standardisés ?", The Conversation , May 2026 
+ The approach behind this work : Understand before you compute
+
+---
+URL: https://www.cyrilvoyant.com/stories/tunnel-load-simulator/
+
+Simulate what you cannot yet measure: the electricity demand of road tunnels 
+ Step of the story · Compute directly The approach When the link is known, compute it with an explicit model, calibrated and validated on data; learning is added only for a demonstrated benefit. Principle 2: The model at the core. 
+ A tunnel's operator rarely has detailed load measurements, especially at the design stage. The Tunnel Load Simulator builds the demand from what is known about the tunnel, says how uncertain it is, and states its limits. 
+ Haytham El-Houari and Cyril Voyant · SmartTunnel project, Université Sidi Mohamed Ben Abdellah (Fès) and Mines Paris – PSL 
+ In brief 
+ With no measurements at all, the electricity demand of a road tunnel can be simulated from its geometry, traffic, lighting and ventilation: one year at 10-minute resolution in about 150 ms . 
+ For a 1.5 km peri-urban tunnel with two tubes, the public example gives a median of 3,233 MWh per year and a peak of 873 kW over 20 Monte Carlo runs. 
+ It is a first-order generator: calibrate it on measurements before any engineering use . 
+ The finding 
+ Where a tunnel has no measurements yet, no model can be trained or validated for it, but a great deal can be simulated. A simple model, whose every coefficient is visible, gives credible orders of magnitude, their variability, and the effect of each design choice, provided its assumptions are stated. 
+ The question 
+ How much electricity does a road tunnel use, hour by hour, and how uncertain is that figure? The answer matters for sizing connections, choosing lighting and ventilation technologies, or studying local energy storage. Measured series are rare and site-specific. 
+ The theory, in plain words 
+ The power drawn at each moment is the sum of four parts, plus a small random fluctuation: 
+ a fixed base (control, safety systems); 
+ auxiliaries (pumps, equipment), proportional to the tunnel's length and depth; 
+ lighting , which depends on daylight at the portals and on traffic; 
+ ventilation , which follows traffic with its morning and evening peaks, and increases with slope and altitude. It jumps during random pollution episodes and accidents . 
+ Each year is simulated many times with different random draws ( Monte Carlo ). The result is a median and a P10–P90 band, rather than a single curve. 
+ Where it sits on the complexity ladder 
+ Complexity ladder: the simulator stops at the second rung, simulation from what is known 
+ Second rung: simulation from what is known . Without local measurements, nothing can be calibrated or validated for this tunnel, and nothing is pretended: the parameters are engineering orders of magnitude, shown and adjustable. 
+ The example in figures 
+ One weekday: fixed base, auxiliaries, lighting and ventilation stacked 
+ On a January weekday, ventilation carries the two traffic peaks; lighting rises at night and at the edges of the day. 
+ One week: median and P10–P90 band over 20 runs 
+ Over a year, the 1.5 km tunnel of the public example gives: 
+ a median of 3,233 MWh (P10 3,230, P90 3,237); 
+ a peak of 873 kW and a mean of 369 kW, i.e. a load factor of 0.42; 
+ 2,156 kWh per meter and per year. 
+ What it brings, and its limits 
+ Brings : fast and transparent pre-design studies (lighting technology, ventilation type, traffic level); synthetic load profiles for research on energy management and renewables in tunnels; a clear teaching case for Monte Carlo uncertainty. 
+ Limits : the P10–P90 band is narrow because it only reflects the random events and noise of the model , not the uncertainty on its parameters. The coefficients are orders of magnitude, not measurements of a given tunnel. Calibrate against measured data before any engineering use or comparison with a real site. 
+ Go further 
+ Full equations, runnable example and results : https://cyrilvoyant.github.io/tools/tunnel-load-simulator.html 
+ The web app : tunnel-load-simulator.onrender.com (free hosting: may take a minute to wake up) 
+ Article : H. El-Houari, C. Voyant, SoftwareX 35, 102946 (2026), doi: 10.1016/j.softx.2026.102946 
+ Code : github.com/cyrilvoyant/tunnel-load-simulator · archive doi: 10.5281/zenodo.20080042 
+ The simulator can also be driven in plain language through WebSemantic . 
+ The approach behind this work : Understand before you compute
+
+---
+URL: https://www.cyrilvoyant.com/stories/websemantic/
+
+Let the language model read, let the validated code compute: WebSemantic 
+ Step of the story · AI in its place The approach Language models help people use validated tools; the calculation, the checking and the responsibility stay with validated codes and people. Principle 4: Every tool, at the periphery. 
+ Language models are good at understanding a request written in plain words. They are not a substitute for a validated scientific code. WebSemantic gives each one its role, and asks the person whenever something is missing. 
+ Cyril Voyant · Mines Paris – PSL, Centre O.I.E. 
+ In brief 
+ Left alone, a language model fills missing inputs by guessing: in plausible interpretations, such guesses changed a computed result by up to a factor of 2.6 and moved a complication probability from 3 % to 47 % . 
+ WebSemantic separates the roles: the language model maps words to variables; a validator decides to execute, clarify or refuse ; an unchanged, validated code computes every number. 
+ On 78 cases, adding a reading contract to the documentation cut premature calculations from 26 % to 6 % (Mistral-Small) and from 52 % to 23 % (Codestral). 
+ The finding 
+ Language models become useful in science when they are kept in their place: reading and translating the request. Computing stays with codes whose validity is known. When an input is missing, the right answer is a question, not a guess. 
+ The question 
+ Can a language model run a scientific simulation on someone's behalf? It can, but it will happily fill in what was not said: "a weak updraft" becomes 0.1 m/s, "the usual dose" becomes 3 Gy, and the code runs on values nobody stated. The result looks precise and may be wrong. 
+ The theory, in plain words 
+ Each code is described once, in a contract : what each variable means, its unit, what may be assumed by default and what must be asked. Every input of a scenario carries its value, its unit, its origin (stated by the person, unit conversion, declared default, assumption) and whether the person accepted it. The rule is simple: 
+ execute only if every required input is stated, or is a sourced assumption the person accepted, and every unit and constraint is satisfied; 
+ clarify if an input is missing, ambiguous or not accepted; 
+ refuse if the request is outside the code's domain, or if the code's files do not match their fingerprint. 
+ The validator never invents a value. The scientific code is pinned to a precise version, checked before each run, and returns its results with a full record of where every number came from. 
+ Where it sits on the complexity ladder 
+ Complexity ladder: a language model, a deep network on the top rung, reads the request; the validated variables go down to the low rungs, where the calculation stays 
+ WebSemantic does use the top rung: a large language model, a deep network, reads the request . But it computes nothing: it hands validated variables down to the low rungs, direct calculation and simulation, where the validated codes compute . AI belongs in every toolbox, not in every solution. 
+ The chain: request, language model, validator, validated code, result 
+ The example in figures 
+ A complete radiotherapy research scenario (rectum and prostate, 39 fractions of 2 Gy, every input stated and accepted): the validator answers execute , and LQL-Equiv returns an EQD2 of 78.0 Gy. Remove the dose per fraction from the same scenario: the answer becomes clarify , "an explicit value or accepted assumption is required", and nothing is computed. 
+ Premature calculations, with and without the contract 
+ What it brings, and its limits 
+ Brings : scientific codes usable in plain language, in English or French, without hiding assumptions. Every result comes with its units, sources and code version. The same approach works for very different codes: road-tunnel energy demand (Tunnel Load Simulator), radiotherapy dose equivalence (LQL-Equiv) and cloud physics (pyrcel). 
+ Limits : a valid contract does not guarantee that the request was understood correctly, nor that the scientific model is right for the question. The evidence covers 78 cases; the associated paper is in preparation. LQL-Equiv runs on fictitious scenarios, for research and teaching only. 
+ Go further 
+ Decision rule, runnable example and figures : https://cyrilvoyant.github.io/tools/websemantic.html 
+ The web app : cyrilvoyant-websemantic.static.hf.space (TLS and LQL-Equiv in the browser) 
+ Code : github.com/cyrilvoyant/websemantic · archive doi: 10.5281/zenodo.23238902 · pip install websemantic · instructions for agents in llm.md 
+ Codes it drives : 
+ Tunnel Load Simulator, SoftwareX 35, 102946 (2026); 
+ LQL-Equiv-web, SoftwareX 36, 103085 (2026). 
+ The approach behind this work : Understand before you compute
+
+---
+URL: https://www.cyrilvoyant.com/fr/enseignement/bases-thermiques-aliments/
+
+Bases de thermique pour le génie industriel alimentaire : transferts, refroidissement et congélation
+Ce que contient le cours
+B.U.T. Génie biologique, Sciences de l'aliment et biotechnologie, 1ʳᵉ année · 24 diapositives · CC BY 4.0
+Comment la chaleur traverse un aliment, et ce qu'il faut pour le refroidir ou le congeler.
+Les trois modes d'échange : conduction, convection, rayonnement.
+Les concepts fondamentaux : surfaces isothermes, flux et densité de flux thermique.
+La conduction : loi de Fourier, résistance thermique de conduction.
+La convection libre et forcée : coefficient d'échange h, résistance de convection.
+Le nombre de Biot : comparer la résistance interne et la résistance de surface.
+Les propriétés thermiques des aliments frais et congelés : capacité calorifique, température de début de congélation.
+La puissance frigorifique d'un refroidissement et d'une congélation, la quantité d'eau à congeler.
+Le bilan énergétique : température à cœur (conduction) et en surface (convection) au cours du temps.
+
+---
+URL: https://www.cyrilvoyant.com/fr/enseignement/bases-thermiques-aliments/cours/
+
+Cours : transferts thermiques, refroidissement et congélation des aliments
+Le chapitre en 10 points
+La thermodynamique étudie des états d'équilibre ; les transferts thermiques étudient les mécanismes qui y conduisent : conduction (chocs entre particules voisines), convection (mouvements d'un fluide), rayonnement (ondes électromagnétiques).
+Flux thermique 
+Φ
+ (W) à travers une surface S, densité de flux 
+φ = Φ/S
+ (W·m
+−2
+) ; une surface isotherme réunit les points de même température.
+Loi de Fourier : 
+φ = −λ dT/dx
+ ; le signe moins dit que la chaleur va du chaud vers le froid.
+Pour une paroi d'épaisseur e : 
+Φ = λ S (T
+2
+ − T
+1
+)/e
+, et une résistance thermique de conduction 
+R = e/λ
+ (K·m²·W
+−1
+), par analogie avec l'électricité.
+Convection, libre ou forcée : 
+φ = h (T
+p
+ − T
+∞
+)
+, avec une résistance externe 
+R = 1/h
+.
+Nombre de Biot : 
+Bi = h L
+c
+/λ
+, rapport des résistances interne et de surface ; s'il est petit (Bi < 0,1), la température de l'aliment reste pratiquement uniforme.
+Les propriétés thermiques d'un aliment dépendent d'abord de sa teneur en eau, avant et après congélation ; la congélation commence sous 0 °C car l'eau contient des solutés.
+Puissance de refroidissement : 
+P = m c
+p
+ (T
+i
+ − T
+f
+)/Δt
+ ; pour une congélation, 
+P = m Δh/Δt
+ où Δh additionne le refroidissement du produit frais, la chaleur latente de l'eau congelée et le refroidissement du produit congelé.
+Toute l'eau ne gèle pas : la relation de Chen donne la teneur en glace, et l'eau non congelable doit entrer dans le bilan.
+Bilan énergétique : avec une température uniforme, 
+T(t) = T
+∞
+ + (T
+i
+ − T
+∞
+) e
+−t/τ
+, 
+τ = m c
+p
+/(h S)
+ ; des formules dédiées traitent la cuisson et le refroidissement au cœur et en surface.
+Pour aller plus loin : questions et réponses
+Que change concrètement un nombre de Biot élevé ?
+La résistance interne domine : la surface suit vite le fluide tandis que le cœur traîne ; la loi exponentielle à température uniforme ne vaut plus, il faut une solution de conduction transitoire et surveiller la température à cœur, qui fixe la sécurité sanitaire.
+Pourquoi la puissance de congélation est-elle si supérieure à celle de réfrigération pour une même masse ?
+Le palier de changement d'état ajoute la chaleur latente de l'eau congelée, environ 333 kJ par kilogramme de glace formée, soit l'équivalent de dizaines de degrés de refroidissement ; à durée égale, la puissance doit suivre.
+Pourquoi la température de début de congélation d'un aliment est-elle inférieure à 0 °C ?
+Les solutés abaissent le point de congélation de l'eau ; à mesure que la glace se forme, la solution restante se concentre et son point de congélation baisse encore, si bien qu'une fraction d'eau reste liquide même à basse température.
+Augmenter la vitesse de l'air suffit-il à accélérer un refroidissement ?
+Seulement tant que la résistance de surface 1/h domine ; quand le Biot devient grand, la conduction interne limite et souffler plus fort ne gagne presque rien, il vaut mieux réduire l'épaisseur du produit.
+
+---
+URL: https://www.cyrilvoyant.com/fr/enseignement/biostatistique/
+
+Biostatistique pour les études de santé : le cours en trois chapitres
+Ce que contient le cours
+Première année des études de santé (PASS, UE8) · 3 chapitres, 246 diapositives · CC BY 4.0
+Les outils statistiques dont un futur soignant a besoin pour lire une étude, interpréter un test et décider avec des données.
+Pourquoi la statistique en santé : variabilité, ajustement thérapeutique, corrélation et causalité, variables cachées.
+Les probabilités : expérience aléatoire, événements, dénombrement, probabilités conditionnelles, approche bayésienne.
+Les tests diagnostiques : tableau de contingence, sensibilité, spécificité, valeurs prédictives, courbes ROC.
+La statistique descriptive : échelles de mesure, représentations graphiques, tendance centrale, dispersion, asymétrie.
+La loi normale : centrage et réduction, table de l'écart réduit, intervalles.
+Les tests d'hypothèses : hypothèses nulle et alternative, risques, comparaison de moyennes.
+Corrélation de Pearson, régression linéaire, coefficient de détermination et significativité.
+Les tests du χ² d'ajustement et d'indépendance, avec des exercices.
+
+---
+URL: https://www.cyrilvoyant.com/fr/enseignement/biostatistique/correlation-regression/
+
+Chapitre 3 : corrélation, régression linéaire et tests du χ²
+Le chapitre en 10 points
+Le diagramme de dispersion montre la forme du lien ; covariance 
+cov(x, y) = Σ(x
+i
+ − x̄)(y
+i
+ − ȳ)/(n − 1)
+.
+Corrélation de Pearson : 
+r = cov(x, y)/(s
+x
+ s
+y
+)
+, entre −1 et 1, à interpréter avec prudence (lien non linéaire, valeurs aberrantes, causalité).
+Droite des moindres carrés : 
+b
+1
+ = cov(x, y)/s
+x
+²
+, 
+b
+0
+ = ȳ − b
+1
+ x̄
+ ; elle sert à prévoir y à partir de x.
+Coefficient de détermination 
+r²
+ : part de la variance de y expliquée par la droite.
+Significativité de r : 
+t = r √(n − 2)/√(1 − r²)
+, loi de Student à n − 2 degrés de liberté.
+Résidus, tests sur la pente et l'ordonnée à l'origine, et intervalle de prévision à 95 % autour d'une valeur prévue.
+Variables qualitatives : 
+χ² = Σ (O − E)²/E
+, observés contre attendus.
+χ² d'ajustement à k − 1 degrés de liberté : avec les sacs de bonbons, 52,75 > 9,488 (α = 0,05, 4 ddl), les saveurs ne sont pas équiréparties.
+χ² d'indépendance sur un tableau de contingence, à (l − 1)(c − 1) degrés de liberté : traitement et guérison, nationalité et marque, sexe et localisation d'un cancer.
+Les exercices de synthèse enchaînent comparaison de moyennes, corrélation, droite de régression et intervalle de prévision sur des données de fumeurs.
+Pour aller plus loin : questions et réponses
+Quelle différence entre intervalle de confiance et intervalle de prévision en régression ?
+Le premier encadre la valeur moyenne de y pour un x donné, il se resserre quand n grandit ; le second encadre une nouvelle observation individuelle et garde la variance résiduelle : il ne descend jamais sous ±1,96 fois l'écart-type des résidus.
+Un r significatif suffit-il à rendre une prévision utile ?
+Non : avec 1000 sujets, r = 0,1 est significatif mais n'explique que 1 % de la variance. La significativité dit que le lien existe, r² et l'erreur de prévision disent s'il sert.
+Pourquoi une seule valeur aberrante peut-elle tout changer ?
+Les moindres carrés pèsent le carré des écarts : un point éloigné en x a un bras de levier qui tire la pente et gonfle ou crée r. On regarde toujours le nuage et les résidus avant de conclure.
+Quand le χ² n'est-il plus valable ?
+Quand des effectifs attendus sont trop petits (en pratique moins de 5) : l'approximation par la loi du χ² se dégrade ; on regroupe des classes, on applique la correction de Yates sur un tableau 2×2, ou le test exact de Fisher.
+
+---
+URL: https://www.cyrilvoyant.com/fr/enseignement/biostatistique/probabilites/
+
+Chapitre 1 : probabilités, probabilités conditionnelles, tableaux de contingence et courbes ROC
+Le chapitre en 10 points
+La statistique sert à définir la normalité, mesurer la variabilité (entre patients, entre mesures) et ajuster les traitements : la concentration d'un médicament varie fortement d'un patient à l'autre pour une même dose.
+Corrélation n'est pas causalité : une variable cachée peut créer un lien apparent, et la formulation d'une question change la probabilité cherchée (paradoxe des deux enfants).
+Une probabilité est une fréquence limite ; pour des événements quelconques 
+P(A ∪ B) = P(A) + P(B) − P(A ∩ B)
+, et 
+P(Ā) = 1 − P(A)
+.
+Sous l'hypothèse d'équiprobabilité, on compte : cas favorables sur cas possibles, avec les outils du dénombrement.
+Probabilité conditionnelle : 
+P(A | B) = P(A ∩ B)/P(B)
+ ; pour des événements indépendants, 
+P(A ∩ B) = P(A) P(B)
+.
+Probabilités totales et théorème de Bayes : 
+P(M | +) = P(+ | M) P(M) / P(+)
+.
+Évaluation d'un test : sensibilité 
+Se = VP/(VP + FN)
+, spécificité 
+Sp = VN/(VN + FP)
+.
+Valeurs prédictives, qui dépendent de la prévalence p : 
+VPP = Se·p / [Se·p + (1 − Sp)(1 − p)]
+, 
+VPN = Sp(1 − p) / [Sp(1 − p) + (1 − Se) p]
+.
+La courbe ROC trace Se en fonction de 1 − Sp quand le seuil varie ; l'aire sous la courbe (AUC) résume le pouvoir discriminant, 0,5 pour un test inutile.
+Le seuil se choisit sur la courbe, par exemple au point le plus proche du coin idéal (0, 1), comme pour le BNP.
+Pour aller plus loin : questions et réponses
+Pourquoi un test excellent donne-t-il tant de faux positifs dans une maladie rare ?
+La VPP dépend de la prévalence : avec Se = Sp = 99 % et p = 1/1000, les faux positifs (1 % de 999 personnes) sont dix fois plus nombreux que les vrais positifs ; c'est pourquoi un dépistage positif se confirme par un second test, plus spécifique.
+Que signifie exactement une AUC de 0,8 ?
+C'est la probabilité qu'un malade tiré au hasard ait un résultat plus élevé qu'un non-malade tiré au hasard ; elle ne dit rien d'un seuil particulier, et deux tests de même AUC peuvent différer nettement dans la zone de haute spécificité utile en pratique.
+Le meilleur seuil est-il toujours celui qui maximise Se + Sp ?
+Non : l'indice de Youden ou le point le plus proche de (0, 1) supposent que faux positifs et faux négatifs coûtent autant. Pour un dépistage on privilégie la sensibilité, pour une confirmation avant traitement lourd la spécificité.
+Pourquoi l'approche bayésienne sert-elle à ajuster une posologie ?
+Elle combine la connaissance de la population (distribution a priori des paramètres pharmacocinétiques) et les dosages du patient : quelques prélèvements suffisent pour une estimation individuelle, que l'on affine à chaque nouvelle mesure.
+
+---
+URL: https://www.cyrilvoyant.com/fr/enseignement/biostatistique/statistiques-descriptives/
+
+Chapitre 2 : statistique descriptive, loi normale et tests d'hypothèses
+Le chapitre en 10 points
+Population, échantillon, variable, paramètre et statistique ; le type d'échelle (nominale, ordinale, d'intervalle, de rapport) dicte les statistiques permises.
+Représentations graphiques et indices de tendance centrale : moyenne, médiane, mode ; la moyenne est sensible aux valeurs extrêmes (un seul très riche fait une « moyenne de millionnaires »).
+Dispersion : variance d'échantillon 
+s² = Σ(x
+i
+ − x̄)²/(n − 1)
+, écart-type s, étendue, quantiles.
+Loi normale 
+N(μ, σ)
+, décrite aussi par ses moments d'ordre 3 (asymétrie) et 4 (aplatissement).
+Tests de normalité, dont Jarque-Bera 
+JB = (n/6)[S² + (K − 3)²/4]
+, comparé à 5,99 (χ² à 2 degrés de liberté).
+Variable centrée réduite 
+z = (x − μ)/σ
+ et table de N(0, 1) ; environ 95 % des valeurs entre μ − 1,96σ et μ + 1,96σ.
+Intervalle de confiance à 95 % de la moyenne : 
+x̄ ± 1,96 · s/√n
+ pour n grand.
+Distribution d'échantillonnage et théorème central limite : la moyenne d'un échantillon suit approximativement une loi normale d'écart-type σ/√n.
+Test d'hypothèses : H₀, H₁, test uni- ou bilatéral, risque α, statistique de test et p-value ; exemple : un seul de trois scores de lecture est significativement inférieur à la référence.
+Comparaison de moyennes : test z, puis test de Student 
+t = (x̄
+1
+ − x̄
+2
+)/√(s
+1
+²/n
+1
+ + s
+2
+²/n
+2
+)
+, apparié ou non, à variances égales ou non.
+Pour aller plus loin : questions et réponses
+Pourquoi diviser par n − 1 et non par n ?
+Les écarts sont mesurés à la moyenne de l'échantillon, qui leur est la plus proche possible : diviser par n sous-estime systématiquement la variance. n − 1 corrige ce biais, car un degré de liberté a servi à estimer la moyenne.
+Une p-value de 0,03 signifie-t-elle que H₀ a 3 % de chances d'être vraie ?
+Non : c'est la probabilité d'observer un écart au moins aussi grand si H₀ était vraie. La probabilité de H₀ elle-même demande un raisonnement bayésien, avec une probabilité a priori.
+Quand le test de Student remplace-t-il le test z ?
+Quand σ est inconnu et estimé par s sur un petit échantillon : la statistique suit une loi de Student à n − 1 degrés de liberté, aux queues plus épaisses ; pour n grand, les deux se confondent.
+Faut-il se fier à un test de normalité sur un grand échantillon ?
+Avec beaucoup de données, le moindre écart devient significatif alors que le test de Student reste robuste grâce au théorème central limite ; le graphique (histogramme, droite de Henry) et la question posée comptent plus que la p-value du test de normalité.
+
+---
+URL: https://www.cyrilvoyant.com/fr/enseignement/cours-prevision-solaire/
+
+Cours de prévision solaire : prévoir la ressource solaire intermittente
+Ce que contient le cours
+Mines Paris – PSL, cycle ingénieur civil, projet de recherche appliquée UE14 · 59 diapositives · français et anglais · CC BY 4.0
+Comment prévoir l'éclairement solaire à une heure, sur dix ans de mesures réelles d'Ajaccio, en n'ajoutant de la complexité que si elle paie.
+Le signal solaire : géométrie, ciel clair et indice de ciel clair (écart additif), ce qui est prévisible et ce qui ne l'est pas.
+Les données : dix ans de mesures horaires, contrôle qualité, traitement du jour et de la nuit.
+Les références à battre : persistance simple, persistance intelligente, climatologie.
+Les modèles autorégressifs estimés par moindres carrés, l'ordre du modèle, la fenêtre glissante.
+Les Extreme Learning Machines : principe, nombre de neurones, risque de sur-apprentissage.
+L'évaluation : nRMSE, nMAE, score, NICE ; test sur l'année 2007, de jour et jour et nuit.
+L'apprentissage en ligne et la frugalité : de combien de modèle a-t-on vraiment besoin ?
+
+---
+URL: https://www.cyrilvoyant.com/fr/enseignement/physique-industrielle/
+
+Physique industrielle : thermodynamique, vapeur d'eau et production de froid
+Ce que contient le cours
+B.U.T. Génie biologique, Sciences de l'aliment et biotechnologie, 2ᵉ année · 5 chapitres, 139 diapositives et un polycopié · CC BY 4.0
+La thermodynamique d'un technicien de l'agroalimentaire, jusqu'au fonctionnement d'une machine frigorifique.
+Les grandeurs : pression, température, travail et chaleur ; chaleur sensible et chaleur latente.
+Les changements d'état : évaporation, ébullition, point triple, condensation.
+Gaz parfaits et gaz réels ; enthalpie et entropie.
+Les diagrammes de Clapeyron, entropique et de Mollier ; lecture du diagramme P-h du R134a ; interpolation linéaire.
+La vapeur d'eau : détente et compression, altitude, condensation, pression de vapeur saturante, humidité relative.
+Premier et second principes, machines thermiques, cycles moteurs et cycles des machines à vapeur.
+Le cycle frigorifique en quatre étapes sur le diagramme de Mollier, son COP, le froid industriel.
+Les fluides frigorigènes et leur réglementation (CFC, HCFC).
+Un polycopié rédigé en cinq chapitres accompagne les diaporamas.
+
+---
+URL: https://www.cyrilvoyant.com/fr/enseignement/physique-industrielle/cycles-frigorifiques/
+
+Chapitre 5 : les cycles frigorifiques
+Le chapitre en 10 points
+Une machine frigorifique fonctionne en quatre étapes : compression, condensation, détente, évaporation ; le fluide absorbe la chaleur en s'évaporant à basse pression et la rejette en se condensant à haute pression.
+On suit le cycle sur le diagramme de Mollier (ln p, h) : enthalpie en abscisse, pression absolue en ordonnée, avec isothermes, isentropes, isochores et isotitres.
+Dans la zone de mélange, pression et température sont liées ; ailleurs, elles sont indépendantes.
+Machine idéale : compression 1-2 isentropique, échanges sans perte de charge (isobares 2-3 et 5-1), détente 4-5 isenthalpe.
+Bilan d'énergie : 
+|q
+c
+| = q
+0
+ + W
+th
+, chaleur rejetée = chaleur extraite + travail du compresseur.
+Efficacité frigorifique : 
+COP = q
+0
+/W
+th
+ = (h
+1
+ − h
+5
+)/(h
+2
+ − h
+1
+)
+.
+Borne de Carnot du cycle inverse : 
+COP
+C
+ = T
+f
+/(T
+c
+ − T
+f
+)
+.
+Pour augmenter q₀ : surchauffe (évaporateur plus grand ou échangeur interne) et sous-refroidissement (condenseur plus grand ou échangeur).
+Les fluides frigorigènes se choisissent selon leurs propriétés thermodynamiques, leur sécurité et leur impact sur l'environnement.
+La réglementation encadre la mise en service, l'entretien, le contrôle d'étanchéité et la récupération des fluides, impose attestations de capacité et d'aptitude, et a interdit les CFC puis les HCFC.
+Pour aller plus loin : questions et réponses
+Pourquoi le COP chute-t-il quand l'écart entre chambre froide et extérieur augmente ?
+La borne de Carnot T_f/(T_c − T_f) diminue quand l'écart grandit : congeler à −30 °C en été coûte bien plus de travail par kilojoule extrait que conserver à +4 °C ; d'où l'intérêt de condenser le plus froid possible et des cycles étagés pour les grands écarts.
+Pourquoi le sous-refroidissement augmente-t-il le COP sans coût de compression ?
+Il déplace le point d'entrée de la détente vers les faibles enthalpies, donc augmente q₀ = h₁ − h₅, tandis que le travail du compresseur, fixé par les points 1 et 2, ne change pas.
+La surchauffe à l'aspiration est-elle un gain ou une nécessité ?
+D'abord une protection : le compresseur ne doit jamais aspirer de liquide. Elle augmente q₀ mais déplace la compression vers des volumes massiques plus grands ; son réglage, par le détendeur, est un compromis entre sécurité et efficacité.
+Pourquoi la détente est-elle isenthalpe et que perd-on ?
+Le détendeur lamine le fluide sans échange de travail ni de chaleur : h se conserve, mais la détente est irréversible ; le travail qu'une turbine de détente aurait récupéré est perdu, ce qui justifie les éjecteurs ou les détendeurs à récupération sur les grandes installations, notamment au CO₂.
+
+---
+URL: https://www.cyrilvoyant.com/fr/enseignement/physique-industrielle/cycles-moteurs/
+
+Chapitre 4 : les cycles thermodynamiques moteurs
+Le chapitre en 10 points
+Premier principe, conservation : 
+ΔU = Q + W
+ pour un système fermé ; sur un cycle 
+ΔU = 0
+, donc le travail fourni équilibre la chaleur nette reçue.
+Second principe, évolution : toute transformation réelle crée de l'entropie ; la chaleur va spontanément du chaud vers le froid, un gaz se détend spontanément de la haute vers la basse pression, jamais l'inverse.
+Conséquence (Carnot) : un moteur en contact avec une seule source ne fournit aucun travail ; il faut une source chaude et une source froide, et la conversion intégrale de chaleur en travail est impossible.
+Inégalité de Clausius : 
+ΔS ≥ ∫ δQ/T
+, avec égalité pour une transformation réversible.
+Rendement maximal d'un moteur ditherme : 
+η
+C
+ = 1 − T
+f
+/T
+c
+ (températures absolues).
+Machines thermodynamiques (chaleur → travail : machines à vapeur, moteurs, centrales) et machines dynamo-thermiques (travail → chaleur déplacée : machines frigorifiques, pompes à chaleur, liquéfacteurs).
+Cycles à gaz : Carnot (2 isothermes, 2 isentropes), Joule-Brayton des turbines à gaz (2 isobares, 2 isentropes), Stirling (2 isochores, 2 isothermes), Ericsson (2 isobares, 2 isothermes), Beau de Rochas-Otto (2 isentropes, 2 isochores), Diesel (2 isentropes, 1 isobare, 1 isochore).
+Machines à vapeur : le fluide devient diphasique et l'on profite de la chaleur latente ; cycle de Rankine, puis cycle de Hirn avec surchauffe de la vapeur.
+Bilan par les enthalpies : 
+η = (W
+turbine
+ − W
+pompe
+) / Q
+c
+, par exemple pour Rankine 
+η = [(H
+4
+ − H
+5
+) − (H
+2
+ − H
+1
+)] / (H
+4
+ − H
+2
+)
+.
+Cycles complexes : la resurchauffe entre deux étages de détente et la régénération par soutirages améliorent le rendement.
+Pour aller plus loin : questions et réponses
+Pourquoi aucun moteur réel n'atteint-il le rendement de Carnot ?
+Le cycle de Carnot suppose des échanges de chaleur réversibles, donc à écart de température nul et infiniment lents ; un moteur réel échange sous des écarts finis, avec frottements et détentes irréversibles, qui créent de l'entropie et dégradent le travail récupérable.
+Pourquoi la régénération améliore-t-elle le rendement d'un cycle à vapeur ?
+Préchauffer l'eau d'alimentation avec de la vapeur soutirée élève la température moyenne à laquelle la chaudière apporte la chaleur ; le cycle se rapproche d'un cycle de Carnot entre des températures plus élevées.
+Pourquoi le moteur Diesel a-t-il un rapport de compression plus élevé que le moteur à essence ?
+Il n'a pas de bougie : la compression doit porter l'air au-delà de la température d'auto-inflammation du gazole ; à l'inverse l'essence, qui s'enflamme plus facilement, imposerait le cliquetis à de tels rapports.
+Pourquoi l'eau est-elle le fluide de travail des grandes centrales ?
+Elle est abondante, non toxique, stable, et sa chaleur latente de vaporisation est élevée : on transporte beaucoup d'énergie par kilogramme, et la pompe, qui comprime un liquide, consomme très peu de travail.
+
+---
+URL: https://www.cyrilvoyant.com/fr/enseignement/physique-industrielle/gaz-parfaits-et-reels/
+
+Chapitre 2 : gaz parfaits, gaz réels et diagrammes
+Le chapitre en 10 points
+Le gaz parfait est un gaz dilué de molécules sans interaction : 
+p V = n R T
+.
+Pour un gaz parfait, les chaleurs massiques sont constantes, l'énergie interne et l'enthalpie ne dépendent que de T, linéairement ; pour un gaz semi-parfait elles dépendent de T sans être linéaires.
+Les gaz réels s'écartent de cette loi quand la pression monte : on ne les décrit plus par une équation simple mais par des diagrammes et des tables.
+Pour un corps pur, deux grandeurs d'état suffisent à fixer l'état ; les autres (T, p, v, h, s…) se lisent sur un diagramme.
+Le diagramme de Clapeyron (p, v) montre la courbe de saturation en cloche : au-dessus de la température critique le fluide reste gazeux, en dessous il se liquéfie à pression constante.
+Dans la zone diphasique, le titre 
+x
+ est la fraction de vapeur (
+x = 0
+ liquide saturé, 
+x = 1
+ vapeur saturée) ; pour un corps pur, isobares et isothermes y sont confondues.
+Les diagrammes entropique (T, s), de Mollier (h, s) des motoristes et (ln p, h) des frigoristes portent les mêmes informations sous des formes adaptées à l'usage.
+Sur le diagramme (ln p, h) du R134a on lit le point critique, les zones liquide sous-refroidi, mélange et vapeur surchauffée, puis les familles isobares, isothermes, isenthalpes, isotitres, isentropes et isochores.
+Entre deux valeurs d'une table, on interpole linéairement : 
+y
+m
+ = y
+a
+ + (y
+b
+ − y
+a
+)(x
+m
+ − x
+a
+)/(x
+b
+ − x
+a
+)
+.
+Ce chapitre prépare la lecture des cycles : chaque transformation devient un trait sur un diagramme.
+Pour aller plus loin : questions et réponses
+Pourquoi les frigoristes préfèrent-ils le diagramme (ln p, h) ?
+Les échanges au condenseur et à l'évaporateur y sont des horizontales (isobares), la détente un trait vertical (isenthalpe), et les énergies échangées se lisent directement comme des longueurs sur l'axe des enthalpies : le bilan du cycle se fait à la règle.
+Comment calculer l'enthalpie d'un mélange liquide-vapeur ?
+Par la règle des moments : h = h_l + x (h_v − h_l), où h_l et h_v sont les enthalpies des liquide et vapeur saturés à la même pression ; le titre x se lit sur les isotitres ou se déduit d'un bilan.
+Quand l'interpolation linéaire dans une table devient-elle risquée ?
+Près de la courbe de saturation et surtout du point critique, où les propriétés varient fortement et de façon non linéaire : il faut alors resserrer les pas de la table ou utiliser une équation d'état, plutôt que d'interpoler sur un grand intervalle.
+Peut-on traiter la vapeur d'un fluide frigorigène comme un gaz parfait ?
+Seulement loin de la saturation et à basse pression ; dans un cycle frigorifique le fluide travaille justement au voisinage de la saturation, ce qui impose les diagrammes.
+
+---
+URL: https://www.cyrilvoyant.com/fr/enseignement/physique-industrielle/notions-de-thermodynamique/
+
+Chapitre 1 : notions générales de thermodynamique
+Le chapitre en 10 points
+La thermodynamique fait le bilan énergétique des machines (moteurs, centrales, machines frigorifiques, pompes à chaleur) et des transferts de chaleur ; on la traite à l'échelle macroscopique, avec des variables d'état (p, V, T, m).
+Le vocabulaire fixe ce qui est échangé : système fermé (pas de matière), calorifugé (pas de chaleur), isolé (rien) ; transformations isotherme, isobare, isochore, adiabatique ; un cycle revient à son état initial.
+Pression : 
+1 bar = 10
+5
+ Pa
+, 
+1 atm = 1,013 bar = 760 mmHg
+ ; les lois s'écrivent en pression absolue, 
+p
+abs
+ = p
+rel
+ + p
+atm
+.
+Température : la mesure de l'agitation moléculaire, 
+E
+c
+ = (3/2) k T
+ avec 
+k = 1,38·10
+−23
+ J·K
+−1
+.
+Premier principe : 
+ΔU = Q + W
+ ; la chaleur est un transfert désordonné, le travail un transfert ordonné.
+Chaleur sensible : 
+Q = m c ΔT
+ (eau : 
+c ≈ 4186 J·kg
+−1
+·°C
+−1
+) ; chaleur latente : 
+Q = m L
+ à température constante (glace : 
+L
+f
+ ≈ 333 kJ·kg
+−1
+).
+Ordres de grandeur : fondre 1 kg de glace (334 kJ) coûte presque autant que chauffer 1 kg d'eau de 0 à 100 °C (421 kJ) ; la vaporisation coûte bien davantage.
+Évaporation (en surface, à toute température) et ébullition (dans la masse, à une température fixée par la pression) ; la surfusion maintient un liquide sous sa température de solidification.
+Le diagramme de phases de l'eau situe le point triple (trois états coexistent) et le point critique (au-delà, fluide supercritique).
+La condensation s'obtient en comprimant jusqu'à la pression de vapeur saturante ou en refroidissant jusqu'à la température de saturation : c'est le principe même du froid industriel.
+Pour aller plus loin : questions et réponses
+Pourquoi la chaleur latente commande-t-elle le dimensionnement d'une congélation ?
+Parce qu'elle pèse autant qu'un refroidissement d'environ 80 °C de l'eau liquide (333 kJ/kg contre 4,19 kJ/kg par °C) : la puissance frigorifique et la durée se jouent au palier de changement d'état, pas sur les degrés gagnés avant ou après.
+Pourquoi un fluide frigorigène doit-il bouillir très en dessous de 0 °C à la pression atmosphérique ?
+La température d'ébullition est fixée par la pression : un fluide comme le R22 (−40,8 °C sous 1 atm) s'évapore à basse température sous une pression raisonnable, ce qui permet d'absorber la chaleur de la chambre froide sans faire le vide dans l'évaporateur.
+La surfusion a-t-elle une conséquence pratique pour les aliments ?
+Oui : un produit peut rester liquide sous sa température de congélation puis cristalliser brusquement ; la température mesurée remonte alors au palier, ce qui fausse une lecture naïve des courbes de congélation et influe sur la taille des cristaux.
+Pourquoi raisonner en pression absolue alors que les manomètres affichent une pression relative ?
+Les relations d'état (gaz parfaits, tables de vapeur, relation pression-température de saturation) portent sur la pression absolue ; oublier la pression atmosphérique fausse d'environ 1 bar tous les points du cycle, ce qui est énorme côté basse pression.
+
+---
+URL: https://www.cyrilvoyant.com/fr/enseignement/physique-industrielle/vapeur-d-eau/
+
+Chapitre 3 : la vapeur d'eau
+Le chapitre en 10 points
+Un gaz qui se détend se refroidit (pneu qui se dégonfle, extincteur à CO₂) ; un gaz que l'on comprime s'échauffe (pompe à vélo, compresseur).
+Une bulle d'air qui s'élève rencontre des pressions plus faibles, se détend et se refroidit : c'est l'origine de la baisse de la température avec l'altitude, et de la baisse de la température d'ébullition en montagne.
+La vapeur d'eau est invisible ; l'air le plus sec en contient toujours. L'humidité mesure cette quantité.
+Dans l'air humide, 
+P = p
+a
+ + e
+ : pression partielle de l'air sec plus celle de la vapeur.
+Rapport de mélange : 
+r = 0,622 · e / (P − e)
+ (masse de vapeur par kilogramme d'air sec).
+Il existe une pression de vapeur saturante 
+e
+s
+(T)
+, d'autant plus forte que l'air est chaud ; au-delà, la vapeur se condense en gouttelettes ou en cristaux.
+Rapport de mélange saturant : 
+r
+s
+ = 0,622 · e
+s
+ / (P − e
+s
+) ≈ 0,622 · e
+s
+ / P
+.
+Humidité relative : 
+HR = 100 · e / e
+s
+ ≈ 100 · r / r
+s
+ ; la sensation d'humidité dépend de l'écart à la saturation, pas de la quantité d'eau seule.
+Exemple : à Ajaccio en hiver, T = 8 °C et r = 6,4 g/kg donnent HR ≈ 96 %.
+La chaleur latente absorbée par la fusion et la vaporisation est restituée exactement par la solidification et la condensation.
+Pour aller plus loin : questions et réponses
+Pourquoi l'humidité relative monte-t-elle la nuit alors que l'air ne gagne pas d'eau ?
+Le rapport de mélange r reste le même, mais e_s(T) chute avec la température : HR = r/r_s augmente jusqu'à 100 % au point de rosée, où la condensation commence (rosée, brouillard, givre).
+D'où vient le coefficient 0,622 ?
+C'est le rapport des masses molaires de l'eau et de l'air sec, 18,0/28,96 : il convertit un rapport de pressions partielles en rapport de masses.
+Pourquoi les évaporateurs des chambres froides givrent-ils ?
+Leur surface est bien en dessous du point de rosée de l'air de la chambre, et sous 0 °C : la vapeur s'y condense directement en glace, ce qui isole l'échangeur et impose des dégivrages, d'autant plus fréquents que l'on ouvre souvent les portes.
+Pourquoi la chaleur latente intéresse-t-elle autant les procédés ?
+Elle permet de transporter beaucoup d'énergie à température constante : condenser de la vapeur chauffe fortement une paroi sans la surchauffer, ce qui explique l'usage de la vapeur en cuisson et en stérilisation, et des fluides diphasiques en froid.
+
+---
+URL: https://www.cyrilvoyant.com/fr/enseignement/physique-pass/
+
+Physique pour les études de santé : ondes électromagnétiques, rayons X et imagerie
+Ce que contient le cours
+Première année des études de santé (PASS-PACES), bases physiques des explorations médicales · cours de 110 diapositives et 2 séances d'exercices corrigées · CC BY 4.0
+Les bases physiques de l'imagerie médicale, de l'onde au scanner.
+La nature des ondes électromagnétiques : célérité, onde sinusoïdale, vecteur d'onde.
+La dualité onde-particule : énergie du photon E = hν, l'électron-volt.
+Le spectre électromagnétique et ses gammes d'énergie.
+Les niveaux d'énergie de l'atome et le cas de l'hydrogène.
+Absorption, émission, fluorescence, effet Auger, spectroscopies ; une application : l'oxymétrie de pouls.
+Les rayons X : tube de Coolidge, rayonnements de freinage et de fluorescence, spectre, radioprotection.
+Les interactions photons-matière : effet photoélectrique, effet Compton, création de paires, atténuation et couche de demi-atténuation.
+L'imagerie : contraste, radiologie conventionnelle, scanner X et fenêtrage.
+Deux séances d'exercices dirigés corrigées pas à pas (18 exercices).
+
+---
+URL: https://www.cyrilvoyant.com/fr/enseignement/physique-pass/ed1-corrige/
+
+Exercices dirigés 1 : les ondes électromagnétiques, corrigé
+Le chapitre en 7 points
+Passer de l'énergie à la longueur d'onde : 
+E = hc/λ
+ ; un photon de 3 eV est à la frontière visible-UV, loin du seuil d'ionisation de l'hydrogène (13,6 eV).
+Lier les paramètres d'une onde : période, pulsation 
+ω = 2πν
+, longueur d'onde dans le vide et dans un milieu où la célérité change (
+λ = v/ν
+).
+Énergie de masse (
+E = mc²
+) et longueur d'onde de de Broglie d'un électron (
+λ = h/(mv)
+).
+Lire l'équation d'une onde : direction et sens de propagation, monochromaticité, polarisation ; intensité 
+I = ⟨E²⟩ = E
+0
+²/2
+.
+Transmittance et absorbance : 
+T = I/I
+0
+, 
+A = −log T
+ (loi de Beer-Lambert).
+Atténuation par couches de demi-atténuation : n CDA transmettent 
+I
+0
+/2
+n
+, ce qui donne le coefficient μ et le contraste entre deux trajets.
+Électron Compton : énergie cinétique maximale en rétrodiffusion.
+Pour aller plus loin : questions et réponses
+Pourquoi raisonner en nombre de CDA plutôt qu'avec l'exponentielle ?
+Parce que les traversées successives se composent par multiplication : 2 CDA de tumeur puis 3 CDA de tissu sain transmettent 1/2⁵ = 1/32, sans calculatrice ; l'exponentielle n'est nécessaire que pour une épaisseur qui n'est pas un multiple simple de la CDA.
+L'intensité d'une onde dépend-elle de sa phase ?
+Non : elle est la moyenne temporelle de E², et la moyenne de cos² sur un temps long vaut 1/2 quelle que soit la phase ; seule l'amplitude E₀ compte, I = E₀²/2.
+
+---
+URL: https://www.cyrilvoyant.com/fr/enseignement/physique-pass/ed2-corrige/
+
+Exercices dirigés 2 : les ondes électromagnétiques, corrigé
+Le chapitre en 6 points
+Niveaux de l'atome hydrogénoïde : 
+E
+n
+ = −13,6 Z²/n² eV
+ ; énergies d'excitation entre couches et énergie minimale d'ionisation.
+L'ionisation par un photon assez énergétique est possible mais pas systématique : l'interaction est probabiliste.
+Photons de fluorescence : selon la transition, dans l'UV (2 → 1) ou dans le visible (3 → 2) ; séries de raies et leurs longueurs d'onde.
+Électron Auger après une lacune K : 
+E
+c
+ = (W
+K
+ − W
+L
+) − W
+L
+ quand un électron L comble la lacune et qu'un autre électron L est éjecté.
+Tube à rayons X : la tension fixe l'énergie maximale, le courant le nombre de photons, la filtration durcit le faisceau et protège le patient.
+Atténuation dans le plomb et l'aluminium : domaines du photoélectrique et du Compton, et remontée du coefficient massique à très haute énergie par création de paires.
+Pour aller plus loin : questions et réponses
+Pourquoi le coefficient d'atténuation massique du plomb remonte-t-il au-delà de quelques MeV ?
+La création de paires, nulle sous 1,022 MeV, croît avec l'énergie et avec Z² ; dans le plomb (Z = 82) elle devient dominante et rend un faisceau de 100 MeV moins pénétrant qu'un faisceau de quelques MeV.
+Un photon d'énergie supérieure à l'énergie d'ionisation ionise-t-il forcément l'atome ?
+Non : l'énergie est une condition nécessaire, pas suffisante ; l'interaction a une probabilité (section efficace) qui dépend de l'énergie et de la couche, d'où une lecture statistique de l'atténuation.
+
+---
+URL: https://www.cyrilvoyant.com/fr/enseignement/physique-pass/ondes-electromagnetiques/
+
+Cours : les ondes électromagnétiques et les bases physiques de l'imagerie
+Le chapitre en 10 points
+Une onde électromagnétique propage un champ électrique et un champ magnétique perpendiculaires entre eux et à la direction de propagation, à 
+c ≈ 3·10
+8
+ m·s
+−1
+ dans le vide.
+Paramètres : 
+ω = 2πν
+, 
+T = 1/ν
+, 
+λ = c/ν
+, nombre d'onde 
+k = 2π/λ
+.
+Aspect corpusculaire : 
+E = hν = hc/λ
+, et de Broglie 
+p = h/λ
+ ; en pratique 
+λ(nm) ≈ 1240/E(eV)
+, avec 
+1 eV = 1,6·10
+−19
+ J
+.
+Niveaux d'énergie atomiques : 
+E
+n
+ = −E
+0
+ (Z − b)²/n²
+, 
+E
+0
+ = 13,6 eV
+ ; au plus 2n² électrons par couche (Pauli).
+L'absorption ionise ou excite ; le réarrangement émet un photon de fluorescence ou un électron Auger, 
+E
+c
+ = (W
+i
+ − W
+j
+) − W
+x
+. La spectroscopie et l'oxymétrie de pouls exploitent ces spectres.
+Tube de Coolidge : 
+E
+c
+(keV) = U(kV)
+, puissance rayonnée 
+F = K i Z U²
+, rendement 
+R = K Z U
+ ; spectre continu de freinage et raies de fluorescence, 
+λ
+min
+ = hc/(eU)
+.
+Atténuation : 
+N(x) = N
+0
+ e
+−μx
+, couche de demi-atténuation 
+CDA = ln 2/μ
+ ; 10 CDA laissent passer environ un photon sur mille.
+Trois interactions : effet photoélectrique (probabilité en 
+Z³/E³
+), effet Compton, création de paires au-delà de 
+2 m
+e
+c² = 1,022 MeV
+.
+Dans l'eau : photoélectrique sous 50 keV, Compton de 50 keV à 20 MeV, matérialisation au-delà.
+Imagerie : le contraste naît de différences d'atténuation ; la tension se règle selon l'examen (25-50 kV en mammographie, 100-130 kV pour le thorax) ; le scanner reconstruit des coupes en unités Hounsfield, avec fenêtrage.
+Pour aller plus loin : questions et réponses
+Pourquoi l'os est-il si contrasté à basse tension et beaucoup moins à haute tension ?
+À basse énergie l'effet photoélectrique domine, en Z³/E³ : le calcium de l'os absorbe beaucoup plus que les tissus mous. À haute énergie l'effet Compton domine, qui dépend surtout de la densité électronique, presque identique d'un tissu à l'autre.
+Comment doubler l'énergie maximale des photons d'un tube sans changer la puissance rayonnée ?
+Puisque F = K i Z U², doubler U multiplie F par quatre : il faut diviser le courant par quatre. L'énergie maximale suit U, le nombre de photons suit i.
+Pourquoi l'électron Compton n'emporte-t-il jamais toute l'énergie du photon ?
+La conservation de l'énergie et de la quantité de mouvement impose un photon diffusé ; l'énergie transférée est maximale en rétrodiffusion, E_c,max = E₀ · 2α/(1 + 2α) avec α = E₀/(m_e c²), toujours inférieure à E₀.
+Pourquoi filtrer le faisceau à la sortie du tube ?
+Les photons de basse énergie sont absorbés dans les premiers centimètres de tissu : ils irradient le patient sans contribuer à l'image. La filtration les retire et durcit le faisceau, au prix d'une légère perte de contraste.

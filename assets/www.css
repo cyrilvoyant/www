@@ -346,3 +346,13 @@ pre.cite-ex { white-space: pre-wrap; background: var(--soft); padding: 12px 14px
 .rtv-list label { display: flex; gap: 8px; align-items: baseline; font-size: .92rem; margin: 4px 0; cursor: pointer; }
 .rtv-list input { accent-color: var(--link); }
 .rtv-reset { font: inherit; font-size: .85rem; padding: 4px 14px; border-radius: 999px; border: 1px solid var(--line); background: var(--paper); color: var(--muted); cursor: pointer; }
+
+/* heritage hub */
+.hg-ideas { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+.hg-ideas a { display: block; padding: 14px; border: 1px solid var(--line); border-top: 4px solid var(--link); border-radius: 10px; background: var(--paper); text-decoration: none; color: var(--ink); }
+.hg-ideas a strong { display: block; color: var(--link); margin-bottom: 4px; } .hg-ideas a span { font-size: .9rem; color: var(--muted); }
+.hg-list { list-style: none; padding: 0; } .hg-list li { padding: 7px 0; border-bottom: 1px solid var(--line); }
+.hg-list .muted { color: var(--muted); font-size: .88rem; display: block; }
+.hg-sw { columns: 2 320px; column-gap: 24px; } .hg-sw li { break-inside: avoid; }
+.hg-chips { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; }
+.hg-chips a { display: inline-block; padding: 5px 12px; border-radius: 999px; background: var(--soft); text-decoration: none; font-size: .9rem; }
