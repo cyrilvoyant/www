@@ -36,6 +36,9 @@
      "@id": "https://doi.org/10.1016/j.rpor.2013.08.004"
     },
     {
+     "@id": "https://www.cyrilvoyant.com/fr/outils/doses-lq-lql/"
+    },
+    {
      "@id": "https://www.cyrilvoyant.com/fr/recits/lql-equiv/"
     },
     {
@@ -91,6 +94,11 @@
    "@type": "ScholarlyArticle",
    "name": "C. Voyant, D. Julian, R. Roustit, K. Biffi, C. Lantieri. Biological effects and equivalent doses in radiotherapy: A software solution. Reports of Practical Oncology and Radiotherapy 19(1) (2014) 47–55",
    "creativeWorkStatus": "published, open access (PMC4055002)"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/fr/outils/doses-lq-lql/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/fr/outils/doses-lq-lql/"
   },
   {
    "@id": "https://www.cyrilvoyant.com/fr/recits/lql-equiv/",

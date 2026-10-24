@@ -205,25 +205,25 @@ URL: https://www.cyrilvoyant.com/tools/
 Interactive tools: choose a question, explore a method
  Calculators, teaching experiments and research applications, organized by domain and language.
  Start with an example, change an input and examine what changes. Research calculators and medical applications are for research and education; their assumptions and limitations are stated in the linked pages.
- Languages: the seven technical calculators are currently in English. The ROC, normal distribution and attenuation course tools are in French. The filter describes the actual interface language, not just this catalog page.
+ Languages: the seven technical calculators have French and English interfaces. The course tools (ROC, normal distribution, attenuation, cooling, freezing, COP) are in French. Dedicated applications and the comparison tool retain their existing interfaces; filter by language before opening a tool.
  Find a tool Field Interface language
- Browser calculator · English interface
+ Browser calculator · French and English
  Compare a forecast with persistence, NICE
  Paste observations and forecasts, choose a horizon, read absolute errors and NICE ratios.
  Open this tool →
- Browser calculator · English interface
+ Browser calculator · French and English
  Compute BLEND weights
  Explore the weights of a periodic reference on a time series.
  Open this tool →
- Browser calculator · English interface
+ Browser calculator · French and English
  Measure variability and forecastability, sCV and F
  Supply measured and clear-sky irradiance, then examine the indicators at your chosen horizon.
  Open this tool →
- Browser calculator · English interface
+ Browser calculator · French and English
  Displace a forecast and explore the γ-index
  Displace, delay or bias a synthetic cloud and adjust the tolerances.
  Open this tool →
- Browser calculator · English interface
+ Browser calculator · French and English
  Explore ARTU coefficients and lookup table
  Vary autocorrelations and measurement quality; read the coefficients.
  Open this tool →
@@ -231,11 +231,11 @@ Interactive tools: choose a question, explore a method
  Compare persistence, AR and ELM
  Explore the existing comparison on public Palaiseau data.
  Open this tool →
- Browser calculator · English interface
+ Browser calculator · French and English
  Compare LQ and LQL biological doses
  Choose parameters and vary dose per fraction. Research and education use.
  Open this tool →
- Browser calculator · English interface
+ Browser calculator · French and English
  Explore thyroid model profiles
  Choose a profile and protocol; follow simulated thyroglobulin. Research and education use.
  Open this tool →
@@ -267,6 +267,18 @@ Interactive tools: choose a question, explore a method
  Explore attenuation and half-value layers
  Vary thickness and half-value layer; read the transmitted fraction.
  Open this tool →
+ Course tool · French interface
+ Cool a food: Biot number, mean and core temperature
+ Vary h, λ and size; compare the uniform-temperature model with the core temperature.
+ Open this tool →
+ Course tool · French interface
+ Freezing: energy and refrigeration power
+ Split the energy to remove (sensible, latent, sensible) and compute the power for a given duration.
+ Open this tool →
+ Course tool · French interface
+ Refrigerator: Carnot bound of the COP
+ Vary evaporation and condensation temperatures; see why the temperature lift is costly.
+ Open this tool →
  Reflection tree · French and English
  Prepare an RTVACOS action plan
  Explore a reflection framework on rigour, transparency, visibility and adoption; no excellence score.
@@ -287,25 +299,25 @@ URL: https://www.cyrilvoyant.com/fr/outils/
 Outils interactifs : choisir une question, essayer une méthode
  Calculateurs, expériences pédagogiques et applications de recherche, réunis par domaine et langue.
  Commencez avec un exemple, modifiez une entrée et examinez ce qui change. Les calculateurs de recherche et les applications médicales sont destinés à la recherche et à l’enseignement ; leurs hypothèses et limites figurent dans les pages liées.
- Langues : les sept petits calculateurs techniques sont actuellement en anglais. Les cours ROC, loi normale et atténuation sont en français. Le filtre décrit la langue réelle, pas seulement celle de cette page.
+ Langues : les sept calculateurs techniques ont des interfaces françaises et anglaises. Les outils des cours (ROC, loi normale, atténuation, refroidissement, congélation, COP) sont en français. Les applications dédiées et le comparateur conservent leur interface actuelle ; le filtre précise la langue avant ouverture.
  Rechercher un outil Domaine Langue de l’interface
- Calculateur dans le navigateur · Interface en anglais
+ Calculateur dans le navigateur · Français et anglais
  Comparer une prévision à la persistance, NICE
  Coller observations et prévisions ; choisir l’horizon ; lire les erreurs et les ratios NICE.
  Ouvrir cet outil →
- Calculateur dans le navigateur · Interface en anglais
+ Calculateur dans le navigateur · Français et anglais
  Calculer les poids de BLEND
  Explorer les poids d’une référence périodique sur une série temporelle.
  Ouvrir cet outil →
- Calculateur dans le navigateur · Interface en anglais
+ Calculateur dans le navigateur · Français et anglais
  Mesurer variabilité et prévisibilité, sCV et F
  Fournir éclairement mesuré et ciel clair, puis examiner les indicateurs à l’horizon choisi.
  Ouvrir cet outil →
- Calculateur dans le navigateur · Interface en anglais
+ Calculateur dans le navigateur · Français et anglais
  Déplacer une prévision et observer l’indice γ
  Déplacer, retarder ou biaiser un nuage synthétique et régler les tolérances.
  Ouvrir cet outil →
- Calculateur dans le navigateur · Interface en anglais
+ Calculateur dans le navigateur · Français et anglais
  Explorer les coefficients et la table ARTU
  Faire varier les autocorrélations et la qualité de mesure ; lire les coefficients.
  Ouvrir cet outil →
@@ -313,11 +325,11 @@ Outils interactifs : choisir une question, essayer une méthode
  Comparer persistance, AR et ELM
  Explorer le comparateur existant sur les données publiques de Palaiseau.
  Ouvrir cet outil →
- Calculateur dans le navigateur · Interface en anglais
+ Calculateur dans le navigateur · Français et anglais
  Comparer les doses biologiques LQ et LQL
  Choisir les paramètres et faire varier la dose par fraction. Usage de recherche et d’enseignement.
  Ouvrir cet outil →
- Calculateur dans le navigateur · Interface en anglais
+ Calculateur dans le navigateur · Français et anglais
  Explorer les profils du modèle thyroïde
  Choisir un profil et un protocole ; suivre la thyroglobuline simulée. Usage de recherche et d’enseignement.
  Ouvrir cet outil →
@@ -348,6 +360,18 @@ Outils interactifs : choisir une question, essayer une méthode
  Outil de cours · Interface en français
  Explorer l’atténuation et la CDA
  Faire varier l’épaisseur et la couche de demi-atténuation ; lire la fraction transmise.
+ Ouvrir cet outil →
+ Outil de cours · Interface en français
+ Refroidir un aliment : Biot, température moyenne et à cœur
+ Faire varier h, λ et la taille ; comparer le modèle à température uniforme et la température à cœur.
+ Ouvrir cet outil →
+ Outil de cours · Interface en français
+ Congeler : énergie et puissance frigorifique
+ Décomposer l’énergie à extraire (sensible, latente, sensible) et calculer la puissance pour une durée donnée.
+ Ouvrir cet outil →
+ Outil de cours · Interface en français
+ Machine frigorifique : borne de Carnot du COP
+ Faire varier les températures d’évaporation et de condensation ; voir pourquoi l’écart coûte cher.
  Ouvrir cet outil →
  Arbre de réflexion · Français et anglais
  Préparer un plan d’action RTVACOS
@@ -1049,6 +1073,7 @@ Teaching
  Two exercise sessions corrected step by step (18 exercises).
  Open the course (in French) →
  Part of the course comes from the work of Professor Pierre Peretti, Université Pierre-et-Marie-Curie (Paris), now retired.
+ Archived and citable on Zenodo, DOI 10.5281/zenodo.23620487
  Industrial physics: thermodynamics, water vapor and refrigeration (in French)
  B.U.T. biological engineering, food science and biotechnology, 2nd year · 5 chapters, 139 slides and handouts · in French · CC BY 4.0
  The thermodynamics of a food-industry technician, up to how a refrigeration machine works.
@@ -1063,6 +1088,7 @@ Teaching
  Five chapters of written handouts come with the slides.
  Open the course (in French) →
  The part on industrial refrigeration was prepared with the help of Gilles Notton , Université de Corse.
+ Archived and citable on Zenodo, DOI 10.5281/zenodo.23620537
  Heat transfer for food engineering (in French)
  B.U.T. biological engineering, food science and biotechnology, 1st year · 24 slides · in French · CC BY 4.0
  How heat moves through a food, and what it takes to cool or freeze it.
@@ -1076,6 +1102,7 @@ Teaching
  Energy balance: core temperature (conduction) and surface temperature (convection) over time.
  Open the course (in French) →
  The part on food freezing was prepared with the help of Gilles Notton , Université de Corse.
+ Archived and citable on Zenodo, DOI 10.5281/zenodo.23621246
  Teaching and research supervision
  I supervise and co-supervise doctoral research on solar forecasting, satellite imagery, parsimonious models, energy-system control and radioiodine modeling. Previous doctoral work includes solar forecasting, air quality and solar-potential estimation.
  At Mines Paris–PSL, my teaching includes solar resource forecasting and academic tutoring of international internships and gap years (UE45). Earlier teaching spans biostatistics, thermodynamics, biophysics and numerical modeling at the University of Corsica.
@@ -1134,6 +1161,7 @@ Enseignement
  Deux séances d'exercices dirigés corrigées pas à pas (18 exercices).
  Ouvrir le cours →
  Une partie du cours est issue du travail du professeur Pierre Peretti, Université Pierre-et-Marie-Curie (Paris), aujourd'hui retraité.
+ Archivé et citable sur Zenodo, DOI 10.5281/zenodo.23620487
  Physique industrielle : thermodynamique, vapeur d'eau et production de froid
  B.U.T. Génie biologique, Sciences de l'aliment et biotechnologie, 2ᵉ année · 5 chapitres, 139 diapositives et un polycopié · CC BY 4.0
  La thermodynamique d'un technicien de l'agroalimentaire, jusqu'au fonctionnement d'une machine frigorifique.
@@ -1148,6 +1176,7 @@ Enseignement
  Un polycopié rédigé en cinq chapitres accompagne les diaporamas.
  Ouvrir le cours →
  La partie sur le froid industriel a été préparée avec l'aide de Gilles Notton , Université de Corse.
+ Archivé et citable sur Zenodo, DOI 10.5281/zenodo.23620537
  Bases de thermique pour le génie industriel alimentaire
  B.U.T. Génie biologique, Sciences de l'aliment et biotechnologie, 1ʳᵉ année · 24 diapositives · CC BY 4.0
  Comment la chaleur traverse un aliment, et ce qu'il faut pour le refroidir ou le congeler.
@@ -1161,6 +1190,7 @@ Enseignement
  Le bilan énergétique : température à cœur (conduction) et en surface (convection) au cours du temps.
  Ouvrir le cours →
  La partie sur la congélation des aliments a été préparée avec l'aide de Gilles Notton , Université de Corse.
+ Archivé et citable sur Zenodo, DOI 10.5281/zenodo.23621246
  Enseignement et encadrement de la recherche
  J'encadre et je co-encadre des thèses sur la prévision solaire, l'imagerie satellite, les modèles parcimonieux, le pilotage des systèmes énergétiques et la modélisation de l'iode radioactif. Les thèses précédentes portaient sur la prévision solaire, la qualité de l'air et l'estimation du potentiel solaire.
  À Mines Paris – PSL, j'enseigne la prévision de la ressource solaire et j'assure le tutorat académique des stages et années de césure à l'international (UE45). Auparavant, à l'Université de Corse, j'ai enseigné les biostatistiques, la thermodynamique, la biophysique et la modélisation numérique.
@@ -1447,6 +1477,12 @@ Bases de thermique pour le génie industriel alimentaire : transferts, refroidis
 Ce que contient le cours
 B.U.T. Génie biologique, Sciences de l'aliment et biotechnologie, 1ʳᵉ année · 24 diapositives · CC BY 4.0
 Comment la chaleur traverse un aliment, et ce qu'il faut pour le refroidir ou le congeler.
+Objectif
+Dimensionner le refroidissement ou la congélation d'un aliment.
+Prérequis
+Les unités (W, J, K) et la lecture d'une exponentielle.
+Parcours conseillé
+Les modes de transfert et le nombre de Biot avec l'outil de refroidissement, puis la congélation avec l'outil de puissance frigorifique, puis le bilan énergétique.
 Les trois modes d'échange : conduction, convection, rayonnement.
 Les concepts fondamentaux : surfaces isothermes, flux et densité de flux thermique.
 La conduction : loi de Fourier, résistance thermique de conduction.
@@ -1458,6 +1494,8 @@ Le bilan énergétique : température à cœur (conduction) et en surface (conve
 La partie sur la congélation des aliments a été préparée avec l'aide de
 Gilles Notton
 , Université de Corse.
+Archivé et citable sur Zenodo, DOI
+10.5281/zenodo.23621246
 
 ---
 URL: https://www.cyrilvoyant.com/fr/enseignement/bases-thermiques-aliments/cours/
@@ -1544,6 +1582,12 @@ Biostatistique pour les études de santé : le cours en trois chapitres
 Ce que contient le cours
 Première année des études de santé (PASS, UE8) · 3 chapitres, 246 diapositives · CC BY 4.0
 Les outils statistiques dont un futur soignant a besoin pour lire une étude, interpréter un test et décider avec des données.
+Objectif
+Lire une étude, interpréter un test diagnostique et choisir un test statistique simple.
+Prérequis
+Les mathématiques du lycée : fractions, puissances, lecture de graphiques.
+Parcours conseillé
+Chapitre 1 (probabilités, Bayes, courbe ROC avec l'outil interactif), chapitre 2 (loi normale avec la table interactive, tests), chapitre 3 (corrélation, régression, khi-deux). Chaque chapitre : le résumé en 10 points, le diaporama, puis la FAQ.
 Pourquoi la statistique en santé : variabilité, ajustement thérapeutique, corrélation et causalité, variables cachées.
 Les probabilités : expérience aléatoire, événements, dénombrement, probabilités conditionnelles, approche bayésienne.
 Les tests diagnostiques : tableau de contingence, sensibilité, spécificité, valeurs prédictives, courbes ROC.
@@ -1712,6 +1756,12 @@ Cours de prévision solaire : prévoir la ressource solaire intermittente
 Ce que contient le cours
 Mines Paris – PSL, cycle ingénieur civil, projet de recherche appliquée UE14 · 59 diapositives · français et anglais · CC BY 4.0
 Comment prévoir l'éclairement solaire à une heure, sur dix ans de mesures réelles d'Ajaccio, en n'ajoutant de la complexité que si elle paie.
+Objectif
+Prévoir l'éclairement à une heure et dire si un modèle bat une référence simple.
+Prérequis
+Notions de séries temporelles et de régression linéaire ; un tableur ou Python suffit.
+Parcours conseillé
+Le signal et l'indice de ciel clair, puis les références à battre (persistance), puis l'autorégression, puis les ELM ; terminer par l'évaluation (nRMSE, NICE).
 Le signal solaire : géométrie, ciel clair et indice de ciel clair (écart additif), ce qui est prévisible et ce qui ne l'est pas.
 Les données : dix ans de mesures horaires, contrôle qualité, traitement du jour et de la nuit.
 Les références à battre : persistance simple, persistance intelligente, climatologie.
@@ -1729,6 +1779,12 @@ Physique industrielle : thermodynamique, vapeur d'eau et production de froid
 Ce que contient le cours
 B.U.T. Génie biologique, Sciences de l'aliment et biotechnologie, 2ᵉ année · 5 chapitres, 139 diapositives et un polycopié · CC BY 4.0
 La thermodynamique d'un technicien de l'agroalimentaire, jusqu'au fonctionnement d'une machine frigorifique.
+Objectif
+Lire un diagramme de Mollier et calculer le COP d'une machine frigorifique.
+Prérequis
+Les unités de pression et de température, la notion d'énergie ; le cours de thermique de 1re année aide.
+Parcours conseillé
+Chapitres 1 à 3 dans l'ordre (grandeurs, gaz et diagrammes, vapeur d'eau), puis les cycles moteurs, puis les cycles frigorifiques avec l'outil COP. Le polycopié reprend chaque chapitre.
 Les grandeurs : pression, température, travail et chaleur ; chaleur sensible et chaleur latente.
 Les changements d'état : évaporation, ébullition, point triple, condensation.
 Gaz parfaits et gaz réels ; enthalpie et entropie.
@@ -1741,6 +1797,8 @@ Un polycopié rédigé en cinq chapitres accompagne les diaporamas.
 La partie sur le froid industriel a été préparée avec l'aide de
 Gilles Notton
 , Université de Corse.
+Archivé et citable sur Zenodo, DOI
+10.5281/zenodo.23620537
 
 ---
 URL: https://www.cyrilvoyant.com/fr/enseignement/physique-industrielle/cycles-frigorifiques/
@@ -2028,6 +2086,12 @@ Physique pour les études de santé : ondes électromagnétiques, rayons X et im
 Ce que contient le cours
 Première année des études de santé (PASS-PACES), bases physiques des explorations médicales · cours de 110 diapositives et 2 séances d'exercices corrigées · CC BY 4.0
 Les bases physiques de l'imagerie médicale, de l'onde au scanner.
+Objectif
+Relier l'énergie d'un photon à son interaction avec les tissus, et comprendre le contraste d'une radiographie.
+Prérequis
+Les puissances de dix, l'exponentielle et le logarithme ; la notion d'énergie.
+Parcours conseillé
+Le cours (ondes, atome, rayons X, interactions, imagerie) avec l'outil d'atténuation, puis les exercices dirigés 1 et 2, corrigés pas à pas.
 La nature des ondes électromagnétiques : célérité, onde sinusoïdale, vecteur d'onde.
 La dualité onde-particule : énergie du photon E = hν, l'électron-volt.
 Le spectre électromagnétique et ses gammes d'énergie.
@@ -2038,6 +2102,8 @@ Les interactions photons-matière : effet photoélectrique, effet Compton, créa
 L'imagerie : contraste, radiologie conventionnelle, scanner X et fenêtrage.
 Deux séances d'exercices dirigés corrigées pas à pas (18 exercices).
 Une partie du cours est issue du travail du professeur Pierre Peretti, Université Pierre-et-Marie-Curie (Paris), aujourd'hui retraité.
+Archivé et citable sur Zenodo, DOI
+10.5281/zenodo.23620487
 
 ---
 URL: https://www.cyrilvoyant.com/fr/enseignement/physique-pass/ed1-corrige/

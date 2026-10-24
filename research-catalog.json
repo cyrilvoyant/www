@@ -1529,6 +1529,18 @@
           "anchor": null
         },
         {
+          "title": "Refroidir un aliment : Biot, température moyenne et à cœur",
+          "anchor": null
+        },
+        {
+          "title": "Congeler : énergie et puissance frigorifique",
+          "anchor": null
+        },
+        {
+          "title": "Machine frigorifique : borne de Carnot du COP",
+          "anchor": null
+        },
+        {
           "title": "Préparer un plan d’action RTVACOS",
           "anchor": null
         },
@@ -1538,6 +1550,596 @@
         },
         {
           "title": "Explorer un choix de licence",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/outils/artu/",
+      "title": "Explorer les coefficients et la table ARTU",
+      "language": "fr",
+      "topics": [],
+      "citations": [
+        {
+          "@type": "ScholarlyArticle",
+          "name": "Benchmarks for solar radiation time series forecasting",
+          "sameAs": "https://doi.org/10.1016/j.renene.2022.04.065",
+          "author": [
+            {
+              "@type": "Person",
+              "name": "Cyril Voyant",
+              "@id": "https://person.cyrilvoyant.com/#cyril-voyant"
+            },
+            {
+              "@type": "Person",
+              "name": "Gilles Notton",
+              "sameAs": "https://orcid.org/0000-0002-6267-9632"
+            },
+            {
+              "@type": "Person",
+              "name": "Jean-Laurent Duchaud",
+              "sameAs": "https://orcid.org/0000-0001-7490-7260"
+            },
+            {
+              "@type": "Person",
+              "name": "Luis Antonio García Gutiérrez",
+              "sameAs": "https://orcid.org/0000-0002-3480-1784"
+            },
+            {
+              "@type": "Person",
+              "name": "Jamie M. Bright"
+            },
+            {
+              "@type": "Person",
+              "name": "Dazhi Yang",
+              "sameAs": "https://orcid.org/0000-0003-2162-6873"
+            }
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "title": "Essayer dans le navigateur",
+          "anchor": null
+        },
+        {
+          "title": "Comprendre les paramètres et les limites",
+          "anchor": null
+        },
+        {
+          "title": "Travaux et équipes de référence",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/outils/blend/",
+      "title": "Calculer les poids de BLEND",
+      "language": "fr",
+      "topics": [],
+      "citations": [
+        {
+          "@type": "ScholarlyArticle",
+          "name": "Symmetry-constrained forecasting of periodically correlated energy processes",
+          "identifier": "https://doi.org/10.1016/j.apm.2026.116988",
+          "url": "https://doi.org/10.1016/j.apm.2026.116988",
+          "author": [
+            {
+              "@id": "https://person.cyrilvoyant.com/#cyril-voyant"
+            },
+            {
+              "@type": "Person",
+              "name": "Candice Banes",
+              "sameAs": "https://orcid.org/0009-0003-6656-8168"
+            },
+            {
+              "@type": "Person",
+              "name": "Luis Garcia-Gutierrez",
+              "sameAs": "https://orcid.org/0000-0002-3480-1784"
+            },
+            {
+              "@type": "Person",
+              "name": "Gilles Notton",
+              "sameAs": "https://orcid.org/0000-0002-6267-9632"
+            },
+            {
+              "@type": "Person",
+              "name": "Milan Despotovic",
+              "sameAs": "https://orcid.org/0000-0003-3144-5945"
+            },
+            {
+              "@type": "Person",
+              "name": "Zaher Mundher Yaseen",
+              "sameAs": "https://orcid.org/0000-0003-3344-214X"
+            }
+          ],
+          "isPartOf": {
+            "@type": "Periodical",
+            "name": "Applied Mathematical Modelling"
+          },
+          "datePublished": "2026"
+        },
+        {
+          "@type": "ScholarlyArticle",
+          "name": "Benchmarks for solar radiation time series forecasting",
+          "identifier": "https://doi.org/10.1016/j.renene.2022.04.065",
+          "url": "https://doi.org/10.1016/j.renene.2022.04.065",
+          "author": [
+            {
+              "@id": "https://person.cyrilvoyant.com/#cyril-voyant"
+            },
+            {
+              "@type": "Person",
+              "name": "Gilles Notton",
+              "sameAs": "https://orcid.org/0000-0002-6267-9632"
+            },
+            {
+              "@type": "Person",
+              "name": "Jean-Laurent Duchaud",
+              "sameAs": "https://orcid.org/0000-0001-7490-7260"
+            },
+            {
+              "@type": "Person",
+              "name": "Luis Antonio Garcia-Gutierrez",
+              "sameAs": "https://orcid.org/0000-0002-3480-1784"
+            },
+            {
+              "@type": "Person",
+              "name": "Jamie M. Bright",
+              "sameAs": "https://orcid.org/0000-0002-9465-3453"
+            },
+            {
+              "@type": "Person",
+              "name": "Dazhi Yang",
+              "sameAs": "https://orcid.org/0000-0003-2162-6873"
+            }
+          ],
+          "isPartOf": {
+            "@type": "Periodical",
+            "name": "Renewable Energy"
+          },
+          "datePublished": "2022"
+        }
+      ],
+      "sections": [
+        {
+          "title": "Essayer dans le navigateur",
+          "anchor": null
+        },
+        {
+          "title": "Comprendre les paramètres et les limites",
+          "anchor": null
+        },
+        {
+          "title": "Travaux et équipes de référence",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/outils/doses-lq-lql/",
+      "title": "Comparer les doses biologiques LQ et LQL",
+      "language": "fr",
+      "topics": [],
+      "citations": [
+        {
+          "@type": "ScholarlyArticle",
+          "@id": "https://doi.org/10.1016/j.softx.2026.103085",
+          "name": "LQL-Equiv-web: a Python library and browser application for linear-quadratic-linear dose equivalence in radiotherapy",
+          "datePublished": "2026",
+          "isPartOf": {
+            "@type": "Periodical",
+            "name": "SoftwareX"
+          },
+          "author": [
+            {
+              "@type": "Person",
+              "@id": "https://person.cyrilvoyant.com/#cyril-voyant",
+              "name": "Cyril Voyant",
+              "url": "https://person.cyrilvoyant.com/"
+            },
+            {
+              "@type": "Person",
+              "name": "Daniel Julian"
+            }
+          ]
+        },
+        {
+          "@type": "ScholarlyArticle",
+          "@id": "https://doi.org/10.1016/j.meddos.2026.08.002",
+          "name": "Dose equivalence calculation in radiotherapy: a call for standardization",
+          "datePublished": "2026",
+          "isPartOf": {
+            "@type": "Periodical",
+            "name": "Medical Dosimetry"
+          },
+          "author": [
+            {
+              "@type": "Person",
+              "@id": "https://person.cyrilvoyant.com/#cyril-voyant",
+              "name": "Cyril Voyant",
+              "url": "https://person.cyrilvoyant.com/"
+            },
+            {
+              "@type": "Person",
+              "name": "Daniel Julian"
+            }
+          ]
+        },
+        {
+          "@type": "ScholarlyArticle",
+          "@id": "https://doi.org/10.1016/j.clon.2025.103893",
+          "name": "Improving clinical decision-making in radiotherapy: a comparative analysis of linear-quadratic (LQ) and linear-quadratic-linear (LQL) dose models",
+          "datePublished": "2025",
+          "isPartOf": {
+            "@type": "Periodical",
+            "name": "Clinical Oncology"
+          },
+          "author": [
+            {
+              "@type": "Person",
+              "@id": "https://person.cyrilvoyant.com/#cyril-voyant",
+              "name": "Cyril Voyant",
+              "url": "https://person.cyrilvoyant.com/"
+            },
+            {
+              "@type": "Person",
+              "name": "D. Julian"
+            },
+            {
+              "@type": "Person",
+              "name": "S. Muraro"
+            },
+            {
+              "@type": "Person",
+              "name": "V. Bodez"
+            },
+            {
+              "@type": "Person",
+              "name": "M. Pinpin"
+            },
+            {
+              "@type": "Person",
+              "name": "D. Leschi"
+            },
+            {
+              "@type": "Person",
+              "name": "R. Oozeer"
+            },
+            {
+              "@type": "Person",
+              "name": "G. Wided"
+            },
+            {
+              "@type": "Person",
+              "name": "M.-A. Acquaviva"
+            },
+            {
+              "@type": "Person",
+              "name": "S. Prapant"
+            },
+            {
+              "@type": "Person",
+              "name": "O. Gahbiche"
+            },
+            {
+              "@type": "Person",
+              "name": "N. Bouaouina"
+            }
+          ]
+        },
+        {
+          "@type": "ScholarlyArticle",
+          "@id": "https://doi.org/10.1016/j.rpor.2013.08.004",
+          "name": "Biological effects and equivalent doses in radiotherapy: a software solution",
+          "datePublished": "2014",
+          "isPartOf": {
+            "@type": "Periodical",
+            "name": "Reports of Practical Oncology and Radiotherapy"
+          },
+          "author": [
+            {
+              "@type": "Person",
+              "@id": "https://person.cyrilvoyant.com/#cyril-voyant",
+              "name": "Cyril Voyant",
+              "url": "https://person.cyrilvoyant.com/"
+            },
+            {
+              "@type": "Person",
+              "name": "D. Julian"
+            },
+            {
+              "@type": "Person",
+              "name": "R. Roustit"
+            },
+            {
+              "@type": "Person",
+              "name": "K. Biffi"
+            },
+            {
+              "@type": "Person",
+              "name": "C. Lantieri"
+            }
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "title": "Essayer dans le navigateur",
+          "anchor": null
+        },
+        {
+          "title": "Comprendre les paramètres et les limites",
+          "anchor": null
+        },
+        {
+          "title": "Travaux et équipes de référence",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/outils/indice-gamma/",
+      "title": "Déplacer une prévision et observer l’indice γ",
+      "language": "fr",
+      "topics": [],
+      "citations": [
+        {
+          "@type": "ScholarlyArticle",
+          "name": "A tolerance-based framework for spatiotemporal forecast validation using the γ-index",
+          "identifier": "https://doi.org/10.1016/j.ijforecast.2026.03.002",
+          "url": "https://doi.org/10.1016/j.ijforecast.2026.03.002",
+          "author": {
+            "@id": "https://person.cyrilvoyant.com/#cyril-voyant"
+          },
+          "isPartOf": {
+            "@type": "Periodical",
+            "name": "International Journal of Forecasting"
+          },
+          "datePublished": "2026",
+          "pagination": "1207–1214"
+        }
+      ],
+      "sections": [
+        {
+          "title": "Essayer dans le navigateur",
+          "anchor": null
+        },
+        {
+          "title": "Comprendre les paramètres et les limites",
+          "anchor": null
+        },
+        {
+          "title": "Travaux et équipes de référence",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/outils/modele-thyroide/",
+      "title": "Explorer les profils du modèle thyroïde",
+      "language": "fr",
+      "topics": [],
+      "citations": [
+        {
+          "@type": "ScholarlyArticle",
+          "@id": "https://doi.org/10.1038/s41598-026-56267-1",
+          "name": "A computational framework for optimizing radioiodine therapy protocols in metastatic thyroid cancer",
+          "datePublished": "2026",
+          "isPartOf": {
+            "@type": "Periodical",
+            "name": "Scientific Reports"
+          },
+          "author": [
+            {
+              "@type": "Person",
+              "givenName": "Marie",
+              "familyName": "Fusella Giuntini",
+              "name": "Marie Fusella Giuntini"
+            },
+            {
+              "@type": "Person",
+              "givenName": "Cyril",
+              "familyName": "Voyant",
+              "name": "Cyril Voyant",
+              "@id": "https://person.cyrilvoyant.com/#cyril-voyant"
+            },
+            {
+              "@type": "Person",
+              "givenName": "David",
+              "familyName": "Taieb",
+              "name": "David Taieb"
+            },
+            {
+              "@type": "Person",
+              "givenName": "Dominique",
+              "familyName": "Barbolosi",
+              "name": "Dominique Barbolosi"
+            }
+          ]
+        },
+        {
+          "@type": "ScholarlyArticle",
+          "@id": "https://doi.org/10.26717/BJSTR.2025.62.009789",
+          "name": "Computational Modeling and Trends in RAI Therapy for Thyroid Cancer: A Field with Clinical Promise",
+          "datePublished": "2025",
+          "isPartOf": {
+            "@type": "Periodical",
+            "name": "Biomedical Journal of Scientific & Technical Research"
+          },
+          "author": [
+            {
+              "@type": "Person",
+              "name": "Marie Fusella Giuntini"
+            },
+            {
+              "@type": "Person",
+              "name": "Cyril Voyant",
+              "@id": "https://person.cyrilvoyant.com/#cyril-voyant"
+            },
+            {
+              "@type": "Person",
+              "name": "David Taieb"
+            },
+            {
+              "@type": "Person",
+              "name": "Dominique Barbolosi"
+            }
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "title": "Essayer dans le navigateur",
+          "anchor": null
+        },
+        {
+          "title": "Comprendre les paramètres et les limites",
+          "anchor": null
+        },
+        {
+          "title": "Travaux et équipes de référence",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/outils/nice/",
+      "title": "Comparer une prévision à la persistance : NICE",
+      "language": "fr",
+      "topics": [],
+      "citations": [
+        {
+          "@type": "ScholarlyArticle",
+          "name": "NICE k metrics: Unified and multidimensional framework for evaluating deterministic solar forecasting accuracy",
+          "identifier": "https://doi.org/10.1016/j.seta.2025.104588",
+          "url": "https://doi.org/10.1016/j.seta.2025.104588",
+          "author": [
+            {
+              "@type": "Person",
+              "name": "Cyril Voyant",
+              "@id": "https://person.cyrilvoyant.com/#cyril-voyant"
+            },
+            {
+              "@type": "Person",
+              "name": "Milan Despotovic",
+              "sameAs": "https://orcid.org/0000-0003-3144-5945"
+            },
+            {
+              "@type": "Person",
+              "name": "Luis Garcia-Gutierrez",
+              "sameAs": "https://orcid.org/0000-0002-3480-1784"
+            },
+            {
+              "@type": "Person",
+              "name": "Rodrigo Amaro e Silva",
+              "sameAs": "https://orcid.org/0000-0002-2813-150X"
+            },
+            {
+              "@type": "Person",
+              "name": "Philippe Lauret",
+              "sameAs": "https://orcid.org/0000-0003-2959-6146"
+            },
+            {
+              "@type": "Person",
+              "name": "Ted Soubdhan",
+              "sameAs": "https://orcid.org/0000-0002-6402-8438"
+            },
+            {
+              "@type": "Person",
+              "name": "Nadjem Bailek",
+              "sameAs": "https://orcid.org/0000-0001-9051-8548"
+            }
+          ],
+          "datePublished": "2025"
+        }
+      ],
+      "sections": [
+        {
+          "title": "Essayer dans le navigateur",
+          "anchor": null
+        },
+        {
+          "title": "Comprendre les paramètres et les limites",
+          "anchor": null
+        },
+        {
+          "title": "Travaux et équipes de référence",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/outils/variabilite-previsibilite/",
+      "title": "Mesurer variabilité et prévisibilité : sCV et F",
+      "language": "fr",
+      "topics": [],
+      "citations": [
+        {
+          "@type": "ScholarlyArticle",
+          "name": "Stochastic coefficient of variation: Assessing the variability and forecastability of solar irradiance",
+          "url": "https://doi.org/10.1016/j.renene.2025.123913",
+          "datePublished": "2026",
+          "isPartOf": {
+            "@type": "Periodical",
+            "name": "Renewable Energy"
+          },
+          "author": [
+            {
+              "@type": "Person",
+              "name": "Cyril Voyant",
+              "sameAs": "https://orcid.org/0000-0003-0242-7377",
+              "@id": "https://person.cyrilvoyant.com/#cyril-voyant"
+            },
+            {
+              "@type": "Person",
+              "name": "Alan Julien",
+              "sameAs": "https://orcid.org/0009-0003-0247-0663"
+            },
+            {
+              "@type": "Person",
+              "name": "Milan Despotovic",
+              "sameAs": "https://orcid.org/0000-0003-3144-5945"
+            },
+            {
+              "@type": "Person",
+              "name": "Gilles Notton",
+              "sameAs": "https://orcid.org/0000-0002-6267-9632"
+            },
+            {
+              "@type": "Person",
+              "name": "Luis Antonio Garcia-Gutierrez",
+              "sameAs": "https://orcid.org/0000-0002-3480-1784"
+            },
+            {
+              "@type": "Person",
+              "name": "Claudio Francesco Nicolosi",
+              "sameAs": "https://orcid.org/0009-0001-2962-6643"
+            },
+            {
+              "@type": "Person",
+              "name": "Philippe Blanc",
+              "sameAs": "https://orcid.org/0000-0002-6345-0004"
+            },
+            {
+              "@type": "Person",
+              "name": "Jamie Bright",
+              "sameAs": "https://orcid.org/0000-0002-9465-3453"
+            }
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "title": "Essayer dans le navigateur",
+          "anchor": null
+        },
+        {
+          "title": "Comprendre les paramètres et les limites",
+          "anchor": null
+        },
+        {
+          "title": "Travaux et équipes de référence",
           "anchor": null
         }
       ]
@@ -2936,6 +3538,18 @@
         },
         {
           "title": "Explore attenuation and half-value layers",
+          "anchor": null
+        },
+        {
+          "title": "Cool a food: Biot number, mean and core temperature",
+          "anchor": null
+        },
+        {
+          "title": "Freezing: energy and refrigeration power",
+          "anchor": null
+        },
+        {
+          "title": "Refrigerator: Carnot bound of the COP",
           "anchor": null
         },
         {

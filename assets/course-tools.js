@@ -164,7 +164,127 @@
     [cC, cX].forEach(function (c) { c.i.addEventListener("input", draw); }); draw();
   }
 
-  var T = { roc: roc, normal: normal, atten: atten };
+
+  /* ---- Thermal tools (24/10/2026), for the courses "Bases thermiques des aliments" and "Physique industrielle".
+     Formulas of the course: Bi = h Lc / λ ; uniform temperature (Bi < 0.1): T(t) = T∞ + (Ti − T∞) e^(−t/τ), τ = ρ cp Lc / h ;
+     freezing: Δh = cp,frais (Ti − Tc) + w·g·L + cp,congelé (Tc − Tf), P = m Δh / Δt ; Carnot bound of a refrigerator: COP = Tf/(Tc − Tf). */
+  CT.lumped = function (h, lam, Lc, rho, cp, Ti, Tinf, t) {
+    var tau = rho * cp * Lc / h;
+    return { bi: h * Lc / lam, tau: tau, T: Tinf + (Ti - Tinf) * Math.exp(-t / tau) };
+  };
+  CT.freeze = function (m, w, g, Ti, Tc, Tf, cpf, cpc, L, dt) {   // kJ/kg/K, kJ/kg, h
+    var a = cpf * (Ti - Tc), b = w * g * L, c = cpc * (Tc - Tf), dh = a + b + c;
+    return { a: a, b: b, c: c, dh: dh, P: m * dh / (dt * 3600) };   // kW
+  };
+  CT.copCarnot = function (tf, tc) { var Tf = tf + 273.15, Tc = tc + 273.15; return Tf / (Tc - Tf); };
+
+  /* core temperature of a slab of half-thickness L (= V/A), first term of the series:
+     θ/θi = C1·exp(−ζ1²·Fo)·cos(ζ1·x/L), ζ1·tan ζ1 = Bi, C1 = 4 sin ζ1/(2ζ1 + sin 2ζ1), Fo = α t/L², α = λ/(ρ cp). Valid for Fo > 0.2. */
+  CT.slab = function (bi) {
+    var a = 1e-9, b = Math.PI / 2 - 1e-9;
+    for (var k = 0; k < 80; k++) { var m = (a + b) / 2; if (m * Math.tan(m) < bi) a = m; else b = m; }
+    var z = (a + b) / 2;
+    return { z: z, C: 4 * Math.sin(z) / (2 * z + Math.sin(2 * z)) };
+  };
+  CT.core = function (h, lam, L, rho, cp, Ti, Tinf, t) {
+    var s = CT.slab(h * L / lam), fo = lam / (rho * cp) * t / (L * L), th = Math.min(1, s.C * Math.exp(-s.z * s.z * fo));
+    return { T: Tinf + (Ti - Tinf) * th, Ts: Tinf + (Ti - Tinf) * th * Math.cos(s.z), fo: fo };
+  };
+
+  function biot(box) {
+    box.appendChild(h("h3", {}, "Refroidir un aliment : nombre de Biot, température moyenne et température à cœur"));
+    box.appendChild(h("p", { "class": "muted" }, "Bi = h·Lc/λ compare la résistance interne (Lc/λ) à la résistance de surface (1/h). Modèle simple, température uniforme : T(t) = T∞ + (Ti − T∞)·e<sup>−t/τ</sup>, τ = ρ·cp·Lc/h, où λ n'intervient pas. Courbe à cœur : conduction transitoire dans une plaque d'épaisseur 2·Lc (premier terme de la série), qui dépend de λ."));
+    var W = 320, H = 150, sv = el("svg", { viewBox: "0 0 " + W + " " + H, "class": "ct-svg", role: "img", "aria-label": "Température moyenne et à cœur de l'aliment au cours du temps" }, box);
+    var cH = slider("h (W/m²·K)", 5, 300, 1, 25, function (v) { return f(v, 0); }),
+        cL = slider("Lc = V/A (cm)", 0.2, 10, 0.1, 2, function (v) { return f(v, 1) + " cm"; }),
+        cK = slider("λ (W/m·K)", 0.1, 2, 0.05, 0.5, function (v) { return f(v, 2); }),
+        cTi = slider("Ti (°C)", 0, 90, 1, 60, function (v) { return f(v, 0) + " °C"; }),
+        cTe = slider("T∞ (°C)", -30, 20, 1, 2, function (v) { return f(v, 0) + " °C"; });
+    var ctl = h("div", { "class": "ct-ctl" }); [cH, cL, cK, cTi, cTe].forEach(function (c) { ctl.appendChild(c.w); }); box.appendChild(ctl);
+    var leg = h("p", { "class": "muted ct-leg" }, '<span class="sw2"></span> température uniforme (modèle simple) &nbsp; <span class="sw3"></span> à cœur (conduction) &nbsp; <span class="sw4"></span> en surface');
+    box.appendChild(leg);
+    var out = h("p", { "class": "ct-out", "aria-live": "polite" }); box.appendChild(out);
+    var rho = 1050, cp = 3600;
+    var cur = el("path", { "class": "ct-l2" }, sv), core = el("path", { "class": "ct-l3" }, sv), surf = el("path", { "class": "ct-l4" }, sv), ax = el("g", {}, sv);
+    function t90core(hh, lam, L, Ti, Te) {          // first time the core has covered 90 % of the gap
+      var s = CT.slab(hh * L / lam), a = lam / (rho * cp);
+      return Math.max(0, Math.log(s.C / 0.1) / (s.z * s.z)) * L * L / a;
+    }
+    function draw() {
+      var hh = +cH.i.value, Lc = +cL.i.value / 100, lam = +cK.i.value, Ti = +cTi.i.value, Te = +cTe.i.value;
+      var r0 = CT.lumped(hh, lam, Lc, rho, cp, Ti, Te, 0), t90 = r0.tau * Math.log(10), tc90 = t90core(hh, lam, Lc, Ti, Te);
+      var tmax = 1.6 * Math.max(t90, tc90), lo = Math.min(Ti, Te), hi = Math.max(Ti, Te);
+      var X = function (t) { return 36 + (W - 46) * t / tmax; }, Y = function (T) { return 10 + (H - 34) * (hi - T) / ((hi - lo) || 1); };
+      var A = [], B = [], C = [];
+      for (var k = 0; k <= 120; k++) {
+        var t = tmax * k / 120, c = CT.core(hh, lam, Lc, rho, cp, Ti, Te, t);
+        A.push([X(t), Y(CT.lumped(hh, lam, Lc, rho, cp, Ti, Te, t).T)]); B.push([X(t), Y(c.T)]); C.push([X(t), Y(c.Ts)]);
+      }
+      cur.setAttribute("d", path(A)); core.setAttribute("d", path(B)); surf.setAttribute("d", path(C));
+      while (ax.firstChild) ax.removeChild(ax.firstChild);
+      el("line", { x1: 36, y1: Y(lo), x2: W - 10, y2: Y(lo), "class": "ct-ax" }, ax);
+      [hi, lo].forEach(function (T) { el("text", { x: 32, y: Y(T) + 4, "class": "ct-axl", "text-anchor": "end" }, ax).textContent = f(T, 0) + "°"; });
+      el("text", { x: W - 10, y: H - 6, "class": "ct-axl", "text-anchor": "end" }, ax).textContent = f(tmax / 3600, 1) + " h";
+      var ok = r0.bi < 0.1;
+      out.innerHTML = "Bi = <b>" + f(r0.bi, 3) + "</b> · 90 % de l'écart rattrapé : <b>" + f(t90 / 60, 0) + " min</b> selon le modèle simple, <b>" + f(tc90 / 60, 0) +
+        " min</b> à cœur.<br>" + (ok ? "Bi &lt; 0,1 : la température reste presque uniforme ; les deux courbes se confondent et le modèle simple suffit."
+        : "<b>Bi ≥ 0,1 : le cœur reste en retard sur la surface</b> ; le modèle simple sous-estime le temps à cœur. Augmentez λ ou diminuez Lc pour voir les courbes se rapprocher.") +
+        " (ρ = 1050 kg/m³, cp = 3,6 kJ/kg·K ; la courbe à cœur, premier terme de la série, n'est exacte qu'après le tout début du refroidissement, Fo &gt; 0,2.)";
+      box.classList.toggle("ct-warn", !ok);
+    }
+    [cH, cL, cK, cTi, cTe].forEach(function (c) { c.i.addEventListener("input", draw); }); draw();
+  }
+
+  function congel(box) {
+    box.appendChild(h("h3", {}, "Congeler : d'où vient l'énergie à extraire ?"));
+    box.appendChild(h("p", { "class": "muted" }, "Δh = cp,frais·(Ti − Tc) + w·g·L + cp,congelé·(Tc − Tf) et P = m·Δh/Δt. w : teneur en eau, g : part de l'eau qui gèle (toute l'eau ne gèle pas), L = 333 kJ/kg."));
+    var cM = slider("Masse (kg)", 10, 2000, 10, 500, function (v) { return f(v, 0) + " kg"; }),
+        cW = slider("Teneur en eau w", 0.5, 0.95, 0.01, 0.75, function (v) { return f(v * 100, 0) + " %"; }),
+        cG = slider("Part de l'eau gelée g", 0.6, 1, 0.01, 0.9, function (v) { return f(v * 100, 0) + " %"; }),
+        cTi = slider("Ti (°C)", 0, 40, 1, 15, function (v) { return f(v, 0) + " °C"; }),
+        cTc = slider("Début de congélation Tc (°C)", -5, 0, 0.1, -1.5, function (v) { return f(v, 1) + " °C"; }),
+        cTf = slider("Température finale Tf (°C)", -40, -5, 1, -18, function (v) { return f(v, 0) + " °C"; }),
+        cDt = slider("Durée Δt (h)", 0.5, 24, 0.5, 4, function (v) { return f(v, 1) + " h"; });
+    var ctl = h("div", { "class": "ct-ctl" }); [cM, cW, cG, cTi, cTc, cTf, cDt].forEach(function (c) { ctl.appendChild(c.w); }); box.appendChild(ctl);
+    var bar = h("div", { "class": "ct-stack", "aria-hidden": "true" }); box.appendChild(bar);
+    var out = h("p", { "class": "ct-out", "aria-live": "polite" }); box.appendChild(out);
+    function draw() {
+      var r = CT.freeze(+cM.i.value, +cW.i.value, +cG.i.value, +cTi.i.value, +cTc.i.value, +cTf.i.value, 3.6, 1.8, 333, +cDt.i.value);
+      var p = function (x) { return (100 * x / r.dh).toFixed(1) + "%"; };
+      var q = function (x) { return (100 * x / r.dh).toFixed(0) + " %"; };
+      bar.innerHTML = '<i class="s1" style="width:' + p(r.a) + '"></i><i class="s2" style="width:' + p(r.b) + '"></i><i class="s3" style="width:' + p(r.c) + '"></i>';
+      out.innerHTML = "Δh = <b>" + f(r.dh, 0) + " kJ/kg</b> : refroidissement du produit frais " + f(r.a, 0) + " (" + q(r.a) + "), <b>chaleur latente " + f(r.b, 0) +
+        " (" + q(r.b) + ")</b>, refroidissement du produit congelé " + f(r.c, 0) + " (" + q(r.c) + ").<br>Puissance frigorifique moyenne : <b>" + f(r.P, 1) +
+        " kW</b> (cp,frais = 3,6 et cp,congelé = 1,8 kJ/kg·K, valeurs typiques ; pertes de l'installation non comptées).";
+    }
+    [cM, cW, cG, cTi, cTc, cTf, cDt].forEach(function (c) { c.i.addEventListener("input", draw); }); draw();
+  }
+
+  function cop(box) {
+    box.appendChild(h("h3", {}, "Machine frigorifique : la borne de Carnot du COP"));
+    box.appendChild(h("p", { "class": "muted" }, "COP<sub>C</sub> = Tf/(Tc − Tf), températures en kelvins. Aucune machine réelle ne l'atteint, mais elle montre pourquoi l'écart de température coûte cher."));
+    var W = 320, H = 150, sv = el("svg", { viewBox: "0 0 " + W + " " + H, "class": "ct-svg", role: "img", "aria-label": "COP de Carnot en fonction de la température froide" }, box);
+    var cF = slider("Évaporation Tf (°C)", -40, 10, 1, -10, function (v) { return f(v, 0) + " °C"; }),
+        cC = slider("Condensation Tc (°C)", 20, 60, 1, 40, function (v) { return f(v, 0) + " °C"; });
+    var ctl = h("div", { "class": "ct-ctl" }); ctl.appendChild(cF.w); ctl.appendChild(cC.w); box.appendChild(ctl);
+    var out = h("p", { "class": "ct-out", "aria-live": "polite" }); box.appendChild(out);
+    var X = function (t) { return 36 + (W - 46) * (t + 40) / 50; }, Y = function (c) { return 10 + (H - 34) * (1 - Math.min(c, 15) / 15); };
+    el("line", { x1: 36, y1: Y(0), x2: W - 10, y2: Y(0), "class": "ct-ax" }, sv);
+    [0, 5, 10, 15].forEach(function (c) { el("text", { x: 32, y: Y(c) + 4, "class": "ct-axl", "text-anchor": "end" }, sv).textContent = c; });
+    [-40, -20, 0, 10].forEach(function (t) { el("text", { x: X(t), y: H - 6, "class": "ct-axl", "text-anchor": "middle" }, sv).textContent = t + " °C"; });
+    var cur = el("path", { "class": "ct-l2" }, sv), pt = el("circle", { r: 4.5, "class": "ct-pt" }, sv);
+    function draw() {
+      var tf = +cF.i.value, tc = +cC.i.value, A = [];
+      for (var k = 0; k <= 100; k++) { var t = -40 + 50 * k / 100; A.push([X(t), Y(CT.copCarnot(t, tc))]); }
+      cur.setAttribute("d", path(A));
+      var c = CT.copCarnot(tf, tc); pt.setAttribute("cx", X(tf)); pt.setAttribute("cy", Y(c));
+      out.innerHTML = "COP de Carnot = <b>" + f(c, 2) + "</b> : au mieux " + f(c, 2) + " kJ de chaleur extraite par kJ de travail. Écart Tc − Tf = " + f(tc - tf, 0) +
+        " K. Congeler à −30 °C au lieu de conserver à 0 °C multiplie l'écart, donc le travail par kJ extrait.";
+    }
+    [cF, cC].forEach(function (c) { c.i.addEventListener("input", draw); }); draw();
+  }
+
+  var T = { roc: roc, normal: normal, atten: atten, biot: biot, congel: congel, cop: cop };
   function init() {
     var bs = document.querySelectorAll(".ctool[data-tool]");
     for (var i = 0; i < bs.length; i++) { var b = bs[i], fn = T[b.getAttribute("data-tool")]; if (fn && !b.childNodes.length) fn(b); }

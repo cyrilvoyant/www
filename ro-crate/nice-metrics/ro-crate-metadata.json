@@ -42,6 +42,9 @@
      "@id": "https://www.cyrilvoyant.com/fr/enseignement/cours-prevision-solaire/"
     },
     {
+     "@id": "https://www.cyrilvoyant.com/fr/outils/nice/"
+    },
+    {
      "@id": "https://www.cyrilvoyant.com/fr/vue-d-ensemble/"
     },
     {
@@ -107,6 +110,11 @@
    "@id": "https://www.cyrilvoyant.com/fr/enseignement/cours-prevision-solaire/",
    "@type": "WebPage",
    "name": "www.cyrilvoyant.com/fr/enseignement/cours-prevision-solaire/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/fr/outils/nice/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/fr/outils/nice/"
   },
   {
    "@id": "https://www.cyrilvoyant.com/fr/vue-d-ensemble/",

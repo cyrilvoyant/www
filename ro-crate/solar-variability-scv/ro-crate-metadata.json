@@ -45,6 +45,9 @@
      "@id": "https://www.cyrilvoyant.com/fr/enseignement/cours-prevision-solaire/"
     },
     {
+     "@id": "https://www.cyrilvoyant.com/fr/outils/variabilite-previsibilite/"
+    },
+    {
      "@id": "https://www.cyrilvoyant.com/fr/vue-d-ensemble/"
     },
     {
@@ -120,6 +123,11 @@
    "@id": "https://www.cyrilvoyant.com/fr/enseignement/cours-prevision-solaire/",
    "@type": "WebPage",
    "name": "www.cyrilvoyant.com/fr/enseignement/cours-prevision-solaire/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/fr/outils/variabilite-previsibilite/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/fr/outils/variabilite-previsibilite/"
   },
   {
    "@id": "https://www.cyrilvoyant.com/fr/vue-d-ensemble/",

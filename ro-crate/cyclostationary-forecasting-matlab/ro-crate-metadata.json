@@ -57,6 +57,9 @@
      "@id": "https://www.cyrilvoyant.com/fr/actualites/forecasting-with-less/"
     },
     {
+     "@id": "https://www.cyrilvoyant.com/fr/outils/blend/"
+    },
+    {
      "@id": "https://www.cyrilvoyant.com/fr/vue-d-ensemble/"
     },
     {
@@ -163,6 +166,11 @@
    "@id": "https://www.cyrilvoyant.com/fr/actualites/forecasting-with-less/",
    "@type": "WebPage",
    "name": "www.cyrilvoyant.com/fr/actualites/forecasting-with-less/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/fr/outils/blend/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/fr/outils/blend/"
   },
   {
    "@id": "https://www.cyrilvoyant.com/fr/vue-d-ensemble/",

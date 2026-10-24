@@ -5,7 +5,7 @@
       "id": "nice",
       "domain": "energy",
       "kind": "calculator",
-      "interface_language": "en",
+      "interface_language": "both",
       "name": {
         "fr": "Comparer une prévision à la persistance — NICE",
         "en": "Compare a forecast with persistence — NICE"
@@ -15,7 +15,7 @@
         "en": "Paste observations and forecasts, choose a horizon, read absolute errors and NICE ratios."
       },
       "url": {
-        "fr": "https://cyrilvoyant.github.io/methods/nice-metrics.html#try-it",
+        "fr": "https://www.cyrilvoyant.com/fr/outils/nice/#try-it",
         "en": "https://cyrilvoyant.github.io/methods/nice-metrics.html#try-it"
       }
     },
@@ -23,7 +23,7 @@
       "id": "blend",
       "domain": "energy",
       "kind": "calculator",
-      "interface_language": "en",
+      "interface_language": "both",
       "name": {
         "fr": "Calculer les poids de BLEND",
         "en": "Compute BLEND weights"
@@ -33,7 +33,7 @@
         "en": "Explore the weights of a periodic reference on a time series."
       },
       "url": {
-        "fr": "https://cyrilvoyant.github.io/methods/persistence-blend.html#try-it",
+        "fr": "https://www.cyrilvoyant.com/fr/outils/blend/#try-it",
         "en": "https://cyrilvoyant.github.io/methods/persistence-blend.html#try-it"
       }
     },
@@ -41,7 +41,7 @@
       "id": "scv",
       "domain": "energy",
       "kind": "calculator",
-      "interface_language": "en",
+      "interface_language": "both",
       "name": {
         "fr": "Mesurer variabilité et prévisibilité — sCV et F",
         "en": "Measure variability and forecastability — sCV and F"
@@ -51,7 +51,7 @@
         "en": "Supply measured and clear-sky irradiance, then examine the indicators at your chosen horizon."
       },
       "url": {
-        "fr": "https://cyrilvoyant.github.io/methods/solar-variability-scv.html#try-it",
+        "fr": "https://www.cyrilvoyant.com/fr/outils/variabilite-previsibilite/#try-it",
         "en": "https://cyrilvoyant.github.io/methods/solar-variability-scv.html#try-it"
       }
     },
@@ -59,7 +59,7 @@
       "id": "gamma",
       "domain": "energy",
       "kind": "calculator",
-      "interface_language": "en",
+      "interface_language": "both",
       "name": {
         "fr": "Déplacer une prévision et observer l’indice γ",
         "en": "Displace a forecast and explore the γ-index"
@@ -69,7 +69,7 @@
         "en": "Displace, delay or bias a synthetic cloud and adjust the tolerances."
       },
       "url": {
-        "fr": "https://cyrilvoyant.github.io/methods/gamma-index.html#try-it",
+        "fr": "https://www.cyrilvoyant.com/fr/outils/indice-gamma/#try-it",
         "en": "https://cyrilvoyant.github.io/methods/gamma-index.html#try-it"
       }
     },
@@ -77,7 +77,7 @@
       "id": "artu",
       "domain": "energy",
       "kind": "calculator",
-      "interface_language": "en",
+      "interface_language": "both",
       "name": {
         "fr": "Explorer les coefficients et la table ARTU",
         "en": "Explore ARTU coefficients and lookup table"
@@ -87,7 +87,7 @@
         "en": "Vary autocorrelations and measurement quality; read the coefficients."
       },
       "url": {
-        "fr": "https://cyrilvoyant.github.io/teaching/artu-worked-example.html#try-it",
+        "fr": "https://www.cyrilvoyant.com/fr/outils/artu/#try-it",
         "en": "https://cyrilvoyant.github.io/teaching/artu-worked-example.html#try-it"
       }
     },
@@ -113,7 +113,7 @@
       "id": "lql",
       "domain": "medicine",
       "kind": "calculator",
-      "interface_language": "en",
+      "interface_language": "both",
       "name": {
         "fr": "Comparer les doses biologiques LQ et LQL",
         "en": "Compare LQ and LQL biological doses"
@@ -123,7 +123,7 @@
         "en": "Choose parameters and vary dose per fraction. Research and education use."
       },
       "url": {
-        "fr": "https://cyrilvoyant.github.io/tools/lql-equiv.html#try-it",
+        "fr": "https://www.cyrilvoyant.com/fr/outils/doses-lq-lql/#try-it",
         "en": "https://cyrilvoyant.github.io/tools/lql-equiv.html#try-it"
       }
     },
@@ -131,7 +131,7 @@
       "id": "thyroid",
       "domain": "medicine",
       "kind": "calculator",
-      "interface_language": "en",
+      "interface_language": "both",
       "name": {
         "fr": "Explorer les profils du modèle thyroïde",
         "en": "Explore thyroid model profiles"
@@ -141,7 +141,7 @@
         "en": "Choose a profile and protocol; follow simulated thyroglobulin. Research and education use."
       },
       "url": {
-        "fr": "https://cyrilvoyant.github.io/methods/thyroid-radioiodine.html#try-it",
+        "fr": "https://www.cyrilvoyant.com/fr/outils/modele-thyroide/#try-it",
         "en": "https://cyrilvoyant.github.io/methods/thyroid-radioiodine.html#try-it"
       }
     },
@@ -269,6 +269,60 @@
       "url": {
         "fr": "https://www.cyrilvoyant.com/fr/enseignement/physique-pass/ondes-electromagnetiques/#course-tool",
         "en": "https://www.cyrilvoyant.com/fr/enseignement/physique-pass/ondes-electromagnetiques/#course-tool"
+      }
+    },
+    {
+      "id": "biot",
+      "domain": "learning",
+      "kind": "teaching",
+      "interface_language": "fr",
+      "name": {
+        "fr": "Refroidir un aliment : Biot, température moyenne et à cœur",
+        "en": "Cool a food: Biot number, mean and core temperature"
+      },
+      "task": {
+        "fr": "Faire varier h, λ et la taille ; comparer le modèle à température uniforme et la température à cœur.",
+        "en": "Vary h, λ and size; compare the uniform-temperature model with the core temperature."
+      },
+      "url": {
+        "fr": "https://www.cyrilvoyant.com/fr/enseignement/bases-thermiques-aliments/cours/#tool-biot",
+        "en": "https://www.cyrilvoyant.com/fr/enseignement/bases-thermiques-aliments/cours/#tool-biot"
+      }
+    },
+    {
+      "id": "congel",
+      "domain": "learning",
+      "kind": "teaching",
+      "interface_language": "fr",
+      "name": {
+        "fr": "Congeler : énergie et puissance frigorifique",
+        "en": "Freezing: energy and refrigeration power"
+      },
+      "task": {
+        "fr": "Décomposer l’énergie à extraire (sensible, latente, sensible) et calculer la puissance pour une durée donnée.",
+        "en": "Split the energy to remove (sensible, latent, sensible) and compute the power for a given duration."
+      },
+      "url": {
+        "fr": "https://www.cyrilvoyant.com/fr/enseignement/bases-thermiques-aliments/cours/#tool-congel",
+        "en": "https://www.cyrilvoyant.com/fr/enseignement/bases-thermiques-aliments/cours/#tool-congel"
+      }
+    },
+    {
+      "id": "cop",
+      "domain": "learning",
+      "kind": "teaching",
+      "interface_language": "fr",
+      "name": {
+        "fr": "Machine frigorifique : borne de Carnot du COP",
+        "en": "Refrigerator: Carnot bound of the COP"
+      },
+      "task": {
+        "fr": "Faire varier les températures d’évaporation et de condensation ; voir pourquoi l’écart coûte cher.",
+        "en": "Vary evaporation and condensation temperatures; see why the temperature lift is costly."
+      },
+      "url": {
+        "fr": "https://www.cyrilvoyant.com/fr/enseignement/physique-industrielle/cycles-frigorifiques/#tool-cop",
+        "en": "https://www.cyrilvoyant.com/fr/enseignement/physique-industrielle/cycles-frigorifiques/#tool-cop"
       }
     },
     {

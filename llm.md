@@ -19,7 +19,7 @@ Cyril Voyant connects medical physics and energy forecasting through modelling f
 
 - Understand the research: https://www.cyrilvoyant.com/stories/ ; français : https://www.cyrilvoyant.com/fr/recits/ . Studies are grouped by subject before modelling approach.
 - Learn: https://www.cyrilvoyant.com/teaching/ ; français : https://www.cyrilvoyant.com/fr/enseignement/ . Course audience and level are specified; most courses are in French, solar course in both languages.
-- Use a tool: https://www.cyrilvoyant.com/tools/ ; français : https://www.cyrilvoyant.com/fr/outils/ . Interface languages are explicit. A translated catalog is not a translation of an English calculator.
+- Use a tool: https://www.cyrilvoyant.com/tools/ ; français : https://www.cyrilvoyant.com/fr/outils/ . Seven scientific calculators have working French interfaces; their numerical engines match the English originals. Dedicated apps and the comparison tool retain their existing languages. The catalog distinguishes these cases.
 - Interactive resource inventory: https://www.cyrilvoyant.com/interactive-resources.json . Research calculators, teaching demonstrations and hosted applications have distinct purposes.
 - Understand the modelling decisions: https://www.cyrilvoyant.com/approach/ ; français : https://www.cyrilvoyant.com/fr/approche/ .
 - Research integrity → /data/ → /ai-in-research/ → /scientific-publishing-trust/ → /cite/.
@@ -93,6 +93,13 @@ Cyril Voyant connects medical physics and energy forecasting through modelling f
 - [L'arbre RTVACOS : où votre travail peut-il casser ?](https://www.cyrilvoyant.com/fr/excellence-rtvacos/)
 - [L'IA dans la recherche : AI Act, charte de laboratoire et boîte à outils](https://www.cyrilvoyant.com/fr/ia-dans-la-recherche/)
 - [Outils interactifs : choisir une question, essayer une méthode](https://www.cyrilvoyant.com/fr/outils/)
+- [Explorer les coefficients et la table ARTU](https://www.cyrilvoyant.com/fr/outils/artu/)
+- [Calculer les poids de BLEND](https://www.cyrilvoyant.com/fr/outils/blend/)
+- [Comparer les doses biologiques LQ et LQL](https://www.cyrilvoyant.com/fr/outils/doses-lq-lql/)
+- [Déplacer une prévision et observer l’indice γ](https://www.cyrilvoyant.com/fr/outils/indice-gamma/)
+- [Explorer les profils du modèle thyroïde](https://www.cyrilvoyant.com/fr/outils/modele-thyroide/)
+- [Comparer une prévision à la persistance : NICE](https://www.cyrilvoyant.com/fr/outils/nice/)
+- [Mesurer variabilité et prévisibilité : sCV et F](https://www.cyrilvoyant.com/fr/outils/variabilite-previsibilite/)
 - [Recherche : questions, résultats et méthodes](https://www.cyrilvoyant.com/fr/recits/)
 - [Calculer plutôt qu'apprendre : l'équivalence de dose en radiothérapie avec LQL-Equiv](https://www.cyrilvoyant.com/fr/recits/lql-equiv/)
 - [Se questionner sur nos façons de faire de la recherche : influence, intégrité, excellence](https://www.cyrilvoyant.com/fr/recits/questioning-research/)
