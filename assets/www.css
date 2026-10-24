@@ -217,3 +217,13 @@ ol.steps li::before { content: counter(s); position: absolute; left: 12px; top: 
 .cite-table th { background: var(--soft); }
 pre.cite-ex { white-space: pre-wrap; background: var(--soft); padding: 12px 14px; border-radius: 6px; font-size: .9rem; }
 @media (max-width: 640px) { .cite-table, .cite-table tbody, .cite-table tr, .cite-table td { display: block; } .cite-table thead { display: none; } .cite-table td { border: 0; padding: 4px 0; } .cite-table tr { border-bottom: 1px solid var(--line); padding: 8px 0; } }
+
+/* Teaching catalogue and "what the course contains" */
+.course-catalogue .course-entry { display: grid; grid-template-columns: 280px 1fr; gap: 22px; padding: 22px 0; border-top: 1px solid var(--line); }
+.course-catalogue .course-entry h3 { margin: 0 0 4px; font-size: 1.2rem; }
+.course-catalogue .course-entry img { width: 100%; height: auto; border: 1px solid var(--line); border-radius: 6px; background: #fff; }
+.course-catalogue .course-entry ul, .course-contents ul { margin: 6px 0; padding-left: 1.2em; }
+.course-catalogue .course-entry li, .course-contents li { margin-bottom: 3px; }
+.course-contents { margin: 16px 0 22px; padding: 14px 18px; border: 1px solid var(--line); border-left: 5px solid var(--link); border-radius: 8px; background: var(--paper); }
+.course-contents h2 { margin-top: 0; font-size: 1.15rem; }
+@media (max-width: 720px) { .course-catalogue .course-entry { grid-template-columns: 1fr; } }
