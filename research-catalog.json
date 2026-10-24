@@ -1,0 +1,2491 @@
+{
+  "description": "Navigation catalog derived from published page metadata. Page authorship is not authorship of every cited study. Teaching examples and draft work must not be reported as published study results.",
+  "identity": "https://person.cyrilvoyant.com/#cyril-voyant",
+  "pages": [
+    {
+      "url": "https://www.cyrilvoyant.com/",
+      "title": "Cyril Voyant",
+      "language": "en",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Forecasting the sun with its uncertainty: ELM against persistence, live",
+          "anchor": "pr-h"
+        },
+        {
+          "title": "One method, four complementary routes",
+          "anchor": null
+        },
+        {
+          "title": "Demonstrate trust",
+          "anchor": null
+        },
+        {
+          "title": "Research stories",
+          "anchor": null
+        },
+        {
+          "title": "Watch and learn",
+          "anchor": null
+        },
+        {
+          "title": "About",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/about/",
+      "title": "About",
+      "language": "en",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Background",
+          "anchor": null
+        },
+        {
+          "title": "Current Research",
+          "anchor": null
+        },
+        {
+          "title": "Research Projects",
+          "anchor": null
+        },
+        {
+          "title": "Recognition and Service",
+          "anchor": null
+        },
+        {
+          "title": "Publications, code & contact",
+          "anchor": null
+        },
+        {
+          "title": "Read next",
+          "anchor": null
+        },
+        {
+          "title": "Contact",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/ai-in-research/",
+      "title": "AI in research: the AI Act, a lab charter and a toolbox for researchers",
+      "language": "en",
+      "topics": [
+        "Demonstrate trust",
+        "Research practice"
+      ],
+      "citations": [],
+      "sections": [
+        {
+          "title": "What AI changes in research",
+          "anchor": null
+        },
+        {
+          "title": "The AI Act in plain words",
+          "anchor": null
+        },
+        {
+          "title": "The timeline in Europe and in France",
+          "anchor": null
+        },
+        {
+          "title": "Elsewhere: no equivalent of the AI Act, but rules everywhere",
+          "anchor": null
+        },
+        {
+          "title": "Who is responsible when research code becomes a product?",
+          "anchor": null
+        },
+        {
+          "title": "Who is responsible? A one-minute orientation",
+          "anchor": null
+        },
+        {
+          "title": "What a lab can do: the example of the O.I.E. framework",
+          "anchor": null
+        },
+        {
+          "title": "The toolbox",
+          "anchor": null
+        },
+        {
+          "title": "Glossary",
+          "anchor": null
+        },
+        {
+          "title": "Official resources",
+          "anchor": null
+        },
+        {
+          "title": "Limits",
+          "anchor": null
+        },
+        {
+          "title": "How to cite this page",
+          "anchor": null
+        },
+        {
+          "title": "Go further",
+          "anchor": null
+        },
+        {
+          "title": "Frequently asked questions",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/approach/",
+      "title": "Understand before you compute: the approach of Cyril Voyant",
+      "language": "en",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "One method, every field",
+          "anchor": null
+        },
+        {
+          "title": "1. Start with the direct approach",
+          "anchor": null
+        },
+        {
+          "title": "2. When the model falls short, hybridize",
+          "anchor": null
+        },
+        {
+          "title": "3. When relations are not known well enough, learn, only as far as it pays",
+          "anchor": null
+        },
+        {
+          "title": "4. Artificial intelligence, in its place",
+          "anchor": null
+        },
+        {
+          "title": "5. Trust is demonstrated",
+          "anchor": null
+        },
+        {
+          "title": "The five principles",
+          "anchor": null
+        },
+        {
+          "title": "Go further",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/cite/",
+      "title": "Cite and reuse our work",
+      "language": "en",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "An example",
+          "anchor": null
+        },
+        {
+          "title": "Team work",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/collaborate/",
+      "title": "Collaborate: research projects, studies and adaptation of the tools",
+      "language": "en",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Three ways to work together",
+          "anchor": null
+        },
+        {
+          "title": "Collaborations that became results",
+          "anchor": null
+        },
+        {
+          "title": "What can be adapted to your data",
+          "anchor": null
+        },
+        {
+          "title": "How it works",
+          "anchor": null
+        },
+        {
+          "title": "A question and some data? Let's look at it together.",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/cv/",
+      "title": "Curriculum vitae",
+      "language": "en",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Current appointments and responsibilities",
+          "anchor": null
+        },
+        {
+          "title": "Career",
+          "anchor": null
+        },
+        {
+          "title": "Education",
+          "anchor": null
+        },
+        {
+          "title": "Teaching and research supervision",
+          "anchor": null
+        },
+        {
+          "title": "Scientific service",
+          "anchor": null
+        },
+        {
+          "title": "Selected distinctions",
+          "anchor": null
+        },
+        {
+          "title": "Publications and scientific software",
+          "anchor": null
+        },
+        {
+          "title": "Publication record",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/data/",
+      "title": "Models live in the data: qualify, certify, license",
+      "language": "en",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "The basic rules",
+          "anchor": null
+        },
+        {
+          "title": "An example: Webservice-Energy",
+          "anchor": null
+        },
+        {
+          "title": "Choosing a license for code and data",
+          "anchor": null
+        },
+        {
+          "title": "Glossary",
+          "anchor": "glossaire"
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/",
+      "title": "Cyril Voyant",
+      "language": "fr",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Prévoir le soleil avec son incertitude : ELM contre persistance, en direct",
+          "anchor": "pr-h"
+        },
+        {
+          "title": "Une méthode, quatre voies complémentaires",
+          "anchor": null
+        },
+        {
+          "title": "Démontrer la confiance",
+          "anchor": null
+        },
+        {
+          "title": "Récits récents",
+          "anchor": null
+        },
+        {
+          "title": "Voir et apprendre",
+          "anchor": null
+        },
+        {
+          "title": "En bref",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/actualites/",
+      "title": "Actualités : publications, logiciels et essais",
+      "language": "fr",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Édition scientifique : sans vérification des données et du code, pas de confiance",
+          "anchor": null
+        },
+        {
+          "title": "ELECTRE, projet phare de l'institut Carnot M.I.N.E.S : électrifier les usages, journée de clôture le 18 novembre 2026",
+          "anchor": null
+        },
+        {
+          "title": "Professeur invité à l'université de Kragujevac (Serbie)",
+          "anchor": null
+        },
+        {
+          "title": "Tunnel Load Simulator : générer la consommation électrique des tunnels routiers",
+          "anchor": null
+        },
+        {
+          "title": "Quand la lumière du soleil n'est plus directe : prévoir la fraction diffuse",
+          "anchor": null
+        },
+        {
+          "title": "Revisiter la persistance : BLEND, une prévision sous contrainte de symétrie pour les processus énergétiques périodiques",
+          "anchor": null
+        },
+        {
+          "title": "Des pixels aux tolérances : valider les prévisions avec l'indice γ",
+          "anchor": null
+        },
+        {
+          "title": "Excellence scientifique à l’ère de l’IA : du SEO au GEO",
+          "anchor": null
+        },
+        {
+          "title": "Prévoir toutes les énergies d'un réseau d'un seul coup : l'approche parcimonieuse MIMO-ELM",
+          "anchor": null
+        },
+        {
+          "title": "What the study shows",
+          "anchor": null
+        },
+        {
+          "title": "Une recherche invisible n'a pas d'impact : construire l'influence scientifique à l'ère de l'IA",
+          "anchor": null
+        },
+        {
+          "title": "Nommé éditeur associé de Scientific Reports (Nature Portfolio)",
+          "anchor": null
+        },
+        {
+          "title": "Contrôle qualité des mesures de rayonnement solaire sur plan incliné",
+          "anchor": null
+        },
+        {
+          "title": "Vers une iodothérapie personnalisée : modélisation, dynamique et perspectives cliniques",
+          "anchor": null
+        },
+        {
+          "title": "Dans le classement Stanford-Elsevier 2025 des 2 % de chercheurs les plus cités",
+          "anchor": null
+        },
+        {
+          "title": "Apprentissage par transfert pour prévoir le vent là où les données manquent",
+          "anchor": null
+        },
+        {
+          "title": "Prévision solaire : 500 articles (2017-2023) analysés par fouille de textes",
+          "anchor": null
+        },
+        {
+          "title": "Estimer rapidement l'erreur d'une prévision solaire à partir de la seule variabilité du site",
+          "anchor": null
+        },
+        {
+          "title": "Nouvelle version de LQL-Equiv, logiciel libre de calcul de dose biologiquement équivalente en radiothérapie",
+          "anchor": null
+        },
+        {
+          "title": "Abstract",
+          "anchor": null
+        },
+        {
+          "title": "Aider la décision clinique en radiothérapie : modèles de dose LQ et LQL comparés",
+          "anchor": null
+        },
+        {
+          "title": "Abstract",
+          "anchor": null
+        },
+        {
+          "title": "Coefficient de variation stochastique : mesurer la variabilité et la prévisibilité du rayonnement solaire",
+          "anchor": null
+        },
+        {
+          "title": "Abstract",
+          "anchor": null
+        },
+        {
+          "title": "Métriques NICEᵏ : un cadre unifié pour évaluer les prévisions solaires déterministes",
+          "anchor": null
+        },
+        {
+          "title": "Abstract",
+          "anchor": null
+        },
+        {
+          "title": "Le choix du modèle de ciel clair compte pour la prévision solaire à court terme",
+          "anchor": null
+        },
+        {
+          "title": "Abstract",
+          "anchor": null
+        },
+        {
+          "title": "Sélection des variables d'entrée pour prévoir le rayonnement solaire par apprentissage automatique : cas de l'Algérie",
+          "anchor": null
+        },
+        {
+          "title": "Abstract",
+          "anchor": null
+        },
+        {
+          "title": "Visibilité académique : pourquoi publier ne suffit plus",
+          "anchor": null
+        },
+        {
+          "title": "A Saturated Ecosystem",
+          "anchor": null
+        },
+        {
+          "title": "Before Submission: Preparing for Discoverability",
+          "anchor": null
+        },
+        {
+          "title": "Open Access: A Global Opportunity",
+          "anchor": null
+        },
+        {
+          "title": "Writing to Be Discovered",
+          "anchor": null
+        },
+        {
+          "title": "After Publication: Orchestrating Dissemination",
+          "anchor": null
+        },
+        {
+          "title": "Structural Solutions Needed",
+          "anchor": null
+        },
+        {
+          "title": "Practical Toolkit",
+          "anchor": null
+        },
+        {
+          "title": "Key References",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/actualites/forecasting-with-less/",
+      "title": "BLEND : une meilleure persistance sans entraîner de réseau neuronal",
+      "language": "fr",
+      "topics": [
+        "Hybrider",
+        "Énergie"
+      ],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Code ouvert v1.1.1 : un benchmark hors échantillon",
+          "anchor": null
+        },
+        {
+          "title": "Article, auteurs et ressources",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/actualites/gamma-index-forecast-validation/",
+      "title": "L'indice γ : valider des prévisions solaires décalées au-delà des erreurs ponctuelles",
+      "language": "fr",
+      "topics": [
+        "Démontrer la confiance",
+        "Énergie"
+      ],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Article, auteurs et ressources",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/actualites/nice-forecast-evaluation/",
+      "title": "Métriques NICE : quand le RMSE masque une différence entre prévisions solaires",
+      "language": "fr",
+      "topics": [
+        "Démontrer la confiance",
+        "Énergie"
+      ],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Article, auteurs et ressources",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/actualites/why-extreme-learning-machines/",
+      "title": "MIMO-ELM : sept signaux énergétiques de la Corse prévus par un seul modèle",
+      "language": "fr",
+      "topics": [
+        "Apprendre frugalement",
+        "Énergie"
+      ],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Article, auteurs et ressources",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/actualites/why-forecast-solar-power/",
+      "title": "sCV et F : variabilité et prévisibilité du rayonnement solaire",
+      "language": "fr",
+      "topics": [
+        "Calculer directement",
+        "Énergie"
+      ],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Article, auteurs et ressources",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/approche/",
+      "title": "Comprendre avant de calculer : la démarche de Cyril Voyant",
+      "language": "fr",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Une méthode, tous les domaines",
+          "anchor": null
+        },
+        {
+          "title": "1. Commencer par l'approche directe",
+          "anchor": null
+        },
+        {
+          "title": "2. Quand le modèle ne suffit pas, on hybride",
+          "anchor": null
+        },
+        {
+          "title": "3. Quand les relations sont mal connues, apprendre, seulement tant que cela paie",
+          "anchor": null
+        },
+        {
+          "title": "4. L'intelligence artificielle, à sa place",
+          "anchor": null
+        },
+        {
+          "title": "5. La confiance se démontre",
+          "anchor": null
+        },
+        {
+          "title": "Les cinq principes",
+          "anchor": null
+        },
+        {
+          "title": "Pour aller plus loin",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/citer/",
+      "title": "Citer et réutiliser nos travaux",
+      "language": "fr",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Un exemple",
+          "anchor": null
+        },
+        {
+          "title": "Les travaux d'équipe",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/collaborer/",
+      "title": "Collaborer : projets de recherche, études et adaptation des outils",
+      "language": "fr",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Trois façons de travailler ensemble",
+          "anchor": null
+        },
+        {
+          "title": "Des collaborations devenues des résultats",
+          "anchor": null
+        },
+        {
+          "title": "Ce qui peut être adapté à vos données",
+          "anchor": null
+        },
+        {
+          "title": "Comment cela se passe",
+          "anchor": null
+        },
+        {
+          "title": "Une question et des données ? Regardons-les ensemble.",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/donnees/",
+      "title": "Les modèles sont dans les données : qualifier, certifier, licencier",
+      "language": "fr",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Les règles de base",
+          "anchor": null
+        },
+        {
+          "title": "Un exemple : Webservice-Energy",
+          "anchor": null
+        },
+        {
+          "title": "Choisir une licence : le code et les données",
+          "anchor": null
+        },
+        {
+          "title": "Glossaire",
+          "anchor": "glossaire"
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/edition-scientifique-confiance/",
+      "title": "Édition scientifique : sans vérification, pas de confiance",
+      "language": "fr",
+      "topics": [
+        "édition scientifique",
+        "science ouverte",
+        "reproductibilité",
+        "vérification du code",
+        "données FAIR",
+        "AI Act",
+        "MLOps",
+        "évaluation par les pairs",
+        "IA générative"
+      ],
+      "citations": [
+        {
+          "@type": "CreativeWork",
+          "name": "Hanson, Gómez Barreiro, Crosetto, Brockington (2024). The strain on scientific publishing. Quantitative Science Studies 5(4)",
+          "url": "https://doi.org/10.1162/qss_a_00327"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Larivière, Haustein, Mongeon (2015). The oligopoly of academic publishers in the digital era. PLoS ONE 10(6)",
+          "url": "https://doi.org/10.1371/journal.pone.0127502"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "RELX (2026). RELX 2025 results",
+          "url": "https://www.relx.com/media/press-releases/year-2026/relx-2025-results"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Aczel, Szaszi, Holcombe (2021). A billion-dollar donation: estimating the cost of researchers' time spent on peer review. Research Integrity and Peer Review 6",
+          "url": "https://doi.org/10.1186/s41073-021-00118-2"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Van Noorden (2023). More than 10,000 research papers were retracted in 2023, a new record. Nature 624",
+          "url": "https://doi.org/10.1038/d41586-023-03974-8"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "NIH (2023). NOT-OD-23-149: generative AI prohibited in NIH peer review",
+          "url": "https://grants.nih.gov/grants/guide/notice-files/NOT-OD-23-149.html"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "OSTP (2022). Ensuring free, immediate, and equitable access to federally funded research",
+          "url": "https://bidenwhitehouse.archives.gov/wp-content/uploads/2022/08/08-2022-OSTP-Public-Access-Memo.pdf"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Wilkinson et al. (2016). The FAIR Guiding Principles for scientific data management and stewardship. Scientific Data 3",
+          "url": "https://doi.org/10.1038/sdata.2016.18"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Journal of Open Source Software: open review on GitHub",
+          "url": "https://joss.readthedocs.io/"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Nüst, Eglen (2021). CODECHECK: an open science initiative for the independent execution of computations. F1000Research 10",
+          "url": "https://doi.org/10.12688/f1000research.51738.2"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "ReScience C: reproducible replications in computational science",
+          "url": "https://rescience.github.io/"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Council of the EU (2023). Conclusions on high-quality, transparent, open, trustworthy and equitable scholarly publishing (9616/23)",
+          "url": "https://european-research-area.ec.europa.eu/documents/council-conclusions-high-quality-transparent-open-trustworthy-and-equitable-scholarly"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Science Europe, cOAlition S, OPERAS, ANR (2022). Action Plan for Diamond Open Access",
+          "url": "https://doi.org/10.5281/zenodo.6282402"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "European Commission. Open Research Europe",
+          "url": "https://open-research-europe.ec.europa.eu/"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "CoARA. Agreement on Reforming Research Assessment (2022)",
+          "url": "https://coara.eu/agreement/the-agreement-full-text/"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Regulation (EU) 2024/1689 (AI Act)",
+          "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Loi n° 2016-1321 pour une République numérique, article 30 (art. L533-4 du code de la recherche)",
+          "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000033202746"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Deuxième Plan national pour la science ouverte 2021-2024",
+          "url": "https://www.enseignementsup-recherche.gouv.fr/fr/une-politique-ambitieuse-pour-la-science-ouverte-50735"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Software Heritage, l'archive universelle du code source",
+          "url": "https://www.softwareheritage.org/"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "SoftwareX: research software publications and reuse",
+          "url": "https://www.sciencedirect.com/journal/softwarex"
+        }
+      ],
+      "sections": [
+        {
+          "title": "De la publication à une preuve vérifiable",
+          "anchor": null
+        },
+        {
+          "title": "Relier les pratiques, sans confondre leurs objectifs",
+          "anchor": null
+        },
+        {
+          "title": "Le constat mondial : trop d'articles, pas assez de vérification",
+          "anchor": null
+        },
+        {
+          "title": "Ce qui existe déjà",
+          "anchor": null
+        },
+        {
+          "title": "L’AI Act comme point de comparaison, pas comme règlement des articles",
+          "anchor": null
+        },
+        {
+          "title": "En France : un travail d'éditeur qui ne compte pas",
+          "anchor": null
+        },
+        {
+          "title": "Ce qui manque",
+          "anchor": null
+        },
+        {
+          "title": "Sans vérification, pas de confiance",
+          "anchor": null
+        },
+        {
+          "title": "Questions et réponses",
+          "anchor": "faq"
+        },
+        {
+          "title": "Sources",
+          "anchor": "sources"
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/enseignement/",
+      "title": "Enseignement",
+      "language": "fr",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Les cours en accès libre",
+          "anchor": null
+        },
+        {
+          "title": "Enseignement et encadrement de la recherche",
+          "anchor": null
+        },
+        {
+          "title": "Prévision solaire : le cours part du signal",
+          "anchor": null
+        },
+        {
+          "title": "Conférence",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/enseignement/bases-thermiques-aliments/",
+      "title": "Bases de thermique pour le génie industriel alimentaire : transferts, refroidissement et congélation",
+      "language": "fr",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Ce que contient le cours",
+          "anchor": null
+        },
+        {
+          "title": "En bref",
+          "anchor": null
+        },
+        {
+          "title": "Pour aller plus loin",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/enseignement/bases-thermiques-aliments/cours/",
+      "title": "Cours : transferts thermiques, refroidissement et congélation des aliments",
+      "language": "fr",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "BASES DE THERMIQUE POUR LE GÉNIE INDUSTRIEL ALIMENTAIRE",
+          "anchor": null
+        },
+        {
+          "title": "Plan du chapitre",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/enseignement/biostatistique/",
+      "title": "Biostatistique pour les études de santé : le cours en trois chapitres",
+      "language": "fr",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Ce que contient le cours",
+          "anchor": null
+        },
+        {
+          "title": "En bref",
+          "anchor": null
+        },
+        {
+          "title": "Pour aller plus loin",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/enseignement/biostatistique/correlation-regression/",
+      "title": "Chapitre 3 : corrélation, régression linéaire et tests du χ²",
+      "language": "fr",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Support de Cours Introduction aux Biostatistiques Partie 3",
+          "anchor": null
+        },
+        {
+          "title": "Plan du chapitre",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/enseignement/biostatistique/probabilites/",
+      "title": "Chapitre 1 : probabilités, probabilités conditionnelles, tableaux de contingence et courbes ROC",
+      "language": "fr",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Plan",
+          "anchor": null
+        },
+        {
+          "title": "Plan du chapitre",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/enseignement/biostatistique/statistiques-descriptives/",
+      "title": "Chapitre 2 : statistique descriptive, loi normale et tests d'hypothèses",
+      "language": "fr",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Support de Cours Introduction aux Biostatistiques Partie 2",
+          "anchor": null
+        },
+        {
+          "title": "Plan du chapitre",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/enseignement/cours-prevision-solaire/",
+      "title": "Cours de prévision solaire : prévoir la ressource solaire intermittente",
+      "language": "fr",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Ce que contient le cours",
+          "anchor": null
+        },
+        {
+          "title": "En bref",
+          "anchor": null
+        },
+        {
+          "title": "Plan du cours",
+          "anchor": null
+        },
+        {
+          "title": "Introduction",
+          "anchor": "part-1"
+        },
+        {
+          "title": "1 · Pourquoi prévoir le solaire ?",
+          "anchor": "part-2"
+        },
+        {
+          "title": "2 · Le rayonnement solaire",
+          "anchor": "part-3"
+        },
+        {
+          "title": "3 · Séries temporelles et prévision",
+          "anchor": "part-4"
+        },
+        {
+          "title": "4 · Ciel clair et indice de ciel clair",
+          "anchor": "part-5"
+        },
+        {
+          "title": "5 · Modèle AR et moindres carrés",
+          "anchor": "part-6"
+        },
+        {
+          "title": "6 · Évaluation, ELM et apprentissage en ligne",
+          "anchor": "part-7"
+        },
+        {
+          "title": "Projet, glossaire et références",
+          "anchor": "part-8"
+        },
+        {
+          "title": "Annexes",
+          "anchor": "part-9"
+        },
+        {
+          "title": "Pour aller plus loin",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/enseignement/physique-industrielle/",
+      "title": "Physique industrielle : thermodynamique, vapeur d'eau et production de froid",
+      "language": "fr",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Ce que contient le cours",
+          "anchor": null
+        },
+        {
+          "title": "En bref",
+          "anchor": null
+        },
+        {
+          "title": "Le polycopié",
+          "anchor": null
+        },
+        {
+          "title": "Pour aller plus loin",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/enseignement/physique-industrielle/cycles-frigorifiques/",
+      "title": "Chapitre 5 : les cycles frigorifiques",
+      "language": "fr",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "C. Voyant",
+          "anchor": null
+        },
+        {
+          "title": "Plan du chapitre",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/enseignement/physique-industrielle/cycles-moteurs/",
+      "title": "Chapitre 4 : les cycles thermodynamiques moteurs",
+      "language": "fr",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "C. Voyant",
+          "anchor": null
+        },
+        {
+          "title": "Plan du chapitre",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/enseignement/physique-industrielle/gaz-parfaits-et-reels/",
+      "title": "Chapitre 2 : gaz parfaits, gaz réels et diagrammes",
+      "language": "fr",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "C. Voyant",
+          "anchor": null
+        },
+        {
+          "title": "Plan du chapitre",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/enseignement/physique-industrielle/notions-de-thermodynamique/",
+      "title": "Chapitre 1 : notions générales de thermodynamique",
+      "language": "fr",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "C. Voyant",
+          "anchor": null
+        },
+        {
+          "title": "Plan du chapitre",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/enseignement/physique-industrielle/vapeur-d-eau/",
+      "title": "Chapitre 3 : la vapeur d'eau",
+      "language": "fr",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "C. Voyant",
+          "anchor": null
+        },
+        {
+          "title": "Plan du chapitre",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/enseignement/physique-pass/",
+      "title": "Physique pour les études de santé : ondes électromagnétiques, rayons X et imagerie",
+      "language": "fr",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Ce que contient le cours",
+          "anchor": null
+        },
+        {
+          "title": "En bref",
+          "anchor": null
+        },
+        {
+          "title": "Le polycopié",
+          "anchor": null
+        },
+        {
+          "title": "Pour aller plus loin",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/enseignement/physique-pass/ed1-corrige/",
+      "title": "Exercices dirigés 1 : les ondes électromagnétiques, corrigé",
+      "language": "fr",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Semestre 1 : Physique Les ondes électromagnétiques ED 1",
+          "anchor": null
+        },
+        {
+          "title": "Plan du chapitre",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/enseignement/physique-pass/ed2-corrige/",
+      "title": "Exercices dirigés 2 : les ondes électromagnétiques, corrigé",
+      "language": "fr",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Semestre 1 : Physique Les ondes électromagnétiques ED 2",
+          "anchor": null
+        },
+        {
+          "title": "Plan du chapitre",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/enseignement/physique-pass/ondes-electromagnetiques/",
+      "title": "Cours : les ondes électromagnétiques et les bases physiques de l'imagerie",
+      "language": "fr",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Semestre 1 : Physique Les ondes électromagnétiques",
+          "anchor": null
+        },
+        {
+          "title": "Plan du chapitre",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/ia-dans-la-recherche/",
+      "title": "L'IA dans la recherche : AI Act, charte de laboratoire et boîte à outils",
+      "language": "fr",
+      "topics": [
+        "Démontrer la confiance",
+        "Pratique de la recherche"
+      ],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Ce que l'IA change dans la recherche",
+          "anchor": null
+        },
+        {
+          "title": "L'AI Act, en clair",
+          "anchor": null
+        },
+        {
+          "title": "Le calendrier en Europe et en France",
+          "anchor": null
+        },
+        {
+          "title": "Ailleurs : pas d'équivalent de l'AI Act, mais des règles partout",
+          "anchor": null
+        },
+        {
+          "title": "Qui est responsable quand un code de recherche devient un produit ?",
+          "anchor": null
+        },
+        {
+          "title": "Qui est responsable ? Une orientation en une minute",
+          "anchor": null
+        },
+        {
+          "title": "Ce qu'un laboratoire peut faire : l'exemple du cadre O.I.E.",
+          "anchor": null
+        },
+        {
+          "title": "La boîte à outils",
+          "anchor": null
+        },
+        {
+          "title": "Glossaire",
+          "anchor": null
+        },
+        {
+          "title": "Ressources officielles",
+          "anchor": null
+        },
+        {
+          "title": "Limites",
+          "anchor": null
+        },
+        {
+          "title": "Citer cette page",
+          "anchor": null
+        },
+        {
+          "title": "Pour aller plus loin",
+          "anchor": null
+        },
+        {
+          "title": "Questions fréquentes",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/recits/",
+      "title": "Récits",
+      "language": "fr",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Calculer directement",
+          "anchor": null
+        },
+        {
+          "title": "Hybrider",
+          "anchor": null
+        },
+        {
+          "title": "Apprendre frugalement",
+          "anchor": null
+        },
+        {
+          "title": "L'IA à sa place",
+          "anchor": null
+        },
+        {
+          "title": "Démontrer la confiance",
+          "anchor": null
+        },
+        {
+          "title": "Comprendre la prévision solaire",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/recits/lql-equiv/",
+      "title": "Calculer plutôt qu'apprendre : l'équivalence de dose en radiothérapie avec LQL-Equiv",
+      "language": "fr",
+      "topics": [
+        "Calculer directement",
+        "Médecine"
+      ],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Le constat",
+          "anchor": null
+        },
+        {
+          "title": "La question",
+          "anchor": null
+        },
+        {
+          "title": "La théorie, en clair",
+          "anchor": null
+        },
+        {
+          "title": "Où l'on se situe sur l'échelle de la complexité",
+          "anchor": null
+        },
+        {
+          "title": "L'exemple en chiffres",
+          "anchor": null
+        },
+        {
+          "title": "Ce que cela apporte, et les limites",
+          "anchor": null
+        },
+        {
+          "title": "Pour aller plus loin",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/recits/questioning-research/",
+      "title": "Se questionner sur nos façons de faire de la recherche : influence, intégrité, excellence",
+      "language": "fr",
+      "topics": [
+        "Démontrer la confiance",
+        "Pratique de la recherche"
+      ],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Le constat",
+          "anchor": null
+        },
+        {
+          "title": "La question",
+          "anchor": null
+        },
+        {
+          "title": "La théorie, en clair",
+          "anchor": null
+        },
+        {
+          "title": "L'exemple en chiffres",
+          "anchor": null
+        },
+        {
+          "title": "Ce que cela apporte, et les limites",
+          "anchor": null
+        },
+        {
+          "title": "Pour aller plus loin",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/recits/satellite-irradiance/",
+      "title": "Prévision satellite du rayonnement : une maille, un voisinage ou tout le champ",
+      "language": "fr",
+      "topics": [
+        "Apprendre frugalement",
+        "Énergie"
+      ],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Le constat",
+          "anchor": null
+        },
+        {
+          "title": "La question",
+          "anchor": null
+        },
+        {
+          "title": "La théorie, en clair",
+          "anchor": null
+        },
+        {
+          "title": "L'exemple en chiffres",
+          "anchor": null
+        },
+        {
+          "title": "Ce que cela apporte, et les limites",
+          "anchor": null
+        },
+        {
+          "title": "Pour aller plus loin",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/recits/thyroid-radioiodine/",
+      "title": "Cancer de la thyroïde et iode radioactif : le modèle d'abord, n'apprendre que ce qui manque",
+      "language": "fr",
+      "topics": [
+        "Hybrider",
+        "Médecine"
+      ],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Le constat",
+          "anchor": null
+        },
+        {
+          "title": "La question",
+          "anchor": null
+        },
+        {
+          "title": "La théorie, en clair",
+          "anchor": null
+        },
+        {
+          "title": "Où l'on se situe sur l'échelle de la complexité",
+          "anchor": null
+        },
+        {
+          "title": "L'exemple en chiffres",
+          "anchor": null
+        },
+        {
+          "title": "Ce que cela apporte, et les limites",
+          "anchor": null
+        },
+        {
+          "title": "Pour aller plus loin",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/recits/tunnel-load-simulator/",
+      "title": "Simuler ce que l'on ne peut pas encore mesurer : la consommation électrique des tunnels routiers",
+      "language": "fr",
+      "topics": [
+        "Calculer directement",
+        "Énergie"
+      ],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Le constat",
+          "anchor": null
+        },
+        {
+          "title": "La question",
+          "anchor": null
+        },
+        {
+          "title": "La théorie, en clair",
+          "anchor": null
+        },
+        {
+          "title": "Où l'on se situe sur l'échelle de la complexité",
+          "anchor": null
+        },
+        {
+          "title": "L'exemple en chiffres",
+          "anchor": null
+        },
+        {
+          "title": "Ce que cela apporte, et les limites",
+          "anchor": null
+        },
+        {
+          "title": "Pour aller plus loin",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/recits/websemantic/",
+      "title": "Au modèle de langage la lecture, au code validé le calcul : WebSemantic",
+      "language": "fr",
+      "topics": [
+        "L'IA à sa place",
+        "Langage"
+      ],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Le constat",
+          "anchor": null
+        },
+        {
+          "title": "La question",
+          "anchor": null
+        },
+        {
+          "title": "La théorie, en clair",
+          "anchor": null
+        },
+        {
+          "title": "Où l'on se situe sur l'échelle de la complexité",
+          "anchor": null
+        },
+        {
+          "title": "L'exemple en chiffres",
+          "anchor": null
+        },
+        {
+          "title": "Ce que cela apporte, et les limites",
+          "anchor": null
+        },
+        {
+          "title": "Pour aller plus loin",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/latest-publications-and-news/",
+      "title": "News: publications, software and essays",
+      "language": "en",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Scientific publishing: no verification of data and code, no trust",
+          "anchor": null
+        },
+        {
+          "title": "ELECTRE, flagship project of the Carnot M.I.N.E.S institute: electrifying uses, closing workshop on 18 November 2026",
+          "anchor": null
+        },
+        {
+          "title": "Visiting Professor at the University of Kragujevac, Serbia",
+          "anchor": null
+        },
+        {
+          "title": "Tunnel Load Simulator: an open-source generator for synthetic road-tunnel electricity demand",
+          "anchor": null
+        },
+        {
+          "title": "When Sunlight Stops Being Direct",
+          "anchor": null
+        },
+        {
+          "title": "Revisiting Persistence: Symmetry-Constrained Forecasting of Periodically Correlated Energy Processes",
+          "anchor": null
+        },
+        {
+          "title": "From Pixels to Tolerances: Rethinking Forecast Validation with the γ-Index",
+          "anchor": null
+        },
+        {
+          "title": "Excellence scientifique à l’ère de l’IA : du SEO au GEO (in French)",
+          "anchor": null
+        },
+        {
+          "title": "Coherent Multi-Energy Forecasting for Real-Time Grid Management: A Parsimonious MIMO-ELM Approach",
+          "anchor": null
+        },
+        {
+          "title": "What the study shows",
+          "anchor": null
+        },
+        {
+          "title": "Invisible Research Has No Impact: Engineering Scientific Influence in the AI Era",
+          "anchor": null
+        },
+        {
+          "title": "Appointed Associate Editor for Scientific Reports (Nature Portfolio)",
+          "anchor": null
+        },
+        {
+          "title": "Quality Control Framework for Tilted Solar Irradiance",
+          "anchor": null
+        },
+        {
+          "title": "Towards Personalized Radio-Iodine Therapy: Modeling, Dynamics, and Clinical Perspectives",
+          "anchor": null
+        },
+        {
+          "title": "Grateful to be included in the 2025 Stanford-Elsevier Top 2% Scientists ranking.",
+          "anchor": null
+        },
+        {
+          "title": "Transfer Learning for Wind Speed Forecasting: A Scalable Approach for Data-Scarce Environments",
+          "anchor": null
+        },
+        {
+          "title": "From Trends to Insights: A Text Mining Analysis of Solar Energy Forecasting (2017–2023)",
+          "anchor": null
+        },
+        {
+          "title": "A Simple Method for Quickly Estimating Solar Irradiance Forecast Errors",
+          "anchor": null
+        },
+        {
+          "title": "New Release: LQL-Equiv: Open‑Source Software for Biologically Equivalent Dose Calculation in Radiotherapy",
+          "anchor": null
+        },
+        {
+          "title": "Abstract",
+          "anchor": null
+        },
+        {
+          "title": "Improving Clinical Decision-Making in Radiotherapy: A Comparative Analysis of Linear-Quadratic LQ and Linear-Quadratic-Linear LQL Dose Models",
+          "anchor": null
+        },
+        {
+          "title": "Abstract",
+          "anchor": null
+        },
+        {
+          "title": "Stochastic Coefficient of Variation: Assessing the Variability and Forecastability of Solar Irradiance",
+          "anchor": null
+        },
+        {
+          "title": "Abstract",
+          "anchor": null
+        },
+        {
+          "title": "NICE^k Metrics: Unified and Multidimensional Framework for Evaluating Deterministic Solar Forecasting Accuracy",
+          "anchor": null
+        },
+        {
+          "title": "Abstract",
+          "anchor": null
+        },
+        {
+          "title": "On the importance of clearsky model in short-term solar radiation forecasting",
+          "anchor": null
+        },
+        {
+          "title": "Abstract",
+          "anchor": null
+        },
+        {
+          "title": "Comparative Study of Feature Selection Techniques for Machine Learning-Based Solar Irradiation Forecasting to Facilitate the Sustainable Development of Photovoltaics: Application to Algerian Climatic Conditions",
+          "anchor": null
+        },
+        {
+          "title": "Abstract",
+          "anchor": null
+        },
+        {
+          "title": "Academic Visibility: Why Publishing Isn't Enough Anymore",
+          "anchor": null
+        },
+        {
+          "title": "A Saturated Ecosystem",
+          "anchor": null
+        },
+        {
+          "title": "Before Submission: Preparing for Discoverability",
+          "anchor": null
+        },
+        {
+          "title": "Open Access: A Global Opportunity",
+          "anchor": null
+        },
+        {
+          "title": "Writing to Be Discovered",
+          "anchor": null
+        },
+        {
+          "title": "After Publication: Orchestrating Dissemination",
+          "anchor": null
+        },
+        {
+          "title": "Structural Solutions Needed",
+          "anchor": null
+        },
+        {
+          "title": "Practical Toolkit",
+          "anchor": null
+        },
+        {
+          "title": "Key References",
+          "anchor": null
+        },
+        {
+          "title": "Talks and teaching",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/latest-publications-and-news/forecasting-with-less/",
+      "title": "BLEND: a better persistence forecast without training a neural network",
+      "language": "en",
+      "topics": [
+        "Hybridize",
+        "Energy"
+      ],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Open code v1.1.1: an out-of-sample benchmark",
+          "anchor": null
+        },
+        {
+          "title": "Paper, authors and resources",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/latest-publications-and-news/gamma-index-forecast-validation/",
+      "title": "The γ-index: validating displaced solar forecasts beyond pointwise errors",
+      "language": "en",
+      "topics": [
+        "Demonstrate trust",
+        "Energy"
+      ],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Paper, authors and resources",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/latest-publications-and-news/nice-forecast-evaluation/",
+      "title": "NICE metrics: when RMSE hides a difference between solar forecasts",
+      "language": "en",
+      "topics": [
+        "Demonstrate trust",
+        "Energy"
+      ],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Paper, authors and resources",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/latest-publications-and-news/why-extreme-learning-machines/",
+      "title": "MIMO-ELM: seven energy signals of Corsica forecast by one model",
+      "language": "en",
+      "topics": [
+        "Learn frugally",
+        "Energy"
+      ],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Paper, authors and resources",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/latest-publications-and-news/why-forecast-solar-power/",
+      "title": "sCV and F: how variable and how forecastable is solar irradiance",
+      "language": "en",
+      "topics": [
+        "Compute directly",
+        "Energy"
+      ],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Paper, authors and resources",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/prevision-pv-reduction-dimension/",
+      "title": "Prévision PV : réduire la dimension",
+      "language": "fr",
+      "topics": [
+        "Apprendre frugalement",
+        "Énergie"
+      ],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Pourquoi prévoir directement la production ?",
+          "anchor": null
+        },
+        {
+          "title": "Réduire la dimension : construire une représentation, pas supprimer au hasard",
+          "anchor": null
+        },
+        {
+          "title": "Deux validations qui ne doivent pas être confondues",
+          "anchor": null
+        },
+        {
+          "title": "Ce que le protocole doit démontrer",
+          "anchor": null
+        },
+        {
+          "title": "Notre travail et ses limites",
+          "anchor": null
+        },
+        {
+          "title": "Auteurs et fondements scientifiques",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/prevision-solaire-faire-simple/",
+      "title": "Prévision solaire : faire simple",
+      "language": "fr",
+      "topics": [
+        "Calculer directement",
+        "Énergie"
+      ],
+      "citations": [],
+      "sections": [
+        {
+          "title": "BLEND et CLIPER : le poids par phase, code v1.1.1 (audité)",
+          "anchor": null
+        },
+        {
+          "title": "1 · Comprendre ce qui reste prévisible",
+          "anchor": null
+        },
+        {
+          "title": "2 · Choisir une référence difficile à battre",
+          "anchor": null
+        },
+        {
+          "title": "3 · Mesurer l’amélioration avec NICE",
+          "anchor": null
+        },
+        {
+          "title": "4 · Distinguer erreur d’intensité et décalage",
+          "anchor": null
+        },
+        {
+          "title": "5 · Justifier la complexité ajoutée",
+          "anchor": null
+        },
+        {
+          "title": "Approfondir et reproduire",
+          "anchor": null
+        },
+        {
+          "title": "Une démarche collective et vérifiable",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/prevision-solaire-modeles-frugaux/",
+      "title": "Prévision solaire : modèles frugaux",
+      "language": "fr",
+      "topics": [
+        "Apprendre frugalement",
+        "Énergie"
+      ],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Pourquoi cette question compte sur le terrain",
+          "anchor": null
+        },
+        {
+          "title": "Pourquoi garder l’ELM dans la comparaison ?",
+          "anchor": null
+        },
+        {
+          "title": "Comparer une capacité, pas seulement une étiquette de modèle",
+          "anchor": null
+        },
+        {
+          "title": "Mesurer le rendement de la complexité",
+          "anchor": null
+        },
+        {
+          "title": "Ce qu’il faut mesurer avant de déployer",
+          "anchor": null
+        },
+        {
+          "title": "Notre démarche, le code et le statut scientifique",
+          "anchor": null
+        },
+        {
+          "title": "Auteurs et fondements scientifiques",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/research-projects/",
+      "title": "Research and projects",
+      "language": "en",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Solar variability and forecastability",
+          "anchor": null
+        },
+        {
+          "title": "Parsimonious forecasting",
+          "anchor": null
+        },
+        {
+          "title": "Evaluation that matches the question",
+          "anchor": null
+        },
+        {
+          "title": "Energy systems and medical physics",
+          "anchor": null
+        },
+        {
+          "title": "Research programs and collaborations",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/scientific-publishing-trust/",
+      "title": "Scientific publishing: no verification, no trust",
+      "language": "en",
+      "topics": [
+        "scholarly publishing",
+        "open science",
+        "reproducibility",
+        "code verification",
+        "FAIR data",
+        "AI Act",
+        "MLOps",
+        "peer review",
+        "generative AI"
+      ],
+      "citations": [
+        {
+          "@type": "CreativeWork",
+          "name": "Hanson, Gómez Barreiro, Crosetto, Brockington (2024). The strain on scientific publishing. Quantitative Science Studies 5(4)",
+          "url": "https://doi.org/10.1162/qss_a_00327"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Larivière, Haustein, Mongeon (2015). The oligopoly of academic publishers in the digital era. PLoS ONE 10(6)",
+          "url": "https://doi.org/10.1371/journal.pone.0127502"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "RELX (2026). RELX 2025 results",
+          "url": "https://www.relx.com/media/press-releases/year-2026/relx-2025-results"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Aczel, Szaszi, Holcombe (2021). A billion-dollar donation: estimating the cost of researchers' time spent on peer review. Research Integrity and Peer Review 6",
+          "url": "https://doi.org/10.1186/s41073-021-00118-2"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Van Noorden (2023). More than 10,000 research papers were retracted in 2023, a new record. Nature 624",
+          "url": "https://doi.org/10.1038/d41586-023-03974-8"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "NIH (2023). NOT-OD-23-149: generative AI prohibited in NIH peer review",
+          "url": "https://grants.nih.gov/grants/guide/notice-files/NOT-OD-23-149.html"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "OSTP (2022). Ensuring free, immediate, and equitable access to federally funded research",
+          "url": "https://bidenwhitehouse.archives.gov/wp-content/uploads/2022/08/08-2022-OSTP-Public-Access-Memo.pdf"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Wilkinson et al. (2016). The FAIR Guiding Principles for scientific data management and stewardship. Scientific Data 3",
+          "url": "https://doi.org/10.1038/sdata.2016.18"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Journal of Open Source Software: open review on GitHub",
+          "url": "https://joss.readthedocs.io/"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Nüst, Eglen (2021). CODECHECK: an open science initiative for the independent execution of computations. F1000Research 10",
+          "url": "https://doi.org/10.12688/f1000research.51738.2"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "ReScience C: reproducible replications in computational science",
+          "url": "https://rescience.github.io/"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Council of the EU (2023). Conclusions on high-quality, transparent, open, trustworthy and equitable scholarly publishing (9616/23)",
+          "url": "https://european-research-area.ec.europa.eu/documents/council-conclusions-high-quality-transparent-open-trustworthy-and-equitable-scholarly"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Science Europe, cOAlition S, OPERAS, ANR (2022). Action Plan for Diamond Open Access",
+          "url": "https://doi.org/10.5281/zenodo.6282402"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "European Commission. Open Research Europe",
+          "url": "https://open-research-europe.ec.europa.eu/"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "CoARA. Agreement on Reforming Research Assessment (2022)",
+          "url": "https://coara.eu/agreement/the-agreement-full-text/"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Regulation (EU) 2024/1689 (AI Act)",
+          "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Loi n° 2016-1321 pour une République numérique, article 30 (art. L533-4 du code de la recherche)",
+          "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000033202746"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Deuxième Plan national pour la science ouverte 2021-2024",
+          "url": "https://www.enseignementsup-recherche.gouv.fr/fr/une-politique-ambitieuse-pour-la-science-ouverte-50735"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Software Heritage, l'archive universelle du code source",
+          "url": "https://www.softwareheritage.org/"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "SoftwareX: research software publications and reuse",
+          "url": "https://www.sciencedirect.com/journal/softwarex"
+        }
+      ],
+      "sections": [
+        {
+          "title": "From publication to checkable evidence",
+          "anchor": null
+        },
+        {
+          "title": "Connect practices without confusing their purposes",
+          "anchor": null
+        },
+        {
+          "title": "The global picture: too many articles, too little verification",
+          "anchor": null
+        },
+        {
+          "title": "What already exists",
+          "anchor": null
+        },
+        {
+          "title": "The AI Act as a comparison, not a regulation of papers",
+          "anchor": null
+        },
+        {
+          "title": "France: editorial work that does not count",
+          "anchor": null
+        },
+        {
+          "title": "What is missing",
+          "anchor": null
+        },
+        {
+          "title": "No verification, no trust",
+          "anchor": null
+        },
+        {
+          "title": "Questions and answers",
+          "anchor": "faq"
+        },
+        {
+          "title": "Sources",
+          "anchor": "sources"
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/stories/",
+      "title": "Stories",
+      "language": "en",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Compute directly",
+          "anchor": null
+        },
+        {
+          "title": "Hybridize",
+          "anchor": null
+        },
+        {
+          "title": "Learn frugally",
+          "anchor": null
+        },
+        {
+          "title": "AI in its place",
+          "anchor": null
+        },
+        {
+          "title": "Demonstrate trust",
+          "anchor": null
+        },
+        {
+          "title": "Explore the results",
+          "anchor": null
+        },
+        {
+          "title": "Solar forecasting, made simple",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/stories/lql-equiv/",
+      "title": "Compute, don't learn: radiobiological dose equivalence with LQL-Equiv",
+      "language": "en",
+      "topics": [
+        "Compute directly",
+        "Medicine"
+      ],
+      "citations": [],
+      "sections": [
+        {
+          "title": "The finding",
+          "anchor": null
+        },
+        {
+          "title": "The question",
+          "anchor": null
+        },
+        {
+          "title": "The theory, in plain words",
+          "anchor": null
+        },
+        {
+          "title": "Where it sits on the complexity ladder",
+          "anchor": null
+        },
+        {
+          "title": "The example in figures",
+          "anchor": null
+        },
+        {
+          "title": "What it brings, and its limits",
+          "anchor": null
+        },
+        {
+          "title": "Go further",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/stories/questioning-research/",
+      "title": "Questioning how we do research: influence, integrity, excellence",
+      "language": "en",
+      "topics": [
+        "Demonstrate trust",
+        "Research practice"
+      ],
+      "citations": [],
+      "sections": [
+        {
+          "title": "The finding",
+          "anchor": null
+        },
+        {
+          "title": "The question",
+          "anchor": null
+        },
+        {
+          "title": "The theory, in plain words",
+          "anchor": null
+        },
+        {
+          "title": "The example in figures",
+          "anchor": null
+        },
+        {
+          "title": "What it brings, and its limits",
+          "anchor": null
+        },
+        {
+          "title": "Go further",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/stories/satellite-irradiance/",
+      "title": "Satellite irradiance forecasting: one cell, a patch or the whole field",
+      "language": "en",
+      "topics": [
+        "Learn frugally",
+        "Energy"
+      ],
+      "citations": [],
+      "sections": [
+        {
+          "title": "The finding",
+          "anchor": null
+        },
+        {
+          "title": "The question",
+          "anchor": null
+        },
+        {
+          "title": "The theory, in plain words",
+          "anchor": null
+        },
+        {
+          "title": "The example in figures",
+          "anchor": null
+        },
+        {
+          "title": "What it brings, and its limits",
+          "anchor": null
+        },
+        {
+          "title": "Go further",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/stories/thyroid-radioiodine/",
+      "title": "Thyroid cancer and radioiodine: model first, learn only what is missing",
+      "language": "en",
+      "topics": [
+        "Hybridize",
+        "Medicine"
+      ],
+      "citations": [],
+      "sections": [
+        {
+          "title": "The finding",
+          "anchor": null
+        },
+        {
+          "title": "The question",
+          "anchor": null
+        },
+        {
+          "title": "The theory, in plain words",
+          "anchor": null
+        },
+        {
+          "title": "Where it sits on the complexity ladder",
+          "anchor": null
+        },
+        {
+          "title": "The example in figures",
+          "anchor": null
+        },
+        {
+          "title": "What it brings, and its limits",
+          "anchor": null
+        },
+        {
+          "title": "Go further",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/stories/tunnel-load-simulator/",
+      "title": "Simulate what you cannot yet measure: the electricity demand of road tunnels",
+      "language": "en",
+      "topics": [
+        "Compute directly",
+        "Energy"
+      ],
+      "citations": [],
+      "sections": [
+        {
+          "title": "The finding",
+          "anchor": null
+        },
+        {
+          "title": "The question",
+          "anchor": null
+        },
+        {
+          "title": "The theory, in plain words",
+          "anchor": null
+        },
+        {
+          "title": "Where it sits on the complexity ladder",
+          "anchor": null
+        },
+        {
+          "title": "The example in figures",
+          "anchor": null
+        },
+        {
+          "title": "What it brings, and its limits",
+          "anchor": null
+        },
+        {
+          "title": "Go further",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/stories/websemantic/",
+      "title": "Let the language model read, let the validated code compute: WebSemantic",
+      "language": "en",
+      "topics": [
+        "AI in its place",
+        "Language"
+      ],
+      "citations": [],
+      "sections": [
+        {
+          "title": "The finding",
+          "anchor": null
+        },
+        {
+          "title": "The question",
+          "anchor": null
+        },
+        {
+          "title": "The theory, in plain words",
+          "anchor": null
+        },
+        {
+          "title": "Where it sits on the complexity ladder",
+          "anchor": null
+        },
+        {
+          "title": "The example in figures",
+          "anchor": null
+        },
+        {
+          "title": "What it brings, and its limits",
+          "anchor": null
+        },
+        {
+          "title": "Go further",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/teaching/",
+      "title": "Teaching",
+      "language": "en",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Open courses",
+          "anchor": null
+        },
+        {
+          "title": "Teaching and research supervision",
+          "anchor": null
+        },
+        {
+          "title": "Solar forecasting: the course starts from the signal",
+          "anchor": null
+        },
+        {
+          "title": "Talks and teaching",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/teaching/open-courses/",
+      "title": "Open courses in French: biostatistics, medical physics, industrial physics and food heat transfer",
+      "language": "en",
+      "topics": [],
+      "citations": [],
+      "sections": []
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/teaching/solar-forecasting-course/",
+      "title": "Solar forecasting course: forecasting the intermittent solar resource",
+      "language": "en",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "What the course contains",
+          "anchor": null
+        },
+        {
+          "title": "In brief",
+          "anchor": null
+        },
+        {
+          "title": "Course outline",
+          "anchor": null
+        },
+        {
+          "title": "Introduction",
+          "anchor": "part-1"
+        },
+        {
+          "title": "1 · Why forecast solar power?",
+          "anchor": "part-2"
+        },
+        {
+          "title": "2 · Solar radiation",
+          "anchor": "part-3"
+        },
+        {
+          "title": "3 · Time series and forecasting",
+          "anchor": "part-4"
+        },
+        {
+          "title": "4 · Clear sky and clear-sky index",
+          "anchor": "part-5"
+        },
+        {
+          "title": "5 · AR model and least squares",
+          "anchor": "part-6"
+        },
+        {
+          "title": "6 · Evaluation, ELM and online learning",
+          "anchor": "part-7"
+        },
+        {
+          "title": "Project, glossary and references",
+          "anchor": "part-8"
+        },
+        {
+          "title": "Appendices",
+          "anchor": "part-9"
+        },
+        {
+          "title": "Go further",
+          "anchor": null
+        }
+      ]
+    }
+  ]
+}
