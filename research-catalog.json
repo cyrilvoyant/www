@@ -1351,43 +1351,6 @@
       ]
     },
     {
-      "url": "https://www.cyrilvoyant.com/fr/heritage/",
-      "title": "Héritage scientifique : tout, au même endroit",
-      "language": "fr",
-      "topics": [],
-      "citations": [],
-      "sections": [
-        {
-          "title": "Les idées directrices",
-          "anchor": null
-        },
-        {
-          "title": "Les axes de recherche",
-          "anchor": null
-        },
-        {
-          "title": "Les logiciels, avec leur DOI et leur équipe",
-          "anchor": null
-        },
-        {
-          "title": "Les cours en accès libre (CC BY 4.0)",
-          "anchor": null
-        },
-        {
-          "title": "Les outils interactifs",
-          "anchor": null
-        },
-        {
-          "title": "Essais et positions",
-          "anchor": null
-        },
-        {
-          "title": "Collaborer, citer",
-          "anchor": null
-        }
-      ]
-    },
-    {
       "url": "https://www.cyrilvoyant.com/fr/ia-dans-la-recherche/",
       "title": "L'IA dans la recherche : AI Act, charte de laboratoire et boîte à outils",
       "language": "fr",
@@ -1721,6 +1684,43 @@
       ]
     },
     {
+      "url": "https://www.cyrilvoyant.com/fr/vue-d-ensemble/",
+      "title": "Vue d'ensemble : recherche, logiciels, cours et outils",
+      "language": "fr",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Les idées directrices",
+          "anchor": null
+        },
+        {
+          "title": "Les axes de recherche",
+          "anchor": null
+        },
+        {
+          "title": "Les logiciels, avec leur DOI et leur équipe",
+          "anchor": null
+        },
+        {
+          "title": "Les cours en accès libre (CC BY 4.0)",
+          "anchor": null
+        },
+        {
+          "title": "Les outils interactifs",
+          "anchor": null
+        },
+        {
+          "title": "Essais et positions",
+          "anchor": null
+        },
+        {
+          "title": "Collaborer, citer",
+          "anchor": null
+        }
+      ]
+    },
+    {
       "url": "https://www.cyrilvoyant.com/latest-publications-and-news/",
       "title": "News: publications, software and essays",
       "language": "en",
@@ -1974,8 +1974,8 @@
       ]
     },
     {
-      "url": "https://www.cyrilvoyant.com/legacy/",
-      "title": "Scientific legacy: everything in one place",
+      "url": "https://www.cyrilvoyant.com/overview/",
+      "title": "At a glance: research, software, courses and tools",
       "language": "en",
       "topics": [],
       "citations": [],

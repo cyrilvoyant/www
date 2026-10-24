@@ -4,10 +4,10 @@
 
 
 ---
-URL: https://www.cyrilvoyant.com/legacy/
+URL: https://www.cyrilvoyant.com/overview/
 
-Scientific legacy: everything in one place 
- More than twenty years of research in medical physics and energy forecasting, of teaching and of software. Everything public is here, linked to its source: paper, DOI, repository, team. Anyone may use it as they wish, on one condition: give credit. 
+At a glance: research, software, courses and tools 
+ The public work of Cyril Voyant in medical physics and energy forecasting, courses and software included, each item linked to its source: paper, DOI, repository, team. Free to reuse, crediting the authors. 
  Main ideas 
  Understand before you compute Start from the human question, model the system, then choose the tool. Beat a simple reference Every forecast is first compared with persistence; a model that does not beat it adds nothing. Complexity must pay A frugal model (ELM, autoregression) first; heavier only if the gain is shown. Trust is demonstrated Public code, data, licences and verification; AI is a tool, declared. Research lines 
  Solar and energy forecasting Persistence, BLEND, ELM, dimensionality reduction, the Corsican electricity mix. 
@@ -54,7 +54,7 @@ Scientific legacy: everything in one place
  Scientific publishing: no verification, no trust 
  AI in research: AI Act, charter and toolbox 
  Models live in the data 
- Research excellence in 2026 (talk) 
+ Research excellence in 2026: beyond publish and pray 
  Collaborate, cite 
  To extend a piece of work: collaborate . To reuse it: cite and reuse . Full publication list: HAL , ORCID . For machines: llms.txt , llms-full.txt , Atom feed .
 

@@ -2,11 +2,9 @@
 
 > Research, teaching and accessible accounts of scientific work. Start from the human question, model the system, validate against references, and add complexity when its benefit is demonstrated.
 
-
 ## Start here
 
-- [Scientific legacy: everything in one place](https://www.cyrilvoyant.com/legacy/): main ideas, research lines, software with DOIs and teams, open courses, tools, essays.
-- [Héritage scientifique](https://www.cyrilvoyant.com/fr/heritage/): the same hub in French.
+- [At a glance](https://www.cyrilvoyant.com/overview/): research lines, software with DOIs and teams, open courses, tools, essays ([en français](https://www.cyrilvoyant.com/fr/vue-d-ensemble/)).
 - [Full text of the main pages](https://www.cyrilvoyant.com/llms-full.txt): one plain-text file, canonical URL before each page.
 - [Reading map](https://www.cyrilvoyant.com/llm.md) and [page catalog](https://www.cyrilvoyant.com/research-catalog.json).
 - [Atom feed](https://www.cyrilvoyant.com/feed.xml): news, publications and new pages.
@@ -62,7 +60,6 @@ Distinguish published papers, preprints, software and work in preparation. Attri
 - [Exercices dirigés 2 : les ondes électromagnétiques, corrigé](https://www.cyrilvoyant.com/fr/enseignement/physique-pass/ed2-corrige/): Neuf exercices corrigés pas à pas : niveaux d'énergie, absorption et émission, rayons X, atténuation et couche de demi-atténuation, avec l'énoncé en PDF.
 - [Cours : les ondes électromagnétiques et les bases physiques de l'imagerie](https://www.cyrilvoyant.com/fr/enseignement/physique-pass/ondes-electromagnetiques/): De l'onde au photon, du spectre aux niveaux d'énergie, de la spectroscopie aux rayons X, de l'atténuation au scanner.
 - [L'arbre RTVACOS : où votre travail peut-il casser ?](https://www.cyrilvoyant.com/fr/excellence-rtvacos/): Un miroir interactif du cadre RTVACOS : quatre fondations (rigueur, transparence, visibilité, adoption) comme racines, trois amplificateurs comme branches.
-- [Héritage scientifique : tout, au même endroit](https://www.cyrilvoyant.com/fr/heritage/): Tout ce qui est public, au même endroit : idées directrices, axes de recherche, 15 logiciels avec DOI et équipes, cinq cours sous CC BY 4.0, outils…
 - [L'IA dans la recherche : AI Act, charte de laboratoire et boîte à outils](https://www.cyrilvoyant.com/fr/ia-dans-la-recherche/): L'IA générative écrit du code, rédige des articles et trie des données dans tous les laboratoires.
 - [Récits](https://www.cyrilvoyant.com/fr/recits/): Chaque récit suit le même plan : le constat, la question, la théorie en clair, la place sur l'échelle de la complexité, un exemple chiffré, les apports et…
 - [Calculer plutôt qu'apprendre : l'équivalence de dose en radiothérapie avec LQL-Equiv](https://www.cyrilvoyant.com/fr/recits/lql-equiv/): Quand le lien entre un schéma de radiothérapie et son effet biologique est connu, on le calcule directement.
@@ -71,13 +68,14 @@ Distinguish published papers, preprints, software and work in preparation. Attri
 - [Cancer de la thyroïde et iode radioactif : le modèle d'abord, n'apprendre que ce qui manque](https://www.cyrilvoyant.com/fr/recits/thyroid-radioiodine/): Combien de séances d'iode radioactif, à quel intervalle, avec quelle activité ? Un modèle intelligible de trois équations explore ces questions avant de…
 - [Simuler ce que l'on ne peut pas encore mesurer : la consommation électrique des tunnels routiers](https://www.cyrilvoyant.com/fr/recits/tunnel-load-simulator/): L'exploitant d'un tunnel dispose rarement de mesures détaillées de sa consommation, surtout au stade de la conception.
 - [Au modèle de langage la lecture, au code validé le calcul : WebSemantic](https://www.cyrilvoyant.com/fr/recits/websemantic/): Les modèles de langage comprennent bien une demande écrite en mots simples. Ils ne remplacent pas un code scientifique validé.
+- [Vue d'ensemble : recherche, logiciels, cours et outils](https://www.cyrilvoyant.com/fr/vue-d-ensemble/): Tout ce qui est public, au même endroit : idées directrices, axes de recherche, 15 logiciels avec DOI et équipes, cinq cours sous CC BY 4.0, outils…
 - [News: publications, software and essays](https://www.cyrilvoyant.com/latest-publications-and-news/): All research news of Cyril Voyant on one page: papers with their co-authors, software releases, appointments and essays, filterable by theme and year.
 - [BLEND: a better persistence forecast without training a neural network](https://www.cyrilvoyant.com/latest-publications-and-news/forecasting-with-less/): Accounting for daily phase improves persistence forecasts on the solar series studied, with differences widening at longer lead times.
 - [The γ-index: validating displaced solar forecasts beyond pointwise errors](https://www.cyrilvoyant.com/latest-publications-and-news/gamma-index-forecast-validation/): In the gamma-index paper’s synthetic experiment, more than 80% of pixels remain acceptable despite an approximately two-kilometre spatial displacement, a…
 - [NICE metrics: when RMSE hides a difference between solar forecasts](https://www.cyrilvoyant.com/latest-publications-and-news/nice-forecast-evaluation/): At a thirty-minute horizon, the NICE study reports a rounded median nRMSE of 0.19 for both an ELM and an autoregressive model.
 - [MIMO-ELM: seven energy signals of Corsica forecast by one model](https://www.cyrilvoyant.com/latest-publications-and-news/why-extreme-learning-machines/): At a one-hour horizon, our MIMO-ELM model achieves nRMSE values of 0.179 for solar generation and 0.051 for thermal generation, with R² above 0.98 for both…
 - [sCV and F: how variable and how forecastable is solar irradiance](https://www.cyrilvoyant.com/latest-publications-and-news/why-forecast-solar-power/): Across 68 Spanish weather stations, our forecastability indicator F retains an inverse relationship with forecast error, examined across ten models and 24…
-- [Scientific legacy: everything in one place](https://www.cyrilvoyant.com/legacy/): Everything public in one place: main ideas, research lines, 15 software packages with DOI and teams, five courses under CC BY 4.0, interactive tools, essays.
+- [At a glance: research, software, courses and tools](https://www.cyrilvoyant.com/overview/): Everything public in one place: main ideas, research lines, 15 software packages with DOI and teams, five courses under CC BY 4.0, interactive tools, essays.
 - [Prévision PV : réduire la dimension](https://www.cyrilvoyant.com/prevision-pv-reduction-dimension/): Prévoir la puissance électrique directement à partir de son historique évite de reconstruire toute la chaîne rayonnement–panneaux–onduleur.
 - [Prévision solaire : faire simple](https://www.cyrilvoyant.com/prevision-solaire-faire-simple/): Prévoir le solaire, c’est distinguer ce que l’on sait déjà (le mouvement du Soleil) de ce qu’il reste à anticiper : les nuages, la dynamique locale et…
 - [Prévision solaire : modèles frugaux](https://www.cyrilvoyant.com/prevision-solaire-modeles-frugaux/): Un modèle de prévision ne se juge pas uniquement sur son erreur. Il doit aussi tenir dans le dispositif, répondre à temps et rester maintenable.
