@@ -179,29 +179,49 @@
   var sR = box.querySelector(".sun-ribbons"), rOut = box.querySelector(".sun-rib-out");
   function ribbons() {
     clear(sR);
-    var x0 = 70, x1 = 630, X = function (m) { return x0 + (x1 - x0) * m / 1440; }, out = "";
-    for (var h = 0; h <= 24; h += 3) { tx(sR, X(60 * h), 16, String(h).padStart(2, "0") + ":00", { "text-anchor": "middle" }); }
-    tx(sR, x0 - 8, 16, "UTC", { "text-anchor": "end", "font-weight": "700" });
+    var x0 = 92, x1 = 630, X = function (m) { return x0 + (x1 - x0) * m / 1440; }, out = "", T0 = Date.UTC(YEAR, 0, st.n);
+    function offset(c) {                         // legal time minus UTC, in minutes, at noon UTC of the chosen day
+      var lt = local(T0 + 720 * 60000, c.tz).hm.split(":"), d = (+lt[0] * 60 + +lt[1]) - 720;
+      return d <= -720 ? d + 1440 : d > 840 ? d - 1440 : d;
+    }
+    // one clock for both cities: the UTC scale at the top
+    el("rect", { x: x0, y: 4, width: x1 - x0, height: 18, fill: "#eef1f4", rx: 4 }, sR);
+    for (var h = 0; h <= 24; h += 3) tx(sR, X(60 * h), 17, String(h).padStart(2, "0") + ":00", { "text-anchor": h === 0 ? "start" : h === 24 ? "end" : "middle", "font-weight": "700" });
+    tx(sR, x0 - 8, 17, fr ? "UTC, pour tous" : "UTC, for all", { "text-anchor": "end", "font-weight": "700" });
     CITIES.forEach(function (c, i) {
-      var y = 34 + i * 78, ev = events(c.lat, c.lon, st.n);
-      tx(sR, x0 - 8, y + 20, c.n, { "text-anchor": "end", "font-weight": "700", fill: c.c });
+      var y = 56 + i * 112, ev = events(c.lat, c.lon, st.n), off = offset(c);
+      tx(sR, x0 - 8, y + 18, c.n, { "text-anchor": "end", "font-weight": "700", fill: c.c });
       for (var m = 0; m < 1440; m += 10) {
         var e = Math.asin(cosz(c.lat, c.lon, st.n, m + 5)) / RAD;
-        var col = e > 0 ? "rgb(" + Math.round(240) + "," + Math.round(199 + 40 * Math.min(1, e / 60)) + "," + Math.round(94 + 120 * Math.min(1, e / 60)) + ")" : e > -6 ? "#5d6f86" : "#172536";
-        el("rect", { x: X(m), y: y, width: X(10) - X(0) + 0.6, height: 30, fill: col }, sR);
+        var col = e > 0 ? "rgb(240," + Math.round(199 + 40 * Math.min(1, e / 60)) + "," + Math.round(94 + 120 * Math.min(1, e / 60)) + ")" : e > -6 ? "#5d6f86" : "#172536";
+        el("rect", { x: X(m), y: y, width: X(10) - X(0) + 0.6, height: 28, fill: col }, sR);
       }
+      // events above the band, on two short lines
       [[ev.rise, L.rise], [ev.noon, L.noon], [ev.set, L.set]].forEach(function (q, j) {
-        var m = ((q[0] % 1440) + 1440) % 1440, lt = local(ms(st.n, q[0]), c.tz);
-        el("line", { x1: X(m), x2: X(m), y1: y - 3, y2: y + 33, stroke: j === 1 ? "#ad5200" : "#172536", "stroke-width": j === 1 ? 2 : 1 }, sR);
-        tx(sR, X(m), y + 46, q[1] + " " + hhmm(q[0]) + " UTC", { "text-anchor": m < 120 ? "start" : m > 1320 ? "end" : "middle" });
-        tx(sR, X(m), y + 58, "= " + lt.hm + " " + c.n, { "text-anchor": m < 120 ? "start" : m > 1320 ? "end" : "middle", "class": "sun-ax sun-mut" });
+        var m = ((q[0] % 1440) + 1440) % 1440, anc = m < 90 ? "start" : m > 1350 ? "end" : "middle";
+        el("line", { x1: X(m), x2: X(m), y1: y - 4, y2: y + 30, stroke: j === 1 ? "#ad5200" : "#172536", "stroke-width": j === 1 ? 2 : 1 }, sR);
+        tx(sR, X(m), y - 18, q[1], { "text-anchor": anc });
+        tx(sR, X(m), y - 7, hhmm(q[0]) + " UTC", { "text-anchor": anc, "font-weight": "700" });
       });
-      var lt = local(ms(st.n, ev.noon), c.tz);
-      out += "<b style=\"color:" + c.c + "\">" + c.n + "</b> : " + L.len + " <b>" + L.hm(ev.len) + "</b> · " + L.noon + " <b>" + hhmm(ev.noon) + " UTC</b> = " + lt.hm + " " + L.local + " (" + lt.off + ")<br>";
+      // the city's own clock under its band: same instants, other numbers
+      el("rect", { x: x0, y: y + 32, width: x1 - x0, height: 16, fill: "#f6f8fa", rx: 3 }, sR);
+      for (var lh = 0; lh < 24; lh += 3) {
+        var mu = ((lh * 60 - off) % 1440 + 1440) % 1440;
+        el("line", { x1: X(mu), x2: X(mu), y1: y + 30, y2: y + 35, stroke: c.c }, sR);
+        tx(sR, X(mu), y + 44, String(lh).padStart(2, "0") + ":00", { "text-anchor": mu < 20 ? "start" : mu > 1420 ? "end" : "middle", fill: c.c });
+      }
+      var o = (off >= 0 ? "+" : "−") + Math.abs(off / 60);
+      tx(sR, x0 - 8, y + 44, (fr ? "heure de " : "") + c.n + (fr ? "" : " time"), { "text-anchor": "end", fill: c.c });
+      tx(sR, x0 - 8, y + 56, "UTC" + o, { "text-anchor": "end", "class": "sun-ax sun-mut" });
+      var lt = local(T0 + ev.noon * 60000, c.tz);
+      out += "<b style=\"color:" + c.c + "\">" + c.n + "</b> : " + L.len + " <b>" + L.hm(ev.len) + "</b> · " + L.noon + " <b>" + hhmm(ev.noon) + " UTC</b> = " + lt.hm + " " + L.local + " (UTC" + o + ")<br>";
     });
-    el("line", { x1: X(st.m), x2: X(st.m), y1: 24, y2: 200, stroke: "#c0392b", "stroke-width": 2 }, sR);
-    tx(sR, X(st.m), 210, L.now + " " + hhmm(st.m) + " UTC", { "text-anchor": st.m < 120 ? "start" : st.m > 1320 ? "end" : "middle", fill: "#c0392b", "font-weight": "700" });
-    rOut.innerHTML = out;
+    var nowP = local(T0 + st.m * 60000, CITIES[0].tz).hm, nowS = local(T0 + st.m * 60000, CITIES[1].tz).hm;
+    el("line", { x1: X(st.m), x2: X(st.m), y1: 4, y2: 262, stroke: "#c0392b", "stroke-width": 2 }, sR);
+    tx(sR, X(st.m), 276, L.now + " " + hhmm(st.m) + " UTC = " + nowP + " " + CITIES[0].n + " = " + nowS + " " + CITIES[1].n,
+       { "text-anchor": st.m < 300 ? "start" : st.m > 1140 ? "end" : "middle", fill: "#c0392b", "font-weight": "700" });
+    rOut.innerHTML = out + (fr ? "Même trait rouge, même instant : seule l'heure affichée par chaque horloge locale change, et le Soleil ne se lève pas au même instant UTC."
+                              : "Same red line, same instant: only the time shown by each local clock changes, and the Sun does not rise at the same UTC instant.");
   }
 
   // ------------------------------------------------------------------ 4. double seasonality: heat maps, then the two cycles
