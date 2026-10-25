@@ -98,8 +98,8 @@
     var cur=EX.hta;
     var presets=node('div',{'class':'st-presets'},b);
     [['hta','Exemple : deux traitements de l’hypertension'],['gfi','Exemple du cours : aire de Broca (diapositive 97)']].forEach(function(p){var bt=node('button',{type:'button'},presets,p[1]);bt.addEventListener('click',function(){load(EX[p[0]]);});});
-    var ctl=node('div',{'class':'st-controls'},b),m1=control(ctl,'Moyenne groupe 1','range',0,100,.25,14),s1=control(ctl,'Écart-type groupe 1','range',.5,30,.1,5),
-        m2=control(ctl,'Moyenne groupe 2','range',0,100,.25,8),s2=control(ctl,'Écart-type groupe 2','range',.5,30,.1,6),n=control(ctl,'Patients par groupe n','range',3,60,1,12);
+    var ctl=node('div',{'class':'st-controls'},b),m1=control(ctl,'Moyenne groupe 1','range',0,100,.25,14),s1=control(ctl,'Écart-type groupe 1','range',.5,30,.01,5),
+        m2=control(ctl,'Moyenne groupe 2','range',0,100,.25,8),s2=control(ctl,'Écart-type groupe 2','range',.5,30,.01,6),n=control(ctl,'Patients par groupe n','range',3,60,1,12);
     var story=node('p',{'class':'st-reading'},b);
     var dist=chart(b,'Distributions des deux groupes : patients et moyennes',640,300);
     var legend=note(b,'');
