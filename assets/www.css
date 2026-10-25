@@ -399,6 +399,9 @@ pre.cite-ex { white-space: pre-wrap; background: var(--soft); padding: 12px 14px
 .ct-leg3 span { display: inline-block; width: 14px; height: 10px; border-radius: 3px; vertical-align: middle; margin-right: 4px; }
 .ct-leg3 .k1 { background: var(--muted); opacity: .55; } .ct-leg3 .k2 { background: var(--link); } .ct-leg3 .k3 { background: var(--focus); opacity: .7; }
 
+/* sticky tool controls (25/10, Cyril: « le bandeau de lancement d'animation comme cela sur les autres pages ») */
+.ctool .ct-ctl, .fc-ctl, .cx .ct-ctl, .st-controls, .ph-controls { position: sticky; top: 0; z-index: 3; padding: 10px 12px; background: color-mix(in srgb, var(--paper, #fff) 94%, transparent); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); border: 1px solid var(--line, #d8e0e8); border-radius: 10px; box-shadow: 0 2px 8px rgba(23, 37, 54, .06); }
+
 /* complex-valued forecasting */
 .cx { margin: 14px 0; padding: 16px; background: var(--paper); border: 1px solid var(--line); border-radius: 12px; }
 .cx .ct-ctl label { display: flex; flex-direction: column; font-size: .85rem; color: var(--muted); } .cx input[type=range] { width: 240px; accent-color: var(--link); }

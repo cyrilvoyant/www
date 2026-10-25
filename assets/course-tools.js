@@ -241,7 +241,7 @@
       "trois étapes, Δh = cp,frais·(Ti − Tc) + w·g·L + cp,congelé·(Tc − Tf). w : teneur en eau, g : part de l'eau qui gèle (toute l'eau ne gèle pas), L = 333 kJ/kg."));
     var W = 640, H = 250, L0 = 60, R0 = 150, T0 = 16, B0 = 46;
     var sv = el("svg", { viewBox: "0 0 " + W + " " + H, "class": "ct-svg ct-wide", role: "img", "aria-label": "Température du produit selon l'énergie extraite, et le produit qui gèle" }, box);
-    var play = h("button", { type: "button", "class": "ct-btn" }, "▶ Congeler"); box.appendChild(play);
+    var play = h("button", { type: "button", "class": "ct-btn" }, "▶ Congeler");
     var cM = slider("Masse (kg)", 10, 2000, 10, 500, function (v) { return f(v, 0) + " kg"; }),
         cW = slider("Teneur en eau w", 0.5, 0.95, 0.01, 0.75, function (v) { return f(v * 100, 0) + " %"; }),
         cG = slider("Part de l'eau gelée g", 0.6, 1, 0.01, 0.9, function (v) { return f(v * 100, 0) + " %"; }),
@@ -249,7 +249,7 @@
         cTc = slider("Début de congélation Tc (°C)", -5, 0, 0.1, -1.5, function (v) { return f(v, 1) + " °C"; }),
         cTf = slider("Température finale Tf (°C)", -40, -5, 1, -18, function (v) { return f(v, 0) + " °C"; }),
         cDt = slider("Durée Δt (h)", 0.5, 24, 0.5, 4, function (v) { return f(v, 1) + " h"; });
-    var ctl = h("div", { "class": "ct-ctl" }); [cM, cW, cG, cTi, cTc, cTf, cDt].forEach(function (c) { ctl.appendChild(c.w); }); box.appendChild(ctl);
+    var ctl = h("div", { "class": "ct-ctl" }); ctl.appendChild(play); [cM, cW, cG, cTi, cTc, cTf, cDt].forEach(function (c) { ctl.appendChild(c.w); }); box.appendChild(ctl);
     var bar = h("div", { "class": "ct-stack", "aria-hidden": "true" }); box.appendChild(bar);
     var leg = h("p", { "class": "muted ct-leg3" }, '<span class="k1"></span>1. refroidir le produit frais &nbsp; <span class="k2"></span>2. geler l\'eau (chaleur latente) &nbsp; <span class="k3"></span>3. refroidir le produit congelé');
     box.appendChild(leg);
