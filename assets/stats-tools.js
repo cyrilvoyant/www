@@ -101,11 +101,13 @@
     var ctl=node('div',{'class':'st-controls'},b),m1=control(ctl,'Moyenne groupe 1','range',0,100,.25,14),s1=control(ctl,'Écart-type groupe 1','range',.5,30,.01,5),
         m2=control(ctl,'Moyenne groupe 2','range',0,100,.25,8),s2=control(ctl,'Écart-type groupe 2','range',.5,30,.01,6),n=control(ctl,'Patients par groupe n','range',3,60,1,12);
     var story=node('p',{'class':'st-reading'},b);
-    var dist=chart(b,'Distributions des deux groupes : patients et moyennes',640,300);
-    var legend=note(b,'');
     var metrics=node('div',{'class':'st-metrics','aria-live':'polite'},b);
-    var view=chart(b,'Loi de Student sous H₀, seuil du cours et t observé',640,260);
-    var read=node('p',{'class':'st-reading'},b), steps=note(b,''), cond=note(b,'');
+    var pair=node('div',{'class':'st-pair'},b), left=node('div',{'class':'st-cell'},pair), right=node('div',{'class':'st-cell'},pair);   // 1×2: distributions | test (Cyril, 25/10)
+    node('h4',{},left,'1. Les deux groupes');node('h4',{},right,'2. Le test de Student');
+    var dist=chart(left,'Distributions des deux groupes : patients et moyennes',640,300);
+    var legend=note(left,'');
+    var view=chart(right,'Loi de Student sous H₀, seuil du cours et t observé',640,260);
+    var read=node('p',{'class':'st-reading'},right), steps=note(b,''), cond=note(b,'');
     function load(e){cur=e;m1.i.value=e.m1;s1.i.value=e.s1;m2.i.value=e.m2;s2.i.value=e.s2;n.i.value=e.n;[m1,s1,m2,s2,n].forEach(function(c){c.i.dispatchEvent(new Event('input'));});}
     function normal(x,m,s){return Math.exp(-.5*((x-m)/s)*((x-m)/s))/(s*Math.sqrt(2*Math.PI));}
     function draw(){
@@ -123,10 +125,10 @@
         svg('path',{d:path(pts)+'L'+X(hi)+' '+base+'L'+X(lo)+' '+base+'Z',fill:g[2],'fill-opacity':.12,stroke:g[2],'stroke-width':2},dist);
         svg('path',{d:path(ptm),fill:'none',stroke:g[2],'stroke-width':2.5,'stroke-dasharray':'6 4'},dist);
         svg('line',{x1:X(g[0]),x2:X(g[0]),y1:base,y2:28,stroke:g[2],'stroke-width':2},dist);
-        svg('text',{x:X(g[0]),y:22-k*0,'text-anchor':'middle','class':'st-axis',fill:g[2]},dist,g[3]+' : '+num(g[0],1));
+        svg('text',{x:X(g[0]),y:12+k*13,'text-anchor':(g[0]>=(k?a1:a2))?'start':'end','class':'st-axis',fill:g[2]},dist,g[3]+' : '+num(g[0],1));
         M.summarySample(g[0],g[1],nn).forEach(function(x,i){svg('circle',{cx:X(x),cy:base+12+k*14+((i*7)%3-1)*2,r:3,fill:g[2],'fill-opacity':.75},dist);});
       });
-      var yA=46;svg('line',{x1:X(Math.min(a1,a2)),x2:X(Math.max(a1,a2)),y1:yA,y2:yA,stroke:'#193d5b','stroke-width':2},dist);
+      var yA=52;svg('line',{x1:X(Math.min(a1,a2)),x2:X(Math.max(a1,a2)),y1:yA,y2:yA,stroke:'#193d5b','stroke-width':2},dist);
       svg('text',{x:(X(a1)+X(a2))/2,y:yA-6,'text-anchor':'middle','class':'st-axis'},dist,'Δ = '+num(a1-a2,2)+u);
       [lo,(lo+hi)/2,hi].forEach(function(x){svg('text',{x:X(x),y:296,'text-anchor':'middle','class':'st-axis'},dist,num(x,1));});
       legend.textContent='Courbes pleines : répartition des patients de chaque groupe (moyenne ± écart-type). Pointillés : précision de la moyenne du groupe, d’écart-type s/√n. Points : les '+nn+' patients de chaque groupe (valeurs construites pour avoir exactement la moyenne et l’écart-type affichés). Les patients se chevauchent ; ce qui compte pour le test, c’est le chevauchement des pointillés.';

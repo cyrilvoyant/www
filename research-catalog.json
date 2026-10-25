@@ -2863,6 +2863,10 @@
       "citations": [],
       "sections": [
         {
+          "title": "Avant l’expérience : trois notions clés",
+          "anchor": null
+        },
+        {
           "title": "Pourquoi cette question appartient à mon parcours",
           "anchor": null
         },
@@ -2895,7 +2899,7 @@
           "anchor": null
         },
         {
-          "title": "Ce que l’on pourrait rechercher ensuite",
+          "title": "Faible dose moyenne, haut LET : pourquoi la question biologique reste intéressante",
           "anchor": null
         },
         {
@@ -3881,6 +3885,10 @@
       "citations": [],
       "sections": [
         {
+          "title": "Before the experiment: three key ideas",
+          "anchor": null
+        },
+        {
           "title": "Where this fits in my research",
           "anchor": null
         },
@@ -3913,7 +3921,7 @@
           "anchor": null
         },
         {
-          "title": "What would need to come next?",
+          "title": "Low mean dose, high LET: why the biological question remains interesting",
           "anchor": null
         },
         {

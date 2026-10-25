@@ -16,7 +16,7 @@
     var fr = box.dataset.lang === 'fr', tr = function (a,b) { return fr ? a : b; };
     var fmt = function (n) { return n.toLocaleString(fr?'fr-FR':'en-GB',{maximumFractionDigits:2}); };
     box.innerHTML = '<h2>' + tr('Du ciel à la cellule : explorer sans confondre les échelles','From the sky to the cell: keep the scales separate') + '</h2>' +
-      '<p>' + tr('Trois étapes schématiques. Les particules dessinées ne représentent pas un nombre réel de captures.','Three schematic stages. Drawn particles do not represent actual capture counts.') + '</p>' +
+      '<p>' + tr('Quatre étapes schématiques, jusqu’à une possible signalisation bystander. Les particules dessinées ne représentent pas un nombre réel de captures.','Four schematic stages, through possible bystander signalling. Drawn particles do not represent actual capture counts.') + '</p>' +
       '<svg viewBox="0 0 760 330" role="img" aria-label="' + tr('Cascade atmosphérique, avion et capture du bore','Atmospheric cascade, aircraft and boron capture') + '"></svg>' +
       '<div class="bnct-ctl"><button type="button" data-step>' + tr('Étape suivante','Next stage') + '</button><button type="button" data-play>' + tr('Lire le schéma','Play diagram') + '</button><button type="button" data-reset>' + tr('Revenir au ciel','Back to the sky') + '</button></div>' +
       '<p class="bnct-step" aria-live="polite"></p><div class="bnct-ctl"><label>' + tr('Durée illustrative : ','Illustrative duration: ') + '<output data-hours>1 h</output><input aria-label="' + tr('Durée en heures','Duration in hours') + '" data-time type="range" min="0" max="12" step="0.5" value="1"></label><label>' + tr('Bore-10 dans le fantôme : ','Boron-10 in the phantom: ') + '<output data-boron>20 µg/g</output><input aria-label="' + tr('Concentration de bore-10 du fantôme','Phantom boron-10 concentration') + '" data-b type="range" min="0" max="50" step="1" value="20"></label></div>' +
@@ -26,7 +26,8 @@
     var reduced=matchMedia('(prefers-reduced-motion: reduce)');
     var desc=[tr('1 — Des particules cosmiques énergétiques rencontrent l’atmosphère : des particules secondaires, dont des neutrons, sont produites. Le vent solaire module le fond galactique ; un événement solaire énergétique est autre chose.','1 — Energetic cosmic particles encounter the atmosphere, producing secondaries including neutrons. Solar wind modulates the galactic background; a solar energetic event is different.'),
       tr('2 — Le modèle étudié fixe 12 km d’altitude, 45° de latitude et un spectre de 14,7 neutrons·cm⁻²·s⁻¹. Une couche d’eau de 10 cm modère les neutrons avant le crâne et le fantôme tumoral. Il ne décrit pas toutes les routes aériennes.','2 — The studied model fixes 12 km altitude, 45° latitude and a spectrum with 14.7 neutrons·cm⁻²·s⁻¹. A 10 cm water layer moderates neutrons before the skull and tumour phantom. This does not describe every flight route.'),
-      tr('3 — Une capture par le bore-10 émet du lithium-7 et une particule alpha : des trajectoires de quelques micromètres. Une énergie très localisée, mais des événements rares : la dose moyenne reste de l’ordre du µGy/h dans le cas de référence.','3 — Boron-10 capture emits lithium-7 and an alpha particle, with tracks a few micrometres long. Highly local energy, but rare events: the mean dose remains of the order of µGy/h in the reference case.')];
+      tr('3 — Une capture par le bore-10 émet du lithium-7 et une particule alpha : des trajectoires de quelques micromètres. Une énergie très localisée, mais des événements rares : la dose moyenne reste de l’ordre du µGy/h dans le cas de référence.','3 — Boron-10 capture emits lithium-7 and an alpha particle, with tracks a few micrometres long. Highly local energy, but rare events: the mean dose remains of the order of µGy/h in the reference case.'),
+      tr('4 — Une cellule touchée peut transmettre des signaux à ses voisines : c’est le bystander. Le pointillé violet représente un signal biologique, pas une trajectoire alpha ni une dose supplémentaire. La réponse de la voisine et l’éventuel effet sur les récidives ne sont pas prédits ici.','4 — A hit cell may signal to neighbours: a bystander response. The purple dashed line represents biological signalling, not an alpha track or extra dose. Neighbour responses and any recurrence effect are not predicted here.')];
     var NS='http://www.w3.org/2000/svg';
     function el(tag,a,text) {var e=document.createElementNS(NS,tag);Object.keys(a).forEach(function(k){e.setAttribute(k,a[k]);});if(text)e.textContent=text;sv.appendChild(e);return e;}
     function txt(x,y,s,size,color){return el('text',{x:x,y:y,'font-size':size||16,fill:color||'currentColor','font-family':'system-ui'},s);}
@@ -57,6 +58,13 @@
       circle(620,170,79,'#e5eff5');el('circle',{cx:620,cy:170,r:79,fill:'none',stroke:'#7197ac','stroke-dasharray':'5 5'});
       circle(620,170,12,'#ba6217');txt(599,151,'¹⁰B',20,'#13405d');
       if(step>=2){var r=40+30*travel;line(620,170,620+r,170-r/2,'#b94631',4);line(620,170,620-r/2,170+r/4,'#7a419c',4);circle(620+r,170-r/2,6,'#b94631');circle(620-r/2,170+r/4,6,'#7a419c');txt(676,113,'α ~8 µm',14,'#9e3020');txt(493,232,'⁷Li ~4 µm',14,'#70338c');}
+      if(step===3){
+        circle(721,229,18,'#d4e1e9');txt(716,235,'?',19,'#70338c');
+        el('line',{x1:667,y1:202,x2:705,y2:224,stroke:'#8052a2','stroke-width':2,'stroke-dasharray':'4 4'});
+        circle(667+38*travel,202+22*travel,3,'#8052a2');
+        txt(686,255,tr('voisine','neighbour'),11,'#70338c');
+        txt(501,73,tr('Bystander : réponse à vérifier','Bystander: response to investigate'),12,'#70338c');
+      }
       txt(498,280,'¹⁰B + n → ⁷Li + α',20,'#13405d');
       txt(498,310,tr('Schéma, distances non à l’échelle','Schematic, distances not to scale'),12,'#13405d');
     }
@@ -69,9 +77,9 @@
       box.querySelector('.bnct-bars').innerHTML=a.map(function(n,i){return '<div class="bnct-bar"><span>'+names[i]+'</span><i style="width:'+n+'%"></i><b>'+(i===2?'≈ ':'')+n+' %</b></div>';}).join('');
     }
     function stop(){playing=false;cancelAnimationFrame(frame);last=0;box.querySelector('[data-play]').textContent=tr('Lire le schéma','Play diagram');}
-    function tick(now){if(!playing)return;if(last){var dt=Math.min(now-last,100);phase=(phase+dt/2200)%1;accumulated+=dt;if(accumulated>4400){step=(step+1)%3;accumulated=0;box.querySelector('.bnct-step').textContent=desc[step];}}last=now;draw();frame=requestAnimationFrame(tick);}
-    box.querySelector('[data-play]').onclick=function(){if(playing){stop();return;}if(reduced.matches){step=(step+1)%3;updateStage();return;}playing=true;this.textContent=tr('Pause','Pause');frame=requestAnimationFrame(tick);};
-    box.querySelector('[data-step]').onclick=function(){stop();step=(step+1)%3;updateStage();};
+    function tick(now){if(!playing)return;if(last){var dt=Math.min(now-last,100);phase=(phase+dt/2200)%1;accumulated+=dt;if(accumulated>4400){step=(step+1)%desc.length;accumulated=0;box.querySelector('.bnct-step').textContent=desc[step];}}last=now;draw();frame=requestAnimationFrame(tick);}
+    box.querySelector('[data-play]').onclick=function(){if(playing){stop();return;}if(reduced.matches){step=(step+1)%desc.length;updateStage();return;}playing=true;this.textContent=tr('Pause','Pause');frame=requestAnimationFrame(tick);};
+    box.querySelector('[data-step]').onclick=function(){stop();step=(step+1)%desc.length;updateStage();};
     box.querySelector('[data-reset]').onclick=function(){stop();step=0;phase=0;accumulated=0;updateStage();};
     box.querySelectorAll('input,select').forEach(function(e){e.addEventListener('input',values);});
     document.addEventListener('visibilitychange',function(){if(document.hidden)stop();});
