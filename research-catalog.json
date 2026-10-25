@@ -1237,6 +1237,10 @@
           "anchor": null
         },
         {
+          "title": "Moteur ditherme : énergie, rendement et Carnot",
+          "anchor": null
+        },
+        {
           "title": "C. Voyant",
           "anchor": null
         },
@@ -1409,6 +1413,14 @@
       "sections": [
         {
           "title": "Le chapitre en 10 points",
+          "anchor": null
+        },
+        {
+          "title": "Onde électromagnétique : voir la propagation",
+          "anchor": null
+        },
+        {
+          "title": "Compton : angle et partage de l’énergie",
           "anchor": null
         },
         {
@@ -1619,6 +1631,18 @@
         },
         {
           "title": "Régression : intervalle de confiance ou de prévision ?",
+          "anchor": null
+        },
+        {
+          "title": "Onde EM animée : E, B et propagation",
+          "anchor": null
+        },
+        {
+          "title": "Compton : angle et partage de l’énergie",
+          "anchor": null
+        },
+        {
+          "title": "Moteur ditherme : bilan et borne de Carnot",
           "anchor": null
         }
       ]
@@ -3701,6 +3725,18 @@
         },
         {
           "title": "Regression: confidence or prediction interval?",
+          "anchor": null
+        },
+        {
+          "title": "Animated EM wave: E, B and propagation",
+          "anchor": null
+        },
+        {
+          "title": "Compton: angle and energy sharing",
+          "anchor": null
+        },
+        {
+          "title": "Heat engine: energy balance and Carnot limit",
           "anchor": null
         }
       ]

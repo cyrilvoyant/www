@@ -37,7 +37,7 @@ Yves-Marie Saint-Drenan: https://orcid.org/0000-0003-1471-1092
 Zaher Mundher Yaseen: https://orcid.org/0000-0003-3344-214X
 
 /* SITE */
-Last update: 2026-10-24
+Last update: 2026-10-25
 Language: English, French
 Licence of texts and courses: CC BY 4.0
 Standards: HTML5, schema.org JSON-LD, Atom, sitemap, llms.txt
