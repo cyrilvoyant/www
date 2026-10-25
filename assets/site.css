@@ -173,12 +173,14 @@ picture { display: block; }
 .cvt-maps figcaption { font-size: .8rem; color: var(--muted); margin-top: 4px; }
 @media (max-width: 720px) { .cvt-maps { grid-template-columns: repeat(2, 1fr); } }
 
-/* wide screens (25/10, Cyril: « le site ne prend pas toute la place sur un navigateur web … deux affichages, mobile court, sinon large ? »):
-   above 1280 px the page grows to 1240 px; running text and text boxes keep a readable measure (46 rem, centred), while
+/* wide screens (25/10, Cyril: « toutes les pages sont trop étroites »):
+   above 1280 px the page grows to 1440 px; running text uses a readable but substantially wider measure (64 rem), while
    figures, tables, tools and card grids use the full width. Phones and tablets are unchanged. */
 @media (min-width: 1280px) {
-  :root { --width: 1240px; }
-  main :is(p, ul, ol, dl, h1, h2, h3, h4, blockquote, details, .lead, .crumbs, .xs-crumbs, .eyebrow, .brief, aside.thread, .theory, .cite-lede, .links-box, .muted) { max-width: 46rem; margin-left: auto; margin-right: auto; }
+  :root { --width: 1440px; }
+  main :is(p, ul, ol, dl, h1, h2, h3, h4, blockquote, details, .lead, .crumbs, .xs-crumbs, .eyebrow, .brief, aside.thread, .theory, .cite-lede, .links-box, .muted) { max-width: 64rem; margin-left: auto; margin-right: auto; }
+  /* Keep hero copy on the same left edge as its title, rather than centring each block independently. */
+  main .hero > div > :is(p, ul, ol, dl, h1, h2, h3, h4, details) { max-width: none; margin-left: 0; margin-right: 0; }
   main :is(figure, table, .table-wrap, .fc-tw, .cards3, .cards, .grid, .cta-grid, .ctool, .fc, .cx, .st-lab, .ph-lab, .sun, .bs-viewer, .cvt-2x2, .cvt-sticky, .sun-dash, #try-it, .course-catalogue, .thread-path)
     :is(p, ul, ol, dl, h1, h2, h3, h4, details, .muted) { max-width: none; margin-left: 0; margin-right: 0; }
   main :is(figure, .table-wrap, .fc-tw, .ctool, .fc, .cx, .st-lab, .ph-lab, .sun, .bs-viewer, #try-it) { max-width: none; }

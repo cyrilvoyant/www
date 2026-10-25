@@ -29,6 +29,10 @@
       "citations": [],
       "sections": [
         {
+          "title": "Three sites, three roles",
+          "anchor": null
+        },
+        {
           "title": "Understand my research",
           "anchor": null
         },
@@ -62,6 +66,23 @@
         },
         {
           "title": "About",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/30-second-brief/",
+      "title": "My research in 30 seconds",
+      "language": "en",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "The thread connecting my work",
+          "anchor": null
+        },
+        {
+          "title": "Start here",
           "anchor": null
         }
       ]
@@ -360,6 +381,10 @@
       "topics": [],
       "citations": [],
       "sections": [
+        {
+          "title": "Trois sites, trois fonctions",
+          "anchor": null
+        },
         {
           "title": "Comprendre mes recherches",
           "anchor": null
@@ -1870,6 +1895,23 @@
       ]
     },
     {
+      "url": "https://www.cyrilvoyant.com/fr/fiche-30-secondes/",
+      "title": "Ma recherche en 30 secondes",
+      "language": "fr",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Le fil conducteur",
+          "anchor": null
+        },
+        {
+          "title": "Pour commencer",
+          "anchor": null
+        }
+      ]
+    },
+    {
       "url": "https://www.cyrilvoyant.com/fr/ia-dans-la-recherche/",
       "title": "L'IA dans la recherche : AI Act, charte de laboratoire et boîte à outils",
       "language": "fr",
@@ -2804,6 +2846,10 @@
         },
         {
           "title": "Comprendre la prévision solaire",
+          "anchor": null
+        },
+        {
+          "title": "Prévision solaire : trois dossiers complémentaires",
           "anchor": null
         }
       ]

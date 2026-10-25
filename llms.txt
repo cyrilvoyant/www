@@ -2,18 +2,6 @@
 
 > Research, teaching and accessible accounts of scientific work. Start from the human question, model the system, validate against references, and add complexity when its benefit is demonstrated.
 
-## Start here
-
-- [Research](https://www.cyrilvoyant.com/stories/) / [Recherche](https://www.cyrilvoyant.com/fr/recits/): questions and findings organized by field.
-- [Courses](https://www.cyrilvoyant.com/teaching/) / [Cours](https://www.cyrilvoyant.com/fr/enseignement/): subject, audience, level, chapters.
-- [Interactive tools](https://www.cyrilvoyant.com/tools/) / [Outils interactifs](https://www.cyrilvoyant.com/fr/outils/): a single catalog, with actual interface languages and execution types.
-- [At a glance](https://www.cyrilvoyant.com/overview/): research lines, software with DOIs and teams, open courses, tools, essays ([en français](https://www.cyrilvoyant.com/fr/vue-d-ensemble/)).
-- [Full text of the main pages](https://www.cyrilvoyant.com/llms-full.txt): one plain-text file, canonical URL before each page.
-- [Reading map](https://www.cyrilvoyant.com/llm.md) and [page catalog](https://www.cyrilvoyant.com/research-catalog.json).
-- [Atom feed](https://www.cyrilvoyant.com/feed.xml): news, publications and new pages.
-- [Knowledge graph](https://www.cyrilvoyant.com/graph.ttl) (Turtle; same graph as [JSON-LD](https://www.cyrilvoyant.com/graph.jsonld)): pages, people with ORCID, software, articles, glossaries (schema.org DefinedTermSet).
-- RO-Crate per study: https://www.cyrilvoyant.com/ro-crate/<study>/ro-crate-metadata.json (software DOI, article DOI and status, team, citing pages); each page signposts its crates with link rel="describedby".
-
 ## Identity and primary sources
 
 - [Identity](https://person.cyrilvoyant.com/): shared person identifier https://person.cyrilvoyant.com/#cyril-voyant.
@@ -35,6 +23,7 @@ Distinguish published papers, preprints, software and work in preparation. Attri
 ## Pages
 
 - [Cyril Voyant](https://www.cyrilvoyant.com/): Cyril Voyant, physicist and Research Director at Mines Paris – PSL: compute directly when the link is known, hybridize when the model falls short, climb the…
+- [My research in 30 seconds](https://www.cyrilvoyant.com/30-second-brief/): A concise introduction to Cyril Voyant’s research: understand the system, choose a useful model, measure what tools add and keep people responsible.
 - [About](https://www.cyrilvoyant.com/about/): Background, current research, projects, recognition, publications, code and contact.
 - [AI in research: the AI Act, a lab charter and a toolbox for researchers](https://www.cyrilvoyant.com/ai-in-research/): Generative AI now writes code, drafts papers and reviews data in every laboratory. The European AI Act sets rules for what we build and what we transfer.
 - [Understand before you compute: the approach of Cyril Voyant](https://www.cyrilvoyant.com/approach/): Medicine, energy, language: very different questions, one method. People and their question at the center; a model we understand at the core; every tool…
@@ -89,6 +78,7 @@ Distinguish published papers, preprints, software and work in preparation. Attri
 - [Exercices dirigés 2 : les ondes électromagnétiques, corrigé](https://www.cyrilvoyant.com/fr/enseignement/physique-pass/ed2-corrige/): Neuf exercices corrigés pas à pas : niveaux d'énergie, absorption et émission, rayons X, atténuation et couche de demi-atténuation, avec l'énoncé en PDF.
 - [Cours : les ondes électromagnétiques et les bases physiques de l'imagerie](https://www.cyrilvoyant.com/fr/enseignement/physique-pass/ondes-electromagnetiques/): De l'onde au photon, du spectre aux niveaux d'énergie, de la spectroscopie aux rayons X, de l'atténuation au scanner.
 - [L'arbre RTVACOS : où votre travail peut-il casser ?](https://www.cyrilvoyant.com/fr/excellence-rtvacos/): Un miroir interactif du cadre RTVACOS : quatre fondations (rigueur, transparence, visibilité, adoption) comme racines, trois amplificateurs comme branches.
+- [Ma recherche en 30 secondes](https://www.cyrilvoyant.com/fr/fiche-30-secondes/): Une fiche courte pour présenter la recherche de Cyril Voyant : comprendre le système, choisir un modèle utile, mesurer l’apport des outils et garder…
 - [L'IA dans la recherche : AI Act, charte de laboratoire et boîte à outils](https://www.cyrilvoyant.com/fr/ia-dans-la-recherche/): L'IA générative écrit du code, rédige des articles et trie des données dans tous les laboratoires.
 - [Le fil : cinq étapes, une même démarche](https://www.cyrilvoyant.com/fr/le-fil/): Le fil des recherches de Cyril Voyant en cinq étapes : calculer quand le lien est connu, hybrider, apprendre frugalement, l'IA à sa place, démontrer la…
 - [Outils interactifs : choisir une question, essayer une méthode](https://www.cyrilvoyant.com/fr/outils/): Calculateurs, expériences pédagogiques et applications de recherche, réunis par domaine et langue.

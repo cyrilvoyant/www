@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" role="img" aria-labelledby="t d">
+  <title id="t">Indexed research articles: 2016 equals 100, 2022 approximately 147</title>
+  <desc id="d">Two bars compare an index of 100 in 2016 with approximately 147 in 2022. Source: Hanson and colleagues, 2024.</desc>
+  <rect width="720" height="360" rx="22" fill="#edf4fa"/>
+  <text x="44" y="58" fill="#172536" font-family="system-ui,sans-serif" font-size="23" font-weight="700">Indexed research articles</text>
+  <text x="44" y="91" fill="#46586a" font-family="system-ui,sans-serif" font-size="17">Scopus and Web of Science · 2016 = 100</text>
+  <line x1="92" y1="270" x2="636" y2="270" stroke="#9aabba" stroke-width="2"/>
+  <rect x="168" y="150" width="142" height="120" rx="10" fill="#07569a"/>
+  <rect x="414" y="94" width="142" height="176" rx="10" fill="#ad5200"/>
+  <text x="239" y="137" fill="#172536" text-anchor="middle" font-family="system-ui,sans-serif" font-size="23" font-weight="700">100</text>
+  <text x="485" y="81" fill="#172536" text-anchor="middle" font-family="system-ui,sans-serif" font-size="23" font-weight="700">≈147</text>
+  <text x="239" y="306" fill="#172536" text-anchor="middle" font-family="system-ui,sans-serif" font-size="19">2016</text>
+  <text x="485" y="306" fill="#172536" text-anchor="middle" font-family="system-ui,sans-serif" font-size="19">2022</text>
+  <text x="44" y="340" fill="#46586a" font-family="system-ui,sans-serif" font-size="14">Hanson et al. (2024) · growth in indexed article volume</text>
+</svg>

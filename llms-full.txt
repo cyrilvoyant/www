@@ -362,6 +362,11 @@ Recherche : questions, résultats et méthodes
  Prévision satellite : une cellule, un voisinage ou tout le champ ? , protocole, résultats du dépôt public et code MATLAB/Python ; manuscrit en préparation, données HelioClim-3 fournies par SoDa.
  Variabilité solaire et prévisibilité : sCV et F , étude publiée, exemple pas à pas, figures et code MATLAB.
  NICE : comparer les erreurs à la persistance , méthode publiée et nouveau dépôt MATLAB documenté .
+ Prévision solaire : trois dossiers complémentaires
+ Ces pages gardent leurs adresses directes pour préserver les liens existants. Elles sont rassemblées ici dans le parcours Recherche, plutôt que laissées isolées.
+ Prévision solaire : faire simple , choisir la démarche avant le modèle.
+ Prévision PV : réduire la dimension , déterminer quelle information des entrées est utile.
+ Prévision solaire : modèles frugaux , mesurer la capacité utile avant le déploiement.
 
 ---
 URL: https://www.cyrilvoyant.com/tools/
@@ -701,6 +706,36 @@ At a glance: research, software, courses and tools
  Research excellence in 2026: beyond publish and pray
  Collaborate, cite
  To extend a piece of work: collaborate . To reuse it: cite and reuse . Full publication list: HAL , ORCID . For machines: llms.txt , llms-full.txt , Atom feed .
+
+---
+URL: https://www.cyrilvoyant.com/fr/fiche-30-secondes/
+
+Ma recherche en 30 secondes
+ Je suis physicien et directeur de recherche à Mines Paris – PSL. Je construis et évalue des modèles pour éclairer des décisions en énergie et en physique médicale.
+ Le fil conducteur
+ Je pars du phénomène, de la question humaine et de la décision à éclairer. Si la relation est connue, je la calcule directement ; si le modèle est incomplet, je le complète ; si une relation manque, j’évalue ce que l’apprentissage apporte face à une référence explicite. Je n’ajoute de complexité que si le gain est démontré. L’IA est un outil parmi d’autres ; la méthode, la vérification et la responsabilité restent centrales.
+ Pour commencer
+ Recherche : résultats, limites, équipes et articles
+ Démonstration : comparer persistance, AR et ELM
+ Identité académique et CV (page en anglais)
+ Cours de prévision solaire
+ Guides techniques et code reproductible (anglais)
+ Une même démarche traverse des domaines différents : comprendre avant de calculer, puis choisir l’outil adapté à la question.
+
+---
+URL: https://www.cyrilvoyant.com/30-second-brief/
+
+My research in 30 seconds
+ I am a physicist and Research Director at Mines Paris – PSL. I build and evaluate models to help inform decisions in energy and medical physics.
+ The thread connecting my work
+ I start from the phenomenon, the human question and the decision to inform. If the relation is known, I compute it directly; if a model is incomplete, I complement it; if a relation is missing, I measure what learning adds against an explicit reference. I add complexity only when its benefit is demonstrated. AI is one tool among others; method, verification and responsibility remain central.
+ Start here
+ Research: findings, limitations, teams and papers
+ Live demonstration: compare persistence, AR and ELM
+ Academic identity and CV
+ Solar forecasting course
+ Technical guides and reproducible code
+ One approach connects different fields: understand before you compute, then choose the tool that fits the question.
 
 ---
 URL: https://www.cyrilvoyant.com/approach/

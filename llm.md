@@ -29,6 +29,7 @@ Cyril Voyant connects medical physics and energy forecasting through modelling f
 ### en
 
 - [Cyril Voyant](https://www.cyrilvoyant.com/)
+- [My research in 30 seconds](https://www.cyrilvoyant.com/30-second-brief/)
 - [About](https://www.cyrilvoyant.com/about/)
 - [AI in research: the AI Act, a lab charter and a toolbox for researchers](https://www.cyrilvoyant.com/ai-in-research/)
 - [Understand before you compute: the approach of Cyril Voyant](https://www.cyrilvoyant.com/approach/)
@@ -112,6 +113,7 @@ Cyril Voyant connects medical physics and energy forecasting through modelling f
 - [Exercices dirigés 2 : les ondes électromagnétiques, corrigé](https://www.cyrilvoyant.com/fr/enseignement/physique-pass/ed2-corrige/)
 - [Cours : les ondes électromagnétiques et les bases physiques de l'imagerie](https://www.cyrilvoyant.com/fr/enseignement/physique-pass/ondes-electromagnetiques/)
 - [L'arbre RTVACOS : où votre travail peut-il casser ?](https://www.cyrilvoyant.com/fr/excellence-rtvacos/)
+- [Ma recherche en 30 secondes](https://www.cyrilvoyant.com/fr/fiche-30-secondes/)
 - [L'IA dans la recherche : AI Act, charte de laboratoire et boîte à outils](https://www.cyrilvoyant.com/fr/ia-dans-la-recherche/)
 - [Le fil : cinq étapes, une même démarche](https://www.cyrilvoyant.com/fr/le-fil/)
 - [Outils interactifs : choisir une question, essayer une méthode](https://www.cyrilvoyant.com/fr/outils/)
