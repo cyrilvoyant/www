@@ -1946,6 +1946,10 @@
       "citations": [],
       "sections": [
         {
+          "title": "Neutrons atmosphériques et bore : explorer les échelles de dose",
+          "anchor": null
+        },
+        {
           "title": "Comparer une prévision à la persistance, NICE",
           "anchor": null
         },
@@ -2797,6 +2801,54 @@
         {
           "title": "Pour aller plus loin",
           "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/recits/neutrons-atmospheriques-bnct/",
+      "title": "Des neutrons atmosphériques à la capture du bore : jusqu’où va l’idée ?",
+      "language": "fr",
+      "topics": [
+        "Calculer directement",
+        "Médecine"
+      ],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Pourquoi cette question appartient à mon parcours",
+          "anchor": null
+        },
+        {
+          "title": "Une cascade dans l’atmosphère, puis une réaction à l’échelle cellulaire",
+          "anchor": null
+        },
+        {
+          "title": "Le résultat : une limite quantitative, pas un hôpital volant validé",
+          "anchor": "resultat"
+        },
+        {
+          "title": "Ce que l’étude apporte à la modélisation",
+          "anchor": null
+        },
+        {
+          "title": "BSH ou BPA : ce que la comparaison dit vraiment",
+          "anchor": null
+        },
+        {
+          "title": "Très local ne veut pas dire partout",
+          "anchor": null
+        },
+        {
+          "title": "La dose du vol est une autre grandeur",
+          "anchor": null
+        },
+        {
+          "title": "Ce que l’on pourrait rechercher ensuite",
+          "anchor": null
+        },
+        {
+          "title": "L’article et toute l’équipe",
+          "anchor": "article"
         }
       ]
     },
@@ -3711,6 +3763,54 @@
       ]
     },
     {
+      "url": "https://www.cyrilvoyant.com/stories/atmospheric-neutrons-bnct/",
+      "title": "Atmospheric neutrons and boron capture: how far can the idea go?",
+      "language": "en",
+      "topics": [
+        "Compute directly",
+        "Medicine"
+      ],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Where this fits in my research",
+          "anchor": null
+        },
+        {
+          "title": "An atmospheric cascade, then a cellular-scale reaction",
+          "anchor": null
+        },
+        {
+          "title": "The finding: a quantitative limit, not a validated flying hospital",
+          "anchor": "resultat"
+        },
+        {
+          "title": "What the study contributes to modeling",
+          "anchor": null
+        },
+        {
+          "title": "BSH versus BPA: what the comparison actually means",
+          "anchor": null
+        },
+        {
+          "title": "Very local does not mean everywhere",
+          "anchor": null
+        },
+        {
+          "title": "Flight exposure is a different quantity",
+          "anchor": null
+        },
+        {
+          "title": "What would need to come next?",
+          "anchor": null
+        },
+        {
+          "title": "The paper and the whole team",
+          "anchor": "article"
+        }
+      ]
+    },
+    {
       "url": "https://www.cyrilvoyant.com/stories/lql-equiv/",
       "title": "Compute, don't learn: radiobiological dose equivalence with LQL-Equiv",
       "language": "en",
@@ -4072,6 +4172,10 @@
       "topics": [],
       "citations": [],
       "sections": [
+        {
+          "title": "Atmospheric neutrons and boron: explore dose scales",
+          "anchor": null
+        },
         {
           "title": "Compare a forecast with persistence, NICE",
           "anchor": null

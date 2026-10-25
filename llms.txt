@@ -2,18 +2,6 @@
 
 > Research, teaching and accessible accounts of scientific work. Start from the human question, model the system, validate against references, and add complexity when its benefit is demonstrated.
 
-## Start here
-
-- [Research](https://www.cyrilvoyant.com/stories/) / [Recherche](https://www.cyrilvoyant.com/fr/recits/): questions and findings organized by field.
-- [Courses](https://www.cyrilvoyant.com/teaching/) / [Cours](https://www.cyrilvoyant.com/fr/enseignement/): subject, audience, level, chapters.
-- [Interactive tools](https://www.cyrilvoyant.com/tools/) / [Outils interactifs](https://www.cyrilvoyant.com/fr/outils/): a single catalog, with actual interface languages and execution types.
-- [At a glance](https://www.cyrilvoyant.com/overview/): research lines, software with DOIs and teams, open courses, tools, essays ([en français](https://www.cyrilvoyant.com/fr/vue-d-ensemble/)).
-- [Full text of the main pages](https://www.cyrilvoyant.com/llms-full.txt): one plain-text file, canonical URL before each page.
-- [Reading map](https://www.cyrilvoyant.com/llm.md) and [page catalog](https://www.cyrilvoyant.com/research-catalog.json).
-- [Atom feed](https://www.cyrilvoyant.com/feed.xml): news, publications and new pages.
-- [Knowledge graph](https://www.cyrilvoyant.com/graph.ttl) (Turtle; same graph as [JSON-LD](https://www.cyrilvoyant.com/graph.jsonld)): pages, people with ORCID, software, articles, glossaries (schema.org DefinedTermSet).
-- RO-Crate per study: https://www.cyrilvoyant.com/ro-crate/<study>/ro-crate-metadata.json (software DOI, article DOI and status, team, citing pages); each page signposts its crates with link rel="describedby".
-
 ## Identity and primary sources
 
 - [Identity](https://person.cyrilvoyant.com/): shared person identifier https://person.cyrilvoyant.com/#cyril-voyant.
@@ -103,6 +91,7 @@ Distinguish published papers, preprints, software and work in preparation. Attri
 - [Prévoir l'éclairement et son incertitude avec des nombres complexes](https://www.cyrilvoyant.com/fr/prevision-complexe/): Une autorégression complexe à six coefficients prévoit à la fois l'éclairement solaire et sa volatilité ; réglez α et voyez la largeur des intervalles.
 - [Recherche : questions, résultats et méthodes](https://www.cyrilvoyant.com/fr/recits/): Chaque récit suit le même plan : le constat, la question, la théorie en clair, la place sur l'échelle de la complexité, un exemple chiffré, les apports et…
 - [Calculer plutôt qu'apprendre : l'équivalence de dose en radiothérapie avec LQL-Equiv](https://www.cyrilvoyant.com/fr/recits/lql-equiv/): Quand le lien entre un schéma de radiothérapie et son effet biologique est connu, on le calcule directement.
+- [Des neutrons atmosphériques à la capture du bore : jusqu’où va l’idée ?](https://www.cyrilvoyant.com/fr/recits/neutrons-atmospheriques-bnct/): Neutrons atmosphériques et BNCT : modèle, dose et limites. Une expérience interactive fidèle aux ordres de grandeur et aux limites de l’article.
 - [Se questionner sur nos façons de faire de la recherche : influence, intégrité, excellence](https://www.cyrilvoyant.com/fr/recits/questioning-research/): Dans un monde en pleine mutation, la recherche doit aussi examiner ses propres méthodes.
 - [Prévision satellite du rayonnement : une maille, un voisinage ou tout le champ](https://www.cyrilvoyant.com/fr/recits/satellite-irradiance/): Un satellite voit le rayonnement de toute une région, heure par heure. La tentation est de donner toute la carte au modèle de prévision.
 - [Cancer de la thyroïde et iode radioactif : le modèle d'abord, n'apprendre que ce qui manque](https://www.cyrilvoyant.com/fr/recits/thyroid-radioiodine/): Combien de séances d'iode radioactif, à quel intervalle, avec quelle activité ? Un modèle intelligible de trois équations explore ces questions avant de…
@@ -123,6 +112,7 @@ Distinguish published papers, preprints, software and work in preparation. Attri
 - [Research and projects](https://www.cyrilvoyant.com/research-projects/): Research and projects of Cyril Voyant, Research Director at Mines Paris – PSL.
 - [Scientific publishing: no verification, no trust](https://www.cyrilvoyant.com/scientific-publishing-trust/): Too many articles, unpaid review, record retractions, generative AI: what exists (FAIR, OSTP, EU Council, CoARA, AI Act, French Digital Republic Act) and…
 - [Research: questions, findings and methods](https://www.cyrilvoyant.com/stories/): Every story follows the same plan: the finding, the question, the theory in plain words, where it sits on the complexity ladder, an example in figures, what…
+- [Atmospheric neutrons and boron capture: how far can the idea go?](https://www.cyrilvoyant.com/stories/atmospheric-neutrons-bnct/): Atmospheric neutrons and BNCT: model, dose and limits. An interactive experience with the paper’s orders of magnitude and limitations.
 - [Compute, don't learn: radiobiological dose equivalence with LQL-Equiv](https://www.cyrilvoyant.com/stories/lql-equiv/): When the link between a radiotherapy schedule and its biological effect is known, it is computed directly.
 - [Questioning how we do research: influence, integrity, excellence](https://www.cyrilvoyant.com/stories/questioning-research/): Research in a changing world also has to examine its own methods. The same approach applies: compare with an explicit reference, look at what a single…
 - [Satellite irradiance forecasting: one cell, a patch or the whole field](https://www.cyrilvoyant.com/stories/satellite-irradiance/): A satellite sees the irradiance of a whole region every hour. It is tempting to give a forecaster the whole map.

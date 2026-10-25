@@ -2,6 +2,24 @@
   "description": "Existing interactive resources; interface language and execution type are explicit. A catalog translation is not an interface translation.",
   "items": [
     {
+      "id": "bnct",
+      "domain": "medicine",
+      "kind": "demo",
+      "interface_language": "both",
+      "name": {
+        "fr": "Neutrons atmosphériques et bore : explorer les échelles de dose",
+        "en": "Atmospheric neutrons and boron: explore dose scales"
+      },
+      "task": {
+        "fr": "Suivre une cascade schématique ; distinguer exposition du vol, dose du fantôme tumoral et distributions BSH/BPA.",
+        "en": "Follow a schematic cascade; distinguish flight exposure, tumour phantom dose and BSH/BPA distributions."
+      },
+      "url": {
+        "fr": "https://www.cyrilvoyant.com/fr/recits/neutrons-atmospheriques-bnct/#experience",
+        "en": "https://www.cyrilvoyant.com/stories/atmospheric-neutrons-bnct/#experience"
+      }
+    },
+    {
       "id": "nice",
       "domain": "energy",
       "kind": "calculator",

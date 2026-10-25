@@ -312,20 +312,23 @@
     box.appendChild(h("h3", {}, "Machine frigorifique : combien de travail pour extraire 1 kJ de froid ?"));
     box.appendChild(h("p", { "class": "muted" }, "Une machine frigorifique pompe la chaleur du côté froid (évaporateur, Tf) vers le côté chaud (condenseur, Tc), en dépensant du travail W. " +
       "Le COP compare la chaleur extraite au travail : COP = Q<sub>f</sub>/W. La borne de Carnot, COP<sub>C</sub> = Tf/(Tc − Tf) en kelvins, est le meilleur COP possible ; aucune machine réelle ne l'atteint."));
+    box.appendChild(h("p", {}, "L’axe de −40 à +10 °C fait varier seulement la source froide. Par défaut : froid −10 °C, chaud +40 °C, soit 263,15 K et 313,15 K : COP maximal = 263,15/50 = 5,26. Cela signifie au plus 5,26 J extraits pour 1 J de travail. Autre couple de sources : froid −40 °C, chaud +10 °C → 233,15/50 = 4,66. Les curseurs de ce graphique gardent la source chaude entre +20 et +60 °C."));
     var W = 640, H = 230, L0 = 60, R0 = 240, T0 = 14, B0 = 46;
     var sv = el("svg", { viewBox: "0 0 " + W + " " + H, "class": "ct-svg ct-wide", role: "img", "aria-label": "COP de Carnot selon la température d'évaporation, et bilan d'énergie" }, box);
-    var cF = slider("Évaporation Tf (°C)", -40, 10, 1, -10, function (v) { return f(v, 0) + " °C"; }),
-        cC = slider("Condensation Tc (°C)", 20, 60, 1, 40, function (v) { return f(v, 0) + " °C"; });
+    var cF = slider("Source froide Tf (°C)", -40, 10, 1, -10, function (v) { return f(v, 0) + " °C"; }),
+        cC = slider("Source chaude Tc (°C)", 20, 60, 1, 40, function (v) { return f(v, 0) + " °C"; });
     var ctl = h("div", { "class": "ct-ctl" }); ctl.appendChild(cF.w); ctl.appendChild(cC.w); box.appendChild(ctl);
     var out = h("p", { "class": "ct-out", "aria-live": "polite" }); box.appendChild(out);
-    var X = function (t) { return L0 + (W - L0 - R0) * (t + 40) / 50; }, Y = function (c) { return T0 + (H - T0 - B0) * (1 - Math.min(c, 15) / 15); };
+    var plotMax = 15;
+    var X = function (t) { return L0 + (W - L0 - R0) * (t + 40) / 50; }, Y = function (c) { return T0 + (H - T0 - B0) * (1 - c / plotMax); };
     function draw() {
       var tf = +cF.i.value, tc = +cC.i.value, A = [];
+      plotMax = 15 * Math.ceil(CT.copCarnot(10, tc) / 15);
       while (sv.firstChild) sv.removeChild(sv.firstChild);
-      [0, 5, 10, 15].forEach(function (c) { el("line", { x1: L0, x2: W - R0, y1: Y(c), y2: Y(c), stroke: "#e3e8ee" }, sv);
+      [0, plotMax / 3, 2 * plotMax / 3, plotMax].forEach(function (c) { el("line", { x1: L0, x2: W - R0, y1: Y(c), y2: Y(c), stroke: "#e3e8ee" }, sv);
         el("text", { x: L0 - 6, y: Y(c) + 4, "class": "ct-axl", "text-anchor": "end" }, sv).textContent = c; });
       [-40, -30, -20, -10, 0, 10].forEach(function (t) { el("text", { x: X(t), y: H - B0 + 16, "class": "ct-axl", "text-anchor": "middle" }, sv).textContent = t + " °C"; });
-      el("text", { x: (L0 + W - R0) / 2, y: H - 8, "class": "ct-axl", "text-anchor": "middle" }, sv).textContent = "température d'évaporation Tf (côté froid)";
+      el("text", { x: (L0 + W - R0) / 2, y: H - 8, "class": "ct-axl", "text-anchor": "middle" }, sv).textContent = "température de la source froide Tf";
       el("text", { x: 14, y: (T0 + H - B0) / 2, "class": "ct-axl", "text-anchor": "middle", transform: "rotate(-90 14 " + ((T0 + H - B0) / 2) + ")" }, sv).textContent = "COP de Carnot";
       for (var k = 0; k <= 100; k++) { var t = -40 + 50 * k / 100; A.push([X(t), Y(CT.copCarnot(t, tc))]); }
       el("path", { d: path(A), fill: "none", stroke: "#07569a", "stroke-width": 2.6 }, sv);

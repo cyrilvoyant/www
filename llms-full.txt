@@ -4,6 +4,62 @@
 
 
 ---
+URL: https://www.cyrilvoyant.com/stories/atmospheric-neutrons-bnct/
+
+Atmospheric neutrons and boron capture: how far can the idea go?
+ In 2011, we asked an unusual question: could neutrons at aircraft altitude trigger captures in a boron-10-enriched tumour? The mechanism exists, but our calculation found a mean dose too low to treat a macroscopic tumour. The contribution is to quantify that limit before promising an application.
+ Explore the model · Read the finding · Paper and team
+ Where this fits in my research
+ Medical physics and solar forecasting share a method: start with the phenomenon, state geometry and assumptions, simulate, and check whether the order of magnitude meets the need. This question does not require AI. A model also helps recognize an insufficient approach and identify what remains to be demonstrated.
+ An atmospheric cascade, then a cellular-scale reaction
+ Galactic cosmic rays, mainly energetic protons and nuclei, generate secondary particles, including neutrons, in the atmosphere. Altitude, the geomagnetic field and particle spectra matter. Solar wind modulates incoming cosmic rays; it is distinct from solar energetic particle events. The galactic background is generally higher at solar minimum. This qualitative diagram is not a space-weather calculation.
+ The finding: a quantitative limit, not a validated flying hospital
+ The paper’s reference case uses 12 km altitude, 45° latitude, a neutron flux of 14.7 cm⁻²·s⁻¹, 10 cm of water, a 0.5 cm skull layer and an approximately 1 g tumour with 20 µg of boron-10 per gram. A hybrid model combines Monte Carlo transport with analytical approximations. The estimated mean tumour dose is of the order of 1 µGy for one hour , insufficient for macroscopic therapeutic irradiation.
+ At the reference concentration only, the tool illustrates D̄ ≈ 1 µGy × (t / 1 h) . A separate panel shows I = 100% × (t / 1 h) × (c₁₀B / 20 µg·g⁻¹) : a relative boron-interaction count index, normalized to 100% for one hour at 20 µg/g. It is neither a capture probability nor a total dose at a different concentration. Spectrum, geometry and mass stay fixed; the paper’s transport model is not rerun. Concentration refers to a numerical phantom, not an amount to administer to a person.
+ What the study contributes to modeling
+ The work connects three levels: reactions in boron carrier molecules, transport through a moderator and tissue, and dose orders of magnitude. Its second contribution replaces some expensive transport steps with analytical expressions for transmission and mean free path. The paper reports 42 seconds instead of 15 hours for 6,000 neutrons , under its historical computing conditions. This is not a benchmark of this browser: it is a concrete example of physical simplification serving a scientific question.
+ BSH versus BPA: what the comparison actually means
+ BNCT means Boron Neutron Capture Therapy. BSH and BPA are boron carriers. Table 2 compares neutron–molecule reaction distributions in the studied spectrum: the (n,α) channel accounts for 94% with BSH and 88% with BPA. These conditional distributions are neither capture probabilities for each flight neutron, tumour selectivity nor clinical success rates. At equal boron-10 concentration, the tool therefore applies no carrier-dependent dose multiplier.
+ Very local does not mean everywhere
+ Capture produces ⁷Li and an alpha particle: ¹⁰B + n → ⁷Li + α. Their tracks are a few micrometres long (approximately 4 µm for lithium and 8 µm for alpha in the paper). The paper also reports about 0.5 Gy per impact locally at cellular scale. That conditional value does not mean that every cell receives this dose. This tool does not reproduce the microdosimetry: scoring volume and deposited-energy fraction would need clarification before recalculating it.
+ Flight exposure is a different quantity
+ For a simplified 56.5 kg cylinder, the paper obtains 4.37 µSv/h versus a historical SIEVERT Paris–New York reference of 6.1 µSv/h, approximately 28% lower, with different solar periods and several approximations. This order-of-magnitude comparison is not a current flight calculator. Gray (Gy) measures absorbed energy per unit mass; sievert (Sv) weights radiological exposure. The two panels cannot be directly converted into each other.
+ What would need to come next?
+ The paper considers micrometastases and an adjuvant hypothesis while calling for biological experiments. Boron distribution, selectivity, low-dose responses, microdosimetry and benefit versus risk would have to be established. Turning aircraft into radiotherapy rooms is an exploratory closing perspective, not demonstrated efficacy. This teaching experience is neither a prescription nor a clinical planning tool.
+ The paper and the whole team
+ Cyril Voyant, Rudy Roustit, Jennifer Tatje, Katia Biffi, Delphine Leschi, Jérome Briançon, Céline Lantieri Marcovici. Therapeutic potential of atmospheric neutrons. Reports of Practical Oncology and Radiotherapy, 16(1), 21–31 (2011). DOI: 10.1016/j.rpor.2010.11.002 · Full text at PMC .
+ Particle origins and solar modulation: NOAA, Galactic Cosmic Rays · FAA, What aircrews should know about their occupational exposure .
+ Continue: LQ–LQL: compute when the relation is known · The research thread
+
+---
+URL: https://www.cyrilvoyant.com/fr/recits/neutrons-atmospheriques-bnct/
+
+Des neutrons atmosphériques à la capture du bore : jusqu’où va l’idée ?
+ En 2011, nous avons posé une question inhabituelle : les neutrons présents à l’altitude des avions peuvent-ils déclencher des captures dans une tumeur enrichie en bore-10 ? Le mécanisme existe. Mais notre calcul trouve une dose moyenne trop faible pour traiter une tumeur macroscopique. L’intérêt de cette étude est de quantifier cette limite, avant de promettre une application.
+ Explorer le modèle · Lire le résultat · Article et équipe
+ Pourquoi cette question appartient à mon parcours
+ La physique médicale et la prévision solaire partagent ici une méthode : partir du phénomène, expliciter la géométrie et les hypothèses, simuler, puis vérifier si l’ordre de grandeur répond au besoin. L’IA n’est pas nécessaire pour poser cette question. Le modèle sert aussi à reconnaître une piste qui ne suffit pas, et à préciser ce qui resterait à démontrer.
+ Une cascade dans l’atmosphère, puis une réaction à l’échelle cellulaire
+ Les rayons cosmiques galactiques, principalement des protons et des noyaux énergétiques, produisent des particules secondaires en rencontrant l’atmosphère, dont des neutrons. Le champ magnétique terrestre, l’altitude et le spectre des particules comptent. Le vent solaire module l’arrivée des rayons cosmiques ; il ne faut pas le confondre avec les événements de particules solaires énergétiques. Le fond galactique est généralement plus élevé au minimum solaire. Le schéma ci-dessous est qualitatif : il ne calcule pas une météorologie de l’espace.
+ Le résultat : une limite quantitative, pas un hôpital volant validé
+ Dans le cas de référence de l’article : altitude 12 km, latitude 45°, flux neutronique de 14,7 cm⁻²·s⁻¹, couche d’eau de 10 cm, crâne de 0,5 cm et tumeur d’environ 1 g contenant 20 µg de bore-10 par gramme. Le modèle hybride associe transport Monte-Carlo et approximations analytiques. Il estime une dose tumorale moyenne de l’ordre de 1 µGy pour une heure . C’est insuffisant pour une irradiation thérapeutique macroscopique.
+ Pour la concentration de référence uniquement, l’outil illustre D̄ ≈ 1 µGy × (t / 1 h) . Un autre panneau représente I = 100 % × (t / 1 h) × (c₁₀B / 20 µg·g⁻¹) : un indice relatif du nombre d’interactions sur le bore, normalisé à 100 % pour une heure à 20 µg/g. Il ne donne ni une probabilité de capture ni une dose totale à une autre concentration. Spectre, géométrie et masse restent fixés ; le transport de l’article n’est pas réexécuté. La concentration est celle d’un fantôme numérique, pas une quantité à administrer à une personne.
+ Ce que l’étude apporte à la modélisation
+ Le travail relie trois niveaux habituellement séparés : les réactions dans les molécules porteuses du bore, le transport à travers un modérateur et les tissus, puis les ordres de grandeur de dose. Sa seconde contribution est de remplacer certaines étapes coûteuses du transport par des expressions analytiques de transmission et de libre parcours moyen. L’article rapporte 42 secondes au lieu de 15 heures pour 6 000 neutrons , dans les conditions de calcul de l’époque. Ce n’est pas un benchmark de ce navigateur : c’est un exemple concret de simplification physique au service d’une question scientifique.
+ BSH ou BPA : ce que la comparaison dit vraiment
+ La BNCT (Boron Neutron Capture Therapy, thérapie par capture neutronique du bore) utilise des vecteurs du bore tels que le BSH et la BPA. Le tableau 2 compare les réactions lors de l’interaction neutron–molécule dans le spectre étudié : le canal (n,α) représente 94 % pour le BSH et 88 % pour la BPA. Ces distributions conditionnelles ne donnent ni la probabilité de capture de chaque neutron du vol, ni la sélectivité tumorale, ni un taux de succès clinique. À concentration de bore-10 identique, nous ne leur attribuons donc pas un multiplicateur de dose différent.
+ Très local ne veut pas dire partout
+ Après capture, ¹⁰B + n → ⁷Li + α : les particules chargées parcourent quelques micromètres (environ 4 µm pour le lithium et 8 µm pour l’alpha dans l’article). Le texte rapporte aussi une dose locale d’environ 0,5 Gy par impact à l’échelle cellulaire. Cette valeur conditionnelle ne signifie pas que chaque cellule reçoit cette dose. Le présent outil ne reproduit pas cette microdosimétrie : le volume de score et la fraction d’énergie déposée devraient être explicités pour la recalculer.
+ La dose du vol est une autre grandeur
+ Pour un cylindre simplifié de 56,5 kg, l’article trouve 4,37 µSv/h, comparés à une référence historique SIEVERT Paris–New York de 6,1 µSv/h : environ 28 % de moins, avec des périodes solaires et des approximations différentes. Cette comparaison d’ordre de grandeur n’est pas un calculateur de vol actuel. Le sievert (Sv) pondère l’exposition radiologique ; le gray (Gy) mesure l’énergie absorbée par unité de masse. Les deux panneaux ne se convertissent pas directement l’un dans l’autre.
+ Ce que l’on pourrait rechercher ensuite
+ L’article envisage les micrométastases et une piste adjuvante, tout en demandant des expériences biologiques. Il faudrait notamment établir la distribution du bore, la sélectivité, la réponse aux faibles doses, la microdosimétrie et le bénéfice par rapport aux risques. « Transformer les avions en salles de radiothérapie » est une perspective exploratoire de la conclusion, pas une efficacité démontrée. Cette expérience n’est ni une prescription ni un outil de planification clinique.
+ L’article et toute l’équipe
+ Cyril Voyant, Rudy Roustit, Jennifer Tatje, Katia Biffi, Delphine Leschi, Jérome Briançon, Céline Lantieri Marcovici. Therapeutic potential of atmospheric neutrons. Reports of Practical Oncology and Radiotherapy, 16(1), 21–31 (2011). DOI: 10.1016/j.rpor.2010.11.002 · Texte intégral chez PMC .
+ Origine des particules et modulation solaire : NOAA, Galactic Cosmic Rays · FAA, What aircrews should know about their occupational exposure .
+ Poursuivre : LQ–LQL : calculer lorsque la relation est connue · Le fil de mes recherches
+
+---
 URL: https://www.cyrilvoyant.com/stories/
 
 Research: questions, findings and methods
@@ -30,6 +86,8 @@ Research: questions, findings and methods
  Demonstrate trust · Energy Beyond pointwise errors: the γ-index
  A tolerance-based test carried over from radiotherapy.
  Medical physics
+ Compute directly · Medicine Atmospheric neutrons and BNCT: quantify the limit
+ An exploratory 2011 model: rare captures, local energy and a mean dose too low for macroscopic therapy.
  Compute directly · Medicine Compute, don't learn: radiobiological dose equivalence
  One fraction of 15 Gy to the rectum: 72.7 Gy under LQ, 59.4 Gy under LQL.
  Hybridize · Medicine Thyroid cancer and radioiodine: model first
@@ -51,6 +109,8 @@ Research: questions, findings and methods
  Compute directly · Hybridize · Learn frugally · AI in its place · Demonstrate trust
  Compute directly
  When the link is known, compute it with an explicit model, calibrated and validated on data; learning is added only for a demonstrated benefit.
+ Compute directly · Medicine Atmospheric neutrons and BNCT: quantify the limit
+ An exploratory 2011 model: rare captures, local energy and a mean dose too low for macroscopic therapy.
  Compute directly · Medicine Compute, don't learn: radiobiological dose equivalence
  One fraction of 15 Gy to the rectum: 72.7 Gy under LQ, 59.4 Gy under LQL.
  Compute directly · Energy Simulate what you cannot yet measure: road tunnels
@@ -129,6 +189,8 @@ Recherche : questions, résultats et méthodes
  Démontrer la confiance · Énergie Une prévision décalée peut rester exploitable : le test gamma
  Un test à tolérances venu de la radiothérapie.
  Physique médicale
+ Calculer directement · Médecine Neutrons atmosphériques et BNCT : quantifier la limite
+ Un modèle exploratoire de 2011 : captures rares, énergie locale et dose moyenne insuffisante pour une thérapie macroscopique.
  Calculer directement · Médecine Calculer plutôt qu'apprendre : l'équivalence de dose en radiothérapie
  Une fraction de 15 Gy au rectum : 72,7 Gy en LQ, 59,4 Gy en LQL.
  Hybrider · Médecine Cancer de la thyroïde et iode radioactif : le modèle d'abord
@@ -150,6 +212,8 @@ Recherche : questions, résultats et méthodes
  Calculer directement · Hybrider · Apprendre frugalement · L'IA à sa place · Démontrer la confiance
  Calculer directement
  Quand le lien est connu, on le calcule avec un modèle explicite, calibré et validé sur des données ; on n'ajoute de l'apprentissage que pour un bénéfice démontré.
+ Calculer directement · Médecine Neutrons atmosphériques et BNCT : quantifier la limite
+ Un modèle exploratoire de 2011 : captures rares, énergie locale et dose moyenne insuffisante pour une thérapie macroscopique.
  Calculer directement · Médecine Calculer plutôt qu'apprendre : l'équivalence de dose en radiothérapie
  Une fraction de 15 Gy au rectum : 72,7 Gy en LQ, 59,4 Gy en LQL.
  Calculer directement · Énergie Simuler ce que l'on ne peut pas encore mesurer : les tunnels routiers
@@ -207,6 +271,10 @@ Interactive tools: choose a question, explore a method
  Start with an example, change an input and examine what changes. Research calculators and medical applications are for research and education; their assumptions and limitations are stated in the linked pages.
  Languages: the seven technical calculators have French and English interfaces. The course tools (ROC, normal distribution, regression, attenuation, cooling, freezing, COP) are in French. The forecast comparison exists in French and English; dedicated applications retain their existing interfaces; filter by language before opening a tool.
  Find a tool Field Interface language
+ Explorable demonstration · French and English
+ Atmospheric neutrons and boron: explore dose scales
+ Follow a schematic cascade; distinguish flight exposure, tumour phantom dose and BSH/BPA distributions.
+ Open this tool →
  Browser calculator · French and English
  Compare a forecast with persistence, NICE
  Paste observations and forecasts, choose a horizon, read absolute errors and NICE ratios.
@@ -341,6 +409,10 @@ Outils interactifs : choisir une question, essayer une méthode
  Commencez avec un exemple, modifiez une entrée et examinez ce qui change. Les calculateurs de recherche et les applications médicales sont destinés à la recherche et à l’enseignement ; leurs hypothèses et limites figurent dans les pages liées.
  Langues : les sept calculateurs techniques ont des interfaces françaises et anglaises. Les outils des cours (ROC, loi normale, régression, atténuation, refroidissement, congélation, COP) sont en français. Le comparateur de prévisions existe en français et en anglais ; les applications dédiées conservent leur interface actuelle ; le filtre précise la langue avant ouverture.
  Rechercher un outil Domaine Langue de l’interface
+ Démonstration à explorer · Français et anglais
+ Neutrons atmosphériques et bore : explorer les échelles de dose
+ Suivre une cascade schématique ; distinguer exposition du vol, dose du fantôme tumoral et distributions BSH/BPA.
+ Ouvrir cet outil →
  Calculateur dans le navigateur · Français et anglais
  Comparer une prévision à la persistance, NICE
  Coller observations et prévisions ; choisir l’horizon ; lire les erreurs et les ratios NICE.
@@ -1690,7 +1762,7 @@ Machine frigorifique : COP et limite de Carnot
  JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. La relation à comprendre
  COPCarnot=Tf/(Tc−Tf), avec Tf et Tc en kelvins ; COP frigorifique=chaleur utile extraite/travail reçu.
  Essayer et interpréter
- Entre −10 °C et +40 °C, la borne vaut environ 5,26. Abaissez la température de la source froide ou augmentez celle de la source chaude : la borne diminue.
+ Source froide à −10 °C et source chaude à +40 °C : COP maximal = 263,15/(313,15−263,15) ≈ 5,26. Avec des sources à −40 °C et +10 °C, il vaut 233,15/50 ≈ 4,66. La plage −40 à +10 °C de l’axe concerne seulement le réglage du côté froid. La borne est un maximum théorique du rapport chaleur extraite/travail fourni, pas une borne de température ni un rendement en pourcentage.
  Hypothèses et limites
  Machine frigorifique cyclique réversible entre deux sources : c’est une borne, pas le COP réel d’un appareil. Ne pas confondre températures des sources et températures détaillées du fluide ; ventilateurs et pertes réelles ne sont pas modélisés.
  Approfondir avec le cours
