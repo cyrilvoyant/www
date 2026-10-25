@@ -1,14 +1,14 @@
 /* Cross-site navigation (www.cyrilvoyant.com, cyrilvoyant.github.io). 23 October 2026.
    Namespaced (.xs-) so that it renders the same on pages with or without the shared site.css. */
 .xs-bar { font: 15px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; background: #172536; color: #dfe7ef; }
-.xs-bar .xs-in { width: 100%; max-width: none; margin: 0; padding: 10px clamp(16px, 3.5vw, 64px); display: flex; flex-wrap: wrap; gap: 4px 18px; align-items: center; }
+.xs-bar .xs-in { width: 100%; max-width: 1280px; margin: 0 auto; padding: 10px 24px; display: flex; flex-wrap: wrap; gap: 4px 18px; align-items: center; }
 @media (max-width: 1100px) { .xs-bar { font-size: 14px; } .xs-bar .xs-in { gap: 4px 12px; } }   /* nine entries since « Le fil » (25/10) */
 .xs-bar a { color: #dfe7ef; text-decoration: none; }
 .xs-bar a:hover, .xs-bar a:focus-visible { text-decoration: underline; }
 .xs-bar .xs-name { font-weight: 700; color: #fff; margin-right: 10px; font-size: 16px; }
 .xs-bar .xs-here { color: #fff; font-weight: 700; border-bottom: 2px solid #f0c75e; }
 .xs-bar .xs-lang { margin-left: auto; border: 1px solid #8fa3b8; border-radius: 999px; padding: 1px 10px; }
-.xs-crumbs { font: 13.5px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; color: #46586a; width: 100%; max-width: none; margin: 10px 0 0; padding: 0 clamp(16px, 3.5vw, 64px); }
+.xs-crumbs { font: 13.5px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; color: #46586a; width: 100%; max-width: 1280px; margin: 10px auto 0; padding: 0 24px; }
 .xs-crumbs a { color: #46586a; }
 .xs-crumbs span[aria-current] { color: #172536; }
 .xs-foot { font: 13.5px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; color: #46586a; }
