@@ -4,6 +4,56 @@
 
 
 ---
+URL: https://www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/
+
+Le modèle ne fait pas tout : variabilité, mémoire et prévisibilité
+ Deux prévisions produites par le même algorithme peuvent avoir des erreurs différentes parce que le signal, l’horizon et l’information disponible diffèrent. Mon point de départ est donc le phénomène à prévoir. Décrire sa variabilité et sa mémoire aide à choisir une référence, à interpréter une erreur et à décider si davantage de complexité apporte quelque chose.
+ Manipuler les séries · Relier les trois études · Comprendre le « no free lunch » · Articles et équipes
+ 1. Décrire le signal
+ Distinguer le cycle astronomique, l’écart au ciel clair et les changements entre instants.
+ 2. Chercher la mémoire
+ Observer quelles dépendances restent exploitables à l’horizon de la décision.
+ 3. Évaluer le modèle
+ Comparer sur les mêmes données de test, avec une référence explicite et des unités cohérentes.
+ Un laboratoire pour séparer mémoire, bruit et choix du modèle
+ Au lieu de simplement mélanger une courbe, on génère ici un signal à deux états avec une mémoire connue. On ajoute un bruit additif, un bruit multiplicatif ou les deux. La question devient mesurable : quelle information la régression apprend-elle, comment ses coefficients changent-ils, et quelle erreur attendue resterait même si l’on connaissait l’état courant du générateur ?
+ Modèle, hypothèses et formules de l’expérience principale
+ Un état S t vaut −1 ou +1, avec probabilité de changer d’état q = (1−r)/2. Il démarre dans la distribution stationnaire équiprobable. Le signal latent est K t = μ + aS t , avec μ = 0,6. Pour a > 0, son autocorrélation exacte est r h . Le signal observé est Y t = K t (1 + βZ m,t ) + σ a Z a,t . Les deux Z sont indépendants entre eux, entre instants et de l’état, uniformes sur [−√3,+√3] : moyenne nulle, variance 1. Le bruit multiplicatif a une variance conditionnelle β²K² ; celle du bruit additif vaut σ a ². Les bornes des commandes garantissent Y > 0 sans écrêtage. Ce modèle pédagogique n’est pas un modèle météorologique validé.
+ L’oracle connaît S à l’origine de prévision : ŷ oracle,t+h = μ + ar h S t . Son risque quadratique moyen exact dans ce générateur est R h = a²(1−r 2h ) + σ a ² + β²(μ²+a²) . Les trois termes décrivent transitions futures, bruit additif et bruit multiplicatif. √R h est une RMSE attendue, pas une limite que chaque échantillon fini doit respecter. L’oracle reçoit une information privilégiée : sa courbe n’est pas une prévision opérationnelle. Cette borne optimiste appartient à ce générateur ; ce n’est ni un résultat numérique des articles cités ni une borne physique du solaire.
+ La régression à horizon h ajuste ŷ = A + BY t sur les seules paires de l’entraînement. En régime stationnaire, son coefficient linéaire optimal en population est B* = a²r h / [a² + σ a ² + β²(μ²+a²)] ; le bruit d’observation réduit ainsi la mémoire accessible à une simple régression. Les valeurs affichées A et B sont estimées, pas remplacées par cette formule. Entraînement : indices 0–599 ; test : 624–1199, avec tampon de 24 pas. Chaque origine précède sa cible d’exactement h pas et suit la fin de l’entraînement. Les modèles voient uniquement Y ; les diagnostics sCV/F utilisent toute la série a posteriori, avec I clr = 1, d = 0,2 et T = 24 conventionnel pour F.
+ La MAE mesure la moyenne des erreurs absolues. La RMSE pénalise davantage les grandes erreurs ; nRMSE = 100 × RMSE / moyenne des observations test. NICE¹ et NICE² divisent respectivement MAE et RMSE par celles de la persistance simple au même horizon, sur les mêmes cibles. NICEΣ est la moyenne équipondérée des trois rapports L¹, L² et L³, selon le code NICE de référence . Une référence parfaite rend les rapports indéfinis. Méthode et article NICE .
+ Trois études complémentaires, trois questions
+ 2015, Peut-on diagnostiquer la difficulté avant de choisir le prévisionniste ?
+ Avec Ted Soubdhan, Philippe Lauret, Mathieu David et Marc Muselli, nous avons étudié des paramètres statistiques pour anticiper l’erreur de prévision solaire. Le mean absolute log return (MALR), issu de l’économétrie, décrit l’amplitude des changements relatifs. Ce diagnostic empirique ne dispense pas de tester le modèle sur le site et à l’horizon visés. Article Energy (2015) .
+ 2025, Estimer une erreur attendue à partir de la variabilité
+ L’étude menée par Philippe Lauret, à laquelle j’ai contribué, relie la variabilité horaire σ(Δk c ) à la RMSE par des régressions calibrées sur 60 sites, en intra-journalier et à J+1. Ses intervalles à 95 % sont statistiques, pas des limites physiques universelles. Article Solar Energy (2025) .
+ sCV et F, Quelle part vient de l’écart au ciel clair, quelle part de la mémoire ?
+ La sCV normalise l’écart quadratique au ciel clair. Elle ne décrit pas à elle seule l’ordre temporel des valeurs. L’indicateur F ajoute la dépendance des résidus à des retards compatibles avec l’horizon. On peut ainsi avoir les mêmes valeurs et la même sCV, mais des structures temporelles et des performances de référence très différentes. Article Renewable Energy (2026) · Calculateur sCV/F · Code de référence .
+ Annexe : mêmes valeurs, ordre temporel différent, avec les formules sCV/F
+ Une expérience qui sépare amplitude et ordre temporel
+ Nous construisons une série positive de période artificielle 24, puis mélangeons une copie de ses valeurs. L’histogramme reste identique. La comparaison oppose deux règles simples : recopier la valeur disponible à l’origine de la prévision, ou utiliser la moyenne estimée sur la première moitié. Le but est de comprendre ces règles et leurs hypothèses. Il ne s’agit ni de mesures solaires ni d’un nouveau benchmark des articles.
+ Les formules derrière les panneaux
+ Ici la référence est constante : I clr = 1 et k = I/I clr . Nous isolons ainsi l’ordre temporel ; le cycle du Soleil sera réintroduit lors d’une application réelle. Avec Δk t = k t − k t−1 , MALR = moyenne(|ln(k t /k t−1 )|) . Toutes les valeurs de cette expérience sont positives ; sur des données réelles, le traitement des zéros et des nuits doit être explicite. σ(Δk) et MALR sont sensibles aux voisins temporels : les mélanger les change.
+ Dans l’expérience, sCV = √2/(1−d) × √moyenne[(k−1)²] , avec d = 0,2. La formule générale normalise par la valeur quadratique moyenne du ciel clair. Pour les résidus ε = I − I clr , F(h) = 1 + sCV[ρ max (h) − 1] , où ρ max est le maximum de |ρ(ℓ)| pour h ≤ ℓ ≤ T/2, ici T = 24. Les corrélations sont calculées sur les paires disponibles, comme dans le code MATLAB de référence. La normalisation sCV = 1 est une référence, pas un plafond à imposer par écrêtage à toute série.
+ Pour chaque cible t de la moitié test : ŷ pers (t) = k(t−h) et ŷ moy (t) = moyenne(k 0:95 ) . Les RMSE utilisent exactement les mêmes 72 cibles, aux indices 120 à 191. Après l’entraînement (indices 0 à 95), une zone tampon de 24 pas garantit que la moyenne est déjà estimée avant chaque origine de prévision, même à horizon 12. La moyenne reste fixée ; aucune cible future ne sert à la réestimer. Les diagnostics sCV, F, MALR et σ(Δk), eux, décrivent ici toute la série a posteriori. Ce sont deux usages distincts des données.
+ « No free lunch » : la structure du problème compte
+ Wolpert et Macready ont établi des théorèmes de « no free lunch » pour l’optimisation : sous une moyenne uniforme sur l’ensemble des fonctions d’un problème fini, les performances moyennes des algorithmes de recherche considérés coïncident. Ce cadre précis n’est pas la distribution des problèmes solaires réels. Il ne démontre ni que tous les modèles se valent sur un domaine donné, ni qu’un modèle simple gagne toujours. Texte de référence (1997) .
+ Le rapprochement est méthodologique : les hypothèses d’un modèle doivent rencontrer la structure du problème. Une expérience de mélange n’est pas une preuve du théorème. Elle montre concrètement que le choix de référence et l’horizon changent ce que l’erreur raconte. À horizon 12, une anticorrélation peut être informative, alors que la persistance, qui recopie sans inverser, devient inadaptée.
+ Le message pour une décision réelle
+ Comprendre le signal, formuler une référence, mesurer le gain, puis complexifier si ce gain le justifie. Une erreur faible sur un ciel facile n’a pas le même sens qu’une erreur comparable dans un contexte instable. Inversement, une forte variabilité ne suffit pas à conclure à une absence de structure prévisible. Il faut examiner l’horizon, les données accessibles à l’origine, la validation hors entraînement et le coût du modèle.
+ Cette démarche rejoint l’étude des neutrons atmosphériques : la simulation quantifie ce qu’un mécanisme peut apporter, avec ses limites. Pour le solaire, poursuivre avec NICE et la référence de persistance , BLEND , les cycles du Soleil et l’horodatage et le fil de mes recherches .
+ Articles et équipes complètes
+ Cyril Voyant , Milan Despotovic , Luis Garcia-Gutierrez , Rodrigo Amaro e Silva , Philippe Lauret , Ted Soubdhan , Nadjem Bailek . NICE k metrics: Unified and multidimensional framework for evaluating deterministic solar forecasting accuracy (2025).
+ Cyril Voyant , Ted Soubdhan , Philippe Lauret , Mathieu David, Marc Muselli. Statistical parameters as a means to a priori assess the accuracy of solar forecasting models (2015).
+ Philippe Lauret , Mathieu David, Josselin Le Gal La Salle, Elke Lorenz, Richard Perez, Cyril Voyant . A simple method for quickly estimating solar irradiance forecast errors (2025).
+ Cyril Voyant , Alan Julien , Milan Despotovic , Gilles Notton , Luis Antonio Garcia-Gutierrez , Claudio Francesco Nicolosi , Philippe Blanc , Jamie Bright . Stochastic coefficient of variation: Assessing the variability and forecastability of solar irradiance (2026).
+ David H. Wolpert, William G. Macready. No Free Lunch Theorems for Optimization . IEEE Transactions on Evolutionary Computation, 1(1), 67–82 (1997).
+ Essayer dans votre navigateur
+ Mesurer variabilité et prévisibilité : sCV et F : un site est-il difficile à prévoir, avant tout modèle ?.
+ Calculer les poids de BLEND : persistance et persistance cyclique mélangées, λ réglable, données PV réelles.
+ Comparer des prévisions : persistance, AR et ELM : erreur selon l’horizon sur données publiques.
+
+---
 URL: https://www.cyrilvoyant.com/stories/atmospheric-neutrons-bnct/
 
 Atmospheric neutrons and boron capture: how far can the idea go?
@@ -18,6 +68,13 @@ Atmospheric neutrons and boron capture: how far can the idea go?
  At the reference concentration only, the tool illustrates D̄ ≈ 1 µGy × (t / 1 h) . A separate panel shows I = 100% × (t / 1 h) × (c₁₀B / 20 µg·g⁻¹) : a relative boron-interaction count index, normalized to 100% for one hour at 20 µg/g. It is neither a capture probability nor a total dose at a different concentration. Spectrum, geometry and mass stay fixed; the paper’s transport model is not rerun. Concentration refers to a numerical phantom, not an amount to administer to a person.
  What the study contributes to modeling
  The work connects three levels: reactions in boron carrier molecules, transport through a moderator and tissue, and dose orders of magnitude. Its second contribution replaces some expensive transport steps with analytical expressions for transmission and mean free path. The paper reports 42 seconds instead of 15 hours for 6,000 neutrons , under its historical computing conditions. This is not a benchmark of this browser: it is a concrete example of physical simplification serving a scientific question.
+ Monte Carlo: following many neutron histories
+ A microscopic cross section σ(E) has units of area and characterizes interactions of a neutron of energy E with a nucleus. The material’s macroscopic cross section Σ = Σᵢ Nᵢσᵢ has units of inverse length, where Nᵢ is species i number density; it sets the mean free path 1/Σ. In a homogeneous medium, a uniform draw U between 0 and 1 gives a sampled distance ℓ = −ln(U)/Σ . The code then samples the nucleus and reaction channel from cross sections and follows the energy and direction after collision. Many histories are accumulated to estimate energy deposition.
+ Under the usual independent-history, finite-variance assumptions, standard error decreases as 1/√N. More histories do not correct inappropriate geometry or physical data. Our 2011 study combines these draws with analytical expressions; the browser diagram illustrates the mechanism without rerunning the transport.
+ Los Alamos, ENDF/B and the paper’s code
+ The paper used ENDF/B data, citing access through Los Alamos’ historical t2.lanl.gov website. These evaluations supply cross sections and reaction distributions. ENDF/B is produced by CSEWG and distributed by Brookhaven’s NNDC , rather than belonging exclusively to Los Alamos. Our code was written in Visual Basic. The paper mentions MCNP as an example of a transport code using these evaluations; this is not a claim that our simulation ran MCNP or involved an institutional partnership with Los Alamos.
+ Why does (n,p) appear as approximately zero?
+ This is the rounded result of the conditional BSH/BPA neutron–molecule comparison in the studied spectrum (Table 2), not a physical prohibition. The paper’s method includes (n,n), (n,γ), (n,p) and (n,α). In tissue, ¹⁴N(n,p)¹⁴C also contributes to BNCT dose, separately from boron capture; see IAEA, Advances in Boron Neutron Capture Therapy, Table 7 . This panel does not calculate those dose components. Numerical labels state the thicknesses; the drawn skull width is exaggerated for visibility.
  BSH versus BPA: what the comparison actually means
  BNCT means Boron Neutron Capture Therapy. BSH and BPA are boron carriers. Table 2 compares neutron–molecule reaction distributions in the studied spectrum: the (n,α) channel accounts for 94% with BSH and 88% with BPA. These conditional distributions are neither capture probabilities for each flight neutron, tumour selectivity nor clinical success rates. At equal boron-10 concentration, the tool therefore applies no carrier-dependent dose multiplier.
  Very local does not mean everywhere
@@ -30,6 +87,7 @@ Atmospheric neutrons and boron capture: how far can the idea go?
  Cyril Voyant, Rudy Roustit, Jennifer Tatje, Katia Biffi, Delphine Leschi, Jérome Briançon, Céline Lantieri Marcovici. Therapeutic potential of atmospheric neutrons. Reports of Practical Oncology and Radiotherapy, 16(1), 21–31 (2011). DOI: 10.1016/j.rpor.2010.11.002 · Full text at PMC .
  Particle origins and solar modulation: NOAA, Galactic Cosmic Rays · FAA, What aircrews should know about their occupational exposure .
  Continue: LQ–LQL: compute when the relation is known · The research thread
+ In another domain: the model is not the whole story, variability and memory in solar forecasting , characterize the problem before choosing a tool.
 
 ---
 URL: https://www.cyrilvoyant.com/fr/recits/neutrons-atmospheriques-bnct/
@@ -46,6 +104,13 @@ Des neutrons atmosphériques à la capture du bore : jusqu’où va l’idée ?
  Pour la concentration de référence uniquement, l’outil illustre D̄ ≈ 1 µGy × (t / 1 h) . Un autre panneau représente I = 100 % × (t / 1 h) × (c₁₀B / 20 µg·g⁻¹) : un indice relatif du nombre d’interactions sur le bore, normalisé à 100 % pour une heure à 20 µg/g. Il ne donne ni une probabilité de capture ni une dose totale à une autre concentration. Spectre, géométrie et masse restent fixés ; le transport de l’article n’est pas réexécuté. La concentration est celle d’un fantôme numérique, pas une quantité à administrer à une personne.
  Ce que l’étude apporte à la modélisation
  Le travail relie trois niveaux habituellement séparés : les réactions dans les molécules porteuses du bore, le transport à travers un modérateur et les tissus, puis les ordres de grandeur de dose. Sa seconde contribution est de remplacer certaines étapes coûteuses du transport par des expressions analytiques de transmission et de libre parcours moyen. L’article rapporte 42 secondes au lieu de 15 heures pour 6 000 neutrons , dans les conditions de calcul de l’époque. Ce n’est pas un benchmark de ce navigateur : c’est un exemple concret de simplification physique au service d’une question scientifique.
+ Monte-Carlo : suivre beaucoup d’histoires de neutrons
+ Une section efficace microscopique σ(E), exprimée en unités de surface, caractérise l’interaction d’un neutron d’énergie E avec un noyau. Dans un matériau, Σ = Σᵢ Nᵢσᵢ est la section macroscopique (inverse d’une longueur), où Nᵢ est la densité de noyaux de l’espèce i. Elle donne un libre parcours moyen 1/Σ. Un tirage uniforme U entre 0 et 1 permet, dans un milieu homogène, de tirer une distance ℓ = −ln(U)/Σ . Le code choisit ensuite le noyau et le canal à partir des sections efficaces, puis suit l’énergie et la direction après collision. Il répète ces histoires et additionne les dépôts d’énergie.
+ Les résultats statistiques convergent avec le nombre d’histoires ; sous les hypothèses usuelles d’indépendance et de variance finie, l’erreur-type diminue comme 1/√N. Cela ne corrige pas une géométrie ou des données physiques inadéquates. Notre étude de 2011 associe ces tirages à des expressions analytiques ; l’animation du navigateur illustre le mécanisme, sans réexécuter ce transport.
+ Los Alamos, ENDF/B et le code de l’article
+ L’article indique avoir utilisé la bibliothèque ENDF/B , avec un accès alors référencé sur t2.lanl.gov , à Los Alamos. Ces évaluations fournissent les sections efficaces et les distributions des réactions. ENDF/B est produite par le groupe CSEWG et distribuée par le NNDC de Brookhaven ; elle ne doit pas être attribuée exclusivement à Los Alamos. Notre code était écrit en Visual Basic. Le papier cite MCNP comme exemple de code de transport utilisant ces évaluations ; cela ne signifie pas que notre simulation utilisait MCNP ni qu’il existait un partenariat institutionnel avec Los Alamos.
+ Pourquoi le tableau affiche-t-il (n,p) ≈ 0 % ?
+ Il s’agit du résultat arrondi de la comparaison neutron–molécule BSH/BPA dans le spectre étudié (tableau 2), pas d’une impossibilité physique. La méthode de l’article inclut les canaux (n,n), (n,γ), (n,p) et (n,α). Dans un tissu, la réaction ¹⁴N(n,p)¹⁴C constitue aussi une composante de la dose BNCT, distincte de la capture sur le bore, comme l’explique l’ AIEA, Advances in Boron Neutron Capture Therapy, tableau 7 . Ce panneau ne calcule pas ces différentes composantes de dose. Sur le dessin, les épaisseurs sont indiquées par les nombres ; la largeur de l’os est exagérée pour rester visible.
  BSH ou BPA : ce que la comparaison dit vraiment
  La BNCT (Boron Neutron Capture Therapy, thérapie par capture neutronique du bore) utilise des vecteurs du bore tels que le BSH et la BPA. Le tableau 2 compare les réactions lors de l’interaction neutron–molécule dans le spectre étudié : le canal (n,α) représente 94 % pour le BSH et 88 % pour la BPA. Ces distributions conditionnelles ne donnent ni la probabilité de capture de chaque neutron du vol, ni la sélectivité tumorale, ni un taux de succès clinique. À concentration de bore-10 identique, nous ne leur attribuons donc pas un multiplicateur de dose différent.
  Très local ne veut pas dire partout
@@ -58,6 +123,7 @@ Des neutrons atmosphériques à la capture du bore : jusqu’où va l’idée ?
  Cyril Voyant, Rudy Roustit, Jennifer Tatje, Katia Biffi, Delphine Leschi, Jérome Briançon, Céline Lantieri Marcovici. Therapeutic potential of atmospheric neutrons. Reports of Practical Oncology and Radiotherapy, 16(1), 21–31 (2011). DOI: 10.1016/j.rpor.2010.11.002 · Texte intégral chez PMC .
  Origine des particules et modulation solaire : NOAA, Galactic Cosmic Rays · FAA, What aircrews should know about their occupational exposure .
  Poursuivre : LQ–LQL : calculer lorsque la relation est connue · Le fil de mes recherches
+ Dans un autre domaine : le modèle ne fait pas tout, variabilité et mémoire en prévision solaire , caractériser le problème avant de choisir l’outil.
 
 ---
 URL: https://www.cyrilvoyant.com/stories/
@@ -67,6 +133,8 @@ Research: questions, findings and methods
  My work connects medical physics and energy forecasting around one question: how can a model help inform a real decision? I start from the physical system, existing knowledge and available data. When the relation is known, I compute it; when it is incomplete, I complement the model; when learning is needed, I measure what its complexity adds. AI is a tool in this approach. Decisions, evaluation and responsibility remain human.
  Choose your subject below. Each study leads to its question, findings, limitations, team and technical resources.
  Solar and energy forecasting
+ Compute directly · Energy The model is not the whole story: variability and memory
+ Add noise, change memory, and compare learned models with persistence and a generator-specific oracle.
  Compute directly · Energy Simulate what you cannot yet measure: road tunnels
  One year at 10-minute resolution in about 150 ms, with its limits stated.
  Compute directly · Energy How forecastable is the sun?
@@ -109,6 +177,8 @@ Research: questions, findings and methods
  Compute directly · Hybridize · Learn frugally · AI in its place · Demonstrate trust
  Compute directly
  When the link is known, compute it with an explicit model, calibrated and validated on data; learning is added only for a demonstrated benefit.
+ Compute directly · Energy The model is not the whole story: variability and memory
+ Add noise, change memory, and compare learned models with persistence and a generator-specific oracle.
  Compute directly · Medicine Atmospheric neutrons and BNCT: quantify the limit
  An exploratory 2011 model: rare captures, local energy and a mean dose too low for macroscopic therapy.
  Compute directly · Medicine Compute, don't learn: radiobiological dose equivalence
@@ -170,6 +240,8 @@ Recherche : questions, résultats et méthodes
  Mon travail relie la physique médicale et la prévision énergétique autour d’une même question : comment construire un modèle utile pour une décision réelle ? Je pars du système physique, des connaissances et des données disponibles. Quand la relation est connue, je la calcule ; lorsqu’elle est incomplète, je complète le modèle ; lorsque l’apprentissage est nécessaire, je mesure ce que sa complexité apporte. L’IA est un outil de cette démarche. La décision, l’évaluation et la responsabilité restent humaines.
  Choisissez d’abord votre sujet ci-dessous. Chaque étude mène à sa question, ses résultats, ses limites, son équipe et ses ressources techniques.
  Prévision solaire et énergétique
+ Calculer directement · Énergie Le modèle ne fait pas tout : variabilité et mémoire
+ Ajouter du bruit, modifier la mémoire, comparer les modèles appris à la persistance et à un oracle propre au générateur.
  Calculer directement · Énergie Simuler ce que l'on ne peut pas encore mesurer : les tunnels routiers
  Une année au pas de 10 minutes en 150 ms environ, limites énoncées.
  Calculer directement · Énergie Le ciel change, mais à quel point reste-t-il prévisible ?
@@ -212,6 +284,8 @@ Recherche : questions, résultats et méthodes
  Calculer directement · Hybrider · Apprendre frugalement · L'IA à sa place · Démontrer la confiance
  Calculer directement
  Quand le lien est connu, on le calcule avec un modèle explicite, calibré et validé sur des données ; on n'ajoute de l'apprentissage que pour un bénéfice démontré.
+ Calculer directement · Énergie Le modèle ne fait pas tout : variabilité et mémoire
+ Ajouter du bruit, modifier la mémoire, comparer les modèles appris à la persistance et à un oracle propre au générateur.
  Calculer directement · Médecine Neutrons atmosphériques et BNCT : quantifier la limite
  Un modèle exploratoire de 2011 : captures rares, énergie locale et dose moyenne insuffisante pour une thérapie macroscopique.
  Calculer directement · Médecine Calculer plutôt qu'apprendre : l'équivalence de dose en radiothérapie
@@ -271,6 +345,10 @@ Interactive tools: choose a question, explore a method
  Start with an example, change an input and examine what changes. Research calculators and medical applications are for research and education; their assumptions and limitations are stated in the linked pages.
  Languages: the seven technical calculators have French and English interfaces. The course tools (ROC, normal distribution, regression, attenuation, cooling, freezing, COP) are in French. The forecast comparison exists in French and English; dedicated applications retain their existing interfaces; filter by language before opening a tool.
  Find a tool Field Interface language
+ Explorable demonstration · French and English
+ Noise and memory: compare forecasts
+ Adjust additive and multiplicative noise; compare regression, persistence, MAE, nRMSE and NICE with a generator-specific oracle.
+ Open this tool →
  Explorable demonstration · French and English
  Atmospheric neutrons and boron: explore dose scales
  Follow a schematic cascade; distinguish flight exposure, tumour phantom dose and BSH/BPA distributions.
@@ -409,6 +487,10 @@ Outils interactifs : choisir une question, essayer une méthode
  Commencez avec un exemple, modifiez une entrée et examinez ce qui change. Les calculateurs de recherche et les applications médicales sont destinés à la recherche et à l’enseignement ; leurs hypothèses et limites figurent dans les pages liées.
  Langues : les sept calculateurs techniques ont des interfaces françaises et anglaises. Les outils des cours (ROC, loi normale, régression, atténuation, refroidissement, congélation, COP) sont en français. Le comparateur de prévisions existe en français et en anglais ; les applications dédiées conservent leur interface actuelle ; le filtre précise la langue avant ouverture.
  Rechercher un outil Domaine Langue de l’interface
+ Démonstration à explorer · Français et anglais
+ Bruit et mémoire : comparer des prévisions
+ Régler les bruits additif et multiplicatif ; comparer régression, persistance, MAE, nRMSE et NICE, avec un oracle propre au générateur.
+ Ouvrir cet outil →
  Démonstration à explorer · Français et anglais
  Neutrons atmosphériques et bore : explorer les échelles de dose
  Suivre une cascade schématique ; distinguer exposition du vol, dose du fantôme tumoral et distributions BSH/BPA.
@@ -1688,6 +1770,52 @@ Simulate what you cannot yet measure: the electricity demand of road tunnels
  The approach behind this work : Understand before you compute
 
 ---
+URL: https://www.cyrilvoyant.com/stories/variability-memory-forecastability/
+
+The model is not the whole story: variability, memory and forecastability
+ The same algorithm can produce different errors because the signal, horizon and available information differ. I therefore start with the phenomenon to be forecast. Describing its variability and memory helps choose a reference, interpret an error and decide whether additional complexity brings a useful gain.
+ Explore the series · Connect the three studies · Understand no free lunch · Papers and teams
+ 1. Describe the signal
+ Separate astronomical cycles, departure from clear sky and changes between successive times.
+ 2. Examine memory
+ Find which dependencies remain useful at the decision horizon.
+ 3. Evaluate the model
+ Compare on identical test targets, with an explicit reference and consistent units.
+ A laboratory separating memory, noise and model choice
+ Rather than only shuffling a curve, generate a two-state signal with known memory. Add additive noise, multiplicative noise or both. Ask what the regression learns, how its coefficients change and what expected error would remain even with knowledge of the generator’s current state.
+ Main experiment: model, assumptions and equations
+ S t is −1 or +1 with switching probability q = (1−r)/2, initialized in its equiprobable stationary distribution. The latent signal is K t = μ + aS t , μ = 0.6, with exact autocorrelation r h when a > 0. Observations are Y t = K t (1 + βZ m,t ) + σ a Z a,t . The Z draws are independent of each other, across times and of the state, uniform on [−√3,+√3], with zero mean and unit variance. Multiplicative noise has conditional variance β²K², additive noise σ a ². Control ranges guarantee positive observations without clipping. This teaching generator is not a validated weather model.
+ The oracle knows the state at forecast origin: ŷ oracle,t+h = μ + ar h S t . Its exact expected squared risk is R h = a²(1−r 2h ) + σ a ² + β²(μ²+a²) , separating future transitions, additive noise and multiplicative noise. √R h is an expected RMSE, not a threshold every finite sample must respect. The oracle has privileged information; it is not an operational forecast. This optimistic bound is specific to the generator, neither a numerical result of the cited papers nor a physical solar limit.
+ The h-step regression fits ŷ = A + BY t on training pairs only. Its stationary population-optimal linear slope is B* = a²r h / [a² + σ a ² + β²(μ²+a²)] . Observation noise thus reduces memory accessible to a simple regression. Displayed A and B are fitted, not substituted from this formula. Training uses indices 0–599; common test targets 624–1199 follow a 24-step buffer. Every forecast origin is exactly h steps before its target and after training. Models see only Y. sCV/F are retrospective diagnostics using the whole series, I clr = 1, d = 0.2 and conventional T = 24 for F.
+ MAE is mean absolute error; RMSE weights large errors more strongly. nRMSE = 100 × RMSE / mean test observation. NICE¹ and NICE² divide model MAE and RMSE by same-horizon simple-persistence errors on identical targets. NICEΣ equally averages the L¹, L² and L³ ratios, following the reference NICE code . Ratios are undefined for a perfect reference. NICE method and paper .
+ Three complementary studies, three questions
+ 2015, Can we diagnose difficulty before choosing the forecaster?
+ With Ted Soubdhan, Philippe Lauret, Mathieu David and Marc Muselli, we studied statistical parameters for anticipating solar forecast error. Mean absolute log return (MALR), borrowed from econometrics, describes relative changes. This empirical diagnostic does not replace testing the model at the intended site and horizon. Energy paper (2015) .
+ 2025, Estimate expected error from variability
+ Philippe Lauret’s study, to which I contributed, relates hourly variability σ(Δk c ) to RMSE through regressions calibrated on 60 sites, for intra-day and day-ahead forecasting. Its 95% intervals are statistical rather than universal physical limits. Solar Energy paper (2025) .
+ sCV and F, Clear-sky departure versus temporal memory
+ sCV normalizes the quadratic departure from clear sky. It does not by itself describe temporal ordering. F incorporates residual dependencies at lags compatible with the horizon. The same values and sCV can therefore coexist with different temporal structures and reference-model performance. Renewable Energy paper (2026) · sCV/F calculator · Reference code .
+ Appendix: identical values, different temporal order, including sCV/F equations
+ An experiment separating amplitude from temporal order
+ We construct a positive series with an artificial period of 24 and shuffle a copy of its values. Its histogram is unchanged. Two simple rules are compared: copy the value available at forecast origin, or use the mean estimated on the first half. The aim is to understand these rules and assumptions. These are synthetic values, not solar measurements or a new benchmark of the papers.
+ The equations behind the panels
+ The reference is constant here: I clr = 1 and k = I/I clr . This isolates temporal ordering; a real application needs the Sun’s cycle too. With Δk t = k t − k t−1 , MALR = mean(|ln(k t /k t−1 )|) . All values here are positive; real-data treatment of zeros and nights must be explicit. Both σ(Δk) and MALR depend on temporal neighbours and change when values are shuffled.
+ In this experiment, sCV = √2/(1−d) × √mean[(k−1)²] , with d = 0.2. The general formula normalizes by root-mean-square clear-sky irradiance. For residuals ε = I − I clr , F(h) = 1 + sCV[ρ max (h) − 1] , where ρ max is the maximum |ρ(ℓ)| for h ≤ ℓ ≤ T/2, here T = 24. Correlations use available pairs, as in the reference MATLAB code. The sCV normalization at 1 is a reference, not a ceiling to impose on every series.
+ For each test target t: ŷ pers (t) = k(t−h) and ŷ mean (t) = mean(k 0:95 ) . Both RMSEs use the same 72 targets, indices 120 to 191. After training on indices 0 to 95, a 24-step buffer ensures that the mean is fitted before every forecast origin, including horizon 12. The mean stays fixed; future targets do not re-estimate it. Conversely, sCV, F, MALR and σ(Δk) describe the entire constructed series retrospectively. Those are distinct uses of the data.
+ No free lunch: problem structure matters
+ Wolpert and Macready’s optimization no-free-lunch results establish equal average performance for the search algorithms considered when uniformly averaging over all functions on a finite problem. That precise setting is not the distribution of real solar forecasting tasks. It does not establish that all models are equivalent within a given domain or that simple models always win. Original reference (1997) .
+ The connection is methodological: model assumptions must meet problem structure. Shuffling an example is not a proof of the theorem. It illustrates how the reference choice and horizon change the interpretation of error. At horizon 12, anticorrelation may carry useful information while persistence, which copies without reversing, becomes inappropriate.
+ The message for a real decision
+ Understand the signal, establish a reference, measure improvement, then add complexity when the gain justifies it. Low error under an easy sky has a different meaning from comparable error under unstable conditions. High variability alone does not establish an absence of predictable structure. Examine the horizon, information available at forecast origin, out-of-training validation and model cost.
+ This connects to the atmospheric neutron study : simulation quantifies what a mechanism can offer, within its limits. Continue with NICE and persistence as a reference , BLEND , solar cycles and timestamps and the research thread .
+ Papers and complete author teams
+ Cyril Voyant , Milan Despotovic , Luis Garcia-Gutierrez , Rodrigo Amaro e Silva , Philippe Lauret , Ted Soubdhan , Nadjem Bailek . NICE k metrics: Unified and multidimensional framework for evaluating deterministic solar forecasting accuracy (2025).
+ Cyril Voyant , Ted Soubdhan , Philippe Lauret , Mathieu David, Marc Muselli. Statistical parameters as a means to a priori assess the accuracy of solar forecasting models (2015).
+ Philippe Lauret , Mathieu David, Josselin Le Gal La Salle, Elke Lorenz, Richard Perez, Cyril Voyant . A simple method for quickly estimating solar irradiance forecast errors (2025).
+ Cyril Voyant , Alan Julien , Milan Despotovic , Gilles Notton , Luis Antonio Garcia-Gutierrez , Claudio Francesco Nicolosi , Philippe Blanc , Jamie Bright . Stochastic coefficient of variation: Assessing the variability and forecastability of solar irradiance (2026).
+ David H. Wolpert, William G. Macready. No Free Lunch Theorems for Optimization . IEEE Transactions on Evolutionary Computation, 1(1), 67–82 (1997).
+
+---
 URL: https://www.cyrilvoyant.com/stories/websemantic/
 
 Let the language model read, let the validated code compute: WebSemantic
@@ -1955,6 +2083,10 @@ Le Soleil, les saisons et l'heure : une seule horloge pour les mesures
  Méthode et vérification
  Déclinaison et équation du temps : séries de Fourier de Spencer (1971), utilisées dans les calculs de position solaire de la NOAA ; lever et coucher à un angle zénithal de 90,833° (réfraction et rayon du disque). Contrôle contre pvlib 0.15.2 (algorithme SPA du NREL) pour Paris et Sydney aux équinoxes et solstices de 2026 : lever, midi et coucher à moins de 3 minutes. G sc = 1361 W/m² (Kopp et Lean, 2011). Heures légales : fuseaux IANA Europe/Paris et Australia/Sydney fournis par le navigateur. Carte : terres Natural Earth au 1:110 m (domaine public). C'est une animation d'enseignement : le rayonnement montré est celui hors atmosphère, pas une mesure ni une prévision.
  Pour aller plus loin : les bases de la prévision solaire, avec les équations (en anglais) · le cours de prévision solaire · le comparateur de prévisions · la prévision complexe .
+ Essayer dans votre navigateur
+ Mesurer variabilité et prévisibilité : sCV et F : un site est-il difficile à prévoir, avant tout modèle ?.
+ Calculer les poids de BLEND : persistance et persistance cyclique mélangées, λ réglable, données PV réelles.
+ Comparer des prévisions : persistance, AR et ELM : erreur selon l’horizon sur données publiques.
 
 ---
 URL: https://www.cyrilvoyant.com/fr/animations/test-khi-deux/

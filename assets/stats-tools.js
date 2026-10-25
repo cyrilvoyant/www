@@ -87,48 +87,71 @@
   function metric(parent,label,value){var d=node('div',{},parent);node('span',{},d,label);node('strong',{},d,value);}
   M.summarySample=function(mean,sd,n){var z=[],sum=0;for(var i=0;i<n;i++){var q=C.invPhi((i+.5)/n);z.push(q);sum+=q;}var center=sum/n,v=0;z.forEach(function(x){v+=(x-center)*(x-center);});var scale=sd/Math.sqrt(v/(n-1));return z.map(function(x){return mean+(x-center)*scale;});};
   function student(b){
-    heading(b,'Student : de la différence observée à la décision','Faites varier la différence, la dispersion et l’effectif. Voyez ce que mesure la p-value, puis lisez l’incertitude sur la différence. Tests bilatéraux uniquement : H₀ = différence de population nulle.');
-    var choice=node('label',{'class':'st-choice'},b);node('span',{},choice,'Plan de comparaison');var mode=node('select',{},choice);
-    [['one','Un échantillon / une référence'],['paired','Mesures appariées : différences'],['welch','Deux groupes indépendants : Welch'],['pooled','Deux groupes : variance commune']].forEach(function(p){node('option',{value:p[0]},mode,p[1]);});
-    mode.value='welch';
-    var ctl=node('div',{'class':'st-controls'},b), d=control(ctl,'Moyenne − référence (unité du cours)','range',-10,10,.1,1), s1=control(ctl,'Écart-type s','number',.000001,100,'any',2), n1=control(ctl,'Effectif n','number',2,5000,1,20),s2=control(ctl,'Écart-type groupe 2','number',.000001,100,'any',3),n2=control(ctl,'Effectif groupe 2','number',2,5000,1,30);
-    var base=control(ctl,'Moyenne du groupe 2','number',-100,100,'any',10),samples=chart(b,'Échantillons construits et moyennes des deux groupes',640,230),sampleNote=note(b,'');
-    var al=node('label',{'class':'st-choice'},b);node('span',{},al,'Risque α choisi avant le test');var alpha=node('select',{},al);[.01,.05,.1].forEach(function(v){node('option',{value:v},alpha,num(100*v,0)+' %');});alpha.value='0.05';
-    var metrics=node('div',{'class':'st-metrics','aria-live':'polite'},b), view=chart(b,'Densité de Student sous H0, zones de rejet et statistique observée',640,260), iv=chart(b,'Intervalle de confiance bilatéral de la différence et repère zéro',640,105), read=node('p',{'class':'st-reading'},b), formula=note(b,''), conditions=note(b,'');
-    note(b,'Courbe : les zones orange totalisent α sous H₀. Les hachures bleues commencent à ±|t observé| : leur aire totale est la p-value. Les aires annoncées incluent les queues au-delà du cadre. L’intervalle porte sur la moyenne ou la différence de moyennes, pas sur 95 % des individus.');
+    // Classic (pooled) Student test of the course (slides 92-93): two independent groups, s_p² = [(n₁−1)s₁²+(n₂−1)s₂²]/(n₁+n₂−2),
+    // t = (x̄₁ − x̄₂)/(s_p √(1/n₁+1/n₂)), ddl = n₁+n₂−2, H₀ rejected when |t| > t_table. Engine: M.student('pooled', …) (checked).
+    heading(b,'Deux traitements : leurs moyennes diffèrent-elles vraiment ?','Deux groupes de patients reçoivent chacun un traitement. Les moyennes diffèrent toujours un peu, ne serait-ce que par hasard. Le test de Student du cours dit si l’écart observé est grand devant ce hasard.');
+    var EX={
+      hta:{a:'Traitement A',b:'Traitement B',u:'mmHg',q:'baisse de la pression systolique après 8 semaines',m1:14,s1:5,m2:8,s2:6,n:12,
+           src:'Exemple construit pour l’exercice : 12 patients par groupe, valeurs fictives.'},
+      gfi:{a:'GFI gauche',b:'GFI droit',u:'',q:'mesure de l’aire de Broca (exemple du cours)',m1:36,s1:9.4195,m2:70.25,s2:4.6928,n:12,
+           src:'Exemple du cours, diapositive 97 : n = 12 par groupe, moyennes 36 et 70,25, variances 88,73 et 22,02 ; le cours trouve t = −11,27 pour 22 ddl.'}};
+    var cur=EX.hta;
     var presets=node('div',{'class':'st-presets'},b);
-    [['Même effet, n = 10',10],['Même effet, n = 100',100],['Même effet, n = 1000',1000]].forEach(function(p){var bt=node('button',{type:'button'},presets,p[0]);bt.addEventListener('click',function(){mode.value='one';d.i.value=1;s1.i.value=5;n1.i.value=p[1];d.i.dispatchEvent(new Event('input'));});});
-    note(b,'À essayer : gardez la différence à 1 et l’écart-type à 5, puis changez seulement n. Une différence inchangée peut franchir le seuil statistique. Non-rejet de H₀ ne signifie pas égalité démontrée.');
+    [['hta','Exemple : deux traitements de l’hypertension'],['gfi','Exemple du cours : aire de Broca (diapositive 97)']].forEach(function(p){var bt=node('button',{type:'button'},presets,p[1]);bt.addEventListener('click',function(){load(EX[p[0]]);});});
+    var ctl=node('div',{'class':'st-controls'},b),m1=control(ctl,'Moyenne groupe 1','range',0,100,.25,14),s1=control(ctl,'Écart-type groupe 1','range',.5,30,.1,5),
+        m2=control(ctl,'Moyenne groupe 2','range',0,100,.25,8),s2=control(ctl,'Écart-type groupe 2','range',.5,30,.1,6),n=control(ctl,'Patients par groupe n','range',3,60,1,12);
+    var story=node('p',{'class':'st-reading'},b);
+    var dist=chart(b,'Distributions des deux groupes : patients et moyennes',640,300);
+    var legend=note(b,'');
+    var metrics=node('div',{'class':'st-metrics','aria-live':'polite'},b);
+    var view=chart(b,'Loi de Student sous H₀, seuil du cours et t observé',640,260);
+    var read=node('p',{'class':'st-reading'},b), steps=note(b,''), cond=note(b,'');
+    function load(e){cur=e;m1.i.value=e.m1;s1.i.value=e.s1;m2.i.value=e.m2;s2.i.value=e.s2;n.i.value=e.n;[m1,s1,m2,s2,n].forEach(function(c){c.i.dispatchEvent(new Event('input'));});}
+    function normal(x,m,s){return Math.exp(-.5*((x-m)/s)*((x-m)/s))/(s*Math.sqrt(2*Math.PI));}
     function draw(){
-      var two=mode.value==='welch'||mode.value==='pooled';s2.w.hidden=n2.w.hidden=!two;
-      base.w.hidden=mode.value==='paired';base.w.firstChild.textContent=two?'Moyenne du groupe 2':'Valeur de référence';
-      d.w.firstChild.textContent=two?'Moyenne groupe 1 − moyenne groupe 2':mode.value==='paired'?'Moyenne des différences appariées':'Moyenne − référence';
-      s1.w.firstChild.textContent=mode.value==='paired'?'Écart-type des différences (pas des niveaux)':two?'Écart-type groupe 1':'Écart-type s';
-      n1.w.firstChild.textContent=mode.value==='paired'?'Nombre de paires':two?'Effectif groupe 1':'Effectif n';
-      metrics.replaceChildren();view.replaceChildren();iv.replaceChildren();samples.replaceChildren();
-      var inputs=[d.i,s1.i,n1.i].concat(mode.value==='paired'?[]:[base.i]).concat(two?[s2.i,n2.i]:[]);if(inputs.some(function(i){return !i.value.trim()||!i.checkValidity();})){read.textContent='Renseignez des effectifs entiers ≥ 2, des moyennes finies et des écarts-types strictement positifs dans les plages proposées.';formula.textContent=conditions.textContent=sampleNote.textContent='';return;}
-      var r=M.student(mode.value,+d.i.value,+s1.i.value,+n1.i.value,+s2.i.value,+n2.i.value,+alpha.value), a=+alpha.value;
-      var paired=mode.value==='paired',m2=paired?0:+base.i.value,m1=m2+r.difference,A=M.summarySample(m1,+s1.i.value,+n1.i.value),B=two?M.summarySample(m2,+s2.i.value,+n2.i.value):[],lo=Math.min(m2,Math.min.apply(null,A),B.length?Math.min.apply(null,B):Infinity),hi=Math.max(m2,Math.max.apply(null,A),B.length?Math.max.apply(null,B):-Infinity),pad=(hi-lo)*.08,XX=function(x){return 80+500*(x-lo+pad)/(hi-lo+2*pad);};
-      function row(values,mean,sd,y,color,label){svg('text',{x:12,y:y+5,'class':'st-axis'},samples,label);var stride=Math.max(1,Math.ceil(values.length/180));values.forEach(function(x,i){if(i%stride===0)svg('circle',{cx:XX(x),cy:y+((i*13)%7-3)*3,r:2.5,fill:color,'fill-opacity':.55},samples);});svg('line',{x1:XX(mean-sd),y1:y+20,x2:XX(mean+sd),y2:y+20,stroke:color,'stroke-width':3},samples);svg('line',{x1:XX(mean),y1:y-20,x2:XX(mean),y2:y+25,stroke:color,'stroke-width':2},samples);svg('text',{x:XX(mean),y:y-28,'text-anchor':'middle','class':'st-axis'},samples,'moyenne '+num(mean,2));}
-      row(A,m1,+s1.i.value,78,'#087e8b',paired?'Écarts':'Groupe 1');if(two)row(B,m2,+s2.i.value,158,'#c36d25','Groupe 2');else{svg('line',{x1:XX(m2),y1:30,x2:XX(m2),y2:185,stroke:'#c36d25','stroke-dasharray':'4 4'},samples);svg('text',{x:XX(m2),y:195,'text-anchor':'middle','class':'st-axis'},samples,paired?'Différence nulle':'Référence '+num(m2,2));}
-      [lo,(lo+hi)/2,hi].forEach(function(x){svg('text',{x:XX(x),y:222,'text-anchor':'middle','class':'st-axis'},samples,num(x,1));});
-      sampleNote.textContent='Points construits pour avoir exactement les moyennes et écarts-types saisis, pas des données du cours ni des observations réelles. '+(two?'Groupe 1 : moyenne '+num(m1,2)+', n='+n1.i.value+' ; groupe 2 : moyenne '+num(m2,2)+', n='+n2.i.value+'. ':paired?'Les points représentent les différences de chaque paire ; ils ne reconstituent pas les mesures avant/après. ':'La ligne orange fixe la référence ; ce n’est pas un second échantillon. ')+'Trait vertical : moyenne ; barre horizontale : ±1 écart-type (pas un IC). Au plus 180 points dessinés par série, tous les effectifs entrent dans le calcul.';
-      metric(metrics,'Différence observée',num(r.difference,2));metric(metrics,'Statistique t',num(r.t));metric(metrics,'p-value bilatérale',pv(r.p));metric(metrics,'Degrés de liberté',num(r.df,2));
-      var span=Math.max(4.5,Math.min(8,Math.abs(r.t)+1),r.critical+1),X=function(t){return 40+560*(t+span)/(2*span);},Y=function(z){return 213-420*z;};
-      var pts=[];for(var j=0;j<=400;j++){var t=-span+2*span*j/400;pts.push([X(t),Y(M.density(t,r.df))]);}
-      var uid='stat-hatch-'+Math.random().toString(36).slice(2),defs=svg('defs',{},view),pat=svg('pattern',{id:uid,width:7,height:7,patternUnits:'userSpaceOnUse'},defs);svg('path',{d:'M0 7L7 0',stroke:'#087e8b','stroke-width':1.4},pat);
-      function tail(bound,fill){[-1,1].forEach(function(sign){if(bound>=span)return;var points=[[X(sign*bound),213]];for(var k=0;k<=150;k++){var t=sign*(bound+(span-bound)*k/150);points.push([X(t),Y(M.density(t,r.df))]);}points.push([X(sign*span),213]);svg('path',{d:path(points)+'Z',fill:fill},view);});}
-      tail(r.critical,'#f2b676');tail(Math.abs(r.t),'url(#'+uid+')');svg('path',{d:path(pts),fill:'none',stroke:'#193d5b','stroke-width':2.5},view);
-      svg('line',{x1:40,y1:213,x2:600,y2:213,stroke:'#74869a'},view);
-      [-r.critical,0,r.critical].forEach(function(t){svg('line',{x1:X(t),y1:30,x2:X(t),y2:213,stroke:t?'#b96a1c':'#acb8c3','stroke-dasharray':'4 4'},view);svg('text',{x:X(t),y:237,'text-anchor':'middle','class':'st-axis'},view,num(t,2));});
-      var shown=Math.max(-span,Math.min(span,r.t));svg('line',{x1:X(shown),y1:40,x2:X(shown),y2:213,stroke:'#087e8b','stroke-width':3},view);svg('text',{x:320,y:20,'text-anchor':'middle','class':'st-axis'},view,'Sous H₀ : Student à '+num(r.df,2)+' ddl · t observé '+num(r.t,2)+(Math.abs(r.t)>span?' (hors cadre)':''));
-      var scale=Math.max(Math.abs(r.lo),Math.abs(r.hi),.1)*1.15,IX=function(x){return 320+270*x/scale;};
-      svg('line',{x1:IX(0),y1:10,x2:IX(0),y2:72,stroke:'#74869a','stroke-dasharray':'4 4'},iv);svg('line',{x1:IX(r.lo),y1:42,x2:IX(r.hi),y2:42,stroke:'#087e8b','stroke-width':5},iv);[r.lo,r.hi].forEach(function(v){svg('line',{x1:IX(v),y1:32,x2:IX(v),y2:52,stroke:'#087e8b','stroke-width':2},iv);});svg('circle',{cx:IX(r.difference),cy:42,r:6,fill:'#193d5b'},iv);svg('text',{x:320,y:93,'text-anchor':'middle','class':'st-axis'},iv,'IC bilatéral '+num(100*(1-a),0)+' % : ['+num(r.lo)+' ; '+num(r.hi)+'] · zéro en pointillés');
-      read.textContent=(r.p<a?'H₀ rejetée':'H₀ non rejetée')+' au risque '+num(100*a,0)+' %. '+(r.p<a?'L’intervalle exclut zéro.':'L’intervalle contient zéro.')+' La p-value n’est pas la probabilité que H₀ soit vraie ; l’importance de la différence dépend de son unité et du contexte.';
-      formula.textContent='t = Δ / SE ; IC = Δ ± t(1 − α/2 ; ν) × SE. '+(mode.value==='welch'?'SE² = s₁²/n₁ + s₂²/n₂ ; ν de Welch–Satterthwaite.':mode.value==='pooled'?'sₚ² = [(n₁−1)s₁²+(n₂−1)s₂²]/(n₁+n₂−2) ; SE² = sₚ²(1/n₁+1/n₂) ; ν = n₁+n₂−2.':'SE = s/√n ; ν = n − 1.');
-      conditions.textContent=mode.value==='paired'?'Hypothèses : paires indépendantes ; normalité des différences pour l’inférence exacte. Saisir l’écart-type des différences individuelles.':mode.value==='one'?'Hypothèses : observations indépendantes, distribution normale pour le test exact à petit effectif ; référence fixée.':'Hypothèses : groupes indépendants, normalité pour le modèle exact à petits effectifs. '+(mode.value==='pooled'?'Variance commune supposée ; elle ne se déduit pas d’un non-rejet d’un test préalable.':'Welch utilise une approximation des ddl et n’impose pas l’égalité des variances.');
+      var a1=+m1.i.value,b1=+s1.i.value,a2=+m2.i.value,b2=+s2.i.value,nn=+n.i.value,u=cur.u?' '+cur.u:'';
+      m1.w.firstChild.textContent='Moyenne '+cur.a;s1.w.firstChild.textContent='Écart-type '+cur.a;m2.w.firstChild.textContent='Moyenne '+cur.b;s2.w.firstChild.textContent='Écart-type '+cur.b;
+      var r=M.student('pooled',a1-a2,b1,nn,b2,nn,.05), sp=Math.sqrt(((nn-1)*b1*b1+(nn-1)*b2*b2)/(2*nn-2));
+      story.textContent='Question : '+cur.q+'. '+cur.a+' : moyenne '+num(a1,2)+u+', écart-type '+num(b1,2)+' ; '+cur.b+' : moyenne '+num(a2,2)+u+', écart-type '+num(b2,2)+' ; '+nn+' patients par groupe. '+cur.src;
+      // 1. the distributions: patients (wide curves, dots) and means (narrow dashed curves, s/√n)
+      dist.replaceChildren();
+      var lo=Math.min(a1-3.2*b1,a2-3.2*b2),hi=Math.max(a1+3.2*b1,a2+3.2*b2),X=function(x){return 40+580*(x-lo)/(hi-lo);},base=230;
+      var top=Math.max(normal(a1,a1,b1),normal(a2,a2,b2)),Yp=function(v){return base-120*v/top;};
+      var topm=Math.max(normal(a1,a1,b1/Math.sqrt(nn)),normal(a2,a2,b2/Math.sqrt(nn))),Ym=function(v){return base-200*v/topm;};
+      [[a1,b1,'#087e8b',cur.a],[a2,b2,'#c36d25',cur.b]].forEach(function(g,k){
+        var pts=[],ptm=[];for(var j=0;j<=300;j++){var x=lo+(hi-lo)*j/300;pts.push([X(x),Yp(normal(x,g[0],g[1]))]);ptm.push([X(x),Ym(normal(x,g[0],g[1]/Math.sqrt(nn)))]);}
+        svg('path',{d:path(pts)+'L'+X(hi)+' '+base+'L'+X(lo)+' '+base+'Z',fill:g[2],'fill-opacity':.12,stroke:g[2],'stroke-width':2},dist);
+        svg('path',{d:path(ptm),fill:'none',stroke:g[2],'stroke-width':2.5,'stroke-dasharray':'6 4'},dist);
+        svg('line',{x1:X(g[0]),x2:X(g[0]),y1:base,y2:28,stroke:g[2],'stroke-width':2},dist);
+        svg('text',{x:X(g[0]),y:22-k*0,'text-anchor':'middle','class':'st-axis',fill:g[2]},dist,g[3]+' : '+num(g[0],1));
+        M.summarySample(g[0],g[1],nn).forEach(function(x,i){svg('circle',{cx:X(x),cy:base+12+k*14+((i*7)%3-1)*2,r:3,fill:g[2],'fill-opacity':.75},dist);});
+      });
+      var yA=46;svg('line',{x1:X(Math.min(a1,a2)),x2:X(Math.max(a1,a2)),y1:yA,y2:yA,stroke:'#193d5b','stroke-width':2},dist);
+      svg('text',{x:(X(a1)+X(a2))/2,y:yA-6,'text-anchor':'middle','class':'st-axis'},dist,'Δ = '+num(a1-a2,2)+u);
+      [lo,(lo+hi)/2,hi].forEach(function(x){svg('text',{x:X(x),y:296,'text-anchor':'middle','class':'st-axis'},dist,num(x,1));});
+      legend.textContent='Courbes pleines : répartition des patients de chaque groupe (moyenne ± écart-type). Pointillés : précision de la moyenne du groupe, d’écart-type s/√n. Points : les '+nn+' patients de chaque groupe (valeurs construites pour avoir exactement la moyenne et l’écart-type affichés). Les patients se chevauchent ; ce qui compte pour le test, c’est le chevauchement des pointillés.';
+      // 2. the three steps of the course
+      metrics.replaceChildren();
+      metric(metrics,'1. Écart des moyennes Δ',num(r.difference,2)+u);metric(metrics,'2. Écart-type commun sₚ',num(sp,2));metric(metrics,'Erreur standard de Δ',num(r.se,3));
+      metric(metrics,'3. t calculé',num(r.t,2));metric(metrics,'ddl = n₁ + n₂ − 2',String(r.df));metric(metrics,'t table (α = 5 %)',num(r.critical,3));metric(metrics,'p-value bilatérale',pv(r.p));
+      // 3. Student density under H0
+      view.replaceChildren();
+      var span=Math.max(4.5,Math.min(13,Math.abs(r.t)+1),r.critical+1),XT=function(t){return 40+560*(t+span)/(2*span);},Y=function(z){return 213-420*z;};
+      var pt=[];for(var j=0;j<=400;j++){var t=-span+2*span*j/400;pt.push([XT(t),Y(M.density(t,r.df))]);}
+      [-1,1].forEach(function(sg){var q=[[XT(sg*r.critical),213]];for(var k=0;k<=150;k++){var t=sg*(r.critical+(span-r.critical)*k/150);q.push([XT(t),Y(M.density(t,r.df))]);}q.push([XT(sg*span),213]);svg('path',{d:path(q)+'Z',fill:'#f2b676'},view);});
+      svg('path',{d:path(pt),fill:'none',stroke:'#193d5b','stroke-width':2.5},view);svg('line',{x1:40,y1:213,x2:600,y2:213,stroke:'#74869a'},view);
+      [-r.critical,0,r.critical].forEach(function(t){svg('line',{x1:XT(t),y1:30,x2:XT(t),y2:213,stroke:t?'#b96a1c':'#acb8c3','stroke-dasharray':'4 4'},view);svg('text',{x:XT(t),y:237,'text-anchor':'middle','class':'st-axis'},view,num(t,3));});
+      var sh=Math.max(-span,Math.min(span,r.t));svg('line',{x1:XT(sh),y1:40,x2:XT(sh),y2:213,stroke:'#087e8b','stroke-width':3},view);
+      svg('text',{x:XT(sh),y:34,'text-anchor':'middle','class':'st-axis'},view,'t calculé = '+num(r.t,2));
+      svg('text',{x:320,y:256,'text-anchor':'middle','class':'st-axis'},view,'Sous H₀ (traitements équivalents) : loi de Student à '+r.df+' ddl ; zones orange : 5 % des cas au total');
+      var rej=Math.abs(r.t)>r.critical;
+      read.textContent=(rej?'|t calculé| = '+num(Math.abs(r.t),2)+' > t table = '+num(r.critical,3)+' (ddl = '+r.df+', α = 0,05) : H₀ rejetée. Les moyennes de '+cur.a+' et de '+cur.b+' diffèrent significativement.'
+        :'|t calculé| = '+num(Math.abs(r.t),2)+' ≤ t table = '+num(r.critical,3)+' (ddl = '+r.df+', α = 0,05) : H₀ non rejetée. L’écart observé peut s’expliquer par le hasard ; cela ne prouve pas que les traitements sont équivalents.');
+      steps.textContent='Calcul du cours : sₚ = √{[(n₁ − 1)s₁² + (n₂ − 1)s₂²]/(n₁ + n₂ − 2)} = '+num(sp,3)+' ; t = Δ/(sₚ √(1/n₁ + 1/n₂)) = '+num(r.difference,2)+'/'+num(r.se,3)+' = '+num(r.t,3)+'. Essayez : augmentez n sans changer les moyennes, les pointillés se resserrent et t grandit.';
+      var ratio=Math.max(b1,b2)*Math.max(b1,b2)/(Math.min(b1,b2)*Math.min(b1,b2));
+      cond.textContent='Conditions du cours : deux groupes indépendants (patients différents), distributions proches de la loi normale, variances homogènes, à vérifier (ici, rapport des variances = '+num(ratio,2)+'). Si les mêmes patients sont mesurés avant et après, c’est le test apparié, sur les différences.';
     }
-    [mode,alpha,d.i,s1.i,n1.i,s2.i,n2.i,base.i].forEach(function(i){i.addEventListener('input',draw);});draw();
+    [m1,s1,m2,s2,n].forEach(function(c){c.i.addEventListener('input',draw);});draw();
   }
   function determination(b){
     heading(b,'Un lien significatif explique-t-il beaucoup ?','Deux curseurs, deux questions : n change la significativité ; r² mesure la part de variation décrite par une régression linéaire simple avec constante. Le signe de r donne le sens, pas la quantité de variation expliquée.');

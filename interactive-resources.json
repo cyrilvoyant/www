@@ -2,6 +2,24 @@
   "description": "Existing interactive resources; interface language and execution type are explicit. A catalog translation is not an interface translation.",
   "items": [
     {
+      "id": "memory",
+      "domain": "energy",
+      "kind": "demo",
+      "interface_language": "both",
+      "name": {
+        "fr": "Bruit et mémoire : comparer des prévisions",
+        "en": "Noise and memory: compare forecasts"
+      },
+      "task": {
+        "fr": "Régler les bruits additif et multiplicatif ; comparer régression, persistance, MAE, nRMSE et NICE, avec un oracle propre au générateur.",
+        "en": "Adjust additive and multiplicative noise; compare regression, persistence, MAE, nRMSE and NICE with a generator-specific oracle."
+      },
+      "url": {
+        "fr": "https://www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/#experience",
+        "en": "https://www.cyrilvoyant.com/stories/variability-memory-forecastability/#experience"
+      }
+    },
+    {
       "id": "bnct",
       "domain": "medicine",
       "kind": "demo",

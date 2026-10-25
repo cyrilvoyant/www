@@ -580,6 +580,10 @@
         {
           "title": "Article, auteurs et ressources",
           "anchor": null
+        },
+        {
+          "title": "Essayer dans votre navigateur",
+          "anchor": null
         }
       ]
     },
@@ -596,6 +600,10 @@
         {
           "title": "Article, auteurs et ressources",
           "anchor": null
+        },
+        {
+          "title": "Essayer dans votre navigateur",
+          "anchor": null
         }
       ]
     },
@@ -611,6 +619,10 @@
       "sections": [
         {
           "title": "Article, auteurs et ressources",
+          "anchor": null
+        },
+        {
+          "title": "Essayer dans votre navigateur",
           "anchor": null
         }
       ]
@@ -643,6 +655,14 @@
       "sections": [
         {
           "title": "Article, auteurs et ressources",
+          "anchor": null
+        },
+        {
+          "title": "Variabilité, mémoire et choix du modèle",
+          "anchor": null
+        },
+        {
+          "title": "Essayer dans votre navigateur",
           "anchor": null
         }
       ]
@@ -984,6 +1004,10 @@
         },
         {
           "title": "Méthode et vérification",
+          "anchor": null
+        },
+        {
+          "title": "Essayer dans votre navigateur",
           "anchor": null
         }
       ]
@@ -1563,6 +1587,10 @@
         {
           "title": "Pour aller plus loin",
           "anchor": null
+        },
+        {
+          "title": "Essayer dans votre navigateur",
+          "anchor": null
         }
       ]
     },
@@ -1946,6 +1974,10 @@
       "citations": [],
       "sections": [
         {
+          "title": "Bruit et mémoire : comparer des prévisions",
+          "anchor": null
+        },
+        {
           "title": "Neutrons atmosphériques et bore : explorer les échelles de dose",
           "anchor": null
         },
@@ -2250,6 +2282,10 @@
         },
         {
           "title": "Logiciel et protocole",
+          "anchor": null
+        },
+        {
+          "title": "Essayer dans votre navigateur",
           "anchor": null
         }
       ]
@@ -2679,6 +2715,10 @@
         {
           "title": "Travaux et équipes de référence",
           "anchor": null
+        },
+        {
+          "title": "Variabilité, mémoire et choix du modèle",
+          "anchor": null
         }
       ]
     },
@@ -2707,6 +2747,10 @@
         },
         {
           "title": "L'article",
+          "anchor": null
+        },
+        {
+          "title": "Essayer dans votre navigateur",
           "anchor": null
         }
       ]
@@ -2801,6 +2845,10 @@
         {
           "title": "Pour aller plus loin",
           "anchor": null
+        },
+        {
+          "title": "Essayer dans votre navigateur",
+          "anchor": null
         }
       ]
     },
@@ -2829,6 +2877,10 @@
         {
           "title": "Ce que l’étude apporte à la modélisation",
           "anchor": null
+        },
+        {
+          "title": "Monte-Carlo : suivre beaucoup d’histoires de neutrons",
+          "anchor": "monte-carlo"
         },
         {
           "title": "BSH ou BPA : ce que la comparaison dit vraiment",
@@ -2921,6 +2973,10 @@
         {
           "title": "Pour aller plus loin",
           "anchor": null
+        },
+        {
+          "title": "Essayer dans votre navigateur",
+          "anchor": null
         }
       ]
     },
@@ -2961,6 +3017,10 @@
         {
           "title": "Pour aller plus loin",
           "anchor": null
+        },
+        {
+          "title": "Essayer dans votre navigateur",
+          "anchor": null
         }
       ]
     },
@@ -3000,6 +3060,50 @@
         },
         {
           "title": "Pour aller plus loin",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/",
+      "title": "Le modèle ne fait pas tout : variabilité, mémoire et prévisibilité",
+      "language": "fr",
+      "topics": [
+        "Calculer directement",
+        "Énergie"
+      ],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Un laboratoire pour séparer mémoire, bruit et choix du modèle",
+          "anchor": null
+        },
+        {
+          "title": "Trois études complémentaires, trois questions",
+          "anchor": "trois-etudes"
+        },
+        {
+          "title": "Une expérience qui sépare amplitude et ordre temporel",
+          "anchor": null
+        },
+        {
+          "title": "Les formules derrière les panneaux",
+          "anchor": null
+        },
+        {
+          "title": "« No free lunch » : la structure du problème compte",
+          "anchor": "nfl"
+        },
+        {
+          "title": "Le message pour une décision réelle",
+          "anchor": null
+        },
+        {
+          "title": "Articles et équipes complètes",
+          "anchor": "sources"
+        },
+        {
+          "title": "Essayer dans votre navigateur",
           "anchor": null
         }
       ]
@@ -3330,6 +3434,10 @@
       "sections": [
         {
           "title": "Paper, authors and resources",
+          "anchor": null
+        },
+        {
+          "title": "Variability, memory and model choice",
           "anchor": null
         }
       ]
@@ -3789,6 +3897,10 @@
           "anchor": null
         },
         {
+          "title": "Monte Carlo: following many neutron histories",
+          "anchor": "monte-carlo"
+        },
+        {
           "title": "BSH versus BPA: what the comparison actually means",
           "anchor": null
         },
@@ -4003,6 +4115,46 @@
       ]
     },
     {
+      "url": "https://www.cyrilvoyant.com/stories/variability-memory-forecastability/",
+      "title": "The model is not the whole story: variability, memory and forecastability",
+      "language": "en",
+      "topics": [
+        "Compute directly",
+        "Energy"
+      ],
+      "citations": [],
+      "sections": [
+        {
+          "title": "A laboratory separating memory, noise and model choice",
+          "anchor": null
+        },
+        {
+          "title": "Three complementary studies, three questions",
+          "anchor": "trois-etudes"
+        },
+        {
+          "title": "An experiment separating amplitude from temporal order",
+          "anchor": null
+        },
+        {
+          "title": "The equations behind the panels",
+          "anchor": null
+        },
+        {
+          "title": "No free lunch: problem structure matters",
+          "anchor": "nfl"
+        },
+        {
+          "title": "The message for a real decision",
+          "anchor": null
+        },
+        {
+          "title": "Papers and complete author teams",
+          "anchor": "sources"
+        }
+      ]
+    },
+    {
       "url": "https://www.cyrilvoyant.com/stories/websemantic/",
       "title": "Let the language model read, let the validated code compute: WebSemantic",
       "language": "en",
@@ -4172,6 +4324,10 @@
       "topics": [],
       "citations": [],
       "sections": [
+        {
+          "title": "Noise and memory: compare forecasts",
+          "anchor": null
+        },
         {
           "title": "Atmospheric neutrons and boron: explore dose scales",
           "anchor": null

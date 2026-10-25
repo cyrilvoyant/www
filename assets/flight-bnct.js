@@ -46,8 +46,11 @@
       el('path',{d:'M295 110 L345 106 L375 80 L388 80 L374 106 L433 110 L374 117 L387 143 L374 143 L345 118 L295 115Z',fill:'#326c88'});
       el('rect',{x:300,y:178,width:55,height:78,fill:'#b1dfef',rx:5});txt(302,280,'10 cm',13,'#13405d');
       txt(302,171,tr('Eau','Water'),14,'#13405d');
-      el('rect',{x:363,y:178,width:10,height:78,fill:'#b9b1a0'});txt(361,300,'0.5 cm',13,'#13405d');
-      circle(414,218,28,'#dcaaa2');txt(391,263,'~1 g',13,'#13405d');
+      // Skull thickness is annotated numerically; its width is exaggerated for legibility.
+      el('rect',{x:363,y:178,width:16,height:78,fill:'#8e8067',stroke:'#564a36','stroke-width':1});
+      line(371,258,371,274,'#564a36',1);txt(345,290,tr('Os du crâne','Skull bone'),13,'#13405d');txt(355,308,'0.5 cm',13,'#13405d');
+      el('ellipse',{cx:419,cy:216,rx:36,ry:43,fill:'#f0dcd6'});txt(390,171,tr('Cerveau','Brain'),13,'#13405d');
+      circle(419,218,16,'#cb8f86');txt(393,273,tr('Tumeur','Tumour'),13,'#13405d');txt(403,290,'~1 g',13,'#13405d');
       if(step>=1){line(286,215,410,215,'#287c99',2);circle(286+124*travel,215,5,'#287c99');}
       line(460,165,490,165,'#476e85',2);
       txt(497,30,tr('ZOOM : UNE CAPTURE','ZOOM: ONE CAPTURE'),15,'#13405d');

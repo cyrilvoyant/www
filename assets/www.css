@@ -402,6 +402,31 @@ pre.cite-ex { white-space: pre-wrap; background: var(--soft); padding: 12px 14px
 /* sticky tool controls (25/10, Cyril: « le bandeau de lancement d'animation comme cela sur les autres pages ») */
 .ctool .ct-ctl, .fc-ctl, .cx .ct-ctl, .st-controls, .ph-controls { position: sticky; top: 0; z-index: 3; padding: 10px 12px; background: color-mix(in srgb, var(--paper, #fff) 94%, transparent); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); border: 1px solid var(--line, #d8e0e8); border-radius: 10px; box-shadow: 0 2px 8px rgba(23, 37, 54, .06); }
 
+/* wide screens (25/10, Cyril: « le site ne prend pas toute la place sur un navigateur web … deux affichages, mobile court, sinon large ? »):
+   above 1280 px the page grows to 1240 px; running text and text boxes keep a readable measure (46 rem, centred), while
+   figures, tables, tools and card grids use the full width. Phones and tablets are unchanged. */
+@media (min-width: 1280px) {
+  :root { --width: 1240px; }
+  main :is(p, ul, ol, dl, h1, h2, h3, h4, blockquote, details, .lead, .crumbs, .xs-crumbs, .eyebrow, .brief, aside.thread, .theory, .cite-lede, .links-box, .muted) { max-width: 46rem; margin-left: auto; margin-right: auto; }
+  main :is(figure, table, .table-wrap, .fc-tw, .cards3, .cards, .grid, .cta-grid, .ctool, .fc, .cx, .st-lab, .ph-lab, .sun, .bs-viewer, .cvt-2x2, .cvt-sticky, .sun-dash, #try-it, .course-catalogue, .thread-path)
+    :is(p, ul, ol, dl, h1, h2, h3, h4, details, .muted) { max-width: none; margin-left: 0; margin-right: 0; }
+  main :is(figure, .table-wrap, .fc-tw, .ctool, .fc, .cx, .st-lab, .ph-lab, .sun, .bs-viewer, #try-it) { max-width: none; }
+  main :is(.table-wrap, .fc-tw) { width: fit-content; max-width: 100%; margin-left: auto; margin-right: auto; }
+  main table, main figure { margin-left: auto; margin-right: auto; }
+}
+
+/* related tools (25/10) */
+.related-tools { margin: 24px auto; padding: 12px 16px; background: var(--soft); border-left: 4px solid var(--link); border-radius: 8px; }
+.related-tools h2 { font-size: 1.05rem; margin: 0 0 6px; } .related-tools ul { margin: 0; padding-left: 18px; } .related-tools li { margin: 3px 0; }
+
+/* Unified parameter docks: existing inputs retain their listeners and meanings. */
+.tool-dock{position:sticky;top:0;z-index:7;background:var(--paper,#fff);border:1px solid var(--line,#d8e0e8);border-radius:10px;padding:8px 12px;margin:12px 0;max-height:55vh;overflow:auto;box-shadow:0 2px 8px #17253615}
+.tool-dock summary{font-weight:650;cursor:pointer}.tool-dock .tool-dock-inner{position:static!important;box-shadow:none!important;border:0!important;margin:4px 0!important;padding:4px!important;width:auto!important;max-width:100%!important;left:auto!important;transform:none!important}.tool-dock .ph-buttons,.tool-dock .vm-playbar{position:static!important}
+@media print{.tool-dock,.fp-dock{position:static;max-height:none;overflow:visible}}
+
+.tool-dock details,.fp-dock details{max-width:none!important;margin-left:0!important;margin-right:0!important}
+.fp-verdict{border-left:4px solid #086b94;background:var(--paper);padding:10px 14px}
+
 /* complex-valued forecasting */
 .cx { margin: 14px 0; padding: 16px; background: var(--paper); border: 1px solid var(--line); border-radius: 12px; }
 .cx .ct-ctl label { display: flex; flex-direction: column; font-size: .85rem; color: var(--muted); } .cx input[type=range] { width: 240px; accent-color: var(--link); }
@@ -461,3 +486,12 @@ pre.cite-ex { white-space: pre-wrap; background: var(--soft); padding: 12px 14px
 .bnct-metrics article{padding:16px;border:1px solid var(--line);background:var(--paper);border-radius:12px}.bnct-metrics strong{display:block;font-size:1.6rem;color:var(--link)}
 .bnct-bars{display:grid;gap:8px;margin:16px 0}.bnct-bar{display:grid;grid-template-columns:120px 1fr 45px;align-items:center;gap:10px}.bnct-bar i{height:14px;background:#0d7996;border-radius:4px;display:block}
 .bnct-step{min-height:5em;border-left:4px solid #bc690d;padding-left:16px}.bnct-foot{font-size:.9rem;color:var(--muted)}
+
+.fp-lab{border:1px solid var(--line);background:var(--soft);border-radius:16px;padding:clamp(12px,2vw,24px);margin:24px 0}.fp-dock{position:sticky;top:0;z-index:8;background:var(--paper);padding:8px 12px;border:1px solid var(--line);border-radius:12px;box-shadow:0 3px 12px #17253618;max-height:55vh;overflow:auto}.fp-dock summary{cursor:pointer;font-weight:650}.fp-summary{font-weight:400;color:var(--muted);font-size:.85rem}.fp-controls{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px 16px;padding:8px 0}.fp-controls label{display:grid;gap:3px;font-size:.9rem}.fp-controls input{width:100%;accent-color:#086b94}.fp-lab button,.fp-lab select{font:inherit;font-size:.85rem;border:1px solid var(--line);border-radius:7px;padding:7px 10px;background:var(--paper);color:var(--ink);cursor:pointer}.fp-presets,.fp-play{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}.fp-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin:14px 0}.fp-cards article{padding:12px;background:var(--paper);border-radius:10px;border:1px solid var(--line)}.fp-cards strong{display:block;font-size:1.5rem;color:var(--link)}.fp-cards small{display:block}.fp-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.fp-grid figure{margin:0;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:10px}.fp-grid h3{font-size:1rem;margin:0 0 8px}.fp-grid svg{width:100%;height:auto;display:block}.fp-grid figcaption,.fp-note,.fp-reading{font-size:.85rem;color:var(--muted)}.fp-table{overflow-x:auto;margin-top:16px}.fp-table table{width:100%;font-variant-numeric:tabular-nums}.fp-table td{text-align:right}.fp-table th{text-align:left}.fp-grid figcaption span{display:inline-block;margin-right:8px}@media(max-width:1100px){.fp-grid{grid-template-columns:1fr}}@media(min-width:1280px){main :is(.fp-lab,.vm-lab){max-width:none!important;width:100%}}
+.vm-lab{background:var(--soft);border:1px solid var(--line);border-radius:16px;padding:clamp(12px,3vw,28px);margin:24px 0}
+.vm-controls{display:flex;flex-wrap:wrap;align-items:end;gap:14px;margin:16px 0}.vm-controls label{display:grid;gap:6px;flex:1;min-width:170px}.vm-controls input{width:100%;accent-color:#086c93}
+.vm-lab button,.vm-lab select{padding:9px 12px;border:1px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink);cursor:pointer}.vm-presets{display:flex;gap:8px;flex-wrap:wrap}
+.vm-plots figure{margin:18px 0;padding:10px;background:var(--paper);border:1px solid var(--line);border-radius:12px}.vm-plots h3{font-size:1rem;margin:0 0 8px}.vm-plots svg{width:100%;height:auto;display:block}
+.vm-verdict{border-left:4px solid #ba691b;padding:6px 16px;background:var(--paper)}.vm-table{overflow-x:auto}.vm-table table{width:100%;font-variant-numeric:tabular-nums}.vm-table td{text-align:right}.vm-table th{text-align:left}.vm-note,.vm-cursor{font-size:.9rem;color:var(--muted)}
+.vm-playbar{position:sticky;top:0;z-index:4;background:var(--soft);padding:8px 0;border-bottom:1px solid var(--line)}
+.vm-roadmap{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}.vm-roadmap article{padding:16px;border:1px solid var(--line);border-radius:12px}.vm-roadmap h3{margin-top:0;font-size:1.15rem}

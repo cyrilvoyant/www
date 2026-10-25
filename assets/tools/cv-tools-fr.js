@@ -253,17 +253,30 @@
     }
     box.addEventListener("input", upd); upd();
   }
+  function layoutStyle() {            // sticky control bar and 2×2 charts, injected once (BLEND explorer)
+    if (document.getElementById("cvt-layout")) return;
+    var st = document.createElement("style"); st.id = "cvt-layout";
+    st.textContent = ".cvt-sticky{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.95);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);border:1px solid #d8e0e8;border-radius:10px;padding:8px 12px;margin:8px 0;box-shadow:0 2px 8px rgba(23,37,54,.06)}" +
+      ".cvt-sticky{width:min(1280px,calc(100vw - 32px));margin-left:calc(50% - min(640px,calc(50vw - 16px)));box-sizing:border-box}.cvt-sticky .cvt-grid{margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:4px 16px}.cvt-sticky .cvt-hint{margin:4px 0 0}.cvt-datadet{margin:6px 0}.cvt-datadet summary{cursor:pointer;font-weight:600}" +
+      ".cvt-2x2{display:grid;grid-template-columns:1fr 1fr;gap:12px;width:min(1280px,calc(100vw - 32px));position:relative;left:50%;transform:translateX(-50%)}" +
+      ".cvt-cell{border:1px solid #d8e0e8;border-radius:10px;padding:10px;background:#fff;min-width:0}.cvt-cell h3{margin:0 0 4px;font-size:1rem}" +
+      "@media (max-width:900px){.cvt-2x2{grid-template-columns:1fr;width:auto;left:0;transform:none}.cvt-sticky{width:auto;margin-left:0}.cvt-sticky .cvt-grid{grid-template-columns:1fr 1fr}}";
+    document.head.appendChild(st);
+  }
   function mountBLEND(box) {
-    box.innerHTML = dataBox("bl-d", ["x"], "Une colonne : le signal régulièrement échantillonné (une ligne par pas de temps). Exemple horaire chargé ; vous pouvez coller vos données.") +
-      '<p class="cvt-hint"><button type="button" class="cvt-btn bl-real">Charger des données PV réelles (Palaiseau, 40 jours, pas de 30 min)</button> <span class="bl-src"></span></p>' +
-      '<div class="cvt-grid">' + num("Période T (pas)", "bl-T", 24, 1) + slider("Horizon h", "bl-h", 1, 24, 1, 1, "pas") + slider("Fenêtre affichée (période)", "bl-w", 1, 30, 1, 1, "") + "</div>" +
-      '<div class="cvt-out" aria-live="polite"></div>' +
-      "<h3>1. Trois périodes entières, de nuit à nuit</h3><div class=\"cvt-plot bl-p1\"></div>" +
-      "<h3>2. Réglez λ vous-même</h3><p class=\"cvt-hint\">À une phase donnée de la période, la prévision vaut (1 − λ) × la valeur une période plus tôt + λ × la dernière valeur. " +
+    layoutStyle();
+    box.innerHTML = '<details class="cvt-datadet"><summary>Données : démo, PV réel ou les vôtres</summary>' +
+      dataBox("bl-d", ["x"], "Une colonne : le signal régulièrement échantillonné (une ligne par pas de temps). Exemple horaire chargé ; vous pouvez coller vos données.") + "</details>" +
+      '<div class="cvt-sticky"><div class="cvt-grid">' + num("Période T (pas)", "bl-T", 24, 1) + slider("Horizon h", "bl-h", 1, 24, 1, 1, "pas") + slider("Fenêtre affichée (période)", "bl-w", 1, 30, 1, 1, "") +
+      slider("Phase de l’origine", "bl-ph", 1, 24, 1, 1, "") + slider("Votre λ", "bl-l", 0, 1, 0.01, 0.5, "") + "</div>" +
+      '<p class="cvt-hint"><button type="button" class="cvt-btn bl-real">Charger des données PV réelles (Palaiseau, 40 jours, pas de 30 min)</button> <span class="bl-src"></span></p></div>' +
+      '<div class="cvt-out" aria-live="polite"></div><div class="cvt-2x2">' +
+      "<div class=\"cvt-cell\"><h3>1. Trois périodes entières, de nuit à nuit</h3><div class=\"cvt-plot bl-p1\"></div></div>" +
+      "<div class=\"cvt-cell\"><h3>2. Réglez λ vous-même</h3><p class=\"cvt-hint\">À une phase donnée de la période, la prévision vaut (1 − λ) × la valeur une période plus tôt + λ × la dernière valeur. " +
       "Son erreur quadratique moyenne est une parabole en λ ; la RMSE affichée est sa racine carrée et a le même minimum. λ = 0 donne la persistance cyclique, λ = 1 la persistance, et BLEND prend le minimum des moindres carrés dans [0, 1].</p>" +
-      '<div class="cvt-grid">' + slider("Phase de l’origine", "bl-ph", 1, 24, 1, 1, "") + slider("Votre λ", "bl-l", 0, 1, 0.01, 0.5, "") + "</div>" +
-      '<div class="cvt-out bl-o2" aria-live="polite"></div><div class="cvt-plot bl-p2"></div><div class="cvt-plot bl-p3"></div>' +
-      "<h3>3. Ce que le mélange apporte, horizon par horizon</h3><div class=\"cvt-plot bl-p4\"></div><div class=\"cvt-out bl-o4\"></div>" +
+      '<div class="cvt-out bl-o2" aria-live="polite"></div><div class="cvt-plot bl-p2"></div></div>' +
+      "<div class=\"cvt-cell\"><h3>λ à chaque phase</h3><div class=\"cvt-plot bl-p3\"></div></div>" +
+      "<div class=\"cvt-cell\"><h3>3. Ce que le mélange apporte, horizon par horizon</h3><div class=\"cvt-plot bl-p4\"></div><div class=\"cvt-out bl-o4\"></div></div></div>" +
       '<p class="cvt-hint">Poids ajustés sur toute la série : diagnostic sur les données d’ajustement, comme dans le code de référence par défaut. Pour évaluer une prévision, ajustez sur une période d’entraînement puis testez sur une autre période.</p>' + TESTS;
     var lastKey = "", real = null;
     function errs(x, T, h) {                // RMSE of persistence, cyclic persistence and BLEND on the same targets
@@ -568,11 +581,26 @@
     box.addEventListener("input", upd); box.addEventListener("change", upd); upd();
   }
 
+  function stickyControls(box) {      // the first block of controls of every tool stays in view while scrolling (Cyril, 25/10)
+    layoutStyle();
+    if (box.querySelector(".cvt-sticky")) return;
+    var g = box.querySelector(".cvt-grid");
+    if (!g) {                          // tools that build their controls later (ARTU loads its tables first)
+      if (window.MutationObserver && !box.dataset.waitSticky) {
+        box.dataset.waitSticky = "1";
+        var mo = new MutationObserver(function () { if (box.querySelector(".cvt-grid")) { mo.disconnect(); stickyControls(box); } });
+        mo.observe(box, { childList: true, subtree: true });
+      }
+      return;
+    }
+    var w = document.createElement("div"); w.className = "cvt-sticky";
+    g.parentNode.insertBefore(w, g); w.appendChild(g);
+  }
   var MOUNT = { lql: mountLQL, thyroid: mountThyroid, nice: mountNICE, blend: mountBLEND, scv: mountSCV, artu: mountARTU, gamma: mountGamma };
   function init() {
     [].forEach.call(document.querySelectorAll(".cvt[data-tool]"), function (box) {
       var f = MOUNT[box.getAttribute("data-tool")];
-      if (f && !box.dataset.ready) { box.dataset.ready = "1"; f(box); }
+      if (f && !box.dataset.ready) { box.dataset.ready = "1"; f(box); stickyControls(box); }
     });
   }
   window.CVT = CVT;

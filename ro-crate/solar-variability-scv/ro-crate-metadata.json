@@ -48,6 +48,9 @@
      "@id": "https://www.cyrilvoyant.com/fr/outils/variabilite-previsibilite/"
     },
     {
+     "@id": "https://www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/"
+    },
+    {
      "@id": "https://www.cyrilvoyant.com/fr/vue-d-ensemble/"
     },
     {
@@ -64,6 +67,9 @@
     },
     {
      "@id": "https://www.cyrilvoyant.com/research-projects/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/stories/variability-memory-forecastability/"
     },
     {
      "@id": "https://www.cyrilvoyant.com/teaching/solar-forecasting-course/"
@@ -130,6 +136,11 @@
    "name": "www.cyrilvoyant.com/fr/outils/variabilite-previsibilite/"
   },
   {
+   "@id": "https://www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/"
+  },
+  {
    "@id": "https://www.cyrilvoyant.com/fr/vue-d-ensemble/",
    "@type": "WebPage",
    "name": "www.cyrilvoyant.com/fr/vue-d-ensemble/"
@@ -158,6 +169,11 @@
    "@id": "https://www.cyrilvoyant.com/research-projects/",
    "@type": "WebPage",
    "name": "www.cyrilvoyant.com/research-projects/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/stories/variability-memory-forecastability/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/stories/variability-memory-forecastability/"
   },
   {
    "@id": "https://www.cyrilvoyant.com/teaching/solar-forecasting-course/",
