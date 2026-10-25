@@ -948,6 +948,47 @@
       ]
     },
     {
+      "url": "https://www.cyrilvoyant.com/fr/animations/soleil-saisons-utc/",
+      "title": "Le Soleil, les saisons et l'heure : une seule horloge pour les mesures",
+      "language": "fr",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Le cas de départ : ce matin, 25 octobre 2026",
+          "anchor": null
+        },
+        {
+          "title": "1. Autour du Soleil : les saisons",
+          "anchor": null
+        },
+        {
+          "title": "2. La rotation : le jour et la nuit",
+          "anchor": null
+        },
+        {
+          "title": "3. La durée du jour",
+          "anchor": null
+        },
+        {
+          "title": "4. La double saisonnalité du rayonnement",
+          "anchor": null
+        },
+        {
+          "title": "5. L'heure des mesures : une seule horloge",
+          "anchor": null
+        },
+        {
+          "title": "Les mots de la page",
+          "anchor": null
+        },
+        {
+          "title": "Méthode et vérification",
+          "anchor": null
+        }
+      ]
+    },
+    {
       "url": "https://www.cyrilvoyant.com/fr/animations/test-khi-deux/",
       "title": "Test du χ² : dé équilibré, observés, attendus et tableau 2×2",
       "language": "fr",
@@ -1946,6 +1987,10 @@
         },
         {
           "title": "Simuler la demande électrique d’un tunnel, TLS",
+          "anchor": null
+        },
+        {
+          "title": "Le Soleil, les saisons et l’heure UTC",
           "anchor": null
         },
         {
@@ -4072,6 +4117,10 @@
           "anchor": null
         },
         {
+          "title": "The Sun, the seasons and UTC",
+          "anchor": null
+        },
+        {
           "title": "Complex-valued forecasting: set α and the interval width",
           "anchor": null
         },
@@ -4162,6 +4211,47 @@
         },
         {
           "title": "Software and protocol",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/tools/sun-seasons-utc/",
+      "title": "The Sun, the seasons and the clock: one time for every measurement",
+      "language": "en",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "The starting case: this morning, 25 October 2026",
+          "anchor": null
+        },
+        {
+          "title": "1. Around the Sun: the seasons",
+          "anchor": null
+        },
+        {
+          "title": "2. Rotation: day and night",
+          "anchor": null
+        },
+        {
+          "title": "3. Day length",
+          "anchor": null
+        },
+        {
+          "title": "4. The double seasonality of irradiance",
+          "anchor": null
+        },
+        {
+          "title": "5. Timestamping measurements: one clock",
+          "anchor": null
+        },
+        {
+          "title": "Words of the page",
+          "anchor": null
+        },
+        {
+          "title": "Method and checks",
           "anchor": null
         }
       ]

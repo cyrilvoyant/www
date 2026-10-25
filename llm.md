@@ -60,6 +60,7 @@ Cyril Voyant connects medical physics and energy forecasting through modelling f
 - [The thread: five steps, one way of working](https://www.cyrilvoyant.com/the-thread/)
 - [Interactive tools: choose a question, explore a method](https://www.cyrilvoyant.com/tools/)
 - [Compare forecasts: when is a more complex model worth it?](https://www.cyrilvoyant.com/tools/forecast-comparison/)
+- [The Sun, the seasons and the clock: one time for every measurement](https://www.cyrilvoyant.com/tools/sun-seasons-utc/)
 
 ### fr
 
@@ -82,6 +83,7 @@ Cyril Voyant connects medical physics and energy forecasting through modelling f
 - [Onde électromagnétique : animation des champs E et B](https://www.cyrilvoyant.com/fr/animations/onde-electromagnetique/)
 - [Régression et point influent : déplacer une observation](https://www.cyrilvoyant.com/fr/animations/point-influent-regression/)
 - [Refroidissement d’un aliment : nombre de Biot et température à cœur](https://www.cyrilvoyant.com/fr/animations/refroidissement-biot/)
+- [Le Soleil, les saisons et l'heure : une seule horloge pour les mesures](https://www.cyrilvoyant.com/fr/animations/soleil-saisons-utc/)
 - [Test du χ² : dé équilibré, observés, attendus et tableau 2×2](https://www.cyrilvoyant.com/fr/animations/test-khi-deux/)
 - [Test de Student interactif : deux moyennes, dispersion et p-value](https://www.cyrilvoyant.com/fr/animations/test-student/)
 - [Comprendre avant de calculer : la démarche de Cyril Voyant](https://www.cyrilvoyant.com/fr/approche/)

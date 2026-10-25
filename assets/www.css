@@ -429,3 +429,19 @@ pre.cite-ex { white-space: pre-wrap; background: var(--soft); padding: 12px 14px
 .th-jump a:hover { background: var(--c); color: #fff; }
 @media (max-width: 560px) { .thread-path { padding-left: 50px; } .th-node { left: -50px; width: 40px; height: 40px; font-size: 1rem; } .thread-path::before, .thread-path .fill { left: 18px; } }
 @media (prefers-reduced-motion: reduce) { .th-step { opacity: 1; transform: none; transition: none; } .thread-path .fill { transition: none; } }
+
+/* sun, seasons and UTC (25/10) */
+.sun { margin: 14px 0; }
+.sun .sun-ctl { position: sticky; top: 0; z-index: 3; display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: end; padding: 10px 12px; background: color-mix(in srgb, var(--paper) 94%, transparent); border: 1px solid var(--line); border-radius: 10px; backdrop-filter: blur(4px); }
+.sun .sun-ctl label { display: flex; flex-direction: column; font-size: .85rem; color: var(--muted); } .sun .sun-ctl input[type=range] { width: 260px; accent-color: var(--link); }
+.sun .sun-ctl output { font-weight: 700; color: var(--ink); }
+.sun-fig { margin: 12px 0 18px; padding: 12px; background: var(--paper); border: 1px solid var(--line); border-radius: 12px; }
+.sun-fig h3 { font-size: 1rem; margin: 0 0 6px; }
+.sun svg, .sun canvas { width: 100%; height: auto; display: block; }
+.sun .sun-ax { font: 11px system-ui, sans-serif; fill: var(--muted); } .sun .sun-mut { fill: var(--muted); color: var(--muted); opacity: .85; }
+.sun-out { margin: 6px 0 0; padding: 8px 10px; background: var(--soft); border-radius: 8px; font-size: .92rem; }
+.sun-goto { font-size: .88rem; margin: 6px 0 0; } .sun-goto button { margin: 2px 4px 2px 0; }
+.sun-t td.sun-dup { background: color-mix(in srgb, var(--focus) 16%, transparent); } .sun-t td.sun-gap { background: color-mix(in srgb, var(--link) 14%, transparent); }
+.sun-t td, .sun-t th { text-align: left; } .sun-exs button[aria-pressed=true] { background: var(--link); color: #fff; }
+.sun-gloss { display: grid; grid-template-columns: minmax(150px, 28%) 1fr; gap: 6px 14px; font-size: .92rem; } .sun-gloss dt { font-weight: 700; } .sun-gloss dd { margin: 0; color: var(--muted); }
+@media (max-width: 560px) { .sun .sun-ctl input[type=range] { width: 180px; } .sun-gloss { grid-template-columns: 1fr; } }

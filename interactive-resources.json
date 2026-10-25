@@ -200,6 +200,24 @@
       }
     },
     {
+      "id": "sun",
+      "domain": "energy",
+      "kind": "demo",
+      "interface_language": "both",
+      "name": {
+        "fr": "Le Soleil, les saisons et l’heure UTC",
+        "en": "The Sun, the seasons and UTC"
+      },
+      "task": {
+        "fr": "La Terre autour du Soleil, le jour et la nuit, la durée du jour à Paris et à Sydney, la double saisonnalité du rayonnement et l’horodatage des mesures en UTC.",
+        "en": "The Earth around the Sun, day and night, day length in Paris and Sydney, the double seasonality of irradiance and timestamping measurements in UTC."
+      },
+      "url": {
+        "fr": "https://www.cyrilvoyant.com/fr/animations/soleil-saisons-utc/",
+        "en": "https://www.cyrilvoyant.com/tools/sun-seasons-utc/"
+      }
+    },
+    {
       "id": "complex",
       "domain": "energy",
       "kind": "demo",

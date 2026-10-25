@@ -62,6 +62,7 @@ Distinguish published papers, preprints, software and work in preparation. Attri
 - [Onde électromagnétique : animation des champs E et B](https://www.cyrilvoyant.com/fr/animations/onde-electromagnetique/): Comment une onde se propage-t-elle si les champs oscillent transversalement ? Simulation interactive, formule, exemple et hypothèses du cours.
 - [Régression et point influent : déplacer une observation](https://www.cyrilvoyant.com/fr/animations/point-influent-regression/): Comment une seule observation peut-elle modifier la droite, la corrélation et la p-value ? Simulation interactive, formule, exemple et hypothèses du cours.
 - [Refroidissement d’un aliment : nombre de Biot et température à cœur](https://www.cyrilvoyant.com/fr/animations/refroidissement-biot/): Quand peut-on remplacer un aliment entier par une seule température ? Simulation interactive, formule, exemple et hypothèses du cours.
+- [Le Soleil, les saisons et l'heure : une seule horloge pour les mesures](https://www.cyrilvoyant.com/fr/animations/soleil-saisons-utc/): Animation : la Terre autour du Soleil et les saisons, le jour et la nuit sur la carte, la durée du jour à Paris et à Sydney, la double saisonnalité du…
 - [Test du χ² : dé équilibré, observés, attendus et tableau 2×2](https://www.cyrilvoyant.com/fr/animations/test-khi-deux/): Quelles cellules expliquent l’écart entre les observations et l’hypothèse ? Simulation interactive, formule, exemple et hypothèses du cours.
 - [Test de Student interactif : deux moyennes, dispersion et p-value](https://www.cyrilvoyant.com/fr/animations/test-student/): Une différence entre deux moyennes est-elle grande par rapport à son incertitude ? Simulation interactive, formule, exemple et hypothèses du cours.
 - [Comprendre avant de calculer : la démarche de Cyril Voyant](https://www.cyrilvoyant.com/fr/approche/): Médecine, énergie, langage : des questions très différentes, une même méthode. Au centre, l'humain et sa question ; au cœur, un modèle que l'on comprend …
@@ -134,6 +135,7 @@ Distinguish published papers, preprints, software and work in preparation. Attri
 - [The thread: five steps, one way of working](https://www.cyrilvoyant.com/the-thread/): The thread of Cyril Voyant's research in five steps: compute when the link is known, hybridize, learn frugally, AI in its place, demonstrate trust.
 - [Interactive tools: choose a question, explore a method](https://www.cyrilvoyant.com/tools/): Calculators, teaching experiments and research applications, organized by domain and language.
 - [Compare forecasts: when is a more complex model worth it?](https://www.cyrilvoyant.com/tools/forecast-comparison/): Five models on public Palaiseau data, from 30 minutes to 6 hours: error against horizon, NICE metrics, forecast curves. Computed by the PV_ELM_pred code.
+- [The Sun, the seasons and the clock: one time for every measurement](https://www.cyrilvoyant.com/tools/sun-seasons-utc/): Animation: the Earth around the Sun and the seasons, day and night on the map, day length in Paris and Sydney, the double seasonality of solar irradiance…
 
 ## Updates
 

@@ -252,6 +252,10 @@ Interactive tools: choose a question, explore a method
  Hosted application: synthetic demand from geometry, ventilation and lighting. The server may need to wake up.
  Open this tool →
  Explorable demonstration · French and English
+ The Sun, the seasons and UTC
+ The Earth around the Sun, day and night, day length in Paris and Sydney, the double seasonality of irradiance and timestamping measurements in UTC.
+ Open this tool →
+ Explorable demonstration · French and English
  Complex-valued forecasting: set α and the interval width
  A complex autoregression forecasts irradiance and its volatility; α slider, Gaussian or calibrated multiplier μ, results of the paper (2022).
  Open this tool →
@@ -380,6 +384,10 @@ Outils interactifs : choisir une question, essayer une méthode
  Application avec serveur · Interface en anglais
  Simuler la demande électrique d’un tunnel, TLS
  Application hébergée : demande synthétique selon géométrie, ventilation et éclairage. Démarrage du serveur parfois nécessaire.
+ Ouvrir cet outil →
+ Démonstration à explorer · Français et anglais
+ Le Soleil, les saisons et l’heure UTC
+ La Terre autour du Soleil, le jour et la nuit, la durée du jour à Paris et à Sydney, la double saisonnalité du rayonnement et l’horodatage des mesures en UTC.
  Ouvrir cet outil →
  Démonstration à explorer · Français et anglais
  Prévision complexe : régler α et la largeur des intervalles
@@ -1153,6 +1161,51 @@ Forecasting irradiance and its uncertainty with complex numbers
  Cyril Voyant , Philippe Lauret , Gilles Notton , Jean-Laurent Duchaud , Luis Garcia-Gutierrez , Ghjuvan Antone Faggianelli . Complex-valued time series based solar irradiance forecast . Journal of Renewable and Sustainable Energy 14, 066502 (2022). HAL · arXiv .
 
 ---
+URL: https://www.cyrilvoyant.com/tools/sun-seasons-utc/
+
+The Sun, the seasons and the clock: one time for every measurement
+ On 21 June 2026, the day lasts 16 h 11 in Paris and 9 h 54 in Sydney. At the same instant, 12:00 UTC, it is 14:00 in Paris and 22:00 in Sydney. Solar irradiance follows two cycles at once, the day and the year, and these cycles do not fall at the same hour from one place to another: to compare and align measurements, one clock is needed, Coordinated Universal Time (UTC).
+ Go to:
+ The starting case: this morning, 25 October 2026
+ The animation opens at 06:00 UTC. In Paris it is 07:00 and still night: the Sun rises at 07:24 (06:24 UTC). In Sydney it is 17:00 and the Sun will set at 19:15. Last night at 03:00, Paris went back to winter time (UTC+1); Sydney has been on summer time (UTC+11) since 4 October. The two clocks are therefore 10 hours apart today, 8 hours in June. Move the date and the instant, or play a year or a day.
+ 1. Around the Sun: the seasons
+ The Earth's rotation axis is tilted by 23.44° and keeps the same direction in space all year. In June the North Pole leans towards the Sun: the northern hemisphere gets higher and longer sunshine, it is summer; in December it is the reverse, and summer is in Sydney. The latitude where the Sun is overhead at noon is the declination δ; it goes from +23.44° (June solstice) to −23.44° (December solstice). Distance plays no part: the Earth is closest to the Sun in early January, in the middle of the northern winter.
+ 2. Rotation: day and night
+ The Earth turns by 15° per hour. Solar noon , when the Sun crosses the local meridian, therefore comes 4 minutes earlier per degree of longitude to the east. In Paris (2.35° E) it falls around 11:51 UTC on 21 June, 13:51 on the clock; in Sydney (151.2° E) around 01:56 UTC, 11:56 on the clock. Up to a few minutes (the equation of time , from −14 to +16 minutes over the year), noon is the same nowhere: the map shows the lit area and the point where the Sun is overhead.
+ 3. Day length
+ The higher the latitude and the more the declination has the same sign, the larger the lit part of the parallel. On 21 June the day lasts 16 h 11 in Paris (sunrise 05:46, sunset 21:57, summer time) and 9 h 54 in Sydney; on 21 December, 8 h 15 in Paris and 14 h 25 in Sydney. In UTC, Sydney's day straddles two dates: on 21 June the Sun rises there on 20 June at 20:59 UTC. Each band below covers 24 UTC hours: yellow for day, gray for twilight, dark blue for night, with the matching legal times.
+ The 24 UTC hours of the chosen day
+ 4. The double seasonality of irradiance
+ Outside the atmosphere, on a horizontal plane, irradiance is G 0 = G sc ·E 0 ·cos θ z , with G sc = 1361 W/m², E 0 = 1 + 0.033·cos(2π n/365) and θ z the zenith angle. It carries two cycles: the daily cycle (rotation) and the yearly cycle (tilt), which modulates the height and length of the first. On the heat maps each column is a day and each row a UTC hour: the bright band of Paris is centred near 12 h UTC, that of Sydney near 2 h UTC, cut in two by UTC midnight; one widens in June, the other in December. Forecasting methods use this structure, for instance through the clear-sky index or cyclic persistences such as BLEND .
+ Outside the atmosphere, by date and UTC hour
+ The chosen day: G0 against UTC hour
+ The year: extraterrestrial energy per day
+ 5. Timestamping measurements: one clock
+ Legal time is UTC plus an offset that changes twice a year, on dates that differ between countries: Paris is UTC+1 in winter and UTC+2 in summer, Sydney UTC+10 in the austral winter and UTC+11 in the austral summer. A series stamped in legal time therefore loses one hour in spring and sees one twice in autumn, and two stations in different countries are not aligned. The tables below show it, half-hour by half-hour, around the three changes of 2026.
+ Timestamp in UTC (ISO 8601, for instance 2026-10-25T06:00Z ) and keep the site longitude to move to solar time.
+ State whether the stamp marks the start, the middle or the end of the averaging period: a half-period shift moves the whole daily curve and biases the comparison with a model.
+ Check the alignment on a clear-sky day: the measured maximum must fall near the computed solar noon.
+ The same instant on three clocks
+ Words of the page
+ Declination δ
+ latitude where the Sun is overhead at noon; from −23.44° to +23.44° over the year.
+ Equation of time
+ difference, from −14 to +16 minutes, between true solar noon and the noon of a mean Sun; due to the elliptical orbit and the tilt.
+ True solar time, hour angle
+ true solar time is UTC + equation of time + 4 min per degree of east longitude; the hour angle is zero at solar noon and grows by 15° per hour.
+ Zenith angle θz
+ angle between the vertical and the direction of the Sun; cos θz = sin φ sin δ + cos φ cos δ cos h.
+ UTC
+ Coordinated Universal Time: one clock for the whole Earth, without summer time.
+ Legal time
+ UTC plus an offset set by each country, which may change in summer.
+ G0
+ extraterrestrial solar irradiance on a horizontal plane: the upper bound of any ground measurement.
+ Method and checks
+ Declination and equation of time: Fourier series of Spencer (1971), as used in the NOAA solar position calculations; sunrise and sunset at a zenith angle of 90.833° (refraction and solar disc radius). Checked against pvlib 0.15.2 (NREL SPA algorithm) for Paris and Sydney on the 2026 equinoxes and solstices: sunrise, noon and sunset within 3 minutes. G sc = 1361 W/m² (Kopp and Lean, 2011). Legal times: IANA zones Europe/Paris and Australia/Sydney from the browser. Map: Natural Earth 1:110m land (public domain). A teaching animation: the irradiance shown is extraterrestrial, not a measurement or a forecast.
+ Further: solar forecasting basics, with the equations · the forecast comparison · complex-valued forecasting .
+
+---
 URL: https://www.cyrilvoyant.com/teaching/
 
 Teaching
@@ -1779,6 +1832,51 @@ Refroidissement d’un aliment : nombre de Biot et température à cœur
  Cette page isole une notion pour la rendre accessible directement. Le chapitre complet conserve le raisonnement, les autres exemples, le diaporama et la FAQ. Les valeurs de la démonstration sont calculées ou construites dans le modèle indiqué ; elles ne constituent pas de nouveaux résultats de recherche.
 
 ---
+URL: https://www.cyrilvoyant.com/fr/animations/soleil-saisons-utc/
+
+Le Soleil, les saisons et l'heure : une seule horloge pour les mesures
+ Le 21 juin 2026, le jour dure 16 h 11 à Paris et 9 h 54 à Sydney. Au même instant, 12:00 UTC, il est 14:00 à Paris et 22:00 à Sydney. Le rayonnement solaire suit deux cycles à la fois, le jour et l'année, et ces cycles ne tombent pas à la même heure d'un lieu à l'autre : pour comparer et caler des mesures, il faut une seule horloge, le temps universel coordonné (UTC).
+ Aller à :
+ Le cas de départ : ce matin, 25 octobre 2026
+ L'animation s'ouvre à 06:00 UTC. À Paris, il est 07:00 et il fait encore nuit : le Soleil se lève à 07:24 (06:24 UTC). À Sydney, il est 17:00 et le Soleil se couchera à 19:15. Cette nuit, à 03:00, Paris est repassé à l'heure d'hiver (UTC+1) ; Sydney est à l'heure d'été (UTC+11) depuis le 4 octobre. L'écart entre les deux horloges vaut donc 10 heures aujourd'hui, 8 heures en juin. Déplacez la date et l'instant, ou lancez une année ou une journée.
+ 1. Autour du Soleil : les saisons
+ L'axe de rotation de la Terre est incliné de 23,44° et garde la même direction dans l'espace toute l'année. En juin, le pôle Nord penche vers le Soleil : l'hémisphère nord reçoit les rayons plus haut et plus longtemps, c'est l'été ; en décembre, c'est l'inverse, et l'été est à Sydney. La latitude où le Soleil passe au zénith à midi s'appelle la déclinaison δ ; elle va de +23,44° (solstice de juin) à −23,44° (solstice de décembre). La distance n'y est pour rien : la Terre est au plus près du Soleil début janvier, en plein hiver boréal.
+ 2. La rotation : le jour et la nuit
+ La Terre tourne de 15° par heure. Le midi solaire , quand le Soleil passe au méridien du lieu, arrive donc 4 minutes plus tôt par degré de longitude vers l'est. À Paris (2,35° E), il tombe vers 11:51 UTC le 21 juin, soit 13:51 à l'horloge ; à Sydney (151,2° E), vers 01:56 UTC, soit 11:56 à l'horloge. À quelques minutes près (l' équation du temps , de −14 à +16 minutes au fil de l'année), midi n'est le même nulle part : la carte montre la zone éclairée et le point où le Soleil est au zénith.
+ 3. La durée du jour
+ Plus la latitude est grande et plus la déclinaison est du même signe, plus la part éclairée du parallèle est grande. Le 21 juin, le jour dure 16 h 11 à Paris (lever 05:46, coucher 21:57, heure d'été) et 9 h 54 à Sydney ; le 21 décembre, 8 h 15 à Paris et 14 h 25 à Sydney. En UTC, la journée de Sydney est à cheval sur deux dates : le 21 juin, le Soleil s'y lève le 20 juin à 20:59 UTC. Chaque bande ci-dessous couvre 24 heures UTC : jaune le jour, gris le crépuscule, bleu nuit la nuit, avec les heures légales correspondantes.
+ Les 24 heures UTC du jour choisi
+ 4. La double saisonnalité du rayonnement
+ Hors atmosphère, sur un plan horizontal, le rayonnement vaut G 0 = G sc ·E 0 ·cos θ z , avec G sc = 1361 W/m², E 0 = 1 + 0,033·cos(2π n/365) et θ z l'angle zénithal. Il porte deux cycles : le cycle du jour (la rotation) et le cycle de l'année (l'inclinaison), qui module la hauteur et la durée du premier. Sur les cartes de chaleur, chaque colonne est un jour, chaque ligne une heure UTC : la bande claire de Paris est centrée vers 12 h UTC, celle de Sydney vers 2 h UTC, coupée en deux par minuit UTC ; l'une s'élargit en juin, l'autre en décembre. C'est cette structure que les méthodes de prévision exploitent, par exemple par l'indice de ciel clair ou les persistances cycliques comme BLEND .
+ Hors atmosphère, par date et par heure UTC
+ Le jour choisi : G0 selon l'heure UTC
+ L'année : énergie par jour hors atmosphère
+ 5. L'heure des mesures : une seule horloge
+ L'heure légale vaut UTC + un décalage qui change deux fois par an, à des dates différentes selon les pays : à Paris UTC+1 l'hiver et UTC+2 l'été, à Sydney UTC+10 l'hiver austral et UTC+11 l'été austral. Une série horodatée en heure légale perd donc une heure au printemps et en voit une deux fois à l'automne, et deux stations de pays différents ne sont pas alignées. Les tableaux ci-dessous le montrent, demi-heure par demi-heure, autour des trois changements de 2026.
+ Dater en UTC (ISO 8601, par exemple 2026-10-25T06:00Z ), et garder la longitude du site pour passer au temps solaire.
+ Dire si l'horodatage marque le début, le milieu ou la fin de la période moyennée : un décalage d'une demi-période déplace toute la courbe journalière et biaise la comparaison avec un modèle.
+ Vérifier l'alignement sur un jour de ciel clair : le maximum mesuré doit tomber près du midi solaire calculé.
+ Le même instant sur trois horloges
+ Les mots de la page
+ Déclinaison δ
+ latitude où le Soleil est au zénith à midi ; de −23,44° à +23,44° au fil de l'année.
+ Équation du temps
+ écart, de −14 à +16 minutes, entre le midi solaire vrai et le midi d'un Soleil moyen ; due à l'orbite elliptique et à l'inclinaison.
+ Temps solaire vrai, angle horaire
+ le temps solaire vrai vaut UTC + équation du temps + 4 min par degré de longitude est ; l'angle horaire est nul au midi solaire et croît de 15° par heure.
+ Angle zénithal θz
+ angle entre la verticale et la direction du Soleil ; cos θz = sin φ sin δ + cos φ cos δ cos h.
+ UTC
+ temps universel coordonné : une seule horloge pour toute la Terre, sans heure d'été.
+ Heure légale
+ UTC + un décalage fixé par chaque pays, qui peut changer en été.
+ G0
+ rayonnement solaire hors atmosphère sur un plan horizontal : la borne au-dessus de toute mesure au sol.
+ Méthode et vérification
+ Déclinaison et équation du temps : séries de Fourier de Spencer (1971), utilisées dans les calculs de position solaire de la NOAA ; lever et coucher à un angle zénithal de 90,833° (réfraction et rayon du disque). Contrôle contre pvlib 0.15.2 (algorithme SPA du NREL) pour Paris et Sydney aux équinoxes et solstices de 2026 : lever, midi et coucher à moins de 3 minutes. G sc = 1361 W/m² (Kopp et Lean, 2011). Heures légales : fuseaux IANA Europe/Paris et Australia/Sydney fournis par le navigateur. Carte : terres Natural Earth au 1:110 m (domaine public). C'est une animation d'enseignement : le rayonnement montré est celui hors atmosphère, pas une mesure ni une prévision.
+ Pour aller plus loin : les bases de la prévision solaire, avec les équations (en anglais) · le cours de prévision solaire · le comparateur de prévisions · la prévision complexe .
+
+---
 URL: https://www.cyrilvoyant.com/fr/animations/test-khi-deux/
 
 Test du χ² : dé équilibré, observés, attendus et tableau 2×2
@@ -2264,7 +2362,7 @@ Le diagramme de phases situe le point triple et le point critique. Un fluide est
 Sous la température critique, refroidir une vapeur jusqu’à saturation ou la comprimer à température constante peut provoquer sa condensation : les tables précisent les conditions du changement de phase.
 Pour aller plus loin : questions et réponses
 Pourquoi la chaleur latente compte-t-elle dans une congélation ?
-Pour l’eau pure, 333 kJ/kg de glace formée représentent environ 80 °C de chaleur sensible de l’eau liquide. Dans un aliment, il faut multiplier par la masse d’eau effectivement congelée et ajouter les autres échanges ; la durée dépend aussi des résistances thermiques et de la géométrie.
+Geler 1 kg d’eau pure demande d’extraire 333 kJ, sans que la température change (palier à 0 °C). C’est autant d’énergie que pour refroidir ce même kilo d’eau liquide d’environ 80 °C (333 ÷ 4,18 ≈ 80) : le changement d’état pèse donc lourd dans le bilan. Dans un aliment, il faut multiplier par la masse d’eau effectivement congelée et ajouter les autres échanges ; la durée dépend aussi des résistances thermiques et de la géométrie.
 Quelle température d’évaporation faut-il choisir pour un fluide frigorigène ?
 Elle doit être inférieure à celle du milieu à refroidir. La pression de saturation correspondante, la sécurité, l’impact environnemental et le cycle guident le choix ; bouillir sous 0 °C à pression atmosphérique n’est pas une condition universelle.
 La surfusion a-t-elle une conséquence pratique pour les aliments ?
