@@ -61,7 +61,7 @@ Cyril Voyant connects medical physics and energy forecasting through modelling f
 - [Open courses in French: biostatistics, medical physics, industrial physics and food heat transfer](https://www.cyrilvoyant.com/teaching/open-courses/)
 - [Solar forecasting course: forecasting the intermittent solar resource](https://www.cyrilvoyant.com/teaching/solar-forecasting-course/)
 - [The thread: five steps, one way of working](https://www.cyrilvoyant.com/the-thread/)
-- [Interactive tools: choose a question, explore a method](https://www.cyrilvoyant.com/tools/)
+- [Scientific simulators, animations and calculators](https://www.cyrilvoyant.com/tools/)
 - [Compare forecasts: when is a more complex model worth it?](https://www.cyrilvoyant.com/tools/forecast-comparison/)
 - [The Sun, the seasons and the clock: one time for every measurement](https://www.cyrilvoyant.com/tools/sun-seasons-utc/)
 
@@ -116,7 +116,7 @@ Cyril Voyant connects medical physics and energy forecasting through modelling f
 - [Ma recherche en 30 secondes](https://www.cyrilvoyant.com/fr/fiche-30-secondes/)
 - [L'IA dans la recherche : AI Act, charte de laboratoire et boîte à outils](https://www.cyrilvoyant.com/fr/ia-dans-la-recherche/)
 - [Le fil : cinq étapes, une même démarche](https://www.cyrilvoyant.com/fr/le-fil/)
-- [Outils interactifs : choisir une question, essayer une méthode](https://www.cyrilvoyant.com/fr/outils/)
+- [Simulateurs, animations et calculateurs scientifiques](https://www.cyrilvoyant.com/fr/outils/)
 - [Explorer les coefficients et la table ARTU](https://www.cyrilvoyant.com/fr/outils/artu/)
 - [Calculer les poids de BLEND](https://www.cyrilvoyant.com/fr/outils/blend/)
 - [Comparer des prévisions : quand un modèle plus complexe vaut-il la peine ?](https://www.cyrilvoyant.com/fr/outils/comparateur-previsions/)
