@@ -21,7 +21,7 @@
     zen: "Le Soleil est au zénith à la latitude ", ns: ["N", "S"], seasonsN: ["printemps", "été", "automne", "hiver"], hemN: "hémisphère nord : ", hemS: "hémisphère sud : ",
     dist: "Distance au Soleil : facteur E0 = ", distNote: " (la Terre est la plus proche début janvier : ce n'est pas la distance qui fait les saisons, c'est l'inclinaison).",
     len: "durée du jour", rise: "lever", set: "coucher", noon: "midi solaire", local: "heure légale", now: "maintenant", elev: "hauteur du Soleil",
-    night: "nuit", dayL: "jour", hm: function (m) { var h = Math.floor(m / 60), mn = Math.round(m - 60 * h); if (mn === 60) { h++; mn = 0; } return h + " h " + String(mn).padStart(2, "0"); },
+    night: "nuit", dayL: "jour", hm: function (m) { var h = Math.floor(m / 60), mn = Math.round(m - 60 * h); if (mn === 60) { h++; mn = 0; } return h ? h + " h " + String(mn).padStart(2, "0") : mn + " min"; },
     g0: "G0 hors atmosphère (W/m²)", h0: "énergie par jour hors atmosphère (kWh/m²)", utcAx: "heure UTC", dayAx: "jour de l'année", heat: "Hors atmosphère, sur un plan horizontal, selon la date (horizontal) et l'heure UTC (vertical)",
     ex: ["Aujourd'hui, 25/10/2026 : Paris passe à l'heure d'hiver", "29/03/2026 : Paris passe à l'heure d'été", "04/10/2026 : Sydney passe à l'heure d'été"],
     dup: "heure vue deux fois", miss: "une heure sautée juste avant", utcCol: "UTC (une seule horloge)", same: "même instant"
@@ -31,7 +31,7 @@
     zen: "The Sun is overhead at latitude ", ns: ["N", "S"], seasonsN: ["spring", "summer", "autumn", "winter"], hemN: "northern hemisphere: ", hemS: "southern hemisphere: ",
     dist: "Distance to the Sun: factor E0 = ", distNote: " (the Earth is closest in early January: the seasons come from the tilt, not from the distance).",
     len: "day length", rise: "sunrise", set: "sunset", noon: "solar noon", local: "legal time", now: "now", elev: "sun elevation",
-    night: "night", dayL: "day", hm: function (m) { var h = Math.floor(m / 60), mn = Math.round(m - 60 * h); if (mn === 60) { h++; mn = 0; } return h + " h " + String(mn).padStart(2, "0"); },
+    night: "night", dayL: "day", hm: function (m) { var h = Math.floor(m / 60), mn = Math.round(m - 60 * h); if (mn === 60) { h++; mn = 0; } return h ? h + " h " + String(mn).padStart(2, "0") : mn + " min"; },
     g0: "extraterrestrial G0 (W/m²)", h0: "extraterrestrial energy per day (kWh/m²)", utcAx: "UTC hour", dayAx: "day of the year", heat: "Outside the atmosphere, on a horizontal plane, by date (horizontal) and UTC hour (vertical)",
     ex: ["Today, 25/10/2026: Paris goes back to winter time", "29/03/2026: Paris moves to summer time", "04/10/2026: Sydney moves to summer time"],
     dup: "hour seen twice", miss: "one hour skipped just before", utcCol: "UTC (one single clock)", same: "same instant"
@@ -220,8 +220,17 @@
     el("line", { x1: X(st.m), x2: X(st.m), y1: 4, y2: 262, stroke: "#c0392b", "stroke-width": 2 }, sR);
     tx(sR, X(st.m), 276, L.now + " " + hhmm(st.m) + " UTC = " + nowP + " " + CITIES[0].n + " = " + nowS + " " + CITIES[1].n,
        { "text-anchor": st.m < 300 ? "start" : st.m > 1140 ? "end" : "middle", fill: "#c0392b", "font-weight": "700" });
-    rOut.innerHTML = out + (fr ? "Même trait rouge, même instant : seule l'heure affichée par chaque horloge locale change, et le Soleil ne se lève pas au même instant UTC."
-                              : "Same red line, same instant: only the time shown by each local clock changes, and the Sun does not rise at the same UTC instant.");
+    // what each city is living at the chosen instant: one UTC instant, two legal times, two skies
+    function up(c, m) { return Math.asin(cosz(c.lat, c.lon, st.n, m)) / RAD > -0.833; }
+    function gap(c, dir) { var a = up(c, st.m); for (var k = 1; k <= 1440; k++) if (up(c, st.m + dir * k) !== a) return k; return null; }
+    var now = "<b>" + hhmm(st.m) + " UTC</b> " + (fr ? "est le même instant pour les deux villes. " : "is the same instant for both cities. ");
+    CITIES.forEach(function (c) {
+      var off = offset(c), o = (off >= 0 ? "+" : "−") + Math.abs(off / 60), lt = local(T0 + st.m * 60000, c.tz).hm, isUp = up(c, st.m), b = gap(c, -1), a = gap(c, 1);
+      now += "<br><b style=\"color:" + c.c + "\">" + c.n + "</b> : UTC" + o + (fr ? " veut dire heure locale = UTC " + o + " h, donc " : " means local time = UTC " + o + " h, so ") + "<b>" + lt + "</b> ; " +
+        (isUp ? (fr ? "jour, Soleil levé depuis " : "day, Sun up for ") + L.hm(b) + (fr ? ", coucher dans " : ", sunset in ") + L.hm(a)
+              : (fr ? "nuit, Soleil couché depuis " : "night, Sun down for ") + L.hm(b) + (fr ? ", lever dans " : ", sunrise in ") + L.hm(a)) + ".";
+    });
+    rOut.innerHTML = out + '<p class="sun-now">' + now + "</p>";
   }
 
   // ------------------------------------------------------------------ 4. double seasonality: heat maps, then the two cycles
