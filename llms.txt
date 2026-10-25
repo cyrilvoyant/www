@@ -2,6 +2,18 @@
 
 > Research, teaching and accessible accounts of scientific work. Start from the human question, model the system, validate against references, and add complexity when its benefit is demonstrated.
 
+## Start here
+
+- [Research](https://www.cyrilvoyant.com/stories/) / [Recherche](https://www.cyrilvoyant.com/fr/recits/): questions and findings organized by field.
+- [Courses](https://www.cyrilvoyant.com/teaching/) / [Cours](https://www.cyrilvoyant.com/fr/enseignement/): subject, audience, level, chapters.
+- [Interactive tools](https://www.cyrilvoyant.com/tools/) / [Outils interactifs](https://www.cyrilvoyant.com/fr/outils/): a single catalog, with actual interface languages and execution types.
+- [At a glance](https://www.cyrilvoyant.com/overview/): research lines, software with DOIs and teams, open courses, tools, essays ([en français](https://www.cyrilvoyant.com/fr/vue-d-ensemble/)).
+- [Full text of the main pages](https://www.cyrilvoyant.com/llms-full.txt): one plain-text file, canonical URL before each page.
+- [Reading map](https://www.cyrilvoyant.com/llm.md) and [page catalog](https://www.cyrilvoyant.com/research-catalog.json).
+- [Atom feed](https://www.cyrilvoyant.com/feed.xml): news, publications and new pages.
+- [Knowledge graph](https://www.cyrilvoyant.com/graph.ttl) (Turtle; same graph as [JSON-LD](https://www.cyrilvoyant.com/graph.jsonld)): pages, people with ORCID, software, articles, glossaries (schema.org DefinedTermSet).
+- RO-Crate per study: https://www.cyrilvoyant.com/ro-crate/<study>/ro-crate-metadata.json (software DOI, article DOI and status, team, citing pages); each page signposts its crates with link rel="describedby".
+
 ## Identity and primary sources
 
 - [Identity](https://person.cyrilvoyant.com/): shared person identifier https://person.cyrilvoyant.com/#cyril-voyant.

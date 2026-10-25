@@ -116,7 +116,7 @@
   var sO = box.querySelector(".sun-orbit"), oOut = box.querySelector(".sun-orbit-out");
   function orbit() {
     clear(sO);
-    var W = 640, H = 300, cx = 320, cy = 150, rx = 250, ry = 92;
+    var W = 640, H = 230, cx = 320, cy = 112, rx = 250, ry = 78;
     var defs = el("defs", {}, sO), rg = el("radialGradient", { id: "sunglow" }, defs);
     el("stop", { offset: "0%", "stop-color": "#fff4c2" }, rg); el("stop", { offset: "60%", "stop-color": "#f0c75e" }, rg); el("stop", { offset: "100%", "stop-color": "#f0c75e", "stop-opacity": "0" }, rg);
     el("ellipse", { cx: cx, cy: cy, rx: rx, ry: ry, fill: "none", stroke: "#9fb0c0", "stroke-dasharray": "4 4" }, sO);
@@ -136,6 +136,76 @@
     var s = spencer(st.n, st.m / 60), d = s.dec / RAD, k = st.n < 79 || st.n >= 355 ? 3 : st.n < 172 ? 0 : st.n < 266 ? 1 : 2, kS = (k + 2) % 4;
     oOut.innerHTML = "<b>" + dateLabel(st.n) + " " + YEAR + "</b> · " + L.zen + "<b>" + num(Math.abs(d), 1) + " ° " + (d >= 0 ? L.ns[0] : L.ns[1]) + "</b> (δ = " + num(d, 2) + " °). " +
       L.hemN + "<b>" + L.seasonsN[k] + "</b>, " + L.hemS + "<b>" + L.seasonsN[kS] + "</b>. " + L.dist + num(e0(st.n), 3) + L.distNote;
+  }
+
+  // ------------------------------------------------------------------ 1b. why the day is longer: the Earth seen from the side
+  // Sun on the left. Axis n tilted towards the Sun by the declination; a point of latitude φ and hour angle h is
+  // p = sin φ·n + cos φ·(cos h·u + sin h·v), lit when it faces the Sun (p·s > 0, s = towards the Sun). Seen from 18° above
+  // the orbital plane. The lit share of each parallel is the share of the 24 hours spent in daylight.
+  var sS = box.querySelector(".sun-side"), sOut = box.querySelector(".sun-side-out");
+  function side() {
+    if (!sS) return;
+    clear(sS);
+    var W = 480, H = 270, cx = 270, cy = 136, R = 104, ep = 18 * RAD, s = spencer(st.n, st.m / 60), d = s.dec;
+    var n = [-Math.sin(d), 0, Math.cos(d)], u = [-Math.cos(d), 0, -Math.sin(d)], v = [0, 1, 0];
+    function P(p) { return [cx + R * p[0], cy - R * (p[2] * Math.cos(ep) + p[1] * Math.sin(ep))]; }
+    function front(p) { return -p[1] * Math.cos(ep) + p[2] * Math.sin(ep) > -1e-9; }
+    for (var k = 0; k < 5; k++) {                     // sunlight from the left
+      var y = cy - 80 + 40 * k;
+      el("line", { x1: 18, x2: cx - R - 14, y1: y, y2: y, stroke: "#f0c75e", "stroke-width": 3 }, sS);
+      el("path", { d: "M" + (cx - R - 14) + " " + (y - 5) + "L" + (cx - R - 4) + " " + y + "L" + (cx - R - 14) + " " + (y + 5) + "Z", fill: "#f0c75e" }, sS);
+    }
+    tx(sS, 18, cy - 94, fr ? "rayons du Soleil" : "sunlight", { "font-weight": "700", fill: "#b07d12" });
+    el("path", { d: "M" + cx + " " + (cy - R) + "A" + R + " " + R + " 0 0 0 " + cx + " " + (cy + R) + "Z", fill: "#fff3cc" }, sS);   // lit half
+    el("path", { d: "M" + cx + " " + (cy - R) + "A" + R + " " + R + " 0 0 1 " + cx + " " + (cy + R) + "Z", fill: "#24344b" }, sS);   // night half
+    el("circle", { cx: cx, cy: cy, r: R, fill: "none", stroke: "#172536", "stroke-width": 1.5 }, sS);
+    tx(sS, cx - R / 2, cy + R + 18, fr ? "jour" : "day", { "text-anchor": "middle", "font-weight": "700" });
+    tx(sS, cx + R / 2, cy + R + 18, fr ? "nuit" : "night", { "text-anchor": "middle", "font-weight": "700" });
+    var a1 = P([-1.25 * n[0], 0, -1.25 * n[2]]), a2 = P([1.25 * n[0], 0, 1.25 * n[2]]);
+    el("line", { x1: a1[0], y1: a1[1], x2: a2[0], y2: a2[1], stroke: "#172536", "stroke-width": 2 }, sS);
+    tx(sS, a2[0], a2[1] - 6, L.north, { "text-anchor": "middle", "font-weight": "700" });
+    var rows = [[0, fr ? "équateur" : "equator", "#9fb0c0", null]].concat(CITIES.map(function (c) { return [c.lat, c.n, c.c, c]; })), out = "";
+    rows.forEach(function (r) {
+      var phi = r[0] * RAD, lit = 0, seg = [];
+      for (var h = 0; h <= 360; h += 3) {
+        var hh = h * RAD, p = [0, 1, 2].map(function (q) { return Math.sin(phi) * n[q] + Math.cos(phi) * (Math.cos(hh) * u[q] + Math.sin(hh) * v[q]); });
+        seg.push({ xy: P(p), lit: p[0] < 0, fr: front(p) }); if (h < 360 && p[0] < 0) lit++;
+      }
+      for (var q = 1; q < seg.length; q++) {
+        var a = seg[q - 1], b = seg[q], on = a.lit && b.lit;
+        el("line", { x1: a.xy[0], y1: a.xy[1], x2: b.xy[0], y2: b.xy[1], stroke: r[3] ? (on ? r[2] : "#9aa5b1") : r[2], "stroke-width": r[3] ? (a.fr ? 4 : 2) : 1.2,
+          "stroke-dasharray": a.fr ? "" : "3 3", opacity: a.fr ? 1 : 0.7 }, sS);
+      }
+      if (r[3]) {
+        var share = lit / 120, ev = events(r[3].lat, r[3].lon, st.n), lab = seg.reduce(function (m, z) { return z.xy[0] > m.xy[0] ? z : m; });
+        tx(sS, cx + R + 8, lab.xy[1] + 4, r[1] + " · " + Math.round(100 * share) + " %", { fill: r[2], "font-weight": "700" });
+        out += "<b style=\"color:" + r[2] + "\">" + r[1] + "</b> : " + (fr ? "le cercle de latitude passe " : "the circle of latitude spends ") + "<b>" + Math.round(100 * share) + " %</b>" +
+          (fr ? " de son tour dans la lumière, soit " : " of its turn in the light, i.e. ") + L.hm(1440 * share) + (fr ? " ; durée du jour avec la réfraction : " : "; day length with refraction: ") + "<b>" + L.hm(ev.len) + "</b>.<br>";
+      }
+    });
+    sOut.innerHTML = out;
+  }
+
+  // ------------------------------------------------------------------ 1c. the second effect of the tilt: the height of the Sun at noon
+  // A beam of 1 m² cross-section reaching the ground at elevation e covers 1/sin e m²: the higher the Sun, the more energy per m².
+  // Noon elevation = 90° − |φ − δ| (geometric). Energy per day outside the atmosphere: h0().
+  var sB = box.querySelector(".sun-beam");
+  function beam() {
+    if (!sB) return;
+    clear(sB);
+    var d = spencer(st.n, 12).dec / RAD;
+    CITIES.forEach(function (c, i) {
+      var e = 90 - Math.abs(c.lat - d), x0 = 30 + i * 240, gy = 132, w = 46, er = e * RAD, foot = w / Math.sin(er);
+      el("line", { x1: x0, x2: x0 + 210, y1: gy, y2: gy, stroke: "#8a6d3b", "stroke-width": 3 }, sB);
+      var cx = x0 + 105, dx = Math.cos(er), dy = Math.sin(er), L0 = 110;
+      // beam of fixed width arriving from the upper left at elevation e
+      var ax = cx - foot / 2, bx = cx + foot / 2;
+      el("path", { d: "M" + ax + " " + gy + "L" + (ax - L0 * dx) + " " + (gy - L0 * dy) + "L" + (bx - L0 * dx) + " " + (gy - L0 * dy) + "L" + bx + " " + gy + "Z", fill: "#f0c75e", opacity: .55 }, sB);
+      el("line", { x1: ax, x2: bx, y1: gy, y2: gy, stroke: c.c, "stroke-width": 6 }, sB);
+      tx(sB, x0, 16, c.n + (fr ? " à midi : Soleil à " : " at noon: Sun at ") + num(e, 0) + "°", { fill: c.c, "font-weight": "700" });
+      tx(sB, x0, 148, (fr ? "1 m² de rayons → " : "1 m² of rays → ") + num(1 / Math.sin(er), 2) + (fr ? " m² de sol" : " m² of ground"), { fill: c.c });
+      tx(sB, x0, 30, (fr ? "énergie du jour hors atmosphère : " : "daily energy outside the atmosphere: ") + num(h0(c.lat, c.lon, st.n), 1) + " kWh/m²", {});
+    });
   }
 
   // ------------------------------------------------------------------ 2. day and night on the map
@@ -179,58 +249,55 @@
   var sR = box.querySelector(".sun-ribbons"), rOut = box.querySelector(".sun-rib-out");
   function ribbons() {
     clear(sR);
-    var x0 = 92, x1 = 630, X = function (m) { return x0 + (x1 - x0) * m / 1440; }, out = "", T0 = Date.UTC(YEAR, 0, st.n);
+    var x0 = 96, x1 = 630, X = function (m) { return x0 + (x1 - x0) * m / 1440; }, out = "", T0 = Date.UTC(YEAR, 0, st.n);
     function offset(c) {                         // legal time minus UTC, in minutes, at noon UTC of the chosen day
       var lt = local(T0 + 720 * 60000, c.tz).hm.split(":"), d = (+lt[0] * 60 + +lt[1]) - 720;
       return d <= -720 ? d + 1440 : d > 840 ? d - 1440 : d;
     }
-    // one clock for both cities: the UTC scale at the top
-    el("rect", { x: x0, y: 4, width: x1 - x0, height: 18, fill: "#eef1f4", rx: 4 }, sR);
-    for (var h = 0; h <= 24; h += 3) tx(sR, X(60 * h), 17, String(h).padStart(2, "0") + ":00", { "text-anchor": h === 0 ? "start" : h === 24 ? "end" : "middle", "font-weight": "700" });
-    tx(sR, x0 - 8, 17, fr ? "UTC, pour tous" : "UTC, for all", { "text-anchor": "end", "font-weight": "700" });
+    // ONE scale for everybody: UTC, at the top and at the bottom, with grid lines crossing both bands
+    function utcAxis(y) {
+      el("rect", { x: x0, y: y - 12, width: x1 - x0, height: 17, fill: "#eef1f4", rx: 4 }, sR);
+      for (var h = 0; h <= 24; h += 3) tx(sR, X(60 * h), y + 1, String(h).padStart(2, "0") + ":00", { "text-anchor": h === 0 ? "start" : h === 24 ? "end" : "middle", "font-weight": "700" });
+      tx(sR, x0 - 8, y + 1, "UTC", { "text-anchor": "end", "font-weight": "700" });
+    }
+    for (var g = 0; g <= 24; g += 3) el("line", { x1: X(60 * g), x2: X(60 * g), y1: 26, y2: 268, stroke: "#cfd8e3", "stroke-dasharray": "2 3" }, sR);
+    utcAxis(16); utcAxis(282);
     CITIES.forEach(function (c, i) {
-      var y = 56 + i * 112, ev = events(c.lat, c.lon, st.n), off = offset(c);
-      tx(sR, x0 - 8, y + 18, c.n, { "text-anchor": "end", "font-weight": "700", fill: c.c });
+      var y = 72 + i * 104, ev = events(c.lat, c.lon, st.n), off = offset(c), o = (off >= 0 ? "+" : "−") + Math.abs(off / 60);
+      // the city's own clock, just above its band
+      for (var lh = 0; lh < 24; lh += 3) {
+        var mu = ((lh * 60 - off) % 1440 + 1440) % 1440;
+        el("line", { x1: X(mu), x2: X(mu), y1: y - 6, y2: y, stroke: c.c, "stroke-width": 1.5 }, sR);
+        tx(sR, X(mu), y - 9, String(lh).padStart(2, "0") + ":00", { "text-anchor": mu < 20 ? "start" : mu > 1420 ? "end" : "middle", fill: c.c, "font-weight": "700" });
+      }
+      tx(sR, x0 - 8, y - 9, (fr ? "heure de " : "") + c.n + (fr ? "" : " time"), { "text-anchor": "end", fill: c.c, "font-weight": "700" });
+      tx(sR, x0 - 8, y + 18, "= UTC " + o + " h", { "text-anchor": "end", fill: c.c });
       for (var m = 0; m < 1440; m += 10) {
         var e = Math.asin(cosz(c.lat, c.lon, st.n, m + 5)) / RAD;
         var col = e > 0 ? "rgb(240," + Math.round(199 + 40 * Math.min(1, e / 60)) + "," + Math.round(94 + 120 * Math.min(1, e / 60)) + ")" : e > -6 ? "#5d6f86" : "#172536";
         el("rect", { x: X(m), y: y, width: X(10) - X(0) + 0.6, height: 28, fill: col }, sR);
       }
-      // events above the band, on two short lines
+      // sunrise, solar noon and sunset under the band, in the city's own time
       [[ev.rise, L.rise], [ev.noon, L.noon], [ev.set, L.set]].forEach(function (q, j) {
-        var m = ((q[0] % 1440) + 1440) % 1440, anc = m < 90 ? "start" : m > 1350 ? "end" : "middle";
-        el("line", { x1: X(m), x2: X(m), y1: y - 4, y2: y + 30, stroke: j === 1 ? "#ad5200" : "#172536", "stroke-width": j === 1 ? 2 : 1 }, sR);
-        tx(sR, X(m), y - 18, q[1], { "text-anchor": anc });
-        tx(sR, X(m), y - 7, hhmm(q[0]) + " UTC", { "text-anchor": anc, "font-weight": "700" });
+        var mm = ((q[0] % 1440) + 1440) % 1440, anc = mm < 90 ? "start" : mm > 1350 ? "end" : "middle", lt = local(T0 + q[0] * 60000, c.tz).hm;
+        el("line", { x1: X(mm), x2: X(mm), y1: y, y2: y + 32, stroke: j === 1 ? "#ad5200" : "#fff", "stroke-width": 2 }, sR);
+        tx(sR, X(mm), y + 44, q[1] + " " + lt, { "text-anchor": anc, fill: "#172536" });
       });
-      // the city's own clock under its band: same instants, other numbers
-      el("rect", { x: x0, y: y + 32, width: x1 - x0, height: 16, fill: "#f6f8fa", rx: 3 }, sR);
-      for (var lh = 0; lh < 24; lh += 3) {
-        var mu = ((lh * 60 - off) % 1440 + 1440) % 1440;
-        el("line", { x1: X(mu), x2: X(mu), y1: y + 30, y2: y + 35, stroke: c.c }, sR);
-        tx(sR, X(mu), y + 44, String(lh).padStart(2, "0") + ":00", { "text-anchor": mu < 20 ? "start" : mu > 1420 ? "end" : "middle", fill: c.c });
-      }
-      var o = (off >= 0 ? "+" : "−") + Math.abs(off / 60);
-      tx(sR, x0 - 8, y + 44, (fr ? "heure de " : "") + c.n + (fr ? "" : " time"), { "text-anchor": "end", fill: c.c });
-      tx(sR, x0 - 8, y + 56, "UTC" + o, { "text-anchor": "end", "class": "sun-ax sun-mut" });
-      var lt = local(T0 + ev.noon * 60000, c.tz);
-      out += "<b style=\"color:" + c.c + "\">" + c.n + "</b> : " + L.len + " <b>" + L.hm(ev.len) + "</b> · " + L.noon + " <b>" + hhmm(ev.noon) + " UTC</b> = " + lt.hm + " " + L.local + " (UTC" + o + ")<br>";
+      var ltn = local(T0 + ev.noon * 60000, c.tz);
+      out += "<b style=\"color:" + c.c + "\">" + c.n + "</b> : " + L.len + " <b>" + L.hm(ev.len) + "</b> · " + L.rise + " " + hhmm(ev.rise) + " UTC · " + L.noon + " <b>" + hhmm(ev.noon) + " UTC</b> = " + ltn.hm + " " + L.local + " · " + L.set + " " + hhmm(ev.set) + " UTC<br>";
     });
-    var nowP = local(T0 + st.m * 60000, CITIES[0].tz).hm, nowS = local(T0 + st.m * 60000, CITIES[1].tz).hm;
-    el("line", { x1: X(st.m), x2: X(st.m), y1: 4, y2: 262, stroke: "#c0392b", "stroke-width": 2 }, sR);
-    tx(sR, X(st.m), 276, L.now + " " + hhmm(st.m) + " UTC = " + nowP + " " + CITIES[0].n + " = " + nowS + " " + CITIES[1].n,
-       { "text-anchor": st.m < 300 ? "start" : st.m > 1140 ? "end" : "middle", fill: "#c0392b", "font-weight": "700" });
+    el("line", { x1: X(st.m), x2: X(st.m), y1: 8, y2: 292, stroke: "#c0392b", "stroke-width": 2.5 }, sR);
     // what each city is living at the chosen instant: one UTC instant, two legal times, two skies
     function up(c, m) { return Math.asin(cosz(c.lat, c.lon, st.n, m)) / RAD > -0.833; }
     function gap(c, dir) { var a = up(c, st.m); for (var k = 1; k <= 1440; k++) if (up(c, st.m + dir * k) !== a) return k; return null; }
-    var now = "<b>" + hhmm(st.m) + " UTC</b> " + (fr ? "est le même instant pour les deux villes. " : "is the same instant for both cities. ");
+    var now = "<b>" + hhmm(st.m) + " UTC</b> " + (fr ? "(trait rouge) est le même instant pour les deux villes. " : "(red line) is the same instant for both cities. ");
     CITIES.forEach(function (c) {
       var off = offset(c), o = (off >= 0 ? "+" : "−") + Math.abs(off / 60), lt = local(T0 + st.m * 60000, c.tz).hm, isUp = up(c, st.m), b = gap(c, -1), a = gap(c, 1);
-      now += "<br><b style=\"color:" + c.c + "\">" + c.n + "</b> : UTC" + o + (fr ? " veut dire heure locale = UTC " + o + " h, donc " : " means local time = UTC " + o + " h, so ") + "<b>" + lt + "</b> ; " +
+      now += "<br><b style=\"color:" + c.c + "\">" + c.n + "</b> : UTC " + o + " h = <b>" + lt + "</b> ; " +
         (isUp ? (fr ? "jour, Soleil levé depuis " : "day, Sun up for ") + L.hm(b) + (fr ? ", coucher dans " : ", sunset in ") + L.hm(a)
               : (fr ? "nuit, Soleil couché depuis " : "night, Sun down for ") + L.hm(b) + (fr ? ", lever dans " : ", sunrise in ") + L.hm(a)) + ".";
     });
-    rOut.innerHTML = out + '<p class="sun-now">' + now + "</p>";
+    rOut.innerHTML = '<p class="sun-now">' + now + "</p>" + out;
   }
 
   // ------------------------------------------------------------------ 4. double seasonality: heat maps, then the two cycles
@@ -308,7 +375,7 @@
   function draw() {
     box.querySelector(".sun-do").textContent = dateLabel(st.n) + " " + YEAR;
     box.querySelector(".sun-to").textContent = hhmm(st.m) + " UTC";
-    orbit(); map(); ribbons(); heat(); curves();
+    orbit(); side(); beam(); map(); ribbons(); heat(); curves();
   }
   draw(); clock();
 })();
