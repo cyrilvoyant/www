@@ -259,19 +259,19 @@
       "sections": [
         {
           "title": "Three ways to work together",
-          "anchor": null
+          "anchor": "ways"
         },
         {
           "title": "Collaborations that became results",
-          "anchor": null
+          "anchor": "proofs"
         },
         {
           "title": "What can be adapted to your data",
-          "anchor": null
+          "anchor": "adaptations"
         },
         {
           "title": "How it works",
-          "anchor": null
+          "anchor": "process"
         },
         {
           "title": "A question and some data? Let's look at it together.",
@@ -1154,19 +1154,19 @@
       "sections": [
         {
           "title": "Trois façons de travailler ensemble",
-          "anchor": null
+          "anchor": "ways"
         },
         {
           "title": "Des collaborations devenues des résultats",
-          "anchor": null
+          "anchor": "proofs"
         },
         {
           "title": "Ce qui peut être adapté à vos données",
-          "anchor": null
+          "anchor": "adaptations"
         },
         {
           "title": "Comment cela se passe",
-          "anchor": null
+          "anchor": "process"
         },
         {
           "title": "Une question et des données ? Regardons-les ensemble.",
