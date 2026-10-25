@@ -648,6 +648,356 @@
       ]
     },
     {
+      "url": "https://www.cyrilvoyant.com/fr/animations/attenuation-demi-epaisseur/",
+      "title": "Atténuation et couche de demi-atténuation : simulation interactive",
+      "language": "fr",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "La relation à comprendre",
+          "anchor": null
+        },
+        {
+          "title": "Essayer et interpréter",
+          "anchor": null
+        },
+        {
+          "title": "Hypothèses et limites",
+          "anchor": null
+        },
+        {
+          "title": "Approfondir avec le cours",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/animations/congelation-energie-puissance/",
+      "title": "Congélation : énergie sensible, chaleur latente et puissance",
+      "language": "fr",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "La relation à comprendre",
+          "anchor": null
+        },
+        {
+          "title": "Essayer et interpréter",
+          "anchor": null
+        },
+        {
+          "title": "Hypothèses et limites",
+          "anchor": null
+        },
+        {
+          "title": "Approfondir avec le cours",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/animations/cop-carnot-machine-frigorifique/",
+      "title": "Machine frigorifique : COP et limite de Carnot",
+      "language": "fr",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "La relation à comprendre",
+          "anchor": null
+        },
+        {
+          "title": "Essayer et interpréter",
+          "anchor": null
+        },
+        {
+          "title": "Hypothèses et limites",
+          "anchor": null
+        },
+        {
+          "title": "Approfondir avec le cours",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/animations/correlation-significativite-r2/",
+      "title": "Corrélation, significativité et R² : animation pour les distinguer",
+      "language": "fr",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "La relation à comprendre",
+          "anchor": null
+        },
+        {
+          "title": "Essayer et interpréter",
+          "anchor": null
+        },
+        {
+          "title": "Hypothèses et limites",
+          "anchor": null
+        },
+        {
+          "title": "Approfondir avec le cours",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/animations/courbe-roc/",
+      "title": "Courbe ROC interactive : sensibilité, spécificité et prévalence",
+      "language": "fr",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "La relation à comprendre",
+          "anchor": null
+        },
+        {
+          "title": "Essayer et interpréter",
+          "anchor": null
+        },
+        {
+          "title": "Hypothèses et limites",
+          "anchor": null
+        },
+        {
+          "title": "Approfondir avec le cours",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/animations/effet-compton/",
+      "title": "Effet Compton : angle, photon diffusé et électron de recul",
+      "language": "fr",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "La relation à comprendre",
+          "anchor": null
+        },
+        {
+          "title": "Essayer et interpréter",
+          "anchor": null
+        },
+        {
+          "title": "Hypothèses et limites",
+          "anchor": null
+        },
+        {
+          "title": "Approfondir avec le cours",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/animations/intervalles-regression/",
+      "title": "Régression : intervalle de confiance et intervalle de prévision",
+      "language": "fr",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "La relation à comprendre",
+          "anchor": null
+        },
+        {
+          "title": "Essayer et interpréter",
+          "anchor": null
+        },
+        {
+          "title": "Hypothèses et limites",
+          "anchor": null
+        },
+        {
+          "title": "Approfondir avec le cours",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/animations/loi-normale/",
+      "title": "Loi normale interactive : aire, probabilité et score z",
+      "language": "fr",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "La relation à comprendre",
+          "anchor": null
+        },
+        {
+          "title": "Essayer et interpréter",
+          "anchor": null
+        },
+        {
+          "title": "Hypothèses et limites",
+          "anchor": null
+        },
+        {
+          "title": "Approfondir avec le cours",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/animations/moteur-carnot/",
+      "title": "Moteur thermique et Carnot : animation du cycle et bilan d’énergie",
+      "language": "fr",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "La relation à comprendre",
+          "anchor": null
+        },
+        {
+          "title": "Essayer et interpréter",
+          "anchor": null
+        },
+        {
+          "title": "Hypothèses et limites",
+          "anchor": null
+        },
+        {
+          "title": "Approfondir avec le cours",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/animations/onde-electromagnetique/",
+      "title": "Onde électromagnétique : animation des champs E et B",
+      "language": "fr",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "La relation à comprendre",
+          "anchor": null
+        },
+        {
+          "title": "Essayer et interpréter",
+          "anchor": null
+        },
+        {
+          "title": "Hypothèses et limites",
+          "anchor": null
+        },
+        {
+          "title": "Approfondir avec le cours",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/animations/point-influent-regression/",
+      "title": "Régression et point influent : déplacer une observation",
+      "language": "fr",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "La relation à comprendre",
+          "anchor": null
+        },
+        {
+          "title": "Essayer et interpréter",
+          "anchor": null
+        },
+        {
+          "title": "Hypothèses et limites",
+          "anchor": null
+        },
+        {
+          "title": "Approfondir avec le cours",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/animations/refroidissement-biot/",
+      "title": "Refroidissement d’un aliment : nombre de Biot et température à cœur",
+      "language": "fr",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "La relation à comprendre",
+          "anchor": null
+        },
+        {
+          "title": "Essayer et interpréter",
+          "anchor": null
+        },
+        {
+          "title": "Hypothèses et limites",
+          "anchor": null
+        },
+        {
+          "title": "Approfondir avec le cours",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/animations/test-khi-deux/",
+      "title": "Test du χ² : dé équilibré, observés, attendus et tableau 2×2",
+      "language": "fr",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "La relation à comprendre",
+          "anchor": null
+        },
+        {
+          "title": "Essayer et interpréter",
+          "anchor": null
+        },
+        {
+          "title": "Hypothèses et limites",
+          "anchor": null
+        },
+        {
+          "title": "Approfondir avec le cours",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/animations/test-student/",
+      "title": "Test de Student interactif : deux moyennes, dispersion et p-value",
+      "language": "fr",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "La relation à comprendre",
+          "anchor": null
+        },
+        {
+          "title": "Essayer et interpréter",
+          "anchor": null
+        },
+        {
+          "title": "Hypothèses et limites",
+          "anchor": null
+        },
+        {
+          "title": "Approfondir avec le cours",
+          "anchor": null
+        }
+      ]
+    },
+    {
       "url": "https://www.cyrilvoyant.com/fr/approche/",
       "title": "Comprendre avant de calculer : la démarche de Cyril Voyant",
       "language": "fr",
@@ -1514,6 +1864,35 @@
         },
         {
           "title": "Questions fréquentes",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/le-fil/",
+      "title": "Le fil : cinq étapes, une même démarche",
+      "language": "fr",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Calculer directement",
+          "anchor": null
+        },
+        {
+          "title": "Hybrider",
+          "anchor": null
+        },
+        {
+          "title": "Apprendre frugalement",
+          "anchor": null
+        },
+        {
+          "title": "L'IA à sa place",
+          "anchor": null
+        },
+        {
+          "title": "Démontrer la confiance",
           "anchor": null
         }
       ]
@@ -3608,6 +3987,35 @@
         },
         {
           "title": "Go further",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/the-thread/",
+      "title": "The thread: five steps, one way of working",
+      "language": "en",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Compute directly",
+          "anchor": null
+        },
+        {
+          "title": "Hybridize",
+          "anchor": null
+        },
+        {
+          "title": "Learn frugally",
+          "anchor": null
+        },
+        {
+          "title": "AI in its place",
+          "anchor": null
+        },
+        {
+          "title": "Demonstrate trust",
           "anchor": null
         }
       ]

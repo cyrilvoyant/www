@@ -249,8 +249,8 @@
         "en": "Change the threshold, distribution separation and prevalence in a teaching example."
       },
       "url": {
-        "fr": "https://www.cyrilvoyant.com/fr/enseignement/biostatistique/probabilites/#course-tool",
-        "en": "https://www.cyrilvoyant.com/fr/enseignement/biostatistique/probabilites/#course-tool"
+        "fr": "https://www.cyrilvoyant.com/fr/animations/courbe-roc/",
+        "en": "https://www.cyrilvoyant.com/fr/animations/courbe-roc/"
       }
     },
     {
@@ -267,8 +267,8 @@
         "en": "Convert a standard score to a probability, or vice versa."
       },
       "url": {
-        "fr": "https://www.cyrilvoyant.com/fr/enseignement/biostatistique/statistiques-descriptives/#course-tool",
-        "en": "https://www.cyrilvoyant.com/fr/enseignement/biostatistique/statistiques-descriptives/#course-tool"
+        "fr": "https://www.cyrilvoyant.com/fr/animations/loi-normale/",
+        "en": "https://www.cyrilvoyant.com/fr/animations/loi-normale/"
       }
     },
     {
@@ -285,8 +285,8 @@
         "en": "Vary thickness and half-value layer; read the transmitted fraction."
       },
       "url": {
-        "fr": "https://www.cyrilvoyant.com/fr/enseignement/physique-pass/ondes-electromagnetiques/#course-tool",
-        "en": "https://www.cyrilvoyant.com/fr/enseignement/physique-pass/ondes-electromagnetiques/#course-tool"
+        "fr": "https://www.cyrilvoyant.com/fr/animations/attenuation-demi-epaisseur/",
+        "en": "https://www.cyrilvoyant.com/fr/animations/attenuation-demi-epaisseur/"
       }
     },
     {
@@ -303,8 +303,8 @@
         "en": "Vary h, λ and size; compare the uniform-temperature model with the core temperature."
       },
       "url": {
-        "fr": "https://www.cyrilvoyant.com/fr/enseignement/bases-thermiques-aliments/cours/#tool-biot",
-        "en": "https://www.cyrilvoyant.com/fr/enseignement/bases-thermiques-aliments/cours/#tool-biot"
+        "fr": "https://www.cyrilvoyant.com/fr/animations/refroidissement-biot/",
+        "en": "https://www.cyrilvoyant.com/fr/animations/refroidissement-biot/"
       }
     },
     {
@@ -321,8 +321,8 @@
         "en": "Split the energy to remove (sensible, latent, sensible) and compute the power for a given duration."
       },
       "url": {
-        "fr": "https://www.cyrilvoyant.com/fr/enseignement/bases-thermiques-aliments/cours/#tool-congel",
-        "en": "https://www.cyrilvoyant.com/fr/enseignement/bases-thermiques-aliments/cours/#tool-congel"
+        "fr": "https://www.cyrilvoyant.com/fr/animations/congelation-energie-puissance/",
+        "en": "https://www.cyrilvoyant.com/fr/animations/congelation-energie-puissance/"
       }
     },
     {
@@ -339,8 +339,8 @@
         "en": "Vary evaporation and condensation temperatures; see why the temperature lift is costly."
       },
       "url": {
-        "fr": "https://www.cyrilvoyant.com/fr/enseignement/physique-industrielle/cycles-frigorifiques/#tool-cop",
-        "en": "https://www.cyrilvoyant.com/fr/enseignement/physique-industrielle/cycles-frigorifiques/#tool-cop"
+        "fr": "https://www.cyrilvoyant.com/fr/animations/cop-carnot-machine-frigorifique/",
+        "en": "https://www.cyrilvoyant.com/fr/animations/cop-carnot-machine-frigorifique/"
       }
     },
     {
@@ -357,8 +357,8 @@
         "en": "Move an outlier and watch r, the least-squares line and the p-value change."
       },
       "url": {
-        "fr": "https://www.cyrilvoyant.com/fr/enseignement/biostatistique/correlation-regression/#tool-regr",
-        "en": "https://www.cyrilvoyant.com/fr/enseignement/biostatistique/correlation-regression/#tool-regr"
+        "fr": "https://www.cyrilvoyant.com/fr/animations/point-influent-regression/",
+        "en": "https://www.cyrilvoyant.com/fr/animations/point-influent-regression/"
       }
     },
     {
@@ -429,8 +429,8 @@
         "en": "Visualize rejection regions; compare one sample with a reference, paired differences or two independent groups."
       },
       "url": {
-        "fr": "https://www.cyrilvoyant.com/fr/enseignement/biostatistique/statistiques-descriptives/#tool-student",
-        "en": "https://www.cyrilvoyant.com/fr/enseignement/biostatistique/statistiques-descriptives/#tool-student"
+        "fr": "https://www.cyrilvoyant.com/fr/animations/test-student/",
+        "en": "https://www.cyrilvoyant.com/fr/animations/test-student/"
       }
     },
     {
@@ -447,8 +447,8 @@
         "en": "Vary r and n; distinguish the theoretical p-value from variation explained in a constructed teaching example."
       },
       "url": {
-        "fr": "https://www.cyrilvoyant.com/fr/enseignement/biostatistique/correlation-regression/#tool-determination",
-        "en": "https://www.cyrilvoyant.com/fr/enseignement/biostatistique/correlation-regression/#tool-determination"
+        "fr": "https://www.cyrilvoyant.com/fr/animations/correlation-significativite-r2/",
+        "en": "https://www.cyrilvoyant.com/fr/animations/correlation-significativite-r2/"
       }
     },
     {
@@ -461,12 +461,12 @@
         "en": "Chi-square: observed, expected and contributions"
       },
       "task": {
-        "fr": "Explorer un ajustement équiprobable ou un tableau 2×2 ; visualiser les cellules qui pèsent et les faibles effectifs.",
-        "en": "Explore equal-probability goodness of fit or a 2×2 table; visualize cell contributions and small expected counts."
+        "fr": "Explorer un dé équilibré ou un tableau 2×2 ; visualiser les cellules qui pèsent et les faibles effectifs.",
+        "en": "Explore a fair die or a 2×2 table; visualize cell contributions and small expected counts."
       },
       "url": {
-        "fr": "https://www.cyrilvoyant.com/fr/enseignement/biostatistique/correlation-regression/#tool-chisquare",
-        "en": "https://www.cyrilvoyant.com/fr/enseignement/biostatistique/correlation-regression/#tool-chisquare"
+        "fr": "https://www.cyrilvoyant.com/fr/animations/test-khi-deux/",
+        "en": "https://www.cyrilvoyant.com/fr/animations/test-khi-deux/"
       }
     },
     {
@@ -483,8 +483,8 @@
         "en": "Compare both bands, move x₀ and recognize extrapolation."
       },
       "url": {
-        "fr": "https://www.cyrilvoyant.com/fr/enseignement/biostatistique/correlation-regression/#tool-intervals",
-        "en": "https://www.cyrilvoyant.com/fr/enseignement/biostatistique/correlation-regression/#tool-intervals"
+        "fr": "https://www.cyrilvoyant.com/fr/animations/intervalles-regression/",
+        "en": "https://www.cyrilvoyant.com/fr/animations/intervalles-regression/"
       }
     },
     {
@@ -501,8 +501,8 @@
         "en": "Frequency, wavelength and transverse fields; slow playback, pause and step controls."
       },
       "url": {
-        "fr": "https://www.cyrilvoyant.com/fr/enseignement/physique-pass/ondes-electromagnetiques/#lab-wave",
-        "en": "https://www.cyrilvoyant.com/fr/enseignement/physique-pass/ondes-electromagnetiques/#lab-wave"
+        "fr": "https://www.cyrilvoyant.com/fr/animations/onde-electromagnetique/",
+        "en": "https://www.cyrilvoyant.com/fr/animations/onde-electromagnetique/"
       }
     },
     {
@@ -519,8 +519,8 @@
         "en": "Connect angle with energy and follow the scattered photon and recoil electron in the free-electron model."
       },
       "url": {
-        "fr": "https://www.cyrilvoyant.com/fr/enseignement/physique-pass/ondes-electromagnetiques/#lab-compton",
-        "en": "https://www.cyrilvoyant.com/fr/enseignement/physique-pass/ondes-electromagnetiques/#lab-compton"
+        "fr": "https://www.cyrilvoyant.com/fr/animations/effet-compton/",
+        "en": "https://www.cyrilvoyant.com/fr/animations/effet-compton/"
       }
     },
     {
@@ -537,8 +537,8 @@
         "en": "Change reservoir temperatures and read work, rejected heat and reservoir entropy."
       },
       "url": {
-        "fr": "https://www.cyrilvoyant.com/fr/enseignement/physique-industrielle/cycles-moteurs/#lab-engine",
-        "en": "https://www.cyrilvoyant.com/fr/enseignement/physique-industrielle/cycles-moteurs/#lab-engine"
+        "fr": "https://www.cyrilvoyant.com/fr/animations/moteur-carnot/",
+        "en": "https://www.cyrilvoyant.com/fr/animations/moteur-carnot/"
       }
     }
   ]

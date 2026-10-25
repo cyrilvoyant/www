@@ -309,7 +309,7 @@ Interactive tools: choose a question, explore a method
  Open this tool →
  Course tool · French interface
  Chi-square: observed, expected and contributions
- Explore equal-probability goodness of fit or a 2×2 table; visualize cell contributions and small expected counts.
+ Explore a fair die or a 2×2 table; visualize cell contributions and small expected counts.
  Open this tool →
  Course tool · French interface
  Regression: confidence or prediction interval?
@@ -439,7 +439,7 @@ Outils interactifs : choisir une question, essayer une méthode
  Ouvrir cet outil →
  Outil de cours · Interface en français
  χ² : observés, attendus et contributions
- Explorer un ajustement équiprobable ou un tableau 2×2 ; visualiser les cellules qui pèsent et les faibles effectifs.
+ Explorer un dé équilibré ou un tableau 2×2 ; visualiser les cellules qui pèsent et les faibles effectifs.
  Ouvrir cet outil →
  Outil de cours · Interface en français
  Régression : intervalle de confiance ou de prévision ?
@@ -683,7 +683,7 @@ Scientific publishing: no verification, no trust
 URL: https://www.cyrilvoyant.com/ai-in-research/
 
 AI in research: the AI Act, a lab charter and a toolbox for researchers
- Step of the story · Demonstrate trust The approach Judge against a reference, publish code, data and limits, make research findable and reusable. Principle 5: Trust is demonstrated.
+ Step 5 of 5 · Demonstrate trust See it on the thread Judge against a reference, publish code, data and limits, make research findable and reusable. Principle 5: Trust is demonstrated.
  Generative AI now writes code, drafts papers and reviews data in every laboratory. The European AI Act sets rules for what we build and what we transfer. Here is what changes for researchers, the timeline in Europe and in France, how the rest of the world compares, who is responsible when research code becomes a product, and a toolbox a lab can adopt in a few hours per project.
  Cyril Voyant , Mines Paris – PSL, Centre O.I.E. · status on 23 October 2026 · not legal advice: check with your institution's legal service
  In brief
@@ -1131,7 +1131,8 @@ Forecasting irradiance and its uncertainty with complex numbers
  Compute the clear-sky index κ = GHI/GHI CS , then its volatility σ τ : the standard deviation of its hour-to-hour changes over the last 30 hours. Instead of forecasting one and then the other, put them in a single complex number, z(t) = κ(t) + j·σ τ (t) , and fit an autoregression of order p to z: ẑ(t+1) = Σ ω i ·z(t−i) , with complex coefficients ω i . The real part predicts κ; multiplying it by GHI CS recovers predicted irradiance. The imaginary part predicts the volatility of κ. The coefficients come from complex least squares, ω = (I H I + λ·1) −1 I H o , with p = 6 and λ = 3.74 for Ajaccio.
  Setting α
  The 1 − α prediction interval is ĜHI ± μ·GHI CS ·σ̂ . Everything lies in the multiplier μ. Under a Gaussian assumption, μ = erf −1 (1 − α)/√(1 − β) ; but irradiance is not Gaussian, and the paper recommends calibrating μ on training data, μ = f 1 ·e f 2 ·α , one pair (f 1 , f 2 ) per horizon. Move α: the blue curve is the calibrated μ at the chosen horizon, the dashed orange curve the Gaussian μ at 1 h.
- α Horizon
+ α Horizon μ calibrated on data, chosen horizon the other horizons (1 to 6 h) Gaussian μ at 1 h (theoretical assumption)
+ Reading the chart: on the left, small α, almost every measurement must fall inside the interval, so μ is large and the interval wide; on the right, the reverse. The further the horizon, the higher the blue curve in general (5 and 6 h almost coincide): more σ̂ are needed for the same coverage. Below the chart, the blue band shows the resulting interval for a 500 W/m² forecast with GHI CS = 800 W/m² and σ̂ = 0.10 (example values).
  The paper's results (target coverage 80%, test year 2018)
  Horizon nRMSE PICP Gauss PICP Quant PICP Compl MIL Gauss MIL Quant MIL Compl
  1 h 0.196 83.8 79.7 80.0 51.2 42.2 41.2
@@ -1233,6 +1234,7 @@ Teaching
  At Mines Paris–PSL, my teaching includes solar resource forecasting and academic tutoring of international internships and gap years (UE45). Earlier teaching spans biostatistics, thermodynamics, biophysics and numerical modeling at the University of Corsica.
  Solar forecasting: the course starts from the signal
  Start from the signal: what is predictable in solar irradiance, and what is not. The figure shows why the course works on the deviation from clear sky.
+ See why: three days of measured irradiance and their deviation from clear sky
  From signal to methods: three days in Ajaccio (2007), measured under clear, variable and overcast skies. Bottom: additive deviation from clear sky, not a ratio. Teaching illustration from the UE14 course, separate from the papers' results. Source: cyrilvoyant.github.io/teaching/solar-forecasting-basics.html
  The course page · Solar forecasting basics, with equations · BLEND · ARTU · Stochastic persistence
  Talks and teaching
@@ -1321,6 +1323,7 @@ Enseignement
  À Mines Paris – PSL, j'enseigne la prévision de la ressource solaire et j'assure le tutorat académique des stages et années de césure à l'international (UE45). Auparavant, à l'Université de Corse, j'ai enseigné les biostatistiques, la thermodynamique, la biophysique et la modélisation numérique.
  Prévision solaire : le cours part du signal
  Partir du signal : ce qui est prévisible dans l'éclairement solaire, et ce qui ne l'est pas. La figure montre pourquoi le cours travaille sur l'écart au ciel clair.
+ Voir pourquoi : trois journées mesurées et leur écart au ciel clair
  Du signal aux méthodes : trois journées à Ajaccio (2007), mesurées sous ciel clair, variable et couvert. En bas : écart additif au ciel clair, et non rapport. Illustration pédagogique du cours UE14, distincte des résultats des articles. Source : cyrilvoyant.github.io/teaching/solar-forecasting-basics.html
  La page du cours (en anglais) · Les bases de la prévision solaire, avec les équations (en anglais) · BLEND · ARTU · Persistance stochastique
  Conférence
@@ -1361,7 +1364,7 @@ Open courses in French: biostatistics, medical physics, industrial physics and f
 URL: https://www.cyrilvoyant.com/stories/lql-equiv/
 
 Compute, don't learn: radiobiological dose equivalence with LQL-Equiv
- Step of the story · Compute directly The approach When the link is known, compute it with an explicit model, calibrated and validated on data; learning is added only for a demonstrated benefit. Principle 2: The model at the core.
+ Step 1 of 5 · Compute directly See it on the thread When the link is known, compute it with an explicit model, calibrated and validated on data; learning is added only for a demonstrated benefit. Principle 2: The model at the core.
  When the link between a radiotherapy schedule and its biological effect is known, it is computed directly. No data and no artificial intelligence are needed: only a model we understand, checked case by case.
  Cyril Voyant , with Daniel Julian · Mines Paris – PSL, Centre O.I.E.
  In brief
@@ -1405,7 +1408,7 @@ Compute, don't learn: radiobiological dose equivalence with LQL-Equiv
 URL: https://www.cyrilvoyant.com/stories/questioning-research/
 
 Questioning how we do research: influence, integrity, excellence
- Step of the story · Demonstrate trust The approach Judge against a reference, publish code, data and limits, make research findable and reusable. Principle 5: Trust is demonstrated.
+ Step 5 of 5 · Demonstrate trust See it on the thread Judge against a reference, publish code, data and limits, make research findable and reusable. Principle 5: Trust is demonstrated.
  Research in a changing world also has to examine its own methods. The same approach applies: compare with an explicit reference, look at what a single number hides, and state the limits.
  Who did what. The science-wide map of institutions: John P. A. Ioannidis (Meta-Research Innovation Center at Stanford, Stanford University), Jeroen Baas and Roy Boverhof (Elsevier, Amsterdam), with Cyril Voyant (Mines Paris – PSL, Centre O.I.E.). The Influence Index: Cyril Voyant , Jeroen Baas , Roy Boverhof , Paolo Stringari , Mathilde Marchand-Lasserre and John P. A. Ioannidis . The excellence framework: Cyril Voyant , Rodrigo Amaro e Silva , Nicolas Fichaux , Lionel Menard , Sylvain Cros and Rodanthi-Elisavet Mamouri .
  In brief
@@ -1439,7 +1442,7 @@ Questioning how we do research: influence, integrity, excellence
 URL: https://www.cyrilvoyant.com/stories/satellite-irradiance/
 
 Satellite irradiance forecasting: one cell, a patch or the whole field
- Step of the story · Learn frugally The approach When the useful relations are not known well enough, evaluate what the data can teach, with only as much complexity as pays. Principle 3: Complexity only if it pays.
+ Step 3 of 5 · Learn frugally See it on the thread When the useful relations are not known well enough, evaluate what the data can teach, with only as much complexity as pays. Principle 3: Complexity only if it pays.
  A satellite sees the irradiance of a whole region every hour. It is tempting to give a forecaster the whole map. Holding the forecaster fixed and changing only what it reads shows how much of that map actually helps.
  Cyril Voyant (Mines Paris – PSL, Centre O.I.E.), with Andreas Kazantzidis (University of Patras) and Jan Kleissl (University of California San Diego) · manuscript in preparation, open code and data extract
  In brief
@@ -1474,7 +1477,7 @@ Satellite irradiance forecasting: one cell, a patch or the whole field
 URL: https://www.cyrilvoyant.com/stories/thyroid-radioiodine/
 
 Thyroid cancer and radioiodine: model first, learn only what is missing
- Step of the story · Hybridize The approach When the model falls short, complete it: keep the model, learn only what is missing. Principle 2: The model at the core.
+ Step 2 of 5 · Hybridize See it on the thread When the model falls short, complete it: keep the model, learn only what is missing. Principle 2: The model at the core.
  How many sessions of radioactive iodine, how far apart, and at what activity? An intelligible model of three equations explores these questions before any patient is treated. Learning will be added only where the model is not enough.
  Marie Fusella Giuntini and Dominique Barbolosi , with Cyril Voyant and David Taieb
  In brief
@@ -1515,7 +1518,7 @@ Thyroid cancer and radioiodine: model first, learn only what is missing
 URL: https://www.cyrilvoyant.com/stories/tunnel-load-simulator/
 
 Simulate what you cannot yet measure: the electricity demand of road tunnels
- Step of the story · Compute directly The approach When the link is known, compute it with an explicit model, calibrated and validated on data; learning is added only for a demonstrated benefit. Principle 2: The model at the core.
+ Step 1 of 5 · Compute directly See it on the thread When the link is known, compute it with an explicit model, calibrated and validated on data; learning is added only for a demonstrated benefit. Principle 2: The model at the core.
  A tunnel's operator rarely has detailed load measurements, especially at the design stage. The Tunnel Load Simulator builds the demand from what is known about the tunnel, says how uncertain it is, and states its limits.
  Haytham El-Houari and Cyril Voyant · SmartTunnel project, Université Sidi Mohamed Ben Abdellah (Fès) and Mines Paris – PSL
  In brief
@@ -1559,7 +1562,7 @@ Simulate what you cannot yet measure: the electricity demand of road tunnels
 URL: https://www.cyrilvoyant.com/stories/websemantic/
 
 Let the language model read, let the validated code compute: WebSemantic
- Step of the story · AI in its place The approach Language models help people use validated tools; the calculation, the checking and the responsibility stay with validated codes and people. Principle 4: Every tool, at the periphery.
+ Step 4 of 5 · AI in its place See it on the thread Language models help people use validated tools; the calculation, the checking and the responsibility stay with validated codes and people. Principle 4: Every tool, at the periphery.
  Language models are good at understanding a request written in plain words. They are not a substitute for a validated scientific code. WebSemantic gives each one its role, and asks the person whenever something is missing.
  Cyril Voyant · Mines Paris – PSL, Centre O.I.E.
  In brief
@@ -1594,6 +1597,216 @@ Let the language model read, let the validated code compute: WebSemantic
  Tunnel Load Simulator, SoftwareX 35, 102946 (2026);
  LQL-Equiv-web, SoftwareX 36, 103085 (2026).
  The approach behind this work : Understand before you compute
+
+---
+URL: https://www.cyrilvoyant.com/fr/animations/attenuation-demi-epaisseur/
+
+Atténuation et couche de demi-atténuation : simulation interactive
+ Combien de rayonnement reste-t-il après plusieurs couches de demi-atténuation ?
+ Une expérience du cours de Cyril Voyant, à manipuler dans le navigateur. Revenir au chapitre et aux diapositives · Choisir une autre expérience .
+ JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. La relation à comprendre
+ N/N₀=exp(−μx)=2^(−x/CDA), avec CDA=ln(2)/μ.
+ Essayer et interpréter
+ Avec une CDA de 2 cm et une épaisseur de 6 cm, le modèle transmet 1/8, soit 12,5 %. Doublez l’épaisseur pour distinguer une décroissance exponentielle d’une soustraction linéaire.
+ Hypothèses et limites
+ Faisceau monoénergétique étroit, matériau homogène, coefficient μ constant. Diffusé, durcissement d’un spectre et géométrie réelle peuvent invalider ce modèle simple. Ce n’est pas un calcul de protection ou de dose clinique.
+ Approfondir avec le cours
+ Cette page isole une notion pour la rendre accessible directement. Le chapitre complet conserve le raisonnement, les autres exemples, le diaporama et la FAQ. Les valeurs de la démonstration sont calculées ou construites dans le modèle indiqué ; elles ne constituent pas de nouveaux résultats de recherche.
+
+---
+URL: https://www.cyrilvoyant.com/fr/animations/congelation-energie-puissance/
+
+Congélation : énergie sensible, chaleur latente et puissance
+ Pourquoi faut-il plus que mcΔT pour dimensionner une congélation ?
+ Une expérience du cours de Cyril Voyant, à manipuler dans le navigateur. Revenir au chapitre et aux diapositives · Choisir une autre expérience .
+ JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. La relation à comprendre
+ Q=mΔh ; Δh additionne refroidissement avant congélation, chaleur latente et refroidissement après congélation. Puissance moyenne P=Q/Δt.
+ Essayer et interpréter
+ À énergie totale inchangée, doubler la durée divise la puissance moyenne par deux. Faites varier la teneur en eau et la part effectivement gelée pour isoler le rôle de la chaleur latente.
+ Hypothèses et limites
+ Bilan simplifié à capacités thermiques fixées ; fraction de glace choisie par l’utilisateur. Il n’établit ni la cinétique de congélation ni la puissance instantanée d’une installation. Toute l’eau d’un aliment ne gèle pas nécessairement.
+ Approfondir avec le cours
+ Cette page isole une notion pour la rendre accessible directement. Le chapitre complet conserve le raisonnement, les autres exemples, le diaporama et la FAQ. Les valeurs de la démonstration sont calculées ou construites dans le modèle indiqué ; elles ne constituent pas de nouveaux résultats de recherche.
+
+---
+URL: https://www.cyrilvoyant.com/fr/animations/cop-carnot-machine-frigorifique/
+
+Machine frigorifique : COP et limite de Carnot
+ Pourquoi l’écart de température pénalise-t-il la production de froid ?
+ Une expérience du cours de Cyril Voyant, à manipuler dans le navigateur. Revenir au chapitre et aux diapositives · Choisir une autre expérience .
+ JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. La relation à comprendre
+ COPCarnot=Tf/(Tc−Tf), avec Tf et Tc en kelvins ; COP frigorifique=chaleur utile extraite/travail reçu.
+ Essayer et interpréter
+ Entre −10 °C et +40 °C, la borne vaut environ 5,26. Abaissez la température de la source froide ou augmentez celle de la source chaude : la borne diminue.
+ Hypothèses et limites
+ Machine frigorifique cyclique réversible entre deux sources : c’est une borne, pas le COP réel d’un appareil. Ne pas confondre températures des sources et températures détaillées du fluide ; ventilateurs et pertes réelles ne sont pas modélisés.
+ Approfondir avec le cours
+ Cette page isole une notion pour la rendre accessible directement. Le chapitre complet conserve le raisonnement, les autres exemples, le diaporama et la FAQ. Les valeurs de la démonstration sont calculées ou construites dans le modèle indiqué ; elles ne constituent pas de nouveaux résultats de recherche.
+
+---
+URL: https://www.cyrilvoyant.com/fr/animations/correlation-significativite-r2/
+
+Corrélation, significativité et R² : animation pour les distinguer
+ Un lien statistiquement significatif explique-t-il beaucoup de variation ?
+ Une expérience du cours de Cyril Voyant, à manipuler dans le navigateur. Revenir au chapitre et aux diapositives · Choisir une autre expérience .
+ JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. La relation à comprendre
+ t=r√[(n−2)/(1−r²)] ; en régression simple avec constante, R²=r²=1−SSE/SST.
+ Essayer et interpréter
+ Avec r=0,10, R² vaut toujours 1 %. Passer de n=30 à n=1000 fait passer la p-value théorique d’environ 0,599 à 0,0015, sans améliorer la part de variation expliquée.
+ Hypothèses et limites
+ Le nuage est construit pour conserver exactement r. La p-value illustre le modèle normal bivarié indépendant sous ρ=0 ; ce n’est pas une inférence sur ces points artificiels. Ni causalité ni performance future ne découle de R².
+ Approfondir avec le cours
+ Cette page isole une notion pour la rendre accessible directement. Le chapitre complet conserve le raisonnement, les autres exemples, le diaporama et la FAQ. Les valeurs de la démonstration sont calculées ou construites dans le modèle indiqué ; elles ne constituent pas de nouveaux résultats de recherche.
+
+---
+URL: https://www.cyrilvoyant.com/fr/animations/courbe-roc/
+
+Courbe ROC interactive : sensibilité, spécificité et prévalence
+ Que change un seuil de test, et pourquoi la valeur prédictive dépend-elle de la prévalence ?
+ Une expérience du cours de Cyril Voyant, à manipuler dans le navigateur. Revenir au chapitre et aux diapositives · Choisir une autre expérience .
+ JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. La relation à comprendre
+ Se=VP/(VP+FN), Sp=VN/(VN+FP), VPP=Se·p/[Se·p+(1−Sp)(1−p)].
+ Essayer et interpréter
+ Changez le seuil pour déplacer le point sur la ROC. Changez ensuite seulement la prévalence : dans ce modèle, la sensibilité et la spécificité restent les mêmes, mais les valeurs prédictives changent.
+ Hypothèses et limites
+ Illustration binormale à variances égales, pas une évaluation clinique. Une AUC ne détermine ni le meilleur seuil, ni la probabilité individuelle d’une maladie. Les conséquences des erreurs et la population comptent.
+ Approfondir avec le cours
+ Cette page isole une notion pour la rendre accessible directement. Le chapitre complet conserve le raisonnement, les autres exemples, le diaporama et la FAQ. Les valeurs de la démonstration sont calculées ou construites dans le modèle indiqué ; elles ne constituent pas de nouveaux résultats de recherche.
+
+---
+URL: https://www.cyrilvoyant.com/fr/animations/effet-compton/
+
+Effet Compton : angle, photon diffusé et électron de recul
+ Comment l’angle de diffusion change-t-il le partage de l’énergie ?
+ Une expérience du cours de Cyril Voyant, à manipuler dans le navigateur. Revenir au chapitre et aux diapositives · Choisir une autre expérience .
+ JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. La relation à comprendre
+ E′=E₀/[1+(E₀/511)(1−cosθ)] en keV ; K=E₀−E′.
+ Essayer et interpréter
+ Avec 255,5 keV et une rétrodiffusion à 180°, le photon conserve 127,75 keV et l’électron reçoit 127,75 keV. Revenez à 0° : le transfert d’énergie s’annule dans ce modèle.
+ Hypothèses et limites
+ Électron libre initialement au repos, mec²≈511 keV. Le schéma décrit les directions et les énergies ; il ne calcule ni probabilités de collision, ni dose. La démonstration des conservations reste hors programme, comme dans le support.
+ Approfondir avec le cours
+ Cette page isole une notion pour la rendre accessible directement. Le chapitre complet conserve le raisonnement, les autres exemples, le diaporama et la FAQ. Les valeurs de la démonstration sont calculées ou construites dans le modèle indiqué ; elles ne constituent pas de nouveaux résultats de recherche.
+
+---
+URL: https://www.cyrilvoyant.com/fr/animations/intervalles-regression/
+
+Régression : intervalle de confiance et intervalle de prévision
+ Pourquoi l’intervalle d’une nouvelle observation est-il plus large que celui de la moyenne ?
+ Une expérience du cours de Cyril Voyant, à manipuler dans le navigateur. Revenir au chapitre et aux diapositives · Choisir une autre expérience .
+ JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. La relation à comprendre
+ IC : ŷ₀±t se√[1/n+(x₀−x̄)²/Sxx]. IP individuel : ajouter 1 sous la racine.
+ Essayer et interpréter
+ Pour n=20, se=1 et x₀ au centre du nuage, les demi-largeurs sont environ 0,47 pour la moyenne et 2,15 pour une observation future. Déplacez x₀ hors des valeurs observées pour voir l’avertissement d’extrapolation.
+ Hypothèses et limites
+ Régression simple avec constante et erreurs indépendantes normales de variance constante. Nuage construit. Bandes ponctuelles à 95 %, pas une garantie simultanée sur toute la courbe. L’extrapolation peut violer le modèle sans que la bande le mesure.
+ Approfondir avec le cours
+ Cette page isole une notion pour la rendre accessible directement. Le chapitre complet conserve le raisonnement, les autres exemples, le diaporama et la FAQ. Les valeurs de la démonstration sont calculées ou construites dans le modèle indiqué ; elles ne constituent pas de nouveaux résultats de recherche.
+
+---
+URL: https://www.cyrilvoyant.com/fr/animations/loi-normale/
+
+Loi normale interactive : aire, probabilité et score z
+ Comment passer d’une valeur à une probabilité, ou retrouver un seuil à partir d’une aire ?
+ Une expérience du cours de Cyril Voyant, à manipuler dans le navigateur. Revenir au chapitre et aux diapositives · Choisir une autre expérience .
+ JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. La relation à comprendre
+ z=(x−μ)/σ ; Φ(z)=P(Z≤z), avec Z∼N(0,1). Ici σ désigne l’écart-type.
+ Essayer et interpréter
+ À z=1,96, l’aire à gauche est voisine de 0,975. La zone centrale de −1,96 à +1,96 contient environ 95 % d’une loi normale. Essayez aussi le calcul inverse depuis la probabilité.
+ Hypothèses et limites
+ Le calcul suppose la loi normale choisie ; il ne démontre pas que des mesures sont normales. Ne pas confondre intervalle de population et intervalle de confiance d’une moyenne.
+ Approfondir avec le cours
+ Cette page isole une notion pour la rendre accessible directement. Le chapitre complet conserve le raisonnement, les autres exemples, le diaporama et la FAQ. Les valeurs de la démonstration sont calculées ou construites dans le modèle indiqué ; elles ne constituent pas de nouveaux résultats de recherche.
+
+---
+URL: https://www.cyrilvoyant.com/fr/animations/moteur-carnot/
+
+Moteur thermique et Carnot : animation du cycle et bilan d’énergie
+ Pourquoi une machine thermique doit-elle rejeter une partie de la chaleur reçue ?
+ Une expérience du cours de Cyril Voyant, à manipuler dans le navigateur. Revenir au chapitre et aux diapositives · Choisir une autre expérience .
+ JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. La relation à comprendre
+ ηCarnot=1−Tf/Tc, W=ηQchaud, Qrejetée=Qchaud−W ; températures absolues en kelvins.
+ Essayer et interpréter
+ Entre 400 °C et 20 °C, la borne réversible vaut environ 56,5 %. Sur 1000 J reçus, elle autorise environ 564,5 J de travail. Suivez les quatre étapes sur le diagramme température–entropie.
+ Hypothèses et limites
+ Machine cyclique ditherme. Le cycle T–S animé représente la référence idéale ; il ne devient pas le cycle réel lorsque vous choisissez un rendement plus faible. L’aire du rectangle donne le travail maximal, pas le travail arbitrairement réglé.
+ Approfondir avec le cours
+ Cette page isole une notion pour la rendre accessible directement. Le chapitre complet conserve le raisonnement, les autres exemples, le diaporama et la FAQ. Les valeurs de la démonstration sont calculées ou construites dans le modèle indiqué ; elles ne constituent pas de nouveaux résultats de recherche.
+
+---
+URL: https://www.cyrilvoyant.com/fr/animations/onde-electromagnetique/
+
+Onde électromagnétique : animation des champs E et B
+ Comment une onde se propage-t-elle si les champs oscillent transversalement ?
+ Une expérience du cours de Cyril Voyant, à manipuler dans le navigateur. Revenir au chapitre et aux diapositives · Choisir une autre expérience .
+ JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. La relation à comprendre
+ E(x,t)=E₀ cos(ωt−kx), B=E/c, λ=c/ν et I=ε₀cE₀²/2.
+ Essayer et interpréter
+ À 50 MHz dans le vide, la longueur d’onde est voisine de 6 m et la période vaut 20 ns. Avancez d’un huitième de période pour suivre un point fixe, puis lancez la lecture ralentie.
+ Hypothèses et limites
+ Onde plane progressive, polarisation linéaire, vide. Le champ B est mis à une échelle de dessin comparable à E ; ses valeurs physiques sont affichées séparément. Deux secondes de lecture représentent une période visuelle, pas le temps physique.
+ Approfondir avec le cours
+ Cette page isole une notion pour la rendre accessible directement. Le chapitre complet conserve le raisonnement, les autres exemples, le diaporama et la FAQ. Les valeurs de la démonstration sont calculées ou construites dans le modèle indiqué ; elles ne constituent pas de nouveaux résultats de recherche.
+
+---
+URL: https://www.cyrilvoyant.com/fr/animations/point-influent-regression/
+
+Régression et point influent : déplacer une observation
+ Comment une seule observation peut-elle modifier la droite, la corrélation et la p-value ?
+ Une expérience du cours de Cyril Voyant, à manipuler dans le navigateur. Revenir au chapitre et aux diapositives · Choisir une autre expérience .
+ JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. La relation à comprendre
+ b₁=cov(x,y)/sₓ², b₀=ȳ−b₁x̄ ; r=cov(x,y)/(sₓsᵧ).
+ Essayer et interpréter
+ Déplacez le point orange, puis désactivez-le. Comparez les deux droites et le coefficient r, en regardant surtout sa position dans le nuage et non seulement la p-value.
+ Hypothèses et limites
+ Jeu de points pédagogique, pas données de recherche. Une observation éloignée en x a du levier, mais son influence dépend aussi de son écart à la relation ajustée. Toujours examiner le nuage et les résidus.
+ Approfondir avec le cours
+ Cette page isole une notion pour la rendre accessible directement. Le chapitre complet conserve le raisonnement, les autres exemples, le diaporama et la FAQ. Les valeurs de la démonstration sont calculées ou construites dans le modèle indiqué ; elles ne constituent pas de nouveaux résultats de recherche.
+
+---
+URL: https://www.cyrilvoyant.com/fr/animations/refroidissement-biot/
+
+Refroidissement d’un aliment : nombre de Biot et température à cœur
+ Quand peut-on remplacer un aliment entier par une seule température ?
+ Une expérience du cours de Cyril Voyant, à manipuler dans le navigateur. Revenir au chapitre et aux diapositives · Choisir une autre expérience .
+ JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. La relation à comprendre
+ Bi=hLc/λ ; modèle uniforme : T(t)=T∞+(Ti−T∞)exp(−t/τ), τ=mcp/(hA).
+ Essayer et interpréter
+ Avec h=25 W/m²/K, Lc=0,02 m et λ=0,5 W/m/K, Bi=1 : les gradients internes ne sont pas négligeables. Augmentez λ pour rapprocher les températures de surface et à cœur.
+ Hypothèses et limites
+ Le critère usuel Bi<0,1 est un repère. L’autre courbe utilise le premier terme de conduction dans une plaque, valable après les tout premiers instants ; propriétés et convection constantes, sans changement de phase. Pas de validation d’un procédé sanitaire.
+ Approfondir avec le cours
+ Cette page isole une notion pour la rendre accessible directement. Le chapitre complet conserve le raisonnement, les autres exemples, le diaporama et la FAQ. Les valeurs de la démonstration sont calculées ou construites dans le modèle indiqué ; elles ne constituent pas de nouveaux résultats de recherche.
+
+---
+URL: https://www.cyrilvoyant.com/fr/animations/test-khi-deux/
+
+Test du χ² : dé équilibré, observés, attendus et tableau 2×2
+ Quelles cellules expliquent l’écart entre les observations et l’hypothèse ?
+ Une expérience du cours de Cyril Voyant, à manipuler dans le navigateur. Revenir au chapitre et aux diapositives · Choisir une autre expérience .
+ JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. La relation à comprendre
+ χ²=Σ(O−E)²/E. Dé équilibré : E=N/6, 5 ddl. Indépendance 2×2 : Eij=LiCj/N, 1 ddl.
+ Essayer et interpréter
+ Pour 120 lancers d’un dé équilibré, on attend 20 résultats par face. Modifiez une face, puis regardez sa contribution. Le second exemple reprend le tableau 75/25 et 65/35 du cours : p≈0,1228 sans correction de continuité.
+ Hypothèses et limites
+ Observations indépendantes, catégories exclusives, vrais comptages. La p-value est asymptotique ; les faibles attendus demandent une attention particulière et suspendent ici la conclusion automatique. Un non-rejet ne démontre pas l’équilibre ou l’indépendance.
+ Approfondir avec le cours
+ Cette page isole une notion pour la rendre accessible directement. Le chapitre complet conserve le raisonnement, les autres exemples, le diaporama et la FAQ. Les valeurs de la démonstration sont calculées ou construites dans le modèle indiqué ; elles ne constituent pas de nouveaux résultats de recherche.
+
+---
+URL: https://www.cyrilvoyant.com/fr/animations/test-student/
+
+Test de Student interactif : deux moyennes, dispersion et p-value
+ Une différence entre deux moyennes est-elle grande par rapport à son incertitude ?
+ Une expérience du cours de Cyril Voyant, à manipuler dans le navigateur. Revenir au chapitre et aux diapositives · Choisir une autre expérience .
+ JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. La relation à comprendre
+ t=Δ/SE ; IC bilatéral=Δ±t(1−α/2;ν)SE. Welch : SE²=s₁²/n₁+s₂²/n₂.
+ Essayer et interpréter
+ Gardez la différence et la dispersion constantes, puis augmentez l’effectif : la p-value change alors que l’écart entre les moyennes reste le même. Avec une différence nulle, t=0 et p=1.
+ Hypothèses et limites
+ Tests bilatéraux seulement. Distinguer groupes indépendants, variance commune et mesures appariées ; en apparié, saisir la dispersion des différences. Les points dessinés sont construits à partir des résumés saisis, pas des observations réelles.
+ Approfondir avec le cours
+ Cette page isole une notion pour la rendre accessible directement. Le chapitre complet conserve le raisonnement, les autres exemples, le diaporama et la FAQ. Les valeurs de la démonstration sont calculées ou construites dans le modèle indiqué ; elles ne constituent pas de nouveaux résultats de recherche.
 
 ---
 URL: https://www.cyrilvoyant.com/fr/enseignement/bases-thermiques-aliments/
