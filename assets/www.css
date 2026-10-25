@@ -321,7 +321,6 @@ pre.cite-ex { white-space: pre-wrap; background: var(--soft); padding: 12px 14px
 .essay-glos dt { font-weight: 600; } .essay-glos dd { margin: 0; color: var(--muted); }
 @media (max-width: 560px) { .essay-glos { grid-template-columns: 1fr; } }
 @media (min-width: 1280px) {
-  :root { --width: 1440px; }
   main .hero > div > :is(p, ul, ol, dl, h1, h2, h3, h4, details) { max-width: none; margin-left: 0; margin-right: 0; }
 }
 
@@ -411,8 +410,15 @@ pre.cite-ex { white-space: pre-wrap; background: var(--soft); padding: 12px 14px
    above 1280 px the page grows to 1440 px; running text uses a readable but substantially wider measure (64 rem), while
    figures, tables, tools and card grids use the full width. Phones and tablets are unchanged. */
 @media (min-width: 1280px) {
-  :root { --width: 1440px; }
-  main :is(p, ul, ol, dl, h1, h2, h3, h4, blockquote, details, .lead, .crumbs, .xs-crumbs, .eyebrow, .brief, aside.thread, .theory, .cite-lede, .links-box, .muted) { max-width: 64rem; margin-left: auto; margin-right: auto; }
+  :root { --width: 100%; }
+  header, main, footer { max-width: 100%; padding-left: clamp(20px, 3.5vw, 64px); padding-right: clamp(20px, 3.5vw, 64px); }
+  main :is(p, ul, ol, dl, h1, h2, h3, h4, blockquote, details, .lead, .crumbs, .xs-crumbs, .eyebrow, .brief, aside.thread, .theory, .cite-lede, .links-box, .muted) { max-width: 64rem; margin-left: 0; margin-right: auto; }
+  /* Full-width desktop canvas; a shared left axis keeps the homepage composed rather than floating in the centre. */
+  main > .site-map, main > .visitor-paths { width: 100%; }
+  main > .site-map > h2 { max-width: none; margin-left: 0; margin-right: 0; text-align: left; }
+  main > .site-map .cards3, main > .visitor-paths .cards3 { width: 100%; max-width: none; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  main > .visitor-paths > .brief { margin-left: 0; margin-right: auto; }
+
   main :is(figure, table, .table-wrap, .fc-tw, .cards3, .cards, .grid, .cta-grid, .ctool, .fc, .cx, .st-lab, .ph-lab, .sun, .bs-viewer, .cvt-2x2, .cvt-sticky, .sun-dash, #try-it, .course-catalogue, .thread-path)
     :is(p, ul, ol, dl, h1, h2, h3, h4, details, .muted) { max-width: none; margin-left: 0; margin-right: 0; }
   main :is(figure, .table-wrap, .fc-tw, .ctool, .fc, .cx, .st-lab, .ph-lab, .sun, .bs-viewer, #try-it) { max-width: none; }
@@ -436,6 +442,13 @@ pre.cite-ex { white-space: pre-wrap; background: var(--soft); padding: 12px 14px
 .st-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0; width: min(1280px, calc(100vw - 32px)); position: relative; left: 50%; transform: translateX(-50%); }
 .st-cell { border: 1px solid var(--line, #d8e0e8); border-radius: 12px; padding: 10px 12px; background: var(--paper, #fff); min-width: 0; } .st-cell h4 { margin: 0 0 4px; font-size: 1rem; }
 @media (max-width: 900px) { .st-pair { grid-template-columns: 1fr; width: auto; left: 0; transform: none; } }
+
+/* Homepage layout for phones: portrait and introduction first, then one clear card per row. */
+@media (max-width: 720px) {
+  main > .site-map > h2 { text-align: left; }
+  main > .site-map .cards3, main > .visitor-paths .cards3 { grid-template-columns: 1fr; }
+  main > .visitor-paths > .brief { max-width: none; }
+}
 
 /* complex-valued forecasting */
 .cx { margin: 14px 0; padding: 16px; background: var(--paper); border: 1px solid var(--line); border-radius: 12px; }
