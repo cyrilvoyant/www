@@ -93,13 +93,13 @@
     var EX={
       hta:{a:'Traitement A',b:'Traitement B',u:'mmHg',q:'baisse de la pression systolique après 8 semaines',m1:14,s1:5,m2:8,s2:6,n:12,
            src:'Exemple construit pour l’exercice : 12 patients par groupe, valeurs fictives.'},
-      gfi:{a:'GFI gauche',b:'GFI droit',u:'',q:'mesure de l’aire de Broca (exemple du cours)',m1:36,s1:9.4195,m2:70.25,s2:4.6928,n:12,
-           src:'Exemple du cours, diapositive 97 : n = 12 par groupe, moyennes 36 et 70,25, variances 88,73 et 22,02 ; le cours trouve t = −11,27 pour 22 ddl.'}};
+      gfi:{a:'Lésion GFI gauche',b:'Lésion GFI droit',u:'',q:'score de dénomination de patients atteints d’une lésion du GFI, l’aire de Broca (exemple du cours)',m1:36,s1:9.4195,m2:70.25,s2:4.6928,n:12,
+           src:'Exemple du cours, diapositives 94 à 97 : n = 12 par groupe, moyennes 36 et 70,25, variances 88,73 et 22,02 ; le cours trouve t = −11,27 pour 22 ddl.'}};
     var cur=EX.hta;
     var presets=node('div',{'class':'st-presets'},b);
-    [['hta','Exemple : deux traitements de l’hypertension'],['gfi','Exemple du cours : aire de Broca (diapositive 97)']].forEach(function(p){var bt=node('button',{type:'button'},presets,p[1]);bt.addEventListener('click',function(){load(EX[p[0]]);});});
-    var ctl=node('div',{'class':'st-controls'},b),m1=control(ctl,'Moyenne groupe 1','range',0,100,.25,14),s1=control(ctl,'Écart-type groupe 1','range',.5,30,.01,5),
-        m2=control(ctl,'Moyenne groupe 2','range',0,100,.25,8),s2=control(ctl,'Écart-type groupe 2','range',.5,30,.01,6),n=control(ctl,'Patients par groupe n','range',3,60,1,12);
+    [['hta','Exemple : deux traitements de l’hypertension'],['gfi','Exemple du cours : lésions de l’aire de Broca (diapositives 94 à 97)']].forEach(function(p){var bt=node('button',{type:'button'},presets,p[1]);bt.addEventListener('click',function(){load(EX[p[0]]);});});
+    var ctl=node('div',{'class':'st-controls'},b),m1=control(ctl,'Moyenne groupe 1','range',0,100,.25,14),s1=control(ctl,'Écart-type groupe 1','range',.5,30,.0001,5),
+        m2=control(ctl,'Moyenne groupe 2','range',0,100,.25,8),s2=control(ctl,'Écart-type groupe 2','range',.5,30,.0001,6),n=control(ctl,'Patients par groupe n','range',3,60,1,12);
     var story=node('p',{'class':'st-reading'},b);
     var metrics=node('div',{'class':'st-metrics','aria-live':'polite'},b);
     var pair=node('div',{'class':'st-pair'},b), left=node('div',{'class':'st-cell'},pair), right=node('div',{'class':'st-cell'},pair);   // 1×2: distributions | test (Cyril, 25/10)
@@ -131,7 +131,7 @@
       var yA=52;svg('line',{x1:X(Math.min(a1,a2)),x2:X(Math.max(a1,a2)),y1:yA,y2:yA,stroke:'#193d5b','stroke-width':2},dist);
       svg('text',{x:(X(a1)+X(a2))/2,y:yA-6,'text-anchor':'middle','class':'st-axis'},dist,'Δ = '+num(a1-a2,2)+u);
       [lo,(lo+hi)/2,hi].forEach(function(x){svg('text',{x:X(x),y:296,'text-anchor':'middle','class':'st-axis'},dist,num(x,1));});
-      legend.textContent='Courbes pleines : répartition des patients de chaque groupe (moyenne ± écart-type). Pointillés : précision de la moyenne du groupe, d’écart-type s/√n. Points : les '+nn+' patients de chaque groupe (valeurs construites pour avoir exactement la moyenne et l’écart-type affichés). Les patients se chevauchent ; ce qui compte pour le test, c’est le chevauchement des pointillés.';
+      legend.textContent='Courbes pleines : répartition des patients de chaque groupe (moyenne ± écart-type). Pointillés : précision de la moyenne du groupe, d’écart-type s/√n. Points : les '+nn+' patients de chaque groupe (valeurs construites pour avoir exactement la moyenne et l’écart-type affichés). Les patients se chevauchent. Le test ne lit pas ce chevauchement : il compare Δ à l’erreur standard de Δ, √(s₁²/n + s₂²/n). Des pointillés séparés annoncent un t grand ; des pointillés qui se touchent ne suffisent pas à conclure, seul t tranche.';
       // 2. the three steps of the course
       metrics.replaceChildren();
       metric(metrics,'1. Écart des moyennes Δ',num(r.difference,2)+u);metric(metrics,'2. Écart-type commun sₚ',num(sp,2));metric(metrics,'Erreur standard de Δ',num(r.se,3));
@@ -151,7 +151,7 @@
         :'|t calculé| = '+num(Math.abs(r.t),2)+' ≤ t table = '+num(r.critical,3)+' (ddl = '+r.df+', α = 0,05) : H₀ non rejetée. L’écart observé peut s’expliquer par le hasard ; cela ne prouve pas que les traitements sont équivalents.');
       steps.textContent='Calcul du cours : sₚ = √{[(n₁ − 1)s₁² + (n₂ − 1)s₂²]/(n₁ + n₂ − 2)} = '+num(sp,3)+' ; t = Δ/(sₚ √(1/n₁ + 1/n₂)) = '+num(r.difference,2)+'/'+num(r.se,3)+' = '+num(r.t,3)+'. Essayez : augmentez n sans changer les moyennes, les pointillés se resserrent et t grandit.';
       var ratio=Math.max(b1,b2)*Math.max(b1,b2)/(Math.min(b1,b2)*Math.min(b1,b2));
-      cond.textContent='Conditions du cours : deux groupes indépendants (patients différents), distributions proches de la loi normale, variances homogènes, à vérifier (ici, rapport des variances = '+num(ratio,2)+'). Si les mêmes patients sont mesurés avant et après, c’est le test apparié, sur les différences.';
+      cond.textContent='Conditions du cours : deux groupes indépendants (patients différents), distributions proches de la loi normale, variances homogènes, à vérifier (ici, rapport des variances = '+num(ratio,2)+'). Si elles diffèrent nettement, le cours passe au dénominateur √(s₁²/n₁ + s₂²/n₂) ; avec n₁ = n₂, le t est le même. Si les mêmes patients sont mesurés avant et après, c’est le test apparié, sur les différences.';
     }
     [m1,s1,m2,s2,n].forEach(function(c){c.i.addEventListener('input',draw);});draw();
   }

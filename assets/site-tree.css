@@ -36,7 +36,7 @@
 @media(max-width:1549px){
  body.site-tree-open{overflow:hidden}
  .site-layout{display:block;max-width:1280px;padding:0 16px}
- .site-tree{position:fixed;top:0;bottom:0;left:0;width:min(88vw,360px);max-height:none;padding:14px 10px 14px 14px;background:#f4f7fa;box-shadow:0 12px 36px #17253636;transform:translateX(-110%);visibility:hidden;pointer-events:none;transition:transform .2s ease,visibility .2s ease;z-index:70}
+ .site-tree{position:fixed;top:0;bottom:0;left:0;align-self:stretch;overflow-y:auto;width:min(88vw,360px);max-height:none;padding:14px 10px 14px 14px;background:#f4f7fa;box-shadow:0 12px 36px #17253636;transform:translateX(-110%);visibility:hidden;pointer-events:none;transition:transform .2s ease,visibility .2s ease;z-index:70}
  .site-tree.is-open{transform:translateX(0);visibility:visible;pointer-events:auto}
  .site-tree-head{border-radius:10px 10px 0 0}
  .tree-close{display:block;flex:none}

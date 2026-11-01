@@ -296,7 +296,7 @@
       var p = function (x) { return (100 * x / r.dh).toFixed(1) + "%"; }, q = function (x) { return (100 * x / r.dh).toFixed(0) + " %"; };
       bar.innerHTML = '<i class="s1" style="width:' + p(r.a) + '"></i><i class="s2" style="width:' + p(r.b) + '"></i><i class="s3" style="width:' + p(r.c) + '"></i>';
       out.innerHTML = "Δh = <b>" + f(r.dh, 0) + " kJ/kg</b> : 1. produit frais " + f(r.a, 0) + " (" + q(r.a) + "), <b>2. chaleur latente " + f(r.b, 0) +
-        " (" + q(r.b) + ")</b>, 3. produit congelé " + f(r.c, 0) + " (" + q(r.c) + "). Le palier est long : geler l'eau coûte plus que tout le reste, alors que la température ne bouge presque pas." +
+        " (" + q(r.b) + ")</b>, 3. produit congelé " + f(r.c, 0) + " (" + q(r.c) + "). " + (r.b > r.a + r.c ? "Ici, geler l'eau coûte plus que tout le reste" : "Ici, geler l'eau coûte moins que les deux refroidissements réunis") + " ; pendant le palier, la température ne bouge pas dans ce modèle." +
         "<br>Pour " + f(+cM.i.value, 0) + " kg en " + f(+cDt.i.value, 1) + " h, puissance frigorifique moyenne : <b>" + f(r.P, 1) +
         " kW</b> (cp,frais = 3,6 et cp,congelé = 1,8 kJ/kg·K, valeurs typiques ; modèle à palier franc, pertes de l'installation non comptées).";
     }
@@ -309,7 +309,7 @@
   }
 
   function cop(box) {
-    box.appendChild(h("h3", {}, "Machine frigorifique : combien de travail pour extraire 1 kJ de froid ?"));
+    box.appendChild(h("h3", {}, "Machine frigorifique : combien de travail pour extraire 1 kJ de chaleur au froid ?"));
     box.appendChild(h("p", { "class": "muted" }, "Une machine frigorifique pompe la chaleur du côté froid (évaporateur, Tf) vers le côté chaud (condenseur, Tc), en dépensant du travail W. " +
       "Le COP compare la chaleur extraite au travail : COP = Q<sub>f</sub>/W. La borne de Carnot, COP<sub>C</sub> = Tf/(Tc − Tf) en kelvins, est le meilleur COP possible ; aucune machine réelle ne l'atteint."));
     box.appendChild(h("p", {}, "L’axe de −40 à +10 °C fait varier seulement la source froide. Par défaut : froid −10 °C, chaud +40 °C, soit 263,15 K et 313,15 K : COP maximal = 263,15/50 = 5,26. Cela signifie au plus 5,26 J extraits pour 1 J de travail. Autre couple de sources : froid −40 °C, chaud +10 °C → 233,15/50 = 4,66. Les curseurs de ce graphique gardent la source chaude entre +20 et +60 °C."));

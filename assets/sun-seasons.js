@@ -23,7 +23,7 @@
     len: "durée du jour", rise: "lever", set: "coucher", noon: "midi solaire", local: "heure légale", now: "maintenant", elev: "hauteur du Soleil",
     night: "nuit", dayL: "jour", hm: function (m) { var h = Math.floor(m / 60), mn = Math.round(m - 60 * h); if (mn === 60) { h++; mn = 0; } return h ? h + " h " + String(mn).padStart(2, "0") : mn + " min"; },
     g0: "G0 hors atmosphère (W/m²)", h0: "énergie par jour hors atmosphère (kWh/m²)", utcAx: "heure UTC", dayAx: "jour de l'année", heat: "Hors atmosphère, sur un plan horizontal, selon la date (horizontal) et l'heure UTC (vertical)",
-    ex: ["Aujourd'hui, 25/10/2026 : Paris passe à l'heure d'hiver", "29/03/2026 : Paris passe à l'heure d'été", "04/10/2026 : Sydney passe à l'heure d'été"],
+    ex: ["25/10/2026 : Paris passe à l'heure d'hiver", "29/03/2026 : Paris passe à l'heure d'été", "04/10/2026 : Sydney passe à l'heure d'été"],
     dup: "heure vue deux fois", miss: "une heure sautée juste avant", utcCol: "UTC (une seule horloge)", same: "même instant"
   } : {
     date: "Date", time: "Instant (UTC)", year: "▶ One year", day: "▶ One day", stop: "❚❚ Pause", months: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
@@ -33,7 +33,7 @@
     len: "day length", rise: "sunrise", set: "sunset", noon: "solar noon", local: "legal time", now: "now", elev: "sun elevation",
     night: "night", dayL: "day", hm: function (m) { var h = Math.floor(m / 60), mn = Math.round(m - 60 * h); if (mn === 60) { h++; mn = 0; } return h ? h + " h " + String(mn).padStart(2, "0") : mn + " min"; },
     g0: "extraterrestrial G0 (W/m²)", h0: "extraterrestrial energy per day (kWh/m²)", utcAx: "UTC hour", dayAx: "day of the year", heat: "Outside the atmosphere, on a horizontal plane, by date (horizontal) and UTC hour (vertical)",
-    ex: ["Today, 25/10/2026: Paris goes back to winter time", "29/03/2026: Paris moves to summer time", "04/10/2026: Sydney moves to summer time"],
+    ex: ["25/10/2026: Paris goes back to winter time", "29/03/2026: Paris moves to summer time", "04/10/2026: Sydney moves to summer time"],
     dup: "hour seen twice", miss: "one hour skipped just before", utcCol: "UTC (one single clock)", same: "same instant"
   };
 

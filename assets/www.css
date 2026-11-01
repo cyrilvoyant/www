@@ -437,9 +437,10 @@ pre.cite-ex { white-space: pre-wrap; background: var(--soft); padding: 12px 14px
 .fp-verdict{border-left:4px solid #086b94;background:var(--paper);padding:10px 14px}
 
 /* Student 1×2 (25/10) */
-.st-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0; width: min(1280px, calc(100vw - 32px)); position: relative; left: 50%; transform: translateX(-50%); }
+.st-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0; width: 100%; }   /* stays inside its tool: no break-out over the side tree */
 .st-cell { border: 1px solid var(--line, #d8e0e8); border-radius: 12px; padding: 10px 12px; background: var(--paper, #fff); min-width: 0; } .st-cell h4 { margin: 0 0 4px; font-size: 1rem; }
-@media (max-width: 900px) { .st-pair { grid-template-columns: 1fr; width: auto; left: 0; transform: none; } }
+@media (max-width: 900px) { .st-pair { grid-template-columns: 1fr; } }
+@media (max-width: 720px) { .tool-dock, .fp-dock { max-height: 40vh; } .xs-bar a { display: inline-block; min-height: 32px; line-height: 32px; } }
 
 /* Homepage layout for phones: portrait and introduction first, then one clear card per row. */
 @media (max-width: 720px) {
