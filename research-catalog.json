@@ -2709,6 +2709,74 @@
       ]
     },
     {
+      "url": "https://www.cyrilvoyant.com/fr/recits/calculateur-bed-eqd2-lq-lql/",
+      "title": "Calculateur gratuit de BED et d'EQD2 : LQ ou LQL ?",
+      "language": "fr",
+      "topics": [
+        "Calculer directement",
+        "Médecine"
+      ],
+      "citations": [],
+      "sections": [
+        {
+          "title": "LQ ou LQL ?",
+          "anchor": null
+        },
+        {
+          "title": "Ce que couvre le calculateur",
+          "anchor": null
+        },
+        {
+          "title": "Autres calculateurs",
+          "anchor": null
+        },
+        {
+          "title": "Limites",
+          "anchor": null
+        },
+        {
+          "title": "À lire et à utiliser",
+          "anchor": null
+        },
+        {
+          "title": "Références",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/recits/evaluer-prevision-solaire-persistance/",
+      "title": "Comment évaluer une prévision solaire face à la persistance",
+      "language": "fr",
+      "topics": [
+        "Démontrer la confiance",
+        "Énergie"
+      ],
+      "citations": [],
+      "sections": [
+        {
+          "title": "La marche à suivre",
+          "anchor": null
+        },
+        {
+          "title": "NICE, un exemple complet",
+          "anchor": null
+        },
+        {
+          "title": "Limites",
+          "anchor": null
+        },
+        {
+          "title": "À lire et à utiliser",
+          "anchor": null
+        },
+        {
+          "title": "Références",
+          "anchor": null
+        }
+      ]
+    },
+    {
       "url": "https://www.cyrilvoyant.com/fr/recits/lql-equiv/",
       "title": "Calculer plutôt qu'apprendre : l'équivalence de dose en radiothérapie avec LQL-Equiv",
       "language": "fr",
@@ -2840,6 +2908,42 @@
         },
         {
           "title": "Pour aller plus loin",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/recits/reference-prevision-solaire-deep-learning/",
+      "title": "Quelle référence une prévision solaire doit-elle battre ? Quand le deep learning vaut-il la peine ?",
+      "language": "fr",
+      "topics": [
+        "Démontrer la confiance",
+        "Énergie"
+      ],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Quoi tester, dans l'ordre",
+          "anchor": null
+        },
+        {
+          "title": "Deux résultats, de cours et publié",
+          "anchor": null
+        },
+        {
+          "title": "Ce qui compte comme un gain",
+          "anchor": null
+        },
+        {
+          "title": "Limites",
+          "anchor": null
+        },
+        {
+          "title": "À lire et à utiliser",
+          "anchor": null
+        },
+        {
+          "title": "Références",
           "anchor": null
         }
       ]
@@ -3751,6 +3855,74 @@
       ]
     },
     {
+      "url": "https://www.cyrilvoyant.com/stories/bed-eqd2-calculator-lq-lql/",
+      "title": "Free BED and EQD2 calculator: LQ or LQL?",
+      "language": "en",
+      "topics": [
+        "Compute directly",
+        "Medicine"
+      ],
+      "citations": [],
+      "sections": [
+        {
+          "title": "LQ or LQL?",
+          "anchor": null
+        },
+        {
+          "title": "What the calculator covers",
+          "anchor": null
+        },
+        {
+          "title": "Other calculators",
+          "anchor": null
+        },
+        {
+          "title": "Limits",
+          "anchor": null
+        },
+        {
+          "title": "To read and to use",
+          "anchor": null
+        },
+        {
+          "title": "References",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/stories/evaluate-solar-forecast-persistence/",
+      "title": "How to evaluate a solar forecast against persistence",
+      "language": "en",
+      "topics": [
+        "Demonstrate trust",
+        "Energy"
+      ],
+      "citations": [],
+      "sections": [
+        {
+          "title": "The steps",
+          "anchor": null
+        },
+        {
+          "title": "NICE, a worked case",
+          "anchor": null
+        },
+        {
+          "title": "Limits",
+          "anchor": null
+        },
+        {
+          "title": "To read and to use",
+          "anchor": null
+        },
+        {
+          "title": "References",
+          "anchor": null
+        }
+      ]
+    },
+    {
       "url": "https://www.cyrilvoyant.com/stories/lql-equiv/",
       "title": "Compute, don't learn: radiobiological dose equivalence with LQL-Equiv",
       "language": "en",
@@ -3858,6 +4030,42 @@
         },
         {
           "title": "Go further",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/stories/solar-forecast-baseline-deep-learning/",
+      "title": "Which baseline must a solar model beat? When is deep learning worth it?",
+      "language": "en",
+      "topics": [
+        "Demonstrate trust",
+        "Energy"
+      ],
+      "citations": [],
+      "sections": [
+        {
+          "title": "What to test, in order",
+          "anchor": null
+        },
+        {
+          "title": "Two published or teaching results",
+          "anchor": null
+        },
+        {
+          "title": "What counts as a gain",
+          "anchor": null
+        },
+        {
+          "title": "Limits",
+          "anchor": null
+        },
+        {
+          "title": "To read and to use",
+          "anchor": null
+        },
+        {
+          "title": "References",
           "anchor": null
         }
       ]

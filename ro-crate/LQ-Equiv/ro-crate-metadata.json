@@ -39,6 +39,9 @@
      "@id": "https://www.cyrilvoyant.com/fr/outils/doses-lq-lql/"
     },
     {
+     "@id": "https://www.cyrilvoyant.com/fr/recits/calculateur-bed-eqd2-lq-lql/"
+    },
+    {
      "@id": "https://www.cyrilvoyant.com/fr/recits/lql-equiv/"
     },
     {
@@ -46,6 +49,9 @@
     },
     {
      "@id": "https://www.cyrilvoyant.com/overview/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/stories/bed-eqd2-calculator-lq-lql/"
     },
     {
      "@id": "https://www.cyrilvoyant.com/stories/lql-equiv/"
@@ -101,6 +107,11 @@
    "name": "www.cyrilvoyant.com/fr/outils/doses-lq-lql/"
   },
   {
+   "@id": "https://www.cyrilvoyant.com/fr/recits/calculateur-bed-eqd2-lq-lql/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/fr/recits/calculateur-bed-eqd2-lq-lql/"
+  },
+  {
    "@id": "https://www.cyrilvoyant.com/fr/recits/lql-equiv/",
    "@type": "WebPage",
    "name": "www.cyrilvoyant.com/fr/recits/lql-equiv/"
@@ -114,6 +125,11 @@
    "@id": "https://www.cyrilvoyant.com/overview/",
    "@type": "WebPage",
    "name": "www.cyrilvoyant.com/overview/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/stories/bed-eqd2-calculator-lq-lql/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/stories/bed-eqd2-calculator-lq-lql/"
   },
   {
    "@id": "https://www.cyrilvoyant.com/stories/lql-equiv/",

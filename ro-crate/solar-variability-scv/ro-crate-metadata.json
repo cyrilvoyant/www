@@ -51,6 +51,9 @@
      "@id": "https://www.cyrilvoyant.com/fr/outils/variabilite-previsibilite/"
     },
     {
+     "@id": "https://www.cyrilvoyant.com/fr/recits/evaluer-prevision-solaire-persistance/"
+    },
+    {
      "@id": "https://www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/"
     },
     {
@@ -70,6 +73,9 @@
     },
     {
      "@id": "https://www.cyrilvoyant.com/research-projects/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/stories/evaluate-solar-forecast-persistence/"
     },
     {
      "@id": "https://www.cyrilvoyant.com/stories/variability-memory-forecastability/"
@@ -144,6 +150,11 @@
    "name": "www.cyrilvoyant.com/fr/outils/variabilite-previsibilite/"
   },
   {
+   "@id": "https://www.cyrilvoyant.com/fr/recits/evaluer-prevision-solaire-persistance/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/fr/recits/evaluer-prevision-solaire-persistance/"
+  },
+  {
    "@id": "https://www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/",
    "@type": "WebPage",
    "name": "www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/"
@@ -177,6 +188,11 @@
    "@id": "https://www.cyrilvoyant.com/research-projects/",
    "@type": "WebPage",
    "name": "www.cyrilvoyant.com/research-projects/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/stories/evaluate-solar-forecast-persistence/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/stories/evaluate-solar-forecast-persistence/"
   },
   {
    "@id": "https://www.cyrilvoyant.com/stories/variability-memory-forecastability/",

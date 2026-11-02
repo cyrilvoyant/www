@@ -63,6 +63,9 @@
      "@id": "https://www.cyrilvoyant.com/fr/outils/blend/"
     },
     {
+     "@id": "https://www.cyrilvoyant.com/fr/recits/reference-prevision-solaire-deep-learning/"
+    },
+    {
      "@id": "https://www.cyrilvoyant.com/fr/vue-d-ensemble/"
     },
     {
@@ -76,6 +79,9 @@
     },
     {
      "@id": "https://www.cyrilvoyant.com/prevision-solaire-faire-simple/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/stories/solar-forecast-baseline-deep-learning/"
     }
    ],
    "keywords": [
@@ -181,6 +187,11 @@
    "name": "www.cyrilvoyant.com/fr/outils/blend/"
   },
   {
+   "@id": "https://www.cyrilvoyant.com/fr/recits/reference-prevision-solaire-deep-learning/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/fr/recits/reference-prevision-solaire-deep-learning/"
+  },
+  {
    "@id": "https://www.cyrilvoyant.com/fr/vue-d-ensemble/",
    "@type": "WebPage",
    "name": "www.cyrilvoyant.com/fr/vue-d-ensemble/"
@@ -204,6 +215,11 @@
    "@id": "https://www.cyrilvoyant.com/prevision-solaire-faire-simple/",
    "@type": "WebPage",
    "name": "www.cyrilvoyant.com/prevision-solaire-faire-simple/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/stories/solar-forecast-baseline-deep-learning/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/stories/solar-forecast-baseline-deep-learning/"
   }
  ]
 }

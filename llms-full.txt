@@ -273,6 +273,10 @@ Research: questions, findings and methods
  NICE compares a model's errors with those of persistence.
  Demonstrate trust · Energy Beyond pointwise errors: the γ-index
  A tolerance-based test carried over from radiotherapy.
+ Demonstrate trust · Energy How to evaluate a solar forecast against persistence
+ Same targets, stated scope, several error norms, a test: the steps, with NICE as a worked case.
+ Demonstrate trust · Energy Which baseline must a solar model beat? When is deep learning worth it?
+ From persistence to deep networks: what to test first, and what counts as a gain.
  Medical physics
  Compute directly · Medicine Atmospheric neutrons and BNCT: quantify the limit
  An exploratory 2011 model: rare captures, local energy and a mean dose too low for macroscopic therapy.
@@ -280,6 +284,8 @@ Research: questions, findings and methods
  One fraction of 15 Gy to the rectum: 72.7 Gy under LQ, 59.4 Gy under LQL.
  Hybridize · Medicine Thyroid cancer and radioiodine: model first
  Marie Fusella Giuntini and Dominique Barbolosi : three equations, 50 patients, a hybrid twin in progress.
+ Compute directly · Medicine Free BED and EQD2 calculator: LQ or LQL?
+ A browser calculator, and when the choice of model changes the answer.
  AI and scientific interfaces
  AI in its place · Language Let the language model read, let the validated code compute
  Execute, clarify or refuse: never guess.
@@ -338,6 +344,10 @@ Recherche : questions, résultats et méthodes
  NICE rapporte les erreurs d'un modèle à celles de la persistance.
  Démontrer la confiance · Énergie Une prévision décalée peut rester exploitable : le test gamma
  Un test à tolérances venu de la radiothérapie.
+ Démontrer la confiance · Énergie Comment évaluer une prévision solaire face à la persistance
+ Mêmes cibles, périmètre annoncé, plusieurs normes d'erreur, un test : la marche à suivre, avec NICE en exemple.
+ Démontrer la confiance · Énergie Quelle référence une prévision solaire doit-elle battre ? Quand le deep learning vaut-il la peine ?
+ De la persistance aux réseaux profonds : quoi tester d'abord, et ce qui compte comme un gain.
  Physique médicale
  Calculer directement · Médecine Neutrons atmosphériques et BNCT : quantifier la limite
  Un modèle exploratoire de 2011 : captures rares, énergie locale et dose moyenne insuffisante pour une thérapie macroscopique.
@@ -345,6 +355,8 @@ Recherche : questions, résultats et méthodes
  Une fraction de 15 Gy au rectum : 72,7 Gy en LQ, 59,4 Gy en LQL.
  Hybrider · Médecine Cancer de la thyroïde et iode radioactif : le modèle d'abord
  Marie Fusella Giuntini et Dominique Barbolosi  : trois équations, 50 patients, un jumeau hybride en cours.
+ Calculer directement · Médecine Calculateur gratuit de BED et d'EQD2 : LQ ou LQL ?
+ Un calculateur dans le navigateur, et quand le choix du modèle change la réponse.
  IA et interfaces scientifiques
  L'IA à sa place · Langage Au modèle de langage la lecture, au code validé le calcul
  Exécuter, clarifier ou refuser : jamais deviner.
@@ -1668,6 +1680,64 @@ Open courses in French: biostatistics, medical physics, industrial physics and f
  License CC BY 4.0 : free reuse, including modification and commercial use, with credit to the author (Cyril Voyant). How to cite: Cite and reuse . In English: the solar forecasting course .
 
 ---
+URL: https://www.cyrilvoyant.com/stories/bed-eqd2-calculator-lq-lql/
+
+Free BED and EQD2 calculator: LQ or LQL?
+ LQL-Equiv is a free, open-source (MIT) calculator of BED and EQD2 under the LQ and LQL models. It runs in the browser, and nothing entered leaves the page. Its authors are Cyril Voyant and Daniel Julian. It is a research and teaching tool, not a medical device: not for choosing or changing a prescription.
+ Cyril Voyant · Mines Paris – PSL, Centre O.I.E. · 2 November 2026
+ LQ or LQL?
+ For n fractions of dose d, the linear-quadratic model gives BED = n · d · (1 + d / (α/β)) , and EQD2 = BED / (1 + 2/(α/β)) . The LQ curve keeps bending upward as the dose per fraction grows. The LQL model keeps it up to a transition dose d T , then continues in a straight line.
+ Below the transition dose, the two models agree. Above it, they part. For one fraction of 15 Gy to the rectum (α/β = 3.9 Gy, d T = 7.8 Gy):
+ LQ: 15 × (1 + 15/3.9) = 72.7 Gy ;
+ LQL: 7.8 × (1 + 7.8/3.9) + 5 × (15 − 7.8) = 59.4 Gy , or 18 % lower.
+ The model must therefore be stated whenever hypofractionated and conventional schedules are compared.
+ What the calculator covers
+ Documented parameters for 34 organs at risk and 20 tumour sites.
+ Gaps, two fractions a day and tumour repopulation.
+ NTCP and TCP as model illustrations, never validated against clinical outcomes.
+ The 2026 version reproduces the 2014 software on 4,438 schedules: 69,125 of 69,131 values agree.
+ Other calculators
+ Other tools exist, such as the eviQ BED and EQD2 calculators . Check which model and which α/β each one uses before comparing results.
+ Limits
+ The result is only as good as the model and its parameters (α/β, d T , slope of the linear tail), which remain uncertain.
+ To read and to use
+ Open the calculator · the story · equations and validation · code
+ References
+ Cyril Voyant , Daniel Julian . LQL-Equiv . SoftwareX 36, 103085 (2026).
+ Cyril Voyant , Daniel Julian , Stéphane Muraro , Véronique Bodez , Morgane Pinpin , Delphine Leschi, Rudy Oozeer, Guiddi Wided, Marie-Aimée Acquaviva , Sylvain Prapant, Omar Gahbiche, Noureddine Bouaouina . Improving clinical decision-making in radiotherapy: a comparative analysis of linear-quadratic (LQ) and linear-quadratic-linear (LQL) dose models . Clinical Oncology 45, 103893 (2025).
+ Cyril Voyant et al.. LQL-Equiv, original software . Reports of Practical Oncology and Radiotherapy (2014).
+
+---
+URL: https://www.cyrilvoyant.com/stories/evaluate-solar-forecast-persistence/
+
+How to evaluate a solar forecast against persistence
+ Compare the model with persistence on the same targets, horizon and scope, report more than one error norm, then test the difference. The ratio of the model's error to that of persistence says what the model adds. The NICEᵏ metrics (Voyant et al., 2025) build this ratio for norms of order one, two and three.
+ Cyril Voyant · Mines Paris – PSL, Centre O.I.E. · 2 November 2026
+ The steps
+ Name the reference. Say which persistence is used: last observation, clear-sky-index (smart) persistence, or a phase-aware reference such as BLEND. A skill score means little without this.
+ Use the same targets. Same site, period, horizon and forecast times for the model and the reference.
+ State the scope. Daytime only, or day and night. Including night changes the evaluated population and the normalization.
+ Report several norms. MAE and RMSE do not weight large errors alike. Keep absolute errors next to relative scores.
+ Test the difference. Compare error distributions across stations or periods, for instance with a Wilcoxon test.
+ Describe the signal. A large error does not mean the same thing under a regular sky and under strongly fluctuating irradiance. sCV and F characterize variability and forecastability before algorithms are compared.
+ NICE, a worked case
+ NICE¹ = MAE / MAE p and NICE² = RMSE / RMSE p , where p is simple persistence at the same horizon. NICE³ uses the cube root of the mean cubed absolute error. NICEΣ combines the three.
+ A useful predictor lies between 0 and 1. Above 1, the model does worse than the simplest predictor, or there is a numerical or other problem.
+ In the published study, at a thirty-minute horizon, an ELM and an autoregressive model share a rounded median nRMSE of 0.19. NICEΣ gives 0.75 versus 0.77. On that protocol the test gives p < 0.001 for NICEΣ and p = 0.0591 for nRMSE. Validation combines Monte Carlo simulations and 68 SIAR stations in Spain.
+ Limits
+ These values concern that protocol and those distributions. They do not measure the economic value of an improvement, and they do not rank methods in general.
+ To read and to use
+ The NICE study, explained · theory, code and runnable example
+ Compare forecasts interactively : persistence, BLEND, AR and ELM on public data
+ sCV and F : how variable and how forecastable is the signal
+ Other references: Yang et al. (2020) on the verification of deterministic forecasts; Marquez and Coimbra on a metric relating forecast uncertainty to variability
+ References
+ Cyril Voyant , Milan Despotovic , Luis Garcia-Gutierrez , Rodrigo Amaro e Silva , Philippe Lauret , Ted Soubdhan , Nadjem Bailek . NICEᵏ metrics: Unified and multidimensional framework for evaluating deterministic solar forecasting accuracy . Sustainable Energy Technologies and Assessments 83, 104588 (2025).
+ Cyril Voyant , Alan Julien , Milan Despotovic , Gilles Notton , Luis Antonio Garcia-Gutierrez , Claudio Francesco Nicolosi , Philippe Blanc , Jamie Bright . Stochastic coefficient of variation: Assessing the variability and forecastability of solar irradiance . Renewable Energy 256, 123913 (2026).
+ Dazhi Yang , Stefano Alessandrini, Javier Antonanzas, Fernando Antonanzas-Torres et al.. Verification of deterministic solar forecasts . Solar Energy 210 (2020).
+ Ricardo Marquez, Carlos F. M. Coimbra. Proposed Metric for Evaluation of Solar Forecasting Models . Journal of Solar Energy Engineering 135.
+
+---
 URL: https://www.cyrilvoyant.com/stories/lql-equiv/
 
 Compute, don't learn: radiobiological dose equivalence with LQL-Equiv
@@ -1794,6 +1864,36 @@ Satellite irradiance forecasting: one cell, a patch or the whole field
  Code and data extract : github.com/cyrilvoyant/cell-vs-field-irradiance · archive doi:10.5281/zenodo.23562557 · data HelioClim-3, SoDa service, under its terms of use
  Same idea elsewhere : MIMO-ELM, seven energy signals of Corsica forecast by one model · how much model is enough?
  The approach behind this work : Understand before you compute
+
+---
+URL: https://www.cyrilvoyant.com/stories/solar-forecast-baseline-deep-learning/
+
+Which baseline must a solar model beat? When is deep learning worth it?
+ Start with persistence, then a phase-aware reference, an autoregression and a frugal learner. Keep a deep network only if it brings a measured gain on the same protocol. Deep learning can be worth it. It has to show this against references that cost almost nothing to run.
+ Cyril Voyant · Mines Paris – PSL, Centre O.I.E. · 2 November 2026
+ What to test, in order
+ Simple persistence. The last observed value: the minimal reference of any forecast.
+ A reference that knows the cycle. Clear-sky-index persistence, or BLEND, which combines immediate memory with the value at the same phase of the cycle. BLEND works from raw irradiance and its weights are in closed form (Voyant et al., 2026).
+ An autoregression. Fitted by least squares on recent lags.
+ A frugal learner. An Extreme Learning Machine (Huang, Zhu and Siew, 2006) keeps a random hidden layer and fits its output weights analytically.
+ A deep network. LSTM, U-Net or larger, under the same split, horizons and tuning budget.
+ Two published or teaching results
+ Ajaccio, 2007 test year, one hour ahead (course UE14). The daytime nRMSE is 22.0 % for smart persistence, 21.3 % for AR(2) and 20.5 % for an ELM. The steps are small, and each is measured.
+ Corsican electricity system, six years of hourly data (Applied Energy, 2026). A multiple-output ELM is compared with persistence, single-output formulations and an LSTM under a realistic tuning budget. At one hour, nRMSE is 0.179 for solar generation.
+ What counts as a gain
+ The same targets, scope and horizon for all models.
+ Training rows kept apart from evaluation rows, including any scaling.
+ A difference tested across stations or periods, not only an average.
+ Costs reported with the error: parameters, training time, what the device can store.
+ Limits
+ These results concern the datasets and protocols studied. BLEND does not outperform every optimized method; autoregressive or learned predictors can do better under some conditions. Nothing here is a universal ranking.
+ To read and to use
+ Compare forecasts interactively on public PV data
+ BLEND explained · MIMO-ELM explained · the course
+ How to evaluate a solar forecast against persistence
+ References
+ Cyril Voyant , Candice Banes , Luis Garcia-Gutierrez , Gilles Notton , Milan Despotovic , Zaher Mundher Yaseen . Symmetry-constrained forecasting of periodically correlated energy processes . Applied Mathematical Modeling 157, 116988 (2026).
+ Cyril Voyant , Milan Despotovic , Luis Garcia-Gutierrez , Mohammed Asloune , Yves-Marie Saint-Drenan , Jean-Laurent Duchaud , Ghjuvan Antone Faggianelli , Elena Magliaro . Short-term forecasting of energy production and consumption using extreme learning machine: A comprehensive MIMO based ELM approach . Applied Energy 410, 127599 (2026).
 
 ---
 URL: https://www.cyrilvoyant.com/stories/thyroid-radioiodine/
@@ -3895,7 +3995,7 @@ Cyril Voyant
  Chaque travail est placé à l'étape dont il a besoin : une colonne de plus vers la droite seulement pour un gain mesuré. U-Net et LSTM ont été testés, non retenus.
  Démontrer la confiance
  Juger contre une référence, publier code, données et limites, rendre la recherche trouvable et réutilisable.
- Se questionner sur nos façons de faire de la recherche · L'IA dans la recherche : AI Act, charte et boîte à outils · Même nRMSE, modèles différents : ce que révèle NICE · Une prévision décalée peut rester exploitable : le test gamma · Visibilité académique : publier ne suffit plus · Excellence scientifique à l'ère de l'IA : du SEO au GEO
+ Se questionner sur nos façons de faire de la recherche · L'IA dans la recherche : AI Act, charte et boîte à outils · Même nRMSE, modèles différents : ce que révèle NICE · Une prévision décalée peut rester exploitable : le test gamma · Visibilité académique : publier ne suffit plus · Excellence scientifique à l'ère de l'IA : du SEO au GEO · Comment évaluer une prévision solaire face à la persistance · Quelle référence une prévision solaire doit-elle battre ? Quand le deep learning vaut-il la peine ?
  Récits
  Le modèle ne fait pas tout : variabilité et mémoire , Ajouter du bruit, modifier la mémoire, comparer les modèles appris à la persistance et à un oracle propre au générateur.
  Neutrons atmosphériques et BNCT : quantifier la limite , Un modèle exploratoire de 2011 : captures rares, énergie locale et dose moyenne insuffisante pour une thérapie macroscopique.
@@ -3913,6 +4013,9 @@ Cyril Voyant
  Une prévision décalée peut rester exploitable : le test gamma , Un test à tolérances venu de la radiothérapie.
  Visibilité académique : publier ne suffit plus , Un écosystème saturé, et une boîte à outils pour une recherche trouvable.
  Excellence scientifique à l'ère de l'IA : du SEO au GEO , Le cadre RTVACOS : rigueur, transparence, visibilité, adoption.
+ Comment évaluer une prévision solaire face à la persistance , Mêmes cibles, périmètre annoncé, plusieurs normes d'erreur, un test : la marche à suivre, avec NICE en exemple.
+ Quelle référence une prévision solaire doit-elle battre ? Quand le deep learning vaut-il la peine ? , De la persistance aux réseaux profonds : quoi tester d'abord, et ce qui compte comme un gain.
+ Calculateur gratuit de BED et d'EQD2 : LQ ou LQL ? , Un calculateur dans le navigateur, et quand le choix du modèle change la réponse.
  Voir et apprendre
  Le cours UE14 « Prévoir la ressource solaire intermittente » et la conférence « Research Excellence in 2026 » .
  Prévoir le soleil avec son incertitude : ELM contre persistance, démonstration sur trois jours
@@ -3995,6 +4098,8 @@ Le fil : cinq étapes, une même démarche
  Une année au pas de 10 minutes en 150 ms environ, limites énoncées.
  Calculer directement · Énergie Le ciel change, mais à quel point reste-t-il prévisible ?
  Deux indices (sCV et F) décrivent un site avant d'ajuster le moindre modèle.
+ Calculer directement · Médecine Calculateur gratuit de BED et d'EQD2 : LQ ou LQL ?
+ Un calculateur dans le navigateur, et quand le choix du modèle change la réponse.
  Le modèle au cœur · Étape suivante : Hybrider ↓
  2 Étape 2 sur 5 · Le modèle suffit-il ?
  Hybrider
@@ -4045,6 +4150,10 @@ Le fil : cinq étapes, une même démarche
  Un écosystème saturé, et une boîte à outils pour une recherche trouvable.
  Démontrer la confiance · Pratique de la recherche Excellence scientifique à l'ère de l'IA : du SEO au GEO
  Le cadre RTVACOS : rigueur, transparence, visibilité, adoption.
+ Démontrer la confiance · Énergie Comment évaluer une prévision solaire face à la persistance
+ Mêmes cibles, périmètre annoncé, plusieurs normes d'erreur, un test : la marche à suivre, avec NICE en exemple.
+ Démontrer la confiance · Énergie Quelle référence une prévision solaire doit-elle battre ? Quand le deep learning vaut-il la peine ?
+ De la persistance aux réseaux profonds : quoi tester d'abord, et ce qui compte comme un gain.
  La confiance se démontre
  L'approche, en détail · Tous les récits, par thème
 
@@ -4249,6 +4358,64 @@ Prévoir l'éclairement et son incertitude avec des nombres complexes
  Mesurer variabilité et prévisibilité : sCV et F : un site est-il difficile à prévoir, avant tout modèle ?.
 
 ---
+URL: https://www.cyrilvoyant.com/fr/recits/calculateur-bed-eqd2-lq-lql/
+
+Calculateur gratuit de BED et d'EQD2 : LQ ou LQL ?
+ LQL-Equiv est un calculateur gratuit et open source (MIT) de BED et d'EQD2 avec les modèles LQ et LQL. Il fonctionne dans le navigateur, et rien de ce qui est saisi ne quitte la page. Ses auteurs sont Cyril Voyant et Daniel Julian. C'est un outil de recherche et d'enseignement, pas un dispositif médical : il ne sert ni à choisir ni à modifier une prescription.
+ Cyril Voyant · Mines Paris – PSL, Centre O.I.E. · 2 novembre 2026
+ LQ ou LQL ?
+ Pour n fractions de dose d, le modèle linéaire-quadratique donne BED = n · d · (1 + d / (α/β)) , et EQD2 = BED / (1 + 2/(α/β)) . La courbe LQ continue de s'infléchir vers le haut quand la dose par fraction augmente. Le modèle LQL la conserve jusqu'à une dose de transition d T , puis continue en ligne droite.
+ Sous la dose de transition, les deux modèles sont d'accord. Au-dessus, ils s'écartent. Pour une fraction de 15 Gy au rectum (α/β = 3,9 Gy, d T = 7,8 Gy) :
+ LQ : 15 × (1 + 15/3,9) = 72,7 Gy ;
+ LQL : 7,8 × (1 + 7,8/3,9) + 5 × (15 − 7,8) = 59,4 Gy , soit 18 % de moins.
+ Le modèle doit donc être indiqué dès qu'on compare des schémas hypofractionnés et conventionnels.
+ Ce que couvre le calculateur
+ Paramètres documentés pour 34 organes à risque et 20 localisations tumorales.
+ Interruptions, deux fractions par jour et repopulation tumorale.
+ NTCP et TCP comme illustrations de modèle, jamais validées sur des résultats cliniques.
+ La version 2026 reproduit le logiciel de 2014 sur 4 438 schémas : 69 125 valeurs sur 69 131 concordent.
+ Autres calculateurs
+ D'autres outils existent, comme les calculateurs BED et EQD2 d'eviQ . Vérifiez quel modèle et quel α/β chacun utilise avant de comparer les résultats.
+ Limites
+ Le résultat ne vaut que ce que valent le modèle et ses paramètres (α/β, d T , pente de la partie linéaire), qui restent incertains.
+ À lire et à utiliser
+ Ouvrir le calculateur · comparer LQ et LQL · le récit · équations et validation · code
+ Références
+ Cyril Voyant , Daniel Julian . LQL-Equiv . SoftwareX 36, 103085 (2026).
+ Cyril Voyant , Daniel Julian , Stéphane Muraro , Véronique Bodez , Morgane Pinpin , Delphine Leschi, Rudy Oozeer, Guiddi Wided, Marie-Aimée Acquaviva , Sylvain Prapant, Omar Gahbiche, Noureddine Bouaouina . Improving clinical decision-making in radiotherapy: a comparative analysis of linear-quadratic (LQ) and linear-quadratic-linear (LQL) dose models . Clinical Oncology 45, 103893 (2025).
+ Cyril Voyant et al.. LQL-Equiv, original software . Reports of Practical Oncology and Radiotherapy (2014).
+
+---
+URL: https://www.cyrilvoyant.com/fr/recits/evaluer-prevision-solaire-persistance/
+
+Comment évaluer une prévision solaire face à la persistance
+ Comparez le modèle à la persistance sur les mêmes cibles, le même horizon et le même périmètre, donnez plus d'une norme d'erreur, puis testez la différence. Le rapport entre l'erreur du modèle et celle de la persistance dit ce que le modèle apporte. Les métriques NICEᵏ (Voyant et al., 2025) construisent ce rapport pour les normes d'ordre un, deux et trois.
+ Cyril Voyant · Mines Paris – PSL, Centre O.I.E. · 2 novembre 2026
+ La marche à suivre
+ Nommer la référence. Dire quelle persistance est utilisée : dernière observation, persistance de l'indice de ciel clair (smart persistence), ou référence qui tient compte de la phase comme BLEND. Sans cela, un score de compétence dit peu de chose.
+ Garder les mêmes cibles. Même site, même période, même horizon et mêmes instants pour le modèle et la référence.
+ Annoncer le périmètre. Jour seul, ou jour et nuit. Inclure la nuit change la population évaluée et la normalisation.
+ Donner plusieurs normes. La MAE et la RMSE ne pèsent pas les grandes erreurs de la même façon. Garder les erreurs absolues à côté des scores relatifs.
+ Tester la différence. Comparer les distributions d'erreurs entre stations ou périodes, par exemple avec un test de Wilcoxon.
+ Décrire le signal. Une grande erreur ne veut pas dire la même chose sous un ciel régulier et avec un éclairement très fluctuant. sCV et F caractérisent la variabilité et la prévisibilité avant de comparer des algorithmes.
+ NICE, un exemple complet
+ NICE¹ = MAE / MAE p et NICE² = RMSE / RMSE p , où p est la persistance simple au même horizon. NICE³ utilise la racine cubique de la moyenne des erreurs absolues au cube. NICEΣ combine les trois.
+ Un prédicteur utile se situe entre 0 et 1. Au-dessus de 1, le modèle fait moins bien que le plus simple des prédicteurs, ou il y a un problème numérique ou autre.
+ Dans l'étude publiée, à l'horizon de trente minutes, un ELM et un modèle autorégressif ont la même nRMSE médiane arrondie, 0,19. NICEΣ donne 0,75 contre 0,77. Sur ce protocole, le test donne p < 0,001 pour NICEΣ et p = 0,0591 pour la nRMSE. La validation combine des simulations de Monte-Carlo et 68 stations SIAR en Espagne.
+ Limites
+ Ces valeurs concernent ce protocole et ces distributions. Elles ne mesurent pas la valeur économique d'un gain et ne classent pas les méthodes en général.
+ À lire et à utiliser
+ L'étude NICE expliquée · calculer NICE · théorie, code et exemple exécutable
+ Comparer des prévisions : persistance, BLEND, AR et ELM sur données publiques
+ sCV et F : variabilité et prévisibilité du signal
+ Autres références : Yang et al. (2020) sur la vérification des prévisions déterministes ; Marquez et Coimbra sur une métrique reliant l'incertitude de prévision à la variabilité
+ Références
+ Cyril Voyant , Milan Despotovic , Luis Garcia-Gutierrez , Rodrigo Amaro e Silva , Philippe Lauret , Ted Soubdhan , Nadjem Bailek . NICEᵏ metrics: Unified and multidimensional framework for evaluating deterministic solar forecasting accuracy . Sustainable Energy Technologies and Assessments 83, 104588 (2025).
+ Cyril Voyant , Alan Julien , Milan Despotovic , Gilles Notton , Luis Antonio Garcia-Gutierrez , Claudio Francesco Nicolosi , Philippe Blanc , Jamie Bright . Stochastic coefficient of variation: Assessing the variability and forecastability of solar irradiance . Renewable Energy 256, 123913 (2026).
+ Dazhi Yang , Stefano Alessandrini, Javier Antonanzas, Fernando Antonanzas-Torres et al.. Verification of deterministic solar forecasts . Solar Energy 210 (2020).
+ Ricardo Marquez, Carlos F. M. Coimbra. Proposed Metric for Evaluation of Solar Forecasting Models . Journal of Solar Energy Engineering 135.
+
+---
 URL: https://www.cyrilvoyant.com/fr/recits/lql-equiv/
 
 Calculer plutôt qu'apprendre : l'équivalence de dose en radiothérapie avec LQL-Equiv
@@ -4334,6 +4501,36 @@ Se questionner sur nos façons de faire de la recherche : influence, intégrit
  Cadre sur l'excellence (RTVACOS)  : C. Voyant, R. Amaro e Silva, N. Fichaux, L. Menard, S. Cros, R.-E. Mamouri, Beyond Publish and Pray : Engineering Research Excellence , préprint SSRN (2026), doi :10.2139/ssrn.6877118 · la conférence, le résumé et les références (en anglais)
  En français  : tribune dans News Tank Éducation & Recherche (3 mars 2026) et le billet Excellence scientifique à l'ère de l'IA : du SEO au GEO sur ce site
  La démarche derrière ce travail  : Comprendre avant de calculer
+
+---
+URL: https://www.cyrilvoyant.com/fr/recits/reference-prevision-solaire-deep-learning/
+
+Quelle référence une prévision solaire doit-elle battre ? Quand le deep learning vaut-il la peine ?
+ Commencez par la persistance, puis une référence qui connaît la phase, une autorégression et un apprentissage frugal. Gardez un réseau profond seulement s'il apporte un gain mesuré sur le même protocole. Le deep learning peut valoir la peine. Il doit le montrer face à des références qui ne coûtent presque rien.
+ Cyril Voyant · Mines Paris – PSL, Centre O.I.E. · 2 novembre 2026
+ Quoi tester, dans l'ordre
+ La persistance simple. La dernière valeur observée : la référence minimale de toute prévision.
+ Une référence qui connaît le cycle. La persistance de l'indice de ciel clair, ou BLEND, qui combine la mémoire immédiate et la valeur à la même phase du cycle. BLEND part de l'éclairement brut et ses poids ont une forme analytique (Voyant et al., 2026).
+ Une autorégression. Estimée par moindres carrés sur les valeurs récentes.
+ Un apprentissage frugal. Une Extreme Learning Machine (Huang, Zhu et Siew, 2006) garde une couche cachée aléatoire et calcule analytiquement ses poids de sortie.
+ Un réseau profond. LSTM, U-Net ou plus grand, avec le même découpage, les mêmes horizons et le même budget de réglage.
+ Deux résultats, de cours et publié
+ Ajaccio, année de test 2007, à une heure (cours UE14). La nRMSE de jour vaut 22,0 % pour la smart persistence, 21,3 % pour AR(2) et 20,5 % pour un ELM. Les marches sont petites, et chacune est mesurée.
+ Système électrique corse, six ans de données horaires (Applied Energy, 2026). Un ELM à sorties multiples est comparé à la persistance, à des formulations à sortie unique et à un LSTM avec un budget de réglage réaliste. À une heure, la nRMSE vaut 0,179 pour la production solaire.
+ Ce qui compte comme un gain
+ Les mêmes cibles, le même périmètre et le même horizon pour tous les modèles.
+ Des lignes d'apprentissage séparées des lignes d'évaluation, mise à l'échelle comprise.
+ Une différence testée entre stations ou périodes, pas seulement une moyenne.
+ Les coûts donnés avec l'erreur : paramètres, temps d'apprentissage, ce que l'appareil peut stocker.
+ Limites
+ Ces résultats concernent les données et les protocoles étudiés. BLEND ne dépasse pas toutes les méthodes optimisées ; des prédicteurs autorégressifs ou appris peuvent faire mieux dans certaines conditions. Rien ici n'est un classement universel.
+ À lire et à utiliser
+ Comparer des prévisions sur des données PV publiques
+ BLEND expliqué · MIMO-ELM expliqué · le cours
+ Comment évaluer une prévision solaire face à la persistance
+ Références
+ Cyril Voyant , Candice Banes , Luis Garcia-Gutierrez , Gilles Notton , Milan Despotovic , Zaher Mundher Yaseen . Symmetry-constrained forecasting of periodically correlated energy processes . Applied Mathematical Modeling 157, 116988 (2026).
+ Cyril Voyant , Milan Despotovic , Luis Garcia-Gutierrez , Mohammed Asloune , Yves-Marie Saint-Drenan , Jean-Laurent Duchaud , Ghjuvan Antone Faggianelli , Elena Magliaro . Short-term forecasting of energy production and consumption using extreme learning machine: A comprehensive MIMO based ELM approach . Applied Energy 410, 127599 (2026).
 
 ---
 URL: https://www.cyrilvoyant.com/fr/recits/satellite-irradiance/
@@ -4624,7 +4821,7 @@ Cyril Voyant
  Each work sits in the step it needs: one column to the right only for a measured gain. U-Net and LSTM were tested, not kept.
  Demonstrate trust
  Judge against a reference, publish code, data and limits, make research findable and reusable.
- Questioning how we do research: influence, integrity, excellence · AI in research: the AI Act, a lab charter and a toolbox · When RMSE hides a difference · Beyond pointwise errors: the γ-index · Academic visibility: why publishing isn't enough anymore · Research excellence in the age of AI: from SEO to GEO (in French)
+ Questioning how we do research: influence, integrity, excellence · AI in research: the AI Act, a lab charter and a toolbox · When RMSE hides a difference · Beyond pointwise errors: the γ-index · Academic visibility: why publishing isn't enough anymore · Research excellence in the age of AI: from SEO to GEO (in French) · How to evaluate a solar forecast against persistence · Which baseline must a solar model beat? When is deep learning worth it?
  Research stories
  How forecastable is the sun? Separating cloud-driven variability from the daily solar cycle: the sCV and forecastability indices, evaluated at 68 stations.
  A better persistence forecast, without training a model BLEND uses the recurring statistical structure of energy signals to improve a simple reference forecast.
@@ -6171,6 +6368,8 @@ The thread: five steps, one way of working
  One year at 10-minute resolution in about 150 ms, with its limits stated.
  Compute directly · Energy How forecastable is the sun?
  Two indices (sCV and F) describe a site before any model is fitted.
+ Compute directly · Medicine Free BED and EQD2 calculator: LQ or LQL?
+ A browser calculator, and when the choice of model changes the answer.
  The model at the core · Next step: Hybridize ↓
  2 Step 2 of 5 · Is the model enough?
  Hybridize
@@ -6221,6 +6420,10 @@ The thread: five steps, one way of working
  A saturated ecosystem, and a practical toolkit for discoverable research.
  Demonstrate trust · Research practice Research excellence in the age of AI: from SEO to GEO (in French)
  The RTVACOS framework: rigour, transparency, visibility, adoption.
+ Demonstrate trust · Energy How to evaluate a solar forecast against persistence
+ Same targets, stated scope, several error norms, a test: the steps, with NICE as a worked case.
+ Demonstrate trust · Energy Which baseline must a solar model beat? When is deep learning worth it?
+ From persistence to deep networks: what to test first, and what counts as a gain.
  Trust is demonstrated
  The approach, in detail · All stories, by topic
 

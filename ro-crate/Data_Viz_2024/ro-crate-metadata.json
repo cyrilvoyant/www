@@ -42,6 +42,9 @@
      "@id": "https://www.cyrilvoyant.com/fr/actualites/why-extreme-learning-machines/"
     },
     {
+     "@id": "https://www.cyrilvoyant.com/fr/recits/reference-prevision-solaire-deep-learning/"
+    },
+    {
      "@id": "https://www.cyrilvoyant.com/fr/vue-d-ensemble/"
     },
     {
@@ -52,6 +55,9 @@
     },
     {
      "@id": "https://www.cyrilvoyant.com/overview/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/stories/solar-forecast-baseline-deep-learning/"
     }
    ],
    "keywords": [
@@ -109,6 +115,11 @@
    "name": "www.cyrilvoyant.com/fr/actualites/why-extreme-learning-machines/"
   },
   {
+   "@id": "https://www.cyrilvoyant.com/fr/recits/reference-prevision-solaire-deep-learning/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/fr/recits/reference-prevision-solaire-deep-learning/"
+  },
+  {
    "@id": "https://www.cyrilvoyant.com/fr/vue-d-ensemble/",
    "@type": "WebPage",
    "name": "www.cyrilvoyant.com/fr/vue-d-ensemble/"
@@ -127,6 +138,11 @@
    "@id": "https://www.cyrilvoyant.com/overview/",
    "@type": "WebPage",
    "name": "www.cyrilvoyant.com/overview/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/stories/solar-forecast-baseline-deep-learning/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/stories/solar-forecast-baseline-deep-learning/"
   }
  ]
 }

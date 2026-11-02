@@ -1,0 +1,31 @@
+name: Notify changed pages with IndexNow
+on:
+  workflow_run:
+    workflows: ['pages-build-deployment', 'pages build and deployment']
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      urls:
+        description: 'Optional changed www URLs, one per line; canonical pages only'
+        required: false
+        type: string
+permissions:
+  contents: read
+concurrency:
+  group: indexnow
+  cancel-in-progress: false
+jobs:
+  notify:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+          fetch-depth: 2
+      - name: Submit only deployed, changed canonical pages
+        env:
+          INDEXNOW_URLS: ${{ inputs.urls }}
+        run: python3 .github/scripts/indexnow.py
