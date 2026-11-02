@@ -83,21 +83,27 @@ URL: https://www.cyrilvoyant.com/fr/a-propos/
 URL: https://www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/
 
 Prévoir un signal qui se répète : que retirer, que garder ?
- Sur un sinus bruité, à trois pas, retirer le cycle divise l'erreur par deux : 39 contre 84 en recopiant la dernière valeur (la moyenne valant 100). Le cycle est connu : il ne faut pas le prévoir. Il ne reste à prévoir que l'écart.
+ Sur un sinus bruité, à trois pas, retirer le cycle divise l'erreur par deux : nRMSE de 24 % contre 51 % en recopiant la dernière valeur. Le cycle est connu : il ne faut pas le prévoir. Il ne reste à prévoir que l'écart, et sa nature dit comment le retirer.
  Le signal : un cycle, 1 + a sin(2πt/24), plus un bruit qui garde une part de mémoire.
  Une fois le cycle retiré, comment prévoir l'écart ?
  Tout dépend de sa mémoire. Le poids à donner à sa dernière valeur vaut φ h , où φ est sa mémoire et h l'horizon.
  Mémoire de l'écart Meilleure prévision Exemple d'erreur, à un pas
  Totale (marche aléatoire) La persistance L'erreur de la moyenne devient infiniment plus grande
- Partielle, φ = 0,5 Une combinaison des deux, comme CLIPER 87, contre 100 pour chacune
- Aucune (bruit pur) La moyenne 100, contre 141 pour la persistance
+ Partielle, φ = 0,5 Une combinaison des deux 13 % de moins que chacune
+ Aucune (bruit pur) La moyenne 41 % de moins que la persistance
  C'est entre ces deux extrêmes qu'il faut être bon. Et une erreur n'a de sens que face à ces références : c'est ce que mesure NICE .
- Retirer le cycle : différence ou ratio ?
- Si le bruit suit le niveau du signal, comme un nuage qui retire une part de la lumière, la différence y − c reste agitée au sommet du cycle et calme au creux. Le ratio y / c rend le bruit égal partout : c'est ce qu'il faut pour un modèle simple. En solaire, c est le ciel clair.
- Différence y − c : l'agitation suit le cycle
- Ratio y / c − 1 : l'agitation est régulière
- CLIPER, BLEND : et sans modèle du cycle ?
- Sans cycle, CLIPER suffit : combiner la dernière valeur et la moyenne fait déjà aussi bien que le reste. Dès qu'il y a un cycle, il ne le voit plus, et son erreur reste à 76. BLEND ouvre une autre voie : il combine la dernière valeur et la valeur un cycle plus tôt, avec un poids pour chaque moment du cycle, et descend à 52 sans aucun modèle du cycle. Retirer le cycle reste meilleur (39), si l'on dispose d'un bon modèle de ce cycle. Ici, version simple de BLEND sur ce signal simulé. Essayer BLEND sur des données PV réelles · L'article expliqué · le cours .
+ Additif ou multiplicatif : différence ou ratio ?
+ La nature du bruit décide. Si le bruit s'ajoute au cycle, y = c + bruit, il faut soustraire le cycle. S'il le multiplie, y = c × (1 + bruit), comme un nuage qui retire une part de la lumière, il faut diviser. Choisir l'opération revient à faire une hypothèse sur le signal, et cette hypothèse se teste.
+ Dans la simulation, le bon choix réduit l'erreur de 5 à 9 % au creux d'un cycle marqué (a = 0,9, à trois pas) et de 1 à 3 % partout. Le gain principal reste le retrait du cycle ; le choix de l'opération vient ensuite. Une autre différence est plus visible : avec un bruit multiplicatif, l'erreur est cinq fois plus forte au sommet qu'au creux. Une seule erreur moyenne le cache.
+ Écart-type du bruit multiplicatif, cycle de 0,1 à 1,9, bruit de 25 % Au creux Au sommet
+ Après différence 0,03 0,48
+ Après ratio 0,25 0,25
+ En solaire, c est le ciel clair : le rapport au ciel clair suppose un bruit multiplicatif. Un modèle qui reçoit un reste de bruit égal partout est plus simple à ajuster.
+ Pour aller plus loin
+ Calculer sCV et F sur vos données, et ce qu'ils mesurent .
+ NICE : comparer une prévision à la persistance, et comment évaluer une prévision .
+ Combiner plutôt que choisir : CLIPER et BLEND , sans modèle du cycle.
+ Le cours de prévision solaire , avec de vraies mesures.
  Trois études complémentaires, trois questions
  2015, Peut-on diagnostiquer la difficulté avant de choisir le modèle de prévision ?
  En 2015, j’ai étudié cette question avec Ted Soubdhan, Philippe Lauret, Mathieu David et Marc Muselli. Notre article examine des paramètres statistiques pour anticiper l’erreur de prévision solaire. Le mean absolute log return (MALR), issu de l’économétrie, décrit l’amplitude des changements relatifs. Ce diagnostic empirique ne dispense pas de tester le modèle sur le site et à l’horizon visés. Article dans Energy (2015) .
@@ -1998,21 +2004,27 @@ Simulate what you cannot yet measure: the electricity demand of road tunnels
 URL: https://www.cyrilvoyant.com/stories/variability-memory-forecastability/
 
 Forecasting a signal that repeats: what to remove, what to keep?
- On a noisy sine, three steps ahead, removing the cycle halves the error: 39 against 84 when copying the last value (with the mean at 100). The cycle is known, so it should not be forecast. Only the gap remains to forecast.
+ On a noisy sine, three steps ahead, removing the cycle halves the error: nRMSE of 24 % against 51 % when copying the last value. The cycle is known, so it should not be forecast. Only the gap remains to forecast, and its nature says how to remove the cycle.
  The signal: a cycle, 1 + a sin(2πt/24), plus a noise that keeps some memory.
  Once the cycle is removed, how to forecast the gap?
  It depends on its memory. The weight to give its last value is φ h , where φ is its memory and h the horizon.
  Memory of the gap Best forecast Example of error, one step ahead
  Total (random walk) Persistence The error of the mean becomes infinitely larger
- Partial, φ = 0.5 A combination of both, such as CLIPER 87, against 100 for each
- None (pure noise) The mean 100, against 141 for persistence
+ Partial, φ = 0.5 A combination of both 13 % lower than each
+ None (pure noise) The mean 41 % lower than persistence
  Between these two extremes is where skill matters. And an error only makes sense against these references: that is what NICE measures.
- Removing the cycle: difference or ratio?
- If the noise follows the level of the signal, like a cloud removing a share of the light, the difference y − c stays agitated at the top of the cycle and calm at the bottom. The ratio y / c makes the noise equal everywhere: what a simple model needs. In solar forecasting, c is clear sky.
- Difference y − c: the agitation follows the cycle
- Ratio y / c − 1: the agitation is regular
- CLIPER, BLEND: and without a model of the cycle?
- With no cycle, CLIPER is enough: combining the last value and the mean already does as well as the rest. Once there is a cycle it no longer sees it, and its error stays at 76. BLEND opens another way: it combines the last value and the value one cycle earlier, with one weight for each moment of the cycle, and falls to 52 with no model of the cycle. Removing the cycle remains better (39), given a good model of that cycle. Here, a simple version of BLEND on this simulated signal. Try BLEND · The paper explained · the course .
+ Additive or multiplicative: difference or ratio?
+ The nature of the noise decides. If the noise adds to the cycle, y = c + noise, subtract the cycle. If it multiplies it, y = c × (1 + noise), like a cloud removing a share of the light, divide. Choosing the operation amounts to a hypothesis about the signal, and that hypothesis can be tested.
+ In the simulation, the right choice reduces the error by 5 to 9 % at the bottom of a marked cycle (a = 0.9, three steps ahead) and by 1 to 3 % everywhere. The main gain remains removing the cycle; the choice of operation comes next. Another difference is more visible: with multiplicative noise, the error is five times larger at the top than at the bottom. A single mean error hides this.
+ Standard deviation of multiplicative noise, cycle from 0.1 to 1.9, noise of 25 % Bottom Top
+ After difference 0.03 0.48
+ After ratio 0.25 0.25
+ In solar forecasting, c is clear sky: the ratio to clear sky assumes multiplicative noise. A model given a residual noise that is equal everywhere is simpler to fit.
+ To go further
+ What sCV and F measure .
+ NICE : comparing a forecast with persistence, and how to evaluate a forecast .
+ Combining rather than choosing: CLIPER and BLEND , with no model of the cycle.
+ The solar forecasting course , with real measurements.
  Three complementary studies, three questions
  2015, Can we diagnose difficulty before choosing the forecaster?
  In 2015, I studied this question with Ted Soubdhan, Philippe Lauret, Mathieu David and Marc Muselli. Our paper examines statistical parameters for anticipating solar forecast error. Mean absolute log return (MALR), borrowed from econometrics, describes relative changes. This empirical diagnostic does not replace testing the model at the intended site and horizon. Paper in Energy (2015) .
