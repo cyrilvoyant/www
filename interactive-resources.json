@@ -545,7 +545,7 @@
       "id": "wave",
       "domain": "learning",
       "kind": "teaching",
-      "interface_language": "fr",
+      "interface_language": "both",
       "name": {
         "fr": "Onde EM animée : E, B et propagation",
         "en": "Animated EM wave: E, B and propagation"
@@ -556,14 +556,14 @@
       },
       "url": {
         "fr": "https://www.cyrilvoyant.com/fr/animations/onde-electromagnetique/",
-        "en": "https://www.cyrilvoyant.com/fr/animations/onde-electromagnetique/"
+        "en": "https://www.cyrilvoyant.com/tools/electromagnetic-wave/"
       }
     },
     {
       "id": "compton",
       "domain": "learning",
       "kind": "teaching",
-      "interface_language": "fr",
+      "interface_language": "both",
       "name": {
         "fr": "Compton : angle et partage de l’énergie",
         "en": "Compton: angle and energy sharing"
@@ -574,14 +574,14 @@
       },
       "url": {
         "fr": "https://www.cyrilvoyant.com/fr/animations/effet-compton/",
-        "en": "https://www.cyrilvoyant.com/fr/animations/effet-compton/"
+        "en": "https://www.cyrilvoyant.com/tools/compton-scattering/"
       }
     },
     {
       "id": "engine",
       "domain": "learning",
       "kind": "teaching",
-      "interface_language": "fr",
+      "interface_language": "both",
       "name": {
         "fr": "Moteur ditherme : bilan et borne de Carnot",
         "en": "Heat engine: energy balance and Carnot limit"
@@ -592,7 +592,7 @@
       },
       "url": {
         "fr": "https://www.cyrilvoyant.com/fr/animations/moteur-carnot/",
-        "en": "https://www.cyrilvoyant.com/fr/animations/moteur-carnot/"
+        "en": "https://www.cyrilvoyant.com/tools/carnot-heat-engine/"
       }
     }
   ]

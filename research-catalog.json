@@ -4481,6 +4481,81 @@
       ]
     },
     {
+      "url": "https://www.cyrilvoyant.com/tools/carnot-heat-engine/",
+      "title": "Heat engine and Carnot limit: cycle and energy balance",
+      "language": "en",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "The relationship to understand",
+          "anchor": null
+        },
+        {
+          "title": "Try it and interpret",
+          "anchor": null
+        },
+        {
+          "title": "Assumptions and limitations",
+          "anchor": null
+        },
+        {
+          "title": "Go further with the course",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/tools/compton-scattering/",
+      "title": "Compton scattering: angle and energy sharing",
+      "language": "en",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "The relationship to understand",
+          "anchor": null
+        },
+        {
+          "title": "Try it and interpret",
+          "anchor": null
+        },
+        {
+          "title": "Assumptions and limitations",
+          "anchor": null
+        },
+        {
+          "title": "Go further with the course",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/tools/electromagnetic-wave/",
+      "title": "Electromagnetic wave: interactive electric and magnetic fields",
+      "language": "en",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "The relationship to understand",
+          "anchor": null
+        },
+        {
+          "title": "Try it and interpret",
+          "anchor": null
+        },
+        {
+          "title": "Assumptions and limitations",
+          "anchor": null
+        },
+        {
+          "title": "Go further with the course",
+          "anchor": null
+        }
+      ]
+    },
+    {
       "url": "https://www.cyrilvoyant.com/tools/forecast-comparison/",
       "title": "Compare forecasts: when is a more complex model worth it?",
       "language": "en",

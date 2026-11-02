@@ -62,6 +62,9 @@ Cyril Voyant connects medical physics and energy forecasting through modelling f
 - [Solar forecasting course: forecasting the intermittent solar resource](https://www.cyrilvoyant.com/teaching/solar-forecasting-course/)
 - [The thread: five steps, one way of working](https://www.cyrilvoyant.com/the-thread/)
 - [Scientific simulators, animations and calculators](https://www.cyrilvoyant.com/tools/)
+- [Heat engine and Carnot limit: cycle and energy balance](https://www.cyrilvoyant.com/tools/carnot-heat-engine/)
+- [Compton scattering: angle and energy sharing](https://www.cyrilvoyant.com/tools/compton-scattering/)
+- [Electromagnetic wave: interactive electric and magnetic fields](https://www.cyrilvoyant.com/tools/electromagnetic-wave/)
 - [Compare forecasts: when is a more complex model worth it?](https://www.cyrilvoyant.com/tools/forecast-comparison/)
 - [The Sun, the seasons and the clock: one time for every measurement](https://www.cyrilvoyant.com/tools/sun-seasons-utc/)
 
