@@ -11,8 +11,8 @@
         "en": "Noise and memory: compare forecasts"
       },
       "task": {
-        "fr": "Régler les bruits additif et multiplicatif ; comparer régression, persistance, MAE, nRMSE et NICE, avec la meilleure prévision possible pour ce générateur.",
-        "en": "Adjust additive and multiplicative noise; compare regression, persistence, MAE, nRMSE and NICE with the best possible forecast of this generator."
+        "fr": "Régler les bruits additif et multiplicatif ; comparer régression, persistance, MAE, nRMSE et NICE.",
+        "en": "Set additive and multiplicative noise; compare regression, persistence, MAE, nRMSE and NICE."
       },
       "url": {
         "fr": "https://www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/#experience",

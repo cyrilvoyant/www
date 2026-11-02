@@ -105,8 +105,6 @@ Pourquoi le même modèle réussit ici et échoue là
  Une erreur seule ne juge donc pas un modèle. Il faut la comparer à une référence simple, sur le même signal.
  Le solaire pose la même question : un ciel régulier et un ciel à nuages changeants ne laissent pas la même chose à prévoir. Sur 68 stations espagnoles, notre indicateur de prévisibilité F évolue à l'inverse de l'erreur de prévision ( sCV et F ).
  Essayer la simulation · Les trois études · Articles et équipes
- Essayer la simulation
- Le tableau du début vient de cette simulation. Changez un réglage et regardez l'erreur de chaque prévision.
  JavaScript est nécessaire pour les curseurs et l’animation. Les explications et les sources de cette page restent accessibles. Modèle, hypothèses et formules de l’expérience principale
  Ici, t repère le pas courant et h le nombre de pas à prévoir. r règle la mémoire entre états consécutifs ; a est le demi-écart entre les deux niveaux ; μ est leur moyenne ; β est l’écart-type relatif du bruit multiplicatif et σ a l’écart-type du bruit additif. Un état S t vaut −1 ou +1, avec probabilité de changer d’état q = (1−r)/2. Il démarre dans la distribution stationnaire équiprobable. Le signal avant ajout du bruit est K t = μ + aS t , avec μ = 0,6. Pour a > 0, son autocorrélation exacte est r h . Le signal observé est Y t = K t ( 1 + β Z m , t ) + σ a Z a , t . Les deux Z sont indépendants entre eux, entre instants et de l’état, uniformes sur [−√3,+√3] : moyenne nulle, variance 1. Le bruit multiplicatif a une variance conditionnelle β²K² ; celle du bruit additif vaut σ a ². Les bornes des commandes garantissent Y > 0 sans écrêtage. Ce modèle pédagogique n’est pas un modèle météorologique validé.
  La référence à état connu connaît S à l’origine de prévision : ŷ ref,t+h = μ + ar h S t . Son risque quadratique moyen exact dans ce générateur est R h = a 2 ( 1 − r 2 h ) + σ a 2 + β 2 ( μ 2 + a 2 ) . Les trois termes décrivent transitions futures, bruit additif et bruit multiplicatif. √R h est une RMSE attendue, pas une limite que chaque échantillon fini doit respecter. La référence à état connu reçoit une information privilégiée : sa courbe n’est pas une prévision opérationnelle. Cette borne optimiste appartient à ce générateur ; ce n’est ni un résultat numérique des articles cités ni une borne physique du solaire.
@@ -416,7 +414,7 @@ Scientific simulators, animations and calculators
  Energy
  Explorable demonstration · French and English
  Noise and memory: compare forecasts
- Adjust additive and multiplicative noise; compare regression, persistence, MAE, nRMSE and NICE with the best possible forecast of this generator.
+ Set additive and multiplicative noise; compare regression, persistence, MAE, nRMSE and NICE.
  Open this tool →
  Browser calculator · French and English
  Compare a forecast with persistence, NICE
@@ -564,7 +562,7 @@ Simulateurs, animations et calculateurs scientifiques
  Énergie
  Démonstration à explorer · Français et anglais
  Bruit et mémoire : comparer des prévisions
- Régler les bruits additif et multiplicatif ; comparer régression, persistance, MAE, nRMSE et NICE, avec la meilleure prévision possible pour ce générateur.
+ Régler les bruits additif et multiplicatif ; comparer régression, persistance, MAE, nRMSE et NICE.
  Ouvrir cet outil →
  Calculateur dans le navigateur · Français et anglais
  Comparer une prévision à la persistance, NICE
@@ -2041,8 +2039,6 @@ Why the same model succeeds here and fails there
  An error alone therefore does not judge a model. Compare it with a simple reference, on the same signal.
  Solar forecasting raises the same question: a steady sky and a sky of changing clouds do not leave the same thing to forecast. Across 68 Spanish stations, our forecastability indicator F moves inversely to forecast error ( sCV and F ).
  Try the simulation · The three studies · Papers and teams
- Try the simulation
- The table at the top comes from this simulation. Change a setting and watch the error of each forecast.
  JavaScript is needed for the controls and animation. The explanations and sources on this page remain available. Main experiment: model, assumptions and equations
  Here t denotes the current step and h the forecast lead. r controls memory between successive states; a is half the separation of the two levels; μ is their mean; β is the relative standard deviation of multiplicative noise and σ a is the standard deviation of additive noise. S t is −1 or +1 with switching probability q = (1−r)/2, initialized in its equiprobable stationary distribution. The signal before adding noise is K t = μ + aS t , μ = 0.6, with exact autocorrelation r h when a > 0. Observations are Y t = K t ( 1 + β Z m , t ) + σ a Z a , t . The Z draws are independent of each other, across times and of the state, uniform on [−√3,+√3], with zero mean and unit variance. Multiplicative noise has conditional variance β²K², additive noise σ a ². Control ranges guarantee positive observations without clipping. This teaching generator is not a validated weather model.
  The known-state reference knows the state at forecast origin: ŷ ref,t+h = μ + ar h S t . Its exact expected squared risk is R h = a 2 ( 1 − r 2 h ) + σ a 2 + β 2 ( μ 2 + a 2 ) , separating future transitions, additive noise and multiplicative noise. √R h is an expected RMSE, not a threshold every finite sample must respect. The known-state reference has privileged information; it is not an operational forecast. This optimistic bound is specific to the generator, neither a numerical result of the cited papers nor a physical solar limit.
@@ -3445,7 +3441,7 @@ sCV et F : variabilité et prévisibilité de l'éclairement solaire
  Référence collective : Cyril Voyant, Alan Julien , Milan Despotovic , Gilles Notton , Luis Antonio Garcia-Gutierrez , Claudio Francesco Nicolosi , Philippe Blanc et Jamie Bright . Stochastic coefficient of variation: Assessing the variability and forecastability of solar irradiance . Renewable Energy 256, 123913 (2026). DOI · article éditeur en accès ouvert .
  Théorie complète, code et exemple exécutable (site des méthodes, en anglais) · Tous les récits · L'auteur
  Variabilité, mémoire et choix du modèle
- Manipuler les mêmes valeurs dans un autre ordre : relier les études de 2015 et 2025 à sCV/F, puis comparer deux références sur les mêmes cibles.
+ Pourquoi le même modèle réussit ici et échoue là : relier les études de 2015 et 2025 à sCV/F, puis comparer deux références sur les mêmes cibles.
  Essayer dans votre navigateur
  Mesurer variabilité et prévisibilité : sCV et F : un site est-il difficile à prévoir, avant tout modèle ?.
  Le Soleil, les saisons et l’heure UTC : pourquoi dater les mesures solaires en UTC.
@@ -4395,7 +4391,7 @@ Mesurer variabilité et prévisibilité : sCV et F
  Cyril Voyant , Alan Julien , Milan Despotovic , Gilles Notton , Luis Antonio Garcia-Gutierrez , Claudio Francesco Nicolosi , Philippe Blanc , Jamie Bright . Stochastic coefficient of variation: Assessing the variability and forecastability of solar irradiance .
  Guide technique, sources et attribution détaillée (anglais) · Cas de vérification numérique
  Variabilité, mémoire et choix du modèle
- Manipuler les mêmes valeurs dans un autre ordre : relier les études de 2015 et 2025 à sCV/F, puis comparer deux références sur les mêmes cibles.
+ Pourquoi le même modèle réussit ici et échoue là : relier les études de 2015 et 2025 à sCV/F, puis comparer deux références sur les mêmes cibles.
 
 ---
 URL: https://www.cyrilvoyant.com/fr/prevision-complexe/
