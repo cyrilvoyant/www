@@ -38,7 +38,7 @@
  .site-layout{display:block;max-width:1280px;padding:0 16px}
  .site-tree{position:fixed;top:0;bottom:0;left:0;align-self:stretch;overflow-y:auto;width:min(88vw,360px);max-height:none;padding:14px 10px 14px 14px;background:#f4f7fa;box-shadow:0 12px 36px #17253636;transform:translateX(-110%);visibility:hidden;pointer-events:none;transition:transform .2s ease,visibility .2s ease;z-index:70}
  .site-tree.is-open{transform:translateX(0);visibility:visible;pointer-events:auto}
- .site-tree-head{border-radius:10px 10px 0 0}
+ .site-tree-head{border-radius:10px 10px 0 0;position:sticky;top:-14px;z-index:1}
  .tree-close{display:block;flex:none}
  .site-tree-trigger{display:inline-flex;align-items:center;gap:7px;margin:8px 16px 0;padding:7px 11px;border:1px solid #c5d3e0;border-radius:999px;background:#f4f7fa;color:#172536;font:600 .88rem/1.2 system-ui,-apple-system,"Segoe UI",sans-serif;cursor:pointer}
  .site-tree-trigger:hover,.site-tree-trigger[aria-expanded=true]{background:#e4eff8;border-color:#07569a;color:#07569a}
@@ -50,4 +50,29 @@
  .site-page-steps{margin:24px 8px 8px;grid-template-columns:1fr}
  .page-step.next{text-align:left}
 }
+/* Reading bar: menu, parent, previous and next always at hand, from the tree already in the page (02/11). */
+.site-maincol{padding-top:54px;position:relative}
+.reading-bar{position:sticky;top:0;z-index:6;height:46px;margin:-54px 0 8px;display:flex;align-items:center;gap:6px;padding:0 6px;box-sizing:border-box;background:#ffffffee;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid #d8e0e8;font:14px/1.2 system-ui,-apple-system,"Segoe UI",sans-serif;view-transition-name:reading-bar}
+.reading-bar a,.reading-bar .site-tree-trigger{display:inline-flex!important;align-items:center;gap:6px;height:36px;min-width:36px;justify-content:center;box-sizing:border-box;margin:0;padding:0 10px;border:1px solid transparent;border-radius:8px;background:transparent;color:#172536;font:inherit;font-weight:600;text-decoration:none;white-space:nowrap;cursor:pointer;transition:background-color .15s ease,border-color .15s ease,transform .15s ease}
+.reading-bar a:hover,.reading-bar .site-tree-trigger:hover{background:#e7eef5;text-decoration:none}
+.reading-bar a:active{transform:translateY(1px)}
+.reading-bar .site-tree-trigger{border-color:#d8e0e8;background:#f4f7fa}
+.reading-bar .rb-title{overflow:hidden;text-overflow:ellipsis;max-width:26ch;font-weight:500}
+.reading-bar .rb-up{min-width:0;color:#07569a}
+.reading-bar .rb-gap{flex:1 1 auto}
+.reading-bar .rb-pos{color:#52677c;font-variant-numeric:tabular-nums;font-size:.86em;padding:0 2px;white-space:nowrap}
+.reading-bar .rb-next{min-width:0;background:#07569a;color:#fff}
+.reading-bar .rb-next:hover{background:#054a85}
+.reading-bar .rb-prev{min-width:0}
+.reading-bar .rb-word{display:none}
+.reading-progress{position:absolute;left:0;right:0;bottom:-1px;height:2px;background:transparent;pointer-events:none}
+.reading-progress i{display:block;height:100%;width:100%;background:#07569a;transform:scaleX(0);transform-origin:0 50%}
+.site-tree-trigger{position:absolute;top:6px;left:6px}
+.reading-bar .site-tree-trigger{position:static}
+.site-maincol>main :is(h1,h2,h3,[id]){scroll-margin-top:62px}
+:is(.tool-dock,.fp-dock,.ctool .ct-ctl,.fc-ctl,.cx .ct-ctl,.st-controls,.ph-controls,.rtv-fig){top:52px}
+@media(min-width:1550px){.reading-bar .site-tree-trigger{display:none!important}}
+@media(max-width:1100px){.reading-bar .rb-prev .rb-title{display:none}.reading-bar .rb-title{max-width:18ch}}
+@media(max-width:720px){.reading-bar{gap:3px;padding:0 2px}.reading-bar a,.reading-bar .site-tree-trigger{padding:0 8px;min-width:40px;height:40px}.reading-bar .rb-up .rb-title,.reading-bar .rb-next .rb-title{display:none}.reading-bar .rb-next .rb-word{display:inline}}
 @media(prefers-reduced-motion:reduce){.site-tree,.site-tree-list details>summary::before{transition:none}}
+@media(prefers-reduced-motion:reduce){.reading-bar a,.reading-bar .site-tree-trigger{transition:none}}
