@@ -85,7 +85,7 @@ URL: https://www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/
 Quelle prévision pour quel signal ?
  Il n'y a pas de meilleure prévision en soi : tout dépend du signal. Sur un signal aléatoire, la moyenne gagne. Sur un mouvement brownien, la persistance gagne. Dès qu'il y a un cycle, la persistance cyclique prend le relais. Choisissez un signal, jouez avec les curseurs, et regardez ce qui change.
  Ce que cela introduit
- La combinaison linéaire. Aucune référence simple ne gagne partout : d'où l'idée de doser entre elles. C'est le principe de CLIPER et BLEND .
+ La combinaison convexe. Aucune référence simple ne gagne partout : d'où l'idée de les peser, avec des poids positifs de somme 1. Persistance et moyenne : CLIPER. Persistance et persistance cyclique : BLEND. Voir CLIPER et BLEND .
  La désaisonnalisation. Un cycle connu ne se prévoit pas : on le retire, on prévoit le reste, on le remet.
  Rapport ou différence à la tendance. Le bruit additif appelle la différence à la tendance, le bruit multiplicatif le rapport à la tendance. En solaire, le rapport à la tendance de ciel clair est l' indice de ciel clair .
  La variabilité et la prévisibilité. sCV et F les quantifient, avant tout modèle. Les calculer sur vos données .
@@ -97,8 +97,8 @@ Quelle prévision pour quel signal ?
  La prévision recopie la valeur un cycle plus tôt, au même moment du cycle.
  Moyenne
  La prévision vaut toujours la moyenne du passé.
- Combinaison linéaire
- Un poids entre deux prévisions, calculé sur le passé. Exemples : CLIPER, BLEND.
+ Combinaison convexe
+ Deux prévisions pesées par des poids positifs de somme 1, calculés sur le passé. Persistance et moyenne : CLIPER. Persistance et persistance cyclique : BLEND.
  AR(2)
  Une régression sur les deux dernières valeurs connues. Brut : sans retirer le cycle. Il sert à mesurer ce que le retrait du cycle rapporte.
  Différence à la tendance
@@ -2019,7 +2019,7 @@ URL: https://www.cyrilvoyant.com/stories/variability-memory-forecastability/
 Which forecast for which signal?
  There is no best forecast as such: it all depends on the signal. On a random signal, the mean wins. On Brownian motion, persistence wins. As soon as there is a cycle, cyclic persistence takes over. Choose a signal, play with the sliders, and watch what changes.
  What this introduces
- The linear combination. No simple reference wins everywhere, hence the idea of weighing them. This is the principle of CLIPER and BLEND .
+ The convex combination. No simple reference wins everywhere, hence the idea of weighing them, with positive weights adding up to 1. Persistence and the mean: CLIPER. Persistence and cyclic persistence: BLEND. See CLIPER and BLEND .
  Deseasonalization. A known cycle is not forecast: remove it, forecast the rest, put it back.
  Ratio to trend or difference to trend. Additive noise calls for the difference to trend, multiplicative noise for the ratio to trend. In solar forecasting, the ratio to the clear-sky trend is the clear-sky index .
  Variability and forecastability. sCV and F quantify them, before any model.
@@ -2031,8 +2031,8 @@ Which forecast for which signal?
  The forecast copies the value one cycle earlier, at the same moment of the cycle.
  Mean
  The forecast is always the mean of the past.
- Linear combination
- A weight between two forecasts, computed on the past. Examples: CLIPER, BLEND.
+ Convex combination
+ Two forecasts weighed by positive weights adding up to 1, computed on the past. Persistence and the mean: CLIPER. Persistence and cyclic persistence: BLEND.
  AR(2)
  A regression on the last two known values. Raw: without removing the cycle. It measures what removing the cycle brings.
  Difference to trend
