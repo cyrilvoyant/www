@@ -7,12 +7,12 @@
       "kind": "demo",
       "interface_language": "both",
       "name": {
-        "fr": "Bruit et mémoire : comparer des prévisions",
-        "en": "Noise and memory: compare forecasts"
+        "fr": "Persistance, moyenne ou combinaison : quelle prévision gagne ?",
+        "en": "Persistence, mean or combination: which forecast wins?"
       },
       "task": {
-        "fr": "Régler les bruits additif et multiplicatif ; comparer régression, persistance, MAE, nRMSE et NICE.",
-        "en": "Set additive and multiplicative noise; compare regression, persistence, MAE, nRMSE and NICE."
+        "fr": "Régler la mémoire du signal, parier, puis comparer les trois prévisions.",
+        "en": "Set the memory of the signal, place a bet, then compare the three forecasts."
       },
       "url": {
         "fr": "https://www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/#experience",

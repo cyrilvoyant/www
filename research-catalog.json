@@ -3074,7 +3074,7 @@
     },
     {
       "url": "https://www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/",
-      "title": "Pourquoi le même modèle réussit ici et échoue là",
+      "title": "Recopier ou prendre la moyenne ? Tout dépend de la mémoire du signal",
       "language": "fr",
       "topics": [
         "Calculer directement",
@@ -3089,14 +3089,6 @@
         {
           "title": "Trois études complémentaires, trois questions",
           "anchor": "trois-etudes"
-        },
-        {
-          "title": "Une expérience qui sépare amplitude et ordre temporel",
-          "anchor": null
-        },
-        {
-          "title": "Les formules derrière les panneaux",
-          "anchor": null
         },
         {
           "title": "« No free lunch » : la structure du problème compte",
@@ -4152,7 +4144,7 @@
     },
     {
       "url": "https://www.cyrilvoyant.com/stories/variability-memory-forecastability/",
-      "title": "Why the same model succeeds here and fails there",
+      "title": "Copy the last value or take the mean? It depends on the signal's memory",
       "language": "en",
       "topics": [
         "Compute directly",
@@ -4167,14 +4159,6 @@
         {
           "title": "Three complementary studies, three questions",
           "anchor": "trois-etudes"
-        },
-        {
-          "title": "An experiment separating amplitude from temporal order",
-          "anchor": null
-        },
-        {
-          "title": "The equations behind the panels",
-          "anchor": null
         },
         {
           "title": "No free lunch: problem structure matters",

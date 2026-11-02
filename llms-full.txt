@@ -82,33 +82,41 @@ URL: https://www.cyrilvoyant.com/fr/a-propos/
 ---
 URL: https://www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/
 
-Pourquoi le même modèle réussit ici et échoue là
- La même régression linéaire fait 11,8 % d'erreur sur un signal qui garde sa mémoire, et 50,5 % sur un signal qui n'en a pas. Le modèle n'a pas changé : c'est le signal. Avant de juger un modèle ou de le complexifier, il faut savoir ce que le signal permet de prévoir.
- Le signal garde sa mémoire
- 11,8 %
- erreur de la régression linéaire
- Recopier la dernière valeur
- 11,9 %
- Prévoir la moyenne
- 47,0 %
- Le signal change au hasard
- 50,5 %
- erreur de la régression linéaire
- Recopier la dernière valeur
- 71,7 %
- Prévoir la moyenne
- 50,5 %
- Erreur : nRMSE, l'erreur quadratique moyenne rapportée à la moyenne des observations. Simulation ci-dessous, préréglages « Presque prévisible » et « Sans mémoire », prévision à un pas. Valeurs simulées, pas des mesures solaires.
+Recopier ou prendre la moyenne ? Tout dépend de la mémoire du signal
+ Sur une marche aléatoire, la persistance est imbattable. Sur un bruit pur, c'est la moyenne. Entre les deux, aucune ne suffit : c'est là qu'il faut être bon. Une combinaison convexe des deux, comme CLIPER, fait alors mieux que chacune.
+ Marche aléatoire, φ = 1
+ La persistance gagne
+ Persistance
+ 0
+ Combinaison
+ 0
+ Moyenne
+ 100 ou plus
+ Entre les deux, φ = 0,5
+ La combinaison gagne
+ Persistance
+ 100
+ Combinaison
+ 87
+ Moyenne
+ 100
+ Bruit pur, φ = 0
+ La moyenne gagne
+ Persistance
+ 141
+ Combinaison
+ 100
+ Moyenne
+ 100
+ Erreur quadratique théorique à un pas, la moyenne valant 100, pour un signal autorégressif d'ordre 1 (équations ci-dessous). À φ = 1, la variance n'est plus finie : la moyenne n'a plus de sens. Pas de mesures solaires ici.
  Ce que cela veut dire
- Quand le signal a de la mémoire, recopier la dernière valeur fait déjà aussi bien que la régression.
- Quand il n'en a pas, recopier la dernière valeur est le pire choix, et la régression ne fait pas mieux qu'une moyenne.
- Une erreur seule ne juge donc pas un modèle. Il faut la comparer à une référence simple, sur le même signal.
- Le solaire pose la même question : un ciel régulier et un ciel à nuages changeants ne laissent pas la même chose à prévoir. Sur 68 stations espagnoles, notre indicateur de prévisibilité F évolue à l'inverse de l'erreur de prévision ( sCV et F ).
- Essayer la simulation · Les trois études · Articles et équipes
- JavaScript est nécessaire pour les curseurs et l’animation. Les explications et les sources de cette page restent accessibles. Modèle, hypothèses et formules de l’expérience principale
- Ici, t repère le pas courant et h le nombre de pas à prévoir. r règle la mémoire entre états consécutifs ; a est le demi-écart entre les deux niveaux ; μ est leur moyenne ; β est l’écart-type relatif du bruit multiplicatif et σ a l’écart-type du bruit additif. Un état S t vaut −1 ou +1, avec probabilité de changer d’état q = (1−r)/2. Il démarre dans la distribution stationnaire équiprobable. Le signal avant ajout du bruit est K t = μ + aS t , avec μ = 0,6. Pour a > 0, son autocorrélation exacte est r h . Le signal observé est Y t = K t ( 1 + β Z m , t ) + σ a Z a , t . Les deux Z sont indépendants entre eux, entre instants et de l’état, uniformes sur [−√3,+√3] : moyenne nulle, variance 1. Le bruit multiplicatif a une variance conditionnelle β²K² ; celle du bruit additif vaut σ a ². Les bornes des commandes garantissent Y > 0 sans écrêtage. Ce modèle pédagogique n’est pas un modèle météorologique validé.
- A désigne la constante de la droite et B sa pente ; B* désigne la pente optimale théorique si la distribution du générateur est connue. La régression à horizon h ajuste ŷ = A + BY t sur les seules paires de l’entraînement. En régime stationnaire, son coefficient linéaire optimal en population est B * = a 2 r h a 2 + σ a 2 + β 2 ( μ 2 + a 2 ) ; le bruit d’observation réduit ainsi la mémoire accessible à une simple régression. Les valeurs affichées A et B sont estimées, pas remplacées par cette formule. Entraînement : indices 0–599 ; test : 624–1199, avec tampon de 24 pas. Chaque origine précède sa cible d’exactement h pas et suit la fin de l’entraînement. Les modèles voient uniquement Y ; les diagnostics sCV/F utilisent toute la série a posteriori, avec I clr = 1, d = 0,2 et T = 24 conventionnel pour F.
- La MAE mesure la moyenne des erreurs absolues. La RMSE pénalise davantage les grandes erreurs ; nRMSE = 100 × RMSE / moyenne des observations test. NICE¹ et NICE² divisent respectivement MAE et RMSE par celles de la persistance simple au même horizon, sur les mêmes cibles. NICEΣ est la moyenne équipondérée des trois rapports L¹, L² et L³, selon le code NICE de référence . Une référence parfaite rend les rapports indéfinis. Méthode et article NICE .
+ La persistance recopie la dernière valeur. Elle est optimale si le signal n'oublie rien.
+ La moyenne ignore le passé. Elle est optimale si le passé n'apporte rien.
+ Un signal réel est presque toujours entre les deux. Le poids optimal de la dernière valeur est alors λ = φ h : l'erreur baisse sans aucun apprentissage complexe.
+ Une erreur n'a donc de sens que comparée à ces références. C'est ce que mesure NICE face à la persistance, et ce que développent BLEND et CLIPER quand le signal suit un cycle, comme le solaire.
+ Essayer · Les trois études · Articles et équipes
+ JavaScript est nécessaire pour les curseurs et l’animation. Les explications et les sources de cette page restent accessibles. Le calcul
+ Pour un signal stationnaire de variance 1, une prévision μ + λ(y t−h − μ) a pour erreur quadratique moyenne 1 − 2λφ h + λ². Persistance, λ = 1 : 2(1 − φ h ). Moyenne, λ = 0 : 1. Meilleur poids, λ = φ h : 1 − φ 2h . Persistance et moyenne se croisent à φ h = 1/2. Dans la simulation, μ et λ sont estimés sur les 1 000 premières valeurs et l'erreur est calculée sur les 1 000 suivantes.
  Trois études complémentaires, trois questions
  2015, Peut-on diagnostiquer la difficulté avant de choisir le modèle de prévision ?
  En 2015, j’ai étudié cette question avec Ted Soubdhan, Philippe Lauret, Mathieu David et Marc Muselli. Notre article examine des paramètres statistiques pour anticiper l’erreur de prévision solaire. Le mean absolute log return (MALR), issu de l’économétrie, décrit l’amplitude des changements relatifs. Ce diagnostic empirique ne dispense pas de tester le modèle sur le site et à l’horizon visés. Article dans Energy (2015) .
@@ -116,13 +124,6 @@ Pourquoi le même modèle réussit ici et échoue là
  Avec Philippe Lauret, Mathieu David, Josselin Le Gal La Salle, Elke Lorenz et Richard Perez, j’ai étudié comment la variabilité horaire σ(Δk c ) renseigne sur la RMSE, au moyen de régressions calibrées sur 60 sites pour les horizons intra-journaliers et le jour suivant. Philippe Lauret est premier auteur ; je suis coauteur. Les intervalles à 95 % sont statistiques, pas des limites physiques universelles. Article dans Solar Energy (2025) .
  sCV et F, Quelle part vient de l’écart au ciel clair, quelle part de la mémoire ?
  La sCV normalise l’écart quadratique au ciel clair. Elle ne décrit pas à elle seule l’ordre temporel des valeurs. L’indicateur F ajoute la dépendance des résidus à des retards compatibles avec l’horizon. On peut ainsi avoir les mêmes valeurs et la même sCV, mais des structures temporelles et des performances de référence très différentes. Article Renewable Energy (2026) · Calculateur sCV/F · Code de référence .
- Annexe : mêmes valeurs, ordre temporel différent, avec les formules sCV/F
- Une expérience qui sépare amplitude et ordre temporel
- Nous construisons une série positive de période artificielle 24, puis mélangeons une copie de ses valeurs. L’histogramme reste identique. La comparaison oppose deux règles simples : recopier la valeur disponible à l’origine de la prévision, ou utiliser la moyenne estimée sur la première moitié. Le but est de comprendre ces règles et leurs hypothèses. Il ne s’agit ni de mesures solaires ni d’un nouveau benchmark des articles.
- Les formules derrière les panneaux
- Ici la référence est constante : I clr = 1 et k = I/I clr . Nous isolons ainsi l’ordre temporel ; le cycle du Soleil sera réintroduit lors d’une application réelle. Avec Δk t = k t − k t−1 , MALR = moyenne(|ln(k t /k t−1 )|) . Toutes les valeurs de cette expérience sont positives ; sur des données réelles, le traitement des zéros et des nuits doit être explicite. σ(Δk) et MALR sont sensibles aux voisins temporels : les mélanger les change.
- Dans l’expérience, sCV = √2/(1−d) × √moyenne[(k−1)²] , avec d = 0,2. La formule générale normalise par la valeur quadratique moyenne du ciel clair. Pour les résidus ε = I − I clr , F(h) = 1 + sCV[ρ max (h) − 1] , où ρ max est le maximum de |ρ(ℓ)| pour h ≤ ℓ ≤ T/2, ici T = 24. Les corrélations sont calculées sur les paires disponibles, comme dans le code MATLAB de référence. La normalisation sCV = 1 est une référence, pas un plafond à imposer par écrêtage à toute série.
- Pour chaque cible t de la moitié test : ŷ pers (t) = k(t−h) et ŷ moy (t) = moyenne(k 0:95 ) . Les RMSE utilisent exactement les mêmes 72 cibles, aux indices 120 à 191. Après l’entraînement (indices 0 à 95), une zone tampon de 24 pas garantit que la moyenne est déjà estimée avant chaque origine de prévision, même à horizon 12. La moyenne reste fixée ; aucune cible future ne sert à la réestimer. Les diagnostics sCV, F, MALR et σ(Δk), eux, décrivent ici toute la série a posteriori. Ce sont deux usages distincts des données.
  « No free lunch » : la structure du problème compte
  Wolpert et Macready ont établi des théorèmes de « no free lunch » pour l’optimisation : sous une moyenne uniforme sur l’ensemble des fonctions d’un problème fini, les performances moyennes des algorithmes de recherche considérés coïncident. Ce cadre précis n’est pas la distribution des problèmes solaires réels. Il ne démontre ni que tous les modèles se valent sur un domaine donné, ni qu’un modèle simple gagne toujours. Texte de référence (1997) .
  Le rapprochement est méthodologique : les hypothèses d’un modèle doivent rencontrer la structure du problème. Une expérience de mélange n’est pas une preuve du théorème. Elle montre concrètement que le choix de référence et l’horizon changent ce que l’erreur raconte. À horizon 12, une anticorrélation peut être informative, alors que la persistance, qui recopie sans inverser, devient inadaptée.
@@ -264,8 +265,8 @@ Research: questions, findings and methods
  My work connects medical physics and energy forecasting around one question: how can a model help inform a real decision? I start from the physical system, existing knowledge and available data. When the relation is known, I compute it; when it is incomplete, I complement the model; when learning is needed, I measure what its complexity adds. AI is a tool in this approach. Decisions, evaluation and responsibility remain human.
  Choose your subject below. Each study leads to its question, findings, limitations, team and technical resources.
  Solar and energy forecasting
- Compute directly · Energy Why the same model succeeds here and fails there
- The same regression: 11.8 % error on a signal with memory, 50.5 % without.
+ Compute directly · Energy Copy the last value or take the mean? It depends on the signal memory
+ Random walk: persistence wins. Pure noise: the mean. In between: their convex combination.
  Compute directly · Energy Simulate what you cannot yet measure: road tunnels
  One year at 10-minute resolution in about 150 ms, with its limits stated.
  Compute directly · Energy How forecastable is the sun?
@@ -335,8 +336,8 @@ Recherche : questions, résultats et méthodes
  Mon travail relie la physique médicale et la prévision énergétique autour d’une même question : comment construire un modèle utile pour une décision réelle ? Je pars du système physique, des connaissances et des données disponibles. Quand la relation est connue, je la calcule ; lorsqu’elle est incomplète, je complète le modèle ; lorsque l’apprentissage est nécessaire, je mesure ce que sa complexité apporte. L’IA est un outil de cette démarche. La décision, l’évaluation et la responsabilité restent humaines.
  Choisissez d’abord votre sujet ci-dessous. Chaque étude mène à sa question, ses résultats, ses limites, son équipe et ses ressources techniques.
  Prévision solaire et énergétique
- Calculer directement · Énergie Pourquoi le même modèle réussit ici et échoue là
- La même régression : 11,8 % d'erreur sur un signal à mémoire, 50,5 % sans mémoire.
+ Calculer directement · Énergie Recopier ou prendre la moyenne ? Tout dépend de la mémoire du signal
+ Marche aléatoire : la persistance gagne. Bruit pur : la moyenne. Entre les deux : leur combinaison convexe.
  Calculer directement · Énergie Simuler ce que l'on ne peut pas encore mesurer : les tunnels routiers
  Une année au pas de 10 minutes en 150 ms environ, limites énoncées.
  Calculer directement · Énergie Le ciel change, mais à quel point reste-t-il prévisible ?
@@ -412,8 +413,8 @@ Scientific simulators, animations and calculators
  Languages: most tools work in French and English. Three applications are in English only. Courses and slides are in French.
  Energy
  Explorable demonstration · French and English
- Noise and memory: compare forecasts
- Set additive and multiplicative noise; compare regression, persistence, MAE, nRMSE and NICE.
+ Persistence, mean or combination: which forecast wins?
+ Set the memory of the signal, place a bet, then compare the three forecasts.
  Open this tool →
  Browser calculator · French and English
  Compare a forecast with persistence, NICE
@@ -560,8 +561,8 @@ Simulateurs, animations et calculateurs scientifiques
  Langues : la plupart des outils existent en français et en anglais. Trois applications sont en anglais seulement. Cours et diapositives sont en français.
  Énergie
  Démonstration à explorer · Français et anglais
- Bruit et mémoire : comparer des prévisions
- Régler les bruits additif et multiplicatif ; comparer régression, persistance, MAE, nRMSE et NICE.
+ Persistance, moyenne ou combinaison : quelle prévision gagne ?
+ Régler la mémoire du signal, parier, puis comparer les trois prévisions.
  Ouvrir cet outil →
  Calculateur dans le navigateur · Français et anglais
  Comparer une prévision à la persistance, NICE
@@ -2015,33 +2016,41 @@ Simulate what you cannot yet measure: the electricity demand of road tunnels
 ---
 URL: https://www.cyrilvoyant.com/stories/variability-memory-forecastability/
 
-Why the same model succeeds here and fails there
- The same linear regression has an error of 11.8 % on a signal that keeps its memory, and 50.5 % on a signal that has none. The model did not change: the signal did. Before judging a model or making it more complex, find out what the signal allows you to forecast.
- The signal keeps its memory
- 11.8 %
- linear regression error
- Copy the last value
- 11.9 %
- Forecast the mean
- 47.0 %
- The signal changes at random
- 50.5 %
- linear regression error
- Copy the last value
- 71.7 %
- Forecast the mean
- 50.5 %
- Error: nRMSE, the root mean squared error divided by the mean of the observations. Simulation below, presets “Almost predictable” and “No memory”, forecast one step ahead. Simulated values, not solar measurements.
+Copy the last value or take the mean? It depends on the signal's memory
+ On a random walk, persistence cannot be beaten. On pure noise, the mean cannot be beaten. In between, neither is enough: that is where skill matters. A convex combination of the two, such as CLIPER, then beats each one.
+ Random walk, φ = 1
+ Persistence wins
+ Persistence
+ 0
+ Combination
+ 0
+ Mean
+ 100 or more
+ In between, φ = 0.5
+ The combination wins
+ Persistence
+ 100
+ Combination
+ 87
+ Mean
+ 100
+ Pure noise, φ = 0
+ The mean wins
+ Persistence
+ 141
+ Combination
+ 100
+ Mean
+ 100
+ Theoretical root mean squared error one step ahead, with the mean at 100, for a first-order autoregressive signal (equations below). At φ = 1 the variance is no longer finite: the mean no longer makes sense. No solar measurements here.
  What this means
- When the signal has memory, copying the last value already does as well as the regression.
- When it has none, copying the last value is the worst choice, and the regression does no better than a mean.
- An error alone therefore does not judge a model. Compare it with a simple reference, on the same signal.
- Solar forecasting raises the same question: a steady sky and a sky of changing clouds do not leave the same thing to forecast. Across 68 Spanish stations, our forecastability indicator F moves inversely to forecast error ( sCV and F ).
- Try the simulation · The three studies · Papers and teams
- JavaScript is needed for the controls and animation. The explanations and sources on this page remain available. Main experiment: model, assumptions and equations
- Here t denotes the current step and h the forecast lead. r controls memory between successive states; a is half the separation of the two levels; μ is their mean; β is the relative standard deviation of multiplicative noise and σ a is the standard deviation of additive noise. S t is −1 or +1 with switching probability q = (1−r)/2, initialized in its equiprobable stationary distribution. The signal before adding noise is K t = μ + aS t , μ = 0.6, with exact autocorrelation r h when a > 0. Observations are Y t = K t ( 1 + β Z m , t ) + σ a Z a , t . The Z draws are independent of each other, across times and of the state, uniform on [−√3,+√3], with zero mean and unit variance. Multiplicative noise has conditional variance β²K², additive noise σ a ². Control ranges guarantee positive observations without clipping. This teaching generator is not a validated weather model.
- A is the line’s intercept and B its slope; B* denotes the theoretical optimal slope when the generator distribution is known. The h-step regression fits ŷ = A + BY t on training pairs only. Its stationary population-optimal linear slope is B * = a 2 r h a 2 + σ a 2 + β 2 ( μ 2 + a 2 ) . Observation noise thus reduces memory accessible to a simple regression. Displayed A and B are fitted, not substituted from this formula. Training uses indices 0–599; common test targets 624–1199 follow a 24-step buffer. Every forecast origin is exactly h steps before its target and after training. Models see only Y. sCV/F are retrospective diagnostics using the whole series, I clr = 1, d = 0.2 and conventional T = 24 for F.
- MAE is mean absolute error; RMSE weights large errors more strongly. nRMSE = 100 × RMSE / mean test observation. NICE¹ and NICE² divide model MAE and RMSE by same-horizon simple-persistence errors on identical targets. NICEΣ equally averages the L¹, L² and L³ ratios, following the reference NICE code . Ratios are undefined for a perfect reference. NICE method and paper .
+ Persistence copies the last value. It is optimal if the signal forgets nothing.
+ The mean ignores the past. It is optimal if the past adds nothing.
+ A real signal is almost always in between. The best weight of the last value is then λ = φ h : the error falls with no complex learning.
+ An error therefore only makes sense against these references. This is what NICE measures against persistence, and what BLEND and CLIPER develop when the signal follows a cycle, as solar does.
+ Try it · The three studies · Papers and teams
+ JavaScript is needed for the controls and animation. The explanations and sources on this page remain available. The calculation
+ For a stationary signal of variance 1, a forecast μ + λ(y t−h − μ) has mean squared error 1 − 2λφ h + λ². Persistence, λ = 1: 2(1 − φ h ). Mean, λ = 0: 1. Best weight, λ = φ h : 1 − φ 2h . Persistence and the mean cross at φ h = 1/2. In the simulation, μ and λ are estimated on the first 1,000 values and the error is computed on the next 1,000.
  Three complementary studies, three questions
  2015, Can we diagnose difficulty before choosing the forecaster?
  In 2015, I studied this question with Ted Soubdhan, Philippe Lauret, Mathieu David and Marc Muselli. Our paper examines statistical parameters for anticipating solar forecast error. Mean absolute log return (MALR), borrowed from econometrics, describes relative changes. This empirical diagnostic does not replace testing the model at the intended site and horizon. Paper in Energy (2015) .
@@ -2049,13 +2058,6 @@ Why the same model succeeds here and fails there
  With Philippe Lauret, Mathieu David, Josselin Le Gal La Salle, Elke Lorenz and Richard Perez, I studied how hourly variability σ(Δk c ) relates to RMSE, using regressions calibrated on 60 sites for intra-day and day-ahead horizons. Philippe Lauret is first author; I am a co-author. The 95% intervals are statistical, not universal physical limits. Paper in Solar Energy (2025) .
  sCV and F, Clear-sky departure versus temporal memory
  sCV normalizes the quadratic departure from clear sky. It does not by itself describe temporal ordering. F incorporates residual dependencies at lags compatible with the horizon. The same values and sCV can therefore coexist with different temporal structures and reference-model performance. Renewable Energy paper (2026) · sCV/F calculator · Reference code .
- Appendix: identical values, different temporal order, including sCV/F equations
- An experiment separating amplitude from temporal order
- We construct a positive series with an artificial period of 24 and shuffle a copy of its values. Its histogram is unchanged. Two simple rules are compared: copy the value available at forecast origin, or use the mean estimated on the first half. The aim is to understand these rules and assumptions. These are synthetic values, not solar measurements or a new benchmark of the papers.
- The equations behind the panels
- The reference is constant here: I clr = 1 and k = I/I clr . This isolates temporal ordering; a real application needs the Sun’s cycle too. With Δk t = k t − k t−1 , MALR = mean(|ln(k t /k t−1 )|) . All values here are positive; real-data treatment of zeros and nights must be explicit. Both σ(Δk) and MALR depend on temporal neighbours and change when values are shuffled.
- In this experiment, sCV = √2/(1−d) × √mean[(k−1)²] , with d = 0.2. The general formula normalizes by root-mean-square clear-sky irradiance. For residuals ε = I − I clr , F(h) = 1 + sCV[ρ max (h) − 1] , where ρ max is the maximum |ρ(ℓ)| for h ≤ ℓ ≤ T/2, here T = 24. Correlations use available pairs, as in the reference MATLAB code. The sCV normalization at 1 is a reference, not a ceiling to impose on every series.
- For each test target t: ŷ pers (t) = k(t−h) and ŷ mean (t) = mean(k 0:95 ) . Both RMSEs use the same 72 targets, indices 120 to 191. After training on indices 0 to 95, a 24-step buffer ensures that the mean is fitted before every forecast origin, including horizon 12. The mean stays fixed; future targets do not re-estimate it. Conversely, sCV, F, MALR and σ(Δk) describe the entire constructed series retrospectively. Those are distinct uses of the data.
  No free lunch: problem structure matters
  Wolpert and Macready’s optimization no-free-lunch results establish equal average performance for the search algorithms considered when uniformly averaging over all functions on a finite problem. That precise setting is not the distribution of real solar forecasting tasks. It does not establish that all models are equivalent within a given domain or that simple models always win. Original reference (1997) .
  The connection is methodological: model assumptions must meet problem structure. Shuffling an example is not a proof of the theorem. It illustrates how the reference choice and horizon change the interpretation of error. At horizon 12, anticorrelation may carry useful information while persistence, which copies without reversing, becomes inappropriate.
@@ -3439,7 +3441,7 @@ sCV et F : variabilité et prévisibilité de l'éclairement solaire
  Référence collective : Cyril Voyant, Alan Julien , Milan Despotovic , Gilles Notton , Luis Antonio Garcia-Gutierrez , Claudio Francesco Nicolosi , Philippe Blanc et Jamie Bright . Stochastic coefficient of variation: Assessing the variability and forecastability of solar irradiance . Renewable Energy 256, 123913 (2026). DOI · article éditeur en accès ouvert .
  Théorie complète, code et exemple exécutable (site des méthodes, en anglais) · Tous les récits · L'auteur
  Variabilité, mémoire et choix du modèle
- Pourquoi le même modèle réussit ici et échoue là : relier les études de 2015 et 2025 à sCV/F, puis comparer deux références sur les mêmes cibles.
+ Recopier ou prendre la moyenne ? : relier les études de 2015 et 2025 à sCV/F, puis comparer deux références sur les mêmes cibles.
  Essayer dans votre navigateur
  Mesurer variabilité et prévisibilité : sCV et F : un site est-il difficile à prévoir, avant tout modèle ?.
  Le Soleil, les saisons et l’heure UTC : pourquoi dater les mesures solaires en UTC.
@@ -4060,7 +4062,7 @@ Cyril Voyant
  Une méthode, quatre voies complémentaires
  Le domaine change ; la méthode, non. La voie est choisie par le problème et la décision à éclairer, pas par l'outil ; la complexité supplémentaire n'est retenue que si son bénéfice est démontré. Ces quatre voies mènent au fil en cinq étapes : la cinquième, montrer pourquoi on peut faire confiance au résultat, vaut pour chacune.
  Calculer directement Quand le lien est connu, on le calcule avec un modèle explicite, calibré et validé sur des données ; on n'ajoute de l'apprentissage que pour un bénéfice démontré.
- Pourquoi le même modèle réussit ici et échoue là · Neutrons atmosphériques et BNCT : quantifier la limite · Calculer plutôt qu'apprendre : l'équivalence de dose en radiothérapie
+ Recopier ou prendre la moyenne ? Tout dépend de la mémoire du signal · Neutrons atmosphériques et BNCT : quantifier la limite · Calculer plutôt qu'apprendre : l'équivalence de dose en radiothérapie
  Hybrider Quand le modèle ne suffit pas, on le complète : garder le modèle, n'apprendre que ce qui manque.
  Cancer de la thyroïde et iode radioactif : le modèle d'abord · Une meilleure persistance, sans entraîner un réseau neuronal
  Apprendre frugalement Quand les relations utiles ne sont pas suffisamment connues, évaluer ce que les données permettent d'apprendre, avec seulement la complexité qui paie.
@@ -4072,7 +4074,7 @@ Cyril Voyant
  Juger contre une référence, publier code, données et limites, rendre la recherche trouvable et réutilisable.
  Se questionner sur nos façons de faire de la recherche · L'IA dans la recherche : AI Act, charte et boîte à outils · Même nRMSE, modèles différents : ce que révèle NICE · Une prévision décalée peut rester exploitable : le test gamma · Visibilité académique : publier ne suffit plus · Excellence scientifique à l'ère de l'IA : du SEO au GEO · Comment évaluer une prévision solaire face à la persistance · Quelle référence une prévision solaire doit-elle battre ? Quand le deep learning vaut-il la peine ?
  Récits
- Pourquoi le même modèle réussit ici et échoue là , La même régression : 11,8 % d'erreur sur un signal à mémoire, 50,5 % sans mémoire.
+ Recopier ou prendre la moyenne ? Tout dépend de la mémoire du signal , Marche aléatoire : la persistance gagne. Bruit pur : la moyenne. Entre les deux : leur combinaison convexe.
  Neutrons atmosphériques et BNCT : quantifier la limite , Un modèle exploratoire de 2011 : captures rares, énergie locale et dose moyenne insuffisante pour une thérapie macroscopique.
  Calculer plutôt qu'apprendre : l'équivalence de dose en radiothérapie , Une fraction de 15 Gy au rectum : 72,7 Gy en LQ, 59,4 Gy en LQL.
  Simuler ce que l'on ne peut pas encore mesurer : les tunnels routiers , Une année au pas de 10 minutes en 150 ms environ, limites énoncées.
@@ -4163,8 +4165,8 @@ Le fil : cinq étapes, une même démarche
  Oui : on le calcule, avec un modèle explicite.
  Quand le lien est connu, on le calcule avec un modèle explicite, calibré et validé sur des données ; on n'ajoute de l'apprentissage que pour un bénéfice démontré.
  Les récits de cette étape
- Calculer directement · Énergie Pourquoi le même modèle réussit ici et échoue là
- La même régression : 11,8 % d'erreur sur un signal à mémoire, 50,5 % sans mémoire.
+ Calculer directement · Énergie Recopier ou prendre la moyenne ? Tout dépend de la mémoire du signal
+ Marche aléatoire : la persistance gagne. Bruit pur : la moyenne. Entre les deux : leur combinaison convexe.
  Calculer directement · Médecine Neutrons atmosphériques et BNCT : quantifier la limite
  Un modèle exploratoire de 2011 : captures rares, énergie locale et dose moyenne insuffisante pour une thérapie macroscopique.
  Calculer directement · Médecine Calculer plutôt qu'apprendre : l'équivalence de dose en radiothérapie
@@ -4389,7 +4391,7 @@ Mesurer variabilité et prévisibilité : sCV et F
  Cyril Voyant , Alan Julien , Milan Despotovic , Gilles Notton , Luis Antonio Garcia-Gutierrez , Claudio Francesco Nicolosi , Philippe Blanc , Jamie Bright . Stochastic coefficient of variation: Assessing the variability and forecastability of solar irradiance .
  Guide technique, sources et attribution détaillée (anglais) · Cas de vérification numérique
  Variabilité, mémoire et choix du modèle
- Pourquoi le même modèle réussit ici et échoue là : relier les études de 2015 et 2025 à sCV/F, puis comparer deux références sur les mêmes cibles.
+ Recopier ou prendre la moyenne ? : relier les études de 2015 et 2025 à sCV/F, puis comparer deux références sur les mêmes cibles.
 
 ---
 URL: https://www.cyrilvoyant.com/fr/prevision-complexe/
@@ -4890,7 +4892,7 @@ Cyril Voyant
  One method, four complementary routes
  The domain changes; the method does not. The route is chosen by the problem and the decision to inform, not by the tool; extra complexity is kept only when its benefit is demonstrated. These four routes lead to the five-step thread : the fifth step, showing why the result can be trusted, applies to each of them.
  Compute directly When the link is known, compute it with an explicit model, calibrated and validated on data; learning is added only for a demonstrated benefit.
- Why the same model succeeds here and fails there · Atmospheric neutrons and BNCT: quantify the limit · Compute, don't learn: radiobiological dose equivalence
+ Copy the last value or take the mean? It depends on the signal memory · Atmospheric neutrons and BNCT: quantify the limit · Compute, don't learn: radiobiological dose equivalence
  Hybridize When the model falls short, complete it: keep the model, learn only what is missing.
  Thyroid cancer and radioiodine: model first · Better persistence, without training a neural network
  Learn frugally When the useful relations are not known well enough, evaluate what the data can teach, with only as much complexity as pays.
@@ -6437,8 +6439,8 @@ The thread: five steps, one way of working
  Yes: compute it, with an explicit model.
  When the link is known, compute it with an explicit model, calibrated and validated on data; learning is added only for a demonstrated benefit.
  Stories of this step
- Compute directly · Energy Why the same model succeeds here and fails there
- The same regression: 11.8 % error on a signal with memory, 50.5 % without.
+ Compute directly · Energy Copy the last value or take the mean? It depends on the signal memory
+ Random walk: persistence wins. Pure noise: the mean. In between: their convex combination.
  Compute directly · Medicine Atmospheric neutrons and BNCT: quantify the limit
  An exploratory 2011 model: rare captures, local energy and a mean dose too low for macroscopic therapy.
  Compute directly · Medicine Compute, don't learn: radiobiological dose equivalence
