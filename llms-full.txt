@@ -87,7 +87,7 @@ Quelle prévision pour quel signal ?
  Ce que cela introduit
  La combinaison linéaire. Aucune référence simple ne gagne partout : d'où l'idée de doser entre elles. C'est le principe de CLIPER et BLEND .
  La désaisonnalisation. Un cycle connu ne se prévoit pas : on le retire, on prévoit le reste, on le remet.
- Ratio ou différence. Le bruit additif appelle la différence, le bruit multiplicatif le ratio. En solaire, le ratio au ciel clair est l' indice de ciel clair .
+ Rapport ou différence à la tendance. Le bruit additif appelle la différence à la tendance, le bruit multiplicatif le rapport à la tendance. En solaire, le rapport à la tendance de ciel clair est l' indice de ciel clair .
  La variabilité et la prévisibilité. sCV et F les quantifient, avant tout modèle. Les calculer sur vos données .
  L'évaluation. Une erreur n'a de sens que face à une référence : c'est ce que mesure NICE . Comment évaluer une prévision .
  Les définitions
@@ -102,9 +102,9 @@ Quelle prévision pour quel signal ?
  AR(2)
  Une régression sur les deux dernières valeurs connues. Brut : sans retirer le cycle. Il sert à mesurer ce que le retrait du cycle rapporte.
  Différence à la tendance
- On étudie y − c, l'écart au cycle c. Adapté à un bruit additif.
- Ratio à la tendance
- On étudie y / c. Adapté à un bruit multiplicatif. Avec c le ciel clair : l'indice de ciel clair.
+ On étudie y − c, avec ici une tendance périodique c. Adapté à un bruit additif.
+ Rapport à la tendance
+ On étudie y / c, avec ici une tendance périodique c. Adapté à un bruit multiplicatif. Avec c le ciel clair : l'indice de ciel clair.
  Mouvement brownien
  Chaque valeur est la précédente plus un tirage au hasard : mémoire φ = 1.
  Mémoire φ
@@ -1494,7 +1494,7 @@ Teaching
  Forecasting the intermittent solar resource
  Mines Paris – PSL engineering curriculum, applied research project UE14 · 59 slides · English and French · CC BY 4.0
  How to forecast solar irradiance one hour ahead, on ten years of real measurements from Ajaccio, adding complexity only where it pays.
- The solar signal: geometry, clear sky and the difference from the clear-sky trend (denoted CSI in the course), what can and cannot be predicted.
+ The solar signal: geometry, clear sky and the difference to the clear-sky trend (denoted CSI in the course), what can and cannot be predicted.
  The data: ten years of hourly measurements, quality control, day and night.
  The references to beat: simple persistence, smart persistence, climatology.
  Autoregressive models fitted by least squares, the model order, the sliding window.
@@ -1565,9 +1565,9 @@ Teaching
  I supervise and co-supervise doctoral research on solar forecasting, satellite imagery, parsimonious models, energy-system control and radioiodine modeling. Previous doctoral work includes solar forecasting, air quality and solar-potential estimation.
  At Mines Paris – PSL, my teaching includes solar resource forecasting and academic tutoring of international internships and gap years (UE45). Earlier teaching spans biostatistics, thermodynamics, biophysics and numerical modeling at the University of Corsica.
  Solar forecasting: the course starts from the signal
- Start from the signal: what is predictable in solar irradiance, and what is not. The figure shows why the course works on the difference from the clear-sky trend.
- See why: three days of measured irradiance and their difference from the clear-sky trend
- From signal to methods: three days in Ajaccio (2007), measured under clear, variable and overcast skies. Bottom: difference from the clear-sky trend (denoted CSI in the course), not a ratio. Teaching illustration from the UE14 course, separate from the papers' results. Source: cyrilvoyant.github.io/teaching/solar-forecasting-basics.html
+ Start from the signal: what is predictable in solar irradiance, and what is not. The figure shows why the course works on the difference to the clear-sky trend.
+ See why: three days of measured irradiance and their difference to the clear-sky trend
+ From signal to methods: three days in Ajaccio (2007), measured under clear, variable and overcast skies. Bottom: difference to the clear-sky trend (denoted CSI in the course), not a ratio. Teaching illustration from the UE14 course, separate from the papers' results. Source: cyrilvoyant.github.io/teaching/solar-forecasting-basics.html
  The course page · Solar forecasting basics, with equations · BLEND · ARTU · Stochastic persistence
  Talks and teaching
  Research Excellence in 2026, watch my talk · YouTube channel Summary, references and associated preprint .
@@ -2021,7 +2021,7 @@ Which forecast for which signal?
  What this introduces
  The linear combination. No simple reference wins everywhere, hence the idea of weighing them. This is the principle of CLIPER and BLEND .
  Deseasonalization. A known cycle is not forecast: remove it, forecast the rest, put it back.
- Ratio or difference. Additive noise calls for the difference, multiplicative noise for the ratio. In solar forecasting, the ratio to clear sky is the clear-sky index .
+ Ratio to trend or difference to trend. Additive noise calls for the difference to trend, multiplicative noise for the ratio to trend. In solar forecasting, the ratio to the clear-sky trend is the clear-sky index .
  Variability and forecastability. sCV and F quantify them, before any model.
  Evaluation. An error only makes sense against a reference: this is what NICE measures. How to evaluate a forecast .
  Definitions
@@ -4991,7 +4991,7 @@ BLEND: a better persistence forecast without training a neural network
  BLEND least squares per phase reaches mean nRMSE 0.3020, 0.3975, 0.4447, 0.4880 and 0.4954 at 1, 2, 3, 6 and 9 steps, compared with 0.5021 for cyclic persistence. Its weight is estimated by least squares in closed form, without iterative optimization. These estimates are not identical to the finite-sample moments estimator in general.
  CLIPER on the ratio to trend x/CS (clear-sky reference) has the lowest mean errors here. This is consistent with a synthetic signal constructed as clear sky multiplied by correlated noise. CLIPER on the difference from the periodic trend (mean profile estimated on training data) also performs well without a clear-sky reference. Ten realizations of one generator do not establish a universal ranking or reproduce the paper’s SIAR experiments.
  Archived code v1.1.1 · Full results, figures and CSV · Step-by-step calculation
- Three panels of out-of-sample nRMSE versus horizon 1 to 9 steps, synthetic signal, 10 realizations (cyclostationary-forecasting-matlab v1.1.1). BLEND on the raw signal: weight per phase 0.302 to 0.495, one weight 0.365 to 0.499, simplified (1 + rho)/2 0.403 to 0.744; cyclic persistence 0.502. CLIPER without clear sky: one weight on the difference from trend 0.223 to 0.354, weight per phase 0.263 to 0.354. With clear sky: CLIPER on x/CS 0.213 to 0.354, BLEND on x/CS 0.219 to 0.413, smart multiplicative 0.230 to 0.593, stochastic 0.260 to 0.474.
+ Three panels of out-of-sample nRMSE versus horizon 1 to 9 steps, synthetic signal, 10 realizations (cyclostationary-forecasting-matlab v1.1.1). BLEND on the raw signal: weight per phase 0.302 to 0.495, one weight 0.365 to 0.499, simplified (1 + rho)/2 0.403 to 0.744; cyclic persistence 0.502. CLIPER without clear sky: one weight on the difference to trend 0.223 to 0.354, weight per phase 0.263 to 0.354. With clear sky: CLIPER on x/CS 0.213 to 0.354, BLEND on x/CS 0.219 to 0.413, smart multiplicative 0.230 to 0.593, stochastic 0.260 to 0.474.
  Paper, authors and resources
  Reference: Cyril Voyant, Candice Banes , Luis Garcia-Gutierrez , Gilles Notton , Milan Despotovic and Zaher Mundher Yaseen . Symmetry-constrained forecasting of periodically correlated energy processes . Applied Mathematical Modeling 157, 116988 (2026). DOI · author full text · MATLAB code · code archive .
  Full theory, code and runnable example (methods site) · All stories · About the author
@@ -5711,8 +5711,8 @@ Solar forecasting course: forecasting the intermittent solar resource
  Prerequisites
  Basics of time series and linear regression; a spreadsheet or Python is enough.
  Suggested path
- The signal and the difference from the clear-sky trend (denoted CSI in the course), then the references to beat (persistence), then autoregression, then ELMs; finish with evaluation (nRMSE, NICE).
- The solar signal: geometry, clear sky and the difference from the clear-sky trend (denoted CSI in the course), what can and cannot be predicted.
+ The signal and the difference to the clear-sky trend (denoted CSI in the course), then the references to beat (persistence), then autoregression, then ELMs; finish with evaluation (nRMSE, NICE).
+ The solar signal: geometry, clear sky and the difference to the clear-sky trend (denoted CSI in the course), what can and cannot be predicted.
  The data: ten years of hourly measurements, quality control, day and night.
  The references to beat: simple persistence, smart persistence, climatology.
  Autoregressive models fitted by least squares, the model order, the sliding window.
@@ -5722,9 +5722,9 @@ Solar forecasting course: forecasting the intermittent solar resource
  Archived and citable on Zenodo, DOI 10.5281/zenodo.23620102
  In brief
  A 59-slide course on forecasting solar irradiance one hour ahead, taught in the UE14 applied research project of the Mines Paris – PSL engineering curriculum, built on ten years of hourly measurements from Ajaccio (Corsica).
- It goes from the solar signal and the difference from the clear-sky trend (denoted CSI in the course) to autoregressive models fitted by least squares, then to Extreme Learning Machines, online learning and frugality, every model judged against persistence; on the 2007 test year, the daytime nRMSE is 22.0 % for smart persistence, 21.3 % for AR(2) and 20.5 % for an ELM.
+ It goes from the solar signal and the difference to the clear-sky trend (denoted CSI in the course) to autoregressive models fitted by least squares, then to Extreme Learning Machines, online learning and frugality, every model judged against persistence; on the 2007 test year, the daytime nRMSE is 22.0 % for smart persistence, 21.3 % for AR(2) and 20.5 % for an ELM.
  Course by Cyril Voyant, license CC BY 4.0, downloadable as PowerPoint and PDF; the worked example with equations and code is on cyrilvoyant.github.io.
- Vocabulary: the original slides call CSI = GHI − GHIcs a clear-sky index. It is a difference from the clear-sky trend, kept as is in the slides; the usual clear-sky index is the ratio to that trend, GHI/GHIcs. Removing a trend does not guarantee stationarity, which is why slide 22 checks it.
+ Vocabulary: the original slides call CSI = GHI − GHIcs a clear-sky index. It is a difference to the clear-sky trend, kept as is in the slides; the usual clear-sky index is the ratio to that trend, GHI/GHIcs. Removing a trend does not guarantee stationarity, which is why slide 22 checks it.
  Download the slides (PowerPoint, 3.5 MB) PDF (2.4 MB) Version française
  Introduction
  1 Forecasting the intermittent solar resource
