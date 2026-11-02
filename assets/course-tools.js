@@ -5,6 +5,9 @@
    Attenuation: N/N0 = exp(-μx) = 2^(-x/CDA). */
 (function () {
   "use strict";
+  var EN = document.documentElement.lang === "en";
+  var TEXT_EN = {"Courbe ROC : déplacez le seuil": "ROC curve: move the threshold", "Résultats du test chez les non-malades N(0, 1) et chez les malades N(d, 1). Le seuil classe positif tout résultat au-dessus ; la prévalence change les valeurs prédictives, pas la courbe.": "Test results without disease follow N(0, 1), and with disease N(d, 1). Results above the threshold are positive. Prevalence changes predictive values, not the curve.", "Distributions des résultats et seuil": "Test-result distributions and threshold", "Courbe ROC": "ROC curve", "Séparation d": "Separation d", "Seuil s": "Threshold s", "Prévalence": "Prevalence", "non-malades": "without disease", "malades": "with disease", "</b><br>VPP = <b>": "</b><br>PPV = <b>", "</b> · VPN = <b>": "</b> · NPV = <b>", "</b> pour une prévalence de ": "</b> at a prevalence of ", " · indice de Youden Se + Sp − 1 = ": " · Youden index Se + Sp − 1 = ", "Table de la loi normale, interactive": "Interactive normal distribution table", "Choisissez une valeur et lisez l'aire, ou choisissez une probabilité et lisez la borne. Tout se fait avec z = (x − μ)/σ.": "Choose a value and read its area, or choose a probability and find its threshold. Both use z = (x − μ)/σ.", "Densité de la loi normale et aire": "Normal density and probability area", "Aire cherchée": "Area to calculate", "probabilité": "probability", "Aire": "Area", " pour N(": " for N(", "</b> · aire = <b>": "</b> · area = <b>", "</b> · densité φ(z) = ": "</b> · density φ(z) = ", "Atténuation d'un faisceau : la couche de demi-atténuation": "Beam attenuation: the half-value layer", "N(x) = N₀ e<sup>−μx</sup> = N₀ / 2<sup>x/CDA</sup>. Sur mille photons qui entrent, combien sortent ?": "N(x) = N₀ e<sup>−μx</sup> = N₀ / 2<sup>x/HVL</sup>. Out of a thousand incident photons, how many are transmitted?", "Courbe d'atténuation et épaisseur traversée": "Attenuation curve and material thickness", "CDA (cm)": "HVL (cm)", "Épaisseur x (cm)": "Thickness x (cm)", "μ = ln 2 / CDA = <b>": "μ = ln 2 / HVL = <b>", " CDA · N/N₀ = <b>": " HVL · N/N₀ = <b>", "</b> · sur 1000 photons, <b>": "</b> · out of 1000 photons, <b>", "</b> sortent": "</b> are transmitted", " (10 CDA ≈ 1 sur 1000)": " (10 HVLs ≈ 1 in 1000)"};
+  function tr(s) { return EN && Object.prototype.hasOwnProperty.call(TEXT_EN,s) ? TEXT_EN[s] : s; }
   var CT = window.CT = {};
   function erf(x) {                    // W. J. Cody-type rational approximation via erfc (Numerical Recipes erfcc), |err| < 1.2e-7
     var z = Math.abs(x), t = 1 / (1 + 0.5 * z);
@@ -35,8 +38,8 @@
   var NS = "http://www.w3.org/2000/svg";
   function el(t, a, p) { var e = document.createElementNS(NS, t); for (var k in a) e.setAttribute(k, a[k]); if (p) p.appendChild(e); return e; }
   function h(t, a, html) { var e = document.createElement(t); for (var k in a) e.setAttribute(k, a[k]); if (html != null) e.innerHTML = html; return e; }
-  function f(v, n) { return v.toFixed(n === undefined ? 2 : n).replace(".", ","); }
-  function pct(v) { return (100 * v).toFixed(1).replace(".", ",") + " %"; }
+  function f(v, n) { return v.toFixed(n === undefined ? 2 : n).replace(".", EN ? "." : ","); }
+  function pct(v) { return (100 * v).toFixed(1).replace(".", EN ? "." : ",") + " %"; }
   function slider(lab, min, max, step, val, fmt) {
     var w = h("label", { "class": "ct-sl" }), s = h("span", {}, lab), i = h("input", { type: "range", min: min, max: max, step: step, value: val }), o = h("output", {});
     w.appendChild(s); w.appendChild(i); w.appendChild(o);
@@ -47,22 +50,22 @@
 
   /* ROC: two distributions, a threshold, the ROC curve with the current point, Se/Sp/VPP/VPN at a prevalence */
   function roc(box) {
-    box.appendChild(h("h3", {}, "Courbe ROC : déplacez le seuil"));
-    box.appendChild(h("p", { "class": "muted" }, "Résultats du test chez les non-malades N(0, 1) et chez les malades N(d, 1). Le seuil classe positif tout résultat au-dessus ; la prévalence change les valeurs prédictives, pas la courbe."));
+    box.appendChild(h("h3", {}, tr("Courbe ROC : déplacez le seuil")));
+    box.appendChild(h("p", { "class": "muted" }, tr("Résultats du test chez les non-malades N(0, 1) et chez les malades N(d, 1). Le seuil classe positif tout résultat au-dessus ; la prévalence change les valeurs prédictives, pas la courbe.")));
     var g = h("div", { "class": "ct-grid" }); box.appendChild(g);
-    var W = 300, H = 170, sv = el("svg", { viewBox: "0 0 " + W + " " + H, "class": "ct-svg", role: "img", "aria-label": "Distributions des résultats et seuil" }, g);
-    var R = 170, sr = el("svg", { viewBox: "0 0 " + R + " " + R, "class": "ct-svg ct-sq", role: "img", "aria-label": "Courbe ROC" }, g);
-    var cD = slider("Séparation d", 0, 4, 0.05, 1.8, function (v) { return f(v); }),
-        cS = slider("Seuil s", -3, 6, 0.05, 1, function (v) { return f(v); }),
-        cP = slider("Prévalence", 0.001, 0.5, 0.001, 0.1, function (v) { return pct(v); });
+    var W = 300, H = 170, sv = el("svg", { viewBox: "0 0 " + W + " " + H, "class": "ct-svg", role: "img", "aria-label": tr("Distributions des résultats et seuil") }, g);
+    var R = 170, sr = el("svg", { viewBox: "0 0 " + R + " " + R, "class": "ct-svg ct-sq", role: "img", "aria-label": tr("Courbe ROC") }, g);
+    var cD = slider(tr("Séparation d"), 0, 4, 0.05, 1.8, function (v) { return f(v); }),
+        cS = slider(tr("Seuil s"), -3, 6, 0.05, 1, function (v) { return f(v); }),
+        cP = slider(tr("Prévalence"), 0.001, 0.5, 0.001, 0.1, function (v) { return pct(v); });
     var ctl = h("div", { "class": "ct-ctl" }); [cD, cS, cP].forEach(function (c) { ctl.appendChild(c.w); }); box.appendChild(ctl);
     var out = h("p", { "class": "ct-out", "aria-live": "polite" }); box.appendChild(out);
     var X = function (z) { return 10 + (W - 20) * (z + 3.5) / 10; }, Y = function (v) { return H - 18 - (H - 30) * v / 0.42; };
     el("line", { x1: 10, y1: H - 18, x2: W - 10, y2: H - 18, "class": "ct-ax" }, sv);
     var aH = el("path", { "class": "ct-a1" }, sv), aS = el("path", { "class": "ct-a2" }, sv), lH = el("path", { "class": "ct-l1" }, sv), lS = el("path", { "class": "ct-l2" }, sv);
     var th = el("line", { "class": "ct-th", y1: 6, y2: H - 18 }, sv);
-    el("text", { x: 14, y: 14, "class": "ct-tx1" }, sv).textContent = "non-malades";
-    var tS = el("text", { y: 14, "class": "ct-tx2" }, sv); tS.textContent = "malades";
+    el("text", { x: 14, y: 14, "class": "ct-tx1" }, sv).textContent = tr("non-malades");
+    var tS = el("text", { y: 14, "class": "ct-tx2" }, sv); tS.textContent = tr("malades");
     var P = function (v) { return 14 + (R - 24) * v; }, Q = function (v) { return R - 14 - (R - 24) * v; };
     el("rect", { x: P(0), y: Q(1), width: P(1) - P(0), height: Q(0) - Q(1), "class": "ct-frame" }, sr);
     el("line", { x1: P(0), y1: Q(0), x2: P(1), y2: Q(1), "class": "ct-diag" }, sr);
@@ -81,17 +84,17 @@
       for (k = 0; k <= 80; k++) { z = 6.5 - 10 * k / 80; E.push([P(1 - Phi(z)), Q(1 - Phi(z - d))]); }
       cR.setAttribute("d", path(E)); aR.setAttribute("d", path(E.concat([[P(1), Q(0)]])) + "Z");
       var r = CT.roc(d, s, p); pt.setAttribute("cx", P(1 - r.sp)); pt.setAttribute("cy", Q(r.se));
-      out.innerHTML = "Se = <b>" + pct(r.se) + "</b> · Sp = <b>" + pct(r.sp) + "</b> · AUC = <b>" + f(r.auc, 3) + "</b><br>VPP = <b>" + pct(r.vpp) +
-        "</b> · VPN = <b>" + pct(r.vpn) + "</b> pour une prévalence de " + pct(p) + " · indice de Youden Se + Sp − 1 = " + f(r.se + r.sp - 1, 3);
+      out.innerHTML = "Se = <b>" + pct(r.se) + "</b> · Sp = <b>" + pct(r.sp) + "</b> · AUC = <b>" + f(r.auc, 3) + tr("</b><br>VPP = <b>") + pct(r.vpp) +
+        tr("</b> · VPN = <b>") + pct(r.vpn) + tr("</b> pour une prévalence de ") + pct(p) + tr(" · indice de Youden Se + Sp − 1 = ") + f(r.se + r.sp - 1, 3);
     }
     [cD, cS, cP].forEach(function (c) { c.i.addEventListener("input", draw); }); draw();
   }
 
   /* Normal law: from z to P(Z < z) and back, with the shaded area; or from x, μ, σ */
   function normal(box) {
-    box.appendChild(h("h3", {}, "Table de la loi normale, interactive"));
-    box.appendChild(h("p", { "class": "muted" }, "Choisissez une valeur et lisez l'aire, ou choisissez une probabilité et lisez la borne. Tout se fait avec z = (x − μ)/σ."));
-    var W = 320, H = 150, sv = el("svg", { viewBox: "0 0 " + W + " " + (H + 12), "class": "ct-svg", role: "img", "aria-label": "Densité de la loi normale et aire" }, box);
+    box.appendChild(h("h3", {}, tr("Table de la loi normale, interactive")));
+    box.appendChild(h("p", { "class": "muted" }, tr("Choisissez une valeur et lisez l'aire, ou choisissez une probabilité et lisez la borne. Tout se fait avec z = (x − μ)/σ.")));
+    var W = 320, H = 150, sv = el("svg", { viewBox: "0 0 " + W + " " + (H + 12), "class": "ct-svg", role: "img", "aria-label": tr("Densité de la loi normale et aire") }, box);
     var X = function (z) { return 10 + (W - 20) * (z + 4) / 8; }, Y = function (v) { return H - 20 - (H - 30) * v / 0.4; };
     var ar = el("path", { "class": "ct-a2" }, sv), ln = el("path", { "class": "ct-l2" }, sv);
     el("line", { x1: 10, y1: H - 20, x2: W - 10, y2: H - 20, "class": "ct-ax" }, sv);
@@ -101,10 +104,10 @@
     el("text", { x: 6, y: H - 8, "class": "ct-axl" }, sv).textContent = "z"; el("text", { x: 6, y: H + 6, "class": "ct-axl ct-xl" }, sv).textContent = "x";
     var A = []; for (var k = 0; k <= 120; k++) { var z0 = -4 + 8 * k / 120; A.push([X(z0), Y(CT.phi(z0))]); } ln.setAttribute("d", path(A));
     var row = h("div", { "class": "ct-ctl ct-num" });
-    var mode = h("select", { "aria-label": "Aire cherchée" }, '<option value="lt">P(Z &lt; z)</option><option value="gt">P(Z &gt; z)</option><option value="two">P(−|z| &lt; Z &lt; |z|)</option>');
-    var iz = h("input", { type: "number", step: "0.01", value: "1.96", "aria-label": "z" }), ip = h("input", { type: "number", step: "0.0001", min: "0", max: "1", value: "0.975", "aria-label": "probabilité" });
+    var mode = h("select", { "aria-label": tr("Aire cherchée") }, '<option value="lt">P(Z &lt; z)</option><option value="gt">P(Z &gt; z)</option><option value="two">P(−|z| &lt; Z &lt; |z|)</option>');
+    var iz = h("input", { type: "number", step: "0.01", value: "1.96", "aria-label": "z" }), ip = h("input", { type: "number", step: "0.0001", min: "0", max: "1", value: "0.975", "aria-label": tr("probabilité") });
     var im = h("input", { type: "number", step: "any", value: "0", "aria-label": "μ" }), is = h("input", { type: "number", step: "any", min: "0", value: "1", "aria-label": "σ" }), ix = h("input", { type: "number", step: "any", value: "1.96", "aria-label": "x" });
-    [["Aire", mode], ["z", iz], ["probabilité", ip], ["x", ix], ["μ", im], ["σ", is]].forEach(function (p) { var l = h("label", {}, "<span>" + p[0] + "</span>"); l.appendChild(p[1]); row.appendChild(l); });
+    [[tr("Aire"), mode], ["z", iz], [tr("probabilité"), ip], ["x", ix], ["μ", im], ["σ", is]].forEach(function (p) { var l = h("label", {}, "<span>" + p[0] + "</span>"); l.appendChild(p[1]); row.appendChild(l); });
     box.appendChild(row);
     var out = h("p", { "class": "ct-out", "aria-live": "polite" }); box.appendChild(out);
     function area(z) {
@@ -125,7 +128,7 @@
     function show(z) {
       area(z); var mu = +im.value, sg = +is.value || 1;
       for (var k = 0; k < xl.length; k++) xl[k].textContent = +(mu + (k - 3) * sg).toPrecision(4);
-      out.innerHTML = "x = " + f(+ix.value, 3) + " pour N(" + f(mu, 3) + " ; " + f(sg, 3) + ") → z = (x − μ)/σ = <b>" + f(z, 4) + "</b> · aire = <b>" + f(P(z), 4) + "</b> · densité φ(z) = " + f(CT.phi(z), 4);
+      out.innerHTML = "x = " + f(+ix.value, 3) + tr(" pour N(") + f(mu, 3) + " ; " + f(sg, 3) + ") → z = (x − μ)/σ = <b>" + f(z, 4) + tr("</b> · aire = <b>") + f(P(z), 4) + tr("</b> · densité φ(z) = ") + f(CT.phi(z), 4);
     }
     iz.addEventListener("input", fromZ); ip.addEventListener("input", fromP); ix.addEventListener("input", fromX);
     // μ and σ describe the population: the measured value x stays, z and the area follow
@@ -134,11 +137,11 @@
 
   /* Attenuation: a beam crossing a slab, N/N0, the CDA, 1000 photons */
   function atten(box) {
-    box.appendChild(h("h3", {}, "Atténuation d'un faisceau : la couche de demi-atténuation"));
-    box.appendChild(h("p", { "class": "muted" }, "N(x) = N₀ e<sup>−μx</sup> = N₀ / 2<sup>x/CDA</sup>. Sur mille photons qui entrent, combien sortent ?"));
-    var W = 320, H = 150, sv = el("svg", { viewBox: "0 0 " + W + " " + H, "class": "ct-svg", role: "img", "aria-label": "Courbe d'atténuation et épaisseur traversée" }, box);
-    var cC = slider("CDA (cm)", 0.1, 10, 0.1, 2, function (v) { return f(v, 1) + " cm"; }),
-        cX = slider("Épaisseur x (cm)", 0, 30, 0.1, 6, function (v) { return f(v, 1) + " cm"; });
+    box.appendChild(h("h3", {}, tr("Atténuation d'un faisceau : la couche de demi-atténuation")));
+    box.appendChild(h("p", { "class": "muted" }, tr("N(x) = N₀ e<sup>−μx</sup> = N₀ / 2<sup>x/CDA</sup>. Sur mille photons qui entrent, combien sortent ?")));
+    var W = 320, H = 150, sv = el("svg", { viewBox: "0 0 " + W + " " + H, "class": "ct-svg", role: "img", "aria-label": tr("Courbe d'atténuation et épaisseur traversée") }, box);
+    var cC = slider(tr("CDA (cm)"), 0.1, 10, 0.1, 2, function (v) { return f(v, 1) + " cm"; }),
+        cX = slider(tr("Épaisseur x (cm)"), 0, 30, 0.1, 6, function (v) { return f(v, 1) + " cm"; });
     var ctl = h("div", { "class": "ct-ctl" }); ctl.appendChild(cC.w); ctl.appendChild(cX.w); box.appendChild(ctl);
     var out = h("p", { "class": "ct-out", "aria-live": "polite" }); box.appendChild(out);
     var X = function (x) { return 34 + (W - 44) * x / 30; }, Y = function (v) { return 10 + (H - 34) * (1 - v); };
@@ -158,8 +161,8 @@
       for (k = 1; k * c <= 30 && k <= 12; k++) el("line", { x1: X(k * c), x2: X(k * c), y1: Y(0), y2: Y(0) + 5, "class": "ct-ax" }, ticks);
       var n = Math.round(1000 * r), ds = dots.children;
       for (k = 0; k < 1000; k++) ds[k].className = k < n ? "on" : "";
-      out.innerHTML = "μ = ln 2 / CDA = <b>" + f(mu, 3) + " cm⁻¹</b> · x = " + f(x / c, 2) + " CDA · N/N₀ = <b>" + (r < 0.001 ? r.toExponential(2).replace(".", ",") : f(r, 4)) +
-        "</b> · sur 1000 photons, <b>" + n + "</b> sortent" + (x / c >= 9.95 ? " (10 CDA ≈ 1 sur 1000)" : "");
+      out.innerHTML = tr("μ = ln 2 / CDA = <b>") + f(mu, 3) + " cm⁻¹</b> · x = " + f(x / c, 2) + tr(" CDA · N/N₀ = <b>") + (r < 0.001 ? r.toExponential(2).replace(".", EN ? "." : ",") : f(r, 4)) +
+        tr("</b> · sur 1000 photons, <b>") + n + tr("</b> sortent") + (x / c >= 9.95 ? tr(" (10 CDA ≈ 1 sur 1000)") : "");
     }
     [cC, cX].forEach(function (c) { c.i.addEventListener("input", draw); }); draw();
   }
@@ -417,7 +420,7 @@
       var XS = on ? BX.concat([px]) : BX, YS = on ? BY.concat([py]) : BY, r = CT.regress(XS, YS);
       line.setAttribute("x1", X(0)); line.setAttribute("x2", X(10)); line.setAttribute("y1", Y(r.b0)); line.setAttribute("y2", Y(r.b0 + 10 * r.b1));
       pt.setAttribute("cx", X(px)); pt.setAttribute("cy", Y(py)); pt.style.opacity = on ? 1 : 0.25;
-      var pv = r.p < 1e-4 ? r.p.toExponential(1).replace(".", ",") : f(r.p, 4);
+      var pv = r.p < 1e-4 ? r.p.toExponential(1).replace(".", EN ? "." : ",") : f(r.p, 4);
       out.innerHTML = "n = " + r.n + " · r = <b>" + f(r.r, 3) + "</b> · r² = <b>" + f(r.r2, 3) + "</b> · droite y = " + f(r.b0, 2) + " + " + f(r.b1, 3) + "·x<br>t = " + f(r.t, 2) +
         " (" + (r.n - 2) + " ddl) · p = <b>" + pv + "</b> " + (r.p < 0.05 ? "(lien significatif au risque 5 %)" : "(pas significatif au risque 5 %)") +
         "<br>Sans le point orange : r = " + f(r0.r, 3) + ". Un seul point loin en x tire la droite (bras de levier) : regardez toujours le nuage avant de conclure.";

@@ -293,7 +293,7 @@
       "id": "roc",
       "domain": "learning",
       "kind": "teaching",
-      "interface_language": "fr",
+      "interface_language": "both",
       "name": {
         "fr": "Comprendre sensibilité, spécificité et courbe ROC",
         "en": "Understand sensitivity, specificity and ROC curves"
@@ -304,14 +304,14 @@
       },
       "url": {
         "fr": "https://www.cyrilvoyant.com/fr/animations/courbe-roc/",
-        "en": "https://www.cyrilvoyant.com/fr/animations/courbe-roc/"
+        "en": "https://www.cyrilvoyant.com/tools/roc-curve/"
       }
     },
     {
       "id": "normal",
       "domain": "learning",
       "kind": "teaching",
-      "interface_language": "fr",
+      "interface_language": "both",
       "name": {
         "fr": "Explorer la loi normale",
         "en": "Explore the normal distribution"
@@ -322,14 +322,14 @@
       },
       "url": {
         "fr": "https://www.cyrilvoyant.com/fr/animations/loi-normale/",
-        "en": "https://www.cyrilvoyant.com/fr/animations/loi-normale/"
+        "en": "https://www.cyrilvoyant.com/tools/normal-distribution/"
       }
     },
     {
       "id": "atten",
       "domain": "learning",
       "kind": "teaching",
-      "interface_language": "fr",
+      "interface_language": "both",
       "name": {
         "fr": "Explorer l’atténuation et la CDA",
         "en": "Explore attenuation and half-value layers"
@@ -340,7 +340,7 @@
       },
       "url": {
         "fr": "https://www.cyrilvoyant.com/fr/animations/attenuation-demi-epaisseur/",
-        "en": "https://www.cyrilvoyant.com/fr/animations/attenuation-demi-epaisseur/"
+        "en": "https://www.cyrilvoyant.com/tools/attenuation-half-value-layer/"
       }
     },
     {

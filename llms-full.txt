@@ -290,7 +290,7 @@ URL: https://www.cyrilvoyant.com/tools/
 Scientific simulators, animations and calculators
  Scientific simulators, interactive animations, and course or research calculators, organized by field and interface language.
  Choose a scientific simulator, interactive animation or calculator. Change an input and examine what changes. Research calculators and medical applications are for research and education; their assumptions and limitations are stated in the linked pages.
- Languages: the seven technical calculators have French and English interfaces. The course tools (ROC, normal distribution, regression, attenuation, cooling, freezing, COP) are in French. The electromagnetic wave, Compton and Carnot heat-engine animations, as well as the forecast comparison, exist in French and English; dedicated applications retain their existing interfaces; filter by language before opening a tool.
+ Languages: the seven technical calculators have French and English interfaces. ROC, normal distribution and attenuation also have both interfaces. Regression, cooling, freezing and COP tools remain in French. The electromagnetic wave, Compton and Carnot heat-engine animations, as well as the forecast comparison, exist in French and English; dedicated applications retain their existing interfaces; filter by language before opening a tool.
  Find a tool Field Interface language
  Explorable demonstration · French and English
  Noise and memory: compare forecasts
@@ -356,15 +356,15 @@ Scientific simulators, animations and calculators
  Watch probabilistic forecasting and its lookup table
  Read ELM/persistence bands, PICP coverage and MIL width on three selected days.
  Open this tool →
- Course tool · French interface
+ Course tool · French and English
  Understand sensitivity, specificity and ROC curves
  Change the threshold, distribution separation and prevalence in a teaching example.
  Open this tool →
- Course tool · French interface
+ Course tool · French and English
  Explore the normal distribution
  Convert a standard score to a probability, or vice versa.
  Open this tool →
- Course tool · French interface
+ Course tool · French and English
  Explore attenuation and half-value layers
  Vary thickness and half-value layer; read the transmitted fraction.
  Open this tool →
@@ -432,7 +432,7 @@ URL: https://www.cyrilvoyant.com/fr/outils/
 Simulateurs, animations et calculateurs scientifiques
  Simulateurs scientifiques, animations interactives et calculateurs de cours ou de recherche, classés par domaine et langue.
  Choisissez un simulateur scientifique, une animation interactive ou un calculateur. Modifiez une entrée et observez ce qui change. Les calculateurs de recherche et les applications médicales sont destinés à la recherche et à l’enseignement ; leurs hypothèses et limites figurent dans les pages liées.
- Langues : les sept calculateurs techniques ont des interfaces françaises et anglaises. Les outils des cours (ROC, loi normale, régression, atténuation, refroidissement, congélation, COP) sont en français. Les animations onde électromagnétique, Compton et moteur de Carnot, ainsi que le comparateur de prévisions, existent en français et en anglais ; les applications dédiées conservent leur interface actuelle ; le filtre précise la langue avant ouverture.
+ Langues : les sept calculateurs techniques ont des interfaces françaises et anglaises. ROC, loi normale et atténuation existent aussi dans les deux langues. Les outils de régression, refroidissement, congélation et COP restent en français. Les animations onde électromagnétique, Compton et moteur de Carnot, ainsi que le comparateur de prévisions, existent en français et en anglais ; les applications dédiées conservent leur interface actuelle ; le filtre précise la langue avant ouverture.
  Rechercher un outil Domaine Langue de l’interface
  Démonstration à explorer · Français et anglais
  Bruit et mémoire : comparer des prévisions
@@ -498,15 +498,15 @@ Simulateurs, animations et calculateurs scientifiques
  Observer la prévision probabiliste et sa lookup table
  Lire les bandes ELM/persistance, la couverture PICP et la largeur MIL sur trois jours sélectionnés.
  Ouvrir cet outil →
- Outil de cours · Interface en français
+ Outil de cours · Français et anglais
  Comprendre sensibilité, spécificité et courbe ROC
  Changer le seuil, la séparation des distributions et la prévalence dans un exemple pédagogique.
  Ouvrir cet outil →
- Outil de cours · Interface en français
+ Outil de cours · Français et anglais
  Explorer la loi normale
  Passer d’un écart réduit à une probabilité, ou l’inverse.
  Ouvrir cet outil →
- Outil de cours · Interface en français
+ Outil de cours · Français et anglais
  Explorer l’atténuation et la CDA
  Faire varier l’épaisseur et la couche de demi-atténuation ; lire la fraction transmise.
  Ouvrir cet outil →
