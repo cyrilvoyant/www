@@ -34,7 +34,7 @@
      "@id": "https://orcid.org/0000-0002-5403-9328"
     },
     {
-     "@id": "#mathilde-marchand-lasserre"
+     "@id": "https://orcid.org/0009-0003-9067-9570"
     },
     {
      "@id": "https://orcid.org/0000-0003-3118-6859"
@@ -86,7 +86,7 @@
      "@id": "https://orcid.org/0000-0002-5403-9328"
     },
     {
-     "@id": "#mathilde-marchand-lasserre"
+     "@id": "https://orcid.org/0009-0003-9067-9570"
     },
     {
      "@id": "https://orcid.org/0000-0003-3118-6859"
@@ -115,7 +115,7 @@
    "name": "Paolo Stringari"
   },
   {
-   "@id": "#mathilde-marchand-lasserre",
+   "@id": "https://orcid.org/0009-0003-9067-9570",
    "@type": "Person",
    "name": "Mathilde Marchand-Lasserre"
   },

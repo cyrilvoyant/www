@@ -7,7 +7,7 @@
 URL: https://www.cyrilvoyant.com/about/
 
 About
- I am a physicist and Research Director at Mines Paris – PSL , within the Centre Observation, Impacts, Energy (O.I.E.), and Visiting Professor at the University of Kragujevac , Serbia. My work connects solar and photovoltaic forecasting, time series and frugal AI. My background also includes medical physics.
+ I am a physicist and Research Director at Mines Paris – PSL , within the Centre Observation, Impacts, Energy (O.I.E.), and Visiting Professor at the University of Kragujevac , Serbia. I build physical and statistical models to inform decisions in energy and medicine, with people at the center and AI as one tool among others. My work connects solar and photovoltaic forecasting, time series and frugal AI. My background also includes medical physics.
  Background
  I trained in fundamental physics, qualified as a medical physicist in 2003, and completed my PhD on solar radiation time series in 2011. I pursued energy research alongside clinical work as a medical physicist at Polyclinique Saint-Roch, Montpellier (2003–2006), then CHD Castelluccio, Ajaccio (2006–2024), before joining Mines Paris – PSL as Research Director in 2024. My appointments at the University of Corsica ended in 2024; since then I have taught there as a part-time lecturer (vacataire).
  My experience in radiotherapy and measurement informs how I approach uncertainty, model evaluation and scientific software. Read my academic CV .
@@ -45,7 +45,7 @@ About
 URL: https://www.cyrilvoyant.com/fr/a-propos/
 
 À propos
- Je suis physicien et directeur de recherche à Mines Paris – PSL , au centre Observation, Impacts, Énergie (O.I.E.), et professeur invité à l'université de Kragujevac , en Serbie. Mes travaux relient la prévision solaire et photovoltaïque, les séries temporelles et l'IA frugale. Mon parcours comprend aussi la physique médicale.
+ Je suis physicien et directeur de recherche à Mines Paris – PSL , au centre Observation, Impacts, Énergie (O.I.E.), et professeur invité à l'université de Kragujevac , en Serbie. Je construis des modèles physiques et statistiques pour éclairer des décisions en énergie et en médecine, l'humain au centre et l'IA comme un outil parmi d'autres. Mes travaux relient la prévision solaire et photovoltaïque, les séries temporelles et l'IA frugale. Mon parcours comprend aussi la physique médicale.
  Parcours
  J'ai suivi une formation en physique fondamentale, obtenu ma qualification de physicien médical en 2003 et soutenu en 2011 une thèse sur les séries temporelles du rayonnement solaire. J'ai mené la recherche en énergie en parallèle de mon activité clinique, comme physicien médical à la Polyclinique Saint-Roch de Montpellier (2003–2006) puis au CHD Castelluccio d'Ajaccio (2006–2024), avant de rejoindre Mines Paris – PSL comme directeur de recherche en 2024. Mes fonctions à l'université de Corse ont pris fin en 2024 ; j'y interviens depuis comme vacataire.
  Mon expérience de la radiothérapie et de la mesure nourrit ma façon d'aborder l'incertitude, l'évaluation des modèles et les logiciels scientifiques. Lire mon CV académique (en anglais) .
@@ -390,7 +390,7 @@ Scientific simulators, animations and calculators
  Energy
  Explorable demonstration · French and English
  Noise and memory: compare forecasts
- Adjust additive and multiplicative noise; compare regression, persistence, MAE, nRMSE and NICE with a generator-specific oracle.
+ Adjust additive and multiplicative noise; compare regression, persistence, MAE, nRMSE and NICE with the best possible forecast of this generator.
  Open this tool →
  Browser calculator · French and English
  Compare a forecast with persistence, NICE
@@ -430,7 +430,7 @@ Scientific simulators, animations and calculators
  Open this tool →
  Explorable demonstration · French and English
  Watch probabilistic forecasting and its lookup table
- Read ELM/persistence bands, PICP coverage and MIL width on three selected days.
+ Read ELM/persistence bands, coverage (PICP: share of measurements inside the band) and mean band width (MIL) on three selected days.
  Open this tool →
  Medical physics
  Explorable demonstration · French and English
@@ -537,7 +537,7 @@ Simulateurs, animations et calculateurs scientifiques
  Énergie
  Démonstration à explorer · Français et anglais
  Bruit et mémoire : comparer des prévisions
- Régler les bruits additif et multiplicatif ; comparer régression, persistance, MAE, nRMSE et NICE, avec un oracle propre au générateur.
+ Régler les bruits additif et multiplicatif ; comparer régression, persistance, MAE, nRMSE et NICE, avec la meilleure prévision possible pour ce générateur.
  Ouvrir cet outil →
  Calculateur dans le navigateur · Français et anglais
  Comparer une prévision à la persistance, NICE
@@ -569,15 +569,15 @@ Simulateurs, animations et calculateurs scientifiques
  Ouvrir cet outil →
  Démonstration à explorer · Français et anglais
  Le Soleil, les saisons et l’heure UTC
- La Terre autour du Soleil, le jour et la nuit, la durée du jour à Paris et à Sydney, la double saisonnalité du rayonnement et l’horodatage des mesures en UTC.
+ La Terre autour du Soleil, le jour et la nuit, la durée du jour à Paris et à Sydney, la double saisonnalité de l’éclairement et l’horodatage des mesures en UTC.
  Ouvrir cet outil →
  Démonstration à explorer · Français et anglais
  Prévision complexe : régler α et la largeur des intervalles
  Une autorégression complexe prévoit l’éclairement et sa volatilité ; curseur α, multiplicateur μ gaussien ou calibré, résultats de l’article (2022).
  Ouvrir cet outil →
  Démonstration à explorer · Français et anglais
- Observer la prévision probabiliste et sa lookup table
- Lire les bandes ELM/persistance, la couverture PICP et la largeur MIL sur trois jours sélectionnés.
+ Observer la prévision probabiliste et sa table de correspondance
+ Lire les bandes ELM/persistance, la couverture (PICP : part des mesures dans la bande) et la largeur moyenne de la bande (MIL) sur trois jours sélectionnés.
  Ouvrir cet outil →
  Physique médicale
  Démonstration à explorer · Français et anglais
@@ -650,7 +650,7 @@ Simulateurs, animations et calculateurs scientifiques
  Relier angle et énergie, suivre le photon diffusé et l’électron de recul ; modèle libre au repos.
  Ouvrir cet outil →
  Outil de cours · Français et anglais
- Moteur ditherme : bilan et borne de Carnot
+ Moteur thermique à deux sources : bilan et borne de Carnot
  Modifier les deux températures et lire travail, chaleur rejetée et entropie des sources.
  Ouvrir cet outil →
  Pratiques de recherche
@@ -696,14 +696,14 @@ At a glance: research, software, courses and tools
  Make_Stationary: deseasonalization benchmark for renewable-energy time series (MATLAB) Maklewa Agoundedemba , Cyril Voyant , Milan Despotovic , Luis Antonio Garcia-Gutierrez , Gilles Notton · repository · GPL-3.0
  Filter and wrapper diagnostics of dimensionality reduction for endogenous PV power forecasting (MATLAB) Hassen Bouzgou , Gabriel Chesnoiu , Claudio F. Nicolosi , Adrien Chatel , Gilles Notton , Lionel Menard , Cyril Voyant · repository · MIT
  RAIR-Sim: compartmental simulator of radioactive iodine therapy response in metastatic thyroid cancer (MATLAB) Marie Fusella Giuntini , Cyril Voyant , David Taieb , Dominique Barbolosi · repository · MIT
- Influence Index: a log-based measure of research influence for institutions (MATLAB, processed data) Cyril Voyant , Jeroen Baas , Roy Boverhof , Paolo Stringari , Mathilde Marchand-Lasserre, John P. A. Ioannidis · repository · MIT
+ Influence Index: a log-based measure of research influence for institutions (MATLAB, processed data) Cyril Voyant , Jeroen Baas , Roy Boverhof , Paolo Stringari , Mathilde Marchand-Lasserre , John P. A. Ioannidis · repository · MIT
  LQL-Equiv 2014: biologically equivalent dose calculation in radiotherapy (MATLAB application) Cyril Voyant , Daniel Julian · repository · MIT
  Tunnel Load Simulator: synthetic electricity demand of road tunnels (Python, Streamlit) Haytham El-Houari , Cyril Voyant · repository · MIT
  LQL-Equiv-web 3.0: biologically equivalent doses in radiotherapy (Python, browser) Cyril Voyant , Daniel Julian · repository · MIT
  Open courses (CC BY 4.0)
  Forecasting the intermittent solar resource Mines Paris – PSL engineering curriculum, applied research project UE14 · 59 slides · English and French · CC BY 4.0
  Biostatistics for health studies (in French) First-year health studies (PASS, UE8) · 3 chapters, 246 slides · in French · CC BY 4.0
- Physics for health studies: electromagnetic waves, X-rays and imaging (in French) First-year health studies (PASS-PACES), physical bases of medical imaging · 110-slide lecture and 2 corrected exercise sessions · in French · CC BY 4.0
+ Physics for health studies: electromagnetic waves, X-rays and imaging (in French) First-year health studies (PASS), physical bases of medical imaging · 110-slide lecture and 2 corrected exercise sessions · in French · CC BY 4.0
  Industrial physics: thermodynamics, water vapor and refrigeration (in French) B.U.T. biological engineering, food science and biotechnology, 2nd year · 5 chapters, 139 slides and handouts · in French · CC BY 4.0
  Heat transfer for food engineering (in French) B.U.T. biological engineering, food science and biotechnology, 1st year · 24 slides · in French · CC BY 4.0
  Interactive tools
@@ -866,7 +866,7 @@ Scientific publishing: no verification, no trust
  France: editorial work that does not count
  France has one of the most open-access-friendly legal frameworks in Europe: a mandatory right to deposit, HAL, Software Heritage, a national plan that covers source code [17] [18] . Yet editing a journal, reviewing or checking code is almost absent from career assessment, which counts articles first. The work that guarantees quality is the work that pays least; editors and reviewers become hard to find, and others end up running the reference journals.
  What is missing
- Checking the data and code of every article that depends on them, as the AI Act does for AI systems: frozen versions, documented environment, independent execution, kept records.
+ Checking the data and code of every article that depends on them, with a traceability requirement comparable to what the AI Act asks of AI systems: frozen versions, documented environment, independent execution, kept records.
  Declaring the tools used, AI included. Neither ban nor silence: a statement of what was used, for what, and what a human checked.
  Following the article after publication , as one monitors a deployed system: versions, errata, reports, links to corrected datasets.
  Recognizing editorial and review work in assessment, as CoARA proposes.
@@ -1491,7 +1491,7 @@ Teaching
  Part of the course comes from the work of Dominique Barbolosi , mathematician, Aix-Marseille Université.
  Archived and citable on Zenodo, DOI 10.5281/zenodo.23620236
  Physics for health studies: electromagnetic waves, X-rays and imaging (in French)
- First-year health studies (PASS-PACES), physical bases of medical imaging · 110-slide lecture and 2 corrected exercise sessions · in French · CC BY 4.0
+ First-year health studies (PASS), physical bases of medical imaging · 110-slide lecture and 2 corrected exercise sessions · in French · CC BY 4.0
  The physical bases of medical imaging, from the wave to the CT scanner.
  The nature of electromagnetic waves: speed, sinusoidal wave, wave vector.
  Wave-particle duality: photon energy E = hν, the electronvolt.
@@ -1503,7 +1503,7 @@ Teaching
  Imaging: contrast, conventional radiography, CT scanning and windowing.
  Two exercise sessions corrected step by step (18 exercises).
  Open the course (in French) →
- Part of the course comes from the work of Professor Pierre Peretti, Université Pierre-et-Marie-Curie (Paris), now retired.
+ Part of the course comes from the work of Professor Pierre Peretti , Université Pierre-et-Marie-Curie (Paris), now retired.
  Archived and citable on Zenodo, DOI 10.5281/zenodo.23620487
  Industrial physics: thermodynamics, water vapor and refrigeration (in French)
  B.U.T. biological engineering, food science and biotechnology, 2nd year · 5 chapters, 139 slides and handouts · in French · CC BY 4.0
@@ -1581,7 +1581,7 @@ Enseignement
  Une partie du cours est issue du travail de Dominique Barbolosi , mathématicien, Aix-Marseille Université.
  Archivé et citable sur Zenodo, DOI 10.5281/zenodo.23620236
  Physique pour les études de santé : ondes électromagnétiques, rayons X et imagerie
- Première année des études de santé (PASS-PACES), bases physiques des explorations médicales · cours de 110 diapositives et 2 séances d'exercices corrigées · CC BY 4.0
+ Première année des études de santé (PASS), bases physiques des explorations médicales · cours de 110 diapositives et 2 séances d'exercices corrigées · CC BY 4.0
  Les bases physiques de l'imagerie médicale, de l'onde au scanner.
  La nature des ondes électromagnétiques : célérité, onde sinusoïdale, vecteur d'onde.
  La dualité onde-particule : énergie du photon E = hν, l'électron-volt.
@@ -1593,7 +1593,7 @@ Enseignement
  L'imagerie : contraste, radiologie conventionnelle, scanner X et fenêtrage.
  Deux séances d'exercices dirigés corrigées pas à pas (18 exercices).
  Ouvrir le cours →
- Une partie du cours est issue du travail du professeur Pierre Peretti, Université Pierre-et-Marie-Curie (Paris), aujourd'hui retraité.
+ Une partie du cours est issue du travail du professeur Pierre Peretti , Université Pierre-et-Marie-Curie (Paris), aujourd'hui retraité.
  Archivé et citable sur Zenodo, DOI 10.5281/zenodo.23620487
  Physique industrielle : thermodynamique, vapeur d'eau et production de froid
  B.U.T. Génie biologique, Sciences de l'aliment et biotechnologie, 2ᵉ année · 5 chapitres, 139 diapositives et un polycopié · CC BY 4.0
@@ -1647,7 +1647,7 @@ Open courses in French: biostatistics, medical physics, industrial physics and f
  Descriptive statistics, the normal distribution and hypothesis tests
  Correlation, linear regression and χ² tests
  Open the course (in French)
- First-year health studies (PASS-PACES), physical bases of medical imaging Physics for health studies: electromagnetic waves, X-rays and imaging
+ First-year health studies (PASS), physical bases of medical imaging Physics for health studies: electromagnetic waves, X-rays and imaging
  The nature of electromagnetic waves and of the photon, the energy levels of the atom, absorption, emission and spectroscopy (up to pulse oximetry), the production of X-rays, their interactions with matter and attenuation, then radiography and CT scanning; two corrected exercise sessions.
  Course: electromagnetic waves and the physical bases of imaging
  Exercise session 1, corrected
@@ -1672,7 +1672,7 @@ URL: https://www.cyrilvoyant.com/stories/lql-equiv/
 
 Compute, don't learn: radiobiological dose equivalence with LQL-Equiv
  Step 1 of 5 · Compute directly See it on the thread When the link is known, compute it with an explicit model, calibrated and validated on data; learning is added only for a demonstrated benefit. The model at the core.
- When the link between a radiotherapy schedule and its biological effect is known, it is computed directly. No data and no artificial intelligence are needed: only a model we understand, checked case by case.
+ When the link between a radiotherapy schedule and its biological effect is known, it is computed directly. No training data and no artificial intelligence are needed: only a model we understand, checked case by case.
  Cyril Voyant , with Daniel Julian · Mines Paris – PSL, Centre O.I.E.
  In brief
  One fraction of 15 Gy to the rectum has a biologically effective dose of 72.7 Gy under the linear-quadratic (LQ) model, but 59.4 Gy under the linear-quadratic-linear (LQL) model: 18 % lower .
@@ -1781,7 +1781,7 @@ Satellite irradiance forecasting: one cell, a patch or the whole field
  Fair scoring. Errors are pooled over all cells, all lead times from 1 to 24 hours and all test hours where the Sun is more than 5° above the horizon. The nRMSE is divided by the mean scored observation of the test year, 407.9 W/m².
  The example in figures
  Pooled error against parameters stored by each model (log scale): the per-cell ELM is the lowest point; reading the whole field moves models to the right without moving them down
- The data are HelioClim-3 irradiance (Heliosat-2 method, Meteosat images, SoDa service) on 1,148 points over Corsica, hourly, with 2005 for training and 2006 for testing.
+ The data are HelioClim-3 irradiance (Heliosat-2 method, Meteosat images, SoDa service) on 1,148 points over Corsica, interpolated onto a 32 × 32 grid of which 722 cells lie inside the convex hull of the points and are scored, hourly, with 2005 for training and 2006 for testing.
  The per-cell ELM reaches nRMSE 0.308 with about 100 thousand stored parameters; the whole-field ELM reaches 0.355 with about 100 million.
  In W/m²: 0.308 × 407.9 ≈ 126 W/m² against about 145 W/m² for the whole-field ELM.
  A 3 × 3 patch does not help either (0.3087 against 0.3077 for a single cell).
@@ -2288,7 +2288,7 @@ Curriculum vitae
  City of Nice Prize, Accademia Corsa, 2012.
  Publications and scientific software
  Read the research stories for findings and limitations from selected first-author papers. Consult Google Scholar or HAL for the wider publication record.
- Public implementation guides cover Extreme Learning Machines , NICE metrics and the γ-index . My medical-physics software includes LQL-Equiv , developed with Daniel Julian.
+ Public implementation guides cover Extreme Learning Machines , NICE metrics and the γ-index . My medical-physics software includes LQL-Equiv , developed with Daniel Julian .
  Publication record
  Selected publications from my research in energy forecasting and medical physics. For the current complete record, consult Google Scholar or HAL .
  Peer-reviewed articles: renewable energy
@@ -2451,7 +2451,7 @@ Curriculum vitae
  The following publications are in peer-reviewed journals from related scientific fields, including medical physics, oncology, and environmental modeling. While not centered on renewable energy, they demonstrate expertise in statistical modeling, biomedical applications, and complex system analysis:
  Show the list
  1. Improving Clinical Decision-Making in Radiotherapy: A Comparative Analysis and Dose Models .
- Cyril Voyant, Daniel Julian, Stéphane Muraro, Véronique Bodez, Morgane Pinpin, Delphine Leschi, Rashid Oozeer, Guiddi Wided, Marie-Aimée Acquaviva, Severine Prapant, Omar Gahbiche, Noureddine Bouaouina. Clinical Oncology ; 2025
+ Cyril Voyant, Daniel Julian, Stéphane Muraro , Véronique Bodez , Morgane Pinpin , Delphine Leschi, Rashid Oozeer , Guiddi Wided, Marie-Aimée Acquaviva , Severine Prapant , Omar Gahbiche, Noureddine Bouaouina. Clinical Oncology ; 2025
  2. Hybrid VMAT-3DCRT as Breast Cancer Treatment Improvement Tool
  C Voyant, M Pinpin, D Leschi, S Prapant, F Savigny, MA Acquaviva
  Scientific Reports 13, 2023
@@ -2483,7 +2483,7 @@ Curriculum vitae
  Below is a list of book chapters I have authored or co-authored, primarily in the fields of solar forecasting, smart energy systems, and artificial intelligence applications in renewable energy:
  Show the list
  1. Profitability and performance improvement of smart photovoltaic/energy storage microgrid by integration of solar production forecasting tool
- Gilles Notton, Sarah Ouédraogo, Ghjuvan Antone Faggianelli , Cyril Voyant, Jean Laurent Duchaud
+ Gilles Notton, Sarah Ouédraogo , Ghjuvan Antone Faggianelli , Cyril Voyant, Jean Laurent Duchaud
  Intelligent Learning Approaches for Renewable and Sustainable Energy, 2024
  2. Forecasting of Intermittent Solar Energy Resource
  G Notton, C Voyant
@@ -2696,7 +2696,7 @@ L'indice γ : valider des prévisions solaires décalées au-delà des erreurs
  Dans l’expérience synthétique du travail gamma-index, plus de 80 % des pixels restent acceptables malgré un déplacement spatial d’environ deux kilomètres, un décalage de dix minutes et un bruit ajouté. La RMSE pixel à pixel donne pourtant une impression de forte erreur. Ce résultat illustre le problème de double pénalité : une structure nuageuse déplacée est pénalisée à son emplacement prévu et à son emplacement observé.
  Publié dans International Journal of Forecasting, l’article de Cyril Voyant transpose à la prévision de champs une idée issue de la vérification des doses en radiothérapie. Trois tolérances sont fixées explicitement : distance spatiale DTA, décalage temporel TTA et différence d’intensité IDT. La méthode recherche l’accord dans un voisinage plutôt qu’au seul pixel de mêmes coordonnées et au même instant.
  Le critère gamma combine les écarts normalisés ; un pixel satisfait le test lorsque gamma est inférieur ou égal à un. Le taux de passage, GPR, indique la proportion correspondante ; moyenne et maximum gamma complètent le diagnostic. Dans l’illustration citée, les tolérances sont deux kilomètres, trente minutes et 50 W/m². Elles donnent un sens précis au résultat ; elles ne constituent pas une norme universelle.
- Le travail applique aussi le cadre à des cartes satellitaires d’éclairement solaire en Corse. L’intérêt pour un utilisateur est de distinguer un petit défaut de positionnement d’une divergence physique plus importante. Le code MATLAB public fournit la fonction de calcul et un exemple synthétique ; cet exemple ne redistribue pas les observations satellitaires à accès restreint. Choisir les tolérances avant la comparaison et publier la RMSE en complément conserve une lecture transparente. Relâcher les tolérances peut augmenter le taux de passage sans améliorer la prévision elle-même.
+ Le travail applique aussi le cadre à des cartes satellitaires d’éclairement solaire en Corse : avec les mêmes tolérances, le GPR y est d’environ 67–69 %, une autre expérience que les plus de 80 % de l’exemple synthétique. L’intérêt pour un utilisateur est de distinguer un petit défaut de positionnement d’une divergence physique plus importante. Le code MATLAB public fournit la fonction de calcul et un exemple synthétique ; cet exemple ne redistribue pas les observations satellitaires à accès restreint. Choisir les tolérances avant la comparaison et publier la RMSE en complément conserve une lecture transparente. Relâcher les tolérances peut augmenter le taux de passage sans améliorer la prévision elle-même.
  Une illustration synthétique distincte. Figure 2 de la version auteur publique dans temporal-gamma-index (GitHub) : observation, prévision, carte γ et carte RMSE. Cette version utilise les tolérances indiquées sur la figure (1 km, 50 min, 10 W/m²), différentes de l'exemple chiffré ci-dessus. Source : github.com/cyrilvoyant/temporal-gamma-index, Gamma_Index_Cyril_Voyant.pdf. Cyril Voyant.
  Article, auteurs et ressources
  Référence : Cyril Voyant, seul auteur. A tolerance-based framework for spatiotemporal forecast validation using the γ-index . International Journal of Forecasting 42(4), 1207–1214 (2026). DOI · manuscrit auteur public, section 3.1 · code · DOI logiciel .
@@ -2709,7 +2709,7 @@ L'indice γ : valider des prévisions solaires décalées au-delà des erreurs
 URL: https://www.cyrilvoyant.com/fr/actualites/
 
 Actualités : publications, logiciels et essais
- Publications, logiciels, nominations et essais, dans l'ordre de leur parution sur ce site. Chaque billet s'ouvre sur place ; Les récits de recherche, classés par étape de la méthode, sont sur la page Récits . Flux Atom .
+ Publications, logiciels, nominations et essais, dans l'ordre de leur parution sur ce site ; pour un article ou un logiciel, la date indiquée est celle de la publication, pas celle du billet, et ne suit donc pas toujours cet ordre. Chaque billet s'ouvre sur place ; les récits de recherche, classés par étape de la méthode, sont sur la page Récits . Flux Atom .
  Thème Année 24 billets affichés
  Publié le 24 octobre 2026 · Pratique de la recherche
  Édition scientifique : sans vérification des données et du code, pas de confiance
@@ -2718,10 +2718,10 @@ Actualités : publications, logiciels et essais
  Lire le billet complet
  On publie plus et l'on vérifie moins. L'AI Act demande aux systèmes d'IA à haut risque une gouvernance des données, une documentation, des traces, une gestion de la qualité et un suivi après la mise sur le marché ; les articles scientifiques ne sont soumis à rien de comparable. Ce qui existe à l'international, en Europe et en France, ce qui manque, et pourquoi la réponse est le changement plutôt que des revues en plus.
  Lire l'essai .
- Publié le 23 octobre 2026 · Prévision solaire et énergétique
+ Publié le 23 octobre 2026 · Énergie : prévision et systèmes
  ELECTRE, projet phare de l'institut Carnot M.I.N.E.S : électrifier les usages, journée de clôture le 18 novembre 2026
- Delphine Gilges-Crampont, Annette Massias et Cyril Voyant
- ELECTRE fédère une quinzaine de laboratoires, centres et instituts de l'institut Carnot M.I.N.E.S autour de 13 projets de recherche (2023-2026) sur l'électrification des usages, des matériaux au stockage, aux procédés industriels et aux limites de l'électrification. Sa journée de clôture a lieu le 18 novembre 2026 à Mi…
+ Delphine Gilges-Crampont , Annette Massias et Cyril Voyant
+ ELECTRE fédère une quinzaine de laboratoires, centres et instituts de l'institut Carnot M.I.N.E.S autour de 13 projets de recherche (2023-2026) sur l'électrification des usages, des matériaux au stockage, aux procédés industriels et aux limites de l'électrification. Sa journée de clôture a lieu le 18 novembre 2026 à Mines Paris – PSL, Sophia Antipolis.
  Lire le billet complet
  Électrifier les transports, le chauffage, la climatisation et les procédés industriels est l'un des principaux leviers pour réduire les émissions de gaz à effet de serre et la dépendance aux énergies fossiles, à plus forte raison avec un mix électrique décarboné et des politiques de sobriété. ELECTRE , projet phare de l'institut Carnot M.I.N.E.S, mobilise les moyens de ressourcement scientifique de l'institut sur les questions que cela pose, tout au long de la chaîne de valeur.
  Qui le pilote. Delphine Gilges-Crampont , Annette Massias et Cyril Voyant (coordinateur scientifique, centre O.I.E., Mines Paris – PSL) travaillent à trois sur le projet. Contact : delphine.gilges-crampont@minesparis.psl.eu , annette.massias@minesparis.psl.eu , cyril.voyant@minesparis.psl.eu .
@@ -2734,7 +2734,7 @@ Actualités : publications, logiciels et essais
  Pour aller plus loin : le projet ELECTRE et le portrait de son coordinateur sur le site du Carnot M.I.N.E.S. Pour monter un projet avec les équipes : Collaborer .
  2026 · Nominations et distinctions
  Professeur invité à l'université de Kragujevac (Serbie)
- Titre original : Visiting Professor at the University of Kragujevac, Serbia
+ Titre du billet d'origine : Visiting Professor at the University of Kragujevac, Serbia
  Cyril Voyant et Gilles Notton
  Nommé professeur invité à la faculté d'ingénierie de l'université de Kragujevac, avec mon collègue et ami Gilles Notton.
  Lire le billet complet
@@ -2746,18 +2746,18 @@ Actualités : publications, logiciels et essais
  Message clé
  Au-delà de la reconnaissance personnelle, cette nomination renforce un partenariat scientifique et pédagogique actif entre la France, la Corse et la Serbie. Elle ouvre de nouvelles perspectives de publications communes, de mobilité étudiante, d’activités d’enseignement et de futurs projets européens dans le domaine de la transition énergétique.
  Annonce officielle de la Faculté d’ingénierie de l’Université de Kragujevac
- https://fin.kg.ac.rs/en/component/content/article/202-news/2380-professors-gilles-notton-and-cyril-voyant-appointed-as-visiting-professors-at-the-faculty-of-engineering?Itemid=620
+ Annonce de la Faculté d’ingénierie (en anglais)
  Annonce officielle en serbe de la Faculté d’ingénierie de l’Université de Kragujevac
- https://www.fin.kg.ac.rs/sr/servisi/vesti/2379-profesori-gilles-notton-i-cyril-voyant-izabrani-u-zvanje-gostujucih-profesora-fakulteta-inzenjerskih-nauka
+ Annonce de la Faculté d’ingénierie (en serbe)
  Contexte de la collaboration : Serbie / France / Corse
- https://www.fin.kg.ac.rs/en/component/content/article/202-news/2188-faculty-of-engineering-strengthens-international-research-collaboration-and-excellence-in-research?Itemid=620
+ Faculté d’ingénierie : collaboration internationale de recherche (en anglais)
  Page des professeurs invités (Faculté d’ingénierie)
- https://fin.kg.ac.rs/sr/zaposleni/gostujuci-profesori
+ Professeurs invités de la Faculté (en serbe)
  Relais de l’actualité par l’Université de Corse (collaboration tripartite)
- https://studia.universita.corsica/plugins/actu/actu-front.php?id=11332
- Version publiée le 8 mai 2026 · Prévision solaire et énergétique
+ Actualité de l’Université de Corse
+ Version publiée le 8 mai 2026 · Énergie : prévision et systèmes
  Tunnel Load Simulator : générer la consommation électrique des tunnels routiers
- Titre original : Tunnel Load Simulator: an open-source generator for synthetic road-tunnel electricity demand
+ Titre du billet d'origine : Tunnel Load Simulator: an open-source generator for synthetic road-tunnel electricity demand
  Application libre (Streamlit), développée dans le projet SmartTunnel, qui produit des profils de charge électrique synthétiques pour les tunnels routiers : éclairage, ventilation, auxiliaires, trafic, saisons et événements aléatoires.
  Lire le billet complet
  Haytham El-Houari et Cyril Voyant
@@ -2771,10 +2771,10 @@ Actualités : publications, logiciels et essais
  Message clé
  Le Tunnel Load Simulator est un démonstrateur logiciel de recherche transparent, open source et citable pour la demande électrique synthétique des tunnels routiers. Son rôle actuel est d’appuyer la modélisation en phase amont et la discussion ; calibré sur des données réelles de tunnels, il pourrait devenir un outil plus solide pour l’analyse et la gestion énergétiques des tunnels.
  Application : https://tunnel-load-simulator.onrender.com/ GitHub : https://github.com/cyrilvoyant/tunnel-load-simulator README : https://github.com/cyrilvoyant/tunnel-load-simulator/blob/main/README.md Zenodo : https://zenodo.org/records/20080043 DOI : https://doi.org/10.5281/zenodo.20080042
- Publié en ligne le 28 avril 2026 · Prévision solaire et énergétique
+ Publié en ligne le 28 avril 2026 · Énergie : prévision et systèmes
  Quand la lumière du soleil n'est plus directe : prévoir la fraction diffuse
- Titre original : When Sunlight Stops Being Direct
- Haifa Harrouch , Nadjem Bailek , Bilel Zerouali , Ilyes Abidi, Hanene Guesmi, Cyril Voyant , Jihad A. Younis , Maher Jebali & Rabab Triki
+ Titre du billet d'origine : When Sunlight Stops Being Direct
+ Haifa Harrouch , Nadjem Bailek , Bilel Zerouali , Ilyes Abidi , Hanene Guesmi , Cyril Voyant , Jihad A. Younis , Maher Jebali & Rabab Triki
  Le rayonnement diffus est l'une des composantes les plus difficiles de la ressource solaire, surtout là où aérosols, humidité et contrastes climatiques sont forts. Mesure et prévision de la fraction diffuse en Arabie saoudite, avec un modèle hybride par empilement.
  Lire le billet complet
  Measurement and forecasting of the diffuse fraction of solar irradiance using a hybrid stacking model in Saudi Arabia
@@ -2786,11 +2786,11 @@ Actualités : publications, logiciels et essais
  Impact scientifique : L’analyse a révélé une forte variabilité spatiale des régimes d’éclairement diffus en Arabie saoudite. Des stations côtières comme Djeddah ont atteint des valeurs de fraction diffuse proches de 0,95, reflet d’une diffusion intense due aux aérosols et à l’humidité, tandis que les stations désertiques de l’intérieur restaient dominées par l’éclairement direct. Le modèle de stacking proposé a nettement amélioré la capacité prédictive par rapport aux modèles pris isolément, avec des corrélations de prévision comprises entre 0,94 et 0,97 et des réductions d’erreur atteignant 62,48 % dans certaines configurations saisonnières. Ces résultats confirment que la dynamique de la fraction diffuse dépend fortement du climat et peut être apprise efficacement par une modélisation d’ensemble hybride.
  Impact opérationnel : Une prévision précise de la fraction diffuse influe directement sur l’estimation du productible photovoltaïque, la transposition de l’éclairement sur plan incliné, la modélisation du PV bifacial et l’évaluation de la ressource solaire dans les régions exposées à une forte variabilité des aérosols ou de l’humidité. Le cadre proposé offre un outil pratique pour améliorer la prévision solaire dans des environnements opérationnels où les conditions atmosphériques évoluent rapidement.
  Message clé : Comprendre comment l’atmosphère redistribue la lumière du soleil n’est pas seulement un défi physique ; c’est aussi un problème de prévision, aux implications directes pour les systèmes photovoltaïques de nouvelle génération.
- Publié en ligne le 24 avril 2026 · Prévision solaire et énergétique
+ Publié en ligne le 24 avril 2026 · Énergie : prévision et systèmes
  Revisiter la persistance : BLEND, une prévision sous contrainte de symétrie pour les processus énergétiques périodiques
- Titre original : Revisiting Persistence: Symmetry-Constrained Forecasting of Periodically Correlated Energy Processes
+ Titre du billet d'origine : Revisiting Persistence: Symmetry-Constrained Forecasting of Periodically Correlated Energy Processes
  Cyril Voyant , Candice Banes , Luis Garcia-Gutierrez , Gilles Notton , Milan Despotovic , Zaher Mundher Yaseen
- La persistance revisitée pour les séries à statistiques périodiques, comme le cycle journalier du rayonnement solaire. BLEND combine la dernière observation et l'observation alignée sur la même phase du cycle.
+ La persistance revisitée pour les séries à statistiques périodiques, comme le cycle journalier de l'éclairement solaire. BLEND combine la dernière observation et l'observation alignée sur la même phase du cycle.
  Lire le billet complet
  Ce travail revisite la prévision par persistance pour des statistiques à variation périodique, dont le cycle journalier de l’éclairement solaire. BLEND combine la dernière observation avec une observation alignée sur la phase cible du cycle.
  Les poids sont estimés sous forme fermée à partir des observations historiques. Les moindres carrés par phase fournissent une référence explicite sans optimisation itérative ; une formulation fondée sur les moments est équivalente en population sous ses hypothèses, mais ne donne pas nécessairement exactement la même estimation sur échantillon fini.
@@ -2800,9 +2800,9 @@ Actualités : publications, logiciels et essais
  Contribution scientifique : une référence analytique tenant compte de la phase pour comparer des prévisions solaires. La formulation originale de BLEND sur signal brut ne requiert pas de modèle externe de ciel clair ; le code étendu inclut aussi des variantes fondées sur un modèle de ciel clair, explicitement identifiées dans le benchmark.
  Usage pratique : examiner les hypothèses, estimer les paramètres sur les données passées et évaluer sur des observations non vues. Les résultats du code sur données synthétiques et les résultats de l’article sur données mesurées sont des expériences distinctes.
  Message clé : la complexité d’un modèle doit se justifier par une comparaison équitable avec des références simples bien spécifiées. Lire l’explication bilingue · Figures, résultats et CSV téléchargeable .
- Publié en ligne le 28 mars 2026 · Prévision solaire et énergétique
+ Publié en ligne le 28 mars 2026 · Énergie : prévision et systèmes
  Des pixels aux tolérances : valider les prévisions avec l'indice γ
- Titre original : From Pixels to Tolerances: Rethinking Forecast Validation with the γ-Index
+ Titre du billet d'origine : From Pixels to Tolerances: Rethinking Forecast Validation with the γ-Index
  Cyril Voyant
  Les métriques classiques comme la RMSE jugent une prévision comme si chaque pixel devait coïncider parfaitement dans l'espace et le temps. L'indice γ accepte un décalage toléré, comme le fait un expert.
  Lire le billet complet
@@ -2814,7 +2814,7 @@ Actualités : publications, logiciels et essais
  L’étude montre que les métriques classiques pixel par pixel souffrent d’une limite structurelle appelée double pénalité : un petit décalage spatial ou temporel entraîne à la fois une détection manquée et une fausse alarme, ce qui gonfle artificiellement l’erreur. Dans des expériences contrôlées, de tels décalages peuvent produire de fortes valeurs de RMSE (par exemple ~20–40 W/m²), alors même que la structure physique sous-jacente est préservée.
  L’indice γ résout ce problème en intégrant directement les tolérances dans l’évaluation. Au lieu de pénaliser le déplacement, il vérifie si la prévision se situe dans une région acceptable d’un domaine conjoint espace–temps–intensité. Les résultats sont clairs :
  Le γ moyen reste stable (~0,29–0,35), ce qui montre une robustesse aux petits déplacements
- Le γ Passing Rate (GPR) atteint ~67–69 %, ce qui rend compte de l’utilisabilité opérationnelle
+ Le γ Passing Rate (GPR) atteint ~67–69 % sur les cartes satellitaires HelioClim-3, ce qui rend compte de l’utilisabilité opérationnelle (les « plus de 80 % » cités ailleurs viennent de l’expérience synthétique, distincte)
  La RMSE, à l’inverse, réagit fortement à de faibles désalignements et peut classer à tort des prévisions utilisables comme des échecs
  Cela change l’interprétation de la performance. La question n’est plus « La prévision est-elle exacte ? » mais « Est-elle acceptable sur le plan opérationnel ? ». Pour la communauté, les implications sont directes :
  Systèmes énergétiques : éviter des actions correctives inutiles (par exemple, pilotage de batteries, production de secours)
@@ -2881,9 +2881,9 @@ Actualités : publications, logiciels et essais
  https://themeta.news/limpact-des-publications-bouleverse-par-lia/
  https://youtu.be/eMp0uyl59d4?si=mByvge5Xs1j1B51J
  https://education.newstank.fr/article/view/432445/repenser-excellence-scientifique-ere-saturation-vers-ingenierie-impact.html
- Publié en ligne le 26 février 2026 · Prévision solaire et énergétique
+ Publié en ligne le 26 février 2026 · Énergie : prévision et systèmes
  Prévoir toutes les énergies d'un réseau d'un seul coup : l'approche parcimonieuse MIMO-ELM
- Titre original : Coherent Multi-Energy Forecasting for Real-Time Grid Management: A Parsimonious MIMO-ELM Approach
+ Titre du billet d'origine : Coherent Multi-Energy Forecasting for Real-Time Grid Management: A Parsimonious MIMO-ELM Approach
  Cyril Voyant , Milan Despotovic , Luis Garcia-Gutierrez , Mohammed Asloune , Yves-Marie Saint-Drenan , Jean-Laurent Duchaud , Ghjuvan Antone Faggianelli , Elena Magliaro
  Une prévision à court terme rapide, transparente et opérationnelle de la demande et de la production de plusieurs sources d'énergie.
  Lire le billet complet
@@ -2896,7 +2896,7 @@ Actualités : publications, logiciels et essais
  Article publié : Applied Energy 410, 127599 (2026) · Lire le récit complet de cette recherche en anglais et en français .
  2026 · Pratique de la recherche
  Une recherche invisible n'a pas d'impact : construire l'influence scientifique à l'ère de l'IA
- Titre original : Invisible Research Has No Impact: Engineering Scientific Influence in the AI Era
+ Titre du billet d'origine : Invisible Research Has No Impact: Engineering Scientific Influence in the AI Era
  Cyril Voyant
  La recherche est passée de la rareté à la saturation : produire du savoir n'est plus le goulot d'étranglement ; être trouvé, jugé crédible et réutilisé, si.
  Lire le billet complet
@@ -2909,7 +2909,7 @@ Actualités : publications, logiciels et essais
  https://x.com/cvoyant1/status/2026701715769114811
  2026 · Nominations et distinctions
  Nommé membre du comité éditorial de Scientific Reports (Nature Portfolio)
- Titre original : Appointed Editorial Board Member of Scientific Reports (Nature Portfolio)
+ Titre du billet d'origine : Appointed Editorial Board Member of Scientific Reports (Nature Portfolio)
  Une revue pluridisciplinaire qui couvre tous les domaines scientifiques ; ce rôle prolonge mon parcours de directeur de recherche à Mines Paris – PSL (centre O.I.E.).
  Lire le billet complet
  Cyril Voyant
@@ -2917,17 +2917,17 @@ Actualités : publications, logiciels et essais
  Traitement des soumissions dans mes domaines d’expertise :
  Énergies renouvelables : prévision de l’éclairement solaire (GHI), ML appliqué au PV/hybridation, micro-réseaux
  Physique médicale : radiothérapie, radiobiologie, dosimétrie équivalente
- Cette fonction s’inscrit dans mon parcours de directeur de recherche à Mines Paris – PSL, O.I.E. (depuis 2024), avec >130 publications à comité de lecture (h-index ~35, >7000 citations, Stanford Top 2%). Scientific Reports couvre tous les domaines scientifiques.
+ Cette fonction s’inscrit dans mon parcours de directeur de recherche à Mines Paris – PSL, O.I.E. (depuis 2024), avec >130 publications à comité de lecture (h-index ~35, >7000 citations en 2026, Stanford Top 2%). Scientific Reports couvre tous les domaines scientifiques.
  L’équipe éditoriale réunit >2000 experts du monde entier ( https://www.nature.com/srep/about/editors ). Ma nomination met en lumière la recherche interdisciplinaire française en énergie/ML/médecine.
  Liens
  Profil : https://www.cyrilvoyant.com
  HAL : https://cv.hal.science/cyril-voyant
  Scholar : https://scholar.google.com/citations?user=aUlP6agAAAAJ&hl=en
- Publié en ligne le 20 décembre 2025 · Prévision solaire et énergétique
- Contrôle qualité des mesures de rayonnement solaire sur plan incliné
- Titre original : Quality Control Framework for Tilted Solar Irradiance
+ Publié en ligne le 20 décembre 2025 · Énergie : prévision et systèmes
+ Contrôle qualité des mesures d'éclairement solaire sur plan incliné
+ Titre du billet d'origine : Quality Control Framework for Tilted Solar Irradiance
  Mohammed Asloune , Gilles Notton , Cyril Voyant
- Un cadre de contrôle qualité pour le rayonnement mesuré sur plan incliné, issu de la thèse de Mohammed Asloune (université de Corse et Mines Paris – PSL).
+ Un cadre de contrôle qualité pour l'éclairement mesuré sur plan incliné, issu de la thèse de Mohammed Asloune (université de Corse et Mines Paris – PSL).
  Lire le billet complet
  Mohammed Asloune, Gilles Notton, Cyril Voyant (Renewable Energy, https://doi.org/10.1016/j.renene.2025.125090 ).
  Ce travail s’inscrit dans la recherche doctorale de Mohammed Asloune (Université de Corse & Mines Paris – PSL).
@@ -2935,9 +2935,9 @@ Actualités : publications, logiciels et essais
  Cet article présente un cadre générique et systématique de contrôle qualité (QC) dédié aux séries temporelles d’éclairement solaire incliné, un problème bien connu mais insuffisamment normalisé en prévision et en exploitation photovoltaïques (PV). L’objectif principal est de fournir une méthodologie robuste et transférable pour détecter et corriger les valeurs aberrantes, les incohérences et les anomalies liées aux capteurs dans les mesures d’éclairement incliné. Le cadre proposé est conçu pour être indépendant du site et de l’instrumentation, et directement applicable dans des contextes opérationnels et industriels, avec l’ambition de servir de référence normative pour la modélisation, la prévision et l’évaluation des performances du PV.
  Principaux résultats
  Le cadre de QC proposé améliore nettement la fiabilité et la cohérence des jeux de données d’éclairement incliné, avec des gains mesurables en précision de la prévision PV, en robustesse opérationnelle et en bancabilité des données, ce qui en fait un candidat sérieux pour devenir une étape standard de prétraitement dans les systèmes d’énergie PV.
- 2025 · Physique médicale
+ Publié en ligne le 10 décembre 2025 · Physique médicale
  Vers une iodothérapie personnalisée : modélisation, dynamique et perspectives cliniques
- Titre original : Towards Personalized Radio-Iodine Therapy: Modeling, Dynamics, and Clinical Perspectives
+ Titre du billet d'origine : Towards Personalized Radio-Iodine Therapy: Modeling, Dynamics, and Clinical Perspectives
  Marie Fusella Giuntini (travail de thèse), Cyril Voyant , David Taieb , Dominique Barbolosi
  Une contribution doctorale de Marie Fusella Giuntini, avec les universités d'Aix-Marseille et de Corse, Mines Paris – PSL et l'hôpital de la Timone : deux articles, un modèle mécaniste et une revue des approches de modélisation.
  Lire le billet complet
@@ -2955,16 +2955,16 @@ Actualités : publications, logiciels et essais
  - une synthèse conceptuelle montrant comment ce travail s’inscrit dans les efforts internationaux en médecine nucléaire computationnelle et les fait progresser.
  2025 · Nominations et distinctions
  Dans le classement Stanford-Elsevier 2025 des 2 % de chercheurs les plus cités
- Titre original : Grateful to be included in the 2025 Stanford-Elsevier Top 2% Scientists ranking.
+ Titre du billet d'origine : Grateful to be included in the 2025 Stanford-Elsevier Top 2% Scientists ranking.
  Une reconnaissance pour les travaux menés à Mines Paris – PSL en prévision solaire, systèmes photovoltaïques, IA pour l'énergie et physique médicale.
  Lire le billet complet
  Fier de contribuer à la recherche en prévision solaire, systèmes PV, IA pour l’énergie et physique médicale à Mines Paris – PSL.
  Merci à tous les collaborateurs et étudiants pour leur rôle essentiel.
  La liste Stanford-Elsevier Top 2% Scientists recense les chercheurs les plus cités au monde à l’aide d’un indicateur composite standardisé fondé sur les données bibliométriques de Scopus, dont le nombre total de citations, le h-index, des indices ajustés selon la co-signature et des métriques d’impact normalisées par domaine. Elle fournit des classements sur l’ensemble de la carrière et sur une seule année, pour toutes les disciplines scientifiques.
  J’ai l’honneur de figurer dans l’édition 2025 de ce classement, et je suis particulièrement fier de contribuer aux bons résultats de Mines Paris – PSL , qui se classe parmi les principaux établissements au monde, avec environ 10 % de ses enseignants-chercheurs reconnus dans la cohorte Top 2%.
- Publié en ligne le 13 octobre 2025 · Prévision solaire et énergétique
+ Publié en ligne le 13 octobre 2025 · Énergie : prévision et systèmes
  Apprentissage par transfert pour prévoir le vent là où les données manquent
- Titre original : Transfer Learning for Wind Speed Forecasting: A Scalable Approach for Data-Scarce Environments
+ Titre du billet d'origine : Transfer Learning for Wind Speed Forecasting: A Scalable Approach for Data-Scarce Environments
  Milan Despotović , Gilles Notton , Cyril Voyant
  Réutiliser des modèles entraînés sur des sites riches en données permet de prévoir la vitesse du vent sur des sites qui en ont peu : sur 4 830 expériences, une précision comparable à l'apprentissage direct (écart de nRMSE inférieur à 0,01).
  Lire le billet complet
@@ -2991,9 +2991,9 @@ Actualités : publications, logiciels et essais
  Ce travail montre que l’apprentissage par transfert est non seulement réalisable, mais passe aussi à l’échelle pour la prévision des énergies renouvelables.
  Il réduit l’écart entre les régions riches et les régions pauvres en données, et permet un accès plus équitable aux outils de prévision fondés sur l’IA.
  L’approche peut se généraliser à d’autres domaines énergétiques (solaire, hydraulique) où la rareté des données locales freine la modélisation, ce qui marque une étape clé vers une prévision universelle et transférable.
- Publié en ligne le 1er octobre 2025 · Prévision solaire et énergétique
+ Publié en ligne le 1er octobre 2025 · Énergie : prévision et systèmes
  Prévision solaire : 500 articles (2017-2023) analysés par fouille de textes
- Titre original : From Trends to Insights: A Text Mining Analysis of Solar Energy Forecasting (2017–2023)
+ Titre du billet d'origine : From Trends to Insights: A Text Mining Analysis of Solar Energy Forecasting (2017–2023)
  Mohammed Asloune , Gilles Notton , Cyril Voyant
  La fouille de textes de 500 articles cartographie la recherche mondiale en prévision solaire : forte montée de l'IA et de l'apprentissage profond, portée par la Chine, les États-Unis et l'Inde, et métriques déterministes encore dominantes.
  Lire le billet complet
@@ -3026,11 +3026,11 @@ Actualités : publications, logiciels et essais
  Ce travail transforme une littérature fragmentée en une carte structurée des connaissances du domaine de la prévision solaire.
  Il confirme le basculement mondial d’une prévision fondée sur la physique vers une prévision fondée sur l’IA, l’émergence de la Chine comme puissance scientifique de premier plan et la sous-représentation persistante des cadres probabilistes.
  En garantissant la reproductibilité, la transparence et la cohérence terminologique, l’étude établit une référence méthodologique pour les futures méta-analyses de la recherche en prévision des énergies renouvelables.
- Publié en ligne le 22 août 2025 · Prévision solaire et énergétique
+ Publié en ligne le 22 août 2025 · Énergie : prévision et systèmes
  Estimer rapidement l'erreur d'une prévision solaire à partir de la seule variabilité du site
- Titre original : A Simple Method for Quickly Estimating Solar Irradiance Forecast Errors
+ Titre du billet d'origine : A Simple Method for Quickly Estimating Solar Irradiance Forecast Errors
  Philippe Lauret , Mathieu David , Josselin Le Gal La Salle , Elke Lorenz , Richard Perez , Cyril Voyant
- Des modèles linéaires prédisent l'erreur de prévision du rayonnement à partir de la variabilité locale, mesurée par l'écart-type des variations horaires de l'indice de ciel clair.
+ Des modèles linéaires prédisent l'erreur de prévision de l'éclairement à partir de la variabilité locale, mesurée par l'écart-type des variations horaires de l'indice de ciel clair.
  Lire le billet complet
  Publié dans : Solar Energy (2025)
  Des chercheurs ont développé des modèles linéaires qui prédisent les erreurs de prévision de l’éclairement solaire à partir de la seule variabilité solaire en un lieu donné. Cette variabilité est mesurée par l’écart-type des variations horaires de l’indice de ciel clair, ce qui revient à saisir l’ampleur des fluctuations des conditions solaires d’une heure à l’autre.
@@ -3051,19 +3051,19 @@ Actualités : publications, logiciels et essais
  Données et code disponibles à l’adresse  : https://github.com/Laboratoire-Piment/solar-predict-rmse.git
  Version publiée le 4 août 2025 · Physique médicale
  Nouvelle version de LQL-Equiv, logiciel libre de calcul de dose biologique efficace en radiothérapie
- Titre original : New Release: LQL-Equiv: Open‑Source Software for Biologically Equivalent Dose Calculation in Radiotherapy
+ Titre du billet d'origine : New Release: LQL-Equiv: Open‑Source Software for Biologically Equivalent Dose Calculation in Radiotherapy
  Logiciel libre écrit en MATLAB par Cyril Voyant et Daniel Julian : calcul voxel par voxel de l'EQD₂ et de la BED avec le modèle linéaire-quadratique-linéaire.
  Lire le billet complet
  Daniel JULIAN & Cyril VOYANT
  Projet de recherche, 2025, https://zenodo.org/doi/10.5281/zenodo.16739882
  Résumé
- LQL‑Equiv est un logiciel libre et open source (GNU), écrit en MATLAB et distribué sous forme d’exécutable autonome, développé par Cyril Voyant et Daniel Julian. Il calcule, voxel par voxel, la dose équivalente en fractions de 2 Gy (EQD₂) et la dose biologique efficace (BED) à l’aide d’un modèle linéaire-quadratique-linéaire (LQL) qui prend explicitement en compte la taille des fractions, la durée totale du traitement et les effets de repopulation cellulaire, et surpasse les calculateurs standards fondés sur le modèle LQ.
+ LQL‑Equiv est un logiciel libre et open source, sous licence MIT, écrit en MATLAB et distribué sous forme d’exécutable autonome, développé par Cyril Voyant et Daniel Julian. Il calcule, voxel par voxel, la dose équivalente en fractions de 2 Gy (EQD₂) et la dose biologique efficace (BED) à l’aide d’un modèle linéaire-quadratique-linéaire (LQL) qui prend explicitement en compte la taille des fractions, la durée totale du traitement et les effets de repopulation cellulaire, et surpasse les calculateurs standards fondés sur le modèle LQ.
  Fondements théoriques : Intègre le cadre LQL d’Astrahan pour les schémas à forte dose par fraction (> dₜ), les corrections de repopulation de Dale et la modélisation multi-fractionnée de Thames, mis en œuvre dans un algorithme qui minimise une fonction de coût spécifique pour calculer avec précision l’EQD₂ et la BED dans des situations complexes de radiothérapie.
  Intérêt clinique : Les études de validation rapportent des écarts de dose allant jusqu’à ~25 % par rapport aux modèles LQ classiques, particulièrement pertinents pour les protocoles hypo- et hyperfractionnés et en cas d’interruption de traitement, une différence largement due à la dynamique de repopulation tumorale dans les cas de cancer de la prostate.
  Interface et déploiement : LQL‑Equiv est distribué comme application graphique autonome Matlab®, qui requiert MATLAB Runtime sous Windows (aucune licence MATLAB complète n’est nécessaire). L’interface propose peu de paramètres ajustables, mais essentiels (par exemple le rapport α/β, le temps de démarrage Tₖ, le temps de doublement potentiel Tₚₒₜ), ce qui garantit la facilité d’utilisation et privilégie la reproductibilité.
  Cadre réglementaire : LQL‑Equiv est destiné uniquement à la recherche et à la validation secondaire, et n’est pas un outil certifié pour l’usage clinique. Les utilisateurs doivent vérifier les résultats et restent responsables de l’interprétation clinique ; les développeurs déclinent toute responsabilité en cas de mauvais usage.
  En résumé
- Performances validées : écarts généralement < 25 % par rapport aux calculs standards.
+ Écarts entre LQ et LQL : généralement < 25 %, LQ étant le calcul standard.
  Entièrement open source, avec interface graphique et paramètres biologiques ajustables.
  Déjà cité dans Google Scholar, documenté sur ResearchGate et archivé sur Zenodo.
  Conçu pour les physiciens médicaux et les chercheurs cliniciens en radiothérapie, afin d’appuyer une évaluation précise et personnalisée des traitements.
@@ -3075,7 +3075,7 @@ Actualités : publications, logiciels et essais
  Télécharger les sources
  Publié en ligne le 24 juin 2025 · Physique médicale
  Aider la décision clinique en radiothérapie : modèles de dose LQ et LQL comparés
- Titre original : Improving Clinical Decision-Making in Radiotherapy: A Comparative Analysis of Linear-Quadratic LQ and Linear-Quadratic-Linear LQL Dose Models
+ Titre du billet d'origine : Improving Clinical Decision-Making in Radiotherapy: A Comparative Analysis of Linear-Quadratic LQ and Linear-Quadratic-Linear LQL Dose Models
  C. Voyant, D. Julian, S. Muraro, V. Bodez, M. Pinpin, D. Leschi, R. Oozeer, G. Wided, M.-A. Acquaviva, S. Prapant, O. Gahbiche, N. Bouaouina
  Un article collectif qui compare les modèles linéaire-quadratique (LQ) et linéaire-quadratique-linéaire (LQL) ; méthodes, résultats et limites cliniques dans l'article publié.
  Lire le billet complet
@@ -3083,18 +3083,18 @@ Actualités : publications, logiciels et essais
  Résumé
  Cet article collaboratif compare les modèles de dose linéaire-quadratique (LQ) et linéaire-quadratique-linéaire (LQL) en radiothérapie. Consulter l’article publié pour les méthodes, les résultats et les limites cliniques.
  Article publié : Improving Clinical Decision-Making in Radiotherapy
- Publié en ligne le 17 juillet 2025 · Prévision solaire et énergétique
- Coefficient de variation stochastique : mesurer la variabilité et la prévisibilité du rayonnement solaire
- Titre original : Stochastic Coefficient of Variation: Assessing the Variability and Forecastability of Solar Irradiance
+ Publié en ligne le 17 juillet 2025 · Énergie : prévision et systèmes
+ Coefficient de variation stochastique : mesurer la variabilité et la prévisibilité de l'éclairement solaire
+ Titre du billet d'origine : Stochastic Coefficient of Variation: Assessing the Variability and Forecastability of Solar Irradiance
  Cyril Voyant , Alan Julien , Milan Despotovic , Gilles Notton , Luis Antonio Garcia-Gutierrez , Claudio Francesco Nicolosi , Philippe Blanc , Jamie Bright
  Le sCV et la prévisibilité F séparent les fluctuations aléatoires des tendances déterministes que l'écart-type mélange, pour caractériser un site avant de comparer des modèles.
  Lire le billet complet
  Renewable Energy, 2025, https://doi.org/10.1016/j.renene.2025.123913
  Résumé
  Ce travail présente un cadre robuste de quantification de la variabilité et de la prévisibilité de l’éclairement solaire au moyen du Stochastic Coefficient of Variation (sCV) et de la Forecastability (F). Les métriques classiques, comme l’écart-type, ne parviennent pas à isoler les fluctuations stochastiques des tendances déterministes de l’éclairement solaire. En considérant l’éclairement de ciel clair comme une borne supérieure dynamique de la mesure, le sCV fournit une mesure de variabilité normalisée et sans dimension, dont la valeur théorique varie de 0 à 1. F prolonge le sCV en intégrant les dépendances temporelles par l’autocorrélation maximale, ce qui relie le sCV à F. La méthode proposée est validée sur des séries temporelles cyclostationnaires synthétiques et sur des données expérimentales provenant de 68 stations météorologiques (en Espagne). Nos analyses comparatives montrent que le sCV et F rendent bien compte des fluctuations multi-échelles, tout en levant d’importantes limites inhérentes aux métriques classiques. Ce cadre complet permet une quantification plus fine de l’incertitude des prévisions solaires, ce qui améliore la prise de décision en matière d’achat de flexibilité et de stratégies opérationnelles. En évaluant la variabilité et la prévisibilité à plusieurs échelles de temps, il renforce les capacités de surveillance en temps réel et éclaire des approches adaptatives de gestion de l’énergie, comme la gestion dynamique de l’écrêtement et l’allocation de capacité ajustée au risque.
- Publié en ligne le 25 septembre 2025 · Prévision solaire et énergétique
+ Publié en ligne le 25 septembre 2025 · Énergie : prévision et systèmes
  Métriques NICEᵏ : un cadre unifié pour évaluer les prévisions solaires déterministes
- Titre original : NICE^k Metrics: Unified and Multidimensional Framework for Evaluating Deterministic Solar Forecasting Accuracy
+ Titre du billet d'origine : NICE^k Metrics: Unified and Multidimensional Framework for Evaluating Deterministic Solar Forecasting Accuracy
  Cyril Voyant , Milan Despotovic , Luis Garcia-Gutierrez , Rodrigo Amaro e Silva , Philippe Lauret , Ted Soubdhan , Nadjem Bailek
  La RMSE, la MAE et les scores de compétence ne saisissent pas toute la qualité d'une prévision solaire. Les métriques NICEᵏ rapportent les erreurs à celles d'une référence explicite, la persistance.
  Lire le billet complet
@@ -3105,27 +3105,27 @@ Actualités : publications, logiciels et essais
  La méthode associe des simulations de Monte-Carlo synthétiques à des données réelles issues du réseau espagnol SIAR, qui comprend 68 stations météorologiques réparties dans diverses régions climatiques. Les modèles de prévision évalués comprennent des approches autorégressives, des Extreme Learning Machines et la persistance intelligente (smart persistence). Les résultats montrent que les valeurs théoriques et empiriques de NICEᵏ ne convergent que lorsque de fortes hypothèses statistiques sont satisfaites (par exemple R² ≈ 1,0 pour NICE²). Surtout, la métrique composite NICEΣ surpasse systématiquement les métriques classiques pour discriminer les modèles (par exemple valeurs de p < 0,05 pour NICEΣ contre > 0,05 pour la nRMSE ou la nMAE).
  À mesure que l’horizon de prévision augmente, NICEΣ donne des valeurs de p constamment significatives (de 10⁻⁶ à 0,004), tandis que la nRMSE et la nMAE n’atteignent souvent pas la significativité statistique. En outre, les métriques classiques (nRMSE, nMAE, nMBE, R²) ne permettent pas de distinguer de manière fiable les modèles dans des comparaisons deux à deux. À l’inverse, la famille NICEᵏ présente une meilleure discrimination statistique (p < 0,001), des distributions de variance plus larges et une meilleure comparabilité entre études.
  Cette étude confirme la validité théorique et empirique du cadre NICEᵏ et souligne sa pertinence opérationnelle. Elle établit NICEᵏ comme une solution robuste, unifiée et interprétable par rapport aux métriques classiques pour évaluer les modèles déterministes de prévision solaire.
- Publié en ligne le 11 avril 2025 · Prévision solaire et énergétique
+ Publié en ligne le 11 avril 2025 · Énergie : prévision et systèmes
  Le choix du modèle de ciel clair compte pour la prévision solaire à court terme
- Titre original : On the importance of clearsky model in short-term solar radiation forecasting
+ Titre du billet d'origine : On the importance of clearsky model in short-term solar radiation forecasting
  Cyril Voyant , Milan Despotovic , Gilles Notton , Yves-Marie Saint-Drenan , Mohammed Asloune , Luis Garcia-Gutierrez
  Les modèles de ciel clair servent partout en énergie solaire, mais leur usage en prévision pose des difficultés : erreurs de synchronisation, choix de l'indice de ciel clair, effets sur les scores.
  Lire le billet complet
  Solar Energy, 2025, https://doi.org/10.1016/j.solener.2025.113490
  Résumé
  Les modèles de ciel clair sont largement utilisés dans le domaine de l’énergie solaire pour de nombreuses applications, comme le contrôle qualité, l’évaluation de la ressource, l’estimation de l’éclairement par satellite et la prévision. Leur utilisation en prévision et en prévision immédiate pose toutefois plusieurs difficultés. Les erreurs de synchronisation, le recours à l’indice de ciel clair (rapport de l’éclairement global horizontal à son équivalent sans nuages) et la forte sensibilité du modèle de ciel clair aux erreurs sur l’épaisseur optique des aérosols à faible élévation solaire limitent leur valeur ajoutée dans les applications en temps réel. Cet article explore la faisabilité d’une prévision à court terme sans recours à un modèle de ciel clair. Nous proposons une approche de prévision Clearsky-Free fondée sur des modèles Extreme Learning Machine (ELM). L’ELM apprend la périodicité journalière et la variabilité locale directement à partir des données brutes d’éclairement global horizontal (GHI). Il supprime le besoin de normalisation par le ciel clair, ce qui simplifie le processus de prévision et améliore le passage à l’échelle. Notre approche est une méthode statistique adaptative non linéaire qui apprend implicitement l’éclairement en conditions sans nuages, ce qui supprime le besoin d’un modèle de ciel clair et les difficultés opérationnelles associées. Les résultats déterministes et probabilistes sont comparés à des références classiques, dont un ARMA avec des données de ciel clair générées par McClear et la régression quantile pour les prévisions probabilistes. L’ELM égale ou surpasse ces méthodes, en fournissant des prédictions précises et une quantification robuste de l’incertitude. Cette approche offre une solution simple et efficace pour la prévision solaire en temps réel. En dépassant les limites du processus de stationnarisation fondé sur le schéma multiplicatif habituel des modèles de ciel clair, elle fournit un cadre souple et fiable pour les systèmes énergétiques modernes.
- Publié en ligne le 12 juillet 2025 · Prévision solaire et énergétique
- Sélection des variables d'entrée pour prévoir le rayonnement solaire par apprentissage automatique : cas de l'Algérie
- Titre original : Comparative Study of Feature Selection Techniques for Machine Learning-Based Solar Irradiation Forecasting to Facilitate the Sustainable Development of Photovoltaics: Application to Algerian Climatic Conditions
+ Publié en ligne le 12 juillet 2025 · Énergie : prévision et systèmes
+ Sélection des variables d'entrée pour prévoir l'éclairement solaire par apprentissage automatique : cas de l'Algérie
+ Titre du billet d'origine : Comparative Study of Feature Selection Techniques for Machine Learning-Based Solar Irradiation Forecasting to Facilitate the Sustainable Development of Photovoltaics: Application to Algerian Climatic Conditions
  Saïd Benkaciali , Gilles Notton , Cyril Voyant
- Plusieurs techniques de sélection de variables comparées pour la prévision du rayonnement solaire par apprentissage automatique, dans les conditions climatiques algériennes.
+ Plusieurs techniques de sélection de variables comparées pour la prévision de l'éclairement solaire par apprentissage automatique, dans les conditions climatiques algériennes.
  Lire le billet complet
  Sustainability, 2025, https://doi.org/10.3390/su17146400
  Résumé
  La prévision de la production future des centrales solaires est essentielle pour poursuivre le développement de l’énergie photovoltaïque et accroître sa part dans le mix énergétique en vue d’un avenir plus durable. Une prévision précise de l’éclairement solaire améliore nettement le maintien de l’équilibre entre l’offre et la demande d’énergie ainsi que les performances de la gestion du réseau. Cette étude évalue l’influence de la sélection des entrées sur la prévision à court terme de l’éclairement global horizontal (GHI) dans deux climats algériens contrastés : Ghardaïa, aride, et Alger, côtier. Huit méthodes de sélection de variables (Pearson, Spearman, Mutual Information (MI), LASSO, SHAP (GB et RF) et RFE (GB et RF)) sont évaluées à l’aide d’un modèle de Gradient Boosting sur des horizons d’une à six heures. La pertinence des entrées dépend à la fois du lieu et de l’horizon de prévision. À t+1, MI obtient les meilleurs résultats à Ghardaïa (nMAE = 6,44 %), tandis que LASSO est le plus performant à Alger (nMAE = 10,82 %). À t+6, les méthodes fondées sur SHAP et RFE donnent les erreurs les plus faibles à Ghardaïa (nMAE = 17,17 %), et RFE-GB arrive en tête à Alger (nMAE = 28,13 %). Bien que les écarts de performance entre méthodes restent modérés, les améliorations relatives atteignent jusqu’à 30,28 % à Ghardaïa et 12,86 % à Alger. Ces résultats confirment que la sélection de variables améliore significativement la précision (en particulier aux horizons éloignés) et suggèrent que des méthodes plus simples, comme MI ou LASSO, peuvent rester efficaces selon le contexte climatique et l’horizon de prévision.
  2025 · Pratique de la recherche
  Visibilité académique : pourquoi publier ne suffit plus
- Titre original : Academic Visibility: Why Publishing Isn't Enough Anymore
+ Titre du billet d'origine : Academic Visibility: Why Publishing Isn't Enough Anymore
  Cyril Voyant
  Un article sans grand espoir cité des centaines de fois, un autre, jugé meilleur, resté dans l'ombre : après vingt ans de recherche, publier ne suffit plus, il faut être trouvé et lu.
  Lire le billet complet
@@ -3251,7 +3251,7 @@ MIMO-ELM : sept signaux énergétiques de la Corse prévus par un seul modèle
 ---
 URL: https://www.cyrilvoyant.com/fr/actualites/why-forecast-solar-power/
 
-sCV et F : variabilité et prévisibilité du rayonnement solaire
+sCV et F : variabilité et prévisibilité de l'éclairement solaire
  Le ciel change, mais à quel point reste-t-il prévisible ?
  Étape 1 sur 5 · Calculer directement Le voir sur le fil Quand le lien est connu, on le calcule avec un modèle explicite, calibré et validé sur des données ; on n'ajoute de l'apprentissage que pour un bénéfice démontré. Le modèle au cœur.
  Cyril Voyant · 18 octobre 2026
@@ -3278,7 +3278,7 @@ Comprendre avant de calculer : la démarche de Cyril Voyant
  Médecine, énergie, langage : des questions très différentes, une même méthode. Au centre, l'humain et sa question ; au cœur, un modèle que l'on comprend ; autour, tous les outils, l'intelligence artificielle comprise. On n'ajoute de la complexité que si elle apporte un gain mesurable.
  Cyril Voyant · directeur de recherche, Mines Paris – PSL, centre O.I.E.
  En bref
- Calculer directement quand le lien entre les entrées et les sorties est connu. Quand un modèle explicite ne suffit pas, hybrider  : garder le modèle et n'apprendre que ce qui manque. Quand les relations utiles ne sont pas suffisamment connues, évaluer ce que les données permettent d'apprendre, une marche de complexité à la fois, et seulement tant que cela paie.
+ Calculer directement quand le lien entre les entrées et les sorties est connu. Quand un modèle explicite ne suffit pas, hybrider  : garder le modèle et n'apprendre que ce qui manque. Quand les relations utiles ne sont pas suffisamment connues, évaluer ce que les données permettent d'apprendre, un niveau de complexité à la fois, et seulement tant que cela paie.
  Plus simple n'est souvent pas pire, et parfois mieux : une machine à apprentissage qui lit seulement sa propre maille satellite prévoit mieux que le même modèle lisant toute la carte, avec mille fois moins de paramètres, et mieux que les réseaux profonds testés.
  L'IA : indispensable dans la boîte à outils, jamais obligatoire dans la solution. Un modèle de langage peut préparer un calcul, jamais le deviner.
  Carte des travaux : quatre colonnes pour les étapes de la démarche (modèle direct ; hybride, modèle plus apprentissage ; apprentissage frugal ; apprentissage lourd et modèles de langage) et trois lignes pour les domaines (médecine, énergie, langage), chaque travail publié ou ouvert écrit dans sa case
@@ -3291,7 +3291,7 @@ Comprendre avant de calculer : la démarche de Cyril Voyant
  Cancer de la thyroïde  : un modèle compartimental de Marie Fusella Giuntini et Dominique Barbolosi , avec Cyril Voyant et David Taieb , est la base d'un jumeau numérique hybride en cours ( Scientific Reports , 2026).
  Prévision solaire  : des prévisions hybrides combinaient déjà en 2012 un modèle météorologique numérique avec ARMA et des réseaux de neurones ( Energy , 2012) ; les références cyclostationnaires inscrivent la symétrie du signal dans la prévision ( Applied Mathematical Modelling , 2026).
  3. Quand les relations sont mal connues, apprendre, seulement tant que cela paie
- La persistance, puis des références structurées (BLEND, CLIPER, ARTU), des modèles statistiques, des machines à apprentissage frugales (ELM), et seulement ensuite les réseaux profonds ou les modèles de fondation. Chaque marche n'est gardée que si elle bat la précédente sur le même protocole.
+ La persistance, puis des références structurées (BLEND, CLIPER, ARTU), des modèles statistiques, des machines à apprentissage frugales (ELM), et seulement ensuite les réseaux profonds ou les modèles de fondation. Chaque niveau n'est gardé que s'il bat le précédent sur le même protocole.
  Une seule ELM prévoit sept signaux du réseau corse à la fois ; à une heure, nRMSE 0,179 pour le solaire et 0,051 pour le thermique ( Applied Energy , 2026).
  Retirer le modèle de ciel clair simplifie la chaîne de prévision, et l'ELM fait aussi bien ou mieux que les références classiques ( Solar Energy , 2025).
  4. L'intelligence artificielle, à sa place
@@ -3496,7 +3496,7 @@ URL: https://www.cyrilvoyant.com/fr/edition-scientifique-confiance/
  En France : un travail d'éditeur qui ne compte pas
  La France a l'un des cadres juridiques les plus favorables à l'accès ouvert d'Europe : droit de dépôt d'ordre public, HAL, Software Heritage, un plan national qui inclut les codes sources [17] [18] . Mais éditer une revue, relire, vérifier un code restent presque absents de l'évaluation des carrières, qui compte d'abord les articles. Le travail qui garantit la qualité est celui qui rapporte le moins ; il devient difficile de trouver des éditeurs et des relecteurs, et l'on laisse à d'autres le pilotage des revues de référence.
  Ce qui manque
- Vérifier les données et le code de chaque article qui en dépend, comme l'AI Act le fait pour les systèmes d'IA : versions figées, environnement documenté, exécution indépendante, traces conservées.
+ Vérifier les données et le code de chaque article qui en dépend, avec une exigence de traçabilité comparable à celle que l'AI Act demande aux systèmes d'IA : versions figées, environnement documenté, exécution indépendante, traces conservées.
  Afficher les outils utilisés, IA comprise. Ni interdiction ni silence : une déclaration de ce qui a servi, à quoi, et ce qui a été vérifié par un humain.
  Suivre l'article après sa publication , comme on surveille un système déployé : versions, errata, signalements, liens vers les jeux de données corrigés.
  Reconnaître le travail d'édition et de relecture dans l'évaluation, comme le propose CoARA.
@@ -3874,6 +3874,7 @@ Cyril Voyant
  Ma recherche en 30 secondes · Une fiche courte pour situer le parcours, les travaux et une démonstration.
  Physicien et directeur de recherche à Mines Paris – PSL, au centre Observation, Impacts, Énergie (O.I.E.). Mon parcours associe la physique médicale en radiothérapie (de 2003 à 2024) et la recherche en prévision énergétique (thèse en 2011), menées en parallèle ; je travaille sur la prévision solaire et énergétique, l'évaluation des prévisions, l'IA frugale et les interfaces entre modèles de langage et codes scientifiques.
  Peut-on savoir à quel point le ciel est prévisible ? Quand un modèle simple bat-il un modèle complexe ? Quelles erreurs comptent en pratique ? J'explique ici les résultats, avec les articles et les codes qui les soutiennent.
+ Professeur invité à l'université de Kragujevac · CV académique complet (en anglais) · Projets de recherche (en anglais) · Google Scholar
  Trois sites, trois fonctions
  cyrilvoyant.com · vous êtes ici
  Recherche, cours et démonstrations interactives.
@@ -3882,7 +3883,7 @@ Cyril Voyant
  cyrilvoyant.github.io
  Guides techniques, méthodes et code reproductible, site en anglais.
  Une méthode, quatre voies complémentaires
- Le domaine change ; la méthode, non. La voie est choisie par le problème et la décision à éclairer, pas par l'outil ; la complexité supplémentaire n'est retenue que si son bénéfice est démontré.
+ Le domaine change ; la méthode, non. La voie est choisie par le problème et la décision à éclairer, pas par l'outil ; la complexité supplémentaire n'est retenue que si son bénéfice est démontré. Ces quatre voies mènent au fil en cinq étapes : la cinquième, montrer pourquoi on peut faire confiance au résultat, vaut pour chacune.
  Calculer directement Quand le lien est connu, on le calcule avec un modèle explicite, calibré et validé sur des données ; on n'ajoute de l'apprentissage que pour un bénéfice démontré.
  Le modèle ne fait pas tout : variabilité et mémoire · Neutrons atmosphériques et BNCT : quantifier la limite · Calculer plutôt qu'apprendre : l'équivalence de dose en radiothérapie
  Hybrider Quand le modèle ne suffit pas, on le complète : garder le modèle, n'apprendre que ce qui manque.
@@ -3895,7 +3896,7 @@ Cyril Voyant
  Démontrer la confiance
  Juger contre une référence, publier code, données et limites, rendre la recherche trouvable et réutilisable.
  Se questionner sur nos façons de faire de la recherche · L'IA dans la recherche : AI Act, charte et boîte à outils · Même nRMSE, modèles différents : ce que révèle NICE · Une prévision décalée peut rester exploitable : le test gamma · Visibilité académique : publier ne suffit plus · Excellence scientifique à l'ère de l'IA : du SEO au GEO
- Récits récents
+ Récits
  Le modèle ne fait pas tout : variabilité et mémoire , Ajouter du bruit, modifier la mémoire, comparer les modèles appris à la persistance et à un oracle propre au générateur.
  Neutrons atmosphériques et BNCT : quantifier la limite , Un modèle exploratoire de 2011 : captures rares, énergie locale et dose moyenne insuffisante pour une thérapie macroscopique.
  Calculer plutôt qu'apprendre : l'équivalence de dose en radiothérapie , Une fraction de 15 Gy au rectum : 72,7 Gy en LQ, 59,4 Gy en LQL.
@@ -4126,8 +4127,8 @@ Comparer les doses biologiques LQ et LQL
  Cette page traduit l’interface du calculateur. Le guide technique anglais contient des développements supplémentaires ; le changement de langue ouvre le même calculateur dans ce guide, pas une traduction intégrale de tous ses chapitres.
  English summary: Choose parameters and vary dose per fraction. Research and education use. Open the calculator and full method guide in English.
  Travaux et équipes de référence
- Cyril Voyant , Daniel Julian. LQL-Equiv-web: a Python library and browser application for linear-quadratic-linear dose equivalence in radiotherapy .
- Cyril Voyant , Daniel Julian. Dose equivalence calculation in radiotherapy: a call for standardization .
+ Cyril Voyant , Daniel Julian . LQL-Equiv-web: a Python library and browser application for linear-quadratic-linear dose equivalence in radiotherapy .
+ Cyril Voyant , Daniel Julian . Dose equivalence calculation in radiotherapy: a call for standardization .
  Cyril Voyant , D. Julian, S. Muraro, V. Bodez, M. Pinpin, D. Leschi, R. Oozeer, G. Wided, M.-A. Acquaviva, S. Prapant, O. Gahbiche, N. Bouaouina. Improving clinical decision-making in radiotherapy: a comparative analysis of linear-quadratic (LQ) and linear-quadratic-linear (LQL) dose models .
  Cyril Voyant , D. Julian, R. Roustit, K. Biffi, C. Lantieri. Biological effects and equivalent doses in radiotherapy: a software solution .
  Guide technique, sources et attribution détaillée (anglais) · Cas de vérification numérique
@@ -4142,7 +4143,7 @@ Déplacer une prévision et observer l’indice γ
  À essayer : Comparez un décalage spatial, un retard et un biais séparément. Une tolérance plus large change le critère d’acceptation, pas la prévision elle-même.
  Activez JavaScript pour utiliser ce calculateur. La méthode et ses limites restent lisibles ci-dessous.
  Comprendre les paramètres et les limites
- DTA est la tolérance spatiale, en km ; TTA la tolérance temporelle, en minutes ; IDT la tolérance d’intensité, en W/m². GPR est la proportion de pixels dont γ ≤ 1. Les erreurs se combinent dans une distance normalisée ; inspectez aussi le RMSE. La scène est synthétique. L’implémentation suit l’équation de l’article ; l’écart avec le traitement temporel de la fonction MATLAB archivée est expliqué dans le guide.
+ DTA est la tolérance spatiale, en km ; TTA la tolérance temporelle, en minutes ; IDT la tolérance d’intensité, en W/m². GPR est la proportion de pixels dont γ ≤ 1. Les erreurs se combinent dans une distance normalisée ; inspectez aussi la RMSE. La scène est synthétique. L’implémentation suit l’équation de l’article ; l’écart avec le traitement temporel de la fonction MATLAB archivée est expliqué dans le guide.
  Cette page traduit l’interface du calculateur. Le guide technique anglais contient des développements supplémentaires ; le changement de langue ouvre le même calculateur dans ce guide, pas une traduction intégrale de tous ses chapitres.
  English summary: Displace, delay or bias a synthetic cloud and adjust the tolerances. Open the calculator and full method guide in English.
  Travaux et équipes de référence
@@ -4252,7 +4253,7 @@ URL: https://www.cyrilvoyant.com/fr/recits/lql-equiv/
 
 Calculer plutôt qu'apprendre : l'équivalence de dose en radiothérapie avec LQL-Equiv
  Étape 1 sur 5 · Calculer directement Le voir sur le fil Quand le lien est connu, on le calcule avec un modèle explicite, calibré et validé sur des données ; on n'ajoute de l'apprentissage que pour un bénéfice démontré. Le modèle au cœur.
- Quand le lien entre un schéma de radiothérapie et son effet biologique est connu, on le calcule directement. Ni données ni intelligence artificielle : un modèle que l'on comprend, vérifié cas par cas.
+ Quand le lien entre un schéma de radiothérapie et son effet biologique est connu, on le calcule directement. Ni données d'apprentissage ni intelligence artificielle : un modèle que l'on comprend, vérifié cas par cas.
  Cyril Voyant , avec Daniel Julian · Mines Paris – PSL, centre O.I.E.
  En bref
  Une fraction de 15 Gy au rectum a une dose biologique efficace de 72,7 Gy avec le modèle linéaire-quadratique (LQ), mais de 59,4 Gy avec le modèle linéaire-quadratique-linéaire (LQL) : 18 % de moins .
@@ -4337,7 +4338,7 @@ Se questionner sur nos façons de faire de la recherche : influence, intégrit
 ---
 URL: https://www.cyrilvoyant.com/fr/recits/satellite-irradiance/
 
-Prévision satellite du rayonnement : une maille, un voisinage ou tout le champ
+Prévision satellite de l'éclairement : une maille, un voisinage ou tout le champ
  Étape 3 sur 5 · Apprendre frugalement Le voir sur le fil Quand les relations utiles ne sont pas suffisamment connues, évaluer ce que les données permettent d'apprendre, avec seulement la complexité qui paie. La complexité seulement si elle paie.
  Un satellite voit le rayonnement de toute une région, heure par heure. La tentation est de donner toute la carte au modèle de prévision. Garder le même modèle et ne changer que ce qu'il lit montre ce que la carte apporte vraiment.
  Cyril Voyant (Mines Paris – PSL, centre O.I.E.), avec Andreas Kazantzidis (université de Patras) et Jan Kleissl (université de Californie à San Diego) · manuscrit en préparation, code et extrait de données ouverts
@@ -4363,7 +4364,7 @@ Prévision satellite du rayonnement : une maille, un voisinage ou tout le cham
  Un score honnête. Les erreurs sont cumulées sur toutes les mailles, toutes les échéances de 1 à 24 heures et toutes les heures de test où le Soleil est à plus de 5° au-dessus de l'horizon. La nRMSE est divisée par la moyenne des observations retenues de l'année de test, 407,9 W/m².
  L'exemple en chiffres
  Erreur cumulée en fonction du nombre de paramètres stockés par chaque modèle (échelle log) : l'ELM par maille est le point le plus bas ; lire tout le champ déplace les modèles vers la droite sans les faire descendre
- Les données sont le rayonnement HelioClim-3 (méthode Heliosat-2, images Meteosat, service SoDa) sur 1 148 points au-dessus de la Corse, au pas horaire, avec 2005 pour l'apprentissage et 2006 pour le test.
+ Les données sont l'éclairement HelioClim-3 (méthode Heliosat-2, images Meteosat, service SoDa) sur 1 148 points au-dessus de la Corse, interpolés sur une grille de 32 × 32 dont 722 mailles, à l'intérieur de l'enveloppe convexe des points, sont évaluées, au pas horaire, avec 2005 pour l'apprentissage et 2006 pour le test.
  L'ELM par maille atteint un nRMSE de 0,308 avec environ 100 000 paramètres stockés ; l'ELM sur tout le champ atteint 0,355 avec environ 100 millions.
  En W/m² : 0,308 × 407,9 ≈ 126 W/m², contre environ 145 W/m² pour l'ELM sur tout le champ.
  Un voisinage 3 × 3 n'aide pas non plus (0,3087 contre 0,3077 pour une seule maille).
@@ -4553,14 +4554,14 @@ Vue d'ensemble : recherche, logiciels, cours et outils
  Make_Stationary: deseasonalization benchmark for renewable-energy time series (MATLAB) Maklewa Agoundedemba , Cyril Voyant , Milan Despotovic , Luis Antonio Garcia-Gutierrez , Gilles Notton · dépôt · GPL-3.0
  Filter and wrapper diagnostics of dimensionality reduction for endogenous PV power forecasting (MATLAB) Hassen Bouzgou , Gabriel Chesnoiu , Claudio F. Nicolosi , Adrien Chatel , Gilles Notton , Lionel Menard , Cyril Voyant · dépôt · MIT
  RAIR-Sim: compartmental simulator of radioactive iodine therapy response in metastatic thyroid cancer (MATLAB) Marie Fusella Giuntini , Cyril Voyant , David Taieb , Dominique Barbolosi · dépôt · MIT
- Influence Index: a log-based measure of research influence for institutions (MATLAB, processed data) Cyril Voyant , Jeroen Baas , Roy Boverhof , Paolo Stringari , Mathilde Marchand-Lasserre, John P. A. Ioannidis · dépôt · MIT
+ Influence Index: a log-based measure of research influence for institutions (MATLAB, processed data) Cyril Voyant , Jeroen Baas , Roy Boverhof , Paolo Stringari , Mathilde Marchand-Lasserre , John P. A. Ioannidis · dépôt · MIT
  LQL-Equiv 2014: biologically equivalent dose calculation in radiotherapy (MATLAB application) Cyril Voyant , Daniel Julian · dépôt · MIT
  Tunnel Load Simulator: synthetic electricity demand of road tunnels (Python, Streamlit) Haytham El-Houari , Cyril Voyant · dépôt · MIT
  LQL-Equiv-web 3.0: biologically equivalent doses in radiotherapy (Python, browser) Cyril Voyant , Daniel Julian · dépôt · MIT
  Les cours en accès libre (CC BY 4.0)
  Prévoir la ressource solaire intermittente Mines Paris – PSL, cycle ingénieur civil, projet de recherche appliquée UE14 · 59 diapositives · français et anglais · CC BY 4.0
  Biostatistique pour les études de santé Première année des études de santé (PASS, UE8) · 3 chapitres, 246 diapositives · CC BY 4.0
- Physique pour les études de santé : ondes électromagnétiques, rayons X et imagerie Première année des études de santé (PASS-PACES), bases physiques des explorations médicales · cours de 110 diapositives et 2 séances d'exercices corrigées · CC BY 4.0
+ Physique pour les études de santé : ondes électromagnétiques, rayons X et imagerie Première année des études de santé (PASS), bases physiques des explorations médicales · cours de 110 diapositives et 2 séances d'exercices corrigées · CC BY 4.0
  Physique industrielle : thermodynamique, vapeur d'eau et production de froid B.U.T. Génie biologique, Sciences de l'aliment et biotechnologie, 2ᵉ année · 5 chapitres, 139 diapositives et un polycopié · CC BY 4.0
  Bases de thermique pour le génie industriel alimentaire B.U.T. Génie biologique, Sciences de l'aliment et biotechnologie, 1ʳᵉ année · 24 diapositives · CC BY 4.0
  Les outils interactifs
@@ -4601,7 +4602,7 @@ Cyril Voyant
  Find a simulator or animation
  Scientific simulator, interactive animation or calculator: browse by field and interface language.
  My research in 30 seconds · A short brief for the research thread, selected work and a demonstration.
- I am a physicist and Research Director at Mines Paris – PSL , within the Centre Observation, Impacts, Energy (O.I.E.), and Visiting Professor at the University of Kragujevac , Serbia. My work connects solar and photovoltaic forecasting, time series and frugal AI. My background also includes medical physics.
+ I am a physicist and Research Director at Mines Paris – PSL , within the Centre Observation, Impacts, Energy (O.I.E.), and Visiting Professor at the University of Kragujevac , Serbia. I build physical and statistical models to inform decisions in energy and medicine, with people at the center and AI as one tool among others. My work connects solar and photovoltaic forecasting, time series and frugal AI. My background also includes medical physics.
  Can we know how predictable the sky is? When does a simple model beat a complex one? Which forecast errors matter in practice? Here I explain the results behind these questions, with the papers and code that support them.
  Three sites, three roles
  cyrilvoyant.com · this site
@@ -4611,7 +4612,7 @@ Cyril Voyant
  cyrilvoyant.github.io
  Technical guides, methods and reproducible code, English site.
  One method, four complementary routes
- The domain changes; the method does not. The route is chosen by the problem and the decision to inform, not by the tool; extra complexity is kept only when its benefit is demonstrated.
+ The domain changes; the method does not. The route is chosen by the problem and the decision to inform, not by the tool; extra complexity is kept only when its benefit is demonstrated. These four routes lead to the five-step thread : the fifth step, showing why the result can be trusted, applies to each of them.
  Compute directly When the link is known, compute it with an explicit model, calibrated and validated on data; learning is added only for a demonstrated benefit.
  The model is not the whole story: variability and memory · Atmospheric neutrons and BNCT: quantify the limit · Compute, don't learn: radiobiological dose equivalence
  Hybridize When the model falls short, complete it: keep the model, learn only what is missing.
@@ -4727,7 +4728,7 @@ The γ-index: validating displaced solar forecasts beyond pointwise errors
  In the gamma-index paper’s synthetic experiment, more than 80% of pixels remain acceptable despite an approximately two-kilometre spatial displacement, a ten-minute time shift and added noise. Pixelwise RMSE nevertheless suggests substantial error. This illustrates the double-penalty problem: a displaced cloud structure is penalised at both its predicted and observed positions.
  Published in International Journal of Forecasting, Cyril Voyant’s paper transfers an idea from radiotherapy dose verification to the verification of forecast fields. Three tolerances are specified explicitly: spatial distance DTA, time displacement TTA and intensity difference IDT. The method searches for agreement in a neighbourhood, rather than comparing only identical coordinates at an identical instant.
  The gamma criterion combines normalized discrepancies; a pixel passes when gamma is less than or equal to one. The Gamma Pass Rate, GPR, reports the corresponding proportion, while mean and maximum gamma complete the diagnosis. In the illustration above, tolerances are two kilometres, thirty minutes and 50 W/m². Those values give the result a precise interpretation; they are not a universal verification standard. The experiment does not mean that every two-kilometre displacement is acceptable under every operational requirement.
- The paper also applies the framework to satellite-derived solar-irradiance fields over Corsica. Its practical value is distinguishing a small positioning error from a more important physical disagreement. Public MATLAB code supplies the calculation function and a synthetic example; that example does not redistribute restricted satellite observations. Selecting tolerances before model comparison and reporting RMSE alongside gamma keeps the evaluation transparent. Relaxing the tolerances can raise the pass rate without improving the forecast itself. Gamma therefore adds an acceptance question to error measurement rather than replacing every existing score.
+ The paper also applies the framework to satellite-derived solar-irradiance fields over Corsica: with the same tolerances, GPR there is about 67–69%, a different experiment from the more than 80% of the synthetic example. Its practical value is distinguishing a small positioning error from a more important physical disagreement. Public MATLAB code supplies the calculation function and a synthetic example; that example does not redistribute restricted satellite observations. Selecting tolerances before model comparison and reporting RMSE alongside gamma keeps the evaluation transparent. Relaxing the tolerances can raise the pass rate without improving the forecast itself. Gamma therefore adds an acceptance question to error measurement rather than replacing every existing score.
  A separate synthetic illustration. Figure 2 from the public author-manuscript version in temporal-gamma-index (GitHub): observation, prediction, γ map and RMSE map. This version uses the tolerances printed on the plot (1 km, 50 min, 10 W/m²); these differ from the numerical example discussed above. Source: github.com/cyrilvoyant/temporal-gamma-index, Gamma_Index_Cyril_Voyant.pdf. Cyril Voyant.
  Paper, authors and resources
  Reference: Cyril Voyant, sole author. A tolerance-based framework for spatiotemporal forecast validation using the γ-index . International Journal of Forecasting 42(4), 1207–1214 (2026). DOI · public author manuscript, section 3.1 · code · software DOI .
@@ -4737,7 +4738,7 @@ The γ-index: validating displaced solar forecasts beyond pointwise errors
 URL: https://www.cyrilvoyant.com/latest-publications-and-news/
 
 News: publications, software and essays
- Publications, software releases, appointments and essays, in the order they were posted. Each post opens in place; the research stories, classified by step of the method, are on the Stories page. Atom feed .
+ Publications, software releases, appointments and essays, in the order they were posted on this site; for a paper or a software release, the date shown is that of the publication, not of the post, so dates do not always follow that order. Each post opens in place; the research stories, classified by step of the method, are on the Stories page. Atom feed .
  Theme Year 24 posts shown
  Posted 24 October 2026 · Research practice
  Scientific publishing: no verification of data and code, no trust
@@ -4746,10 +4747,10 @@ News: publications, software and essays
  Read the full post
  We publish more and check less. The AI Act asks high-risk AI systems for data governance, documentation, logs, quality management and post-market monitoring; scientific articles face nothing comparable. What already exists internationally, in Europe and in France, what is missing, and why the answer is change rather than more journals.
  Read the essay .
- Posted 23 October 2026 · Solar and energy forecasting
+ Posted 23 October 2026 · Energy: forecasting and systems
  ELECTRE, flagship project of the Carnot M.I.N.E.S institute: electrifying uses, closing workshop on 18 November 2026
- Delphine Gilges-Crampont, Annette Massias and Cyril Voyant
- ELECTRE brings together about fifteen laboratories, centers and institutes of the Carnot M.I.N.E.S institute around 13 research projects (2023–2026) on the electrification of uses, from materials to storage, industrial processes and the limits of electrification. Its closing workshop is on 18 November 2026, Mines Paris…
+ Delphine Gilges-Crampont , Annette Massias and Cyril Voyant
+ ELECTRE brings together about fifteen laboratories, centers and institutes of the Carnot M.I.N.E.S institute around 13 research projects (2023–2026) on the electrification of uses, from materials to storage, industrial processes and the limits of electrification. Its closing workshop is on 18 November 2026, Mines Paris – PSL, Sophia Antipolis.
  Read the full post
  Electrifying transport, heating, cooling and industrial processes is one of the main levers to cut greenhouse-gas emissions and the dependence on fossil fuels, all the more when it goes with a low-carbon electricity mix and sobriety. ELECTRE , a flagship project of the Carnot M.I.N.E.S institute, uses the institute's scientific resources to address the questions this raises, along the whole value chain.
  Who runs it. Delphine Gilges-Crampont , Annette Massias and Cyril Voyant (scientific coordinator, Centre O.I.E., Mines Paris – PSL) work on the project as a team of three. Contact: delphine.gilges-crampont@minesparis.psl.eu , annette.massias@minesparis.psl.eu , cyril.voyant@minesparis.psl.eu .
@@ -4773,16 +4774,16 @@ News: publications, software and essays
  Key message
  Beyond the personal recognition, this appointment strengthens an active scientific and educational partnership between France, Corsica, and Serbia. It opens new perspectives for joint publications, student mobility, teaching activities, and future European projects in the field of energy transition.
  Official announcement of Faculty of Engineering, University of Kragujevac
- https://fin.kg.ac.rs/en/component/content/article/202-news/2380-professors-gilles-notton-and-cyril-voyant-appointed-as-visiting-professors-at-the-faculty-of-engineering?Itemid=620
+ Announcement of the Faculty of Engineering (English)
  Official announcement in Serbian of Faculty of Engineering, University of Kragujevac
- https://www.fin.kg.ac.rs/sr/servisi/vesti/2379-profesori-gilles-notton-i-cyril-voyant-izabrani-u-zvanje-gostujucih-profesora-fakulteta-inzenjerskih-nauka
+ Announcement of the Faculty of Engineering (Serbian)
  Collaboration context: Serbia / France / Corsica
- https://www.fin.kg.ac.rs/en/component/content/article/202-news/2188-faculty-of-engineering-strengthens-international-research-collaboration-and-excellence-in-research?Itemid=620
+ Faculty of Engineering: international research collaboration
  Visiting Professors page (Faculty of Engineering)
- https://fin.kg.ac.rs/sr/zaposleni/gostujuci-profesori
+ Visiting professors of the Faculty (Serbian)
  University of Corsica news relay (tripartite collaboration)
- https://studia.universita.corsica/plugins/actu/actu-front.php?id=11332
- Released 8 May 2026 · Solar and energy forecasting
+ University of Corsica news (French)
+ Released 8 May 2026 · Energy: forecasting and systems
  Tunnel Load Simulator: an open-source generator for synthetic road-tunnel electricity demand
  The Tunnel Load Simulator is an open-source Streamlit application developed within the SmartTunnel project to generate synthetic electrical load profiles for road tunnels. It combines simplified representations of lighting, ventilation, auxiliary loads, traffic patterns, seasonal effects and stochastic events such as p…
  Read the full post
@@ -4797,9 +4798,9 @@ News: publications, software and essays
  Key message
  The Tunnel Load Simulator is a transparent, open-source and citable research-software demonstrator for synthetic road-tunnel electricity demand. Its current role is to support early-stage modeling and discussion; with calibration on real tunnel data, it could become a stronger tool for tunnel energy analysis and management.
  Application: https://tunnel-load-simulator.onrender.com/ GitHub: https://github.com/cyrilvoyant/tunnel-load-simulator README: https://github.com/cyrilvoyant/tunnel-load-simulator/blob/main/README.md Zenodo: https://zenodo.org/records/20080043 DOI: https://doi.org/10.5281/zenodo.20080042
- Published online 28 April 2026 · Solar and energy forecasting
+ Published online 28 April 2026 · Energy: forecasting and systems
  When Sunlight Stops Being Direct
- Haifa Harrouch , Nadjem Bailek , Bilel Zerouali , Ilyes Abidi, Hanene Guesmi, Cyril Voyant , Jihad A. Younis , Maher Jebali & Rabab Triki
+ Haifa Harrouch , Nadjem Bailek , Bilel Zerouali , Ilyes Abidi , Hanene Guesmi , Cyril Voyant , Jihad A. Younis , Maher Jebali & Rabab Triki
  Diffuse solar radiation remains one of the most complex components of the solar resource, particularly in regions affected by aerosols, humidity, and strong climatic contrasts.
  Read the full post
  Measurement and forecasting of the diffuse fraction of solar irradiance using a hybrid stacking model in Saudi Arabia
@@ -4811,7 +4812,7 @@ News: publications, software and essays
  Scientific impact: The analysis revealed strong spatial variability in diffuse solar regimes across Saudi Arabia. Coastal stations such as Jeddah reached diffuse fraction values close to 0.95, reflecting intense aerosol and humidity-driven scattering, while inland desert stations remained dominated by direct beam irradiance. The proposed stacking model significantly improved predictive skill compared with standalone learners, with forecast correlations between 0.94 and 0.97, and error reductions reaching 62.48% in some seasonal configurations. These results confirm that diffuse fraction dynamics are strongly climate-dependent and can be effectively learned through hybrid ensemble modeling.
  Operational impact: Accurate prediction of diffuse fraction directly affects photovoltaic yield estimation, tilted irradiance transposition, bifacial PV modeling, and solar resource assessment in regions exposed to strong aerosol or humidity variability. The framework offers a practical tool for improving solar forecasting in operational environments where atmospheric conditions evolve rapidly.
  Key message: Understanding how the atmosphere redistributes sunlight is not only a physical challenge; it is also a forecasting problem with direct implications for next generation photovoltaic systems .
- Published online 24 April 2026 · Solar and energy forecasting
+ Published online 24 April 2026 · Energy: forecasting and systems
  Revisiting Persistence: Symmetry-Constrained Forecasting of Periodically Correlated Energy Processes
  Cyril Voyant , Candice Banes , Luis Garcia-Gutierrez , Gilles Notton , Milan Despotovic , Zaher Mundher Yaseen
  This work revisits persistence forecasting for periodically varying statistics, including the daily cycle of solar irradiance. BLEND combines the latest observation with an observation aligned to the target phase of the cycle.
@@ -4824,7 +4825,7 @@ News: publications, software and essays
  Scientific contribution: a phase-aware analytical reference for comparing solar forecasts. The original raw-signal BLEND formulation does not require an external clear-sky model; the extended code also includes clear-sky-based variants, explicitly identified in the benchmark.
  Practical use: inspect the assumptions, estimate parameters on past data, and evaluate on unseen observations. The synthetic code results and the measured-data results of the paper are separate experiments.
  Key message: model complexity should earn its place through a fair comparison with well-specified simple references. Read the bilingual explanation · Figures, results and downloadable CSV .
- Published online 28 March 2026 · Solar and energy forecasting
+ Published online 28 March 2026 · Energy: forecasting and systems
  From Pixels to Tolerances: Rethinking Forecast Validation with the γ-Index
  Cyril Voyant
  Classical metrics like RMSE evaluate forecasts as if every pixel must match perfectly in space and time. Machines optimize for that. Humans do not think that way.
@@ -4837,7 +4838,7 @@ News: publications, software and essays
  The study demonstrates that classical pixel-wise metrics suffer from a structural limitation known as the double penalty: a small spatial or temporal shift leads to both a miss and a false alarm, artificially inflating the error. In controlled experiments, such shifts can produce large RMSE values (e.g., ~20–40 W/m²), even when the underlying physical structure is preserved.
  The γ-index resolves this by embedding tolerances directly into the evaluation. Instead of penalizing displacement, it checks whether the forecast lies within an acceptable region in a joint space–time–intensity domain. The results are clear:
  Mean γ remains stable (~0.29–0.35), showing robustness to small displacements
- γ Passing Rate (GPR) reaches ~67–69%, capturing operational usability
+ γ Passing Rate (GPR) reaches ~67–69% on the HelioClim-3 satellite maps, capturing operational usability (the “more than 80%” quoted elsewhere comes from the separate synthetic experiment)
  RMSE, in contrast, reacts strongly to minor misalignments and can misclassify usable forecasts as failures
  This changes the interpretation of performance. The question is no longer “Is the forecast exact?” but “Is it operationally acceptable?” For the community, this has direct implications:
  Energy systems: avoids unnecessary corrective actions (e.g., battery dispatch, backup generation)
@@ -4904,7 +4905,7 @@ News: publications, software and essays
  https://themeta.news/limpact-des-publications-bouleverse-par-lia/
  https://youtu.be/eMp0uyl59d4?si=mByvge5Xs1j1B51J
  https://education.newstank.fr/article/view/432445/repenser-excellence-scientifique-ere-saturation-vers-ingenierie-impact.html
- Published online 26 February 2026 · Solar and energy forecasting
+ Published online 26 February 2026 · Energy: forecasting and systems
  Coherent Multi-Energy Forecasting for Real-Time Grid Management: A Parsimonious MIMO-ELM Approach
  Cyril Voyant , Milan Despotovic , Luis Garcia-Gutierrez , Mohammed Asloune , Yves-Marie Saint-Drenan , Jean-Laurent Duchaud , Ghjuvan Antone Faggianelli , Elena Magliaro
  Fast, transparent, and operational short-term forecasting of demand and generation across multiple energy sources.
@@ -4937,13 +4938,13 @@ News: publications, software and essays
  Handling submissions in my areas of expertise:
  Renewable energy: Solar irradiance forecasting (GHI), ML applied to PV/hybridation, microgrids
  Medical physics: Radiotherapy , radiobiology, equivalent dosimetry
- This role aligns with my trajectory as Research Director at Mines Paris – PSL O.I.E. (since 2024), with >130 peer-reviewed publications (h-index ~35, >7000 citations, Stanford Top 2%). Scientific Reports covers all scientific domains.
+ This role aligns with my trajectory as Research Director at Mines Paris – PSL O.I.E. (since 2024), with >130 peer-reviewed publications (h-index ~35, >7000 citations in 2026, Stanford Top 2%). Scientific Reports covers all scientific domains.
  The editorial team comprises >2000 global experts ( https://www.nature.com/srep/about/editors ). My appointment highlights French interdisciplinary research in energy/ML/medicine. .
  Links
  Profile: https://www.cyrilvoyant.com
  HAL: https://cv.hal.science/cyril-voyant
  Scholar: https://scholar.google.com/citations?user=aUlP6agAAAAJ&hl=en
- Published online 20 December 2025 · Solar and energy forecasting
+ Published online 20 December 2025 · Energy: forecasting and systems
  Quality Control Framework for Tilted Solar Irradiance
  Mohammed Asloune , Gilles Notton , Cyril Voyant
  This work is part of the doctoral research of Mohammed Asloune (University of Corsica & Mines Paris – PSL).
@@ -4954,7 +4955,7 @@ News: publications, software and essays
  This paper introduces a generic and systematic quality control (QC) framework dedicated to tilted solar irradiance time series, a well-known but insufficiently standardized issue in photovoltaic (PV) forecasting and operations. The primary objective is to provide a robust, transferable methodology for detecting and correcting outliers, inconsistencies, and sensor-related anomalies in tilted irradiance measurements. The proposed framework is designed to be site-independent, instrumentation-agnostic, and directly applicable in operational and industrial contexts, with the ambition of serving as a reference standard for PV modelling, forecasting, and performance assessment.
  Key results
  The proposed QC framework significantly improves the reliability and consistency of tilted irradiance datasets, leading to measurable gains in PV forecasting accuracy, operational robustness, and data bankability, thereby establishing it as a strong candidate for a standard preprocessing step in PV energy systems.
- 2025 · Medical physics
+ Published online 10 December 2025 · Medical physics
  Towards Personalized Radio-Iodine Therapy: Modeling, Dynamics, and Clinical Perspectives
  Marie Fusella Giuntini (travail de thèse), Cyril Voyant , David Taieb , Dominique Barbolosi
  A doctoral contribution by Marie Fusella Giuntini, in collaboration with Aix-Marseille, Corsica Universities, Mines Paris – PSL, and la Timone Hospital : Marie Fusella Giuntini, Cyril Voyant, David Taieb and Dominique Barbolosi.
@@ -4979,7 +4980,7 @@ News: publications, software and essays
  Thanks to all collaborators and students for their essential role.
  The Stanford-Elsevier Top 2% Scientists list identifies the world's most cited researchers using a standardized composite indicator based on Scopus bibliometric data, including total citations, h-index, co-authorship-adjusted indices, and field-normalized impact metrics. It provides both career-long and single-year rankings across all scientific disciplines.
  I am honored to be included in the 2025 edition of this ranking, and particularly proud to contribute to the strong performance of Mines Paris – PSL , which ranks among the leading institutions worldwide, with approximately 10% of its faculty members recognized in the Top 2% cohort.
- Published online 13 October 2025 · Solar and energy forecasting
+ Published online 13 October 2025 · Energy: forecasting and systems
  Transfer Learning for Wind Speed Forecasting: A Scalable Approach for Data-Scarce Environments
  Milan Despotović , Gilles Notton , Cyril Voyant
  This paper demonstrates that transfer learning can accurately forecast wind speed in data-scarce regions by reusing models trained on data-rich sites. Across 4,830 experiments, TL achieved accuracy comparable to direct learning (ΔnRMSE < 0.01). The approach offers a scalable, low-data solution for expanding wind foreca…
@@ -5007,7 +5008,7 @@ News: publications, software and essays
  This work demonstrates that transfer learning is not only feasible but scalable for renewable energy forecasting.
  It bridges the gap between data-rich and data-poor regions, enabling fairer access to AI-driven forecasting tools.
  The approach can generalize to other energy domains (solar, hydro) where local data scarcity hinders modeling, marking a key step toward universal, transferable forecasting intelligence.
- Published online 1 October 2025 · Solar and energy forecasting
+ Published online 1 October 2025 · Energy: forecasting and systems
  From Trends to Insights: A Text Mining Analysis of Solar Energy Forecasting (2017–2023)
  Mohammed Asloune , Gilles Notton , Cyril Voyant
  The study applies text mining to 500 papers (2017–2023) to map global trends in solar energy forecasting. It reveals a strong rise of AI and deep learning, led by China, the USA, and India, and shows that deterministic metrics still dominate probabilistic ones. The work delivers a reproducible overview and standardized…
@@ -5041,7 +5042,7 @@ News: publications, software and essays
  This work transforms fragmented literature into a structured knowledge map of the solar forecasting domain.
  It confirms the global pivot from physics-driven to AI-driven forecasting, the emergence of China as a scientific leader, and the persistent under-representation of probabilistic frameworks.
  By ensuring reproducibility, transparency, and terminological coherence, the study sets a methodological benchmark for future meta-analyses of renewable forecasting research.
- Published online 22 August 2025 · Solar and energy forecasting
+ Published online 22 August 2025 · Energy: forecasting and systems
  A Simple Method for Quickly Estimating Solar Irradiance Forecast Errors
  Philippe Lauret , Mathieu David , Josselin Le Gal La Salle , Elke Lorenz , Richard Perez , Cyril Voyant
  Researchers have developed linear models that predict solar irradiance forecast errors using only solar variability at a specific location. This variability is measured by the standard deviation of hourly changes in the clear sky index, essentially capturing how much solar conditions fluctuate hour to hour.
@@ -5065,18 +5066,18 @@ News: publications, software and essays
  Data and code available at : https://github.com/Laboratoire-Piment/solar-predict-rmse.git
  Released 4 August 2025 · Medical physics
  New Release: LQL-Equiv: Open‑Source Software for Biologically Equivalent Dose Calculation in Radiotherapy
- LQL‑Equiv is a free & open‑source software (GNU‑based) written in MATLAB and distributed as a standalone executable, developed by Cyril Voyant & Daniel Julian. It computes voxel‑wise Equivalent Dose in 2 Gy fractions (EQD₂) and Biologically Effective Dose (BED) using a Linear‑Quadratic‑Linear (LQL) model that explicitl…
+ LQL‑Equiv is a free & open‑source software (GNU‑based) written in MATLAB and distributed as a standalone executable, developed by Cyril Voyant & Daniel Julian . It computes voxel‑wise Equivalent Dose in 2 Gy fractions (EQD₂) and Biologically Effective Dose (BED) using a Linear‑Quadratic‑Linear (LQL) model that explicitl…
  Read the full post
  Daniel JULIAN & Cyril VOYANT
  Research project, 2025, https://zenodo.org/doi/10.5281/zenodo.16739882
  Abstract
- LQL‑Equiv is a free & open‑source software (GNU‑based) written in MATLAB and distributed as a standalone executable, developed by Cyril Voyant & Daniel Julian. It computes voxel‑wise Equivalent Dose in 2 Gy fractions (EQD₂) and Biologically Effective Dose (BED) using a Linear‑Quadratic‑Linear (LQL) model that explicitly accounts for fraction size, overall treatment time, and cellular repopulation effects, outperforming standard LQ-based calculators.
+ LQL‑Equiv is a free, open-source software under the MIT License written in MATLAB and distributed as a standalone executable, developed by Cyril Voyant & Daniel Julian. It computes voxel‑wise Equivalent Dose in 2 Gy fractions (EQD₂) and Biologically Effective Dose (BED) using a Linear‑Quadratic‑Linear (LQL) model that explicitly accounts for fraction size, overall treatment time, and cellular repopulation effects, outperforming standard LQ-based calculators.
  Theoretical Basis: Integrates the Astrahan LQL framework for high‑dose per fraction regimens (> dₜ), Dale’s repopulation corrections, and Thames’s multi‑fractionation modeling, implemented in an algorithm that minimizes a custom cost function to compute accurate EQD₂ and BED across complex radiotherapy scenarios.
  Clinical Relevance: Validation studies report dose discrepancies up to ~25 % when compared to conventional LQ-based models, particularly relevant in hypo‑ and hyper‑fractionated protocols and in presence of treatment interruptions, a difference largely driven by tumor repopulation dynamics in prostate cancer cases.
  Interface & Deployment: LQL‑Equiv is distributed as a Matlab® standalone GUI application, requiring MATLAB Runtime on Windows (no full MATLAB license needed). The interface offers few but essential adjustable parameters (e.g. α/β ratio, kick-off time Tₖ, potential doubling time Tₚₒₜ), ensuring usability and focus on reproducibility.
  Regulatory Scope: LQL‑Equiv is intended for research use and secondary validation only, not as a clinically certified tool. Users must verify outputs and remain responsible for clinical interpretation; the developers disclaim liability for misuse.
  As a Resume
- Validated performance: deviations typically < 25 % compared to standard computations.
+ Differences between LQ and LQL: typically < 25 %, LQ being the standard calculation.
  Fully open‑source available with GUI and adjustable biological parameters.
  Already cited in Google Scholar, documented on ResearchGate, and archived on Zenodo.
  Designed for medical physicists and clinical researchers in radiotherapy to support accurate and personalized treatment evaluation.
@@ -5095,7 +5096,7 @@ News: publications, software and essays
  Abstract
  This collaborative paper compares the linear-quadratic (LQ) and linear-quadratic-linear (LQL) dose models in radiotherapy. Read the published article for the methods, results and clinical limitations.
  Published paper: Improving Clinical Decision-Making in Radiotherapy
- Published online 17 July 2025 · Solar and energy forecasting
+ Published online 17 July 2025 · Energy: forecasting and systems
  Stochastic Coefficient of Variation: Assessing the Variability and Forecastability of Solar Irradiance
  Cyril Voyant , Alan Julien , Milan Despotovic , Gilles Notton , Luis Antonio Garcia-Gutierrez , Claudio Francesco Nicolosi , Philippe Blanc , Jamie Bright
  This work presents a robust framework for quantifying solar irradiance variability and forecastability through the Stochastic Coefficient of Variation (sCV) and the Forecastability (F). Traditional metrics, such as the standard deviation, fail to isolate stochastic fluctuations from deterministic trends in solar irradi…
@@ -5103,7 +5104,7 @@ News: publications, software and essays
  Renewable Energy, 2025, https://doi.org/10.1016/j.renene.2025.123913
  Abstract
  This work presents a robust framework for quantifying solar irradiance variability and forecastability through the Stochastic Coefficient of Variation (sCV) and the Forecastability (F). Traditional metrics, such as the standard deviation, fail to isolate stochastic fluctuations from deterministic trends in solar irradiance. By considering clear-sky irradiance as a dynamic upper bound of measurement, sCV provides a normalized, dimensionless measure of variability that theoretically ranges from 0 to 1. F extends sCV by integrating temporal dependencies via maximum autocorrelation, thus linking sCV with F. The proposed methodology is validated using synthetic cyclostationary time series and experimental data from 68 meteorological stations (in Spain). Our comparative analyses demonstrate that sCV and F proficiently encapsulate multi-scale fluctuations, while addressing significant limitations inherent in traditional metrics. This comprehensive framework enables a refined quantification of solar forecast uncertainty, supporting improved decision-making in flexibility procurement and operational strategies. By assessing variability and forecastability across multiple time scales, it enhances real-time monitoring capabilities and informs adaptive energy management approaches, such as dynamic outage management and risk-adjusted capacity allocation.
- Published online 25 September 2025 · Solar and energy forecasting
+ Published online 25 September 2025 · Energy: forecasting and systems
  NICE^k Metrics: Unified and Multidimensional Framework for Evaluating Deterministic Solar Forecasting Accuracy
  Cyril Voyant , Milan Despotovic , Luis Garcia-Gutierrez , Rodrigo Amaro e Silva , Philippe Lauret , Ted Soubdhan , Nadjem Bailek
  Accurate solar energy output prediction is fundamental to integrating renewable energy sources into electrical grids, maintaining system stability, and enabling effective energy management. However, conventional error metrics, such as Root Mean Squared Error (RMSE), Mean Absolute Error (MAE), and Skill Scores (SS), fail …
@@ -5115,7 +5116,7 @@ News: publications, software and essays
  The methodology combines synthetic Monte Carlo simulations with real-world data from the Spanish SIAR network, encompassing 68 meteorological stations in diverse climatic regions. Forecasting models evaluated include autoregressive approaches, Extreme Learning Machines, and smart persistence. Results show that theoretical and empirical NICEᵏ values converge only when strong statistical assumptions are met (e.g., R² ≈ 1.0 for NICE²). Most importantly, the composite metric NICEΣ consistently outperforms conventional metrics in discriminating between models (e.g., p-values < 0.05 for NICEΣ vs > 0.05 for nRMSE or nMAE).
  Across increasing forecast horizons, NICEΣ yields consistently significant p-values (from 10⁻⁶ to 0.004), while nRMSE and nMAE often fail to reach statistical significance. Furthermore, traditional metrics (nRMSE, nMAE, nMBE, R²) cannot reliably distinguish between models in head-to-head comparisons. In contrast, the NICEᵏ family demonstrates superior statistical discrimination (p < 0.001), broader variance distributions, and better inter-study comparability.
  This study confirms the theoretical and empirical validity of the NICEᵏ framework and highlights its operational relevance. It establishes NICEᵏ as a robust, unified, and interpretable alternative to conventional metrics for evaluating deterministic solar forecasting models.
- Published online 11 April 2025 · Solar and energy forecasting
+ Published online 11 April 2025 · Energy: forecasting and systems
  On the importance of clearsky model in short-term solar radiation forecasting
  Cyril Voyant , Milan Despotovic , Gilles Notton , Yves-Marie Saint-Drenan , Mohammed Asloune , Luis Garcia-Gutierrez
  Clearsky models are widely used in solar energy for many applications such as quality control, resource assessment, satellite-base irradiance estimation and forecasting. However, their use in forecasting and nowcasting is associated with a number of challenges. Synchronization errors, reliance on the Clearsky index (ra…
@@ -5123,7 +5124,7 @@ News: publications, software and essays
  Solar Energy, 2025, https://doi.org/10.1016/j.solener.2025.113490
  Abstract
  Clearsky models are widely used in solar energy for many applications such as quality control, resource assessment, satellite-base irradiance estimation and forecasting. However, their use in forecasting and nowcasting is associated with a number of challenges. Synchronization errors, reliance on the Clearsky index (ratio of the global horizontal irradiance to its cloud-free counterpart) and high sensitivity of the clearsky model to errors in aerosol optical depth at low solar elevation limit their added value in real-time applications. This paper explores the feasibility of short-term forecasting without relying on a clearsky model. We propose a Clearsky-Free forecasting approach using Extreme Learning Machine (ELM) models. ELM learns daily periodicity and local variability directly from raw Global Horizontal Irradiance (GHI) data. It eliminates the need for Clearsky normalization, simplifying the forecasting process and improving scalability. Our approach is a non-linear adaptative statistical method that implicitly learns the irradiance in cloud-free conditions removing the need for an clear-sky model and the related operational issues. Deterministic and probabilistic results are compared to traditional benchmarks, including ARMA with McClear-generated Clearsky data and quantile regression for probabilistic forecasts. ELM matches or outperforms these methods, providing accurate predictions and robust uncertainty quantification. This approach offers a simple, efficient solution for real-time solar forecasting. By overcoming the stationarization process limitations based on usual multiplicative scheme Clearsky models, it provides a flexible and reliable framework for modern energy systems.
- Published online 12 July 2025 · Solar and energy forecasting
+ Published online 12 July 2025 · Energy: forecasting and systems
  Comparative Study of Feature Selection Techniques for Machine Learning-Based Solar Irradiation Forecasting to Facilitate the Sustainable Development of Photovoltaics: Application to Algerian Climatic Conditions
  Saïd Benkaciali , Gilles Notton , Cyril Voyant
  Forecasting future solar power plant production is essential to continue the development of photovoltaic energy and increase its share in the energy mix for a more sustainable future. Accurate solar radiation forecasting greatly improves the balance maintenance between energy supply and demand and grid management perfo…
@@ -5305,8 +5306,8 @@ Prévision PV : réduire la dimension
  Explorer le code et ses conditions de réutilisation · Suite : dimensionner le modèle à déployer · Revenir au parcours des recherches
  Auteurs et fondements scientifiques
  Équipe du manuscrit, dans l’ordre du document : Hassen Bouzgou, Gabriel Chesnoiu , Claudio Francesco Nicolosi , Adrien Chatel , Gilles Notton , Lionel Menard , Cyril Voyant . Manuscrit non soumis ; Cyril Voyant est l’auteur de cette explication pédagogique.
- L’ELM est une méthode antérieure à ces études : Guang-Bin Huang , Qin-Yu Zhu et Chee-Kheong Siew, Extreme learning machine: Theory and applications (2006). Notre démarche concerne son évaluation et son usage en prévision ; elle ne revendique pas l’invention de l’ELM.
- Pour situer les méthodes de réduction : Laurens van der Maaten, Eric Postma et Jaap van den Herik , Dimensionality Reduction: A Comparative Review (rapport, 2009). La boîte à outils de Laurens van der Maaten est une dépendance du dépôt ; ses conditions de licence restent distinctes de celles du code du projet.
+ L’ELM est une méthode antérieure à ces études : Guang-Bin Huang , Qin-Yu Zhu et Chee-Kheong Siew , Extreme learning machine: Theory and applications (2006). Notre démarche concerne son évaluation et son usage en prévision ; elle ne revendique pas l’invention de l’ELM.
+ Pour situer les méthodes de réduction : Laurens van der Maaten , Eric Postma et Jaap van den Herik , Dimensionality Reduction: A Comparative Review (rapport, 2009). La boîte à outils de Laurens van der Maaten est une dépendance du dépôt ; ses conditions de licence restent distinctes de celles du code du projet.
 
 ---
 URL: https://www.cyrilvoyant.com/prevision-solaire-faire-simple/
@@ -5381,7 +5382,7 @@ Prévision solaire : modèles frugaux
  Auteurs et fondements scientifiques
  Équipe du manuscrit, dans l’ordre du document : Cyril Voyant , Martin Leiva, Xavier Silvani , Gilles Notton , Luis Garcia-Gutierrez , Alan Julien , Gabriel Chesnoiu , Kamel Abdeladim , Thomas Carriere . Manuscrit non soumis ; Cyril Voyant est l’auteur de cette explication pédagogique.
  Crédits de la version logicielle citée dans le guide PV_ELM_pred : M. Leiva, X. Silvani, G. Notton, C. Voyant et A. Julien. Ils sont distincts de la liste du manuscrit.
- L’ELM est une méthode antérieure à ces études : Guang-Bin Huang , Qin-Yu Zhu et Chee-Kheong Siew, Extreme learning machine: Theory and applications (2006). Notre démarche concerne son évaluation et son usage en prévision ; elle ne revendique pas l’invention de l’ELM.
+ L’ELM est une méthode antérieure à ces études : Guang-Bin Huang , Qin-Yu Zhu et Chee-Kheong Siew , Extreme learning machine: Theory and applications (2006). Notre démarche concerne son évaluation et son usage en prévision ; elle ne revendique pas l’invention de l’ELM.
 
 ---
 URL: https://www.cyrilvoyant.com/research-projects/
@@ -6954,7 +6955,7 @@ URL: https://www.cyrilvoyant.com/fr/enseignement/physique-pass/
 
 Physique pour les études de santé : ondes électromagnétiques, rayons X et imagerie
 Ce que contient le cours
-Première année des études de santé (PASS-PACES), bases physiques des explorations médicales · cours de 110 diapositives et 2 séances d'exercices corrigées · CC BY 4.0
+Première année des études de santé (PASS), bases physiques des explorations médicales · cours de 110 diapositives et 2 séances d'exercices corrigées · CC BY 4.0
 Les bases physiques de l'imagerie médicale, de l'onde au scanner.
 Objectif
 Relier l'énergie d'un photon à son interaction avec les tissus, et comprendre le contraste d'une radiographie.
@@ -6971,7 +6972,9 @@ Les rayons X : tube de Coolidge, rayonnements de freinage et de fluorescence, sp
 Les interactions photons-matière : effet photoélectrique, effet Compton, création de paires, atténuation et couche de demi-atténuation.
 L'imagerie : contraste, radiologie conventionnelle, scanner X et fenêtrage.
 Deux séances d'exercices dirigés corrigées pas à pas (18 exercices).
-Une partie du cours est issue du travail du professeur Pierre Peretti, Université Pierre-et-Marie-Curie (Paris), aujourd'hui retraité.
+Une partie du cours est issue du travail du professeur
+Pierre Peretti
+, Université Pierre-et-Marie-Curie (Paris), aujourd'hui retraité.
 Archivé et citable sur Zenodo, DOI
 10.5281/zenodo.23620487
 

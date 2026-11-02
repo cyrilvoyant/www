@@ -104,6 +104,8 @@
     [['hta',trText('Exemple : deux traitements de l’hypertension')],['gfi',trText('Exemple du cours : lésions de l’aire de Broca (diapositives 94 à 97)')]].forEach(function(p){var bt=node('button',{type:'button'},presets,p[1]);bt.addEventListener('click',function(){load(EX[p[0]]);});});
     var ctl=node('div',{'class':'st-controls'},b),m1=control(ctl,trText('Moyenne groupe 1'),'range',0,100,.25,14),s1=control(ctl,trText('Écart-type groupe 1'),'range',.5,30,.0001,5),
         m2=control(ctl,trText('Moyenne groupe 2'),'range',0,100,.25,8),s2=control(ctl,trText('Écart-type groupe 2'),'range',.5,30,.0001,6),n=control(ctl,trText('Patients par groupe n'),'range',3,60,1,12);
+    // The slider keeps its 0.0001 step, so the course values stay exact; at the keyboard an arrow moves by 0.01, which the two-decimal display shows.
+    [s1,s2].forEach(function(c){c.i.addEventListener('keydown',function(e){var d=(e.key==='ArrowRight'||e.key==='ArrowUp')?.01:(e.key==='ArrowLeft'||e.key==='ArrowDown')?-.01:0;if(!d)return;e.preventDefault();c.i.value=(+c.i.value+d).toFixed(4);c.i.dispatchEvent(new Event('input'));});});
     var story=node('p',{'class':'st-reading'},b);
     var metrics=node('div',{'class':'st-metrics','aria-live':'polite'},b);
     var pair=node('div',{'class':'st-pair'},b), left=node('div',{'class':'st-cell'},pair), right=node('div',{'class':'st-cell'},pair);   // 1×2: distributions | test (Cyril, 25/10)

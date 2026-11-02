@@ -11,8 +11,8 @@
         "en": "Noise and memory: compare forecasts"
       },
       "task": {
-        "fr": "Régler les bruits additif et multiplicatif ; comparer régression, persistance, MAE, nRMSE et NICE, avec un oracle propre au générateur.",
-        "en": "Adjust additive and multiplicative noise; compare regression, persistence, MAE, nRMSE and NICE with a generator-specific oracle."
+        "fr": "Régler les bruits additif et multiplicatif ; comparer régression, persistance, MAE, nRMSE et NICE, avec la meilleure prévision possible pour ce générateur.",
+        "en": "Adjust additive and multiplicative noise; compare regression, persistence, MAE, nRMSE and NICE with the best possible forecast of this generator."
       },
       "url": {
         "fr": "https://www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/#experience",
@@ -245,7 +245,7 @@
         "en": "The Sun, the seasons and UTC"
       },
       "task": {
-        "fr": "La Terre autour du Soleil, le jour et la nuit, la durée du jour à Paris et à Sydney, la double saisonnalité du rayonnement et l’horodatage des mesures en UTC.",
+        "fr": "La Terre autour du Soleil, le jour et la nuit, la durée du jour à Paris et à Sydney, la double saisonnalité de l’éclairement et l’horodatage des mesures en UTC.",
         "en": "The Earth around the Sun, day and night, day length in Paris and Sydney, the double seasonality of irradiance and timestamping measurements in UTC."
       },
       "url": {
@@ -277,12 +277,12 @@
       "kind": "demo",
       "interface_language": "both",
       "name": {
-        "fr": "Observer la prévision probabiliste et sa lookup table",
+        "fr": "Observer la prévision probabiliste et sa table de correspondance",
         "en": "Watch probabilistic forecasting and its lookup table"
       },
       "task": {
-        "fr": "Lire les bandes ELM/persistance, la couverture PICP et la largeur MIL sur trois jours sélectionnés.",
-        "en": "Read ELM/persistence bands, PICP coverage and MIL width on three selected days."
+        "fr": "Lire les bandes ELM/persistance, la couverture (PICP : part des mesures dans la bande) et la largeur moyenne de la bande (MIL) sur trois jours sélectionnés.",
+        "en": "Read ELM/persistence bands, coverage (PICP: share of measurements inside the band) and mean band width (MIL) on three selected days."
       },
       "url": {
         "fr": "https://www.cyrilvoyant.com/fr/#proba-race",
@@ -583,7 +583,7 @@
       "kind": "teaching",
       "interface_language": "both",
       "name": {
-        "fr": "Moteur ditherme : bilan et borne de Carnot",
+        "fr": "Moteur thermique à deux sources : bilan et borne de Carnot",
         "en": "Heat engine: energy balance and Carnot limit"
       },
       "task": {

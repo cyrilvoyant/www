@@ -156,7 +156,7 @@
         },
         {
           "title": "Who is responsible? A one-minute orientation",
-          "anchor": null
+          "anchor": "role-helper"
         },
         {
           "title": "What a lab can do: the example of the O.I.E. framework",
@@ -406,7 +406,7 @@
           "anchor": null
         },
         {
-          "title": "Récits récents",
+          "title": "Récits",
           "anchor": null
         },
         {
@@ -512,7 +512,7 @@
           "anchor": null
         },
         {
-          "title": "Contrôle qualité des mesures de rayonnement solaire sur plan incliné",
+          "title": "Contrôle qualité des mesures d'éclairement solaire sur plan incliné",
           "anchor": null
         },
         {
@@ -544,7 +544,7 @@
           "anchor": null
         },
         {
-          "title": "Coefficient de variation stochastique : mesurer la variabilité et la prévisibilité du rayonnement solaire",
+          "title": "Coefficient de variation stochastique : mesurer la variabilité et la prévisibilité de l'éclairement solaire",
           "anchor": null
         },
         {
@@ -556,7 +556,7 @@
           "anchor": null
         },
         {
-          "title": "Sélection des variables d'entrée pour prévoir le rayonnement solaire par apprentissage automatique : cas de l'Algérie",
+          "title": "Sélection des variables d'entrée pour prévoir l'éclairement solaire par apprentissage automatique : cas de l'Algérie",
           "anchor": null
         },
         {
@@ -647,7 +647,7 @@
     },
     {
       "url": "https://www.cyrilvoyant.com/fr/actualites/why-forecast-solar-power/",
-      "title": "sCV et F : variabilité et prévisibilité du rayonnement solaire",
+      "title": "sCV et F : variabilité et prévisibilité de l'éclairement solaire",
       "language": "fr",
       "topics": [
         "Calculer directement",
@@ -1300,11 +1300,11 @@
         },
         {
           "title": "De la publication à une preuve vérifiable",
-          "anchor": null
+          "anchor": "evidence-chain"
         },
         {
           "title": "Relier les pratiques, sans confondre leurs objectifs",
-          "anchor": null
+          "anchor": "connected-practices"
         },
         {
           "title": "Le constat mondial : trop d'articles, pas assez de vérification",
@@ -1316,7 +1316,7 @@
         },
         {
           "title": "Qui vérifie quoi ? Les acteurs, et ce que chaque dispositif est conçu pour couvrir",
-          "anchor": null
+          "anchor": "who-checks-what"
         },
         {
           "title": "L’AI Act comme point de comparaison, pas comme règlement des articles",
@@ -1336,7 +1336,7 @@
         },
         {
           "title": "Glossaire",
-          "anchor": null
+          "anchor": "glossaire"
         },
         {
           "title": "Questions et réponses",
@@ -1386,7 +1386,7 @@
         },
         {
           "title": "En bref",
-          "anchor": null
+          "anchor": "brief"
         },
         {
           "title": "Pour aller plus loin",
@@ -1403,11 +1403,11 @@
       "sections": [
         {
           "title": "Le chapitre en 10 points",
-          "anchor": null
+          "anchor": "resume"
         },
         {
           "title": "Diaporama",
-          "anchor": null
+          "anchor": "bs-viewer"
         },
         {
           "title": "Plan du chapitre",
@@ -1415,7 +1415,7 @@
         },
         {
           "title": "Pour aller plus loin : questions et réponses",
-          "anchor": null
+          "anchor": "faq"
         }
       ]
     },
@@ -1432,7 +1432,7 @@
         },
         {
           "title": "En bref",
-          "anchor": null
+          "anchor": "brief"
         },
         {
           "title": "Pour aller plus loin",
@@ -1449,7 +1449,7 @@
       "sections": [
         {
           "title": "Le chapitre en 10 points",
-          "anchor": null
+          "anchor": "resume"
         },
         {
           "title": "Distinguer significativité et variation expliquée",
@@ -1465,7 +1465,7 @@
         },
         {
           "title": "Diaporama",
-          "anchor": null
+          "anchor": "bs-viewer"
         },
         {
           "title": "Plan du chapitre",
@@ -1473,7 +1473,7 @@
         },
         {
           "title": "Pour aller plus loin : questions et réponses",
-          "anchor": null
+          "anchor": "faq"
         }
       ]
     },
@@ -1486,11 +1486,11 @@
       "sections": [
         {
           "title": "Le chapitre en 10 points",
-          "anchor": null
+          "anchor": "resume"
         },
         {
           "title": "Diaporama",
-          "anchor": null
+          "anchor": "bs-viewer"
         },
         {
           "title": "Plan du chapitre",
@@ -1498,7 +1498,7 @@
         },
         {
           "title": "Pour aller plus loin : questions et réponses",
-          "anchor": null
+          "anchor": "faq"
         }
       ]
     },
@@ -1511,7 +1511,7 @@
       "sections": [
         {
           "title": "Le chapitre en 10 points",
-          "anchor": null
+          "anchor": "resume"
         },
         {
           "title": "Tester une différence et lire son incertitude",
@@ -1519,7 +1519,7 @@
         },
         {
           "title": "Diaporama",
-          "anchor": null
+          "anchor": "bs-viewer"
         },
         {
           "title": "Plan du chapitre",
@@ -1527,7 +1527,7 @@
         },
         {
           "title": "Pour aller plus loin : questions et réponses",
-          "anchor": null
+          "anchor": "faq"
         }
       ]
     },
@@ -1544,7 +1544,7 @@
         },
         {
           "title": "En bref",
-          "anchor": null
+          "anchor": "brief"
         },
         {
           "title": "Plan du cours",
@@ -1609,7 +1609,7 @@
         },
         {
           "title": "En bref",
-          "anchor": null
+          "anchor": "brief"
         },
         {
           "title": "Le polycopié",
@@ -1630,11 +1630,11 @@
       "sections": [
         {
           "title": "Le chapitre en 10 points",
-          "anchor": null
+          "anchor": "resume"
         },
         {
           "title": "Diaporama",
-          "anchor": null
+          "anchor": "bs-viewer"
         },
         {
           "title": "Plan du chapitre",
@@ -1642,7 +1642,7 @@
         },
         {
           "title": "Pour aller plus loin : questions et réponses",
-          "anchor": null
+          "anchor": "faq"
         }
       ]
     },
@@ -1655,7 +1655,7 @@
       "sections": [
         {
           "title": "Le chapitre en 10 points",
-          "anchor": null
+          "anchor": "resume"
         },
         {
           "title": "Moteur ditherme : énergie, rendement et Carnot",
@@ -1663,7 +1663,7 @@
         },
         {
           "title": "Diaporama",
-          "anchor": null
+          "anchor": "bs-viewer"
         },
         {
           "title": "Plan du chapitre",
@@ -1671,7 +1671,7 @@
         },
         {
           "title": "Pour aller plus loin : questions et réponses",
-          "anchor": null
+          "anchor": "faq"
         }
       ]
     },
@@ -1684,11 +1684,11 @@
       "sections": [
         {
           "title": "Le chapitre en 10 points",
-          "anchor": null
+          "anchor": "resume"
         },
         {
           "title": "Diaporama",
-          "anchor": null
+          "anchor": "bs-viewer"
         },
         {
           "title": "Plan du chapitre",
@@ -1696,7 +1696,7 @@
         },
         {
           "title": "Pour aller plus loin : questions et réponses",
-          "anchor": null
+          "anchor": "faq"
         }
       ]
     },
@@ -1709,11 +1709,11 @@
       "sections": [
         {
           "title": "Le chapitre en 10 points",
-          "anchor": null
+          "anchor": "resume"
         },
         {
           "title": "Diaporama",
-          "anchor": null
+          "anchor": "bs-viewer"
         },
         {
           "title": "Plan du chapitre",
@@ -1721,7 +1721,7 @@
         },
         {
           "title": "Pour aller plus loin : questions et réponses",
-          "anchor": null
+          "anchor": "faq"
         }
       ]
     },
@@ -1734,11 +1734,11 @@
       "sections": [
         {
           "title": "Le chapitre en 10 points",
-          "anchor": null
+          "anchor": "resume"
         },
         {
           "title": "Diaporama",
-          "anchor": null
+          "anchor": "bs-viewer"
         },
         {
           "title": "Plan du chapitre",
@@ -1746,7 +1746,7 @@
         },
         {
           "title": "Pour aller plus loin : questions et réponses",
-          "anchor": null
+          "anchor": "faq"
         }
       ]
     },
@@ -1763,7 +1763,7 @@
         },
         {
           "title": "En bref",
-          "anchor": null
+          "anchor": "brief"
         },
         {
           "title": "Énoncés des exercices",
@@ -1784,11 +1784,11 @@
       "sections": [
         {
           "title": "La séance en 10 points",
-          "anchor": null
+          "anchor": "resume"
         },
         {
           "title": "Diaporama",
-          "anchor": null
+          "anchor": "bs-viewer"
         },
         {
           "title": "Plan de la séance",
@@ -1796,7 +1796,7 @@
         },
         {
           "title": "Pour aller plus loin : questions et réponses",
-          "anchor": null
+          "anchor": "faq"
         }
       ]
     },
@@ -1809,11 +1809,11 @@
       "sections": [
         {
           "title": "La séance en 10 points",
-          "anchor": null
+          "anchor": "resume"
         },
         {
           "title": "Diaporama",
-          "anchor": null
+          "anchor": "bs-viewer"
         },
         {
           "title": "Plan de la séance",
@@ -1821,7 +1821,7 @@
         },
         {
           "title": "Pour aller plus loin : questions et réponses",
-          "anchor": null
+          "anchor": "faq"
         }
       ]
     },
@@ -1834,7 +1834,7 @@
       "sections": [
         {
           "title": "Le chapitre en 10 points",
-          "anchor": null
+          "anchor": "resume"
         },
         {
           "title": "Onde électromagnétique : voir la propagation",
@@ -1846,7 +1846,7 @@
         },
         {
           "title": "Diaporama",
-          "anchor": null
+          "anchor": "bs-viewer"
         },
         {
           "title": "Plan du chapitre",
@@ -1854,7 +1854,7 @@
         },
         {
           "title": "Pour aller plus loin : questions et réponses",
-          "anchor": null
+          "anchor": "faq"
         }
       ]
     },
@@ -1920,7 +1920,7 @@
         },
         {
           "title": "Qui est responsable ? Une orientation en une minute",
-          "anchor": null
+          "anchor": "role-helper"
         },
         {
           "title": "Ce qu'un laboratoire peut faire : l'exemple du cadre O.I.E.",
@@ -1965,23 +1965,23 @@
       "sections": [
         {
           "title": "Calculer directement",
-          "anchor": null
+          "anchor": "compute"
         },
         {
           "title": "Hybrider",
-          "anchor": null
+          "anchor": "hybrid"
         },
         {
           "title": "Apprendre frugalement",
-          "anchor": null
+          "anchor": "learn"
         },
         {
           "title": "L'IA à sa place",
-          "anchor": null
+          "anchor": "ai"
         },
         {
           "title": "Démontrer la confiance",
-          "anchor": null
+          "anchor": "trust"
         }
       ]
     },
@@ -2057,7 +2057,7 @@
       "sections": [
         {
           "title": "Essayer dans le navigateur",
-          "anchor": null
+          "anchor": "try-it"
         },
         {
           "title": "Comprendre les paramètres et les limites",
@@ -2161,7 +2161,7 @@
       "sections": [
         {
           "title": "Essayer dans le navigateur",
-          "anchor": null
+          "anchor": "try-it"
         },
         {
           "title": "Comprendre les paramètres et les limites",
@@ -2218,7 +2218,8 @@
             },
             {
               "@type": "Person",
-              "name": "Daniel Julian"
+              "name": "Daniel Julian",
+              "sameAs": "https://www.linkedin.com/in/daniel-julian-52442295/"
             }
           ]
         },
@@ -2240,7 +2241,8 @@
             },
             {
               "@type": "Person",
-              "name": "Daniel Julian"
+              "name": "Daniel Julian",
+              "sameAs": "https://www.linkedin.com/in/daniel-julian-52442295/"
             }
           ]
         },
@@ -2344,7 +2346,7 @@
       "sections": [
         {
           "title": "Essayer dans le navigateur",
-          "anchor": null
+          "anchor": "try-it"
         },
         {
           "title": "Comprendre les paramètres et les limites",
@@ -2381,7 +2383,7 @@
       "sections": [
         {
           "title": "Essayer dans le navigateur",
-          "anchor": null
+          "anchor": "try-it"
         },
         {
           "title": "Comprendre les paramètres et les limites",
@@ -2475,7 +2477,7 @@
       "sections": [
         {
           "title": "Essayer dans le navigateur",
-          "anchor": null
+          "anchor": "try-it"
         },
         {
           "title": "Comprendre les paramètres et les limites",
@@ -2541,7 +2543,7 @@
       "sections": [
         {
           "title": "Essayer dans le navigateur",
-          "anchor": null
+          "anchor": "try-it"
         },
         {
           "title": "Comprendre les paramètres et les limites",
@@ -2616,7 +2618,7 @@
       "sections": [
         {
           "title": "Essayer dans le navigateur",
-          "anchor": null
+          "anchor": "try-it"
         },
         {
           "title": "Comprendre les paramètres et les limites",
@@ -2678,23 +2680,23 @@
         },
         {
           "title": "Prévision solaire et énergétique",
-          "anchor": null
+          "anchor": "topic-energy"
         },
         {
           "title": "Physique médicale",
-          "anchor": null
+          "anchor": "topic-med"
         },
         {
           "title": "IA et interfaces scientifiques",
-          "anchor": null
+          "anchor": "topic-lang"
         },
         {
           "title": "Pratiques et évaluation de la recherche",
-          "anchor": null
+          "anchor": "topic-research"
         },
         {
           "title": "Les mêmes études, par étape de modélisation",
-          "anchor": null
+          "anchor": "by-step"
         },
         {
           "title": "Comprendre la prévision solaire",
@@ -2702,7 +2704,7 @@
         },
         {
           "title": "Prévision solaire : trois dossiers complémentaires",
-          "anchor": null
+          "anchor": "solar-forecasting-paths"
         }
       ]
     },
@@ -2762,7 +2764,7 @@
       "sections": [
         {
           "title": "Avant l’expérience : trois notions clés",
-          "anchor": null
+          "anchor": "reperes-bnct"
         },
         {
           "title": "Pourquoi cette question appartient à mon parcours",
@@ -2798,7 +2800,7 @@
         },
         {
           "title": "Faible dose moyenne, haut LET : pourquoi la question biologique reste intéressante",
-          "anchor": null
+          "anchor": "bystander"
         },
         {
           "title": "L’article et toute l’équipe",
@@ -2844,7 +2846,7 @@
     },
     {
       "url": "https://www.cyrilvoyant.com/fr/recits/satellite-irradiance/",
-      "title": "Prévision satellite du rayonnement : une maille, un voisinage ou tout le champ",
+      "title": "Prévision satellite de l'éclairement : une maille, un voisinage ou tout le champ",
       "language": "fr",
       "topics": [
         "Apprendre frugalement",
@@ -3603,11 +3605,11 @@
         },
         {
           "title": "From publication to checkable evidence",
-          "anchor": null
+          "anchor": "evidence-chain"
         },
         {
           "title": "Connect practices without confusing their purposes",
-          "anchor": null
+          "anchor": "connected-practices"
         },
         {
           "title": "The global picture: too many articles, too little verification",
@@ -3619,7 +3621,7 @@
         },
         {
           "title": "Who checks what? The actors, and what each mechanism is designed to cover",
-          "anchor": null
+          "anchor": "who-checks-what"
         },
         {
           "title": "The AI Act as a comparison, not a regulation of papers",
@@ -3639,7 +3641,7 @@
         },
         {
           "title": "Glossary",
-          "anchor": null
+          "anchor": "glossaire"
         },
         {
           "title": "Questions and answers",
@@ -3664,23 +3666,23 @@
         },
         {
           "title": "Solar and energy forecasting",
-          "anchor": null
+          "anchor": "topic-energy"
         },
         {
           "title": "Medical physics",
-          "anchor": null
+          "anchor": "topic-med"
         },
         {
           "title": "AI and scientific interfaces",
-          "anchor": null
+          "anchor": "topic-lang"
         },
         {
           "title": "Research practices and assessment",
-          "anchor": null
+          "anchor": "topic-research"
         },
         {
           "title": "The same studies, by modeling step",
-          "anchor": null
+          "anchor": "by-step"
         },
         {
           "title": "Explore the results",
@@ -3704,7 +3706,7 @@
       "sections": [
         {
           "title": "Before the experiment: three key ideas",
-          "anchor": null
+          "anchor": "bnct-primer"
         },
         {
           "title": "Where this fits in my research",
@@ -3740,7 +3742,7 @@
         },
         {
           "title": "Low mean dose, high LET: why the biological question remains interesting",
-          "anchor": null
+          "anchor": "bystander"
         },
         {
           "title": "The paper and the whole team",
@@ -4071,7 +4073,7 @@
         },
         {
           "title": "In brief",
-          "anchor": null
+          "anchor": "brief"
         },
         {
           "title": "Course outline",
@@ -4128,23 +4130,23 @@
       "sections": [
         {
           "title": "Compute directly",
-          "anchor": null
+          "anchor": "compute"
         },
         {
           "title": "Hybridize",
-          "anchor": null
+          "anchor": "hybrid"
         },
         {
           "title": "Learn frugally",
-          "anchor": null
+          "anchor": "learn"
         },
         {
           "title": "AI in its place",
-          "anchor": null
+          "anchor": "ai"
         },
         {
           "title": "Demonstrate trust",
-          "anchor": null
+          "anchor": "trust"
         }
       ]
     },
