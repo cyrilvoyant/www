@@ -563,10 +563,11 @@ main:has(> .site-map) { display: flex; flex-direction: column; }
 main:has(> .site-map) > .hero { order: -2; }
 main:has(> .site-map) > .visitor-paths { order: -1; }
 @media (max-width: 720px) {
-  .xs-in { flex-wrap: wrap; row-gap: 6px; }
-  .xs-in > a:not(.xs-name):not(.xs-lang) { display: none; }
-  .xs-in > .xs-lang { margin-left: auto; }
-  .xs-in > .site-search { order: 3; flex: 1 1 100%; }
+  .xs-in { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; gap: 14px; }
+  .xs-in::-webkit-scrollbar { display: none; }
+  .xs-in > a { flex: none; white-space: nowrap; }
+  .xs-in > .site-search { display: none; }
+  .xs-in > .xs-lang { position: sticky; right: 0; order: 9; margin-left: auto; background: #172536; box-shadow: -10px 0 10px #172536; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

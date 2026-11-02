@@ -8,12 +8,18 @@ if(e.key!=='Tab')return;const items=[...tree.querySelectorAll('a[href],button,su
 if(!tree.contains(cur)){e.preventDefault();first.focus()}else if(e.shiftKey&&cur===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&cur===last){e.preventDefault();first.focus()}});
 tree.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{if(matchMedia('(max-width:1549px)').matches)setOpen(false)}));
 trigger.addEventListener('click',()=>{const cur=tree.querySelector('[aria-current=page]');if(cur)setTimeout(()=>cur.scrollIntoView({block:'center'}),80)});
+const tfr=(document.documentElement.lang||'').startsWith('fr');
+let tid=0;tree.querySelectorAll('.site-tree-list,.site-tree-list ul').forEach(u=>{const n='tree-'+(++tid);u.querySelectorAll(':scope>li>details').forEach(d=>d.setAttribute('name',n))});
+tree.querySelectorAll('.site-tree-list>li>details').forEach(d=>{const h=d.querySelector(':scope>a.tree-hub')||d.querySelector('a');const sm=d.querySelector(':scope>summary');if(!h||!sm)return;const g=document.createElement('a');g.className='tree-go';g.href=h.href;g.textContent='→';g.setAttribute('aria-label',(tfr?'Ouvrir : ':'Open: ')+sm.textContent.trim());sm.appendChild(g)});
+const sf=document.querySelector('.xs-bar .site-search');if(sf&&!tree.querySelector('.site-search')){const c=sf.cloneNode(true);c.querySelectorAll('[id]').forEach(e=>e.removeAttribute('id'));c.querySelectorAll('label').forEach(e=>e.remove());c.querySelector('input')?.setAttribute('aria-label',tfr?'Rechercher sur le site':'Search the site');tree.querySelector('nav')?.prepend(c)}
+const xs=document.querySelector('.xs-bar');const here=xs&&xs.querySelector('.xs-here');const scroller=xs&&xs.querySelector('.xs-in');if(here&&scroller&&scroller.scrollWidth>scroller.clientWidth)scroller.scrollLeft=Math.max(0,here.offsetLeft-90);
+const setH=()=>{if(xs)document.documentElement.style.setProperty('--xs-h',getComputedStyle(xs).position==='sticky'?xs.offsetHeight+'px':'0px')};setH();addEventListener('resize',setH,{passive:true});
 const maincol=tree.parentElement.querySelector('.site-maincol');if(!maincol)return;
 const fr=(document.documentElement.lang||'').startsWith('fr');
 const T=fr?{menu:'Menu',up:'Niveau supérieur',prev:'Page précédente',next:'Page suivante',nextw:'Suivant',start:'Commencer'}:{menu:'Menu',up:'Up one level',prev:'Previous page',next:'Next page',nextw:'Next',start:'Start'};
 const same=a=>{const u=new URL(a.href,location.href);return u.origin===location.origin&&!u.hash&&(/\.html$/i.test(u.pathname)||!/\.[a-z0-9]+$/i.test(u.pathname))&&!/\/(search|recherche)\/?$/.test(u.pathname)};
 const mirror=a=>{const d=a.closest('details');return d&&/\((anglais|French)\)\s*$/.test(d.querySelector(':scope>summary')?.textContent||'')};
-const label=a=>{if(a.classList.contains('tree-hub')){const s=a.closest('details')?.querySelector(':scope>summary');if(s)return s.textContent.trim()}return a.textContent.replace(/^[^\p{L}\p{N}]+/u,'').trim()};
+const label=a=>{if(a.classList.contains('tree-hub')){const s=a.closest('details')?.querySelector(':scope>summary');if(s)return s.textContent.replace(/→\s*$/,'').trim()}return a.textContent.replace(/^[^\p{L}\p{N}]+/u,'').trim()};
 const cur=tree.querySelector('.site-tree-list a[aria-current=page]');
 const tops=[...tree.querySelectorAll('.site-tree-list>li')];
 const topLi=cur&&cur.closest('.site-tree-list>li');
