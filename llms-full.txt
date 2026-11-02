@@ -82,47 +82,27 @@ URL: https://www.cyrilvoyant.com/fr/a-propos/
 ---
 URL: https://www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/
 
-Recopier ou prendre la moyenne ? Tout dépend de la mémoire du signal
- Sur une marche aléatoire, la persistance est imbattable. Sur un bruit pur, c'est la moyenne. Entre les deux, aucune ne suffit : c'est là qu'il faut être bon. Une combinaison convexe des deux, comme CLIPER, fait alors mieux que chacune.
- Marche aléatoire, φ = 1
- La persistance gagne
- Persistance
- ≈ 0
- Combinaison
- ≈ 0
- Moyenne
- 100
- Entre les deux, φ = 0,5
- La combinaison gagne
- Persistance
- 100
- Combinaison
- 87
- Moyenne
- 100
- Bruit pur, φ = 0
- La moyenne gagne
- Persistance
- 141
- Combinaison
- 100
- Moyenne
- 100
- Erreur quadratique théorique à un pas, la moyenne valant 100, pour un signal autorégressif d'ordre 1 (équations ci-dessous). À φ = 1, le signal s'éloigne sans fin de sa moyenne, dont l'erreur devient infiniment plus grande : le rapport tend vers 0. Pas de mesures solaires ici.
- Ce que cela veut dire
- La persistance recopie la dernière valeur. Elle est optimale si le signal n'oublie rien.
- La moyenne ignore le passé. Elle est optimale si le passé n'apporte rien.
- Un signal réel est presque toujours entre les deux. Le poids optimal de la dernière valeur est alors λ = φ h : l'erreur baisse sans aucun apprentissage complexe.
- Une erreur n'a donc de sens que comparée à ces références. C'est ce que mesure NICE face à la persistance, et ce que développent BLEND et CLIPER quand le signal suit un cycle, comme le solaire.
- Essayer · Le cas d'un cycle · Les trois études · Articles et équipes
- Et si le signal a un cycle ?
- Beaucoup de signaux réels se répètent : la journée solaire, la consommation d'électricité. Recopier la dernière valeur prend alors le mauvais moment du cycle. La bonne idée est de désaisonnaliser : retirer le cycle, prévoir ce qui reste, puis remettre le cycle. Plus l'amplitude a est grande, plus ce geste compte.
- Pour aller plus loin : BLEND combine la dernière valeur et la valeur un cycle plus tôt, sans modèle de ciel clair, avec un poids pour chaque phase. L'article expliqué .
- JavaScript est nécessaire pour les curseurs et l’animation. Les explications et les sources de cette page restent accessibles. Trois études complémentaires, trois questions
+Prévoir un signal qui se répète : que retirer, que garder ?
+ Sur un sinus bruité, à trois pas, retirer le cycle divise l'erreur par deux : 39 contre 84 en recopiant la dernière valeur (la moyenne valant 100). Le cycle est connu : il ne faut pas le prévoir. Il ne reste à prévoir que l'écart.
+ Le signal : un cycle, 1 + a sin(2πt/24), plus un bruit qui garde une part de mémoire.
+ Une fois le cycle retiré, comment prévoir l'écart ?
+ Tout dépend de sa mémoire. Le poids à donner à sa dernière valeur vaut φ h , où φ est sa mémoire et h l'horizon.
+ Mémoire de l'écart Meilleure prévision Exemple d'erreur, à un pas
+ Totale (marche aléatoire) La persistance L'erreur de la moyenne devient infiniment plus grande
+ Partielle, φ = 0,5 Une combinaison des deux, comme CLIPER 87, contre 100 pour chacune
+ Aucune (bruit pur) La moyenne 100, contre 141 pour la persistance
+ C'est entre ces deux extrêmes qu'il faut être bon. Et une erreur n'a de sens que face à ces références : c'est ce que mesure NICE .
+ Retirer le cycle : différence ou ratio ?
+ Si le bruit suit le niveau du signal, comme un nuage qui retire une part de la lumière, la différence y − c reste agitée au sommet du cycle et calme au creux. Le ratio y / c rend le bruit égal partout : c'est ce qu'il faut pour un modèle simple. En solaire, c est le ciel clair.
+ Différence y − c : l'agitation suit le cycle
+ Ratio y / c − 1 : l'agitation est régulière
+ Et sans modèle de ciel clair ?
+ BLEND combine la dernière valeur et la valeur un cycle plus tôt, avec un poids pour chaque moment du cycle. L'article expliqué · le cours .
+ Trois études complémentaires, trois questions
  2015, Peut-on diagnostiquer la difficulté avant de choisir le modèle de prévision ?
  En 2015, j’ai étudié cette question avec Ted Soubdhan, Philippe Lauret, Mathieu David et Marc Muselli. Notre article examine des paramètres statistiques pour anticiper l’erreur de prévision solaire. Le mean absolute log return (MALR), issu de l’économétrie, décrit l’amplitude des changements relatifs. Ce diagnostic empirique ne dispense pas de tester le modèle sur le site et à l’horizon visés. Article dans Energy (2015) .
  2025, Estimer une erreur attendue à partir de la variabilité
- Avec Philippe Lauret, Mathieu David, Josselin Le Gal La Salle, Elke Lorenz et Richard Perez, j’ai étudié comment la variabilité horaire σ(Δk c ) renseigne sur la RMSE, au moyen de régressions calibrées sur 60 sites pour les horizons intra-journaliers et le jour suivant. Philippe Lauret est premier auteur ; je suis coauteur. Les intervalles à 95 % sont statistiques, pas des limites physiques universelles. Article dans Solar Energy (2025) .
+ Avec Philippe Lauret, Mathieu David, Josselin Le Gal La Salle, Elke Lorenz et Richard Perez, j’ai étudié comment la variabilité horaire σ(Δk c ) renseigne sur la RMSE, au moyen de régressions calibrées sur 60 sites pour les horizons intra-journaliers et le jour suivant. Les intervalles à 95 % sont statistiques, pas des limites physiques universelles. Article dans Solar Energy (2025) .
  sCV et F, Quelle part vient de l’écart au ciel clair, quelle part de la mémoire ?
  La sCV normalise l’écart quadratique au ciel clair. Elle ne décrit pas à elle seule l’ordre temporel des valeurs. L’indicateur F ajoute la dépendance des résidus à des retards compatibles avec l’horizon. On peut ainsi avoir les mêmes valeurs et la même sCV, mais des structures temporelles et des performances de référence très différentes. Article Renewable Energy (2026) · Calculateur sCV/F · Code de référence .
  « No free lunch » : la structure du problème compte
@@ -266,8 +246,8 @@ Research: questions, findings and methods
  My work connects medical physics and energy forecasting around one question: how can a model help inform a real decision? I start from the physical system, existing knowledge and available data. When the relation is known, I compute it; when it is incomplete, I complement the model; when learning is needed, I measure what its complexity adds. AI is a tool in this approach. Decisions, evaluation and responsibility remain human.
  Choose your subject below. Each study leads to its question, findings, limitations, team and technical resources.
  Solar and energy forecasting
- Compute directly · Energy Copy the last value or take the mean? It depends on the signal memory
- Random walk: persistence wins. Pure noise: the mean. In between: their convex combination.
+ Compute directly · Energy Forecasting a signal that repeats: what to remove, what to keep?
+ On a noisy sine, removing the cycle halves the error three steps ahead.
  Compute directly · Energy Simulate what you cannot yet measure: road tunnels
  One year at 10-minute resolution in about 150 ms, with its limits stated.
  Compute directly · Energy How forecastable is the sun?
@@ -337,8 +317,8 @@ Recherche : questions, résultats et méthodes
  Mon travail relie la physique médicale et la prévision énergétique autour d’une même question : comment construire un modèle utile pour une décision réelle ? Je pars du système physique, des connaissances et des données disponibles. Quand la relation est connue, je la calcule ; lorsqu’elle est incomplète, je complète le modèle ; lorsque l’apprentissage est nécessaire, je mesure ce que sa complexité apporte. L’IA est un outil de cette démarche. La décision, l’évaluation et la responsabilité restent humaines.
  Choisissez d’abord votre sujet ci-dessous. Chaque étude mène à sa question, ses résultats, ses limites, son équipe et ses ressources techniques.
  Prévision solaire et énergétique
- Calculer directement · Énergie Recopier ou prendre la moyenne ? Tout dépend de la mémoire du signal
- Marche aléatoire : la persistance gagne. Bruit pur : la moyenne. Entre les deux : leur combinaison convexe.
+ Calculer directement · Énergie Prévoir un signal qui se répète : que retirer, que garder ?
+ Sur un sinus bruité, retirer le cycle divise l'erreur par deux à trois pas.
  Calculer directement · Énergie Simuler ce que l'on ne peut pas encore mesurer : les tunnels routiers
  Une année au pas de 10 minutes en 150 ms environ, limites énoncées.
  Calculer directement · Énergie Le ciel change, mais à quel point reste-t-il prévisible ?
@@ -414,8 +394,8 @@ Scientific simulators, animations and calculators
  Languages: most tools work in French and English. Three applications are in English only. Courses and slides are in French.
  Energy
  Explorable demonstration · French and English
- Persistence, mean or combination: which forecast wins?
- Set the memory of the signal, place a bet, then compare the three forecasts.
+ Forecasting a signal that repeats
+ Compare three forecasts on a noisy sine and see their errors.
  Open this tool →
  Browser calculator · French and English
  Compare a forecast with persistence, NICE
@@ -562,8 +542,8 @@ Simulateurs, animations et calculateurs scientifiques
  Langues : la plupart des outils existent en français et en anglais. Trois applications sont en anglais seulement. Cours et diapositives sont en français.
  Énergie
  Démonstration à explorer · Français et anglais
- Persistance, moyenne ou combinaison : quelle prévision gagne ?
- Régler la mémoire du signal, parier, puis comparer les trois prévisions.
+ Prévoir un signal qui se répète
+ Comparer trois prévisions sur un sinus bruité et voir leurs erreurs.
  Ouvrir cet outil →
  Calculateur dans le navigateur · Français et anglais
  Comparer une prévision à la persistance, NICE
@@ -2017,47 +1997,27 @@ Simulate what you cannot yet measure: the electricity demand of road tunnels
 ---
 URL: https://www.cyrilvoyant.com/stories/variability-memory-forecastability/
 
-Copy the last value or take the mean? It depends on the signal's memory
- On a random walk, persistence cannot be beaten. On pure noise, the mean cannot be beaten. In between, neither is enough: that is where skill matters. A convex combination of the two, such as CLIPER, then beats each one.
- Random walk, φ = 1
- Persistence wins
- Persistence
- ≈ 0
- Combination
- ≈ 0
- Mean
- 100
- In between, φ = 0.5
- The combination wins
- Persistence
- 100
- Combination
- 87
- Mean
- 100
- Pure noise, φ = 0
- The mean wins
- Persistence
- 141
- Combination
- 100
- Mean
- 100
- Theoretical root mean squared error one step ahead, with the mean at 100, for a first-order autoregressive signal (equations below). At φ = 1 the signal drifts away from its mean without bound, and the error of the mean becomes infinitely larger: the ratio tends to 0. No solar measurements here.
- What this means
- Persistence copies the last value. It is optimal if the signal forgets nothing.
- The mean ignores the past. It is optimal if the past adds nothing.
- A real signal is almost always in between. The best weight of the last value is then λ = φ h : the error falls with no complex learning.
- An error therefore only makes sense against these references. This is what NICE measures against persistence, and what BLEND and CLIPER develop when the signal follows a cycle, as solar does.
- Try it · The case of a cycle · The three studies · Papers and teams
- And if the signal has a cycle?
- Many real signals repeat: the solar day, electricity demand. Copying the last value then picks the wrong moment of the cycle. The good idea is to deseasonalize : remove the cycle, forecast what is left, then put the cycle back. The larger the amplitude a, the more this matters.
- To go further: BLEND combines the last value and the value one cycle earlier, with no clear-sky model and one weight for each phase. The paper explained .
- JavaScript is needed for the controls and animation. The explanations and sources on this page remain available. Three complementary studies, three questions
+Forecasting a signal that repeats: what to remove, what to keep?
+ On a noisy sine, three steps ahead, removing the cycle halves the error: 39 against 84 when copying the last value (with the mean at 100). The cycle is known, so it should not be forecast. Only the gap remains to forecast.
+ The signal: a cycle, 1 + a sin(2πt/24), plus a noise that keeps some memory.
+ Once the cycle is removed, how to forecast the gap?
+ It depends on its memory. The weight to give its last value is φ h , where φ is its memory and h the horizon.
+ Memory of the gap Best forecast Example of error, one step ahead
+ Total (random walk) Persistence The error of the mean becomes infinitely larger
+ Partial, φ = 0.5 A combination of both, such as CLIPER 87, against 100 for each
+ None (pure noise) The mean 100, against 141 for persistence
+ Between these two extremes is where skill matters. And an error only makes sense against these references: that is what NICE measures.
+ Removing the cycle: difference or ratio?
+ If the noise follows the level of the signal, like a cloud removing a share of the light, the difference y − c stays agitated at the top of the cycle and calm at the bottom. The ratio y / c makes the noise equal everywhere: what a simple model needs. In solar forecasting, c is clear sky.
+ Difference y − c: the agitation follows the cycle
+ Ratio y / c − 1: the agitation is regular
+ And without a clear-sky model?
+ BLEND combines the last value and the value one cycle earlier, with one weight for each moment of the cycle. The paper explained · the course .
+ Three complementary studies, three questions
  2015, Can we diagnose difficulty before choosing the forecaster?
  In 2015, I studied this question with Ted Soubdhan, Philippe Lauret, Mathieu David and Marc Muselli. Our paper examines statistical parameters for anticipating solar forecast error. Mean absolute log return (MALR), borrowed from econometrics, describes relative changes. This empirical diagnostic does not replace testing the model at the intended site and horizon. Paper in Energy (2015) .
  2025, Estimate expected error from variability
- With Philippe Lauret, Mathieu David, Josselin Le Gal La Salle, Elke Lorenz and Richard Perez, I studied how hourly variability σ(Δk c ) relates to RMSE, using regressions calibrated on 60 sites for intra-day and day-ahead horizons. Philippe Lauret is first author; I am a co-author. The 95% intervals are statistical, not universal physical limits. Paper in Solar Energy (2025) .
+ With Philippe Lauret, Mathieu David, Josselin Le Gal La Salle, Elke Lorenz and Richard Perez, I studied how hourly variability σ(Δk c ) relates to RMSE, using regressions calibrated on 60 sites for intra-day and day-ahead horizons. The 95% intervals are statistical, not universal physical limits. Paper in Solar Energy (2025) .
  sCV and F, Clear-sky departure versus temporal memory
  sCV normalizes the quadratic departure from clear sky. It does not by itself describe temporal ordering. F incorporates residual dependencies at lags compatible with the horizon. The same values and sCV can therefore coexist with different temporal structures and reference-model performance. Renewable Energy paper (2026) · sCV/F calculator · Reference code .
  No free lunch: problem structure matters
@@ -3443,7 +3403,7 @@ sCV et F : variabilité et prévisibilité de l'éclairement solaire
  Référence collective : Cyril Voyant, Alan Julien , Milan Despotovic , Gilles Notton , Luis Antonio Garcia-Gutierrez , Claudio Francesco Nicolosi , Philippe Blanc et Jamie Bright . Stochastic coefficient of variation: Assessing the variability and forecastability of solar irradiance . Renewable Energy 256, 123913 (2026). DOI · article éditeur en accès ouvert .
  Théorie complète, code et exemple exécutable (site des méthodes, en anglais) · Tous les récits · L'auteur
  Variabilité, mémoire et choix du modèle
- Recopier ou prendre la moyenne ? : relier les études de 2015 et 2025 à sCV/F, puis comparer deux références sur les mêmes cibles.
+ Prévoir un signal qui se répète : relier les études de 2015 et 2025 à sCV/F, puis comparer deux références sur les mêmes cibles.
  Essayer dans votre navigateur
  Mesurer variabilité et prévisibilité : sCV et F : un site est-il difficile à prévoir, avant tout modèle ?.
  Le Soleil, les saisons et l’heure UTC : pourquoi dater les mesures solaires en UTC.
@@ -4064,7 +4024,7 @@ Cyril Voyant
  Une méthode, quatre voies complémentaires
  Le domaine change ; la méthode, non. La voie est choisie par le problème et la décision à éclairer, pas par l'outil ; la complexité supplémentaire n'est retenue que si son bénéfice est démontré. Ces quatre voies mènent au fil en cinq étapes : la cinquième, montrer pourquoi on peut faire confiance au résultat, vaut pour chacune.
  Calculer directement Quand le lien est connu, on le calcule avec un modèle explicite, calibré et validé sur des données ; on n'ajoute de l'apprentissage que pour un bénéfice démontré.
- Recopier ou prendre la moyenne ? Tout dépend de la mémoire du signal · Neutrons atmosphériques et BNCT : quantifier la limite · Calculer plutôt qu'apprendre : l'équivalence de dose en radiothérapie
+ Prévoir un signal qui se répète : que retirer, que garder ? · Neutrons atmosphériques et BNCT : quantifier la limite · Calculer plutôt qu'apprendre : l'équivalence de dose en radiothérapie
  Hybrider Quand le modèle ne suffit pas, on le complète : garder le modèle, n'apprendre que ce qui manque.
  Cancer de la thyroïde et iode radioactif : le modèle d'abord · Une meilleure persistance, sans entraîner un réseau neuronal
  Apprendre frugalement Quand les relations utiles ne sont pas suffisamment connues, évaluer ce que les données permettent d'apprendre, avec seulement la complexité qui paie.
@@ -4076,7 +4036,7 @@ Cyril Voyant
  Juger contre une référence, publier code, données et limites, rendre la recherche trouvable et réutilisable.
  Se questionner sur nos façons de faire de la recherche · L'IA dans la recherche : AI Act, charte et boîte à outils · Même nRMSE, modèles différents : ce que révèle NICE · Une prévision décalée peut rester exploitable : le test gamma · Visibilité académique : publier ne suffit plus · Excellence scientifique à l'ère de l'IA : du SEO au GEO · Comment évaluer une prévision solaire face à la persistance · Quelle référence une prévision solaire doit-elle battre ? Quand le deep learning vaut-il la peine ?
  Récits
- Recopier ou prendre la moyenne ? Tout dépend de la mémoire du signal , Marche aléatoire : la persistance gagne. Bruit pur : la moyenne. Entre les deux : leur combinaison convexe.
+ Prévoir un signal qui se répète : que retirer, que garder ? , Sur un sinus bruité, retirer le cycle divise l'erreur par deux à trois pas.
  Neutrons atmosphériques et BNCT : quantifier la limite , Un modèle exploratoire de 2011 : captures rares, énergie locale et dose moyenne insuffisante pour une thérapie macroscopique.
  Calculer plutôt qu'apprendre : l'équivalence de dose en radiothérapie , Une fraction de 15 Gy au rectum : 72,7 Gy en LQ, 59,4 Gy en LQL.
  Simuler ce que l'on ne peut pas encore mesurer : les tunnels routiers , Une année au pas de 10 minutes en 150 ms environ, limites énoncées.
@@ -4167,8 +4127,8 @@ Le fil : cinq étapes, une même démarche
  Oui : on le calcule, avec un modèle explicite.
  Quand le lien est connu, on le calcule avec un modèle explicite, calibré et validé sur des données ; on n'ajoute de l'apprentissage que pour un bénéfice démontré.
  Les récits de cette étape
- Calculer directement · Énergie Recopier ou prendre la moyenne ? Tout dépend de la mémoire du signal
- Marche aléatoire : la persistance gagne. Bruit pur : la moyenne. Entre les deux : leur combinaison convexe.
+ Calculer directement · Énergie Prévoir un signal qui se répète : que retirer, que garder ?
+ Sur un sinus bruité, retirer le cycle divise l'erreur par deux à trois pas.
  Calculer directement · Médecine Neutrons atmosphériques et BNCT : quantifier la limite
  Un modèle exploratoire de 2011 : captures rares, énergie locale et dose moyenne insuffisante pour une thérapie macroscopique.
  Calculer directement · Médecine Calculer plutôt qu'apprendre : l'équivalence de dose en radiothérapie
@@ -4393,7 +4353,7 @@ Mesurer variabilité et prévisibilité : sCV et F
  Cyril Voyant , Alan Julien , Milan Despotovic , Gilles Notton , Luis Antonio Garcia-Gutierrez , Claudio Francesco Nicolosi , Philippe Blanc , Jamie Bright . Stochastic coefficient of variation: Assessing the variability and forecastability of solar irradiance .
  Guide technique, sources et attribution détaillée (anglais) · Cas de vérification numérique
  Variabilité, mémoire et choix du modèle
- Recopier ou prendre la moyenne ? : relier les études de 2015 et 2025 à sCV/F, puis comparer deux références sur les mêmes cibles.
+ Prévoir un signal qui se répète : relier les études de 2015 et 2025 à sCV/F, puis comparer deux références sur les mêmes cibles.
 
 ---
 URL: https://www.cyrilvoyant.com/fr/prevision-complexe/
@@ -4894,7 +4854,7 @@ Cyril Voyant
  One method, four complementary routes
  The domain changes; the method does not. The route is chosen by the problem and the decision to inform, not by the tool; extra complexity is kept only when its benefit is demonstrated. These four routes lead to the five-step thread : the fifth step, showing why the result can be trusted, applies to each of them.
  Compute directly When the link is known, compute it with an explicit model, calibrated and validated on data; learning is added only for a demonstrated benefit.
- Copy the last value or take the mean? It depends on the signal memory · Atmospheric neutrons and BNCT: quantify the limit · Compute, don't learn: radiobiological dose equivalence
+ Forecasting a signal that repeats: what to remove, what to keep? · Atmospheric neutrons and BNCT: quantify the limit · Compute, don't learn: radiobiological dose equivalence
  Hybridize When the model falls short, complete it: keep the model, learn only what is missing.
  Thyroid cancer and radioiodine: model first · Better persistence, without training a neural network
  Learn frugally When the useful relations are not known well enough, evaluate what the data can teach, with only as much complexity as pays.
@@ -6441,8 +6401,8 @@ The thread: five steps, one way of working
  Yes: compute it, with an explicit model.
  When the link is known, compute it with an explicit model, calibrated and validated on data; learning is added only for a demonstrated benefit.
  Stories of this step
- Compute directly · Energy Copy the last value or take the mean? It depends on the signal memory
- Random walk: persistence wins. Pure noise: the mean. In between: their convex combination.
+ Compute directly · Energy Forecasting a signal that repeats: what to remove, what to keep?
+ On a noisy sine, removing the cycle halves the error three steps ahead.
  Compute directly · Medicine Atmospheric neutrons and BNCT: quantify the limit
  An exploratory 2011 model: rare captures, local energy and a mean dose too low for macroscopic therapy.
  Compute directly · Medicine Compute, don't learn: radiobiological dose equivalence

@@ -7,12 +7,12 @@
       "kind": "demo",
       "interface_language": "both",
       "name": {
-        "fr": "Persistance, moyenne ou combinaison : quelle prévision gagne ?",
-        "en": "Persistence, mean or combination: which forecast wins?"
+        "fr": "Prévoir un signal qui se répète",
+        "en": "Forecasting a signal that repeats"
       },
       "task": {
-        "fr": "Régler la mémoire du signal, parier, puis comparer les trois prévisions.",
-        "en": "Set the memory of the signal, place a bet, then compare the three forecasts."
+        "fr": "Comparer trois prévisions sur un sinus bruité et voir leurs erreurs.",
+        "en": "Compare three forecasts on a noisy sine and see their errors."
       },
       "url": {
         "fr": "https://www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/#experience",

@@ -3074,7 +3074,7 @@
     },
     {
       "url": "https://www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/",
-      "title": "Recopier ou prendre la moyenne ? Tout dépend de la mémoire du signal",
+      "title": "Prévoir un signal qui se répète : que retirer, que garder ?",
       "language": "fr",
       "topics": [
         "Calculer directement",
@@ -3083,12 +3083,16 @@
       "citations": [],
       "sections": [
         {
-          "title": "Ce que cela veut dire",
-          "anchor": null
+          "title": "Une fois le cycle retiré, comment prévoir l'écart ?",
+          "anchor": "reste"
         },
         {
-          "title": "Et si le signal a un cycle ?",
-          "anchor": "cycle"
+          "title": "Retirer le cycle : différence ou ratio ?",
+          "anchor": "ratio"
+        },
+        {
+          "title": "Et sans modèle de ciel clair ?",
+          "anchor": "suite"
         },
         {
           "title": "Trois études complémentaires, trois questions",
@@ -4148,7 +4152,7 @@
     },
     {
       "url": "https://www.cyrilvoyant.com/stories/variability-memory-forecastability/",
-      "title": "Copy the last value or take the mean? It depends on the signal's memory",
+      "title": "Forecasting a signal that repeats: what to remove, what to keep?",
       "language": "en",
       "topics": [
         "Compute directly",
@@ -4157,12 +4161,16 @@
       "citations": [],
       "sections": [
         {
-          "title": "What this means",
-          "anchor": null
+          "title": "Once the cycle is removed, how to forecast the gap?",
+          "anchor": "reste"
         },
         {
-          "title": "And if the signal has a cycle?",
-          "anchor": "cycle"
+          "title": "Removing the cycle: difference or ratio?",
+          "anchor": "ratio"
+        },
+        {
+          "title": "And without a clear-sky model?",
+          "anchor": "suite"
         },
         {
           "title": "Three complementary studies, three questions",
