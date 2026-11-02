@@ -99,6 +99,8 @@ Quelle prévision pour quel signal ?
  La prévision vaut toujours la moyenne du passé.
  Combinaison linéaire
  Un poids entre deux prévisions, calculé sur le passé. Exemples : CLIPER, BLEND.
+ AR(2)
+ Une régression sur les deux dernières valeurs connues. Brut : sans retirer le cycle. Il sert à mesurer ce que le retrait du cycle rapporte.
  Différence à la tendance
  On étudie y − c, l'écart au cycle c. Adapté à un bruit additif.
  Ratio à la tendance
@@ -2031,6 +2033,8 @@ Which forecast for which signal?
  The forecast is always the mean of the past.
  Linear combination
  A weight between two forecasts, computed on the past. Examples: CLIPER, BLEND.
+ AR(2)
+ A regression on the last two known values. Raw: without removing the cycle. It measures what removing the cycle brings.
  Difference to trend
  We study y − c, the gap to the cycle c. Suited to additive noise.
  Ratio to trend
