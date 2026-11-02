@@ -424,6 +424,43 @@
       ]
     },
     {
+      "url": "https://www.cyrilvoyant.com/fr/a-propos/",
+      "title": "À propos",
+      "language": "fr",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Parcours",
+          "anchor": null
+        },
+        {
+          "title": "Recherche actuelle",
+          "anchor": null
+        },
+        {
+          "title": "Projets de recherche",
+          "anchor": null
+        },
+        {
+          "title": "Distinctions et engagements",
+          "anchor": null
+        },
+        {
+          "title": "Publications, code et contact",
+          "anchor": null
+        },
+        {
+          "title": "À lire ensuite",
+          "anchor": null
+        },
+        {
+          "title": "Contact",
+          "anchor": null
+        }
+      ]
+    },
+    {
       "url": "https://www.cyrilvoyant.com/fr/actualites/",
       "title": "Actualités : publications, logiciels et essais",
       "language": "fr",
@@ -467,7 +504,7 @@
           "anchor": null
         },
         {
-          "title": "What the study shows",
+          "title": "Ce que montre l’étude",
           "anchor": null
         },
         {
@@ -507,7 +544,7 @@
           "anchor": null
         },
         {
-          "title": "Abstract",
+          "title": "Résumé",
           "anchor": null
         },
         {
@@ -515,7 +552,7 @@
           "anchor": null
         },
         {
-          "title": "Abstract",
+          "title": "Résumé",
           "anchor": null
         },
         {
@@ -523,7 +560,7 @@
           "anchor": null
         },
         {
-          "title": "Abstract",
+          "title": "Résumé",
           "anchor": null
         },
         {
@@ -531,7 +568,7 @@
           "anchor": null
         },
         {
-          "title": "Abstract",
+          "title": "Résumé",
           "anchor": null
         },
         {
@@ -539,7 +576,7 @@
           "anchor": null
         },
         {
-          "title": "Abstract",
+          "title": "Résumé",
           "anchor": null
         },
         {
@@ -547,7 +584,7 @@
           "anchor": null
         },
         {
-          "title": "Abstract",
+          "title": "Résumé",
           "anchor": null
         },
         {
@@ -555,35 +592,35 @@
           "anchor": null
         },
         {
-          "title": "A Saturated Ecosystem",
+          "title": "Un écosystème saturé",
           "anchor": null
         },
         {
-          "title": "Before Submission: Preparing for Discoverability",
+          "title": "Avant la soumission : préparer la découvrabilité",
           "anchor": null
         },
         {
-          "title": "Open Access: A Global Opportunity",
+          "title": "Le libre accès : une chance à l’échelle mondiale",
           "anchor": null
         },
         {
-          "title": "Writing to Be Discovered",
+          "title": "Écrire pour être découvert",
           "anchor": null
         },
         {
-          "title": "After Publication: Orchestrating Dissemination",
+          "title": "Après la publication : orchestrer la diffusion",
           "anchor": null
         },
         {
-          "title": "Structural Solutions Needed",
+          "title": "Des solutions structurelles nécessaires",
           "anchor": null
         },
         {
-          "title": "Practical Toolkit",
+          "title": "Boîte à outils pratique",
           "anchor": null
         },
         {
-          "title": "Key References",
+          "title": "Références principales",
           "anchor": null
         }
       ]

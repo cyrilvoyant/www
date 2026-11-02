@@ -82,6 +82,7 @@ Cyril Voyant connects medical physics and energy forecasting through modelling f
 ### fr
 
 - [Cyril Voyant](https://www.cyrilvoyant.com/fr/)
+- [À propos](https://www.cyrilvoyant.com/fr/a-propos/)
 - [Actualités : publications, logiciels et essais](https://www.cyrilvoyant.com/fr/actualites/)
 - [BLEND : une meilleure persistance sans entraîner de réseau neuronal](https://www.cyrilvoyant.com/fr/actualites/forecasting-with-less/)
 - [L'indice γ : valider des prévisions solaires décalées au-delà des erreurs ponctuelles](https://www.cyrilvoyant.com/fr/actualites/gamma-index-forecast-validation/)

@@ -36,6 +36,9 @@
      "@id": "https://www.cyrilvoyant.com/about/"
     },
     {
+     "@id": "https://www.cyrilvoyant.com/fr/a-propos/"
+    },
+    {
      "@id": "https://www.cyrilvoyant.com/fr/actualites/"
     },
     {
@@ -100,6 +103,11 @@
    "@id": "https://www.cyrilvoyant.com/about/",
    "@type": "WebPage",
    "name": "www.cyrilvoyant.com/about/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/fr/a-propos/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/fr/a-propos/"
   },
   {
    "@id": "https://www.cyrilvoyant.com/fr/actualites/",
