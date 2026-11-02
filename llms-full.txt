@@ -82,17 +82,20 @@ URL: https://www.cyrilvoyant.com/fr/a-propos/
 ---
 URL: https://www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/
 
-Le modèle ne fait pas tout : variabilité, mémoire et prévisibilité
- Deux prévisions produites par le même algorithme peuvent avoir des erreurs différentes parce que le signal, l’horizon et l’information disponible diffèrent. Mon point de départ est donc le phénomène à prévoir. Décrire sa variabilité et sa mémoire aide à choisir une référence, à interpréter une erreur et à décider si davantage de complexité apporte quelque chose.
- Manipuler les séries · Relier les trois études · Comprendre le « no free lunch » · Articles et équipes
- 1. Décrire le signal
- Distinguer le cycle astronomique, l’écart au ciel clair et les changements entre instants.
- 2. Chercher la mémoire
- Observer quelles dépendances restent exploitables à l’horizon de la décision.
- 3. Évaluer le modèle
- Comparer sur les mêmes données de test, avec une référence explicite et des unités cohérentes.
- Un laboratoire pour séparer mémoire, bruit et choix du modèle
- Au lieu de simplement mélanger une courbe, on génère ici un signal à deux états avec une mémoire connue. On ajoute un bruit additif, un bruit multiplicatif ou les deux. La question devient mesurable : quelle relation la régression ajuste-t-elle, comment ses coefficients changent-ils, et quelle erreur attendue resterait même si l’on connaissait l’état courant du générateur ?
+Pourquoi le même modèle réussit ici et échoue là
+ La même régression linéaire fait 11,8 % d'erreur sur un signal qui garde sa mémoire, et 50,5 % sur un signal qui n'en a pas. Le modèle n'a pas changé : c'est le signal. Avant de juger un modèle ou de le complexifier, il faut savoir ce que le signal permet de prévoir.
+ Erreur de trois prévisions (nRMSE : erreur quadratique moyenne rapportée à la moyenne des observations) Signal simulé Recopier la dernière valeur Prévoir la moyenne Régression linéaire
+ Reste longtemps dans le même état 11,9 % 47,0 % 11,8 %
+ Change au hasard, sans mémoire 71,7 % 50,5 % 50,5 %
+ Simulation ci-dessous, préréglages « Presque prévisible » et « Sans mémoire », prévision à un pas, série n° 42. Valeurs simulées, pas des mesures solaires.
+ Ce que cela veut dire
+ Quand le signal a de la mémoire, recopier la dernière valeur fait déjà aussi bien que la régression.
+ Quand il n'en a pas, recopier la dernière valeur est le pire choix, et la régression ne fait pas mieux qu'une moyenne.
+ Une erreur seule ne juge donc pas un modèle. Il faut la comparer à une référence simple, sur le même signal.
+ Le solaire pose la même question : un ciel régulier et un ciel à nuages changeants ne laissent pas la même chose à prévoir. Sur 68 stations espagnoles, notre indicateur de prévisibilité F évolue à l'inverse de l'erreur de prévision ( sCV et F ).
+ Essayer la simulation · Les trois études · Articles et équipes
+ Essayer la simulation
+ Le tableau du début vient de cette simulation. Changez un réglage et regardez l'erreur de chaque prévision.
  JavaScript est nécessaire pour les curseurs et l’animation. Les explications et les sources de cette page restent accessibles. Modèle, hypothèses et formules de l’expérience principale
  Ici, t repère le pas courant et h le nombre de pas à prévoir. r règle la mémoire entre états consécutifs ; a est le demi-écart entre les deux niveaux ; μ est leur moyenne ; β est l’écart-type relatif du bruit multiplicatif et σ a l’écart-type du bruit additif. Un état S t vaut −1 ou +1, avec probabilité de changer d’état q = (1−r)/2. Il démarre dans la distribution stationnaire équiprobable. Le signal avant ajout du bruit est K t = μ + aS t , avec μ = 0,6. Pour a > 0, son autocorrélation exacte est r h . Le signal observé est Y t = K t ( 1 + β Z m , t ) + σ a Z a , t . Les deux Z sont indépendants entre eux, entre instants et de l’état, uniformes sur [−√3,+√3] : moyenne nulle, variance 1. Le bruit multiplicatif a une variance conditionnelle β²K² ; celle du bruit additif vaut σ a ². Les bornes des commandes garantissent Y > 0 sans écrêtage. Ce modèle pédagogique n’est pas un modèle météorologique validé.
  La référence à état connu connaît S à l’origine de prévision : ŷ ref,t+h = μ + ar h S t . Son risque quadratique moyen exact dans ce générateur est R h = a 2 ( 1 − r 2 h ) + σ a 2 + β 2 ( μ 2 + a 2 ) . Les trois termes décrivent transitions futures, bruit additif et bruit multiplicatif. √R h est une RMSE attendue, pas une limite que chaque échantillon fini doit respecter. La référence à état connu reçoit une information privilégiée : sa courbe n’est pas une prévision opérationnelle. Cette borne optimiste appartient à ce générateur ; ce n’est ni un résultat numérique des articles cités ni une borne physique du solaire.
@@ -253,8 +256,8 @@ Research: questions, findings and methods
  My work connects medical physics and energy forecasting around one question: how can a model help inform a real decision? I start from the physical system, existing knowledge and available data. When the relation is known, I compute it; when it is incomplete, I complement the model; when learning is needed, I measure what its complexity adds. AI is a tool in this approach. Decisions, evaluation and responsibility remain human.
  Choose your subject below. Each study leads to its question, findings, limitations, team and technical resources.
  Solar and energy forecasting
- Compute directly · Energy The model is not the whole story: variability and memory
- Add noise, change memory, and compare learned models with persistence and a generator-specific oracle.
+ Compute directly · Energy Why the same model succeeds here and fails there
+ The same regression: 11.8 % error on a signal with memory, 50.5 % without.
  Compute directly · Energy Simulate what you cannot yet measure: road tunnels
  One year at 10-minute resolution in about 150 ms, with its limits stated.
  Compute directly · Energy How forecastable is the sun?
@@ -324,8 +327,8 @@ Recherche : questions, résultats et méthodes
  Mon travail relie la physique médicale et la prévision énergétique autour d’une même question : comment construire un modèle utile pour une décision réelle ? Je pars du système physique, des connaissances et des données disponibles. Quand la relation est connue, je la calcule ; lorsqu’elle est incomplète, je complète le modèle ; lorsque l’apprentissage est nécessaire, je mesure ce que sa complexité apporte. L’IA est un outil de cette démarche. La décision, l’évaluation et la responsabilité restent humaines.
  Choisissez d’abord votre sujet ci-dessous. Chaque étude mène à sa question, ses résultats, ses limites, son équipe et ses ressources techniques.
  Prévision solaire et énergétique
- Calculer directement · Énergie Le modèle ne fait pas tout : variabilité et mémoire
- Ajouter du bruit, modifier la mémoire, comparer les modèles appris à la persistance et à un oracle propre au générateur.
+ Calculer directement · Énergie Pourquoi le même modèle réussit ici et échoue là
+ La même régression : 11,8 % d'erreur sur un signal à mémoire, 50,5 % sans mémoire.
  Calculer directement · Énergie Simuler ce que l'on ne peut pas encore mesurer : les tunnels routiers
  Une année au pas de 10 minutes en 150 ms environ, limites énoncées.
  Calculer directement · Énergie Le ciel change, mais à quel point reste-t-il prévisible ?
@@ -2004,17 +2007,20 @@ Simulate what you cannot yet measure: the electricity demand of road tunnels
 ---
 URL: https://www.cyrilvoyant.com/stories/variability-memory-forecastability/
 
-The model is not the whole story: variability, memory and forecastability
- The same algorithm can produce different errors because the signal, horizon and available information differ. I therefore start with the phenomenon to be forecast. Describing its variability and memory helps choose a reference, interpret an error and decide whether additional complexity brings a useful gain.
- Explore the series · Connect the three studies · Understand no free lunch · Papers and teams
- 1. Describe the signal
- Separate astronomical cycles, departure from clear sky and changes between successive times.
- 2. Examine memory
- Find which dependencies remain useful at the decision horizon.
- 3. Evaluate the model
- Compare on identical test targets, with an explicit reference and consistent units.
- A laboratory separating memory, noise and model choice
- Rather than only shuffling a curve, generate a two-state signal with known memory. Add additive noise, multiplicative noise or both. Ask what relationship the regression fits, how its coefficients change and what expected error would remain even with knowledge of the generator’s current state.
+Why the same model succeeds here and fails there
+ The same linear regression has an error of 11.8 % on a signal that keeps its memory, and 50.5 % on a signal that has none. The model did not change: the signal did. Before judging a model or making it more complex, find out what the signal allows you to forecast.
+ Error of three forecasts (nRMSE: root mean squared error divided by the mean of the observations) Simulated signal Copy the last value Forecast the mean Linear regression
+ Stays in the same state for a long time 11.9 % 47.0 % 11.8 %
+ Changes at random, no memory 71.7 % 50.5 % 50.5 %
+ Simulation below, presets “Almost predictable” and “No memory”, forecast one step ahead, series no. 42. Simulated values, not solar measurements.
+ What this means
+ When the signal has memory, copying the last value already does as well as the regression.
+ When it has none, copying the last value is the worst choice, and the regression does no better than a mean.
+ An error alone therefore does not judge a model. Compare it with a simple reference, on the same signal.
+ Solar forecasting raises the same question: a steady sky and a sky of changing clouds do not leave the same thing to forecast. Across 68 Spanish stations, our forecastability indicator F moves inversely to forecast error ( sCV and F ).
+ Try the simulation · The three studies · Papers and teams
+ Try the simulation
+ The table at the top comes from this simulation. Change a setting and watch the error of each forecast.
  JavaScript is needed for the controls and animation. The explanations and sources on this page remain available. Main experiment: model, assumptions and equations
  Here t denotes the current step and h the forecast lead. r controls memory between successive states; a is half the separation of the two levels; μ is their mean; β is the relative standard deviation of multiplicative noise and σ a is the standard deviation of additive noise. S t is −1 or +1 with switching probability q = (1−r)/2, initialized in its equiprobable stationary distribution. The signal before adding noise is K t = μ + aS t , μ = 0.6, with exact autocorrelation r h when a > 0. Observations are Y t = K t ( 1 + β Z m , t ) + σ a Z a , t . The Z draws are independent of each other, across times and of the state, uniform on [−√3,+√3], with zero mean and unit variance. Multiplicative noise has conditional variance β²K², additive noise σ a ². Control ranges guarantee positive observations without clipping. This teaching generator is not a validated weather model.
  The known-state reference knows the state at forecast origin: ŷ ref,t+h = μ + ar h S t . Its exact expected squared risk is R h = a 2 ( 1 − r 2 h ) + σ a 2 + β 2 ( μ 2 + a 2 ) , separating future transitions, additive noise and multiplicative noise. √R h is an expected RMSE, not a threshold every finite sample must respect. The known-state reference has privileged information; it is not an operational forecast. This optimistic bound is specific to the generator, neither a numerical result of the cited papers nor a physical solar limit.
@@ -4007,7 +4013,7 @@ Cyril Voyant
  Une méthode, quatre voies complémentaires
  Le domaine change ; la méthode, non. La voie est choisie par le problème et la décision à éclairer, pas par l'outil ; la complexité supplémentaire n'est retenue que si son bénéfice est démontré. Ces quatre voies mènent au fil en cinq étapes : la cinquième, montrer pourquoi on peut faire confiance au résultat, vaut pour chacune.
  Calculer directement Quand le lien est connu, on le calcule avec un modèle explicite, calibré et validé sur des données ; on n'ajoute de l'apprentissage que pour un bénéfice démontré.
- Le modèle ne fait pas tout : variabilité et mémoire · Neutrons atmosphériques et BNCT : quantifier la limite · Calculer plutôt qu'apprendre : l'équivalence de dose en radiothérapie
+ Pourquoi le même modèle réussit ici et échoue là · Neutrons atmosphériques et BNCT : quantifier la limite · Calculer plutôt qu'apprendre : l'équivalence de dose en radiothérapie
  Hybrider Quand le modèle ne suffit pas, on le complète : garder le modèle, n'apprendre que ce qui manque.
  Cancer de la thyroïde et iode radioactif : le modèle d'abord · Une meilleure persistance, sans entraîner un réseau neuronal
  Apprendre frugalement Quand les relations utiles ne sont pas suffisamment connues, évaluer ce que les données permettent d'apprendre, avec seulement la complexité qui paie.
@@ -4019,7 +4025,7 @@ Cyril Voyant
  Juger contre une référence, publier code, données et limites, rendre la recherche trouvable et réutilisable.
  Se questionner sur nos façons de faire de la recherche · L'IA dans la recherche : AI Act, charte et boîte à outils · Même nRMSE, modèles différents : ce que révèle NICE · Une prévision décalée peut rester exploitable : le test gamma · Visibilité académique : publier ne suffit plus · Excellence scientifique à l'ère de l'IA : du SEO au GEO · Comment évaluer une prévision solaire face à la persistance · Quelle référence une prévision solaire doit-elle battre ? Quand le deep learning vaut-il la peine ?
  Récits
- Le modèle ne fait pas tout : variabilité et mémoire , Ajouter du bruit, modifier la mémoire, comparer les modèles appris à la persistance et à un oracle propre au générateur.
+ Pourquoi le même modèle réussit ici et échoue là , La même régression : 11,8 % d'erreur sur un signal à mémoire, 50,5 % sans mémoire.
  Neutrons atmosphériques et BNCT : quantifier la limite , Un modèle exploratoire de 2011 : captures rares, énergie locale et dose moyenne insuffisante pour une thérapie macroscopique.
  Calculer plutôt qu'apprendre : l'équivalence de dose en radiothérapie , Une fraction de 15 Gy au rectum : 72,7 Gy en LQ, 59,4 Gy en LQL.
  Simuler ce que l'on ne peut pas encore mesurer : les tunnels routiers , Une année au pas de 10 minutes en 150 ms environ, limites énoncées.
@@ -4110,8 +4116,8 @@ Le fil : cinq étapes, une même démarche
  Oui : on le calcule, avec un modèle explicite.
  Quand le lien est connu, on le calcule avec un modèle explicite, calibré et validé sur des données ; on n'ajoute de l'apprentissage que pour un bénéfice démontré.
  Les récits de cette étape
- Calculer directement · Énergie Le modèle ne fait pas tout : variabilité et mémoire
- Ajouter du bruit, modifier la mémoire, comparer les modèles appris à la persistance et à un oracle propre au générateur.
+ Calculer directement · Énergie Pourquoi le même modèle réussit ici et échoue là
+ La même régression : 11,8 % d'erreur sur un signal à mémoire, 50,5 % sans mémoire.
  Calculer directement · Médecine Neutrons atmosphériques et BNCT : quantifier la limite
  Un modèle exploratoire de 2011 : captures rares, énergie locale et dose moyenne insuffisante pour une thérapie macroscopique.
  Calculer directement · Médecine Calculer plutôt qu'apprendre : l'équivalence de dose en radiothérapie
@@ -4837,7 +4843,7 @@ Cyril Voyant
  One method, four complementary routes
  The domain changes; the method does not. The route is chosen by the problem and the decision to inform, not by the tool; extra complexity is kept only when its benefit is demonstrated. These four routes lead to the five-step thread : the fifth step, showing why the result can be trusted, applies to each of them.
  Compute directly When the link is known, compute it with an explicit model, calibrated and validated on data; learning is added only for a demonstrated benefit.
- The model is not the whole story: variability and memory · Atmospheric neutrons and BNCT: quantify the limit · Compute, don't learn: radiobiological dose equivalence
+ Why the same model succeeds here and fails there · Atmospheric neutrons and BNCT: quantify the limit · Compute, don't learn: radiobiological dose equivalence
  Hybridize When the model falls short, complete it: keep the model, learn only what is missing.
  Thyroid cancer and radioiodine: model first · Better persistence, without training a neural network
  Learn frugally When the useful relations are not known well enough, evaluate what the data can teach, with only as much complexity as pays.
@@ -6384,8 +6390,8 @@ The thread: five steps, one way of working
  Yes: compute it, with an explicit model.
  When the link is known, compute it with an explicit model, calibrated and validated on data; learning is added only for a demonstrated benefit.
  Stories of this step
- Compute directly · Energy The model is not the whole story: variability and memory
- Add noise, change memory, and compare learned models with persistence and a generator-specific oracle.
+ Compute directly · Energy Why the same model succeeds here and fails there
+ The same regression: 11.8 % error on a signal with memory, 50.5 % without.
  Compute directly · Medicine Atmospheric neutrons and BNCT: quantify the limit
  An exploratory 2011 model: rare captures, local energy and a mean dose too low for macroscopic therapy.
  Compute directly · Medicine Compute, don't learn: radiobiological dose equivalence

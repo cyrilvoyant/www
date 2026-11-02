@@ -3074,7 +3074,7 @@
     },
     {
       "url": "https://www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/",
-      "title": "Le modèle ne fait pas tout : variabilité, mémoire et prévisibilité",
+      "title": "Pourquoi le même modèle réussit ici et échoue là",
       "language": "fr",
       "topics": [
         "Calculer directement",
@@ -3083,7 +3083,11 @@
       "citations": [],
       "sections": [
         {
-          "title": "Un laboratoire pour séparer mémoire, bruit et choix du modèle",
+          "title": "Ce que cela veut dire",
+          "anchor": null
+        },
+        {
+          "title": "Essayer la simulation",
           "anchor": null
         },
         {
@@ -4152,7 +4156,7 @@
     },
     {
       "url": "https://www.cyrilvoyant.com/stories/variability-memory-forecastability/",
-      "title": "The model is not the whole story: variability, memory and forecastability",
+      "title": "Why the same model succeeds here and fails there",
       "language": "en",
       "topics": [
         "Compute directly",
@@ -4161,7 +4165,11 @@
       "citations": [],
       "sections": [
         {
-          "title": "A laboratory separating memory, noise and model choice",
+          "title": "What this means",
+          "anchor": null
+        },
+        {
+          "title": "Try the simulation",
           "anchor": null
         },
         {
