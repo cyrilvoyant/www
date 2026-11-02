@@ -2451,7 +2451,7 @@ Curriculum vitae
  The following publications are in peer-reviewed journals from related scientific fields, including medical physics, oncology, and environmental modeling. While not centered on renewable energy, they demonstrate expertise in statistical modeling, biomedical applications, and complex system analysis:
  Show the list
  1. Improving Clinical Decision-Making in Radiotherapy: A Comparative Analysis and Dose Models .
- Cyril Voyant, Daniel Julian, Stéphane Muraro , Véronique Bodez , Morgane Pinpin , Delphine Leschi, Rashid Oozeer , Guiddi Wided, Marie-Aimée Acquaviva , Severine Prapant , Omar Gahbiche, Noureddine Bouaouina. Clinical Oncology ; 2025
+ Cyril Voyant, Daniel Julian, Stéphane Muraro , Véronique Bodez , Morgane Pinpin , Delphine Leschi, Rashid Oozeer , Guiddi Wided, Marie-Aimée Acquaviva , Severine Prapant , Omar Gahbiche, Noureddine Bouaouina . Clinical Oncology ; 2025
  2. Hybrid VMAT-3DCRT as Breast Cancer Treatment Improvement Tool
  C Voyant, M Pinpin, D Leschi, S Prapant, F Savigny, MA Acquaviva
  Scientific Reports 13, 2023
@@ -5337,7 +5337,7 @@ Prévision solaire : faire simple
  Prévision PV : quelle information conserver ? · Modèles frugaux : quelle capacité déployer ?
  Approfondir et reproduire
  Le cours (en anglais) : observations, références et calculs expliqués · Calcul BLEND : poids par phase · Calcul ARTU · Persistance stochastique
- Les exemples fictifs, les calculs de cours et les résultats publiés sont identifiés séparément. La comparaison interactive minimale est en cours de révision méthodologique : elle n’est pas utilisée ici comme démonstration des performances de recherche.
+ Les exemples fictifs, les calculs de cours et les résultats publiés sont identifiés séparément. Le comparateur interactif « Comparer des prévisions » (persistance, BLEND, AR, ELM) est un calcul d’enseignement sur données publiques : il n’est pas utilisé ici comme démonstration des performances de recherche.
  BLEND et CLIPER : le poids par phase, code v1.1.1 (audité)
  Comme dans l’article, BLEND combine la mesure récente r et la valeur c de la même phase du cycle précédent : prévision = (1 − λ)c + λr, où λ pondère la mesure récente. Le poids λ est estimé pour chaque phase sur les données passées, par moindres carrés, puis borné entre 0 et 1. Le coefficient simplifié (1 + ρ)/2, lui aussi fixé par phase, n’en est qu’une approximation, valable sous les hypothèses de l’article.
  Exemple pédagogique fictif : sur cinq journées passées, λ = Σ(y − c)(r − c) / Σ(r − c)² = 29 000 / 72 500 = 0,4. Avec r = 600 et c = 400 W/m², la prévision est 0,6 × 400 + 0,4 × 600 = 480 W/m².
