@@ -3377,16 +3377,16 @@
     schema:inLanguage "en" ;
     schema:url "https://www.cyrilvoyant.com/latest-publications-and-news/#academic-visibility-why-publishing-isn-t-enough-anymore" .
 
-<https://www.cyrilvoyant.com/latest-publications-and-news/#appointed-associate-editor-for-scientific-reports-nature-portfolio> a schema:BlogPosting ;
+<https://www.cyrilvoyant.com/latest-publications-and-news/#appointed-editorial-board-member-of-scientific-reports-nature-portfolio> a schema:BlogPosting ;
     schema:abstract "This role aligns with my trajectory as Research Director at Mines Paris–PSL O.I.E. (since 2024), with >130 peer-reviewed publications (h-index ~35, >7000 citations, Stanford Top 2%). Scientific Reports covers all scientific domains.",
         "Une revue pluridisciplinaire qui couvre tous les domaines scientifiques ; ce rôle prolonge mon parcours de directeur de recherche à Mines Paris – PSL (centre O.I.E.)." ;
     schema:author <https://person.cyrilvoyant.com/#cyril-voyant> ;
     schema:datePublished "2026" ;
-    schema:headline "Appointed Associate Editor for Scientific Reports (Nature Portfolio)",
-        "Nommé éditeur associé de Scientific Reports (Nature Portfolio)" ;
+    schema:headline "Appointed Editorial Board Member of Scientific Reports (Nature Portfolio)",
+        "Nommé membre du comité éditorial de Scientific Reports (Nature Portfolio)" ;
     schema:image "https://www.cyrilvoyant.com/assets/img/fd09837e8068.jpg" ;
     schema:inLanguage "en" ;
-    schema:url "https://www.cyrilvoyant.com/latest-publications-and-news/#appointed-associate-editor-for-scientific-reports-nature-portfolio" .
+    schema:url "https://www.cyrilvoyant.com/latest-publications-and-news/#appointed-editorial-board-member-of-scientific-reports-nature-portfolio" .
 
 <https://www.cyrilvoyant.com/latest-publications-and-news/#coherent-multi-energy-forecasting-for-real-time-grid-management-a-parsimonious> a schema:BlogPosting ;
     schema:abstract "Fast, transparent, and operational short-term forecasting of demand and generation across multiple energy sources.",
@@ -5305,7 +5305,7 @@
             schema:item <https://www.cyrilvoyant.com/latest-publications-and-news/#from-trends-to-insights-a-text-mining-analysis-of-solar-energy-forecasting-2017> ;
             schema:position 16 ],
         [ a schema:ListItem ;
-            schema:item <https://www.cyrilvoyant.com/latest-publications-and-news/#appointed-associate-editor-for-scientific-reports-nature-portfolio> ;
+            schema:item <https://www.cyrilvoyant.com/latest-publications-and-news/#appointed-editorial-board-member-of-scientific-reports-nature-portfolio> ;
             schema:position 11 ] ;
     schema:name "Actualités" ;
     schema:numberOfItems 24 .
@@ -5339,7 +5339,7 @@
             schema:item <https://www.cyrilvoyant.com/latest-publications-and-news/#invisible-research-has-no-impact-engineering-scientific-influence-in-the-ai-era> ;
             schema:position 10 ],
         [ a schema:ListItem ;
-            schema:item <https://www.cyrilvoyant.com/latest-publications-and-news/#appointed-associate-editor-for-scientific-reports-nature-portfolio> ;
+            schema:item <https://www.cyrilvoyant.com/latest-publications-and-news/#appointed-editorial-board-member-of-scientific-reports-nature-portfolio> ;
             schema:position 11 ],
         [ a schema:ListItem ;
             schema:item <https://www.cyrilvoyant.com/latest-publications-and-news/#comparative-study-of-feature-selection-techniques-for-machine-learning-based> ;
