@@ -263,7 +263,7 @@ Research: questions, findings and methods
  Compute directly · Medicine Compute, don't learn: radiobiological dose equivalence
  One fraction of 15 Gy to the rectum: 72.7 Gy under LQ, 59.4 Gy under LQL.
  Hybridize · Medicine Thyroid cancer and radioiodine: model first
- Marie Fusella Giuntini and Dominique Barbolosi: three equations, 50 patients, a hybrid twin in progress.
+ Marie Fusella Giuntini and Dominique Barbolosi : three equations, 50 patients, a hybrid twin in progress.
  AI and scientific interfaces
  AI in its place · Language Let the language model read, let the validated code compute
  Execute, clarify or refuse: never guess.
@@ -328,7 +328,7 @@ Recherche : questions, résultats et méthodes
  Calculer directement · Médecine Calculer plutôt qu'apprendre : l'équivalence de dose en radiothérapie
  Une fraction de 15 Gy au rectum : 72,7 Gy en LQ, 59,4 Gy en LQL.
  Hybrider · Médecine Cancer de la thyroïde et iode radioactif : le modèle d'abord
- Marie Fusella Giuntini et Dominique Barbolosi : trois équations, 50 patients, un jumeau hybride en cours.
+ Marie Fusella Giuntini et Dominique Barbolosi  : trois équations, 50 patients, un jumeau hybride en cours.
  IA et interfaces scientifiques
  L'IA à sa place · Langage Au modèle de langage la lecture, au code validé le calcul
  Exécuter, clarifier ou refuser : jamais deviner.
@@ -679,7 +679,7 @@ At a glance: research, software, courses and tools
  PV_ELM_pred: benchmark of persistence, BLEND, autoregression and ELM variants for PV forecasting (Python) Martin Leiva, Xavier Silvani , Gilles Notton , Cyril Voyant , Alan Julien · repository · MIT
  Make_Stationary: deseasonalization benchmark for renewable-energy time series (MATLAB) Maklewa Agoundedemba , Cyril Voyant , Milan Despotovic , Luis Antonio Garcia-Gutierrez , Gilles Notton · repository · GPL-3.0
  Filter and wrapper diagnostics of dimensionality reduction for endogenous PV power forecasting (MATLAB) Hassen Bouzgou , Gabriel Chesnoiu , Claudio F. Nicolosi , Adrien Chatel , Gilles Notton , Lionel Menard , Cyril Voyant · repository · MIT
- RAIR-Sim: compartmental simulator of radioactive iodine therapy response in metastatic thyroid cancer (MATLAB) Marie Fusella Giuntini, Cyril Voyant , David Taieb , Dominique Barbolosi · repository · MIT
+ RAIR-Sim: compartmental simulator of radioactive iodine therapy response in metastatic thyroid cancer (MATLAB) Marie Fusella Giuntini , Cyril Voyant , David Taieb , Dominique Barbolosi · repository · MIT
  Influence Index: a log-based measure of research influence for institutions (MATLAB, processed data) Cyril Voyant , Jeroen Baas , Roy Boverhof , Paolo Stringari , Mathilde Marchand-Lasserre, John P. A. Ioannidis · repository · MIT
  LQL-Equiv 2014: biologically equivalent dose calculation in radiotherapy (MATLAB application) Cyril Voyant , Daniel Julian · repository · MIT
  Tunnel Load Simulator: synthetic electricity demand of road tunnels (Python, Streamlit) Haytham El-Houari , Cyril Voyant · repository · MIT
@@ -1294,7 +1294,7 @@ Collaborate
  3 Explore a research direction together
  An academic collaboration to explore a research question together, compare approaches or open a new scientific direction. Each team’s objectives and contributions are defined from the outset, with a view to sharing or applying the work: a joint paper, open software, a dataset or transfer to practice.
  Collaborations that became results
- Medicine With Marie Fusella Giuntini, Dominique Barbolosi and David Taieb : three equations calibrated on 50 patients to explore radioiodine protocols before treating anyone ( Scientific Reports , 2026).
+ Medicine With Marie Fusella Giuntini , Dominique Barbolosi and David Taieb : three equations calibrated on 50 patients to explore radioiodine protocols before treating anyone ( Scientific Reports , 2026).
  Read the story →
  Research on research With John P. A. Ioannidis (Stanford University), Jeroen Baas and Roy Boverhof (Elsevier): a science-wide map of institutions, impact next to integrity ( Royal Society Open Science , 2026).
  Read the story →
@@ -1464,7 +1464,7 @@ Teaching
  Pearson correlation, linear regression, coefficient of determination and significance.
  χ² goodness-of-fit and independence tests, with exercises.
  Open the course (in French) →
- Part of the course comes from the work of Dominique Barbolosi, mathematician, Aix-Marseille Université.
+ Part of the course comes from the work of Dominique Barbolosi , mathematician, Aix-Marseille Université.
  Archived and citable on Zenodo, DOI 10.5281/zenodo.23620236
  Physics for health studies: electromagnetic waves, X-rays and imaging (in French)
  First-year health studies (PASS-PACES), physical bases of medical imaging · 110-slide lecture and 2 corrected exercise sessions · in French · CC BY 4.0
@@ -1554,7 +1554,7 @@ Enseignement
  Corrélation de Pearson, régression linéaire, coefficient de détermination et significativité.
  Les tests du χ² d'ajustement et d'indépendance, avec des exercices.
  Ouvrir le cours →
- Une partie du cours est issue du travail de Dominique Barbolosi, mathématicien, Aix-Marseille Université.
+ Une partie du cours est issue du travail de Dominique Barbolosi , mathématicien, Aix-Marseille Université.
  Archivé et citable sur Zenodo, DOI 10.5281/zenodo.23620236
  Physique pour les études de santé : ondes électromagnétiques, rayons X et imagerie
  Première année des études de santé (PASS-PACES), bases physiques des explorations médicales · cours de 110 diapositives et 2 séances d'exercices corrigées · CC BY 4.0
@@ -2281,7 +2281,9 @@ La loi normale : centrage et réduction, table de l'écart réduit, intervalles.
 Les tests d'hypothèses : hypothèses nulle et alternative, risques, comparaison de moyennes.
 Corrélation de Pearson, régression linéaire, coefficient de détermination et significativité.
 Les tests du χ² d'ajustement et d'indépendance, avec des exercices.
-Une partie du cours est issue du travail de Dominique Barbolosi, mathématicien, Aix-Marseille Université.
+Une partie du cours est issue du travail de
+Dominique Barbolosi
+, mathématicien, Aix-Marseille Université.
 Archivé et citable sur Zenodo, DOI
 10.5281/zenodo.23620236
 

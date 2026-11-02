@@ -2413,7 +2413,8 @@
               "@type": "Person",
               "givenName": "Marie",
               "familyName": "Fusella Giuntini",
-              "name": "Marie Fusella Giuntini"
+              "name": "Marie Fusella Giuntini",
+              "sameAs": "https://orcid.org/0009-0002-2031-4077"
             },
             {
               "@type": "Person",
@@ -2433,7 +2434,8 @@
               "@type": "Person",
               "givenName": "Dominique",
               "familyName": "Barbolosi",
-              "name": "Dominique Barbolosi"
+              "name": "Dominique Barbolosi",
+              "sameAs": "https://www.idref.fr/033468540"
             }
           ]
         },
@@ -2449,7 +2451,8 @@
           "author": [
             {
               "@type": "Person",
-              "name": "Marie Fusella Giuntini"
+              "name": "Marie Fusella Giuntini",
+              "sameAs": "https://orcid.org/0009-0002-2031-4077"
             },
             {
               "@type": "Person",
@@ -2463,7 +2466,8 @@
             },
             {
               "@type": "Person",
-              "name": "Dominique Barbolosi"
+              "name": "Dominique Barbolosi",
+              "sameAs": "https://www.idref.fr/033468540"
             }
           ]
         }

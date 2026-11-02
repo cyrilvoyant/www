@@ -22,7 +22,7 @@
    "datePublished": "2026-10-24",
    "author": [
     {
-     "@id": "#marie-fusella-giuntini"
+     "@id": "https://orcid.org/0009-0002-2031-4077"
     },
     {
      "@id": "https://orcid.org/0000-0003-0242-7377"
@@ -75,7 +75,7 @@
    "programmingLanguage": "MATLAB",
    "author": [
     {
-     "@id": "#marie-fusella-giuntini"
+     "@id": "https://orcid.org/0009-0002-2031-4077"
     },
     {
      "@id": "https://orcid.org/0000-0003-0242-7377"
@@ -92,7 +92,7 @@
    }
   },
   {
-   "@id": "#marie-fusella-giuntini",
+   "@id": "https://orcid.org/0009-0002-2031-4077",
    "@type": "Person",
    "name": "Marie Fusella Giuntini"
   },
