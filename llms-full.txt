@@ -87,11 +87,11 @@ Recopier ou prendre la moyenne ? Tout dépend de la mémoire du signal
  Marche aléatoire, φ = 1
  La persistance gagne
  Persistance
- 0
+ ≈ 0
  Combinaison
- 0
+ ≈ 0
  Moyenne
- 100 ou plus
+ 100
  Entre les deux, φ = 0,5
  La combinaison gagne
  Persistance
@@ -108,16 +108,17 @@ Recopier ou prendre la moyenne ? Tout dépend de la mémoire du signal
  100
  Moyenne
  100
- Erreur quadratique théorique à un pas, la moyenne valant 100, pour un signal autorégressif d'ordre 1 (équations ci-dessous). À φ = 1, la variance n'est plus finie : la moyenne n'a plus de sens. Pas de mesures solaires ici.
+ Erreur quadratique théorique à un pas, la moyenne valant 100, pour un signal autorégressif d'ordre 1 (équations ci-dessous). À φ = 1, le signal s'éloigne sans fin de sa moyenne, dont l'erreur devient infiniment plus grande : le rapport tend vers 0. Pas de mesures solaires ici.
  Ce que cela veut dire
  La persistance recopie la dernière valeur. Elle est optimale si le signal n'oublie rien.
  La moyenne ignore le passé. Elle est optimale si le passé n'apporte rien.
  Un signal réel est presque toujours entre les deux. Le poids optimal de la dernière valeur est alors λ = φ h : l'erreur baisse sans aucun apprentissage complexe.
  Une erreur n'a donc de sens que comparée à ces références. C'est ce que mesure NICE face à la persistance, et ce que développent BLEND et CLIPER quand le signal suit un cycle, comme le solaire.
- Essayer · Les trois études · Articles et équipes
- JavaScript est nécessaire pour les curseurs et l’animation. Les explications et les sources de cette page restent accessibles. Le calcul
- Pour un signal stationnaire de variance 1, une prévision μ + λ(y t−h − μ) a pour erreur quadratique moyenne 1 − 2λφ h + λ². Persistance, λ = 1 : 2(1 − φ h ). Moyenne, λ = 0 : 1. Meilleur poids, λ = φ h : 1 − φ 2h . Persistance et moyenne se croisent à φ h = 1/2. Dans la simulation, μ et λ sont estimés sur les 1 000 premières valeurs et l'erreur est calculée sur les 1 000 suivantes.
- Trois études complémentaires, trois questions
+ Essayer · Le cas d'un cycle · Les trois études · Articles et équipes
+ Et si le signal a un cycle ?
+ Beaucoup de signaux réels se répètent : la journée solaire, la consommation d'électricité. Recopier la dernière valeur prend alors le mauvais moment du cycle. La bonne idée est de désaisonnaliser : retirer le cycle, prévoir ce qui reste, puis remettre le cycle. Plus l'amplitude a est grande, plus ce geste compte.
+ Pour aller plus loin : BLEND combine la dernière valeur et la valeur un cycle plus tôt, sans modèle de ciel clair, avec un poids pour chaque phase. L'article expliqué .
+ JavaScript est nécessaire pour les curseurs et l’animation. Les explications et les sources de cette page restent accessibles. Trois études complémentaires, trois questions
  2015, Peut-on diagnostiquer la difficulté avant de choisir le modèle de prévision ?
  En 2015, j’ai étudié cette question avec Ted Soubdhan, Philippe Lauret, Mathieu David et Marc Muselli. Notre article examine des paramètres statistiques pour anticiper l’erreur de prévision solaire. Le mean absolute log return (MALR), issu de l’économétrie, décrit l’amplitude des changements relatifs. Ce diagnostic empirique ne dispense pas de tester le modèle sur le site et à l’horizon visés. Article dans Energy (2015) .
  2025, Estimer une erreur attendue à partir de la variabilité
@@ -2021,11 +2022,11 @@ Copy the last value or take the mean? It depends on the signal's memory
  Random walk, φ = 1
  Persistence wins
  Persistence
- 0
+ ≈ 0
  Combination
- 0
+ ≈ 0
  Mean
- 100 or more
+ 100
  In between, φ = 0.5
  The combination wins
  Persistence
@@ -2042,16 +2043,17 @@ Copy the last value or take the mean? It depends on the signal's memory
  100
  Mean
  100
- Theoretical root mean squared error one step ahead, with the mean at 100, for a first-order autoregressive signal (equations below). At φ = 1 the variance is no longer finite: the mean no longer makes sense. No solar measurements here.
+ Theoretical root mean squared error one step ahead, with the mean at 100, for a first-order autoregressive signal (equations below). At φ = 1 the signal drifts away from its mean without bound, and the error of the mean becomes infinitely larger: the ratio tends to 0. No solar measurements here.
  What this means
  Persistence copies the last value. It is optimal if the signal forgets nothing.
  The mean ignores the past. It is optimal if the past adds nothing.
  A real signal is almost always in between. The best weight of the last value is then λ = φ h : the error falls with no complex learning.
  An error therefore only makes sense against these references. This is what NICE measures against persistence, and what BLEND and CLIPER develop when the signal follows a cycle, as solar does.
- Try it · The three studies · Papers and teams
- JavaScript is needed for the controls and animation. The explanations and sources on this page remain available. The calculation
- For a stationary signal of variance 1, a forecast μ + λ(y t−h − μ) has mean squared error 1 − 2λφ h + λ². Persistence, λ = 1: 2(1 − φ h ). Mean, λ = 0: 1. Best weight, λ = φ h : 1 − φ 2h . Persistence and the mean cross at φ h = 1/2. In the simulation, μ and λ are estimated on the first 1,000 values and the error is computed on the next 1,000.
- Three complementary studies, three questions
+ Try it · The case of a cycle · The three studies · Papers and teams
+ And if the signal has a cycle?
+ Many real signals repeat: the solar day, electricity demand. Copying the last value then picks the wrong moment of the cycle. The good idea is to deseasonalize : remove the cycle, forecast what is left, then put the cycle back. The larger the amplitude a, the more this matters.
+ To go further: BLEND combines the last value and the value one cycle earlier, with no clear-sky model and one weight for each phase. The paper explained .
+ JavaScript is needed for the controls and animation. The explanations and sources on this page remain available. Three complementary studies, three questions
  2015, Can we diagnose difficulty before choosing the forecaster?
  In 2015, I studied this question with Ted Soubdhan, Philippe Lauret, Mathieu David and Marc Muselli. Our paper examines statistical parameters for anticipating solar forecast error. Mean absolute log return (MALR), borrowed from econometrics, describes relative changes. This empirical diagnostic does not replace testing the model at the intended site and horizon. Paper in Energy (2015) .
  2025, Estimate expected error from variability

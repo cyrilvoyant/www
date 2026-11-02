@@ -3087,6 +3087,10 @@
           "anchor": null
         },
         {
+          "title": "Et si le signal a un cycle ?",
+          "anchor": "cycle"
+        },
+        {
           "title": "Trois études complémentaires, trois questions",
           "anchor": "trois-etudes"
         },
@@ -4155,6 +4159,10 @@
         {
           "title": "What this means",
           "anchor": null
+        },
+        {
+          "title": "And if the signal has a cycle?",
+          "anchor": "cycle"
         },
         {
           "title": "Three complementary studies, three questions",
