@@ -475,12 +475,12 @@
       "kind": "teaching",
       "interface_language": "both",
       "name": {
-        "fr": "Student : différence, p-value et intervalle de confiance",
-        "en": "Student: difference, p-value and confidence interval"
+        "fr": "Test de Student : deux traitements, t et p-value",
+        "en": "Student test: two treatments, t and p-value"
       },
       "task": {
-        "fr": "Visualiser les zones de rejet ; comparer un échantillon à une référence, des différences appariées ou deux groupes indépendants.",
-        "en": "Visualize rejection regions; compare one sample with a reference, paired differences or two independent groups."
+        "fr": "Comparer deux traitements avec le test classique à variance commune : écart, t, ddl et zones de rejet.",
+        "en": "Compare two treatments with the classic pooled t-test: difference, t, df and rejection regions."
       },
       "url": {
         "fr": "https://www.cyrilvoyant.com/fr/animations/test-student/",

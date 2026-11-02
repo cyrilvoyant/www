@@ -28,7 +28,7 @@
      "@id": "https://orcid.org/0000-0003-0242-7377"
     },
     {
-     "@id": "#david-taieb"
+     "@id": "https://orcid.org/0000-0002-0400-7600"
     },
     {
      "@id": "#dominique-barbolosi"
@@ -81,7 +81,7 @@
      "@id": "https://orcid.org/0000-0003-0242-7377"
     },
     {
-     "@id": "#david-taieb"
+     "@id": "https://orcid.org/0000-0002-0400-7600"
     },
     {
      "@id": "#dominique-barbolosi"
@@ -102,7 +102,7 @@
    "name": "Cyril Voyant"
   },
   {
-   "@id": "#david-taieb",
+   "@id": "https://orcid.org/0000-0002-0400-7600",
    "@type": "Person",
    "name": "David Taieb"
   },

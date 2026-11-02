@@ -4,9 +4,85 @@
 
 
 ---
+URL: https://www.cyrilvoyant.com/about/
+
+About
+ I am a physicist and Research Director at Mines Paris – PSL , within the Centre Observation, Impacts, Energy (O.I.E.), and Visiting Professor at the University of Kragujevac , Serbia. My work connects solar and photovoltaic forecasting, time series and frugal AI. My background also includes medical physics.
+ Background
+ I trained in fundamental physics, qualified as a medical physicist in 2003, and completed my PhD on solar radiation time series in 2011. I pursued energy research alongside clinical work as a medical physicist at Polyclinique Saint-Roch, Montpellier (2003–2006), then CHD Castelluccio, Ajaccio (2006–2024), before joining Mines Paris – PSL as Research Director in 2024. My appointments at the University of Corsica ended in 2024; since then I have taught there as a part-time lecturer (vacataire).
+ My experience in radiotherapy and measurement informs how I approach uncertainty, model evaluation and scientific software. Read my academic CV .
+ Photovoltaic installation on a coastal research platform in Corsica.
+ Radiotherapy linear accelerator and treatment-planning images, illustrating my medical physics background.
+ Current research
+ I study solar variability and forecastability , parsimonious time-series models and the evaluation of forecasts against meaningful baselines. Applications include joint energy-demand and generation forecasting, storage and microgrid operation. My medical-physics research addresses dose equivalence and modeling.
+ Recent first-author papers introduce the sCV and forecastability indices , develop BLEND forecasting , and examine tolerance-based validation with the γ-index .
+ Research themes and project portfolio · Implementation guides and code
+ Research projects
+ My current collaborative work includes Fine4Cast (2023–2028), the ELECTRE program, and the Mines Paris – PSL / University of Corsica / CNRS research agreement (2024–2027). These activities connect forecasting, AI and energy management.
+ Earlier work includes SAPHIR, HyLES, INTELPOLY and the TILOS island demonstrator. Explore the research themes and project portfolio .
+ Recognition and service
+ I serve as Editorial Board Member of Scientific Reports and on the Sustainability editorial board. I also contribute to research-proposal evaluation (Swiss National Science Foundation, Swiss Cancer Research, Kuwait Foundation for the Advancement of Sciences), doctoral supervision and the ETIP PV working group on Digital PV, Grid and Storage.
+ Selected distinctions include the PVSEC Award (Hamburg, 2009) and the City of Nice Prize (2012) . Appointments, service and career .
+ Professional networks: registered with the SciPinion expert network since 2026.
+ Publications, code & contact
+ Read my research Google Scholar · HAL · ORCID
+ Explore my code GitHub · methods and software · Zenodo · research record
+ Get in touch LinkedIn · cyril.voyant@minesparis.psl.eu
+ Read next
+ The approach : how a problem leads to a method, from direct computation to learning
+ Stories : each method told through a real question, in plain words
+ AI in research : the European AI Act, responsibility and a toolbox for laboratories
+ Models live in the data : qualify, certify and license data, with the example of Webservice-Energy
+ Cite and reuse : the license of each kind of work and how to cite it
+ News : publications, software and essays, filterable by year and theme
+ Collaborate : research projects, studies and adaptation of the tools
+ Methods and code : theory, worked examples and open code for every method
+ Contact
+ Cyril Voyant , Research Director (HDR, PhD), Mines Paris – PSL · Centre Observation, Impacts, Energy (O.I.E.), Campus Pierre Laffitte, 1 rue Claude Daunesse, CS 10207, F-06904 Sophia Antipolis Cedex, France
+ cyril.voyant@minesparis.psl.eu · (+33) 7 86 82 68 63 · LinkedIn · ResearchGate · Google Scholar · ORCID · HAL · GitHub · person.cyrilvoyant.com
+
+---
+URL: https://www.cyrilvoyant.com/fr/a-propos/
+
+À propos
+ Je suis physicien et directeur de recherche à Mines Paris – PSL , au centre Observation, Impacts, Énergie (O.I.E.), et professeur invité à l'université de Kragujevac , en Serbie. Mes travaux relient la prévision solaire et photovoltaïque, les séries temporelles et l'IA frugale. Mon parcours comprend aussi la physique médicale.
+ Parcours
+ J'ai suivi une formation en physique fondamentale, obtenu ma qualification de physicien médical en 2003 et soutenu en 2011 une thèse sur les séries temporelles du rayonnement solaire. J'ai mené la recherche en énergie en parallèle de mon activité clinique, comme physicien médical à la Polyclinique Saint-Roch de Montpellier (2003–2006) puis au CHD Castelluccio d'Ajaccio (2006–2024), avant de rejoindre Mines Paris – PSL comme directeur de recherche en 2024. Mes fonctions à l'université de Corse ont pris fin en 2024 ; j'y interviens depuis comme vacataire.
+ Mon expérience de la radiothérapie et de la mesure nourrit ma façon d'aborder l'incertitude, l'évaluation des modèles et les logiciels scientifiques. Lire mon CV académique (en anglais) .
+ Installation photovoltaïque sur une plateforme de recherche côtière en Corse.
+ Accélérateur linéaire de radiothérapie et images de planification de traitement, en écho à mon parcours en physique médicale.
+ Recherche actuelle
+ J'étudie la variabilité et la prévisibilité du rayonnement solaire , les modèles parcimonieux de séries temporelles et l'évaluation des prévisions par rapport à des références pertinentes. Les applications portent sur la prévision conjointe de la demande et de la production d'énergie, le stockage et le pilotage des micro-réseaux. Mes recherches en physique médicale portent sur l'équivalence de dose et la modélisation.
+ Des articles récents, dont je suis premier auteur, introduisent les indices sCV et de prévisibilité , développent la prévision BLEND et examinent la validation par tolérances avec l'indice γ .
+ Thèmes de recherche et portefeuille de projets (en anglais) · Guides de mise en œuvre et code (en anglais)
+ Projets de recherche
+ Mes travaux collaboratifs en cours comprennent Fine4Cast (2023–2028), le programme ELECTRE et la convention de recherche Mines Paris – PSL / université de Corse / CNRS (2024–2027). Ces activités relient la prévision, l'IA et la gestion de l'énergie.
+ Parmi les travaux antérieurs figurent SAPHIR, HyLES, INTELPOLY et le démonstrateur insulaire TILOS. Explorer les thèmes de recherche et le portefeuille de projets (en anglais) .
+ Distinctions et engagements
+ Je suis membre du comité éditorial (Editorial Board Member) de Scientific Reports et du comité éditorial de Sustainability . Je contribue aussi à l'évaluation de projets de recherche (Fonds national suisse de la recherche scientifique, Recherche suisse contre le cancer, Kuwait Foundation for the Advancement of Sciences), à l'encadrement doctoral et au groupe de travail de l'ETIP PV sur le PV numérique, le réseau et le stockage (Digital PV, Grid and Storage).
+ Parmi les distinctions : le PVSEC Award (Hambourg, 2009) et le prix de la Ville de Nice (2012) . Fonctions, engagements et carrière (CV en anglais) .
+ Réseaux professionnels : inscrit au réseau d'experts SciPinion depuis 2026.
+ Publications, code et contact
+ Lire mes recherches Google Scholar · HAL · ORCID
+ Explorer mon code GitHub · méthodes et logiciels (en anglais) · Zenodo · dossier de recherche
+ Me contacter LinkedIn · cyril.voyant@minesparis.psl.eu
+ À lire ensuite
+ La démarche : comment un problème mène à une méthode, du calcul direct à l'apprentissage
+ Récits : chaque méthode racontée à partir d'une vraie question, en mots simples
+ L'IA dans la recherche : l'AI Act européen, la responsabilité et une boîte à outils pour les laboratoires
+ Les modèles sont dans les données : qualifier, certifier et licencier les données, avec l'exemple de Webservice-Energy
+ Citer et réutiliser : la licence de chaque type de travail et la façon de le citer
+ Actualités : publications, logiciels et essais, à filtrer par année et par thème
+ Collaborer : projets de recherche, études et adaptation des outils
+ Méthodes et code (en anglais) : théorie, exemples détaillés et code ouvert pour chaque méthode
+ Contact
+ Cyril Voyant , directeur de recherche Mines Paris – PSL (HDR, Dr) · Centre Observation, Impacts, Énergie (O.I.E.), Campus Pierre Laffitte, 1 rue Claude Daunesse, CS 10207, F-06904 Sophia Antipolis Cedex
+ cyril.voyant@minesparis.psl.eu · (+33) 7 86 82 68 63 · LinkedIn · ResearchGate · Google Scholar · ORCID · HAL · GitHub · person.cyrilvoyant.com
+
+---
 URL: https://www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/
 
-Le modèle ne fait pas tout : variabilité, mémoire et prévisibilité
+Le modèle ne fait pas tout : variabilité, mémoire et prévisibilité
  Deux prévisions produites par le même algorithme peuvent avoir des erreurs différentes parce que le signal, l’horizon et l’information disponible diffèrent. Mon point de départ est donc le phénomène à prévoir. Décrire sa variabilité et sa mémoire aide à choisir une référence, à interpréter une erreur et à décider si davantage de complexité apporte quelque chose.
  Manipuler les séries · Relier les trois études · Comprendre le « no free lunch » · Articles et équipes
  1. Décrire le signal
@@ -17,17 +93,17 @@ Le modèle ne fait pas tout : variabilité, mémoire et prévisibilité
  Comparer sur les mêmes données de test, avec une référence explicite et des unités cohérentes.
  Un laboratoire pour séparer mémoire, bruit et choix du modèle
  Au lieu de simplement mélanger une courbe, on génère ici un signal à deux états avec une mémoire connue. On ajoute un bruit additif, un bruit multiplicatif ou les deux. La question devient mesurable : quelle information la régression apprend-elle, comment ses coefficients changent-ils, et quelle erreur attendue resterait même si l’on connaissait l’état courant du générateur ?
- Modèle, hypothèses et formules de l’expérience principale
+ JavaScript est nécessaire pour les curseurs et l’animation. Les explications et les sources de cette page restent accessibles. Modèle, hypothèses et formules de l’expérience principale
  Un état S t vaut −1 ou +1, avec probabilité de changer d’état q = (1−r)/2. Il démarre dans la distribution stationnaire équiprobable. Le signal latent est K t = μ + aS t , avec μ = 0,6. Pour a > 0, son autocorrélation exacte est r h . Le signal observé est Y t = K t (1 + βZ m,t ) + σ a Z a,t . Les deux Z sont indépendants entre eux, entre instants et de l’état, uniformes sur [−√3,+√3] : moyenne nulle, variance 1. Le bruit multiplicatif a une variance conditionnelle β²K² ; celle du bruit additif vaut σ a ². Les bornes des commandes garantissent Y > 0 sans écrêtage. Ce modèle pédagogique n’est pas un modèle météorologique validé.
  L’oracle connaît S à l’origine de prévision : ŷ oracle,t+h = μ + ar h S t . Son risque quadratique moyen exact dans ce générateur est R h = a²(1−r 2h ) + σ a ² + β²(μ²+a²) . Les trois termes décrivent transitions futures, bruit additif et bruit multiplicatif. √R h est une RMSE attendue, pas une limite que chaque échantillon fini doit respecter. L’oracle reçoit une information privilégiée : sa courbe n’est pas une prévision opérationnelle. Cette borne optimiste appartient à ce générateur ; ce n’est ni un résultat numérique des articles cités ni une borne physique du solaire.
  La régression à horizon h ajuste ŷ = A + BY t sur les seules paires de l’entraînement. En régime stationnaire, son coefficient linéaire optimal en population est B* = a²r h / [a² + σ a ² + β²(μ²+a²)] ; le bruit d’observation réduit ainsi la mémoire accessible à une simple régression. Les valeurs affichées A et B sont estimées, pas remplacées par cette formule. Entraînement : indices 0–599 ; test : 624–1199, avec tampon de 24 pas. Chaque origine précède sa cible d’exactement h pas et suit la fin de l’entraînement. Les modèles voient uniquement Y ; les diagnostics sCV/F utilisent toute la série a posteriori, avec I clr = 1, d = 0,2 et T = 24 conventionnel pour F.
  La MAE mesure la moyenne des erreurs absolues. La RMSE pénalise davantage les grandes erreurs ; nRMSE = 100 × RMSE / moyenne des observations test. NICE¹ et NICE² divisent respectivement MAE et RMSE par celles de la persistance simple au même horizon, sur les mêmes cibles. NICEΣ est la moyenne équipondérée des trois rapports L¹, L² et L³, selon le code NICE de référence . Une référence parfaite rend les rapports indéfinis. Méthode et article NICE .
  Trois études complémentaires, trois questions
- 2015, Peut-on diagnostiquer la difficulté avant de choisir le prévisionniste ?
+ 2015, Peut-on diagnostiquer la difficulté avant de choisir le modèle de prévision ?
  En 2015, j’ai étudié cette question avec Ted Soubdhan, Philippe Lauret, Mathieu David et Marc Muselli. Notre article examine des paramètres statistiques pour anticiper l’erreur de prévision solaire. Le mean absolute log return (MALR), issu de l’économétrie, décrit l’amplitude des changements relatifs. Ce diagnostic empirique ne dispense pas de tester le modèle sur le site et à l’horizon visés. Article dans Energy (2015) .
  2025, Estimer une erreur attendue à partir de la variabilité
  Avec Philippe Lauret, Mathieu David, Josselin Le Gal La Salle, Elke Lorenz et Richard Perez, j’ai étudié comment la variabilité horaire σ(Δk c ) renseigne sur la RMSE, au moyen de régressions calibrées sur 60 sites pour les horizons intra-journaliers et le jour suivant. Philippe Lauret est premier auteur ; je suis coauteur. Les intervalles à 95 % sont statistiques, pas des limites physiques universelles. Article dans Solar Energy (2025) .
- sCV et F, Quelle part vient de l’écart au ciel clair, quelle part de la mémoire ?
+ sCV et F, Quelle part vient de l’écart au ciel clair, quelle part de la mémoire ?
  La sCV normalise l’écart quadratique au ciel clair. Elle ne décrit pas à elle seule l’ordre temporel des valeurs. L’indicateur F ajoute la dépendance des résidus à des retards compatibles avec l’horizon. On peut ainsi avoir les mêmes valeurs et la même sCV, mais des structures temporelles et des performances de référence très différentes. Article Renewable Energy (2026) · Calculateur sCV/F · Code de référence .
  Annexe : mêmes valeurs, ordre temporel différent, avec les formules sCV/F
  Une expérience qui sépare amplitude et ordre temporel
@@ -36,7 +112,7 @@ Le modèle ne fait pas tout : variabilité, mémoire et prévisibilité
  Ici la référence est constante : I clr = 1 et k = I/I clr . Nous isolons ainsi l’ordre temporel ; le cycle du Soleil sera réintroduit lors d’une application réelle. Avec Δk t = k t − k t−1 , MALR = moyenne(|ln(k t /k t−1 )|) . Toutes les valeurs de cette expérience sont positives ; sur des données réelles, le traitement des zéros et des nuits doit être explicite. σ(Δk) et MALR sont sensibles aux voisins temporels : les mélanger les change.
  Dans l’expérience, sCV = √2/(1−d) × √moyenne[(k−1)²] , avec d = 0,2. La formule générale normalise par la valeur quadratique moyenne du ciel clair. Pour les résidus ε = I − I clr , F(h) = 1 + sCV[ρ max (h) − 1] , où ρ max est le maximum de |ρ(ℓ)| pour h ≤ ℓ ≤ T/2, ici T = 24. Les corrélations sont calculées sur les paires disponibles, comme dans le code MATLAB de référence. La normalisation sCV = 1 est une référence, pas un plafond à imposer par écrêtage à toute série.
  Pour chaque cible t de la moitié test : ŷ pers (t) = k(t−h) et ŷ moy (t) = moyenne(k 0:95 ) . Les RMSE utilisent exactement les mêmes 72 cibles, aux indices 120 à 191. Après l’entraînement (indices 0 à 95), une zone tampon de 24 pas garantit que la moyenne est déjà estimée avant chaque origine de prévision, même à horizon 12. La moyenne reste fixée ; aucune cible future ne sert à la réestimer. Les diagnostics sCV, F, MALR et σ(Δk), eux, décrivent ici toute la série a posteriori. Ce sont deux usages distincts des données.
- « No free lunch » : la structure du problème compte
+ « No free lunch » : la structure du problème compte
  Wolpert et Macready ont établi des théorèmes de « no free lunch » pour l’optimisation : sous une moyenne uniforme sur l’ensemble des fonctions d’un problème fini, les performances moyennes des algorithmes de recherche considérés coïncident. Ce cadre précis n’est pas la distribution des problèmes solaires réels. Il ne démontre ni que tous les modèles se valent sur un domaine donné, ni qu’un modèle simple gagne toujours. Texte de référence (1997) .
  Le rapprochement est méthodologique : les hypothèses d’un modèle doivent rencontrer la structure du problème. Une expérience de mélange n’est pas une preuve du théorème. Elle montre concrètement que le choix de référence et l’horizon changent ce que l’erreur raconte. À horizon 12, une anticorrélation peut être informative, alors que la persistance, qui recopie sans inverser, devient inadaptée.
  Le message pour une décision réelle
@@ -44,8 +120,8 @@ Le modèle ne fait pas tout : variabilité, mémoire et prévisibilité
  Cette démarche rejoint l’étude des neutrons atmosphériques : la simulation quantifie ce qu’un mécanisme peut apporter, avec ses limites. Pour le solaire, poursuivre avec NICE et la référence de persistance , BLEND , les cycles du Soleil et l’horodatage et le fil de mes recherches .
  Articles et équipes complètes
  Cyril Voyant , Milan Despotovic , Luis Garcia-Gutierrez , Rodrigo Amaro e Silva , Philippe Lauret , Ted Soubdhan , Nadjem Bailek . NICE k metrics: Unified and multidimensional framework for evaluating deterministic solar forecasting accuracy (2025).
- Cyril Voyant , Ted Soubdhan , Philippe Lauret , Mathieu David, Marc Muselli. Statistical parameters as a means to a priori assess the accuracy of solar forecasting models (2015).
- Philippe Lauret , Mathieu David, Josselin Le Gal La Salle, Elke Lorenz, Richard Perez, Cyril Voyant . A simple method for quickly estimating solar irradiance forecast errors (2025).
+ Cyril Voyant , Ted Soubdhan , Philippe Lauret , Mathieu David , Marc Muselli . Statistical parameters as a means to a priori assess the accuracy of solar forecasting models (2015).
+ Philippe Lauret , Mathieu David , Josselin Le Gal La Salle , Elke Lorenz , Richard Perez , Cyril Voyant . A simple method for quickly estimating solar irradiance forecast errors (2025).
  Cyril Voyant , Alan Julien , Milan Despotovic , Gilles Notton , Luis Antonio Garcia-Gutierrez , Claudio Francesco Nicolosi , Philippe Blanc , Jamie Bright . Stochastic coefficient of variation: Assessing the variability and forecastability of solar irradiance (2026).
  David H. Wolpert, William G. Macready. No Free Lunch Theorems for Optimization . IEEE Transactions on Evolutionary Computation, 1(1), 67–82 (1997).
  Essayer dans votre navigateur
@@ -67,6 +143,7 @@ Atmospheric neutrons and boron capture: how far can the idea go?
  Medical physics and solar forecasting share a method: start with the phenomenon, state geometry and assumptions, simulate, and check whether the order of magnitude meets the need. This question does not require AI. A model also helps recognize an insufficient approach and identify what remains to be demonstrated.
  An atmospheric cascade, then a cellular-scale reaction
  Galactic cosmic rays, mainly energetic protons and nuclei, generate secondary particles, including neutrons, in the atmosphere. Altitude, the geomagnetic field and particle spectra matter. Solar wind modulates incoming cosmic rays; it is distinct from solar energetic particle events. The galactic background is generally higher at solar minimum. This qualitative diagram is not a space-weather calculation.
+ JavaScript is needed for the controls and animation. The explanations and sources on this page remain available.
  The finding: a quantitative limit, not a validated flying hospital
  The paper’s reference case uses 12 km altitude, 45° latitude, a neutron flux of 14.7 cm⁻²·s⁻¹, 10 cm of water, a 0.5 cm skull layer and an approximately 1 g tumour with 20 µg of boron-10 per gram. A hybrid model combines Monte Carlo transport with analytical approximations. The estimated mean tumour dose is of the order of 1 µGy for one hour , insufficient for macroscopic therapeutic irradiation.
  At the reference concentration only, the tool illustrates D̄ ≈ 1 µGy × (t / 1 h) . A separate panel shows I = 100% × (t / 1 h) × (c₁₀B / 20 µg·g⁻¹) : a relative boron-interaction count index, normalized to 100% for one hour at 20 µg/g. It is neither a capture probability nor a total dose at a different concentration. Spectrum, geometry and mass stay fixed; the paper’s transport model is not rerun. Concentration refers to a numerical phantom, not an amount to administer to a person.
@@ -105,9 +182,9 @@ Atmospheric neutrons and boron capture: how far can the idea go?
 ---
 URL: https://www.cyrilvoyant.com/fr/recits/neutrons-atmospheriques-bnct/
 
-Des neutrons atmosphériques à la capture du bore : jusqu’où va l’idée ?
+Des neutrons atmosphériques à la capture du bore : jusqu’où va l’idée ?
  En 2011, nous avons posé une question inhabituelle : les neutrons présents à l’altitude des avions peuvent-ils déclencher des captures dans une tumeur enrichie en bore-10 ? Le mécanisme existe. Mais notre calcul trouve une dose moyenne trop faible pour traiter une tumeur macroscopique. L’intérêt de cette étude est de quantifier cette limite, avant de promettre une application.
- Avant l’expérience : trois notions clés
+ Avant l’expérience : trois notions clés
  BNCT signifie « thérapie par capture neutronique du bore » ( Boron Neutron Capture Therapy ). Le principe associe un composé qui transporte du bore-10 vers les tissus visés et des neutrons. Après capture d’un neutron par le bore-10, la réaction produit notamment une particule alpha et un noyau de lithium-7 ; ils déposent leur énergie sur quelques micromètres. La localisation dépend donc de la distribution du bore autant que du champ neutronique : les neutrons ne reconnaissent pas une tumeur par eux-mêmes. L’AIEA présente les principes et les composés de la BNCT .
  Dans notre article, BPA désigne la 4-borono-L-phénylalanine, un analogue d’acide aminé portant du bore ; BSH est le borocaptate de sodium, un composé en grappe constitué de 12 atomes de bore (Na₂B₁₂H₁₁SH). Ce sont deux vecteurs de bore étudiés dans l’article, pas des sources de neutrons. La façon dont chaque composé se distribue dans l’organisme est une question biologique distincte de la réaction nucléaire.
  Une section efficace σ(E) quantifie la propension d’un noyau à réagir avec un neutron d’énergie E. Elle s’exprime en unité de surface, souvent en barns, mais ne représente pas la taille géométrique du noyau et n’est pas à elle seule la probabilité qu’un neutron du vol soit capturé dans une tumeur. Cette probabilité dépend aussi du nombre de noyaux présents, du flux et du spectre en énergie des neutrons. La section Monte-Carlo explique comment passer de σ à une probabilité d’interaction dans un matériau.
@@ -116,32 +193,33 @@ Des neutrons atmosphériques à la capture du bore : jusqu’où va l’idée ?
  La physique médicale et la prévision solaire partagent ici une méthode : partir du phénomène, expliciter la géométrie et les hypothèses, simuler, puis vérifier si l’ordre de grandeur répond au besoin. L’IA n’est pas nécessaire pour poser cette question. Le modèle sert aussi à reconnaître une piste qui ne suffit pas, et à préciser ce qui resterait à démontrer.
  Une cascade dans l’atmosphère, puis une réaction à l’échelle cellulaire
  Les rayons cosmiques galactiques, principalement des protons et des noyaux énergétiques, produisent des particules secondaires en rencontrant l’atmosphère, dont des neutrons. Le champ magnétique terrestre, l’altitude et le spectre des particules comptent. Le vent solaire module l’arrivée des rayons cosmiques ; il ne faut pas le confondre avec les événements de particules solaires énergétiques. Le fond galactique est généralement plus élevé au minimum solaire. Le schéma ci-dessous est qualitatif : il ne calcule pas une météorologie de l’espace.
- Le résultat : une limite quantitative, pas un hôpital volant validé
+ JavaScript est nécessaire pour les curseurs et l’animation. Les explications et les sources de cette page restent accessibles.
+ Le résultat : une limite quantitative, pas un hôpital volant validé
  Dans le cas de référence de l’article : altitude 12 km, latitude 45°, flux neutronique de 14,7 cm⁻²·s⁻¹, couche d’eau de 10 cm, crâne de 0,5 cm et tumeur d’environ 1 g contenant 20 µg de bore-10 par gramme. Le modèle hybride associe transport Monte-Carlo et approximations analytiques. Il estime une dose tumorale moyenne de l’ordre de 1 µGy pour une heure . C’est insuffisant pour une irradiation thérapeutique macroscopique.
  Pour la concentration de référence uniquement, l’outil illustre D̄ ≈ 1 µGy × (t / 1 h) . Un autre panneau représente I = 100 % × (t / 1 h) × (c₁₀B / 20 µg·g⁻¹) : un indice relatif du nombre d’interactions sur le bore, normalisé à 100 % pour une heure à 20 µg/g. Il ne donne ni une probabilité de capture ni une dose totale à une autre concentration. Spectre, géométrie et masse restent fixés ; le transport de l’article n’est pas réexécuté. La concentration est celle d’un fantôme numérique, pas une quantité à administrer à une personne.
  Ce que l’étude apporte à la modélisation
  Le travail relie trois niveaux habituellement séparés : les réactions dans les molécules porteuses du bore, le transport à travers un modérateur et les tissus, puis les ordres de grandeur de dose. Sa seconde contribution est de remplacer certaines étapes coûteuses du transport par des expressions analytiques de transmission et de libre parcours moyen. L’article rapporte 42 secondes au lieu de 15 heures pour 6 000 neutrons , dans les conditions de calcul de l’époque. Ce n’est pas un benchmark de ce navigateur : c’est un exemple concret de simplification physique au service d’une question scientifique.
- Monte-Carlo : suivre beaucoup d’histoires de neutrons
+ Monte-Carlo : suivre beaucoup d’histoires de neutrons
  Une section efficace microscopique σ(E), exprimée en unités de surface, caractérise l’interaction d’un neutron d’énergie E avec un noyau. Dans un matériau, Σ = Σᵢ Nᵢσᵢ est la section macroscopique (inverse d’une longueur), où Nᵢ est la densité de noyaux de l’espèce i. Elle donne un libre parcours moyen 1/Σ. Un tirage uniforme U entre 0 et 1 permet, dans un milieu homogène, de tirer une distance ℓ = −ln(U)/Σ . Le code choisit ensuite le noyau et le canal à partir des sections efficaces, puis suit l’énergie et la direction après collision. Il répète ces histoires et additionne les dépôts d’énergie.
  Les résultats statistiques convergent avec le nombre d’histoires ; sous les hypothèses usuelles d’indépendance et de variance finie, l’erreur-type diminue comme 1/√N. Cela ne corrige pas une géométrie ou des données physiques inadéquates. Notre étude de 2011 associe ces tirages à des expressions analytiques ; l’animation du navigateur illustre le mécanisme, sans réexécuter ce transport.
  Los Alamos, ENDF/B et le code de l’article
- L’article indique avoir utilisé la bibliothèque ENDF/B , avec un accès alors référencé sur t2.lanl.gov , à Los Alamos. Ces évaluations fournissent les sections efficaces et les distributions des réactions. ENDF/B est produite par le groupe CSEWG et distribuée par le NNDC de Brookhaven ; elle ne doit pas être attribuée exclusivement à Los Alamos. Notre code était écrit en Visual Basic. Le papier cite MCNP comme exemple de code de transport utilisant ces évaluations ; cela ne signifie pas que notre simulation utilisait MCNP ni qu’il existait un partenariat institutionnel avec Los Alamos.
- Pourquoi le tableau affiche-t-il (n,p) ≈ 0 % ?
+ L’article indique avoir utilisé la bibliothèque ENDF/B , avec un accès alors référencé sur t2.lanl.gov , à Los Alamos. Ces évaluations fournissent les sections efficaces et les distributions des réactions. ENDF/B est produite par le groupe CSEWG et distribuée par le NNDC de Brookhaven ; elle ne doit pas être attribuée exclusivement à Los Alamos. Notre code était écrit en Visual Basic. L’article cite MCNP comme exemple de code de transport utilisant ces évaluations ; cela ne signifie pas que notre simulation utilisait MCNP ni qu’il existait un partenariat institutionnel avec Los Alamos.
+ Pourquoi le tableau affiche-t-il (n,p) ≈ 0 % ?
  Il s’agit du résultat arrondi de la comparaison neutron–molécule BSH/BPA dans le spectre étudié (tableau 2), pas d’une impossibilité physique. La méthode de l’article inclut les canaux (n,n), (n,γ), (n,p) et (n,α). Dans un tissu, la réaction ¹⁴N(n,p)¹⁴C constitue aussi une composante de la dose BNCT, distincte de la capture sur le bore, comme l’explique l’ AIEA, Advances in Boron Neutron Capture Therapy, tableau 7 . Ce panneau ne calcule pas ces différentes composantes de dose. Sur le dessin, les épaisseurs sont indiquées par les nombres ; la largeur de l’os est exagérée pour rester visible.
- BSH ou BPA : ce que la comparaison dit vraiment
+ BSH ou BPA : ce que la comparaison dit vraiment
  La BNCT (Boron Neutron Capture Therapy, thérapie par capture neutronique du bore) utilise des vecteurs du bore tels que le BSH et la BPA. Le tableau 2 compare les réactions lors de l’interaction neutron–molécule dans le spectre étudié : le canal (n,α) représente 94 % pour le BSH et 88 % pour la BPA. Ces distributions conditionnelles ne donnent ni la probabilité de capture de chaque neutron du vol, ni la sélectivité tumorale, ni un taux de succès clinique. À concentration de bore-10 identique, nous ne leur attribuons donc pas un multiplicateur de dose différent.
  Très local ne veut pas dire partout
  Après capture, ¹⁰B + n → ⁷Li + α : les particules chargées parcourent quelques micromètres (environ 4 µm pour le lithium et 8 µm pour l’alpha dans l’article). Le texte rapporte aussi une dose locale d’environ 0,5 Gy par impact à l’échelle cellulaire. Cette valeur conditionnelle ne signifie pas que chaque cellule reçoit cette dose. Le présent outil ne reproduit pas cette microdosimétrie : le volume de score et la fraction d’énergie déposée devraient être explicités pour la recalculer.
  La dose du vol est une autre grandeur
  Pour un cylindre simplifié de 56,5 kg, l’article trouve 4,37 µSv/h, comparés à une référence historique SIEVERT Paris–New York de 6,1 µSv/h : environ 28 % de moins, avec des périodes solaires et des approximations différentes. Cette comparaison d’ordre de grandeur n’est pas un calculateur de vol actuel. Le sievert (Sv) pondère l’exposition radiologique ; le gray (Gy) mesure l’énergie absorbée par unité de masse. Les deux panneaux ne se convertissent pas directement l’un dans l’autre.
- Faible dose moyenne, haut LET : pourquoi la question biologique reste intéressante
+ Faible dose moyenne, haut LET : pourquoi la question biologique reste intéressante
  La dose moyenne ne raconte pas toute la microdosimétrie. Le transfert linéique d’énergie (LET, linear energy transfer , énergie déposée par unité de longueur de trajet) des particules α et du lithium de recul est élevé : les ionisations sont denses et les lésions de l’ADN peuvent être complexes. Une capture peut donc avoir un effet important dans son voisinage immédiat. Mais le LET élevé ne crée pas de captures supplémentaires et ne garantit pas que toutes les cellules tumorales soient atteintes. Il faut tenir ensemble la qualité du dépôt et la rareté des événements.
- L’effet bystander : une réponse chez les cellules voisines
+ L’effet bystander : une réponse chez les cellules voisines
  Une cellule irradiée peut transmettre des signaux qui modifient la réponse de cellules voisines non directement traversées par les particules chargées. Cet effet bystander est biologique ; il ne prolonge pas physiquement la trajectoire α et ne crée pas de dose absorbée à distance. Des expériences de BNCT montrent des mutations chez des cellules voisines ( Kinashi et al., 2009 ). Dans une autre étude, le milieu provenant de cellules traitées favorisait la migration de cellules non irradiées, sans modifier leur prolifération dans les conditions rapportées ( Rodriguez et al., 2025 ). Une réponse bystander n’est donc pas automatiquement une destruction antitumorale.
- Le scénario à étudier : maladie résiduelle et récidives
+ Le scénario à étudier : maladie résiduelle et récidives
  L’hypothèse est celle d’une contribution adjuvante contre une maladie microscopique résiduelle, à évaluer pour son éventuel effet sur le risque de récidive. Elle prolonge la piste des micrométastases discutée dans notre article de 2011 : combiner des dépôts très localisés de haut LET avec d’éventuels effets de voisinage. Cela ne constitue ni une prévention des récidives démontrée ni un traitement validé d’une tumeur en place. Les expériences biologiques citées utilisent des irradiations et des conditions différentes de notre exposition atmosphérique ; elles ne démontrent pas un bénéfice à environ 1 µGy/h dans notre fantôme.
  La bonne question expérimentale devient : des captures aussi rares réduisent-elles réellement la capacité des cellules résiduelles à reformer une tumeur, avec un bilan favorable pour les tissus sains ? Des marqueurs de dommages ou des mutations ne suffisent pas à répondre. Il faudrait mesurer la survie clonogénique, la distribution du bore et, dans des modèles précliniques adaptés, le contrôle tumoral dans le temps et les toxicités. Les réponses immunitaires systémiques ou abscopales doivent être distinguées du bystander local.
- Hypoxie et cœur peu vascularisé : deux obstacles à distinguer
+ Hypoxie et cœur peu vascularisé : deux obstacles à distinguer
  L’ hypoxie désigne un manque d’oxygène ; l’ ischémie , une perfusion insuffisante. Les particules de haut LET dépendent moins de l’oxygénation pour produire leur effet biologique que les photons de faible LET ; cet avantage ne résout pas l’acheminement du bore. Un cœur peu perfusé peut recevoir moins de vecteur et présenter une distribution hétérogène. Sur des cellules de glioblastome, une hypoxie expérimentale a aussi diminué la captation de BPA et l’expression du transporteur LAT1 ( Wada et al., 2018 ).
  Il serait donc trop simple de conclure que le haut LET règle à lui seul le problème d’un cœur tumoral hypoxique ou peu vascularisé. Inversement, un foyer microscopique peut lui aussi être hypoxique ou avascularisé : sa petite taille ne garantit pas son accessibilité au bore. Le scénario adjuvant reste intéressant comme question de recherche, à condition de vérifier les captures, la microdistribution et les réponses biologiques au débit de dose réellement envisagé.
  Cadre radiobiologique : AIEA, Current Status of Neutron Capture Therapy, §6.6 . Le dessin de signalisation entre cellules est qualitatif : aucun nombre de cellules détruites, portée bystander ni pourcentage de récidives évitées n’est calculé. Cette page décrit une hypothèse de recherche et ne propose pas de protocole thérapeutique.
@@ -164,10 +242,10 @@ Research: questions, findings and methods
  Compute directly · Energy Simulate what you cannot yet measure: road tunnels
  One year at 10-minute resolution in about 150 ms, with its limits stated.
  Compute directly · Energy How forecastable is the sun?
- sCV and F describe a site before any model is fitted.
+ Two indices (sCV and F) describe a site before any model is fitted.
  Hybridize · Energy Better persistence, without training a neural network
  Symmetry-constrained forecasting: the structure of the signal written into the reference.
- Learn frugally · Energy Seven signals, one ELM
+ Learn frugally · Energy Seven signals, one frugal learner (ELM)
  One frugal learner forecasts the whole Corsican electricity mix.
  Learn frugally · Energy Satellite forecasting: one cell or the whole field?
  A per-cell ELM beats the same ELM reading the whole field, with a thousand times fewer parameters.
@@ -199,9 +277,9 @@ Research: questions, findings and methods
  Demonstrate trust · Research practice Research excellence in the age of AI: from SEO to GEO (in French)
  The RTVACOS framework: rigour, transparency, visibility, adoption.
  Data · trust · reuse Models live in the data: qualify, certify, license
- FAIR, metadata, data quality, open services and licences make results verifiable and reusable.
+ FAIR, metadata, data quality, open services and licenses make results verifiable and reusable.
  The same studies, by modeling step
- Every story follows the same plan: the finding, the question, the theory in plain words, where it sits on the complexity ladder, an example in figures, what it brings and its limits. Technical details and code are on the methods site.
+ Most stories follow the same plan: the finding, the question, the theory in plain words, where it sits on the complexity ladder, an example in figures, what it brings and its limits. Technical details and code are on the methods site.
  The thread orders them by the step of the method they illustrate:
  Compute directly · Hybridize · Learn frugally · AI in its place · Demonstrate trust
  For a shorter view: my research in 30 seconds , or the overview of research, software, courses and tools .
@@ -213,60 +291,60 @@ Research: questions, findings and methods
  When RMSE hides a difference Two models with the same rounded nRMSE are distinguished by persistence-relative evaluation.
  These research stories explain results from papers on which I am first author. Each page includes the question, evidence, interpretation, limitations and full collective attribution, in English and French.
  Solar forecasting, made simple
- Explore the ideas, methods and evidence, Prévision solaire : faire simple
+ Explore the ideas, methods and evidence, Prévision solaire : faire simple (in French)
  Forecastability, useful baselines, error evaluation and frugal models: a guided route through our published studies, open code and ongoing research, with full attribution.
 
 ---
 URL: https://www.cyrilvoyant.com/fr/recits/
 
-Recherche : questions, résultats et méthodes
+Recherche : questions, résultats et méthodes
  Le fil conducteur de mes recherches
  Mon travail relie la physique médicale et la prévision énergétique autour d’une même question : comment construire un modèle utile pour une décision réelle ? Je pars du système physique, des connaissances et des données disponibles. Quand la relation est connue, je la calcule ; lorsqu’elle est incomplète, je complète le modèle ; lorsque l’apprentissage est nécessaire, je mesure ce que sa complexité apporte. L’IA est un outil de cette démarche. La décision, l’évaluation et la responsabilité restent humaines.
  Choisissez d’abord votre sujet ci-dessous. Chaque étude mène à sa question, ses résultats, ses limites, son équipe et ses ressources techniques.
  Prévision solaire et énergétique
- Calculer directement · Énergie Le modèle ne fait pas tout : variabilité et mémoire
+ Calculer directement · Énergie Le modèle ne fait pas tout : variabilité et mémoire
  Ajouter du bruit, modifier la mémoire, comparer les modèles appris à la persistance et à un oracle propre au générateur.
- Calculer directement · Énergie Simuler ce que l'on ne peut pas encore mesurer : les tunnels routiers
+ Calculer directement · Énergie Simuler ce que l'on ne peut pas encore mesurer : les tunnels routiers
  Une année au pas de 10 minutes en 150 ms environ, limites énoncées.
- Calculer directement · Énergie Le ciel change, mais à quel point reste-t-il prévisible ?
- sCV et F décrivent un site avant d'ajuster le moindre modèle.
+ Calculer directement · Énergie Le ciel change, mais à quel point reste-t-il prévisible ?
+ Deux indices (sCV et F) décrivent un site avant d'ajuster le moindre modèle.
  Hybrider · Énergie Une meilleure persistance, sans entraîner un réseau neuronal
- Prévision sous contraintes de symétrie : la structure du signal inscrite dans la référence.
- Apprendre frugalement · Énergie Sept sorties, six ans de données : ce que montre MIMO-ELM
+ Prévision sous contraintes de symétrie : la structure du signal inscrite dans la référence.
+ Apprendre frugalement · Énergie Sept sorties, six ans de données : ce que montre MIMO-ELM
  Un apprentissage frugal prévoit tout le mix électrique corse.
- Apprendre frugalement · Énergie Prévision satellite : une maille ou tout le champ ?
+ Apprendre frugalement · Énergie Prévision satellite : une maille ou tout le champ ?
  Un ELM par maille bat le même ELM lisant tout le champ, avec mille fois moins de paramètres.
- Apprendre frugalement · Énergie Prévision solaire : modèles frugaux
+ Apprendre frugalement · Énergie Prévision solaire : modèles frugaux
  De combien de modèle une prévision a vraiment besoin avant d'être déployée.
- Apprendre frugalement · Énergie Prévision PV : réduire la dimension
+ Apprendre frugalement · Énergie Prévision PV : réduire la dimension
  Ne compresser l'entrée que si la compression sert la prévision.
- Démontrer la confiance · Énergie Même nRMSE, modèles différents : ce que révèle NICE
+ Démontrer la confiance · Énergie Même nRMSE, modèles différents : ce que révèle NICE
  NICE rapporte les erreurs d'un modèle à celles de la persistance.
- Démontrer la confiance · Énergie Une prévision décalée peut rester exploitable : le test gamma
+ Démontrer la confiance · Énergie Une prévision décalée peut rester exploitable : le test gamma
  Un test à tolérances venu de la radiothérapie.
  Physique médicale
- Calculer directement · Médecine Neutrons atmosphériques et BNCT : quantifier la limite
- Un modèle exploratoire de 2011 : captures rares, énergie locale et dose moyenne insuffisante pour une thérapie macroscopique.
- Calculer directement · Médecine Calculer plutôt qu'apprendre : l'équivalence de dose en radiothérapie
- Une fraction de 15 Gy au rectum : 72,7 Gy en LQ, 59,4 Gy en LQL.
- Hybrider · Médecine Cancer de la thyroïde et iode radioactif : le modèle d'abord
- Marie Fusella Giuntini et Dominique Barbolosi : trois équations, 50 patients, un jumeau hybride en cours.
+ Calculer directement · Médecine Neutrons atmosphériques et BNCT : quantifier la limite
+ Un modèle exploratoire de 2011 : captures rares, énergie locale et dose moyenne insuffisante pour une thérapie macroscopique.
+ Calculer directement · Médecine Calculer plutôt qu'apprendre : l'équivalence de dose en radiothérapie
+ Une fraction de 15 Gy au rectum : 72,7 Gy en LQ, 59,4 Gy en LQL.
+ Hybrider · Médecine Cancer de la thyroïde et iode radioactif : le modèle d'abord
+ Marie Fusella Giuntini et Dominique Barbolosi : trois équations, 50 patients, un jumeau hybride en cours.
  IA et interfaces scientifiques
  L'IA à sa place · Langage Au modèle de langage la lecture, au code validé le calcul
- Exécuter, clarifier ou refuser : jamais deviner.
+ Exécuter, clarifier ou refuser : jamais deviner.
  Pratiques et évaluation de la recherche
  Démontrer la confiance · Pratique de la recherche Se questionner sur nos façons de faire de la recherche
- Avec J. P. A. Ioannidis (Stanford), J. Baas et R. Boverhof (Elsevier) : l'influence sur une échelle de doublement, l'impact à côté de l'intégrité, l'excellence comme système.
- Démontrer la confiance · Pratique de la recherche L'IA dans la recherche : AI Act, charte et boîte à outils
- La recherche est exclue sous conditions, les transferts non : calendrier, responsabilités, et dix outils pour un laboratoire.
- Démontrer la confiance · Pratique de la recherche Visibilité académique : publier ne suffit plus (en anglais)
+ Avec J. P. A. Ioannidis (Stanford), J. Baas et R. Boverhof (Elsevier) : l'influence sur une échelle de doublement, l'impact à côté de l'intégrité, l'excellence comme système.
+ Démontrer la confiance · Pratique de la recherche L'IA dans la recherche : AI Act, charte et boîte à outils
+ La recherche est exclue sous conditions, les transferts non : calendrier, responsabilités, et dix outils pour un laboratoire.
+ Démontrer la confiance · Pratique de la recherche Visibilité académique : publier ne suffit plus
  Un écosystème saturé, et une boîte à outils pour une recherche trouvable.
- Démontrer la confiance · Pratique de la recherche Excellence scientifique à l'ère de l'IA : du SEO au GEO
- Le cadre RTVACOS : rigueur, transparence, visibilité, adoption.
- Données · confiance · réutilisation Les modèles sont dans les données : qualifier, certifier, licencier
+ Démontrer la confiance · Pratique de la recherche Excellence scientifique à l'ère de l'IA : du SEO au GEO
+ Le cadre RTVACOS : rigueur, transparence, visibilité, adoption.
+ Données · confiance · réutilisation Les modèles sont dans les données : qualifier, certifier, placer sous licence
  FAIR, métadonnées, qualité des mesures, services ouverts et choix d’une licence pour que les résultats soient vérifiables et réutilisables.
  Les mêmes études, par étape de modélisation
- Chaque récit suit le même plan : le constat, la question, la théorie en clair, la place sur l'échelle de la complexité, un exemple chiffré, les apports et les limites. Le détail technique et le code sont sur le site des méthodes.
+ La plupart des récits suivent le même plan : le constat, la question, la théorie en clair, la place sur l'échelle de la complexité, un exemple chiffré, les apports et les limites. Le détail technique et le code sont sur le site des méthodes.
  Le fil les classe selon l’étape de la méthode qu’elles illustrent :
  Calculer directement · Hybrider · Apprendre frugalement · L'IA à sa place · Démontrer la confiance
  Pour une vue plus courte : ma recherche en 30 secondes , ou la vue d’ensemble des recherches, logiciels, cours et outils .
@@ -278,8 +356,8 @@ Recherche : questions, résultats et méthodes
  Prévision satellite : une cellule, un voisinage ou tout le champ ? , protocole, résultats du dépôt public et code MATLAB/Python ; manuscrit en préparation, données HelioClim-3 fournies par SoDa.
  Variabilité solaire et prévisibilité : sCV et F , étude publiée, exemple pas à pas, figures et code MATLAB.
  NICE : comparer les erreurs à la persistance , méthode publiée et nouveau dépôt MATLAB documenté .
- Prévision solaire : trois dossiers complémentaires
- Ces pages gardent leurs adresses directes pour préserver les liens existants. Elles sont rassemblées ici dans le parcours Recherche, plutôt que laissées isolées.
+ Prévision solaire : trois dossiers complémentaires
+ Trois lectures complémentaires pour comprendre la prévision solaire.
  Prévision solaire : faire simple , choisir la démarche avant le modèle.
  Prévision PV : réduire la dimension , déterminer quelle information des entrées est utile.
  Prévision solaire : modèles frugaux , mesurer la capacité utile avant le déploiement.
@@ -288,17 +366,15 @@ Recherche : questions, résultats et méthodes
 URL: https://www.cyrilvoyant.com/tools/
 
 Scientific simulators, animations and calculators
- Scientific simulators, interactive animations, and course or research calculators, organized by field and interface language.
- Choose a scientific simulator, interactive animation or calculator. Change an input and examine what changes. Research calculators and medical applications are for research and education; their assumptions and limitations are stated in the linked pages.
- Languages: the seven technical calculators have French and English interfaces. ROC, normal distribution and attenuation also have both interfaces. All fourteen standalone physics, statistics and thermal experiments are bilingual; the source chapters and slides remain in French. The electromagnetic wave, Compton and Carnot heat-engine animations, as well as the forecast comparison, exist in French and English; dedicated applications retain their existing interfaces; filter by language before opening a tool.
+ Change a value and see what happens: 33 tools for courses and research.
  Find a tool Field Interface language
+ No tool matches.
+ Choose a scientific simulator, interactive animation or calculator. Change an input and examine what changes. Research calculators and medical applications are for research and education; their assumptions and limitations are stated in the linked pages.
+ Languages: most tools work in French and English. Three applications are in English only. Courses and slides are in French.
+ Energy
  Explorable demonstration · French and English
  Noise and memory: compare forecasts
  Adjust additive and multiplicative noise; compare regression, persistence, MAE, nRMSE and NICE with a generator-specific oracle.
- Open this tool →
- Explorable demonstration · French and English
- Atmospheric neutrons and boron: explore dose scales
- Follow a schematic cascade; distinguish flight exposure, tumour phantom dose and BSH/BPA distributions.
  Open this tool →
  Browser calculator · French and English
  Compare a forecast with persistence, NICE
@@ -324,22 +400,6 @@ Scientific simulators, animations and calculators
  Compare forecasts: persistence, AR and ELM against horizon
  Five models on public Palaiseau data, 30 min to 6 h: error against horizon, NICE, curves; computed by the PV_ELM_pred code.
  Open this tool →
- Browser calculator · French and English
- Compare LQ and LQL biological doses
- Choose parameters and vary dose per fraction. Research and education use.
- Open this tool →
- Browser calculator · French and English
- Explore thyroid model profiles
- Choose a profile and protocol; follow simulated thyroglobulin. Research and education use.
- Open this tool →
- Dedicated application · English interface
- Open the full LQL-Equiv application
- Dedicated dose-equivalence application; distinct from the small teaching calculator.
- Open this tool →
- Dedicated application · English interface
- Use a dialogue interface to scientific codes, WebSemantic
- Open the dedicated interface; missing inputs are requested according to the code contract.
- Open this tool →
  Server-backed application · English interface
  Simulate tunnel electricity demand, TLS
  Hosted application: synthetic demand from geometry, ventilation and lighting. The server may need to wake up.
@@ -356,6 +416,24 @@ Scientific simulators, animations and calculators
  Watch probabilistic forecasting and its lookup table
  Read ELM/persistence bands, PICP coverage and MIL width on three selected days.
  Open this tool →
+ Medical physics
+ Explorable demonstration · French and English
+ Atmospheric neutrons and boron: explore dose scales
+ Follow a schematic cascade; distinguish flight exposure, tumour phantom dose and BSH/BPA distributions.
+ Open this tool →
+ Browser calculator · French and English
+ Compare LQ and LQL biological doses
+ Choose parameters and vary dose per fraction. Research and education use.
+ Open this tool →
+ Browser calculator · French and English
+ Explore thyroid model profiles
+ Choose a profile and protocol; follow simulated thyroglobulin. Research and education use.
+ Open this tool →
+ Dedicated application · English interface
+ Open the full LQL-Equiv application
+ Dedicated dose-equivalence application; distinct from the small teaching calculator.
+ Open this tool →
+ Courses and statistics
  Course tool · French and English
  Understand sensitivity, specificity and ROC curves
  Change the threshold, distribution separation and prevalence in a teaching example.
@@ -384,21 +462,9 @@ Scientific simulators, animations and calculators
  Correlation and regression: move a point
  Move an outlier and watch r, the least-squares line and the p-value change.
  Open this tool →
- Reflection tree · French and English
- Prepare an RTVACOS action plan
- Explore a reflection framework on rigour, transparency, visibility and adoption; no excellence score.
- Open this tool →
- Reflection tree · French and English
- Explore AI responsibility provisions
- Explore the lab orientation questions; legal references and limitations still need to be read.
- Open this tool →
- Reflection tree · French and English
- Explore a licensing choice
- Follow an example decision tree, to be adapted to context and content rights.
- Open this tool →
  Course tool · French and English
- Student: difference, p-value and confidence interval
- Visualize rejection regions; compare one sample with a reference, paired differences or two independent groups.
+ Student test: two treatments, t and p-value
+ Compare two treatments with the classic pooled t-test: difference, t, df and rejection regions.
  Open this tool →
  Course tool · French and English
  Significance and R²: how much variation does the line explain?
@@ -424,27 +490,42 @@ Scientific simulators, animations and calculators
  Heat engine: energy balance and Carnot limit
  Change reservoir temperatures and read work, rejected heat and reservoir entropy.
  Open this tool →
+ Research practices
+ Dedicated application · English interface
+ Use a dialogue interface to scientific codes, WebSemantic
+ Open the dedicated interface; missing inputs are requested according to the code contract.
+ Open this tool →
+ Reflection tree · French and English
+ Prepare an RTVACOS action plan
+ Explore a reflection framework on rigour, transparency, visibility and adoption; no excellence score.
+ Open this tool →
+ Reflection tree · French and English
+ Explore AI responsibility provisions
+ Explore the lab orientation questions; legal references and limitations still need to be read.
+ Open this tool →
+ Reflection tree · French and English
+ Explore a licensing choice
+ Follow an example decision tree, to be adapted to context and content rights.
+ Open this tool →
  Technical guides, equations and code · Numerical checks of the seven calculators
 
 ---
 URL: https://www.cyrilvoyant.com/fr/outils/
 
 Simulateurs, animations et calculateurs scientifiques
- Simulateurs scientifiques, animations interactives et calculateurs de cours ou de recherche, classés par domaine et langue.
- Choisissez un simulateur scientifique, une animation interactive ou un calculateur. Modifiez une entrée et observez ce qui change. Les calculateurs de recherche et les applications médicales sont destinés à la recherche et à l’enseignement ; leurs hypothèses et limites figurent dans les pages liées.
- Langues : les sept calculateurs techniques ont des interfaces françaises et anglaises. ROC, loi normale et atténuation existent aussi dans les deux langues. Les quatorze expériences autonomes de physique, statistiques et thermique sont bilingues ; les chapitres et diapositives sources restent en français. Les animations onde électromagnétique, Compton et moteur de Carnot, ainsi que le comparateur de prévisions, existent en français et en anglais ; les applications dédiées conservent leur interface actuelle ; le filtre précise la langue avant ouverture.
+ Changez une valeur et observez : 33 outils pour le cours et la recherche.
  Rechercher un outil Domaine Langue de l’interface
+ Aucun outil trouvé.
+ Choisissez un simulateur scientifique, une animation interactive ou un calculateur. Modifiez une entrée et observez ce qui change. Les calculateurs de recherche et les applications médicales sont destinés à la recherche et à l’enseignement ; leurs hypothèses et limites figurent dans les pages liées.
+ Langues : la plupart des outils existent en français et en anglais. Trois applications sont en anglais seulement. Cours et diapositives sont en français.
+ Énergie
  Démonstration à explorer · Français et anglais
- Bruit et mémoire : comparer des prévisions
- Régler les bruits additif et multiplicatif ; comparer régression, persistance, MAE, nRMSE et NICE, avec un oracle propre au générateur.
- Ouvrir cet outil →
- Démonstration à explorer · Français et anglais
- Neutrons atmosphériques et bore : explorer les échelles de dose
- Suivre une cascade schématique ; distinguer exposition du vol, dose du fantôme tumoral et distributions BSH/BPA.
+ Bruit et mémoire : comparer des prévisions
+ Régler les bruits additif et multiplicatif ; comparer régression, persistance, MAE, nRMSE et NICE, avec un oracle propre au générateur.
  Ouvrir cet outil →
  Calculateur dans le navigateur · Français et anglais
  Comparer une prévision à la persistance, NICE
- Coller observations et prévisions ; choisir l’horizon ; lire les erreurs et les ratios NICE.
+ Coller observations et prévisions ; choisir l’horizon ; lire les erreurs et les ratios NICE.
  Ouvrir cet outil →
  Calculateur dans le navigateur · Français et anglais
  Calculer les poids de BLEND
@@ -460,11 +541,32 @@ Simulateurs, animations et calculateurs scientifiques
  Ouvrir cet outil →
  Calculateur dans le navigateur · Français et anglais
  Explorer les coefficients et la table ARTU
- Faire varier les autocorrélations et la qualité de mesure ; lire les coefficients.
+ Faire varier les autocorrélations et la qualité de mesure ; lire les coefficients.
  Ouvrir cet outil →
  Démonstration à explorer · Français et anglais
- Comparer des prévisions : persistance, AR et ELM selon l’horizon
- Cinq modèles sur les données publiques de Palaiseau, de 30 min à 6 h : erreur selon l’horizon, NICE, courbes ; calculs du code PV_ELM_pred.
+ Comparer des prévisions : persistance, AR et ELM selon l’horizon
+ Cinq modèles sur les données publiques de Palaiseau, de 30 min à 6 h : erreur selon l’horizon, NICE, courbes ; calculs du code PV_ELM_pred.
+ Ouvrir cet outil →
+ Application avec serveur · Interface en anglais
+ Simuler la demande électrique d’un tunnel, TLS
+ Application hébergée : demande synthétique selon géométrie, ventilation et éclairage. Démarrage du serveur parfois nécessaire.
+ Ouvrir cet outil →
+ Démonstration à explorer · Français et anglais
+ Le Soleil, les saisons et l’heure UTC
+ La Terre autour du Soleil, le jour et la nuit, la durée du jour à Paris et à Sydney, la double saisonnalité du rayonnement et l’horodatage des mesures en UTC.
+ Ouvrir cet outil →
+ Démonstration à explorer · Français et anglais
+ Prévision complexe : régler α et la largeur des intervalles
+ Une autorégression complexe prévoit l’éclairement et sa volatilité ; curseur α, multiplicateur μ gaussien ou calibré, résultats de l’article (2022).
+ Ouvrir cet outil →
+ Démonstration à explorer · Français et anglais
+ Observer la prévision probabiliste et sa lookup table
+ Lire les bandes ELM/persistance, la couverture PICP et la largeur MIL sur trois jours sélectionnés.
+ Ouvrir cet outil →
+ Physique médicale
+ Démonstration à explorer · Français et anglais
+ Neutrons atmosphériques et bore : explorer les échelles de dose
+ Suivre une cascade schématique ; distinguer exposition du vol, dose du fantôme tumoral et distributions BSH/BPA.
  Ouvrir cet outil →
  Calculateur dans le navigateur · Français et anglais
  Comparer les doses biologiques LQ et LQL
@@ -472,32 +574,13 @@ Simulateurs, animations et calculateurs scientifiques
  Ouvrir cet outil →
  Calculateur dans le navigateur · Français et anglais
  Explorer les profils du modèle thyroïde
- Choisir un profil et un protocole ; suivre la thyroglobuline simulée. Usage de recherche et d’enseignement.
+ Choisir un profil et un protocole ; suivre la thyroglobuline simulée. Usage de recherche et d’enseignement.
  Ouvrir cet outil →
  Application dédiée · Interface en anglais
  Ouvrir l’application LQL-Equiv complète
- Application dédiée d’équivalence de dose ; distincte du petit calculateur pédagogique.
+ Application dédiée d’équivalence de dose ; distincte du petit calculateur pédagogique.
  Ouvrir cet outil →
- Application dédiée · Interface en anglais
- Dialoguer avec des codes, WebSemantic
- Ouvrir l’interface dédiée ; les entrées manquantes sont demandées selon le contrat du code.
- Ouvrir cet outil →
- Application avec serveur · Interface en anglais
- Simuler la demande électrique d’un tunnel, TLS
- Application hébergée : demande synthétique selon géométrie, ventilation et éclairage. Démarrage du serveur parfois nécessaire.
- Ouvrir cet outil →
- Démonstration à explorer · Français et anglais
- Le Soleil, les saisons et l’heure UTC
- La Terre autour du Soleil, le jour et la nuit, la durée du jour à Paris et à Sydney, la double saisonnalité du rayonnement et l’horodatage des mesures en UTC.
- Ouvrir cet outil →
- Démonstration à explorer · Français et anglais
- Prévision complexe : régler α et la largeur des intervalles
- Une autorégression complexe prévoit l’éclairement et sa volatilité ; curseur α, multiplicateur μ gaussien ou calibré, résultats de l’article (2022).
- Ouvrir cet outil →
- Démonstration à explorer · Français et anglais
- Observer la prévision probabiliste et sa lookup table
- Lire les bandes ELM/persistance, la couverture PICP et la largeur MIL sur trois jours sélectionnés.
- Ouvrir cet outil →
+ Cours et statistiques
  Outil de cours · Français et anglais
  Comprendre sensibilité, spécificité et courbe ROC
  Changer le seuil, la séparation des distributions et la prévalence dans un exemple pédagogique.
@@ -508,63 +591,68 @@ Simulateurs, animations et calculateurs scientifiques
  Ouvrir cet outil →
  Outil de cours · Français et anglais
  Explorer l’atténuation et la CDA
- Faire varier l’épaisseur et la couche de demi-atténuation ; lire la fraction transmise.
+ Faire varier l’épaisseur et la couche de demi-atténuation ; lire la fraction transmise.
  Ouvrir cet outil →
  Outil de cours · Français et anglais
- Refroidir un aliment : Biot, température moyenne et à cœur
- Faire varier h, λ et la taille ; comparer le modèle à température uniforme et la température à cœur.
+ Refroidir un aliment : Biot, température moyenne et à cœur
+ Faire varier h, λ et la taille ; comparer le modèle à température uniforme et la température à cœur.
  Ouvrir cet outil →
  Outil de cours · Français et anglais
- Congeler : énergie et puissance frigorifique
+ Congeler : énergie et puissance frigorifique
  Décomposer l’énergie à extraire (sensible, latente, sensible) et calculer la puissance pour une durée donnée.
  Ouvrir cet outil →
  Outil de cours · Français et anglais
- Machine frigorifique : borne de Carnot du COP
- Faire varier les températures d’évaporation et de condensation ; voir pourquoi l’écart coûte cher.
+ Machine frigorifique : borne de Carnot du COP
+ Faire varier les températures d’évaporation et de condensation ; voir pourquoi l’écart coûte cher.
  Ouvrir cet outil →
  Outil de cours · Français et anglais
- Corrélation et régression : déplacer un point
+ Corrélation et régression : déplacer un point
  Déplacer un point aberrant et voir r, la droite des moindres carrés et la p-value changer.
+ Ouvrir cet outil →
+ Outil de cours · Français et anglais
+ Test de Student : deux traitements, t et p-value
+ Comparer deux traitements avec le test classique à variance commune : écart, t, ddl et zones de rejet.
+ Ouvrir cet outil →
+ Outil de cours · Français et anglais
+ Significativité et R² : quelle variation explique la droite ?
+ Faire varier r et n ; distinguer la p-value théorique et la variation expliquée dans un nuage pédagogique construit.
+ Ouvrir cet outil →
+ Outil de cours · Français et anglais
+ χ² : observés, attendus et contributions
+ Explorer un dé équilibré ou un tableau 2×2 ; visualiser les cellules qui pèsent et les faibles effectifs.
+ Ouvrir cet outil →
+ Outil de cours · Français et anglais
+ Régression : intervalle de confiance ou de prévision ?
+ Comparer les deux bandes, déplacer x₀ et reconnaître une extrapolation.
+ Ouvrir cet outil →
+ Outil de cours · Français et anglais
+ Onde EM animée : E, B et propagation
+ Fréquence, longueur d’onde et champs transversaux ; lecture ralentie avec pause et pas à pas.
+ Ouvrir cet outil →
+ Outil de cours · Français et anglais
+ Compton : angle et partage de l’énergie
+ Relier angle et énergie, suivre le photon diffusé et l’électron de recul ; modèle libre au repos.
+ Ouvrir cet outil →
+ Outil de cours · Français et anglais
+ Moteur ditherme : bilan et borne de Carnot
+ Modifier les deux températures et lire travail, chaleur rejetée et entropie des sources.
+ Ouvrir cet outil →
+ Pratiques de recherche
+ Application dédiée · Interface en anglais
+ Dialoguer avec des codes, WebSemantic
+ Ouvrir l’interface dédiée ; les entrées manquantes sont demandées selon le contrat du code.
  Ouvrir cet outil →
  Arbre de réflexion · Français et anglais
  Préparer un plan d’action RTVACOS
- Parcourir une grille de réflexion sur rigueur, transparence, visibilité et adoption ; aucun score d’excellence.
+ Parcourir une grille de réflexion sur rigueur, transparence, visibilité et adoption ; aucun score d’excellence.
  Ouvrir cet outil →
  Arbre de réflexion · Français et anglais
  S’orienter dans les responsabilités liées à l’IA
- Parcourir les questions d’orientation du laboratoire ; les références et limites juridiques restent à lire.
+ Parcourir les questions d’orientation du laboratoire ; les références et limites juridiques restent à lire.
  Ouvrir cet outil →
  Arbre de réflexion · Français et anglais
  Explorer un choix de licence
  Suivre un exemple d’arbre de décision, à adapter au contexte et aux droits sur les contenus.
- Ouvrir cet outil →
- Outil de cours · Français et anglais
- Student : différence, p-value et intervalle de confiance
- Visualiser les zones de rejet ; comparer un échantillon à une référence, des différences appariées ou deux groupes indépendants.
- Ouvrir cet outil →
- Outil de cours · Français et anglais
- Significativité et R² : quelle variation explique la droite ?
- Faire varier r et n ; distinguer la p-value théorique et la variation expliquée dans un nuage pédagogique construit.
- Ouvrir cet outil →
- Outil de cours · Français et anglais
- χ² : observés, attendus et contributions
- Explorer un dé équilibré ou un tableau 2×2 ; visualiser les cellules qui pèsent et les faibles effectifs.
- Ouvrir cet outil →
- Outil de cours · Français et anglais
- Régression : intervalle de confiance ou de prévision ?
- Comparer les deux bandes, déplacer x₀ et reconnaître une extrapolation.
- Ouvrir cet outil →
- Outil de cours · Français et anglais
- Onde EM animée : E, B et propagation
- Fréquence, longueur d’onde et champs transversaux ; lecture ralentie avec pause et pas à pas.
- Ouvrir cet outil →
- Outil de cours · Français et anglais
- Compton : angle et partage de l’énergie
- Relier angle et énergie, suivre le photon diffusé et l’électron de recul ; modèle libre au repos.
- Ouvrir cet outil →
- Outil de cours · Français et anglais
- Moteur ditherme : bilan et borne de Carnot
- Modifier les deux températures et lire travail, chaleur rejetée et entropie des sources.
  Ouvrir cet outil →
  Guides techniques, équations et codes (en anglais) · Contrôles numériques des sept calculateurs
 
@@ -574,7 +662,7 @@ URL: https://www.cyrilvoyant.com/overview/
 At a glance: research, software, courses and tools
  The public work of Cyril Voyant in medical physics and energy forecasting, courses and software included, each item linked to its source: paper, DOI, repository, team. Free to reuse, crediting the authors.
  Main ideas
- Understand before you compute Start from the human question, model the system, then choose the tool. Beat a simple reference Every forecast is first compared with persistence; a model that does not beat it adds nothing. Complexity must pay A frugal model (ELM, autoregression) first; heavier only if the gain is shown. Trust is demonstrated Public code, data, licences and verification; AI is a tool, declared. Research lines
+ Understand before you compute Start from the human question, model the system, then choose the tool. Beat a simple reference Every forecast is first compared with persistence; a model that does not beat it adds nothing. Complexity must pay A frugal model (ELM, autoregression) first; heavier only if the gain is shown. Trust is demonstrated Public code, data, licenses and verification; AI is a tool, declared. Research lines
  Solar and energy forecasting Persistence, BLEND, ELM, dimensionality reduction, the Corsican electricity mix.
  Evaluating forecasts NICE, γ-index, sCV and forecastability, prediction intervals.
  Medical physics Biologically equivalent doses (LQL-Equiv), radioiodine therapy of the thyroid.
@@ -586,15 +674,15 @@ At a glance: research, software, courses and tools
  The γ-index: tolerance-based validation of spatio-temporal forecast fields (MATLAB) Cyril Voyant · repository · MIT
  ARTU: second-order autoregressive reference method for solar radiation forecasting Cyril Voyant · repository · MIT
  BLEND and CLIPER: persistence operators for cyclostationary energy processes (MATLAB) Cyril Voyant , Candice Banes , Luis Garcia-Gutierrez , Gilles Notton , Milan Despotovic , Zaher Mundher Yaseen · repository · MIT
- Per-cell, spatial and compressed forecasters of satellite solar irradiance: benchmark code (MATLAB, Python) Cyril Voyant , Andreas Kazantzidis, Jan Kleissl · repository · MIT
+ Per-cell, spatial and compressed forecasters of satellite solar irradiance: benchmark code (MATLAB, Python) Cyril Voyant , Andreas Kazantzidis , Jan Kleissl · repository · MIT
  MIMO-ELM forecasting of the Corsican electricity mix (MATLAB, Python, EDF open data) Cyril Voyant , Yoan Jheelan · repository · GPL-3.0
  PV_ELM_pred: benchmark of persistence, BLEND, autoregression and ELM variants for PV forecasting (Python) Martin Leiva, Xavier Silvani , Gilles Notton , Cyril Voyant , Alan Julien · repository · MIT
- Make_Stationary: deseasonalization benchmark for renewable-energy time series (MATLAB) Maklewa Agoundedemba, Cyril Voyant , Milan Despotovic , Luis Antonio Garcia-Gutierrez , Gilles Notton · repository · GPL-3.0
- Filter and wrapper diagnostics of dimensionality reduction for endogenous PV power forecasting (MATLAB) Hassen Bouzgou, Gabriel Chesnoiu, Claudio F. Nicolosi, Adrien Chatel, Gilles Notton , Lionel Menard , Cyril Voyant · repository · MIT
- RAIR-Sim: compartmental simulator of radioactive iodine therapy response in metastatic thyroid cancer (MATLAB) Marie Fusella Giuntini, Cyril Voyant , David Taieb, Dominique Barbolosi · repository · MIT
+ Make_Stationary: deseasonalization benchmark for renewable-energy time series (MATLAB) Maklewa Agoundedemba , Cyril Voyant , Milan Despotovic , Luis Antonio Garcia-Gutierrez , Gilles Notton · repository · GPL-3.0
+ Filter and wrapper diagnostics of dimensionality reduction for endogenous PV power forecasting (MATLAB) Hassen Bouzgou , Gabriel Chesnoiu , Claudio F. Nicolosi , Adrien Chatel , Gilles Notton , Lionel Menard , Cyril Voyant · repository · MIT
+ RAIR-Sim: compartmental simulator of radioactive iodine therapy response in metastatic thyroid cancer (MATLAB) Marie Fusella Giuntini, Cyril Voyant , David Taieb , Dominique Barbolosi · repository · MIT
  Influence Index: a log-based measure of research influence for institutions (MATLAB, processed data) Cyril Voyant , Jeroen Baas , Roy Boverhof , Paolo Stringari , Mathilde Marchand-Lasserre, John P. A. Ioannidis · repository · MIT
  LQL-Equiv 2014: biologically equivalent dose calculation in radiotherapy (MATLAB application) Cyril Voyant , Daniel Julian · repository · MIT
- Tunnel Load Simulator: synthetic electricity demand of road tunnels (Python, Streamlit) Haytham El-Houari, Cyril Voyant · repository · MIT
+ Tunnel Load Simulator: synthetic electricity demand of road tunnels (Python, Streamlit) Haytham El-Houari , Cyril Voyant · repository · MIT
  LQL-Equiv-web 3.0: biologically equivalent doses in radiotherapy (Python, browser) Cyril Voyant , Daniel Julian · repository · MIT
  Open courses (CC BY 4.0)
  Forecasting the intermittent solar resource Mines Paris – PSL engineering curriculum, applied research project UE14 · 59 slides · English and French · CC BY 4.0
@@ -603,11 +691,11 @@ At a glance: research, software, courses and tools
  Industrial physics: thermodynamics, water vapor and refrigeration (in French) B.U.T. biological engineering, food science and biotechnology, 2nd year · 5 chapters, 139 slides and handouts · in French · CC BY 4.0
  Heat transfer for food engineering (in French) B.U.T. biological engineering, food science and biotechnology, 1st year · 24 slides · in French · CC BY 4.0
  Interactive tools
- Live probabilistic forecast: ELM against persistence
+ Probabilistic forecast, demonstration over three days: ELM against persistence
  ROC curve, normal law, attenuation (courses, in French)
  The RTVACOS tree
  Who is responsible? (AI Act)
- Which licence? The decision tree
+ Which license? The decision tree
  LQ and LQL doses
  Thyroid protocol explorer
  NICE calculator
@@ -633,7 +721,9 @@ Ma recherche en 30 secondes
  Pour commencer
  Recherche : résultats, limites, équipes et articles
  Démonstration : comparer persistance, AR et ELM
- Identité académique et CV (page en anglais)
+ CV (page en anglais)
+ Identité académique (page en anglais)
+ Travailler ensemble
  Cours de prévision solaire
  Guides techniques et code reproductible (anglais)
  Une même démarche traverse des domaines différents : comprendre avant de calculer, puis choisir l’outil adapté à la question.
@@ -647,8 +737,10 @@ My research in 30 seconds
  I start from the phenomenon, the human question and the decision to inform. If the relation is known, I compute it directly; if a model is incomplete, I complement it; if a relation is missing, I measure what learning adds against an explicit reference. I add complexity only when its benefit is demonstrated. AI is one tool among others; method, verification and responsibility remain central.
  Start here
  Research: findings, limitations, teams and papers
- Live demonstration: compare persistence, AR and ELM
- Academic identity and CV
+ Demonstration: compare persistence, AR and ELM
+ CV
+ Academic identity
+ Work together
  Solar forecasting course
  Technical guides and reproducible code
  One approach connects different fields: understand before you compute, then choose the tool that fits the question.
@@ -670,7 +762,7 @@ Understand before you compute: the approach of Cyril Voyant
  When the link is known, compute it. Radiobiological dose equivalence follows an explicit model, checked on 4,438 treatment schedules (LQL-Equiv). When no measurements exist, the electricity demand of a tunnel is simulated from what is known about it (Tunnel Load Simulator). Before forecasting the sun, describe how variable and how forecastable a site is (sCV and F).
  2. When the model falls short, hybridize
  This is the route Cyril Voyant prefers. When an explicit model meets the need well enough, no learning is added without reason. When it falls short, it is completed, not replaced: learning informed by physics, medicine or mathematics estimates only what the model does not capture.
- Thyroid cancer : a compartmental model by Marie Fusella Giuntini and Dominique Barbolosi , with Cyril Voyant and David Taieb, is the base of a hybrid digital twin now in progress ( Scientific Reports , 2026).
+ Thyroid cancer : a compartmental model by Marie Fusella Giuntini and Dominique Barbolosi , with Cyril Voyant and David Taieb , is the base of a hybrid digital twin now in progress ( Scientific Reports , 2026).
  Solar forecasting : hybrid forecasts combined a numerical weather model with ARMA and neural networks as early as 2012 ( Energy , 2012); cyclostationary references write the symmetry of the signal into the forecast ( Applied Mathematical Modelling , 2026).
  3. When relations are not known well enough, learn, only as far as it pays
  Persistence, then structured references (BLEND, CLIPER, ARTU), statistical models, frugal learning machines (ELM), and only then deep networks or foundation models. Each step is kept only if it beats the previous one under the same protocol.
@@ -687,7 +779,7 @@ Understand before you compute: the approach of Cyril Voyant
  Every tool, at the periphery : AI included, often in hybrid form.
  Trust is demonstrated : evaluation, open code, data and limits.
  Go further
- The reference page, with every source (for researchers and machines): https://cyrilvoyant.github.io/approach.html
+ The reference page, with every source (for researchers and machines): the reference page, on the technical site
  Methods and code , with full theory and runnable examples: https://cyrilvoyant.github.io/
  Author profile : person.cyrilvoyant.com · ORCID 0000-0003-0242-7377
 
@@ -721,7 +813,7 @@ Scientific publishing: no verification, no trust
  Reproduced A documented run recovers a result within a stated tolerance. Are the assumptions and method appropriate?
  Validated for a use Scientific criteria and a domain of application have been examined. What happens outside that domain?
  Connect practices without confusing their purposes
- FAIR supports discovery and reuse; licences define permissions; reproducibility lets others check a computation; the AI Act regulates specified AI uses. RTVACOS connects this work to research excellence. These frameworks complement rather than replace one another.
+ FAIR supports discovery and reuse; licenses define permissions; reproducibility lets others check a computation; the AI Act regulates specified AI uses. RTVACOS connects this work to research excellence. These frameworks complement rather than replace one another.
  The global picture: too many articles, too little verification
  Output that outruns researchers. Articles indexed in Scopus and Web of Science rose by about 47% from 2016 to 2022, faster than the number of scientists; part of the growth came from special issues with shortened review times [1] .
  A concentrated market. Five publishers published more than half of all papers as early as 2013 [2] ; the group that owns the largest reported an adjusted operating margin of 34.8% in 2025 [3] .
@@ -739,7 +831,7 @@ Scientific publishing: no verification, no trust
  France National Plan for Open Science [18] ; HAL; Software Heritage [19] Target of 100% open-access articles by 2030; open research source code; code archiving.
  These texts open access . Almost none asks anyone to check that a published result can be reproduced from its data and code.
  Who checks what? The actors, and what each mechanism is designed to cover
- Classic peer review FAIR and repositories Licences JOSS, SoftwareX CODECHECK ReScience C AI Act (AI systems) CoARA
+ Classic peer review FAIR and repositories Licenses JOSS, SoftwareX CODECHECK ReScience C AI Act (AI systems) CoARA
  Who checks? Reviewers and journal editor Repository and data curators No one: the author declares Software-journal reviewers An independent codechecker Another team, then reviewers The provider, often by self-assessment, under market-surveillance authorities Institutions that assess
  Text and reasoning ● · · ◐ · ◐ · ·
  Data (find, reuse) ◐ ● · · ◐ ◐ ● ·
@@ -762,7 +854,7 @@ Scientific publishing: no verification, no trust
  Declaring the tools used, AI included. Neither ban nor silence: a statement of what was used, for what, and what a human checked.
  Following the article after publication , as one monitors a deployed system: versions, errata, reports, links to corrected datasets.
  Recognizing editorial and review work in assessment, as CoARA proposes.
- Connecting the frameworks : code licences, FAIR data and the AI Act talk about the same thing, traceability, but do not cite each other.
+ Connecting the frameworks : code licenses, FAIR data and the AI Act talk about the same thing, traceability, but do not cite each other.
  This is not necessarily about more journals, but about changing what we ask of the existing ones. On this site, every study links to its code and data; the page AI in research shows how to declare tools, the page Data how to choose a license, the page Cite and reuse how to give credit.
  No verification, no trust
  An article no one can redo is a claim, not a result. The tools to check exist, AI included; what is missing is making them normal, and recognizing the people who do that work.
@@ -822,7 +914,7 @@ Scientific publishing: no verification, no trust
 URL: https://www.cyrilvoyant.com/ai-in-research/
 
 AI in research: the AI Act, a lab charter and a toolbox for researchers
- Step 5 of 5 · Demonstrate trust See it on the thread Judge against a reference, publish code, data and limits, make research findable and reusable. Principle 5: Trust is demonstrated.
+ Step 5 of 5 · Demonstrate trust See it on the thread Judge against a reference, publish code, data and limits, make research findable and reusable. Trust is demonstrated.
  Generative AI now writes code, drafts papers and reviews data in every laboratory. The European AI Act sets rules for what we build and what we transfer. Here is what changes for researchers, the timeline in Europe and in France, how the rest of the world compares, who is responsible when research code becomes a product, and a toolbox a lab can adopt in a few hours per project.
  Cyril Voyant , Mines Paris – PSL, Centre O.I.E. · status on 23 October 2026 · not legal advice: check with your institution's legal service
  In brief
@@ -886,7 +978,7 @@ AI in research: the AI Act, a lab charter and a toolbox for researchers
  JavaScript is needed for this orientation. What a lab can do: the example of the O.I.E. framework
  At the Centre O.I.E. (Mines Paris – PSL, about 30 people), a FAIR + AI framework has been drafted since 2025 and is being finalized, for deployment from 2027. Its main lines:
  A one-page charter signed by every member : generative AI allowed as an assistant for writing, code and figures, with explicit mention of its use; human review of everything it produces; minimal documentation ( data card , model card , versioned Git repository with README); every AI project in a register , reassessed when it moves from research to industry; a data management plan with six AI fields .
- Light roles, about 0.3 full-time equivalent in total : an AI compliance lead (register, regulatory watch, partners), a FAIR data steward (data management plans, data cards, licences, GDPR ) and an MLOps and quality referent (model cards, test plans, drift), plus an ethics committee of four people meeting each quarter for sensitive projects.
+ Light roles, about 0.3 full-time equivalent in total : an AI compliance lead (register, regulatory watch, partners), a FAIR data steward (data management plans, data cards, licenses, GDPR ) and an MLOps and quality referent (model cards, test plans, drift), plus an ethics committee of four people meeting each quarter for sensitive projects.
  Six steps per project (indicative durations): register (5 minutes); data management plan with AI fields (1 hour); data card and model card (2 hours); minimal test plan (2 to 3 hours); README with the AI-use statement (30 minutes); for a transfer, an audit-ready file (one day).
  Indicators : at least 95 % of projects documented, less than five days between project start and an enriched plan, partner satisfaction above 8/10.
  At the institution level, Mines Paris – PSL's legal service has built, with the research centers, a self-assessment decision tree : who is the actor and in which role, the essential questions, the impacts, the qualification of the AI system in the risk pyramid, the conditions of use and of making it available. Its purpose is to find the tipping point where a project enters the scope of the AI Act, and to adapt the contract and its technical annex in time. It is a good example of what an institution can offer its researchers.
@@ -997,7 +1089,7 @@ AI in research: the AI Act, a lab charter and a toolbox for researchers
  nRMSE and NICE on recent versus older data, with thresholds
  Anticipate loss of performance
  MLOps and quality referent
- Licences
+ Licenses
  Every dataset and code reused respects its license
  Legal compliance
  FAIR data steward
@@ -1012,7 +1104,7 @@ AI in research: the AI Act, a lab charter and a toolbox for researchers
  For a model in operation, a monitoring plan adds thresholds, for example: nRMSE checked monthly, alert above +0.05 and critical above +0.10, then analysis and retraining; data coverage checked weekly, alert below 95 %; more than three incidents a month triggers an urgent diagnosis.
  7. Add six fields to the data management plan . Legal basis; human oversight; AI transparency; conditions of reuse; international transfers; impact assessment ( DPIA where personal-data processing is likely to create a high risk to people, FRIA for some high-risk deployments).
  Example: the six AI fields of a data management plan
- Legal basis : for personal data, identify the applicable basis under Article 6 GDPR , and Article 9 conditions where relevant. Record copyright licences and reuse agreements separately; they do not replace a GDPR legal basis.
+ Legal basis : for personal data, identify the applicable basis under Article 6 GDPR , and Article 9 conditions where relevant. Record copyright licenses and reuse agreements separately; they do not replace a GDPR legal basis.
  Human oversight : who validates the results, when, at which level (in, on or outside the loop).
  AI transparency : whether content or code was generated with AI, and how it is stated.
  Conditions of reuse : free, under license, or reserved to a contract.
@@ -1040,7 +1132,7 @@ AI in research: the AI Act, a lab charter and a toolbox for researchers
  Project start; on any change of purpose
  9. Before any transfer, write the contract and prepare the file. Who becomes provider; license and intellectual property; warranties and liability; duty to report incidents; data transfers; the technical file (README, data card, model card, test plan and results, change log, monitoring plan).
  Example: content of an audit-ready file
- README with the use of generative AI and the licences of data and code;
+ README with the use of generative AI and the licenses of data and code;
  data card (origin, biases, legal basis, reuse) and model card (type, data, metrics, limits, human oversight, Git traceability);
  test plan and its results, validated by the supervisor;
  data management plan with the six AI fields;
@@ -1079,7 +1171,7 @@ AI in research: the AI Act, a lab charter and a toolbox for researchers
  This page summarizes public texts and the work of one laboratory; it is not legal advice. National laws, guidance and standards are still moving: dates are given as checked on 23 October 2026. For a real project, ask your institution's legal service.
  How to cite this page
  Voyant, C. (2026). AI in research: the AI Act, a lab charter and a toolbox for researchers , version 1.2, 24 October 2026. https://www.cyrilvoyant.com/ai-in-research/
- Versions: 1.0 (23 October 2026), first publication; 1.1 (23 October 2026), the two research exclusions (art. 2(6) and 2(8)) and the high-risk scope of Annex III, point 2 (safety components) stated precisely, durations marked as indicative. 1.2 (24 October 2026): qualitative DPIA/FRIA screening and separation of GDPR legal basis from reuse licences.
+ Versions: 1.0 (23 October 2026), first publication; 1.1 (23 October 2026), the two research exclusions (art. 2(6) and 2(8)) and the high-risk scope of Annex III, point 2 (safety components) stated precisely, durations marked as indicative. 1.2 (24 October 2026): qualitative DPIA/FRIA screening and separation of GDPR legal basis from reuse licenses.
  @misc{voyant2026airesearch,
  author = {Voyant, Cyril},
  title = {AI in research: the AI Act, a lab charter and a toolbox for researchers},
@@ -1118,14 +1210,14 @@ Models live in the data: qualify, certify, license
  In open formats and services (NetCDF-CF, OGC standards) rather than isolated files.
  Under an explicit license : without one, nobody knows what they may do.
  An example: Webservice-Energy
- Webservice-Energy is the spatial data infrastructure of the O.I.E. centre (Observation, Impacts, Energy) of Mines Paris – PSL , developed and operated for almost twenty years for energy, the environment and Earth observation, "FAIR by design". Its main architects are Lionel Ménard ( ORCID ) and Raphaël Jolivet (contact: lionel.menard@minesparis.psl.eu , raphael.jolivet@minesparis.psl.eu ).
+ Webservice-Energy is the spatial data infrastructure of the O.I.E. center (Observation, Impacts, Energy) of Mines Paris – PSL , developed and operated for almost twenty years for energy, the environment and Earth observation, "FAIR by design". Its main architects are Lionel Ménard ( ORCID ) and Raphaël Jolivet (contact: lionel.menard@minesparis.psl.eu , raphael.jolivet@minesparis.psl.eu ).
  Find : a metadata catalogue ( GeoNetwork , ISO 19115/19139, INSPIRE , OGC ) for data, services, publications and software.
  Access : a THREDDS server ( OPeNDAP , NetCDF Subset Service, WMS), OGC map services (WMS, WFS, WCS), remote processing (WPS) and a STAC catalog under development.
  Harmonize ground measurements : the open library libinsitu brings heterogeneous networks to the same NetCDF-CF format, with their quality control.
  Identify and license : DOIs assigned to datasets through DataCite , and a CC BY license.
  Connect : community portal of the Group on Earth Observations (GEO) , Copernicus data ( CAMS for the atmosphere, C3S for the climate), Horizon 2020 and Horizon Europe projects.
  Choosing a license for code and data
- After the reflection led at the O.I.E. center by Raphaël Jolivet . The usual practice is binary: close everything when commercial valorization is hoped for, open everything (CC BY, MIT, Apache, BSD) otherwise. It rests on an estimate made too early, and it limits the diffusion of the very work one wants to protect, while diffusion is often what creates opportunities. A middle way exists: non-commercial licences (CC BY-NC for data, PolyForm Noncommercial for code). They are not "open source" in the OSI sense, but they remain compatible with academic open access and reproducibility, and keep a future valorization possible.
+ After the reflection led at the O.I.E. center by Raphaël Jolivet . The usual practice is binary: close everything when commercial valorization is hoped for, open everything (CC BY, MIT, Apache, BSD) otherwise. It rests on an estimate made too early, and it limits the diffusion of the very work one wants to protect, while diffusion is often what creates opportunities. A middle way exists: non-commercial licenses (CC BY-NC for data, PolyForm Noncommercial for code). They are not "open source" in the OSI sense, but they remain compatible with academic open access and reproducibility, and keep a future valorization possible.
  The tree below is an example, nothing fixed : each research center adapts it to its contracts, its partners and its institution's policy.
  Which license? The decision tree
  First: the agreement of every rights holder.
@@ -1159,7 +1251,7 @@ Models live in the data: qualify, certify, license
  Apache 2.0
  Permissive like MIT, plus an explicit patent license from contributors and a duty to flag modified files.
  BSD
- A family of permissive licences close to MIT; the three-clause version also forbids using the authors' names to promote a derived product.
+ A family of permissive licenses close to MIT; the three-clause version also forbids using the authors' names to promote a derived product.
  GPL
  A copyleft license: any derived software that is distributed must be under the GPL, with its source code.
  PolyForm Noncommercial
@@ -1176,12 +1268,12 @@ Cite and reuse our work
  Work License How to cite
  Articles The journal's (often CC BY when open access) The full reference with every co-author and the DOI; the list is on the news page , ORCID and HAL .
  Software The repository's ( LICENSE file: MIT, BSD, GPL…) The repository's "all versions" Zenodo DOI, or GitHub's "Cite this repository" button ( CITATION.cff ), plus the associated article when there is one.
- Courses (solar forecasting, biostatistics, industrial physics) CC BY 4.0 (lectures and exercise sessions) Voyant, C. (year). Course title . Mines Paris – PSL, O.I.E. center. Page address.
+ Courses (the five open courses) CC BY 4.0 (lectures and exercise sessions) Voyant, C. (year). Course title . Mines Paris – PSL, O.I.E. center. Page address.
  Data The dataset's (for example CC BY on Webservice-Energy ) The dataset DOI and version, with its producers.
  Texts and figures of this site (stories, approach, AI page, data page) CC BY 4.0 Voyant, C. (2026). Page title . www.cyrilvoyant.com, page address, date accessed.
  An example
  Voyant, C. (2026). Solar forecasting course: forecasting the intermittent solar resource.
-Mines Paris – PSL, O.I.E. centre. Licence CC BY 4.0.
+Mines Paris – PSL, O.I.E. center. License CC BY 4.0.
 https://www.cyrilvoyant.com/teaching/solar-forecasting-course/ Team work
  Much of this work is collective: cite every author in the order of the publication . For the laboratory's infrastructures, such as Webservice-Energy ( Lionel Ménard ( ORCID ), Raphaël Jolivet ), cite the infrastructure, its authors and the O.I.E. center.
  Logos, trademarks and third-party content shown on some pages keep their own rights. A question: write .
@@ -1202,7 +1294,7 @@ Collaborate
  3 Explore a research direction together
  An academic collaboration to explore a research question together, compare approaches or open a new scientific direction. Each team’s objectives and contributions are defined from the outset, with a view to sharing or applying the work: a joint paper, open software, a dataset or transfer to practice.
  Collaborations that became results
- Medicine With Marie Fusella Giuntini, Dominique Barbolosi and David Taieb: three equations calibrated on 50 patients to explore radioiodine protocols before treating anyone ( Scientific Reports , 2026).
+ Medicine With Marie Fusella Giuntini, Dominique Barbolosi and David Taieb : three equations calibrated on 50 patients to explore radioiodine protocols before treating anyone ( Scientific Reports , 2026).
  Read the story →
  Research on research With John P. A. Ioannidis (Stanford University), Jeroen Baas and Roy Boverhof (Elsevier): a science-wide map of institutions, impact next to integrity ( Royal Society Open Science , 2026).
  Read the story →
@@ -1229,7 +1321,7 @@ Collaborate
 URL: https://www.cyrilvoyant.com/research-excellence-rtvacos/
 
 The RTVACOS tree: where can your work break?
- Research has an effect only if it is found, judged credible and reused. The RTVACOS framework describes this as a multiplicative system: four foundations, where a single weakness drags everything down, and three amplifiers, which scale a solid base but never replace it.
+ Research has an effect only if it is found, judged credible and reused. The RTVACOS framework describes this as a multiplicative system: four foundations, where a single weakness drags everything down, and three amplifiers (collaboration, outreach, societal relevance), which scale a solid base but never replace it.
  Tick what your project already does. Roots are foundations, branches are amplifiers. A bare root turns the whole tree pale: that is the multiplicative logic.
  R · Rigour (foundation) A simple reference to beat (persistence, climatology…) Separate training and test data, without leakage Limits and domain of validity written down T · Transparency (foundation) Public code, with a license Data or their access described, with a license Tool use declared, AI included V · Visibility (foundation) An ORCID and DOIs (article, code, data) A clear page: the result, the method, how to cite Machine-readable metadata (CITATION.cff, JSON-LD) A · Adoption (foundation) An example that runs in minutes Documentation for a user who is not the author Real user feedback taken into account C · Collaboration (amplifier) Co-authors who strengthen a foundation, not only the list Credited contributions (CRediT, ORCID) O · Outreach (amplifier) A summary for non-specialists A talk, a course or a video S · Societal relevance (amplifier) An identified user or decision A partner outside academia A mirror for reflection, not a scoring instrument: the authors claim no empirical validation and discuss limits themselves, such as the risk of gamification and the unequal distribution of skills.
  The framework
@@ -1259,7 +1351,7 @@ Compare forecasts: when is a more complex model worth it?
  "daytime" counts only the times when the sun is up; predictions are set to zero at night. Including night changes the evaluated population and normalization; state the scope alongside results.
  Protocol: public Palaiseau data (AC power, 30-minute steps, first two years); models trained on the first half, evaluated on the second; 24 hours of lags plus time of day and of year as inputs; forecasts set to zero at night. nRMSE and nMAE divide RMSE and MAE by the observed mean on the selected scope. The published PV_ELM_pred solvers are used, with lag scaling fitted on training rows only in this demonstration. The displayed persistence is night-masked, unlike the raw NICE reference: its day-and-night NICE may be below 1. One ELM setup (200 neurons, 8 draws, seed 42) is studied here, not a universal model ranking. A teaching calculation on public data, not the result of an article. For the uncertainty around a forecast, see complex-valued forecasting and the probabilistic animation .
  Software and protocol
- Martin Leiva, Xavier Silvani , Gilles Notton , Cyril Voyant , Alan Julien . PV_ELM_pred (Zenodo). Code and data : github.com/cyrilvoyant/PV_ELM_pred .
+ Martin Leiva, Xavier Silvani , Gilles Notton , Cyril Voyant , Alan Julien . PV_ELM_pred (Zenodo). Code and data: github.com/cyrilvoyant/PV_ELM_pred .
 
 ---
 URL: https://www.cyrilvoyant.com/complex-valued-forecasting/
@@ -1296,7 +1388,7 @@ URL: https://www.cyrilvoyant.com/tools/sun-seasons-utc/
 
 The Sun, the seasons and the clock: one time for every measurement
  On 21 June 2026, the day lasts 16 h 11 in Paris and 9 h 54 in Sydney. At the same instant, 12:00 UTC, it is 14:00 in Paris and 22:00 in Sydney. Solar irradiance follows two cycles at once, the day and the year, and these cycles do not fall at the same hour from one place to another: to compare and align measurements, one clock is needed, Coordinated Universal Time (UTC).
- Go to:
+ JavaScript is needed for the controls and animation. The explanations, glossary and method on this page remain available. Go to:
  1. The Earth around the Sun
  2. Why the tilt makes the seasons: longer days, higher Sun
  3. Day and night on Earth
@@ -1311,7 +1403,7 @@ The Sun, the seasons and the clock: one time for every measurement
  3. Day length
  The higher the latitude and the more the declination has the same sign, the larger the lit part of the parallel. On 21 June the day lasts 16 h 11 in Paris (sunrise 05:46, sunset 21:57, summer time) and 9 h 54 in Sydney; on 21 December, 8 h 15 in Paris and 14 h 25 in Sydney. In UTC, Sydney's day straddles two dates: on 21 June the Sun rises there on 20 June at 20:59 UTC. Below, the top scale is one single clock, UTC, shared by both cities: a UTC instant is the same everywhere (red line). Each band shows day (yellow), twilight (gray) and night (blue); under each band, the scale of the local clock shows that the same instant does not carry the same number in Paris and in Sydney.
  4. The double seasonality of irradiance
- Outside the atmosphere, on a horizontal plane, irradiance is G 0 = G sc ·E 0 ·cos θ z , with G sc = 1361 W/m², E 0 = 1 + 0.033·cos(2π n/365) and θ z the zenith angle. It carries two cycles: the daily cycle (rotation) and the yearly cycle (tilt), which modulates the height and length of the first. On the heat maps each column is a day and each row a UTC hour: the bright band of Paris is centred near 12 h UTC, that of Sydney near 2 h UTC, cut in two by UTC midnight; one widens in June, the other in December. Forecasting methods use this structure, for instance through the ratio to the clear-sky trend (clear-sky index) or cyclic persistences such as BLEND .
+ Outside the atmosphere, on a horizontal plane, irradiance is G 0 = G sc ·E 0 ·cos θ z , with G sc = 1361 W/m², E 0 = 1 + 0.033·cos(2π n/365) and θ z the zenith angle. It carries two cycles: the daily cycle (rotation) and the yearly cycle (tilt), which modulates the height and length of the first. On the heat maps each column is a day and each row a UTC hour: the bright band of Paris is centered near 12 h UTC, that of Sydney near 2 h UTC, cut in two by UTC midnight; one widens in June, the other in December. Forecasting methods use this structure, for instance through the ratio to the clear-sky trend (clear-sky index) or cyclic persistences such as BLEND .
  Outside the atmosphere, by date and UTC hour
  The chosen day: G0 against UTC hour
  The year: extraterrestrial energy per day
@@ -1345,6 +1437,7 @@ URL: https://www.cyrilvoyant.com/teaching/
 
 Teaching
  Five courses, open to all under CC BY 4.0, from health studies to energy. The same habit runs through them: start from the signal or the data, compare with a simple reference, measure what a model adds.
+ Health studies (PASS): biostatistics , then physics . B.U.T. in biological engineering: food heat transfer (1st year), then industrial physics (2nd year). Engineer or researcher in energy: solar forecasting .
  Open courses
  Most courses are in French; the English guide to the open courses describes each one, chapter by chapter.
  Forecasting the intermittent solar resource
@@ -1419,7 +1512,7 @@ Teaching
  Archived and citable on Zenodo, DOI 10.5281/zenodo.23621246
  Teaching and research supervision
  I supervise and co-supervise doctoral research on solar forecasting, satellite imagery, parsimonious models, energy-system control and radioiodine modeling. Previous doctoral work includes solar forecasting, air quality and solar-potential estimation.
- At Mines Paris–PSL, my teaching includes solar resource forecasting and academic tutoring of international internships and gap years (UE45). Earlier teaching spans biostatistics, thermodynamics, biophysics and numerical modeling at the University of Corsica.
+ At Mines Paris – PSL, my teaching includes solar resource forecasting and academic tutoring of international internships and gap years (UE45). Earlier teaching spans biostatistics, thermodynamics, biophysics and numerical modeling at the University of Corsica.
  Solar forecasting: the course starts from the signal
  Start from the signal: what is predictable in solar irradiance, and what is not. The figure shows why the course works on the difference from the clear-sky trend.
  See why: three days of measured irradiance and their difference from the clear-sky trend
@@ -1427,7 +1520,7 @@ Teaching
  The course page · Solar forecasting basics, with equations · BLEND · ARTU · Stochastic persistence
  Talks and teaching
  Research Excellence in 2026, watch my talk · YouTube channel Summary, references and associated preprint .
- Forecasting the intermittent solar resource, Mines Paris–PSL course UE14 A guided route through solar variability, statistical models, evaluation and frugal forecasting.
+ Forecasting the intermittent solar resource, Mines Paris – PSL course UE14 A guided route through solar variability, statistical models, evaluation and frugal forecasting.
  Academic profile · Methods and code · Google Scholar
 
 ---
@@ -1435,6 +1528,7 @@ URL: https://www.cyrilvoyant.com/fr/enseignement/
 
 Enseignement
  Cinq cours, en accès libre sous CC BY 4.0, des études de santé à l'énergie. Une même habitude les relie : partir du signal ou des données, comparer à une référence simple, mesurer ce qu'un modèle apporte.
+ Vous êtes en PASS : biostatistique , puis physique . En B.U.T. Génie biologique : thermique des aliments (1ʳᵉ année), puis physique industrielle (2ᵉ année). Ingénieur ou chercheur en énergie : prévision solaire .
  Les cours en accès libre
  Prévoir la ressource solaire intermittente
  Mines Paris – PSL, cycle ingénieur civil, projet de recherche appliquée UE14 · 59 diapositives · français et anglais · CC BY 4.0
@@ -1462,7 +1556,7 @@ Enseignement
  Ouvrir le cours →
  Une partie du cours est issue du travail de Dominique Barbolosi, mathématicien, Aix-Marseille Université.
  Archivé et citable sur Zenodo, DOI 10.5281/zenodo.23620236
- Physique pour les études de santé : ondes électromagnétiques, rayons X et imagerie
+ Physique pour les études de santé : ondes électromagnétiques, rayons X et imagerie
  Première année des études de santé (PASS-PACES), bases physiques des explorations médicales · cours de 110 diapositives et 2 séances d'exercices corrigées · CC BY 4.0
  Les bases physiques de l'imagerie médicale, de l'onde au scanner.
  La nature des ondes électromagnétiques : célérité, onde sinusoïdale, vecteur d'onde.
@@ -1477,7 +1571,7 @@ Enseignement
  Ouvrir le cours →
  Une partie du cours est issue du travail du professeur Pierre Peretti, Université Pierre-et-Marie-Curie (Paris), aujourd'hui retraité.
  Archivé et citable sur Zenodo, DOI 10.5281/zenodo.23620487
- Physique industrielle : thermodynamique, vapeur d'eau et production de froid
+ Physique industrielle : thermodynamique, vapeur d'eau et production de froid
  B.U.T. Génie biologique, Sciences de l'aliment et biotechnologie, 2ᵉ année · 5 chapitres, 139 diapositives et un polycopié · CC BY 4.0
  La thermodynamique d'un technicien de l'agroalimentaire, jusqu'au fonctionnement d'une machine frigorifique.
  Les grandeurs : pression, température, travail et chaleur ; chaleur sensible et chaleur latente.
@@ -1509,7 +1603,7 @@ Enseignement
  Enseignement et encadrement de la recherche
  J'encadre et je co-encadre des thèses sur la prévision solaire, l'imagerie satellite, les modèles parcimonieux, le pilotage des systèmes énergétiques et la modélisation de l'iode radioactif. Les thèses précédentes portaient sur la prévision solaire, la qualité de l'air et l'estimation du potentiel solaire.
  À Mines Paris – PSL, j'enseigne la prévision de la ressource solaire et j'assure le tutorat académique des stages et années de césure à l'international (UE45). Auparavant, à l'Université de Corse, j'ai enseigné les biostatistiques, la thermodynamique, la biophysique et la modélisation numérique.
- Prévision solaire : le cours part du signal
+ Prévision solaire : le cours part du signal
  Partir du signal : ce qui est prévisible dans l'éclairement solaire, et ce qui ne l'est pas. La figure montre pourquoi le cours travaille sur la différence à la tendance de ciel clair.
  Voir pourquoi : trois journées mesurées et leur différence à la tendance de ciel clair
  Du signal aux méthodes : trois journées à Ajaccio (2007), mesurées sous ciel clair, variable et couvert. En bas : différence à la tendance de ciel clair (notée CSI dans le support), et non rapport. Illustration pédagogique du cours UE14, distincte des résultats des articles. Source : cyrilvoyant.github.io/teaching/solar-forecasting-basics.html
@@ -1522,6 +1616,7 @@ URL: https://www.cyrilvoyant.com/teaching/open-courses/
 
 Open courses in French: biostatistics, medical physics, industrial physics and food heat transfer
  Courses I taught to first-year health students and to food-science technicians, published in full: every slide with its text, one at a time, the decks and handouts as PDF, exercise sessions with their corrections. They are in French; the slide viewer works for everyone, and the formulas speak for themselves.
+ The four courses
  First-year health studies (PASS, UE8) Biostatistics for health studies
  Probabilities and Bayesian reasoning, diagnostic tests (sensitivity, specificity, ROC curves), descriptive statistics, the normal distribution and hypothesis tests, correlation, linear regression and χ² tests, with medical examples.
  Probabilities, conditional probabilities, contingency tables and ROC curves
@@ -1552,7 +1647,7 @@ Open courses in French: biostatistics, medical physics, industrial physics and f
 URL: https://www.cyrilvoyant.com/stories/lql-equiv/
 
 Compute, don't learn: radiobiological dose equivalence with LQL-Equiv
- Step 1 of 5 · Compute directly See it on the thread When the link is known, compute it with an explicit model, calibrated and validated on data; learning is added only for a demonstrated benefit. Principle 2: The model at the core.
+ Step 1 of 5 · Compute directly See it on the thread When the link is known, compute it with an explicit model, calibrated and validated on data; learning is added only for a demonstrated benefit. The model at the core.
  When the link between a radiotherapy schedule and its biological effect is known, it is computed directly. No data and no artificial intelligence are needed: only a model we understand, checked case by case.
  Cyril Voyant , with Daniel Julian · Mines Paris – PSL, Centre O.I.E.
  In brief
@@ -1560,17 +1655,17 @@ Compute, don't learn: radiobiological dose equivalence with LQL-Equiv
  LQL-Equiv computes these equivalences directly from an explicit model. Its 2026 version reproduces the 2014 software on 4,438 treatment schedules (69,125 of 69,131 values agree, 99.991 %).
  It is a research and teaching tool, not a medical device .
  The finding
- The answer to "are these two schedules equivalent?" does not need to be learned from data: it follows from a radiobiological model whose parameters are documented. Computing it directly is exact, explainable and reproducible, and the choice of model matters: at high doses per fraction, LQ and LQL differ by tens of grays.
+ The answer to "are these two schedules equivalent?" does not need to be learned from data: it follows from a radiobiological model whose parameters are documented. Computing it directly is exact, explainable and reproducible, and the choice of model matters: at high doses per fraction, LQ and LQL differ by 13.3 Gy per fraction in the example on this page.
  The question
- Two treatments can deliver the same total dose very differently: 39 fractions of 2 Gy, or 5 fractions of 7 Gy. Are they equivalent for the tumour, and for the healthy organs around it? Radiotherapy answers with the biologically effective dose (BED) and its translation into a dose given in 2 Gy fractions ( EQD2 ).
+ Two treatments can look incomparable: 39 fractions of 2 Gy, a physical dose of 78 Gy, or 5 fractions of 7 Gy, a physical dose of 35 Gy. Physical dose, in grays, measures the energy deposited per kilogram of tissue. It is not enough to predict the biological effect, which also depends on the dose received at each fraction, so these two schedules cannot be compared by adding up grays. Are they equivalent for the tumour, and for the healthy organs around it? Radiotherapy answers with the biologically effective dose (BED) and its translation into a dose given in 2 Gy fractions ( EQD2 ).
  The theory, in plain words
  For n fractions of dose d , the linear-quadratic model gives
  BED = n · d · (1 + d / (α/β))
  where α/β describes how sensitive a tissue is to the size of each fraction (about 3.9 Gy for the rectum). The term d/(α/β) is why large fractions count for more than their dose. The equivalent dose in 2 Gy fractions is then EQD2 = BED / (1 + 2/(α/β)) .
  The LQ curve keeps bending upward as the dose per fraction grows, which overstates the effect of very large fractions. The LQL model keeps the LQ curve up to a transition dose d_T (7.8 Gy for the rectum) and continues it as a straight line beyond. LQL-Equiv also handles gaps, two fractions a day and tumour repopulation; the full equations are on the technical page.
  Where it sits on the complexity ladder
- Complexity ladder: LQL-Equiv stops at the first rung, direct calculation
- First rung: direct calculation . The link between inputs and outputs is known, so climbing further, to statistics or machine learning, would add data needs and uncertainty without adding anything. AI belongs in every toolbox, not in every solution.
+ Complexity ladder: LQL-Equiv stops at the first level, direct calculation
+ First level: direct calculation . The link between inputs and outputs is known, so climbing further, to statistics or machine learning, would add data needs and uncertainty without adding anything. AI belongs in every toolbox, not in every solution.
  The example in figures
  BED per fraction for the rectum, LQ and LQL
  One fraction of 15 Gy to the rectum:
@@ -1596,7 +1691,7 @@ Compute, don't learn: radiobiological dose equivalence with LQL-Equiv
 URL: https://www.cyrilvoyant.com/stories/questioning-research/
 
 Questioning how we do research: influence, integrity, excellence
- Step 5 of 5 · Demonstrate trust See it on the thread Judge against a reference, publish code, data and limits, make research findable and reusable. Principle 5: Trust is demonstrated.
+ Step 5 of 5 · Demonstrate trust See it on the thread Judge against a reference, publish code, data and limits, make research findable and reusable. Trust is demonstrated.
  Research in a changing world also has to examine its own methods. The same approach applies: compare with an explicit reference, look at what a single number hides, and state the limits.
  Who did what. The science-wide map of institutions: John P. A. Ioannidis (Meta-Research Innovation Center at Stanford, Stanford University), Jeroen Baas and Roy Boverhof (Elsevier, Amsterdam), with Cyril Voyant (Mines Paris – PSL, Centre O.I.E.). The Influence Index: Cyril Voyant , Jeroen Baas , Roy Boverhof , Paolo Stringari , Mathilde Marchand-Lasserre and John P. A. Ioannidis . The excellence framework: Cyril Voyant , Rodrigo Amaro e Silva , Nicolas Fichaux , Lionel Menard , Sylvain Cros and Rodanthi-Elisavet Mamouri .
  In brief
@@ -1630,7 +1725,7 @@ Questioning how we do research: influence, integrity, excellence
 URL: https://www.cyrilvoyant.com/stories/satellite-irradiance/
 
 Satellite irradiance forecasting: one cell, a patch or the whole field
- Step 3 of 5 · Learn frugally See it on the thread When the useful relations are not known well enough, evaluate what the data can teach, with only as much complexity as pays. Principle 3: Complexity only if it pays.
+ Step 3 of 5 · Learn frugally See it on the thread When the useful relations are not known well enough, evaluate what the data can teach, with only as much complexity as pays. Complexity only if it pays.
  A satellite sees the irradiance of a whole region every hour. It is tempting to give a forecaster the whole map. Holding the forecaster fixed and changing only what it reads shows how much of that map actually helps.
  Cyril Voyant (Mines Paris – PSL, Centre O.I.E.), with Andreas Kazantzidis (University of Patras) and Jan Kleissl (University of California San Diego) · manuscript in preparation, open code and data extract
  In brief
@@ -1665,7 +1760,7 @@ Satellite irradiance forecasting: one cell, a patch or the whole field
 URL: https://www.cyrilvoyant.com/stories/thyroid-radioiodine/
 
 Thyroid cancer and radioiodine: model first, learn only what is missing
- Step 2 of 5 · Hybridize See it on the thread When the model falls short, complete it: keep the model, learn only what is missing. Principle 2: The model at the core.
+ Step 2 of 5 · Hybridize See it on the thread When the model falls short, complete it: keep the model, learn only what is missing. The model at the core.
  How many sessions of radioactive iodine, how far apart, and at what activity? An intelligible model of three equations explores these questions before any patient is treated. Learning will be added only where the model is not enough.
  Marie Fusella Giuntini and Dominique Barbolosi , with Cyril Voyant and David Taieb
  In brief
@@ -1683,8 +1778,8 @@ Thyroid cancer and radioiodine: model first, learn only what is missing
  thyroglobulin is produced by the tumour cells and cleared by the body.
  The equations are solved session by session, so a whole protocol can be simulated in seconds. A short doubling time means a fast-growing tumour: that is what separates a refractory profile from a responding one.
  Where it sits on the complexity ladder
- Complexity ladder: the thyroid model stops at the second rung, simulation from what is known
- Second rung: simulation from a model we understand . The next step is a hybrid digital twin : keep the model, and let a learning method (a frugal extreme learning machine, for example) estimate only what the model does not capture. This is mathematics- and medicine-informed learning, not a black box replacing the model. No learning added where the model meets the need; learning, in hybrid form, where it helps.
+ Complexity ladder: the thyroid model stops at the second level, simulation from what is known
+ Second level: simulation from a model we understand . The next step is a hybrid digital twin : keep the model, and let a learning method (a frugal extreme learning machine, for example) estimate only what the model does not capture. This is mathematics- and medicine-informed learning, not a black box replacing the model. No learning added where the model meets the need; learning, in hybrid form, where it helps.
  The example in figures
  Thyroglobulin over 80 months for 1, 2, 4 and 8 sessions, refractory and responding profiles
  With the public demonstrator parameters, 3.7 GBq per session every 3 months:
@@ -1706,7 +1801,7 @@ Thyroid cancer and radioiodine: model first, learn only what is missing
 URL: https://www.cyrilvoyant.com/stories/tunnel-load-simulator/
 
 Simulate what you cannot yet measure: the electricity demand of road tunnels
- Step 1 of 5 · Compute directly See it on the thread When the link is known, compute it with an explicit model, calibrated and validated on data; learning is added only for a demonstrated benefit. Principle 2: The model at the core.
+ Step 1 of 5 · Compute directly See it on the thread When the link is known, compute it with an explicit model, calibrated and validated on data; learning is added only for a demonstrated benefit. The model at the core.
  A tunnel's operator rarely has detailed load measurements, especially at the design stage. The Tunnel Load Simulator builds the demand from what is known about the tunnel, says how uncertain it is, and states its limits.
  Haytham El-Houari and Cyril Voyant · SmartTunnel project, Université Sidi Mohamed Ben Abdellah (Fès) and Mines Paris – PSL
  In brief
@@ -1725,8 +1820,8 @@ Simulate what you cannot yet measure: the electricity demand of road tunnels
  ventilation , which follows traffic with its morning and evening peaks, and increases with slope and altitude. It jumps during random pollution episodes and accidents .
  Each year is simulated many times with different random draws ( Monte Carlo ). The result is a median and a P10–P90 band, rather than a single curve.
  Where it sits on the complexity ladder
- Complexity ladder: the simulator stops at the second rung, simulation from what is known
- Second rung: simulation from what is known . Without local measurements, nothing can be calibrated or validated for this tunnel, and nothing is pretended: the parameters are engineering orders of magnitude, shown and adjustable.
+ Complexity ladder: the simulator stops at the second level, simulation from what is known
+ Second level: simulation from what is known . Without local measurements, nothing can be calibrated or validated for this tunnel, and nothing is pretended: the parameters are engineering orders of magnitude, shown and adjustable.
  The example in figures
  One weekday: fixed base, auxiliaries, lighting and ventilation stacked
  On a January weekday, ventilation carries the two traffic peaks; lighting rises at night and at the edges of the day.
@@ -1760,7 +1855,7 @@ The model is not the whole story: variability, memory and forecastability
  Compare on identical test targets, with an explicit reference and consistent units.
  A laboratory separating memory, noise and model choice
  Rather than only shuffling a curve, generate a two-state signal with known memory. Add additive noise, multiplicative noise or both. Ask what the regression learns, how its coefficients change and what expected error would remain even with knowledge of the generator’s current state.
- Main experiment: model, assumptions and equations
+ JavaScript is needed for the controls and animation. The explanations and sources on this page remain available. Main experiment: model, assumptions and equations
  S t is −1 or +1 with switching probability q = (1−r)/2, initialized in its equiprobable stationary distribution. The latent signal is K t = μ + aS t , μ = 0.6, with exact autocorrelation r h when a > 0. Observations are Y t = K t (1 + βZ m,t ) + σ a Z a,t . The Z draws are independent of each other, across times and of the state, uniform on [−√3,+√3], with zero mean and unit variance. Multiplicative noise has conditional variance β²K², additive noise σ a ². Control ranges guarantee positive observations without clipping. This teaching generator is not a validated weather model.
  The oracle knows the state at forecast origin: ŷ oracle,t+h = μ + ar h S t . Its exact expected squared risk is R h = a²(1−r 2h ) + σ a ² + β²(μ²+a²) , separating future transitions, additive noise and multiplicative noise. √R h is an expected RMSE, not a threshold every finite sample must respect. The oracle has privileged information; it is not an operational forecast. This optimistic bound is specific to the generator, neither a numerical result of the cited papers nor a physical solar limit.
  The h-step regression fits ŷ = A + BY t on training pairs only. Its stationary population-optimal linear slope is B* = a²r h / [a² + σ a ² + β²(μ²+a²)] . Observation noise thus reduces memory accessible to a simple regression. Displayed A and B are fitted, not substituted from this formula. Training uses indices 0–599; common test targets 624–1199 follow a 24-step buffer. Every forecast origin is exactly h steps before its target and after training. Models see only Y. sCV/F are retrospective diagnostics using the whole series, I clr = 1, d = 0.2 and conventional T = 24 for F.
@@ -1787,8 +1882,8 @@ The model is not the whole story: variability, memory and forecastability
  This connects to the atmospheric neutron study : simulation quantifies what a mechanism can offer, within its limits. Continue with NICE and persistence as a reference , BLEND , solar cycles and timestamps and the research thread .
  Papers and complete author teams
  Cyril Voyant , Milan Despotovic , Luis Garcia-Gutierrez , Rodrigo Amaro e Silva , Philippe Lauret , Ted Soubdhan , Nadjem Bailek . NICE k metrics: Unified and multidimensional framework for evaluating deterministic solar forecasting accuracy (2025).
- Cyril Voyant , Ted Soubdhan , Philippe Lauret , Mathieu David, Marc Muselli. Statistical parameters as a means to a priori assess the accuracy of solar forecasting models (2015).
- Philippe Lauret , Mathieu David, Josselin Le Gal La Salle, Elke Lorenz, Richard Perez, Cyril Voyant . A simple method for quickly estimating solar irradiance forecast errors (2025).
+ Cyril Voyant , Ted Soubdhan , Philippe Lauret , Mathieu David , Marc Muselli . Statistical parameters as a means to a priori assess the accuracy of solar forecasting models (2015).
+ Philippe Lauret , Mathieu David , Josselin Le Gal La Salle , Elke Lorenz , Richard Perez , Cyril Voyant . A simple method for quickly estimating solar irradiance forecast errors (2025).
  Cyril Voyant , Alan Julien , Milan Despotovic , Gilles Notton , Luis Antonio Garcia-Gutierrez , Claudio Francesco Nicolosi , Philippe Blanc , Jamie Bright . Stochastic coefficient of variation: Assessing the variability and forecastability of solar irradiance (2026).
  David H. Wolpert, William G. Macready. No Free Lunch Theorems for Optimization . IEEE Transactions on Evolutionary Computation, 1(1), 67–82 (1997).
 
@@ -1796,7 +1891,7 @@ The model is not the whole story: variability, memory and forecastability
 URL: https://www.cyrilvoyant.com/stories/websemantic/
 
 Let the language model read, let the validated code compute: WebSemantic
- Step 4 of 5 · AI in its place See it on the thread Language models help people use validated tools; the calculation, the checking and the responsibility stay with validated codes and people. Principle 4: Every tool, at the periphery.
+ Step 4 of 5 · AI in its place See it on the thread Language models help people use validated tools; the calculation, the checking and the responsibility stay with validated codes and people. Every tool, at the periphery.
  Language models are good at understanding a request written in plain words. They are not a substitute for a validated scientific code. WebSemantic gives each one its role, and asks the person whenever something is missing.
  Cyril Voyant · Mines Paris – PSL, Centre O.I.E.
  In brief
@@ -1835,7 +1930,7 @@ Let the language model read, let the validated code compute: WebSemantic
 ---
 URL: https://www.cyrilvoyant.com/fr/animations/attenuation-demi-epaisseur/
 
-Atténuation et couche de demi-atténuation : simulation interactive
+Atténuation et couche de demi-atténuation : simulation interactive
  Combien de rayonnement reste-t-il après plusieurs couches de demi-atténuation ?
  Une expérience du cours de Cyril Voyant, à manipuler dans le navigateur. Revenir au chapitre et aux diapositives · Choisir une autre expérience .
  JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. La relation à comprendre
@@ -1850,7 +1945,7 @@ Atténuation et couche de demi-atténuation : simulation interactive
 ---
 URL: https://www.cyrilvoyant.com/fr/animations/congelation-energie-puissance/
 
-Congélation : énergie sensible, chaleur latente et puissance
+Congélation : énergie sensible, chaleur latente et puissance
  Pourquoi faut-il plus que mcΔT pour dimensionner une congélation ?
  Une expérience du cours de Cyril Voyant, à manipuler dans le navigateur. Revenir au chapitre et aux diapositives · Choisir une autre expérience .
  JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. La relation à comprendre
@@ -1865,13 +1960,13 @@ Congélation : énergie sensible, chaleur latente et puissance
 ---
 URL: https://www.cyrilvoyant.com/fr/animations/cop-carnot-machine-frigorifique/
 
-Machine frigorifique : COP et limite de Carnot
+Machine frigorifique : COP et limite de Carnot
  Pourquoi l’écart de température pénalise-t-il la production de froid ?
  Une expérience du cours de Cyril Voyant, à manipuler dans le navigateur. Revenir au chapitre et aux diapositives · Choisir une autre expérience .
  JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. La relation à comprendre
  COPCarnot=Tf/(Tc−Tf), avec Tf et Tc en kelvins ; COP frigorifique=chaleur utile extraite/travail reçu.
  Essayer et interpréter
- Source froide à −10 °C et source chaude à +40 °C : COP maximal = 263,15/(313,15−263,15) ≈ 5,26. Avec des sources à −40 °C et +10 °C, il vaut 233,15/50 ≈ 4,66. La plage −40 à +10 °C de l’axe concerne seulement le réglage du côté froid. La borne est un maximum théorique du rapport chaleur extraite/travail fourni, pas une borne de température ni un rendement en pourcentage.
+ Source froide à −10 °C et source chaude à +40 °C : COP maximal = 263,15/(313,15−263,15) ≈ 5,26. Avec des sources à −40 °C et +20 °C, il vaut 233,15/60 ≈ 3,89. La courbe montre la source froide de −40 à +10 °C, pour la source chaude choisie. La borne est un maximum théorique du rapport chaleur extraite/travail fourni, pas une borne de température ni un rendement en pourcentage.
  Hypothèses et limites
  Machine frigorifique cyclique réversible entre deux sources : c’est une borne, pas le COP réel d’un appareil. Ne pas confondre températures des sources et températures détaillées du fluide ; ventilateurs et pertes réelles ne sont pas modélisés.
  Approfondir avec le cours
@@ -1880,7 +1975,7 @@ Machine frigorifique : COP et limite de Carnot
 ---
 URL: https://www.cyrilvoyant.com/fr/animations/correlation-significativite-r2/
 
-Corrélation, significativité et R² : animation pour les distinguer
+Corrélation, significativité et R² : animation pour les distinguer
  Un lien statistiquement significatif explique-t-il beaucoup de variation ?
  Une expérience du cours de Cyril Voyant, à manipuler dans le navigateur. Revenir au chapitre et aux diapositives · Choisir une autre expérience .
  JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. La relation à comprendre
@@ -1895,7 +1990,7 @@ Corrélation, significativité et R² : animation pour les distinguer
 ---
 URL: https://www.cyrilvoyant.com/fr/animations/courbe-roc/
 
-Courbe ROC interactive : sensibilité, spécificité et prévalence
+Courbe ROC interactive : sensibilité, spécificité et prévalence
  Que change un seuil de test, et pourquoi la valeur prédictive dépend-elle de la prévalence ?
  Une expérience du cours de Cyril Voyant, à manipuler dans le navigateur. Revenir au chapitre et aux diapositives · Choisir une autre expérience .
  JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. La relation à comprendre
@@ -1910,7 +2005,7 @@ Courbe ROC interactive : sensibilité, spécificité et prévalence
 ---
 URL: https://www.cyrilvoyant.com/fr/animations/effet-compton/
 
-Effet Compton : angle, photon diffusé et électron de recul
+Effet Compton : angle, photon diffusé et électron de recul
  Comment l’angle de diffusion change-t-il le partage de l’énergie ?
  Une expérience du cours de Cyril Voyant, à manipuler dans le navigateur. Revenir au chapitre et aux diapositives · Choisir une autre expérience .
  JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. La relation à comprendre
@@ -1925,7 +2020,7 @@ Effet Compton : angle, photon diffusé et électron de recul
 ---
 URL: https://www.cyrilvoyant.com/fr/animations/intervalles-regression/
 
-Régression : intervalle de confiance et intervalle de prévision
+Régression : intervalle de confiance et intervalle de prévision
  Pourquoi l’intervalle d’une nouvelle observation est-il plus large que celui de la moyenne ?
  Une expérience du cours de Cyril Voyant, à manipuler dans le navigateur. Revenir au chapitre et aux diapositives · Choisir une autre expérience .
  JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. La relation à comprendre
@@ -1940,7 +2035,7 @@ Régression : intervalle de confiance et intervalle de prévision
 ---
 URL: https://www.cyrilvoyant.com/fr/animations/loi-normale/
 
-Loi normale interactive : aire, probabilité et score z
+Loi normale interactive : aire, probabilité et score z
  Comment passer d’une valeur à une probabilité, ou retrouver un seuil à partir d’une aire ?
  Une expérience du cours de Cyril Voyant, à manipuler dans le navigateur. Revenir au chapitre et aux diapositives · Choisir une autre expérience .
  JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. La relation à comprendre
@@ -1955,7 +2050,7 @@ Loi normale interactive : aire, probabilité et score z
 ---
 URL: https://www.cyrilvoyant.com/fr/animations/moteur-carnot/
 
-Moteur thermique et Carnot : animation du cycle et bilan d’énergie
+Moteur thermique et Carnot : animation du cycle et bilan d’énergie
  Pourquoi une machine thermique doit-elle rejeter une partie de la chaleur reçue ?
  Une expérience du cours de Cyril Voyant, à manipuler dans le navigateur. Revenir au chapitre et aux diapositives · Choisir une autre expérience .
  JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. La relation à comprendre
@@ -1970,7 +2065,7 @@ Moteur thermique et Carnot : animation du cycle et bilan d’énergie
 ---
 URL: https://www.cyrilvoyant.com/fr/animations/onde-electromagnetique/
 
-Onde électromagnétique : animation des champs E et B
+Onde électromagnétique : animation des champs E et B
  Comment une onde se propage-t-elle si les champs oscillent transversalement ?
  Une expérience du cours de Cyril Voyant, à manipuler dans le navigateur. Revenir au chapitre et aux diapositives · Choisir une autre expérience .
  JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. La relation à comprendre
@@ -1985,7 +2080,7 @@ Onde électromagnétique : animation des champs E et B
 ---
 URL: https://www.cyrilvoyant.com/fr/animations/point-influent-regression/
 
-Régression et point influent : déplacer une observation
+Régression et point influent : déplacer une observation
  Comment une seule observation peut-elle modifier la droite, la corrélation et la p-value ?
  Une expérience du cours de Cyril Voyant, à manipuler dans le navigateur. Revenir au chapitre et aux diapositives · Choisir une autre expérience .
  JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. La relation à comprendre
@@ -2000,7 +2095,7 @@ Régression et point influent : déplacer une observation
 ---
 URL: https://www.cyrilvoyant.com/fr/animations/refroidissement-biot/
 
-Refroidissement d’un aliment : nombre de Biot et température à cœur
+Refroidissement d’un aliment : nombre de Biot et température à cœur
  Quand peut-on remplacer un aliment entier par une seule température ?
  Une expérience du cours de Cyril Voyant, à manipuler dans le navigateur. Revenir au chapitre et aux diapositives · Choisir une autre expérience .
  JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. La relation à comprendre
@@ -2015,28 +2110,28 @@ Refroidissement d’un aliment : nombre de Biot et température à cœur
 ---
 URL: https://www.cyrilvoyant.com/fr/animations/soleil-saisons-utc/
 
-Le Soleil, les saisons et l'heure : une seule horloge pour les mesures
+Le Soleil, les saisons et l'heure : une seule horloge pour les mesures
  Le 21 juin 2026, le jour dure 16 h 11 à Paris et 9 h 54 à Sydney. Au même instant, 12:00 UTC, il est 14:00 à Paris et 22:00 à Sydney. Le rayonnement solaire suit deux cycles à la fois, le jour et l'année, et ces cycles ne tombent pas à la même heure d'un lieu à l'autre : pour comparer et caler des mesures, il faut une seule horloge, le temps universel coordonné (UTC).
- Aller à :
+ JavaScript est nécessaire pour les curseurs et l’animation. Les explications, le glossaire et la méthode de cette page restent accessibles. Aller à :
  1. La Terre autour du Soleil
- 2. Pourquoi l'inclinaison fait les saisons : jours plus longs, Soleil plus haut
+ 2. Pourquoi l'inclinaison fait les saisons : jours plus longs, Soleil plus haut
  3. Le jour et la nuit sur la Terre
  4. Une seule horloge (UTC), deux heures locales
- Le cas de départ : le matin du 25 octobre 2026
+ Le cas de départ : le matin du 25 octobre 2026
  L'animation s'ouvre à 06:00 UTC. À Paris, il est 07:00 et il fait encore nuit : le Soleil se lève à 07:24 (06:24 UTC). À Sydney, il est 17:00 et le Soleil se couchera à 19:15. La nuit précédente, à 03:00, Paris est repassé à l'heure d'hiver (UTC+1) ; Sydney est à l'heure d'été (UTC+11) depuis le 4 octobre. L'écart entre les deux horloges vaut donc 10 heures ce jour-là, 8 heures en juin. Déplacez la date et l'instant, ou lancez une année ou une journée.
- 1. Autour du Soleil : les saisons
+ 1. Autour du Soleil : les saisons
  L'axe de rotation de la Terre est incliné de 23,44° et garde la même direction dans l'espace toute l'année. En juin, le pôle Nord penche vers le Soleil : l'hémisphère nord reçoit les rayons plus haut et plus longtemps, c'est l'été ; en décembre, c'est l'inverse, et l'été est à Sydney. La latitude où le Soleil passe au zénith à midi s'appelle la déclinaison δ ; elle va de +23,44° (solstice de juin) à −23,44° (solstice de décembre). La distance n'y est pour rien : la Terre est au plus près du Soleil début janvier, en plein hiver boréal.
  L'inclinaison agit de deux façons, qui s'additionnent. Des jours plus longs (vue 2) : quand l'axe penche vers le Soleil, le cercle de latitude de Paris passe plus de la moitié de son tour dans la lumière, celui de Sydney moins ; aux équinoxes, tous sont à moitié éclairés, 12 h. Un Soleil plus haut (schéma sous la vue 1) : le même faisceau de 1 m² de rayons couvre 1,11 m² de sol à Paris le 21 juin (Soleil à 65°), mais 1,85 m² à Sydney (Soleil à 33°) : chaque mètre carré reçoit moins. Plus de temps et plus d'énergie par mètre carré : c'est l'été.
- 2. La rotation : le jour et la nuit
+ 2. La rotation : le jour et la nuit
  La Terre tourne de 15° par heure. Le midi solaire , quand le Soleil passe au méridien du lieu, arrive donc 4 minutes plus tôt par degré de longitude vers l'est. À Paris (2,35° E), il tombe vers 11:51 UTC le 21 juin, soit 13:51 à l'horloge ; à Sydney (151,2° E), vers 01:56 UTC, soit 11:56 à l'horloge. À quelques minutes près (l' équation du temps , de −14 à +16 minutes au fil de l'année), midi n'est le même nulle part : la carte montre la zone éclairée et le point où le Soleil est au zénith.
  3. La durée du jour
  Plus la latitude est grande et plus la déclinaison est du même signe, plus la part éclairée du parallèle est grande. Le 21 juin, le jour dure 16 h 11 à Paris (lever 05:46, coucher 21:57, heure d'été) et 9 h 54 à Sydney ; le 21 décembre, 8 h 15 à Paris et 14 h 25 à Sydney. En UTC, la journée de Sydney est à cheval sur deux dates : le 21 juin, le Soleil s'y lève le 20 juin à 20:59 UTC. Ci-dessous, l'échelle du haut est une seule horloge, UTC, commune aux deux villes : un instant UTC est le même partout (trait rouge). Chaque bande montre le jour (jaune), le crépuscule (gris) et la nuit (bleu) ; sous chaque bande, la graduation de l'horloge locale montre que ce même instant ne porte pas le même numéro à Paris et à Sydney.
  4. La double saisonnalité du rayonnement
  Hors atmosphère, sur un plan horizontal, le rayonnement vaut G 0 = G sc ·E 0 ·cos θ z , avec G sc = 1361 W/m², E 0 = 1 + 0,033·cos(2π n/365) et θ z l'angle zénithal. Il porte deux cycles : le cycle du jour (la rotation) et le cycle de l'année (l'inclinaison), qui module la hauteur et la durée du premier. Sur les cartes de chaleur, chaque colonne est un jour, chaque ligne une heure UTC : la bande claire de Paris est centrée vers 12 h UTC, celle de Sydney vers 2 h UTC, coupée en deux par minuit UTC ; l'une s'élargit en juin, l'autre en décembre. C'est cette structure que les méthodes de prévision exploitent, par exemple par le rapport à la tendance de ciel clair (indice de ciel clair) ou les persistances cycliques comme BLEND .
  Hors atmosphère, par date et par heure UTC
- Le jour choisi : G0 selon l'heure UTC
- L'année : énergie par jour hors atmosphère
- 5. L'heure des mesures : une seule horloge
+ Le jour choisi : G0 selon l'heure UTC
+ L'année : énergie par jour hors atmosphère
+ 5. L'heure des mesures : une seule horloge
  L'heure légale vaut UTC + un décalage qui change deux fois par an, à des dates différentes selon les pays : à Paris UTC+1 l'hiver et UTC+2 l'été, à Sydney UTC+10 l'hiver austral et UTC+11 l'été austral. Une série horodatée en heure légale perd donc une heure au printemps et en voit une deux fois à l'automne, et deux stations de pays différents ne sont pas alignées. Les tableaux ci-dessous le montrent, demi-heure par demi-heure, autour de trois changements de 2026.
  Dater en UTC (ISO 8601, par exemple 2026-10-25T06:00Z ), et garder la longitude du site pour passer au temps solaire.
  Dire si l'horodatage marque le début, le milieu ou la fin de la période moyennée : un décalage d'une demi-période déplace toute la courbe journalière et biaise la comparaison avec un modèle.
@@ -2068,7 +2163,7 @@ Le Soleil, les saisons et l'heure : une seule horloge pour les mesures
 ---
 URL: https://www.cyrilvoyant.com/fr/animations/test-khi-deux/
 
-Test du χ² : dé équilibré, observés, attendus et tableau 2×2
+Test du χ² : dé équilibré, observés, attendus et tableau 2×2
  Quelles cellules expliquent l’écart entre les observations et l’hypothèse ?
  Une expérience du cours de Cyril Voyant, à manipuler dans le navigateur. Revenir au chapitre et aux diapositives · Choisir une autre expérience .
  JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. La relation à comprendre
@@ -2083,7 +2178,7 @@ Test du χ² : dé équilibré, observés, attendus et tableau 2×2
 ---
 URL: https://www.cyrilvoyant.com/fr/animations/test-student/
 
-Test de Student interactif : deux moyennes, dispersion et p-value
+Test de Student interactif : deux moyennes, dispersion et p-value
  Une différence entre deux moyennes est-elle grande par rapport à son incertitude ?
  Une expérience du cours de Cyril Voyant, à manipuler dans le navigateur. Revenir au chapitre et aux diapositives · Choisir une autre expérience .
  JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. La relation à comprendre
@@ -2091,14 +2186,14 @@ Test de Student interactif : deux moyennes, dispersion et p-value
  Essayer et interpréter
  Gardez la différence et la dispersion constantes, puis augmentez l’effectif : la p-value change alors que l’écart entre les moyennes reste le même. Avec une différence nulle, t=0 et p=1.
  Hypothèses et limites
- Cette interface illustre le test bilatéral à variance commune pour deux groupes indépendants de même effectif, au seuil de 5 %. Vérifier normalité et homogénéité des variances ; Welch et les mesures appariées demandent un autre cadre. Les points dessinés sont construits à partir des résumés saisis, pas des observations réelles.
+ Cette interface illustre le test bilatéral à variance commune pour deux groupes indépendants de même effectif, au seuil de 5 %. Vérifier normalité et homogénéité des variances. Les mesures appariées demandent un autre cadre. Les points dessinés sont construits à partir des résumés saisis, pas des observations réelles.
  Approfondir avec le cours
  Cette page isole une notion pour la rendre accessible directement. Le chapitre complet conserve le raisonnement, les autres exemples, le diaporama et la FAQ. Les valeurs de la démonstration sont calculées ou construites dans le modèle indiqué ; elles ne constituent pas de nouveaux résultats de recherche.
 
 ---
 URL: https://www.cyrilvoyant.com/fr/enseignement/bases-thermiques-aliments/
 
-Bases de thermique pour le génie industriel alimentaire : transferts, refroidissement et congélation
+Bases de thermique pour le génie industriel alimentaire : transferts, refroidissement et congélation
 Ce que contient le cours
 B.U.T. Génie biologique, Sciences de l'aliment et biotechnologie, 1ʳᵉ année · 24 diapositives · CC BY 4.0
 Comment la chaleur traverse un aliment, et ce qu'il faut pour le refroidir ou le congeler.
@@ -2125,7 +2220,7 @@ Archivé et citable sur Zenodo, DOI
 ---
 URL: https://www.cyrilvoyant.com/fr/enseignement/bases-thermiques-aliments/cours/
 
-Cours : transferts thermiques, refroidissement et congélation des aliments
+Cours : transferts thermiques, refroidissement et congélation des aliments
 Le chapitre en 10 points
 La thermodynamique étudie des états d'équilibre ; les transferts thermiques étudient les mécanismes qui y conduisent : conduction (chocs entre particules voisines), convection (mouvements d'un fluide), rayonnement (ondes électromagnétiques).
 Flux thermique
@@ -2155,7 +2250,7 @@ P = m Δh/Δt
  où Δh additionne le refroidissement du produit frais, la chaleur latente de l'eau congelée et le refroidissement du produit congelé.
 Toute l'eau ne gèle pas : la relation de Chen donne la teneur en glace, et l'eau non congelable doit entrer dans le bilan.
 Modèle uniforme, sans changement de phase, milieu extérieur et propriétés constants : T(t) = T∞ + (Ti − T∞) exp(−t/τ), τ = mcp/(hS). Sinon, une résolution de conduction et un bilan de phase peuvent être nécessaires.
-Pour aller plus loin : questions et réponses
+Pour aller plus loin : questions et réponses
 Que change concrètement un nombre de Biot élevé ?
 La résistance interne domine : la surface suit vite le fluide tandis que le cœur traîne ; la loi exponentielle à température uniforme ne vaut plus, il faut une solution de conduction transitoire et surveiller la température à cœur, qui fixe la sécurité sanitaire.
 Pourquoi la puissance de congélation est-elle si supérieure à celle de réfrigération pour une même masse ?
@@ -2168,7 +2263,7 @@ Seulement tant que la résistance de surface 1/h domine ; quand le Biot devient 
 ---
 URL: https://www.cyrilvoyant.com/fr/enseignement/biostatistique/
 
-Biostatistique pour les études de santé : le cours en trois chapitres
+Biostatistique pour les études de santé : le cours en trois chapitres
 Ce que contient le cours
 Première année des études de santé (PASS, UE8) · 3 chapitres, 246 diapositives · CC BY 4.0
 Les outils statistiques dont un futur soignant a besoin pour lire une étude, interpréter un test et décider avec des données.
@@ -2193,7 +2288,7 @@ Archivé et citable sur Zenodo, DOI
 ---
 URL: https://www.cyrilvoyant.com/fr/enseignement/biostatistique/correlation-regression/
 
-Chapitre 3 : corrélation, régression linéaire et tests du χ²
+Chapitre 3 : corrélation, régression linéaire et tests du χ²
 Le chapitre en 10 points
 Le diagramme de dispersion montre la forme du lien ; covariance
 cov(x, y) = Σ(x
@@ -2238,7 +2333,7 @@ NIST : intervalles de confiance et de prévision
  ·
 NIST : conditions du χ² d’ajustement
 .
-Pour aller plus loin : questions et réponses
+Pour aller plus loin : questions et réponses
 Quelle différence entre intervalle de confiance et de prévision ?
 Dans une régression linéaire simple à erreurs indépendantes normales de variance constante : IC95 de la moyenne = ŷ0 ± t(n−2;0,975) se √[1/n + (x0−x̄)²/Sxx]. Pour une future observation, ajouter 1 sous la racine. Ici Sxx = Σ(xi−x̄)² et se² = Σrésidu²/(n−2). L’intervalle de prévision conserve donc la dispersion individuelle ; 1,96 n’est qu’une approximation asymptotique du quantile.
 Un r significatif suffit-il à rendre une prévision utile ?
@@ -2251,7 +2346,7 @@ L’approximation asymptotique peut être médiocre ; examiner la taille et la s
 ---
 URL: https://www.cyrilvoyant.com/fr/enseignement/biostatistique/probabilites/
 
-Chapitre 1 : probabilités, probabilités conditionnelles, tableaux de contingence et courbes ROC
+Chapitre 1 : probabilités, probabilités conditionnelles, tableaux de contingence et courbes ROC
 Le chapitre en 10 points
 La statistique sert à définir la normalité, mesurer la variabilité (entre patients, entre mesures) et ajuster les traitements : la concentration d'un médicament varie fortement d'un patient à l'autre pour une même dose.
 Corrélation n'est pas causalité : une variable cachée peut créer un lien apparent, et la formulation d'une question change la probabilité cherchée (paradoxe des deux enfants).
@@ -2277,7 +2372,7 @@ VPN = Sp(1 − p) / [Sp(1 − p) + (1 − Se) p]
 .
 La ROC trace Se en fonction de 1 − Sp lorsque le seuil varie. Une AUC de 0,5 correspond à une absence de discrimination moyenne par le classement du score ; elle ne décrit pas à elle seule l’utilité d’une décision.
 Le choix du seuil dépend de l’usage, de la prévalence et des conséquences des erreurs. Maximiser Youden (Se + Sp − 1) et minimiser la distance au coin (0, 1) sont deux critères distincts.
-Pour aller plus loin : questions et réponses
+Pour aller plus loin : questions et réponses
 Pourquoi la prévalence modifie-t-elle la valeur prédictive ?
 Avec Se = Sp = 99 % et une prévalence de 1/1000, sur 1000 personnes on attend 0,99 vrai positif et 9,99 faux positifs, soit une VPP proche de 9 %. C’est une illustration de Bayes ; la conduite clinique dépend du contexte et du protocole.
 Que signifie une AUC de 0,8 ?
@@ -2290,7 +2385,7 @@ Elle combine la connaissance de la population (distribution a priori des paramè
 ---
 URL: https://www.cyrilvoyant.com/fr/enseignement/biostatistique/statistiques-descriptives/
 
-Chapitre 2 : statistique descriptive, loi normale et tests d'hypothèses
+Chapitre 2 : statistique descriptive, loi normale et tests d'hypothèses
 Le chapitre en 10 points
 Population, échantillon, variable, paramètre et statistique ; le type d'échelle (nominale, ordinale, d'intervalle, de rapport) dicte les statistiques permises.
 Représentations graphiques et indices de tendance centrale : moyenne, médiane, mode ; la moyenne est sensible aux valeurs extrêmes (un seul très riche fait une « moyenne de millionnaires »).
@@ -2299,7 +2394,7 @@ s² = Σ(x
 i
  − x̄)²/(n − 1)
 , écart-type s, étendue, quantiles.
-Notation utilisée ici : N(μ, σ²), où μ est la moyenne, σ l’écart-type et σ² la variance. Asymétrie et aplatissement décrivent d’autres aspects de la forme de la distribution.
+Notation utilisée ici : N(μ, σ²), où μ est la moyenne, σ l’écart-type et σ² la variance. Attention : les diapositives écrivent N(m, s), avec l’écart-type en second. Asymétrie et aplatissement décrivent d’autres aspects de la forme de la distribution.
 Jarque-Bera : JB = (n/6)[S² + (K − 3)²/4], avec K l’aplatissement non centré sur 3. Sous les conditions asymptotiques du test, le seuil à 5 % est environ 5,99 (χ² à 2 ddl).
 Variable centrée réduite
 z = (x − μ)/σ
@@ -2310,7 +2405,7 @@ x̄ ± 1,96 · s/√n
 Théorème central limite : pour des observations indépendantes de même loi et de variance finie, la moyenne standardisée tend vers une normale ; son erreur-type est σ/√n. Une dépendance exige des conditions supplémentaires.
 Test d'hypothèses : H₀, H₁, test uni- ou bilatéral, risque α, statistique de test et p-value ; exemple : un seul de trois scores de lecture est significativement inférieur à la référence.
 Deux échantillons indépendants : t = (x̄1 − x̄2)/√(s1²/n1 + s2²/n2) est la statistique de Welch, avec ddl approchés de Welch-Satterthwaite. Le test apparié porte sur les différences ; le Student à variances égales utilise une variance commune.
-Pour aller plus loin : questions et réponses
+Pour aller plus loin : questions et réponses
 Pourquoi diviser par n − 1 et non par n ?
 Les écarts sont mesurés à la moyenne de l'échantillon, qui leur est la plus proche possible : diviser par n sous-estime systématiquement la variance. n − 1 corrige ce biais, car un degré de liberté a servi à estimer la moyenne.
 Une p-value de 0,03 donne-t-elle la probabilité que H0 soit vraie ?
@@ -2323,7 +2418,7 @@ Non : un grand échantillon détecte de faibles écarts et un petit échantillon
 ---
 URL: https://www.cyrilvoyant.com/fr/enseignement/cours-prevision-solaire/
 
-Cours de prévision solaire : prévoir la ressource solaire intermittente
+Cours de prévision solaire : prévoir la ressource solaire intermittente
 Ce que contient le cours
 Mines Paris – PSL, cycle ingénieur civil, projet de recherche appliquée UE14 · 59 diapositives · français et anglais · CC BY 4.0
 Comment prévoir l'éclairement solaire à une heure, sur dix ans de mesures réelles d'Ajaccio, en n'ajoutant de la complexité que si elle paie.
@@ -2346,7 +2441,7 @@ Archivé et citable sur Zenodo, DOI
 ---
 URL: https://www.cyrilvoyant.com/fr/enseignement/physique-industrielle/
 
-Physique industrielle : thermodynamique, vapeur d'eau et production de froid
+Physique industrielle : thermodynamique, vapeur d'eau et production de froid
 Ce que contient le cours
 B.U.T. Génie biologique, Sciences de l'aliment et biotechnologie, 2ᵉ année · 5 chapitres, 139 diapositives et un polycopié · CC BY 4.0
 La thermodynamique d'un technicien de l'agroalimentaire, jusqu'au fonctionnement d'une machine frigorifique.
@@ -2374,7 +2469,7 @@ Archivé et citable sur Zenodo, DOI
 ---
 URL: https://www.cyrilvoyant.com/fr/enseignement/physique-industrielle/cycles-frigorifiques/
 
-Chapitre 5 : les cycles frigorifiques
+Chapitre 5 : les cycles frigorifiques
 Le chapitre en 10 points
 Une machine frigorifique fonctionne en quatre étapes : compression, condensation, détente, évaporation ; le fluide absorbe la chaleur en s'évaporant à basse pression et la rejette en se condensant à haute pression.
 On suit le cycle sur le diagramme de Mollier (ln p, h) : enthalpie en abscisse, pression absolue en ordonnée, avec isothermes, isentropes, isochores et isotitres.
@@ -2407,7 +2502,7 @@ Borne de Carnot du COP frigorifique : COPC = Tf/(Tc − Tf), avec températures 
 Le sous-refroidissement peut augmenter l’effet frigorifique massique. La surchauffe ne produit du froid utile que si la chaleur est absorbée dans le volume à refroidir ; une surchauffe de la conduite d’aspiration n’est pas un gain utile.
 Les fluides frigorigènes se choisissent selon leurs propriétés thermodynamiques, leur sécurité et leur impact sur l'environnement.
 Les obligations applicables aux fluides et aux équipements évoluent : les éléments réglementaires des supports historiques doivent être vérifiés dans les textes en vigueur avant une décision professionnelle.
-Pour aller plus loin : questions et réponses
+Pour aller plus loin : questions et réponses
 Pourquoi le COP chute-t-il quand l'écart entre chambre froide et extérieur augmente ?
 La borne de Carnot T_f/(T_c − T_f) diminue quand l'écart grandit : congeler à −30 °C en été coûte bien plus de travail par kilojoule extrait que conserver à +4 °C ; d'où l'intérêt de condenser le plus froid possible et des cycles étagés pour les grands écarts.
 Dans quelles conditions le sous-refroidissement augmente-t-il le COP ?
@@ -2420,7 +2515,7 @@ Le détendeur lamine le fluide sans échange de travail ni de chaleur : h se con
 ---
 URL: https://www.cyrilvoyant.com/fr/enseignement/physique-industrielle/cycles-moteurs/
 
-Chapitre 4 : les cycles thermodynamiques moteurs
+Chapitre 4 : les cycles thermodynamiques moteurs
 Le chapitre en 10 points
 Premier principe pour un système fermé immobile : ΔU = Q + W (échanges reçus positifs). Sur un cycle ΔU = 0 : le travail net fourni égale la chaleur nette reçue.
 Second principe : la production d’entropie est positive ou nulle, strictement positive pour un processus irréversible. Un transfert spontané de chaleur va du chaud vers le froid ; l’inverser exige une compensation.
@@ -2460,7 +2555,7 @@ c
 )
 .
 Resurchauffe et régénération modifient le cycle : leurs effets sur rendement, travail et humidité en sortie de turbine se quantifient par un bilan, sans supposer un gain identique pour toute configuration.
-Pour aller plus loin : questions et réponses
+Pour aller plus loin : questions et réponses
 Pourquoi aucun moteur réel n'atteint-il le rendement de Carnot ?
 Le cycle de Carnot suppose des échanges de chaleur réversibles, donc à écart de température nul et infiniment lents ; un moteur réel échange sous des écarts finis, avec frottements et détentes irréversibles, qui créent de l'entropie et dégradent le travail récupérable.
 Pourquoi la régénération améliore-t-elle le rendement d'un cycle à vapeur ?
@@ -2473,7 +2568,7 @@ Elle est abondante, non toxique, stable, et sa chaleur latente de vaporisation e
 ---
 URL: https://www.cyrilvoyant.com/fr/enseignement/physique-industrielle/gaz-parfaits-et-reels/
 
-Chapitre 2 : gaz parfaits, gaz réels et diagrammes
+Chapitre 2 : gaz parfaits, gaz réels et diagrammes
 Le chapitre en 10 points
 Le gaz parfait est un gaz dilué de molécules sans interaction :
 p V = n R T
@@ -2511,7 +2606,7 @@ a
 )
 .
 Ce chapitre prépare la lecture des cycles : chaque transformation devient un trait sur un diagramme.
-Pour aller plus loin : questions et réponses
+Pour aller plus loin : questions et réponses
 Pourquoi les frigoristes préfèrent-ils le diagramme (ln p, h) ?
 Les échanges au condenseur et à l'évaporateur y sont des horizontales (isobares), la détente un trait vertical (isenthalpe), et les énergies échangées se lisent directement comme des longueurs sur l'axe des enthalpies : le bilan du cycle se fait à la règle.
 Comment calculer l'enthalpie d'un mélange liquide-vapeur ?
@@ -2524,7 +2619,7 @@ Seulement loin de la saturation et à basse pression ; dans un cycle frigorifiqu
 ---
 URL: https://www.cyrilvoyant.com/fr/enseignement/physique-industrielle/notions-de-thermodynamique/
 
-Chapitre 1 : notions générales de thermodynamique
+Chapitre 1 : notions générales de thermodynamique
 Le chapitre en 10 points
 La thermodynamique fait le bilan énergétique des machines (moteurs, centrales, machines frigorifiques, pompes à chaleur) et des transferts de chaleur ; on la traite à l'échelle macroscopique, avec des variables d'état (p, V, T, m).
 Le vocabulaire fixe ce qui est échangé : système fermé (pas de matière), calorifugé (pas de chaleur), isolé (rien) ; transformations isotherme, isobare, isochore, adiabatique ; un cycle revient à son état initial.
@@ -2545,13 +2640,13 @@ atm
 La température absolue T se mesure en kelvins ; pour un gaz parfait monatomique, l’énergie cinétique moyenne de translation par particule vaut ⟨Ec⟩ = (3/2) kT, avec k = 1,380649·10⁻²³ J/K.
 Premier principe pour un système fermé immobile : ΔU = Q + W, avec chaleur Q et travail W comptés positivement lorsqu’ils sont reçus par le système.
 Chaleur sensible : Q = m c ΔT si c est constant ; changement de phase d’un corps pur à pression fixée : Q = m L. Pour un aliment, la congélation s’étale généralement sur une plage de températures.
-Ordres de grandeur : fondre 1 kg de glace (334 kJ) coûte presque autant que chauffer 1 kg d'eau de 0 à 100 °C (421 kJ) ; la vaporisation coûte bien davantage.
+Ordres de grandeur : fondre 1 kg de glace (334 kJ) coûte environ les quatre cinquièmes de ce que coûte chauffer 1 kg d'eau de 0 à 100 °C (environ 419 kJ) ; la vaporisation coûte bien davantage.
 Évaporation (en surface, à toute température) et ébullition (dans la masse, à une température fixée par la pression) ; la surfusion maintient un liquide sous sa température de solidification.
 Le diagramme de phases situe le point triple et le point critique. Un fluide est supercritique lorsque sa température ET sa pression dépassent leurs valeurs critiques.
 Sous la température critique, refroidir une vapeur jusqu’à saturation ou la comprimer à température constante peut provoquer sa condensation : les tables précisent les conditions du changement de phase.
-Pour aller plus loin : questions et réponses
+Pour aller plus loin : questions et réponses
 Pourquoi la chaleur latente compte-t-elle dans une congélation ?
-Geler 1 kg d’eau pure demande d’extraire 333 kJ, sans que la température change (palier à 0 °C). C’est autant d’énergie que pour refroidir ce même kilo d’eau liquide d’environ 80 °C (333 ÷ 4,18 ≈ 80) : le changement d’état pèse donc lourd dans le bilan. Dans un aliment, il faut multiplier par la masse d’eau effectivement congelée et ajouter les autres échanges ; la durée dépend aussi des résistances thermiques et de la géométrie.
+Geler 1 kg d’eau pure demande d’extraire 334 kJ, sans que la température change (palier à 0 °C). C’est autant d’énergie que pour refroidir ce même kilo d’eau liquide d’environ 80 °C (334 ÷ 4,18 ≈ 80) : le changement d’état pèse donc lourd dans le bilan. Dans un aliment, il faut multiplier par la masse d’eau effectivement congelée et ajouter les autres échanges ; la durée dépend aussi des résistances thermiques et de la géométrie.
 Quelle température d’évaporation faut-il choisir pour un fluide frigorigène ?
 Elle doit être inférieure à celle du milieu à refroidir. La pression de saturation correspondante, la sécurité, l’impact environnemental et le cycle guident le choix ; bouillir sous 0 °C à pression atmosphérique n’est pas une condition universelle.
 La surfusion a-t-elle une conséquence pratique pour les aliments ?
@@ -2562,7 +2657,7 @@ Les relations d'état (gaz parfaits, tables de vapeur, relation pression-tempér
 ---
 URL: https://www.cyrilvoyant.com/fr/enseignement/physique-industrielle/vapeur-d-eau/
 
-Chapitre 3 : la vapeur d'eau
+Chapitre 3 : la vapeur d'eau
 Le chapitre en 10 points
 Le changement de température d’un gaz dépend du procédé : une détente adiabatique avec travail tend à le refroidir ; la détente libre d’un gaz parfait conserve sa température. Un laminage réel dépend aussi du gaz et de l’état initial.
 Une parcelle d’air ascendante peut se refroidir par détente adiabatique. En montagne, l’eau bout à plus basse température parce que la pression extérieure est plus faible : c’est une autre conséquence de la baisse de pression.
@@ -2599,7 +2694,7 @@ s
  ; la sensation d'humidité dépend de l'écart à la saturation, pas de la quantité d'eau seule.
 Exemple du support : à environ 1013 hPa, T = 8 °C et r = 6,4 g/kg donnent une humidité relative voisine de 96 % ; la pression doit être précisée pour convertir r en pression partielle.
 La chaleur latente absorbée par la fusion et la vaporisation est restituée exactement par la solidification et la condensation.
-Pour aller plus loin : questions et réponses
+Pour aller plus loin : questions et réponses
 Pourquoi l’humidité relative peut-elle monter la nuit sans apport d’eau ?
 À pression et rapport de mélange approximativement constants, la baisse de température réduit la pression de saturation : HR = 100 e/es augmente. À saturation, de l’eau peut se condenser ; sous zéro, une déposition de glace est également possible.
 D'où vient le coefficient 0,622 ?
@@ -2612,7 +2707,7 @@ Elle permet de transporter beaucoup d'énergie à température constante : conde
 ---
 URL: https://www.cyrilvoyant.com/fr/enseignement/physique-pass/
 
-Physique pour les études de santé : ondes électromagnétiques, rayons X et imagerie
+Physique pour les études de santé : ondes électromagnétiques, rayons X et imagerie
 Ce que contient le cours
 Première année des études de santé (PASS-PACES), bases physiques des explorations médicales · cours de 110 diapositives et 2 séances d'exercices corrigées · CC BY 4.0
 Les bases physiques de l'imagerie médicale, de l'onde au scanner.
@@ -2638,8 +2733,8 @@ Archivé et citable sur Zenodo, DOI
 ---
 URL: https://www.cyrilvoyant.com/fr/enseignement/physique-pass/ed1-corrige/
 
-Exercices dirigés 1 : les ondes électromagnétiques, corrigé
-Le chapitre en 10 points
+Exercices dirigés 1 : les ondes électromagnétiques, corrigé
+La séance en 10 points
 E = hc/λ : un photon de 3 eV a une longueur d’onde d’environ 413 nm, dans le violet visible. Le seuil de 13,6 eV concerne l’ionisation de l’hydrogène dans son état fondamental, pas toute matière.
 Lier les paramètres d'une onde : période, pulsation
 ω = 2πν
@@ -2659,7 +2754,7 @@ n
 Application du TD : à 10 MHz, T = 100 ns et ω ≈ 6,28·10⁷ rad/s. Toujours convertir MHz en Hz avant le calcul.
 À fréquence 500 THz, λ vaut 600 nm dans le vide et 400 nm dans un verre de célérité 2·10⁸ m/s ; la fréquence se conserve au passage de l’interface.
 Pour un photon incident de 255,5 keV (α = E/(mec²) = 0,5), le transfert Compton maximal vaut E·2α/(1+2α) = 127,75 keV, atteint en rétrodiffusion.
-Pour aller plus loin : questions et réponses
+Pour aller plus loin : questions et réponses
 Pourquoi raisonner en nombre de CDA plutôt qu'avec l'exponentielle ?
 Parce que les traversées successives se composent par multiplication : 2 CDA de tumeur puis 3 CDA de tissu sain transmettent 1/2⁵ = 1/32, sans calculatrice ; l'exponentielle n'est nécessaire que pour une épaisseur qui n'est pas un multiple simple de la CDA.
 L’intensité d’une onde dépend-elle de sa phase ?
@@ -2670,8 +2765,8 @@ L’exposant μx doit être sans dimension. Si μ est en cm⁻¹, exprimer x en 
 ---
 URL: https://www.cyrilvoyant.com/fr/enseignement/physique-pass/ed2-corrige/
 
-Exercices dirigés 2 : les ondes électromagnétiques, corrigé
-Le chapitre en 10 points
+Exercices dirigés 2 : les ondes électromagnétiques, corrigé
+La séance en 10 points
 Niveaux de l'atome hydrogénoïde :
 E
 n
@@ -2698,7 +2793,7 @@ Passer de μ/ρ au coefficient linéique : μ = (μ/ρ)ρ. Ainsi cm²/g multipli
 Pour vérifier les conditions des modèles :
 NIST XCOM : atténuation massique et interactions
 .
-Pour aller plus loin : questions et réponses
+Pour aller plus loin : questions et réponses
 Pourquoi le coefficient d'atténuation massique du plomb remonte-t-il au-delà de quelques MeV ?
 La création de paires, nulle sous 1,022 MeV, croît avec l'énergie et avec Z² ; dans le plomb (Z = 82) elle devient dominante et rend un faisceau de 100 MeV moins pénétrant qu'un faisceau de quelques MeV.
 Un photon d'énergie supérieure à l'énergie d'ionisation ionise-t-il forcément l'atome ?
@@ -2709,7 +2804,7 @@ La loi −13,6 Z²/n² eV décrit un système à un électron. He⁺ en possède
 ---
 URL: https://www.cyrilvoyant.com/fr/enseignement/physique-pass/ondes-electromagnetiques/
 
-Cours : les ondes électromagnétiques et les bases physiques de l'imagerie
+Cours : les ondes électromagnétiques et les bases physiques de l'imagerie
 Le chapitre en 10 points
 Une onde électromagnétique propage un champ électrique et un champ magnétique perpendiculaires entre eux et à la direction de propagation, à
 c ≈ 3·10
@@ -2768,7 +2863,7 @@ En imagerie, le contraste dépend des différences d’atténuation ; le scanner
 Pour vérifier les conditions des modèles :
 NIST XCOM : coefficients d’interaction et limites des tables
 .
-Pour aller plus loin : questions et réponses
+Pour aller plus loin : questions et réponses
 Pourquoi l'os est-il si contrasté à basse tension et beaucoup moins à haute tension ?
 À basse énergie l'effet photoélectrique domine, en Z³/E³ : le calcium de l'os absorbe beaucoup plus que les tissus mous. À haute énergie l'effet Compton domine, qui dépend surtout de la densité électronique, presque identique d'un tissu à l'autre.
 Comment doubler l’énergie maximale sans changer la puissance rayonnée du tube ?

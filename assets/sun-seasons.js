@@ -18,7 +18,7 @@
   var L = fr ? {
     date: "Date", time: "Instant (UTC)", year: "▶ Une année", day: "▶ Une journée", stop: "❚❚ Pause", months: ["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."],
     jun: "solstice de juin", sep: "équinoxe de septembre", dec: "solstice de décembre", mar: "équinoxe de mars", sun: "Soleil", north: "N",
-    zen: "Le Soleil est au zénith à la latitude ", ns: ["N", "S"], seasonsN: ["printemps", "été", "automne", "hiver"], hemN: "hémisphère nord : ", hemS: "hémisphère sud : ",
+    zen: "Le Soleil est au zénith à la latitude ", ns: ["N", "S"], seasonsN: ["printemps", "été", "automne", "hiver"], hemN: "Hémisphère nord : ", hemS: "hémisphère sud : ",
     dist: "Distance au Soleil : facteur E0 = ", distNote: " (la Terre est la plus proche début janvier : ce n'est pas la distance qui fait les saisons, c'est l'inclinaison).",
     len: "durée du jour", rise: "lever", set: "coucher", noon: "midi solaire", local: "heure légale", now: "maintenant", elev: "hauteur du Soleil",
     night: "nuit", dayL: "jour", hm: function (m) { var h = Math.floor(m / 60), mn = Math.round(m - 60 * h); if (mn === 60) { h++; mn = 0; } return h ? h + " h " + String(mn).padStart(2, "0") : mn + " min"; },
@@ -28,7 +28,7 @@
   } : {
     date: "Date", time: "Instant (UTC)", year: "▶ One year", day: "▶ One day", stop: "❚❚ Pause", months: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
     jun: "June solstice", sep: "September equinox", dec: "December solstice", mar: "March equinox", sun: "Sun", north: "N",
-    zen: "The Sun is overhead at latitude ", ns: ["N", "S"], seasonsN: ["spring", "summer", "autumn", "winter"], hemN: "northern hemisphere: ", hemS: "southern hemisphere: ",
+    zen: "The Sun is overhead at latitude ", ns: ["N", "S"], seasonsN: ["spring", "summer", "autumn", "winter"], hemN: "Northern hemisphere: ", hemS: "southern hemisphere: ",
     dist: "Distance to the Sun: factor E0 = ", distNote: " (the Earth is closest in early January: the seasons come from the tilt, not from the distance).",
     len: "day length", rise: "sunrise", set: "sunset", noon: "solar noon", local: "legal time", now: "now", elev: "sun elevation",
     night: "night", dayL: "day", hm: function (m) { var h = Math.floor(m / 60), mn = Math.round(m - 60 * h); if (mn === 60) { h++; mn = 0; } return h ? h + " h " + String(mn).padStart(2, "0") : mn + " min"; },
@@ -90,8 +90,8 @@
   // ------------------------------------------------------------------ controls
   var st = { n: 298, m: 360 }, timer = null;
   var ctl = box.querySelector(".sun-ctl");
-  ctl.innerHTML = '<label><span>' + L.date + ' <output class="sun-do"></output></span><input class="sun-d" type="range" min="1" max="365" step="1" value="' + st.n + '"></label>' +
-    '<label><span>' + L.time + ' <output class="sun-to"></output></span><input class="sun-t" type="range" min="0" max="1435" step="5" value="' + st.m + '"></label>' +
+  ctl.innerHTML = '<label><span>' + L.date + ' <output class="sun-do"></output></span><input class="sun-d" type="range" aria-label="' + L.date + '" min="1" max="365" step="1" value="' + st.n + '"></label>' +
+    '<label><span>' + L.time + ' <output class="sun-to"></output></span><input class="sun-t" type="range" aria-label="' + L.time + '" min="0" max="1435" step="5" value="' + st.m + '"></label>' +
     '<span class="sun-play"><button type="button" class="ct-btn" data-play="year">' + L.year + '</button> <button type="button" class="ct-btn" data-play="day">' + L.day + "</button></span>";
   var iD = ctl.querySelector(".sun-d"), iT = ctl.querySelector(".sun-t");
   iD.addEventListener("input", function () { st.n = +iD.value; draw(); });
@@ -134,8 +134,8 @@
     el("line", { x1: ex - ax * r * 1.6, y1: ey - ay * r * 1.6, x2: ex + ax * r * 1.6, y2: ey + ay * r * 1.6, stroke: "#172536", "stroke-width": 2 }, sO);
     tx(sO, ex + ax * r * 1.9, ey + ay * r * 1.9, L.north, { "text-anchor": "middle", "font-weight": "700" });
     var s = spencer(st.n, st.m / 60), d = s.dec / RAD, k = st.n < 79 || st.n >= 355 ? 3 : st.n < 172 ? 0 : st.n < 266 ? 1 : 2, kS = (k + 2) % 4;
-    oOut.innerHTML = "<b>" + dateLabel(st.n) + " " + YEAR + "</b> · " + L.zen + "<b>" + num(Math.abs(d), 1) + " ° " + (d >= 0 ? L.ns[0] : L.ns[1]) + "</b> (δ = " + num(d, 2) + " °). " +
-      L.hemN + "<b>" + L.seasonsN[k] + "</b>, " + L.hemS + "<b>" + L.seasonsN[kS] + "</b>. " + L.dist + num(e0(st.n), 3) + L.distNote;
+    oOut.innerHTML = "<b>" + dateLabel(st.n) + " " + YEAR + "</b> · " + L.zen + "<b>" + num(Math.abs(d), 1) + (fr ? " ° " : "° ") + (d >= 0 ? L.ns[0] : L.ns[1]) + "</b> (δ = " + num(d, 2) + (fr ? " °). " : "°). ") +
+      L.hemN + "<b>" + L.seasonsN[k] + "</b>" + (fr ? ", " : "; ") + L.hemS + "<b>" + L.seasonsN[kS] + "</b>. " + L.dist + num(e0(st.n), 3) + L.distNote;
   }
 
   // ------------------------------------------------------------------ 1b. why the day is longer: the Earth seen from the side
@@ -178,8 +178,8 @@
       }
       if (r[3]) {
         var share = lit / 120, ev = events(r[3].lat, r[3].lon, st.n), lab = seg.reduce(function (m, z) { return z.xy[0] > m.xy[0] ? z : m; });
-        tx(sS, cx + R + 8, lab.xy[1] + 4, r[1] + " · " + Math.round(100 * share) + " %", { fill: r[2], "font-weight": "700" });
-        out += "<b style=\"color:" + r[2] + "\">" + r[1] + "</b> : " + (fr ? "le cercle de latitude passe " : "the circle of latitude spends ") + "<b>" + Math.round(100 * share) + " %</b>" +
+        tx(sS, cx + R + 8, lab.xy[1] + 4, r[1] + " · " + Math.round(100 * share) + (fr ? " %" : "%"), { fill: r[2], "font-weight": "700" });
+        out += "<b style=\"color:" + r[2] + "\">" + r[1] + (fr ? "</b> : " : "</b>: ") + (fr ? "le cercle de latitude passe " : "the circle of latitude spends ") + "<b>" + Math.round(100 * share) + (fr ? " %</b>" : "%</b>") +
           (fr ? " de son tour dans la lumière, soit " : " of its turn in the light, i.e. ") + L.hm(1440 * share) + (fr ? " ; durée du jour avec la réfraction : " : "; day length with refraction: ") + "<b>" + L.hm(ev.len) + "</b>.<br>";
       }
     });

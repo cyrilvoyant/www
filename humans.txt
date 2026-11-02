@@ -6,35 +6,70 @@ ORCID: https://orcid.org/0000-0003-0242-7377
 Laboratory: Centre O.I.E. (Observation, Impacts, Energy), Mines Paris - PSL
 
 /* CO-AUTHORS AND CONTRIBUTORS CREDITED ON THIS SITE */
+Adrien Chatel: https://orcid.org/0009-0006-5581-7685
+Ahmed A Ewees: https://orcid.org/0000-0002-0666-7055
 Alan Julien: https://orcid.org/0009-0003-0247-0663
+Ali Omran Al-Sulttani: https://orcid.org/0000-0001-8734-5287
 Andreas Kazantzidis: https://orcid.org/0009-0005-6612-4991
+Asaad M Armanuos: https://orcid.org/0000-0002-4134-0429
+Bilel Zerouali: https://orcid.org/0000-0003-4735-9750
 Candice Banes: https://orcid.org/0009-0003-6656-8168
 Claudio Francesco Nicolosi: https://orcid.org/0009-0001-2962-6643
+David Taieb: https://orcid.org/0000-0002-0400-7600
 Dazhi Yang: https://orcid.org/0000-0003-2162-6873
+Elena Magliaro: https://orcid.org/0009-0009-8057-1957
+Elke Lorenz: https://orcid.org/0000-0002-7475-1048
+Eric Postma: https://orcid.org/0000-0001-9627-1523
+Fei Wang: https://orcid.org/0000-0002-7332-9726
+Gabriel Chesnoiu: https://orcid.org/0009-0005-6831-7607
 Ghjuvan Antone Faggianelli: https://orcid.org/0000-0002-9954-5910
 Gilles Notton: https://orcid.org/0000-0002-6267-9632
-Jamie Bright: https://orcid.org/0000-0002-9465-3453
+Guang-Bin Huang: https://orcid.org/0000-0002-2480-4965
+Hai Tao: https://orcid.org/0000-0002-6156-1974
+Haifa Harrouch: https://orcid.org/0009-0001-5988-4803
+Hassen Bouzgou: https://orcid.org/0000-0003-3685-1213
+Haytham El-Houari: https://orcid.org/0009-0004-8728-6562
+Jaap van den Herik: https://orcid.org/0000-0001-9751-761X
+Jamie M. Bright: https://orcid.org/0000-0002-9465-3453
 Jan Kleissl: https://orcid.org/0000-0003-4364-0211
-Jean-Laurent Duchaud: https://orcid.org/0000-0001-7490-7260
+Javier Almorox: https://orcid.org/0000-0003-1523-0979
+Jean Laurent Duchaud: https://orcid.org/0000-0001-7490-7260
 Jeroen Baas: https://orcid.org/0000-0001-8005-4153
+Jihad A. Younis: https://orcid.org/0000-0001-7116-3251
 John P. A. Ioannidis: https://orcid.org/0000-0003-3118-6859
+Josselin Le Gal La Salle: https://orcid.org/0000-0003-0126-3796
+Kamel Abdeladim: https://orcid.org/0000-0001-5087-7538
 Lionel Ménard: https://orcid.org/0009-0002-2156-8538
 Luis Antonio García Gutiérrez: https://orcid.org/0000-0002-3480-1784
+Maklewa Agoundedemba: https://orcid.org/0000-0001-7537-4080
+Marc Muselli: https://orcid.org/0000-0002-2786-2749
+Martin János Mayer: https://orcid.org/0000-0001-5631-6117
+Mathieu David: https://orcid.org/0000-0002-7382-1294
 Milan Despotović: https://orcid.org/0000-0003-3144-5945
 Mohammed Asloune: https://orcid.org/0009-0004-0183-2156
+Mohammed Majeed Hameed: https://orcid.org/0000-0002-9366-9162
+Nadhir Al-Ansari: https://orcid.org/0000-0002-6790-2653
 Nadjem Bailek: https://orcid.org/0000-0001-9051-8548
 Nicolas Fichaux: https://orcid.org/0009-0008-2824-0387
 Paolo Stringari: https://orcid.org/0000-0002-5403-9328
 Philippe Blanc: https://orcid.org/0000-0002-6345-0004
 Philippe Lauret: https://orcid.org/0000-0003-2959-6146
+Rabab Triki: https://orcid.org/0000-0002-4532-4864
+Richard Perez: https://orcid.org/0000-0001-8064-3281
 Rodanthi-Elisavet Mamouri: https://orcid.org/0000-0003-4836-8560
 Rodrigo Amaro e Silva: https://orcid.org/0000-0002-2813-150X
 Roy Boverhof: https://orcid.org/0000-0002-7299-680X
+Shamsuddin Shahid: https://orcid.org/0000-0001-9621-6452
+Sinan Q Salih: https://orcid.org/0000-0003-0717-7506
 Sylvain Cros: https://orcid.org/0000-0002-7702-2123
 Ted Soubdhan: https://orcid.org/0000-0002-6402-8438
+Thomas Carriere: https://orcid.org/0000-0003-3529-6801
+Ufuk Beyaztas: https://orcid.org/0000-0002-5208-4950
 Xavier Silvani: https://orcid.org/0000-0002-0387-1667
+Yoan Jheelan: https://orcid.org/0009-0002-2075-3571
 Yves-Marie Saint-Drenan: https://orcid.org/0000-0003-1471-1092
 Zaher Mundher Yaseen: https://orcid.org/0000-0003-3344-214X
+Zhao Zhen: https://orcid.org/0000-0001-5406-6441
 
 /* SITE */
 Last update: 2026-11-02

@@ -22,16 +22,16 @@
    "datePublished": "2026-10-24",
    "author": [
     {
-     "@id": "#hassen-bouzgou"
+     "@id": "https://orcid.org/0000-0003-3685-1213"
     },
     {
-     "@id": "#gabriel-chesnoiu"
+     "@id": "https://orcid.org/0009-0005-6831-7607"
     },
     {
-     "@id": "#claudio-f-nicolosi"
+     "@id": "https://orcid.org/0009-0001-2962-6643"
     },
     {
-     "@id": "#adrien-chatel"
+     "@id": "https://orcid.org/0009-0006-5581-7685"
     },
     {
      "@id": "https://orcid.org/0000-0002-6267-9632"
@@ -71,16 +71,16 @@
    "programmingLanguage": "MATLAB",
    "author": [
     {
-     "@id": "#hassen-bouzgou"
+     "@id": "https://orcid.org/0000-0003-3685-1213"
     },
     {
-     "@id": "#gabriel-chesnoiu"
+     "@id": "https://orcid.org/0009-0005-6831-7607"
     },
     {
-     "@id": "#claudio-f-nicolosi"
+     "@id": "https://orcid.org/0009-0001-2962-6643"
     },
     {
-     "@id": "#adrien-chatel"
+     "@id": "https://orcid.org/0009-0006-5581-7685"
     },
     {
      "@id": "https://orcid.org/0000-0002-6267-9632"
@@ -95,22 +95,22 @@
    "description": "H. Bouzgou, G. Chesnoiu, C. F. Nicolosi, A. Chatel, G. Notton, L. Menard, C. Voyant. Dimensionality reduction with redundancy awareness for parsimonious PV power time series forecasting (manuscript in preparation; no result of it is reported here)"
   },
   {
-   "@id": "#hassen-bouzgou",
+   "@id": "https://orcid.org/0000-0003-3685-1213",
    "@type": "Person",
    "name": "Hassen Bouzgou"
   },
   {
-   "@id": "#gabriel-chesnoiu",
+   "@id": "https://orcid.org/0009-0005-6831-7607",
    "@type": "Person",
    "name": "Gabriel Chesnoiu"
   },
   {
-   "@id": "#claudio-f-nicolosi",
+   "@id": "https://orcid.org/0009-0001-2962-6643",
    "@type": "Person",
    "name": "Claudio F. Nicolosi"
   },
   {
-   "@id": "#adrien-chatel",
+   "@id": "https://orcid.org/0009-0006-5581-7685",
    "@type": "Person",
    "name": "Adrien Chatel"
   },

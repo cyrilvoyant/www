@@ -29,10 +29,6 @@
       "citations": [],
       "sections": [
         {
-          "title": "Three sites, three roles",
-          "anchor": null
-        },
-        {
           "title": "Understand my research",
           "anchor": null
         },
@@ -42,6 +38,10 @@
         },
         {
           "title": "Find a simulator or animation",
+          "anchor": null
+        },
+        {
+          "title": "Three sites, three roles",
           "anchor": null
         },
         {
@@ -61,7 +61,7 @@
           "anchor": null
         },
         {
-          "title": "Forecasting the sun with its uncertainty: ELM against persistence, live",
+          "title": "Forecasting the sun with its uncertainty: ELM against persistence, demonstration over three days",
           "anchor": "pr-h"
         },
         {
@@ -99,15 +99,15 @@
           "anchor": null
         },
         {
-          "title": "Current Research",
+          "title": "Current research",
           "anchor": null
         },
         {
-          "title": "Research Projects",
+          "title": "Research projects",
           "anchor": null
         },
         {
-          "title": "Recognition and Service",
+          "title": "Recognition and service",
           "anchor": null
         },
         {
@@ -321,11 +321,11 @@
         },
         {
           "title": "Career",
-          "anchor": null
+          "anchor": "career"
         },
         {
           "title": "Education",
-          "anchor": null
+          "anchor": "education"
         },
         {
           "title": "Teaching and research supervision",
@@ -333,7 +333,7 @@
         },
         {
           "title": "Scientific service",
-          "anchor": null
+          "anchor": "service"
         },
         {
           "title": "Selected distinctions",
@@ -345,7 +345,7 @@
         },
         {
           "title": "Publication record",
-          "anchor": null
+          "anchor": "publications"
         }
       ]
     },
@@ -382,10 +382,6 @@
       "citations": [],
       "sections": [
         {
-          "title": "Trois sites, trois fonctions",
-          "anchor": null
-        },
-        {
           "title": "Comprendre mes recherches",
           "anchor": null
         },
@@ -395,6 +391,10 @@
         },
         {
           "title": "Trouver un simulateur ou une animation",
+          "anchor": null
+        },
+        {
+          "title": "Trois sites, trois fonctions",
           "anchor": null
         },
         {
@@ -414,7 +414,7 @@
           "anchor": null
         },
         {
-          "title": "Prévoir le soleil avec son incertitude : ELM contre persistance, en direct",
+          "title": "Prévoir le soleil avec son incertitude : ELM contre persistance, démonstration sur trois jours",
           "anchor": "pr-h"
         },
         {
@@ -462,17 +462,17 @@
     },
     {
       "url": "https://www.cyrilvoyant.com/fr/actualites/",
-      "title": "Actualités : publications, logiciels et essais",
+      "title": "Actualités : publications, logiciels et essais",
       "language": "fr",
       "topics": [],
       "citations": [],
       "sections": [
         {
-          "title": "Édition scientifique : sans vérification des données et du code, pas de confiance",
+          "title": "Édition scientifique : sans vérification des données et du code, pas de confiance",
           "anchor": null
         },
         {
-          "title": "ELECTRE, projet phare de l'institut Carnot M.I.N.E.S : électrifier les usages, journée de clôture le 18 novembre 2026",
+          "title": "ELECTRE, projet phare de l'institut Carnot M.I.N.E.S : électrifier les usages, journée de clôture le 18 novembre 2026",
           "anchor": null
         },
         {
@@ -480,35 +480,31 @@
           "anchor": null
         },
         {
-          "title": "Tunnel Load Simulator : générer la consommation électrique des tunnels routiers",
+          "title": "Tunnel Load Simulator : générer la consommation électrique des tunnels routiers",
           "anchor": null
         },
         {
-          "title": "Quand la lumière du soleil n'est plus directe : prévoir la fraction diffuse",
+          "title": "Quand la lumière du soleil n'est plus directe : prévoir la fraction diffuse",
           "anchor": null
         },
         {
-          "title": "Revisiter la persistance : BLEND, une prévision sous contrainte de symétrie pour les processus énergétiques périodiques",
+          "title": "Revisiter la persistance : BLEND, une prévision sous contrainte de symétrie pour les processus énergétiques périodiques",
           "anchor": null
         },
         {
-          "title": "Des pixels aux tolérances : valider les prévisions avec l'indice γ",
+          "title": "Des pixels aux tolérances : valider les prévisions avec l'indice γ",
           "anchor": null
         },
         {
-          "title": "Excellence scientifique à l’ère de l’IA : du SEO au GEO",
+          "title": "Excellence scientifique à l’ère de l’IA : du SEO au GEO",
           "anchor": null
         },
         {
-          "title": "Prévoir toutes les énergies d'un réseau d'un seul coup : l'approche parcimonieuse MIMO-ELM",
+          "title": "Prévoir toutes les énergies d'un réseau d'un seul coup : l'approche parcimonieuse MIMO-ELM",
           "anchor": null
         },
         {
-          "title": "Ce que montre l’étude",
-          "anchor": null
-        },
-        {
-          "title": "Une recherche invisible n'a pas d'impact : construire l'influence scientifique à l'ère de l'IA",
+          "title": "Une recherche invisible n'a pas d'impact : construire l'influence scientifique à l'ère de l'IA",
           "anchor": null
         },
         {
@@ -520,7 +516,7 @@
           "anchor": null
         },
         {
-          "title": "Vers une iodothérapie personnalisée : modélisation, dynamique et perspectives cliniques",
+          "title": "Vers une iodothérapie personnalisée : modélisation, dynamique et perspectives cliniques",
           "anchor": null
         },
         {
@@ -532,7 +528,7 @@
           "anchor": null
         },
         {
-          "title": "Prévision solaire : 500 articles (2017-2023) analysés par fouille de textes",
+          "title": "Prévision solaire : 500 articles (2017-2023) analysés par fouille de textes",
           "anchor": null
         },
         {
@@ -540,35 +536,19 @@
           "anchor": null
         },
         {
-          "title": "Nouvelle version de LQL-Equiv, logiciel libre de calcul de dose biologiquement équivalente en radiothérapie",
+          "title": "Nouvelle version de LQL-Equiv, logiciel libre de calcul de dose biologique efficace en radiothérapie",
           "anchor": null
         },
         {
-          "title": "Résumé",
+          "title": "Aider la décision clinique en radiothérapie : modèles de dose LQ et LQL comparés",
           "anchor": null
         },
         {
-          "title": "Aider la décision clinique en radiothérapie : modèles de dose LQ et LQL comparés",
+          "title": "Coefficient de variation stochastique : mesurer la variabilité et la prévisibilité du rayonnement solaire",
           "anchor": null
         },
         {
-          "title": "Résumé",
-          "anchor": null
-        },
-        {
-          "title": "Coefficient de variation stochastique : mesurer la variabilité et la prévisibilité du rayonnement solaire",
-          "anchor": null
-        },
-        {
-          "title": "Résumé",
-          "anchor": null
-        },
-        {
-          "title": "Métriques NICEᵏ : un cadre unifié pour évaluer les prévisions solaires déterministes",
-          "anchor": null
-        },
-        {
-          "title": "Résumé",
+          "title": "Métriques NICEᵏ : un cadre unifié pour évaluer les prévisions solaires déterministes",
           "anchor": null
         },
         {
@@ -576,58 +556,18 @@
           "anchor": null
         },
         {
-          "title": "Résumé",
+          "title": "Sélection des variables d'entrée pour prévoir le rayonnement solaire par apprentissage automatique : cas de l'Algérie",
           "anchor": null
         },
         {
-          "title": "Sélection des variables d'entrée pour prévoir le rayonnement solaire par apprentissage automatique : cas de l'Algérie",
-          "anchor": null
-        },
-        {
-          "title": "Résumé",
-          "anchor": null
-        },
-        {
-          "title": "Visibilité académique : pourquoi publier ne suffit plus",
-          "anchor": null
-        },
-        {
-          "title": "Un écosystème saturé",
-          "anchor": null
-        },
-        {
-          "title": "Avant la soumission : préparer la découvrabilité",
-          "anchor": null
-        },
-        {
-          "title": "Le libre accès : une chance à l’échelle mondiale",
-          "anchor": null
-        },
-        {
-          "title": "Écrire pour être découvert",
-          "anchor": null
-        },
-        {
-          "title": "Après la publication : orchestrer la diffusion",
-          "anchor": null
-        },
-        {
-          "title": "Des solutions structurelles nécessaires",
-          "anchor": null
-        },
-        {
-          "title": "Boîte à outils pratique",
-          "anchor": null
-        },
-        {
-          "title": "Références principales",
+          "title": "Visibilité académique : pourquoi publier ne suffit plus",
           "anchor": null
         }
       ]
     },
     {
       "url": "https://www.cyrilvoyant.com/fr/actualites/forecasting-with-less/",
-      "title": "BLEND : une meilleure persistance sans entraîner de réseau neuronal",
+      "title": "BLEND : une meilleure persistance sans entraîner de réseau neuronal",
       "language": "fr",
       "topics": [
         "Hybrider",
@@ -636,7 +576,7 @@
       "citations": [],
       "sections": [
         {
-          "title": "Code ouvert v1.1.1 : un benchmark hors échantillon",
+          "title": "Code ouvert v1.1.1 : un benchmark hors échantillon",
           "anchor": null
         },
         {
@@ -651,7 +591,7 @@
     },
     {
       "url": "https://www.cyrilvoyant.com/fr/actualites/gamma-index-forecast-validation/",
-      "title": "L'indice γ : valider des prévisions solaires décalées au-delà des erreurs ponctuelles",
+      "title": "L'indice γ : valider des prévisions solaires décalées au-delà des erreurs ponctuelles",
       "language": "fr",
       "topics": [
         "Démontrer la confiance",
@@ -671,7 +611,7 @@
     },
     {
       "url": "https://www.cyrilvoyant.com/fr/actualites/nice-forecast-evaluation/",
-      "title": "Métriques NICE : quand le RMSE masque une différence entre prévisions solaires",
+      "title": "Métriques NICE : quand la RMSE masque une différence entre prévisions solaires",
       "language": "fr",
       "topics": [
         "Démontrer la confiance",
@@ -691,7 +631,7 @@
     },
     {
       "url": "https://www.cyrilvoyant.com/fr/actualites/why-extreme-learning-machines/",
-      "title": "MIMO-ELM : sept signaux énergétiques de la Corse prévus par un seul modèle",
+      "title": "MIMO-ELM : sept signaux énergétiques de la Corse prévus par un seul modèle",
       "language": "fr",
       "topics": [
         "Apprendre frugalement",
@@ -707,7 +647,7 @@
     },
     {
       "url": "https://www.cyrilvoyant.com/fr/actualites/why-forecast-solar-power/",
-      "title": "sCV et F : variabilité et prévisibilité du rayonnement solaire",
+      "title": "sCV et F : variabilité et prévisibilité du rayonnement solaire",
       "language": "fr",
       "topics": [
         "Calculer directement",
@@ -731,7 +671,7 @@
     },
     {
       "url": "https://www.cyrilvoyant.com/fr/animations/attenuation-demi-epaisseur/",
-      "title": "Atténuation et couche de demi-atténuation : simulation interactive",
+      "title": "Atténuation et couche de demi-atténuation : simulation interactive",
       "language": "fr",
       "topics": [],
       "citations": [],
@@ -756,7 +696,7 @@
     },
     {
       "url": "https://www.cyrilvoyant.com/fr/animations/congelation-energie-puissance/",
-      "title": "Congélation : énergie sensible, chaleur latente et puissance",
+      "title": "Congélation : énergie sensible, chaleur latente et puissance",
       "language": "fr",
       "topics": [],
       "citations": [],
@@ -781,7 +721,7 @@
     },
     {
       "url": "https://www.cyrilvoyant.com/fr/animations/cop-carnot-machine-frigorifique/",
-      "title": "Machine frigorifique : COP et limite de Carnot",
+      "title": "Machine frigorifique : COP et limite de Carnot",
       "language": "fr",
       "topics": [],
       "citations": [],
@@ -806,7 +746,7 @@
     },
     {
       "url": "https://www.cyrilvoyant.com/fr/animations/correlation-significativite-r2/",
-      "title": "Corrélation, significativité et R² : animation pour les distinguer",
+      "title": "Corrélation, significativité et R² : animation pour les distinguer",
       "language": "fr",
       "topics": [],
       "citations": [],
@@ -831,7 +771,7 @@
     },
     {
       "url": "https://www.cyrilvoyant.com/fr/animations/courbe-roc/",
-      "title": "Courbe ROC interactive : sensibilité, spécificité et prévalence",
+      "title": "Courbe ROC interactive : sensibilité, spécificité et prévalence",
       "language": "fr",
       "topics": [],
       "citations": [],
@@ -856,7 +796,7 @@
     },
     {
       "url": "https://www.cyrilvoyant.com/fr/animations/effet-compton/",
-      "title": "Effet Compton : angle, photon diffusé et électron de recul",
+      "title": "Effet Compton : angle, photon diffusé et électron de recul",
       "language": "fr",
       "topics": [],
       "citations": [],
@@ -881,7 +821,7 @@
     },
     {
       "url": "https://www.cyrilvoyant.com/fr/animations/intervalles-regression/",
-      "title": "Régression : intervalle de confiance et intervalle de prévision",
+      "title": "Régression : intervalle de confiance et intervalle de prévision",
       "language": "fr",
       "topics": [],
       "citations": [],
@@ -906,7 +846,7 @@
     },
     {
       "url": "https://www.cyrilvoyant.com/fr/animations/loi-normale/",
-      "title": "Loi normale interactive : aire, probabilité et score z",
+      "title": "Loi normale interactive : aire, probabilité et score z",
       "language": "fr",
       "topics": [],
       "citations": [],
@@ -931,7 +871,7 @@
     },
     {
       "url": "https://www.cyrilvoyant.com/fr/animations/moteur-carnot/",
-      "title": "Moteur thermique et Carnot : animation du cycle et bilan d’énergie",
+      "title": "Moteur thermique et Carnot : animation du cycle et bilan d’énergie",
       "language": "fr",
       "topics": [],
       "citations": [],
@@ -956,7 +896,7 @@
     },
     {
       "url": "https://www.cyrilvoyant.com/fr/animations/onde-electromagnetique/",
-      "title": "Onde électromagnétique : animation des champs E et B",
+      "title": "Onde électromagnétique : animation des champs E et B",
       "language": "fr",
       "topics": [],
       "citations": [],
@@ -981,7 +921,7 @@
     },
     {
       "url": "https://www.cyrilvoyant.com/fr/animations/point-influent-regression/",
-      "title": "Régression et point influent : déplacer une observation",
+      "title": "Régression et point influent : déplacer une observation",
       "language": "fr",
       "topics": [],
       "citations": [],
@@ -1006,7 +946,7 @@
     },
     {
       "url": "https://www.cyrilvoyant.com/fr/animations/refroidissement-biot/",
-      "title": "Refroidissement d’un aliment : nombre de Biot et température à cœur",
+      "title": "Refroidissement d’un aliment : nombre de Biot et température à cœur",
       "language": "fr",
       "topics": [],
       "citations": [],
@@ -1031,21 +971,21 @@
     },
     {
       "url": "https://www.cyrilvoyant.com/fr/animations/soleil-saisons-utc/",
-      "title": "Le Soleil, les saisons et l'heure : une seule horloge pour les mesures",
+      "title": "Le Soleil, les saisons et l'heure : une seule horloge pour les mesures",
       "language": "fr",
       "topics": [],
       "citations": [],
       "sections": [
         {
-          "title": "Le cas de départ : le matin du 25 octobre 2026",
+          "title": "Le cas de départ : le matin du 25 octobre 2026",
           "anchor": null
         },
         {
-          "title": "1. Autour du Soleil : les saisons",
+          "title": "1. Autour du Soleil : les saisons",
           "anchor": null
         },
         {
-          "title": "2. La rotation : le jour et la nuit",
+          "title": "2. La rotation : le jour et la nuit",
           "anchor": null
         },
         {
@@ -1057,7 +997,7 @@
           "anchor": null
         },
         {
-          "title": "5. L'heure des mesures : une seule horloge",
+          "title": "5. L'heure des mesures : une seule horloge",
           "anchor": null
         },
         {
@@ -1076,7 +1016,7 @@
     },
     {
       "url": "https://www.cyrilvoyant.com/fr/animations/test-khi-deux/",
-      "title": "Test du χ² : dé équilibré, observés, attendus et tableau 2×2",
+      "title": "Test du χ² : dé équilibré, observés, attendus et tableau 2×2",
       "language": "fr",
       "topics": [],
       "citations": [],
@@ -1101,7 +1041,7 @@
     },
     {
       "url": "https://www.cyrilvoyant.com/fr/animations/test-student/",
-      "title": "Test de Student interactif : deux moyennes, dispersion et p-value",
+      "title": "Test de Student interactif : deux moyennes, dispersion et p-value",
       "language": "fr",
       "topics": [],
       "citations": [],
@@ -1184,7 +1124,7 @@
     },
     {
       "url": "https://www.cyrilvoyant.com/fr/collaborer/",
-      "title": "Collaborer : projets de recherche, études et adaptation des outils",
+      "title": "Collaborer : projets de recherche, études et adaptation des outils",
       "language": "fr",
       "topics": [],
       "citations": [],
@@ -1206,14 +1146,14 @@
           "anchor": "process"
         },
         {
-          "title": "Une question et des données ? Regardons-les ensemble.",
+          "title": "Une question et des données ? Regardons-les ensemble.",
           "anchor": null
         }
       ]
     },
     {
       "url": "https://www.cyrilvoyant.com/fr/donnees/",
-      "title": "Les modèles sont dans les données : qualifier, certifier, licencier",
+      "title": "Les modèles sont dans les données : qualifier, certifier, placer sous licence",
       "language": "fr",
       "topics": [],
       "citations": [],
@@ -1223,11 +1163,11 @@
           "anchor": null
         },
         {
-          "title": "Un exemple : Webservice-Energy",
+          "title": "Un exemple : Webservice-Energy",
           "anchor": null
         },
         {
-          "title": "Choisir une licence : le code et les données",
+          "title": "Choisir une licence : le code et les données",
           "anchor": null
         },
         {
@@ -1238,7 +1178,7 @@
     },
     {
       "url": "https://www.cyrilvoyant.com/fr/edition-scientifique-confiance/",
-      "title": "Édition scientifique : sans vérification, pas de confiance",
+      "title": "Édition scientifique : sans vérification, pas de confiance",
       "language": "fr",
       "topics": [
         "édition scientifique",
@@ -1367,7 +1307,7 @@
           "anchor": null
         },
         {
-          "title": "Le constat mondial : trop d'articles, pas assez de vérification",
+          "title": "Le constat mondial : trop d'articles, pas assez de vérification",
           "anchor": null
         },
         {
@@ -1375,7 +1315,7 @@
           "anchor": null
         },
         {
-          "title": "Qui vérifie quoi ? Les acteurs, et ce que chaque dispositif est conçu pour couvrir",
+          "title": "Qui vérifie quoi ? Les acteurs, et ce que chaque dispositif est conçu pour couvrir",
           "anchor": null
         },
         {
@@ -1383,7 +1323,7 @@
           "anchor": null
         },
         {
-          "title": "En France : un travail d'éditeur qui ne compte pas",
+          "title": "En France : un travail d'éditeur qui ne compte pas",
           "anchor": null
         },
         {
@@ -1424,7 +1364,7 @@
           "anchor": null
         },
         {
-          "title": "Prévision solaire : le cours part du signal",
+          "title": "Prévision solaire : le cours part du signal",
           "anchor": null
         },
         {
@@ -1435,7 +1375,7 @@
     },
     {
       "url": "https://www.cyrilvoyant.com/fr/enseignement/bases-thermiques-aliments/",
-      "title": "Bases de thermique pour le génie industriel alimentaire : transferts, refroidissement et congélation",
+      "title": "Bases de thermique pour le génie industriel alimentaire : transferts, refroidissement et congélation",
       "language": "fr",
       "topics": [],
       "citations": [],
@@ -1456,7 +1396,7 @@
     },
     {
       "url": "https://www.cyrilvoyant.com/fr/enseignement/bases-thermiques-aliments/cours/",
-      "title": "Cours : transferts thermiques, refroidissement et congélation des aliments",
+      "title": "Cours : transferts thermiques, refroidissement et congélation des aliments",
       "language": "fr",
       "topics": [],
       "citations": [],
@@ -1466,7 +1406,7 @@
           "anchor": null
         },
         {
-          "title": "BASES DE THERMIQUE POUR LE GÉNIE INDUSTRIEL ALIMENTAIRE",
+          "title": "Diaporama",
           "anchor": null
         },
         {
@@ -1474,14 +1414,14 @@
           "anchor": null
         },
         {
-          "title": "Pour aller plus loin : questions et réponses",
+          "title": "Pour aller plus loin : questions et réponses",
           "anchor": null
         }
       ]
     },
     {
       "url": "https://www.cyrilvoyant.com/fr/enseignement/biostatistique/",
-      "title": "Biostatistique pour les études de santé : le cours en trois chapitres",
+      "title": "Biostatistique pour les études de santé : le cours en trois chapitres",
       "language": "fr",
       "topics": [],
       "citations": [],
@@ -1502,7 +1442,7 @@
     },
     {
       "url": "https://www.cyrilvoyant.com/fr/enseignement/biostatistique/correlation-regression/",
-      "title": "Chapitre 3 : corrélation, régression linéaire et tests du χ²",
+      "title": "Chapitre 3 : corrélation, régression linéaire et tests du χ²",
       "language": "fr",
       "topics": [],
       "citations": [],
@@ -1516,15 +1456,15 @@
           "anchor": null
         },
         {
-          "title": "χ² : comparer observés et attendus",
+          "title": "χ² : comparer observés et attendus",
           "anchor": null
         },
         {
-          "title": "Régression : moyenne ou future observation ?",
+          "title": "Régression : moyenne ou future observation ?",
           "anchor": null
         },
         {
-          "title": "Support de Cours Introduction aux Biostatistiques Partie 3",
+          "title": "Diaporama",
           "anchor": null
         },
         {
@@ -1532,14 +1472,14 @@
           "anchor": null
         },
         {
-          "title": "Pour aller plus loin : questions et réponses",
+          "title": "Pour aller plus loin : questions et réponses",
           "anchor": null
         }
       ]
     },
     {
       "url": "https://www.cyrilvoyant.com/fr/enseignement/biostatistique/probabilites/",
-      "title": "Chapitre 1 : probabilités, probabilités conditionnelles, tableaux de contingence et courbes ROC",
+      "title": "Chapitre 1 : probabilités, probabilités conditionnelles, tableaux de contingence et courbes ROC",
       "language": "fr",
       "topics": [],
       "citations": [],
@@ -1549,7 +1489,7 @@
           "anchor": null
         },
         {
-          "title": "Plan",
+          "title": "Diaporama",
           "anchor": null
         },
         {
@@ -1557,14 +1497,14 @@
           "anchor": null
         },
         {
-          "title": "Pour aller plus loin : questions et réponses",
+          "title": "Pour aller plus loin : questions et réponses",
           "anchor": null
         }
       ]
     },
     {
       "url": "https://www.cyrilvoyant.com/fr/enseignement/biostatistique/statistiques-descriptives/",
-      "title": "Chapitre 2 : statistique descriptive, loi normale et tests d'hypothèses",
+      "title": "Chapitre 2 : statistique descriptive, loi normale et tests d'hypothèses",
       "language": "fr",
       "topics": [],
       "citations": [],
@@ -1578,7 +1518,7 @@
           "anchor": null
         },
         {
-          "title": "Support de Cours Introduction aux Biostatistiques Partie 2",
+          "title": "Diaporama",
           "anchor": null
         },
         {
@@ -1586,14 +1526,14 @@
           "anchor": null
         },
         {
-          "title": "Pour aller plus loin : questions et réponses",
+          "title": "Pour aller plus loin : questions et réponses",
           "anchor": null
         }
       ]
     },
     {
       "url": "https://www.cyrilvoyant.com/fr/enseignement/cours-prevision-solaire/",
-      "title": "Cours de prévision solaire : prévoir la ressource solaire intermittente",
+      "title": "Cours de prévision solaire : prévoir la ressource solaire intermittente",
       "language": "fr",
       "topics": [],
       "citations": [],
@@ -1615,7 +1555,7 @@
           "anchor": "part-1"
         },
         {
-          "title": "1 · Pourquoi prévoir le solaire ?",
+          "title": "1 · Pourquoi prévoir le solaire ?",
           "anchor": "part-2"
         },
         {
@@ -1658,7 +1598,7 @@
     },
     {
       "url": "https://www.cyrilvoyant.com/fr/enseignement/physique-industrielle/",
-      "title": "Physique industrielle : thermodynamique, vapeur d'eau et production de froid",
+      "title": "Physique industrielle : thermodynamique, vapeur d'eau et production de froid",
       "language": "fr",
       "topics": [],
       "citations": [],
@@ -1683,7 +1623,7 @@
     },
     {
       "url": "https://www.cyrilvoyant.com/fr/enseignement/physique-industrielle/cycles-frigorifiques/",
-      "title": "Chapitre 5 : les cycles frigorifiques",
+      "title": "Chapitre 5 : les cycles frigorifiques",
       "language": "fr",
       "topics": [],
       "citations": [],
@@ -1693,7 +1633,7 @@
           "anchor": null
         },
         {
-          "title": "C. Voyant",
+          "title": "Diaporama",
           "anchor": null
         },
         {
@@ -1701,14 +1641,14 @@
           "anchor": null
         },
         {
-          "title": "Pour aller plus loin : questions et réponses",
+          "title": "Pour aller plus loin : questions et réponses",
           "anchor": null
         }
       ]
     },
     {
       "url": "https://www.cyrilvoyant.com/fr/enseignement/physique-industrielle/cycles-moteurs/",
-      "title": "Chapitre 4 : les cycles thermodynamiques moteurs",
+      "title": "Chapitre 4 : les cycles thermodynamiques moteurs",
       "language": "fr",
       "topics": [],
       "citations": [],
@@ -1718,11 +1658,11 @@
           "anchor": null
         },
         {
-          "title": "Moteur ditherme : énergie, rendement et Carnot",
+          "title": "Moteur ditherme : énergie, rendement et Carnot",
           "anchor": null
         },
         {
-          "title": "C. Voyant",
+          "title": "Diaporama",
           "anchor": null
         },
         {
@@ -1730,14 +1670,14 @@
           "anchor": null
         },
         {
-          "title": "Pour aller plus loin : questions et réponses",
+          "title": "Pour aller plus loin : questions et réponses",
           "anchor": null
         }
       ]
     },
     {
       "url": "https://www.cyrilvoyant.com/fr/enseignement/physique-industrielle/gaz-parfaits-et-reels/",
-      "title": "Chapitre 2 : gaz parfaits, gaz réels et diagrammes",
+      "title": "Chapitre 2 : gaz parfaits, gaz réels et diagrammes",
       "language": "fr",
       "topics": [],
       "citations": [],
@@ -1747,7 +1687,7 @@
           "anchor": null
         },
         {
-          "title": "C. Voyant",
+          "title": "Diaporama",
           "anchor": null
         },
         {
@@ -1755,14 +1695,14 @@
           "anchor": null
         },
         {
-          "title": "Pour aller plus loin : questions et réponses",
+          "title": "Pour aller plus loin : questions et réponses",
           "anchor": null
         }
       ]
     },
     {
       "url": "https://www.cyrilvoyant.com/fr/enseignement/physique-industrielle/notions-de-thermodynamique/",
-      "title": "Chapitre 1 : notions générales de thermodynamique",
+      "title": "Chapitre 1 : notions générales de thermodynamique",
       "language": "fr",
       "topics": [],
       "citations": [],
@@ -1772,7 +1712,7 @@
           "anchor": null
         },
         {
-          "title": "C. Voyant",
+          "title": "Diaporama",
           "anchor": null
         },
         {
@@ -1780,14 +1720,14 @@
           "anchor": null
         },
         {
-          "title": "Pour aller plus loin : questions et réponses",
+          "title": "Pour aller plus loin : questions et réponses",
           "anchor": null
         }
       ]
     },
     {
       "url": "https://www.cyrilvoyant.com/fr/enseignement/physique-industrielle/vapeur-d-eau/",
-      "title": "Chapitre 3 : la vapeur d'eau",
+      "title": "Chapitre 3 : la vapeur d'eau",
       "language": "fr",
       "topics": [],
       "citations": [],
@@ -1797,7 +1737,7 @@
           "anchor": null
         },
         {
-          "title": "C. Voyant",
+          "title": "Diaporama",
           "anchor": null
         },
         {
@@ -1805,14 +1745,14 @@
           "anchor": null
         },
         {
-          "title": "Pour aller plus loin : questions et réponses",
+          "title": "Pour aller plus loin : questions et réponses",
           "anchor": null
         }
       ]
     },
     {
       "url": "https://www.cyrilvoyant.com/fr/enseignement/physique-pass/",
-      "title": "Physique pour les études de santé : ondes électromagnétiques, rayons X et imagerie",
+      "title": "Physique pour les études de santé : ondes électromagnétiques, rayons X et imagerie",
       "language": "fr",
       "topics": [],
       "citations": [],
@@ -1826,7 +1766,7 @@
           "anchor": null
         },
         {
-          "title": "Le polycopié",
+          "title": "Énoncés des exercices",
           "anchor": null
         },
         {
@@ -1837,57 +1777,57 @@
     },
     {
       "url": "https://www.cyrilvoyant.com/fr/enseignement/physique-pass/ed1-corrige/",
-      "title": "Exercices dirigés 1 : les ondes électromagnétiques, corrigé",
+      "title": "Exercices dirigés 1 : les ondes électromagnétiques, corrigé",
       "language": "fr",
       "topics": [],
       "citations": [],
       "sections": [
         {
-          "title": "Le chapitre en 10 points",
+          "title": "La séance en 10 points",
           "anchor": null
         },
         {
-          "title": "Semestre 1 : Physique Les ondes électromagnétiques ED 1",
+          "title": "Diaporama",
           "anchor": null
         },
         {
-          "title": "Plan du chapitre",
+          "title": "Plan de la séance",
           "anchor": null
         },
         {
-          "title": "Pour aller plus loin : questions et réponses",
+          "title": "Pour aller plus loin : questions et réponses",
           "anchor": null
         }
       ]
     },
     {
       "url": "https://www.cyrilvoyant.com/fr/enseignement/physique-pass/ed2-corrige/",
-      "title": "Exercices dirigés 2 : les ondes électromagnétiques, corrigé",
+      "title": "Exercices dirigés 2 : les ondes électromagnétiques, corrigé",
       "language": "fr",
       "topics": [],
       "citations": [],
       "sections": [
         {
-          "title": "Le chapitre en 10 points",
+          "title": "La séance en 10 points",
           "anchor": null
         },
         {
-          "title": "Semestre 1 : Physique Les ondes électromagnétiques ED 2",
+          "title": "Diaporama",
           "anchor": null
         },
         {
-          "title": "Plan du chapitre",
+          "title": "Plan de la séance",
           "anchor": null
         },
         {
-          "title": "Pour aller plus loin : questions et réponses",
+          "title": "Pour aller plus loin : questions et réponses",
           "anchor": null
         }
       ]
     },
     {
       "url": "https://www.cyrilvoyant.com/fr/enseignement/physique-pass/ondes-electromagnetiques/",
-      "title": "Cours : les ondes électromagnétiques et les bases physiques de l'imagerie",
+      "title": "Cours : les ondes électromagnétiques et les bases physiques de l'imagerie",
       "language": "fr",
       "topics": [],
       "citations": [],
@@ -1897,15 +1837,15 @@
           "anchor": null
         },
         {
-          "title": "Onde électromagnétique : voir la propagation",
+          "title": "Onde électromagnétique : voir la propagation",
           "anchor": null
         },
         {
-          "title": "Compton : angle et partage de l’énergie",
+          "title": "Compton : angle et partage de l’énergie",
           "anchor": null
         },
         {
-          "title": "Semestre 1 : Physique Les ondes électromagnétiques",
+          "title": "Diaporama",
           "anchor": null
         },
         {
@@ -1913,14 +1853,14 @@
           "anchor": null
         },
         {
-          "title": "Pour aller plus loin : questions et réponses",
+          "title": "Pour aller plus loin : questions et réponses",
           "anchor": null
         }
       ]
     },
     {
       "url": "https://www.cyrilvoyant.com/fr/excellence-rtvacos/",
-      "title": "L'arbre RTVACOS : où votre travail peut-il casser ?",
+      "title": "L'arbre RTVACOS : où votre travail peut-il casser ?",
       "language": "fr",
       "topics": [],
       "citations": [],
@@ -2018,7 +1958,7 @@
     },
     {
       "url": "https://www.cyrilvoyant.com/fr/le-fil/",
-      "title": "Le fil : cinq étapes, une même démarche",
+      "title": "Le fil : cinq étapes, une même démarche",
       "language": "fr",
       "topics": [],
       "citations": [],
@@ -2053,135 +1993,19 @@
       "citations": [],
       "sections": [
         {
-          "title": "Bruit et mémoire : comparer des prévisions",
+          "title": "Énergie",
           "anchor": null
         },
         {
-          "title": "Neutrons atmosphériques et bore : explorer les échelles de dose",
+          "title": "Physique médicale",
           "anchor": null
         },
         {
-          "title": "Comparer une prévision à la persistance, NICE",
+          "title": "Cours et statistiques",
           "anchor": null
         },
         {
-          "title": "Calculer les poids de BLEND",
-          "anchor": null
-        },
-        {
-          "title": "Mesurer variabilité et prévisibilité, sCV et F",
-          "anchor": null
-        },
-        {
-          "title": "Déplacer une prévision et observer l’indice γ",
-          "anchor": null
-        },
-        {
-          "title": "Explorer les coefficients et la table ARTU",
-          "anchor": null
-        },
-        {
-          "title": "Comparer des prévisions : persistance, AR et ELM selon l’horizon",
-          "anchor": null
-        },
-        {
-          "title": "Comparer les doses biologiques LQ et LQL",
-          "anchor": null
-        },
-        {
-          "title": "Explorer les profils du modèle thyroïde",
-          "anchor": null
-        },
-        {
-          "title": "Ouvrir l’application LQL-Equiv complète",
-          "anchor": null
-        },
-        {
-          "title": "Dialoguer avec des codes, WebSemantic",
-          "anchor": null
-        },
-        {
-          "title": "Simuler la demande électrique d’un tunnel, TLS",
-          "anchor": null
-        },
-        {
-          "title": "Le Soleil, les saisons et l’heure UTC",
-          "anchor": null
-        },
-        {
-          "title": "Prévision complexe : régler α et la largeur des intervalles",
-          "anchor": null
-        },
-        {
-          "title": "Observer la prévision probabiliste et sa lookup table",
-          "anchor": null
-        },
-        {
-          "title": "Comprendre sensibilité, spécificité et courbe ROC",
-          "anchor": null
-        },
-        {
-          "title": "Explorer la loi normale",
-          "anchor": null
-        },
-        {
-          "title": "Explorer l’atténuation et la CDA",
-          "anchor": null
-        },
-        {
-          "title": "Refroidir un aliment : Biot, température moyenne et à cœur",
-          "anchor": null
-        },
-        {
-          "title": "Congeler : énergie et puissance frigorifique",
-          "anchor": null
-        },
-        {
-          "title": "Machine frigorifique : borne de Carnot du COP",
-          "anchor": null
-        },
-        {
-          "title": "Corrélation et régression : déplacer un point",
-          "anchor": null
-        },
-        {
-          "title": "Préparer un plan d’action RTVACOS",
-          "anchor": null
-        },
-        {
-          "title": "S’orienter dans les responsabilités liées à l’IA",
-          "anchor": null
-        },
-        {
-          "title": "Explorer un choix de licence",
-          "anchor": null
-        },
-        {
-          "title": "Student : différence, p-value et intervalle de confiance",
-          "anchor": null
-        },
-        {
-          "title": "Significativité et R² : quelle variation explique la droite ?",
-          "anchor": null
-        },
-        {
-          "title": "χ² : observés, attendus et contributions",
-          "anchor": null
-        },
-        {
-          "title": "Régression : intervalle de confiance ou de prévision ?",
-          "anchor": null
-        },
-        {
-          "title": "Onde EM animée : E, B et propagation",
-          "anchor": null
-        },
-        {
-          "title": "Compton : angle et partage de l’énergie",
-          "anchor": null
-        },
-        {
-          "title": "Moteur ditherme : bilan et borne de Carnot",
+          "title": "Pratiques de recherche",
           "anchor": null
         }
       ]
@@ -2219,7 +2043,8 @@
             },
             {
               "@type": "Person",
-              "name": "Jamie M. Bright"
+              "name": "Jamie M. Bright",
+              "sameAs": "https://orcid.org/0000-0002-9465-3453"
             },
             {
               "@type": "Person",
@@ -2350,7 +2175,7 @@
     },
     {
       "url": "https://www.cyrilvoyant.com/fr/outils/comparateur-previsions/",
-      "title": "Comparer des prévisions : quand un modèle plus complexe vaut-il la peine ?",
+      "title": "Comparer des prévisions : quand un modèle plus complexe vaut-il la peine ?",
       "language": "fr",
       "topics": [],
       "citations": [],
@@ -2601,7 +2426,8 @@
               "@type": "Person",
               "givenName": "David",
               "familyName": "Taieb",
-              "name": "David Taieb"
+              "name": "David Taieb",
+              "sameAs": "https://orcid.org/0000-0002-0400-7600"
             },
             {
               "@type": "Person",
@@ -2632,7 +2458,8 @@
             },
             {
               "@type": "Person",
-              "name": "David Taieb"
+              "name": "David Taieb",
+              "sameAs": "https://orcid.org/0000-0002-0400-7600"
             },
             {
               "@type": "Person",
@@ -2658,7 +2485,7 @@
     },
     {
       "url": "https://www.cyrilvoyant.com/fr/outils/nice/",
-      "title": "Comparer une prévision à la persistance : NICE",
+      "title": "Comparer une prévision à la persistance : NICE",
       "language": "fr",
       "topics": [],
       "citations": [
@@ -2724,7 +2551,7 @@
     },
     {
       "url": "https://www.cyrilvoyant.com/fr/outils/variabilite-previsibilite/",
-      "title": "Mesurer variabilité et prévisibilité : sCV et F",
+      "title": "Mesurer variabilité et prévisibilité : sCV et F",
       "language": "fr",
       "topics": [],
       "citations": [
@@ -2836,7 +2663,7 @@
     },
     {
       "url": "https://www.cyrilvoyant.com/fr/recits/",
-      "title": "Recherche : questions, résultats et méthodes",
+      "title": "Recherche : questions, résultats et méthodes",
       "language": "fr",
       "topics": [],
       "citations": [],
@@ -2870,7 +2697,7 @@
           "anchor": null
         },
         {
-          "title": "Prévision solaire : trois dossiers complémentaires",
+          "title": "Prévision solaire : trois dossiers complémentaires",
           "anchor": null
         }
       ]
@@ -2921,7 +2748,7 @@
     },
     {
       "url": "https://www.cyrilvoyant.com/fr/recits/neutrons-atmospheriques-bnct/",
-      "title": "Des neutrons atmosphériques à la capture du bore : jusqu’où va l’idée ?",
+      "title": "Des neutrons atmosphériques à la capture du bore : jusqu’où va l’idée ?",
       "language": "fr",
       "topics": [
         "Calculer directement",
@@ -2930,7 +2757,7 @@
       "citations": [],
       "sections": [
         {
-          "title": "Avant l’expérience : trois notions clés",
+          "title": "Avant l’expérience : trois notions clés",
           "anchor": null
         },
         {
@@ -2942,7 +2769,7 @@
           "anchor": null
         },
         {
-          "title": "Le résultat : une limite quantitative, pas un hôpital volant validé",
+          "title": "Le résultat : une limite quantitative, pas un hôpital volant validé",
           "anchor": "resultat"
         },
         {
@@ -2950,11 +2777,11 @@
           "anchor": null
         },
         {
-          "title": "Monte-Carlo : suivre beaucoup d’histoires de neutrons",
+          "title": "Monte-Carlo : suivre beaucoup d’histoires de neutrons",
           "anchor": "monte-carlo"
         },
         {
-          "title": "BSH ou BPA : ce que la comparaison dit vraiment",
+          "title": "BSH ou BPA : ce que la comparaison dit vraiment",
           "anchor": null
         },
         {
@@ -2966,7 +2793,7 @@
           "anchor": null
         },
         {
-          "title": "Faible dose moyenne, haut LET : pourquoi la question biologique reste intéressante",
+          "title": "Faible dose moyenne, haut LET : pourquoi la question biologique reste intéressante",
           "anchor": null
         },
         {
@@ -3137,7 +2964,7 @@
     },
     {
       "url": "https://www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/",
-      "title": "Le modèle ne fait pas tout : variabilité, mémoire et prévisibilité",
+      "title": "Le modèle ne fait pas tout : variabilité, mémoire et prévisibilité",
       "language": "fr",
       "topics": [
         "Calculer directement",
@@ -3162,7 +2989,7 @@
           "anchor": null
         },
         {
-          "title": "« No free lunch » : la structure du problème compte",
+          "title": "« No free lunch » : la structure du problème compte",
           "anchor": "nfl"
         },
         {
@@ -3221,7 +3048,7 @@
     },
     {
       "url": "https://www.cyrilvoyant.com/fr/vue-d-ensemble/",
-      "title": "Vue d'ensemble : recherche, logiciels, cours et outils",
+      "title": "Vue d'ensemble : recherche, logiciels, cours et outils",
       "language": "fr",
       "topics": [],
       "citations": [],
@@ -3300,10 +3127,6 @@
           "anchor": null
         },
         {
-          "title": "What the study shows",
-          "anchor": null
-        },
-        {
           "title": "Invisible Research Has No Impact: Engineering Scientific Influence in the AI Era",
           "anchor": null
         },
@@ -3340,15 +3163,7 @@
           "anchor": null
         },
         {
-          "title": "Abstract",
-          "anchor": null
-        },
-        {
           "title": "Improving Clinical Decision-Making in Radiotherapy: A Comparative Analysis of Linear-Quadratic LQ and Linear-Quadratic-Linear LQL Dose Models",
-          "anchor": null
-        },
-        {
-          "title": "Abstract",
           "anchor": null
         },
         {
@@ -3356,15 +3171,7 @@
           "anchor": null
         },
         {
-          "title": "Abstract",
-          "anchor": null
-        },
-        {
           "title": "NICE^k Metrics: Unified and Multidimensional Framework for Evaluating Deterministic Solar Forecasting Accuracy",
-          "anchor": null
-        },
-        {
-          "title": "Abstract",
           "anchor": null
         },
         {
@@ -3372,51 +3179,11 @@
           "anchor": null
         },
         {
-          "title": "Abstract",
-          "anchor": null
-        },
-        {
           "title": "Comparative Study of Feature Selection Techniques for Machine Learning-Based Solar Irradiation Forecasting to Facilitate the Sustainable Development of Photovoltaics: Application to Algerian Climatic Conditions",
           "anchor": null
         },
         {
-          "title": "Abstract",
-          "anchor": null
-        },
-        {
           "title": "Academic Visibility: Why Publishing Isn't Enough Anymore",
-          "anchor": null
-        },
-        {
-          "title": "A Saturated Ecosystem",
-          "anchor": null
-        },
-        {
-          "title": "Before Submission: Preparing for Discoverability",
-          "anchor": null
-        },
-        {
-          "title": "Open Access: A Global Opportunity",
-          "anchor": null
-        },
-        {
-          "title": "Writing to Be Discovered",
-          "anchor": null
-        },
-        {
-          "title": "After Publication: Orchestrating Dissemination",
-          "anchor": null
-        },
-        {
-          "title": "Structural Solutions Needed",
-          "anchor": null
-        },
-        {
-          "title": "Practical Toolkit",
-          "anchor": null
-        },
-        {
-          "title": "Key References",
           "anchor": null
         },
         {
@@ -3552,7 +3319,7 @@
     },
     {
       "url": "https://www.cyrilvoyant.com/prevision-pv-reduction-dimension/",
-      "title": "Prévision PV : réduire la dimension",
+      "title": "Prévision PV : réduire la dimension",
       "language": "fr",
       "topics": [
         "Apprendre frugalement",
@@ -3561,11 +3328,11 @@
       "citations": [],
       "sections": [
         {
-          "title": "Pourquoi prévoir directement la production ?",
+          "title": "Pourquoi prévoir directement la production ?",
           "anchor": null
         },
         {
-          "title": "Réduire la dimension : construire une représentation, pas supprimer au hasard",
+          "title": "Réduire la dimension : construire une représentation, pas supprimer au hasard",
           "anchor": null
         },
         {
@@ -3588,7 +3355,7 @@
     },
     {
       "url": "https://www.cyrilvoyant.com/prevision-solaire-faire-simple/",
-      "title": "Prévision solaire : faire simple",
+      "title": "Prévision solaire : faire simple",
       "language": "fr",
       "topics": [
         "Calculer directement",
@@ -3596,10 +3363,6 @@
       ],
       "citations": [],
       "sections": [
-        {
-          "title": "BLEND et CLIPER : le poids par phase, code v1.1.1 (audité)",
-          "anchor": null
-        },
         {
           "title": "1 · Comprendre ce qui reste prévisible",
           "anchor": null
@@ -3632,7 +3395,7 @@
     },
     {
       "url": "https://www.cyrilvoyant.com/prevision-solaire-modeles-frugaux/",
-      "title": "Prévision solaire : modèles frugaux",
+      "title": "Prévision solaire : modèles frugaux",
       "language": "fr",
       "topics": [
         "Apprendre frugalement",
@@ -3645,7 +3408,7 @@
           "anchor": null
         },
         {
-          "title": "Pourquoi garder l’ELM dans la comparaison ?",
+          "title": "Pourquoi garder l’ELM dans la comparaison ?",
           "anchor": null
         },
         {
@@ -4284,7 +4047,12 @@
       "language": "en",
       "topics": [],
       "citations": [],
-      "sections": []
+      "sections": [
+        {
+          "title": "The four courses",
+          "anchor": null
+        }
+      ]
     },
     {
       "url": "https://www.cyrilvoyant.com/teaching/solar-forecasting-course/",
@@ -4384,135 +4152,19 @@
       "citations": [],
       "sections": [
         {
-          "title": "Noise and memory: compare forecasts",
+          "title": "Energy",
           "anchor": null
         },
         {
-          "title": "Atmospheric neutrons and boron: explore dose scales",
+          "title": "Medical physics",
           "anchor": null
         },
         {
-          "title": "Compare a forecast with persistence, NICE",
+          "title": "Courses and statistics",
           "anchor": null
         },
         {
-          "title": "Compute BLEND weights",
-          "anchor": null
-        },
-        {
-          "title": "Measure variability and forecastability, sCV and F",
-          "anchor": null
-        },
-        {
-          "title": "Displace a forecast and explore the γ-index",
-          "anchor": null
-        },
-        {
-          "title": "Explore ARTU coefficients and lookup table",
-          "anchor": null
-        },
-        {
-          "title": "Compare forecasts: persistence, AR and ELM against horizon",
-          "anchor": null
-        },
-        {
-          "title": "Compare LQ and LQL biological doses",
-          "anchor": null
-        },
-        {
-          "title": "Explore thyroid model profiles",
-          "anchor": null
-        },
-        {
-          "title": "Open the full LQL-Equiv application",
-          "anchor": null
-        },
-        {
-          "title": "Use a dialogue interface to scientific codes, WebSemantic",
-          "anchor": null
-        },
-        {
-          "title": "Simulate tunnel electricity demand, TLS",
-          "anchor": null
-        },
-        {
-          "title": "The Sun, the seasons and UTC",
-          "anchor": null
-        },
-        {
-          "title": "Complex-valued forecasting: set α and the interval width",
-          "anchor": null
-        },
-        {
-          "title": "Watch probabilistic forecasting and its lookup table",
-          "anchor": null
-        },
-        {
-          "title": "Understand sensitivity, specificity and ROC curves",
-          "anchor": null
-        },
-        {
-          "title": "Explore the normal distribution",
-          "anchor": null
-        },
-        {
-          "title": "Explore attenuation and half-value layers",
-          "anchor": null
-        },
-        {
-          "title": "Cool a food: Biot number, mean and core temperature",
-          "anchor": null
-        },
-        {
-          "title": "Freezing: energy and refrigeration power",
-          "anchor": null
-        },
-        {
-          "title": "Refrigerator: Carnot bound of the COP",
-          "anchor": null
-        },
-        {
-          "title": "Correlation and regression: move a point",
-          "anchor": null
-        },
-        {
-          "title": "Prepare an RTVACOS action plan",
-          "anchor": null
-        },
-        {
-          "title": "Explore AI responsibility provisions",
-          "anchor": null
-        },
-        {
-          "title": "Explore a licensing choice",
-          "anchor": null
-        },
-        {
-          "title": "Student: difference, p-value and confidence interval",
-          "anchor": null
-        },
-        {
-          "title": "Significance and R²: how much variation does the line explain?",
-          "anchor": null
-        },
-        {
-          "title": "Chi-square: observed, expected and contributions",
-          "anchor": null
-        },
-        {
-          "title": "Regression: confidence or prediction interval?",
-          "anchor": null
-        },
-        {
-          "title": "Animated EM wave: E, B and propagation",
-          "anchor": null
-        },
-        {
-          "title": "Compton: angle and energy sharing",
-          "anchor": null
-        },
-        {
-          "title": "Heat engine: energy balance and Carnot limit",
+          "title": "Research practices",
           "anchor": null
         }
       ]
@@ -4669,7 +4321,7 @@
     },
     {
       "url": "https://www.cyrilvoyant.com/tools/electromagnetic-wave/",
-      "title": "Electromagnetic wave: interactive electric and magnetic fields",
+      "title": "Electromagnetic wave: electric and magnetic fields",
       "language": "en",
       "topics": [],
       "citations": [],

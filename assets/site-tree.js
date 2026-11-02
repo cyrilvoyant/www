@@ -37,7 +37,7 @@ else if(cur){const seen=new Set();const seq=[...topLi.querySelectorAll('a:not(.t
 const bar=document.createElement('nav');bar.className='reading-bar';bar.setAttribute('aria-label',fr?'Parcours de lecture':'Reading path');
 const link=(a,cls,before,word,after,aria,rel)=>{const e=document.createElement('a');e.href=a.href;e.className=cls;const t=label(a);e.title=aria+' : '+t;e.setAttribute('aria-label',aria+' : '+t);if(rel)e.rel=rel;e.innerHTML=(before?'<span aria-hidden="true">'+before+'</span>':'')+'<span class="rb-title"></span>'+(word?'<span class="rb-word">'+word+'</span>':'')+(after?'<span aria-hidden="true">'+after+'</span>':'');e.querySelector('.rb-title').textContent=t;return e};
 trigger.lastElementChild&&(trigger.lastElementChild.textContent=T.menu);bar.appendChild(trigger);
-if(up)bar.appendChild(link(up,'rb-up','↑','','',T.up));
+if(up){const toTools=/\/(tools|fr\/outils)\/?$/.test(new URL(up.href).pathname);bar.appendChild(link(up,'rb-up','↑',toTools?(fr?'Outils':'Tools'):'','',toTools?(fr?'Outils interactifs':'Interactive tools'):T.up))}
 const gap=document.createElement('span');gap.className='rb-gap';bar.appendChild(gap);
 if(prev)bar.appendChild(link(prev,'rb-prev','←','','',T.prev,'prev'));
 if(pos){const s=document.createElement('span');s.className='rb-pos';s.textContent=pos;bar.appendChild(s)}

@@ -22,7 +22,7 @@
    "datePublished": "2026-10-24",
    "author": [
     {
-     "@id": "#haytham-el-houari"
+     "@id": "https://orcid.org/0009-0004-8728-6562"
     },
     {
      "@id": "https://orcid.org/0000-0003-0242-7377"
@@ -72,7 +72,7 @@
    "programmingLanguage": "Python",
    "author": [
     {
-     "@id": "#haytham-el-houari"
+     "@id": "https://orcid.org/0009-0004-8728-6562"
     },
     {
      "@id": "https://orcid.org/0000-0003-0242-7377"
@@ -83,7 +83,7 @@
    }
   },
   {
-   "@id": "#haytham-el-houari",
+   "@id": "https://orcid.org/0009-0004-8728-6562",
    "@type": "Person",
    "name": "Haytham El-Houari"
   },

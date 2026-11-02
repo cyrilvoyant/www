@@ -248,3 +248,12 @@ main img { border-radius: 4px; }
   .lvl-step { order: calc(7 - var(--h)); min-height: 0; width: calc(52% + (var(--h) - 1) * 9.6%); flex-direction: row; flex-wrap: wrap; align-items: baseline; gap: 2px 8px; border-radius: 3px 8px 8px 3px; font-size: .86rem; }
   .lvl-flag { flex-basis: 100%; margin: 0; padding: 0; }
 }
+
+/* Phone width (02/11): the language pill no longer covers the band; the breadcrumb reads as one plain line. */
+@media (max-width: 480px) {
+  .xs-bar .xs-in > .xs-lang { font-size: 0; padding: 1px 9px; }
+  .xs-bar .xs-in > .xs-lang::after { font-size: 14px; }
+  html[lang="en"] .xs-bar .xs-in > .xs-lang::after { content: "FR"; content: "FR" / ""; }
+  html[lang="fr"] .xs-bar .xs-in > .xs-lang::after { content: "EN"; content: "EN" / ""; }
+  main .xs-crumbs { display: block; }
+}
