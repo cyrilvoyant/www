@@ -7,12 +7,12 @@
       "kind": "demo",
       "interface_language": "both",
       "name": {
-        "fr": "Prévoir un signal qui se répète",
-        "en": "Forecasting a signal that repeats"
+        "fr": "Quelle prévision pour quel signal ?",
+        "en": "Which forecast for which signal?"
       },
       "task": {
-        "fr": "Comparer trois prévisions sur un sinus bruité et voir leurs erreurs.",
-        "en": "Compare three forecasts on a noisy sine and see their errors."
+        "fr": "Choisir un signal, jouer avec les curseurs, voir quelle prévision gagne.",
+        "en": "Choose a signal, play with the sliders, see which forecast wins."
       },
       "url": {
         "fr": "https://www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/#experience",

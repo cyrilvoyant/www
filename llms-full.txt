@@ -82,28 +82,39 @@ URL: https://www.cyrilvoyant.com/fr/a-propos/
 ---
 URL: https://www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/
 
-Prévoir un signal qui se répète : que retirer, que garder ?
- Sur un sinus bruité, à trois pas, retirer le cycle divise l'erreur par deux : nRMSE de 24 % contre 51 % en recopiant la dernière valeur. Le cycle est connu : il ne faut pas le prévoir. Il ne reste à prévoir que l'écart, et sa nature dit comment le retirer.
- Le signal : un cycle, 1 + a sin(2πt/24), plus un bruit qui garde une part de mémoire.
- Une fois le cycle retiré, comment prévoir l'écart ?
- Tout dépend de sa mémoire. Le poids à donner à sa dernière valeur vaut φ h , où φ est sa mémoire et h l'horizon.
- Mémoire de l'écart Meilleure prévision Exemple d'erreur, à un pas
- Totale (marche aléatoire) La persistance L'erreur de la moyenne devient infiniment plus grande
- Partielle, φ = 0,5 Une combinaison des deux 13 % de moins que chacune
- Aucune (bruit pur) La moyenne 41 % de moins que la persistance
- C'est entre ces deux extrêmes qu'il faut être bon. Et une erreur n'a de sens que face à ces références : c'est ce que mesure NICE .
- Additif ou multiplicatif : différence ou ratio ?
- La nature du bruit décide. Si le bruit s'ajoute au cycle, y = c + bruit, il faut soustraire le cycle. S'il le multiplie, y = c × (1 + bruit), comme un nuage qui retire une part de la lumière, il faut diviser. Choisir l'opération revient à faire une hypothèse sur le signal, et cette hypothèse se teste.
- Dans la simulation, le bon choix réduit l'erreur de 5 à 9 % au creux d'un cycle marqué (a = 0,9, à trois pas) et de 1 à 3 % partout. Le gain principal reste le retrait du cycle ; le choix de l'opération vient ensuite. Une autre différence est plus visible : avec un bruit multiplicatif, l'erreur est cinq fois plus forte au sommet qu'au creux. Une seule erreur moyenne le cache.
- Écart-type du bruit multiplicatif, cycle de 0,1 à 1,9, bruit de 25 % Au creux Au sommet
- Après différence 0,03 0,48
- Après ratio 0,25 0,25
- En solaire, c est le ciel clair : le rapport au ciel clair suppose un bruit multiplicatif. Un modèle qui reçoit un reste de bruit égal partout est plus simple à ajuster.
- Pour aller plus loin
- Calculer sCV et F sur vos données, et ce qu'ils mesurent .
- NICE : comparer une prévision à la persistance, et comment évaluer une prévision .
- Combiner plutôt que choisir : CLIPER et BLEND , sans modèle du cycle.
- Le cours de prévision solaire , avec de vraies mesures.
+Quelle prévision pour quel signal ?
+ Il n'y a pas de meilleure prévision en soi : tout dépend du signal. Sur un signal aléatoire, la moyenne gagne. Sur un mouvement brownien, la persistance gagne. Dès qu'il y a un cycle, la persistance cyclique prend le relais. Choisissez un signal, jouez avec les curseurs, et regardez ce qui change.
+ Ce que cela introduit
+ La combinaison linéaire. Aucune référence simple ne gagne partout : d'où l'idée de doser entre elles. C'est le principe de CLIPER et BLEND .
+ La désaisonnalisation. Un cycle connu ne se prévoit pas : on le retire, on prévoit le reste, on le remet.
+ Ratio ou différence. Le bruit additif appelle la différence, le bruit multiplicatif le ratio. En solaire, le ratio au ciel clair est l' indice de ciel clair .
+ La variabilité et la prévisibilité. sCV et F les quantifient, avant tout modèle. Les calculer sur vos données .
+ L'évaluation. Une erreur n'a de sens que face à une référence : c'est ce que mesure NICE . Comment évaluer une prévision .
+ Les définitions
+ Persistance
+ La prévision recopie la dernière valeur connue.
+ Persistance cyclique
+ La prévision recopie la valeur un cycle plus tôt, au même moment du cycle.
+ Moyenne
+ La prévision vaut toujours la moyenne du passé.
+ Combinaison linéaire
+ Un poids entre deux prévisions, calculé sur le passé. Exemples : CLIPER, BLEND.
+ Différence à la tendance
+ On étudie y − c, l'écart au cycle c. Adapté à un bruit additif.
+ Ratio à la tendance
+ On étudie y / c. Adapté à un bruit multiplicatif. Avec c le ciel clair : l'indice de ciel clair.
+ Mouvement brownien
+ Chaque valeur est la précédente plus un tirage au hasard : mémoire φ = 1.
+ Mémoire φ
+ La corrélation entre deux valeurs voisines du bruit. 0 : aucune. 1 : totale.
+ Horizon
+ Le nombre de pas entre la dernière valeur connue et la valeur à prévoir.
+ nRMSE, nMAE
+ L'erreur quadratique et l'erreur absolue moyennes, rapportées à la moyenne du signal.
+ NICE
+ L'erreur rapportée à celle de la persistance. Entre 0 et 1 : la prévision apporte quelque chose.
+ sCV , F
+ La quantification de la variabilité et de la prévisibilité d'un signal, avant tout modèle.
  Trois études complémentaires, trois questions
  2015, Peut-on diagnostiquer la difficulté avant de choisir le modèle de prévision ?
  En 2015, j’ai étudié cette question avec Ted Soubdhan, Philippe Lauret, Mathieu David et Marc Muselli. Notre article examine des paramètres statistiques pour anticiper l’erreur de prévision solaire. Le mean absolute log return (MALR), issu de l’économétrie, décrit l’amplitude des changements relatifs. Ce diagnostic empirique ne dispense pas de tester le modèle sur le site et à l’horizon visés. Article dans Energy (2015) .
@@ -252,8 +263,8 @@ Research: questions, findings and methods
  My work connects medical physics and energy forecasting around one question: how can a model help inform a real decision? I start from the physical system, existing knowledge and available data. When the relation is known, I compute it; when it is incomplete, I complement the model; when learning is needed, I measure what its complexity adds. AI is a tool in this approach. Decisions, evaluation and responsibility remain human.
  Choose your subject below. Each study leads to its question, findings, limitations, team and technical resources.
  Solar and energy forecasting
- Compute directly · Energy Forecasting a signal that repeats: what to remove, what to keep?
- On a noisy sine, removing the cycle halves the error three steps ahead.
+ Compute directly · Energy Which forecast for which signal?
+ Random, correlated, Brownian or cyclic: choose a signal and see which forecast wins.
  Compute directly · Energy Simulate what you cannot yet measure: road tunnels
  One year at 10-minute resolution in about 150 ms, with its limits stated.
  Compute directly · Energy How forecastable is the sun?
@@ -323,8 +334,8 @@ Recherche : questions, résultats et méthodes
  Mon travail relie la physique médicale et la prévision énergétique autour d’une même question : comment construire un modèle utile pour une décision réelle ? Je pars du système physique, des connaissances et des données disponibles. Quand la relation est connue, je la calcule ; lorsqu’elle est incomplète, je complète le modèle ; lorsque l’apprentissage est nécessaire, je mesure ce que sa complexité apporte. L’IA est un outil de cette démarche. La décision, l’évaluation et la responsabilité restent humaines.
  Choisissez d’abord votre sujet ci-dessous. Chaque étude mène à sa question, ses résultats, ses limites, son équipe et ses ressources techniques.
  Prévision solaire et énergétique
- Calculer directement · Énergie Prévoir un signal qui se répète : que retirer, que garder ?
- Sur un sinus bruité, retirer le cycle divise l'erreur par deux à trois pas.
+ Calculer directement · Énergie Quelle prévision pour quel signal ?
+ Aléatoire, corrélé, brownien ou cyclique : choisissez un signal et voyez quelle prévision gagne.
  Calculer directement · Énergie Simuler ce que l'on ne peut pas encore mesurer : les tunnels routiers
  Une année au pas de 10 minutes en 150 ms environ, limites énoncées.
  Calculer directement · Énergie Le ciel change, mais à quel point reste-t-il prévisible ?
@@ -400,8 +411,8 @@ Scientific simulators, animations and calculators
  Languages: most tools work in French and English. Three applications are in English only. Courses and slides are in French.
  Energy
  Explorable demonstration · French and English
- Forecasting a signal that repeats
- Compare three forecasts on a noisy sine and see their errors.
+ Which forecast for which signal?
+ Choose a signal, play with the sliders, see which forecast wins.
  Open this tool →
  Browser calculator · French and English
  Compare a forecast with persistence, NICE
@@ -548,8 +559,8 @@ Simulateurs, animations et calculateurs scientifiques
  Langues : la plupart des outils existent en français et en anglais. Trois applications sont en anglais seulement. Cours et diapositives sont en français.
  Énergie
  Démonstration à explorer · Français et anglais
- Prévoir un signal qui se répète
- Comparer trois prévisions sur un sinus bruité et voir leurs erreurs.
+ Quelle prévision pour quel signal ?
+ Choisir un signal, jouer avec les curseurs, voir quelle prévision gagne.
  Ouvrir cet outil →
  Calculateur dans le navigateur · Français et anglais
  Comparer une prévision à la persistance, NICE
@@ -2003,28 +2014,39 @@ Simulate what you cannot yet measure: the electricity demand of road tunnels
 ---
 URL: https://www.cyrilvoyant.com/stories/variability-memory-forecastability/
 
-Forecasting a signal that repeats: what to remove, what to keep?
- On a noisy sine, three steps ahead, removing the cycle halves the error: nRMSE of 24 % against 51 % when copying the last value. The cycle is known, so it should not be forecast. Only the gap remains to forecast, and its nature says how to remove the cycle.
- The signal: a cycle, 1 + a sin(2πt/24), plus a noise that keeps some memory.
- Once the cycle is removed, how to forecast the gap?
- It depends on its memory. The weight to give its last value is φ h , where φ is its memory and h the horizon.
- Memory of the gap Best forecast Example of error, one step ahead
- Total (random walk) Persistence The error of the mean becomes infinitely larger
- Partial, φ = 0.5 A combination of both 13 % lower than each
- None (pure noise) The mean 41 % lower than persistence
- Between these two extremes is where skill matters. And an error only makes sense against these references: that is what NICE measures.
- Additive or multiplicative: difference or ratio?
- The nature of the noise decides. If the noise adds to the cycle, y = c + noise, subtract the cycle. If it multiplies it, y = c × (1 + noise), like a cloud removing a share of the light, divide. Choosing the operation amounts to a hypothesis about the signal, and that hypothesis can be tested.
- In the simulation, the right choice reduces the error by 5 to 9 % at the bottom of a marked cycle (a = 0.9, three steps ahead) and by 1 to 3 % everywhere. The main gain remains removing the cycle; the choice of operation comes next. Another difference is more visible: with multiplicative noise, the error is five times larger at the top than at the bottom. A single mean error hides this.
- Standard deviation of multiplicative noise, cycle from 0.1 to 1.9, noise of 25 % Bottom Top
- After difference 0.03 0.48
- After ratio 0.25 0.25
- In solar forecasting, c is clear sky: the ratio to clear sky assumes multiplicative noise. A model given a residual noise that is equal everywhere is simpler to fit.
- To go further
- What sCV and F measure .
- NICE : comparing a forecast with persistence, and how to evaluate a forecast .
- Combining rather than choosing: CLIPER and BLEND , with no model of the cycle.
- The solar forecasting course , with real measurements.
+Which forecast for which signal?
+ There is no best forecast as such: it all depends on the signal. On a random signal, the mean wins. On Brownian motion, persistence wins. As soon as there is a cycle, cyclic persistence takes over. Choose a signal, play with the sliders, and watch what changes.
+ What this introduces
+ The linear combination. No simple reference wins everywhere, hence the idea of weighing them. This is the principle of CLIPER and BLEND .
+ Deseasonalization. A known cycle is not forecast: remove it, forecast the rest, put it back.
+ Ratio or difference. Additive noise calls for the difference, multiplicative noise for the ratio. In solar forecasting, the ratio to clear sky is the clear-sky index .
+ Variability and forecastability. sCV and F quantify them, before any model.
+ Evaluation. An error only makes sense against a reference: this is what NICE measures. How to evaluate a forecast .
+ Definitions
+ Persistence
+ The forecast copies the last known value.
+ Cyclic persistence
+ The forecast copies the value one cycle earlier, at the same moment of the cycle.
+ Mean
+ The forecast is always the mean of the past.
+ Linear combination
+ A weight between two forecasts, computed on the past. Examples: CLIPER, BLEND.
+ Difference to trend
+ We study y − c, the gap to the cycle c. Suited to additive noise.
+ Ratio to trend
+ We study y / c. Suited to multiplicative noise. With c as clear sky: the clear-sky index.
+ Brownian motion
+ Each value is the previous one plus a random draw: memory φ = 1.
+ Memory φ
+ The correlation between two neighbouring values of the noise. 0: none. 1: total.
+ Horizon
+ The number of steps between the last known value and the value to forecast.
+ nRMSE, nMAE
+ The root mean squared error and the mean absolute error, divided by the mean of the signal.
+ NICE
+ The error divided by that of persistence. Between 0 and 1: the forecast adds something.
+ sCV, F
+ The quantification of the variability and forecastability of a signal, before any model.
  Three complementary studies, three questions
  2015, Can we diagnose difficulty before choosing the forecaster?
  In 2015, I studied this question with Ted Soubdhan, Philippe Lauret, Mathieu David and Marc Muselli. Our paper examines statistical parameters for anticipating solar forecast error. Mean absolute log return (MALR), borrowed from econometrics, describes relative changes. This empirical diagnostic does not replace testing the model at the intended site and horizon. Paper in Energy (2015) .
@@ -3415,7 +3437,7 @@ sCV et F : variabilité et prévisibilité de l'éclairement solaire
  Référence collective : Cyril Voyant, Alan Julien , Milan Despotovic , Gilles Notton , Luis Antonio Garcia-Gutierrez , Claudio Francesco Nicolosi , Philippe Blanc et Jamie Bright . Stochastic coefficient of variation: Assessing the variability and forecastability of solar irradiance . Renewable Energy 256, 123913 (2026). DOI · article éditeur en accès ouvert .
  Théorie complète, code et exemple exécutable (site des méthodes, en anglais) · Tous les récits · L'auteur
  Variabilité, mémoire et choix du modèle
- Prévoir un signal qui se répète : relier les études de 2015 et 2025 à sCV/F, puis comparer deux références sur les mêmes cibles.
+ Quelle prévision pour quel signal ? : relier les études de 2015 et 2025 à sCV/F, puis comparer deux références sur les mêmes cibles.
  Essayer dans votre navigateur
  Mesurer variabilité et prévisibilité : sCV et F : un site est-il difficile à prévoir, avant tout modèle ?.
  Le Soleil, les saisons et l’heure UTC : pourquoi dater les mesures solaires en UTC.
@@ -4036,7 +4058,7 @@ Cyril Voyant
  Une méthode, quatre voies complémentaires
  Le domaine change ; la méthode, non. La voie est choisie par le problème et la décision à éclairer, pas par l'outil ; la complexité supplémentaire n'est retenue que si son bénéfice est démontré. Ces quatre voies mènent au fil en cinq étapes : la cinquième, montrer pourquoi on peut faire confiance au résultat, vaut pour chacune.
  Calculer directement Quand le lien est connu, on le calcule avec un modèle explicite, calibré et validé sur des données ; on n'ajoute de l'apprentissage que pour un bénéfice démontré.
- Prévoir un signal qui se répète : que retirer, que garder ? · Neutrons atmosphériques et BNCT : quantifier la limite · Calculer plutôt qu'apprendre : l'équivalence de dose en radiothérapie
+ Quelle prévision pour quel signal ? · Neutrons atmosphériques et BNCT : quantifier la limite · Calculer plutôt qu'apprendre : l'équivalence de dose en radiothérapie
  Hybrider Quand le modèle ne suffit pas, on le complète : garder le modèle, n'apprendre que ce qui manque.
  Cancer de la thyroïde et iode radioactif : le modèle d'abord · Une meilleure persistance, sans entraîner un réseau neuronal
  Apprendre frugalement Quand les relations utiles ne sont pas suffisamment connues, évaluer ce que les données permettent d'apprendre, avec seulement la complexité qui paie.
@@ -4048,7 +4070,7 @@ Cyril Voyant
  Juger contre une référence, publier code, données et limites, rendre la recherche trouvable et réutilisable.
  Se questionner sur nos façons de faire de la recherche · L'IA dans la recherche : AI Act, charte et boîte à outils · Même nRMSE, modèles différents : ce que révèle NICE · Une prévision décalée peut rester exploitable : le test gamma · Visibilité académique : publier ne suffit plus · Excellence scientifique à l'ère de l'IA : du SEO au GEO · Comment évaluer une prévision solaire face à la persistance · Quelle référence une prévision solaire doit-elle battre ? Quand le deep learning vaut-il la peine ?
  Récits
- Prévoir un signal qui se répète : que retirer, que garder ? , Sur un sinus bruité, retirer le cycle divise l'erreur par deux à trois pas.
+ Quelle prévision pour quel signal ? , Aléatoire, corrélé, brownien ou cyclique : choisissez un signal et voyez quelle prévision gagne.
  Neutrons atmosphériques et BNCT : quantifier la limite , Un modèle exploratoire de 2011 : captures rares, énergie locale et dose moyenne insuffisante pour une thérapie macroscopique.
  Calculer plutôt qu'apprendre : l'équivalence de dose en radiothérapie , Une fraction de 15 Gy au rectum : 72,7 Gy en LQ, 59,4 Gy en LQL.
  Simuler ce que l'on ne peut pas encore mesurer : les tunnels routiers , Une année au pas de 10 minutes en 150 ms environ, limites énoncées.
@@ -4139,8 +4161,8 @@ Le fil : cinq étapes, une même démarche
  Oui : on le calcule, avec un modèle explicite.
  Quand le lien est connu, on le calcule avec un modèle explicite, calibré et validé sur des données ; on n'ajoute de l'apprentissage que pour un bénéfice démontré.
  Les récits de cette étape
- Calculer directement · Énergie Prévoir un signal qui se répète : que retirer, que garder ?
- Sur un sinus bruité, retirer le cycle divise l'erreur par deux à trois pas.
+ Calculer directement · Énergie Quelle prévision pour quel signal ?
+ Aléatoire, corrélé, brownien ou cyclique : choisissez un signal et voyez quelle prévision gagne.
  Calculer directement · Médecine Neutrons atmosphériques et BNCT : quantifier la limite
  Un modèle exploratoire de 2011 : captures rares, énergie locale et dose moyenne insuffisante pour une thérapie macroscopique.
  Calculer directement · Médecine Calculer plutôt qu'apprendre : l'équivalence de dose en radiothérapie
@@ -4365,7 +4387,7 @@ Mesurer variabilité et prévisibilité : sCV et F
  Cyril Voyant , Alan Julien , Milan Despotovic , Gilles Notton , Luis Antonio Garcia-Gutierrez , Claudio Francesco Nicolosi , Philippe Blanc , Jamie Bright . Stochastic coefficient of variation: Assessing the variability and forecastability of solar irradiance .
  Guide technique, sources et attribution détaillée (anglais) · Cas de vérification numérique
  Variabilité, mémoire et choix du modèle
- Prévoir un signal qui se répète : relier les études de 2015 et 2025 à sCV/F, puis comparer deux références sur les mêmes cibles.
+ Quelle prévision pour quel signal ? : relier les études de 2015 et 2025 à sCV/F, puis comparer deux références sur les mêmes cibles.
 
 ---
 URL: https://www.cyrilvoyant.com/fr/prevision-complexe/
@@ -4866,7 +4888,7 @@ Cyril Voyant
  One method, four complementary routes
  The domain changes; the method does not. The route is chosen by the problem and the decision to inform, not by the tool; extra complexity is kept only when its benefit is demonstrated. These four routes lead to the five-step thread : the fifth step, showing why the result can be trusted, applies to each of them.
  Compute directly When the link is known, compute it with an explicit model, calibrated and validated on data; learning is added only for a demonstrated benefit.
- Forecasting a signal that repeats: what to remove, what to keep? · Atmospheric neutrons and BNCT: quantify the limit · Compute, don't learn: radiobiological dose equivalence
+ Which forecast for which signal? · Atmospheric neutrons and BNCT: quantify the limit · Compute, don't learn: radiobiological dose equivalence
  Hybridize When the model falls short, complete it: keep the model, learn only what is missing.
  Thyroid cancer and radioiodine: model first · Better persistence, without training a neural network
  Learn frugally When the useful relations are not known well enough, evaluate what the data can teach, with only as much complexity as pays.
@@ -6413,8 +6435,8 @@ The thread: five steps, one way of working
  Yes: compute it, with an explicit model.
  When the link is known, compute it with an explicit model, calibrated and validated on data; learning is added only for a demonstrated benefit.
  Stories of this step
- Compute directly · Energy Forecasting a signal that repeats: what to remove, what to keep?
- On a noisy sine, removing the cycle halves the error three steps ahead.
+ Compute directly · Energy Which forecast for which signal?
+ Random, correlated, Brownian or cyclic: choose a signal and see which forecast wins.
  Compute directly · Medicine Atmospheric neutrons and BNCT: quantify the limit
  An exploratory 2011 model: rare captures, local energy and a mean dose too low for macroscopic therapy.
  Compute directly · Medicine Compute, don't learn: radiobiological dose equivalence

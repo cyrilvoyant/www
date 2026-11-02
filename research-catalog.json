@@ -3074,7 +3074,7 @@
     },
     {
       "url": "https://www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/",
-      "title": "Prévoir un signal qui se répète : que retirer, que garder ?",
+      "title": "Quelle prévision pour quel signal ?",
       "language": "fr",
       "topics": [
         "Calculer directement",
@@ -3083,16 +3083,12 @@
       "citations": [],
       "sections": [
         {
-          "title": "Une fois le cycle retiré, comment prévoir l'écart ?",
-          "anchor": "reste"
+          "title": "Ce que cela introduit",
+          "anchor": "retenir"
         },
         {
-          "title": "Additif ou multiplicatif : différence ou ratio ?",
-          "anchor": "ratio"
-        },
-        {
-          "title": "Pour aller plus loin",
-          "anchor": "suite"
+          "title": "Les définitions",
+          "anchor": "definitions"
         },
         {
           "title": "Trois études complémentaires, trois questions",
@@ -4152,7 +4148,7 @@
     },
     {
       "url": "https://www.cyrilvoyant.com/stories/variability-memory-forecastability/",
-      "title": "Forecasting a signal that repeats: what to remove, what to keep?",
+      "title": "Which forecast for which signal?",
       "language": "en",
       "topics": [
         "Compute directly",
@@ -4161,16 +4157,12 @@
       "citations": [],
       "sections": [
         {
-          "title": "Once the cycle is removed, how to forecast the gap?",
-          "anchor": "reste"
+          "title": "What this introduces",
+          "anchor": "retenir"
         },
         {
-          "title": "Additive or multiplicative: difference or ratio?",
-          "anchor": "ratio"
-        },
-        {
-          "title": "To go further",
-          "anchor": "suite"
+          "title": "Definitions",
+          "anchor": "definitions"
         },
         {
           "title": "Three complementary studies, three questions",
