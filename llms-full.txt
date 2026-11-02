@@ -92,11 +92,11 @@ Le modèle ne fait pas tout : variabilité, mémoire et prévisibilité
  3. Évaluer le modèle
  Comparer sur les mêmes données de test, avec une référence explicite et des unités cohérentes.
  Un laboratoire pour séparer mémoire, bruit et choix du modèle
- Au lieu de simplement mélanger une courbe, on génère ici un signal à deux états avec une mémoire connue. On ajoute un bruit additif, un bruit multiplicatif ou les deux. La question devient mesurable : quelle information la régression apprend-elle, comment ses coefficients changent-ils, et quelle erreur attendue resterait même si l’on connaissait l’état courant du générateur ?
+ Au lieu de simplement mélanger une courbe, on génère ici un signal à deux états avec une mémoire connue. On ajoute un bruit additif, un bruit multiplicatif ou les deux. La question devient mesurable : quelle relation la régression ajuste-t-elle, comment ses coefficients changent-ils, et quelle erreur attendue resterait même si l’on connaissait l’état courant du générateur ?
  JavaScript est nécessaire pour les curseurs et l’animation. Les explications et les sources de cette page restent accessibles. Modèle, hypothèses et formules de l’expérience principale
- Un état S t vaut −1 ou +1, avec probabilité de changer d’état q = (1−r)/2. Il démarre dans la distribution stationnaire équiprobable. Le signal latent est K t = μ + aS t , avec μ = 0,6. Pour a > 0, son autocorrélation exacte est r h . Le signal observé est Y t = K t (1 + βZ m,t ) + σ a Z a,t . Les deux Z sont indépendants entre eux, entre instants et de l’état, uniformes sur [−√3,+√3] : moyenne nulle, variance 1. Le bruit multiplicatif a une variance conditionnelle β²K² ; celle du bruit additif vaut σ a ². Les bornes des commandes garantissent Y > 0 sans écrêtage. Ce modèle pédagogique n’est pas un modèle météorologique validé.
- L’oracle connaît S à l’origine de prévision : ŷ oracle,t+h = μ + ar h S t . Son risque quadratique moyen exact dans ce générateur est R h = a²(1−r 2h ) + σ a ² + β²(μ²+a²) . Les trois termes décrivent transitions futures, bruit additif et bruit multiplicatif. √R h est une RMSE attendue, pas une limite que chaque échantillon fini doit respecter. L’oracle reçoit une information privilégiée : sa courbe n’est pas une prévision opérationnelle. Cette borne optimiste appartient à ce générateur ; ce n’est ni un résultat numérique des articles cités ni une borne physique du solaire.
- La régression à horizon h ajuste ŷ = A + BY t sur les seules paires de l’entraînement. En régime stationnaire, son coefficient linéaire optimal en population est B* = a²r h / [a² + σ a ² + β²(μ²+a²)] ; le bruit d’observation réduit ainsi la mémoire accessible à une simple régression. Les valeurs affichées A et B sont estimées, pas remplacées par cette formule. Entraînement : indices 0–599 ; test : 624–1199, avec tampon de 24 pas. Chaque origine précède sa cible d’exactement h pas et suit la fin de l’entraînement. Les modèles voient uniquement Y ; les diagnostics sCV/F utilisent toute la série a posteriori, avec I clr = 1, d = 0,2 et T = 24 conventionnel pour F.
+ Ici, t repère le pas courant et h le nombre de pas à prévoir. r règle la mémoire entre états consécutifs ; a est le demi-écart entre les deux niveaux ; μ est leur moyenne ; β est l’écart-type relatif du bruit multiplicatif et σ a l’écart-type du bruit additif. Un état S t vaut −1 ou +1, avec probabilité de changer d’état q = (1−r)/2. Il démarre dans la distribution stationnaire équiprobable. Le signal avant ajout du bruit est K t = μ + aS t , avec μ = 0,6. Pour a > 0, son autocorrélation exacte est r h . Le signal observé est Y t = K t ( 1 + β Z m , t ) + σ a Z a , t . Les deux Z sont indépendants entre eux, entre instants et de l’état, uniformes sur [−√3,+√3] : moyenne nulle, variance 1. Le bruit multiplicatif a une variance conditionnelle β²K² ; celle du bruit additif vaut σ a ². Les bornes des commandes garantissent Y > 0 sans écrêtage. Ce modèle pédagogique n’est pas un modèle météorologique validé.
+ La référence à état connu connaît S à l’origine de prévision : ŷ ref,t+h = μ + ar h S t . Son risque quadratique moyen exact dans ce générateur est R h = a 2 ( 1 − r 2 h ) + σ a 2 + β 2 ( μ 2 + a 2 ) . Les trois termes décrivent transitions futures, bruit additif et bruit multiplicatif. √R h est une RMSE attendue, pas une limite que chaque échantillon fini doit respecter. La référence à état connu reçoit une information privilégiée : sa courbe n’est pas une prévision opérationnelle. Cette borne optimiste appartient à ce générateur ; ce n’est ni un résultat numérique des articles cités ni une borne physique du solaire.
+ A désigne la constante de la droite et B sa pente ; B* désigne la pente optimale théorique si la distribution du générateur est connue. La régression à horizon h ajuste ŷ = A + BY t sur les seules paires de l’entraînement. En régime stationnaire, son coefficient linéaire optimal en population est B * = a 2 r h a 2 + σ a 2 + β 2 ( μ 2 + a 2 ) ; le bruit d’observation réduit ainsi la mémoire accessible à une simple régression. Les valeurs affichées A et B sont estimées, pas remplacées par cette formule. Entraînement : indices 0–599 ; test : 624–1199, avec tampon de 24 pas. Chaque origine précède sa cible d’exactement h pas et suit la fin de l’entraînement. Les modèles voient uniquement Y ; les diagnostics sCV/F utilisent toute la série a posteriori, avec I clr = 1, d = 0,2 et T = 24 conventionnel pour F.
  La MAE mesure la moyenne des erreurs absolues. La RMSE pénalise davantage les grandes erreurs ; nRMSE = 100 × RMSE / moyenne des observations test. NICE¹ et NICE² divisent respectivement MAE et RMSE par celles de la persistance simple au même horizon, sur les mêmes cibles. NICEΣ est la moyenne équipondérée des trois rapports L¹, L² et L³, selon le code NICE de référence . Une référence parfaite rend les rapports indéfinis. Méthode et article NICE .
  Trois études complémentaires, trois questions
  2015, Peut-on diagnostiquer la difficulté avant de choisir le modèle de prévision ?
@@ -453,6 +453,7 @@ Scientific simulators, animations and calculators
  Compare LQ and LQL biological doses
  Choose parameters and vary dose per fraction. Research and education use.
  Open this tool →
+ Understand BED and EQD2 calculations with LQ or LQL
  Browser calculator · French and English
  Explore thyroid model profiles
  Choose a profile and protocol; follow simulated thyroglobulin. Research and education use.
@@ -600,6 +601,7 @@ Simulateurs, animations et calculateurs scientifiques
  Comparer les doses biologiques LQ et LQL
  Choisir les paramètres et faire varier la dose par fraction. Usage de recherche et d’enseignement.
  Ouvrir cet outil →
+ Comprendre les calculs BED et EQD2 avec LQ ou LQL
  Calculateur dans le navigateur · Français et anglais
  Explorer les profils du modèle thyroïde
  Choisir un profil et un protocole ; suivre la thyroglobuline simulée. Usage de recherche et d’enseignement.
@@ -724,7 +726,7 @@ At a glance: research, software, courses and tools
  The RTVACOS tree
  Who is responsible? (AI Act)
  Which license? The decision tree
- LQ and LQL doses
+ LQ and LQL doses · Understand BED and EQD2 with LQ or LQL
  Thyroid protocol explorer
  NICE calculator
  BLEND step by step
@@ -1004,7 +1006,7 @@ AI in research: the AI Act, a lab charter and a toolbox for researchers
  Who is responsible? A one-minute orientation
  Answer a few questions about one AI system. The answers point to the articles of the AI Act that apply; they are an orientation, not legal advice.
  JavaScript is needed for this orientation. What a lab can do: the example of the O.I.E. framework
- At the Centre O.I.E. (Mines Paris – PSL, about 30 people), a FAIR + AI framework has been drafted since 2025 and is being finalized, for deployment from 2027. Its main lines:
+ At the Centre O.I.E. (Mines Paris – PSL, about 30 people), a FAIR + AI framework has been drafted since 2025 and is being finalized, for deployment from 2027. FAIR means findable, accessible, interoperable and reusable: properties that make research data usable beyond their original project. Its main lines:
  A one-page charter signed by every member : generative AI allowed as an assistant for writing, code and figures, with explicit mention of its use; human review of everything it produces; minimal documentation ( data card , model card , versioned Git repository with README); every AI project in a register , reassessed when it moves from research to industry; a data management plan with six AI fields .
  Light roles, about 0.3 full-time equivalent in total : an AI compliance lead (register, regulatory watch, partners), a FAIR data steward (data management plans, data cards, licenses, GDPR ) and an MLOps and quality referent (model cards, test plans, drift), plus an ethics committee of four people meeting each quarter for sensitive projects.
  Six steps per project (indicative durations): register (5 minutes); data management plan with AI fields (1 hour); data card and model card (2 hours); minimal test plan (2 to 3 hours); README with the AI-use statement (30 minutes); for a transfer, an audit-ready file (one day).
@@ -1019,7 +1021,7 @@ AI in research: the AI Act, a lab charter and a toolbox for researchers
  Purpose : train a multilayer perceptron to forecast hourly GHI from weather data.
  Use of AI : occasional help from a generative AI assistant (name and version) for boilerplate code and debugging. Every suggestion was reviewed by the author (unit tests, validation by the supervisor), name and date.
  Data : SIAR network (Spain), 2005–2015; normalization, gap handling; public, non-personal data; license stated.
- Tests : fixed seed, identical results on repeated runs; cross-validation (k > 3 folds); stress test on irradiance peaks and missing values; drift checked with nRMSE and NICE on recent data.
+ Tests : fix the random-number generator's starting value (the seed) to repeat a simulation; check identical results on repeated runs; cross-validation (k > 3 folds, where k is the number of data partitions); stress test on irradiance peaks and missing values; drift checked with nRMSE and NICE on recent data. nRMSE is a normalized root mean squared error; NICE compares forecast errors with persistence, the reference that repeats the last available observation. The normalization and evaluation protocol must be stated with the scores.
  Reuse : academic research; any industrial use must be agreed with the laboratory.
  3. Keep a human in charge. No AI as an author; every reference, equation and line of code checked by a named person.
  4. Document the data ( data card ). Origin, period, volume, variables and units, preprocessing, quality, known biases, license or legal basis, transfers outside the EU, conditions of reuse.
@@ -1188,6 +1190,7 @@ AI in research: the AI Act, a lab charter and a toolbox for researchers
  A document describing how a project collects, documents, stores, shares and archives its data, required by ANR and Horizon Europe; written in France with DMP OPIDoR .
  Data card, model card
  One- to two-page sheets that describe a dataset or a trained model: origin, content, intended use, metrics, limits. The format follows the "model cards" and "datasheets for datasets" proposals of the machine-learning community.
+ Prediction metrics. nRMSE and nMAE are normalized root mean squared error and normalized mean absolute error; their denominator must be specified. NICE compares forecast errors with persistence on the same evaluated targets; NICE² uses quadratic errors. These are prediction diagnostics, not measures of legal compliance.
  Official resources
  AI Act: Regulation (EU) 2024/1689 on EUR-Lex and the European Commission's AI policy page
  European Commission: living guidelines on the responsible use of generative AI in research
@@ -1685,6 +1688,7 @@ URL: https://www.cyrilvoyant.com/stories/bed-eqd2-calculator-lq-lql/
 Free BED and EQD2 calculator: LQ or LQL?
  LQL-Equiv is a free, open-source (MIT) calculator of BED and EQD2 under the LQ and LQL models. It runs in the browser, and nothing entered leaves the page. Its authors are Cyril Voyant and Daniel Julian. It is a research and teaching tool, not a medical device: not for choosing or changing a prescription.
  Cyril Voyant · Mines Paris – PSL, Centre O.I.E. · 2 November 2026
+ Reading the quantities. BED is biologically effective dose; EQD2 is the equivalent dose expressed in 2 Gy fractions. LQ means linear-quadratic and LQL linear-quadratic-linear. n counts fractions, d is dose per fraction and Gy is the gray (energy deposited per unit mass). The tissue parameter α/β and transition dose d T are expressed in Gy. NTCP and TCP denote normal-tissue complication and tumour-control probabilities within the stated model.
  LQ or LQL?
  For n fractions of dose d, the linear-quadratic model gives BED = n · d · (1 + d / (α/β)) , and EQD2 = BED / (1 + 2/(α/β)) . The LQ curve keeps bending upward as the dose per fraction grows. The LQL model keeps it up to a transition dose d T , then continues in a straight line.
  Below the transition dose, the two models agree. Above it, they part. For one fraction of 15 Gy to the rectum (α/β = 3.9 Gy, d T = 7.8 Gy):
@@ -1713,6 +1717,7 @@ URL: https://www.cyrilvoyant.com/stories/evaluate-solar-forecast-persistence/
 How to evaluate a solar forecast against persistence
  Compare the model with persistence on the same targets, horizon and scope, report more than one error norm, then test the difference. The ratio of the model's error to that of persistence says what the model adds. The NICEᵏ metrics (Voyant et al., 2025) build this ratio for norms of order one, two and three.
  Cyril Voyant · Mines Paris – PSL, Centre O.I.E. · 2 November 2026
+ Reading the quantities. MAE is mean absolute error; RMSE is root mean squared error and gives large errors more weight. nRMSE normalizes RMSE by the mean observation on the evaluated data. AR is autoregression; ELM (extreme learning machine) fits output weights while keeping a fixed random hidden layer. In the NICE formulas, the subscript p denotes persistence; the statistical p-value reported by a test is a different quantity. sCV describes signal variability and F combines variability with temporal dependence.
  The steps
  Name the reference. Say which persistence is used: last observation, clear-sky-index (smart) persistence, or a phase-aware reference such as BLEND. A skill score means little without this.
  Use the same targets. Same site, period, horizon and forecast times for the model and the reference.
@@ -1745,7 +1750,7 @@ Compute, don't learn: radiobiological dose equivalence with LQL-Equiv
  When the link between a radiotherapy schedule and its biological effect is known, it is computed directly. No training data and no artificial intelligence are needed: only a model we understand, checked case by case.
  Cyril Voyant , with Daniel Julian · Mines Paris – PSL, Centre O.I.E.
  In brief
- One fraction of 15 Gy to the rectum has a biologically effective dose of 72.7 Gy under the linear-quadratic (LQ) model, but 59.4 Gy under the linear-quadratic-linear (LQL) model: 18 % lower .
+ One fraction of 15 Gy (grays, the unit of physical absorbed dose) to the rectum has a biologically effective dose of 72.7 Gy under the linear-quadratic (LQ) model, but 59.4 Gy under the linear-quadratic-linear (LQL) model: 18 % lower .
  LQL-Equiv computes these equivalences directly from an explicit model. Its 2026 version reproduces the 2014 software on 4,438 treatment schedules (69,125 of 69,131 values agree, 99.991 %).
  It is a research and teaching tool, not a medical device .
  The finding
@@ -1753,10 +1758,10 @@ Compute, don't learn: radiobiological dose equivalence with LQL-Equiv
  The question
  Two treatments can look incomparable: 39 fractions of 2 Gy, a physical dose of 78 Gy, or 5 fractions of 7 Gy, a physical dose of 35 Gy. Physical dose, in grays, measures the energy deposited per kilogram of tissue. It is not enough to predict the biological effect, which also depends on the dose received at each fraction, so these two schedules cannot be compared by adding up grays. Are they equivalent for the tumour, and for the healthy organs around it? Radiotherapy answers with the biologically effective dose (BED) and its translation into a dose given in 2 Gy fractions ( EQD2 ).
  The theory, in plain words
- For n fractions of dose d , the linear-quadratic model gives
+ For n fractions (the number of treatment sessions), each delivering a dose d in grays (Gy), the linear-quadratic model gives
  BED = n · d · (1 + d / (α/β))
  where α/β describes how sensitive a tissue is to the size of each fraction (about 3.9 Gy for the rectum). The term d/(α/β) is why large fractions count for more than their dose. The equivalent dose in 2 Gy fractions is then EQD2 = BED / (1 + 2/(α/β)) .
- The LQ curve keeps bending upward as the dose per fraction grows, which overstates the effect of very large fractions. The LQL model keeps the LQ curve up to a transition dose d_T (7.8 Gy for the rectum) and continues it as a straight line beyond. LQL-Equiv also handles gaps, two fractions a day and tumour repopulation; the full equations are on the technical page.
+ The LQ curve keeps bending upward as the dose per fraction grows, which overstates the effect of very large fractions. The LQL model keeps the LQ curve up to a transition dose d T (7.8 Gy for the rectum), the dose at which the model changes from a quadratic curve to a straight line. LQL-Equiv also handles gaps, two fractions a day and tumour repopulation; the full equations are on the technical page.
  Where it sits on the complexity ladder
  What level of complexity for this work? Level 1 of 6
  1 Direct calculation (the link is known) ◀ This work stops here
@@ -1775,9 +1780,10 @@ Compute, don't learn: radiobiological dose equivalence with LQL-Equiv
  The gap grows with the dose per fraction. This is why the choice of model must be stated when hypofractionated and conventional schedules are compared. The calculator then adds the time and repair corrections of each tissue.
  What it brings, and its limits
  Brings : a transparent calculation, documented parameters for 34 organs at risk and 20 tumour sites, case-by-case validation against the original software, and a free calculator that runs in the browser (nothing entered leaves the page).
- Limits : the result is only as good as the model and its parameters (α/β, d_T, slope of the linear tail), which remain uncertain. Complication and control probabilities (NTCP, TCP) are model illustrations, never validated against clinical outcomes. Not for choosing or changing a prescription.
+ Limits : the result is only as good as the model and its parameters (α/β, d T , slope of the linear tail), which remain uncertain. Normal tissue complication probability (NTCP) and tumour control probability (TCP) are model illustrations, never validated against clinical outcomes. Not for choosing or changing a prescription.
  Two companion articles go further: a comparison of LQ and LQL for clinical decision-making ( Clinical Oncology , 2025), and a call for standardizing dose-equivalence calculations ( Medical Dosimetry , 2026).
  Go further
+ Choose and read a calculation : BED and EQD2 with LQ or LQL: what the calculator reports .
  Full theory, runnable code and validation : https://cyrilvoyant.github.io/tools/lql-equiv.html
  The calculator : https://cyrilvoyant.github.io/LQL-Equiv-web/
  Articles :
@@ -1798,7 +1804,7 @@ Questioning how we do research: influence, integrity, excellence
  In brief
  Counting highly cited researchers mixes up size and concentration. A share compared with a neutral 2 % baseline , on a doubling scale, says how concentrated influence is, independently of the size of an institution.
  Impact alone is not enough: a science-wide map of institutions by J. P. A. Ioannidis (Stanford), J. Baas and R. Boverhof (Elsevier) and C. Voyant, in Royal Society Open Science (2026), puts it next to research-integrity proxies : retractions, extreme self-citation, publication in discontinued journals.
- Publishing is no longer enough either: in a saturated system, research must be found, trusted and reused . The RTVACOS framework treats excellence as a multiplicative system in which one weak foundation collapses the whole.
+ Publishing is no longer enough either: in a saturated system, research must be found, trusted and reused . RTVACOS brings together rigour, transparency, visibility, adoption, collaboration, outreach and societal relevance; it is a reflection framework, not a measured excellence score.
  The finding
  The tools we use to judge research deserve the same scrutiny as the models we use to forecast the sun or compute a dose. A volume indicator rewards size; a single score hides integrity problems; a good paper nobody finds has no impact. Each of these questions has the same answer as elsewhere in this work: an explicit reference, several complementary measures, and stated limits.
  The question
@@ -1806,9 +1812,9 @@ Questioning how we do research: influence, integrity, excellence
  The theory, in plain words
  Influence, independently of size. With X highly cited authors among N eligible authors of an institution, the share is p = X/N . It is compared with the share expected by construction of the Top 2 % lists, p₀ = 0.02 :
  I = log₂(p / p₀)
- I = 0 means the baseline, I = +1 twice the baseline, I = −1 half of it. The scale is symmetric and does not depend on the size of the institution or on the performance of others. The idea is the same as comparing a forecast with persistence: a score means something only against a stated reference.
+ Here log₂ is the base-two logarithm: each extra unit corresponds to a doubling. I = 0 means the baseline, I = +1 twice the baseline, I = −1 half of it. The scale is symmetric and does not depend on the size of the institution or on the performance of others. The idea is the same as comparing a forecast with persistence: a score means something only against a stated reference.
  Impact and integrity, side by side. The science-wide map published in Royal Society Open Science (2026) adds three proxies of possible integrity problems: authorships in papers retracted for reasons other than publisher errors, and the shares of top-cited authors with extreme self-citation or many publications in titles discontinued by Scopus.
- Excellence as a system. RTVACOS treats excellence as E ∝ (R × T × V × A) × (1 + C + O + S) : four foundations (Rigour, Transparency, Visibility, Adoption) that multiply each other, so that a zero in one collapses the whole, and three amplifiers (Collaboration, Outreach, Societal relevance) that scale a solid base but cannot replace it.
+ Excellence as a system. RTVACOS represents excellence schematically by E ∝ (R × T × V × A) × (1 + C + O + S) . Here E denotes the excellence being discussed; the proportionality sign ∝ expresses a conceptual relationship, not a calibrated equation. The four foundations are rigour ( R ), transparency ( T ), visibility ( V ) and adoption ( A ): weakness in one can undermine the whole. The three amplifiers are collaboration ( C ), outreach ( O ) and societal relevance ( S ); they strengthen a solid base but cannot replace it.
  The example in figures
  The Influence Index on a doubling scale: 1 % gives −1, 2 % gives 0, 4 % gives +1, 8 % gives +2
  An institution where 4 % of the eligible authors are in the Top 2 % lists has I = +1 : twice the baseline. One at 1 % has I = −1 . These shares are illustrative.
@@ -1831,7 +1837,7 @@ Satellite irradiance forecasting: one cell, a patch or the whole field
  Cyril Voyant (Mines Paris – PSL, Centre O.I.E.), with Andreas Kazantzidis (University of Patras) and Jan Kleissl (University of California San Diego) · manuscript in preparation, open code and data extract
  In brief
  Every model forecasts the next 24 hourly values of one satellite cell over Corsica from its 24 past values; only what it reads changes: its own cell, a patch, the whole field, or a compressed field .
- In the public repository, an extreme learning machine reading its own cell has the lowest pooled error ( nRMSE 0.308 ), ahead of the same model reading the whole field (0.355) with a thousand times fewer parameters , and of a U-Net (0.343) and an LSTM (0.326) reading the field.
+ In the public repository, an extreme learning machine (ELM, a neural model with randomly fixed hidden weights) reading its own cell has the lowest pooled error ( nRMSE 0.308 ), ahead of the same model reading the whole field (0.355) with a thousand times fewer parameters , and of a U-Net (0.343) and an LSTM (0.326) reading the field. nRMSE is the root mean squared error divided by the mean scored observation; lower is better. U-Net and LSTM are the two deep-network architectures tested here.
  It is one region, one satellite product and one two-year split: a benchmark result, not a general law .
  What level of complexity for this work? Level 5 of 6
  1 Direct calculation (the link is known)
@@ -1846,9 +1852,9 @@ Satellite irradiance forecasting: one cell, a patch or the whole field
  The question
  Satellite irradiance comes as maps. Deep networks such as U-Nets and LSTMs read whole fields; compression methods shrink the field before a model reads it. Both add inputs and parameters. How much of that spatial information lowers the error of a forecast for each of the next 24 hours, and at what cost in stored parameters?
  The theory, in plain words
- One forecaster, several inputs. The forecaster is an extreme learning machine (ELM): a hidden layer of neurons drawn at random and never trained, and output weights fitted in one linear least-squares solve. Training takes seconds and the number of stored parameters is easy to count. The same forecaster reads either its own cell, a 3 × 3 patch, the whole field of 722 cells, or the field compressed by one of seven methods (Radon transform, DCT, wavelets, PCA, random projection, subsampling, autoencoder).
+ One forecaster, several inputs. The forecaster is an extreme learning machine (ELM): a hidden layer of neurons drawn at random and never trained, and output weights fitted in one linear least-squares solve. Training takes seconds and the number of stored parameters is easy to count. The same forecaster reads either its own cell, a 3 × 3 patch, the whole field of 722 cells, or the field compressed by one of seven methods (Radon transform, discrete cosine transform or DCT, wavelets, principal component analysis or PCA, random projection, subsampling, autoencoder).
  Fair references. Persistence repeats the last hour, the 24-hour persistence repeats the same hour of the previous day, and BLEND mixes the two. A model is worth its parameters only if it beats them.
- Fair scoring. Errors are pooled over all cells, all lead times from 1 to 24 hours and all test hours where the Sun is more than 5° above the horizon. The nRMSE is divided by the mean scored observation of the test year, 407.9 W/m².
+ Fair scoring. Errors are pooled over all cells, all lead times from 1 to 24 hours and all test hours where the Sun is more than 5° above the horizon. For nRMSE, the root mean squared error is divided by the mean scored observation of the test year, 407.9 W/m².
  The example in figures
  Pooled error against parameters stored by each model (log scale): the per-cell ELM is the lowest point; reading the whole field moves models to the right without moving them down
  The data are HelioClim-3 irradiance (Heliosat-2 method, Meteosat images, SoDa service) on 1,148 points over Corsica, interpolated onto a 32 × 32 grid of which 722 cells lie inside the convex hull of the points and are scored, hourly, with 2005 for training and 2006 for testing.
@@ -1871,6 +1877,7 @@ URL: https://www.cyrilvoyant.com/stories/solar-forecast-baseline-deep-learning/
 Which baseline must a solar model beat? When is deep learning worth it?
  Start with persistence, then a phase-aware reference, an autoregression and a frugal learner. Keep a deep network only if it brings a measured gain on the same protocol. Deep learning can be worth it. It has to show this against references that cost almost nothing to run.
  Cyril Voyant · Mines Paris – PSL, Centre O.I.E. · 2 November 2026
+ Reading the quantities. MAE is mean absolute error; RMSE is root mean squared error and gives large errors more weight. nRMSE normalizes RMSE by the mean observation on the evaluated data. AR is autoregression; ELM (extreme learning machine) fits output weights while keeping a fixed random hidden layer. In the NICE formulas, the subscript p denotes persistence; the statistical p-value reported by a test is a different quantity. sCV describes signal variability and F combines variability with temporal dependence.
  What to test, in order
  Simple persistence. The last observed value: the minimal reference of any forecast.
  A reference that knows the cycle. Clear-sky-index persistence, or BLEND, which combines immediate memory with the value at the same phase of the cycle. BLEND works from raw irradiance and its weights are in closed form (Voyant et al., 2026).
@@ -1909,11 +1916,11 @@ Thyroid cancer and radioiodine: model first, learn only what is missing
  The finding
  The model and its simulator, RAIR-Sim, are the work of Marie Fusella Giuntini and Dominique Barbolosi, with Cyril Voyant and David Taieb ( Scientific Reports , 2026). When a disease can be described by an intelligible model, that model comes first: it explains, it can be calibrated on real patients, and it lets one test protocols in silico . Artificial intelligence is not needed to do what the model already does well.
  The question
- Metastatic differentiated thyroid cancer is often treated with repeated sessions of radioactive iodine. Some tumours respond; others become refractory. Thyroglobulin (Tg), measured in the blood, follows the tumour burden. Which protocol, and for which patient profile?
+ Metastatic differentiated thyroid cancer is often treated with repeated sessions of radioactive iodine. Some tumours respond; others become refractory, meaning they no longer respond adequately to radioiodine. Thyroglobulin (Tg) is a protein measured in the blood and used here to follow the tumour burden. Which protocol, and for which patient profile?
  The theory, in plain words
  Three quantities evolve over the months:
- the activity of the administered iodine decreases over time, and each session adds a new dose to what remains;
- the tumour cells grow at a rate set by their doubling time T_d , and are killed in proportion to the activity present;
+ the activity of the administered iodine, the rate of radioactive decays, decreases over time, and each session adds a new dose to what remains;
+ the tumour cells grow at a rate set by their doubling time T d (the time needed to double in the model without treatment), and are killed in proportion to the activity present;
  thyroglobulin is produced by the tumour cells and cleared by the body.
  The equations are solved session by session, so a whole protocol can be simulated in seconds. A short doubling time means a fast-growing tumour: that is what separates a refractory profile from a responding one.
  Where it sits on the complexity ladder
@@ -1928,9 +1935,9 @@ Thyroid cancer and radioiodine: model first, learn only what is missing
  Second level: simulation from a model we understand . The next step is a hybrid digital twin : keep the model, and let a learning method (a frugal extreme learning machine, for example) estimate only what the model does not capture. This is mathematics- and medicine-informed learning, not a black box replacing the model. No learning added where the model meets the need; learning, in hybrid form, where it helps.
  The example in figures
  Thyroglobulin over 80 months for 1, 2, 4 and 8 sessions, refractory and responding profiles
- With the public demonstrator parameters, 3.7 GBq per session every 3 months:
- Refractory profile ( T_d = 9.8 months): thyroglobulin reaches about 1,386 ng/mL at 79 months after one session, and stays near 12 ng/mL after eight.
- Responding profile ( T_d = 66.6 months): about 14 ng/mL after one session, and 0.13 ng/mL after eight.
+ With the public demonstrator parameters, 3.7 GBq (gigabecquerels, the unit of administered activity) per session every 3 months; thyroglobulin concentrations are given in ng/mL (nanograms per millilitre):
+ Refractory profile ( T d = 9.8 months): thyroglobulin reaches about 1,386 ng/mL at 79 months after one session, and stays near 12 ng/mL after eight.
+ Responding profile ( T d = 66.6 months): about 14 ng/mL after one session, and 0.13 ng/mL after eight.
  These are model outputs for two archetypes, not predictions for a patient.
  What it brings, and its limits
  Brings : an intelligible way to compare protocols before treating; a biomarker reading (the doubling time) that separates profiles; open code that anyone can run (MATLAB).
@@ -1952,7 +1959,7 @@ Simulate what you cannot yet measure: the electricity demand of road tunnels
  Haytham El-Houari and Cyril Voyant · SmartTunnel project, Université Sidi Mohamed Ben Abdellah (Fès) and Mines Paris – PSL
  In brief
  With no measurements at all, the electricity demand of a road tunnel can be simulated from its geometry, traffic, lighting and ventilation: one year at 10-minute resolution in about 150 ms .
- For a 1.5 km peri-urban tunnel with two tubes, the public example gives a median of 3,233 MWh per year and a peak of 873 kW over 20 Monte Carlo runs.
+ For a 1.5 km peri-urban tunnel with two tubes, the public example gives a median of 3,233 MWh per year (megawatt-hours, an amount of energy) and a peak of 873 kW (kilowatts, an instantaneous power) over 20 Monte Carlo runs.
  It is a first-order generator: calibrate it on measurements before any engineering use .
  The finding
  Where a tunnel has no measurements yet, no model can be trained or validated for it, but a great deal can be simulated. A simple model, whose every coefficient is visible, gives credible orders of magnitude, their variability, and the effect of each design choice, provided its assumptions are stated.
@@ -1964,7 +1971,7 @@ Simulate what you cannot yet measure: the electricity demand of road tunnels
  auxiliaries (pumps, equipment), proportional to the tunnel's length and depth;
  lighting , which depends on daylight at the portals and on traffic;
  ventilation , which follows traffic with its morning and evening peaks, and increases with slope and altitude. It jumps during random pollution episodes and accidents .
- Each year is simulated many times with different random draws ( Monte Carlo ). The result is a median and a P10–P90 band, rather than a single curve.
+ Each year is simulated many times with different random draws ( Monte Carlo ). The median is the middle value of the simulated results. P10 and P90 are the 10th and 90th percentiles: the P10–P90 band contains the central 80 % of those results. It describes variation between runs under the chosen parameters, not all uncertainty about a real tunnel.
  Where it sits on the complexity ladder
  What level of complexity for this work? Level 2 of 6
  1 Direct calculation (the link is known)
@@ -2007,11 +2014,11 @@ The model is not the whole story: variability, memory and forecastability
  3. Evaluate the model
  Compare on identical test targets, with an explicit reference and consistent units.
  A laboratory separating memory, noise and model choice
- Rather than only shuffling a curve, generate a two-state signal with known memory. Add additive noise, multiplicative noise or both. Ask what the regression learns, how its coefficients change and what expected error would remain even with knowledge of the generator’s current state.
+ Rather than only shuffling a curve, generate a two-state signal with known memory. Add additive noise, multiplicative noise or both. Ask what relationship the regression fits, how its coefficients change and what expected error would remain even with knowledge of the generator’s current state.
  JavaScript is needed for the controls and animation. The explanations and sources on this page remain available. Main experiment: model, assumptions and equations
- S t is −1 or +1 with switching probability q = (1−r)/2, initialized in its equiprobable stationary distribution. The latent signal is K t = μ + aS t , μ = 0.6, with exact autocorrelation r h when a > 0. Observations are Y t = K t (1 + βZ m,t ) + σ a Z a,t . The Z draws are independent of each other, across times and of the state, uniform on [−√3,+√3], with zero mean and unit variance. Multiplicative noise has conditional variance β²K², additive noise σ a ². Control ranges guarantee positive observations without clipping. This teaching generator is not a validated weather model.
- The oracle knows the state at forecast origin: ŷ oracle,t+h = μ + ar h S t . Its exact expected squared risk is R h = a²(1−r 2h ) + σ a ² + β²(μ²+a²) , separating future transitions, additive noise and multiplicative noise. √R h is an expected RMSE, not a threshold every finite sample must respect. The oracle has privileged information; it is not an operational forecast. This optimistic bound is specific to the generator, neither a numerical result of the cited papers nor a physical solar limit.
- The h-step regression fits ŷ = A + BY t on training pairs only. Its stationary population-optimal linear slope is B* = a²r h / [a² + σ a ² + β²(μ²+a²)] . Observation noise thus reduces memory accessible to a simple regression. Displayed A and B are fitted, not substituted from this formula. Training uses indices 0–599; common test targets 624–1199 follow a 24-step buffer. Every forecast origin is exactly h steps before its target and after training. Models see only Y. sCV/F are retrospective diagnostics using the whole series, I clr = 1, d = 0.2 and conventional T = 24 for F.
+ Here t denotes the current step and h the forecast lead. r controls memory between successive states; a is half the separation of the two levels; μ is their mean; β is the relative standard deviation of multiplicative noise and σ a is the standard deviation of additive noise. S t is −1 or +1 with switching probability q = (1−r)/2, initialized in its equiprobable stationary distribution. The signal before adding noise is K t = μ + aS t , μ = 0.6, with exact autocorrelation r h when a > 0. Observations are Y t = K t ( 1 + β Z m , t ) + σ a Z a , t . The Z draws are independent of each other, across times and of the state, uniform on [−√3,+√3], with zero mean and unit variance. Multiplicative noise has conditional variance β²K², additive noise σ a ². Control ranges guarantee positive observations without clipping. This teaching generator is not a validated weather model.
+ The known-state reference knows the state at forecast origin: ŷ ref,t+h = μ + ar h S t . Its exact expected squared risk is R h = a 2 ( 1 − r 2 h ) + σ a 2 + β 2 ( μ 2 + a 2 ) , separating future transitions, additive noise and multiplicative noise. √R h is an expected RMSE, not a threshold every finite sample must respect. The known-state reference has privileged information; it is not an operational forecast. This optimistic bound is specific to the generator, neither a numerical result of the cited papers nor a physical solar limit.
+ A is the line’s intercept and B its slope; B* denotes the theoretical optimal slope when the generator distribution is known. The h-step regression fits ŷ = A + BY t on training pairs only. Its stationary population-optimal linear slope is B * = a 2 r h a 2 + σ a 2 + β 2 ( μ 2 + a 2 ) . Observation noise thus reduces memory accessible to a simple regression. Displayed A and B are fitted, not substituted from this formula. Training uses indices 0–599; common test targets 624–1199 follow a 24-step buffer. Every forecast origin is exactly h steps before its target and after training. Models see only Y. sCV/F are retrospective diagnostics using the whole series, I clr = 1, d = 0.2 and conventional T = 24 for F.
  MAE is mean absolute error; RMSE weights large errors more strongly. nRMSE = 100 × RMSE / mean test observation. NICE¹ and NICE² divide model MAE and RMSE by same-horizon simple-persistence errors on identical targets. NICEΣ equally averages the L¹, L² and L³ ratios, following the reference NICE code . Ratios are undefined for a perfect reference. NICE method and paper .
  Three complementary studies, three questions
  2015, Can we diagnose difficulty before choosing the forecaster?
@@ -2093,6 +2100,7 @@ URL: https://www.cyrilvoyant.com/fr/animations/attenuation-demi-epaisseur/
 Atténuation et couche de demi-atténuation : simulation interactive
  Combien de rayonnement reste-t-il après plusieurs couches de demi-atténuation ?
  Une expérience du cours de Cyril Voyant, à manipuler dans le navigateur. Revenir au chapitre et aux diapositives · Choisir une autre expérience .
+ Repères de lecture. N₀ est l’intensité du faisceau avant le matériau, N l’intensité non diffusée transmise et x l’épaisseur traversée. μ est le coefficient d’atténuation linéique. La CDA (couche de demi-atténuation) est l’épaisseur qui divise cette intensité par deux. exp est la fonction exponentielle et ln le logarithme naturel.
  JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. La relation à comprendre
  N/N₀=exp(−μx)=2^(−x/CDA), avec CDA=ln(2)/μ.
  Essayer et interpréter
@@ -2108,6 +2116,7 @@ URL: https://www.cyrilvoyant.com/fr/animations/congelation-energie-puissance/
 Congélation : énergie sensible, chaleur latente et puissance
  Pourquoi faut-il plus que mcΔT pour dimensionner une congélation ?
  Une expérience du cours de Cyril Voyant, à manipuler dans le navigateur. Revenir au chapitre et aux diapositives · Choisir une autre expérience .
+ Repères de lecture. Q est l’énergie à retirer, m la masse et Δh la variation d’enthalpie massique correspondant au refroidissement et au gel. P est la puissance moyenne à fournir pendant la durée Δt. Dans mcΔT, c est la capacité thermique massique et ΔT une variation de température : ce terme seul ne représente pas le changement de phase.
  JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. La relation à comprendre
  Q=mΔh ; Δh additionne refroidissement avant congélation, chaleur latente et refroidissement après congélation. Puissance moyenne P=Q/Δt.
  Essayer et interpréter
@@ -2123,6 +2132,7 @@ URL: https://www.cyrilvoyant.com/fr/animations/cop-carnot-machine-frigorifique/
 Machine frigorifique : COP et limite de Carnot
  Pourquoi l’écart de température pénalise-t-il la production de froid ?
  Une expérience du cours de Cyril Voyant, à manipuler dans le navigateur. Revenir au chapitre et aux diapositives · Choisir une autre expérience .
+ Repères de lecture. COP signifie coefficient de performance : chaleur extraite de la source froide par unité de travail reçu. Tf et Tc sont respectivement les températures des sources froide et chaude, en kelvins. La limite de Carnot décrit le maximum réversible ; un COP peut dépasser 1 sans être un rendement énergétique supérieur à 100 %.
  JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. La relation à comprendre
  COPCarnot=Tf/(Tc−Tf), avec Tf et Tc en kelvins ; COP frigorifique=chaleur utile extraite/travail reçu.
  Essayer et interpréter
@@ -2138,6 +2148,7 @@ URL: https://www.cyrilvoyant.com/fr/animations/correlation-significativite-r2/
 Corrélation, significativité et R² : animation pour les distinguer
  Un lien statistiquement significatif explique-t-il beaucoup de variation ?
  Une expérience du cours de Cyril Voyant, à manipuler dans le navigateur. Revenir au chapitre et aux diapositives · Choisir une autre expérience .
+ Repères de lecture. r est le coefficient de corrélation de Pearson dans le nuage ; n est l’effectif et t la statistique du test de corrélation nulle. ρ désigne la corrélation dans la population supposée. R² est le coefficient de détermination : la part de variation décrite par la droite ajustée avec constante. SSE est la somme des carrés des résidus et SST la somme des carrés des écarts à la moyenne. La p-value mesure l’extrémité du résultat sous l’hypothèse ρ = 0, pas l’importance du lien.
  JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. La relation à comprendre
  t=r√[(n−2)/(1−r²)] ; en régression simple avec constante, R²=r²=1−SSE/SST.
  Essayer et interpréter
@@ -2153,6 +2164,7 @@ URL: https://www.cyrilvoyant.com/fr/animations/courbe-roc/
 Courbe ROC interactive : sensibilité, spécificité et prévalence
  Que change un seuil de test, et pourquoi la valeur prédictive dépend-elle de la prévalence ?
  Une expérience du cours de Cyril Voyant, à manipuler dans le navigateur. Revenir au chapitre et aux diapositives · Choisir une autre expérience .
+ Repères de lecture. La courbe ROC (Receiver Operating Characteristic) relie la sensibilité Se au taux de faux positifs 1−Sp lorsque le seuil varie. VP et VN sont les vrais positifs et négatifs ; FP et FN les faux positifs et négatifs. Sp est la spécificité et p la prévalence, la proportion de personnes ayant la maladie. VPP et VPN sont les valeurs prédictives positive et négative ; AUC est l’aire sous la courbe ROC.
  JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. La relation à comprendre
  Se=VP/(VP+FN), Sp=VN/(VN+FP), VPP=Se·p/[Se·p+(1−Sp)(1−p)].
  Essayer et interpréter
@@ -2168,6 +2180,7 @@ URL: https://www.cyrilvoyant.com/fr/animations/effet-compton/
 Effet Compton : angle, photon diffusé et électron de recul
  Comment l’angle de diffusion change-t-il le partage de l’énergie ?
  Une expérience du cours de Cyril Voyant, à manipuler dans le navigateur. Revenir au chapitre et aux diapositives · Choisir une autre expérience .
+ Repères de lecture. E₀ est l’énergie du photon incident, E′ celle du photon diffusé et K l’énergie cinétique reçue par l’électron. θ est l’angle entre les directions du photon avant et après diffusion. L’énergie au repos de l’électron, mₑc², vaut environ 511 keV ; keV signifie kiloélectronvolt.
  JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. La relation à comprendre
  E′=E₀/[1+(E₀/511)(1−cosθ)] en keV ; K=E₀−E′.
  Essayer et interpréter
@@ -2183,6 +2196,7 @@ URL: https://www.cyrilvoyant.com/fr/animations/intervalles-regression/
 Régression : intervalle de confiance et intervalle de prévision
  Pourquoi l’intervalle d’une nouvelle observation est-il plus large que celui de la moyenne ?
  Une expérience du cours de Cyril Voyant, à manipuler dans le navigateur. Revenir au chapitre et aux diapositives · Choisir une autre expérience .
+ Repères de lecture. IC signifie intervalle de confiance de la moyenne et IP intervalle de prévision d’une observation. x₀ est la valeur où l’on prévoit ; ŷ₀ est la moyenne prévue par la droite. x̄ est la moyenne des x observés, n leur nombre et Sxx la somme des carrés des écarts x−x̄. se est l’écart-type résiduel estimé ; t est le quantile de Student retenu pour la bande à 95 %, avec n−2 degrés de liberté.
  JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. La relation à comprendre
  IC : ŷ₀±t se√[1/n+(x₀−x̄)²/Sxx]. IP individuel : ajouter 1 sous la racine.
  Essayer et interpréter
@@ -2198,6 +2212,7 @@ URL: https://www.cyrilvoyant.com/fr/animations/loi-normale/
 Loi normale interactive : aire, probabilité et score z
  Comment passer d’une valeur à une probabilité, ou retrouver un seuil à partir d’une aire ?
  Une expérience du cours de Cyril Voyant, à manipuler dans le navigateur. Revenir au chapitre et aux diapositives · Choisir une autre expérience .
+ Repères de lecture. x est une valeur, μ la moyenne et σ l’écart-type. Le score z mesure à combien d’écarts-types de la moyenne se trouve x. Z est la variable normale centrée réduite, de moyenne 0 et d’écart-type 1 ; Φ(z) est la probabilité de rester en dessous de z. P signifie probabilité et N(0,1) désigne cette loi normale.
  JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. La relation à comprendre
  z=(x−μ)/σ ; Φ(z)=P(Z≤z), avec Z∼N(0,1). Ici σ désigne l’écart-type.
  Essayer et interpréter
@@ -2213,6 +2228,7 @@ URL: https://www.cyrilvoyant.com/fr/animations/moteur-carnot/
 Moteur thermique et Carnot : animation du cycle et bilan d’énergie
  Pourquoi une machine thermique doit-elle rejeter une partie de la chaleur reçue ?
  Une expérience du cours de Cyril Voyant, à manipuler dans le navigateur. Revenir au chapitre et aux diapositives · Choisir une autre expérience .
+ Repères de lecture. η est le rendement, c’est-à-dire le travail utile W divisé par la chaleur reçue Qchaud. Tf et Tc sont respectivement les températures des sources froide et chaude, en kelvins. Qrejetée est la chaleur rendue à la source froide. Dans le diagramme T–S, T est la température et S l’entropie.
  JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. La relation à comprendre
  ηCarnot=1−Tf/Tc, W=ηQchaud, Qrejetée=Qchaud−W ; températures absolues en kelvins.
  Essayer et interpréter
@@ -2228,6 +2244,7 @@ URL: https://www.cyrilvoyant.com/fr/animations/onde-electromagnetique/
 Onde électromagnétique : animation des champs E et B
  Comment une onde se propage-t-elle si les champs oscillent transversalement ?
  Une expérience du cours de Cyril Voyant, à manipuler dans le navigateur. Revenir au chapitre et aux diapositives · Choisir une autre expérience .
+ Repères de lecture. E et B sont les champs électrique et magnétique ; E₀ est l’amplitude électrique. x est la position et t le temps ; ω est la pulsation, k le nombre d’onde, ν la fréquence et λ la longueur d’onde. c est la vitesse de la lumière dans le vide, ε₀ sa permittivité électrique et I l’intensité moyenne transportée.
  JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. La relation à comprendre
  E(x,t)=E₀ cos(ωt−kx), B=E/c, λ=c/ν et I=ε₀cE₀²/2.
  Essayer et interpréter
@@ -2243,6 +2260,7 @@ URL: https://www.cyrilvoyant.com/fr/animations/point-influent-regression/
 Régression et point influent : déplacer une observation
  Comment une seule observation peut-elle modifier la droite, la corrélation et la p-value ?
  Une expérience du cours de Cyril Voyant, à manipuler dans le navigateur. Revenir au chapitre et aux diapositives · Choisir une autre expérience .
+ Repères de lecture. b₁ est la pente et b₀ l’ordonnée à l’origine de la droite des moindres carrés. x̄ et ȳ sont les moyennes ; sₓ et sᵧ les écarts-types des deux variables. cov(x,y) est leur covariance et r leur corrélation de Pearson. La p-value du test de corrélation nulle ne remplace pas l’examen du nuage, des résidus et du point influent.
  JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. La relation à comprendre
  b₁=cov(x,y)/sₓ², b₀=ȳ−b₁x̄ ; r=cov(x,y)/(sₓsᵧ).
  Essayer et interpréter
@@ -2258,6 +2276,7 @@ URL: https://www.cyrilvoyant.com/fr/animations/refroidissement-biot/
 Refroidissement d’un aliment : nombre de Biot et température à cœur
  Quand peut-on remplacer un aliment entier par une seule température ?
  Une expérience du cours de Cyril Voyant, à manipuler dans le navigateur. Revenir au chapitre et aux diapositives · Choisir une autre expérience .
+ Repères de lecture. Bi est le nombre de Biot, qui compare les résistances thermiques de conduction interne et de convection en surface. h est le coefficient de convection, Lc une longueur caractéristique et λ la conductivité thermique. T(t) est la température au temps t ; Ti la température initiale et T∞ celle du milieu extérieur. τ est le temps caractéristique du modèle uniforme, m la masse, cp la capacité thermique massique et A la surface d’échange.
  JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. La relation à comprendre
  Bi=hLc/λ ; modèle uniforme : T(t)=T∞+(Ti−T∞)exp(−t/τ), τ=mcp/(hA).
  Essayer et interpréter
@@ -2326,6 +2345,7 @@ URL: https://www.cyrilvoyant.com/fr/animations/test-khi-deux/
 Test du χ² : dé équilibré, observés, attendus et tableau 2×2
  Quelles cellules expliquent l’écart entre les observations et l’hypothèse ?
  Une expérience du cours de Cyril Voyant, à manipuler dans le navigateur. Revenir au chapitre et aux diapositives · Choisir une autre expérience .
+ Repères de lecture. O est un effectif observé et E l’effectif attendu sous l’hypothèse testée ; N est l’effectif total. Dans un tableau, Li et Cj sont les totaux de la ligne i et de la colonne j ; Eij est l’effectif attendu de leur cellule. Σ signifie que l’on additionne les contributions des cellules. χ² désigne la statistique de test et ddl les degrés de liberté ; la p-value correspond à sa probabilité de dépassement sous l’hypothèse.
  JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. La relation à comprendre
  χ²=Σ(O−E)²/E. Dé équilibré : E=N/6, 5 ddl. Indépendance 2×2 : Eij=LiCj/N, 1 ddl.
  Essayer et interpréter
@@ -2341,6 +2361,7 @@ URL: https://www.cyrilvoyant.com/fr/animations/test-student/
 Test de Student interactif : deux moyennes, dispersion et p-value
  Une différence entre deux moyennes est-elle grande par rapport à son incertitude ?
  Une expérience du cours de Cyril Voyant, à manipuler dans le navigateur. Revenir au chapitre et aux diapositives · Choisir une autre expérience .
+ Repères de lecture. Δ est la différence entre les moyennes ; n₁ et n₂ sont les effectifs des deux groupes ; s₁ et s₂ leurs écarts-types. sₚ est l’écart-type commun estimé et ν le nombre de degrés de liberté. t mesure l’écart entre moyennes en unités d’erreur standard. La p-value est la probabilité, sous l’hypothèse de moyennes égales et le modèle du test, d’obtenir un écart au moins aussi extrême ; ce n’est pas la probabilité que cette hypothèse soit vraie.
  JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. La relation à comprendre
  Test de Student à variance commune : t=Δ/[sₚ√(1/n₁+1/n₂)] ; sₚ²=[(n₁−1)s₁²+(n₂−1)s₂²]/(n₁+n₂−2), ν=n₁+n₂−2.
  Essayer et interpréter
@@ -3357,7 +3378,7 @@ sCV et F : variabilité et prévisibilité de l'éclairement solaire
  Cyril Voyant · 18 octobre 2026
  Sur 68 stations météorologiques espagnoles, notre indice de prévisibilité F conserve une relation inverse avec l’erreur de prévision, examinée sur dix modèles et 24 horizons. Ce résultat publié dans Renewable Energy montre l’intérêt de caractériser le signal avant de comparer les algorithmes : une erreur élevée ne raconte pas la même histoire sur un ciel régulier et sur une série très fluctuante.
  Un diagnostic utile peut reposer sur des outils suffisants : la complexité est ajoutée seulement si son apport est démontré.
- Le travail introduit deux indicateurs complémentaires. Le coefficient de variation stochastique, sCV, mesure les fluctuations en les rapportant à une référence dynamique de ciel clair. sCV est compris entre 0 et 1 ; la valeur 1 correspond au cas théorique où le signal alterne aléatoirement entre ciel clair et plancher diffus. Au-delà de 1, le modèle n’est plus un prédicteur, puisqu’il fait moins bien que le prédicteur le plus simple : une telle valeur signale un problème numérique ou autre. F ajoute une information de dépendance temporelle issue de l’autocorrélation. Deux séries de variabilité comparable peuvent ainsi conserver des mémoires différentes : l’une laisse davantage d’information exploitable pour prévoir.
+ Le travail introduit deux indicateurs complémentaires. Le coefficient de variation stochastique, sCV, mesure les fluctuations en les rapportant à une référence dynamique de ciel clair. sCV est compris entre 0 et 1 ; la valeur 1 correspond au cas théorique où le signal alterne aléatoirement entre ciel clair et plancher diffus. sCV décrit la variabilité du signal, pas la performance d’un modèle par rapport à la persistance. Une valeur hors du domaine attendu demande de vérifier les données, le prétraitement et les hypothèses de normalisation. F ajoute une information de dépendance temporelle issue de l’autocorrélation. Deux séries de variabilité comparable peuvent ainsi conserver des mémoires différentes : l’une laisse davantage d’information exploitable pour prévoir.
  La validation combine cent séries synthétiques cyclostationnaires et les observations du réseau SIAR. Les simulations permettent de faire varier les propriétés du signal ; les stations permettent de confronter le diagnostic à des situations réelles. La relation entre F et les erreurs apparaît aussi à l’échelle des stations, et ne se réduit donc pas à un effet d’agrégation du réseau. Sous forte variabilité synthétique, elle peut devenir non linéaire.
  Pour un utilisateur, l’apport est un diagnostic : comparer la difficulté de prévision, choisir des références et interpréter un score dans son contexte. F n’est ni un intervalle de confiance calibré ni une promesse de gain économique. Les événements de sur-éclairement et la qualité du modèle de ciel clair demandent aussi de l’attention. L’étude propose une mesure de la prévisibilité ; elle ne supprime pas l’incertitude atmosphérique.
  Variabilité et mémoire. Illustration pédagogique du cours UE14 : F varie avec l'horizon de prévision quand sCV est fixé ; les barres représentent la mémoire temporelle restante. Cette illustration de cours n'est pas la validation sur 68 stations de l'article, et ses valeurs ne sont pas un seuil universel. Source : Cyril Voyant, cyrilvoyant.github.io/assets/course/F_horizon.png.
@@ -3734,7 +3755,7 @@ L'IA dans la recherche : AI Act, charte de laboratoire et boîte à outils
  Qui est responsable ? Une orientation en une minute
  Répondez à quelques questions sur un système d'IA. Les réponses renvoient aux articles de l'AI Act qui s'appliquent ; c'est une orientation, pas un avis juridique.
  JavaScript is needed for this orientation. Ce qu'un laboratoire peut faire : l'exemple du cadre O.I.E.
- Au centre O.I.E. (Mines Paris – PSL, une trentaine de personnes), un cadre FAIR + IA est en rédaction depuis 2025 et en cours de finalisation, pour un déploiement à partir de 2027. Ses grandes lignes :
+ Au centre O.I.E. (Mines Paris – PSL, une trentaine de personnes), un cadre FAIR + IA est en rédaction depuis 2025 et en cours de finalisation, pour un déploiement à partir de 2027. FAIR signifie trouvable, accessible, interopérable et réutilisable : des propriétés qui permettent aux données de servir au-delà de leur projet d'origine. Ses grandes lignes :
  Une charte d'une page signée par chaque membre  : IA générative autorisée comme assistant pour la rédaction, le code et les figures, avec mention explicite de son usage ; relecture humaine de tout ce qu'elle produit ; documentation minimale ( fiche données , fiche modèle , dépôt Git versionné avec README) ; chaque projet IA dans un registre , réévalué quand il passe de la recherche à l'industrie ; un plan de gestion des données avec six champs IA .
  Des rôles légers, environ 0,3 équivalent temps plein au total  : un référent conformité IA (registre, veille, partenaires), un responsable des données FAIR (plans de gestion, fiches données, licences, RGPD ) et un référent MLOps et qualité (fiches modèle, plans de test, dérive), plus un comité d'éthique de quatre personnes réuni chaque trimestre pour les projets sensibles.
  Six étapes par projet (durées indicatives) : registre (5 minutes) ; plan de gestion des données avec les champs IA (1 heure) ; fiche données et fiche modèle (2 heures) ; plan de test minimal (2 à 3 heures) ; README avec la mention d'usage de l'IA (30 minutes) ; pour un transfert, un dossier prêt pour l'audit (une journée).
@@ -3749,7 +3770,7 @@ L'IA dans la recherche : AI Act, charte de laboratoire et boîte à outils
  Objet  : entraîner un perceptron multicouche pour prévoir le GHI horaire à partir de données météorologiques.
  Usage de l'IA  : aide ponctuelle d'un assistant d'IA générative (nom et version) pour du code standard et du débogage. Toutes les suggestions ont été revérifiées par l'auteur (tests unitaires, validation par l'encadrant), nom et date.
  Données  : réseau SIAR (Espagne), 2005–2015 ; normalisation, gestion des manques ; données publiques non personnelles ; licence indiquée.
- Tests  : graine fixée, résultats identiques sur des exécutions répétées ; validation croisée (k > 3) ; test de stress sur les pics d'éclairement et les valeurs manquantes ; dérive suivie par la nRMSE et NICE sur des données récentes.
+ Tests  : fixer la valeur initiale du générateur aléatoire (la graine) pour répéter une simulation ; vérifier des résultats identiques sur des exécutions répétées ; validation croisée (k > 3, où k est le nombre de partitions des données) ; test de stress sur les pics d'éclairement et les valeurs manquantes ; dérive suivie par la nRMSE et NICE sur des données récentes. La nRMSE est une racine d'erreur quadratique moyenne normalisée ; NICE compare les erreurs de prévision à celles de la persistance, la référence qui répète la dernière observation disponible. Le choix de normalisation et le protocole d'évaluation doivent accompagner les scores.
  Réutilisation  : recherche académique ; toute utilisation industrielle doit être validée par le laboratoire.
  3. Garder un humain aux commandes. Pas d'IA autrice ; chaque référence, équation et ligne de code vérifiée par une personne nommée.
  4. Documenter les données ( fiche données ). Origine, période, volume, variables et unités, prétraitements, qualité, biais connus, licence ou base légale, transferts hors UE, conditions de réutilisation.
@@ -3918,6 +3939,7 @@ L'IA dans la recherche : AI Act, charte de laboratoire et boîte à outils
  Document qui décrit comment un projet collecte, documente, stocke, partage et archive ses données, exigé par l'ANR et Horizon Europe ; rédigé en France avec DMP OPIDoR .
  Fiche données, fiche modèle
  Fiches d'une ou deux pages qui décrivent un jeu de données ou un modèle entraîné : origine, contenu, usage prévu, métriques, limites. Le format reprend les propositions « model cards » et « datasheets for datasets » de la communauté de l'apprentissage automatique.
+ Métriques de prévision. La nRMSE est la racine de l'erreur quadratique moyenne normalisée ; la nMAE est l'erreur absolue moyenne normalisée. Leur dénominateur doit être précisé. NICE compare les erreurs de prévision à celles de la persistance sur les mêmes cibles évaluées ; NICE² utilise les erreurs quadratiques. Ce sont des diagnostics de prévision, pas des mesures de conformité juridique.
  Ressources officielles
  AI Act : règlement (UE) 2024/1689 sur EUR-Lex et la page de la Commission européenne
  Commission européenne : lignes directrices évolutives pour un usage responsable de l'IA générative en recherche (en anglais)
@@ -4363,6 +4385,7 @@ URL: https://www.cyrilvoyant.com/fr/recits/calculateur-bed-eqd2-lq-lql/
 Calculateur gratuit de BED et d'EQD2 : LQ ou LQL ?
  LQL-Equiv est un calculateur gratuit et open source (MIT) de BED et d'EQD2 avec les modèles LQ et LQL. Il fonctionne dans le navigateur, et rien de ce qui est saisi ne quitte la page. Ses auteurs sont Cyril Voyant et Daniel Julian. C'est un outil de recherche et d'enseignement, pas un dispositif médical : il ne sert ni à choisir ni à modifier une prescription.
  Cyril Voyant · Mines Paris – PSL, Centre O.I.E. · 2 novembre 2026
+ Repères de lecture. BED désigne la dose biologiquement efficace ; EQD2 la dose équivalente exprimée en fractions de 2 Gy. LQ signifie linéaire-quadratique et LQL linéaire-quadratique-linéaire. n compte les fractions, d est la dose par fraction et Gy le gray (énergie déposée par unité de masse). Le paramètre tissulaire α/β et la dose de transition d T s’expriment en Gy. NTCP et TCP désignent les probabilités de complication des tissus sains et de contrôle tumoral dans le modèle indiqué.
  LQ ou LQL ?
  Pour n fractions de dose d, le modèle linéaire-quadratique donne BED = n · d · (1 + d / (α/β)) , et EQD2 = BED / (1 + 2/(α/β)) . La courbe LQ continue de s'infléchir vers le haut quand la dose par fraction augmente. Le modèle LQL la conserve jusqu'à une dose de transition d T , puis continue en ligne droite.
  Sous la dose de transition, les deux modèles sont d'accord. Au-dessus, ils s'écartent. Pour une fraction de 15 Gy au rectum (α/β = 3,9 Gy, d T = 7,8 Gy) :
@@ -4391,6 +4414,7 @@ URL: https://www.cyrilvoyant.com/fr/recits/evaluer-prevision-solaire-persistance
 Comment évaluer une prévision solaire face à la persistance
  Comparez le modèle à la persistance sur les mêmes cibles, le même horizon et le même périmètre, donnez plus d'une norme d'erreur, puis testez la différence. Le rapport entre l'erreur du modèle et celle de la persistance dit ce que le modèle apporte. Les métriques NICEᵏ (Voyant et al., 2025) construisent ce rapport pour les normes d'ordre un, deux et trois.
  Cyril Voyant · Mines Paris – PSL, Centre O.I.E. · 2 novembre 2026
+ Repères de lecture. La MAE est la moyenne des erreurs absolues ; la RMSE est la racine de la moyenne des erreurs au carré et donne plus de poids aux grandes erreurs. La nRMSE rapporte la RMSE à la moyenne des observations évaluées. AR désigne l’autorégression ; ELM (extreme learning machine) ajuste les poids de sortie en gardant une couche cachée aléatoire fixe. Dans les formules NICE, l’indice p désigne la persistance ; la p-value statistique d’un test est une autre quantité. sCV décrit la variabilité du signal et F combine variabilité et dépendance temporelle.
  La marche à suivre
  Nommer la référence. Dire quelle persistance est utilisée : dernière observation, persistance de l'indice de ciel clair (smart persistence), ou référence qui tient compte de la phase comme BLEND. Sans cela, un score de compétence dit peu de chose.
  Garder les mêmes cibles. Même site, même période, même horizon et mêmes instants pour le modèle et la référence.
@@ -4423,7 +4447,7 @@ Calculer plutôt qu'apprendre : l'équivalence de dose en radiothérapie avec 
  Quand le lien entre un schéma de radiothérapie et son effet biologique est connu, on le calcule directement. Ni données d'apprentissage ni intelligence artificielle : un modèle que l'on comprend, vérifié cas par cas.
  Cyril Voyant , avec Daniel Julian · Mines Paris – PSL, centre O.I.E.
  En bref
- Une fraction de 15 Gy au rectum a une dose biologique efficace de 72,7 Gy avec le modèle linéaire-quadratique (LQ), mais de 59,4 Gy avec le modèle linéaire-quadratique-linéaire (LQL) : 18 % de moins .
+ Une fraction de 15 Gy (grays, l'unité de dose physique absorbée) au rectum a une dose biologique efficace de 72,7 Gy avec le modèle linéaire-quadratique (LQ), mais de 59,4 Gy avec le modèle linéaire-quadratique-linéaire (LQL) : 18 % de moins .
  LQL-Equiv calcule ces équivalences directement à partir d'un modèle explicite. Sa version 2026 reproduit le logiciel de 2014 sur 4 438 schémas de traitement (69 125 valeurs sur 69 131 concordent, soit 99,991 %).
  C'est un outil de recherche et d'enseignement, pas un dispositif médical .
  Le constat
@@ -4431,10 +4455,10 @@ Calculer plutôt qu'apprendre : l'équivalence de dose en radiothérapie avec 
  La question
  Deux traitements peuvent sembler sans commune mesure : 39 fractions de 2 Gy, soit 78 Gy de dose physique, ou 5 fractions de 7 Gy, soit 35 Gy. La dose physique, en grays, mesure l'énergie déposée par kilogramme de tissu. Elle ne suffit pas à prédire l'effet biologique, qui dépend aussi de la dose reçue à chaque fraction : on ne compare donc pas ces deux schémas en additionnant les grays. Sont-ils équivalents pour la tumeur, et pour les organes sains qui l'entourent ? La radiothérapie répond avec la dose biologique efficace (BED) et sa traduction en dose délivrée par fractions de 2 Gy ( EQD2 ).
  La théorie, en clair
- Pour n fractions de dose d , le modèle linéaire-quadratique donne
+ Pour n fractions (le nombre de séances), chacune délivrant une dose d en grays (Gy), le modèle linéaire-quadratique donne
  BED = n · d · (1 + d / (α/β))
  où α/β décrit la sensibilité d'un tissu à la taille de chaque fraction (environ 3,9 Gy pour le rectum). Le terme d/(α/β) explique pourquoi une grosse fraction compte plus que sa dose. La dose équivalente en fractions de 2 Gy est alors EQD2 = BED / (1 + 2/(α/β)) .
- La courbe LQ continue de s'infléchir vers le haut quand la dose par fraction augmente, ce qui surestime l'effet des très grosses fractions. Le modèle LQL garde la courbe LQ jusqu'à une dose de transition d_T (7,8 Gy pour le rectum), puis la prolonge par une droite. LQL-Equiv traite aussi les interruptions, les deux fractions par jour et la repopulation tumorale ; les équations complètes sont sur la page technique.
+ La courbe LQ continue de s'infléchir vers le haut quand la dose par fraction augmente, ce qui surestime l'effet des très grosses fractions. Le modèle LQL garde la courbe LQ jusqu'à une dose de transition d T (7,8 Gy pour le rectum), la dose à laquelle le modèle passe d'une courbe quadratique à une droite. LQL-Equiv traite aussi les interruptions, les deux fractions par jour et la repopulation tumorale ; les équations complètes sont sur la page technique.
  Où l'on se situe sur l'échelle de la complexité
  Quel niveau de complexité pour ce travail ? Niveau 1 sur 6
  1 Calcul direct (le lien est connu) ◀ Ce travail s'arrête ici
@@ -4453,9 +4477,10 @@ Calculer plutôt qu'apprendre : l'équivalence de dose en radiothérapie avec 
  L'écart grandit avec la dose par fraction. C'est pourquoi le choix du modèle doit être indiqué quand on compare des schémas hypofractionnés et conventionnels. Le calculateur ajoute ensuite les corrections de temps et de réparation propres à chaque tissu.
  Ce que cela apporte, et les limites
  Apports  : un calcul transparent ; des paramètres documentés pour 34 organes à risque et 20 sites tumoraux ; une validation cas par cas contre le logiciel d'origine ; un calculateur gratuit qui fonctionne dans le navigateur (rien de ce qui est saisi ne quitte la page).
- Limites  : le résultat ne vaut que ce que valent le modèle et ses paramètres (α/β, d_T, pente de la partie linéaire), qui restent incertains. Les probabilités de complication et de contrôle (NTCP, TCP) sont des illustrations du modèle, jamais validées sur des résultats cliniques. Ne pas utiliser pour choisir ou modifier une prescription.
+ Limites  : le résultat ne vaut que ce que valent le modèle et ses paramètres (α/β, d T , pente de la partie linéaire), qui restent incertains. La probabilité de complication des tissus sains (NTCP, normal tissue complication probability ) et la probabilité de contrôle tumoral (TCP, tumour control probability ) sont des illustrations du modèle, jamais validées sur des résultats cliniques. Ne pas utiliser pour choisir ou modifier une prescription.
  Deux articles prolongent ce travail : une comparaison de LQ et LQL pour la décision clinique ( Clinical Oncology , 2025), et un appel à standardiser les calculs d'équivalence de dose ( Medical Dosimetry , 2026).
  Pour aller plus loin
+ Choisir et lire un calcul  : BED et EQD2 avec LQ ou LQL : ce que donne le calculateur .
  Théorie complète, code exécutable et validation (en anglais) : https://cyrilvoyant.github.io/tools/lql-equiv.html
  Le calculateur  : https://cyrilvoyant.github.io/LQL-Equiv-web/
  Articles  :
@@ -4478,7 +4503,7 @@ Se questionner sur nos façons de faire de la recherche : influence, intégrit
  En bref
  Compter les chercheurs très cités mélange taille et concentration. Une part rapportée à une référence neutre de 2 % , sur une échelle de doublement, dit à quel point l'influence est concentrée, indépendamment de la taille d'un établissement.
  L'impact seul ne suffit pas : une cartographie mondiale des institutions, par J. P. A. Ioannidis (Stanford), J. Baas et R. Boverhof (Elsevier) et C. Voyant, dans Royal Society Open Science (2026), le place à côté d' indicateurs d'intégrité  : rétractations, autocitation extrême, publication dans des revues retirées.
- Publier ne suffit plus non plus : dans un système saturé, la recherche doit être trouvée, jugée crédible et réutilisée . Le cadre RTVACOS traite l'excellence comme un système multiplicatif où un seul socle faible fait tout s'effondrer.
+ Publier ne suffit plus non plus : dans un système saturé, la recherche doit être trouvée, jugée crédible et réutilisée . RTVACOS réunit rigueur, transparence, visibilité, adoption, collaboration, ouverture et signification sociétale : un cadre de réflexion, pas un score d'excellence mesuré.
  Le constat
  Les outils qui servent à juger la recherche méritent le même examen que les modèles qui prévoient le soleil ou calculent une dose. Un indicateur de volume récompense la taille ; un score unique masque les problèmes d'intégrité ; un bon article que personne ne trouve n'a pas d'impact. Chacune de ces questions reçoit la même réponse qu'ailleurs dans ce travail : une référence explicite, plusieurs mesures complémentaires, et des limites énoncées.
  La question
@@ -4486,9 +4511,9 @@ Se questionner sur nos façons de faire de la recherche : influence, intégrit
  La théorie, en clair
  L'influence, indépendamment de la taille. Avec X auteurs très cités parmi N auteurs éligibles d'un établissement, la part est p = X/N . On la compare à la part attendue par construction des listes Top 2 %, p₀ = 0,02  :
  I = log₂(p / p₀)
- I = 0 correspond à la référence, I = +1 au double, I = −1 à la moitié. L'échelle est symétrique et ne dépend ni de la taille de l'établissement ni des performances des autres. L'idée est la même que comparer une prévision à la persistance : un score n'a de sens que rapporté à une référence énoncée.
+ Ici, log₂ est le logarithme en base deux : une unité de plus correspond à un doublement. I = 0 correspond à la référence, I = +1 au double, I = −1 à la moitié. L'échelle est symétrique et ne dépend ni de la taille de l'établissement ni des performances des autres. L'idée est la même que comparer une prévision à la persistance : un score n'a de sens que rapporté à une référence énoncée.
  Impact et intégrité, côte à côte. La cartographie publiée dans Royal Society Open Science (2026) ajoute trois indicateurs de problèmes possibles d'intégrité : les signatures d'articles rétractés pour des raisons autres que des erreurs d'éditeur, et les parts d'auteurs très cités ayant une autocitation extrême ou beaucoup de publications dans des titres retirés de Scopus.
- L'excellence comme système. RTVACOS écrit l'excellence E ∝ (R × T × V × A) × (1 + C + O + S)  : quatre fondations (Rigueur, Transparence, Visibilité, Adoption) qui se multiplient, de sorte qu'un zéro dans l'une annule l'ensemble, et trois amplificateurs (Collaboration, Ouverture, Signification sociétale) qui démultiplient un socle solide sans pouvoir le remplacer.
+ L'excellence comme système. RTVACOS représente schématiquement l'excellence par E ∝ (R × T × V × A) × (1 + C + O + S) . Ici, E désigne l'excellence discutée ; le signe de proportionnalité ∝ exprime une relation conceptuelle, pas une équation calibrée. Les quatre fondations sont la rigueur ( R ), la transparence ( T ), la visibilité ( V ) et l'adoption ( A ) : une faiblesse de l'une peut compromettre l'ensemble. Les trois amplificateurs sont la collaboration ( C ), l'ouverture ( O ) et la signification sociétale ( S ) ; ils renforcent un socle solide sans pouvoir le remplacer.
  L'exemple en chiffres
  L'indice d'influence sur une échelle de doublement : 1 % donne −1, 2 % donne 0, 4 % donne +1, 8 % donne +2
  Un établissement dont 4 % des auteurs éligibles figurent dans les listes Top 2 % a I = +1  : le double de la référence. Un établissement à 1 % a I = −1 . Ces parts sont illustratives.
@@ -4508,6 +4533,7 @@ URL: https://www.cyrilvoyant.com/fr/recits/reference-prevision-solaire-deep-lear
 Quelle référence une prévision solaire doit-elle battre ? Quand le deep learning vaut-il la peine ?
  Commencez par la persistance, puis une référence qui connaît la phase, une autorégression et un apprentissage frugal. Gardez un réseau profond seulement s'il apporte un gain mesuré sur le même protocole. Le deep learning peut valoir la peine. Il doit le montrer face à des références qui ne coûtent presque rien.
  Cyril Voyant · Mines Paris – PSL, Centre O.I.E. · 2 novembre 2026
+ Repères de lecture. La MAE est la moyenne des erreurs absolues ; la RMSE est la racine de la moyenne des erreurs au carré et donne plus de poids aux grandes erreurs. La nRMSE rapporte la RMSE à la moyenne des observations évaluées. AR désigne l’autorégression ; ELM (extreme learning machine) ajuste les poids de sortie en gardant une couche cachée aléatoire fixe. Dans les formules NICE, l’indice p désigne la persistance ; la p-value statistique d’un test est une autre quantité. sCV décrit la variabilité du signal et F combine variabilité et dépendance temporelle.
  Quoi tester, dans l'ordre
  La persistance simple. La dernière valeur observée : la référence minimale de toute prévision.
  Une référence qui connaît le cycle. La persistance de l'indice de ciel clair, ou BLEND, qui combine la mémoire immédiate et la valeur à la même phase du cycle. BLEND part de l'éclairement brut et ses poids ont une forme analytique (Voyant et al., 2026).
@@ -4541,7 +4567,7 @@ Prévision satellite de l'éclairement : une maille, un voisinage ou tout le c
  Cyril Voyant (Mines Paris – PSL, centre O.I.E.), avec Andreas Kazantzidis (université de Patras) et Jan Kleissl (université de Californie à San Diego) · manuscrit en préparation, code et extrait de données ouverts
  En bref
  Chaque modèle prévoit les 24 prochaines valeurs horaires d'une maille satellite au-dessus de la Corse à partir de ses 24 valeurs passées ; seul change ce qu'il lit : sa propre maille, un voisinage, tout le champ, ou un champ compressé .
- Dans le dépôt public, une machine à apprentissage extrême (ELM) qui lit sa propre maille a l'erreur cumulée la plus faible ( nRMSE 0,308 ), devant le même modèle lisant tout le champ (0,355) avec mille fois moins de paramètres , et devant un U-Net (0,343) et un LSTM (0,326) lisant le champ.
+ Dans le dépôt public, une machine à apprentissage extrême (ELM, un modèle neuronal dont les poids cachés sont fixés aléatoirement) qui lit sa propre maille a l'erreur cumulée la plus faible ( nRMSE 0,308 ), devant le même modèle lisant tout le champ (0,355) avec mille fois moins de paramètres , et devant un U-Net (0,343) et un LSTM (0,326) lisant le champ. La nRMSE est la racine de l'erreur quadratique moyenne, divisée par la moyenne des observations évaluées : plus elle est faible, mieux c'est. U-Net et LSTM sont les deux architectures de réseaux profonds testées ici.
  C'est une région, un produit satellite et un découpage sur deux ans : un résultat de banc d'essai, pas une loi générale .
  Quel niveau de complexité pour ce travail ? Niveau 5 sur 6
  1 Calcul direct (le lien est connu)
@@ -4556,9 +4582,9 @@ Prévision satellite de l'éclairement : une maille, un voisinage ou tout le c
  La question
  Le rayonnement satellite arrive sous forme de cartes. Les réseaux profonds, U-Net ou LSTM, lisent des champs entiers ; les méthodes de compression réduisent le champ avant qu'un modèle le lise. Les deux ajoutent des entrées et des paramètres. Quelle part de cette information spatiale fait baisser l'erreur de la prévision pour chacune des 24 heures suivantes, et pour quel coût en paramètres stockés ?
  La théorie, en clair
- Un seul modèle, plusieurs entrées. Le modèle est une machine à apprentissage extrême (ELM) : une couche cachée de neurones tirés au hasard et jamais entraînés, et des poids de sortie ajustés par une seule résolution de moindres carrés. L'apprentissage prend quelques secondes et le nombre de paramètres stockés se compte facilement. Ce même modèle lit soit sa propre maille, soit un voisinage 3 × 3, soit tout le champ de 722 mailles, soit le champ compressé par l'une de sept méthodes (transformée de Radon, DCT, ondelettes, ACP, projection aléatoire, sous-échantillonnage, autoencodeur).
+ Un seul modèle, plusieurs entrées. Le modèle est une machine à apprentissage extrême (ELM) : une couche cachée de neurones tirés au hasard et jamais entraînés, et des poids de sortie ajustés par une seule résolution de moindres carrés. L'apprentissage prend quelques secondes et le nombre de paramètres stockés se compte facilement. Ce même modèle lit soit sa propre maille, soit un voisinage 3 × 3, soit tout le champ de 722 mailles, soit le champ compressé par l'une de sept méthodes (transformée de Radon, transformée en cosinus discrète ou DCT, ondelettes, analyse en composantes principales ou ACP, projection aléatoire, sous-échantillonnage, autoencodeur).
  Des références honnêtes. La persistance répète la dernière heure, la persistance 24 h répète la même heure de la veille, et BLEND mélange les deux. Un modèle ne vaut ses paramètres que s'il les bat.
- Un score honnête. Les erreurs sont cumulées sur toutes les mailles, toutes les échéances de 1 à 24 heures et toutes les heures de test où le Soleil est à plus de 5° au-dessus de l'horizon. La nRMSE est divisée par la moyenne des observations retenues de l'année de test, 407,9 W/m².
+ Un score honnête. Les erreurs sont cumulées sur toutes les mailles, toutes les échéances de 1 à 24 heures et toutes les heures de test où le Soleil est à plus de 5° au-dessus de l'horizon. Pour obtenir la nRMSE, la racine de l'erreur quadratique moyenne est divisée par la moyenne des observations retenues de l'année de test, 407,9 W/m².
  L'exemple en chiffres
  Erreur cumulée en fonction du nombre de paramètres stockés par chaque modèle (échelle log) : l'ELM par maille est le point le plus bas ; lire tout le champ déplace les modèles vers la droite sans les faire descendre
  Les données sont l'éclairement HelioClim-3 (méthode Heliosat-2, images Meteosat, service SoDa) sur 1 148 points au-dessus de la Corse, interpolés sur une grille de 32 × 32 dont 722 mailles, à l'intérieur de l'enveloppe convexe des points, sont évaluées, au pas horaire, avec 2005 pour l'apprentissage et 2006 pour le test.
@@ -4593,11 +4619,11 @@ Cancer de la thyroïde et iode radioactif : le modèle d'abord, n'apprendre qu
  Le constat
  Le modèle et son simulateur, RAIR-Sim, sont le travail de Marie Fusella Giuntini et Dominique Barbolosi, avec Cyril Voyant et David Taieb ( Scientific Reports , 2026). Quand une maladie peut être décrite par un modèle intelligible, ce modèle passe en premier : il explique, il se calibre sur de vrais patients, et il permet de tester des protocoles in silico . L'intelligence artificielle n'est pas nécessaire pour faire ce que le modèle fait déjà bien.
  La question
- Le cancer différencié de la thyroïde métastatique est souvent traité par des séances répétées d'iode radioactif. Certaines tumeurs répondent, d'autres deviennent réfractaires. La thyroglobuline (Tg), dosée dans le sang, suit la masse tumorale. Quel protocole, et pour quel profil de patient ?
+ Le cancer différencié de la thyroïde métastatique est souvent traité par des séances répétées d'iode radioactif. Certaines tumeurs répondent, d'autres deviennent réfractaires, c'est-à-dire qu'elles ne répondent plus suffisamment à l'iode radioactif. La thyroglobuline (Tg) est une protéine dosée dans le sang, utilisée ici pour suivre la masse tumorale. Quel protocole, et pour quel profil de patient ?
  La théorie, en clair
  Trois grandeurs évoluent au fil des mois :
- l' activité de l'iode administré décroît avec le temps, et chaque séance ajoute une nouvelle dose à ce qui reste ;
- les cellules tumorales croissent à un rythme fixé par leur temps de doublement T_d , et sont détruites en proportion de l'activité présente ;
+ l' activité de l'iode administré, le nombre de désintégrations radioactives par unité de temps, décroît avec le temps, et chaque séance ajoute une nouvelle dose à ce qui reste ;
+ les cellules tumorales croissent à un rythme fixé par leur temps de doublement T d (le temps nécessaire pour doubler dans le modèle sans traitement), et sont détruites en proportion de l'activité présente ;
  la thyroglobuline est produite par les cellules tumorales et éliminée par l'organisme.
  Les équations sont résolues séance par séance : un protocole entier se simule en quelques secondes. Un temps de doublement court signifie une tumeur qui croît vite ; c'est ce qui distingue un profil réfractaire d'un profil répondeur.
  Où l'on se situe sur l'échelle de la complexité
@@ -4612,9 +4638,9 @@ Cancer de la thyroïde et iode radioactif : le modèle d'abord, n'apprendre qu
  Deuxième niveau : la simulation à partir d'un modèle que l'on comprend . L'étape suivante est un jumeau numérique hybride  : garder le modèle, et laisser une méthode d'apprentissage (une machine à apprentissage extrême frugale, par exemple) estimer seulement ce que le modèle ne capture pas. C'est un apprentissage guidé par les mathématiques et la médecine, pas une boîte noire à la place du modèle. Pas d'apprentissage ajouté quand le modèle répond au besoin ; de l'apprentissage, en hybride, là où il aide.
  L'exemple en chiffres
  Thyroglobuline sur 80 mois pour 1, 2, 4 et 8 séances, profils réfractaire et répondeur
- Avec les paramètres des démonstrateurs publics, 3,7 GBq par séance tous les 3 mois :
- Profil réfractaire ( T_d = 9,8 mois) : la thyroglobuline atteint environ 1 386 ng/mL à 79 mois après une séance, et reste vers 12 ng/mL après huit.
- Profil répondeur ( T_d = 66,6 mois) : environ 14 ng/mL après une séance, et 0,13 ng/mL après huit.
+ Avec les paramètres des démonstrateurs publics, 3,7 GBq (gigabecquerels, l'unité d'activité administrée) par séance tous les 3 mois ; les concentrations de thyroglobuline sont données en ng/mL (nanogrammes par millilitre) :
+ Profil réfractaire ( T d = 9,8 mois) : la thyroglobuline atteint environ 1 386 ng/mL à 79 mois après une séance, et reste vers 12 ng/mL après huit.
+ Profil répondeur ( T d = 66,6 mois) : environ 14 ng/mL après une séance, et 0,13 ng/mL après huit.
  Ce sont des sorties du modèle pour deux archétypes, pas des prédictions pour un patient.
  Ce que cela apporte, et les limites
  Apports  : une façon intelligible de comparer des protocoles avant de traiter ; une lecture par biomarqueur (le temps de doublement) qui sépare les profils ; un code ouvert que chacun peut exécuter (MATLAB).
@@ -4638,7 +4664,7 @@ Simuler ce que l'on ne peut pas encore mesurer : la consommation électrique d
  Haytham El-Houari et Cyril Voyant · projet SmartTunnel, Université Sidi Mohamed Ben Abdellah (Fès) et Mines Paris – PSL
  En bref
  Sans aucune mesure, on peut simuler la consommation électrique d'un tunnel routier à partir de sa géométrie, du trafic, de l'éclairage et de la ventilation : une année au pas de 10 minutes en environ 150 ms .
- Pour un tunnel périurbain de 1,5 km à deux tubes, l'exemple public donne une médiane de 3 233 MWh par an et une pointe de 873 kW sur 20 tirages Monte Carlo.
+ Pour un tunnel périurbain de 1,5 km à deux tubes, l'exemple public donne une médiane de 3 233 MWh par an (mégawattheures, une quantité d'énergie) et une pointe de 873 kW (kilowatts, une puissance instantanée) sur 20 tirages Monte Carlo.
  C'est un générateur de premier ordre : à calibrer sur des mesures avant tout usage d'ingénierie .
  Le constat
  Quand un tunnel n'a pas encore de mesures, aucun modèle ne peut être entraîné ni validé pour lui, mais on peut beaucoup simuler. Un modèle simple, dont chaque coefficient est visible, donne des ordres de grandeur crédibles, leur variabilité et l'effet de chaque choix de conception, à condition d'en énoncer les hypothèses.
@@ -4650,7 +4676,7 @@ Simuler ce que l'on ne peut pas encore mesurer : la consommation électrique d
  les auxiliaires (pompes, équipements), proportionnels à la longueur et à la profondeur du tunnel ;
  l' éclairage , qui dépend de la lumière du jour aux têtes et du trafic ;
  la ventilation , qui suit le trafic avec ses pointes du matin et du soir, et augmente avec la pente et l'altitude. Elle bondit lors d' épisodes de pollution et d' accidents tirés au hasard.
- Chaque année est simulée de nombreuses fois avec des tirages aléatoires différents ( Monte Carlo ). On obtient une médiane et une bande P10–P90 plutôt qu'une seule courbe.
+ Chaque année est simulée de nombreuses fois avec des tirages aléatoires différents ( Monte Carlo ). La médiane est la valeur centrale des résultats simulés. P10 et P90 sont les centiles 10 et 90 : la bande P10–P90 contient les 80 % centraux de ces résultats. Elle décrit la variation entre simulations pour les paramètres choisis, pas toute l'incertitude sur un tunnel réel.
  Où l'on se situe sur l'échelle de la complexité
  Quel niveau de complexité pour ce travail ? Niveau 2 sur 6
  1 Calcul direct (le lien est connu)
@@ -4767,7 +4793,7 @@ Vue d'ensemble : recherche, logiciels, cours et outils
  L'arbre RTVACOS
  Qui est responsable ? (AI Act)
  Quelle licence ? L'arbre de décision
- Doses LQ et LQL
+ Doses LQ et LQL · Comprendre BED et EQD2 avec LQ ou LQL
  Explorateur thyroïde
  Calculateur NICE
  BLEND pas à pas
@@ -5463,7 +5489,7 @@ sCV and F: how variable and how forecastable is solar irradiance
  Cyril Voyant · 18 October 2026
  Across 68 Spanish weather stations, our forecastability indicator F retains an inverse relationship with forecast error, examined across ten models and 24 horizons. This result, published in Renewable Energy, supports characterizing the signal before comparing algorithms: a large error means something different for a regular sky than for a strongly fluctuating irradiance series.
  A useful diagnosis can rely on sufficient tools: complexity is added only when its benefit is demonstrated.
- The study introduces two complementary indicators. The stochastic coefficient of variation, sCV, measures fluctuations relative to a dynamic clear-sky reference. sCV lies between 0 and 1; the value 1 corresponds to the theoretical case in which the signal switches randomly between clear sky and the diffuse floor. Above 1, the model is no longer a predictor, since it does worse than the simplest predictor: such a value signals a numerical or other problem. F adds information about temporal dependence through autocorrelation. Two series with similar variability can therefore retain different amounts of memory, leaving different amounts of useful information for prediction.
+ The study introduces two complementary indicators. The stochastic coefficient of variation, sCV, measures fluctuations relative to a dynamic clear-sky reference. sCV lies between 0 and 1; the value 1 corresponds to the theoretical case in which the signal switches randomly between clear sky and the diffuse floor. sCV describes signal variability, not a forecast model’s performance against persistence. A value outside the expected domain calls for checking the data, preprocessing and normalization assumptions. F adds information about temporal dependence through autocorrelation. Two series with similar variability can therefore retain different amounts of memory, leaving different amounts of useful information for prediction.
  Validation combines one hundred synthetic cyclostationary series with observations from the SIAR network. Simulations allow controlled changes to signal properties; weather stations test the diagnosis against measured conditions. The association between F and forecast errors also appears at individual stations, rather than being solely a consequence of network aggregation. Under extreme synthetic variability, that association can become nonlinear.
  For an operator or researcher, the contribution is diagnostic: compare forecasting difficulty, select meaningful baselines and interpret a score in context. It can inform a discussion of forecast risk before choosing a more elaborate model. F is neither a calibrated confidence interval nor a promise of financial savings. Overirradiance events and the quality of the clear-sky reference also require attention. The study measures aspects of inherent forecastability; it does not remove atmospheric uncertainty or establish an operational benefit for every energy system. Those benefits require a separate decision-based evaluation.
  Variability and memory. Teaching illustration from the UE14 course: F changes with the forecast horizon while sCV is held fixed; the bars represent remaining temporal memory. This course illustration is not the paper’s 68-station validation and its values should not be read as a universal threshold. Source: Cyril Voyant, cyrilvoyant.github.io/assets/course/F_horizon.png.
@@ -6433,6 +6459,7 @@ URL: https://www.cyrilvoyant.com/tools/attenuation-half-value-layer/
 Attenuation and half-value layer: interactive simulator
  How much radiation remains after several half-value layers?
  An experiment from Cyril Voyant’s course, running in your browser. Full course and slides (French) · Choose another experiment .
+ Reading the quantities. N₀ is the beam intensity before the material, N the transmitted uncollided intensity and x the thickness. μ is the linear attenuation coefficient. HVL means half-value layer, the thickness that halves this intensity. exp is the exponential function and ln the natural logarithm.
  JavaScript is needed for the controls and animation. The explanation, equations, example and limitations below remain available. The relationship to understand
  N/N₀=exp(−μx)=2^(−x/HVL), with HVL=ln(2)/μ. HVL means half-value layer, the thickness halving the uncollided beam intensity.
  Try it and interpret
@@ -6448,6 +6475,7 @@ URL: https://www.cyrilvoyant.com/tools/biot-cooling/
 Food cooling: Biot number and core temperature
  When can an entire food product be represented by a single temperature?
  An experiment from Cyril Voyant’s course, running in your browser. Full course and slides (French) · Choose another experiment .
+ Reading the quantities. Bi is the Biot number, comparing internal conduction resistance with surface convection resistance. h is the convection coefficient, Lc a characteristic length and λ thermal conductivity. T(t) is temperature at time t; Ti the initial temperature and T∞ the surrounding-medium temperature. τ is the uniform-model time constant, m mass, cp specific heat capacity and A heat-transfer area.
  JavaScript is needed for the controls and animation. The explanation, equations, example and limitations below remain available. The relationship to understand
  Bi=hLc/λ; lumped model: T(t)=T∞+(Ti−T∞)exp(−t/τ), τ=mcp/(hA).
  Try it and interpret
@@ -6463,6 +6491,7 @@ URL: https://www.cyrilvoyant.com/tools/carnot-heat-engine/
 Heat engine and Carnot limit: cycle and energy balance
  Why must a heat engine reject part of the heat it receives?
  An experiment from Cyril Voyant’s course, running in your browser. Full course and slides (French) · Choose another experiment .
+ Reading the quantities. η is efficiency: useful work W divided by heat received Qhot. Tcold and Thot are the cold- and hot-reservoir temperatures in kelvins. Qrejected is the heat returned to the cold reservoir. In the T–S diagram, T is temperature and S is entropy.
  JavaScript is needed for the controls and animation. The explanation, equations, example and limitations below remain available. The relationship to understand
  ηCarnot=1−Tcold/Thot, W=ηQhot, Qrejected=Qhot−W; absolute temperatures in kelvins.
  Try it and interpret
@@ -6478,6 +6507,7 @@ URL: https://www.cyrilvoyant.com/tools/chi-square-test/
 Chi-square test: observed counts, expected counts and contributions
  Which cells contribute to the discrepancy between observations and the hypothesis?
  An experiment from Cyril Voyant’s course, running in your browser. Full course and slides (French) · Choose another experiment .
+ Reading the quantities. O is an observed count and E the count expected under the tested hypothesis; N is the total count. Ri and Cj are the totals of row i and column j; Eij is their expected cell count. Σ means summing the cell contributions. χ² is the test statistic, and the p-value is its upper-tail probability under the hypothesis; degrees of freedom determine the reference distribution.
  JavaScript is needed for the controls and animation. The explanation, equations, example and limitations below remain available. The relationship to understand
  χ²=Σ(O−E)²/E. Fair die: E=N/6, 5 degrees of freedom. Independence in a 2×2 table: Eij=RiCj/N, 1 degree of freedom.
  Try it and interpret
@@ -6493,6 +6523,7 @@ URL: https://www.cyrilvoyant.com/tools/compton-scattering/
 Compton scattering: angle and energy sharing
  How does the scattering angle change the energy shared by a photon and an electron?
  An experiment from Cyril Voyant’s course, running in your browser. Full course and slides (French) · Choose another experiment .
+ Reading the quantities. E₀ is the incident photon energy, E′ the scattered photon energy and K the kinetic energy received by the electron. θ is the angle between the photon directions before and after scattering. The electron rest energy, mₑc², is approximately 511 keV; keV means kiloelectronvolt.
  JavaScript is needed for the controls and animation. The explanation, equations, example and limitations below remain available. The relationship to understand
  E′=E₀/[1+(E₀/511)(1−cosθ)] in keV; K=E₀−E′.
  Try it and interpret
@@ -6508,6 +6539,7 @@ URL: https://www.cyrilvoyant.com/tools/correlation-significance-r-squared/
 Correlation, significance and R²: distinguish the concepts
  Does a statistically significant association explain much variation?
  An experiment from Cyril Voyant’s course, running in your browser. Full course and slides (French) · Choose another experiment .
+ Reading the quantities. r is the Pearson correlation coefficient in the scatter; n is sample size and t the zero-correlation test statistic. ρ denotes correlation in the assumed population. R² is the coefficient of determination: the share of variation described by the fitted line with an intercept. SSE is the sum of squared residuals and SST the sum of squared deviations from the mean. The p-value measures how extreme the result is under ρ = 0, not the importance of the association.
  JavaScript is needed for the controls and animation. The explanation, equations, example and limitations below remain available. The relationship to understand
  t=r√[(n−2)/(1−r²)]; for simple linear regression with an intercept, R²=r²=1−SSE/SST.
  Try it and interpret
@@ -6523,6 +6555,7 @@ URL: https://www.cyrilvoyant.com/tools/electromagnetic-wave/
 Electromagnetic wave: electric and magnetic fields
  How does a wave travel while its fields oscillate transversely?
  An experiment from Cyril Voyant’s course, running in your browser. Full course and slides (French) · Choose another experiment .
+ Reading the quantities. E and B are the electric and magnetic fields; E₀ is the electric-field amplitude. x is position and t is time; ω is angular frequency, k the wave number, ν frequency and λ wavelength. c is the speed of light in vacuum, ε₀ the vacuum permittivity and I the mean transported intensity.
  JavaScript is needed for the controls and animation. The explanation, equations, example and limitations below remain available. The relationship to understand
  E(x,t)=E₀ cos(ωt−kx), B=E/c, λ=c/ν and I=ε₀cE₀²/2.
  Try it and interpret
@@ -6538,6 +6571,7 @@ URL: https://www.cyrilvoyant.com/tools/freezing-energy-power/
 Freezing: sensible heat, latent heat and power
  Why is mcΔT alone insufficient to estimate freezing requirements?
  An experiment from Cyril Voyant’s course, running in your browser. Full course and slides (French) · Choose another experiment .
+ Reading the quantities. Q is energy to remove, m is mass and Δh is the specific enthalpy change corresponding to cooling and freezing. P is average power over duration Δt. In mcΔT, c is specific heat capacity and ΔT a temperature change: this term alone does not represent the phase change.
  JavaScript is needed for the controls and animation. The explanation, equations, example and limitations below remain available. The relationship to understand
  Q=mΔh; Δh adds cooling before freezing, latent heat and cooling after freezing. Average power P=Q/Δt.
  Try it and interpret
@@ -6553,6 +6587,7 @@ URL: https://www.cyrilvoyant.com/tools/influential-point-regression/
 Regression and an influential point: move an observation
  How can one observation change the fitted line, correlation and p-value?
  An experiment from Cyril Voyant’s course, running in your browser. Full course and slides (French) · Choose another experiment .
+ Reading the quantities. b₁ is the slope and b₀ the intercept of the least-squares line. x̄ and ȳ are means; sₓ and sᵧ are the variables’ standard deviations. cov(x,y) is their covariance and r their Pearson correlation. The zero-correlation p-value does not replace inspecting the scatter, residuals and influential point.
  JavaScript is needed for the controls and animation. The explanation, equations, example and limitations below remain available. The relationship to understand
  b₁=cov(x,y)/sₓ², b₀=ȳ−b₁x̄; r=cov(x,y)/(sₓsᵧ).
  Try it and interpret
@@ -6568,6 +6603,7 @@ URL: https://www.cyrilvoyant.com/tools/normal-distribution/
 Interactive normal distribution: area, probability and z-score
  How do you convert a value into a probability, or find a threshold from an area?
  An experiment from Cyril Voyant’s course, running in your browser. Full course and slides (French) · Choose another experiment .
+ Reading the quantities. x is a value, μ the mean and σ the standard deviation. The z-score measures how many standard deviations x lies from the mean. Z is a standard normal variable, with mean 0 and standard deviation 1; Φ(z) is the probability of being below z. P denotes probability and N(0,1) denotes this normal distribution.
  JavaScript is needed for the controls and animation. The explanation, equations, example and limitations below remain available. The relationship to understand
  z=(x−μ)/σ; Φ(z)=P(Z≤z), with Z∼N(0,1). Here σ is the standard deviation.
  Try it and interpret
@@ -6583,6 +6619,7 @@ URL: https://www.cyrilvoyant.com/tools/refrigerator-carnot-cop/
 Refrigeration: coefficient of performance and Carnot limit
  Why does a larger temperature difference make refrigeration more demanding?
  An experiment from Cyril Voyant’s course, running in your browser. Full course and slides (French) · Choose another experiment .
+ Reading the quantities. COP means coefficient of performance: heat removed from the cold reservoir per unit of work supplied. Tcold and Thot are the cold- and hot-reservoir temperatures in kelvins. The Carnot limit is a reversible maximum; a COP above 1 is not an energy-conversion efficiency above 100%.
  JavaScript is needed for the controls and animation. The explanation, equations, example and limitations below remain available. The relationship to understand
  COPCarnot=Tcold/(Thot−Tcold), with absolute temperatures in kelvins; refrigeration COP=useful heat extracted/work supplied.
  Try it and interpret
@@ -6598,6 +6635,7 @@ URL: https://www.cyrilvoyant.com/tools/regression-intervals/
 Regression: confidence interval and prediction interval
  Why is the interval for a new observation wider than the interval for the mean?
  An experiment from Cyril Voyant’s course, running in your browser. Full course and slides (French) · Choose another experiment .
+ Reading the quantities. CI means a confidence interval for the mean; a prediction interval concerns a new observation. x₀ is the predictor value of interest and ŷ₀ the mean predicted by the line. x̄ is the mean observed x, n is sample size and Sxx the sum of squared deviations x−x̄. se is the estimated residual standard error; t is the Student quantile used for the 95% band, with n−2 degrees of freedom.
  JavaScript is needed for the controls and animation. The explanation, equations, example and limitations below remain available. The relationship to understand
  Mean CI: ŷ₀±t se√[1/n+(x₀−x̄)²/Sxx]. Individual prediction interval: add 1 inside the square root. se is the residual standard error.
  Try it and interpret
@@ -6613,6 +6651,7 @@ URL: https://www.cyrilvoyant.com/tools/roc-curve/
 Interactive ROC curve: sensitivity, specificity and prevalence
  What changes with a test threshold, and why do predictive values depend on prevalence?
  An experiment from Cyril Voyant’s course, running in your browser. Full course and slides (French) · Choose another experiment .
+ Reading the quantities. ROC means Receiver Operating Characteristic: sensitivity Se is plotted against the false-positive rate 1−Sp as the threshold varies. TP and TN are true positives and negatives; FP and FN are false positives and negatives. Sp is specificity and p is prevalence, the proportion with the disease. PPV and NPV are positive and negative predictive values; AUC is the area under the ROC curve.
  JavaScript is needed for the controls and animation. The explanation, equations, example and limitations below remain available. The relationship to understand
  Se=TP/(TP+FN), Sp=TN/(TN+FP), PPV=Se·p/[Se·p+(1−Sp)(1−p)]. NPV is the negative predictive value; AUC is the area under the ROC curve.
  Try it and interpret
@@ -6628,6 +6667,7 @@ URL: https://www.cyrilvoyant.com/tools/student-t-test/
 Interactive t-test: means, variability and p-values
  Is a difference between means large relative to its uncertainty?
  An experiment from Cyril Voyant’s course, running in your browser. Full course and slides (French) · Choose another experiment .
+ Reading the quantities. Δ is the difference between the means; n₁ and n₂ are the group sizes; s₁ and s₂ their standard deviations. sₚ is the estimated common standard deviation and ν the degrees of freedom. t expresses the mean difference in standard-error units. The p-value is the probability, assuming equal means and the test model, of a result at least as extreme; it is not the probability that the hypothesis is true.
  JavaScript is needed for the controls and animation. The explanation, equations, example and limitations below remain available. The relationship to understand
  Pooled-variance t-test: t=Δ/[sₚ√(1/n₁+1/n₂)]; sₚ²=[(n₁−1)s₁²+(n₂−1)s₂²]/(n₁+n₂−2), ν=n₁+n₂−2 degrees of freedom.
  Try it and interpret
@@ -6679,10 +6719,10 @@ Flux thermique
 ) ; une surface isotherme réunit les points de même température.
 Loi de Fourier :
 φ = −λ dT/dx
- ; le signe moins dit que la chaleur va du chaud vers le froid.
-Paroi plane, régime stationnaire et λ constant : |Φ| = λ S (Tchaud − Tfroid)/e. Résistance totale : R = e/(λS), en K/W ; résistance surfacique : R″ = e/λ, en m²·K/W.
-Convection : φ = h (Tp − T∞). La résistance surfacique vaut 1/h ; la résistance totale vaut 1/(hS). Il faut conserver la même convention pour additionner les résistances.
-Nombre de Biot : Bi = hLc/λ, avec Lc = V/S pour le modèle uniforme. Bi < 0,1 est un critère usuel pour négliger les gradients internes, à apprécier selon la géométrie et la précision voulue.
+, avec λ la conductivité thermique (W·m⁻¹·K⁻¹) et dT/dx le gradient de température selon la coordonnée x ; le signe moins dit que la chaleur va du chaud vers le froid.
+Paroi plane, régime stationnaire et λ constant : |Φ| = λ S (Tchaud − Tfroid)/e, avec e l’épaisseur de la paroi et Tchaud et Tfroid ses températures de part et d’autre. Résistance totale : R = e/(λS), en K/W ; résistance surfacique : R″ = e/λ, en m²·K/W.
+Convection : φ = h (Tp − T∞), avec h le coefficient d’échange convectif (W·m⁻²·K⁻¹), Tp la température de la paroi et T∞ celle du fluide loin de la paroi. La résistance surfacique vaut 1/h ; la résistance totale vaut 1/(hS). Il faut conserver la même convention pour additionner les résistances.
+Nombre de Biot : Bi = hLc/λ, avec Lc = V/S la longueur caractéristique, V le volume et S la surface d’échange pour le modèle uniforme. Bi < 0,1 est un critère usuel pour négliger les gradients internes, à apprécier selon la géométrie et la précision voulue.
 Les propriétés thermiques d'un aliment dépendent d'abord de sa teneur en eau, avant et après congélation ; la congélation commence sous 0 °C car l'eau contient des solutés.
 Puissance de refroidissement :
 P = m c
@@ -6696,7 +6736,7 @@ f
 P = m Δh/Δt
  où Δh additionne le refroidissement du produit frais, la chaleur latente de l'eau congelée et le refroidissement du produit congelé.
 Toute l'eau ne gèle pas : la relation de Chen donne la teneur en glace, et l'eau non congelable doit entrer dans le bilan.
-Modèle uniforme, sans changement de phase, milieu extérieur et propriétés constants : T(t) = T∞ + (Ti − T∞) exp(−t/τ), τ = mcp/(hS). Sinon, une résolution de conduction et un bilan de phase peuvent être nécessaires.
+Modèle uniforme, sans changement de phase, milieu extérieur et propriétés constants : T(t) = T∞ + (Ti − T∞) exp(−t/τ), τ = mcp/(hS), où τ est le temps caractéristique, m la masse, cp la capacité thermique massique et Ti la température initiale. Sinon, une résolution de conduction et un bilan de phase peuvent être nécessaires.
 Pour aller plus loin : questions et réponses
 Que change concrètement un nombre de Biot élevé ?
 La résistance interne domine : la surface suit vite le fluide tandis que le cœur traîne ; la loi exponentielle à température uniforme ne vaut plus, il faut une solution de conduction transitoire et surveiller la température à cœur, qui fixe la sécurité sanitaire.
@@ -6808,18 +6848,18 @@ P(A ∩ B) = P(A) P(B)
 .
 Probabilités totales et théorème de Bayes :
 P(M | +) = P(+ | M) P(M) / P(+)
-.
-Évaluation d'un test : sensibilité
+, avec M l’événement « personne malade » et + l’événement « test positif ».
+Évaluation d’un test : sensibilité
 Se = VP/(VP + FN)
 , spécificité
 Sp = VN/(VN + FP)
-.
-Valeurs prédictives, qui dépendent de la prévalence p :
+. VP et VN comptent les vrais positifs et vrais négatifs ; FP et FN les faux positifs et faux négatifs.
+Valeurs prédictives positive (VPP) et négative (VPN), qui dépendent de la prévalence p, proportion de personnes malades :
 VPP = Se·p / [Se·p + (1 − Sp)(1 − p)]
 ,
 VPN = Sp(1 − p) / [Sp(1 − p) + (1 − Se) p]
 .
-La ROC trace Se en fonction de 1 − Sp lorsque le seuil varie. Une AUC de 0,5 correspond à une absence de discrimination moyenne par le classement du score ; elle ne décrit pas à elle seule l’utilité d’une décision.
+La courbe ROC (receiver operating characteristic) trace la sensibilité Se en fonction de la proportion de faux positifs 1 − Sp lorsque le seuil varie. L’aire sous cette courbe est notée AUC (area under the curve). Une AUC de 0,5 correspond à une absence de discrimination moyenne par le classement du score ; elle ne décrit pas à elle seule l’utilité d’une décision.
 Le choix du seuil dépend de l’usage, de la prévalence et des conséquences des erreurs. Maximiser Youden (Se + Sp − 1) et minimiser la distance au coin (0, 1) sont deux critères distincts.
 Pour aller plus loin : questions et réponses
 Pourquoi la prévalence modifie-t-elle la valeur prédictive ?
@@ -6844,7 +6884,7 @@ i
  − x̄)²/(n − 1)
 , écart-type s, étendue, quantiles.
 Notation utilisée ici : N(μ, σ²), où μ est la moyenne, σ l’écart-type et σ² la variance. Attention : les diapositives écrivent N(m, s), avec l’écart-type en second. Asymétrie et aplatissement décrivent d’autres aspects de la forme de la distribution.
-Jarque-Bera : JB = (n/6)[S² + (K − 3)²/4], avec K l’aplatissement non centré sur 3. Sous les conditions asymptotiques du test, le seuil à 5 % est environ 5,99 (χ² à 2 ddl).
+Jarque-Bera : JB = (n/6)[S² + (K − 3)²/4], avec n le nombre de valeurs, S le coefficient d’asymétrie et K l’aplatissement non centré sur 3. Sous les conditions asymptotiques du test, le seuil à 5 % est environ 5,99 (χ² à 2 ddl).
 Variable centrée réduite
 z = (x − μ)/σ
  et table de N(0, 1) ; environ 95 % des valeurs entre μ − 1,96σ et μ + 1,96σ.
@@ -7021,8 +7061,8 @@ Chapitre 2 : gaz parfaits, gaz réels et diagrammes
 Le chapitre en 10 points
 Le gaz parfait est un gaz dilué de molécules sans interaction :
 p V = n R T
-.
-Pour un gaz parfait, u et h ne dépendent que de T. Les capacités thermiques peuvent dépendre de T ; les supposer constantes définit ici l’approximation de gaz caloriquement parfait.
+, avec p la pression absolue, V le volume, n la quantité de matière, R la constante des gaz parfaits et T la température en kelvins.
+Pour un gaz parfait, l’énergie interne massique u et l’enthalpie massique h ne dépendent que de la température T. Les capacités thermiques peuvent dépendre de T ; les supposer constantes définit ici l’approximation de gaz caloriquement parfait.
 Les gaz réels peuvent s’écarter de pV = nRT, notamment à forte densité et près de la saturation ; des équations d’état, tables ou diagrammes décrivent ces écarts.
 Deux propriétés intensives indépendantes fixent l’état d’un corps pur simple compressible à l’équilibre. Dans le mélange liquide-vapeur, p et T sont liées : il faut aussi le titre massique de vapeur.
 Sur le diagramme (p, v), une isotherme sous-critique traverse le domaine liquide-vapeur à pression de saturation constante. Au-dessus de Tc, une compression isotherme ne rencontre plus cette transition.
@@ -7070,7 +7110,7 @@ URL: https://www.cyrilvoyant.com/fr/enseignement/physique-industrielle/notions-d
 
 Chapitre 1 : notions générales de thermodynamique
 Le chapitre en 10 points
-La thermodynamique fait le bilan énergétique des machines (moteurs, centrales, machines frigorifiques, pompes à chaleur) et des transferts de chaleur ; on la traite à l'échelle macroscopique, avec des variables d'état (p, V, T, m).
+La thermodynamique fait le bilan énergétique des machines (moteurs, centrales, machines frigorifiques, pompes à chaleur) et des transferts de chaleur ; on la traite à l'échelle macroscopique, avec la pression p, le volume V, la température T et la masse m comme variables d’état.
 Le vocabulaire fixe ce qui est échangé : système fermé (pas de matière), calorifugé (pas de chaleur), isolé (rien) ; transformations isotherme, isobare, isochore, adiabatique ; un cycle revient à son état initial.
 Pression :
 1 bar = 10
@@ -7088,7 +7128,7 @@ atm
 .
 La température absolue T se mesure en kelvins ; pour un gaz parfait monatomique, l’énergie cinétique moyenne de translation par particule vaut ⟨Ec⟩ = (3/2) kT, avec k = 1,380649·10⁻²³ J/K.
 Premier principe pour un système fermé immobile : ΔU = Q + W, avec chaleur Q et travail W comptés positivement lorsqu’ils sont reçus par le système.
-Chaleur sensible : Q = m c ΔT si c est constant ; changement de phase d’un corps pur à pression fixée : Q = m L. Pour un aliment, la congélation s’étale généralement sur une plage de températures.
+Chaleur sensible : Q = m c ΔT si c est constant ; changement de phase d’un corps pur à pression fixée : Q = m L. Ici m est la masse, c la capacité thermique massique, ΔT la variation de température et L la chaleur latente massique. Pour un aliment, la congélation s’étale généralement sur une plage de températures.
 Ordres de grandeur : fondre 1 kg de glace (334 kJ) coûte environ les quatre cinquièmes de ce que coûte chauffer 1 kg d'eau de 0 à 100 °C (environ 419 kJ) ; la vaporisation coûte bien davantage.
 Évaporation (en surface, à toute température) et ébullition (dans la masse, à une température fixée par la pression) ; la surfusion maintient un liquide sous sa température de solidification.
 Le diagramme de phases situe le point triple et le point critique. Un fluide est supercritique lorsque sa température ET sa pression dépassent leurs valeurs critiques.
@@ -7186,12 +7226,12 @@ URL: https://www.cyrilvoyant.com/fr/enseignement/physique-pass/ed1-corrige/
 
 Exercices dirigés 1 : les ondes électromagnétiques, corrigé
 La séance en 10 points
-E = hc/λ : un photon de 3 eV a une longueur d’onde d’environ 413 nm, dans le violet visible. Le seuil de 13,6 eV concerne l’ionisation de l’hydrogène dans son état fondamental, pas toute matière.
-Lier les paramètres d'une onde : période, pulsation
+E = hc/λ, avec E l’énergie du photon, h la constante de Planck, c la célérité dans le vide et λ la longueur d’onde : un photon de 3 eV a une longueur d’onde d’environ 413 nm, dans le violet visible. Le seuil de 13,6 eV concerne l’ionisation de l’hydrogène dans son état fondamental, pas toute matière.
+Lier les paramètres d’une onde : période T, pulsation
 ω = 2πν
-, longueur d'onde dans le vide et dans un milieu où la célérité change (
+, fréquence ν et longueur d’onde λ ; dans un milieu de célérité v,
 λ = v/ν
-).
+.
 Énergie de masse au repos : E0 = mc². Longueur d’onde de de Broglie : λ = h/p ; l’approximation λ = h/(mv) s’utilise seulement lorsque v est petit devant c.
 Lire une onde : propagation, fréquence et polarisation. Pour une onde plane sinusoïdale dans le vide, l’intensité moyenne est I = ε0 c E0²/2 ; ⟨E²⟩ = E0²/2 est proportionnel à I, sans avoir les mêmes unités.
 Transmittance T = I/I0 ; absorbance décimale A = −log10(T). Dans le modèle de Beer-Lambert homogène à coefficient constant, doubler l’épaisseur double A et élève T au carré.
@@ -7263,20 +7303,20 @@ c ≈ 3·10
  m·s
 −1
  dans le vide.
-Paramètres :
+Paramètres : pulsation
 ω = 2πν
-,
+ (rad/s), période
 T = 1/ν
-,
+ (s), longueur d’onde
 λ = c/ν
-, nombre d'onde
+ (m) et nombre d’onde
 k = 2π/λ
-.
+ (rad/m), avec ν la fréquence (Hz).
 Aspect corpusculaire :
 E = hν = hc/λ
 , et de Broglie
 p = h/λ
- ; en pratique
+, avec E l’énergie du photon, h la constante de Planck et p la quantité de mouvement ; en pratique
 λ(nm) ≈ 1240/E(eV)
 , avec
 1 eV = 1,6·10
@@ -7307,7 +7347,7 @@ R = K Z U
 min
  = hc/(eU)
 .
-Faisceau monoénergétique étroit, milieu homogène et coefficient μ constant : N(x) = N0 exp(−μx), CDA = ln(2)/μ. Dix CDA transmettent 1/1024 ; un faisceau polychromatique peut se durcir au cours du trajet.
+Faisceau monoénergétique étroit, milieu homogène et coefficient μ constant : N(x) = N0 exp(−μx), CDA = ln(2)/μ. Ici N0 et N(x) sont les nombres de photons avant et après une épaisseur x ; μ est le coefficient d’atténuation linéique et CDA la couche de demi-atténuation. Dix CDA transmettent 1/1024 ; un faisceau polychromatique peut se durcir au cours du trajet.
 Interactions : photoélectrique (dépendance approximative en Z³/E³ loin des seuils), Compton, création de paires dans le champ nucléaire au-dessus de 1,022 MeV.
 Les domaines de prédominance des interactions dépendent du matériau et de l’énergie ; les frontières simplifiées du support sont des repères, pas des seuils universels.
 En imagerie, le contraste dépend des différences d’atténuation ; le scanner reconstruit des coefficients exprimés en unités Hounsfield. Les tensions citées dans le support illustrent des ordres de grandeur, pas un protocole clinique.
