@@ -7,6 +7,7 @@
   "use strict";
   var EN = document.documentElement.lang === "en";
   var TEXT_EN = {"Courbe ROC : déplacez le seuil": "ROC curve: move the threshold", "Résultats du test chez les non-malades N(0, 1) et chez les malades N(d, 1). Le seuil classe positif tout résultat au-dessus ; la prévalence change les valeurs prédictives, pas la courbe.": "Test results without disease follow N(0, 1), and with disease N(d, 1). Results above the threshold are positive. Prevalence changes predictive values, not the curve.", "Distributions des résultats et seuil": "Test-result distributions and threshold", "Courbe ROC": "ROC curve", "Séparation d": "Separation d", "Seuil s": "Threshold s", "Prévalence": "Prevalence", "non-malades": "without disease", "malades": "with disease", "</b><br>VPP = <b>": "</b><br>PPV = <b>", "</b> · VPN = <b>": "</b> · NPV = <b>", "</b> pour une prévalence de ": "</b> at a prevalence of ", " · indice de Youden Se + Sp − 1 = ": " · Youden index Se + Sp − 1 = ", "Table de la loi normale, interactive": "Interactive normal distribution table", "Choisissez une valeur et lisez l'aire, ou choisissez une probabilité et lisez la borne. Tout se fait avec z = (x − μ)/σ.": "Choose a value and read its area, or choose a probability and find its threshold. Both use z = (x − μ)/σ.", "Densité de la loi normale et aire": "Normal density and probability area", "Aire cherchée": "Area to calculate", "probabilité": "probability", "Aire": "Area", " pour N(": " for N(", "</b> · aire = <b>": "</b> · area = <b>", "</b> · densité φ(z) = ": "</b> · density φ(z) = ", "Atténuation d'un faisceau : la couche de demi-atténuation": "Beam attenuation: the half-value layer", "N(x) = N₀ e<sup>−μx</sup> = N₀ / 2<sup>x/CDA</sup>. Sur mille photons qui entrent, combien sortent ?": "N(x) = N₀ e<sup>−μx</sup> = N₀ / 2<sup>x/HVL</sup>. Out of a thousand incident photons, how many are transmitted?", "Courbe d'atténuation et épaisseur traversée": "Attenuation curve and material thickness", "CDA (cm)": "HVL (cm)", "Épaisseur x (cm)": "Thickness x (cm)", "μ = ln 2 / CDA = <b>": "μ = ln 2 / HVL = <b>", " CDA · N/N₀ = <b>": " HVL · N/N₀ = <b>", "</b> · sur 1000 photons, <b>": "</b> · out of 1000 photons, <b>", "</b> sortent": "</b> are transmitted", " (10 CDA ≈ 1 sur 1000)": " (10 HVLs ≈ 1 in 1000)"};
+  Object.assign(TEXT_EN, {"Refroidir un aliment : nombre de Biot, température moyenne et température à cœur": "Cooling food: Biot number, mean and core temperatures", "Bi = h·Lc/λ compare la résistance interne (Lc/λ) à la résistance de surface (1/h). Modèle simple, température uniforme : T(t) = T∞ + (Ti − T∞)·e<sup>−t/τ</sup>, τ = ρ·cp·Lc/h, où λ n'intervient pas. Courbe à cœur : conduction transitoire dans une plaque d'épaisseur 2·Lc (premier terme de la série), qui dépend de λ.": "Bi = h·Lc/λ compares internal resistance (Lc/λ) with surface resistance (1/h). Uniform-temperature model: T(t) = T∞ + (Ti − T∞)·e<sup>−t/τ</sup>, τ = ρ·cp·Lc/h; λ does not enter this expression. Core curve: transient conduction through a slab of thickness 2·Lc (first series term), which depends on λ.", "Température moyenne et à cœur de l'aliment au cours du temps": "Mean and core food temperatures over time", "<span class=\"sw2\"></span> température uniforme (modèle simple) &nbsp; <span class=\"sw3\"></span> à cœur (conduction) &nbsp; <span class=\"sw4\"></span> en surface": "<span class=\"sw2\"></span> uniform temperature (simple model) &nbsp; <span class=\"sw3\"></span> core (conduction) &nbsp; <span class=\"sw4\"></span> surface", "</b> · 90 % de l'écart rattrapé : <b>": "</b> · 90% of the temperature gap covered: <b>", " min</b> selon le modèle simple, <b>": " min</b> in the simple model, <b>", " min</b> à cœur.<br>": " min</b> at the core.<br>", "Bi &lt; 0,1 : la température reste presque uniforme ; les deux courbes se confondent et le modèle simple suffit.": "Bi &lt; 0.1: temperature is nearly uniform; the two curves almost coincide and the simple model is adequate.", "<b>Bi ≥ 0,1 : le cœur reste en retard sur la surface</b> ; le modèle simple sous-estime le temps à cœur. Augmentez λ ou diminuez Lc pour voir les courbes se rapprocher.": "<b>Bi ≥ 0.1: the core lags behind the surface</b>; the simple model underestimates the core cooling time. Increase λ or decrease Lc to bring the curves closer.", " (ρ = 1050 kg/m³, cp = 3,6 kJ/kg·K ; la courbe à cœur, premier terme de la série, n'est exacte qu'après le tout début du refroidissement, Fo &gt; 0,2.)": " (ρ = 1050 kg/m³, cp = 3.6 kJ/kg·K; the first-term core approximation is applicable after the initial cooling stage, Fo &gt; 0.2.)", "Congeler : suivez le produit, du frais au congelé": "Freezing: follow the product from fresh to frozen", "Appuyez sur ▶ : le produit cède sa chaleur kilojoule par kilojoule. La courbe donne sa température selon l'énergie déjà extraite par kilo : ": "Press ▶: the product releases heat kilojoule by kilojoule. The curve shows its temperature against energy already removed per kilogram: ", "trois étapes, Δh = cp,frais·(Ti − Tc) + w·g·L + cp,congelé·(Tc − Tf). w : teneur en eau, g : part de l'eau qui gèle (toute l'eau ne gèle pas), L = 333 kJ/kg.": "three stages, Δh = cp,fresh·(Ti − Tc) + w·g·L + cp,frozen·(Tc − Tf). w: water content; g: fraction of water that freezes (not all water freezes); L = 333 kJ/kg.", "Température du produit selon l'énergie extraite, et le produit qui gèle": "Product temperature against energy removed, and the freezing product", "▶ Congeler": "▶ Freeze", "Masse (kg)": "Mass (kg)", "Teneur en eau w": "Water content w", "Part de l'eau gelée g": "Fraction of water frozen g", "Début de congélation Tc (°C)": "Freezing onset Tc (°C)", "Température finale Tf (°C)": "Final temperature Tf (°C)", "Durée Δt (h)": "Duration Δt (h)", "<span class=\"k1\"></span>1. refroidir le produit frais &nbsp; <span class=\"k2\"></span>2. geler l'eau (chaleur latente) &nbsp; <span class=\"k3\"></span>3. refroidir le produit congelé": "<span class=\"k1\"></span>1. cool the fresh product &nbsp; <span class=\"k2\"></span>2. freeze water (latent heat) &nbsp; <span class=\"k3\"></span>3. cool the frozen product", "énergie déjà extraite (kJ par kg de produit)": "energy removed (kJ per kg of product)", "température du produit (°C)": "product temperature (°C)", "1. le produit frais refroidit": "1. fresh product cooling", "2. l'eau gèle : ": "2. water freezing: ", "3. le produit congelé refroidit": "3. frozen product cooling", " kJ/kg</b> : 1. produit frais ": " kJ/kg</b>: 1. fresh product ", "), <b>2. chaleur latente ": "), <b>2. latent heat ", ")</b>, 3. produit congelé ": ")</b>, 3. frozen product ", "Ici, geler l'eau coûte plus que tout le reste": "Here, freezing water requires more energy removal than all other stages combined", "Ici, geler l'eau coûte moins que les deux refroidissements réunis": "Here, freezing water requires less energy removal than the two cooling stages combined", " ; pendant le palier, la température ne bouge pas dans ce modèle.": "; during the plateau, temperature is constant in this model.", "<br>Pour ": "<br>For ", " kg en ": " kg in ", " h, puissance frigorifique moyenne : <b>": " h, average cooling power: <b>", " kW</b> (cp,frais = 3,6 et cp,congelé = 1,8 kJ/kg·K, valeurs typiques ; modèle à palier franc, pertes de l'installation non comptées).": " kW</b> (cp,fresh = 3.6 and cp,frozen = 1.8 kJ/kg·K, typical values; idealized plateau model, plant losses excluded).", "▶ Recommencer": "▶ Restart", "Machine frigorifique : combien de travail pour extraire 1 kJ de chaleur au froid ?": "Refrigerator: how much work removes 1 kJ of heat from the cold side?", "Une machine frigorifique pompe la chaleur du côté froid (évaporateur, Tf) vers le côté chaud (condenseur, Tc), en dépensant du travail W. ": "A refrigerator pumps heat from the cold side (evaporator, Tf) to the hot side (condenser, Tc), using work W. ", "Le COP compare la chaleur extraite au travail : COP = Q<sub>f</sub>/W. La borne de Carnot, COP<sub>C</sub> = Tf/(Tc − Tf) en kelvins, est le meilleur COP possible ; aucune machine réelle ne l'atteint.": "The coefficient of performance compares heat removed with work: COP = Q<sub>f</sub>/W. The Carnot limit, COP<sub>C</sub> = Tf/(Tc − Tf), with temperatures in kelvins, is the highest possible COP; no real machine attains it.", "L’axe de −40 à +10 °C fait varier seulement la source froide. Par défaut : froid −10 °C, chaud +40 °C, soit 263,15 K et 313,15 K : COP maximal = 263,15/50 = 5,26. Cela signifie au plus 5,26 J extraits pour 1 J de travail. Autre couple de sources : froid −40 °C, chaud +10 °C → 233,15/50 = 4,66. Les curseurs de ce graphique gardent la source chaude entre +20 et +60 °C.": "The −40 to +10 °C axis varies only the cold reservoir. Defaults: cold −10 °C, hot +40 °C, or 263.15 K and 313.15 K: maximum COP = 263.15/50 = 5.26. This means at most 5.26 J removed per 1 J of work. Another pair: cold −40 °C, hot +10 °C → 233.15/50 = 4.66. This chart keeps the hot reservoir between +20 and +60 °C.", "COP de Carnot selon la température d'évaporation, et bilan d'énergie": "Carnot COP against cold-side temperature, and energy balance", "Source froide Tf (°C)": "Cold reservoir Tf (°C)", "Source chaude Tc (°C)": "Hot reservoir Tc (°C)", "température de la source froide Tf": "cold reservoir temperature Tf", "COP de Carnot": "Carnot COP", "conserver à 0 °C": "store at 0 °C", "surgeler à −30 °C": "deep-freeze at −30 °C", "chaud ": "hot ", "froid ": "cold ", "machine": "machine", "travail W = ": "work W = ", "COP de Carnot = <b>": "Carnot COP = <b>", "</b> : pour extraire 1 kJ au froid, il faut au moins <b>": "</b>: removing 1 kJ from the cold side requires at least <b>", " kJ de travail</b>, et le condenseur rejette ": " kJ of work</b>, and the condenser rejects ", " kJ au chaud. Écart Tc − Tf = ": " kJ on the hot side. Temperature difference Tc − Tf = ", " K : plus l'écart grandit, plus la flèche verte (travail) s'épaissit. Surgeler coûte donc plus cher que conserver au frais.": " K: as the gap grows, the green arrow (work) gets thicker. Deep-freezing therefore requires more work per unit of heat removed than chilled storage.", "Corrélation et régression : déplacez un point": "Correlation and regression: move one point", "Douze mesures (points bleus) et un point que vous déplacez (orange). r = cov(x, y)/(s<sub>x</sub>·s<sub>y</sub>), droite des moindres carrés y = b<sub>0</sub> + b<sub>1</sub>·x, test de r : t = r·√(n − 2)/√(1 − r²) à n − 2 degrés de liberté.": "Twelve example points (blue) and one movable point (orange). r = cov(x, y)/(s<sub>x</sub>·s<sub>y</sub>), least-squares line y = b<sub>0</sub> + b<sub>1</sub>·x; test of r: t = r·√(n − 2)/√(1 − r²), with n − 2 degrees of freedom.", "Nuage de points et droite de régression": "Scatter plot and regression line", "x du point orange": "Orange point x", "y du point orange": "Orange point y", "<span>Inclure le point orange</span>": "<span>Include the orange point</span>", "</b> · droite y = ": "</b> · line y = ", " ddl) · p = <b>": " df) · p = <b>", "(lien significatif au risque 5 %)": "(statistically significant at the 5% level)", "(pas significatif au risque 5 %)": "(not statistically significant at the 5% level)", "<br>Sans le point orange : r = ": "<br>Without the orange point: r = ", ". Un seul point loin en x tire la droite (bras de levier) : regardez toujours le nuage avant de conclure.": ". One point far away in x can pull the fitted line (leverage): always inspect the scatter plot before drawing conclusions."});
   function tr(s) { return EN && Object.prototype.hasOwnProperty.call(TEXT_EN,s) ? TEXT_EN[s] : s; }
   var CT = window.CT = {};
   function erf(x) {                    // W. J. Cody-type rational approximation via erfc (Numerical Recipes erfcc), |err| < 1.2e-7
@@ -195,16 +196,16 @@
   };
 
   function biot(box) {
-    box.appendChild(h("h3", {}, "Refroidir un aliment : nombre de Biot, température moyenne et température à cœur"));
-    box.appendChild(h("p", { "class": "muted" }, "Bi = h·Lc/λ compare la résistance interne (Lc/λ) à la résistance de surface (1/h). Modèle simple, température uniforme : T(t) = T∞ + (Ti − T∞)·e<sup>−t/τ</sup>, τ = ρ·cp·Lc/h, où λ n'intervient pas. Courbe à cœur : conduction transitoire dans une plaque d'épaisseur 2·Lc (premier terme de la série), qui dépend de λ."));
-    var W = 320, H = 150, sv = el("svg", { viewBox: "0 0 " + W + " " + H, "class": "ct-svg", role: "img", "aria-label": "Température moyenne et à cœur de l'aliment au cours du temps" }, box);
+    box.appendChild(h("h3", {}, tr("Refroidir un aliment : nombre de Biot, température moyenne et température à cœur")));
+    box.appendChild(h("p", { "class": "muted" }, tr("Bi = h·Lc/λ compare la résistance interne (Lc/λ) à la résistance de surface (1/h). Modèle simple, température uniforme : T(t) = T∞ + (Ti − T∞)·e<sup>−t/τ</sup>, τ = ρ·cp·Lc/h, où λ n'intervient pas. Courbe à cœur : conduction transitoire dans une plaque d'épaisseur 2·Lc (premier terme de la série), qui dépend de λ.")));
+    var W = 320, H = 150, sv = el("svg", { viewBox: "0 0 " + W + " " + H, "class": "ct-svg", role: "img", "aria-label": tr("Température moyenne et à cœur de l'aliment au cours du temps") }, box);
     var cH = slider("h (W/m²·K)", 5, 300, 1, 25, function (v) { return f(v, 0); }),
         cL = slider("Lc = V/A (cm)", 0.2, 10, 0.1, 2, function (v) { return f(v, 1) + " cm"; }),
         cK = slider("λ (W/m·K)", 0.1, 2, 0.05, 0.5, function (v) { return f(v, 2); }),
         cTi = slider("Ti (°C)", 0, 90, 1, 60, function (v) { return f(v, 0) + " °C"; }),
         cTe = slider("T∞ (°C)", -30, 20, 1, 2, function (v) { return f(v, 0) + " °C"; });
     var ctl = h("div", { "class": "ct-ctl" }); [cH, cL, cK, cTi, cTe].forEach(function (c) { ctl.appendChild(c.w); }); box.appendChild(ctl);
-    var leg = h("p", { "class": "muted ct-leg" }, '<span class="sw2"></span> température uniforme (modèle simple) &nbsp; <span class="sw3"></span> à cœur (conduction) &nbsp; <span class="sw4"></span> en surface');
+    var leg = h("p", { "class": "muted ct-leg" }, tr('<span class="sw2"></span> température uniforme (modèle simple) &nbsp; <span class="sw3"></span> à cœur (conduction) &nbsp; <span class="sw4"></span> en surface'));
     box.appendChild(leg);
     var out = h("p", { "class": "ct-out", "aria-live": "polite" }); box.appendChild(out);
     var rho = 1050, cp = 3600;
@@ -229,32 +230,32 @@
       [hi, lo].forEach(function (T) { el("text", { x: 32, y: Y(T) + 4, "class": "ct-axl", "text-anchor": "end" }, ax).textContent = f(T, 0) + "°"; });
       el("text", { x: W - 10, y: H - 6, "class": "ct-axl", "text-anchor": "end" }, ax).textContent = f(tmax / 3600, 1) + " h";
       var ok = r0.bi < 0.1;
-      out.innerHTML = "Bi = <b>" + f(r0.bi, 3) + "</b> · 90 % de l'écart rattrapé : <b>" + f(t90 / 60, 0) + " min</b> selon le modèle simple, <b>" + f(tc90 / 60, 0) +
-        " min</b> à cœur.<br>" + (ok ? "Bi &lt; 0,1 : la température reste presque uniforme ; les deux courbes se confondent et le modèle simple suffit."
-        : "<b>Bi ≥ 0,1 : le cœur reste en retard sur la surface</b> ; le modèle simple sous-estime le temps à cœur. Augmentez λ ou diminuez Lc pour voir les courbes se rapprocher.") +
-        " (ρ = 1050 kg/m³, cp = 3,6 kJ/kg·K ; la courbe à cœur, premier terme de la série, n'est exacte qu'après le tout début du refroidissement, Fo &gt; 0,2.)";
+      out.innerHTML = "Bi = <b>" + f(r0.bi, 3) + tr("</b> · 90 % de l'écart rattrapé : <b>") + f(t90 / 60, 0) + tr(" min</b> selon le modèle simple, <b>") + f(tc90 / 60, 0) +
+        tr(" min</b> à cœur.<br>") + (ok ? tr("Bi &lt; 0,1 : la température reste presque uniforme ; les deux courbes se confondent et le modèle simple suffit.")
+        : tr("<b>Bi ≥ 0,1 : le cœur reste en retard sur la surface</b> ; le modèle simple sous-estime le temps à cœur. Augmentez λ ou diminuez Lc pour voir les courbes se rapprocher.")) +
+        tr(" (ρ = 1050 kg/m³, cp = 3,6 kJ/kg·K ; la courbe à cœur, premier terme de la série, n'est exacte qu'après le tout début du refroidissement, Fo &gt; 0,2.)");
       box.classList.toggle("ct-warn", !ok);
     }
     [cH, cL, cK, cTi, cTe].forEach(function (c) { c.i.addEventListener("input", draw); }); draw();
   }
 
   function congel(box) {
-    box.appendChild(h("h3", {}, "Congeler : suivez le produit, du frais au congelé"));
-    box.appendChild(h("p", { "class": "muted" }, "Appuyez sur ▶ : le produit cède sa chaleur kilojoule par kilojoule. La courbe donne sa température selon l'énergie déjà extraite par kilo : " +
-      "trois étapes, Δh = cp,frais·(Ti − Tc) + w·g·L + cp,congelé·(Tc − Tf). w : teneur en eau, g : part de l'eau qui gèle (toute l'eau ne gèle pas), L = 333 kJ/kg."));
+    box.appendChild(h("h3", {}, tr("Congeler : suivez le produit, du frais au congelé")));
+    box.appendChild(h("p", { "class": "muted" }, tr("Appuyez sur ▶ : le produit cède sa chaleur kilojoule par kilojoule. La courbe donne sa température selon l'énergie déjà extraite par kilo : ") +
+      tr("trois étapes, Δh = cp,frais·(Ti − Tc) + w·g·L + cp,congelé·(Tc − Tf). w : teneur en eau, g : part de l'eau qui gèle (toute l'eau ne gèle pas), L = 333 kJ/kg.")));
     var W = 640, H = 250, L0 = 60, R0 = 150, T0 = 16, B0 = 46;
-    var sv = el("svg", { viewBox: "0 0 " + W + " " + H, "class": "ct-svg ct-wide", role: "img", "aria-label": "Température du produit selon l'énergie extraite, et le produit qui gèle" }, box);
-    var play = h("button", { type: "button", "class": "ct-btn" }, "▶ Congeler");
-    var cM = slider("Masse (kg)", 10, 2000, 10, 500, function (v) { return f(v, 0) + " kg"; }),
-        cW = slider("Teneur en eau w", 0.5, 0.95, 0.01, 0.75, function (v) { return f(v * 100, 0) + " %"; }),
-        cG = slider("Part de l'eau gelée g", 0.6, 1, 0.01, 0.9, function (v) { return f(v * 100, 0) + " %"; }),
+    var sv = el("svg", { viewBox: "0 0 " + W + " " + H, "class": "ct-svg ct-wide", role: "img", "aria-label": tr("Température du produit selon l'énergie extraite, et le produit qui gèle") }, box);
+    var play = h("button", { type: "button", "class": "ct-btn" }, tr("▶ Congeler"));
+    var cM = slider(tr("Masse (kg)"), 10, 2000, 10, 500, function (v) { return f(v, 0) + " kg"; }),
+        cW = slider(tr("Teneur en eau w"), 0.5, 0.95, 0.01, 0.75, function (v) { return f(v * 100, 0) + " %"; }),
+        cG = slider(tr("Part de l'eau gelée g"), 0.6, 1, 0.01, 0.9, function (v) { return f(v * 100, 0) + " %"; }),
         cTi = slider("Ti (°C)", 0, 40, 1, 15, function (v) { return f(v, 0) + " °C"; }),
-        cTc = slider("Début de congélation Tc (°C)", -5, 0, 0.1, -1.5, function (v) { return f(v, 1) + " °C"; }),
-        cTf = slider("Température finale Tf (°C)", -40, -5, 1, -18, function (v) { return f(v, 0) + " °C"; }),
-        cDt = slider("Durée Δt (h)", 0.5, 24, 0.5, 4, function (v) { return f(v, 1) + " h"; });
+        cTc = slider(tr("Début de congélation Tc (°C)"), -5, 0, 0.1, -1.5, function (v) { return f(v, 1) + " °C"; }),
+        cTf = slider(tr("Température finale Tf (°C)"), -40, -5, 1, -18, function (v) { return f(v, 0) + " °C"; }),
+        cDt = slider(tr("Durée Δt (h)"), 0.5, 24, 0.5, 4, function (v) { return f(v, 1) + " h"; });
     var ctl = h("div", { "class": "ct-ctl" }); ctl.appendChild(play); [cM, cW, cG, cTi, cTc, cTf, cDt].forEach(function (c) { ctl.appendChild(c.w); }); box.appendChild(ctl);
     var bar = h("div", { "class": "ct-stack", "aria-hidden": "true" }); box.appendChild(bar);
-    var leg = h("p", { "class": "muted ct-leg3" }, '<span class="k1"></span>1. refroidir le produit frais &nbsp; <span class="k2"></span>2. geler l\'eau (chaleur latente) &nbsp; <span class="k3"></span>3. refroidir le produit congelé');
+    var leg = h("p", { "class": "muted ct-leg3" }, tr('<span class="k1"></span>1. refroidir le produit frais &nbsp; <span class="k2"></span>2. geler l\'eau (chaleur latente) &nbsp; <span class="k3"></span>3. refroidir le produit congelé'));
     box.appendChild(leg);
     var out = h("p", { "class": "ct-out", "aria-live": "polite" }); box.appendChild(out);
     var u = 1, timer = null, r, Ti, Tc, Tf, g;
@@ -274,8 +275,8 @@
       el("text", { x: W - R0 + 4, y: Y(0) + 4, "class": "ct-axl" }, sv).textContent = "0 °C";
       [hi, Tc, lo].forEach(function (t) { el("text", { x: L0 - 6, y: Y(t) + 4, "class": "ct-axl", "text-anchor": "end" }, sv).textContent = f(t, t === Tc ? 1 : 0) + "°"; });
       [0, r.a, r.a + r.b, r.dh].forEach(function (e, k) { el("text", { x: X(e), y: H - B0 + 16, "class": "ct-axl", "text-anchor": k === 3 ? "end" : "middle" }, sv).textContent = f(e, 0); });
-      el("text", { x: (L0 + W - R0) / 2, y: H - 8, "class": "ct-axl", "text-anchor": "middle" }, sv).textContent = "énergie déjà extraite (kJ par kg de produit)";
-      el("text", { x: 14, y: (T0 + H - B0) / 2, "class": "ct-axl", "text-anchor": "middle", transform: "rotate(-90 14 " + ((T0 + H - B0) / 2) + ")" }, sv).textContent = "température du produit (°C)";
+      el("text", { x: (L0 + W - R0) / 2, y: H - 8, "class": "ct-axl", "text-anchor": "middle" }, sv).textContent = tr("énergie déjà extraite (kJ par kg de produit)");
+      el("text", { x: 14, y: (T0 + H - B0) / 2, "class": "ct-axl", "text-anchor": "middle", transform: "rotate(-90 14 " + ((T0 + H - B0) / 2) + ")" }, sv).textContent = tr("température du produit (°C)");
       var e1 = u * r.dh, pts = [];
       for (var k = 0; k <= 200; k++) { var e = r.dh * k / 200; pts.push([X(e), Y(T(e))]); }
       el("path", { d: path(pts), fill: "none", stroke: "#9fb0c0", "stroke-width": 2 }, sv);
@@ -294,32 +295,32 @@
           stroke: "#07569a", "stroke-width": 1.2 }, sv);
       }
       el("text", { x: cx0 + s / 2, y: cy0 - 10, "class": "ct-axl", "text-anchor": "middle" }, sv).textContent = f(T(e1), 1) + " °C";
-      var step = e1 < r.a ? "1. le produit frais refroidit" : e1 < r.a + r.b ? "2. l'eau gèle : " + f(100 * fz, 0) + " %" : "3. le produit congelé refroidit";
+      var step = e1 < r.a ? tr("1. le produit frais refroidit") : e1 < r.a + r.b ? tr("2. l'eau gèle : ") + f(100 * fz, 0) + " %" : tr("3. le produit congelé refroidit");
       el("text", { x: cx0 + s / 2, y: cy0 + s + 20, "class": "ct-axl", "text-anchor": "middle" }, sv).textContent = step;
       var p = function (x) { return (100 * x / r.dh).toFixed(1) + "%"; }, q = function (x) { return (100 * x / r.dh).toFixed(0) + " %"; };
       bar.innerHTML = '<i class="s1" style="width:' + p(r.a) + '"></i><i class="s2" style="width:' + p(r.b) + '"></i><i class="s3" style="width:' + p(r.c) + '"></i>';
-      out.innerHTML = "Δh = <b>" + f(r.dh, 0) + " kJ/kg</b> : 1. produit frais " + f(r.a, 0) + " (" + q(r.a) + "), <b>2. chaleur latente " + f(r.b, 0) +
-        " (" + q(r.b) + ")</b>, 3. produit congelé " + f(r.c, 0) + " (" + q(r.c) + "). " + (r.b > r.a + r.c ? "Ici, geler l'eau coûte plus que tout le reste" : "Ici, geler l'eau coûte moins que les deux refroidissements réunis") + " ; pendant le palier, la température ne bouge pas dans ce modèle." +
-        "<br>Pour " + f(+cM.i.value, 0) + " kg en " + f(+cDt.i.value, 1) + " h, puissance frigorifique moyenne : <b>" + f(r.P, 1) +
-        " kW</b> (cp,frais = 3,6 et cp,congelé = 1,8 kJ/kg·K, valeurs typiques ; modèle à palier franc, pertes de l'installation non comptées).";
+      out.innerHTML = "Δh = <b>" + f(r.dh, 0) + tr(" kJ/kg</b> : 1. produit frais ") + f(r.a, 0) + " (" + q(r.a) + tr("), <b>2. chaleur latente ") + f(r.b, 0) +
+        " (" + q(r.b) + tr(")</b>, 3. produit congelé ") + f(r.c, 0) + " (" + q(r.c) + "). " + (r.b > r.a + r.c ? tr("Ici, geler l'eau coûte plus que tout le reste") : tr("Ici, geler l'eau coûte moins que les deux refroidissements réunis")) + tr(" ; pendant le palier, la température ne bouge pas dans ce modèle.") +
+        tr("<br>Pour ") + f(+cM.i.value, 0) + tr(" kg en ") + f(+cDt.i.value, 1) + tr(" h, puissance frigorifique moyenne : <b>") + f(r.P, 1) +
+        tr(" kW</b> (cp,frais = 3,6 et cp,congelé = 1,8 kJ/kg·K, valeurs typiques ; modèle à palier franc, pertes de l'installation non comptées).");
     }
     play.addEventListener("click", function () {
-      if (timer) { clearInterval(timer); timer = null; play.textContent = "▶ Congeler"; return; }
+      if (timer) { clearInterval(timer); timer = null; play.textContent = tr("▶ Congeler"); return; }
       u = 0; play.textContent = "❚❚ Pause";
-      timer = setInterval(function () { u = Math.min(1, u + 0.006); draw(); if (u >= 1) { clearInterval(timer); timer = null; play.textContent = "▶ Recommencer"; } }, 30);
+      timer = setInterval(function () { u = Math.min(1, u + 0.006); draw(); if (u >= 1) { clearInterval(timer); timer = null; play.textContent = tr("▶ Recommencer"); } }, 30);
     });
     [cM, cW, cG, cTi, cTc, cTf, cDt].forEach(function (c) { c.i.addEventListener("input", draw); }); draw();
   }
 
   function cop(box) {
-    box.appendChild(h("h3", {}, "Machine frigorifique : combien de travail pour extraire 1 kJ de chaleur au froid ?"));
-    box.appendChild(h("p", { "class": "muted" }, "Une machine frigorifique pompe la chaleur du côté froid (évaporateur, Tf) vers le côté chaud (condenseur, Tc), en dépensant du travail W. " +
-      "Le COP compare la chaleur extraite au travail : COP = Q<sub>f</sub>/W. La borne de Carnot, COP<sub>C</sub> = Tf/(Tc − Tf) en kelvins, est le meilleur COP possible ; aucune machine réelle ne l'atteint."));
-    box.appendChild(h("p", {}, "L’axe de −40 à +10 °C fait varier seulement la source froide. Par défaut : froid −10 °C, chaud +40 °C, soit 263,15 K et 313,15 K : COP maximal = 263,15/50 = 5,26. Cela signifie au plus 5,26 J extraits pour 1 J de travail. Autre couple de sources : froid −40 °C, chaud +10 °C → 233,15/50 = 4,66. Les curseurs de ce graphique gardent la source chaude entre +20 et +60 °C."));
+    box.appendChild(h("h3", {}, tr("Machine frigorifique : combien de travail pour extraire 1 kJ de chaleur au froid ?")));
+    box.appendChild(h("p", { "class": "muted" }, tr("Une machine frigorifique pompe la chaleur du côté froid (évaporateur, Tf) vers le côté chaud (condenseur, Tc), en dépensant du travail W. ") +
+      tr("Le COP compare la chaleur extraite au travail : COP = Q<sub>f</sub>/W. La borne de Carnot, COP<sub>C</sub> = Tf/(Tc − Tf) en kelvins, est le meilleur COP possible ; aucune machine réelle ne l'atteint.")));
+    box.appendChild(h("p", {}, tr("L’axe de −40 à +10 °C fait varier seulement la source froide. Par défaut : froid −10 °C, chaud +40 °C, soit 263,15 K et 313,15 K : COP maximal = 263,15/50 = 5,26. Cela signifie au plus 5,26 J extraits pour 1 J de travail. Autre couple de sources : froid −40 °C, chaud +10 °C → 233,15/50 = 4,66. Les curseurs de ce graphique gardent la source chaude entre +20 et +60 °C.")));
     var W = 640, H = 230, L0 = 60, R0 = 240, T0 = 14, B0 = 46;
-    var sv = el("svg", { viewBox: "0 0 " + W + " " + H, "class": "ct-svg ct-wide", role: "img", "aria-label": "COP de Carnot selon la température d'évaporation, et bilan d'énergie" }, box);
-    var cF = slider("Source froide Tf (°C)", -40, 10, 1, -10, function (v) { return f(v, 0) + " °C"; }),
-        cC = slider("Source chaude Tc (°C)", 20, 60, 1, 40, function (v) { return f(v, 0) + " °C"; });
+    var sv = el("svg", { viewBox: "0 0 " + W + " " + H, "class": "ct-svg ct-wide", role: "img", "aria-label": tr("COP de Carnot selon la température d'évaporation, et bilan d'énergie") }, box);
+    var cF = slider(tr("Source froide Tf (°C)"), -40, 10, 1, -10, function (v) { return f(v, 0) + " °C"; }),
+        cC = slider(tr("Source chaude Tc (°C)"), 20, 60, 1, 40, function (v) { return f(v, 0) + " °C"; });
     var ctl = h("div", { "class": "ct-ctl" }); ctl.appendChild(cF.w); ctl.appendChild(cC.w); box.appendChild(ctl);
     var out = h("p", { "class": "ct-out", "aria-live": "polite" }); box.appendChild(out);
     var plotMax = 15;
@@ -331,30 +332,30 @@
       [0, plotMax / 3, 2 * plotMax / 3, plotMax].forEach(function (c) { el("line", { x1: L0, x2: W - R0, y1: Y(c), y2: Y(c), stroke: "#e3e8ee" }, sv);
         el("text", { x: L0 - 6, y: Y(c) + 4, "class": "ct-axl", "text-anchor": "end" }, sv).textContent = c; });
       [-40, -30, -20, -10, 0, 10].forEach(function (t) { el("text", { x: X(t), y: H - B0 + 16, "class": "ct-axl", "text-anchor": "middle" }, sv).textContent = t + " °C"; });
-      el("text", { x: (L0 + W - R0) / 2, y: H - 8, "class": "ct-axl", "text-anchor": "middle" }, sv).textContent = "température de la source froide Tf";
-      el("text", { x: 14, y: (T0 + H - B0) / 2, "class": "ct-axl", "text-anchor": "middle", transform: "rotate(-90 14 " + ((T0 + H - B0) / 2) + ")" }, sv).textContent = "COP de Carnot";
+      el("text", { x: (L0 + W - R0) / 2, y: H - 8, "class": "ct-axl", "text-anchor": "middle" }, sv).textContent = tr("température de la source froide Tf");
+      el("text", { x: 14, y: (T0 + H - B0) / 2, "class": "ct-axl", "text-anchor": "middle", transform: "rotate(-90 14 " + ((T0 + H - B0) / 2) + ")" }, sv).textContent = tr("COP de Carnot");
       for (var k = 0; k <= 100; k++) { var t = -40 + 50 * k / 100; A.push([X(t), Y(CT.copCarnot(t, tc))]); }
       el("path", { d: path(A), fill: "none", stroke: "#07569a", "stroke-width": 2.6 }, sv);
-      [[0, "conserver à 0 °C"], [-30, "surgeler à −30 °C"]].forEach(function (m) {
+      [[0, tr("conserver à 0 °C")], [-30, tr("surgeler à −30 °C")]].forEach(function (m) {
         var c0 = CT.copCarnot(m[0], tc); el("circle", { cx: X(m[0]), cy: Y(c0), r: 3.5, fill: "#8a96a3" }, sv);
         el("text", { x: X(m[0]) + (m[0] ? -6 : 6), y: Y(c0) + (m[0] ? 16 : -8), "class": "ct-axl", "text-anchor": m[0] ? "start" : "end" }, sv).textContent = m[1] + " : " + f(c0, 1); });
       var c = CT.copCarnot(tf, tc); el("circle", { cx: X(tf), cy: Y(c), r: 6, fill: "#ad5200" }, sv);
       // energy balance for 1 kJ extracted: arrows whose widths are the energies
       var bx = W - R0 + 80, w1 = 1 / c, sc = 22, wq = 1 * sc, ww = Math.min(4, w1) * sc, wc = Math.min(5, 1 + w1) * sc;
       el("rect", { x: bx, y: 8, width: 150, height: 30, rx: 6, fill: "#f6dccb" }, sv);
-      el("text", { x: bx + 75, y: 28, "text-anchor": "middle", "class": "ct-axl" }, sv).textContent = "chaud " + tc + " °C";
+      el("text", { x: bx + 75, y: 28, "text-anchor": "middle", "class": "ct-axl" }, sv).textContent = tr("chaud ") + tc + " °C";
       el("rect", { x: bx, y: 150, width: 150, height: 30, rx: 6, fill: "#d6e6f5" }, sv);
-      el("text", { x: bx + 75, y: 170, "text-anchor": "middle", "class": "ct-axl" }, sv).textContent = "froid " + tf + " °C";
+      el("text", { x: bx + 75, y: 170, "text-anchor": "middle", "class": "ct-axl" }, sv).textContent = tr("froid ") + tf + " °C";
       el("rect", { x: bx + 45, y: 78, width: 60, height: 34, rx: 6, fill: "#eef1f4", stroke: "#9fb0c0" }, sv);
-      el("text", { x: bx + 75, y: 99, "text-anchor": "middle", "class": "ct-axl" }, sv).textContent = "machine";
+      el("text", { x: bx + 75, y: 99, "text-anchor": "middle", "class": "ct-axl" }, sv).textContent = tr("machine");
       el("rect", { x: bx + 60 - wq / 2 + 15, y: 112, width: wq, height: 38, fill: "#07569a", opacity: .75 }, sv);
       el("text", { x: bx + 75 + wq / 2 + 6, y: 136, "class": "ct-axl" }, sv).textContent = "Qf = 1 kJ";
       el("rect", { x: bx + 75 - wc / 2, y: 38, width: wc, height: 40, fill: "#ad5200", opacity: .7 }, sv);
       el("text", { x: bx + 75 + wc / 2 + 6, y: 62, "class": "ct-axl" }, sv).textContent = "Qc = " + f(1 + w1, 2) + " kJ";
       el("rect", { x: bx - 40, y: 95 - ww / 2, width: 85, height: ww, fill: "#3c8d5a", opacity: .8 }, sv);
-      el("text", { x: bx - 40, y: 95 + ww / 2 + 14, "class": "ct-axl" }, sv).textContent = "travail W = " + f(w1, 2) + " kJ";
-      out.innerHTML = "COP de Carnot = <b>" + f(c, 2) + "</b> : pour extraire 1 kJ au froid, il faut au moins <b>" + f(w1, 2) + " kJ de travail</b>, et le condenseur rejette " + f(1 + w1, 2) +
-        " kJ au chaud. Écart Tc − Tf = " + f(tc - tf, 0) + " K : plus l'écart grandit, plus la flèche verte (travail) s'épaissit. Surgeler coûte donc plus cher que conserver au frais.";
+      el("text", { x: bx - 40, y: 95 + ww / 2 + 14, "class": "ct-axl" }, sv).textContent = tr("travail W = ") + f(w1, 2) + " kJ";
+      out.innerHTML = tr("COP de Carnot = <b>") + f(c, 2) + tr("</b> : pour extraire 1 kJ au froid, il faut au moins <b>") + f(w1, 2) + tr(" kJ de travail</b>, et le condenseur rejette ") + f(1 + w1, 2) +
+        tr(" kJ au chaud. Écart Tc − Tf = ") + f(tc - tf, 0) + tr(" K : plus l'écart grandit, plus la flèche verte (travail) s'épaissit. Surgeler coûte donc plus cher que conserver au frais.");
     }
     [cF, cC].forEach(function (c) { c.i.addEventListener("input", draw); }); draw();
   }
@@ -396,14 +397,14 @@
   };
 
   function regr(box) {
-    box.appendChild(h("h3", {}, "Corrélation et régression : déplacez un point"));
-    box.appendChild(h("p", { "class": "muted" }, "Douze mesures (points bleus) et un point que vous déplacez (orange). r = cov(x, y)/(s<sub>x</sub>·s<sub>y</sub>), droite des moindres carrés y = b<sub>0</sub> + b<sub>1</sub>·x, test de r : t = r·√(n − 2)/√(1 − r²) à n − 2 degrés de liberté."));
-    var W = 320, H = 210, sv = el("svg", { viewBox: "0 0 " + W + " " + H, "class": "ct-svg", role: "img", "aria-label": "Nuage de points et droite de régression" }, box);
+    box.appendChild(h("h3", {}, tr("Corrélation et régression : déplacez un point")));
+    box.appendChild(h("p", { "class": "muted" }, tr("Douze mesures (points bleus) et un point que vous déplacez (orange). r = cov(x, y)/(s<sub>x</sub>·s<sub>y</sub>), droite des moindres carrés y = b<sub>0</sub> + b<sub>1</sub>·x, test de r : t = r·√(n − 2)/√(1 − r²) à n − 2 degrés de liberté.")));
+    var W = 320, H = 210, sv = el("svg", { viewBox: "0 0 " + W + " " + H, "class": "ct-svg", role: "img", "aria-label": tr("Nuage de points et droite de régression") }, box);
     var BX = [1.2, 1.9, 2.4, 3.1, 3.6, 4.2, 4.9, 5.5, 6.1, 6.8, 7.4, 8.0],
         BY = [2.6, 2.1, 3.5, 3.2, 4.4, 3.9, 5.1, 4.6, 5.9, 5.4, 6.6, 6.2];
-    var cX = slider("x du point orange", 0, 10, 0.1, 9.5, function (v) { return f(v, 1); }),
-        cY = slider("y du point orange", 0, 10, 0.1, 1, function (v) { return f(v, 1); }),
-        cOn = h("label", { "class": "ct-sl" }, '<span>Inclure le point orange</span>');
+    var cX = slider(tr("x du point orange"), 0, 10, 0.1, 9.5, function (v) { return f(v, 1); }),
+        cY = slider(tr("y du point orange"), 0, 10, 0.1, 1, function (v) { return f(v, 1); }),
+        cOn = h("label", { "class": "ct-sl" }, tr('<span>Inclure le point orange</span>'));
     var chk = h("input", { type: "checkbox", checked: "" }); cOn.appendChild(chk);
     var ctl = h("div", { "class": "ct-ctl" }); [cX, cY].forEach(function (c) { ctl.appendChild(c.w); }); ctl.appendChild(cOn); box.appendChild(ctl);
     var out = h("p", { "class": "ct-out", "aria-live": "polite" }); box.appendChild(out);
@@ -421,9 +422,9 @@
       line.setAttribute("x1", X(0)); line.setAttribute("x2", X(10)); line.setAttribute("y1", Y(r.b0)); line.setAttribute("y2", Y(r.b0 + 10 * r.b1));
       pt.setAttribute("cx", X(px)); pt.setAttribute("cy", Y(py)); pt.style.opacity = on ? 1 : 0.25;
       var pv = r.p < 1e-4 ? r.p.toExponential(1).replace(".", EN ? "." : ",") : f(r.p, 4);
-      out.innerHTML = "n = " + r.n + " · r = <b>" + f(r.r, 3) + "</b> · r² = <b>" + f(r.r2, 3) + "</b> · droite y = " + f(r.b0, 2) + " + " + f(r.b1, 3) + "·x<br>t = " + f(r.t, 2) +
-        " (" + (r.n - 2) + " ddl) · p = <b>" + pv + "</b> " + (r.p < 0.05 ? "(lien significatif au risque 5 %)" : "(pas significatif au risque 5 %)") +
-        "<br>Sans le point orange : r = " + f(r0.r, 3) + ". Un seul point loin en x tire la droite (bras de levier) : regardez toujours le nuage avant de conclure.";
+      out.innerHTML = "n = " + r.n + " · r = <b>" + f(r.r, 3) + "</b> · r² = <b>" + f(r.r2, 3) + tr("</b> · droite y = ") + f(r.b0, 2) + " + " + f(r.b1, 3) + "·x<br>t = " + f(r.t, 2) +
+        " (" + (r.n - 2) + tr(" ddl) · p = <b>") + pv + "</b> " + (r.p < 0.05 ? tr("(lien significatif au risque 5 %)") : tr("(pas significatif au risque 5 %)")) +
+        tr("<br>Sans le point orange : r = ") + f(r0.r, 3) + tr(". Un seul point loin en x tire la droite (bras de levier) : regardez toujours le nuage avant de conclure.");
     }
     [cX, cY].forEach(function (c) { c.i.addEventListener("input", draw); }); chk.addEventListener("change", draw); draw();
   }

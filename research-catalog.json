@@ -4506,6 +4506,31 @@
       ]
     },
     {
+      "url": "https://www.cyrilvoyant.com/tools/biot-cooling/",
+      "title": "Food cooling: Biot number and core temperature",
+      "language": "en",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "The relationship to understand",
+          "anchor": null
+        },
+        {
+          "title": "Try it and interpret",
+          "anchor": null
+        },
+        {
+          "title": "Assumptions and limitations",
+          "anchor": null
+        },
+        {
+          "title": "Go further with the course",
+          "anchor": null
+        }
+      ]
+    },
+    {
       "url": "https://www.cyrilvoyant.com/tools/carnot-heat-engine/",
       "title": "Heat engine and Carnot limit: cycle and energy balance",
       "language": "en",
@@ -4531,8 +4556,58 @@
       ]
     },
     {
+      "url": "https://www.cyrilvoyant.com/tools/chi-square-test/",
+      "title": "Chi-square test: observed counts, expected counts and contributions",
+      "language": "en",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "The relationship to understand",
+          "anchor": null
+        },
+        {
+          "title": "Try it and interpret",
+          "anchor": null
+        },
+        {
+          "title": "Assumptions and limitations",
+          "anchor": null
+        },
+        {
+          "title": "Go further with the course",
+          "anchor": null
+        }
+      ]
+    },
+    {
       "url": "https://www.cyrilvoyant.com/tools/compton-scattering/",
       "title": "Compton scattering: angle and energy sharing",
+      "language": "en",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "The relationship to understand",
+          "anchor": null
+        },
+        {
+          "title": "Try it and interpret",
+          "anchor": null
+        },
+        {
+          "title": "Assumptions and limitations",
+          "anchor": null
+        },
+        {
+          "title": "Go further with the course",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/tools/correlation-significance-r-squared/",
+      "title": "Correlation, significance and R²: distinguish the concepts",
       "language": "en",
       "topics": [],
       "citations": [],
@@ -4598,6 +4673,56 @@
       ]
     },
     {
+      "url": "https://www.cyrilvoyant.com/tools/freezing-energy-power/",
+      "title": "Freezing: sensible heat, latent heat and power",
+      "language": "en",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "The relationship to understand",
+          "anchor": null
+        },
+        {
+          "title": "Try it and interpret",
+          "anchor": null
+        },
+        {
+          "title": "Assumptions and limitations",
+          "anchor": null
+        },
+        {
+          "title": "Go further with the course",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/tools/influential-point-regression/",
+      "title": "Regression and an influential point: move an observation",
+      "language": "en",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "The relationship to understand",
+          "anchor": null
+        },
+        {
+          "title": "Try it and interpret",
+          "anchor": null
+        },
+        {
+          "title": "Assumptions and limitations",
+          "anchor": null
+        },
+        {
+          "title": "Go further with the course",
+          "anchor": null
+        }
+      ]
+    },
+    {
       "url": "https://www.cyrilvoyant.com/tools/normal-distribution/",
       "title": "Interactive normal distribution: area, probability and z-score",
       "language": "en",
@@ -4623,8 +4748,83 @@
       ]
     },
     {
+      "url": "https://www.cyrilvoyant.com/tools/refrigerator-carnot-cop/",
+      "title": "Refrigeration: coefficient of performance and Carnot limit",
+      "language": "en",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "The relationship to understand",
+          "anchor": null
+        },
+        {
+          "title": "Try it and interpret",
+          "anchor": null
+        },
+        {
+          "title": "Assumptions and limitations",
+          "anchor": null
+        },
+        {
+          "title": "Go further with the course",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/tools/regression-intervals/",
+      "title": "Regression: confidence interval and prediction interval",
+      "language": "en",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "The relationship to understand",
+          "anchor": null
+        },
+        {
+          "title": "Try it and interpret",
+          "anchor": null
+        },
+        {
+          "title": "Assumptions and limitations",
+          "anchor": null
+        },
+        {
+          "title": "Go further with the course",
+          "anchor": null
+        }
+      ]
+    },
+    {
       "url": "https://www.cyrilvoyant.com/tools/roc-curve/",
       "title": "Interactive ROC curve: sensitivity, specificity and prevalence",
+      "language": "en",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "The relationship to understand",
+          "anchor": null
+        },
+        {
+          "title": "Try it and interpret",
+          "anchor": null
+        },
+        {
+          "title": "Assumptions and limitations",
+          "anchor": null
+        },
+        {
+          "title": "Go further with the course",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/tools/student-t-test/",
+      "title": "Interactive t-test: means, variability and p-values",
       "language": "en",
       "topics": [],
       "citations": [],

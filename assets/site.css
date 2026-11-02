@@ -187,3 +187,43 @@ picture { display: block; }
   main :is(.table-wrap, .fc-tw) { width: fit-content; max-width: 100%; margin-left: 0; margin-right: auto; }
   main table, main figure { margin-left: 0; margin-right: auto; }
 }
+
+/* Reading comfort, depth and motion (02/11). Nothing is removed: same pages, easier to read and to walk through. */
+@view-transition { navigation: auto; }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: .16s; }
+html { scroll-behavior: smooth; }
+main :is(h1, h2) { letter-spacing: -.012em; text-wrap: balance; }
+main p { text-wrap: pretty; }
+main a { overflow-wrap: anywhere; }
+main :is(input, select, textarea) { max-width: 100%; box-sizing: border-box; }
+.collab-form .f2 > *, .cvt-row, .cvt-row > * { min-width: 0; }
+@media (max-width: 720px) { .cvt-row { grid-template-columns: minmax(0, 1fr) auto auto; } .cvt-row input { min-width: 0; } }
+@media (max-width: 640px) { .collab-form .f2 { grid-template-columns: minmax(0, 1fr); } .collab-form :is(input, select, textarea) { width: 100%; min-width: 0; } }
+main a { text-underline-offset: .16em; text-decoration-thickness: from-font; transition: color .15s ease; }
+:is(a, button, summary, input, select, textarea):focus-visible { outline: 2px solid #07569a; outline-offset: 2px; border-radius: 4px; }
+@media (min-width: 900px) {
+  main :is(p, ul, ol, dl, blockquote, .lead, .brief, .muted) { max-width: 52rem; }
+}
+.card { position: relative; transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease; }
+.card:hover { transform: translateY(-2px); box-shadow: 0 8px 22px #17253620; }
+.card h3 a::after { content: ""; position: absolute; inset: 0; }
+.card a:not(h3 a), .card details, .card button { position: relative; z-index: 1; }
+.card:focus-within { box-shadow: 0 0 0 2px #07569a55; }
+.page-step { transition: transform .18s ease, border-color .18s ease, background-color .18s ease; }
+.page-step:hover { transform: translateY(-1px); }
+main details > summary { transition: color .15s ease; }
+main img { border-radius: 4px; }
+.xs-bar a { transition: color .15s ease, opacity .15s ease; }
+@media (max-width: 720px) {
+  .xs-in { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; gap: 14px; }
+  .xs-in::-webkit-scrollbar { display: none; }
+  .xs-in > a { flex: none; white-space: nowrap; }
+  .xs-in > .site-search { display: none; }
+  .xs-in > .xs-lang { position: sticky; right: 0; order: 9; margin-left: auto; background: #172536; box-shadow: -10px 0 10px #172536; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  @view-transition { navigation: none; }
+  .card, .page-step, main a, .xs-bar a { transition: none; }
+  .card:hover, .page-step:hover { transform: none; }
+}

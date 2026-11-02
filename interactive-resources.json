@@ -347,7 +347,7 @@
       "id": "biot",
       "domain": "learning",
       "kind": "teaching",
-      "interface_language": "fr",
+      "interface_language": "both",
       "name": {
         "fr": "Refroidir un aliment : Biot, température moyenne et à cœur",
         "en": "Cool a food: Biot number, mean and core temperature"
@@ -358,14 +358,14 @@
       },
       "url": {
         "fr": "https://www.cyrilvoyant.com/fr/animations/refroidissement-biot/",
-        "en": "https://www.cyrilvoyant.com/fr/animations/refroidissement-biot/"
+        "en": "https://www.cyrilvoyant.com/tools/biot-cooling/"
       }
     },
     {
       "id": "congel",
       "domain": "learning",
       "kind": "teaching",
-      "interface_language": "fr",
+      "interface_language": "both",
       "name": {
         "fr": "Congeler : énergie et puissance frigorifique",
         "en": "Freezing: energy and refrigeration power"
@@ -376,14 +376,14 @@
       },
       "url": {
         "fr": "https://www.cyrilvoyant.com/fr/animations/congelation-energie-puissance/",
-        "en": "https://www.cyrilvoyant.com/fr/animations/congelation-energie-puissance/"
+        "en": "https://www.cyrilvoyant.com/tools/freezing-energy-power/"
       }
     },
     {
       "id": "cop",
       "domain": "learning",
       "kind": "teaching",
-      "interface_language": "fr",
+      "interface_language": "both",
       "name": {
         "fr": "Machine frigorifique : borne de Carnot du COP",
         "en": "Refrigerator: Carnot bound of the COP"
@@ -394,14 +394,14 @@
       },
       "url": {
         "fr": "https://www.cyrilvoyant.com/fr/animations/cop-carnot-machine-frigorifique/",
-        "en": "https://www.cyrilvoyant.com/fr/animations/cop-carnot-machine-frigorifique/"
+        "en": "https://www.cyrilvoyant.com/tools/refrigerator-carnot-cop/"
       }
     },
     {
       "id": "regr",
       "domain": "learning",
       "kind": "teaching",
-      "interface_language": "fr",
+      "interface_language": "both",
       "name": {
         "fr": "Corrélation et régression : déplacer un point",
         "en": "Correlation and regression: move a point"
@@ -412,7 +412,7 @@
       },
       "url": {
         "fr": "https://www.cyrilvoyant.com/fr/animations/point-influent-regression/",
-        "en": "https://www.cyrilvoyant.com/fr/animations/point-influent-regression/"
+        "en": "https://www.cyrilvoyant.com/tools/influential-point-regression/"
       }
     },
     {
@@ -473,7 +473,7 @@
       "id": "student",
       "domain": "learning",
       "kind": "teaching",
-      "interface_language": "fr",
+      "interface_language": "both",
       "name": {
         "fr": "Student : différence, p-value et intervalle de confiance",
         "en": "Student: difference, p-value and confidence interval"
@@ -484,14 +484,14 @@
       },
       "url": {
         "fr": "https://www.cyrilvoyant.com/fr/animations/test-student/",
-        "en": "https://www.cyrilvoyant.com/fr/animations/test-student/"
+        "en": "https://www.cyrilvoyant.com/tools/student-t-test/"
       }
     },
     {
       "id": "determination",
       "domain": "learning",
       "kind": "teaching",
-      "interface_language": "fr",
+      "interface_language": "both",
       "name": {
         "fr": "Significativité et R² : quelle variation explique la droite ?",
         "en": "Significance and R²: how much variation does the line explain?"
@@ -502,14 +502,14 @@
       },
       "url": {
         "fr": "https://www.cyrilvoyant.com/fr/animations/correlation-significativite-r2/",
-        "en": "https://www.cyrilvoyant.com/fr/animations/correlation-significativite-r2/"
+        "en": "https://www.cyrilvoyant.com/tools/correlation-significance-r-squared/"
       }
     },
     {
       "id": "chisquare",
       "domain": "learning",
       "kind": "teaching",
-      "interface_language": "fr",
+      "interface_language": "both",
       "name": {
         "fr": "χ² : observés, attendus et contributions",
         "en": "Chi-square: observed, expected and contributions"
@@ -520,14 +520,14 @@
       },
       "url": {
         "fr": "https://www.cyrilvoyant.com/fr/animations/test-khi-deux/",
-        "en": "https://www.cyrilvoyant.com/fr/animations/test-khi-deux/"
+        "en": "https://www.cyrilvoyant.com/tools/chi-square-test/"
       }
     },
     {
       "id": "intervals",
       "domain": "learning",
       "kind": "teaching",
-      "interface_language": "fr",
+      "interface_language": "both",
       "name": {
         "fr": "Régression : intervalle de confiance ou de prévision ?",
         "en": "Regression: confidence or prediction interval?"
@@ -538,7 +538,7 @@
       },
       "url": {
         "fr": "https://www.cyrilvoyant.com/fr/animations/intervalles-regression/",
-        "en": "https://www.cyrilvoyant.com/fr/animations/intervalles-regression/"
+        "en": "https://www.cyrilvoyant.com/tools/regression-intervals/"
       }
     },
     {

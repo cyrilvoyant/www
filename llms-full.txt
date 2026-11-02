@@ -290,7 +290,7 @@ URL: https://www.cyrilvoyant.com/tools/
 Scientific simulators, animations and calculators
  Scientific simulators, interactive animations, and course or research calculators, organized by field and interface language.
  Choose a scientific simulator, interactive animation or calculator. Change an input and examine what changes. Research calculators and medical applications are for research and education; their assumptions and limitations are stated in the linked pages.
- Languages: the seven technical calculators have French and English interfaces. ROC, normal distribution and attenuation also have both interfaces. Regression, cooling, freezing and COP tools remain in French. The electromagnetic wave, Compton and Carnot heat-engine animations, as well as the forecast comparison, exist in French and English; dedicated applications retain their existing interfaces; filter by language before opening a tool.
+ Languages: the seven technical calculators have French and English interfaces. ROC, normal distribution and attenuation also have both interfaces. All fourteen standalone physics, statistics and thermal experiments are bilingual; the source chapters and slides remain in French. The electromagnetic wave, Compton and Carnot heat-engine animations, as well as the forecast comparison, exist in French and English; dedicated applications retain their existing interfaces; filter by language before opening a tool.
  Find a tool Field Interface language
  Explorable demonstration · French and English
  Noise and memory: compare forecasts
@@ -368,19 +368,19 @@ Scientific simulators, animations and calculators
  Explore attenuation and half-value layers
  Vary thickness and half-value layer; read the transmitted fraction.
  Open this tool →
- Course tool · French interface
+ Course tool · French and English
  Cool a food: Biot number, mean and core temperature
  Vary h, λ and size; compare the uniform-temperature model with the core temperature.
  Open this tool →
- Course tool · French interface
+ Course tool · French and English
  Freezing: energy and refrigeration power
  Split the energy to remove (sensible, latent, sensible) and compute the power for a given duration.
  Open this tool →
- Course tool · French interface
+ Course tool · French and English
  Refrigerator: Carnot bound of the COP
  Vary evaporation and condensation temperatures; see why the temperature lift is costly.
  Open this tool →
- Course tool · French interface
+ Course tool · French and English
  Correlation and regression: move a point
  Move an outlier and watch r, the least-squares line and the p-value change.
  Open this tool →
@@ -396,19 +396,19 @@ Scientific simulators, animations and calculators
  Explore a licensing choice
  Follow an example decision tree, to be adapted to context and content rights.
  Open this tool →
- Course tool · French interface
+ Course tool · French and English
  Student: difference, p-value and confidence interval
  Visualize rejection regions; compare one sample with a reference, paired differences or two independent groups.
  Open this tool →
- Course tool · French interface
+ Course tool · French and English
  Significance and R²: how much variation does the line explain?
  Vary r and n; distinguish the theoretical p-value from variation explained in a constructed teaching example.
  Open this tool →
- Course tool · French interface
+ Course tool · French and English
  Chi-square: observed, expected and contributions
  Explore a fair die or a 2×2 table; visualize cell contributions and small expected counts.
  Open this tool →
- Course tool · French interface
+ Course tool · French and English
  Regression: confidence or prediction interval?
  Compare both bands, move x₀ and recognize extrapolation.
  Open this tool →
@@ -432,7 +432,7 @@ URL: https://www.cyrilvoyant.com/fr/outils/
 Simulateurs, animations et calculateurs scientifiques
  Simulateurs scientifiques, animations interactives et calculateurs de cours ou de recherche, classés par domaine et langue.
  Choisissez un simulateur scientifique, une animation interactive ou un calculateur. Modifiez une entrée et observez ce qui change. Les calculateurs de recherche et les applications médicales sont destinés à la recherche et à l’enseignement ; leurs hypothèses et limites figurent dans les pages liées.
- Langues : les sept calculateurs techniques ont des interfaces françaises et anglaises. ROC, loi normale et atténuation existent aussi dans les deux langues. Les outils de régression, refroidissement, congélation et COP restent en français. Les animations onde électromagnétique, Compton et moteur de Carnot, ainsi que le comparateur de prévisions, existent en français et en anglais ; les applications dédiées conservent leur interface actuelle ; le filtre précise la langue avant ouverture.
+ Langues : les sept calculateurs techniques ont des interfaces françaises et anglaises. ROC, loi normale et atténuation existent aussi dans les deux langues. Les quatorze expériences autonomes de physique, statistiques et thermique sont bilingues ; les chapitres et diapositives sources restent en français. Les animations onde électromagnétique, Compton et moteur de Carnot, ainsi que le comparateur de prévisions, existent en français et en anglais ; les applications dédiées conservent leur interface actuelle ; le filtre précise la langue avant ouverture.
  Rechercher un outil Domaine Langue de l’interface
  Démonstration à explorer · Français et anglais
  Bruit et mémoire : comparer des prévisions
@@ -510,19 +510,19 @@ Simulateurs, animations et calculateurs scientifiques
  Explorer l’atténuation et la CDA
  Faire varier l’épaisseur et la couche de demi-atténuation ; lire la fraction transmise.
  Ouvrir cet outil →
- Outil de cours · Interface en français
+ Outil de cours · Français et anglais
  Refroidir un aliment : Biot, température moyenne et à cœur
  Faire varier h, λ et la taille ; comparer le modèle à température uniforme et la température à cœur.
  Ouvrir cet outil →
- Outil de cours · Interface en français
+ Outil de cours · Français et anglais
  Congeler : énergie et puissance frigorifique
  Décomposer l’énergie à extraire (sensible, latente, sensible) et calculer la puissance pour une durée donnée.
  Ouvrir cet outil →
- Outil de cours · Interface en français
+ Outil de cours · Français et anglais
  Machine frigorifique : borne de Carnot du COP
  Faire varier les températures d’évaporation et de condensation ; voir pourquoi l’écart coûte cher.
  Ouvrir cet outil →
- Outil de cours · Interface en français
+ Outil de cours · Français et anglais
  Corrélation et régression : déplacer un point
  Déplacer un point aberrant et voir r, la droite des moindres carrés et la p-value changer.
  Ouvrir cet outil →
@@ -538,19 +538,19 @@ Simulateurs, animations et calculateurs scientifiques
  Explorer un choix de licence
  Suivre un exemple d’arbre de décision, à adapter au contexte et aux droits sur les contenus.
  Ouvrir cet outil →
- Outil de cours · Interface en français
+ Outil de cours · Français et anglais
  Student : différence, p-value et intervalle de confiance
  Visualiser les zones de rejet ; comparer un échantillon à une référence, des différences appariées ou deux groupes indépendants.
  Ouvrir cet outil →
- Outil de cours · Interface en français
+ Outil de cours · Français et anglais
  Significativité et R² : quelle variation explique la droite ?
  Faire varier r et n ; distinguer la p-value théorique et la variation expliquée dans un nuage pédagogique construit.
  Ouvrir cet outil →
- Outil de cours · Interface en français
+ Outil de cours · Français et anglais
  χ² : observés, attendus et contributions
  Explorer un dé équilibré ou un tableau 2×2 ; visualiser les cellules qui pèsent et les faibles effectifs.
  Ouvrir cet outil →
- Outil de cours · Interface en français
+ Outil de cours · Français et anglais
  Régression : intervalle de confiance ou de prévision ?
  Comparer les deux bandes, déplacer x₀ et reconnaître une extrapolation.
  Ouvrir cet outil →
@@ -2087,11 +2087,11 @@ Test de Student interactif : deux moyennes, dispersion et p-value
  Une différence entre deux moyennes est-elle grande par rapport à son incertitude ?
  Une expérience du cours de Cyril Voyant, à manipuler dans le navigateur. Revenir au chapitre et aux diapositives · Choisir une autre expérience .
  JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. La relation à comprendre
- t=Δ/SE ; IC bilatéral=Δ±t(1−α/2;ν)SE. Welch : SE²=s₁²/n₁+s₂²/n₂.
+ Test de Student à variance commune : t=Δ/[sₚ√(1/n₁+1/n₂)] ; sₚ²=[(n₁−1)s₁²+(n₂−1)s₂²]/(n₁+n₂−2), ν=n₁+n₂−2.
  Essayer et interpréter
  Gardez la différence et la dispersion constantes, puis augmentez l’effectif : la p-value change alors que l’écart entre les moyennes reste le même. Avec une différence nulle, t=0 et p=1.
  Hypothèses et limites
- Tests bilatéraux seulement. Distinguer groupes indépendants, variance commune et mesures appariées ; en apparié, saisir la dispersion des différences. Les points dessinés sont construits à partir des résumés saisis, pas des observations réelles.
+ Cette interface illustre le test bilatéral à variance commune pour deux groupes indépendants de même effectif, au seuil de 5 %. Vérifier normalité et homogénéité des variances ; Welch et les mesures appariées demandent un autre cadre. Les points dessinés sont construits à partir des résumés saisis, pas des observations réelles.
  Approfondir avec le cours
  Cette page isole une notion pour la rendre accessible directement. Le chapitre complet conserve le raisonnement, les autres exemples, le diaporama et la FAQ. Les valeurs de la démonstration sont calculées ou construites dans le modèle indiqué ; elles ne constituent pas de nouveaux résultats de recherche.
 
