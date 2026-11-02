@@ -25,10 +25,10 @@ const tops=[...tree.querySelectorAll('.site-tree-list>li')];
 const topLi=cur&&cur.closest('.site-tree-list>li');
 let prev=null,next=null,up=null,pos='';
 const isHome=cur&&cur.closest('.tree-home');
-if(isHome){next=tops.map(li=>li.querySelector('a.tree-hub')||li.querySelector('details a')).find(a=>a&&a!==cur)||null}
-else if(cur){const seen=new Set();const seq=[...topLi.querySelectorAll('a')].filter(a=>same(a)&&!mirror(a)).filter(a=>{const k=new URL(a.href).pathname;if(seen.has(k))return false;seen.add(k);return true});
+if(isHome){next=tops.map(li=>li.querySelector('a.tree-hub')||li.querySelector('details a:not(.tree-go)')).find(a=>a&&a!==cur)||null}
+else if(cur){const seen=new Set();const seq=[...topLi.querySelectorAll('a:not(.tree-go)')].filter(a=>same(a)&&!mirror(a)).filter(a=>{const k=new URL(a.href).pathname;if(seen.has(k))return false;seen.add(k);return true});
  const i=seq.indexOf(cur);if(i>0)prev=seq[i-1];if(i>=0&&i+1<seq.length)next=seq[i+1];
- if(i>=0&&i+1===seq.length){const t=tops.indexOf(topLi);for(let k=t+1;k<tops.length&&!next;k++)next=[...tops[k].querySelectorAll('a')].find(same)||null}
+ if(i>=0&&i+1===seq.length){const t=tops.indexOf(topLi);for(let k=t+1;k<tops.length&&!next;k++)next=[...tops[k].querySelectorAll('a:not(.tree-go)')].find(same)||null}
  if(!next){const h=tree.querySelector('.tree-home a');if(h&&h!==cur&&same(h))next=h}
  let d=cur.closest('details');if(cur.classList.contains('tree-hub'))d=d&&d.parentElement.closest('details');
  while(d&&!up){const h=d.querySelector(':scope>a.tree-hub');if(h&&h!==cur&&same(h))up=h;d=d.parentElement.closest('details')}
