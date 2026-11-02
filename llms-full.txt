@@ -96,8 +96,8 @@ Prévoir un signal qui se répète : que retirer, que garder ?
  Si le bruit suit le niveau du signal, comme un nuage qui retire une part de la lumière, la différence y − c reste agitée au sommet du cycle et calme au creux. Le ratio y / c rend le bruit égal partout : c'est ce qu'il faut pour un modèle simple. En solaire, c est le ciel clair.
  Différence y − c : l'agitation suit le cycle
  Ratio y / c − 1 : l'agitation est régulière
- Et sans modèle de ciel clair ?
- BLEND combine la dernière valeur et la valeur un cycle plus tôt, avec un poids pour chaque moment du cycle. L'article expliqué · le cours .
+ CLIPER, BLEND : et sans modèle du cycle ?
+ Sans cycle, CLIPER suffit : combiner la dernière valeur et la moyenne fait déjà aussi bien que le reste. Dès qu'il y a un cycle, il ne le voit plus, et son erreur reste à 76. BLEND ouvre une autre voie : il combine la dernière valeur et la valeur un cycle plus tôt, avec un poids pour chaque moment du cycle, et descend à 52 sans aucun modèle du cycle. Retirer le cycle reste meilleur (39), si l'on dispose d'un bon modèle de ce cycle. Ici, version simple de BLEND sur ce signal simulé. Essayer BLEND sur des données PV réelles · L'article expliqué · le cours .
  Trois études complémentaires, trois questions
  2015, Peut-on diagnostiquer la difficulté avant de choisir le modèle de prévision ?
  En 2015, j’ai étudié cette question avec Ted Soubdhan, Philippe Lauret, Mathieu David et Marc Muselli. Notre article examine des paramètres statistiques pour anticiper l’erreur de prévision solaire. Le mean absolute log return (MALR), issu de l’économétrie, décrit l’amplitude des changements relatifs. Ce diagnostic empirique ne dispense pas de tester le modèle sur le site et à l’horizon visés. Article dans Energy (2015) .
@@ -2011,8 +2011,8 @@ Forecasting a signal that repeats: what to remove, what to keep?
  If the noise follows the level of the signal, like a cloud removing a share of the light, the difference y − c stays agitated at the top of the cycle and calm at the bottom. The ratio y / c makes the noise equal everywhere: what a simple model needs. In solar forecasting, c is clear sky.
  Difference y − c: the agitation follows the cycle
  Ratio y / c − 1: the agitation is regular
- And without a clear-sky model?
- BLEND combines the last value and the value one cycle earlier, with one weight for each moment of the cycle. The paper explained · the course .
+ CLIPER, BLEND: and without a model of the cycle?
+ With no cycle, CLIPER is enough: combining the last value and the mean already does as well as the rest. Once there is a cycle it no longer sees it, and its error stays at 76. BLEND opens another way: it combines the last value and the value one cycle earlier, with one weight for each moment of the cycle, and falls to 52 with no model of the cycle. Removing the cycle remains better (39), given a good model of that cycle. Here, a simple version of BLEND on this simulated signal. Try BLEND · The paper explained · the course .
  Three complementary studies, three questions
  2015, Can we diagnose difficulty before choosing the forecaster?
  In 2015, I studied this question with Ted Soubdhan, Philippe Lauret, Mathieu David and Marc Muselli. Our paper examines statistical parameters for anticipating solar forecast error. Mean absolute log return (MALR), borrowed from econometrics, describes relative changes. This empirical diagnostic does not replace testing the model at the intended site and horizon. Paper in Energy (2015) .

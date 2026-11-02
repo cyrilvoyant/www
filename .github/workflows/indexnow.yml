@@ -12,6 +12,7 @@ on:
         type: string
 permissions:
   contents: read
+  actions: read
 concurrency:
   group: indexnow
   cancel-in-progress: false
@@ -28,4 +29,5 @@ jobs:
       - name: Submit only deployed, changed canonical pages
         env:
           INDEXNOW_URLS: ${{ inputs.urls }}
+          GITHUB_TOKEN: ${{ github.token }}
         run: python3 .github/scripts/indexnow.py

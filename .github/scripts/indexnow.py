@@ -23,7 +23,7 @@ def candidates():
         # Compare with the preceding successful Pages deployment, including
         # every commit in a multi-commit push, not just the final commit.
         api='https://api.github.com/repos/cyrilvoyant/www/actions/workflows/'+str(int(run['workflow_id']))+'/runs?status=success&per_page=30'
-        req=urllib.request.Request(api,headers={'Accept':'application/vnd.github+json','User-Agent':'cyrilvoyant-indexnow'})
+        req=urllib.request.Request(api,headers={'Accept':'application/vnd.github+json','User-Agent':'cyrilvoyant-indexnow','Authorization':'Bearer '+os.environ.get('GITHUB_TOKEN','')})
         with urllib.request.urlopen(req,timeout=30) as r:previous=json.load(r)['workflow_runs']
         older=[x for x in previous if x['id']<run['id'] and x['head_branch']=='main' and x['head_sha']!=run['head_sha']]
         if not older:raise RuntimeError('No earlier Pages baseline found; explicit changed URLs required')
