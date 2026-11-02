@@ -84,10 +84,21 @@ URL: https://www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/
 
 Pourquoi le même modèle réussit ici et échoue là
  La même régression linéaire fait 11,8 % d'erreur sur un signal qui garde sa mémoire, et 50,5 % sur un signal qui n'en a pas. Le modèle n'a pas changé : c'est le signal. Avant de juger un modèle ou de le complexifier, il faut savoir ce que le signal permet de prévoir.
- Erreur de trois prévisions (nRMSE : erreur quadratique moyenne rapportée à la moyenne des observations) Signal simulé Recopier la dernière valeur Prévoir la moyenne Régression linéaire
- Reste longtemps dans le même état 11,9 % 47,0 % 11,8 %
- Change au hasard, sans mémoire 71,7 % 50,5 % 50,5 %
- Simulation ci-dessous, préréglages « Presque prévisible » et « Sans mémoire », prévision à un pas, série n° 42. Valeurs simulées, pas des mesures solaires.
+ Le signal garde sa mémoire
+ 11,8 %
+ erreur de la régression linéaire
+ Recopier la dernière valeur
+ 11,9 %
+ Prévoir la moyenne
+ 47,0 %
+ Le signal change au hasard
+ 50,5 %
+ erreur de la régression linéaire
+ Recopier la dernière valeur
+ 71,7 %
+ Prévoir la moyenne
+ 50,5 %
+ Erreur : nRMSE, l'erreur quadratique moyenne rapportée à la moyenne des observations. Simulation ci-dessous, préréglages « Presque prévisible » et « Sans mémoire », prévision à un pas. Valeurs simulées, pas des mesures solaires.
  Ce que cela veut dire
  Quand le signal a de la mémoire, recopier la dernière valeur fait déjà aussi bien que la régression.
  Quand il n'en a pas, recopier la dernière valeur est le pire choix, et la régression ne fait pas mieux qu'une moyenne.
@@ -2009,10 +2020,21 @@ URL: https://www.cyrilvoyant.com/stories/variability-memory-forecastability/
 
 Why the same model succeeds here and fails there
  The same linear regression has an error of 11.8 % on a signal that keeps its memory, and 50.5 % on a signal that has none. The model did not change: the signal did. Before judging a model or making it more complex, find out what the signal allows you to forecast.
- Error of three forecasts (nRMSE: root mean squared error divided by the mean of the observations) Simulated signal Copy the last value Forecast the mean Linear regression
- Stays in the same state for a long time 11.9 % 47.0 % 11.8 %
- Changes at random, no memory 71.7 % 50.5 % 50.5 %
- Simulation below, presets “Almost predictable” and “No memory”, forecast one step ahead, series no. 42. Simulated values, not solar measurements.
+ The signal keeps its memory
+ 11.8 %
+ linear regression error
+ Copy the last value
+ 11.9 %
+ Forecast the mean
+ 47.0 %
+ The signal changes at random
+ 50.5 %
+ linear regression error
+ Copy the last value
+ 71.7 %
+ Forecast the mean
+ 50.5 %
+ Error: nRMSE, the root mean squared error divided by the mean of the observations. Simulation below, presets “Almost predictable” and “No memory”, forecast one step ahead. Simulated values, not solar measurements.
  What this means
  When the signal has memory, copying the last value already does as well as the regression.
  When it has none, copying the last value is the worst choice, and the regression does no better than a mean.
@@ -2108,7 +2130,9 @@ Atténuation et couche de demi-atténuation : simulation interactive
  Une expérience du cours de Cyril Voyant, à manipuler dans le navigateur. Revenir au chapitre et aux diapositives · Choisir une autre expérience .
  Repères de lecture. N₀ est l’intensité du faisceau avant le matériau, N l’intensité non diffusée transmise et x l’épaisseur traversée. μ est le coefficient d’atténuation linéique. La CDA (couche de demi-atténuation) est l’épaisseur qui divise cette intensité par deux. exp est la fonction exponentielle et ln le logarithme naturel.
  JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. La relation à comprendre
- N/N₀=exp(−μx)=2^(−x/CDA), avec CDA=ln(2)/μ.
+ N N 0 = e − μ x = 2 − x / CDA
+ CDA = ln 2 μ
+ CDA : couche de demi-atténuation.
  Essayer et interpréter
  Avec une CDA de 2 cm et une épaisseur de 6 cm, le modèle transmet 1/8, soit 12,5 %. Doublez l’épaisseur pour distinguer une décroissance exponentielle d’une soustraction linéaire.
  Hypothèses et limites
@@ -2124,7 +2148,9 @@ Congélation : énergie sensible, chaleur latente et puissance
  Une expérience du cours de Cyril Voyant, à manipuler dans le navigateur. Revenir au chapitre et aux diapositives · Choisir une autre expérience .
  Repères de lecture. Q est l’énergie à retirer, m la masse et Δh la variation d’enthalpie massique correspondant au refroidissement et au gel. P est la puissance moyenne à fournir pendant la durée Δt. Dans mcΔT, c est la capacité thermique massique et ΔT une variation de température : ce terme seul ne représente pas le changement de phase.
  JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. La relation à comprendre
- Q=mΔh ; Δh additionne refroidissement avant congélation, chaleur latente et refroidissement après congélation. Puissance moyenne P=Q/Δt.
+ Q = m Δ h
+ P = Q Δ t
+ Δh additionne le refroidissement avant congélation, la chaleur latente et le refroidissement après congélation. P est la puissance moyenne.
  Essayer et interpréter
  À énergie totale inchangée, doubler la durée divise la puissance moyenne par deux. Faites varier la teneur en eau et la part effectivement gelée pour isoler le rôle de la chaleur latente.
  Hypothèses et limites
@@ -2140,7 +2166,9 @@ Machine frigorifique : COP et limite de Carnot
  Une expérience du cours de Cyril Voyant, à manipuler dans le navigateur. Revenir au chapitre et aux diapositives · Choisir une autre expérience .
  Repères de lecture. COP signifie coefficient de performance : chaleur extraite de la source froide par unité de travail reçu. Tf et Tc sont respectivement les températures des sources froide et chaude, en kelvins. La limite de Carnot décrit le maximum réversible ; un COP peut dépasser 1 sans être un rendement énergétique supérieur à 100 %.
  JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. La relation à comprendre
- COPCarnot=Tf/(Tc−Tf), avec Tf et Tc en kelvins ; COP frigorifique=chaleur utile extraite/travail reçu.
+ COP Carnot = T f T c − T f
+ COP frigorifique = chaleur utile extraite travail reçu
+ Températures en kelvins.
  Essayer et interpréter
  Source froide à −10 °C et source chaude à +40 °C : COP maximal = 263,15/(313,15−263,15) ≈ 5,26. Avec des sources à −40 °C et +20 °C, il vaut 233,15/60 ≈ 3,89. La courbe montre la source froide de −40 à +10 °C, pour la source chaude choisie. La borne est un maximum théorique du rapport chaleur extraite/travail fourni, pas une borne de température ni un rendement en pourcentage.
  Hypothèses et limites
@@ -2156,7 +2184,9 @@ Corrélation, significativité et R² : animation pour les distinguer
  Une expérience du cours de Cyril Voyant, à manipuler dans le navigateur. Revenir au chapitre et aux diapositives · Choisir une autre expérience .
  Repères de lecture. r est le coefficient de corrélation de Pearson dans le nuage ; n est l’effectif et t la statistique du test de corrélation nulle. ρ désigne la corrélation dans la population supposée. R² est le coefficient de détermination : la part de variation décrite par la droite ajustée avec constante. SSE est la somme des carrés des résidus et SST la somme des carrés des écarts à la moyenne. La p-value mesure l’extrémité du résultat sous l’hypothèse ρ = 0, pas l’importance du lien.
  JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. La relation à comprendre
- t=r√[(n−2)/(1−r²)] ; en régression simple avec constante, R²=r²=1−SSE/SST.
+ t = r n − 2 1 − r 2
+ R 2 = r 2 = 1 − SSE SST
+ En régression simple avec constante.
  Essayer et interpréter
  Avec r=0,10, R² vaut toujours 1 %. Passer de n=30 à n=1000 fait passer la p-value théorique d’environ 0,599 à 0,0015, sans améliorer la part de variation expliquée.
  Hypothèses et limites
@@ -2172,7 +2202,10 @@ Courbe ROC interactive : sensibilité, spécificité et prévalence
  Une expérience du cours de Cyril Voyant, à manipuler dans le navigateur. Revenir au chapitre et aux diapositives · Choisir une autre expérience .
  Repères de lecture. La courbe ROC (Receiver Operating Characteristic) relie la sensibilité Se au taux de faux positifs 1−Sp lorsque le seuil varie. VP et VN sont les vrais positifs et négatifs ; FP et FN les faux positifs et négatifs. Sp est la spécificité et p la prévalence, la proportion de personnes ayant la maladie. VPP et VPN sont les valeurs prédictives positive et négative ; AUC est l’aire sous la courbe ROC.
  JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. La relation à comprendre
- Se=VP/(VP+FN), Sp=VN/(VN+FP), VPP=Se·p/[Se·p+(1−Sp)(1−p)].
+ Se = VP VP + FN
+ Sp = VN VN + FP
+ VPP = Se · p Se · p + ( 1 − Sp ) ( 1 − p )
+ p est la prévalence.
  Essayer et interpréter
  Changez le seuil pour déplacer le point sur la ROC. Changez ensuite seulement la prévalence : dans ce modèle, la sensibilité et la spécificité restent les mêmes, mais les valeurs prédictives changent.
  Hypothèses et limites
@@ -2188,7 +2221,9 @@ Effet Compton : angle, photon diffusé et électron de recul
  Une expérience du cours de Cyril Voyant, à manipuler dans le navigateur. Revenir au chapitre et aux diapositives · Choisir une autre expérience .
  Repères de lecture. E₀ est l’énergie du photon incident, E′ celle du photon diffusé et K l’énergie cinétique reçue par l’électron. θ est l’angle entre les directions du photon avant et après diffusion. L’énergie au repos de l’électron, mₑc², vaut environ 511 keV ; keV signifie kiloélectronvolt.
  JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. La relation à comprendre
- E′=E₀/[1+(E₀/511)(1−cosθ)] en keV ; K=E₀−E′.
+ E ′ = E 0 1 + E 0 511 ( 1 − cos θ )
+ K = E 0 − E ′
+ Énergies en keV.
  Essayer et interpréter
  Avec 255,5 keV et une rétrodiffusion à 180°, le photon conserve 127,75 keV et l’électron reçoit 127,75 keV. Revenez à 0° : le transfert d’énergie s’annule dans ce modèle.
  Hypothèses et limites
@@ -2204,7 +2239,8 @@ Régression : intervalle de confiance et intervalle de prévision
  Une expérience du cours de Cyril Voyant, à manipuler dans le navigateur. Revenir au chapitre et aux diapositives · Choisir une autre expérience .
  Repères de lecture. IC signifie intervalle de confiance de la moyenne et IP intervalle de prévision d’une observation. x₀ est la valeur où l’on prévoit ; ŷ₀ est la moyenne prévue par la droite. x̄ est la moyenne des x observés, n leur nombre et Sxx la somme des carrés des écarts x−x̄. se est l’écart-type résiduel estimé ; t est le quantile de Student retenu pour la bande à 95 %, avec n−2 degrés de liberté.
  JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. La relation à comprendre
- IC : ŷ₀±t se√[1/n+(x₀−x̄)²/Sxx]. IP individuel : ajouter 1 sous la racine.
+ y ^ 0 ± t s e 1 n + ( x 0 − x ¯ ) 2 S xx
+ Intervalle de confiance de la moyenne. Pour l'intervalle de prédiction individuel, ajouter 1 sous la racine.
  Essayer et interpréter
  Pour n=20, se=1 et x₀ au centre du nuage, les demi-largeurs sont environ 0,47 pour la moyenne et 2,15 pour une observation future. Déplacez x₀ hors des valeurs observées pour voir l’avertissement d’extrapolation.
  Hypothèses et limites
@@ -2220,7 +2256,9 @@ Loi normale interactive : aire, probabilité et score z
  Une expérience du cours de Cyril Voyant, à manipuler dans le navigateur. Revenir au chapitre et aux diapositives · Choisir une autre expérience .
  Repères de lecture. x est une valeur, μ la moyenne et σ l’écart-type. Le score z mesure à combien d’écarts-types de la moyenne se trouve x. Z est la variable normale centrée réduite, de moyenne 0 et d’écart-type 1 ; Φ(z) est la probabilité de rester en dessous de z. P signifie probabilité et N(0,1) désigne cette loi normale.
  JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. La relation à comprendre
- z=(x−μ)/σ ; Φ(z)=P(Z≤z), avec Z∼N(0,1). Ici σ désigne l’écart-type.
+ z = x − μ σ
+ Φ ( z ) = P ( Z ≤ z )
+ Avec Z ∼ N(0, 1). Ici σ désigne l'écart-type.
  Essayer et interpréter
  À z=1,96, l’aire à gauche est voisine de 0,975. La zone centrale de −1,96 à +1,96 contient environ 95 % d’une loi normale. Essayez aussi le calcul inverse depuis la probabilité.
  Hypothèses et limites
@@ -2236,7 +2274,10 @@ Moteur thermique et Carnot : animation du cycle et bilan d’énergie
  Une expérience du cours de Cyril Voyant, à manipuler dans le navigateur. Revenir au chapitre et aux diapositives · Choisir une autre expérience .
  Repères de lecture. η est le rendement, c’est-à-dire le travail utile W divisé par la chaleur reçue Qchaud. Tf et Tc sont respectivement les températures des sources froide et chaude, en kelvins. Qrejetée est la chaleur rendue à la source froide. Dans le diagramme T–S, T est la température et S l’entropie.
  JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. La relation à comprendre
- ηCarnot=1−Tf/Tc, W=ηQchaud, Qrejetée=Qchaud−W ; températures absolues en kelvins.
+ η Carnot = 1 − T f T c
+ W = η Q chaud
+ Q rejetée = Q chaud − W
+ Températures absolues, en kelvins.
  Essayer et interpréter
  Entre 400 °C et 20 °C, la borne réversible vaut environ 56,5 %. Sur 1000 J reçus, elle autorise environ 564,5 J de travail. Suivez les quatre étapes sur le diagramme température–entropie.
  Hypothèses et limites
@@ -2252,7 +2293,10 @@ Onde électromagnétique : animation des champs E et B
  Une expérience du cours de Cyril Voyant, à manipuler dans le navigateur. Revenir au chapitre et aux diapositives · Choisir une autre expérience .
  Repères de lecture. E et B sont les champs électrique et magnétique ; E₀ est l’amplitude électrique. x est la position et t le temps ; ω est la pulsation, k le nombre d’onde, ν la fréquence et λ la longueur d’onde. c est la vitesse de la lumière dans le vide, ε₀ sa permittivité électrique et I l’intensité moyenne transportée.
  JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. La relation à comprendre
- E(x,t)=E₀ cos(ωt−kx), B=E/c, λ=c/ν et I=ε₀cE₀²/2.
+ E ( x , t ) = E 0 cos ( ω t − k x )
+ B = E c
+ λ = c ν
+ I = ε 0 c E 0 2 2
  Essayer et interpréter
  À 50 MHz dans le vide, la longueur d’onde est voisine de 6 m et la période vaut 20 ns. Avancez d’un huitième de période pour suivre un point fixe, puis lancez la lecture ralentie.
  Hypothèses et limites
@@ -2268,7 +2312,9 @@ Régression et point influent : déplacer une observation
  Une expérience du cours de Cyril Voyant, à manipuler dans le navigateur. Revenir au chapitre et aux diapositives · Choisir une autre expérience .
  Repères de lecture. b₁ est la pente et b₀ l’ordonnée à l’origine de la droite des moindres carrés. x̄ et ȳ sont les moyennes ; sₓ et sᵧ les écarts-types des deux variables. cov(x,y) est leur covariance et r leur corrélation de Pearson. La p-value du test de corrélation nulle ne remplace pas l’examen du nuage, des résidus et du point influent.
  JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. La relation à comprendre
- b₁=cov(x,y)/sₓ², b₀=ȳ−b₁x̄ ; r=cov(x,y)/(sₓsᵧ).
+ b 1 = cov ( x , y ) s x 2
+ b 0 = y ¯ − b 1 x ¯
+ r = cov ( x , y ) s x s y
  Essayer et interpréter
  Déplacez le point orange, puis désactivez-le. Comparez les deux droites et le coefficient r, en regardant surtout sa position dans le nuage et non seulement la p-value.
  Hypothèses et limites
@@ -2284,7 +2330,10 @@ Refroidissement d’un aliment : nombre de Biot et température à cœur
  Une expérience du cours de Cyril Voyant, à manipuler dans le navigateur. Revenir au chapitre et aux diapositives · Choisir une autre expérience .
  Repères de lecture. Bi est le nombre de Biot, qui compare les résistances thermiques de conduction interne et de convection en surface. h est le coefficient de convection, Lc une longueur caractéristique et λ la conductivité thermique. T(t) est la température au temps t ; Ti la température initiale et T∞ celle du milieu extérieur. τ est le temps caractéristique du modèle uniforme, m la masse, cp la capacité thermique massique et A la surface d’échange.
  JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. La relation à comprendre
- Bi=hLc/λ ; modèle uniforme : T(t)=T∞+(Ti−T∞)exp(−t/τ), τ=mcp/(hA).
+ Bi = h L c λ
+ T ( t ) = T ∞ + ( T i − T ∞ ) e − t / τ
+ τ = m c p h A
+ Modèle à température uniforme pour T(t).
  Essayer et interpréter
  Avec h=25 W/m²/K, Lc=0,02 m et λ=0,5 W/m/K, Bi=1 : les gradients internes ne sont pas négligeables. Augmentez λ pour rapprocher les températures de surface et à cœur.
  Hypothèses et limites
@@ -2353,7 +2402,8 @@ Test du χ² : dé équilibré, observés, attendus et tableau 2×2
  Une expérience du cours de Cyril Voyant, à manipuler dans le navigateur. Revenir au chapitre et aux diapositives · Choisir une autre expérience .
  Repères de lecture. O est un effectif observé et E l’effectif attendu sous l’hypothèse testée ; N est l’effectif total. Dans un tableau, Li et Cj sont les totaux de la ligne i et de la colonne j ; Eij est l’effectif attendu de leur cellule. Σ signifie que l’on additionne les contributions des cellules. χ² désigne la statistique de test et ddl les degrés de liberté ; la p-value correspond à sa probabilité de dépassement sous l’hypothèse.
  JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. La relation à comprendre
- χ²=Σ(O−E)²/E. Dé équilibré : E=N/6, 5 ddl. Indépendance 2×2 : Eij=LiCj/N, 1 ddl.
+ χ 2 = ∑ ( O − E ) 2 E
+ Dé équilibré : E = N/6, 5 degrés de liberté. Indépendance dans un tableau 2×2 : E = (total de ligne × total de colonne)/N, 1 degré de liberté.
  Essayer et interpréter
  Pour 120 lancers d’un dé équilibré, on attend 20 résultats par face. Modifiez une face, puis regardez sa contribution. Le second exemple reprend le tableau 75/25 et 65/35 du cours : p≈0,1228 sans correction de continuité.
  Hypothèses et limites
@@ -2369,7 +2419,10 @@ Test de Student interactif : deux moyennes, dispersion et p-value
  Une expérience du cours de Cyril Voyant, à manipuler dans le navigateur. Revenir au chapitre et aux diapositives · Choisir une autre expérience .
  Repères de lecture. Δ est la différence entre les moyennes ; n₁ et n₂ sont les effectifs des deux groupes ; s₁ et s₂ leurs écarts-types. sₚ est l’écart-type commun estimé et ν le nombre de degrés de liberté. t mesure l’écart entre moyennes en unités d’erreur standard. La p-value est la probabilité, sous l’hypothèse de moyennes égales et le modèle du test, d’obtenir un écart au moins aussi extrême ; ce n’est pas la probabilité que cette hypothèse soit vraie.
  JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. La relation à comprendre
- Test de Student à variance commune : t=Δ/[sₚ√(1/n₁+1/n₂)] ; sₚ²=[(n₁−1)s₁²+(n₂−1)s₂²]/(n₁+n₂−2), ν=n₁+n₂−2.
+ t = Δ s p 1 n 1 + 1 n 2
+ s p 2 = ( n 1 − 1 ) s 1 2 + ( n 2 − 1 ) s 2 2 n 1 + n 2 − 2
+ ν = n 1 + n 2 − 2
+ Test de Student à variance commune.
  Essayer et interpréter
  Gardez la différence et la dispersion constantes, puis augmentez l’effectif : la p-value change alors que l’écart entre les moyennes reste le même. Avec une différence nulle, t=0 et p=1.
  Hypothèses et limites
@@ -6467,7 +6520,9 @@ Attenuation and half-value layer: interactive simulator
  An experiment from Cyril Voyant’s course, running in your browser. Full course and slides (French) · Choose another experiment .
  Reading the quantities. N₀ is the beam intensity before the material, N the transmitted uncollided intensity and x the thickness. μ is the linear attenuation coefficient. HVL means half-value layer, the thickness that halves this intensity. exp is the exponential function and ln the natural logarithm.
  JavaScript is needed for the controls and animation. The explanation, equations, example and limitations below remain available. The relationship to understand
- N/N₀=exp(−μx)=2^(−x/HVL), with HVL=ln(2)/μ. HVL means half-value layer, the thickness halving the uncollided beam intensity.
+ N N 0 = e − μ x = 2 − x / HVL
+ HVL = ln 2 μ
+ HVL: half-value layer.
  Try it and interpret
  For a half-value layer of 2 cm and a thickness of 6 cm, the model transmits 1/8, or 12.5%. Double the thickness to distinguish exponential decay from linear subtraction.
  Assumptions and limitations
@@ -6483,7 +6538,10 @@ Food cooling: Biot number and core temperature
  An experiment from Cyril Voyant’s course, running in your browser. Full course and slides (French) · Choose another experiment .
  Reading the quantities. Bi is the Biot number, comparing internal conduction resistance with surface convection resistance. h is the convection coefficient, Lc a characteristic length and λ thermal conductivity. T(t) is temperature at time t; Ti the initial temperature and T∞ the surrounding-medium temperature. τ is the uniform-model time constant, m mass, cp specific heat capacity and A heat-transfer area.
  JavaScript is needed for the controls and animation. The explanation, equations, example and limitations below remain available. The relationship to understand
- Bi=hLc/λ; lumped model: T(t)=T∞+(Ti−T∞)exp(−t/τ), τ=mcp/(hA).
+ Bi = h L c λ
+ T ( t ) = T ∞ + ( T i − T ∞ ) e − t / τ
+ τ = m c p h A
+ Uniform-temperature model for T(t).
  Try it and interpret
  With h=25 W/m²/K, Lc=0.02 m and λ=0.5 W/m/K, Bi=1: internal gradients are not negligible. Increase λ to bring surface and core temperatures closer together.
  Assumptions and limitations
@@ -6499,7 +6557,10 @@ Heat engine and Carnot limit: cycle and energy balance
  An experiment from Cyril Voyant’s course, running in your browser. Full course and slides (French) · Choose another experiment .
  Reading the quantities. η is efficiency: useful work W divided by heat received Qhot. Tcold and Thot are the cold- and hot-reservoir temperatures in kelvins. Qrejected is the heat returned to the cold reservoir. In the T–S diagram, T is temperature and S is entropy.
  JavaScript is needed for the controls and animation. The explanation, equations, example and limitations below remain available. The relationship to understand
- ηCarnot=1−Tcold/Thot, W=ηQhot, Qrejected=Qhot−W; absolute temperatures in kelvins.
+ η Carnot = 1 − T cold T hot
+ W = η Q hot
+ Q rejected = Q hot − W
+ Absolute temperatures, in kelvins.
  Try it and interpret
  Between 400 °C and 20 °C, the reversible limit is about 56.5%. For 1000 J of heat received, it allows about 564.5 J of work. Follow the four stages on the temperature–entropy diagram.
  Assumptions and limitations
@@ -6515,7 +6576,8 @@ Chi-square test: observed counts, expected counts and contributions
  An experiment from Cyril Voyant’s course, running in your browser. Full course and slides (French) · Choose another experiment .
  Reading the quantities. O is an observed count and E the count expected under the tested hypothesis; N is the total count. Ri and Cj are the totals of row i and column j; Eij is their expected cell count. Σ means summing the cell contributions. χ² is the test statistic, and the p-value is its upper-tail probability under the hypothesis; degrees of freedom determine the reference distribution.
  JavaScript is needed for the controls and animation. The explanation, equations, example and limitations below remain available. The relationship to understand
- χ²=Σ(O−E)²/E. Fair die: E=N/6, 5 degrees of freedom. Independence in a 2×2 table: Eij=RiCj/N, 1 degree of freedom.
+ χ 2 = ∑ ( O − E ) 2 E
+ Fair die: E = N/6, 5 degrees of freedom. Independence in a 2×2 table: E = (row total × column total)/N, 1 degree of freedom.
  Try it and interpret
  For 120 throws of a fair die, expect 20 occurrences of each face. Change one face and inspect its contribution. The second example uses the course table 75/25 and 65/35: p≈0.1228 without continuity correction.
  Assumptions and limitations
@@ -6531,7 +6593,9 @@ Compton scattering: angle and energy sharing
  An experiment from Cyril Voyant’s course, running in your browser. Full course and slides (French) · Choose another experiment .
  Reading the quantities. E₀ is the incident photon energy, E′ the scattered photon energy and K the kinetic energy received by the electron. θ is the angle between the photon directions before and after scattering. The electron rest energy, mₑc², is approximately 511 keV; keV means kiloelectronvolt.
  JavaScript is needed for the controls and animation. The explanation, equations, example and limitations below remain available. The relationship to understand
- E′=E₀/[1+(E₀/511)(1−cosθ)] in keV; K=E₀−E′.
+ E ′ = E 0 1 + E 0 511 ( 1 − cos θ )
+ K = E 0 − E ′
+ Energies in keV.
  Try it and interpret
  For an incident photon of 255.5 keV scattered through 180°, the photon retains 127.75 keV and the electron receives 127.75 keV. Return to 0°: the energy transfer vanishes in this model.
  Assumptions and limitations
@@ -6547,7 +6611,9 @@ Correlation, significance and R²: distinguish the concepts
  An experiment from Cyril Voyant’s course, running in your browser. Full course and slides (French) · Choose another experiment .
  Reading the quantities. r is the Pearson correlation coefficient in the scatter; n is sample size and t the zero-correlation test statistic. ρ denotes correlation in the assumed population. R² is the coefficient of determination: the share of variation described by the fitted line with an intercept. SSE is the sum of squared residuals and SST the sum of squared deviations from the mean. The p-value measures how extreme the result is under ρ = 0, not the importance of the association.
  JavaScript is needed for the controls and animation. The explanation, equations, example and limitations below remain available. The relationship to understand
- t=r√[(n−2)/(1−r²)]; for simple linear regression with an intercept, R²=r²=1−SSE/SST.
+ t = r n − 2 1 − r 2
+ R 2 = r 2 = 1 − SSE SST
+ In simple regression with an intercept.
  Try it and interpret
  With r=0.10, R² always equals 1%. Increasing n from 30 to 1000 changes the theoretical p-value from about 0.599 to 0.0015, without increasing the proportion of variation explained.
  Assumptions and limitations
@@ -6563,7 +6629,10 @@ Electromagnetic wave: electric and magnetic fields
  An experiment from Cyril Voyant’s course, running in your browser. Full course and slides (French) · Choose another experiment .
  Reading the quantities. E and B are the electric and magnetic fields; E₀ is the electric-field amplitude. x is position and t is time; ω is angular frequency, k the wave number, ν frequency and λ wavelength. c is the speed of light in vacuum, ε₀ the vacuum permittivity and I the mean transported intensity.
  JavaScript is needed for the controls and animation. The explanation, equations, example and limitations below remain available. The relationship to understand
- E(x,t)=E₀ cos(ωt−kx), B=E/c, λ=c/ν and I=ε₀cE₀²/2.
+ E ( x , t ) = E 0 cos ( ω t − k x )
+ B = E c
+ λ = c ν
+ I = ε 0 c E 0 2 2
  Try it and interpret
  At 50 MHz in vacuum, the wavelength is about 6 m and the period is 20 ns. Advance by one eighth of a period to follow a fixed position, then start the slow-motion animation.
  Assumptions and limitations
@@ -6579,7 +6648,9 @@ Freezing: sensible heat, latent heat and power
  An experiment from Cyril Voyant’s course, running in your browser. Full course and slides (French) · Choose another experiment .
  Reading the quantities. Q is energy to remove, m is mass and Δh is the specific enthalpy change corresponding to cooling and freezing. P is average power over duration Δt. In mcΔT, c is specific heat capacity and ΔT a temperature change: this term alone does not represent the phase change.
  JavaScript is needed for the controls and animation. The explanation, equations, example and limitations below remain available. The relationship to understand
- Q=mΔh; Δh adds cooling before freezing, latent heat and cooling after freezing. Average power P=Q/Δt.
+ Q = m Δ h
+ P = Q Δ t
+ Δh adds cooling before freezing, latent heat and cooling after freezing. P is the average power.
  Try it and interpret
  With the total energy unchanged, doubling the duration halves the average power. Change water content and the fraction actually frozen to isolate the contribution of latent heat.
  Assumptions and limitations
@@ -6595,7 +6666,9 @@ Regression and an influential point: move an observation
  An experiment from Cyril Voyant’s course, running in your browser. Full course and slides (French) · Choose another experiment .
  Reading the quantities. b₁ is the slope and b₀ the intercept of the least-squares line. x̄ and ȳ are means; sₓ and sᵧ are the variables’ standard deviations. cov(x,y) is their covariance and r their Pearson correlation. The zero-correlation p-value does not replace inspecting the scatter, residuals and influential point.
  JavaScript is needed for the controls and animation. The explanation, equations, example and limitations below remain available. The relationship to understand
- b₁=cov(x,y)/sₓ², b₀=ȳ−b₁x̄; r=cov(x,y)/(sₓsᵧ).
+ b 1 = cov ( x , y ) s x 2
+ b 0 = y ¯ − b 1 x ¯
+ r = cov ( x , y ) s x s y
  Try it and interpret
  Move the orange point, then turn it off. Compare the two lines and r, paying attention to its position in the scatter rather than only to the p-value.
  Assumptions and limitations
@@ -6611,7 +6684,9 @@ Interactive normal distribution: area, probability and z-score
  An experiment from Cyril Voyant’s course, running in your browser. Full course and slides (French) · Choose another experiment .
  Reading the quantities. x is a value, μ the mean and σ the standard deviation. The z-score measures how many standard deviations x lies from the mean. Z is a standard normal variable, with mean 0 and standard deviation 1; Φ(z) is the probability of being below z. P denotes probability and N(0,1) denotes this normal distribution.
  JavaScript is needed for the controls and animation. The explanation, equations, example and limitations below remain available. The relationship to understand
- z=(x−μ)/σ; Φ(z)=P(Z≤z), with Z∼N(0,1). Here σ is the standard deviation.
+ z = x − μ σ
+ Φ ( z ) = P ( Z ≤ z )
+ With Z ∼ N(0, 1). Here σ is the standard deviation.
  Try it and interpret
  At z=1.96 the area to the left is approximately 0.975. The central interval from −1.96 to +1.96 contains about 95% of a standard normal distribution. Try the inverse calculation from a probability.
  Assumptions and limitations
@@ -6627,7 +6702,9 @@ Refrigeration: coefficient of performance and Carnot limit
  An experiment from Cyril Voyant’s course, running in your browser. Full course and slides (French) · Choose another experiment .
  Reading the quantities. COP means coefficient of performance: heat removed from the cold reservoir per unit of work supplied. Tcold and Thot are the cold- and hot-reservoir temperatures in kelvins. The Carnot limit is a reversible maximum; a COP above 1 is not an energy-conversion efficiency above 100%.
  JavaScript is needed for the controls and animation. The explanation, equations, example and limitations below remain available. The relationship to understand
- COPCarnot=Tcold/(Thot−Tcold), with absolute temperatures in kelvins; refrigeration COP=useful heat extracted/work supplied.
+ COP Carnot = T cold T hot − T cold
+ refrigeration COP = useful heat extracted work supplied
+ Temperatures in kelvins.
  Try it and interpret
  Cold reservoir at −10 °C and hot reservoir at +40 °C: maximum COP=263.15/(313.15−263.15)≈5.26. Between −40 °C and +20 °C it is 233.15/60≈3.89. The curve shows the cold side from −40 to +10 °C, for the chosen hot side. The bound is a theoretical maximum of heat extracted per work supplied, not a temperature bound or a percentage efficiency.
  Assumptions and limitations
@@ -6643,7 +6720,8 @@ Regression: confidence interval and prediction interval
  An experiment from Cyril Voyant’s course, running in your browser. Full course and slides (French) · Choose another experiment .
  Reading the quantities. CI means a confidence interval for the mean; a prediction interval concerns a new observation. x₀ is the predictor value of interest and ŷ₀ the mean predicted by the line. x̄ is the mean observed x, n is sample size and Sxx the sum of squared deviations x−x̄. se is the estimated residual standard error; t is the Student quantile used for the 95% band, with n−2 degrees of freedom.
  JavaScript is needed for the controls and animation. The explanation, equations, example and limitations below remain available. The relationship to understand
- Mean CI: ŷ₀±t se√[1/n+(x₀−x̄)²/Sxx]. Individual prediction interval: add 1 inside the square root. se is the residual standard error.
+ y ^ 0 ± t s e 1 n + ( x 0 − x ¯ ) 2 S xx
+ Confidence interval of the mean. For the individual prediction interval, add 1 under the root.
  Try it and interpret
  For n=20, se=1 and x₀ at the center of the scatter, the half-widths are about 0.47 for the mean and 2.15 for a future observation. Move x₀ beyond the observed range to see the extrapolation warning.
  Assumptions and limitations
@@ -6659,7 +6737,10 @@ Interactive ROC curve: sensitivity, specificity and prevalence
  An experiment from Cyril Voyant’s course, running in your browser. Full course and slides (French) · Choose another experiment .
  Reading the quantities. ROC means Receiver Operating Characteristic: sensitivity Se is plotted against the false-positive rate 1−Sp as the threshold varies. TP and TN are true positives and negatives; FP and FN are false positives and negatives. Sp is specificity and p is prevalence, the proportion with the disease. PPV and NPV are positive and negative predictive values; AUC is the area under the ROC curve.
  JavaScript is needed for the controls and animation. The explanation, equations, example and limitations below remain available. The relationship to understand
- Se=TP/(TP+FN), Sp=TN/(TN+FP), PPV=Se·p/[Se·p+(1−Sp)(1−p)]. NPV is the negative predictive value; AUC is the area under the ROC curve.
+ Se = TP TP + FN
+ Sp = TN TN + FP
+ PPV = Se · p Se · p + ( 1 − Sp ) ( 1 − p )
+ p is the prevalence.
  Try it and interpret
  Move the threshold to move the point on the ROC curve. Then change prevalence alone: sensitivity and specificity stay unchanged in this model, while positive and negative predictive values change.
  Assumptions and limitations
@@ -6675,7 +6756,10 @@ Interactive t-test: means, variability and p-values
  An experiment from Cyril Voyant’s course, running in your browser. Full course and slides (French) · Choose another experiment .
  Reading the quantities. Δ is the difference between the means; n₁ and n₂ are the group sizes; s₁ and s₂ their standard deviations. sₚ is the estimated common standard deviation and ν the degrees of freedom. t expresses the mean difference in standard-error units. The p-value is the probability, assuming equal means and the test model, of a result at least as extreme; it is not the probability that the hypothesis is true.
  JavaScript is needed for the controls and animation. The explanation, equations, example and limitations below remain available. The relationship to understand
- Pooled-variance t-test: t=Δ/[sₚ√(1/n₁+1/n₂)]; sₚ²=[(n₁−1)s₁²+(n₂−1)s₂²]/(n₁+n₂−2), ν=n₁+n₂−2 degrees of freedom.
+ t = Δ s p 1 n 1 + 1 n 2
+ s p 2 = ( n 1 − 1 ) s 1 2 + ( n 2 − 1 ) s 2 2 n 1 + n 2 − 2
+ ν = n 1 + n 2 − 2
+ Student's t-test with pooled variance.
  Try it and interpret
  Keep the difference and variability fixed, then increase the sample size: the p-value changes while the difference between means stays the same. With a zero difference, t=0 and p=1.
  Assumptions and limitations

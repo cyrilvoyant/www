@@ -8,13 +8,13 @@
   var fr = box.getAttribute("data-lang") === "fr";
   var L = fr ? {
     h: "Horizon", show: "Modèles affichés", metric: "Métrique", scope: "Cibles", day: "de jour", all: "jour et nuit",
-    m1: "Erreur selon l'horizon", m2: "Prévisions et observation sur quatre jours, à l'horizon choisi", obs: "observation",
+    m1: "Erreur selon l'horizon", m1n: "NICE baisse avec l'horizon parce que l'erreur de la persistance monte plus vite que celle du modèle. L'erreur elle-même monte : choisissez nRMSE pour la voir.", m2: "Prévisions et observation sur quatre jours, à l'horizon choisi", obs: "observation",
     names: { P: "persistance", Pc: "persistance cyclique (24 h avant)", BLEND: "BLEND", AR: "autorégression AR (24 h de retards)", ELM: "ELM ridge" },
     none: "Cochez au moins un modèle.", hAria: "Horizon de prévision", best: "Meilleur modèle affiché à cet horizon : ", vs: " NICE < 1 : meilleur que la persistance simple.", min: "min", kw: "kW", step: "pas de 30 min dans la fenêtre",
     table: ["Modèle", "RMSE (kW)", "nRMSE", "nMAE", "NICE₁", "NICE₂", "NICE₃"]
   } : {
     h: "Horizon", show: "Models shown", metric: "Metric", scope: "Targets", day: "daytime", all: "day and night",
-    m1: "Error against horizon", m2: "Forecasts and observation over four days, at the chosen horizon", obs: "observation",
+    m1: "Error against horizon", m1n: "NICE falls with the horizon because the error of persistence rises faster than that of the model. The error itself rises: choose nRMSE to see it.", m2: "Forecasts and observation over four days, at the chosen horizon", obs: "observation",
     names: { P: "persistence", Pc: "cyclic persistence (24 h before)", BLEND: "BLEND", AR: "autoregression AR (24 h of lags)", ELM: "ridge ELM" },
     none: "Select at least one model.", hAria: "Forecast horizon", best: "Best model shown at this horizon: ", vs: " NICE < 1: better than simple persistence.", min: "min", kw: "kW", step: "30-min step in the window",
     table: ["Model", "RMSE (kW)", "nRMSE", "nMAE", "NICE₁", "NICE₂", "NICE₃"]
@@ -35,7 +35,7 @@
       '<fieldset class="fc-mods"><legend>' + L.show + "</legend>" + D.models.map(function (m) {
         return '<label><input type="checkbox" value="' + m + '"' + (m === "P" || m === "AR" || m === "ELM" ? " checked" : "") + '> <i style="background:' + COL[m] + '"></i>' + L.names[m] + "</label>";
       }).join("") + "</fieldset>" +
-      '<h3>' + L.m1 + '</h3><svg class="fc-svg fc-1" viewBox="0 0 640 260" role="img" aria-label="' + L.m1 + '"></svg>' +
+      '<h3>' + L.m1 + '</h3><svg class="fc-svg fc-1" viewBox="0 0 640 260" role="img" aria-label="' + L.m1 + '"></svg><p class="fc-m1n">' + L.m1n + '</p>' +
       '<p class="fc-out" aria-live="polite"></p>' +
       '<h3>' + L.m2 + '</h3><svg class="fc-svg fc-2" viewBox="0 0 640 240" role="img" aria-label="' + L.m2 + '"></svg>' +
       '<div class="fc-tw"><table class="fc-t"></table></div>';
@@ -77,7 +77,7 @@
     box.querySelector(".fc-h output").textContent = h * 30 >= 60 ? f(h * 0.5, 1) + " h" : h * 30 + " " + L.min;
     chart1(box.querySelector(".fc-1"), key, hi, mods); chart2(box.querySelector(".fc-2"), hi, mods);
     // Best among the models shown, for the chosen metric (lower is better for all six).
-    var sc = box.querySelector(".fc-s").value, mk = box.querySelector(".fc-m").value, best = mods.slice().sort(function (a, b) { return D.metrics[a][key][hi] - D.metrics[b][key][hi]; })[0];
+    box.querySelector(".fc-m1n").hidden = !/NICE/.test(box.querySelector(".fc-m").value);var sc = box.querySelector(".fc-s").value, mk = box.querySelector(".fc-m").value, best = mods.slice().sort(function (a, b) { return D.metrics[a][key][hi] - D.metrics[b][key][hi]; })[0];
     var mLabel = METRICS.filter(function (m) { return m[0] === mk; })[0][1];
     box.querySelector(".fc-out").innerHTML = best ? L.best + "<b>" + L.names[best] + "</b> (" + (mk === "RMSE" ? "" : mLabel + " " + f(D.metrics[best][key][hi], 3) + ", ") + "RMSE " + f(D.metrics[best]["RMSE_" + sc][hi] / 1000, 3) + " " + L.kw + ")." + L.vs : L.none;
     var rows = D.models.map(function (m) {
