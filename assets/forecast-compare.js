@@ -38,8 +38,8 @@
   };
   var COL = { P: "#9a5b13", Pc: "#8052a2", BLEND: "#0f8a7e", AR: "#b8306b", ELM: "#086b94" };
   var METRICS = fr
-    ? [["RMSE", "RMSE, en kW"], ["nRMSE", "nRMSE (RMSE / production moyenne)"], ["nMAE", "nMAE (erreur absolue / production moyenne)"], ["NICE2", "NICE² (RMSE / celle de la persistance)"], ["NICE1", "NICE¹ (erreur absolue / celle de la persistance)"], ["NICE3", "NICE³ (norme 3 / celle de la persistance)"]]
-    : [["RMSE", "RMSE, in kW"], ["nRMSE", "nRMSE (RMSE / mean output)"], ["nMAE", "nMAE (absolute error / mean output)"], ["NICE2", "NICE² (RMSE / that of persistence)"], ["NICE1", "NICE¹ (absolute error / that of persistence)"], ["NICE3", "NICE³ (norm 3 / that of persistence)"]];
+    ? [["RMSE", "RMSE, en kW"], ["nRMSE", "nRMSE (RMSE / production moyenne)"], ["nMAE", "nMAE (erreur absolue / production moyenne)"], ["NICE2", "NICE² (RMSE / celle de la persistance)"], ["NICE1", "NICE¹ (erreur absolue / celle de la persistance)"], ["NICE3", "NICE³ (erreur cubique / celle de la persistance)"]]
+    : [["RMSE", "RMSE, in kW"], ["nRMSE", "nRMSE (RMSE / mean output)"], ["nMAE", "nMAE (absolute error / mean output)"], ["NICE2", "NICE² (RMSE / that of persistence)"], ["NICE1", "NICE¹ (absolute error / that of persistence)"], ["NICE3", "NICE³ (cubic error / that of persistence)"]];
   var NICE_NAME = { NICE1: "NICE¹", NICE2: "NICE²", NICE3: "NICE³" };
   var D = null, NS = "http://www.w3.org/2000/svg", presetOn = -1, H6 = 11, M30 = 0;
   function f(v, n) { var s = v.toFixed(n); return fr ? s.replace(".", ",") : s; }

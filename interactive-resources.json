@@ -29,8 +29,8 @@
         "en": "Atmospheric neutrons and boron: explore dose scales"
       },
       "task": {
-        "fr": "Suivre une cascade schématique ; distinguer exposition du vol, dose du fantôme tumoral et distributions BSH/BPA.",
-        "en": "Follow a schematic cascade; distinguish flight exposure, tumour phantom dose and BSH/BPA distributions."
+        "fr": "Suivre une cascade schématique ; distinguer l’exposition en vol de la dose dans un modèle numérique de tumeur, et comparer deux composés boronés, BSH et BPA.",
+        "en": "Follow a schematic cascade; distinguish flight exposure from the dose in a numerical tumour model, and compare two boron carriers, BSH and BPA."
       },
       "url": {
         "fr": "https://www.cyrilvoyant.com/fr/recits/neutrons-atmospheriques-bnct/#experience",
@@ -227,8 +227,8 @@
         "en": "Simulate tunnel electricity demand — TLS"
       },
       "task": {
-        "fr": "Application hébergée : demande synthétique selon géométrie, ventilation et éclairage. Démarrage du serveur parfois nécessaire.",
-        "en": "Hosted application: synthetic demand from geometry, ventilation and lighting. The server may need to wake up."
+        "fr": "Application hébergée (Tunnel Load Simulator, TLS) : demande synthétique selon géométrie, ventilation et éclairage. Démarrage du serveur parfois nécessaire.",
+        "en": "Hosted application (Tunnel Load Simulator, TLS): synthetic demand from geometry, ventilation and lighting. The server may need to wake up."
       },
       "url": {
         "fr": "https://tunnel-load-simulator.onrender.com/",

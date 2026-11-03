@@ -2072,6 +2072,10 @@
           "anchor": "trust"
         },
         {
+          "title": "Les mots du fil",
+          "anchor": "mots"
+        },
+        {
           "title": "Et ensuite ?",
           "anchor": null
         }
@@ -4408,6 +4412,106 @@
       ]
     },
     {
+      "url": "https://www.cyrilvoyant.com/teaching/biostatistics/",
+      "title": "Biostatistics for health studies: the course in three chapters",
+      "language": "en",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "What the course contains",
+          "anchor": null
+        },
+        {
+          "title": "In brief",
+          "anchor": "brief"
+        },
+        {
+          "title": "Going further",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/teaching/biostatistics/correlation-regression/",
+      "title": "Chapter 3: correlation, linear regression and χ² tests",
+      "language": "en",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "The chapter in 10 points",
+          "anchor": "summary"
+        },
+        {
+          "title": "Significance versus explained variation",
+          "anchor": null
+        },
+        {
+          "title": "χ²: compare observed and expected counts",
+          "anchor": null
+        },
+        {
+          "title": "Regression: the mean or a future observation?",
+          "anchor": null
+        },
+        {
+          "title": "The slides (in French)",
+          "anchor": "slides"
+        },
+        {
+          "title": "Going further: questions and answers",
+          "anchor": "faq"
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/teaching/biostatistics/descriptive-statistics/",
+      "title": "Chapter 2: descriptive statistics, the normal distribution and hypothesis tests",
+      "language": "en",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "The chapter in 10 points",
+          "anchor": "summary"
+        },
+        {
+          "title": "Test a difference and read its uncertainty",
+          "anchor": null
+        },
+        {
+          "title": "The slides (in French)",
+          "anchor": "slides"
+        },
+        {
+          "title": "Going further: questions and answers",
+          "anchor": "faq"
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/teaching/biostatistics/probabilities/",
+      "title": "Chapter 1: probability, conditional probability, contingency tables and ROC curves",
+      "language": "en",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "The chapter in 10 points",
+          "anchor": "summary"
+        },
+        {
+          "title": "The slides (in French)",
+          "anchor": "slides"
+        },
+        {
+          "title": "Going further: questions and answers",
+          "anchor": "faq"
+        }
+      ]
+    },
+    {
       "url": "https://www.cyrilvoyant.com/teaching/open-courses/",
       "title": "Open courses in French: biostatistics, medical physics, industrial physics and food heat transfer",
       "language": "en",
@@ -4511,6 +4615,10 @@
         {
           "title": "Demonstrate trust",
           "anchor": "trust"
+        },
+        {
+          "title": "Words used here",
+          "anchor": "mots"
         },
         {
           "title": "Where next?",

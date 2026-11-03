@@ -15,7 +15,7 @@ About
  Radiotherapy linear accelerator and treatment-planning images, illustrating my medical physics background.
  Current research
  I study solar variability and forecastability , parsimonious time-series models and the evaluation of forecasts against meaningful baselines. Applications include joint energy-demand and generation forecasting, storage and microgrid operation. My medical-physics research addresses dose equivalence and modeling.
- Recent first-author papers introduce the sCV and forecastability indices , develop BLEND forecasting , and examine tolerance-based validation with the γ-index .
+ Recent papers introduce the sCV and forecastability indices , develop BLEND forecasting , and examine tolerance-based validation with the γ-index .
  Research themes and project portfolio · Implementation guides and code
  Research projects
  My current collaborative work includes Fine4Cast (2023–2028), the ELECTRE program, and the Mines Paris – PSL / University of Corsica / CNRS research agreement (2024–2027). These activities connect forecasting, AI and energy management.
@@ -53,7 +53,7 @@ URL: https://www.cyrilvoyant.com/fr/a-propos/
  Accélérateur linéaire de radiothérapie et images de planification de traitement, en écho à mon parcours en physique médicale.
  Recherche actuelle
  J'étudie la variabilité et la prévisibilité du rayonnement solaire , les modèles parcimonieux de séries temporelles et l'évaluation des prévisions par rapport à des références pertinentes. Les applications portent sur la prévision conjointe de la demande et de la production d'énergie, le stockage et le pilotage des micro-réseaux. Mes recherches en physique médicale portent sur l'équivalence de dose et la modélisation.
- Des articles récents, dont je suis premier auteur, introduisent les indices sCV et de prévisibilité , développent la prévision BLEND et examinent la validation par tolérances avec l'indice γ .
+ Des articles récents introduisent les indices sCV et de prévisibilité , développent la prévision BLEND et examinent la validation par tolérances avec l'indice γ .
  Thèmes de recherche et portefeuille de projets (en anglais) · Guides de mise en œuvre et code (en anglais)
  Projets de recherche
  Mes travaux collaboratifs en cours comprennent Fine4Cast (2023–2028), le programme ELECTRE et la convention de recherche Mines Paris – PSL / université de Corse / CNRS (2024–2027). Ces activités relient la prévision, l'IA et la gestion de l'énergie.
@@ -266,19 +266,19 @@ Research: questions, findings and methods
  Compute directly · Energy Simulate what you cannot yet measure: road tunnels
  One year at 10-minute resolution in about 150 ms, with its limits stated.
  Compute directly · Energy How forecastable is the sun?
- Two indices (sCV and F) describe a site before any model is fitted.
+ Two indices, sCV (variability) and F (forecastability), describe a site before any model is fitted.
  Hybridize · Energy Better persistence, without training a neural network
- Symmetry-constrained forecasting: the structure of the signal written into the reference.
+ Persistence repeats the last value. BLEND mixes it with the value at the same phase of the cycle, with weights in closed form: no neural network.
  Learn frugally · Energy Seven signals, one frugal learner (ELM)
- One frugal learner forecasts the whole Corsican electricity mix.
+ One ELM (extreme learning machine, a frugal neural model) with several outputs (MIMO) forecasts the whole Corsican electricity mix.
  Learn frugally · Energy Satellite forecasting: one cell or the whole field?
- A per-cell ELM beats the same ELM reading the whole field, with a thousand times fewer parameters.
+ A per-cell ELM (extreme learning machine, a frugal neural model) beats the same ELM reading the whole field, with a thousand times fewer parameters.
  Learn frugally · Energy Frugal models for solar forecasting (in French)
  How much model a forecast really needs before it is deployed.
  Learn frugally · Energy Direct PV forecasting: reduce the dimension (in French)
  Compress the input only when the compression serves the forecast.
  Demonstrate trust · Energy When RMSE hides a difference
- NICE compares a model's errors with those of persistence.
+ NICE divides a model's errors by those of persistence, which repeats the last value: a useful model scores between 0 and 1.
  Demonstrate trust · Energy Beyond pointwise errors: the γ-index
  A tolerance-based test carried over from radiotherapy.
  Demonstrate trust · Energy How to evaluate a solar forecast against persistence
@@ -287,9 +287,9 @@ Research: questions, findings and methods
  From persistence to deep networks: what to test first, and what counts as a gain.
  Medical physics
  Compute directly · Medicine Atmospheric neutrons and BNCT: quantify the limit
- An exploratory 2011 model: rare captures, local energy and a mean dose too low for macroscopic therapy.
+ Boron neutron capture therapy (BNCT), exploratory 2011 model: rare captures, local energy and a mean dose too low for macroscopic therapy.
  Compute directly · Medicine Compute, don't learn: radiobiological dose equivalence
- One fraction of 15 Gy to the rectum: 72.7 Gy under LQ, 59.4 Gy under LQL.
+ A single 15 Gy fraction (Gy: gray, the unit of absorbed dose) to the rectum has a biologically effective dose of 72.7 Gy under the linear-quadratic model (LQ) but 59.4 Gy under the linear-quadratic-linear model (LQL).
  Hybridize · Medicine Thyroid cancer and radioiodine: model first
  Marie Fusella Giuntini and Dominique Barbolosi : three equations, 50 patients, a hybrid twin in progress.
  Compute directly · Medicine Free BED and EQD2 calculator: LQ or LQL?
@@ -337,19 +337,19 @@ Recherche : questions, résultats et méthodes
  Calculer directement · Énergie Simuler ce que l'on ne peut pas encore mesurer : les tunnels routiers
  Une année au pas de 10 minutes en 150 ms environ, limites énoncées.
  Calculer directement · Énergie Le ciel change, mais à quel point reste-t-il prévisible ?
- Deux indices (sCV et F) décrivent un site avant d'ajuster le moindre modèle.
+ Deux indices, sCV (variabilité) et F (prévisibilité), décrivent un site avant d'ajuster le moindre modèle.
  Hybrider · Énergie Une meilleure persistance, sans entraîner un réseau neuronal
- Prévision sous contraintes de symétrie : la structure du signal inscrite dans la référence.
+ La persistance répète la dernière valeur. BLEND la mélange avec la valeur à la même phase du cycle, avec des poids de forme analytique : aucun réseau neuronal.
  Apprendre frugalement · Énergie Sept sorties, six ans de données : ce que montre MIMO-ELM
- Un apprentissage frugal prévoit tout le mix électrique corse.
+ Un seul ELM (machine à apprentissage extrême, modèle neuronal frugal) à plusieurs sorties (MIMO) prévoit tout le mix électrique corse.
  Apprendre frugalement · Énergie Prévision satellite : une maille ou tout le champ ?
- Un ELM par maille bat le même ELM lisant tout le champ, avec mille fois moins de paramètres.
+ Un ELM par maille (machine à apprentissage extrême, modèle neuronal frugal) bat le même ELM lisant tout le champ, avec mille fois moins de paramètres.
  Apprendre frugalement · Énergie Prévision solaire : modèles frugaux
  De combien de modèle une prévision a vraiment besoin avant d'être déployée.
  Apprendre frugalement · Énergie Prévision PV : réduire la dimension
  Ne compresser l'entrée que si la compression sert la prévision.
  Démontrer la confiance · Énergie Même nRMSE, modèles différents : ce que révèle NICE
- NICE rapporte les erreurs d'un modèle à celles de la persistance.
+ NICE divise les erreurs d'un modèle par celles de la persistance, qui répète la dernière valeur : un modèle utile se situe entre 0 et 1.
  Démontrer la confiance · Énergie Une prévision décalée peut rester exploitable : le test gamma
  Un test à tolérances venu de la radiothérapie.
  Démontrer la confiance · Énergie Comment évaluer une prévision solaire face à la persistance
@@ -358,9 +358,9 @@ Recherche : questions, résultats et méthodes
  De la persistance aux réseaux profonds : quoi tester d'abord, et ce qui compte comme un gain.
  Physique médicale
  Calculer directement · Médecine Neutrons atmosphériques et BNCT : quantifier la limite
- Un modèle exploratoire de 2011 : captures rares, énergie locale et dose moyenne insuffisante pour une thérapie macroscopique.
+ Thérapie par capture neutronique du bore (BNCT), modèle exploratoire de 2011 : captures rares, énergie locale et dose moyenne insuffisante pour une thérapie macroscopique.
  Calculer directement · Médecine Calculer plutôt qu'apprendre : l'équivalence de dose en radiothérapie
- Une fraction de 15 Gy au rectum : 72,7 Gy en LQ, 59,4 Gy en LQL.
+ Une fraction unique de 15 Gy (le gray, unité de dose absorbée) au rectum a une dose biologique efficace de 72,7 Gy avec le modèle linéaire-quadratique (LQ), mais de 59,4 Gy avec le modèle linéaire-quadratique-linéaire (LQL).
  Hybrider · Médecine Cancer de la thyroïde et iode radioactif : le modèle d'abord
  Marie Fusella Giuntini et Dominique Barbolosi  : trois équations, 50 patients, un jumeau hybride en cours.
  Calculer directement · Médecine Calculateur gratuit de BED et d'EQD2 : LQ ou LQL ?
@@ -445,7 +445,7 @@ Scientific simulators, animations and calculators
  How to evaluate a forecast
  Server-backed application · English interface
  Simulate tunnel electricity demand, TLS
- Hosted application: synthetic demand from geometry, ventilation and lighting. The server may need to wake up.
+ Hosted application (Tunnel Load Simulator, TLS): synthetic demand from geometry, ventilation and lighting. The server may need to wake up.
  Open this tool →
  Understand the simulator
  Explorable demonstration · French and English
@@ -464,7 +464,7 @@ Scientific simulators, animations and calculators
  Medical physics
  Explorable demonstration · French and English
  Atmospheric neutrons and boron: explore dose scales
- Follow a schematic cascade; distinguish flight exposure, tumour phantom dose and BSH/BPA distributions.
+ Follow a schematic cascade; distinguish flight exposure from the dose in a numerical tumour model, and compare two boron carriers, BSH and BPA.
  Open this tool →
  Browser calculator · French and English
  Compare LQ and LQL biological doses
@@ -609,7 +609,7 @@ Simulateurs, animations et calculateurs scientifiques
  Comment évaluer une prévision
  Application avec serveur · Interface en anglais
  Simuler la demande électrique d’un tunnel, TLS
- Application hébergée : demande synthétique selon géométrie, ventilation et éclairage. Démarrage du serveur parfois nécessaire.
+ Application hébergée (Tunnel Load Simulator, TLS) : demande synthétique selon géométrie, ventilation et éclairage. Démarrage du serveur parfois nécessaire.
  Ouvrir cet outil →
  Comprendre le simulateur
  Démonstration à explorer · Français et anglais
@@ -628,7 +628,7 @@ Simulateurs, animations et calculateurs scientifiques
  Physique médicale
  Démonstration à explorer · Français et anglais
  Neutrons atmosphériques et bore : explorer les échelles de dose
- Suivre une cascade schématique ; distinguer exposition du vol, dose du fantôme tumoral et distributions BSH/BPA.
+ Suivre une cascade schématique ; distinguer l’exposition en vol de la dose dans un modèle numérique de tumeur, et comparer deux composés boronés, BSH et BPA.
  Ouvrir cet outil →
  Calculateur dans le navigateur · Français et anglais
  Comparer les doses biologiques LQ et LQL
@@ -733,11 +733,11 @@ At a glance: research, software, courses and tools
  The public work of Cyril Voyant in medical physics and energy forecasting, courses and software included, each item linked to its source: paper, DOI, repository, team. Free to reuse, crediting the authors. The short version, in 30 seconds ; the thread connecting this work .
  Main ideas
  Understand before you compute Start from the human question, model the system, then choose the tool. Beat a simple reference Every forecast is first compared with persistence; a model that does not beat it adds nothing. Complexity must pay A frugal model (ELM, autoregression) first; heavier only if the gain is shown. Trust is demonstrated Public code, data, licenses and verification; AI is a tool, declared. Research lines
- Solar and energy forecasting Persistence , BLEND , ELM and the Corsican electricity mix , dimensionality reduction .
- Evaluating forecasts NICE , γ-index , sCV and forecastability , prediction intervals .
- Medical physics Biologically equivalent doses (LQL-Equiv) , radioiodine therapy of the thyroid .
+ Solar and energy forecasting Persistence (copy the last known value), BLEND (a mix of persistence and the value one cycle earlier), ELM and the Corsican electricity mix (a frugal neural model whose output weights alone are fitted), dimensionality reduction (keep only the part of the input that serves the forecast).
+ Evaluating forecasts NICE (error divided by that of persistence: useful between 0 and 1), γ-index (tolerates small shifts in space, time and intensity), sCV and forecastability (cloud-driven variability, computed before any model), prediction intervals (a range meant to contain the measurement).
+ Medical physics Biologically equivalent doses (LQL-Equiv) : compare two radiotherapy schedules on one scale; radioiodine therapy of the thyroid : a three-equation model.
  AI and language Language models as interfaces to validated codes.
- Assessing research Influence index , the RTVACOS framework , scientific publishing .
+ Assessing research Influence index (a log-based measure of an institution's influence), the RTVACOS framework (seven criteria, from rigor to societal relevance), scientific publishing .
  Software, with its DOI and its team
  NICEᵏ: normalized forecast errors compared with simple persistence (MATLAB) Cyril Voyant · repository · MIT
  sCV and F: variability and forecastability of solar irradiance (MATLAB) Cyril Voyant · repository · MIT
@@ -756,7 +756,7 @@ At a glance: research, software, courses and tools
  LQL-Equiv-web 3.0: biologically equivalent doses in radiotherapy (Python, browser) Cyril Voyant , Daniel Julian · repository · MIT
  Open courses (CC BY 4.0)
  Forecasting the intermittent solar resource Mines Paris – PSL engineering curriculum, applied research project UE14 · 59 slides · English and French · CC BY 4.0
- Biostatistics for health studies (in French) First-year health studies (PASS, UE8) · 3 chapters, 246 slides · in French · CC BY 4.0
+ Biostatistics for health studies First-year health studies (PASS, UE8) · 3 chapters, 246 slides in French · summaries, experiments and FAQ in English · CC BY 4.0
  Physics for health studies: electromagnetic waves, X-rays and imaging (in French) First-year health studies (PASS), physical bases of medical imaging · 110-slide lecture and 2 corrected exercise sessions · in French · CC BY 4.0
  Industrial physics: thermodynamics, water vapor and refrigeration (in French) B.U.T. biological engineering, food science and biotechnology, 2nd year · 5 chapters, 139 slides and handouts · in French · CC BY 4.0
  Heat transfer for food engineering (in French) B.U.T. biological engineering, food science and biotechnology, 1st year · 24 slides · in French · CC BY 4.0
@@ -797,7 +797,7 @@ Ma recherche en 30 secondes
  Je pars du phénomène, de la question humaine et de la décision à éclairer. Si la relation est connue, je la calcule directement ; si le modèle est incomplet, je le complète ; si une relation manque, j’évalue ce que l’apprentissage apporte face à une référence explicite. Je n’ajoute de complexité que si le gain est démontré. L’IA est un outil parmi d’autres ; la méthode, la vérification et la responsabilité restent centrales.
  Pour commencer
  Recherche : résultats, limites, équipes et articles
- Démonstration : comparer persistance, AR et ELM
+ Démonstration : comparer la persistance (recopier la dernière valeur), l’autorégression (AR) et l’ELM (réseau de neurones frugal)
  CV (page en anglais)
  Identité académique (page en anglais)
  Travailler ensemble
@@ -814,7 +814,7 @@ My research in 30 seconds
  I start from the phenomenon, the human question and the decision to inform. If the relation is known, I compute it directly; if a model is incomplete, I complement it; if a relation is missing, I measure what learning adds against an explicit reference. I add complexity only when its benefit is demonstrated. AI is one tool among others; method, verification and responsibility remain central.
  Start here
  Research: findings, limitations, teams and papers
- Demonstration: compare persistence, AR and ELM
+ Demonstration: compare persistence (copy the last value), autoregression (AR) and the ELM (a frugal neural network)
  CV
  Academic identity
  Work together
@@ -1419,7 +1419,7 @@ The RTVACOS tree: where can your work break?
  Research has an effect only if it is found, judged credible and reused. The RTVACOS framework describes this as a multiplicative system: four foundations, where a single weakness drags everything down, and three amplifiers (collaboration, outreach, societal relevance), which scale a solid base but never replace it.
  RTVACOS: Rigour, Transparency, Visibility, Adoption, Collaboration, Outreach, Societal relevance.
  Tick what your project already does. Roots are foundations, branches are amplifiers. A bare root turns the whole tree pale: that is the multiplicative logic.
- R · Rigour (foundation) A simple reference to beat (persistence, climatology…) Separate training and test data, without leakage Limits and domain of validity written down T · Transparency (foundation) Public code, with a license Data or their access described, with a license Tool use declared, AI included V · Visibility (foundation) An ORCID and DOIs (article, code, data) A clear page: the result, the method, how to cite Machine-readable metadata (CITATION.cff, JSON-LD) A · Adoption (foundation) An example that runs in minutes Documentation for a user who is not the author Real user feedback taken into account C · Collaboration (amplifier) Co-authors who strengthen a foundation, not only the list Credited contributions (CRediT, ORCID) O · Outreach (amplifier) A summary for non-specialists A talk, a course or a video S · Societal relevance (amplifier) An identified user or decision A partner outside academia A mirror for reflection, not a scoring instrument: the authors claim no empirical validation and discuss limits themselves, such as the risk of gamification and the unequal distribution of skills.
+ R · Rigour (foundation) A simple reference to beat (persistence, or climatology: the usual average) Separate training and test data, with no information leaking from one to the other Limits and domain of validity written down T · Transparency (foundation) Public code, with a license Data or their access described, with a license Tool use declared, AI included V · Visibility (foundation) An ORCID and DOIs (article, code, data) A clear page: the result, the method, how to cite Machine-readable metadata (CITATION.cff, JSON-LD) A · Adoption (foundation) An example that runs in minutes Documentation for a user who is not the author Real user feedback taken into account C · Collaboration (amplifier) Co-authors who strengthen a foundation, not only the list Credited contributions (CRediT, ORCID) O · Outreach (amplifier) A summary for non-specialists A talk, a course or a video S · Societal relevance (amplifier) An identified user or decision A partner outside academia A mirror for reflection, not a scoring instrument: the authors claim no empirical validation and discuss limits themselves, such as the risk of gamification and the unequal distribution of skills.
  Strengthen each foundation
  Rigour : Evaluate a forecast against a reference · Judge a forecast with NICE
  Transparency : Prepare your data · Choose a license · Declare the use of AI
@@ -1607,8 +1607,8 @@ Teaching
  Try it: Forecast comparison · CLIPER and BLEND · NICE · sCV and F · Which forecast for which signal? · Sun, seasons and timestamps
  Open the course →
  Archived and citable on Zenodo, DOI 10.5281/zenodo.23620102
- Biostatistics for health studies (in French)
- First-year health studies (PASS, UE8) · 3 chapters, 246 slides · in French · CC BY 4.0
+ Biostatistics for health studies
+ First-year health studies (PASS, UE8) · 3 chapters, 246 slides in French · summaries, experiments and FAQ in English · CC BY 4.0
  With a sensitivity and specificity of 99%, a positive test points to a sick person only about one time in eleven if the prevalence is 1/1000. The course gives the tools to read a study, interpret a test and decide with data.
  Why statistics in health: variability, therapeutic adjustment, correlation and causation, hidden variables.
  Probabilities: random experiments, events, counting, conditional probabilities, the Bayesian approach.
@@ -1619,7 +1619,7 @@ Teaching
  Pearson correlation, linear regression, coefficient of determination and significance.
  χ² goodness-of-fit and independence tests, with exercises.
  Try it: ROC curve · Normal distribution · Student t-test · Influential point in regression · Significance and R² · χ² test · Regression intervals
- Open the course (in French) →
+ Open the course →
  Part of the course comes from the work of Dominique Barbolosi , mathematician, Aix-Marseille Université.
  Archived and citable on Zenodo, DOI 10.5281/zenodo.23620236
  Physics for health studies: electromagnetic waves, X-rays and imaging (in French)
@@ -1858,9 +1858,9 @@ URL: https://www.cyrilvoyant.com/stories/evaluate-solar-forecast-persistence/
 How to evaluate a solar forecast against persistence
  Compare the model with persistence on the same targets, horizon and scope, report more than one error norm, then test the difference. The ratio of the model's error to that of persistence says what the model adds. The NICEᵏ metrics (Voyant et al., 2025) build this ratio for norms of order one, two and three.
  Cyril Voyant · Mines Paris – PSL, Centre O.I.E. · 2 November 2026
- Reading the quantities. MAE is mean absolute error; RMSE is root mean squared error and gives large errors more weight. nRMSE normalizes RMSE by the mean observation on the evaluated data. AR is autoregression; ELM (extreme learning machine) fits output weights while keeping a fixed random hidden layer. In the NICE formulas, the subscript p denotes persistence; the statistical p-value reported by a test is a different quantity. sCV describes signal variability and F combines variability with temporal dependence.
+ Reading the quantities. MAE is mean absolute error; RMSE is root mean squared error and gives large errors more weight. nRMSE normalizes RMSE by the mean observation on the evaluated data. AR is autoregression; ELM (extreme learning machine) fits output weights while keeping a fixed random hidden layer. In the NICE formulas, the subscript p denotes persistence; the statistical p-value reported by a test is a different quantity. sCV (stochastic coefficient of variation) measures how far irradiance departs from the clear-sky curve: 0 under a clear sky, 1 for a sky that alternates at random between clear sky and thick cloud. F (forecastability) lies between 1 − sCV, when those departures keep no memory, and 1, when they are perfectly correlated in time; unlike sCV, it depends on the horizon. Both are explained, with an interactive page, in Which forecast for which signal? ; the study is summarized in sCV and F, explained ; equations and code are on the methods page .
  The steps
- Name the reference. Say which persistence is used: last observation, clear-sky-index (smart) persistence, or a phase-aware reference such as BLEND. A skill score means little without this.
+ Name the reference. Say which persistence is used: last observation, clear-sky-index (smart) persistence, or a phase-aware reference such as BLEND . A skill score means little without this.
  Use the same targets. Same site, period, horizon and forecast times for the model and the reference.
  State the scope. Daytime only, or day and night. Including night changes the evaluated population and the normalization.
  Report several norms. MAE and RMSE do not weight large errors alike. Keep absolute errors next to relative scores.
@@ -1983,7 +1983,7 @@ Satellite irradiance forecasting: one cell, a patch or the whole field
  Cyril Voyant (Mines Paris – PSL, Centre O.I.E.), with Andreas Kazantzidis (University of Patras) and Jan Kleissl (University of California San Diego) · manuscript in preparation, open code and data extract
  In brief
  Every model forecasts the next 24 hourly values of one satellite cell over Corsica from its 24 past values; only what it reads changes: its own cell, a patch, the whole field, or a compressed field .
- In the public repository, an extreme learning machine (ELM, a neural model with randomly fixed hidden weights) reading its own cell has the lowest error pooled over all cells and horizons ( nRMSE 0.308 ), ahead of the same model reading the whole field (0.355) with a thousand times fewer parameters , and of a U-Net (0.343) and an LSTM (0.326) reading the field. nRMSE is the root mean squared error divided by the mean scored observation; lower is better. The two deep networks tested are a U-Net, designed to read images, and an LSTM, designed to read sequences with a memory of the past.
+ In the public repository, an extreme learning machine ( ELM , a neural model with randomly fixed hidden weights) reading its own cell has the lowest error pooled over all cells and horizons ( nRMSE 0.308 ), ahead of the same model reading the whole field (0.355) with a thousand times fewer parameters , and of a U-Net (0.343) and an LSTM (0.326) reading the field. nRMSE is the root mean squared error divided by the mean scored observation; lower is better. The two deep networks tested are a U-Net, designed to read images, and an LSTM, designed to read sequences with a memory of the past.
  It is one region, one satellite product and one two-year split: a benchmark result, not a general law .
  What level of complexity for this work? Level 5 of 6
  1 Direct calculation (the link is known)
@@ -2027,10 +2027,10 @@ URL: https://www.cyrilvoyant.com/stories/solar-forecast-baseline-deep-learning/
 Which baseline must a solar model beat? When is deep learning worth it?
  Start with persistence, then a phase-aware reference, an autoregression and a frugal learner. Keep a deep network only if it brings a measured gain on the same protocol. Deep learning can be worth it. It has to show this against references that cost almost nothing to run.
  Cyril Voyant · Mines Paris – PSL, Centre O.I.E. · 2 November 2026
- Reading the quantities. MAE is mean absolute error; RMSE is root mean squared error and gives large errors more weight. nRMSE normalizes RMSE by the mean observation on the evaluated data. AR is autoregression; ELM (extreme learning machine) fits output weights while keeping a fixed random hidden layer. In the NICE formulas, the subscript p denotes persistence; the statistical p-value reported by a test is a different quantity. sCV describes signal variability and F combines variability with temporal dependence.
+ Reading the quantities. MAE is mean absolute error; RMSE is root mean squared error and gives large errors more weight. nRMSE normalizes RMSE by the mean observation on the evaluated data. AR is autoregression; ELM (extreme learning machine) fits output weights while keeping a fixed random hidden layer. In the NICE formulas, the subscript p denotes persistence; the statistical p-value reported by a test is a different quantity. sCV (stochastic coefficient of variation) measures how far irradiance departs from the clear-sky curve: 0 under a clear sky, 1 for a sky that alternates at random between clear sky and thick cloud. F (forecastability) lies between 1 − sCV, when those departures keep no memory, and 1, when they are perfectly correlated in time; unlike sCV, it depends on the horizon. Both are explained, with an interactive page, in Which forecast for which signal? ; the study is summarized in sCV and F, explained ; equations and code are on the methods page .
  What to test, in order
  Simple persistence. The last observed value: the minimal reference of any forecast.
- A reference that knows the cycle. Clear-sky-index persistence, or BLEND, which combines immediate memory with the value at the same phase of the cycle. BLEND works from raw irradiance and its weights are in closed form (Voyant et al., 2026).
+ A reference that knows the cycle. Clear-sky-index persistence, or BLEND , which combines immediate memory with the value at the same phase of the cycle. BLEND works from raw irradiance and its weights are in closed form (Voyant et al., 2026).
  An autoregression. Fitted by least squares on recent lags.
  A frugal learner. An Extreme Learning Machine (Huang, Zhu and Siew, 2006) keeps a random hidden layer and fits its output weights analytically.
  A deep network. LSTM, U-Net or larger, under the same split, horizons and tuning budget.
@@ -2042,8 +2042,9 @@ Which baseline must a solar model beat? When is deep learning worth it?
  Training rows kept apart from evaluation rows, including any scaling.
  A difference tested across stations or periods, not only an average.
  Costs reported with the error: parameters, training time, what the device can store.
+ The signal described next to the score: with sCV and F (see the box above), a reader can tell a regular sky from a hard-to-forecast one.
  Limits
- These results concern the datasets and protocols studied. BLEND does not outperform every optimized method; autoregressive or learned predictors can do better under some conditions. Nothing here is a universal ranking.
+ These results concern the datasets and protocols studied. BLEND does not outperform every optimized method; autoregressive or trained predictors can do better under some conditions. Nothing here is a universal ranking.
  To read and to use
  Compare forecasts interactively on public PV data
  BLEND explained · MIMO-ELM explained · the course
@@ -2304,7 +2305,7 @@ Atténuation et couche de demi-atténuation : simulation interactive
 URL: https://www.cyrilvoyant.com/fr/animations/congelation-energie-puissance/
 
 Congélation : énergie sensible, chaleur latente et puissance
- Dans l’exemple affiché (75 % d’eau, dont 90 % gèle), geler l’eau représente 72 % de l’énergie à retirer. Pour 500 kg en 4 h, la puissance moyenne atteint 10,9 kW. Vous voyez ce que le calcul mcΔT oublie.
+ Avec les réglages initiaux (75 % d’eau, dont 90 % gèle), geler l’eau représente 72 % de l’énergie à retirer. Pour 500 kg en 4 h, la puissance moyenne atteint 10,9 kW. Vous voyez ce que le calcul mcΔT oublie.
  Une expérience du cours de Cyril Voyant, à manipuler dans le navigateur. Le chapitre et ses diapositives · Toutes les expériences .
  JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. Essayer et interpréter
  Faites varier la teneur en eau et la part effectivement gelée : la part de la chaleur latente change. Doublez la durée : l’énergie ne bouge pas, et la puissance moyenne est divisée par deux.
@@ -2755,7 +2756,7 @@ Test du χ² : dé équilibré, observés, attendus et tableau 2×2
  Degrés de liberté
  Le paramètre de la loi de référence : 5 pour le dé, 1 pour le tableau 2×2.
  p-value
- La probabilité de dépasser le χ² obtenu si l’hypothèse est vraie, selon la loi approchée. Voir le test de Student pour deux moyennes.
+ La probabilité de dépasser le χ² obtenu si l’hypothèse est vraie, selon la loi approchée. Une petite p-value dit que l’écart est peu compatible avec l’hypothèse, pas qu’il est grand : voir le chapitre Tester une différence et lire son incertitude .
  Hypothèses et limites
  Observations indépendantes, catégories exclusives, vrais comptages. La p-value est approchée : avec de faibles effectifs attendus, la conclusion automatique est suspendue. Ne pas rejeter ne démontre ni l’équilibre ni l’indépendance.
  Aller plus loin
@@ -2837,7 +2838,7 @@ Curriculum vitae
  PVSEC Award, photovoltaic systems category, Hamburg, 2009 .
  City of Nice Prize, Accademia Corsa, 2012.
  Publications and scientific software
- Read the research stories for findings and limitations from selected first-author papers. Consult Google Scholar or HAL for the wider publication record.
+ Read the research stories for findings and limitations from selected papers. Consult Google Scholar or HAL for the wider publication record.
  Public implementation guides cover Extreme Learning Machines , NICE metrics and the γ-index . My medical-physics software includes LQL-Equiv , developed with Daniel Julian .
  Publication record
  Selected publications from my research in energy forecasting and medical physics. For the current complete record, consult Google Scholar or HAL .
@@ -3210,10 +3211,10 @@ BLEND : une meilleure persistance sans entraîner de réseau neuronal
  Étape 2 sur 5 · Hybrider Le voir sur le fil Quand le modèle ne suffit pas, on le complète : garder le modèle, n'apprendre que ce qui manque. Le modèle au cœur.
  Cyril Voyant · 18 octobre 2026
  Introduire la phase quotidienne dans une prévision de persistance améliore les résultats sur les séries solaires étudiées, avec des écarts qui s’accentuent aux horizons plus longs. Dans notre travail publié dans Applied Mathematical Modelling, BLEND fournit cette référence directement sur l’éclairement brut, sans normalisation par un modèle externe de ciel clair.
- Le point de départ est physique et statistique : les propriétés de l’éclairement ne restent pas identiques au cours de la journée. Leur évolution se répète en partie avec le cycle. Une persistance qui reporte simplement la dernière observation ne représente pas cette structure. Les opérateurs BLEND associent mémoire immédiate et récurrence alignée sur la phase ; le poids entre les deux est fixé pour chaque phase du cycle : sa valeur optimale au sens de l’erreur quadratique, écrite avec les moyennes, écarts-types et corrélations cycliques, est proche d’un ajustement par moindres carrés sur les cycles passés. Le coefficient simplifié λ = (1 + ρ)/2, lui aussi fixé pour chaque phase à partir de la corrélation locale ρ, est une approximation sous les hypothèses de corrélation de la remarque 17, dont les performances dépendent de l’horizon.
+ Le point de départ est physique et statistique : les propriétés de l’éclairement ne restent pas identiques au cours de la journée. Leur évolution se répète en partie avec le cycle. Une persistance qui reporte simplement la dernière observation ne représente pas cette structure. Les opérateurs BLEND forment une combinaison convexe de la mémoire immédiate (persistance) et de la récurrence alignée sur la phase (persistance cyclique : la valeur observée un cycle plus tôt, à la même phase) ; le poids entre les deux est fixé pour chaque phase du cycle : sa valeur optimale au sens de l’erreur quadratique, écrite avec les moyennes, écarts-types et corrélations cycliques, est proche d’un ajustement par moindres carrés sur les cycles passés. Le coefficient simplifié λ = (1 + ρ)/2 est le poids de la dernière observation ; ρ est la corrélation, à cette phase, entre la valeur présente et la valeur à l’horizon de prévision. Une forte corrélation favorise la persistance, une faible corrélation le cycle précédent. C’est une approximation sous les conditions énoncées dans l’article, dont les performances dépendent de l’horizon.
  La validation associe simulations contrôlées et mesures de 68 stations espagnoles. Elle compare les variantes de persistance et des références plus élaborées. Sur les observations, les ajustements cyclostationnaires réduisent les erreurs par rapport à leurs homologues naïfs ; le travail évalue aussi les différences entre modèles par des tests de Wilcoxon. Les distributions d’erreur montrent aussi le comportement selon l’horizon et la station.
  L’intérêt pratique est une référence analytique, lisible et peu coûteuse, à laquelle confronter un modèle appris. Les poids sont estimés sur les observations passées en forme fermée, sans optimisation itérative. Les statistiques cycliques et les corrélations doivent donc être estimées correctement. BLEND ne gagne pas contre toutes les méthodes optimisées ; des modèles autorégressifs ou appris peuvent faire mieux dans certaines conditions. Le code MATLAB public permet de reproduire le protocole et de tester si cette simplicité convient à une autre série, au lieu de supposer que toute complexité supplémentaire sera utile.
- L'horizon change la comparaison. Figure 6 de la version auteur publique : erreurs normalisées moyennes sur 68 stations SIAR, de 30 à 360 minutes. Cercles et tirets : nRMSE ; carrés et traits pleins : nMAE. Les variantes de BLEND sont comparées à la persistance et à d'autres références selon le protocole de l'étude ; ces moyennes ne signifient pas qu'un modèle gagne à chaque station. Source : arxiv.org/html/2602.18949v3. Équipe complète et publication ci-dessous.
+ L'horizon change la comparaison. Figure 6 de la version auteur publique : erreurs normalisées moyennes sur 68 stations SIAR, de 30 à 360 minutes. Cercles et tirets : nRMSE (RMSE normalisée) ; carrés et traits pleins : nMAE (MAE normalisée). Les variantes de BLEND sont comparées à la persistance et à d'autres références selon le protocole de l'étude ; ces moyennes ne signifient pas qu'un modèle gagne à chaque station. Source : arxiv.org/html/2602.18949v3. Équipe complète et publication ci-dessous.
  Quel niveau de complexité pour ce travail ? Niveau 3 sur 6
  1 Calcul direct (le lien est connu)
  2 Simulation à partir de ce que l'on sait
@@ -3223,9 +3224,9 @@ BLEND : une meilleure persistance sans entraîner de réseau neuronal
  6 Réseaux profonds, modèles de fondation
  Monter d'un niveau seulement si cela paie.
  Code ouvert v1.1.1 : un benchmark hors échantillon
- Le benchmark MATLAB corrigé sépare 6 000 observations pour l’estimation et 6 000 pour l’évaluation, avec des cibles de prévision communes. Il compare 21 références, cinq horizons et dix réalisations synthétiques. La figure ci-dessous présente la nRMSE jour et nuit, normalisé par la moyenne des observations évaluées.
+ Le benchmark MATLAB corrigé sépare 6 000 observations pour l’estimation et 6 000 pour l’évaluation, avec des cibles de prévision communes. Il compare 21 références, cinq horizons et dix réalisations synthétiques. La figure ci-dessous présente la nRMSE jour et nuit (la RMSE divisée par la moyenne des observations évaluées).
  BLEND par moindres carrés par phase atteint un nRMSE moyen de 0,3020, 0,3975, 0,4447, 0,4880 et 0,4954 à 1, 2, 3, 6 et 9 pas, contre 0,5021 pour la persistance cyclique. Son poids est estimé par moindres carrés en forme fermée, sans optimisation itérative. En échantillon fini, cette estimation n’est pas en général identique à l’estimation par moments.
- CLIPER sur le rapport à la tendance de ciel clair x/CS obtient ici les plus faibles erreurs moyennes, ce qui est cohérent avec un signal synthétique construit comme le produit du ciel clair par un bruit corrélé. Sans ciel clair, CLIPER sur la différence à la tendance périodique (profil moyen estimé sur l’apprentissage) est également performant. Dix réalisations d’un seul générateur ne démontrent pas un classement universel et ne reproduisent pas les expériences SIAR du papier.
+ CLIPER, combinaison convexe de la persistance et de la moyenne, appliqué au rapport à la tendance de ciel clair x/CS (CS : le ciel clair), obtient ici les plus faibles erreurs moyennes, ce qui est cohérent avec un signal synthétique construit comme le produit du ciel clair par un bruit corrélé. Sans ciel clair, CLIPER sur la différence à la tendance périodique (profil moyen estimé sur l’apprentissage) est également performant. Dix réalisations d’un seul générateur ne démontrent pas un classement universel et ne reproduisent pas les expériences SIAR du papier.
  Archive du code v1.1.1 · Résultats complets, figures et CSV · Calcul détaillé
  Trois panneaux de nRMSE hors échantillon selon l'horizon (1 à 9 pas), signal synthétique, 10 réalisations (cyclostationary-forecasting-matlab v1.1.1).
  Article, auteurs et ressources
@@ -3341,6 +3342,7 @@ Actualités : publications, logiciels et essais
  Titre du billet d'origine : Revisiting Persistence: Symmetry-Constrained Forecasting of Periodically Correlated Energy Processes
  Cyril Voyant , Candice Banes , Luis Garcia-Gutierrez , Gilles Notton , Milan Despotovic , Zaher Mundher Yaseen
  La persistance revisitée pour les séries à statistiques périodiques, comme le cycle journalier de l'éclairement solaire. BLEND combine la dernière observation et l'observation alignée sur la même phase du cycle.
+ Version expliquée : une meilleure persistance sans entraîner de réseau neuronal (BLEND)
  Lire le billet complet
  Ce travail revisite la prévision par persistance pour des statistiques à variation périodique, dont le cycle journalier de l’éclairement solaire. BLEND combine la dernière observation avec une observation alignée sur la phase cible du cycle.
  Les poids sont estimés sous forme fermée à partir des observations historiques. Les moindres carrés par phase fournissent une référence explicite sans optimisation itérative ; une formulation fondée sur les moments est équivalente en population sous ses hypothèses, mais ne donne pas nécessairement exactement la même estimation sur échantillon fini.
@@ -3355,6 +3357,7 @@ Actualités : publications, logiciels et essais
  Titre du billet d'origine : From Pixels to Tolerances: Rethinking Forecast Validation with the γ-Index
  Cyril Voyant
  Les métriques classiques comme la RMSE jugent une prévision comme si chaque pixel devait coïncider parfaitement dans l'espace et le temps. L'indice γ accepte un décalage toléré, comme le fait un expert.
+ Version expliquée : valider des prévisions décalées au-delà des erreurs ponctuelles (indice γ)
  Lire le billet complet
  Cyril Voyant
  Les métriques classiques comme la RMSE évaluent les prévisions comme si chaque pixel devait correspondre parfaitement dans l’espace et dans le temps. Les machines s’optimisent pour cela. Les humains ne raisonnent pas ainsi.
@@ -3436,6 +3439,7 @@ Actualités : publications, logiciels et essais
  Titre du billet d'origine : Coherent Multi-Energy Forecasting for Real-Time Grid Management: A Parsimonious MIMO-ELM Approach
  Cyril Voyant , Milan Despotovic , Luis Garcia-Gutierrez , Mohammed Asloune , Yves-Marie Saint-Drenan , Jean-Laurent Duchaud , Ghjuvan Antone Faggianelli , Elena Magliaro
  Une prévision à court terme rapide, transparente et opérationnelle de la demande et de la production de plusieurs sources d'énergie.
+ Version expliquée : sept signaux énergétiques de la Corse prévus par un seul modèle (MIMO-ELM)
  Lire le billet complet
  Une prévision à court terme rapide, transparente et opérationnelle de la demande et de la production pour plusieurs sources d’énergie.
  Les systèmes électriques modernes deviennent structurellement plus complexes. L’intégration des renouvelables, l’autoconsommation, les ressources distribuées et les interconnexions partielles introduisent une forte variabilité et des dépendances croisées entre les sources d’énergie. Dans ce contexte, prévoir ne consiste plus à prédire une seule série temporelle, mais à prédire un système. Une nouvelle étude publiée dans Applied Energy présente un cadre unifié de Multi-Input Multi-Output Extreme Learning Machine (MIMO-ELM) conçu pour la prévision à court terme de systèmes énergétiques multi-sources. Le modèle prédit simultanément sept variables du réseau : la demande totale et la production solaire PV, éolienne, hydraulique, thermique, bioénergétique, ainsi que les importations.
@@ -3638,6 +3642,7 @@ Actualités : publications, logiciels et essais
  Titre du billet d'origine : Stochastic Coefficient of Variation: Assessing the Variability and Forecastability of Solar Irradiance
  Cyril Voyant , Alan Julien , Milan Despotovic , Gilles Notton , Luis Antonio Garcia-Gutierrez , Claudio Francesco Nicolosi , Philippe Blanc , Jamie Bright
  Le sCV et la prévisibilité F séparent les fluctuations aléatoires des tendances déterministes que l'écart-type mélange, pour caractériser un site avant de comparer des modèles.
+ Version expliquée : variabilité et prévisibilité de l’éclairement solaire (sCV et F)
  Lire le billet complet
  Renewable Energy, 2025, https://doi.org/10.1016/j.renene.2025.123913
  Résumé
@@ -3647,6 +3652,7 @@ Actualités : publications, logiciels et essais
  Titre du billet d'origine : NICE^k Metrics: Unified and Multidimensional Framework for Evaluating Deterministic Solar Forecasting Accuracy
  Cyril Voyant , Milan Despotovic , Luis Garcia-Gutierrez , Rodrigo Amaro e Silva , Philippe Lauret , Ted Soubdhan , Nadjem Bailek
  La RMSE, la MAE et les scores de compétence ne saisissent pas toute la qualité d'une prévision solaire. Les métriques NICEᵏ rapportent les erreurs à celles d'une référence explicite, la persistance.
+ Version expliquée : quand la RMSE masque une différence entre prévisions solaires (NICE)
  Lire le billet complet
  Sustainable Energy Technologies and Assessments, 2025, https://doi.org/10.1016/j.seta.2025.104588
  Résumé
@@ -3763,8 +3769,8 @@ Métriques NICE : quand la RMSE masque une différence entre prévisions solai
  Étape 5 sur 5 · Démontrer la confiance Le voir sur le fil Juger contre une référence, publier code, données et limites, rendre la recherche trouvable et réutilisable. La confiance se démontre.
  Cyril Voyant · 18 octobre 2026
  À trente minutes, le tableau de notre étude NICE rapporte une nRMSE médiane arrondie de 0,19 pour un modèle ELM comme pour un modèle autorégressif. Le score composite NICEΣ donne pourtant 0,75 contre 0,77, avec une différence statistiquement significative dans le test rapporté. Le résultat n’est pas qu’une nouvelle notation : le choix de la métrique change la capacité à distinguer les prévisions.
- Publié dans Sustainable Energy Technologies and Assessments, le travail propose une famille fondée sur les normes d’erreur d’ordres un, deux et trois. NICE¹ suit les erreurs moyennes, NICE² donne davantage de poids aux grands écarts et NICE³ accentue les valeurs extrêmes. NICEΣ combine ces dimensions. La référence de persistance replace l’erreur dans le contexte de la série, plutôt que de normaliser uniquement par une moyenne d’éclairement.
- La validation associe simulations Monte-Carlo et observations de 68 stations SIAR en Espagne. Elle compare notamment modèles autorégressifs, Extreme Learning et persistance intelligente. L’article distingue une construction théorique, dépendante d’hypothèses statistiques strictes, de l’évaluation empirique ; il ne recommande pas de substituer aveuglément une formule théorique au calcul sur observations.
+ Publié dans Sustainable Energy Technologies and Assessments, le travail propose une famille fondée sur les normes d’erreur d’ordres un, deux et trois. NICE¹ suit les erreurs moyennes, NICE² donne davantage de poids aux grands écarts et NICE³ accentue les valeurs extrêmes. NICEΣ combine ces dimensions. La référence de persistance replace l’erreur dans le contexte de la série, plutôt que de normaliser uniquement par une moyenne d’éclairement. Chaque composante est l’erreur du modèle divisée par celle de la persistance simple au même horizon : 0 pour une prévision parfaite, 1 pour la persistance elle-même, et au-dessus de 1 quand la persistance fait mieux.
+ La validation associe simulations Monte-Carlo et observations de 68 stations SIAR en Espagne. Elle compare notamment des modèles autorégressifs (AR), l’extreme learning machine (EL : une couche cachée aléatoire dont les poids de sortie sont calculés analytiquement), la persistance intelligente (SP : persistance de l’indice de ciel clair) et ARTU (une référence d’ordre deux sur le rapport à la tendance). L’article distingue une construction théorique, dépendante d’hypothèses statistiques strictes, de l’évaluation empirique ; il ne recommande pas de substituer aveuglément une formule théorique au calcul sur observations.
  Dans l’exemple à trente minutes, les tests donnent p < 0,001 pour NICEΣ et p = 0,0591 pour nRMSE. Ces nombres concernent ce protocole et ces distributions : ils ne mesurent pas directement l’importance économique du gain. L’utilisateur peut choisir une sensibilité aux erreurs extrêmes adaptée à son besoin, tout en conservant les erreurs absolues et les hypothèses de calcul. Le code public PV_ELM_pred documente les composantes et leur moyenne. Un score relatif supérieur à un doit rester visible : la référence de persistance peut être battue, mais aussi faire mieux que le modèle testé.
  Ce qu'un score unique masque. Figure 5 de la version auteur publique : distributions des composantes NICE et des métriques classiques pour quatre modèles (EL, AR, SP et ARTU) sur les données SIAR, à 30 minutes. Les valeurs p imprimées concernent la comparaison des quatre modèles, pas les tests EL–AR par paires discutés plus haut. Un p = 0,0000 affiché est arrondi, pas une probabilité exactement nulle. Source : arxiv.org/html/2508.01457v1. Équipe complète et DOI ci-dessous.
  Article, auteurs et ressources
@@ -3782,8 +3788,8 @@ MIMO-ELM : sept signaux énergétiques de la Corse prévus par un seul modèle
  Étape 3 sur 5 · Apprendre frugalement Le voir sur le fil Quand les relations utiles ne sont pas suffisamment connues, évaluer ce que les données permettent d'apprendre, avec seulement la complexité qui paie. La complexité seulement si elle paie.
  Cyril Voyant · 18 octobre 2026
  À une heure d’horizon, notre modèle MIMO-ELM atteint une nRMSE de 0,179 pour le solaire et de 0,051 pour le thermique, avec R² supérieur à 0,98 pour ces deux séries. La demande totale conserve des prévisions jugées fiables jusqu’à cinq heures dans l’étude. Ces résultats, publiés dans Applied Energy, proviennent de six années de données horaires du système électrique corse.
- Le modèle traite sept variables : demande totale, solaire, éolien, hydraulique, thermique, bioénergie et importations. Son architecture multi-entrée multi-sortie utilise des fenêtres glissantes et des encodages cycliques pour représenter la mémoire et les variations saisonnières. L’Extreme Learning Machine garde une couche cachée aléatoire et ajuste les sorties par une résolution analytique, ce qui évite un entraînement profond itératif.
- La comparaison ne s’arrête pas à un score isolé. Le travail confronte le modèle à la persistance, à des formulations mono-sortie et à un LSTM avec un budget de réglage réaliste. Il rapporte des gains de compétence face aux références et des améliorations modestes mais stables par rapport aux formulations SISO. L’éolien et la bioénergie restent plus difficiles à prévoir, en lien avec leur forte variabilité.
+ Le modèle traite sept variables : demande totale, solaire, éolien, hydraulique, thermique, bioénergie et importations. Son architecture multi-entrée multi-sortie (MIMO), où un seul modèle lit l’historique récent des sept signaux et les prévoit ensemble, utilise des fenêtres glissantes et des encodages cycliques pour représenter la mémoire et les variations saisonnières. La nRMSE citée plus haut est la RMSE divisée par un niveau typique du signal (0 pour une prévision parfaite), et R² la part de la variance de la série que la prévision explique (1 pour une prévision parfaite). L’Extreme Learning Machine garde une couche cachée aléatoire et ajuste les sorties par une résolution analytique, ce qui évite un entraînement profond itératif.
+ La comparaison ne s’arrête pas à un score isolé. Le travail confronte le modèle à la persistance, à des formulations mono-sortie (SISO : un modèle par signal) et à un LSTM (réseau profond récurrent à mémoire longue et courte) avec un budget de réglage réaliste. Il rapporte des gains de compétence face aux références et des améliorations modestes mais stables par rapport aux formulations SISO. L’éolien et la bioénergie restent plus difficiles à prévoir, en lien avec leur forte variabilité.
  Pour un système énergétique, la contribution est de représenter plusieurs composantes dans un même cadre, rapidement ajustable. Cela facilite l’étude conjointe de la production et de la consommation. Mais une sortie multiple ne garantit pas, à elle seule, un bilan énergétique exact : une contrainte physique ou une réconciliation doit être spécifiée pour l’imposer. Les valeurs rapportées ne sont pas des gains en pourcentage contre un concurrent. Elles caractérisent ce protocole corse ; une autre zone doit être évaluée avec ses propres contraintes, données et horizons.
  Sept signaux à un même horizon. Figure 1 de la version auteur publique : demande, thermique, hydraulique, solaire, éolien, bioénergie et importations mesurés et prévus sur environ 100 heures d'hiver en Corse, à une heure d'horizon (MW). Cette fenêtre illustre les trajectoires ; l'évaluation complète de l'article établit les performances. Source : arxiv.org/html/2508.12764v2. Équipe complète et publication ci-dessous.
  Quel niveau de complexité pour ce travail ? Niveau 5 sur 6
@@ -3809,8 +3815,8 @@ sCV et F : variabilité et prévisibilité de l'éclairement solaire
  Cyril Voyant · 18 octobre 2026
  Sur 68 stations météorologiques espagnoles, notre indice de prévisibilité F conserve une relation inverse avec l’erreur de prévision, examinée sur dix modèles et 24 horizons. Ce résultat publié dans Renewable Energy montre l’intérêt de caractériser le signal avant de comparer les algorithmes : une erreur élevée ne raconte pas la même histoire sur un ciel régulier et sur une série très fluctuante.
  Un diagnostic utile peut reposer sur des outils suffisants : la complexité est ajoutée seulement si son apport est démontré.
- Le travail introduit deux indicateurs complémentaires. Le coefficient de variation stochastique, sCV, mesure les fluctuations en les rapportant à une référence dynamique de ciel clair. sCV est compris entre 0 et 1 ; la valeur 1 correspond au cas théorique où le signal alterne aléatoirement entre ciel clair et plancher diffus. sCV décrit la variabilité du signal, pas la performance d’un modèle par rapport à la persistance. Une valeur hors du domaine attendu demande de vérifier les données, le prétraitement et les hypothèses de normalisation. F ajoute une information de dépendance temporelle issue de l’autocorrélation. Deux séries de variabilité comparable peuvent ainsi conserver des mémoires différentes : l’une laisse davantage d’information exploitable pour prévoir.
- La validation combine cent séries synthétiques cyclostationnaires et les observations du réseau SIAR. Les simulations permettent de faire varier les propriétés du signal ; les stations permettent de confronter le diagnostic à des situations réelles. La relation entre F et les erreurs apparaît aussi à l’échelle des stations, et ne se réduit donc pas à un effet d’agrégation du réseau. Sous forte variabilité synthétique, elle peut devenir non linéaire.
+ Le travail introduit deux indicateurs complémentaires. Le coefficient de variation stochastique, sCV, mesure les fluctuations en les rapportant à une référence dynamique de ciel clair. sCV est compris entre 0 et 1 ; la valeur 1 correspond au cas théorique où le signal alterne aléatoirement entre ciel clair et plancher diffus. sCV décrit la variabilité du signal, pas la performance d’un modèle par rapport à la persistance. Une valeur hors du domaine attendu demande de vérifier les données, le prétraitement et les hypothèses de normalisation. F ajoute une information de dépendance temporelle issue de l’autocorrélation. F est compris entre 1 − sCV, quand les écarts au ciel clair n’ont aucune mémoire, et 1, quand ils sont parfaitement corrélés dans le temps ; contrairement à sCV, il dépend de l’horizon de prévision. Deux séries de variabilité comparable peuvent ainsi conserver des mémoires différentes : l’une laisse davantage d’information exploitable pour prévoir.
+ La validation combine cent séries synthétiques cyclostationnaires et les observations du réseau SIAR (les stations agroclimatiques d’Espagne). Les simulations permettent de faire varier les propriétés du signal ; les stations permettent de confronter le diagnostic à des situations réelles. La relation entre F et les erreurs apparaît aussi à l’échelle des stations, et ne se réduit donc pas à un effet d’agrégation du réseau. Sous forte variabilité synthétique, elle peut devenir non linéaire.
  Pour un utilisateur, l’apport est un diagnostic : comparer la difficulté de prévision, choisir des références et interpréter un score dans son contexte. F n’est ni un intervalle de confiance calibré ni une promesse de gain économique. Les événements de sur-éclairement et la qualité du modèle de ciel clair demandent aussi de l’attention. L’étude propose une mesure de la prévisibilité ; elle ne supprime pas l’incertitude atmosphérique.
  Variabilité et mémoire. Illustration pédagogique du cours UE14 : F varie avec l'horizon de prévision quand sCV est fixé ; les barres représentent la mémoire temporelle restante. Cette illustration de cours n'est pas la validation sur 68 stations de l'article, et ses valeurs ne sont pas un seuil universel. Source : Cyril Voyant, cyrilvoyant.github.io/assets/course/F_horizon.png.
  Article, auteurs et ressources
@@ -4126,7 +4132,7 @@ L'arbre RTVACOS : où votre travail peut-il casser ?
  Une recherche n'a d'effet que si elle est trouvée, jugée crédible et réutilisée. Le cadre RTVACOS la décrit comme un système multiplicatif : quatre fondations, dont une seule faiblesse fait chuter l'ensemble, et trois amplificateurs (collaboration, diffusion, pertinence sociétale), qui démultiplient une base solide sans jamais la remplacer.
  RTVACOS : Rigueur, Transparence, Visibilité, Adoption, Collaboration, diffusion ( Outreach ), pertinence Sociétale.
  Cochez ce que votre projet fait déjà. Les racines sont les fondations, les branches les amplificateurs. Une racine nue rend tout l'arbre pâle : c'est la logique multiplicative.
- R · Rigueur (fondation) Une référence simple (persistance, climatologie…) à battre Des données d'entraînement et de test séparées, sans fuite Les limites et le domaine de validité écrits T · Transparence (fondation) Le code public, avec une licence Les données ou leur accès décrits, avec une licence L'usage des outils déclaré, IA comprise V · Visibilité (fondation) Un ORCID et des DOI (article, code, données) Une page claire : le résultat, la méthode, comment citer Des métadonnées lisibles par les machines (CITATION.cff, JSON-LD) A · Adoption (fondation) Un exemple qui tourne en quelques minutes Une documentation pour un utilisateur qui n'est pas l'auteur Un retour d'utilisateur réel pris en compte C · Collaboration (amplificateur) Des coauteurs qui renforcent une fondation, pas seulement la liste Des contributions créditées (CRediT, ORCID) O · Diffusion (amplificateur) Un résumé pour non-spécialistes Une présentation, un cours ou une vidéo S · Pertinence sociétale (amplificateur) Un utilisateur ou une décision identifiés Un partenaire hors du monde académique Un miroir pour réfléchir, pas un instrument de notation : les auteurs ne revendiquent pas de validation empirique et discutent eux-mêmes les limites, comme le risque de transformer ces critères en jeu ou l'inégale répartition des compétences.
+ R · Rigueur (fondation) Une référence simple à battre (persistance, ou climatologie : la moyenne habituelle) Des données d'entraînement et de test séparées, sans fuite d'information de l'une vers l'autre Les limites et le domaine de validité écrits T · Transparence (fondation) Le code public, avec une licence Les données ou leur accès décrits, avec une licence L'usage des outils déclaré, IA comprise V · Visibilité (fondation) Un ORCID et des DOI (article, code, données) Une page claire : le résultat, la méthode, comment citer Des métadonnées lisibles par les machines (CITATION.cff, JSON-LD) A · Adoption (fondation) Un exemple qui tourne en quelques minutes Une documentation pour un utilisateur qui n'est pas l'auteur Un retour d'utilisateur réel pris en compte C · Collaboration (amplificateur) Des coauteurs qui renforcent une fondation, pas seulement la liste Des contributions créditées (CRediT, ORCID) O · Diffusion (amplificateur) Un résumé pour non-spécialistes Une présentation, un cours ou une vidéo S · Pertinence sociétale (amplificateur) Un utilisateur ou une décision identifiés Un partenaire hors du monde académique Un miroir pour réfléchir, pas un instrument de notation : les auteurs ne revendiquent pas de validation empirique et discutent eux-mêmes les limites, comme le risque de transformer ces critères en jeu ou l'inégale répartition des compétences.
  Renforcer chaque fondation
  Rigueur : Évaluer une prévision face à une référence · Juger une prévision avec NICE
  Transparence : Préparer ses données · Choisir une licence · Déclarer l'usage de l'IA
@@ -4476,18 +4482,18 @@ Cyril Voyant
  Se questionner sur nos façons de faire de la recherche · L'IA dans la recherche : AI Act, charte et boîte à outils · Même nRMSE, modèles différents : ce que révèle NICE · Une prévision décalée peut rester exploitable : le test gamma · Visibilité académique : publier ne suffit plus · Excellence scientifique à l'ère de l'IA : du SEO au GEO · Comment évaluer une prévision solaire face à la persistance · Quelle référence une prévision solaire doit-elle battre ? Quand le deep learning vaut-il la peine ?
  Récits
  Quelle prévision pour quel signal ? , Aléatoire, corrélé, brownien ou cyclique : choisissez un signal et voyez quelle prévision gagne.
- Neutrons atmosphériques et BNCT : quantifier la limite , Un modèle exploratoire de 2011 : captures rares, énergie locale et dose moyenne insuffisante pour une thérapie macroscopique.
- Calculer plutôt qu'apprendre : l'équivalence de dose en radiothérapie , Une fraction de 15 Gy au rectum : 72,7 Gy en LQ, 59,4 Gy en LQL.
+ Neutrons atmosphériques et BNCT : quantifier la limite , Thérapie par capture neutronique du bore (BNCT), modèle exploratoire de 2011 : captures rares, énergie locale et dose moyenne insuffisante pour une thérapie macroscopique.
+ Calculer plutôt qu'apprendre : l'équivalence de dose en radiothérapie , Une fraction unique de 15 Gy (le gray, unité de dose absorbée) au rectum a une dose biologique efficace de 72,7 Gy avec le modèle linéaire-quadratique (LQ), mais de 59,4 Gy avec le modèle linéaire-quadratique-linéaire (LQL).
  Simuler ce que l'on ne peut pas encore mesurer : les tunnels routiers , Une année au pas de 10 minutes en 150 ms environ, limites énoncées.
- Le ciel change, mais à quel point reste-t-il prévisible ? , Deux indices (sCV et F) décrivent un site avant d'ajuster le moindre modèle.
+ Le ciel change, mais à quel point reste-t-il prévisible ? , Deux indices, sCV (variabilité) et F (prévisibilité), décrivent un site avant d'ajuster le moindre modèle.
  Cancer de la thyroïde et iode radioactif : le modèle d'abord , Marie Fusella Giuntini et Dominique Barbolosi : trois équations, 50 patients, un jumeau hybride en cours.
- Une meilleure persistance, sans entraîner un réseau neuronal , Prévision sous contraintes de symétrie : la structure du signal inscrite dans la référence.
- Sept sorties, six ans de données : ce que montre MIMO-ELM , Un apprentissage frugal prévoit tout le mix électrique corse.
- Prévision satellite : une maille ou tout le champ ? , Un ELM par maille bat le même ELM lisant tout le champ, avec mille fois moins de paramètres.
+ Une meilleure persistance, sans entraîner un réseau neuronal , La persistance répète la dernière valeur. BLEND la mélange avec la valeur à la même phase du cycle, avec des poids de forme analytique : aucun réseau neuronal.
+ Sept sorties, six ans de données : ce que montre MIMO-ELM , Un seul ELM (machine à apprentissage extrême, modèle neuronal frugal) à plusieurs sorties (MIMO) prévoit tout le mix électrique corse.
+ Prévision satellite : une maille ou tout le champ ? , Un ELM par maille (machine à apprentissage extrême, modèle neuronal frugal) bat le même ELM lisant tout le champ, avec mille fois moins de paramètres.
  Au modèle de langage la lecture, au code validé le calcul , Exécuter, clarifier ou refuser : jamais deviner.
  Se questionner sur nos façons de faire de la recherche , Avec J. P. A. Ioannidis (Stanford), J. Baas et R. Boverhof (Elsevier) : l'influence sur une échelle de doublement, l'impact à côté de l'intégrité, l'excellence comme système.
  L'IA dans la recherche : AI Act, charte et boîte à outils , La recherche est exclue sous conditions, les transferts non : calendrier, responsabilités, et dix outils pour un laboratoire.
- Même nRMSE, modèles différents : ce que révèle NICE , NICE rapporte les erreurs d'un modèle à celles de la persistance.
+ Même nRMSE, modèles différents : ce que révèle NICE , NICE divise les erreurs d'un modèle par celles de la persistance, qui répète la dernière valeur : un modèle utile se situe entre 0 et 1.
  Une prévision décalée peut rester exploitable : le test gamma , Un test à tolérances venu de la radiothérapie.
  Visibilité académique : publier ne suffit plus , Un écosystème saturé, et une boîte à outils pour une recherche trouvable.
  Excellence scientifique à l'ère de l'IA : du SEO au GEO , Le cadre RTVACOS : rigueur, transparence, visibilité, adoption.
@@ -4561,6 +4567,7 @@ Le fil : cinq étapes, une même démarche
  3. Apprendre frugalement
  4. L'IA à sa place
  5. Démontrer la confiance
+ Les mots du fil
  1 Étape 1 sur 5 · Le lien entre causes et effets est-il connu ?
  Calculer directement
  Oui : on le calcule, avec un modèle explicite.
@@ -4569,13 +4576,13 @@ Le fil : cinq étapes, une même démarche
  Calculer directement · Énergie Quelle prévision pour quel signal ?
  Aléatoire, corrélé, brownien ou cyclique : choisissez un signal et voyez quelle prévision gagne.
  Calculer directement · Médecine Neutrons atmosphériques et BNCT : quantifier la limite
- Un modèle exploratoire de 2011 : captures rares, énergie locale et dose moyenne insuffisante pour une thérapie macroscopique.
+ Thérapie par capture neutronique du bore (BNCT), modèle exploratoire de 2011 : captures rares, énergie locale et dose moyenne insuffisante pour une thérapie macroscopique.
  Calculer directement · Médecine Calculer plutôt qu'apprendre : l'équivalence de dose en radiothérapie
- Une fraction de 15 Gy au rectum : 72,7 Gy en LQ, 59,4 Gy en LQL.
+ Une fraction unique de 15 Gy (le gray, unité de dose absorbée) au rectum a une dose biologique efficace de 72,7 Gy avec le modèle linéaire-quadratique (LQ), mais de 59,4 Gy avec le modèle linéaire-quadratique-linéaire (LQL).
  Calculer directement · Énergie Simuler ce que l'on ne peut pas encore mesurer : les tunnels routiers
  Une année au pas de 10 minutes en 150 ms environ, limites énoncées.
  Calculer directement · Énergie Le ciel change, mais à quel point reste-t-il prévisible ?
- Deux indices (sCV et F) décrivent un site avant d'ajuster le moindre modèle.
+ Deux indices, sCV (variabilité) et F (prévisibilité), décrivent un site avant d'ajuster le moindre modèle.
  Calculer directement · Médecine Calculateur gratuit de BED et d'EQD2 : LQ ou LQL ?
  Un calculateur dans le navigateur, et quand le choix du modèle change la réponse.
  À essayer : Quelle prévision pour quel signal ? · Comparer les doses LQ et LQL · Mesurer sCV et F
@@ -4588,7 +4595,7 @@ Le fil : cinq étapes, une même démarche
  Hybrider · Médecine Cancer de la thyroïde et iode radioactif : le modèle d'abord
  Marie Fusella Giuntini et Dominique Barbolosi  : trois équations, 50 patients, un jumeau hybride en cours.
  Hybrider · Énergie Une meilleure persistance, sans entraîner un réseau neuronal
- Prévision sous contraintes de symétrie : la structure du signal inscrite dans la référence.
+ La persistance répète la dernière valeur. BLEND la mélange avec la valeur à la même phase du cycle, avec des poids de forme analytique : aucun réseau neuronal.
  À essayer : Calculer les poids de BLEND · Explorer le modèle thyroïde
  Le modèle au cœur · Étape suivante : Apprendre frugalement ↓
  3 Étape 3 sur 5 · Les relations utiles sont-elles connues ?
@@ -4597,9 +4604,9 @@ Le fil : cinq étapes, une même démarche
  Quand les relations utiles ne sont pas suffisamment connues, évaluer ce que les données permettent d'apprendre, avec seulement la complexité qui paie.
  Les récits de cette étape
  Apprendre frugalement · Énergie Sept sorties, six ans de données : ce que montre MIMO-ELM
- Un apprentissage frugal prévoit tout le mix électrique corse.
+ Un seul ELM (machine à apprentissage extrême, modèle neuronal frugal) à plusieurs sorties (MIMO) prévoit tout le mix électrique corse.
  Apprendre frugalement · Énergie Prévision satellite : une maille ou tout le champ ?
- Un ELM par maille bat le même ELM lisant tout le champ, avec mille fois moins de paramètres.
+ Un ELM par maille (machine à apprentissage extrême, modèle neuronal frugal) bat le même ELM lisant tout le champ, avec mille fois moins de paramètres.
  Apprendre frugalement · Énergie Prévision solaire : modèles frugaux
  De combien de modèle une prévision a vraiment besoin avant d'être déployée.
  Apprendre frugalement · Énergie Prévision PV : réduire la dimension
@@ -4625,7 +4632,7 @@ Le fil : cinq étapes, une même démarche
  Démontrer la confiance · Pratique de la recherche L'IA dans la recherche : AI Act, charte et boîte à outils
  La recherche est exclue sous conditions, les transferts non : calendrier, responsabilités, et dix outils pour un laboratoire.
  Démontrer la confiance · Énergie Même nRMSE, modèles différents : ce que révèle NICE
- NICE rapporte les erreurs d'un modèle à celles de la persistance.
+ NICE divise les erreurs d'un modèle par celles de la persistance, qui répète la dernière valeur : un modèle utile se situe entre 0 et 1.
  Démontrer la confiance · Énergie Une prévision décalée peut rester exploitable : le test gamma
  Un test à tolérances venu de la radiothérapie.
  Démontrer la confiance · Pratique de la recherche Visibilité académique : publier ne suffit plus
@@ -4638,6 +4645,33 @@ Le fil : cinq étapes, une même démarche
  De la persistance aux réseaux profonds : quoi tester d'abord, et ce qui compte comme un gain.
  À essayer : Juger une prévision avec NICE · Observer l’indice γ · L’arbre RTVACOS · Choisir une licence
  La confiance se démontre
+ Les mots du fil
+ Persistance
+ la prévision qui recopie la dernière valeur connue : la référence que tout modèle doit battre.
+ AR (autorégression)
+ une prévision calculée comme une somme pondérée des dernières valeurs observées.
+ ELM
+ machine à apprentissage extrême : un modèle neuronal frugal dont les poids d’entrée sont tirés au hasard ; seuls les poids de sortie sont ajustés, par moindres carrés.
+ BLEND
+ combinaison convexe (poids positifs de somme 1) de la persistance et de la persistance cyclique, c’est-à-dire de la valeur un cycle plus tôt, par exemple la veille à la même heure. Les poids se calculent, aucun réseau n’est entraîné.
+ sCV et F
+ deux indices calculés sur les données, avant tout modèle : sCV mesure la variabilité due aux nuages une fois le cycle du jour retiré ; F, l’indice de prévisibilité, y ajoute la mémoire de cette variabilité à l’horizon visé.
+ NICE
+ l’erreur d’un modèle divisée par celle de la persistance : 0 pour une prévision parfaite, 1 pour la persistance. Un modèle utile se situe entre 0 et 1 ; « > 1 » signale un modèle moins bon que la persistance.
+ nRMSE
+ racine de l’erreur quadratique moyenne ramenée à l’échelle du signal : plus elle est faible, mieux c’est.
+ Indice γ (test gamma)
+ un point prévu est accepté si une observation se trouve dans des tolérances d’espace, de temps et d’intensité fixées à l’avance ; la méthode vient de la vérification des doses en radiothérapie.
+ Maille
+ une cellule de la grille de l’image satellite, soit un pixel.
+ LQ, LQL, BED, EQD2
+ LQ : modèle linéaire-quadratique ; LQL : linéaire-quadratique-linéaire. BED : dose biologique efficace ; EQD2 : dose équivalente en fractions de 2 Gy. Elles servent à comparer des schémas de radiothérapie (recherche et enseignement, pas une recommandation clinique).
+ Jumeau numérique hybride
+ un modèle d’un système, ici la réponse d’un cancer à l’iode radioactif, complété par de l’apprentissage pour ce qu’il ne capture pas.
+ RTVACOS
+ Rigueur, Transparence, Visibilité, Adoption, puis Collaboration, diffusion (Outreach) et pertinence Sociétale : un cadre pour juger l’excellence d’une recherche.
+ AI Act
+ le règlement européen sur l’intelligence artificielle.
  L'approche, en détail · Tous les récits, par thème
  Et ensuite ?
  Essayer un outil Changer une valeur et voir ce qui change, dans le navigateur. Tout voir sur une page Logiciels avec DOI et équipes, cours, outils et essais. Suivre un cours Cinq cours en accès libre, sous licence CC BY 4.0. Tester la solidité d’un projet L’arbre RTVACOS : cochez vos pratiques, sans aucune note.
@@ -4699,27 +4733,27 @@ Calculer les poids de BLEND
 URL: https://www.cyrilvoyant.com/fr/outils/comparateur-previsions/
 
 Comparer des prévisions : quand un modèle plus complexe vaut-il la peine ?
- À 30 minutes, un réseau de neurones ne fait pas mieux qu'une simple autorégression : la RMSE vaut 1,43 kW pour les deux, contre 1,65 kW pour la persistance. À 6 heures, tous deux divisent par environ 2,5 l'erreur de la persistance, et le réseau ne gagne qu'environ 4 % de plus. Ces cinq prévisions portent sur une même installation photovoltaïque de Palaiseau et sur les mêmes instants. Vous y apprendrez à juger un modèle par ce qu'il gagne sur une référence simple, et non par sa complexité.
+ À 30 minutes, un réseau de neurones ne fait pas mieux qu’une simple autorégression : la RMSE vaut 1,43 kW pour les deux, contre 1,65 kW pour la persistance. À 6 heures, tous deux divisent par environ 2,5 l’erreur de la persistance, et le réseau ne gagne qu’environ 4 % de plus. Ces cinq prévisions portent sur une même installation photovoltaïque de Palaiseau et sur les mêmes instants. Vous y apprendrez à juger un modèle par ce qu’il gagne sur une référence simple, et non par sa complexité.
  JavaScript est nécessaire pour les graphiques ; les définitions et les sources restent accessibles ci-dessous. Les mots de la comparaison
  Persistance
  recopier la dernière valeur observée : la référence minimale de toute prévision.
  Persistance cyclique
- recopier la valeur observée 24 heures avant l'instant visé. Elle suit le cycle du jour, mais ignore la météo du moment.
+ recopier la valeur observée 24 heures avant l’instant visé. Elle suit le cycle du jour, mais ignore la météo du moment.
  BLEND
  combinaison convexe de la persistance et de la persistance cyclique : deux poids positifs de somme 1, un jeu de poids par demi-heure de la journée, calculé sur la première moitié des données.
  AR
- autorégression : une somme pondérée des valeurs des 24 dernières heures et de l'heure du jour et de l'année, avec des poids calculés par moindres carrés.
+ autorégression : une somme pondérée des valeurs des 24 dernières heures et de l’heure du jour et de l’année, avec des poids calculés par moindres carrés.
  ELM
  Extreme Learning Machine : un réseau de neurones à une couche intermédiaire tirée au hasard. Seuls les poids de sortie sont calculés, par moindres carrés régularisés.
  Horizon
  le temps entre la dernière valeur connue et la valeur à prévoir, ici de 30 minutes à 6 heures.
  RMSE, nRMSE, nMAE
- la RMSE est la racine de l'erreur quadratique moyenne, en kW ; elle pénalise les grosses erreurs. nRMSE et nMAE rapportent la RMSE et l'erreur absolue moyenne à la production moyenne des instants comptés.
+ la RMSE est la racine de l’erreur quadratique moyenne, en kW ; elle pénalise les grosses erreurs. nRMSE et nMAE rapportent la RMSE et l’erreur absolue moyenne à la production moyenne des instants comptés.
  NICE¹, NICE², NICE³
- l'erreur du modèle divisée par celle de la persistance simple brute (dernière observation, sans masque de nuit), au même horizon : NICE¹ pour l'erreur absolue moyenne, NICE² pour la RMSE, NICE³ pour la racine cubique de la moyenne des erreurs absolues au cube, qui pèse encore plus sur les grosses erreurs. Entre 0 et 1 : la prévision est utile. Au-dessus, elle est moins bonne que la persistance : la page affiche alors « > 1 ».
+ l’erreur du modèle divisée par celle de la persistance simple brute (dernière observation, sans masque de nuit), au même horizon : NICE¹ pour l’erreur absolue moyenne, NICE² pour la RMSE, NICE³ pour la racine cubique de la moyenne des erreurs absolues au cube, qui pèse encore plus sur les grosses erreurs. Entre 0 et 1 : la prévision est utile. Au-dessus, elle est moins bonne que la persistance : la page affiche alors « > 1 ».
  De jour / jour et nuit
  « de jour » ne compte que les instants où le soleil est levé. Les prévisions sont mises à zéro la nuit. Compter la nuit change les valeurs : le périmètre doit accompagner les résultats.
- Protocole : données publiques de Palaiseau (puissance AC au pas de 30 minutes, deux premières années, puissance maximale 16,5 kW) ; poids calculés sur la première moitié, évaluation sur la seconde. Le code publié PV_ELM_pred fournit les calculs ; la mise à l'échelle des valeurs passées est calculée ici sur la première moitié seule. Une seule configuration d'ELM (200 neurones, 8 tirages), une seule installation : ce n'est ni un classement universel, ni le résultat d'un article.
+ Protocole : données publiques de Palaiseau (puissance AC au pas de 30 minutes, deux premières années, puissance maximale 16,5 kW) ; poids calculés sur la première moitié, évaluation sur la seconde. Le code publié PV_ELM_pred fournit les calculs ; la mise à l’échelle des valeurs passées est calculée ici sur la première moitié seule. Une seule configuration d’ELM (200 neurones, 8 tirages), une seule installation : ce n’est ni un classement universel, ni le résultat d’un article.
  Pour aller plus loin : quelle prévision pour quel signal ? · comment évaluer une prévision · calculer sCV et F sur vos données · le cours de prévision solaire · pour l'incertitude autour d'une prévision, la prévision à nombres complexes et l'animation probabiliste .
  Logiciel et protocole
  Martin Leiva, Xavier Silvani , Gilles Notton , Cyril Voyant , Alan Julien . PV_ELM_pred (Zenodo). Code et données : github.com/cyrilvoyant/PV_ELM_pred .
@@ -4732,14 +4766,14 @@ Comparer des prévisions : quand un modèle plus complexe vaut-il la peine ?
 URL: https://www.cyrilvoyant.com/fr/outils/doses-lq-lql/
 
 Comparer les doses biologiques LQ et LQL
- Pour une dose unique de 15 Gy au rectum, le modèle LQ donne une BED de 72,7 Gy, le modèle LQL 59,4 Gy : 22 % d’écart. Sous la dose de transition, les deux modèles sont identiques. Vous verrez à partir de quelle dose le choix du modèle change le chiffre.
+ Pour une dose unique de 15 Gy au rectum, le modèle LQ donne une BED de 72,7 Gy, le modèle LQL 59,4 Gy : la valeur LQ est supérieure de 22 %. Sous la dose de transition, les deux modèles sont identiques. Vous verrez à partir de quelle dose le choix du modèle change le chiffre.
  ← Tous les outils · Version anglaise et guide complet : calculateur et guide (en anglais)
  Essayer
  Chaque bouton règle les paramètres sur un cas expliqué. Le « ? » à côté d’un réglage le définit.
  Activez JavaScript pour utiliser ce calculateur. Les définitions restent lisibles ci-dessous.
  Les notions
  BED
- Dose biologiquement efficace : elle permet de comparer des fractionnements différents. Elle est calculée ici avant toute correction de prolifération.
+ Dose biologiquement efficace, en grays (Gy) : elle permet de comparer des fractionnements différents. Elle est calculée ici avant toute correction de prolifération.
  LQ
  Modèle linéaire-quadratique : la BED d’une fraction croît en courbe avec la dose, à toutes les doses.
  LQL
@@ -4749,7 +4783,7 @@ Comparer les doses biologiques LQ et LQL
  Dose de transition d T
  La dose par fraction où LQL passe à la droite. Dans la bibliothèque de LQL-Equiv, elle vaut 2 α/β.
  γ/α
- La pente de la droite, sans unité. Avec 5 et d T = 2 α/β, la droite prolonge la courbe sans cassure.
+ La pente de la droite, sans unité. Avec γ/α = 5 et d T = 2 α/β, la droite prolonge la courbe sans cassure.
  À garder en tête : Une fraction par jour, sans correction de prolifération. Ce démonstrateur ne reproduit pas toutes les options de l’application LQL-Equiv complète.
  Recherche et enseignement uniquement. Cette démonstration ne constitue pas une recommandation thérapeutique ni un outil de décision clinique, et n’est pas un dispositif médical.
  Pour aller plus loin : Comprendre les calculs BED et EQD2 · Le récit de LQL-Equiv
@@ -4802,7 +4836,7 @@ Explorer les profils du modèle thyroïde
  Les deux groupes de la cohorte de 50 patients de l’article : 27,5 % et 72,5 %.
  Activité
  La quantité d’iode radioactif administrée à chaque séance, en gigabecquerels (GBq).
- À garder en tête : Deux profils types issus des démonstrateurs publics RAIR-Sim, pas un ajustement à un patient.
+ À garder en tête : Deux profils types, avec les paramètres des démonstrateurs publics RAIR-Sim (ceux de l’équipe de l’article), pas un ajustement à un patient.
  Recherche et enseignement uniquement. Cette démonstration ne constitue pas une recommandation thérapeutique ni un outil de décision clinique, et n’est pas un dispositif médical.
  Pour aller plus loin : Le récit du modèle thyroïde
  Travaux et équipes de référence
@@ -4958,9 +4992,9 @@ URL: https://www.cyrilvoyant.com/fr/recits/evaluer-prevision-solaire-persistance
 Comment évaluer une prévision solaire face à la persistance
  Comparez le modèle à la persistance sur les mêmes cibles, le même horizon et le même périmètre, donnez plus d'une norme d'erreur, puis testez la différence. Le rapport entre l'erreur du modèle et celle de la persistance dit ce que le modèle apporte. Les métriques NICEᵏ (Voyant et al., 2025) construisent ce rapport pour les normes d'ordre un, deux et trois.
  Cyril Voyant · Mines Paris – PSL, Centre O.I.E. · 2 novembre 2026
- Repères de lecture. La MAE est la moyenne des erreurs absolues ; la RMSE est la racine de la moyenne des erreurs au carré et donne plus de poids aux grandes erreurs. La nRMSE rapporte la RMSE à la moyenne des observations évaluées. AR désigne l’autorégression ; ELM (extreme learning machine) ajuste les poids de sortie en gardant une couche cachée aléatoire fixe. Dans les formules NICE, l’indice p désigne la persistance ; la p-value statistique d’un test est une autre quantité. sCV décrit la variabilité du signal et F combine variabilité et dépendance temporelle.
+ Repères de lecture. La MAE est la moyenne des erreurs absolues ; la RMSE est la racine de la moyenne des erreurs au carré et donne plus de poids aux grandes erreurs. La nRMSE rapporte la RMSE à la moyenne des observations évaluées. AR désigne l’autorégression ; ELM (extreme learning machine) ajuste les poids de sortie en gardant une couche cachée aléatoire fixe. Dans les formules NICE, l’indice p désigne la persistance ; la p-value statistique d’un test est une autre quantité. sCV (coefficient de variation stochastique) mesure l’écart de l’éclairement à la courbe de ciel clair : 0 par ciel clair, 1 pour un ciel qui alterne au hasard entre ciel clair et nuage épais. F (prévisibilité) est compris entre 1 − sCV, quand ces écarts n’ont aucune mémoire, et 1, quand ils sont parfaitement corrélés dans le temps ; contrairement à sCV, il dépend de l’horizon. Les deux sont expliqués, avec une page interactive, dans Quelle prévision pour quel signal ? ; l’étude est résumée dans sCV et F, expliqués ; équations et code sont sur la page des méthodes (en anglais).
  La marche à suivre
- Nommer la référence. Dire quelle persistance est utilisée : dernière observation, persistance de l'indice de ciel clair (smart persistence), ou référence qui tient compte de la phase comme BLEND. Sans cela, un score de compétence dit peu de chose.
+ Nommer la référence. Dire quelle persistance est utilisée : dernière observation, persistance de l'indice de ciel clair (smart persistence), ou référence qui tient compte de la phase comme BLEND . Sans cela, un score de compétence dit peu de chose.
  Garder les mêmes cibles. Même site, même période, même horizon et mêmes instants pour le modèle et la référence.
  Annoncer le périmètre. Jour seul, ou jour et nuit. Inclure la nuit change la population évaluée et la normalisation.
  Donner plusieurs normes. La MAE et la RMSE ne pèsent pas les grandes erreurs de la même façon. Garder les erreurs absolues à côté des scores relatifs.
@@ -5080,10 +5114,10 @@ URL: https://www.cyrilvoyant.com/fr/recits/reference-prevision-solaire-deep-lear
 Quelle référence une prévision solaire doit-elle battre ? Quand le deep learning vaut-il la peine ?
  Commencez par la persistance, puis une référence qui connaît la phase, une autorégression et un apprentissage frugal. Gardez un réseau profond seulement s'il apporte un gain mesuré sur le même protocole. Le deep learning peut valoir la peine. Il doit le montrer face à des références qui ne coûtent presque rien.
  Cyril Voyant · Mines Paris – PSL, Centre O.I.E. · 2 novembre 2026
- Repères de lecture. La MAE est la moyenne des erreurs absolues ; la RMSE est la racine de la moyenne des erreurs au carré et donne plus de poids aux grandes erreurs. La nRMSE rapporte la RMSE à la moyenne des observations évaluées. AR désigne l’autorégression ; ELM (extreme learning machine) ajuste les poids de sortie en gardant une couche cachée aléatoire fixe. Dans les formules NICE, l’indice p désigne la persistance ; la p-value statistique d’un test est une autre quantité. sCV décrit la variabilité du signal et F combine variabilité et dépendance temporelle.
+ Repères de lecture. La MAE est la moyenne des erreurs absolues ; la RMSE est la racine de la moyenne des erreurs au carré et donne plus de poids aux grandes erreurs. La nRMSE rapporte la RMSE à la moyenne des observations évaluées. AR désigne l’autorégression ; ELM (extreme learning machine) ajuste les poids de sortie en gardant une couche cachée aléatoire fixe. Dans les formules NICE, l’indice p désigne la persistance ; la p-value statistique d’un test est une autre quantité. sCV (coefficient de variation stochastique) mesure l’écart de l’éclairement à la courbe de ciel clair : 0 par ciel clair, 1 pour un ciel qui alterne au hasard entre ciel clair et nuage épais. F (prévisibilité) est compris entre 1 − sCV, quand ces écarts n’ont aucune mémoire, et 1, quand ils sont parfaitement corrélés dans le temps ; contrairement à sCV, il dépend de l’horizon. Les deux sont expliqués, avec une page interactive, dans Quelle prévision pour quel signal ? ; l’étude est résumée dans sCV et F, expliqués ; équations et code sont sur la page des méthodes (en anglais).
  Quoi tester, dans l'ordre
  La persistance simple. La dernière valeur observée : la référence minimale de toute prévision.
- Une référence qui connaît le cycle. La persistance de l'indice de ciel clair, ou BLEND, qui combine la mémoire immédiate et la valeur à la même phase du cycle. BLEND part de l'éclairement brut et ses poids ont une forme analytique (Voyant et al., 2026).
+ Une référence qui connaît le cycle. La persistance de l'indice de ciel clair, ou BLEND , qui combine la mémoire immédiate et la valeur à la même phase du cycle. BLEND part de l'éclairement brut et ses poids ont une forme analytique (Voyant et al., 2026).
  Une autorégression. Estimée par moindres carrés sur les valeurs récentes.
  Un apprentissage frugal. Une Extreme Learning Machine (Huang, Zhu et Siew, 2006) garde une couche cachée aléatoire et calcule analytiquement ses poids de sortie.
  Un réseau profond. LSTM, U-Net ou plus grand, avec le même découpage, les mêmes horizons et le même budget de réglage.
@@ -5095,8 +5129,9 @@ Quelle référence une prévision solaire doit-elle battre ? Quand le deep lea
  Des lignes d'apprentissage séparées des lignes d'évaluation, mise à l'échelle comprise.
  Une différence testée entre stations ou périodes, pas seulement une moyenne.
  Les coûts donnés avec l'erreur : paramètres, temps d'apprentissage, ce que l'appareil peut stocker.
+ Le signal décrit à côté du score : avec sCV et F (voir l’encadré ci-dessus), le lecteur distingue un ciel régulier d’un ciel difficile à prévoir.
  Limites
- Ces résultats concernent les données et les protocoles étudiés. BLEND ne dépasse pas toutes les méthodes optimisées ; des prédicteurs autorégressifs ou appris peuvent faire mieux dans certaines conditions. Rien ici n'est un classement universel.
+ Ces résultats concernent les données et les protocoles étudiés. BLEND ne dépasse pas toutes les méthodes optimisées ; des prédicteurs autorégressifs ou entraînés peuvent faire mieux dans certaines conditions. Rien ici n'est un classement universel.
  À lire et à utiliser
  Comparer des prévisions sur des données PV publiques
  BLEND expliqué · MIMO-ELM expliqué · le cours
@@ -5118,7 +5153,7 @@ Prévision satellite de l'éclairement : une maille, un voisinage ou tout le c
  Cyril Voyant (Mines Paris – PSL, centre O.I.E.), avec Andreas Kazantzidis (université de Patras) et Jan Kleissl (université de Californie à San Diego) · manuscrit en préparation, code et extrait de données ouverts
  En bref
  Chaque modèle prévoit les 24 prochaines valeurs horaires d'une maille satellite au-dessus de la Corse à partir de ses 24 valeurs passées ; seul change ce qu'il lit : sa propre maille, un voisinage, tout le champ, ou un champ compressé .
- Dans le dépôt public, une machine à apprentissage extrême (ELM, un modèle neuronal dont les poids cachés sont fixés aléatoirement) qui lit sa propre maille a l'erreur la plus faible, cumulée sur toutes les mailles et tous les horizons ( nRMSE 0,308 ), devant le même modèle lisant tout le champ (0,355) avec mille fois moins de paramètres , et devant un U-Net (0,343) et un LSTM (0,326) lisant le champ. La nRMSE est la racine de l'erreur quadratique moyenne, divisée par la moyenne des observations évaluées : plus elle est faible, mieux c'est. Les deux réseaux profonds testés sont un U-Net, conçu pour lire des images, et un LSTM, conçu pour lire des suites en gardant la mémoire du passé.
+ Dans le dépôt public, une machine à apprentissage extrême ( ELM , un modèle neuronal dont les poids cachés sont fixés aléatoirement) qui lit sa propre maille a l'erreur la plus faible, cumulée sur toutes les mailles et tous les horizons ( nRMSE 0,308 ), devant le même modèle lisant tout le champ (0,355) avec mille fois moins de paramètres , et devant un U-Net (0,343) et un LSTM (0,326) lisant le champ. La nRMSE est la racine de l'erreur quadratique moyenne, divisée par la moyenne des observations évaluées : plus elle est faible, mieux c'est. Les deux réseaux profonds testés sont un U-Net, conçu pour lire des images, et un LSTM, conçu pour lire des suites en gardant la mémoire du passé.
  C'est une région, un produit satellite et un découpage sur deux ans : un résultat de banc d'essai, pas une loi générale .
  Quel niveau de complexité pour ce travail ? Niveau 5 sur 6
  1 Calcul direct (le lien est connu)
@@ -5134,8 +5169,8 @@ Prévision satellite de l'éclairement : une maille, un voisinage ou tout le c
  L'éclairement satellite arrive sous forme de cartes. Les réseaux profonds, U-Net ou LSTM, lisent des champs entiers ; les méthodes de compression réduisent le champ avant qu'un modèle le lise. Les deux ajoutent des entrées et des paramètres. Quelle part de cette information spatiale fait baisser l'erreur de la prévision pour chacune des 24 heures suivantes, et pour quel coût en paramètres stockés ?
  La théorie, en clair
  Un seul modèle, plusieurs entrées. Le modèle est une machine à apprentissage extrême (ELM) : une couche cachée de neurones tirés au hasard et jamais entraînés, et des poids de sortie ajustés par un seul calcul linéaire de moindres carrés, sans entraînement itératif. L'apprentissage prend quelques secondes et le nombre de paramètres stockés se compte facilement. Ce même modèle lit soit sa propre maille, soit un voisinage 3 × 3, soit tout le champ de 722 mailles, soit le champ compressé par l'une de sept méthodes (transformée de Radon, transformée en cosinus discrète ou DCT, ondelettes, analyse en composantes principales ou ACP, projection aléatoire, sous-échantillonnage, autoencodeur).
- Des références honnêtes. La persistance répète la dernière heure ; la persistance cyclique, ici la persistance 24 h, répète la même heure de la veille ; BLEND est une combinaison convexe des deux, une moyenne pondérée à poids positifs. Un modèle ne vaut ses paramètres que s'il les bat.
- Un score honnête. Les erreurs sont cumulées sur toutes les mailles, tous les horizons de 1 à 24 heures et toutes les heures de test où le Soleil est à plus de 5° au-dessus de l'horizon. Pour obtenir la nRMSE, la racine de l'erreur quadratique moyenne est divisée par la moyenne des observations retenues de l'année de test, 407,9 W/m².
+ Des références équitables. La persistance répète la dernière heure ; la persistance cyclique, ici la persistance 24 h, répète la même heure de la veille ; BLEND est une combinaison convexe des deux, une moyenne pondérée à poids positifs. Un modèle ne vaut ses paramètres que s'il les bat.
+ Un score équitable. Les erreurs sont cumulées sur toutes les mailles, tous les horizons de 1 à 24 heures et toutes les heures de test où le Soleil est à plus de 5° au-dessus de l'horizon. Pour obtenir la nRMSE, la racine de l'erreur quadratique moyenne est divisée par la moyenne des observations retenues de l'année de test, 407,9 W/m².
  L'exemple en chiffres
  Erreur cumulée en fonction du nombre de paramètres stockés par chaque modèle (échelle logarithmique) : l'ELM par maille est le point le plus bas ; lire tout le champ déplace les modèles vers la droite sans les faire descendre
  Les données sont l'éclairement HelioClim-3 (méthode Heliosat-2, images Meteosat, service SoDa) sur 1 148 points au-dessus de la Corse, interpolés sur une grille de 32 × 32 dont 722 mailles, à l'intérieur du contour de ces points (leur enveloppe convexe), sont évaluées, au pas horaire, avec 2005 pour l'apprentissage et 2006 pour le test.
@@ -5313,11 +5348,11 @@ Vue d'ensemble : recherche, logiciels, cours et outils
  Les travaux publics de Cyril Voyant en physique médicale et en prévision énergétique, cours et logiciels compris, chacun relié à sa source : article, DOI, dépôt, équipe. Réutilisation libre, en citant les auteurs. La version courte, en 30 secondes ; le fil qui relie ces travaux .
  Les idées directrices
  Comprendre avant de calculer Partir de la question humaine, modéliser le système, puis seulement choisir l'outil. Battre une référence simple Toute prévision se compare d'abord à la persistance ; un modèle qui ne la bat pas n'apporte rien. La complexité doit payer Un modèle frugal (ELM, autorégression) d'abord ; plus lourd seulement si le gain est démontré. La confiance se démontre Code, données, licences et vérification publics ; l'IA est un outil, déclaré. Les axes de recherche
- Prévision solaire et énergétique Persistance , BLEND , ELM et mix électrique corse , réduction de dimension .
- Évaluer les prévisions NICE , indice γ , sCV et prévisibilité , intervalles de prévision .
- Physique médicale Doses biologiquement équivalentes (LQL-Equiv) , radiothérapie interne de la thyroïde .
+ Prévision solaire et énergétique Persistance (recopier la dernière valeur connue), BLEND (mélange de la persistance et de la valeur un cycle plus tôt), ELM et mix électrique corse (un modèle neuronal frugal dont seuls les poids de sortie sont ajustés), réduction de dimension (ne garder de l’entrée que ce qui sert la prévision).
+ Évaluer les prévisions NICE (erreur divisée par celle de la persistance : utile entre 0 et 1), indice γ (tolère de petits décalages en espace, en temps et en intensité), sCV et prévisibilité (variabilité due aux nuages, calculée avant tout modèle), intervalles de prévision (fourchette censée contenir la mesure).
+ Physique médicale Doses biologiquement équivalentes (LQL-Equiv) : comparer deux schémas de radiothérapie sur une même échelle ; radiothérapie interne de la thyroïde : un modèle à trois équations.
  IA et langage Les modèles de langage comme interfaces vers des codes validés.
- Évaluer la recherche Indice d'influence , cadre RTVACOS , édition scientifique .
+ Évaluer la recherche Indice d'influence (mesure logarithmique de l'influence d'une institution), cadre RTVACOS (sept critères, de la rigueur à la pertinence sociétale), édition scientifique .
  Les logiciels, avec leur DOI et leur équipe
  NICEᵏ: normalized forecast errors compared with simple persistence (MATLAB) Cyril Voyant · dépôt · MIT
  sCV and F: variability and forecastability of solar irradiance (MATLAB) Cyril Voyant · dépôt · MIT
@@ -5479,10 +5514,10 @@ BLEND: a better persistence forecast without training a neural network
  Step 2 of 5 · Hybridize See it on the thread When the model falls short, complete it: keep the model, learn only what is missing. The model at the core.
  Cyril Voyant · 18 October 2026
  Accounting for daily phase improves persistence forecasts on the solar series studied, with differences widening at longer lead times. In our Applied Mathematical Modeling paper, BLEND supplies this baseline directly from raw irradiance, without normalizing observations by an external clear-sky model.
- The starting point is physical and statistical: irradiance does not have the same statistical properties throughout the day. Part of their evolution repeats with the cycle. Simply carrying the latest observation forward misses that structure. BLEND operators combine immediate memory with phase-aligned recurrence. The weight between the two is set for each phase of the cycle. Its MSE-optimal value, written with cyclic means, deviations and correlations, is close to a one-line least-squares fit on past cycles. The simplified coefficient λ = (1 + ρ)/2, also set for each phase from the local correlation ρ, is an approximation under the correlation assumptions of Remark 17, whose performance depends on the horizon. The resulting forecast has an explicit analytical construction rather than a hidden layer fitted to predict the target.
+ The starting point is physical and statistical: irradiance does not have the same statistical properties throughout the day. Part of their evolution repeats with the cycle. Simply carrying the latest observation forward misses that structure. BLEND operators form a convex combination of immediate memory (persistence) and phase-aligned recurrence (cyclic persistence: the value observed one cycle earlier, at the same phase). The weight between the two is set for each phase of the cycle. Its MSE-optimal value, written with cyclic means, deviations and correlations, is close to a one-line least-squares fit on past cycles. The simplified coefficient λ = (1 + ρ)/2 is the weight of the latest observation; ρ is the correlation, at that phase, between the present value and the value at the forecast horizon. High correlation favors persistence, low correlation the previous cycle. It is an approximation under the conditions stated in the paper, and its performance depends on the horizon. The resulting forecast has an explicit analytical construction rather than a hidden layer fitted to predict the target.
  Validation combines controlled simulations with measurements from 68 Spanish stations. It compares persistence variants with more elaborate reference methods. On measured data, cyclostationary adjustments reduce errors relative to their naive counterparts; the paper also evaluates inter-model differences with Wilcoxon tests. Error distributions also reveal how performance varies across stations and forecast horizons.
  The practical contribution is an interpretable, inexpensive analytical baseline against which to assess a trained model. Weights are estimated from historical observations in closed form, without iterative optimization. Cyclic statistics and correlations therefore require appropriate estimation. BLEND does not outperform every optimized method; autoregressive or learned predictors can do better under some conditions. Public MATLAB code makes the protocol inspectable and supports testing whether this simplicity transfers to another series. That test is more informative than assuming that additional modeling complexity must improve the forecast. The paper’s evidence concerns the studied datasets, rather than a universal ranking of forecasting methods.
- The horizon changes the comparison. Figure 6 of the public author version: average normalized errors over 68 SIAR stations, from 30 to 360 minutes. Circles and dashed lines show nRMSE; squares and solid lines show nMAE. The BLEND variants are compared with persistence and other references under the study protocol; these averages do not imply that a model wins at every station. Source: arxiv.org/html/2602.18949v3. Full research team and publication below.
+ The horizon changes the comparison. Figure 6 of the public author version: average normalized errors over 68 SIAR stations, from 30 to 360 minutes. Circles and dashed lines show nRMSE (normalized root mean squared error); squares and solid lines show nMAE (normalized mean absolute error). The BLEND variants are compared with persistence and other references under the study protocol; these averages do not imply that a model wins at every station. Source: arxiv.org/html/2602.18949v3. Full research team and publication below.
  What level of complexity for this work? Level 3 of 6
  1 Direct calculation (the link is known)
  2 Simulation from what is known
@@ -5492,9 +5527,9 @@ BLEND: a better persistence forecast without training a neural network
  6 Deep networks, foundation models
  Climb a level only if it pays.
  Open code v1.1.1: an out-of-sample benchmark
- The corrected MATLAB benchmark separates 6,000 observations for estimation from 6,000 for evaluation, with common forecast targets. It compares 21 references over five horizons and 10 synthetic realizations. The figure below reports day-and-night nRMSE, normalized by the mean of the evaluated observations.
+ The corrected MATLAB benchmark separates 6,000 observations for estimation from 6,000 for evaluation, with common forecast targets. It compares 21 references over five horizons and 10 synthetic realizations. The figure below reports day-and-night nRMSE (the RMSE divided by the mean of the evaluated observations).
  BLEND least squares per phase reaches mean nRMSE 0.3020, 0.3975, 0.4447, 0.4880 and 0.4954 at 1, 2, 3, 6 and 9 steps, compared with 0.5021 for cyclic persistence. Its weight is estimated by least squares in closed form, without iterative optimization. These estimates are not identical to the finite-sample moments estimator in general.
- CLIPER on the ratio to trend x/CS (clear-sky reference) has the lowest mean errors here. This is consistent with a synthetic signal constructed as clear sky multiplied by correlated noise. CLIPER on the difference from the periodic trend (mean profile estimated on training data) also performs well without a clear-sky reference. Ten realizations of one generator do not establish a universal ranking or reproduce the paper’s SIAR experiments.
+ CLIPER, a convex combination of persistence and the mean, applied to the ratio to trend x/CS (CS is the clear-sky reference), has the lowest mean errors here. This is consistent with a synthetic signal constructed as clear sky multiplied by correlated noise. CLIPER on the difference to the periodic trend (mean profile estimated on training data) also performs well without a clear-sky reference. Ten realizations of one generator do not establish a universal ranking or reproduce the paper’s SIAR experiments.
  Archived code v1.1.1 · Full results, figures and CSV · Step-by-step calculation
  Three panels of out-of-sample nRMSE versus horizon 1 to 9 steps, synthetic signal, 10 realizations (cyclostationary-forecasting-matlab v1.1.1). BLEND on the raw signal: weight per phase 0.302 to 0.495, one weight 0.365 to 0.499, simplified (1 + rho)/2 0.403 to 0.744; cyclic persistence 0.502. CLIPER without clear sky: one weight on the difference to trend 0.223 to 0.354, weight per phase 0.263 to 0.354. With clear sky: CLIPER on x/CS 0.213 to 0.354, BLEND on x/CS 0.219 to 0.413, smart multiplicative 0.230 to 0.593, stochastic 0.260 to 0.474.
  Paper, authors and resources
@@ -5606,6 +5641,7 @@ News: publications, software and essays
  Revisiting Persistence: Symmetry-Constrained Forecasting of Periodically Correlated Energy Processes
  Cyril Voyant , Candice Banes , Luis Garcia-Gutierrez , Gilles Notton , Milan Despotovic , Zaher Mundher Yaseen
  This work revisits persistence forecasting for periodically varying statistics, including the daily cycle of solar irradiance. BLEND combines the latest observation with an observation aligned to the target phase of the cycle.
+ Explained version: a better persistence forecast without training a neural network (BLEND)
  Read the full post
  This work revisits persistence forecasting for periodically varying statistics, including the daily cycle of solar irradiance. BLEND combines the latest observation with an observation aligned to the target phase of the cycle.
  The weights are estimated from historical observations in closed form. Phase-wise least squares provides an explicit baseline without iterative optimisation; a moments-based formulation is equivalent in population under its assumptions, but need not give exactly the same finite-sample estimate.
@@ -5619,6 +5655,7 @@ News: publications, software and essays
  From Pixels to Tolerances: Rethinking Forecast Validation with the γ-Index
  Cyril Voyant
  Classical metrics like RMSE evaluate forecasts as if every pixel must match perfectly in space and time. Machines optimize for that. Humans do not think that way.
+ Explained version: validating displaced forecasts beyond pointwise errors (γ-index)
  Read the full post
  Cyril Voyant
  Classical metrics like RMSE evaluate forecasts as if every pixel must match perfectly in space and time. Machines optimize for that. Humans do not think that way.
@@ -5699,6 +5736,7 @@ News: publications, software and essays
  Coherent Multi-Energy Forecasting for Real-Time Grid Management: A Parsimonious MIMO-ELM Approach
  Cyril Voyant , Milan Despotovic , Luis Garcia-Gutierrez , Mohammed Asloune , Yves-Marie Saint-Drenan , Jean-Laurent Duchaud , Ghjuvan Antone Faggianelli , Elena Magliaro
  Fast, transparent, and operational short-term forecasting of demand and generation across multiple energy sources.
+ Explained version: seven energy signals of Corsica forecast by one model (MIMO-ELM)
  Read the full post
  Fast, transparent, and operational short-term forecasting of demand and generation across multiple energy sources.
  Modern power systems are becoming structurally more complex. Renewable integration, self-consumption, distributed resources, and partial interconnections introduce strong variability and cross-dependencies between energy sources. In this context, forecasting is no longer about predicting a single time series. It is about predicting a system. A new study published in Applied Energy presents a unified Multi-Input Multi-Output Extreme Learning Machine (MIMO-ELM) framework designed for short-term forecasting of multi-source energy systems. The model simultaneously predicts seven grid variables: total demand and generation from solar PV, wind, hydropower, thermal power, bioenergy, and imports.
@@ -5890,6 +5928,7 @@ News: publications, software and essays
  Stochastic Coefficient of Variation: Assessing the Variability and Forecastability of Solar Irradiance
  Cyril Voyant , Alan Julien , Milan Despotovic , Gilles Notton , Luis Antonio Garcia-Gutierrez , Claudio Francesco Nicolosi , Philippe Blanc , Jamie Bright
  This work presents a robust framework for quantifying solar irradiance variability and forecastability through the Stochastic Coefficient of Variation (sCV) and the Forecastability (F). Traditional metrics, such as the standard deviation, fail to isolate stochastic fluctuations from deterministic trends in solar irradi…
+ Explained version: how variable and how forecastable is solar irradiance (sCV and F)
  Read the full post
  Renewable Energy, 2025, https://doi.org/10.1016/j.renene.2025.123913
  Abstract
@@ -5898,6 +5937,7 @@ News: publications, software and essays
  NICE^k Metrics: Unified and Multidimensional Framework for Evaluating Deterministic Solar Forecasting Accuracy
  Cyril Voyant , Milan Despotovic , Luis Garcia-Gutierrez , Rodrigo Amaro e Silva , Philippe Lauret , Ted Soubdhan , Nadjem Bailek
  Accurate solar energy output prediction is fundamental to integrating renewable energy sources into electrical grids, maintaining system stability, and enabling effective energy management. However, conventional error metrics, such as Root Mean Squared Error (RMSE), Mean Absolute Error (MAE), and Skill Scores (SS), fail …
+ Explained version: when RMSE hides a difference between solar forecasts (NICE)
  Read the full post
  Sustainable Energy Technologies and Assessments, 2025, https://doi.org/10.1016/j.seta.2025.104588
  Abstract
@@ -6015,8 +6055,8 @@ NICE metrics: when RMSE hides a difference between solar forecasts
  Step 5 of 5 · Demonstrate trust See it on the thread Judge against a reference, publish code, data and limits, make research findable and reusable. Trust is demonstrated.
  Cyril Voyant · 18 October 2026
  At a thirty-minute horizon, the NICE study reports a rounded median nRMSE of 0.19 for both an ELM and an autoregressive model. The composite NICEΣ score nevertheless gives 0.75 versus 0.77, with a statistically significant difference in the reported test. The finding is more than a change of notation: the evaluation metric changes how effectively forecasts can be distinguished.
- Published in Sustainable Energy Technologies and Assessments, the study introduces a family based on error norms of orders one, two and three. NICE¹ tracks average errors, NICE² gives more weight to large deviations and NICE³ amplifies extremes. NICEΣ combines those dimensions. A persistence reference places error in the context of the series, rather than normalizing solely by mean irradiance. The components therefore describe different aspects of performance instead of assuming that a single conventional error statistic answers every evaluation question.
- Validation combines Monte Carlo simulations with observations from 68 SIAR stations in Spain. Comparisons include autoregressive models, Extreme Learning and smart persistence. The paper distinguishes a theoretical construction, which depends on strict statistical assumptions, from empirical evaluation. It does not justify substituting a theoretical expression for observed-error calculations without checking those assumptions.
+ Published in Sustainable Energy Technologies and Assessments, the study introduces a family based on error norms of orders one, two and three. NICE¹ tracks average errors, NICE² gives more weight to large deviations and NICE³ amplifies extremes. NICEΣ combines those dimensions. A persistence reference places error in the context of the series, rather than normalizing solely by mean irradiance. Each component is the model’s error divided by that of simple persistence at the same horizon: 0 for a perfect forecast, 1 for persistence itself, and above 1 when persistence does better. The components therefore describe different aspects of performance instead of assuming that a single conventional error statistic answers every evaluation question.
+ Validation combines Monte Carlo simulations with observations from 68 SIAR stations in Spain. Comparisons include autoregressive models (AR), the extreme learning machine (EL: a random hidden layer whose output weights are fitted analytically), smart persistence (SP: persistence of the clear-sky index) and ARTU (a second-order reference on the ratio to trend). The paper distinguishes a theoretical construction, which depends on strict statistical assumptions, from empirical evaluation. It does not justify substituting a theoretical expression for observed-error calculations without checking those assumptions.
  In the thirty-minute example, the tests give p < 0.001 for NICEΣ and p = 0.0591 for nRMSE. These values concern that protocol and those distributions; they do not directly measure the economic importance of the improvement. Users can select sensitivity to extreme errors that fits their application while retaining absolute errors and calculation assumptions. The public PV_ELM_pred code documents the components and their average. Relative scores above one should remain visible: persistence can outperform the model being evaluated.
  What a single score hides. Figure 5 of the public author version: distributions of NICE components and conventional metrics for four models (EL, AR, SP and ARTU) on SIAR data, at a 30-minute horizon. The printed p-values concern the four-model comparison; they are not the pairwise EL–AR tests discussed above. A displayed p = 0.0000 is rounded, not an exactly zero probability. Source: arxiv.org/html/2508.01457v1. Full research team and DOI below.
  Paper, authors and resources
@@ -6034,8 +6074,8 @@ MIMO-ELM: seven energy signals of Corsica forecast by one model
  Step 3 of 5 · Learn frugally See it on the thread When the useful relations are not known well enough, evaluate what the data can teach, with only as much complexity as pays. Complexity only if it pays.
  Cyril Voyant · 18 October 2026
  At a one-hour horizon, our MIMO-ELM model achieves nRMSE values of 0.179 for solar generation and 0.051 for thermal generation, with R² above 0.98 for both series. Total-demand forecasts remain reliable up to five hours ahead within the study. Published in Applied Energy, these results come from six years of hourly data for the Corsican electricity system.
- The model handles seven variables: total demand, solar, wind, hydropower, thermal generation, bioenergy and imports. Its multiple-input multiple-output architecture uses sliding windows and cyclic encodings to represent memory and seasonal variation. The Extreme Learning Machine retains a random hidden layer and fits its output coefficients analytically, avoiding iterative deep-network training.
- Evaluation goes beyond an isolated score. The study compares the model with persistence, single-output formulations and an LSTM under a realistic tuning budget. It reports improved skill against the reference methods and small but stable gains over SISO formulations. Wind and bioenergy remain more difficult because of their strong variability. These differences are useful findings in their own right: a shared architecture does not make every energy component equally predictable.
+ The model handles seven variables: total demand, solar, wind, hydropower, thermal generation, bioenergy and imports. Its multiple-input multiple-output (MIMO) architecture, in which one model reads the recent history of all seven signals and forecasts them together, uses sliding windows and cyclic encodings to represent memory and seasonal variation. The nRMSE quoted above is the RMSE divided by a typical level of the signal (0 for a perfect forecast), and R² is the share of the variance of the series that the forecast explains (1 for a perfect forecast). The Extreme Learning Machine retains a random hidden layer and fits its output coefficients analytically, avoiding iterative deep-network training.
+ Evaluation goes beyond an isolated score. The study compares the model with persistence, single-output (SISO) formulations with one model per signal, and an LSTM (long short-term memory, a recurrent deep network) under a realistic tuning budget. It reports improved skill against the reference methods and small but stable gains over SISO formulations. Wind and bioenergy remain more difficult because of their strong variability. These differences are useful findings in their own right: a shared architecture does not make every energy component equally predictable.
  For an energy system, the contribution is a common, rapidly fitted framework for several components. It supports joint investigation of production and consumption. Multiple outputs alone, however, do not impose an exact physical energy balance; enforcing conservation requires an explicit constraint or reconciliation procedure. The reported nRMSE values are not percentage improvements over a competitor. They describe the Corsican evaluation protocol. Transfer to another region should be assessed using that region’s data, constraints and forecast horizons, rather than inferred from architecture alone.
  Seven signals, one forecast horizon. Figure 1 of the public author version: measured and predicted demand, thermal, hydro, solar, wind, bioenergy and imports over approximately 100 winter hours in Corsica, at a one-hour horizon (MW). This selected window illustrates the trajectories; the paper’s full evaluation establishes performance. Source: arxiv.org/html/2508.12764v2. Full author team and publication below.
  What level of complexity for this work? Level 5 of 6
@@ -6061,8 +6101,8 @@ sCV and F: how variable and how forecastable is solar irradiance
  Cyril Voyant · 18 October 2026
  Across 68 Spanish weather stations, our forecastability indicator F retains an inverse relationship with forecast error, examined across ten models and 24 horizons. This result, published in Renewable Energy, supports characterizing the signal before comparing algorithms: a large error means something different for a regular sky than for a strongly fluctuating irradiance series.
  A useful diagnosis can rely on sufficient tools: complexity is added only when its benefit is demonstrated.
- The study introduces two complementary indicators. The stochastic coefficient of variation, sCV, measures fluctuations relative to a dynamic clear-sky reference. sCV lies between 0 and 1; the value 1 corresponds to the theoretical case in which the signal switches randomly between clear sky and the diffuse floor. sCV describes signal variability, not a forecast model’s performance against persistence. A value outside the expected domain calls for checking the data, preprocessing and normalization assumptions. F adds information about temporal dependence through autocorrelation. Two series with similar variability can therefore retain different amounts of memory, leaving different amounts of useful information for prediction.
- Validation combines one hundred synthetic cyclostationary series with observations from the SIAR network. Simulations allow controlled changes to signal properties; weather stations test the diagnosis against measured conditions. The association between F and forecast errors also appears at individual stations, rather than being solely a consequence of network aggregation. Under extreme synthetic variability, that association can become nonlinear.
+ The study introduces two complementary indicators. The stochastic coefficient of variation, sCV, measures fluctuations relative to a dynamic clear-sky reference. sCV lies between 0 and 1; the value 1 corresponds to the theoretical case in which the signal switches randomly between clear sky and the diffuse floor. sCV describes signal variability, not a forecast model’s performance against persistence. A value outside the expected domain calls for checking the data, preprocessing and normalization assumptions. F adds information about temporal dependence through autocorrelation. F lies between 1 − sCV, when the departures from clear sky keep no memory, and 1, when they are perfectly correlated in time; unlike sCV, it depends on the forecast horizon. Two series with similar variability can therefore retain different amounts of memory, leaving different amounts of useful information for prediction.
+ Validation combines one hundred synthetic cyclostationary series with observations from the SIAR network (the agro-climatic weather stations of Spain). Simulations allow controlled changes to signal properties; weather stations test the diagnosis against measured conditions. The association between F and forecast errors also appears at individual stations, rather than being solely a consequence of network aggregation. Under extreme synthetic variability, that association can become nonlinear.
  For an operator or researcher, the contribution is diagnostic: compare forecasting difficulty, select meaningful baselines and interpret a score in context. It can inform a discussion of forecast risk before choosing a more elaborate model. F is neither a calibrated confidence interval nor a promise of financial savings. Overirradiance events and the quality of the clear-sky reference also require attention. The study measures aspects of inherent forecastability; it does not remove atmospheric uncertainty or establish an operational benefit for every energy system. Those benefits require a separate decision-based evaluation.
  Variability and memory. Teaching illustration from the UE14 course: F changes with the forecast horizon while sCV is held fixed; the bars represent remaining temporal memory. This course illustration is not the paper’s 68-station validation and its values should not be read as a universal threshold. Source: Cyril Voyant, cyrilvoyant.github.io/assets/course/F_horizon.png.
  Paper, authors and resources
@@ -6220,6 +6260,218 @@ Research and projects
  Academic CV · Full publication record · cyril.voyant@minesparis.psl.eu
 
 ---
+URL: https://www.cyrilvoyant.com/teaching/biostatistics/correlation-regression/
+
+Chapter 3: correlation, linear regression and χ² tests
+ Covariance and Pearson correlation, the regression line and R², the significance of r, the χ² goodness-of-fit and independence tests, with exercises.
+ Slides (69, in French) · PDF in French (5.1 MB) · Questions
+ The chapter in 10 points
+ Key point. With 1000 pairs, r = 0.1 can be significant while explaining only 1% of the variation: significant does not mean useful.
+ The scatter plot shows the shape of the link; covariance cov(x, y) = Σ(x i − x̄)(y i − ȳ)/(n − 1) .
+ Pearson correlation: r = cov(x, y)/(s x s y ) , where s x and s y are the standard deviations, between −1 and 1, to be interpreted with care (non-linear link, outliers, causation).
+ Least-squares line: b 1 = cov(x, y)/s x ² , b 0 = ȳ − b 1 x̄ , slope b 1 and intercept b 0 ; it is used to predict y from x.
+ In simple least-squares linear regression with an intercept, R² = r² measures the share of the variation of y explained in the sample; this equality does not carry over to every model.
+ Under H0: ρ = 0, where ρ is the correlation in the population, for independent pairs from a bivariate normal distribution, t = r√(n − 2)/√(1 − r²) follows a Student distribution with n − 2 df. A non-linear link can escape Pearson's r.
+ Residuals, tests on the slope and on the intercept, and the 95% prediction interval around a predicted value.
+ Qualitative variables: χ² = Σ (O − E)²/E , where O are the observed counts and E the expected counts.
+ χ² goodness of fit: k − 1 degrees of freedom (df) for k probabilities fixed in advance; estimating m parameters can bring the df down to k − 1 − m under the conditions of the test. Example from the course: 52.75 exceeds 9.488 for 4 df at the 5% level.
+ χ² test of independence on a contingency table, with (R − 1)(C − 1) degrees of freedom for R rows and C columns: treatment and recovery, nationality and brand, sex and site of a cancer.
+ The synthesis exercises chain comparison of means, correlation, regression line and prediction interval on data from smokers.
+ To check the conditions of the models: NIST: least squares and residual variance · NIST: confidence and prediction intervals · NIST: conditions of the χ² goodness-of-fit test .
+ To go on: the solar forecasting course, where regression is applied to a time series · how to evaluate a forecast .
+ Open this experiment on its own page
+ Significance versus explained variation
+ A correlation can be significant and explain very little. Vary the correlation r and the sample size, then compare the p-value with the coefficient of determination R², the share of variation explained by the line. Open this experiment on its own page .
+ Enable JavaScript to use this tool; the formulas and explanations remain in the summary and the FAQ of the chapter. χ²: compare observed and expected counts
+ Is a six-sided die fair? Are the two variables of a 2×2 table independent? See what each cell adds to χ², and the limits set by small counts. Open this experiment on its own page .
+ Enable JavaScript to use this tool; the formulas and explanations remain in the summary and the FAQ of the chapter. Regression: the mean or a future observation?
+ The mean of y is known better than a new observation. Compare the two bands, move x₀ (the value of x where you predict), see the effect of sample size and scatter, and recognize an extrapolation. Open this experiment on its own page .
+ Enable JavaScript to use this tool; the formulas and explanations remain in the summary and the FAQ of the chapter. These experiments extend the notions of the biostatistics course without adding a new method. Least squares and residual variance: NIST .
+ The slides (in French)
+ The 69 slides of this chapter are in French. Their text is written out and searchable in the French chapter , which shows one slide at a time (arrow keys, deep links). The summary, the experiments and the FAQ above are the English reading of the same chapter; formulas and numbers are identical.
+ Open the slides → · Download the chapter (PDF in French, 5.1 MB)
+ Outline of the chapter
+ Introduction (slides 1–3, in French)
+ I. Correlation (slides 4–15, in French)
+ II. Linear regression (slides 16–24, in French)
+ III. Significance (slides 25–38, in French)
+ IV. χ² goodness of fit (slides 39–45, in French)
+ V. χ² test of independence (slides 46–54, in French)
+ VI. Exercises (slides 55–69, in French)
+ Going further: questions and answers
+ What is the difference between a confidence interval and a prediction interval?
+ In simple linear regression with independent normal errors of constant variance: 95% CI of the mean = ŷ0 ± t(n−2; 0.975) se √[1/n + (x0−x̄)²/Sxx]. For a future observation, add 1 under the root. Here Sxx = Σ(xi−x̄)² and se² = Σresidual²/(n−2). The prediction interval therefore keeps the individual scatter; 1.96 is only an asymptotic approximation of the quantile.
+ Is a significant r enough to make a prediction useful?
+ No: with 1000 pairs, r = 0.1 can be significant while explaining only 1% of the variation in a simple regression with an intercept. Rejecting ρ = 0 under a model proves neither causation nor predictive usefulness; the latter is also measured on data not used to fit the model.
+ Why can a single outlier change everything?
+ Least squares weigh the square of the deviations: a point far away in x has leverage that pulls the slope and inflates or creates r. Always look at the scatter plot and the residuals before concluding.
+ What to do when the expected counts of a χ² are small?
+ The asymptotic approximation can be poor; examine the size and structure of the table. A justified grouping or an exact method may be suitable, notably Fisher's test for a 2×2 table in its setting. Yates' continuity correction does not guarantee to solve the small-count problem.
+ ← Chapter 2 Course contents
+ These slides are not a handout: they accompany the lectures and cannot replace them (disclaimer of the course). Teaching material, not clinical advice. The slides and the PDF are in French. License CC BY 4.0 : free reuse, including modification and commercial use, with credit to the author (Cyril Voyant).
+
+---
+URL: https://www.cyrilvoyant.com/teaching/biostatistics/descriptive-statistics/
+
+Chapter 2: descriptive statistics, the normal distribution and hypothesis tests
+ Measurement scales, graphs, central tendency and dispersion, the normal distribution and the z table, confidence intervals, hypotheses and the comparison of means.
+ Slides (99, in French) · PDF in French (8.2 MB) · Questions
+ The chapter in 10 points
+ Key point. A p-value of 0.03 does not say that the tested hypothesis has a 3% chance of being true: this chapter teaches how to read what a test really says.
+ Population, sample, variable, parameter and statistic; the type of scale (nominal, ordinal, interval, ratio) dictates which statistics are allowed.
+ Graphical displays and measures of central tendency: mean, median, mode; the mean is sensitive to extreme values (one very rich person makes a “mean of millionaires”).
+ Dispersion: sample variance s² = Σ(x i − x̄)²/(n − 1) , where x i are the values, x̄ their mean and n their number; standard deviation s, range, quantiles.
+ Notation used here: N(μ, σ²), where μ is the mean, σ the standard deviation and σ² the variance. Caution: the slides write N(m, s), with the standard deviation second. Skewness and kurtosis describe other aspects of the shape of the distribution.
+ Jarque-Bera: JB = (n/6)[S² + (K − 3)²/4], where n is the number of values, S the skewness and K the raw kurtosis (centered on 3). Under the asymptotic conditions of the test, the 5% threshold is about 5.99 (χ² with 2 degrees of freedom).
+ Standardized variable z = (x − μ)/σ and the table of N(0, 1); about 95% of the values lie between μ − 1.96σ and μ + 1.96σ.
+ 95% confidence interval of the mean: x̄ ± 1.96 · s/√n for large n.
+ Central limit theorem: for independent observations with the same distribution and a finite variance, the standardized mean tends to a normal distribution; its standard error is σ/√n. Dependence requires additional conditions.
+ Hypothesis testing: the null hypothesis H₀ (no effect) against the alternative H₁, one- or two-sided test, risk α of wrongly rejecting H₀, test statistic and p-value, the probability under H₀ of a result at least as extreme; in the worked example, only one of three reading scores is significantly below the reference.
+ Two independent samples, with means x̄1 and x̄2, standard deviations s1 and s2 and sizes n1 and n2: t = (x̄1 − x̄2)/√(s1²/n1 + s2²/n2) is the Welch statistic, with approximate Welch-Satterthwaite degrees of freedom (df). The paired test works on the differences; Student's test with equal variances uses a pooled variance.
+ To check the conditions of the models: Checking the Student formulas: NIST .
+ Open this experiment on its own page
+ Test a difference and read its uncertainty
+ Student t-test with a pooled variance for two treatments. Read together the gap between the means, the t statistic (that gap divided by its uncertainty), the degrees of freedom (df), the p-value and the rejection regions. Open this experiment on its own page .
+ Enable JavaScript to use this tool; the formulas and explanations remain in the summary and the FAQ of the chapter. These experiments extend the notions of the biostatistics course without adding a new method. Checking the Student formulas: NIST .
+ The slides (in French)
+ The 99 slides of this chapter are in French. Their text is written out and searchable in the French chapter , which shows one slide at a time (arrow keys, deep links). The summary, the experiments and the FAQ above are the English reading of the same chapter; formulas and numbers are identical.
+ Open the slides → · Download the chapter (PDF in French, 8.2 MB)
+ Outline of the chapter
+ Introduction (slides 1–4, in French)
+ I. Basic concepts (slides 5–19, in French)
+ II. Describing data (slides 20–47, in French)
+ III. The normal distribution (slides 48–66, in French)
+ IV. Hypotheses (slides 67–81, in French)
+ V. Hypothesis testing (means) (slides 82–99, in French)
+ Going further: questions and answers
+ Why divide by n − 1 and not by n?
+ The deviations are measured from the sample mean, which is as close to them as possible: dividing by n systematically underestimates the variance. Dividing by n − 1 corrects this bias, because one degree of freedom was used to estimate the mean.
+ Does a p-value of 0.03 give the probability that H0 is true?
+ No. Under H0 and the assumptions of the model, it is the probability of a statistic at least as extreme as the one observed, for the chosen test. It is neither P(H0 | data) nor a measure of the practical importance of the effect.
+ When is Student's distribution used for a mean?
+ For independent normal observations with an unknown variance, (x̄ − μ0)/(s/√n) follows exactly a Student distribution with n − 1 df, even for large n. Without normality, the approximation depends on the size and on the distribution; two-group and paired tests have their own conditions.
+ Is a normality test enough to choose a method?
+ No: a large sample detects small departures and a small sample lacks power. One must look at the graphs, the extreme values, the independence and the inference question; the central limit theorem does not repair biased data collection or any dependence.
+ ← Chapter 1 Course contents Chapter 3 →
+ These slides are not a handout: they accompany the lectures and cannot replace them (disclaimer of the course). Teaching material, not clinical advice. The slides and the PDF are in French. License CC BY 4.0 : free reuse, including modification and commercial use, with credit to the author (Cyril Voyant).
+
+---
+URL: https://www.cyrilvoyant.com/teaching/biostatistics/
+
+Biostatistics for health studies: the course in three chapters
+ A test with a sensitivity and a specificity of 99% can be wrong about ten times out of eleven when it is positive, if the disease is rare: this course gives the statistics a future clinician needs to read a study, interpret a test and decide with data. Probability, diagnostic tests, descriptive statistics, the normal distribution, hypothesis tests, correlation, regression and χ².
+ Start: chapter 1 →
+ What the course contains
+ First-year health studies (PASS, UE8) · 3 chapters, 246 slides in French · summaries, experiments and FAQ in English · CC BY 4.0
+ Goal
+ Read a study, interpret a diagnostic test and choose a simple statistical test.
+ Prerequisites
+ High-school mathematics: fractions, powers, reading graphs.
+ Suggested path
+ Chapter 1 (probability, Bayes, ROC curve with the interactive tool), chapter 2 (normal distribution with the interactive table, tests), chapter 3 (correlation, regression, chi-squared). Each chapter: the 10-point summary, the slides, then the FAQ.
+ Why statistics in health: variability, therapeutic adjustment, correlation and causation, hidden variables.
+ Probabilities: random experiments, events, counting, conditional probabilities, the Bayesian approach.
+ Diagnostic tests: contingency tables, sensitivity, specificity, predictive values, ROC curves.
+ Descriptive statistics: measurement scales, graphs, central tendency, dispersion, skewness.
+ The normal distribution: standardization, the z table, intervals.
+ Hypothesis tests: null and alternative hypotheses, risks, comparison of means.
+ Pearson correlation, linear regression, coefficient of determination and significance.
+ χ² goodness-of-fit and independence tests, with exercises.
+ Try it: ROC curve · Normal distribution · Student t-test · Influential point in regression · Significance and R² · χ² test · Regression intervals
+ The words of the course
+ PASS, UE8
+ The French first year of health studies; UE8 is its teaching unit 8.
+ Sensitivity, specificity
+ The share of sick people whose test is positive; the share of healthy people whose test is negative.
+ Positive predictive value
+ The probability of being sick when the test is positive. It depends on prevalence, the share of sick people.
+ ROC curve
+ Sensitivity against 1 − specificity as the test threshold varies.
+ p-value
+ The probability, if the null hypothesis is true, of a result at least as extreme as the one observed.
+ Hidden variable
+ An unmeasured factor that can create an apparent link between two variables.
+ χ²
+ A statistic comparing observed counts with expected counts.
+ Part of the course comes from the work of Dominique Barbolosi , mathematician, Aix-Marseille Université.
+ Archived and citable on Zenodo, DOI 10.5281/zenodo.23620236
+ In brief
+ A biostatistics course in three chapters and 246 slides, for the first year of health studies (PASS, teaching unit UE8). The chapters are read here in English; the slides are in French.
+ It goes from probability and Bayesian reasoning to diagnostic tests (sensitivity, specificity, ROC curves), descriptive statistics, the normal distribution and hypothesis tests, then correlation, linear regression and χ² tests, with medical examples.
+ Course by Cyril Voyant, trained as a medical physicist, under CC BY 4.0: each chapter has a ten-point summary with the formulas, experiments to manipulate, a FAQ, and a link to its slides and PDF in French.
+ Chapter 1 · 78 slides in French Probability, conditional probability, contingency tables and ROC curves
+ I. Why statistics matters in health
+ II. Probability
+ III. Applications
+ IV. Conditional probability
+ V. Contingency tables
+ VI. ROC curves
+ Open the chapter · PDF (French)
+ Chapter 2 · 99 slides in French Descriptive statistics, the normal distribution and hypothesis tests
+ I. Basic concepts
+ II. Describing data
+ III. The normal distribution
+ IV. Hypotheses
+ V. Hypothesis testing (means)
+ Open the chapter · PDF (French)
+ Chapter 3 · 69 slides in French Correlation, linear regression and χ² tests
+ I. Correlation
+ II. Linear regression
+ III. Significance
+ IV. χ² goodness of fit
+ V. χ² test of independence
+ VI. Exercises
+ Open the chapter · PDF (French)
+ These slides are not a handout: they accompany the lectures and cannot replace them (disclaimer of the course). Teaching material, not clinical advice. The slides and the PDF are in French. License CC BY 4.0 : free reuse, including modification and commercial use, with credit to the author (Cyril Voyant).
+ Going further
+ Physics for health studies (in French), the physics course of the same year.
+ The solar forecasting course , applied statistics for energy time series, in English.
+ The open courses : the other French courses presented in English.
+ All the interactive experiments , in English.
+
+---
+URL: https://www.cyrilvoyant.com/teaching/biostatistics/probabilities/
+
+Chapter 1: probability, conditional probability, contingency tables and ROC curves
+ Why health needs statistics, probability vocabulary, counting, conditional probability and Bayes' theorem, contingency tables, sensitivity, specificity, ROC curves.
+ Slides (78, in French) · PDF in French (4.7 MB) · Questions
+ The chapter in 10 points
+ Key point. With a sensitivity and a specificity of 99%, a positive test points to a sick person only about one time in eleven when the prevalence is 1/1000: a Bayes calculation, not clinical guidance.
+ Statistics defines what is normal, measures variability (between patients, between measurements) and adjusts treatments: the concentration of a drug varies widely from one patient to another for the same dose.
+ Correlation is not causation: a hidden variable can create an apparent link, and the wording of a question changes the probability being sought (the two-children paradox).
+ A probability is a model; the limiting frequency is its frequentist interpretation. P(A ∪ B) = P(A) + P(B) − P(A ∩ B) and P(Ā) = 1 − P(A) , where A ∪ B means “A or B”, A ∩ B means “A and B”, and Ā is the complement of A.
+ Under equiprobability, one counts: favorable cases over possible cases, with the tools of combinatorics.
+ Conditional probability: P(A | B) = P(A ∩ B)/P(B) , read “probability of A given B”; for independent events, P(A ∩ B) = P(A) P(B) .
+ Total probability and Bayes' theorem: P(D | +) = P(+ | D) P(D) / P(+) , where D is the event “the person has the disease” and + the event “the test is positive”.
+ Evaluating a test: sensitivity Se = TP/(TP + FN) , specificity Sp = TN/(TN + FP) . TP and TN count the true positives and true negatives; FP and FN the false positives and false negatives.
+ Positive and negative predictive values (PPV, NPV) depend on the prevalence p, the proportion of people with the disease: PPV = Se·p / [Se·p + (1 − Sp)(1 − p)] , NPV = Sp(1 − p) / [Sp(1 − p) + (1 − Se) p] .
+ The ROC curve (receiver operating characteristic) plots the sensitivity Se against the false-positive rate 1 − Sp as the threshold varies. The area under this curve is the AUC (area under the curve). An AUC of 0.5 means no discrimination on average when the score is used to rank people; it does not by itself describe the usefulness of a decision.
+ The choice of threshold depends on the use, the prevalence and the consequences of errors. Maximizing Youden's index (Se + Sp − 1) and minimizing the distance to the corner (0, 1) are two different criteria.
+ Open this experiment on its own page
+ The slides (in French)
+ The 78 slides of this chapter are in French. Their text is written out and searchable in the French chapter , which shows one slide at a time (arrow keys, deep links). The summary, the experiments and the FAQ above are the English reading of the same chapter; formulas and numbers are identical.
+ Open the slides → · Download the chapter (PDF in French, 4.7 MB)
+ Outline of the chapter
+ Introduction (slides 1–2, in French)
+ I. Why statistics matters in health (slides 3–12, in French)
+ II. Probability (slides 13–31, in French)
+ III. Applications (slides 32–41, in French)
+ IV. Conditional probability (slides 42–54, in French)
+ V. Contingency tables (slides 55–71, in French)
+ VI. ROC curves (slides 72–78, in French)
+ Going further: questions and answers
+ Why does prevalence change the predictive value?
+ With Se = Sp = 99% and a prevalence of 1/1000, among 1000 people one expects 0.99 true positives and 9.99 false positives, hence a PPV close to 9%. This illustrates Bayes' theorem; clinical management depends on context and protocol.
+ What does an AUC of 0.8 mean?
+ For a score oriented toward the presence of disease, AUC = P(score of a sick person > score of a healthy person) + 0.5 P(tie). An AUC of 0.8 describes this ranking, not the individual probability of being sick, nor the quality at a given threshold.
+ Does the best threshold always maximize Se + Sp?
+ No. Youden's index and the distance to the ideal corner optimize different criteria; neither automatically encodes the clinical cost of errors. A decision needs, among other things, the prevalence and the respective consequences of false positives and false negatives.
+ Why is the Bayesian approach used to adjust a dose?
+ It combines knowledge of the population (a prior distribution of the pharmacokinetic parameters) with the patient's own measurements: a few blood samples are enough for an individual estimate, which is refined with each new measurement.
+ Course contents Chapter 2 →
+ These slides are not a handout: they accompany the lectures and cannot replace them (disclaimer of the course). Teaching material, not clinical advice. The slides and the PDF are in French. License CC BY 4.0 : free reuse, including modification and commercial use, with credit to the author (Cyril Voyant).
+
+---
 URL: https://www.cyrilvoyant.com/teaching/solar-forecasting-course/
 
 Solar forecasting course: forecasting the intermittent solar resource
@@ -6246,6 +6498,8 @@ Solar forecasting course: forecasting the intermittent solar resource
  The solar energy received by a horizontal surface, here in Wh/m² over each hour.
  Difference to the clear-sky trend
  Measured irradiance minus clear-sky irradiance, valid day and night. The course denotes it CSI. Difference or ratio to trend .
+ Clear sky
+ The irradiance you would get without clouds, computed by a model from the position of the Sun and the atmosphere (denoted GHIcs in the course).
  AR(p)
  An autoregressive model: the forecast is a combination of the last p values.
  ELM
@@ -6259,9 +6513,9 @@ Solar forecasting course: forecasting the intermittent solar resource
  SS score
  1 − RMSE of the model / RMSE of smart persistence: positive if the model beats it.
  NICE
- The error of the model divided by that of simple persistence. Between 0 and 1, the model adds something; above 1, it is worse than persistence. NICE explained .
+ The error of the model divided by that of simple persistence, on the same dates: 0 for a perfect forecast, 1 for as much error as persistence. Between 0 and 1, the model adds something; above 1 (written "> 1"), it is worse than persistence. NICE explained .
  sCV, F
- sCV measures the variability of a site: the typical gap to clear sky, normalized. F adds the memory of the signal, for its forecastability. Compute sCV and F .
+ sCV measures the variability of a site: the root-mean-square gap between measured irradiance and clear sky, divided by the root-mean-square clear-sky irradiance. F adds the memory of the signal, for its forecastability. Compute sCV and F .
  CLIPER, BLEND
  Going beyond the course: convex combinations, of persistence and the mean for CLIPER, of persistence and cyclic persistence for BLEND. CLIPER and BLEND .
  Archived and citable on Zenodo, DOI 10.5281/zenodo.23620102
@@ -6985,6 +7239,7 @@ The thread: five steps, one way of working
  3. Learn frugally
  4. AI in its place
  5. Demonstrate trust
+ Words used here
  1 Step 1 of 5 · Is the link between causes and effects known?
  Compute directly
  Yes: compute it, with an explicit model.
@@ -6993,13 +7248,13 @@ The thread: five steps, one way of working
  Compute directly · Energy Which forecast for which signal?
  Random, correlated, Brownian or cyclic: choose a signal and see which forecast wins.
  Compute directly · Medicine Atmospheric neutrons and BNCT: quantify the limit
- An exploratory 2011 model: rare captures, local energy and a mean dose too low for macroscopic therapy.
+ Boron neutron capture therapy (BNCT), exploratory 2011 model: rare captures, local energy and a mean dose too low for macroscopic therapy.
  Compute directly · Medicine Compute, don't learn: radiobiological dose equivalence
- One fraction of 15 Gy to the rectum: 72.7 Gy under LQ, 59.4 Gy under LQL.
+ A single 15 Gy fraction (Gy: gray, the unit of absorbed dose) to the rectum has a biologically effective dose of 72.7 Gy under the linear-quadratic model (LQ) but 59.4 Gy under the linear-quadratic-linear model (LQL).
  Compute directly · Energy Simulate what you cannot yet measure: road tunnels
  One year at 10-minute resolution in about 150 ms, with its limits stated.
  Compute directly · Energy How forecastable is the sun?
- Two indices (sCV and F) describe a site before any model is fitted.
+ Two indices, sCV (variability) and F (forecastability), describe a site before any model is fitted.
  Compute directly · Medicine Free BED and EQD2 calculator: LQ or LQL?
  A browser calculator, and when the choice of model changes the answer.
  Try it: Which forecast for which signal? · Compare LQ and LQL doses · Measure sCV and F
@@ -7012,7 +7267,7 @@ The thread: five steps, one way of working
  Hybridize · Medicine Thyroid cancer and radioiodine: model first
  Marie Fusella Giuntini and Dominique Barbolosi : three equations, 50 patients, a hybrid twin in progress.
  Hybridize · Energy Better persistence, without training a neural network
- Symmetry-constrained forecasting: the structure of the signal written into the reference.
+ Persistence repeats the last value. BLEND mixes it with the value at the same phase of the cycle, with weights in closed form: no neural network.
  Try it: Compute BLEND weights · Explore the thyroid model
  The model at the core · Next step: Learn frugally ↓
  3 Step 3 of 5 · Are the useful relations known?
@@ -7021,9 +7276,9 @@ The thread: five steps, one way of working
  When the useful relations are not known well enough, evaluate what the data can teach, with only as much complexity as pays.
  Stories of this step
  Learn frugally · Energy Seven signals, one frugal learner (ELM)
- One frugal learner forecasts the whole Corsican electricity mix.
+ One ELM (extreme learning machine, a frugal neural model) with several outputs (MIMO) forecasts the whole Corsican electricity mix.
  Learn frugally · Energy Satellite forecasting: one cell or the whole field?
- A per-cell ELM beats the same ELM reading the whole field, with a thousand times fewer parameters.
+ A per-cell ELM (extreme learning machine, a frugal neural model) beats the same ELM reading the whole field, with a thousand times fewer parameters.
  Learn frugally · Energy Frugal models for solar forecasting (in French)
  How much model a forecast really needs before it is deployed.
  Learn frugally · Energy Direct PV forecasting: reduce the dimension (in French)
@@ -7049,7 +7304,7 @@ The thread: five steps, one way of working
  Demonstrate trust · Research practice AI in research: the AI Act, a lab charter and a toolbox
  Research is excluded under conditions, transfers are not: timeline, who is responsible, and ten tools for a lab.
  Demonstrate trust · Energy When RMSE hides a difference
- NICE compares a model's errors with those of persistence.
+ NICE divides a model's errors by those of persistence, which repeats the last value: a useful model scores between 0 and 1.
  Demonstrate trust · Energy Beyond pointwise errors: the γ-index
  A tolerance-based test carried over from radiotherapy.
  Demonstrate trust · Research practice Academic visibility: why publishing isn't enough anymore
@@ -7062,6 +7317,33 @@ The thread: five steps, one way of working
  From persistence to deep networks: what to test first, and what counts as a gain.
  Try it: Judge a forecast with NICE · Explore the γ-index · The RTVACOS tree · Choose a license
  Trust is demonstrated
+ Words used here
+ Persistence
+ the forecast that copies the last known value: the reference every model has to beat.
+ AR (autoregression)
+ a forecast computed as a weighted sum of the latest observed values.
+ ELM
+ extreme learning machine: a frugal neural model whose input weights are drawn at random; only the output weights are fitted, by least squares.
+ BLEND
+ a convex combination (positive weights adding up to 1) of persistence and cyclic persistence, that is, of the value one cycle earlier, for example the same hour the day before. The weights are computed; no network is trained.
+ sCV and F
+ two indices computed from the data, before any model: sCV measures the cloud-driven variability once the daily cycle is removed; F, the forecastability index, adds the memory of that variability at the forecast horizon.
+ NICE
+ a model’s error divided by that of persistence: 0 for a perfect forecast, 1 for persistence. A useful model lies between 0 and 1; “> 1” means worse than persistence.
+ nRMSE
+ root mean square error scaled to the size of the signal: the lower, the better.
+ γ-index (gamma test)
+ a forecast point is accepted if an observation lies within tolerances in space, time and intensity set in advance; the method comes from dose verification in radiotherapy.
+ Cell
+ one cell of the satellite image grid, that is, one pixel.
+ LQ, LQL, BED, EQD2
+ LQ: linear-quadratic model; LQL: linear-quadratic-linear. BED: biologically effective dose; EQD2: dose equivalent in 2 Gy fractions. They compare radiotherapy schedules (research and teaching, not a clinical recommendation).
+ Hybrid digital twin
+ a model of a system, here the response of a cancer to radioactive iodine, completed by learning for what the model does not capture.
+ RTVACOS
+ Rigor, Transparency, Visibility, Adoption, then Collaboration, Outreach and Societal relevance: a framework for judging research excellence.
+ AI Act
+ the European regulation on artificial intelligence.
  The approach, in detail · All stories, by topic
  Where next?
  Try a tool Change a value and see what changes, in your browser. See it all on one page Software with DOI and teams, courses, tools and essays. Take a course Five open courses, under a CC BY 4.0 license. Test how solid a project is The RTVACOS tree: tick your practices, with no score.
@@ -7172,7 +7454,7 @@ URL: https://www.cyrilvoyant.com/tools/chi-square-test/
 
 Chi-square test: observed counts, expected counts and contributions
  Over 120 throws of a die, a single face appearing 68 times instead of 20 contributes 115.2 of the 138.5 points of χ². You learn to look for where the departure lies, instead of stopping at the p-value.
- An experiment from Cyril Voyant’s course, running in your browser. The chapter and its slides (French) · All experiments .
+ An experiment from Cyril Voyant’s course, running in your browser. The chapter: summary, formulas and FAQ (slides in French) · All experiments .
  JavaScript is needed for the controls and animation. The explanation, equations, example and limitations below remain available. Try it and interpret
  For 120 throws of a fair die, expect 20 occurrences of each face. Change one face and inspect its contribution. The 2×2 table uses the course case 75/25 and 65/35: p ≈ 0.1228 without continuity correction, so no rejection at the 5% level.
  Which cells contribute to the discrepancy between observations and the hypothesis?
@@ -7191,11 +7473,11 @@ Chi-square test: observed counts, expected counts and contributions
  Degrees of freedom
  The parameter of the reference distribution: 5 for the die, 1 for the 2×2 table.
  p-value
- The probability of exceeding the χ² obtained if the hypothesis is true, under the approximate distribution. See the Student test for two means.
+ The probability of exceeding the χ² obtained if the hypothesis is true, under the approximate distribution. A small p-value says the departure is hardly compatible with the hypothesis, not that it is large: see the course chapter Testing a difference and reading its uncertainty .
  Assumptions and limitations
  Independent observations, mutually exclusive categories, actual counts. The p-value is approximate: with small expected counts, the automatic conclusion is suspended. Failing to reject demonstrates neither fairness nor independence.
  Go further
- The full course chapter (French) : the reasoning, further examples, slides and FAQ
+ The course chapter : summary with the formulas, conditions of the test and FAQ in English; slides in French
  The Student test: compare two means
  The ROC curve: another 2×2 table, test against disease
  The values shown are computed or constructed within the stated model: they are not new research findings.
@@ -7237,7 +7519,7 @@ URL: https://www.cyrilvoyant.com/tools/correlation-significance-r-squared/
 
 Correlation, significance and R²: distinguish the concepts
  With r = 0.10, the line describes 1% of the variation, whether there are 30 points (p ≈ 0.599) or 1000 (p ≈ 0.0015). You separate two questions that are often confused: is the association detectable, and does it describe much?
- An experiment from Cyril Voyant’s course, running in your browser. The chapter and its slides (French) · All experiments .
+ An experiment from Cyril Voyant’s course, running in your browser. The chapter: summary, formulas and FAQ (slides in French) · All experiments .
  JavaScript is needed for the controls and animation. The explanation, equations, example and limitations below remain available. Try it and interpret
  Fix r, then increase n: the p-value collapses, R² does not move. This is not a flaw of the tool: at fixed r, R² = r² does not depend on n. Then change the sign of r: the line reverses, R² stays the same.
  Does a statistically significant association explain much variation?
@@ -7261,7 +7543,7 @@ Correlation, significance and R²: distinguish the concepts
  Assumptions and limitations
  The scatter is constructed to preserve r exactly: the p-value illustrates the theoretical test, it is not inference on these points. R² proves neither causality nor future performance.
  Go further
- The full course chapter (French) : the reasoning, further examples, slides and FAQ
+ The course chapter : summary with the formulas, conditions of the test and FAQ in English; slides in French
  The influential point: one point can change r
  Regression intervals: mean or new observation
  The Student test: the p-value for two means
@@ -7307,7 +7589,7 @@ Electromagnetic wave: electric and magnetic fields
 URL: https://www.cyrilvoyant.com/tools/freezing-energy-power/
 
 Freezing: sensible heat, latent heat and power
- In the example shown (75% water, 90% of which freezes), freezing the water accounts for 72% of the energy to remove. For 500 kg in 4 h, the average power reaches 10.9 kW. You see what the mcΔT calculation leaves out.
+ With the initial settings (75% water, 90% of which freezes), freezing the water accounts for 72% of the energy to remove. For 500 kg in 4 h, the average power reaches 10.9 kW. You see what the mcΔT calculation leaves out.
  An experiment from Cyril Voyant’s course, running in your browser. The chapter and its slides (French) · All experiments .
  JavaScript is needed for the controls and animation. The explanation, equations, example and limitations below remain available. Try it and interpret
  Vary the water content and the fraction actually frozen: the share of latent heat changes. Double the duration: the energy does not move, and the average power is halved.
@@ -7340,7 +7622,7 @@ URL: https://www.cyrilvoyant.com/tools/influential-point-regression/
 
 Regression and an influential point: move an observation
  In this example, adding one distant point makes the correlation fall from 0.948 to 0.348. You get into the habit of looking at the scatter before concluding.
- An experiment from Cyril Voyant’s course, running in your browser. The chapter and its slides (French) · All experiments .
+ An experiment from Cyril Voyant’s course, running in your browser. The chapter: summary, formulas and FAQ (slides in French) · All experiments .
  JavaScript is needed for the controls and animation. The explanation, equations, example and limitations below remain available. Try it and interpret
  Move the orange point, then turn it off. Compare the lines and r. Then place it far away in x but aligned with the others, then off the line: the second case is the one that changes everything.
  How can one observation change the fitted line, correlation and p-value?
@@ -7364,7 +7646,7 @@ Regression and an influential point: move an observation
  Assumptions and limitations
  Teaching points, not research data. Always inspect the scatter and residuals: a coefficient alone does not reveal an influential point.
  Go further
- The full course chapter (French) : the reasoning, further examples, slides and FAQ
+ The course chapter : summary with the formulas, conditions of the test and FAQ in English; slides in French
  Correlation, significance and R²: do not confuse them
  Regression intervals: the uncertainty around the line
  The values shown are computed or constructed within the stated model: they are not new research findings.
@@ -7374,7 +7656,7 @@ URL: https://www.cyrilvoyant.com/tools/normal-distribution/
 
 Interactive normal distribution: area, probability and z-score
  In any normal distribution, about 95% of values lie within 1.96 standard deviations of the mean. You go from a value to a probability, and from a probability to a threshold, without a table.
- An experiment from Cyril Voyant’s course, running in your browser. The chapter and its slides (French) · All experiments .
+ An experiment from Cyril Voyant’s course, running in your browser. The chapter: summary, formulas and FAQ (slides in French) · All experiments .
  JavaScript is needed for the controls and animation. The explanation, equations, example and limitations below remain available. Try it and interpret
  At z = 1.96 the area to the left is about 0.975. Read the central zone from −1.96 to +1.96: about 95%. Also try the inverse calculation, from probability to threshold.
  How do you convert a value into a probability, or find a threshold from an area?
@@ -7394,7 +7676,7 @@ Interactive normal distribution: area, probability and z-score
  Assumptions and limitations
  The calculation assumes the selected normal distribution; it does not show that measurements are normal. A population interval is not a confidence interval for a mean.
  Go further
- The full course chapter (French) : the reasoning, further examples, slides and FAQ
+ The course chapter : summary with the formulas, conditions of the test and FAQ in English; slides in French
  The Student test: when the standard deviation is estimated
  The ROC curve: two normal distributions and a threshold
  Regression intervals: a direct application
@@ -7435,7 +7717,7 @@ URL: https://www.cyrilvoyant.com/tools/regression-intervals/
 
 Regression: confidence interval and prediction interval
  With 20 points and a residual standard deviation of 1, the predicted mean at the center is known to ±0.47, but a new observation only to ±2.15. You know which interval answers which question.
- An experiment from Cyril Voyant’s course, running in your browser. The chapter and its slides (French) · All experiments .
+ An experiment from Cyril Voyant’s course, running in your browser. The chapter: summary, formulas and FAQ (slides in French) · All experiments .
  JavaScript is needed for the controls and animation. The explanation, equations, example and limitations below remain available. Try it and interpret
  At the center of the scatter, compare the half-widths, 0.47 and 2.15. Increase n: the band for the mean narrows clearly, the band for an observation much less. Move x₀ beyond the observed values: both widen and the extrapolation warning appears.
  Why is the interval for a new observation wider than the interval for the mean?
@@ -7458,7 +7740,7 @@ Regression: confidence interval and prediction interval
  Assumptions and limitations
  Simple regression, independent normal errors of constant variance, constructed scatter. Bands hold at 95% at each x, not over the whole curve at once. In extrapolation, the model may be wrong without the band showing it.
  Go further
- The full course chapter (French) : the reasoning, further examples, slides and FAQ
+ The course chapter : summary with the formulas, conditions of the test and FAQ in English; slides in French
  The influential point: what one point does to the line
  Correlation and R²: the share of variation described by the line
  The normal distribution: where “about 2 standard deviations” comes from
@@ -7470,7 +7752,7 @@ URL: https://www.cyrilvoyant.com/tools/roc-curve/
 
 Interactive ROC curve: sensitivity, specificity and prevalence
  At 10% prevalence, a test with 78.8% sensitivity and 84.1% specificity gives only 35.6% of people with the disease among positive results (constructed example). You understand what a positive result means, and what depends on the population.
- An experiment from Cyril Voyant’s course, running in your browser. The chapter and its slides (French) · All experiments .
+ An experiment from Cyril Voyant’s course, running in your browser. The chapter: summary, formulas and FAQ (slides in French) · All experiments .
  JavaScript is needed for the controls and animation. The explanation, equations, example and limitations below remain available. Try it and interpret
  Change the threshold: the point moves along the curve. Then change prevalence alone: sensitivity, specificity and the curve do not move, as expected in this model. Predictive values do change. Finally increase the separation: the curve moves away from the diagonal.
  What changes with a test threshold, and why do predictive values depend on prevalence?
@@ -7495,7 +7777,7 @@ Interactive ROC curve: sensitivity, specificity and prevalence
  Assumptions and limitations
  Two normal distributions with the same standard deviation: an illustration, not a clinical evaluation. AUC gives neither the best threshold nor an individual probability of disease.
  Go further
- The full course chapter (French) : the reasoning, further examples, slides and FAQ
+ The course chapter : summary with the formulas, conditions of the test and FAQ in English; slides in French
  The normal distribution: the two curves of this experiment (a teaching assumption, not a universal property of tests)
  The chi-square test: read a 2×2 table
  The values shown are computed or constructed within the stated model: they are not new research findings.
@@ -7505,7 +7787,7 @@ URL: https://www.cyrilvoyant.com/tools/student-t-test/
 
 Interactive t-test: means, variability and p-values
  A 6 mmHg difference between two treatments gives p ≈ 0.18 with 4 patients per group and p ≈ 0.014 with 12, with means and standard deviations unchanged (constructed example). You learn to compare a difference with its uncertainty, rather than read a p-value alone.
- An experiment from Cyril Voyant’s course, running in your browser. The chapter and its slides (French) · All experiments .
+ An experiment from Cyril Voyant’s course, running in your browser. The chapter: summary, formulas and FAQ (slides in French) · All experiments .
  JavaScript is needed for the controls and animation. The explanation, equations, example and limitations below remain available. Try it and interpret
  Keep the means and standard deviations, then vary the number of patients: the p-value changes while the difference stays the same. Make the two means equal: t = 0 and p = 1.
  Is a difference between means large relative to its uncertainty?
@@ -7530,7 +7812,7 @@ Interactive t-test: means, variability and p-values
  Assumptions and limitations
  Two-sided pooled-variance test for two independent groups of equal size: check normality and equal variances. Paired measurements need another test. Displayed points are constructed from the entered summaries.
  Go further
- The full course chapter (French) : the reasoning, further examples, slides and FAQ
+ The course chapter : summary with the formulas, conditions of the test and FAQ in English; slides in French
  The normal distribution: standard deviation, area and thresholds
  The chi-square test: compare counts rather than means
  Correlation and R²: what significance does not say
@@ -7884,6 +8166,8 @@ Différence à la tendance de ciel clair
 L'éclairement mesuré moins l'éclairement par ciel clair, valable de jour comme de nuit. Le support la note CSI.
 Différence ou rapport à la tendance
 .
+Ciel clair
+L'éclairement qu'on aurait sans nuage, calculé par un modèle à partir de la position du Soleil et de l'atmosphère (noté GHIcs dans le support).
 AR(p)
 Un modèle autorégressif : la prévision est une combinaison des p dernières valeurs.
 ELM
@@ -7901,11 +8185,11 @@ Comment évaluer une prévision
 Score SS
 1 − RMSE du modèle / RMSE de la persistance intelligente : positif si le modèle la bat.
 NICE
-L'erreur du modèle rapportée à celle de la persistance simple. Entre 0 et 1, le modèle apporte quelque chose ; au-dessus de 1, il est moins bon que la persistance.
+L'erreur du modèle divisée par celle de la persistance simple, aux mêmes dates : 0 si la prévision est parfaite, 1 si elle se trompe autant que la persistance. Entre 0 et 1, le modèle apporte quelque chose ; au-dessus de 1 (écrit « > 1 »), il est moins bon que la persistance.
 Calculer NICE
 .
 sCV, F
-La sCV mesure la variabilité d'un site : l'écart typique au ciel clair, normalisé. F y ajoute la mémoire du signal, pour sa prévisibilité.
+La sCV mesure la variabilité d'un site : l'écart quadratique moyen entre l'éclairement mesuré et le ciel clair, rapporté à l'éclairement de ciel clair (en valeur quadratique moyenne). F y ajoute la mémoire du signal, pour sa prévisibilité.
 Calculer sCV et F
 .
 CLIPER, BLEND

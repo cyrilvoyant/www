@@ -1077,7 +1077,7 @@
     function apply(p) { $(box, "#gm-s").value = p.s; $(box, "#gm-l").value = p.l; $(box, "#gm-b").value = p.b; $(box, "#gm-dta").value = p.D || 2; $(box, "#gm-tta").value = p.Tt || 30; $(box, "#gm-idt").value = p.I || 50; upd(); }
     function stop() { if (timer) { clearInterval(timer); timer = null; } var b = $(box, "#gm-play"); b.textContent = "▶ Éloigner le nuage prévu"; b.setAttribute("aria-pressed", "false"); }
     wirePresets(box, P, function (p) { stop(); apply(p); });
-    $(box, "#gm-art").addEventListener("click", function () { $(box, "#gm-dta").value = 2; $(box, "#gm-tta").value = 30; $(box, "#gm-idt").value = 50; markPreset(box, P, -1); upd(); });
+    $(box, "#gm-art").addEventListener("click", function () { $(box, "#gm-dta").value = 2; $(box, "#gm-tta").value = 30; $(box, "#gm-idt").value = 50; markPreset(box, P, -1); $(box, ".cvfr-case").innerHTML = "Les tolérances de l’article sur la Corse : 2 km, 30 min, 50 W/m². Elles se choisissent selon l’usage : gardez l’erreur, changez les tolérances : γ change."; upd(); });
     $(box, "#gm-play").addEventListener("click", function () {
       if (timer) { stop(); return; }
       var b = this, s = $(box, "#gm-s"); b.textContent = "❚❚ Arrêter"; b.setAttribute("aria-pressed", "true"); s.value = 0; $(box, "#gm-l").value = 0; $(box, "#gm-b").value = 0; markPreset(box, P, -1);
@@ -1140,7 +1140,7 @@
       }
       var c = C.artuLookup(tab, r1, r2, Rv), wy = c.S, wl = -c.P, wm = 1 + c.P - c.S;
       function signed(v) { return (v < 0 ? "− " : "+ ") + "<strong>" + fr(Math.abs(v), 2) + "</strong>"; }
-      $(box, ".ar-eq").innerHTML = "ŷ(t + h) = <strong>" + fr(wy, 2) + "</strong> y(t) " + signed(wl) + " y(t − h) " + signed(wm) + " ȳ";
+      $(box, ".ar-eq").innerHTML = "ŷ(t + h) = <strong>" + fr(wy, 2) + "</strong> y(t) " + signed(wl) + " y(t − h) " + signed(wm) + " ȳ<br><small>y(t) : la série (en prévision solaire, l’indice de ciel clair) ; ŷ(t + h) : la prévision à l’horizon h ; ȳ : la moyenne d’entraînement.</small>";
       var big = wm > wy && wm > wl ? "la moyenne d’entraînement" : wy >= wl ? "la dernière valeur" : "la valeur h pas plus tôt";
       out.innerHTML = "<strong>Le plus gros poids va à " + big + ".</strong> Deux autocorrélations et une table suffisent : ici α = " + fr(c.alpha, 2) + ", K = " + fr(c.K, 2) + ", donc S = α + K = " + fr(c.S, 2) + " et P = αK = " + fr(c.P, 2) + ".";
       var bars = [["dernière valeur y(t)", wy, "#07569a"], ["valeur h pas plus tôt y(t − h)", wl, "#3c8d5a"], ["moyenne d’entraînement ȳ", wm, "#b4513a"]], sc = Math.max(1.5, Math.abs(wy), Math.abs(wl), Math.abs(wm));
@@ -1219,7 +1219,7 @@
       slide({ id: "th-a", label: "Activité par séance", min: 1, max: 8, step: 0.1, val: 3.7, tip: "L’activité d’iode administrée à chaque séance, en gigabecquerels (GBq)." }) +
       '<div class="cvfr-ctl"><label for="th-log">Axe vertical</label>' + tip("L’échelle logarithmique montre aussi les très petites valeurs : chaque graduation vaut dix fois la précédente.") + '<select id="th-log"><option value="0">linéaire</option><option value="1">logarithmique</option></select></div></div></div>' +
       '<div class="cvfr-verdict cvt-out" aria-live="polite"></div><div class="cvfr-cards th-c"></div><div class="cvfr-charts">' + fig("Thyroglobuline simulée sur 80 mois", "th-plot", "Les traits verticaux marquent les séances. L’autre profil suit le même protocole. Un trait qui s’arrête sort de l’axe.") + "</div>" +
-      '<p class="cvfr-note">Paramètres des démonstrateurs publics RAIR-Sim. Sorties du modèle pour deux profils types : ni prédiction pour un patient, ni recommandation.</p>' + CHECK;
+      '<p class="cvfr-note">Paramètres des démonstrateurs publics RAIR-Sim, ceux de l’équipe de l’article. Sorties du modèle pour deux profils types : ni prédiction pour un patient, ni recommandation.</p>' + CHECK;
     function small(v) { return v < 0.1 ? "&lt; 0,1" : fr(v, v < 10 ? 1 : 0); }
     function upd() {
       var Td = +$(box, "#th-p").value, n = val(box, "th-n"), l = val(box, "th-l"), A = val(box, "th-a"), lg = $(box, "#th-log").value === "1";
