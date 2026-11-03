@@ -83,7 +83,7 @@ URL: https://www.cyrilvoyant.com/fr/a-propos/
 URL: https://www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/
 
 Quelle prévision pour quel signal ?
- Il n'y a pas de meilleure prévision en soi : tout dépend du signal. Sur un signal aléatoire, la moyenne gagne. Sur un mouvement brownien, la persistance gagne. Dès qu'il y a un cycle, la persistance cyclique prend le relais. Choisissez un signal, jouez avec les curseurs, et regardez ce qui change.
+ Il n'y a pas de meilleure prévision en soi : tout dépend du signal. Sur un signal aléatoire, la moyenne gagne. Sur un mouvement brownien, la persistance gagne. Avec un cycle, tout dépend aussi de l'horizon : à très court terme la persistance reste difficile à battre ; plus loin, la persistance cyclique exploite le cycle. Choisissez un signal, jouez avec les curseurs, et regardez ce qui change.
  Ce que cela introduit
  La combinaison convexe. Aucune référence simple ne gagne partout : d'où l'idée de les peser, avec des poids positifs de somme 1. Persistance et moyenne : CLIPER. Persistance et persistance cyclique : BLEND. Voir CLIPER et BLEND .
  La désaisonnalisation. Un cycle connu ne se prévoit pas : on le retire, on prévoit le reste, on le remet.
@@ -168,7 +168,7 @@ Atmospheric neutrons and boron capture: how far can the idea go?
  What the study contributes to modeling
  The work connects three levels: reactions in boron carrier molecules, transport through a moderator and tissue, and dose orders of magnitude. Its second contribution replaces some expensive transport steps with analytical expressions for transmission and mean free path. The paper reports 42 seconds instead of 15 hours for 6,000 neutrons , on the computers of the time: a concrete example of physical simplification serving a scientific question.
  Monte Carlo: following many neutron histories
- Multiplied by the number of nuclei per unit volume, the cross section gives the mean free path L: the average distance between two collisions. A number U drawn at random between 0 and 1 then gives the distance travelled by a neutron, −L·ln(U) . The code then chooses the nucleus and the reaction, follows energy and direction, starts again, and adds up the energy deposits. Try it: the paper uses 6,000 to 60,000 neutrons.
+ Multiplied by the number of nuclei per unit volume, the cross section gives the macroscopic cross section Σ, an inverse length; for a mixture, Σ adds these products nucleus by nucleus. Its inverse L = 1/Σ is the mean free path : the average distance between two collisions. A number U drawn at random between 0 and 1 then gives the distance travelled by a neutron, −L·ln(U) . The code then chooses the nucleus and the reaction, follows energy and direction, starts again, and adds up the energy deposits. Try it: the paper uses 6,000 to 60,000 neutrons.
  More histories reduce the statistical error, as 1/√N for N histories. They correct neither a wrong geometry nor wrong physical data.
  The paper’s data and code
  The code, written in Visual Basic, uses cross sections from the ENDF/B library, accessed at the time through t2.lanl.gov at Los Alamos; it is produced by the CSEWG group and distributed by Brookhaven’s NNDC . The paper mentions MCNP as an example of a transport code; our simulation does not use it.
@@ -224,7 +224,7 @@ Des neutrons atmosphériques à la capture du bore : jusqu’où va l’idée�
  Ce que l’étude apporte à la modélisation
  Le travail relie trois niveaux habituellement séparés : les réactions dans les molécules porteuses du bore, le transport à travers un modérateur et les tissus, puis les ordres de grandeur de dose. Sa seconde contribution est de remplacer certaines étapes coûteuses du transport par des expressions analytiques de transmission et de libre parcours moyen. L’article rapporte 42 secondes au lieu de 15 heures pour 6 000 neutrons , sur les machines de l’époque : un exemple concret de simplification physique au service d’une question scientifique.
  Monte-Carlo : suivre beaucoup d’histoires de neutrons
- Multipliée par le nombre de noyaux par unité de volume, la section efficace donne le libre parcours moyen L : la distance moyenne entre deux collisions. Un nombre U tiré au hasard entre 0 et 1 donne alors la distance parcourue par un neutron, −L·ln(U) . Le code choisit ensuite le noyau et la réaction, suit l’énergie et la direction, recommence, et additionne les dépôts d’énergie. Essayez : l’article utilise de 6 000 à 60 000 neutrons.
+ Multipliée par le nombre de noyaux par unité de volume, la section efficace donne la section efficace macroscopique Σ, l’inverse d’une longueur ; pour un mélange, Σ additionne ces produits noyau par noyau. Son inverse L = 1/Σ est le libre parcours moyen : la distance moyenne entre deux collisions. Un nombre U tiré au hasard entre 0 et 1 donne alors la distance parcourue par un neutron, −L·ln(U) . Le code choisit ensuite le noyau et la réaction, suit l’énergie et la direction, recommence, et additionne les dépôts d’énergie. Essayez : l’article utilise de 6 000 à 60 000 neutrons.
  Plus d’histoires réduisent l’erreur statistique, comme 1/√N pour N histoires. Elles ne corrigent ni une mauvaise géométrie ni de mauvaises données physiques.
  Les données et le code de l’article
  Le code, écrit en Visual Basic, utilise les sections efficaces de la bibliothèque ENDF/B , consultée à l’époque sur t2.lanl.gov , à Los Alamos ; elle est produite par le groupe CSEWG et distribuée par le NNDC de Brookhaven . L’article cite MCNP comme exemple de code de transport ; notre simulation ne l’utilise pas.
@@ -2163,7 +2163,7 @@ Simulate what you cannot yet measure: the electricity demand of road tunnels
 URL: https://www.cyrilvoyant.com/stories/variability-memory-forecastability/
 
 Which forecast for which signal?
- There is no best forecast as such: it all depends on the signal. On a random signal, the mean wins. On Brownian motion, persistence wins. As soon as there is a cycle, cyclic persistence takes over. Choose a signal, play with the sliders, and watch what changes.
+ There is no best forecast as such: it all depends on the signal. On a random signal, the mean wins. On Brownian motion, persistence wins. With a cycle, the horizon matters too: very close ahead persistence is hard to beat; further ahead, cyclic persistence exploits the cycle. Choose a signal, play with the sliders, and watch what changes.
  What this introduces
  The convex combination. No simple reference wins everywhere, hence the idea of weighing them, with positive weights adding up to 1. Persistence and the mean: CLIPER. Persistence and cyclic persistence: BLEND. See CLIPER and BLEND .
  Deseasonalization. A known cycle is not forecast: remove it, forecast the rest, put it back.
@@ -5170,7 +5170,7 @@ Cancer de la thyroïde et iode radioactif : le modèle d'abord, n'apprendre qu
  Le modèle permet d'explorer le nombre de séances, leur intervalle et l'activité avant de traiter. L'apprentissage est prévu seulement là où le modèle ne suffit pas, dans une approche hybride qui garde le modèle au cœur.
  C'est un travail de recherche et d'enseignement : pas un dispositif médical, et aucune recommandation clinique .
  Le constat
- Quand une maladie peut être décrite par un modèle que l'on peut lire terme à terme, ce modèle passe en premier : il explique, il se calibre sur de vrais patients, et il permet de tester des protocoles par simulation ( in silico ). L'intelligence artificielle n'est pas nécessaire pour faire ce que le modèle fait déjà bien. Le modèle et son simulateur, RAIR-Sim, sont le travail de Marie Fusella Giuntini et Dominique Barbolosi, avec Cyril Voyant et David Taieb ( Scientific Reports , 2026). Un étudiant peut suivre chaque équation ci-dessous, puis changer le protocole et voir réagir la thyroglobuline .
+ Quand une maladie peut être décrite par un modèle que l'on peut lire terme à terme, ce modèle passe en premier : il explique, il se calibre sur de vrais patients, et il permet de tester des protocoles par simulation ( in silico ). L'intelligence artificielle n'est pas nécessaire pour faire ce que le modèle fait déjà bien. Le modèle et son simulateur, RAIR-Sim, sont le travail de Marie Fusella Giuntini et Dominique Barbolosi, avec Cyril Voyant et David Taieb ( Scientific Reports , 2026). Un étudiant peut suivre les mécanismes ci-dessous (les équations sont dans le guide technique ), puis changer le protocole et voir réagir la thyroglobuline .
  La question
  Le cancer différencié de la thyroïde métastatique est souvent traité par des séances répétées d'iode radioactif. Certaines tumeurs répondent, d'autres deviennent réfractaires, c'est-à-dire qu'elles ne répondent plus suffisamment à l'iode radioactif. La thyroglobuline (Tg) est une protéine dosée dans le sang, utilisée ici pour suivre la masse tumorale. Quel protocole, et pour quel profil de patient ?
  La théorie, en clair
