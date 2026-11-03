@@ -47,7 +47,7 @@
    "description": "Coordinated Universal Time: one clock for the whole Earth, without summer time.",
    "value": 360,
    "minValue": 0,
-   "maxValue": 1435,
+   "maxValue": 1439,
    "unitText": "minutes since 00:00 UTC (shown as hh:mm UTC)"
   },
   {
@@ -83,7 +83,7 @@
    "propertyID": "preset:noon-in-sydney",
    "name": "Noon in Sydney",
    "alternateName": "Midi à Sydney",
-   "value": "{\"sun-d\": 172, \"sun-t\": 115}"
+   "value": "{\"sun-d\": 172, \"sun-t\": 116}"
   },
   {
    "@type": "PropertyValue",
@@ -132,9 +132,9 @@
     "description": "Instant (UTC)",
     "valueRequired": false,
     "minValue": 0,
-    "maxValue": 1435,
+    "maxValue": 1439,
     "defaultValue": 360,
-    "stepValue": 5
+    "stepValue": 1
    }
   ]
  }

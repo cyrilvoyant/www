@@ -518,7 +518,7 @@
   "sensible-heat"
  ],
  "extraction": {
-  "source_hash": "4b08ba25efce27d5",
+  "source_hash": "496f257446a6cdc9",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#experience"

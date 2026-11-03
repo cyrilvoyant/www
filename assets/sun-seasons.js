@@ -91,7 +91,7 @@
   var st = { n: 298, m: 360 }, timer = null;
   var ctl = box.querySelector(".sun-ctl");
   ctl.innerHTML = '<label><span>' + L.date + ' <output class="sun-do"></output></span><input class="sun-d" type="range" aria-label="' + L.date + '" min="1" max="365" step="1" value="' + st.n + '"></label>' +
-    '<label><span>' + L.time + ' <output class="sun-to"></output></span><input class="sun-t" type="range" aria-label="' + L.time + '" min="0" max="1435" step="5" value="' + st.m + '"></label>' +
+    '<label><span>' + L.time + ' <output class="sun-to"></output></span><input class="sun-t" type="range" aria-label="' + L.time + '" min="0" max="1439" step="1" value="' + st.m + '"></label>' +
     '<span class="sun-play"><button type="button" class="ct-btn" data-play="year">' + L.year + '</button> <button type="button" class="ct-btn" data-play="day">' + L.day + "</button></span>";
   var iD = ctl.querySelector(".sun-d"), iT = ctl.querySelector(".sun-t");
   iD.addEventListener("input", function () { st.n = +iD.value; draw(); });

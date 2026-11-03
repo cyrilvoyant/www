@@ -52,8 +52,8 @@
    "type": "integer",
    "control": "range",
    "min": 0,
-   "max": 1435,
-   "step": 5,
+   "max": 1439,
+   "step": 1,
    "default": 360,
    "label": {
     "fr": "Instant (UTC)",
@@ -152,11 +152,11 @@
    },
    "values": {
     "sun-d": 172,
-    "sun-t": 115
+    "sun-t": 116
    },
    "changes_vs_default": {
     "sun-d": 172,
-    "sun-t": 115
+    "sun-t": 116
    },
    "shows": {
     "fr": "21 juin, 01:56 UTC : midi solaire à Sydney alors qu'il fait nuit à Paris.",
@@ -491,7 +491,7 @@
    },
    "set": {
     "sun-d": 172,
-    "sun-t": 115
+    "sun-t": 116
    },
    "observe": {
     "fr": "21 juin, 01:56 UTC : midi solaire à Sydney alors qu'il fait nuit à Paris.",
@@ -501,7 +501,7 @@
  ],
  "concepts": [],
  "extraction": {
-  "source_hash": "dfd60bb6a3504dc2",
+  "source_hash": "0015c2dd0023317f",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#sun"

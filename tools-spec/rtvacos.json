@@ -21,8 +21,8 @@
   "en": "Explore a reflection framework on rigour, transparency, visibility and adoption; no excellence score."
  },
  "summary": {
-  "fr": "Une recherche n'a d'effet que si elle est trouvée, jugée crédible et réutilisée. Le cadre RTVACOS la décrit comme un système multiplicatif : quatre fondations, dont une seule faiblesse fait chuter l'ensemble, et trois amplificateurs (collaboration, diffusion, pertinence sociétale), qui démultiplient une base solide…",
-  "en": "Research has an effect only if it is found, judged credible and reused. The RTVACOS framework describes this as a multiplicative system: four foundations, where a single weakness drags everything down, and three amplifiers (collaboration, outreach, societal relevance), which scale a solid base but never replace it."
+  "fr": "Une recherche n'a d'effet que si elle est trouvée, jugée crédible et réutilisée. Le cadre RTVACOS (sigle de sept critères, détaillés juste en dessous) la décrit comme un système multiplicatif : quatre fondations, dont une seule faiblesse fait chuter l'ensemble, et trois amplificateurs (collaboration, diffusion,…",
+  "en": "Research has an effect only if it is found, judged credible and reused. The RTVACOS framework (an acronym of seven criteria, spelled out just below) describes this as a multiplicative system: four foundations, where a single weakness drags everything down, and three amplifiers (collaboration, outreach, societal…"
  },
  "parameters": [
   {
@@ -31,8 +31,8 @@
    "control": "checkbox",
    "default": false,
    "label": {
-    "fr": "Une référence simple à battre (persistance, ou climatologie : la moyenne habituelle)",
-    "en": "A simple reference to beat (persistence, or climatology: the usual average)"
+    "fr": "Une référence simple à battre (persistance : la dernière valeur recopiée ; ou climatologie : la moyenne habituelle)",
+    "en": "A simple reference to beat (persistence: the last value copied; or climatology: the usual average)"
    },
    "meaning": {
     "fr": null,
@@ -127,8 +127,8 @@
    "control": "checkbox",
    "default": false,
    "label": {
-    "fr": "Un ORCID et des DOI (article, code, données)",
-    "en": "An ORCID and DOIs (article, code, data)"
+    "fr": "Un ORCID (identifiant unique de chercheur) et des DOI (identifiants permanents : article, code, données)",
+    "en": "An ORCID (unique researcher identifier) and DOIs (permanent identifiers: article, code, data)"
    },
    "meaning": {
     "fr": null,
@@ -159,8 +159,8 @@
    "control": "checkbox",
    "default": false,
    "label": {
-    "fr": "Des métadonnées lisibles par les machines (CITATION.cff, JSON-LD)",
-    "en": "Machine-readable metadata (CITATION.cff, JSON-LD)"
+    "fr": "Des métadonnées lisibles par les machines (CITATION.cff : comment citer le code ; JSON-LD : une description lisible par une machine)",
+    "en": "Machine-readable metadata (CITATION.cff: how to cite the code; JSON-LD: a machine-readable description)"
    },
    "meaning": {
     "fr": null,
@@ -418,7 +418,7 @@
   "persistence"
  ],
  "extraction": {
-  "source_hash": "a88a0d5319f30a0a",
+  "source_hash": "838217ae7926eef1",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#rtv"

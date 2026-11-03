@@ -21,8 +21,8 @@
   "en": "A complex autoregression forecasts irradiance and its volatility. Set α, the share of measurements left outside the interval, and read μ, the multiplier that sets the width, Gaussian or calibrated; results of the paper (2022)."
  },
  "summary": {
-  "fr": "Une seule autorégression complexe, six coefficients, prévoit en même temps l'éclairement et sa volatilité. Pour une couverture visée de 80 %, la couverture observée reste entre 79,5 et 80,7 % jusqu'à six heures, et ses intervalles sont plus étroits que ceux de la régression quantile à tous les horizons.",
-  "en": "A single complex autoregression, six coefficients, forecasts irradiance and its volatility at once. For a target coverage of 80%, the observed coverage stays between 79.5 and 80.7% up to six hours, and its intervals are narrower than those of quantile regression at every horizon."
+  "fr": "Une seule autorégression complexe (une prévision calculée comme somme pondérée des valeurs passées, à coefficients complexes), six coefficients, prévoit en même temps l'éclairement et sa volatilité. Pour une couverture visée de 80 % (la part des mesures qui doivent tomber dans l’intervalle), la couverture observée…",
+  "en": "A single complex autoregression (a forecast computed as a weighted sum of past values, with complex coefficients), six coefficients, forecasts irradiance and its volatility at once. For a target coverage of 80% (the share of measurements that should fall inside the interval), the observed coverage stays between 79.5…"
  },
  "parameters": [
   {
@@ -395,7 +395,7 @@
  ],
  "concepts": [],
  "extraction": {
-  "source_hash": "098117180e2f0c7a",
+  "source_hash": "4a294877bde4b467",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#cx"

@@ -396,7 +396,7 @@
   "forecastability-f"
  ],
  "extraction": {
-  "source_hash": "67879c7349dc9edb",
+  "source_hash": "9de200d8bd924f23",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#try-it"

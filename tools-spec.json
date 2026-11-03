@@ -477,7 +477,7 @@
    ],
    "concepts": [],
    "extraction": {
-    "source_hash": "faebb89232f72a06",
+    "source_hash": "f013f37b79e49801",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -865,7 +865,7 @@
     "cop"
    ],
    "extraction": {
-    "source_hash": "fabed06046de3c16",
+    "source_hash": "3ec169e5c9dbaf14",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -1303,7 +1303,7 @@
    ],
    "concepts": [],
    "extraction": {
-    "source_hash": "5e9638731a133e1a",
+    "source_hash": "87c3b4f4a7b1412d",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -1718,7 +1718,7 @@
    ],
    "concepts": [],
    "extraction": {
-    "source_hash": "616a03c47e5a26f2",
+    "source_hash": "51fa74a3d33cefbe",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -2102,7 +2102,7 @@
     "half-value-layer"
    ],
    "extraction": {
-    "source_hash": "7e2d5f837300cd15",
+    "source_hash": "81b3ed6b5f1bc7a1",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -2606,7 +2606,7 @@
     "biot-number"
    ],
    "extraction": {
-    "source_hash": "2c6c88ea6f185d18",
+    "source_hash": "1a1c3c828199b2e2",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -3138,7 +3138,7 @@
     "sensible-heat"
    ],
    "extraction": {
-    "source_hash": "4b08ba25efce27d5",
+    "source_hash": "496f257446a6cdc9",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -3685,7 +3685,7 @@
     "roc-curve"
    ],
    "extraction": {
-    "source_hash": "c595c33b6e9e70bb",
+    "source_hash": "994e98a0bdfbd27d",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -4193,7 +4193,7 @@
     "normal-distribution"
    ],
    "extraction": {
-    "source_hash": "500396262d9f889c",
+    "source_hash": "8a6d776fc26b1576",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -4763,7 +4763,7 @@
     "student-t-test"
    ],
    "extraction": {
-    "source_hash": "90c77ee17986439f",
+    "source_hash": "eb92e5d81a6374e8",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -5493,7 +5493,7 @@
     "chi-square-test"
    ],
    "extraction": {
-    "source_hash": "ef726508d169ef9e",
+    "source_hash": "d89282a827a68150",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -5911,7 +5911,7 @@
     "r-squared"
    ],
    "extraction": {
-    "source_hash": "eabb6a51e041bec1",
+    "source_hash": "d26cc23c60dccc57",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -6369,7 +6369,7 @@
     "prediction-interval"
    ],
    "extraction": {
-    "source_hash": "6629ae278d280e08",
+    "source_hash": "efe41e8458917307",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -6753,7 +6753,7 @@
     "influential-point"
    ],
    "extraction": {
-    "source_hash": "300f4a3db2afabbf",
+    "source_hash": "04c6cf5243286ea5",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -6819,8 +6819,8 @@
      "type": "integer",
      "control": "range",
      "min": 0,
-     "max": 1435,
-     "step": 5,
+     "max": 1439,
+     "step": 1,
      "default": 360,
      "label": {
       "fr": "Instant (UTC)",
@@ -6919,11 +6919,11 @@
      },
      "values": {
       "sun-d": 172,
-      "sun-t": 115
+      "sun-t": 116
      },
      "changes_vs_default": {
       "sun-d": 172,
-      "sun-t": 115
+      "sun-t": 116
      },
      "shows": {
       "fr": "21 juin, 01:56 UTC : midi solaire à Sydney alors qu'il fait nuit à Paris.",
@@ -7258,7 +7258,7 @@
      },
      "set": {
       "sun-d": 172,
-      "sun-t": 115
+      "sun-t": 116
      },
      "observe": {
       "fr": "21 juin, 01:56 UTC : midi solaire à Sydney alors qu'il fait nuit à Paris.",
@@ -7268,7 +7268,7 @@
    ],
    "concepts": [],
    "extraction": {
-    "source_hash": "dfd60bb6a3504dc2",
+    "source_hash": "0015c2dd0023317f",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#sun"
@@ -7659,7 +7659,7 @@
     "nice"
    ],
    "extraction": {
-    "source_hash": "e5baec1286f0015b",
+    "source_hash": "e86cfeab21e55d1b",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#try-it"
@@ -8150,7 +8150,7 @@
     "blend"
    ],
    "extraction": {
-    "source_hash": "ce2459ddec4047ca",
+    "source_hash": "0e27c4288de8c3e8",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#try-it"
@@ -8557,7 +8557,7 @@
     "forecastability-f"
    ],
    "extraction": {
-    "source_hash": "67879c7349dc9edb",
+    "source_hash": "9de200d8bd924f23",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#try-it"
@@ -9160,7 +9160,7 @@
     "gamma-index"
    ],
    "extraction": {
-    "source_hash": "ed1f6e622f4f476a",
+    "source_hash": "92e29d26a4860b93",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#try-it"
@@ -9631,7 +9631,7 @@
     "gray"
    ],
    "extraction": {
-    "source_hash": "d75781abe64ed0a3",
+    "source_hash": "e83bd835dc4f3c69",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#try-it"
@@ -10046,7 +10046,7 @@
     "doubling-time"
    ],
    "extraction": {
-    "source_hash": "4e272c9642114f96",
+    "source_hash": "783ad3c64fcfe93c",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#try-it"
@@ -10726,7 +10726,7 @@
     "nice"
    ],
    "extraction": {
-    "source_hash": "9e08bc3e438828de",
+    "source_hash": "7e4b12f78a6c073f",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#fc"
@@ -11403,7 +11403,7 @@
     "memory-phi"
    ],
    "extraction": {
-    "source_hash": "6c54131a9cf337ee",
+    "source_hash": "753c132f642043b7",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -11830,7 +11830,7 @@
    ],
    "concepts": [],
    "extraction": {
-    "source_hash": "b4741964e96fbe3e",
+    "source_hash": "504094aed262f07d",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience",
@@ -11866,8 +11866,8 @@
     "en": "A complex autoregression forecasts irradiance and its volatility. Set α, the share of measurements left outside the interval, and read μ, the multiplier that sets the width, Gaussian or calibrated; results of the paper (2022)."
    },
    "summary": {
-    "fr": "Une seule autorégression complexe, six coefficients, prévoit en même temps l'éclairement et sa volatilité. Pour une couverture visée de 80 %, la couverture observée reste entre 79,5 et 80,7 % jusqu'à six heures, et ses intervalles sont plus étroits que ceux de la régression quantile à tous les horizons.",
-    "en": "A single complex autoregression, six coefficients, forecasts irradiance and its volatility at once. For a target coverage of 80%, the observed coverage stays between 79.5 and 80.7% up to six hours, and its intervals are narrower than those of quantile regression at every horizon."
+    "fr": "Une seule autorégression complexe (une prévision calculée comme somme pondérée des valeurs passées, à coefficients complexes), six coefficients, prévoit en même temps l'éclairement et sa volatilité. Pour une couverture visée de 80 % (la part des mesures qui doivent tomber dans l’intervalle), la couverture observée…",
+    "en": "A single complex autoregression (a forecast computed as a weighted sum of past values, with complex coefficients), six coefficients, forecasts irradiance and its volatility at once. For a target coverage of 80% (the share of measurements that should fall inside the interval), the observed coverage stays between 79.5…"
    },
    "parameters": [
     {
@@ -12240,7 +12240,7 @@
    ],
    "concepts": [],
    "extraction": {
-    "source_hash": "098117180e2f0c7a",
+    "source_hash": "4a294877bde4b467",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#cx"
@@ -12483,7 +12483,7 @@
     "prediction-interval"
    ],
    "extraction": {
-    "source_hash": "1ee24b2c829475e5",
+    "source_hash": "985946782de493ce",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#proba-race"
@@ -12515,8 +12515,8 @@
     "en": "Explore a reflection framework on rigour, transparency, visibility and adoption; no excellence score."
    },
    "summary": {
-    "fr": "Une recherche n'a d'effet que si elle est trouvée, jugée crédible et réutilisée. Le cadre RTVACOS la décrit comme un système multiplicatif : quatre fondations, dont une seule faiblesse fait chuter l'ensemble, et trois amplificateurs (collaboration, diffusion, pertinence sociétale), qui démultiplient une base solide…",
-    "en": "Research has an effect only if it is found, judged credible and reused. The RTVACOS framework describes this as a multiplicative system: four foundations, where a single weakness drags everything down, and three amplifiers (collaboration, outreach, societal relevance), which scale a solid base but never replace it."
+    "fr": "Une recherche n'a d'effet que si elle est trouvée, jugée crédible et réutilisée. Le cadre RTVACOS (sigle de sept critères, détaillés juste en dessous) la décrit comme un système multiplicatif : quatre fondations, dont une seule faiblesse fait chuter l'ensemble, et trois amplificateurs (collaboration, diffusion,…",
+    "en": "Research has an effect only if it is found, judged credible and reused. The RTVACOS framework (an acronym of seven criteria, spelled out just below) describes this as a multiplicative system: four foundations, where a single weakness drags everything down, and three amplifiers (collaboration, outreach, societal…"
    },
    "parameters": [
     {
@@ -12525,8 +12525,8 @@
      "control": "checkbox",
      "default": false,
      "label": {
-      "fr": "Une référence simple à battre (persistance, ou climatologie : la moyenne habituelle)",
-      "en": "A simple reference to beat (persistence, or climatology: the usual average)"
+      "fr": "Une référence simple à battre (persistance : la dernière valeur recopiée ; ou climatologie : la moyenne habituelle)",
+      "en": "A simple reference to beat (persistence: the last value copied; or climatology: the usual average)"
      },
      "meaning": {
       "fr": null,
@@ -12621,8 +12621,8 @@
      "control": "checkbox",
      "default": false,
      "label": {
-      "fr": "Un ORCID et des DOI (article, code, données)",
-      "en": "An ORCID and DOIs (article, code, data)"
+      "fr": "Un ORCID (identifiant unique de chercheur) et des DOI (identifiants permanents : article, code, données)",
+      "en": "An ORCID (unique researcher identifier) and DOIs (permanent identifiers: article, code, data)"
      },
      "meaning": {
       "fr": null,
@@ -12653,8 +12653,8 @@
      "control": "checkbox",
      "default": false,
      "label": {
-      "fr": "Des métadonnées lisibles par les machines (CITATION.cff, JSON-LD)",
-      "en": "Machine-readable metadata (CITATION.cff, JSON-LD)"
+      "fr": "Des métadonnées lisibles par les machines (CITATION.cff : comment citer le code ; JSON-LD : une description lisible par une machine)",
+      "en": "Machine-readable metadata (CITATION.cff: how to cite the code; JSON-LD: a machine-readable description)"
      },
      "meaning": {
       "fr": null,
@@ -12912,7 +12912,7 @@
     "persistence"
    ],
    "extraction": {
-    "source_hash": "a88a0d5319f30a0a",
+    "source_hash": "838217ae7926eef1",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#rtv"
@@ -13330,7 +13330,7 @@
    "exploration": [],
    "concepts": [],
    "extraction": {
-    "source_hash": "76ab32d007bd01e5",
+    "source_hash": "fb5f82af256cdbbe",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#role-helper"
@@ -13644,7 +13644,7 @@
    "exploration": [],
    "concepts": [],
    "extraction": {
-    "source_hash": "fb4dac3ff71e5bf6",
+    "source_hash": "3c37795c39e4b79a",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#lic-tree"

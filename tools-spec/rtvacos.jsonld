@@ -32,8 +32,8 @@
   {
    "@type": "PropertyValue",
    "propertyID": "R1",
-   "name": "A simple reference to beat (persistence, or climatology: the usual average)",
-   "alternateName": "Une référence simple à battre (persistance, ou climatologie : la moyenne habituelle)",
+   "name": "A simple reference to beat (persistence: the last value copied; or climatology: the usual average)",
+   "alternateName": "Une référence simple à battre (persistance : la dernière valeur recopiée ; ou climatologie : la moyenne habituelle)",
    "value": false
   },
   {
@@ -74,8 +74,8 @@
   {
    "@type": "PropertyValue",
    "propertyID": "V1",
-   "name": "An ORCID and DOIs (article, code, data)",
-   "alternateName": "Un ORCID et des DOI (article, code, données)",
+   "name": "An ORCID (unique researcher identifier) and DOIs (permanent identifiers: article, code, data)",
+   "alternateName": "Un ORCID (identifiant unique de chercheur) et des DOI (identifiants permanents : article, code, données)",
    "value": false
   },
   {
@@ -88,8 +88,8 @@
   {
    "@type": "PropertyValue",
    "propertyID": "V3",
-   "name": "Machine-readable metadata (CITATION.cff, JSON-LD)",
-   "alternateName": "Des métadonnées lisibles par les machines (CITATION.cff, JSON-LD)",
+   "name": "Machine-readable metadata (CITATION.cff: how to cite the code; JSON-LD: a machine-readable description)",
+   "alternateName": "Des métadonnées lisibles par les machines (CITATION.cff : comment citer le code ; JSON-LD : une description lisible par une machine)",
    "value": false
   },
   {
@@ -168,7 +168,7 @@
    {
     "@type": "PropertyValueSpecification",
     "valueName": "R1",
-    "description": "A simple reference to beat (persistence, or climatology: the usual average)",
+    "description": "A simple reference to beat (persistence: the last value copied; or climatology: the usual average)",
     "valueRequired": false,
     "defaultValue": false
    },
@@ -210,7 +210,7 @@
    {
     "@type": "PropertyValueSpecification",
     "valueName": "V1",
-    "description": "An ORCID and DOIs (article, code, data)",
+    "description": "An ORCID (unique researcher identifier) and DOIs (permanent identifiers: article, code, data)",
     "valueRequired": false,
     "defaultValue": false
    },
@@ -224,7 +224,7 @@
    {
     "@type": "PropertyValueSpecification",
     "valueName": "V3",
-    "description": "Machine-readable metadata (CITATION.cff, JSON-LD)",
+    "description": "Machine-readable metadata (CITATION.cff: how to cite the code; JSON-LD: a machine-readable description)",
     "valueRequired": false,
     "defaultValue": false
    },
