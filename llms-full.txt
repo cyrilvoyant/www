@@ -722,7 +722,7 @@ Simulateurs, animations et calculateurs scientifiques
  Suivre un exemple d’arbre de décision, à adapter au contexte et aux droits sur les contenus.
  Ouvrir cet outil →
  Citer et réutiliser nos travaux
- Guides techniques, équations et codes (en anglais) · Contrôles numériques des sept calculateurs
+ Guides techniques, équations et codes · Contrôles numériques des sept calculateurs
  Et ensuite ?
  Comprendre la démarche Le fil : cinq étapes, du calcul direct à la confiance. Tout voir sur une page Logiciels avec DOI et équipes, cours, outils et essais. Évaluer une prévision La marche à suivre face à la persistance, avec NICE en exemple. Citer ou réutiliser La licence de chaque travail et des exemples à copier.
 
@@ -2402,7 +2402,7 @@ Corrélation, significativité et R² : animation pour les distinguer
 URL: https://www.cyrilvoyant.com/fr/animations/courbe-roc/
 
 Courbe ROC interactive : sensibilité, spécificité et prévalence
- À 10 % de prévalence, un test à 78,8 % de sensibilité et 84,1 % de spécificité ne donne que 35,6 % de malades parmi les résultats positifs (exemple modèle). Vous comprenez ce qu’un résultat positif veut dire, et ce qui dépend de la population.
+ À 10 % de prévalence, un test à 78,8 % de sensibilité et 84,1 % de spécificité ne donne que 35,6 % de malades parmi les résultats positifs (exemple construit). Vous comprenez ce qu’un résultat positif veut dire, et ce qui dépend de la population.
  Une expérience du cours de Cyril Voyant, à manipuler dans le navigateur. Le chapitre et ses diapositives · Toutes les expériences .
  JavaScript est nécessaire pour les curseurs et l’animation. Les explications, formules, exemple et limites ci-dessous restent accessibles. Essayer et interpréter
  Changez le seuil : le point se déplace sur la courbe. Changez ensuite seulement la prévalence : la sensibilité, la spécificité et la courbe ne bougent pas, c’est normal dans ce modèle. Les valeurs prédictives, elles, changent. Augmentez enfin la séparation : la courbe s’écarte de la diagonale.
@@ -2429,7 +2429,7 @@ Courbe ROC interactive : sensibilité, spécificité et prévalence
  Deux lois normales de même écart-type : une illustration, pas une évaluation clinique. L’AUC ne donne ni le meilleur seuil, ni la probabilité individuelle d’une maladie.
  Aller plus loin
  Le chapitre complet du cours : le raisonnement, d’autres exemples, le diaporama et la FAQ
- La loi normale : les deux courbes de cette expérience
+ La loi normale : les deux courbes de cette expérience (hypothèse gaussienne pédagogique, pas une propriété universelle des tests)
  Le test du χ² : lire un tableau 2×2
  Les valeurs affichées sont calculées ou construites dans le modèle indiqué : ce ne sont pas de nouveaux résultats de recherche.
 
@@ -2782,7 +2782,7 @@ Test de Student interactif : deux moyennes, dispersion et p-value
  Δ
  La différence entre les deux moyennes.
  n₁, n₂
- Les effectifs des deux groupes.
+ Les effectifs des deux groupes, égaux dans cet outil.
  s₁, s₂, sₚ
  Les écarts-types de chaque groupe et leur estimation commune. Voir l’ écart-type dans la loi normale .
  t
@@ -3607,9 +3607,9 @@ Actualités : publications, logiciels et essais
  Daniel JULIAN & Cyril VOYANT
  Projet de recherche, 2025, https://zenodo.org/doi/10.5281/zenodo.16739882
  Résumé
- LQL‑Equiv est un logiciel libre et open source, sous licence MIT, écrit en MATLAB et distribué sous forme d’exécutable autonome, développé par Cyril Voyant et Daniel Julian. Il calcule, voxel par voxel, la dose équivalente en fractions de 2 Gy (EQD₂) et la dose biologique efficace (BED) à l’aide d’un modèle linéaire-quadratique-linéaire (LQL) qui prend explicitement en compte la taille des fractions, la durée totale du traitement et les effets de repopulation cellulaire, et surpasse les calculateurs standards fondés sur le modèle LQ.
- Fondements théoriques : Intègre le cadre LQL d’Astrahan pour les schémas à forte dose par fraction (> dₜ), les corrections de repopulation de Dale et la modélisation multi-fractionnée de Thames, mis en œuvre dans un algorithme qui minimise une fonction de coût spécifique pour calculer avec précision l’EQD₂ et la BED dans des situations complexes de radiothérapie.
- Intérêt clinique : Les études de validation rapportent des écarts de dose allant jusqu’à ~25 % par rapport aux modèles LQ classiques, particulièrement pertinents pour les protocoles hypo- et hyperfractionnés et en cas d’interruption de traitement, une différence largement due à la dynamique de repopulation tumorale dans les cas de cancer de la prostate.
+ LQL‑Equiv est un logiciel libre et open source, sous licence MIT, écrit en MATLAB et distribué sous forme d’exécutable autonome, développé par Cyril Voyant et Daniel Julian. Il calcule, voxel par voxel, la dose équivalente en fractions de 2 Gy (EQD₂) et la dose biologique efficace (BED) à l’aide d’un modèle linéaire-quadratique-linéaire (LQL) qui prend explicitement en compte la taille des fractions, la durée totale du traitement et les effets de repopulation cellulaire, et permet une comparaison avec les calculs LQ standards sous les hypothèses biologiques choisies.
+ Fondements théoriques : Intègre le cadre LQL d’Astrahan pour les schémas à forte dose par fraction (> dₜ), les corrections de repopulation de Dale et la modélisation multi-fractionnée de Thames, mis en œuvre dans un algorithme qui minimise une fonction de coût spécifique pour calculer avec précision l’EQD₂ et la BED dans le cadre du modèle et des paramètres retenus.
+ Intérêt clinique : Les comparaisons entre les modèles LQ et LQL rapportent des écarts de dose allant jusqu’à ~25 % par rapport aux modèles LQ classiques, particulièrement pertinents pour les protocoles hypo- et hyperfractionnés et en cas d’interruption de traitement, une différence largement due à la dynamique de repopulation tumorale dans les cas de cancer de la prostate.
  Interface et déploiement : LQL‑Equiv est distribué comme application graphique autonome Matlab®, qui requiert MATLAB Runtime sous Windows (aucune licence MATLAB complète n’est nécessaire). L’interface propose peu de paramètres ajustables, mais essentiels (par exemple le rapport α/β, le temps de démarrage Tₖ, le temps de doublement potentiel Tₚₒₜ), ce qui garantit la facilité d’utilisation et privilégie la reproductibilité.
  Cadre réglementaire : LQL‑Equiv est destiné uniquement à la recherche et à la validation secondaire, et n’est pas un outil certifié pour l’usage clinique. Les utilisateurs doivent vérifier les résultats et restent responsables de l’interprétation clinique ; les développeurs déclinent toute responsabilité en cas de mauvais usage.
  En résumé
@@ -4693,7 +4693,7 @@ Calculer les poids de BLEND
  Travaux et équipes de référence
  Cyril Voyant , Candice Banes , Luis Garcia-Gutierrez , Gilles Notton , Milan Despotovic , Zaher Mundher Yaseen . Symmetry-constrained forecasting of periodically correlated energy processes .
  Cyril Voyant , Gilles Notton , Jean-Laurent Duchaud , Luis Antonio Garcia-Gutierrez , Jamie M. Bright , Dazhi Yang . Benchmarks for solar radiation time series forecasting .
- Guide technique, sources et attribution détaillée (en anglais) · Cas de vérification numérique
+ Guide technique : théorie, sources et attribution détaillée · version anglaise · Cas de vérification numérique
 
 ---
 URL: https://www.cyrilvoyant.com/fr/outils/comparateur-previsions/
@@ -4834,7 +4834,7 @@ Comparer une prévision à la persistance : NICE
  Pour aller plus loin : Comment évaluer une prévision solaire · Quelle prévision pour quel signal ? · Comparer des prévisions sur données réelles
  Travaux et équipes de référence
  Cyril Voyant , Milan Despotovic , Luis Garcia-Gutierrez , Rodrigo Amaro e Silva , Philippe Lauret , Ted Soubdhan , Nadjem Bailek . NICE k metrics: Unified and multidimensional framework for evaluating deterministic solar forecasting accuracy .
- Guide technique, sources et attribution détaillée (en anglais) · Cas de vérification numérique
+ Guide technique : théorie, sources et attribution détaillée · version anglaise · Cas de vérification numérique
 
 ---
 URL: https://www.cyrilvoyant.com/fr/outils/variabilite-previsibilite/
@@ -5861,9 +5861,9 @@ News: publications, software and essays
  Daniel JULIAN & Cyril VOYANT
  Research project, 2025, https://zenodo.org/doi/10.5281/zenodo.16739882
  Abstract
- LQL‑Equiv is a free, open-source software under the MIT License written in MATLAB and distributed as a standalone executable, developed by Cyril Voyant & Daniel Julian. It computes voxel‑wise Equivalent Dose in 2 Gy fractions (EQD₂) and Biologically Effective Dose (BED) using a Linear‑Quadratic‑Linear (LQL) model that explicitly accounts for fraction size, overall treatment time, and cellular repopulation effects, outperforming standard LQ-based calculators.
- Theoretical Basis: Integrates the Astrahan LQL framework for high‑dose per fraction regimens (> dₜ), Dale’s repopulation corrections, and Thames’s multi‑fractionation modeling, implemented in an algorithm that minimizes a custom cost function to compute accurate EQD₂ and BED across complex radiotherapy scenarios.
- Clinical Relevance: Validation studies report dose discrepancies up to ~25 % when compared to conventional LQ-based models, particularly relevant in hypo‑ and hyper‑fractionated protocols and in presence of treatment interruptions, a difference largely driven by tumor repopulation dynamics in prostate cancer cases.
+ LQL‑Equiv is a free, open-source software under the MIT License written in MATLAB and distributed as a standalone executable, developed by Cyril Voyant & Daniel Julian. It computes voxel‑wise Equivalent Dose in 2 Gy fractions (EQD₂) and Biologically Effective Dose (BED) using a Linear‑Quadratic‑Linear (LQL) model that explicitly accounts for fraction size, overall treatment time, and cellular repopulation effects, allowing comparison with standard LQ-based calculations under the chosen biological assumptions.
+ Theoretical Basis: Integrates the Astrahan LQL framework for high‑dose per fraction regimens (> dₜ), Dale’s repopulation corrections, and Thames’s multi‑fractionation modeling, implemented in an algorithm that minimizes a custom cost function to compute accurate EQD₂ and BED within the selected model and its parameter assumptions.
+ Clinical Relevance: Comparisons between the LQ and LQL models report dose differences up to ~25 % when compared to conventional LQ-based models, particularly relevant in hypo‑ and hyper‑fractionated protocols and in presence of treatment interruptions, a difference largely driven by tumor repopulation dynamics in prostate cancer cases.
  Interface & Deployment: LQL‑Equiv is distributed as a Matlab® standalone GUI application, requiring MATLAB Runtime on Windows (no full MATLAB license needed). The interface offers few but essential adjustable parameters (e.g. α/β ratio, kick-off time Tₖ, potential doubling time Tₚₒₜ), ensuring usability and focus on reproducibility.
  Regulatory Scope: LQL‑Equiv is intended for research use and secondary validation only, not as a clinically certified tool. Users must verify outputs and remain responsible for clinical interpretation; the developers disclaim liability for misuse.
  As a Resume
@@ -7469,7 +7469,7 @@ Regression: confidence interval and prediction interval
 URL: https://www.cyrilvoyant.com/tools/roc-curve/
 
 Interactive ROC curve: sensitivity, specificity and prevalence
- At 10% prevalence, a test with 78.8% sensitivity and 84.1% specificity gives only 35.6% of people with the disease among positive results (model example). You understand what a positive result means, and what depends on the population.
+ At 10% prevalence, a test with 78.8% sensitivity and 84.1% specificity gives only 35.6% of people with the disease among positive results (constructed example). You understand what a positive result means, and what depends on the population.
  An experiment from Cyril Voyant’s course, running in your browser. The chapter and its slides (French) · All experiments .
  JavaScript is needed for the controls and animation. The explanation, equations, example and limitations below remain available. Try it and interpret
  Change the threshold: the point moves along the curve. Then change prevalence alone: sensitivity, specificity and the curve do not move, as expected in this model. Predictive values do change. Finally increase the separation: the curve moves away from the diagonal.
@@ -7496,7 +7496,7 @@ Interactive ROC curve: sensitivity, specificity and prevalence
  Two normal distributions with the same standard deviation: an illustration, not a clinical evaluation. AUC gives neither the best threshold nor an individual probability of disease.
  Go further
  The full course chapter (French) : the reasoning, further examples, slides and FAQ
- The normal distribution: the two curves of this experiment
+ The normal distribution: the two curves of this experiment (a teaching assumption, not a universal property of tests)
  The chi-square test: read a 2×2 table
  The values shown are computed or constructed within the stated model: they are not new research findings.
 
@@ -7518,7 +7518,7 @@ Interactive t-test: means, variability and p-values
  Δ
  The difference between the two means.
  n₁, n₂
- The sizes of the two groups.
+ The sizes of the two groups, equal in this tool.
  s₁, s₂, sₚ
  The standard deviation of each group and their pooled estimate. See the standard deviation in the normal distribution .
  t
