@@ -1,0 +1,312 @@
+{
+ "id": "licence",
+ "schema": "https://www.cyrilvoyant.com/tools-spec.json#1.0",
+ "kind": "decision",
+ "domain": "research",
+ "interface_language": "both",
+ "name": {
+  "fr": "Explorer un choix de licence",
+  "en": "Explore a licensing choice"
+ },
+ "url": {
+  "fr": "https://www.cyrilvoyant.com/fr/donnees/#lic-tree",
+  "en": "https://www.cyrilvoyant.com/data/#lic-tree"
+ },
+ "page_title": {
+  "fr": "Les modèles sont dans les données : qualifier, certifier, placer sous licence",
+  "en": "Models live in the data: qualify, certify, license"
+ },
+ "computes": {
+  "fr": "Suivre un exemple d’arbre de décision, à adapter au contexte et aux droits sur les contenus.",
+  "en": "Follow an example decision tree, to be adapted to context and content rights."
+ },
+ "summary": {
+  "fr": "Avec l'IA, n'importe qui écrit en quelques minutes un modèle de prévision ou un réseau de neurones. La méthode n'est plus rare ; les données le sont.",
+  "en": "With AI, anyone writes a forecasting model or a neural network in minutes. The method is no longer scarce; the data are."
+ },
+ "parameters": [
+  {
+   "id": "frame",
+   "type": "boolean",
+   "control": "button",
+   "options": [
+    {
+     "value": "yes",
+     "label": "Oui"
+    },
+    {
+     "value": "no",
+     "label": "Non"
+    }
+   ],
+   "label": {
+    "fr": "Le cadre du projet (contrat, financeur, chaire) impose-t-il la confidentialité ou l'exclusivité ?",
+    "en": "Does the project framework (contract, funder, chair) impose confidentiality or exclusivity?"
+   }
+  },
+  {
+   "id": "open",
+   "type": "boolean",
+   "control": "button",
+   "options": [
+    {
+     "value": "yes",
+     "label": "Oui"
+    },
+    {
+     "value": "no",
+     "label": "Non"
+    }
+   ],
+   "label": {
+    "fr": "Ce cadre impose-t-il l'ouverture (Horizon Europe, ANR, chaire avec clause d'ouverture) ?",
+    "en": "Does it impose openness (Horizon Europe, ANR, a chair with an openness clause)?"
+   }
+  },
+  {
+   "id": "oss",
+   "type": "boolean",
+   "control": "button",
+   "options": [
+    {
+     "value": "yes",
+     "label": "Oui"
+    },
+    {
+     "value": "no",
+     "label": "Non"
+    }
+   ],
+   "label": {
+    "fr": "La clause exige-t-elle explicitement l'« open source » (et pas seulement un accès ouvert au code) ?",
+    "en": "Does the clause explicitly require \"open source\" (not only open access to the code)?"
+   }
+  },
+  {
+   "id": "rev",
+   "type": "boolean",
+   "control": "button",
+   "options": [
+    {
+     "value": "yes",
+     "label": "Oui"
+    },
+    {
+     "value": "no",
+     "label": "Non"
+    }
+   ],
+   "label": {
+    "fr": "Le code est-il destiné à une revue logicielle (SoftwareX, JOSS, JORS) ou lié à une bibliothèque sous GPL ?",
+    "en": "Is the code meant for a software journal (SoftwareX, JOSS, JORS) or linked to a GPL library?"
+   }
+  }
+ ],
+ "presets": [],
+ "actions": [
+  {
+   "name": {
+    "fr": "Oui",
+    "en": "Yes"
+   }
+  },
+  {
+   "name": {
+    "fr": "Non",
+    "en": "No"
+   }
+  }
+ ],
+ "variants": [],
+ "outputs": [
+  {
+   "id": "closed",
+   "name": {
+    "fr": "Aucune diffusion publique.",
+    "en": "No public release."
+   },
+   "unit": null,
+   "meaning": {
+    "fr": "Aucune diffusion publique. Le contrat prime ; c'est aussi la solution qui bride le plus la diffusion académique et la reproductibilité.",
+    "en": "No public release. The contract prevails; it is also the option that most limits academic diffusion and reproducibility."
+   },
+   "kind": "decision-outcome"
+  },
+  {
+   "id": "oss",
+   "name": {
+    "fr": "Licence open source",
+    "en": "Open-source license"
+   },
+   "unit": null,
+   "meaning": {
+    "fr": "Licence open source (code : MIT, Apache, BSD ou GPL selon les dépendances ; données : CC BY). Diffusion maximale, valorisation commerciale non protégée.",
+    "en": "Open-source license (code: MIT, Apache, BSD or GPL depending on dependencies; data: CC BY). Widest diffusion, commercial valorization not protected."
+   },
+   "kind": "decision-outcome"
+  },
+  {
+   "id": "nc",
+   "name": {
+    "fr": "Licence non commerciale",
+    "en": "Non-commercial license"
+   },
+   "unit": null,
+   "meaning": {
+    "fr": "Licence non commerciale (code : par exemple PolyForm Noncommercial ; données : CC BY-NC). Accès libre pour la recherche, l'enseignement et le service public ; pas « open source » au sens de l'OSI ; valorisation commerciale protégée.",
+    "en": "Non-commercial license (code: for example PolyForm Noncommercial; data: CC BY-NC). Free access for research, teaching and public service; not \"open source\" in the OSI sense; commercial valorization protected."
+   },
+   "kind": "decision-outcome"
+  }
+ ],
+ "formulas": [],
+ "definitions": [
+  {
+   "term": "FAIR",
+   "meaning": {
+    "fr": "Trouvable, accessible, interopérable, réutilisable : quatre principes pour que des données servent au-delà de ceux qui les ont produites.",
+    "en": "Findable, accessible, interoperable, reusable: four principles so that data serve beyond those who produced them."
+   }
+  },
+  {
+   "term": "Métadonnées",
+   "meaning": {
+    "fr": "Les données qui décrivent les données : origine, instrument, unités, période, pas de temps, traitements, licence.",
+    "en": "Data about the data: origin, instrument, units, period, time step, processing, license."
+   }
+  },
+  {
+   "term": "DOI",
+   "meaning": {
+    "fr": "Identifiant pérenne d'un objet numérique (article, jeu de données, logiciel) ; l'adresse reste valable même si le site change. DataCite en attribue aux données de la recherche.",
+    "en": "A persistent identifier for a digital object (article, dataset, software); the address remains valid even if the website changes. DataCite assigns them to research data."
+   }
+  },
+  {
+   "term": "OGC",
+   "meaning": {
+    "fr": "Open Geospatial Consortium : normes ouvertes des services géographiques, dont WMS (cartes), WFS (objets), WCS (grilles) et WPS (traitements à distance).",
+    "en": "Open Geospatial Consortium: open standards for geographic services, among them WMS (maps), WFS (features), WCS (grids) and WPS (remote processing)."
+   }
+  },
+  {
+   "term": "INSPIRE, ISO 19115",
+   "meaning": {
+    "fr": "La directive européenne sur l'information géographique et la norme internationale de ses métadonnées.",
+    "en": "The European directive on geographic information and the international standard for its metadata."
+   }
+  },
+  {
+   "term": "THREDDS, OPeNDAP",
+   "meaning": {
+    "fr": "Un serveur de données scientifiques et le protocole qui permet d'en lire seulement la partie utile (une zone, une période) sans tout télécharger.",
+    "en": "A scientific data server and the protocol that reads only the useful part (an area, a period) without downloading everything."
+   }
+  },
+  {
+   "term": "NetCDF-CF",
+   "meaning": {
+    "fr": "Un format de fichier pour les grilles et séries scientifiques, avec des conventions (CF) qui fixent noms de variables, unités et coordonnées.",
+    "en": "A file format for scientific grids and series, with conventions (CF) that fix variable names, units and coordinates."
+   }
+  },
+  {
+   "term": "STAC",
+   "meaning": {
+    "fr": "SpatioTemporal Asset Catalog : une façon standard de cataloguer images satellite et données « cloud-native ».",
+    "en": "SpatioTemporal Asset Catalog: a standard way to catalog satellite imagery and cloud-native data."
+   }
+  },
+  {
+   "term": "GEO, Copernicus, CAMS, C3S",
+   "meaning": {
+    "fr": "Le Group on Earth Observations (partenariat intergouvernemental), le programme européen d'observation de la Terre et deux de ses services : atmosphère (CAMS) et changement climatique (C3S).",
+    "en": "The Group on Earth Observations (an intergovernmental partnership), the European Earth observation program and two of its services: atmosphere (CAMS) and climate change (C3S)."
+   }
+  },
+  {
+   "term": "CC BY",
+   "meaning": {
+    "fr": "Licence Creative Commons Attribution : chacun peut copier, modifier et réutiliser, y compris commercialement, à condition de citer l'auteur. Pensée pour les textes, figures et données.",
+    "en": "Creative Commons Attribution: anyone may copy, adapt and reuse, commercially too, provided the author is credited. Meant for texts, figures and data."
+   }
+  },
+  {
+   "term": "CC BY-NC",
+   "meaning": {
+    "fr": "La même, réservée aux usages non commerciaux.",
+    "en": "The same, for non-commercial uses only."
+   }
+  },
+  {
+   "term": "MIT",
+   "meaning": {
+    "fr": "Licence de logiciel très permissive : usage, modification, redistribution et vente libres, à condition de garder la mention de copyright et le texte de la licence ; aucune garantie.",
+    "en": "A very permissive software license: free use, modification, redistribution and sale, provided the copyright notice and the license text are kept; no warranty."
+   }
+  },
+  {
+   "term": "Apache 2.0",
+   "meaning": {
+    "fr": "Permissive comme MIT, avec en plus une licence explicite sur les brevets des contributeurs et l'obligation de signaler les fichiers modifiés.",
+    "en": "Permissive like MIT, plus an explicit patent license from contributors and a duty to flag modified files."
+   }
+  },
+  {
+   "term": "BSD",
+   "meaning": {
+    "fr": "Famille de licences permissives proches de MIT ; la version à trois clauses interdit en plus d'utiliser le nom des auteurs pour promouvoir un produit dérivé.",
+    "en": "A family of permissive licenses close to MIT; the three-clause version also forbids using the authors' names to promote a derived product."
+   }
+  },
+  {
+   "term": "GPL",
+   "meaning": {
+    "fr": "Licence « copyleft » : tout logiciel dérivé distribué doit l'être sous GPL, avec son code source.",
+    "en": "A copyleft license: any derived software that is distributed must be under the GPL, with its source code."
+   }
+  },
+  {
+   "term": "PolyForm Noncommercial",
+   "meaning": {
+    "fr": "Licence de logiciel qui autorise tout usage non commercial : usage personnel, recherche, expérimentation, enseignement, et usage par des organisations non commerciales (établissements d'enseignement, recherche publique, associations, administrations). L'usage commercial demande un autre accord avec l'auteur. La licence doit accompagner le code redistribué.",
+    "en": "A software license that allows any non-commercial use: personal use, research, experiment, teaching, and use by non-commercial organizations (educational institutions, public research, charities, government bodies). Commercial use needs another agreement with the author. The license must travel with redistributed code."
+   }
+  },
+  {
+   "term": "Open source (OSI)",
+   "meaning": {
+    "fr": "Définition de l'Open Source Initiative : une licence open source ne peut restreindre aucun domaine d'usage ; une licence non commerciale n'est donc pas « open source », même si le code est ouvert à la lecture.",
+    "en": "The Open Source Initiative definition: an open-source license may not restrict any field of use; a non-commercial license is therefore not \"open source\", even if the code is open to read."
+   }
+  }
+ ],
+ "assumptions": {
+  "fr": [],
+  "en": []
+ },
+ "source": {
+  "dois": [],
+  "repositories": [],
+  "related_pages": [
+   {
+    "href": "/fr/animations/soleil-saisons-utc/",
+    "text": "horodatage"
+   }
+  ]
+ },
+ "how_to_explore": {
+  "fr": "Régler les paramètres sur un préréglage (valeurs ci-dessus), lire la phrase affichée par la page puis les sorties ; modifier ensuite un seul paramètre à la fois entre son minimum et son maximum.",
+  "en": "Set the parameters to a preset (values above), read the sentence the page shows then the outputs; then change one parameter at a time between its minimum and maximum."
+ },
+ "exploration": [],
+ "concepts": [],
+ "extraction": {
+  "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
+  "roots": [
+   "#lic-tree"
+  ],
+  "page_errors": [],
+  "fr_en_preset_consistency": null
+ }
+}

@@ -1,0 +1,675 @@
+{
+ "id": "memory",
+ "schema": "https://www.cyrilvoyant.com/tools-spec.json#1.0",
+ "kind": "demo",
+ "domain": "energy",
+ "interface_language": "both",
+ "name": {
+  "fr": "Quelle prévision pour quel signal ?",
+  "en": "Which forecast for which signal?"
+ },
+ "url": {
+  "fr": "https://www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/#experience",
+  "en": "https://www.cyrilvoyant.com/stories/variability-memory-forecastability/#experience"
+ },
+ "page_title": {
+  "fr": "Quelle prévision pour quel signal ?",
+  "en": "Which forecast for which signal?"
+ },
+ "computes": {
+  "fr": "Choisir un signal, jouer avec les curseurs, voir quelle prévision gagne.",
+  "en": "Choose a signal, play with the sliders, see which forecast wins."
+ },
+ "summary": {
+  "fr": "Il n'y a pas de meilleure prévision en soi : tout dépend du signal. Sur un signal aléatoire, la moyenne gagne.",
+  "en": "There is no best forecast as such: it all depends on the signal. On a random signal, the mean wins."
+ },
+ "parameters": [
+  {
+   "id": "a",
+   "type": "number",
+   "control": "range",
+   "min": 0,
+   "max": 0.9,
+   "step": 0.05,
+   "default": 0.8,
+   "label": {
+    "fr": "Force du cycle",
+    "en": "Strength of the cycle"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "unit_source": "no unit shown by the page"
+  },
+  {
+   "id": "phi",
+   "type": "number",
+   "control": "range",
+   "min": 0,
+   "max": 1,
+   "step": 0.05,
+   "default": 0.7,
+   "label": {
+    "fr": "Mémoire",
+    "en": "Memory"
+   },
+   "meaning": {
+    "fr": "La corrélation entre deux valeurs voisines du bruit. 0 : aucune. 1 : totale.",
+    "en": "The correlation between two neighbouring values of the noise. 0: none. 1: total."
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "unit_source": "no unit shown by the page"
+  },
+  {
+   "id": "h",
+   "type": "integer",
+   "control": "range",
+   "min": 1,
+   "max": 12,
+   "step": 1,
+   "default": 3,
+   "label": {
+    "fr": "Prévoir à",
+    "en": "Forecast"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": {
+    "fr": "pas",
+    "en": "pas"
+   },
+   "unit_source": "display"
+  }
+ ],
+ "presets": [
+  {
+   "id": "random",
+   "name": {
+    "fr": "Aléatoire",
+    "en": "Random"
+   },
+   "values": {
+    "a": 0,
+    "phi": 0,
+    "h": 3
+   },
+   "changes_vs_default": {
+    "a": 0,
+    "phi": 0
+   },
+   "shows": {
+    "fr": "Chaque valeur est tirée au hasard, sans mémoire ni cycle.",
+    "en": "Each value is drawn at random, with no memory and no cycle."
+   }
+  },
+  {
+   "id": "almost-random",
+   "name": {
+    "fr": "Presque aléatoire",
+    "en": "Almost random"
+   },
+   "values": {
+    "a": 0,
+    "phi": 0.2,
+    "h": 3
+   },
+   "changes_vs_default": {
+    "a": 0,
+    "phi": 0.2
+   },
+   "shows": {
+    "fr": "Une faible mémoire, sans cycle.",
+    "en": "A weak memory, with no cycle."
+   }
+  },
+  {
+   "id": "persistent",
+   "name": {
+    "fr": "Persistant",
+    "en": "Persistent"
+   },
+   "values": {
+    "a": 0,
+    "phi": 0.95,
+    "h": 3
+   },
+   "changes_vs_default": {
+    "a": 0,
+    "phi": 0.95
+   },
+   "shows": {
+    "fr": "Chaque valeur ressemble à la précédente, sans cycle.",
+    "en": "Each value looks like the previous one, with no cycle."
+   }
+  },
+  {
+   "id": "brownian",
+   "name": {
+    "fr": "Brownien",
+    "en": "Brownian"
+   },
+   "values": {
+    "a": 0,
+    "phi": 1,
+    "h": 3
+   },
+   "changes_vs_default": {
+    "a": 0,
+    "phi": 1
+   },
+   "shows": {
+    "fr": "Marche aléatoire : le signal part de sa dernière valeur et s’en éloigne au hasard.",
+    "en": "Random walk: the signal starts from its last value and drifts away at random."
+   }
+  },
+  {
+   "id": "cycle-additive-noise",
+   "name": {
+    "fr": "Cycle, bruit additif",
+    "en": "Cycle, additive noise"
+   },
+   "values": {
+    "a": 0.8,
+    "phi": 0.7,
+    "h": 3
+   },
+   "changes_vs_default": {},
+   "shows": {
+    "fr": "y = c + bruit : le bruit a la même taille partout.",
+    "en": "y = c + noise: the noise has the same size everywhere."
+   }
+  },
+  {
+   "id": "cycle-multiplicative-noise",
+   "name": {
+    "fr": "Cycle, bruit multiplicatif",
+    "en": "Cycle, multiplicative noise"
+   },
+   "values": {
+    "a": 0.8,
+    "phi": 0.7,
+    "h": 3
+   },
+   "changes_vs_default": {},
+   "shows": {
+    "fr": "y = c × (1 + bruit) : le bruit suit le niveau du cycle, comme un nuage qui retire une part de la lumière.",
+    "en": "y = c × (1 + noise): the noise follows the level of the cycle, like a cloud removing a share of the light."
+   }
+  }
+ ],
+ "actions": [
+  {
+   "name": {
+    "fr": "PersistancenRMSE 51 %",
+    "en": "PersistencenRMSE 51 %"
+   }
+  },
+  {
+   "name": {
+    "fr": "MoyennenRMSE 60 %",
+    "en": "MeannRMSE 60 %"
+   }
+  },
+  {
+   "name": {
+    "fr": "Persistance cycliquenRMSE 36 %",
+    "en": "Cyclic persistencenRMSE 36 %"
+   }
+  },
+  {
+   "name": {
+    "fr": "CLIPERnRMSE 46 %",
+    "en": "CLIPERnRMSE 46 %"
+   }
+  },
+  {
+   "name": {
+    "fr": "BLENDnRMSE 31 %",
+    "en": "BLENDnRMSE 31 %"
+   }
+  },
+  {
+   "name": {
+    "fr": "AR(2) brutnRMSE 41 %",
+    "en": "Raw AR(2)nRMSE 41 %"
+   }
+  },
+  {
+   "name": {
+    "fr": "Différence à la tendancenRMSE 24 %",
+    "en": "Difference to trendnRMSE 24 %"
+   }
+  },
+  {
+   "name": {
+    "fr": "Rapport à la tendancenRMSE 24 %",
+    "en": "Ratio to trendnRMSE 24 %"
+   }
+  }
+ ],
+ "variants": [],
+ "outputs": [
+  {
+   "name": {
+    "fr": "Différence à la tendancenRMSE",
+    "en": "Difference to trendnRMSE"
+   },
+   "unit": {
+    "fr": "%",
+    "en": "%"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "kind": "reading"
+  },
+  {
+   "name": {
+    "fr": "nMAE",
+    "en": "nMAE"
+   },
+   "unit": {
+    "fr": "%",
+    "en": "%"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "kind": "reading"
+  },
+  {
+   "name": {
+    "fr": "NICE²",
+    "en": "NICE²"
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "kind": "reading"
+  },
+  {
+   "name": {
+    "fr": "sCV",
+    "en": "sCV"
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "kind": "reading"
+  },
+  {
+   "name": {
+    "fr": "F",
+    "en": "F"
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "kind": "reading"
+  },
+  {
+   "name": {
+    "fr": "Persistance",
+    "en": "Persistence"
+   },
+   "unit": null,
+   "meaning": {
+    "fr": "nRMSE | nMAE | NICE¹ | NICE² | NICE³ | Persistance",
+    "en": "nRMSE | nMAE | NICE¹ | NICE² | NICE³ | Persistence"
+   },
+   "kind": "table-row"
+  },
+  {
+   "name": {
+    "fr": "Moyenne",
+    "en": "Mean"
+   },
+   "unit": null,
+   "meaning": {
+    "fr": "nRMSE | nMAE | NICE¹ | NICE² | NICE³ | Persistance",
+    "en": "nRMSE | nMAE | NICE¹ | NICE² | NICE³ | Persistence"
+   },
+   "kind": "table-row"
+  },
+  {
+   "name": {
+    "fr": "Persistance cyclique",
+    "en": "Cyclic persistence"
+   },
+   "unit": null,
+   "meaning": {
+    "fr": "nRMSE | nMAE | NICE¹ | NICE² | NICE³ | Persistance",
+    "en": "nRMSE | nMAE | NICE¹ | NICE² | NICE³ | Persistence"
+   },
+   "kind": "table-row"
+  },
+  {
+   "name": {
+    "fr": "CLIPER",
+    "en": "CLIPER"
+   },
+   "unit": null,
+   "meaning": {
+    "fr": "nRMSE | nMAE | NICE¹ | NICE² | NICE³ | Persistance",
+    "en": "nRMSE | nMAE | NICE¹ | NICE² | NICE³ | Persistence"
+   },
+   "kind": "table-row"
+  },
+  {
+   "name": {
+    "fr": "BLEND",
+    "en": "BLEND"
+   },
+   "unit": null,
+   "meaning": {
+    "fr": "nRMSE | nMAE | NICE¹ | NICE² | NICE³ | Persistance",
+    "en": "nRMSE | nMAE | NICE¹ | NICE² | NICE³ | Persistence"
+   },
+   "kind": "table-row"
+  },
+  {
+   "name": {
+    "fr": "AR(2) brut",
+    "en": "Raw AR(2)"
+   },
+   "unit": null,
+   "meaning": {
+    "fr": "nRMSE | nMAE | NICE¹ | NICE² | NICE³ | Persistance",
+    "en": "nRMSE | nMAE | NICE¹ | NICE² | NICE³ | Persistence"
+   },
+   "kind": "table-row"
+  },
+  {
+   "name": {
+    "fr": "Différence à la tendance",
+    "en": "Difference to trend"
+   },
+   "unit": null,
+   "meaning": {
+    "fr": "nRMSE | nMAE | NICE¹ | NICE² | NICE³ | Persistance",
+    "en": "nRMSE | nMAE | NICE¹ | NICE² | NICE³ | Persistence"
+   },
+   "kind": "table-row"
+  },
+  {
+   "name": {
+    "fr": "Rapport à la tendance",
+    "en": "Ratio to trend"
+   },
+   "unit": null,
+   "meaning": {
+    "fr": "nRMSE | nMAE | NICE¹ | NICE² | NICE³ | Persistance",
+    "en": "nRMSE | nMAE | NICE¹ | NICE² | NICE³ | Persistence"
+   },
+   "kind": "table-row"
+  }
+ ],
+ "formulas": [],
+ "definitions": [
+  {
+   "term": "Persistance",
+   "meaning": {
+    "fr": "La prévision recopie la dernière valeur connue.",
+    "en": "The forecast copies the last known value."
+   }
+  },
+  {
+   "term": "Persistance cyclique",
+   "meaning": {
+    "fr": "La prévision recopie la valeur un cycle plus tôt, au même moment du cycle.",
+    "en": "The forecast copies the value one cycle earlier, at the same moment of the cycle."
+   }
+  },
+  {
+   "term": "Moyenne",
+   "meaning": {
+    "fr": "La prévision vaut toujours la moyenne du passé.",
+    "en": "The forecast is always the mean of the past."
+   }
+  },
+  {
+   "term": "Combinaison convexe",
+   "meaning": {
+    "fr": "Deux prévisions pesées par des poids positifs de somme 1, calculés sur le passé. Persistance et moyenne : CLIPER. Persistance et persistance cyclique : BLEND.",
+    "en": "Two forecasts weighed by positive weights adding up to 1, computed on the past. Persistence and the mean: CLIPER. Persistence and cyclic persistence: BLEND."
+   }
+  },
+  {
+   "term": "AR(2)",
+   "meaning": {
+    "fr": "Une régression sur les deux dernières valeurs connues. Brut : sans retirer le cycle. Il sert à mesurer ce que le retrait du cycle rapporte.",
+    "en": "A regression on the last two known values. Raw: without removing the cycle. It measures what removing the cycle brings."
+   }
+  },
+  {
+   "term": "Différence à la tendance",
+   "meaning": {
+    "fr": "On étudie y − c, avec ici une tendance périodique c. Adapté à un bruit additif.",
+    "en": "We study y − c, the gap to the cycle c. Suited to additive noise."
+   }
+  },
+  {
+   "term": "Rapport à la tendance",
+   "meaning": {
+    "fr": "On étudie y / c, avec ici une tendance périodique c. Adapté à un bruit multiplicatif. Avec c le ciel clair : l'indice de ciel clair.",
+    "en": "We study y / c. Suited to multiplicative noise. With c as clear sky: the clear-sky index."
+   }
+  },
+  {
+   "term": "Mouvement brownien",
+   "meaning": {
+    "fr": "Chaque valeur est la précédente plus un tirage au hasard : mémoire φ = 1.",
+    "en": "Each value is the previous one plus a random draw: memory φ = 1."
+   }
+  },
+  {
+   "term": "Mémoire φ",
+   "meaning": {
+    "fr": "La corrélation entre deux valeurs voisines du bruit. 0 : aucune. 1 : totale.",
+    "en": "The correlation between two neighbouring values of the noise. 0: none. 1: total."
+   }
+  },
+  {
+   "term": "Horizon",
+   "meaning": {
+    "fr": "Le nombre de pas entre la dernière valeur connue et la valeur à prévoir.",
+    "en": "The number of steps between the last known value and the value to forecast."
+   }
+  },
+  {
+   "term": "nRMSE, nMAE",
+   "meaning": {
+    "fr": "L'erreur quadratique et l'erreur absolue moyennes, rapportées à la moyenne du signal.",
+    "en": "The root mean squared error and the mean absolute error, divided by the mean of the signal."
+   }
+  },
+  {
+   "term": "NICE",
+   "meaning": {
+    "fr": "L'erreur rapportée à celle de la persistance. Entre 0 et 1 : la prévision apporte quelque chose.",
+    "en": "The error divided by that of persistence. Between 0 and 1: the forecast adds something."
+   }
+  },
+  {
+   "term": "sCV, F",
+   "meaning": {
+    "fr": "La quantification de la variabilité et de la prévisibilité d'un signal, avant tout modèle.",
+    "en": "The quantification of the variability and forecastability of a signal, before any model."
+   }
+  }
+ ],
+ "assumptions": {
+  "fr": [],
+  "en": []
+ },
+ "source": {
+  "dois": [
+   "10.1016/j.energy.2015.07.089",
+   "10.1016/j.renene.2025.123913",
+   "10.1016/j.seta.2025.104588",
+   "10.1016/j.solener.2025.113821",
+   "10.1109/4235.585893"
+  ],
+  "repositories": [
+   "https://github.com/cyrilvoyant/solar-variability-scv"
+  ],
+  "related_pages": [
+   {
+    "href": "/fr/enseignement/cours-prevision-solaire/",
+    "text": "indice de ciel clair"
+   },
+   {
+    "href": "/fr/outils/variabilite-previsibilite/",
+    "text": "Les calculer sur vos données"
+   },
+   {
+    "href": "/fr/recits/evaluer-prevision-solaire-persistance/",
+    "text": "Comment évaluer une prévision"
+   },
+   {
+    "href": "/fr/outils/blend/",
+    "text": "Calculer les poids de BLEND"
+   },
+   {
+    "href": "/fr/outils/comparateur-previsions/",
+    "text": "Comparer des prévisions : persistance, AR et ELM"
+   }
+  ]
+ },
+ "how_to_explore": {
+  "fr": "Régler les paramètres sur un préréglage (valeurs ci-dessus), lire la phrase affichée par la page puis les sorties ; modifier ensuite un seul paramètre à la fois entre son minimum et son maximum.",
+  "en": "Set the parameters to a preset (values above), read the sentence the page shows then the outputs; then change one parameter at a time between its minimum and maximum."
+ },
+ "exploration": [
+  {
+   "preset": "random",
+   "title": {
+    "fr": "Aléatoire",
+    "en": "Random"
+   },
+   "set": {
+    "a": 0,
+    "phi": 0
+   },
+   "observe": {
+    "fr": "Chaque valeur est tirée au hasard, sans mémoire ni cycle.",
+    "en": "Each value is drawn at random, with no memory and no cycle."
+   }
+  },
+  {
+   "preset": "almost-random",
+   "title": {
+    "fr": "Presque aléatoire",
+    "en": "Almost random"
+   },
+   "set": {
+    "a": 0,
+    "phi": 0.2
+   },
+   "observe": {
+    "fr": "Une faible mémoire, sans cycle.",
+    "en": "A weak memory, with no cycle."
+   }
+  },
+  {
+   "preset": "persistent",
+   "title": {
+    "fr": "Persistant",
+    "en": "Persistent"
+   },
+   "set": {
+    "a": 0,
+    "phi": 0.95
+   },
+   "observe": {
+    "fr": "Chaque valeur ressemble à la précédente, sans cycle.",
+    "en": "Each value looks like the previous one, with no cycle."
+   }
+  },
+  {
+   "preset": "cycle-additive-noise",
+   "title": {
+    "fr": "Cycle, bruit additif",
+    "en": "Cycle, additive noise"
+   },
+   "set": {
+    "a": 0.8,
+    "phi": 0.7,
+    "h": 3
+   },
+   "observe": {
+    "fr": "y = c + bruit : le bruit a la même taille partout.",
+    "en": "y = c + noise: the noise has the same size everywhere."
+   }
+  },
+  {
+   "preset": "cycle-multiplicative-noise",
+   "title": {
+    "fr": "Cycle, bruit multiplicatif",
+    "en": "Cycle, multiplicative noise"
+   },
+   "set": {
+    "a": 0.8,
+    "phi": 0.7,
+    "h": 3
+   },
+   "observe": {
+    "fr": "y = c × (1 + bruit) : le bruit suit le niveau du cycle, comme un nuage qui retire une part de la lumière.",
+    "en": "y = c × (1 + noise): the noise follows the level of the cycle, like a cloud removing a share of the light."
+   }
+  }
+ ],
+ "concepts": [
+  "persistence",
+  "cyclic-persistence",
+  "convex-combination",
+  "ar2",
+  "difference-to-trend",
+  "ratio-to-trend",
+  "nrmse",
+  "nmae",
+  "nice",
+  "scv",
+  "brownian-motion",
+  "memory-phi"
+ ],
+ "extraction": {
+  "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
+  "roots": [
+   "#experience"
+  ],
+  "page_errors": [],
+  "fr_en_preset_consistency": {
+   "presets_compared": 6,
+   "presets_with_different_values_fr_vs_en": []
+  }
+ }
+}

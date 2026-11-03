@@ -1,0 +1,433 @@
+{
+ "id": "compton",
+ "schema": "https://www.cyrilvoyant.com/tools-spec.json#1.0",
+ "kind": "teaching",
+ "domain": "learning",
+ "interface_language": "both",
+ "name": {
+  "fr": "Compton : angle et partage de l’énergie",
+  "en": "Compton: angle and energy sharing"
+ },
+ "url": {
+  "fr": "https://www.cyrilvoyant.com/fr/animations/effet-compton/",
+  "en": "https://www.cyrilvoyant.com/tools/compton-scattering/"
+ },
+ "page_title": {
+  "fr": "Effet Compton : angle, photon diffusé et électron de recul",
+  "en": "Compton scattering: angle and energy sharing"
+ },
+ "computes": {
+  "fr": "Relier angle et énergie, suivre le photon diffusé et l’électron de recul ; modèle libre au repos.",
+  "en": "Connect angle with energy and follow the scattered photon and recoil electron in the free-electron model."
+ },
+ "summary": {
+  "fr": "Un photon de 255,5 keV garde 66,7 % de son énergie après une diffusion à 90°, et seulement la moitié à 180°. Vous lisez, angle par angle, le partage de l’énergie entre le photon et l’électron.",
+  "en": "A 255.5 keV photon keeps 66.7% of its energy after scattering at 90°, and only half at 180°. You read, angle by angle, how the energy is shared between photon and electron."
+ },
+ "parameters": [
+  {
+   "id": "incident-energy-e0",
+   "type": "number",
+   "control": "range",
+   "min": 25,
+   "max": 1000,
+   "step": 0.5,
+   "default": 255.5,
+   "label": {
+    "fr": "Énergie incidente E₀ (keV)",
+    "en": "Incident energy E₀ (keV)"
+   },
+   "meaning": {
+    "fr": "Énergie du photon avant le choc. keV : kiloélectronvolt.",
+    "en": "Photon energy before the collision. keV: kiloelectronvolt."
+   },
+   "unit": {
+    "fr": "keV",
+    "en": "keV"
+   },
+   "unit_source": "label"
+  },
+  {
+   "id": "photon-angle",
+   "type": "integer",
+   "control": "range",
+   "min": 0,
+   "max": 180,
+   "step": 1,
+   "default": 90,
+   "label": {
+    "fr": "Angle du photon θ (°)",
+    "en": "Photon angle θ (°)"
+   },
+   "meaning": {
+    "fr": "0° : tout droit. 180° : renvoyé en arrière.",
+    "en": "0°: straight on. 180°: sent backwards."
+   },
+   "unit": {
+    "fr": "°",
+    "en": "°"
+   },
+   "unit_source": "label"
+  }
+ ],
+ "presets": [
+  {
+   "id": "faible-30-kev",
+   "name": {
+    "fr": "Faible · 30 keV",
+    "en": null
+   },
+   "values": {
+    "incident-energy-e0": 30,
+    "photon-angle": 180
+   },
+   "changes_vs_default": {
+    "incident-energy-e0": 30,
+    "photon-angle": 180
+   },
+   "shows": {
+    "fr": "À 30 keV, le photon garde 89,5 % de son énergie : il rebondit presque sans rien céder.",
+    "en": null
+   }
+  },
+  {
+   "id": "partage-egal-255-5-kev",
+   "name": {
+    "fr": "Partage égal · 255,5 keV",
+    "en": null
+   },
+   "values": {
+    "incident-energy-e0": 255.5,
+    "photon-angle": 180
+   },
+   "changes_vs_default": {
+    "photon-angle": 180
+   },
+   "shows": {
+    "fr": "À 255,5 keV, moitié de 511 keV, photon et électron repartent chacun avec 127,75 keV.",
+    "en": null
+   }
+  },
+  {
+   "id": "511-kev",
+   "name": {
+    "fr": "511 keV",
+    "en": null
+   },
+   "values": {
+    "incident-energy-e0": 511,
+    "photon-angle": 180
+   },
+   "changes_vs_default": {
+    "incident-energy-e0": 511,
+    "photon-angle": 180
+   },
+   "shows": {
+    "fr": "511 keV est l’énergie au repos de l’électron. Le photon ne garde que 33,3 %.",
+    "en": null
+   }
+  },
+  {
+   "id": "forte-1-000-kev",
+   "name": {
+    "fr": "Forte · 1 000 keV",
+    "en": null
+   },
+   "values": {
+    "incident-energy-e0": 1000,
+    "photon-angle": 180
+   },
+   "changes_vs_default": {
+    "incident-energy-e0": 1000,
+    "photon-angle": 180
+   },
+   "shows": {
+    "fr": "Le photon ne garde que 20,4 %, soit 203,5 keV : malgré une énergie de départ bien plus grande, il repart avec moins de 255,5 keV.",
+    "en": null
+   }
+  },
+  {
+   "id": "sans-deviation",
+   "name": {
+    "fr": "Sans déviation",
+    "en": null
+   },
+   "values": {
+    "incident-energy-e0": 255.5,
+    "photon-angle": 0
+   },
+   "changes_vs_default": {
+    "photon-angle": 0
+   },
+   "shows": {
+    "fr": "Réglage libre : lisez le partage ci-dessous.",
+    "en": null
+   }
+  },
+  {
+   "id": "angle-droit",
+   "name": {
+    "fr": "Angle droit",
+    "en": null
+   },
+   "values": {
+    "incident-energy-e0": 255.5,
+    "photon-angle": 90
+   },
+   "changes_vs_default": {},
+   "shows": {
+    "fr": "Réglage libre : lisez le partage ci-dessous.",
+    "en": null
+   }
+  },
+  {
+   "id": "retrodiffusion",
+   "name": {
+    "fr": "Rétrodiffusion",
+    "en": null
+   },
+   "values": {
+    "incident-energy-e0": 255.5,
+    "photon-angle": 180
+   },
+   "changes_vs_default": {
+    "photon-angle": 180
+   },
+   "shows": {
+    "fr": "À 255,5 keV, moitié de 511 keV, photon et électron repartent chacun avec 127,75 keV.",
+    "en": null
+   }
+  }
+ ],
+ "actions": [],
+ "variants": [],
+ "outputs": [
+  {
+   "name": {
+    "fr": "Photon diffusé E′",
+    "en": "Scattered photon E′"
+   },
+   "unit": {
+    "fr": "keV",
+    "en": "keV"
+   },
+   "meaning": {
+    "fr": "Énergie qui repart avec le photon.",
+    "en": "Energy leaving with the photon."
+   },
+   "kind": "metric"
+  },
+  {
+   "name": {
+    "fr": "Électron : K",
+    "en": "Electron: K"
+   },
+   "unit": {
+    "fr": "keV",
+    "en": "keV"
+   },
+   "meaning": {
+    "fr": "Énergie de mouvement reçue par l’électron.",
+    "en": "Energy of motion received by the electron."
+   },
+   "kind": "metric"
+  },
+  {
+   "name": {
+    "fr": "Somme E′ + K",
+    "en": "Sum E′ + K"
+   },
+   "unit": {
+    "fr": "keV",
+    "en": "keV"
+   },
+   "meaning": {
+    "fr": "Toujours égale à E₀ : l’énergie se conserve.",
+    "en": "Always equal to E₀: energy is conserved."
+   },
+   "kind": "metric"
+  },
+  {
+   "name": {
+    "fr": "Décalage Δλ",
+    "en": "Wavelength shift Δλ"
+   },
+   "unit": {
+    "fr": "pm",
+    "en": "pm"
+   },
+   "meaning": {
+    "fr": "Allongement de la longueur d’onde. Ne dépend que de l’angle : E₀ ne le change pas.",
+    "en": "Lengthening of the wavelength. Depends only on the angle: E₀ does not change it."
+   },
+   "kind": "metric"
+  }
+ ],
+ "formulas": [
+  {
+   "text": "E^′ = E_0/(1 + E_0/511(1 − cosθ))"
+  },
+  {
+   "text": "K = E_0 − E^′"
+  },
+  {
+   "text": "E′ = E₀/[1 + (E₀/511)(1−cos θ)] en keV ; énergie cinétique de l’électron K = E₀−E′ ; Δλ = (h/mec)(1−cos θ). Le cours utilise mec² ≈ 511 keV. La démonstration des équations de conservation reste hors programme, comme dans le support.",
+   "note": true
+  },
+  {
+   "text": "h : constante de Planck ; me : masse de l’électron ; c : vitesse de la lumière ; pm : picomètre. Électron libre, initialement au repos. Ni probabilité de diffusion, ni dose, ni conduite clinique ne sont calculées ici.",
+   "note": true
+  }
+ ],
+ "definitions": [
+  {
+   "term": "E₀, E′",
+   "meaning": {
+    "fr": "L’énergie du photon avant et après la diffusion.",
+    "en": "The photon energy before and after scattering."
+   }
+  },
+  {
+   "term": "K",
+   "meaning": {
+    "fr": "L’énergie cinétique reçue par l’électron.",
+    "en": "The kinetic energy received by the electron."
+   }
+  },
+  {
+   "term": "θ",
+   "meaning": {
+    "fr": "L’angle entre les directions du photon avant et après la diffusion.",
+    "en": "The angle between the photon directions before and after scattering."
+   }
+  },
+  {
+   "term": "511 keV",
+   "meaning": {
+    "fr": "L’énergie au repos de l’électron, mₑc².",
+    "en": "The electron rest energy, mₑc²."
+   }
+  },
+  {
+   "term": "keV",
+   "meaning": {
+    "fr": "Le kiloélectronvolt, unité d’énergie : 1 keV = 1000 eV.",
+    "en": "The kiloelectronvolt, a unit of energy: 1 keV = 1000 eV."
+   }
+  }
+ ],
+ "assumptions": {
+  "fr": [
+   "Électron libre au repos. Le schéma donne des directions et des énergies, ni probabilités de collision ni dose."
+  ],
+  "en": [
+   "Free electron at rest. The diagram gives directions and energies, neither collision probabilities nor dose."
+  ]
+ },
+ "source": {
+  "dois": [],
+  "repositories": [],
+  "related_pages": [
+   {
+    "href": "/fr/animations/onde-electromagnetique/",
+    "text": "L’onde électromagnétique"
+   },
+   {
+    "href": "/fr/animations/attenuation-demi-epaisseur/",
+    "text": "Atténuation : Compton est l’une de ses causes"
+   },
+   {
+    "href": "/fr/enseignement/physique-pass/ondes-electromagnetiques/",
+    "text": "Le chapitre complet du cours"
+   }
+  ]
+ },
+ "how_to_explore": {
+  "fr": "Régler les paramètres sur un préréglage (valeurs ci-dessus), lire la phrase affichée par la page puis les sorties ; modifier ensuite un seul paramètre à la fois entre son minimum et son maximum.",
+  "en": "Set the parameters to a preset (values above), read the sentence the page shows then the outputs; then change one parameter at a time between its minimum and maximum."
+ },
+ "exploration": [
+  {
+   "preset": "faible-30-kev",
+   "title": {
+    "fr": "Faible · 30 keV",
+    "en": null
+   },
+   "set": {
+    "incident-energy-e0": 30,
+    "photon-angle": 180
+   },
+   "observe": {
+    "fr": "À 30 keV, le photon garde 89,5 % de son énergie : il rebondit presque sans rien céder.",
+    "en": null
+   }
+  },
+  {
+   "preset": "511-kev",
+   "title": {
+    "fr": "511 keV",
+    "en": null
+   },
+   "set": {
+    "incident-energy-e0": 511,
+    "photon-angle": 180
+   },
+   "observe": {
+    "fr": "511 keV est l’énergie au repos de l’électron. Le photon ne garde que 33,3 %.",
+    "en": null
+   }
+  },
+  {
+   "preset": "forte-1-000-kev",
+   "title": {
+    "fr": "Forte · 1 000 keV",
+    "en": null
+   },
+   "set": {
+    "incident-energy-e0": 1000,
+    "photon-angle": 180
+   },
+   "observe": {
+    "fr": "Le photon ne garde que 20,4 %, soit 203,5 keV : malgré une énergie de départ bien plus grande, il repart avec moins de 255,5 keV.",
+    "en": null
+   }
+  },
+  {
+   "preset": "sans-deviation",
+   "title": {
+    "fr": "Sans déviation",
+    "en": null
+   },
+   "set": {
+    "photon-angle": 0
+   },
+   "observe": {
+    "fr": "Réglage libre : lisez le partage ci-dessous.",
+    "en": null
+   }
+  },
+  {
+   "preset": "retrodiffusion",
+   "title": {
+    "fr": "Rétrodiffusion",
+    "en": null
+   },
+   "set": {
+    "photon-angle": 180
+   },
+   "observe": {
+    "fr": "À 255,5 keV, moitié de 511 keV, photon et électron repartent chacun avec 127,75 keV.",
+    "en": null
+   }
+  }
+ ],
+ "concepts": [],
+ "extraction": {
+  "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
+  "roots": [
+   "#experience"
+  ],
+  "page_errors": [],
+  "fr_en_preset_consistency": null
+ }
+}

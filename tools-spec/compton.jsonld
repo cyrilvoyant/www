@@ -1,0 +1,135 @@
+{
+ "@context": "https://schema.org",
+ "@type": [
+  "SoftwareApplication",
+  "LearningResource"
+ ],
+ "@id": "https://www.cyrilvoyant.com/tools/compton-scattering/#tool-spec",
+ "identifier": "compton",
+ "name": "Compton: angle and energy sharing",
+ "alternateName": "Compton : angle et partage de l’énergie",
+ "description": "Connect angle with energy and follow the scattered photon and recoil electron in the free-electron model.",
+ "url": "https://www.cyrilvoyant.com/tools/compton-scattering/",
+ "sameAs": [
+  "https://www.cyrilvoyant.com/fr/animations/effet-compton/",
+  "https://www.cyrilvoyant.com/tools/compton-scattering/"
+ ],
+ "inLanguage": [
+  "fr",
+  "en"
+ ],
+ "applicationCategory": "EducationalApplication",
+ "operatingSystem": "Any (web browser)",
+ "isAccessibleForFree": true,
+ "learningResourceType": "teaching",
+ "author": {
+  "@type": "Person",
+  "name": "Cyril Voyant",
+  "identifier": "https://orcid.org/0000-0003-0242-7377"
+ },
+ "license": "https://creativecommons.org/licenses/by/4.0/",
+ "additionalProperty": [
+  {
+   "@type": "PropertyValue",
+   "propertyID": "incident-energy-e0",
+   "name": "Incident energy E₀ (keV)",
+   "alternateName": "Énergie incidente E₀ (keV)",
+   "description": "Photon energy before the collision. keV: kiloelectronvolt.",
+   "value": 255.5,
+   "minValue": 25,
+   "maxValue": 1000,
+   "unitText": "keV"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "photon-angle",
+   "name": "Photon angle θ (°)",
+   "alternateName": "Angle du photon θ (°)",
+   "description": "0°: straight on. 180°: sent backwards.",
+   "value": 90,
+   "minValue": 0,
+   "maxValue": 180,
+   "unitText": "°"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:faible-30-kev",
+   "name": "Faible · 30 keV",
+   "alternateName": "Faible · 30 keV",
+   "value": "{\"incident-energy-e0\": 30, \"photon-angle\": 180}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:partage-egal-255-5-kev",
+   "name": "Partage égal · 255,5 keV",
+   "alternateName": "Partage égal · 255,5 keV",
+   "value": "{\"incident-energy-e0\": 255.5, \"photon-angle\": 180}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:511-kev",
+   "name": "511 keV",
+   "alternateName": "511 keV",
+   "value": "{\"incident-energy-e0\": 511, \"photon-angle\": 180}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:forte-1-000-kev",
+   "name": "Forte · 1 000 keV",
+   "alternateName": "Forte · 1 000 keV",
+   "value": "{\"incident-energy-e0\": 1000, \"photon-angle\": 180}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:sans-deviation",
+   "name": "Sans déviation",
+   "alternateName": "Sans déviation",
+   "value": "{\"incident-energy-e0\": 255.5, \"photon-angle\": 0}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:angle-droit",
+   "name": "Angle droit",
+   "alternateName": "Angle droit",
+   "value": "{\"incident-energy-e0\": 255.5, \"photon-angle\": 90}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:retrodiffusion",
+   "name": "Rétrodiffusion",
+   "alternateName": "Rétrodiffusion",
+   "value": "{\"incident-energy-e0\": 255.5, \"photon-angle\": 180}"
+  }
+ ],
+ "potentialAction": {
+  "@type": "Action",
+  "name": "Explore the tool",
+  "target": {
+   "@type": "EntryPoint",
+   "urlTemplate": "https://www.cyrilvoyant.com/tools/compton-scattering/",
+   "actionPlatform": "https://schema.org/DesktopWebPlatform"
+  },
+  "object": [
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "incident-energy-e0",
+    "description": "Incident energy E₀ (keV)",
+    "valueRequired": false,
+    "minValue": 25,
+    "maxValue": 1000,
+    "defaultValue": 255.5,
+    "stepValue": 0.5
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "photon-angle",
+    "description": "Photon angle θ (°)",
+    "valueRequired": false,
+    "minValue": 0,
+    "maxValue": 180,
+    "defaultValue": 90,
+    "stepValue": 1
+   }
+  ]
+ }
+}

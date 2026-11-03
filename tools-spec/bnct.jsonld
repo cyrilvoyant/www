@@ -1,0 +1,148 @@
+{
+ "@context": "https://schema.org",
+ "@type": [
+  "SoftwareApplication",
+  "LearningResource"
+ ],
+ "@id": "https://www.cyrilvoyant.com/stories/atmospheric-neutrons-bnct/#experience#tool-spec",
+ "identifier": "bnct",
+ "name": "Atmospheric neutrons and boron: explore dose scales",
+ "alternateName": "Neutrons atmosphériques et bore : explorer les échelles de dose",
+ "description": "Follow a schematic cascade; distinguish flight exposure from the dose in a numerical tumour model, and compare two boron carriers, BSH and BPA.",
+ "url": "https://www.cyrilvoyant.com/stories/atmospheric-neutrons-bnct/#experience",
+ "sameAs": [
+  "https://www.cyrilvoyant.com/fr/recits/neutrons-atmospheriques-bnct/#experience",
+  "https://www.cyrilvoyant.com/stories/atmospheric-neutrons-bnct/#experience"
+ ],
+ "inLanguage": [
+  "fr",
+  "en"
+ ],
+ "applicationCategory": "ScientificApplication",
+ "operatingSystem": "Any (web browser)",
+ "isAccessibleForFree": true,
+ "learningResourceType": "demo",
+ "author": {
+  "@type": "Person",
+  "name": "Cyril Voyant",
+  "identifier": "https://orcid.org/0000-0003-0242-7377"
+ },
+ "license": "https://creativecommons.org/licenses/by/4.0/",
+ "additionalProperty": [
+  {
+   "@type": "PropertyValue",
+   "propertyID": "flight-duration",
+   "name": "Flight duration",
+   "alternateName": "Durée de vol",
+   "value": 1,
+   "minValue": 0.5,
+   "maxValue": 12,
+   "unitText": "h"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "boron-10-in-the-model",
+   "name": "Boron-10 in the model",
+   "alternateName": "Bore-10 dans le modèle",
+   "value": 20,
+   "minValue": 0,
+   "maxValue": 50,
+   "unitText": "µg/g"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "bnct-carrier",
+   "name": "Molecule carrying the boron (Table 2 of the paper)",
+   "alternateName": "Molécule qui porte le bore (tableau 2 de l’article)",
+   "value": "BSH"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "neutron-energy",
+   "name": "Neutron energy",
+   "alternateName": "Énergie des neutrons",
+   "value": "1"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:the-papers-case",
+   "name": "The paper’s case",
+   "alternateName": "Le cas de l’article",
+   "value": "{\"flight-duration\": 1, \"boron-10-in-the-model\": 20, \"bnct-carrier\": \"BSH\", \"neutron-energy\": \"1\"}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:a-long-12-h-flight",
+   "name": "A long 12 h flight",
+   "alternateName": "Un long vol de 12 h",
+   "value": "{\"flight-duration\": 12, \"boron-10-in-the-model\": 20, \"bnct-carrier\": \"BSH\", \"neutron-energy\": \"1\"}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:more-boron",
+   "name": "More boron",
+   "alternateName": "Plus de bore",
+   "value": "{\"flight-duration\": 1, \"boron-10-in-the-model\": 50, \"bnct-carrier\": \"BSH\", \"neutron-energy\": \"1\"}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:no-boron",
+   "name": "No boron",
+   "alternateName": "Sans bore",
+   "value": "{\"flight-duration\": 1, \"boron-10-in-the-model\": 0, \"bnct-carrier\": \"BSH\", \"neutron-energy\": \"1\"}"
+  }
+ ],
+ "potentialAction": {
+  "@type": "Action",
+  "name": "Explore the tool",
+  "target": {
+   "@type": "EntryPoint",
+   "urlTemplate": "https://www.cyrilvoyant.com/stories/atmospheric-neutrons-bnct/#experience",
+   "actionPlatform": "https://schema.org/DesktopWebPlatform"
+  },
+  "object": [
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "flight-duration",
+    "description": "Flight duration",
+    "valueRequired": false,
+    "minValue": 0.5,
+    "maxValue": 12,
+    "defaultValue": 1,
+    "stepValue": 0.5
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "boron-10-in-the-model",
+    "description": "Boron-10 in the model",
+    "valueRequired": false,
+    "minValue": 0,
+    "maxValue": 50,
+    "defaultValue": 20,
+    "stepValue": 1
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "bnct-carrier",
+    "description": "Molecule carrying the boron (Table 2 of the paper)",
+    "valueRequired": false,
+    "valuePattern": "^(BSH|BPA)$",
+    "defaultValue": "BSH"
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "neutron-energy",
+    "description": "Neutron energy",
+    "valueRequired": false,
+    "valuePattern": "^(0|1|2)$",
+    "defaultValue": "1"
+   }
+  ]
+ },
+ "citation": [
+  "https://doi.org/10.1016/j.apradiso.2009.03.072",
+  "https://doi.org/10.1016/j.rpor.2010.11.002",
+  "https://doi.org/10.1080/09553002.2025.2535001",
+  "https://doi.org/10.1093/jrr/rrx080"
+ ]
+}

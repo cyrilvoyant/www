@@ -1,0 +1,382 @@
+{
+ "id": "nice",
+ "schema": "https://www.cyrilvoyant.com/tools-spec.json#1.0",
+ "kind": "calculator",
+ "domain": "energy",
+ "interface_language": "both",
+ "name": {
+  "fr": "Comparer une prévision à la persistance — NICE",
+  "en": "Compare a forecast with persistence — NICE"
+ },
+ "url": {
+  "fr": "https://www.cyrilvoyant.com/fr/outils/nice/#try-it",
+  "en": "https://cyrilvoyant.github.io/methods/nice-metrics.html#try-it"
+ },
+ "page_title": {
+  "fr": "Comparer une prévision à la persistance : NICE",
+  "en": "NICEᵏ metrics: solar forecast errors compared with persistence"
+ },
+ "computes": {
+  "fr": "NICE divise l’erreur d’une prévision par celle de la persistance : 1 signifie « aussi bien que la persistance », 0 une prévision parfaite. Coller observations et prévisions, choisir l’horizon, lire le résultat.",
+  "en": "NICE divides a forecast’s error by that of persistence: 1 means “as good as persistence”, 0 a perfect forecast. Paste observations and forecasts, choose a horizon, read the result."
+ },
+ "summary": {
+  "fr": "Une RMSE seule ne dit pas si une prévision est bonne. NICE répond : fait-elle mieux que recopier la dernière valeur connue ?",
+  "en": null
+ },
+ "parameters": [
+  {
+   "id": "ni-n",
+   "type": "integer",
+   "control": "range",
+   "min": 1,
+   "max": 12,
+   "step": 1,
+   "default": 1,
+   "label": {
+    "fr": "Horizon n",
+    "en": "Forecast horizon n (steps)"
+   },
+   "meaning": {
+    "fr": "Nombre de pas entre la dernière valeur connue et la valeur à prévoir. La persistance recopie l’observation n pas plus tôt. Ici un pas vaut une heure.",
+    "en": null
+   },
+   "unit": {
+    "fr": "pas",
+    "en": "pas"
+   },
+   "unit_source": "display"
+  },
+  {
+   "id": "ni-d",
+   "type": "text",
+   "control": "textarea",
+   "default": null,
+   "lines": 480,
+   "preview": "220 214.8 / 443.3 292 / 571.6 492.3",
+   "label": {
+    "fr": "Deux colonnes, une ligne par pas de temps : observation, puis prévision émise n pas plus tôt pour cette même date. Colonnes séparées par une tabulation, un espace ou un point-virgule ; point ou virgule décimale.",
+    "en": "Two columns: observation y(t), forecast of y(t) issued n steps earlier (one row per time step). Demo data loaded (n = 1); paste your own."
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": null
+  }
+ ],
+ "presets": [
+  {
+   "id": "prevision-de-demonstration",
+   "name": {
+    "fr": "Prévision de démonstration",
+    "en": null
+   },
+   "values": {
+    "ni-n": 1
+   },
+   "changes_vs_default": {},
+   "data_preview": "220 214.8 / 443.3 292 / 571.6 492.3",
+   "shows": {
+    "fr": "Une prévision simple : 60 % de la valeur connue n pas plus tôt, plus une part du ciel clair. Augmentez l’horizon n : l’écart avec la persistance se creuse à mesure qu’elle se dégrade.",
+    "en": null
+   }
+  },
+  {
+   "id": "prevision-parfaite",
+   "name": {
+    "fr": "Prévision parfaite",
+    "en": null
+   },
+   "values": {
+    "ni-n": 1
+   },
+   "changes_vs_default": {},
+   "data_preview": "220 220 / 443.3 443.3 / 571.6 571.6",
+   "shows": {
+    "fr": "La prévision vaut l’observation : toutes les erreurs sont nulles, NICE vaut 0. C’est le bas de l’échelle, inatteignable en pratique.",
+    "en": null
+   }
+  },
+  {
+   "id": "la-persistance-elle-meme",
+   "name": {
+    "fr": "La persistance elle-même",
+    "en": null
+   },
+   "values": {
+    "ni-n": 1
+   },
+   "changes_vs_default": {},
+   "data_preview": "220 220 / 443.3 220 / 571.6 443.3",
+   "shows": {
+    "fr": "La prévision recopie la valeur connue n pas plus tôt : c’est la référence. NICE vaut exactement 1, à tout horizon. Bouger n change les erreurs, pas NICE : c’est mathématiquement juste.",
+    "en": null
+   }
+  },
+  {
+   "id": "la-moyenne",
+   "name": {
+    "fr": "La moyenne",
+    "en": null
+   },
+   "values": {
+    "ni-n": 1
+   },
+   "changes_vs_default": {},
+   "data_preview": "220 224.2 / 443.3 224.2 / 571.6 224.2",
+   "shows": {
+    "fr": "Une prévision constante. À horizon 1, la persistance est bien meilleure : NICE > 1. Dès n = 4, la persistance s’est tant dégradée que la moyenne passe devant : NICE tombe sous 1.",
+    "en": null
+   }
+  },
+  {
+   "id": "quelques-grosses-erreurs",
+   "name": {
+    "fr": "Quelques grosses erreurs",
+    "en": null
+   },
+   "values": {
+    "ni-n": 1
+   },
+   "changes_vs_default": {},
+   "data_preview": "220 214.8 / 443.3 292 / 571.6 492.3",
+   "shows": {
+    "fr": "La prévision de démonstration, avec 700 W/m² d’erreur sur de rares pas. NICE¹ bouge peu, NICE³ bondit : plus k est grand, plus les grands écarts pèsent.",
+    "en": null
+   }
+  }
+ ],
+ "actions": [],
+ "variants": [],
+ "outputs": [
+  {
+   "name": {
+    "fr": "NICE¹ (MAE)",
+    "en": null
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "kind": "metric"
+  },
+  {
+   "name": {
+    "fr": "NICE² (RMSE)",
+    "en": null
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "kind": "metric"
+  },
+  {
+   "name": {
+    "fr": "NICE³",
+    "en": null
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "kind": "metric"
+  },
+  {
+   "name": {
+    "fr": "NICEΣ",
+    "en": null
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "kind": "metric"
+  },
+  {
+   "name": {
+    "fr": "Prévision",
+    "en": null
+   },
+   "unit": null,
+   "meaning": {
+    "fr": "k = 1 : MAE | k = 2 : RMSE | k = 3 | Prévision",
+    "en": null
+   },
+   "kind": "table-row"
+  },
+  {
+   "name": {
+    "fr": "Persistance",
+    "en": null
+   },
+   "unit": null,
+   "meaning": {
+    "fr": "k = 1 : MAE | k = 2 : RMSE | k = 3 | Prévision",
+    "en": null
+   },
+   "kind": "table-row"
+  }
+ ],
+ "formulas": [],
+ "definitions": [
+  {
+   "term": "Persistance",
+   "meaning": {
+    "fr": "La prévision recopie l’observation connue n pas plus tôt. C’est l’unique référence de NICE.",
+    "en": null
+   }
+  },
+  {
+   "term": "NICEk",
+   "meaning": {
+    "fr": "L’erreur de la prévision divisée par celle de la persistance, aux mêmes dates et au même horizon.",
+    "en": null
+   }
+  },
+  {
+   "term": "k = 1, 2, 3",
+   "meaning": {
+    "fr": "k = 1 : la MAE, erreur absolue moyenne. k = 2 : la RMSE, racine de l’erreur quadratique moyenne. k = 3 : la racine cubique de l’erreur cubique moyenne. Les grands écarts pèsent de plus en plus.",
+    "en": null
+   }
+  },
+  {
+   "term": "NICEΣ",
+   "meaning": {
+    "fr": "La moyenne à poids égaux de NICE¹, NICE² et NICE³.",
+    "en": null
+   }
+  },
+  {
+   "term": "Horizon n",
+   "meaning": {
+    "fr": "Le nombre de pas entre la dernière valeur connue et la valeur à prévoir.",
+    "en": null
+   }
+  }
+ ],
+ "assumptions": {
+  "fr": [],
+  "en": [
+   "The model and simple persistence are scored on the same samples, horizon and time step. The theoretical forms (8) to (14) assume weak stationarity, reasonable for irradiance at short lags (under one hour) or at daily scale, not for long horizons; the article finds the empirical form (5) the most insightful. The perfect forecast of the lower bound is unattainable in practice. The repository README adds a note on the constant of Eq. (B.5), checked on the arXiv version of the article."
+  ]
+ },
+ "source": {
+  "dois": [
+   "10.1016/j.seta.2025.104588",
+   "10.5281/zenodo.23562549"
+  ],
+  "repositories": [
+   "https://github.com/cyrilvoyant/PV_ELM_pred",
+   "https://github.com/cyrilvoyant/nice-metrics"
+  ],
+  "related_pages": []
+ },
+ "how_to_explore": {
+  "fr": "Régler les paramètres sur un préréglage (valeurs ci-dessus), lire la phrase affichée par la page puis les sorties ; modifier ensuite un seul paramètre à la fois entre son minimum et son maximum.",
+  "en": "Set the parameters to a preset (values above), read the sentence the page shows then the outputs; then change one parameter at a time between its minimum and maximum."
+ },
+ "exploration": [
+  {
+   "preset": "prevision-de-demonstration",
+   "title": {
+    "fr": "Prévision de démonstration",
+    "en": null
+   },
+   "set": {
+    "ni-n": 1
+   },
+   "observe": {
+    "fr": "Une prévision simple : 60 % de la valeur connue n pas plus tôt, plus une part du ciel clair. Augmentez l’horizon n : l’écart avec la persistance se creuse à mesure qu’elle se dégrade.",
+    "en": null
+   }
+  },
+  {
+   "preset": "prevision-parfaite",
+   "title": {
+    "fr": "Prévision parfaite",
+    "en": null
+   },
+   "set": {
+    "ni-n": 1
+   },
+   "observe": {
+    "fr": "La prévision vaut l’observation : toutes les erreurs sont nulles, NICE vaut 0. C’est le bas de l’échelle, inatteignable en pratique.",
+    "en": null
+   }
+  },
+  {
+   "preset": "la-persistance-elle-meme",
+   "title": {
+    "fr": "La persistance elle-même",
+    "en": null
+   },
+   "set": {
+    "ni-n": 1
+   },
+   "observe": {
+    "fr": "La prévision recopie la valeur connue n pas plus tôt : c’est la référence. NICE vaut exactement 1, à tout horizon. Bouger n change les erreurs, pas NICE : c’est mathématiquement juste.",
+    "en": null
+   }
+  },
+  {
+   "preset": "la-moyenne",
+   "title": {
+    "fr": "La moyenne",
+    "en": null
+   },
+   "set": {
+    "ni-n": 1
+   },
+   "observe": {
+    "fr": "Une prévision constante. À horizon 1, la persistance est bien meilleure : NICE > 1. Dès n = 4, la persistance s’est tant dégradée que la moyenne passe devant : NICE tombe sous 1.",
+    "en": null
+   }
+  },
+  {
+   "preset": "quelques-grosses-erreurs",
+   "title": {
+    "fr": "Quelques grosses erreurs",
+    "en": null
+   },
+   "set": {
+    "ni-n": 1
+   },
+   "observe": {
+    "fr": "La prévision de démonstration, avec 700 W/m² d’erreur sur de rares pas. NICE¹ bouge peu, NICE³ bondit : plus k est grand, plus les grands écarts pèsent.",
+    "en": null
+   }
+  }
+ ],
+ "concepts": [
+  "persistence",
+  "horizon",
+  "nice"
+ ],
+ "extraction": {
+  "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
+  "roots": [
+   "#try-it"
+  ],
+  "page_errors": [],
+  "fr_en_preset_consistency": null
+ }
+}

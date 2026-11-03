@@ -1,0 +1,568 @@
+{
+ "id": "student",
+ "schema": "https://www.cyrilvoyant.com/tools-spec.json#1.0",
+ "kind": "teaching",
+ "domain": "learning",
+ "interface_language": "both",
+ "name": {
+  "fr": "Test de Student : deux traitements, t et p-value",
+  "en": "Student test: two treatments, t and p-value"
+ },
+ "url": {
+  "fr": "https://www.cyrilvoyant.com/fr/animations/test-student/",
+  "en": "https://www.cyrilvoyant.com/tools/student-t-test/"
+ },
+ "page_title": {
+  "fr": "Test de Student interactif : deux moyennes, dispersion et p-value",
+  "en": "Interactive t-test: means, variability and p-values"
+ },
+ "computes": {
+  "fr": "Comparer deux traitements avec le test classique à variance commune : écart, statistique t, degrés de liberté (ddl) et zones de rejet.",
+  "en": "Compare two treatments with the classic pooled t-test: difference, t statistic, degrees of freedom (df) and rejection regions."
+ },
+ "summary": {
+  "fr": "Un écart de 6 mmHg entre deux traitements donne p ≈ 0,18 avec 4 patients par groupe, et p ≈ 0,014 avec 12, à moyennes et écarts-types inchangés (exemple construit). Vous apprenez à comparer un écart à son incertitude, et non à lire une p-value seule.",
+  "en": "A 6 mmHg difference between two treatments gives p ≈ 0.18 with 4 patients per group and p ≈ 0.014 with 12, with means and standard deviations unchanged (constructed example). You learn to compare a difference with its uncertainty, rather than read a p-value alone."
+ },
+ "parameters": [
+  {
+   "id": "mean-treatment-a",
+   "type": "number",
+   "control": "range",
+   "min": 0,
+   "max": 100,
+   "step": 0.25,
+   "default": 14,
+   "label": {
+    "fr": "Moyenne Traitement A",
+    "en": "Mean Treatment A"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": {
+    "fr": "mmHg",
+    "en": "mmHg"
+   },
+   "unit_source": "display"
+  },
+  {
+   "id": "standard-deviation-treatment-a",
+   "type": "number",
+   "control": "range",
+   "min": 0.5,
+   "max": 30,
+   "step": 0.0001,
+   "default": 5,
+   "label": {
+    "fr": "Écart-type Traitement A",
+    "en": "Standard deviation Treatment A"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": {
+    "fr": "mmHg",
+    "en": "mmHg"
+   },
+   "unit_source": "display"
+  },
+  {
+   "id": "mean-treatment-b",
+   "type": "number",
+   "control": "range",
+   "min": 0,
+   "max": 100,
+   "step": 0.25,
+   "default": 8,
+   "label": {
+    "fr": "Moyenne Traitement B",
+    "en": "Mean Treatment B"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": {
+    "fr": "mmHg",
+    "en": "mmHg"
+   },
+   "unit_source": "display"
+  },
+  {
+   "id": "standard-deviation-treatment-b",
+   "type": "number",
+   "control": "range",
+   "min": 0.5,
+   "max": 30,
+   "step": 0.0001,
+   "default": 6,
+   "label": {
+    "fr": "Écart-type Traitement B",
+    "en": "Standard deviation Treatment B"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": {
+    "fr": "mmHg",
+    "en": "mmHg"
+   },
+   "unit_source": "display"
+  },
+  {
+   "id": "patients-per-group-n",
+   "type": "integer",
+   "control": "range",
+   "min": 3,
+   "max": 60,
+   "step": 1,
+   "default": 12,
+   "label": {
+    "fr": "Patients par groupe n",
+    "en": "Patients per group n"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "unit_source": "no unit shown by the page"
+  }
+ ],
+ "presets": [
+  {
+   "id": "hypertension-12-patients-per-group",
+   "name": {
+    "fr": "Hypertension, 12 patients par groupe",
+    "en": "Hypertension, 12 patients per group"
+   },
+   "values": {
+    "mean-treatment-a": 14,
+    "standard-deviation-treatment-a": 5,
+    "mean-treatment-b": 8,
+    "standard-deviation-treatment-b": 6,
+    "patients-per-group-n": 12
+   },
+   "changes_vs_default": {},
+   "shows": {
+    "fr": "L’écart de 6 mmHg dépasse le seuil du test : H₀ est rejetée.",
+    "en": "The 6 mmHg difference exceeds the test threshold: H₀ is rejected."
+   }
+  },
+  {
+   "id": "same-difference-4-patients",
+   "name": {
+    "fr": "Même écart, 4 patients",
+    "en": "Same difference, 4 patients"
+   },
+   "values": {
+    "mean-treatment-a": 14,
+    "standard-deviation-treatment-a": 5,
+    "mean-treatment-b": 8,
+    "standard-deviation-treatment-b": 6,
+    "patients-per-group-n": 4
+   },
+   "changes_vs_default": {
+    "patients-per-group-n": 4
+   },
+   "shows": {
+    "fr": "Mêmes moyennes, mêmes écarts-types, mais trop peu de patients : le test ne conclut plus. Cela ne prouve pas que les traitements sont équivalents.",
+    "en": "Same means, same standard deviations, but too few patients: the test no longer concludes. This does not establish equivalence."
+   }
+  },
+  {
+   "id": "same-difference-60-patients",
+   "name": {
+    "fr": "Même écart, 60 patients",
+    "en": "Same difference, 60 patients"
+   },
+   "values": {
+    "mean-treatment-a": 14,
+    "standard-deviation-treatment-a": 5,
+    "mean-treatment-b": 8,
+    "standard-deviation-treatment-b": 6,
+    "patients-per-group-n": 60
+   },
+   "changes_vs_default": {
+    "patients-per-group-n": 60
+   },
+   "shows": {
+    "fr": "L’écart n’a pas changé : seule sa précision s’est améliorée.",
+    "en": "The difference has not changed: only its precision has improved."
+   }
+  },
+  {
+   "id": "widely-spread-patients",
+   "name": {
+    "fr": "Patients très dispersés",
+    "en": "Widely spread patients"
+   },
+   "values": {
+    "mean-treatment-a": 14,
+    "standard-deviation-treatment-a": 25,
+    "mean-treatment-b": 8,
+    "standard-deviation-treatment-b": 25,
+    "patients-per-group-n": 12
+   },
+   "changes_vs_default": {
+    "standard-deviation-treatment-a": 25,
+    "standard-deviation-treatment-b": 25
+   },
+   "shows": {
+    "fr": "Toujours 6 mmHg, mais noyés dans une forte dispersion : H₀ n’est pas rejetée.",
+    "en": "Still 6 mmHg, but lost in a large spread: H₀ is not rejected."
+   }
+  },
+  {
+   "id": "equal-means",
+   "name": {
+    "fr": "Moyennes égales",
+    "en": "Equal means"
+   },
+   "values": {
+    "mean-treatment-a": 14,
+    "standard-deviation-treatment-a": 5,
+    "mean-treatment-b": 14,
+    "standard-deviation-treatment-b": 6,
+    "patients-per-group-n": 12
+   },
+   "changes_vs_default": {
+    "mean-treatment-b": 14
+   },
+   "shows": {
+    "fr": "Aucun écart : t = 0 et p = 1, quel que soit le nombre de patients.",
+    "en": "No difference: t = 0 and p = 1, whatever the number of patients."
+   }
+  },
+  {
+   "id": "course-example-brocas-area-lesions-slide",
+   "name": {
+    "fr": "Exemple du cours : lésions de l’aire de Broca (diapositives 94 à 97)",
+    "en": "Course example: Broca’s area lesions (slides 94–97)"
+   },
+   "values": {
+    "mean-treatment-a": 36,
+    "standard-deviation-treatment-a": 9.4195,
+    "mean-treatment-b": 70.25,
+    "standard-deviation-treatment-b": 4.6928,
+    "patients-per-group-n": 12
+   },
+   "changes_vs_default": {
+    "mean-treatment-a": 36,
+    "standard-deviation-treatment-a": 9.4195,
+    "mean-treatment-b": 70.25,
+    "standard-deviation-treatment-b": 4.6928
+   },
+   "shows": {
+    "fr": "Un écart très grand devant sa précision : le t calculé sort largement du seuil, comme dans le cours.",
+    "en": "A difference much larger than its precision: the computed t lies far beyond the threshold, as in the course."
+   }
+  }
+ ],
+ "actions": [],
+ "variants": [],
+ "outputs": [
+  {
+   "name": {
+    "fr": "1. Écart des moyennes Δ",
+    "en": "1. Difference between means Δ"
+   },
+   "unit": {
+    "fr": "mmHg",
+    "en": "mmHg"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "kind": "metric"
+  },
+  {
+   "name": {
+    "fr": "2. Écart-type commun sₚ",
+    "en": "2. Pooled standard deviation sₚ"
+   },
+   "unit": {
+    "fr": "mmHg",
+    "en": "mmHg"
+   },
+   "meaning": {
+    "fr": "dispersion commune estimée",
+    "en": "estimated common spread"
+   },
+   "kind": "metric"
+  },
+  {
+   "name": {
+    "fr": "Erreur standard de Δ",
+    "en": "Standard error of Δ"
+   },
+   "unit": {
+    "fr": "mmHg",
+    "en": "mmHg"
+   },
+   "meaning": {
+    "fr": "incertitude sur l’écart Δ",
+    "en": "uncertainty on the difference Δ"
+   },
+   "kind": "metric"
+  },
+  {
+   "name": {
+    "fr": "3. t calculé",
+    "en": "3. Computed t"
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": "Δ divisé par son erreur standard",
+    "en": "Δ divided by its standard error"
+   },
+   "kind": "metric"
+  },
+  {
+   "name": {
+    "fr": "ddl = n₁ + n₂ − 2",
+    "en": "df = n₁ + n₂ − 2"
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": "degrés de liberté",
+    "en": "degrees of freedom"
+   },
+   "kind": "metric"
+  },
+  {
+   "name": {
+    "fr": "t table (α = 5 %)",
+    "en": "Critical t (α = 5%)"
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": "seuil à dépasser pour rejeter H₀",
+    "en": "threshold to exceed to reject H₀"
+   },
+   "kind": "metric"
+  },
+  {
+   "name": {
+    "fr": "p-value bilatérale",
+    "en": "Two-sided p-value"
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": "écart au moins aussi grand si H₀ est vraie",
+    "en": "a difference at least this large if H₀ holds"
+   },
+   "kind": "metric"
+  }
+ ],
+ "formulas": [
+  {
+   "text": "t = Δ/(s_psqrt(1/n_1 + 1/n_2))"
+  },
+  {
+   "text": "s_p^2 = ((n_1 − 1)s_1^2 + (n_2 − 1)s_2^2)/(n_1 + n_2 − 2)"
+  },
+  {
+   "text": "ν = n_1 + n_2 − 2"
+  }
+ ],
+ "definitions": [
+  {
+   "term": "Δ",
+   "meaning": {
+    "fr": "La différence entre les deux moyennes.",
+    "en": "The difference between the two means."
+   }
+  },
+  {
+   "term": "n₁, n₂",
+   "meaning": {
+    "fr": "Les effectifs des deux groupes, égaux dans cet outil.",
+    "en": "The sizes of the two groups, equal in this tool."
+   }
+  },
+  {
+   "term": "s₁, s₂, sₚ",
+   "meaning": {
+    "fr": "Les écarts-types de chaque groupe et leur estimation commune. Voir l’écart-type dans la loi normale.",
+    "en": "The standard deviation of each group and their pooled estimate. See the standard deviation in the normal distribution."
+   }
+  },
+  {
+   "term": "t",
+   "meaning": {
+    "fr": "L’écart Δ exprimé en unités d’erreur standard.",
+    "en": "The difference Δ expressed in standard-error units."
+   }
+  },
+  {
+   "term": "ν",
+   "meaning": {
+    "fr": "Le nombre de degrés de liberté : ici n₁ + n₂ − 2.",
+    "en": "The degrees of freedom: here n₁ + n₂ − 2."
+   }
+  },
+  {
+   "term": "p-value",
+   "meaning": {
+    "fr": "La probabilité, si les moyennes sont égales et le modèle correct, d’un écart au moins aussi extrême. Ce n’est pas la probabilité que l’hypothèse soit vraie.",
+    "en": "The probability, if the means are equal and the model is correct, of a difference at least as extreme. It is not the probability that the hypothesis is true."
+   }
+  },
+  {
+   "term": "Que veut dire chaque symbole ?",
+   "meaning": {
+    "fr": "Δ est l’écart des moyennes ; s₁ et s₂ les écarts-types des groupes et sₚ leur estimation commune. n₁ et n₂ sont les effectifs, tous deux égaux au curseur n. H₀ suppose les moyennes des populations égales. t exprime Δ en unités d’erreur standard, ddl signifie degrés de liberté et α = 5 % est le seuil de rejet. La p-value est une probabilité de résultats au moins aussi extrêmes sous H₀ et le modèle du test, pas la probabilité que H₀ soit vraie.",
+    "en": "Δ is the difference between group means; s₁ and s₂ are group standard deviations and sₚ their pooled estimate. n₁ and n₂ are group sizes, both equal to the n control. H₀ assumes equal population means. t expresses Δ in standard-error units, df means degrees of freedom, and α = 5% is the rejection threshold. The p-value is a probability of results at least as extreme under H₀ and the test model, not the probability that H₀ is true."
+   }
+  }
+ ],
+ "assumptions": {
+  "fr": [
+   "Test bilatéral à variance commune pour deux groupes indépendants de même effectif : normalité et variances homogènes à vérifier. Mesures appariées : un autre test. Les points dessinés sont construits à partir des résumés saisis."
+  ],
+  "en": [
+   "Two-sided pooled-variance test for two independent groups of equal size: check normality and equal variances. Paired measurements need another test. Displayed points are constructed from the entered summaries."
+  ]
+ },
+ "source": {
+  "dois": [],
+  "repositories": [],
+  "related_pages": [
+   {
+    "href": "/fr/enseignement/biostatistique/statistiques-descriptives/",
+    "text": "Le chapitre complet du cours"
+   },
+   {
+    "href": "/fr/animations/loi-normale/",
+    "text": "La loi normale : écart-type, aire et seuils"
+   },
+   {
+    "href": "/fr/animations/test-khi-deux/",
+    "text": "Le test du χ² : comparer des effectifs plutôt que des moyennes"
+   },
+   {
+    "href": "/fr/animations/correlation-significativite-r2/",
+    "text": "Corrélation et R² : ce que la significativité ne dit pas"
+   }
+  ]
+ },
+ "how_to_explore": {
+  "fr": "Régler les paramètres sur un préréglage (valeurs ci-dessus), lire la phrase affichée par la page puis les sorties ; modifier ensuite un seul paramètre à la fois entre son minimum et son maximum.",
+  "en": "Set the parameters to a preset (values above), read the sentence the page shows then the outputs; then change one parameter at a time between its minimum and maximum."
+ },
+ "exploration": [
+  {
+   "preset": "hypertension-12-patients-per-group",
+   "title": {
+    "fr": "Hypertension, 12 patients par groupe",
+    "en": "Hypertension, 12 patients per group"
+   },
+   "set": {
+    "mean-treatment-a": 14,
+    "standard-deviation-treatment-a": 5,
+    "mean-treatment-b": 8,
+    "standard-deviation-treatment-b": 6,
+    "patients-per-group-n": 12
+   },
+   "observe": {
+    "fr": "L’écart de 6 mmHg dépasse le seuil du test : H₀ est rejetée.",
+    "en": "The 6 mmHg difference exceeds the test threshold: H₀ is rejected."
+   }
+  },
+  {
+   "preset": "same-difference-4-patients",
+   "title": {
+    "fr": "Même écart, 4 patients",
+    "en": "Same difference, 4 patients"
+   },
+   "set": {
+    "patients-per-group-n": 4
+   },
+   "observe": {
+    "fr": "Mêmes moyennes, mêmes écarts-types, mais trop peu de patients : le test ne conclut plus. Cela ne prouve pas que les traitements sont équivalents.",
+    "en": "Same means, same standard deviations, but too few patients: the test no longer concludes. This does not establish equivalence."
+   }
+  },
+  {
+   "preset": "same-difference-60-patients",
+   "title": {
+    "fr": "Même écart, 60 patients",
+    "en": "Same difference, 60 patients"
+   },
+   "set": {
+    "patients-per-group-n": 60
+   },
+   "observe": {
+    "fr": "L’écart n’a pas changé : seule sa précision s’est améliorée.",
+    "en": "The difference has not changed: only its precision has improved."
+   }
+  },
+  {
+   "preset": "equal-means",
+   "title": {
+    "fr": "Moyennes égales",
+    "en": "Equal means"
+   },
+   "set": {
+    "mean-treatment-b": 14
+   },
+   "observe": {
+    "fr": "Aucun écart : t = 0 et p = 1, quel que soit le nombre de patients.",
+    "en": "No difference: t = 0 and p = 1, whatever the number of patients."
+   }
+  },
+  {
+   "preset": "course-example-brocas-area-lesions-slide",
+   "title": {
+    "fr": "Exemple du cours : lésions de l’aire de Broca (diapositives 94 à 97)",
+    "en": "Course example: Broca’s area lesions (slides 94–97)"
+   },
+   "set": {
+    "mean-treatment-a": 36,
+    "standard-deviation-treatment-a": 9.4195,
+    "mean-treatment-b": 70.25,
+    "standard-deviation-treatment-b": 4.6928
+   },
+   "observe": {
+    "fr": "Un écart très grand devant sa précision : le t calculé sort largement du seuil, comme dans le cours.",
+    "en": "A difference much larger than its precision: the computed t lies far beyond the threshold, as in the course."
+   }
+  }
+ ],
+ "concepts": [
+  "p-value",
+  "student-t-test"
+ ],
+ "extraction": {
+  "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
+  "roots": [
+   "#experience"
+  ],
+  "page_errors": [],
+  "fr_en_preset_consistency": {
+   "presets_compared": 6,
+   "presets_with_different_values_fr_vs_en": []
+  }
+ }
+}

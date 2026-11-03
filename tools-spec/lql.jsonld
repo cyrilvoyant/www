@@ -1,0 +1,223 @@
+{
+ "@context": "https://schema.org",
+ "@type": [
+  "SoftwareApplication",
+  "LearningResource"
+ ],
+ "@id": "https://cyrilvoyant.github.io/tools/lql-equiv.html#try-it#tool-spec",
+ "identifier": "lql",
+ "name": "Compare LQ and LQL biological doses",
+ "alternateName": "Comparer les doses biologiques LQ et LQL",
+ "description": "LQ (linear-quadratic) and LQL (linear-quadratic-linear) are two models of the effect of a dose. Choose parameters and vary dose per fraction. Research and education use.",
+ "url": "https://cyrilvoyant.github.io/tools/lql-equiv.html#try-it",
+ "sameAs": [
+  "https://www.cyrilvoyant.com/fr/outils/doses-lq-lql/#try-it",
+  "https://cyrilvoyant.github.io/tools/lql-equiv.html#try-it"
+ ],
+ "inLanguage": [
+  "fr",
+  "en"
+ ],
+ "applicationCategory": "ScientificApplication",
+ "operatingSystem": "Any (web browser)",
+ "isAccessibleForFree": true,
+ "learningResourceType": "calculator",
+ "author": {
+  "@type": "Person",
+  "name": "Cyril Voyant",
+  "identifier": "https://orcid.org/0000-0003-0242-7377"
+ },
+ "license": "https://creativecommons.org/licenses/by/4.0/",
+ "additionalProperty": [
+  {
+   "@type": "PropertyValue",
+   "propertyID": "lq-d",
+   "name": "Dose per fraction d Gy",
+   "alternateName": "Dose par fraction d",
+   "description": "La dose d’une séance, en gray (Gy).",
+   "value": 15,
+   "minValue": 0.5,
+   "maxValue": 25,
+   "unitText": "Gy"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "lq-n",
+   "name": "Number of fractions n",
+   "alternateName": "Nombre de fractions n",
+   "description": "Le nombre de séances. La BED est proportionnelle à n : l’écart relatif entre LQ et LQL n’en dépend donc pas. C’est normal.",
+   "value": 1,
+   "minValue": 1,
+   "maxValue": 40,
+   "unitText": "dimensionless"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "lq-tis",
+   "name": "Tissu",
+   "alternateName": "Tissu",
+   "description": "Paramètres de la bibliothèque de LQL-Equiv, pour comparer des courbes. Rien ici n’est une recommandation.",
+   "value": "0"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "lq-ab",
+   "name": "α/β (Gy)",
+   "alternateName": "α/β",
+   "description": "Paramètre du modèle linéaire-quadratique, en Gy. Plus il est faible, plus le tissu est sensible à la dose par fraction.",
+   "value": 3.9,
+   "minValue": 0.4,
+   "maxValue": 20,
+   "unitText": "Gy"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "lq-dt",
+   "name": "Transition dose dT (Gy)",
+   "alternateName": "Dose de transition dT",
+   "description": "Au-dessus de cette dose par fraction, LQL passe de la courbe à une droite. Dans la bibliothèque de LQL-Equiv, dT = 2 α/β.",
+   "value": 7.8,
+   "minValue": 0.8,
+   "maxValue": 32,
+   "unitText": "Gy"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "lq-g",
+   "name": "γ/α (dimensionless tail slope)",
+   "alternateName": "Pente γ/α",
+   "description": "La pente de la droite au-dessus de dT, sans unité. LQL-Equiv prend 5.",
+   "value": 5,
+   "minValue": 1,
+   "maxValue": 15,
+   "unitText": "dimensionless"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:petites-fractions-30-2-gy",
+   "name": "Petites fractions : 30 × 2 Gy",
+   "alternateName": "Petites fractions : 30 × 2 Gy",
+   "value": "{\"lq-d\": 2, \"lq-n\": 30, \"lq-tis\": \"0\", \"lq-ab\": 3.9, \"lq-dt\": 7.8, \"lq-g\": 5}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:autour-du-seuil-5-8-gy",
+   "name": "Autour du seuil : 5 × 8 Gy",
+   "alternateName": "Autour du seuil : 5 × 8 Gy",
+   "value": "{\"lq-d\": 8, \"lq-n\": 5, \"lq-tis\": \"0\", \"lq-ab\": 3.9, \"lq-dt\": 7.8, \"lq-g\": 5}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:dose-unique-1-15-gy",
+   "name": "Dose unique : 1 × 15 Gy",
+   "alternateName": "Dose unique : 1 × 15 Gy",
+   "value": "{\"lq-d\": 15, \"lq-n\": 1, \"lq-tis\": \"0\", \"lq-ab\": 3.9, \"lq-dt\": 7.8, \"lq-g\": 5}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:tres-forte-dose-1-25-gy",
+   "name": "Très forte dose : 1 × 25 Gy",
+   "alternateName": "Très forte dose : 1 × 25 Gy",
+   "value": "{\"lq-d\": 25, \"lq-n\": 1, \"lq-tis\": \"0\", \"lq-ab\": 3.9, \"lq-dt\": 7.8, \"lq-g\": 5}"
+  }
+ ],
+ "potentialAction": {
+  "@type": "Action",
+  "name": "Explore the tool",
+  "target": {
+   "@type": "EntryPoint",
+   "urlTemplate": "https://cyrilvoyant.github.io/tools/lql-equiv.html#try-it",
+   "actionPlatform": "https://schema.org/DesktopWebPlatform"
+  },
+  "object": [
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "lq-d",
+    "description": "Dose per fraction d Gy",
+    "valueRequired": false,
+    "minValue": 0.5,
+    "maxValue": 25,
+    "defaultValue": 15,
+    "stepValue": 0.1
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "lq-n",
+    "description": "Number of fractions n",
+    "valueRequired": false,
+    "minValue": 1,
+    "maxValue": 40,
+    "defaultValue": 1,
+    "stepValue": 1
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "lq-tis",
+    "description": "Tissu",
+    "valueRequired": false,
+    "valuePattern": "^(0|1|2|3|4|\\-1)$",
+    "defaultValue": "0"
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "lq-ab",
+    "description": "α/β (Gy)",
+    "valueRequired": false,
+    "minValue": 0.4,
+    "maxValue": 20,
+    "defaultValue": 3.9,
+    "stepValue": 0.1
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "lq-dt",
+    "description": "Transition dose dT (Gy)",
+    "valueRequired": false,
+    "minValue": 0.8,
+    "maxValue": 32,
+    "defaultValue": 7.8,
+    "stepValue": 0.1
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "lq-g",
+    "description": "γ/α (dimensionless tail slope)",
+    "valueRequired": false,
+    "minValue": 1,
+    "maxValue": 15,
+    "defaultValue": 5,
+    "stepValue": 0.1
+   }
+  ]
+ },
+ "citation": [
+  "https://doi.org/10.1016/j.clon.2025.103893",
+  "https://doi.org/10.1016/j.meddos.2026.08.002",
+  "https://doi.org/10.1016/j.rpor.2013.08.004",
+  "https://doi.org/10.1016/j.softx.2026.103085",
+  "https://doi.org/10.1101/2025.03.05.25323402",
+  "https://doi.org/10.5281/zenodo.16739882",
+  "https://doi.org/10.5281/zenodo.21948623"
+ ],
+ "codeRepository": "https://github.com/cyrilvoyant/LQ-Equiv",
+ "about": [
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#lq-model"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#lql-model"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#bed"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#alpha-beta"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#transition-dose"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#gray"
+  }
+ ]
+}

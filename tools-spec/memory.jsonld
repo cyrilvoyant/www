@@ -1,0 +1,193 @@
+{
+ "@context": "https://schema.org",
+ "@type": [
+  "SoftwareApplication",
+  "LearningResource"
+ ],
+ "@id": "https://www.cyrilvoyant.com/stories/variability-memory-forecastability/#experience#tool-spec",
+ "identifier": "memory",
+ "name": "Which forecast for which signal?",
+ "alternateName": "Quelle prévision pour quel signal ?",
+ "description": "Choose a signal, play with the sliders, see which forecast wins.",
+ "url": "https://www.cyrilvoyant.com/stories/variability-memory-forecastability/#experience",
+ "sameAs": [
+  "https://www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/#experience",
+  "https://www.cyrilvoyant.com/stories/variability-memory-forecastability/#experience"
+ ],
+ "inLanguage": [
+  "fr",
+  "en"
+ ],
+ "applicationCategory": "ScientificApplication",
+ "operatingSystem": "Any (web browser)",
+ "isAccessibleForFree": true,
+ "learningResourceType": "demo",
+ "author": {
+  "@type": "Person",
+  "name": "Cyril Voyant",
+  "identifier": "https://orcid.org/0000-0003-0242-7377"
+ },
+ "license": "https://creativecommons.org/licenses/by/4.0/",
+ "additionalProperty": [
+  {
+   "@type": "PropertyValue",
+   "propertyID": "a",
+   "name": "Strength of the cycle",
+   "alternateName": "Force du cycle",
+   "value": 0.8,
+   "minValue": 0,
+   "maxValue": 0.9,
+   "unitText": "dimensionless"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "phi",
+   "name": "Memory",
+   "alternateName": "Mémoire",
+   "description": "The correlation between two neighbouring values of the noise. 0: none. 1: total.",
+   "value": 0.7,
+   "minValue": 0,
+   "maxValue": 1,
+   "unitText": "dimensionless"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "h",
+   "name": "Forecast",
+   "alternateName": "Prévoir à",
+   "value": 3,
+   "minValue": 1,
+   "maxValue": 12,
+   "unitText": "pas"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:random",
+   "name": "Random",
+   "alternateName": "Aléatoire",
+   "value": "{\"a\": 0, \"phi\": 0, \"h\": 3}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:almost-random",
+   "name": "Almost random",
+   "alternateName": "Presque aléatoire",
+   "value": "{\"a\": 0, \"phi\": 0.2, \"h\": 3}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:persistent",
+   "name": "Persistent",
+   "alternateName": "Persistant",
+   "value": "{\"a\": 0, \"phi\": 0.95, \"h\": 3}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:brownian",
+   "name": "Brownian",
+   "alternateName": "Brownien",
+   "value": "{\"a\": 0, \"phi\": 1, \"h\": 3}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:cycle-additive-noise",
+   "name": "Cycle, additive noise",
+   "alternateName": "Cycle, bruit additif",
+   "value": "{\"a\": 0.8, \"phi\": 0.7, \"h\": 3}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:cycle-multiplicative-noise",
+   "name": "Cycle, multiplicative noise",
+   "alternateName": "Cycle, bruit multiplicatif",
+   "value": "{\"a\": 0.8, \"phi\": 0.7, \"h\": 3}"
+  }
+ ],
+ "potentialAction": {
+  "@type": "Action",
+  "name": "Explore the tool",
+  "target": {
+   "@type": "EntryPoint",
+   "urlTemplate": "https://www.cyrilvoyant.com/stories/variability-memory-forecastability/#experience",
+   "actionPlatform": "https://schema.org/DesktopWebPlatform"
+  },
+  "object": [
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "a",
+    "description": "Strength of the cycle",
+    "valueRequired": false,
+    "minValue": 0,
+    "maxValue": 0.9,
+    "defaultValue": 0.8,
+    "stepValue": 0.05
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "phi",
+    "description": "Memory",
+    "valueRequired": false,
+    "minValue": 0,
+    "maxValue": 1,
+    "defaultValue": 0.7,
+    "stepValue": 0.05
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "h",
+    "description": "Forecast",
+    "valueRequired": false,
+    "minValue": 1,
+    "maxValue": 12,
+    "defaultValue": 3,
+    "stepValue": 1
+   }
+  ]
+ },
+ "citation": [
+  "https://doi.org/10.1016/j.energy.2015.07.089",
+  "https://doi.org/10.1016/j.renene.2025.123913",
+  "https://doi.org/10.1016/j.seta.2025.104588",
+  "https://doi.org/10.1016/j.solener.2025.113821",
+  "https://doi.org/10.1109/4235.585893"
+ ],
+ "codeRepository": "https://github.com/cyrilvoyant/solar-variability-scv",
+ "about": [
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#persistence"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#cyclic-persistence"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#convex-combination"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#ar2"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#difference-to-trend"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#ratio-to-trend"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#nrmse"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#nmae"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#nice"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#scv"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#brownian-motion"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#memory-phi"
+  }
+ ]
+}

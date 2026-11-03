@@ -1,0 +1,127 @@
+{
+ "@context": "https://schema.org",
+ "@type": [
+  "SoftwareApplication",
+  "LearningResource"
+ ],
+ "@id": "https://www.cyrilvoyant.com/tools/correlation-significance-r-squared/#tool-spec",
+ "identifier": "determination",
+ "name": "Significance and R²: how much variation does the line explain?",
+ "alternateName": "Significativité et R² : quelle variation explique la droite ?",
+ "description": "Vary the correlation r and the sample size n; distinguish the theoretical p-value from variation explained in a constructed teaching example.",
+ "url": "https://www.cyrilvoyant.com/tools/correlation-significance-r-squared/",
+ "sameAs": [
+  "https://www.cyrilvoyant.com/fr/animations/correlation-significativite-r2/",
+  "https://www.cyrilvoyant.com/tools/correlation-significance-r-squared/"
+ ],
+ "inLanguage": [
+  "fr",
+  "en"
+ ],
+ "applicationCategory": "EducationalApplication",
+ "operatingSystem": "Any (web browser)",
+ "isAccessibleForFree": true,
+ "learningResourceType": "teaching",
+ "author": {
+  "@type": "Person",
+  "name": "Cyril Voyant",
+  "identifier": "https://orcid.org/0000-0003-0242-7377"
+ },
+ "license": "https://creativecommons.org/licenses/by/4.0/",
+ "additionalProperty": [
+  {
+   "@type": "PropertyValue",
+   "propertyID": "correlation-r-of-the-constructed-cloud",
+   "name": "Correlation r of the constructed cloud",
+   "alternateName": "Corrélation r du nuage construit",
+   "value": 0.3,
+   "minValue": -0.95,
+   "maxValue": 0.95,
+   "unitText": "dimensionless"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "number-of-points-n",
+   "name": "Number of points n",
+   "alternateName": "Nombre de points n",
+   "value": 30,
+   "minValue": 10,
+   "maxValue": 1000,
+   "unitText": "dimensionless"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:moderate-link-30-points",
+   "name": "Moderate link, 30 points",
+   "alternateName": "Lien moyen, 30 points",
+   "value": "{\"correlation-r-of-the-constructed-cloud\": 0.3, \"number-of-points-n\": 30}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:weak-link-30-points",
+   "name": "Weak link, 30 points",
+   "alternateName": "Lien faible, 30 points",
+   "value": "{\"correlation-r-of-the-constructed-cloud\": 0.1, \"number-of-points-n\": 30}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:same-link-1-000-points",
+   "name": "Same link, 1,000 points",
+   "alternateName": "Même lien, 1 000 points",
+   "value": "{\"correlation-r-of-the-constructed-cloud\": 0.1, \"number-of-points-n\": 1000}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:strong-negative-link-30-points",
+   "name": "Strong negative link, 30 points",
+   "alternateName": "Fort lien négatif, 30 points",
+   "value": "{\"correlation-r-of-the-constructed-cloud\": -0.8, \"number-of-points-n\": 30}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:no-link-100-points",
+   "name": "No link, 100 points",
+   "alternateName": "Aucun lien, 100 points",
+   "value": "{\"correlation-r-of-the-constructed-cloud\": 0, \"number-of-points-n\": 100}"
+  }
+ ],
+ "potentialAction": {
+  "@type": "Action",
+  "name": "Explore the tool",
+  "target": {
+   "@type": "EntryPoint",
+   "urlTemplate": "https://www.cyrilvoyant.com/tools/correlation-significance-r-squared/",
+   "actionPlatform": "https://schema.org/DesktopWebPlatform"
+  },
+  "object": [
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "correlation-r-of-the-constructed-cloud",
+    "description": "Correlation r of the constructed cloud",
+    "valueRequired": false,
+    "minValue": -0.95,
+    "maxValue": 0.95,
+    "defaultValue": 0.3,
+    "stepValue": 0.01
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "number-of-points-n",
+    "description": "Number of points n",
+    "valueRequired": false,
+    "minValue": 10,
+    "maxValue": 1000,
+    "defaultValue": 30,
+    "stepValue": 1
+   }
+  ]
+ },
+ "about": [
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#p-value"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#r-squared"
+  }
+ ]
+}

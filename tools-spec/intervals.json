@@ -1,0 +1,450 @@
+{
+ "id": "intervals",
+ "schema": "https://www.cyrilvoyant.com/tools-spec.json#1.0",
+ "kind": "teaching",
+ "domain": "learning",
+ "interface_language": "both",
+ "name": {
+  "fr": "Régression : intervalle de confiance ou de prévision ?",
+  "en": "Regression: confidence or prediction interval?"
+ },
+ "url": {
+  "fr": "https://www.cyrilvoyant.com/fr/animations/intervalles-regression/",
+  "en": "https://www.cyrilvoyant.com/tools/regression-intervals/"
+ },
+ "page_title": {
+  "fr": "Régression : intervalle de confiance et intervalle de prévision",
+  "en": "Regression: confidence interval and prediction interval"
+ },
+ "computes": {
+  "fr": "Comparer les deux bandes, déplacer x₀, la valeur où l’on prévoit, et reconnaître une extrapolation.",
+  "en": "Compare both bands, move x₀, the value where the prediction is made, and recognize extrapolation."
+ },
+ "summary": {
+  "fr": "Avec 20 points et un écart-type résiduel de 1, la moyenne prévue au centre est connue à ±0,47, mais une nouvelle observation seulement à ±2,15. Vous savez quel intervalle répond à quelle question.",
+  "en": "With 20 points and a residual standard deviation of 1, the predicted mean at the center is known to ±0.47, but a new observation only to ±2.15. You know which interval answers which question."
+ },
+ "parameters": [
+  {
+   "id": "number-of-points-n",
+   "type": "integer",
+   "control": "range",
+   "min": 6,
+   "max": 100,
+   "step": 1,
+   "default": 20,
+   "label": {
+    "fr": "Nombre de points n",
+    "en": "Number of points n"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "unit_source": "no unit shown by the page"
+  },
+  {
+   "id": "residual-standard-deviation-se",
+   "type": "number",
+   "control": "range",
+   "min": 0.2,
+   "max": 3,
+   "step": 0.1,
+   "default": 1,
+   "label": {
+    "fr": "Écart-type résiduel se",
+    "en": "Residual standard deviation se"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "unit_source": "no unit shown by the page"
+  },
+  {
+   "id": "prediction-input-x0",
+   "type": "number",
+   "control": "range",
+   "min": -4,
+   "max": 4,
+   "step": 0.1,
+   "default": 0,
+   "label": {
+    "fr": "Valeur x₀ à prévoir",
+    "en": "Prediction input x₀"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "unit_source": "no unit shown by the page"
+  }
+ ],
+ "presets": [
+  {
+   "id": "at-the-center-20-points",
+   "name": {
+    "fr": "Au centre, 20 points",
+    "en": "At the center, 20 points"
+   },
+   "values": {
+    "number-of-points-n": 20,
+    "residual-standard-deviation-se": 1,
+    "prediction-input-x0": 0
+   },
+   "changes_vs_default": {},
+   "shows": {
+    "fr": "Au centre du nuage, la moyenne est connue à ±0,47 ; une nouvelle observation à ±2,15 seulement.",
+    "en": "At the center of the scatter, the mean is known to ±0.47; a new observation only to ±2.15."
+   }
+  },
+  {
+   "id": "many-points-100",
+   "name": {
+    "fr": "Beaucoup de points : 100",
+    "en": "Many points: 100"
+   },
+   "values": {
+    "number-of-points-n": 100,
+    "residual-standard-deviation-se": 1,
+    "prediction-input-x0": 0
+   },
+   "changes_vs_default": {
+    "number-of-points-n": 100
+   },
+   "shows": {
+    "fr": "La moyenne est bien estimée ; la prochaine observation garde sa dispersion propre, et son intervalle reste large.",
+    "en": "The mean is well estimated; the next observation keeps its own spread, and its interval stays wide."
+   }
+  },
+  {
+   "id": "few-points-6",
+   "name": {
+    "fr": "Peu de points : 6",
+    "en": "Few points: 6"
+   },
+   "values": {},
+   "changes_vs_default": {},
+   "shows": {
+    "fr": null,
+    "en": "Few points: the Student quantile rises and both bands widen."
+   }
+  },
+  {
+   "id": "large-spread",
+   "name": {
+    "fr": "Forte dispersion",
+    "en": "Large spread"
+   },
+   "values": {
+    "number-of-points-n": 20,
+    "residual-standard-deviation-se": 3,
+    "prediction-input-x0": 0
+   },
+   "changes_vs_default": {
+    "residual-standard-deviation-se": 3
+   },
+   "shows": {
+    "fr": "Les deux bandes sont proportionnelles à se : tripler la dispersion triple leur largeur.",
+    "en": "Both bands are proportional to se: tripling the spread triples their width."
+   }
+  },
+  {
+   "id": "at-the-observed-x-boundary",
+   "name": {
+    "fr": "À la limite des x observés",
+    "en": "At the observed x boundary"
+   },
+   "values": {
+    "number-of-points-n": 20,
+    "residual-standard-deviation-se": 1,
+    "prediction-input-x0": 2
+   },
+   "changes_vs_default": {
+    "prediction-input-x0": 2
+   },
+   "shows": {
+    "fr": "Au bord des données, l’incertitude sur la moyenne a grossi : la droite y est moins bien tenue.",
+    "en": "At the edge of the data, uncertainty on the mean has grown: the line is less well anchored there."
+   }
+  },
+  {
+   "id": "extrapolation",
+   "name": {
+    "fr": "En extrapolation",
+    "en": "Extrapolation"
+   },
+   "values": {
+    "number-of-points-n": 20,
+    "residual-standard-deviation-se": 1,
+    "prediction-input-x0": 3.5
+   },
+   "changes_vs_default": {
+    "prediction-input-x0": 3.5
+   },
+   "shows": {
+    "fr": "Hors des x observés, les bandes supposent la droite toujours valable : elles ne mesurent pas ce risque.",
+    "en": "Outside the observed x, the bands assume the line still holds: they do not measure this risk."
+   }
+  }
+ ],
+ "actions": [],
+ "variants": [],
+ "outputs": [
+  {
+   "name": {
+    "fr": "Moyenne prévue ŷ₀",
+    "en": "Predicted mean ŷ₀"
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": "valeur de la droite en x₀",
+    "en": "value of the line at x₀"
+   },
+   "kind": "metric"
+  },
+  {
+   "name": {
+    "fr": "IC95 moyenne",
+    "en": "95% mean CI"
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": "où se situe la moyenne, à 95 %",
+    "en": "where the mean lies, at 95%"
+   },
+   "kind": "metric"
+  },
+  {
+   "name": {
+    "fr": "IP95 individuel",
+    "en": "95% individual PI"
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": "où tombera une nouvelle observation, à 95 %",
+    "en": "where a new observation will fall, at 95%"
+   },
+   "kind": "metric"
+  },
+  {
+   "name": {
+    "fr": "Degrés de liberté",
+    "en": "Degrees of freedom"
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": "n − 2",
+    "en": "n − 2"
+   },
+   "kind": "metric"
+  }
+ ],
+ "formulas": [
+  {
+   "text": "ŷ_0 ± ts_esqrt(1/n + ((x_0 − x̄)^2)/S_xx)"
+  }
+ ],
+ "definitions": [
+  {
+   "term": "Intervalle de confiance",
+   "meaning": {
+    "fr": "Il encadre la moyenne des y en x₀.",
+    "en": "It brackets the mean of y at x₀."
+   }
+  },
+  {
+   "term": "Intervalle de prévision",
+   "meaning": {
+    "fr": "Il encadre une nouvelle observation en x₀ : on ajoute 1 sous la racine.",
+    "en": "It brackets a new observation at x₀: add 1 under the root."
+   }
+  },
+  {
+   "term": "x₀, ŷ₀",
+   "meaning": {
+    "fr": "La valeur où l’on prévoit et la moyenne prévue par la droite.",
+    "en": "The value where the prediction is made and the mean predicted by the line."
+   }
+  },
+  {
+   "term": "x̄, n, Sxx",
+   "meaning": {
+    "fr": "La moyenne des x observés, leur nombre et la somme des carrés des écarts x − x̄.",
+    "en": "The mean of the observed x, their number and the sum of squared deviations x − x̄."
+   }
+  },
+  {
+   "term": "sₑ (se)",
+   "meaning": {
+    "fr": "L’écart-type résiduel estimé : la dispersion des points autour de la droite.",
+    "en": "The estimated residual standard deviation: the spread of points around the line."
+   }
+  },
+  {
+   "term": "t",
+   "meaning": {
+    "fr": "Le quantile de Student pour une bande à 95 %, à n − 2 degrés de liberté. Voir le test de Student.",
+    "en": "The Student quantile for a 95% band, with n − 2 degrees of freedom. See the Student test."
+   }
+  },
+  {
+   "term": "Que veut dire chaque symbole ?",
+   "meaning": {
+    "fr": "x₀ est la valeur de la variable explicative où l’on prévoit ; ŷ₀ est la moyenne prévue par la droite. n est l’effectif, se l’écart-type résiduel estimé et x̄ la moyenne des x observés. Sxx additionne les carrés des écarts xᵢ−x̄ ; SSE additionne les carrés des résidus. IC désigne l’intervalle de confiance de la moyenne et IP l’intervalle de prévision d’une observation. Dans les formules, t(0,975 ; n−2) est le quantile de Student utilisé pour les bandes à 95 %.",
+    "en": "x₀ is the predictor value where a prediction is requested; ŷ₀ is the mean predicted by the line. n is sample size, se the estimated residual standard deviation, and x̄ the mean observed x. Sxx adds the squared distances xᵢ−x̄; SSE adds squared residuals. CI is a confidence interval for the mean and PI a prediction interval for a new observation. In the equations, t(0.975; n−2) is the Student quantile used for the 95% bands."
+   }
+  }
+ ],
+ "assumptions": {
+  "fr": [
+   "Régression simple, erreurs indépendantes normales de variance constante, nuage construit. Bandes valables à 95 % en chaque x, pas sur toute la courbe à la fois. En extrapolation, le modèle peut être faux sans que la bande le signale."
+  ],
+  "en": [
+   "Simple regression, independent normal errors of constant variance, constructed scatter. Bands hold at 95% at each x, not over the whole curve at once. In extrapolation, the model may be wrong without the band showing it."
+  ]
+ },
+ "source": {
+  "dois": [],
+  "repositories": [],
+  "related_pages": [
+   {
+    "href": "/fr/enseignement/biostatistique/correlation-regression/",
+    "text": "Le chapitre complet du cours"
+   },
+   {
+    "href": "/fr/animations/point-influent-regression/",
+    "text": "Le point influent : ce qu’un seul point fait à la droite"
+   },
+   {
+    "href": "/fr/animations/correlation-significativite-r2/",
+    "text": "Corrélation et R² : la part de variation décrite par la droite"
+   },
+   {
+    "href": "/fr/animations/loi-normale/",
+    "text": "La loi normale : d’où vient le « environ 2 écarts-types »"
+   },
+   {
+    "href": "/fr/recits/evaluer-prevision-solaire-persistance/",
+    "text": "Évaluer une prévision : la persistance comme référence"
+   }
+  ]
+ },
+ "how_to_explore": {
+  "fr": "Régler les paramètres sur un préréglage (valeurs ci-dessus), lire la phrase affichée par la page puis les sorties ; modifier ensuite un seul paramètre à la fois entre son minimum et son maximum.",
+  "en": "Set the parameters to a preset (values above), read the sentence the page shows then the outputs; then change one parameter at a time between its minimum and maximum."
+ },
+ "exploration": [
+  {
+   "preset": "at-the-center-20-points",
+   "title": {
+    "fr": "Au centre, 20 points",
+    "en": "At the center, 20 points"
+   },
+   "set": {
+    "number-of-points-n": 20,
+    "residual-standard-deviation-se": 1,
+    "prediction-input-x0": 0
+   },
+   "observe": {
+    "fr": "Au centre du nuage, la moyenne est connue à ±0,47 ; une nouvelle observation à ±2,15 seulement.",
+    "en": "At the center of the scatter, the mean is known to ±0.47; a new observation only to ±2.15."
+   }
+  },
+  {
+   "preset": "many-points-100",
+   "title": {
+    "fr": "Beaucoup de points : 100",
+    "en": "Many points: 100"
+   },
+   "set": {
+    "number-of-points-n": 100
+   },
+   "observe": {
+    "fr": "La moyenne est bien estimée ; la prochaine observation garde sa dispersion propre, et son intervalle reste large.",
+    "en": "The mean is well estimated; the next observation keeps its own spread, and its interval stays wide."
+   }
+  },
+  {
+   "preset": "few-points-6",
+   "title": {
+    "fr": "Peu de points : 6",
+    "en": "Few points: 6"
+   },
+   "set": {},
+   "observe": {
+    "fr": null,
+    "en": "Few points: the Student quantile rises and both bands widen."
+   }
+  },
+  {
+   "preset": "at-the-observed-x-boundary",
+   "title": {
+    "fr": "À la limite des x observés",
+    "en": "At the observed x boundary"
+   },
+   "set": {
+    "prediction-input-x0": 2
+   },
+   "observe": {
+    "fr": "Au bord des données, l’incertitude sur la moyenne a grossi : la droite y est moins bien tenue.",
+    "en": "At the edge of the data, uncertainty on the mean has grown: the line is less well anchored there."
+   }
+  },
+  {
+   "preset": "extrapolation",
+   "title": {
+    "fr": "En extrapolation",
+    "en": "Extrapolation"
+   },
+   "set": {
+    "prediction-input-x0": 3.5
+   },
+   "observe": {
+    "fr": "Hors des x observés, les bandes supposent la droite toujours valable : elles ne mesurent pas ce risque.",
+    "en": "Outside the observed x, the bands assume the line still holds: they do not measure this risk."
+   }
+  }
+ ],
+ "concepts": [
+  "confidence-interval",
+  "prediction-interval"
+ ],
+ "extraction": {
+  "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
+  "roots": [
+   "#experience"
+  ],
+  "page_errors": [],
+  "fr_en_preset_consistency": {
+   "presets_compared": 6,
+   "presets_with_different_values_fr_vs_en": [
+    2
+   ]
+  }
+ }
+}

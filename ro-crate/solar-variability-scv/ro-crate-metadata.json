@@ -51,6 +51,9 @@
      "@id": "https://www.cyrilvoyant.com/fr/outils/variabilite-previsibilite/"
     },
     {
+     "@id": "https://www.cyrilvoyant.com/fr/projets-de-recherche/"
+    },
+    {
      "@id": "https://www.cyrilvoyant.com/fr/recits/evaluer-prevision-solaire-persistance/"
     },
     {
@@ -148,6 +151,11 @@
    "@id": "https://www.cyrilvoyant.com/fr/outils/variabilite-previsibilite/",
    "@type": "WebPage",
    "name": "www.cyrilvoyant.com/fr/outils/variabilite-previsibilite/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/fr/projets-de-recherche/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/fr/projets-de-recherche/"
   },
   {
    "@id": "https://www.cyrilvoyant.com/fr/recits/evaluer-prevision-solaire-persistance/",

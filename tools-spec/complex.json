@@ -1,0 +1,407 @@
+{
+ "id": "complex",
+ "schema": "https://www.cyrilvoyant.com/tools-spec.json#1.0",
+ "kind": "demo",
+ "domain": "energy",
+ "interface_language": "both",
+ "name": {
+  "fr": "Prévision complexe : régler α et la largeur des intervalles",
+  "en": "Complex-valued forecasting: set α and the interval width"
+ },
+ "url": {
+  "fr": "https://www.cyrilvoyant.com/fr/prevision-complexe/",
+  "en": "https://www.cyrilvoyant.com/complex-valued-forecasting/"
+ },
+ "page_title": {
+  "fr": "Prévoir l'éclairement et son incertitude avec des nombres complexes",
+  "en": "Forecasting irradiance and its uncertainty with complex numbers"
+ },
+ "computes": {
+  "fr": "Une autorégression complexe prévoit l’éclairement et sa volatilité. Régler α, la part de mesures laissée hors intervalle, et lire μ, le multiplicateur qui fixe la largeur, gaussien ou calibré ; résultats de l’article (2022).",
+  "en": "A complex autoregression forecasts irradiance and its volatility. Set α, the share of measurements left outside the interval, and read μ, the multiplier that sets the width, Gaussian or calibrated; results of the paper (2022)."
+ },
+ "summary": {
+  "fr": "Une seule autorégression complexe, six coefficients, prévoit en même temps l'éclairement et sa volatilité. Pour une couverture visée de 80 %, la couverture observée reste entre 79,5 et 80,7 % jusqu'à six heures, et ses intervalles sont plus étroits que ceux de la régression quantile à tous les horizons.",
+  "en": "A single complex autoregression, six coefficients, forecasts irradiance and its volatility at once. For a target coverage of 80%, the observed coverage stays between 79.5 and 80.7% up to six hours, and its intervals are narrower than those of quantile regression at every horizon."
+ },
+ "parameters": [
+  {
+   "id": "cx-a",
+   "type": "number",
+   "control": "range",
+   "min": 0.1,
+   "max": 0.9,
+   "step": 0.01,
+   "default": 0.2,
+   "label": {
+    "fr": "α, part laissée hors intervalle",
+    "en": "α, share left outside"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "unit_source": "no unit shown by the page"
+  },
+  {
+   "id": "cx-l",
+   "type": "integer",
+   "control": "range",
+   "min": 1,
+   "max": 6,
+   "step": 1,
+   "default": 1,
+   "label": {
+    "fr": "Horizon",
+    "en": "Horizon"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": {
+    "fr": "h",
+    "en": "h"
+   },
+   "unit_source": "display"
+  },
+  {
+   "id": "cx-s",
+   "type": "number",
+   "control": "range",
+   "min": 0.02,
+   "max": 0.2,
+   "step": 0.01,
+   "default": 0.1,
+   "label": {
+    "fr": "σ̂, volatilité prévue",
+    "en": "σ̂, forecast volatility"
+   },
+   "meaning": {
+    "fr": "la volatilité prévue, sans unité. Le curseur en donne des valeurs d'exemple ; dans la méthode, elle sort de l'autorégression à chaque instant.",
+    "en": "the forecast volatility, without unit. The slider gives example values; in the method, it comes out of the autoregression at each time."
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "unit_source": "no unit shown by the page"
+  }
+ ],
+ "presets": [
+  {
+   "id": "the-papers-setting",
+   "name": {
+    "fr": "Le réglage de l’article",
+    "en": "The paper’s setting"
+   },
+   "values": {
+    "cx-a": 0.2,
+    "cx-l": 1,
+    "cx-s": 0.1
+   },
+   "changes_vs_default": {},
+   "shows": {
+    "fr": "Le réglage étudié dans l’article : on vise 80 % des mesures dans l’intervalle, à 1 h. C’est celui du tableau de résultats plus bas.",
+    "en": "The setting studied in the paper: 80% of the measurements are targeted inside the interval, at 1 h. It is the one in the results table below."
+   }
+  },
+  {
+   "id": "same-coverage-at-6-h",
+   "name": {
+    "fr": "Même couverture, à 6 h",
+    "en": "Same coverage, at 6 h"
+   },
+   "values": {
+    "cx-a": 0.2,
+    "cx-l": 6,
+    "cx-s": 0.1
+   },
+   "changes_vs_default": {
+    "cx-l": 6
+   },
+   "shows": {
+    "fr": "Pour garder 80 % à 6 h plutôt qu’à 1 h, μ passe de 1,04 à 1,75 : à volatilité égale, l’intervalle s’élargit de 68 %.",
+    "en": "To keep 80% at 6 h rather than 1 h, μ goes from 1.04 to 1.75: for the same volatility, the interval widens by 68%."
+   }
+  },
+  {
+   "id": "demand-90",
+   "name": {
+    "fr": "Exiger 90 %",
+    "en": "Demand 90%"
+   },
+   "values": {
+    "cx-a": 0.1,
+    "cx-l": 1,
+    "cx-s": 0.1
+   },
+   "changes_vs_default": {
+    "cx-a": 0.1
+   },
+   "shows": {
+    "fr": "Dix points de couverture visée en plus coûtent 35 % de largeur à 1 h. C’est le calcul de μ : l’article n’a vérifié la couverture observée qu’à 80 %.",
+    "en": "Ten more points of target coverage cost 35% of width at 1 h. This is the calculation of μ: the paper only checked observed coverage at 80%."
+   }
+  },
+  {
+   "id": "calm-sky",
+   "name": {
+    "fr": "Ciel calme",
+    "en": "Calm sky"
+   },
+   "values": {
+    "cx-a": 0.2,
+    "cx-l": 1,
+    "cx-s": 0.02
+   },
+   "changes_vs_default": {
+    "cx-s": 0.02
+   },
+   "shows": {
+    "fr": "La volatilité prévue σ̂ est faible : l’intervalle se resserre. μ n’a pas bougé : seule la largeur change, en proportion de σ̂.",
+    "en": "The forecast volatility σ̂ is low: the interval narrows. μ has not moved: only the width changes, in proportion to σ̂."
+   }
+  },
+  {
+   "id": "unsettled-sky",
+   "name": {
+    "fr": "Ciel agité",
+    "en": "Unsettled sky"
+   },
+   "values": {
+    "cx-a": 0.2,
+    "cx-l": 1,
+    "cx-s": 0.2
+   },
+   "changes_vs_default": {
+    "cx-s": 0.2
+   },
+   "shows": {
+    "fr": "Après des heures instables, σ̂ monte et l’intervalle s’ouvre, sans rien changer d’autre. L’incertitude suit le temps qu’il fait : c’est l’intérêt de la méthode.",
+    "en": "After unstable hours, σ̂ rises and the interval opens, with nothing else changed. The uncertainty follows the weather: this is the point of the method."
+   }
+  }
+ ],
+ "actions": [],
+ "variants": [],
+ "outputs": [
+  {
+   "name": {
+    "fr": "Multiplicateur calibré sur les données, horizon 1 h",
+    "en": "Data-calibrated multiplier, horizon 1 h"
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "kind": "reading"
+  },
+  {
+   "name": {
+    "fr": "hypothèse gaussienne",
+    "en": "Gaussian assumption"
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "kind": "reading"
+  },
+  {
+   "name": {
+    "fr": "Intervalle : 500 ± μ × 800 × σ̂ = 500 ±",
+    "en": "Interval: 500 ± μ × 800 × σ̂ = 500 ±"
+   },
+   "unit": {
+    "fr": "W/m²",
+    "en": "W/m²"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "kind": "reading"
+  }
+ ],
+ "formulas": [
+  {
+   "text": "z = κ + j·στ"
+  },
+  {
+   "text": "ĜHI ± μ·GHICS·σ̂"
+  },
+  {
+   "text": "μ = f1·ef2·α"
+  },
+  {
+   "text": "μ = erf−1(1 − α)/√(1 − β)"
+  }
+ ],
+ "definitions": [
+  {
+   "term": "α",
+   "meaning": {
+    "fr": "la part des mesures qu'on accepte de laisser hors de l'intervalle. α = 0,2 : on vise 80 % de mesures dedans.",
+    "en": "the share of measurements allowed outside the interval. α = 0.2: 80% of measurements are targeted inside."
+   }
+  },
+  {
+   "term": "μ",
+   "meaning": {
+    "fr": "le nombre de σ̂ de chaque côté de la prévision. Il ne dépend pas de σ̂ : le curseur σ̂ ne déplace que la bande.",
+    "en": "the number of σ̂ on each side of the forecast. It does not depend on σ̂: the σ̂ slider only moves the band."
+   }
+  },
+  {
+   "term": "μ calibré",
+   "meaning": {
+    "fr": "μ = f1·ef2·α, avec deux constantes ajustées sur 2008-2017 pour chaque horizon.",
+    "en": "μ = f1·ef2·α, with two constants fitted on 2008–2017 for each horizon."
+   }
+  },
+  {
+   "term": "μ gaussien",
+   "meaning": {
+    "fr": "μ = erf−1(1 − α)/√(1 − β), où erf−1 vient de la loi normale et β = 0,38 mesure à quel point les fluctuations rapides de κ se ressemblent d'une heure à la suivante.",
+    "en": "μ = erf−1(1 − α)/√(1 − β), where erf−1 comes from the normal law and β = 0.38 measures how much the fast fluctuations of κ resemble each other from one hour to the next."
+   }
+  },
+  {
+   "term": "σ̂",
+   "meaning": {
+    "fr": "la volatilité prévue, sans unité. Le curseur en donne des valeurs d'exemple ; dans la méthode, elle sort de l'autorégression à chaque instant.",
+    "en": "the forecast volatility, without unit. The slider gives example values; in the method, it comes out of the autoregression at each time."
+   }
+  },
+  {
+   "term": "Bande",
+   "meaning": {
+    "fr": "un exemple avec ĜHI = 500 W/m² et GHICS = 800 W/m², le trait vertical à droite. La bande bleue suit le μ calibré, le cadre orange le μ gaussien à 1 h.",
+    "en": "an example with ĜHI = 500 W/m² and GHICS = 800 W/m², the vertical mark on the right. The blue band follows the calibrated μ, the orange frame the Gaussian μ at 1 h."
+   }
+  }
+ ],
+ "assumptions": {
+  "fr": [],
+  "en": []
+ },
+ "source": {
+  "dois": [
+   "10.1063/5.0128131"
+  ],
+  "repositories": [],
+  "related_pages": [
+   {
+    "href": "/fr/outils/comparateur-previsions/",
+    "text": "Comparer des prévisions : persistance, AR et ELM"
+   },
+   {
+    "href": "/fr/outils/variabilite-previsibilite/",
+    "text": "Mesurer variabilité et prévisibilité : sCV et F"
+   }
+  ]
+ },
+ "how_to_explore": {
+  "fr": "Régler les paramètres sur un préréglage (valeurs ci-dessus), lire la phrase affichée par la page puis les sorties ; modifier ensuite un seul paramètre à la fois entre son minimum et son maximum.",
+  "en": "Set the parameters to a preset (values above), read the sentence the page shows then the outputs; then change one parameter at a time between its minimum and maximum."
+ },
+ "exploration": [
+  {
+   "preset": "the-papers-setting",
+   "title": {
+    "fr": "Le réglage de l’article",
+    "en": "The paper’s setting"
+   },
+   "set": {
+    "cx-a": 0.2,
+    "cx-l": 1,
+    "cx-s": 0.1
+   },
+   "observe": {
+    "fr": "Le réglage étudié dans l’article : on vise 80 % des mesures dans l’intervalle, à 1 h. C’est celui du tableau de résultats plus bas.",
+    "en": "The setting studied in the paper: 80% of the measurements are targeted inside the interval, at 1 h. It is the one in the results table below."
+   }
+  },
+  {
+   "preset": "same-coverage-at-6-h",
+   "title": {
+    "fr": "Même couverture, à 6 h",
+    "en": "Same coverage, at 6 h"
+   },
+   "set": {
+    "cx-l": 6
+   },
+   "observe": {
+    "fr": "Pour garder 80 % à 6 h plutôt qu’à 1 h, μ passe de 1,04 à 1,75 : à volatilité égale, l’intervalle s’élargit de 68 %.",
+    "en": "To keep 80% at 6 h rather than 1 h, μ goes from 1.04 to 1.75: for the same volatility, the interval widens by 68%."
+   }
+  },
+  {
+   "preset": "demand-90",
+   "title": {
+    "fr": "Exiger 90 %",
+    "en": "Demand 90%"
+   },
+   "set": {
+    "cx-a": 0.1
+   },
+   "observe": {
+    "fr": "Dix points de couverture visée en plus coûtent 35 % de largeur à 1 h. C’est le calcul de μ : l’article n’a vérifié la couverture observée qu’à 80 %.",
+    "en": "Ten more points of target coverage cost 35% of width at 1 h. This is the calculation of μ: the paper only checked observed coverage at 80%."
+   }
+  },
+  {
+   "preset": "calm-sky",
+   "title": {
+    "fr": "Ciel calme",
+    "en": "Calm sky"
+   },
+   "set": {
+    "cx-s": 0.02
+   },
+   "observe": {
+    "fr": "La volatilité prévue σ̂ est faible : l’intervalle se resserre. μ n’a pas bougé : seule la largeur change, en proportion de σ̂.",
+    "en": "The forecast volatility σ̂ is low: the interval narrows. μ has not moved: only the width changes, in proportion to σ̂."
+   }
+  },
+  {
+   "preset": "unsettled-sky",
+   "title": {
+    "fr": "Ciel agité",
+    "en": "Unsettled sky"
+   },
+   "set": {
+    "cx-s": 0.2
+   },
+   "observe": {
+    "fr": "Après des heures instables, σ̂ monte et l’intervalle s’ouvre, sans rien changer d’autre. L’incertitude suit le temps qu’il fait : c’est l’intérêt de la méthode.",
+    "en": "After unstable hours, σ̂ rises and the interval opens, with nothing else changed. The uncertainty follows the weather: this is the point of the method."
+   }
+  }
+ ],
+ "concepts": [],
+ "extraction": {
+  "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
+  "roots": [
+   "#cx"
+  ],
+  "page_errors": [],
+  "fr_en_preset_consistency": {
+   "presets_compared": 5,
+   "presets_with_different_values_fr_vs_en": []
+  }
+ }
+}

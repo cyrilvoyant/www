@@ -1,0 +1,502 @@
+{
+ "id": "biot",
+ "schema": "https://www.cyrilvoyant.com/tools-spec.json#1.0",
+ "kind": "teaching",
+ "domain": "learning",
+ "interface_language": "both",
+ "name": {
+  "fr": "Refroidir un aliment : Biot, température moyenne et à cœur",
+  "en": "Cool a food: Biot number, mean and core temperature"
+ },
+ "url": {
+  "fr": "https://www.cyrilvoyant.com/fr/animations/refroidissement-biot/",
+  "en": "https://www.cyrilvoyant.com/tools/biot-cooling/"
+ },
+ "page_title": {
+  "fr": "Refroidissement d’un aliment : nombre de Biot et température à cœur",
+  "en": "Food cooling: Biot number and core temperature"
+ },
+ "computes": {
+  "fr": "Faire varier le coefficient de convection h, la conductivité thermique λ et la taille ; comparer le modèle à température uniforme et la température à cœur.",
+  "en": "Vary the convection coefficient h, the thermal conductivity λ and size; compare the uniform-temperature model with the core temperature."
+ },
+ "summary": {
+  "fr": "À Bi = 1, le modèle à température uniforme annonce 116 min pour rattraper 90 % de l’écart ; le cœur de l’aliment en demande 164. Vous savez quand une seule température suffit, et quand elle trompe.",
+  "en": "At Bi = 1, the uniform-temperature model announces 116 min to close 90% of the gap; the core of the food needs 164. You know when one temperature is enough, and when it misleads."
+ },
+ "parameters": [
+  {
+   "id": "convection-h",
+   "type": "integer",
+   "control": "range",
+   "min": 5,
+   "max": 300,
+   "step": 1,
+   "default": 25,
+   "label": {
+    "fr": "Convection h (W/m²·K)",
+    "en": "Convection h (W/m²·K)"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": {
+    "fr": "W/m²·K",
+    "en": "W/m²·K"
+   },
+   "unit_source": "label"
+  },
+  {
+   "id": "length-lc-v-a",
+   "type": "number",
+   "control": "range",
+   "min": 0.2,
+   "max": 10,
+   "step": 0.1,
+   "default": 2,
+   "label": {
+    "fr": "Longueur Lc = V/A (cm)",
+    "en": "Length Lc = V/A (cm)"
+   },
+   "meaning": {
+    "fr": "La longueur caractéristique : le volume divisé par la surface d’échange.",
+    "en": "The characteristic length: volume divided by heat-transfer area."
+   },
+   "unit": {
+    "fr": "cm",
+    "en": "cm"
+   },
+   "unit_source": "display"
+  },
+  {
+   "id": "conductivity",
+   "type": "number",
+   "control": "range",
+   "min": 0.1,
+   "max": 2,
+   "step": 0.05,
+   "default": 0.5,
+   "label": {
+    "fr": "Conductivité λ (W/m·K)",
+    "en": "Conductivity λ (W/m·K)"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": {
+    "fr": "W/m·K",
+    "en": "W/m·K"
+   },
+   "unit_source": "label"
+  },
+  {
+   "id": "initial-temperature-ti",
+   "type": "integer",
+   "control": "range",
+   "min": 0,
+   "max": 90,
+   "step": 1,
+   "default": 60,
+   "label": {
+    "fr": "Température initiale Ti",
+    "en": "Initial temperature Ti"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": {
+    "fr": "°C",
+    "en": "°C"
+   },
+   "unit_source": "display"
+  },
+  {
+   "id": "surroundings-t",
+   "type": "integer",
+   "control": "range",
+   "min": -30,
+   "max": 20,
+   "step": 1,
+   "default": 2,
+   "label": {
+    "fr": "Milieu extérieur T∞",
+    "en": "Surroundings T∞"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": {
+    "fr": "°C",
+    "en": "°C"
+   },
+   "unit_source": "display"
+  }
+ ],
+ "presets": [
+  {
+   "id": "thick-food-bi-1",
+   "name": {
+    "fr": "Aliment épais : Bi = 1",
+    "en": "Thick food: Bi = 1"
+   },
+   "values": {
+    "convection-h": 25,
+    "length-lc-v-a": 2,
+    "conductivity": 0.5,
+    "initial-temperature-ti": 60,
+    "surroundings-t": 2
+   },
+   "changes_vs_default": {},
+   "shows": {
+    "fr": "Le cœur reste nettement en retard sur la surface : une seule température tromperait.",
+    "en": "The core clearly lags behind the surface: a single temperature would mislead."
+   }
+  },
+  {
+   "id": "thin-slice-small-bi",
+   "name": {
+    "fr": "Tranche fine : Bi petit",
+    "en": "Thin slice: small Bi"
+   },
+   "values": {
+    "convection-h": 10,
+    "length-lc-v-a": 0.5,
+    "conductivity": 2,
+    "initial-temperature-ti": 60,
+    "surroundings-t": 2
+   },
+   "changes_vs_default": {
+    "convection-h": 10,
+    "length-lc-v-a": 0.5,
+    "conductivity": 2
+   },
+   "shows": {
+    "fr": "Les courbes se confondent : la température reste presque uniforme et le modèle simple suffit.",
+    "en": "The curves merge: temperature stays nearly uniform and the simple model is adequate."
+   }
+  },
+  {
+   "id": "only-conductivity-increases",
+   "name": {
+    "fr": "Seule la conductivité λ augmente",
+    "en": "Only conductivity λ increases"
+   },
+   "values": {
+    "convection-h": 25,
+    "length-lc-v-a": 2,
+    "conductivity": 2,
+    "initial-temperature-ti": 60,
+    "surroundings-t": 2
+   },
+   "changes_vs_default": {
+    "conductivity": 2
+   },
+   "shows": {
+    "fr": "Le temps du modèle simple ne bouge pas : c’est juste, λ n’y intervient pas. Seul le cœur se rapproche.",
+    "en": "The simple-model time does not move: this is correct, since λ is absent from it. Only the core gets closer."
+   }
+  },
+  {
+   "id": "strong-air-flow-h-100",
+   "name": {
+    "fr": "Air très brassé : h = 100",
+    "en": "Strong air flow: h = 100"
+   },
+   "values": {
+    "convection-h": 100,
+    "length-lc-v-a": 2,
+    "conductivity": 0.5,
+    "initial-temperature-ti": 60,
+    "surroundings-t": 2
+   },
+   "changes_vs_default": {
+    "convection-h": 100
+   },
+   "shows": {
+    "fr": "La surface refroidit vite, mais le cœur est limité par la conduction : Bi = 4.",
+    "en": "The surface cools fast, but the core is limited by conduction: Bi = 4."
+   }
+  },
+  {
+   "id": "large-piece-lc-6-cm",
+   "name": {
+    "fr": "Gros morceau : Lc = 6 cm",
+    "en": "Large piece: Lc = 6 cm"
+   },
+   "values": {
+    "convection-h": 25,
+    "length-lc-v-a": 6,
+    "conductivity": 0.5,
+    "initial-temperature-ti": 60,
+    "surroundings-t": 2
+   },
+   "changes_vs_default": {
+    "length-lc-v-a": 6
+   },
+   "shows": {
+    "fr": "Trois fois plus épais : le temps à cœur devient bien plus long que le modèle simple ne l’annonce.",
+    "en": "Three times thicker: the core time becomes much longer than the simple model announces."
+   }
+  },
+  {
+   "id": "warming-ti-below-t",
+   "name": {
+    "fr": "Réchauffement : Ti sous T∞",
+    "en": "Warming: Ti below T∞"
+   },
+   "values": {
+    "convection-h": 25,
+    "length-lc-v-a": 2,
+    "conductivity": 0.5,
+    "initial-temperature-ti": 2,
+    "surroundings-t": 20
+   },
+   "changes_vs_default": {
+    "initial-temperature-ti": 2,
+    "surroundings-t": 20
+   },
+   "shows": {
+    "fr": "Mêmes équations, écart de signe opposé : l’aliment se réchauffe.",
+    "en": "Same equations, opposite gap: the food warms up."
+   }
+  }
+ ],
+ "actions": [],
+ "variants": [],
+ "outputs": [
+  {
+   "name": {
+    "fr": "Bi",
+    "en": "Bi"
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "kind": "reading"
+  },
+  {
+   "name": {
+    "fr": "90 % de l'écart rattrapé",
+    "en": "90% of the temperature gap covered"
+   },
+   "unit": {
+    "fr": "min",
+    "en": "min"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "kind": "reading"
+  },
+  {
+   "name": {
+    "fr": "selon le modèle simple,",
+    "en": "in the simple model,"
+   },
+   "unit": {
+    "fr": "min",
+    "en": "min"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "kind": "reading"
+  }
+ ],
+ "formulas": [
+  {
+   "text": "Bi = hL_c/λ"
+  },
+  {
+   "text": "T(t) = T_∞ + (T_i − T_∞)e^( − t/τ)"
+  },
+  {
+   "text": "τ = mc_p/hA"
+  }
+ ],
+ "definitions": [
+  {
+   "term": "Bi",
+   "meaning": {
+    "fr": "Le nombre de Biot : la résistance de conduction interne comparée à la résistance de convection en surface.",
+    "en": "The Biot number: internal conduction resistance compared with surface convection resistance."
+   }
+  },
+  {
+   "term": "h",
+   "meaning": {
+    "fr": "Le coefficient de convection en surface.",
+    "en": "The surface convection coefficient."
+   }
+  },
+  {
+   "term": "Lc",
+   "meaning": {
+    "fr": "La longueur caractéristique : le volume divisé par la surface d’échange.",
+    "en": "The characteristic length: volume divided by heat-transfer area."
+   }
+  },
+  {
+   "term": "λ",
+   "meaning": {
+    "fr": "La conductivité thermique de l’aliment.",
+    "en": "The thermal conductivity of the food."
+   }
+  },
+  {
+   "term": "T(t), Ti, T∞",
+   "meaning": {
+    "fr": "La température au temps t, la température initiale et celle du milieu extérieur.",
+    "en": "Temperature at time t, the initial temperature and that of the surrounding medium."
+   }
+  },
+  {
+   "term": "τ, m, cp, A",
+   "meaning": {
+    "fr": "Le temps caractéristique du modèle uniforme, la masse, la capacité thermique massique et la surface d’échange.",
+    "en": "The time constant of the uniform model, mass, specific heat capacity and heat-transfer area."
+   }
+  },
+  {
+   "term": "Que veut dire chaque symbole ?",
+   "meaning": {
+    "fr": "Bi = h·Lc/λ. h décrit la convection en surface, λ la conductivité thermique et Lc = V/A la longueur caractéristique (volume divisé par la surface d’échange). Ti est la température initiale et T∞ celle du milieu extérieur. Modèle uniforme : T(t) = T∞ + (Ti − T∞)·e^(−t/τ), τ = ρ·cp·Lc/h, avec la masse volumique ρ, la capacité thermique massique cp et le temps caractéristique τ. Courbes à cœur et en surface : conduction transitoire dans une plaque d’épaisseur 2·Lc (premier terme de la série). Fo est le nombre de Fourier : le temps écoulé rapporté à l’échelle de diffusion interne.",
+    "en": "Bi = h·Lc/λ. h describes surface convection, λ thermal conductivity and Lc = V/A the characteristic length (volume divided by exchange area). Ti is the initial temperature and T∞ the surrounding temperature. Uniform model: T(t) = T∞ + (Ti − T∞)·e^(−t/τ), τ = ρ·cp·Lc/h, with density ρ, specific heat capacity cp and time constant τ. Core and surface curves: transient conduction through a slab of thickness 2·Lc (first series term). Fo is the Fourier number: elapsed time compared with the internal diffusion timescale."
+   }
+  }
+ ],
+ "assumptions": {
+  "fr": [
+   "Bi < 0,1 est un repère. La courbe à cœur prend le premier terme de conduction dans une plaque, valable après les tout premiers instants ; propriétés et convection constantes, sans changement de phase. Ce n’est pas la validation d’un procédé sanitaire."
+  ],
+  "en": [
+   "Bi < 0.1 is a guide. The core curve uses the first conduction term for a slab, valid after the earliest instants; properties and convection are constant, with no phase change. This does not validate a food-safety process."
+  ]
+ },
+ "source": {
+  "dois": [],
+  "repositories": [],
+  "related_pages": [
+   {
+    "href": "/fr/enseignement/bases-thermiques-aliments/cours/",
+    "text": "Le chapitre complet du cours"
+   },
+   {
+    "href": "/fr/animations/congelation-energie-puissance/",
+    "text": "La congélation : l’énergie et la puissance à prévoir"
+   },
+   {
+    "href": "/fr/animations/cop-carnot-machine-frigorifique/",
+    "text": "La machine frigorifique : le travail nécessaire pour extraire cette chaleur"
+   }
+  ]
+ },
+ "how_to_explore": {
+  "fr": "Régler les paramètres sur un préréglage (valeurs ci-dessus), lire la phrase affichée par la page puis les sorties ; modifier ensuite un seul paramètre à la fois entre son minimum et son maximum.",
+  "en": "Set the parameters to a preset (values above), read the sentence the page shows then the outputs; then change one parameter at a time between its minimum and maximum."
+ },
+ "exploration": [
+  {
+   "preset": "thick-food-bi-1",
+   "title": {
+    "fr": "Aliment épais : Bi = 1",
+    "en": "Thick food: Bi = 1"
+   },
+   "set": {
+    "convection-h": 25,
+    "length-lc-v-a": 2,
+    "conductivity": 0.5,
+    "initial-temperature-ti": 60,
+    "surroundings-t": 2
+   },
+   "observe": {
+    "fr": "Le cœur reste nettement en retard sur la surface : une seule température tromperait.",
+    "en": "The core clearly lags behind the surface: a single temperature would mislead."
+   }
+  },
+  {
+   "preset": "thin-slice-small-bi",
+   "title": {
+    "fr": "Tranche fine : Bi petit",
+    "en": "Thin slice: small Bi"
+   },
+   "set": {
+    "convection-h": 10,
+    "length-lc-v-a": 0.5,
+    "conductivity": 2
+   },
+   "observe": {
+    "fr": "Les courbes se confondent : la température reste presque uniforme et le modèle simple suffit.",
+    "en": "The curves merge: temperature stays nearly uniform and the simple model is adequate."
+   }
+  },
+  {
+   "preset": "only-conductivity-increases",
+   "title": {
+    "fr": "Seule la conductivité λ augmente",
+    "en": "Only conductivity λ increases"
+   },
+   "set": {
+    "conductivity": 2
+   },
+   "observe": {
+    "fr": "Le temps du modèle simple ne bouge pas : c’est juste, λ n’y intervient pas. Seul le cœur se rapproche.",
+    "en": "The simple-model time does not move: this is correct, since λ is absent from it. Only the core gets closer."
+   }
+  },
+  {
+   "preset": "large-piece-lc-6-cm",
+   "title": {
+    "fr": "Gros morceau : Lc = 6 cm",
+    "en": "Large piece: Lc = 6 cm"
+   },
+   "set": {
+    "length-lc-v-a": 6
+   },
+   "observe": {
+    "fr": "Trois fois plus épais : le temps à cœur devient bien plus long que le modèle simple ne l’annonce.",
+    "en": "Three times thicker: the core time becomes much longer than the simple model announces."
+   }
+  },
+  {
+   "preset": "warming-ti-below-t",
+   "title": {
+    "fr": "Réchauffement : Ti sous T∞",
+    "en": "Warming: Ti below T∞"
+   },
+   "set": {
+    "initial-temperature-ti": 2,
+    "surroundings-t": 20
+   },
+   "observe": {
+    "fr": "Mêmes équations, écart de signe opposé : l’aliment se réchauffe.",
+    "en": "Same equations, opposite gap: the food warms up."
+   }
+  }
+ ],
+ "concepts": [
+  "biot-number"
+ ],
+ "extraction": {
+  "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
+  "roots": [
+   "#experience"
+  ],
+  "page_errors": [],
+  "fr_en_preset_consistency": {
+   "presets_compared": 6,
+   "presets_with_different_values_fr_vs_en": []
+  }
+ }
+}

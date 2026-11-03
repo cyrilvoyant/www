@@ -1,0 +1,238 @@
+{
+ "id": "proba",
+ "schema": "https://www.cyrilvoyant.com/tools-spec.json#1.0",
+ "kind": "demo",
+ "domain": "energy",
+ "interface_language": "both",
+ "name": {
+  "fr": "Observer la prévision probabiliste et sa table de correspondance",
+  "en": "Watch probabilistic forecasting and its lookup table"
+ },
+ "url": {
+  "fr": "https://www.cyrilvoyant.com/fr/#proba-race",
+  "en": "https://www.cyrilvoyant.com/#proba-race"
+ },
+ "page_title": {
+  "fr": "Cyril Voyant",
+  "en": "Cyril Voyant"
+ },
+ "computes": {
+  "fr": "Lire les bandes ELM/persistance, la couverture (PICP : part des mesures dans la bande) et la largeur moyenne de la bande (MIL) sur trois jours sélectionnés.",
+  "en": "Read ELM/persistence bands, coverage (PICP: share of measurements inside the band) and mean band width (MIL) on three selected days."
+ },
+ "summary": {
+  "fr": "Je construis des modèles physiques et statistiques pour éclairer des décisions en énergie et en médecine. Je pars de la question, des connaissances et des données disponibles, puis je choisis les outils.",
+  "en": "I build physical and statistical models to help inform decisions in energy and medicine. I start with the question, existing knowledge and available data, then choose the tools."
+ },
+ "parameters": [
+  {
+   "id": "position-in-the-three-days",
+   "type": "integer",
+   "control": "range",
+   "min": 0,
+   "max": 143,
+   "step": null,
+   "default": 0,
+   "label": {
+    "fr": "Position dans les trois jours",
+    "en": "Position in the three days"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "unit_source": "no unit shown by the page"
+  }
+ ],
+ "presets": [],
+ "actions": [
+  {
+   "name": {
+    "fr": "Lecture",
+    "en": "Play"
+   }
+  }
+ ],
+ "variants": [],
+ "outputs": [
+  {
+   "name": {
+    "fr": "ELM",
+    "en": "ELM"
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": "Score d’intervalle à 90 % : largeur et pénalité en cas de dépassement (plus bas = meilleur)",
+    "en": "90% interval score: width and penalty for observations outside the interval (lower is better)"
+   },
+   "kind": "metric"
+  },
+  {
+   "name": {
+    "fr": "Persistance",
+    "en": "Persistence"
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": "Score d’intervalle à 90 % : largeur et pénalité en cas de dépassement (plus bas = meilleur)",
+    "en": "90% interval score: width and penalty for observations outside the interval (lower is better)"
+   },
+   "kind": "metric"
+  }
+ ],
+ "formulas": [],
+ "definitions": [
+  {
+   "term": "Prévision déterministe ŷ",
+   "meaning": {
+    "fr": "Une seule valeur prévue, la ligne pleine de chaque modèle.",
+    "en": "A single forecast value, the solid line of each model."
+   }
+  },
+  {
+   "term": "Intervalle de prévision",
+   "meaning": {
+    "fr": "Une fourchette [borne inférieure, borne supérieure] qui doit contenir l’observation avec une probabilité annoncée : les bandes colorées.",
+    "en": "A range [lower bound, upper bound] that should contain the observation with a stated probability: the coloured bands."
+   }
+  },
+  {
+   "term": "Couverture nominale (1 − α)",
+   "meaning": {
+    "fr": "La probabilité visée : 50 % pour la bande foncée, 90 % pour la bande claire (α = 0,1).",
+    "en": "The target probability: 50% for the dark band, 90% for the light band (α = 0.1)."
+   }
+  },
+  {
+   "term": "σ, écart-type des résidus",
+   "meaning": {
+    "fr": "L’erreur typique du modèle, mesurée sur la période d’entraînement, une valeur par modèle et par horizon.",
+    "en": "The model’s typical error, measured on the training period, one value per model and horizon."
+   }
+  },
+  {
+   "term": "Facteur k et table de correspondance (LUT)",
+   "meaning": {
+    "fr": "La table donne, pour chaque couverture visée, le multiple de σ à prendre : intervalle = ŷ ± k·σ. On la construit une fois, sur l’entraînement, sans supposer d’erreurs gaussiennes (pour des erreurs gaussiennes, k ≈ 1,64 à 90 %).",
+    "en": "For each target coverage, the table gives the multiple of σ to use: interval = ŷ ± k·σ. It is built once, on training data, without assuming Gaussian errors (for Gaussian errors, k ≈ 1.64 at 90%)."
+   }
+  },
+  {
+   "term": "Borne inférieure ≥ 0",
+   "meaning": {
+    "fr": "La puissance d’une centrale est positive ou nulle : une borne sous zéro n’aurait pas de sens physique, on la ramène à 0.",
+    "en": "A plant’s power is zero or positive: a bound below zero has no physical meaning, so it is raised to 0."
+   }
+  },
+  {
+   "term": "PICP (Prediction Interval Coverage Probability)",
+   "meaning": {
+    "fr": "La couverture observée : la part des observations qui tombent dans l’intervalle. Un intervalle à 90 % est fiable si son PICP est proche de 90 %.",
+    "en": "Observed coverage: the share of observations falling inside the interval. A 90% interval is reliable if its PICP is close to 90%."
+   }
+  },
+  {
+   "term": "MIL (Mean Interval Length)",
+   "meaning": {
+    "fr": "La largeur moyenne de l’intervalle, en kW. À couverture égale, plus étroit est plus utile : c’est la finesse.",
+    "en": "Mean interval width, in kW. At equal coverage, narrower is more useful: this is sharpness."
+   }
+  },
+  {
+   "term": "Score d’intervalle",
+   "meaning": {
+    "fr": "Largeur de l’intervalle plus une pénalité de 2/α = 20 fois l’écart quand l’observation sort de l’intervalle : il récompense à la fois la fiabilité et la finesse, plus bas est meilleur.",
+    "en": "Interval width plus a penalty of 2/α = 20 times the miss when the observation falls outside: it rewards both reliability and sharpness; lower is better."
+   }
+  },
+  {
+   "term": "Persistance",
+   "meaning": {
+    "fr": "La référence la plus simple : demain ressemble à maintenant, la prévision est la dernière valeur observée.",
+    "en": "The simplest reference: the near future looks like now, the forecast is the last observed value."
+   }
+  },
+  {
+   "term": "ELM (Extreme Learning Machine)",
+   "meaning": {
+    "fr": "Un réseau de neurones à une couche cachée dont les poids d’entrée sont tirés au hasard et seuls les poids de sortie sont appris, par moindres carrés régularisés : rapide et frugal.",
+    "en": "A one-hidden-layer neural network whose input weights are drawn at random and only output weights are learned, by regularized least squares: fast and frugal."
+   }
+  }
+ ],
+ "assumptions": {
+  "fr": [],
+  "en": []
+ },
+ "source": {
+  "dois": [
+   "10.1016/j.solener.2025.113490",
+   "10.5281/zenodo.21487267"
+  ],
+  "repositories": [
+   "https://github.com/cyrilvoyant/PV_ELM_pred"
+  ],
+  "related_pages": [
+   {
+    "href": "/fr/recits/variabilite-memoire-previsibilite/",
+    "text": "Quelle prévision pour quel signal ?"
+   },
+   {
+    "href": "/fr/recits/neutrons-atmospheriques-bnct/",
+    "text": "Neutrons atmosphériques et BNCT : quantifier la limite"
+   },
+   {
+    "href": "/fr/recits/lql-equiv/",
+    "text": "Calculer plutôt qu'apprendre : l'équivalence de dose en radiothérapie"
+   },
+   {
+    "href": "/fr/recits/tunnel-load-simulator/",
+    "text": "Simuler ce que l'on ne peut pas encore mesurer : les tunnels routiers"
+   },
+   {
+    "href": "/fr/actualites/why-forecast-solar-power/",
+    "text": "Le ciel change, mais à quel point reste-t-il prévisible ?"
+   },
+   {
+    "href": "/fr/recits/thyroid-radioiodine/",
+    "text": "Cancer de la thyroïde et iode radioactif : le modèle d'abord"
+   },
+   {
+    "href": "/fr/actualites/forecasting-with-less/",
+    "text": "Une meilleure persistance, sans entraîner un réseau neuronal"
+   },
+   {
+    "href": "/fr/actualites/why-extreme-learning-machines/",
+    "text": "Sept sorties, six ans de données : ce que montre MIMO-ELM"
+   }
+  ]
+ },
+ "how_to_explore": {
+  "fr": "Régler les paramètres sur un préréglage (valeurs ci-dessus), lire la phrase affichée par la page puis les sorties ; modifier ensuite un seul paramètre à la fois entre son minimum et son maximum.",
+  "en": "Set the parameters to a preset (values above), read the sentence the page shows then the outputs; then change one parameter at a time between its minimum and maximum."
+ },
+ "exploration": [],
+ "concepts": [
+  "persistence",
+  "elm",
+  "prediction-interval"
+ ],
+ "extraction": {
+  "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
+  "roots": [
+   "#proba-race"
+  ],
+  "page_errors": [],
+  "fr_en_preset_consistency": null
+ }
+}

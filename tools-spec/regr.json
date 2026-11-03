@@ -1,0 +1,382 @@
+{
+ "id": "regr",
+ "schema": "https://www.cyrilvoyant.com/tools-spec.json#1.0",
+ "kind": "teaching",
+ "domain": "learning",
+ "interface_language": "both",
+ "name": {
+  "fr": "Corrélation et régression : déplacer un point",
+  "en": "Correlation and regression: move a point"
+ },
+ "url": {
+  "fr": "https://www.cyrilvoyant.com/fr/animations/point-influent-regression/",
+  "en": "https://www.cyrilvoyant.com/tools/influential-point-regression/"
+ },
+ "page_title": {
+  "fr": "Régression et point influent : déplacer une observation",
+  "en": "Regression and an influential point: move an observation"
+ },
+ "computes": {
+  "fr": "Déplacer un point aberrant et voir le coefficient de corrélation r, la droite des moindres carrés et la p-value changer.",
+  "en": "Move an outlier and watch the correlation coefficient r, the least-squares line and the p-value change."
+ },
+ "summary": {
+  "fr": "Dans cet exemple, ajouter un seul point éloigné fait tomber la corrélation de 0,948 à 0,348. Vous prenez le réflexe de regarder le nuage avant de conclure.",
+  "en": "In this example, adding one distant point makes the correlation fall from 0.948 to 0.348. You get into the habit of looking at the scatter before concluding."
+ },
+ "parameters": [
+  {
+   "id": "orange-point-x",
+   "type": "number",
+   "control": "range",
+   "min": 0,
+   "max": 10,
+   "step": 0.1,
+   "default": 9.5,
+   "label": {
+    "fr": "x du point orange",
+    "en": "Orange point x"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "unit_source": "no unit shown by the page"
+  },
+  {
+   "id": "orange-point-y",
+   "type": "number",
+   "control": "range",
+   "min": 0,
+   "max": 10,
+   "step": 0.1,
+   "default": 1,
+   "label": {
+    "fr": "y du point orange",
+    "en": "Orange point y"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "unit_source": "no unit shown by the page"
+  },
+  {
+   "id": "include-the-orange-point",
+   "type": "boolean",
+   "control": "checkbox",
+   "default": true,
+   "label": {
+    "fr": "Inclure le point orange",
+    "en": "Include the orange point"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": null
+  }
+ ],
+ "presets": [
+  {
+   "id": "far-in-x-off-the-trend",
+   "name": {
+    "fr": "Loin en x, hors tendance",
+    "en": "Far in x, off the trend"
+   },
+   "values": {
+    "orange-point-x": 9.5,
+    "orange-point-y": 1,
+    "include-the-orange-point": true
+   },
+   "changes_vs_default": {},
+   "shows": {
+    "fr": "Le point tire la droite vers lui : la pente et r chutent. C’est l’effet de levier.",
+    "en": "The point pulls the line towards it: the slope and r fall. This is leverage."
+   }
+  },
+  {
+   "id": "far-in-x-on-the-trend",
+   "name": {
+    "fr": "Loin en x, dans la tendance",
+    "en": "Far in x, on the trend"
+   },
+   "values": {
+    "orange-point-x": 9.5,
+    "orange-point-y": 7.5,
+    "include-the-orange-point": true
+   },
+   "changes_vs_default": {
+    "orange-point-y": 7.5
+   },
+   "shows": {
+    "fr": "Même éloignement, mais il confirme la relation : la droite ne bouge presque pas et r monte. Éloigné ne veut pas dire influent.",
+    "en": "Same distance, but it confirms the relationship: the line hardly moves and r rises. Far away does not mean influential."
+   }
+  },
+  {
+   "id": "at-the-center-off-the-trend",
+   "name": {
+    "fr": "Au centre, hors tendance",
+    "en": "At the center, off the trend"
+   },
+   "values": {
+    "orange-point-x": 4.5,
+    "orange-point-y": 9,
+    "include-the-orange-point": true
+   },
+   "changes_vs_default": {
+    "orange-point-x": 4.5,
+    "orange-point-y": 9
+   },
+   "shows": {
+    "fr": "Grand écart vertical, peu de levier : la pente bouge peu, mais r baisse quand même.",
+    "en": "Large vertical gap, little leverage: the slope barely moves, but r still falls."
+   }
+  },
+  {
+   "id": "without-the-orange-point",
+   "name": {
+    "fr": "Sans le point orange",
+    "en": "Without the orange point"
+   },
+   "values": {
+    "orange-point-x": 9.5,
+    "orange-point-y": 1,
+    "include-the-orange-point": false
+   },
+   "changes_vs_default": {
+    "include-the-orange-point": false
+   },
+   "shows": {
+    "fr": "Les douze points seuls : c’est la droite grise de référence.",
+    "en": "The twelve points alone: this is the grey reference line."
+   }
+  }
+ ],
+ "actions": [],
+ "variants": [],
+ "outputs": [
+  {
+   "name": {
+    "fr": "r",
+    "en": "r"
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "kind": "reading"
+  },
+  {
+   "name": {
+    "fr": "r²",
+    "en": "r²"
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "kind": "reading"
+  },
+  {
+   "name": {
+    "fr": "p",
+    "en": "p"
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "kind": "reading"
+  }
+ ],
+ "formulas": [
+  {
+   "text": "b_1 = (cov(x,y))/(s_x^2)"
+  },
+  {
+   "text": "b_0 = ȳ − b_1x̄"
+  },
+  {
+   "text": "r = (cov(x,y))/s_xs_y"
+  }
+ ],
+ "definitions": [
+  {
+   "term": "b₁, b₀",
+   "meaning": {
+    "fr": "La pente et l’ordonnée à l’origine de la droite des moindres carrés.",
+    "en": "The slope and the intercept of the least-squares line."
+   }
+  },
+  {
+   "term": "x̄, ȳ",
+   "meaning": {
+    "fr": "Les moyennes de x et de y.",
+    "en": "The means of x and y."
+   }
+  },
+  {
+   "term": "sₓ, sᵧ",
+   "meaning": {
+    "fr": "Les écarts-types de x et de y.",
+    "en": "The standard deviations of x and y."
+   }
+  },
+  {
+   "term": "cov(x, y)",
+   "meaning": {
+    "fr": "La covariance : leur variation commune.",
+    "en": "The covariance: how x and y vary together."
+   }
+  },
+  {
+   "term": "r",
+   "meaning": {
+    "fr": "La corrélation de Pearson. Voir corrélation, significativité et R².",
+    "en": "Pearson correlation. See correlation, significance and R²."
+   }
+  },
+  {
+   "term": "Levier",
+   "meaning": {
+    "fr": "Le poids potentiel d’un point sur la droite, d’autant plus grand qu’il est loin en x.",
+    "en": "The potential weight of a point on the line, greater the farther it lies in x."
+   }
+  },
+  {
+   "term": "Que veut dire chaque symbole ?",
+   "meaning": {
+    "fr": "x et y sont les deux coordonnées d’un point. r = cov(x, y)/(sx·sy) est leur corrélation de Pearson, cov leur covariance et sx et sy leurs écarts-types. La droite des moindres carrés est y = b₀ + b₁·x, de pente b₁ et d’ordonnée à l’origine b₀. n est le nombre de points inclus et t = r·√(n − 2)/√(1 − r²) la statistique du test de corrélation nulle, à n − 2 degrés de liberté (ddl). r² décrit la variation expliquée par cette droite ; la p-value n’établit ni causalité ni performance prédictive future.",
+    "en": "x and y are the two coordinates of a point. r = cov(x, y)/(sx·sy) is their Pearson correlation, cov their covariance, and sx and sy their standard deviations. The least-squares line is y = b₀ + b₁·x, with slope b₁ and intercept b₀. n is the number of included points and t = r·√(n − 2)/√(1 − r²) the zero-correlation test statistic, with n − 2 degrees of freedom (df). r² describes variation explained by this line; the p-value establishes neither causality nor future predictive performance."
+   }
+  }
+ ],
+ "assumptions": {
+  "fr": [
+   "Points d’enseignement, pas données de recherche. Toujours examiner le nuage et les résidus : un coefficient seul ne montre pas un point influent."
+  ],
+  "en": [
+   "Teaching points, not research data. Always inspect the scatter and residuals: a coefficient alone does not reveal an influential point."
+  ]
+ },
+ "source": {
+  "dois": [],
+  "repositories": [],
+  "related_pages": [
+   {
+    "href": "/fr/enseignement/biostatistique/correlation-regression/",
+    "text": "Le chapitre complet du cours"
+   },
+   {
+    "href": "/fr/animations/correlation-significativite-r2/",
+    "text": "Corrélation, significativité et R² : ne pas les confondre"
+   },
+   {
+    "href": "/fr/animations/intervalles-regression/",
+    "text": "Les intervalles de régression : l’incertitude autour de la droite"
+   }
+  ]
+ },
+ "how_to_explore": {
+  "fr": "Régler les paramètres sur un préréglage (valeurs ci-dessus), lire la phrase affichée par la page puis les sorties ; modifier ensuite un seul paramètre à la fois entre son minimum et son maximum.",
+  "en": "Set the parameters to a preset (values above), read the sentence the page shows then the outputs; then change one parameter at a time between its minimum and maximum."
+ },
+ "exploration": [
+  {
+   "preset": "far-in-x-off-the-trend",
+   "title": {
+    "fr": "Loin en x, hors tendance",
+    "en": "Far in x, off the trend"
+   },
+   "set": {
+    "orange-point-x": 9.5,
+    "orange-point-y": 1,
+    "include-the-orange-point": true
+   },
+   "observe": {
+    "fr": "Le point tire la droite vers lui : la pente et r chutent. C’est l’effet de levier.",
+    "en": "The point pulls the line towards it: the slope and r fall. This is leverage."
+   }
+  },
+  {
+   "preset": "far-in-x-on-the-trend",
+   "title": {
+    "fr": "Loin en x, dans la tendance",
+    "en": "Far in x, on the trend"
+   },
+   "set": {
+    "orange-point-y": 7.5
+   },
+   "observe": {
+    "fr": "Même éloignement, mais il confirme la relation : la droite ne bouge presque pas et r monte. Éloigné ne veut pas dire influent.",
+    "en": "Same distance, but it confirms the relationship: the line hardly moves and r rises. Far away does not mean influential."
+   }
+  },
+  {
+   "preset": "at-the-center-off-the-trend",
+   "title": {
+    "fr": "Au centre, hors tendance",
+    "en": "At the center, off the trend"
+   },
+   "set": {
+    "orange-point-x": 4.5,
+    "orange-point-y": 9
+   },
+   "observe": {
+    "fr": "Grand écart vertical, peu de levier : la pente bouge peu, mais r baisse quand même.",
+    "en": "Large vertical gap, little leverage: the slope barely moves, but r still falls."
+   }
+  },
+  {
+   "preset": "without-the-orange-point",
+   "title": {
+    "fr": "Sans le point orange",
+    "en": "Without the orange point"
+   },
+   "set": {
+    "include-the-orange-point": false
+   },
+   "observe": {
+    "fr": "Les douze points seuls : c’est la droite grise de référence.",
+    "en": "The twelve points alone: this is the grey reference line."
+   }
+  }
+ ],
+ "concepts": [
+  "p-value",
+  "influential-point"
+ ],
+ "extraction": {
+  "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
+  "roots": [
+   "#experience"
+  ],
+  "page_errors": [],
+  "fr_en_preset_consistency": {
+   "presets_compared": 4,
+   "presets_with_different_values_fr_vs_en": []
+  }
+ }
+}

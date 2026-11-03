@@ -1,0 +1,489 @@
+{
+ "id": "blend",
+ "schema": "https://www.cyrilvoyant.com/tools-spec.json#1.0",
+ "kind": "calculator",
+ "domain": "energy",
+ "interface_language": "both",
+ "name": {
+  "fr": "Calculer les poids de BLEND",
+  "en": "Compute BLEND weights"
+ },
+ "url": {
+  "fr": "https://www.cyrilvoyant.com/fr/outils/blend/#try-it",
+  "en": "https://cyrilvoyant.github.io/methods/persistence-blend.html#try-it"
+ },
+ "page_title": {
+  "fr": "Calculer les poids de BLEND",
+  "en": "BLEND and CLIPER: cyclostationary persistence references for solar forecasting"
+ },
+ "computes": {
+  "fr": "BLEND est une combinaison convexe de la persistance et de la persistance cyclique. Voir les poids calculés sur une série temporelle.",
+  "en": "BLEND is a convex combination of persistence and cyclic persistence. See the weights computed on a time series."
+ },
+ "summary": {
+  "fr": "Deux références gratuites, et leur mélange fait mieux que chacune : sur la puissance PV de Palaiseau à 1 heure, BLEND fait 17 % de RMSE en moins que la meilleure des deux. Son principe : un poids pour chaque moment du cycle.",
+  "en": "With a clear-sky reference, CLIPER on x/CS beats BLEND on x/CS at all horizons across all test days combined, by 1 to 2 %, and it is simpler. BLEND wins only on stable days, a class known only after the fact."
+ },
+ "parameters": [
+  {
+   "id": "bl-h",
+   "type": "integer",
+   "control": "range",
+   "min": 1,
+   "max": 24,
+   "step": 1,
+   "default": 1,
+   "label": {
+    "fr": "Horizon h",
+    "en": "Horizon h steps"
+   },
+   "meaning": {
+    "fr": "Nombre de pas entre la dernière valeur connue et la valeur à prévoir.",
+    "en": null
+   },
+   "unit": {
+    "fr": "pas",
+    "en": "pas"
+   },
+   "unit_source": "display"
+  },
+  {
+   "id": "bl-ph",
+   "type": "integer",
+   "control": "range",
+   "min": 1,
+   "max": 24,
+   "step": 1,
+   "default": 7,
+   "label": {
+    "fr": "Phase",
+    "en": "Phase of the origin"
+   },
+   "meaning": {
+    "fr": "Le moment du cycle où part la prévision : ici l’heure de la journée. BLEND a un poids par phase.",
+    "en": null
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "unit_source": "no unit shown by the page"
+  },
+  {
+   "id": "bl-l",
+   "type": "number",
+   "control": "range",
+   "min": 0,
+   "max": 1,
+   "step": 0.01,
+   "default": 0.5,
+   "label": {
+    "fr": "Votre λ",
+    "en": "Your λ"
+   },
+   "meaning": {
+    "fr": "Le poids de la dernière valeur. λ = 1 : persistance. λ = 0 : persistance cyclique. Entre les deux : un mélange.",
+    "en": null
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "unit_source": "no unit shown by the page"
+  },
+  {
+   "id": "bl-w",
+   "type": "integer",
+   "control": "range",
+   "min": 1,
+   "max": 16,
+   "step": 1,
+   "default": 1,
+   "label": {
+    "fr": "Fenêtre affichée",
+    "en": "Window shown (period)"
+   },
+   "meaning": {
+    "fr": "Change seulement les trois périodes montrées sur le premier graphique. Aucun résultat chiffré n’en dépend.",
+    "en": null
+   },
+   "unit": {
+    "fr": "period",
+    "en": "period"
+   },
+   "unit_source": "label"
+  },
+  {
+   "id": "bl-T",
+   "type": "integer",
+   "control": "number",
+   "min": 2,
+   "max": null,
+   "step": 1,
+   "default": 24,
+   "label": {
+    "fr": "Période T (pas)",
+    "en": "Period T (steps)"
+   },
+   "meaning": {
+    "fr": "Nombre de pas dans un cycle : 24 pour une journée au pas horaire, 48 au pas de 30 min.",
+    "en": null
+   },
+   "unit": {
+    "fr": "pas",
+    "en": "pas"
+   },
+   "unit_source": "label"
+  },
+  {
+   "id": "bl-d",
+   "type": "text",
+   "control": "textarea",
+   "default": null,
+   "lines": 480,
+   "preview": "220 / 443.3 / 571.6",
+   "label": {
+    "fr": "Une colonne, une ligne par pas de temps, régulièrement échantillonnée. Il faut au moins trois périodes.",
+    "en": "One column: the signal, regularly sampled (one row per time step). Demo data loaded (hourly); paste your own."
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": null
+  }
+ ],
+ "presets": [
+  {
+   "id": "demonstration-h-1",
+   "name": {
+    "fr": "Démonstration, h = 1",
+    "en": null
+   },
+   "values": {
+    "bl-h": 1,
+    "bl-ph": 7,
+    "bl-l": 0.5,
+    "bl-w": 1,
+    "bl-T": 24
+   },
+   "changes_vs_default": {},
+   "data_preview": "220 / 443.3 / 571.6",
+   "shows": {
+    "fr": "À 1 pas, la persistance manque la montée et la descente du Soleil, la persistance cyclique manque les nuages. Les mélanger réduit nettement l’erreur, et λ varie fortement d’une phase à l’autre.",
+    "en": null
+   }
+  },
+  {
+   "id": "demonstration-h-12",
+   "name": {
+    "fr": "Démonstration, h = 12",
+    "en": null
+   },
+   "values": {
+    "bl-h": 12,
+    "bl-ph": 22,
+    "bl-l": 0.5,
+    "bl-w": 1,
+    "bl-T": 24
+   },
+   "changes_vs_default": {
+    "bl-h": 12,
+    "bl-ph": 22
+   },
+   "data_preview": "220 / 443.3 / 571.6",
+   "shows": {
+    "fr": "À une demi-période, la dernière valeur est à l’opposé du cycle : la persistance cyclique l’emporte et λ tombe près de 0.",
+    "en": null
+   }
+  },
+  {
+   "id": "demonstration-h-24",
+   "name": {
+    "fr": "Démonstration, h = 24",
+    "en": null
+   },
+   "values": {
+    "bl-h": 24,
+    "bl-ph": 1,
+    "bl-l": 0.5,
+    "bl-w": 1,
+    "bl-T": 24
+   },
+   "changes_vs_default": {
+    "bl-h": 24,
+    "bl-ph": 1
+   },
+   "data_preview": "220 / 443.3 / 571.6",
+   "shows": {
+    "fr": "À h = T, la valeur une période plus tôt et la dernière valeur sont la même donnée. Les deux persistances coïncident : rien à mélanger, gain nul. Ce n’est pas une panne.",
+    "en": null
+   }
+  },
+  {
+   "id": "pv-reel-1-heure",
+   "name": {
+    "fr": "PV réel, 1 heure",
+    "en": null
+   },
+   "values": {
+    "bl-h": 2,
+    "bl-ph": 14,
+    "bl-l": 0.5,
+    "bl-w": 1,
+    "bl-T": 48
+   },
+   "changes_vs_default": {
+    "bl-h": 2,
+    "bl-ph": 14,
+    "bl-T": 48
+   },
+   "data_preview": "0 / 0 / 0",
+   "shows": {
+    "fr": "Puissance PV mesurée à Palaiseau, h = 2 pas de 30 min. Les poids diffèrent d’une heure à l’autre : c’est l’intérêt d’un poids par phase.",
+    "en": null
+   }
+  },
+  {
+   "id": "pv-reel-12-heures",
+   "name": {
+    "fr": "PV réel, 12 heures",
+    "en": null
+   },
+   "values": {
+    "bl-h": 24,
+    "bl-ph": 12,
+    "bl-l": 0.5,
+    "bl-w": 1,
+    "bl-T": 48
+   },
+   "changes_vs_default": {
+    "bl-h": 24,
+    "bl-ph": 12,
+    "bl-T": 48
+   },
+   "data_preview": "0 / 0 / 0",
+   "shows": {
+    "fr": "Puissance PV mesurée à Palaiseau, h = 24 pas de 30 min. La persistance recopie la nuit pour le jour : la persistance cyclique domine.",
+    "en": null
+   }
+  }
+ ],
+ "actions": [],
+ "variants": [],
+ "outputs": [
+  {
+   "name": {
+    "fr": "RMSE de BLEND",
+    "en": null
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": "Combinaison convexe de la persistance et de la persistance cyclique.",
+    "en": null
+   },
+   "kind": "metric"
+  },
+  {
+   "name": {
+    "fr": "RMSE de la persistance",
+    "en": null
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": "Recopie la dernière valeur connue.",
+    "en": null
+   },
+   "kind": "metric"
+  },
+  {
+   "name": {
+    "fr": "RMSE de la persistance cyclique",
+    "en": null
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": "Recopie la valeur une période plus tôt, au même moment du cycle.",
+    "en": null
+   },
+   "kind": "metric"
+  }
+ ],
+ "formulas": [],
+ "definitions": [
+  {
+   "term": "Persistance",
+   "meaning": {
+    "fr": "La prévision recopie la dernière valeur connue.",
+    "en": null
+   }
+  },
+  {
+   "term": "Persistance cyclique",
+   "meaning": {
+    "fr": "La prévision recopie la valeur une période plus tôt, au même moment du cycle.",
+    "en": null
+   }
+  },
+  {
+   "term": "BLEND",
+   "meaning": {
+    "fr": "La combinaison convexe de la persistance et de la persistance cyclique : deux poids positifs de somme 1, λ et 1 − λ.",
+    "en": null
+   }
+  },
+  {
+   "term": "CLIPER",
+   "meaning": {
+    "fr": "La combinaison convexe de la persistance et de la moyenne. Même idée, autre partenaire.",
+    "en": null
+   }
+  },
+  {
+   "term": "Période T et phase",
+   "meaning": {
+    "fr": "T : le nombre de pas d’un cycle. La phase : le moment du cycle où part la prévision.",
+    "en": null
+   }
+  },
+  {
+   "term": "Poids λ",
+   "meaning": {
+    "fr": "Il minimise l’erreur quadratique à chaque phase, borné entre 0 et 1.",
+    "en": null
+   }
+  }
+ ],
+ "assumptions": {
+  "fr": [],
+  "en": [
+   "“Training-free” does not mean “observation-free”: cyclic means, deviations and correlations must still be estimated on past data, and they need enough cycles to be stable. BLEND does not outperform every optimized method; autoregressive or learned predictors can do better under some conditions. The evidence concerns the datasets of the paper, not a universal ranking of forecasting methods. Test the transfer to your own series rather than assuming it."
+  ]
+ },
+ "source": {
+  "dois": [
+   "10.1016/j.apm.2026.116988",
+   "10.1016/j.renene.2022.04.065",
+   "10.1016/j.renene.2025.123913",
+   "10.5281/zenodo.18812333",
+   "10.5281/zenodo.23534072"
+  ],
+  "repositories": [
+   "https://github.com/cyrilvoyant/ARTU",
+   "https://github.com/cyrilvoyant/PV_ELM_pred",
+   "https://github.com/cyrilvoyant/cyclostationary-forecasting-matlab",
+   "https://github.com/cyrilvoyant/solar-variability-scv"
+  ],
+  "related_pages": []
+ },
+ "how_to_explore": {
+  "fr": "Régler les paramètres sur un préréglage (valeurs ci-dessus), lire la phrase affichée par la page puis les sorties ; modifier ensuite un seul paramètre à la fois entre son minimum et son maximum.",
+  "en": "Set the parameters to a preset (values above), read the sentence the page shows then the outputs; then change one parameter at a time between its minimum and maximum."
+ },
+ "exploration": [
+  {
+   "preset": "demonstration-h-1",
+   "title": {
+    "fr": "Démonstration, h = 1",
+    "en": null
+   },
+   "set": {
+    "bl-h": 1,
+    "bl-ph": 7,
+    "bl-l": 0.5,
+    "bl-w": 1,
+    "bl-T": 24
+   },
+   "observe": {
+    "fr": "À 1 pas, la persistance manque la montée et la descente du Soleil, la persistance cyclique manque les nuages. Les mélanger réduit nettement l’erreur, et λ varie fortement d’une phase à l’autre.",
+    "en": null
+   }
+  },
+  {
+   "preset": "demonstration-h-12",
+   "title": {
+    "fr": "Démonstration, h = 12",
+    "en": null
+   },
+   "set": {
+    "bl-h": 12,
+    "bl-ph": 22
+   },
+   "observe": {
+    "fr": "À une demi-période, la dernière valeur est à l’opposé du cycle : la persistance cyclique l’emporte et λ tombe près de 0.",
+    "en": null
+   }
+  },
+  {
+   "preset": "demonstration-h-24",
+   "title": {
+    "fr": "Démonstration, h = 24",
+    "en": null
+   },
+   "set": {
+    "bl-h": 24,
+    "bl-ph": 1
+   },
+   "observe": {
+    "fr": "À h = T, la valeur une période plus tôt et la dernière valeur sont la même donnée. Les deux persistances coïncident : rien à mélanger, gain nul. Ce n’est pas une panne.",
+    "en": null
+   }
+  },
+  {
+   "preset": "pv-reel-1-heure",
+   "title": {
+    "fr": "PV réel, 1 heure",
+    "en": null
+   },
+   "set": {
+    "bl-h": 2,
+    "bl-ph": 14,
+    "bl-T": 48
+   },
+   "observe": {
+    "fr": "Puissance PV mesurée à Palaiseau, h = 2 pas de 30 min. Les poids diffèrent d’une heure à l’autre : c’est l’intérêt d’un poids par phase.",
+    "en": null
+   }
+  },
+  {
+   "preset": "pv-reel-12-heures",
+   "title": {
+    "fr": "PV réel, 12 heures",
+    "en": null
+   },
+   "set": {
+    "bl-h": 24,
+    "bl-ph": 12,
+    "bl-T": 48
+   },
+   "observe": {
+    "fr": "Puissance PV mesurée à Palaiseau, h = 24 pas de 30 min. La persistance recopie la nuit pour le jour : la persistance cyclique domine.",
+    "en": null
+   }
+  }
+ ],
+ "concepts": [
+  "persistence",
+  "cyclic-persistence",
+  "convex-combination",
+  "cliper",
+  "blend"
+ ],
+ "extraction": {
+  "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
+  "roots": [
+   "#try-it"
+  ],
+  "page_errors": [],
+  "fr_en_preset_consistency": null
+ }
+}

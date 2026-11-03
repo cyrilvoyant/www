@@ -1,0 +1,601 @@
+{
+ "id": "gamma",
+ "schema": "https://www.cyrilvoyant.com/tools-spec.json#1.0",
+ "kind": "calculator",
+ "domain": "energy",
+ "interface_language": "both",
+ "name": {
+  "fr": "Déplacer une prévision et observer l’indice γ",
+  "en": "Displace a forecast and explore the γ-index"
+ },
+ "url": {
+  "fr": "https://www.cyrilvoyant.com/fr/outils/indice-gamma/#try-it",
+  "en": "https://cyrilvoyant.github.io/methods/gamma-index.html#try-it"
+ },
+ "page_title": {
+  "fr": "Déplacer une prévision et observer l’indice γ",
+  "en": "The γ-index: tolerance-based validation of spatio-temporal forecast fields"
+ },
+ "computes": {
+  "fr": "L’indice γ juge une prévision avec des tolérances d’espace, de temps et d’intensité. Déplacer, retarder ou biaiser un nuage synthétique et régler ces tolérances.",
+  "en": "The γ-index judges a forecast with tolerances in space, time and intensity. Displace, delay or bias a synthetic cloud and adjust these tolerances."
+ },
+ "summary": {
+  "fr": "Un nuage bien prévu mais en retard de 30 min coûte 133 W/m² de RMSE ; un biais de 80 W/m² n’en coûte que 80. Pourtant γ accepte 100 % des pixels du premier et 34 % du second.",
+  "en": null
+ },
+ "parameters": [
+  {
+   "id": "gm-s",
+   "type": "number",
+   "control": "range",
+   "min": 0,
+   "max": 6,
+   "step": 0.25,
+   "default": 2,
+   "label": {
+    "fr": "Décalage vers le nord",
+    "en": "Cloud displaced north by (across its motion) km"
+   },
+   "meaning": {
+    "fr": "Le nuage prévu est déplacé perpendiculairement à son mouvement.",
+    "en": null
+   },
+   "unit": {
+    "fr": "km",
+    "en": "km"
+   },
+   "unit_source": "display"
+  },
+  {
+   "id": "gm-l",
+   "type": "integer",
+   "control": "range",
+   "min": -30,
+   "max": 30,
+   "step": 5,
+   "default": 0,
+   "label": {
+    "fr": "Retard (+) ou avance (−)",
+    "en": "Forecast late (+) or early (−) by min"
+   },
+   "meaning": {
+    "fr": "Le nuage se déplace vers l’est à 12 km/h : 30 min de retard le placent 6 km trop à l’ouest.",
+    "en": null
+   },
+   "unit": {
+    "fr": "min",
+    "en": "min"
+   },
+   "unit_source": "display"
+  },
+  {
+   "id": "gm-b",
+   "type": "integer",
+   "control": "range",
+   "min": -80,
+   "max": 80,
+   "step": 5,
+   "default": 0,
+   "label": {
+    "fr": "Biais",
+    "en": "Intensity bias W/m²"
+   },
+   "meaning": {
+    "fr": "Toute la carte prévue est trop claire (+) ou trop sombre (−), en W/m².",
+    "en": null
+   },
+   "unit": {
+    "fr": "W/m²",
+    "en": "W/m²"
+   },
+   "unit_source": "display"
+  },
+  {
+   "id": "gm-dta",
+   "type": "number",
+   "control": "range",
+   "min": 0.5,
+   "max": 3,
+   "step": 0.5,
+   "default": 2,
+   "label": {
+    "fr": "DTA",
+    "en": "DTA, spatial km"
+   },
+   "meaning": {
+    "fr": "Tolérance de distance : le décalage acceptable en km. Une maille de la grille dans l’article, soit environ 2 km.",
+    "en": "distance to agreement: spatial tolerance"
+   },
+   "unit": {
+    "fr": "km",
+    "en": "km"
+   },
+   "unit_source": "display"
+  },
+  {
+   "id": "gm-tta",
+   "type": "integer",
+   "control": "range",
+   "min": 5,
+   "max": 30,
+   "step": 5,
+   "default": 30,
+   "label": {
+    "fr": "TTA",
+    "en": "TTA, temporal min"
+   },
+   "meaning": {
+    "fr": "Tolérance de temps : le décalage acceptable en minutes. 30 min dans l’article.",
+    "en": "time to agreement: temporal tolerance"
+   },
+   "unit": {
+    "fr": "min",
+    "en": "min"
+   },
+   "unit_source": "display"
+  },
+  {
+   "id": "gm-idt",
+   "type": "integer",
+   "control": "range",
+   "min": 10,
+   "max": 100,
+   "step": 5,
+   "default": 50,
+   "label": {
+    "fr": "IDT",
+    "en": "IDT, intensity W/m²"
+   },
+   "meaning": {
+    "fr": "Tolérance d’intensité : l’écart acceptable en W/m². 50 W/m² dans l’article.",
+    "en": "intensity deviation tolerance, for example 50 W/m², calibrated from sensor uncertainty or grid operational limits"
+   },
+   "unit": {
+    "fr": "W/m²",
+    "en": "W/m²"
+   },
+   "unit_source": "display"
+  }
+ ],
+ "presets": [
+  {
+   "id": "nuage-decale-de-2-km",
+   "name": {
+    "fr": "Nuage décalé de 2 km",
+    "en": null
+   },
+   "values": {
+    "gm-s": 2,
+    "gm-l": 0,
+    "gm-b": 0,
+    "gm-dta": 2,
+    "gm-tta": 30,
+    "gm-idt": 50
+   },
+   "changes_vs_default": {},
+   "shows": {
+    "fr": "Le nuage est bien prévu, mais 2 km trop au nord. La RMSE le compte deux fois : là où il était prévu, là où il se trouve. γ l’accepte : le décalage reste dans la tolérance de distance.",
+    "en": null
+   }
+  },
+  {
+   "id": "retard-de-30-min",
+   "name": {
+    "fr": "Retard de 30 min",
+    "en": null
+   },
+   "values": {
+    "gm-s": 0,
+    "gm-l": 30,
+    "gm-b": 0,
+    "gm-dta": 2,
+    "gm-tta": 30,
+    "gm-idt": 50
+   },
+   "changes_vs_default": {
+    "gm-s": 0,
+    "gm-l": 30
+   },
+   "shows": {
+    "fr": "Le bon nuage, en retard. La RMSE monte fortement, mais chaque pixel trouve la bonne valeur dans la tolérance de temps. Réduisez TTA pour voir γ devenir sévère.",
+    "en": null
+   }
+  },
+  {
+   "id": "biais-de-80-w-m2",
+   "name": {
+    "fr": "Biais de 80 W/m²",
+    "en": null
+   },
+   "values": {
+    "gm-s": 0,
+    "gm-l": 0,
+    "gm-b": 80,
+    "gm-dta": 2,
+    "gm-tta": 30,
+    "gm-idt": 50
+   },
+   "changes_vs_default": {
+    "gm-s": 0,
+    "gm-b": 80
+   },
+   "shows": {
+    "fr": "Le nuage est au bon endroit, mais toute la carte est 80 W/m² trop claire. La RMSE reste modérée ; γ rejette la plupart des pixels : dans le ciel clair, 80 dépasse IDT = 50 W/m² et aucune observation n’est aussi claire.",
+    "en": null
+   }
+  },
+  {
+   "id": "nuage-decale-de-6-km",
+   "name": {
+    "fr": "Nuage décalé de 6 km",
+    "en": null
+   },
+   "values": {
+    "gm-s": 6,
+    "gm-l": 0,
+    "gm-b": 0,
+    "gm-dta": 2,
+    "gm-tta": 30,
+    "gm-idt": 50
+   },
+   "changes_vs_default": {
+    "gm-s": 6
+   },
+   "shows": {
+    "fr": "Un décalage trois fois plus grand que DTA. Attention : le GPR reste élevé, car la plus grande partie de la carte est du ciel clair sans erreur. Regardez γmax et la carte, pas seulement le GPR.",
+    "en": null
+   }
+  },
+  {
+   "id": "tolerances-strictes",
+   "name": {
+    "fr": "Tolérances strictes",
+    "en": null
+   },
+   "values": {
+    "gm-s": 3,
+    "gm-l": 0,
+    "gm-b": 0,
+    "gm-dta": 0.5,
+    "gm-tta": 5,
+    "gm-idt": 10
+   },
+   "changes_vs_default": {
+    "gm-s": 3,
+    "gm-dta": 0.5,
+    "gm-tta": 5,
+    "gm-idt": 10
+   },
+   "shows": {
+    "fr": "Un décalage de 3 km jugé avec 0,5 km, 5 min et 10 W/m². Le GPR chute : les tolérances font partie du résultat, elles se choisissent selon l’usage, avant de comparer des prévisions.",
+    "en": null
+   }
+  },
+  {
+   "id": "tolerances-de-larticle",
+   "name": {
+    "fr": "Tolérances de l’article",
+    "en": null
+   },
+   "values": {
+    "gm-s": 2,
+    "gm-l": 0,
+    "gm-b": 0,
+    "gm-dta": 2,
+    "gm-tta": 30,
+    "gm-idt": 50
+   },
+   "changes_vs_default": {},
+   "shows": {
+    "fr": "Les tolérances de l’article sur la Corse : 2 km, 30 min, 50 W/m². Elles se choisissent selon l’usage : gardez l’erreur, changez les tolérances : γ change.",
+    "en": null
+   }
+  }
+ ],
+ "actions": [
+  {
+   "name": {
+    "fr": "▶ Éloigner le nuage prévu",
+    "en": null
+   }
+  }
+ ],
+ "variants": [],
+ "outputs": [
+  {
+   "name": {
+    "fr": "GPR",
+    "en": null
+   },
+   "unit": {
+    "fr": "%",
+    "en": "%"
+   },
+   "meaning": {
+    "fr": "La part des pixels acceptés (γ ≤ 1).",
+    "en": null
+   },
+   "kind": "metric"
+  },
+  {
+   "name": {
+    "fr": "γ moyen",
+    "en": null
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": "La distance moyenne à la meilleure observation, en unités de tolérance.",
+    "en": null
+   },
+   "kind": "metric"
+  },
+  {
+   "name": {
+    "fr": "γmax",
+    "en": null
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": "Le pixel le moins acceptable de la carte.",
+    "en": null
+   },
+   "kind": "metric"
+  },
+  {
+   "name": {
+    "fr": "RMSE",
+    "en": null
+   },
+   "unit": {
+    "fr": "W/m²",
+    "en": "W/m²"
+   },
+   "meaning": {
+    "fr": "L’erreur point par point, sans tolérance. 26 % des pixels dépassent IDT.",
+    "en": null
+   },
+   "kind": "metric"
+  },
+  {
+   "name": {
+    "fr": "Prévision exacte",
+    "en": null
+   },
+   "unit": null,
+   "meaning": {
+    "fr": "Erreur | RMSE (W/m²) | GPR | γ moyen | Prévision exacte",
+    "en": null
+   },
+   "kind": "table-row"
+  },
+  {
+   "name": {
+    "fr": "Décalé de 2 km",
+    "en": null
+   },
+   "unit": null,
+   "meaning": {
+    "fr": "Erreur | RMSE (W/m²) | GPR | γ moyen | Prévision exacte",
+    "en": null
+   },
+   "kind": "table-row"
+  },
+  {
+   "name": {
+    "fr": "Décalé de 6 km",
+    "en": null
+   },
+   "unit": null,
+   "meaning": {
+    "fr": "Erreur | RMSE (W/m²) | GPR | γ moyen | Prévision exacte",
+    "en": null
+   },
+   "kind": "table-row"
+  },
+  {
+   "name": {
+    "fr": "Retard de 15 min",
+    "en": null
+   },
+   "unit": null,
+   "meaning": {
+    "fr": "Erreur | RMSE (W/m²) | GPR | γ moyen | Prévision exacte",
+    "en": null
+   },
+   "kind": "table-row"
+  },
+  {
+   "name": {
+    "fr": "Retard de 30 min",
+    "en": null
+   },
+   "unit": null,
+   "meaning": {
+    "fr": "Erreur | RMSE (W/m²) | GPR | γ moyen | Prévision exacte",
+    "en": null
+   },
+   "kind": "table-row"
+  },
+  {
+   "name": {
+    "fr": "Biais de 40 W/m²",
+    "en": null
+   },
+   "unit": null,
+   "meaning": {
+    "fr": "Erreur | RMSE (W/m²) | GPR | γ moyen | Prévision exacte",
+    "en": null
+   },
+   "kind": "table-row"
+  },
+  {
+   "name": {
+    "fr": "Biais de 80 W/m²",
+    "en": null
+   },
+   "unit": null,
+   "meaning": {
+    "fr": "Erreur | RMSE (W/m²) | GPR | γ moyen | Prévision exacte",
+    "en": null
+   },
+   "kind": "table-row"
+  }
+ ],
+ "formulas": [],
+ "definitions": [
+  {
+   "term": "Indice γ",
+   "meaning": {
+    "fr": "Pour chaque pixel prévu, la distance à l’observation la plus proche dans l’espace, le temps et l’intensité, chacun divisé par sa tolérance. γ ≤ 1 : accepté.",
+    "en": null
+   }
+  },
+  {
+   "term": "DTA, TTA, IDT",
+   "meaning": {
+    "fr": "Les tolérances de distance (km), de temps (min) et d’intensité (W/m²). L’article prend environ 2 km, 30 min et 50 W/m² sur la Corse.",
+    "en": null
+   }
+  },
+  {
+   "term": "GPR",
+   "meaning": {
+    "fr": "La part des pixels acceptés. L’article propose GPR > 80 % et γ moyen < 0,7 comme repères pratiques.",
+    "en": null
+   }
+  },
+  {
+   "term": "Double pénalité",
+   "meaning": {
+    "fr": "Une RMSE compte un nuage décalé deux fois : là où il était prévu, là où il se trouve.",
+    "en": null
+   }
+  }
+ ],
+ "assumptions": {
+  "fr": [],
+  "en": [
+   "The temporal component is not fully exploited in this first implementation (the validation focuses on the spatial dimension); a finer TTA or a full temporal search is needed for transient phenomena, and a TTA equal to the whole sampling interval can favor persistence. DTA = 1 pixel suits moderate resolutions (1 to 5 km), not grids coarser than 5 to 10 km. The 10 % IDT is a baseline; the operational rules of each variable should set it. Because γ is continuous and differentiable almost everywhere, the article suggests, beyond its scope, a tolerance-aware training loss \\(\\mathcal L_{\\mathrm{total}}=\\mathcal L_{\\mathrm{data}}+\\lambda\\,\\mathbb E[\\max(0,\\gamma-1)]\\) (Eq. 3), with \\(\\lambda\\) a weight: a perspective, not a validated training result."
+  ]
+ },
+ "source": {
+  "dois": [
+   "10.1016/j.ijforecast.2026.03.002",
+   "10.5281/zenodo.21755936",
+   "10.5281/zenodo.21755937"
+  ],
+  "repositories": [
+   "https://github.com/cyrilvoyant/temporal-gamma-index"
+  ],
+  "related_pages": []
+ },
+ "how_to_explore": {
+  "fr": "Régler les paramètres sur un préréglage (valeurs ci-dessus), lire la phrase affichée par la page puis les sorties ; modifier ensuite un seul paramètre à la fois entre son minimum et son maximum.",
+  "en": "Set the parameters to a preset (values above), read the sentence the page shows then the outputs; then change one parameter at a time between its minimum and maximum."
+ },
+ "exploration": [
+  {
+   "preset": "nuage-decale-de-2-km",
+   "title": {
+    "fr": "Nuage décalé de 2 km",
+    "en": null
+   },
+   "set": {
+    "gm-s": 2,
+    "gm-l": 0,
+    "gm-b": 0,
+    "gm-dta": 2,
+    "gm-tta": 30,
+    "gm-idt": 50
+   },
+   "observe": {
+    "fr": "Le nuage est bien prévu, mais 2 km trop au nord. La RMSE le compte deux fois : là où il était prévu, là où il se trouve. γ l’accepte : le décalage reste dans la tolérance de distance.",
+    "en": null
+   }
+  },
+  {
+   "preset": "retard-de-30-min",
+   "title": {
+    "fr": "Retard de 30 min",
+    "en": null
+   },
+   "set": {
+    "gm-s": 0,
+    "gm-l": 30
+   },
+   "observe": {
+    "fr": "Le bon nuage, en retard. La RMSE monte fortement, mais chaque pixel trouve la bonne valeur dans la tolérance de temps. Réduisez TTA pour voir γ devenir sévère.",
+    "en": null
+   }
+  },
+  {
+   "preset": "biais-de-80-w-m2",
+   "title": {
+    "fr": "Biais de 80 W/m²",
+    "en": null
+   },
+   "set": {
+    "gm-s": 0,
+    "gm-b": 80
+   },
+   "observe": {
+    "fr": "Le nuage est au bon endroit, mais toute la carte est 80 W/m² trop claire. La RMSE reste modérée ; γ rejette la plupart des pixels : dans le ciel clair, 80 dépasse IDT = 50 W/m² et aucune observation n’est aussi claire.",
+    "en": null
+   }
+  },
+  {
+   "preset": "tolerances-strictes",
+   "title": {
+    "fr": "Tolérances strictes",
+    "en": null
+   },
+   "set": {
+    "gm-s": 3,
+    "gm-dta": 0.5,
+    "gm-tta": 5,
+    "gm-idt": 10
+   },
+   "observe": {
+    "fr": "Un décalage de 3 km jugé avec 0,5 km, 5 min et 10 W/m². Le GPR chute : les tolérances font partie du résultat, elles se choisissent selon l’usage, avant de comparer des prévisions.",
+    "en": null
+   }
+  },
+  {
+   "preset": "tolerances-de-larticle",
+   "title": {
+    "fr": "Tolérances de l’article",
+    "en": null
+   },
+   "set": {
+    "gm-s": 2,
+    "gm-l": 0,
+    "gm-b": 0,
+    "gm-dta": 2,
+    "gm-tta": 30,
+    "gm-idt": 50
+   },
+   "observe": {
+    "fr": "Les tolérances de l’article sur la Corse : 2 km, 30 min, 50 W/m². Elles se choisissent selon l’usage : gardez l’erreur, changez les tolérances : γ change.",
+    "en": null
+   }
+  }
+ ],
+ "concepts": [
+  "gamma-index"
+ ],
+ "extraction": {
+  "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
+  "roots": [
+   "#try-it"
+  ],
+  "page_errors": [],
+  "fr_en_preset_consistency": null
+ }
+}

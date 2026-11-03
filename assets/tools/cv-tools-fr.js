@@ -191,22 +191,31 @@
 
   // ---------------------------------------------------------------- widget: thyroid protocol explorer
   function mountThyroid(box) {
-    box.innerHTML = '<div class="cvt-grid"><label class="cvt-row" for="th-p"><span>Profil du modèle</span><select id="th-p"><option value="9.8">réfractaire (T<sub>d</sub> = 9,8 mois)</option>' +
-      '<option value="66.6">répondeur (T<sub>d</sub> = 66,6 mois)</option></select></label>' + slider("Séances", "th-n", 1, 8, 1, 4) +
-      slider("Mois entre les séances", "th-l", 1, 8, 1, 3) + slider("Activité par séance", "th-a", 1, 8, 0.1, 3.7, "GBq") +
+    var fr = document.documentElement.lang === "fr";
+    function tr(f, e) { return fr ? f : e; }
+    function local(v, digits) { var s = fmt(v, digits); return fr ? s.replace(".", ",") : s; }
+    box.innerHTML = '<div class="cvt-grid"><label class="cvt-row" for="th-p"><span>' + tr("Profil du patient", "Profil du modèle") + '</span><select id="th-p"><option value="9.8">' +
+      tr("réfractaire (T<sub>d</sub> = 9,8 mois)", "réfractaire (T<sub>d</sub> = 9,8 mois)") + '</option>' +
+      '<option value="66.6">' + tr("répondeur (T<sub>d</sub> = 66,6 mois)", "répondeur (T<sub>d</sub> = 66,6 mois)") + '</option></select></label>' + slider(tr("Séances", "Séances"), "th-n", 1, 8, 1, 4) +
+      slider(tr("Mois entre les séances", "Mois entre les séances"), "th-l", 1, 8, 1, 3) + slider(tr("Activité par séance", "Activité par séance"), "th-a", 1, 8, 0.1, 3.7, "GBq") +
       '</div><div class="cvt-out" aria-live="polite"></div><div class="cvt-plot"></div>' +
-      '<p class="cvt-hint">Paramètres des démonstrateurs publics RAIR-Sim (Fusella Giuntini et coll.). Sorties du modèle pour deux profils types ; aucune prédiction individuelle pour un patient.</p>' + TESTS;
+      '<p class="cvt-hint">' + tr("Paramètres des démonstrateurs publics RAIR-Sim (Fusella Giuntini et al.). Sorties du modèle pour deux archétypes, et non prédictions pour un patient.",
+        "Paramètres des démonstrateurs publics RAIR-Sim (Fusella Giuntini et coll.). Sorties du modèle pour deux profils types ; aucune prédiction individuelle pour un patient.") + '</p>' +
+      (fr ? '<p class="cvt-note">Comparé au code de référence : <a href="https://cyrilvoyant.github.io/tools/js-tests.html">cas de vérification</a>. Le calcul se fait dans votre navigateur ; aucune donnée n’est envoyée.</p>' : TESTS);
     function upd() {
       var Td = +box.querySelector("#th-p").value, n = +box.querySelector("#th-n").value, l = +box.querySelector("#th-l").value, A = +box.querySelector("#th-a").value;
-      box.querySelector("#th-n-o").textContent = n; box.querySelector("#th-l-o").textContent = l; box.querySelector("#th-a-o").textContent = A.toFixed(1);
+      box.querySelector("#th-n-o").textContent = n; box.querySelector("#th-l-o").textContent = l; box.querySelector("#th-a-o").textContent = local(A, 1);
       var pts = CVT.thyroidTg({ Td: Td, sessions: n, lag: l, activity: A, h: 0.01 }), last = pts[pts.length - 1][1];
       var peak = Math.max.apply(null, pts.map(function (p) { return p[1]; }));
-      box.querySelector(".cvt-out").innerHTML = "<p>Thyroglobuline après 80 mois : <strong>" + fmt(last, 1) + " ng/mL</strong> (valeur initiale de 100 ng/mL, comme dans les simulations de l’article). " +
-        (Td < 30 ? "Profil réfractaire de l’article (27,5 % de la cohorte) : la thyroglobuline diminue d’abord puis remonte, sauf intensification du protocole simulé."
-                 : "Profil répondeur de l’article (72,5 % de la cohorte) : la thyroglobuline diminue progressivement ; le modèle explore l’activité minimale efficace.") + "</p>";
+      box.querySelector(".cvt-out").innerHTML = "<p>" + tr("Thyroglobuline après 80 mois : ", "Thyroglobuline après 80 mois : ") + "<strong>" + local(last, 1) + " ng/mL</strong> " +
+        tr("(départ à 100 ng/mL, comme dans les simulations de l’article). ", "(valeur initiale de 100 ng/mL, comme dans les simulations de l’article). ") +
+        (Td < 30 ? tr("Profil réfractaire de l’article (27,5 % des 40 patients classés : 11 réfractaires, 29 répondeurs ; cohorte de 50) : la thyroglobuline diminue d’abord, puis remonte si le protocole n’est pas intensifié.",
+                      "Refractory profile of the article (27.5 % of the 40 classified patients: 11 refractory, 29 responders; cohort of 50): thyroglobulin first decreases, then rises again unless the protocol is intensified.")
+                 : tr("Profil répondeur de l’article (72,5 % des 40 patients classés : 29 répondeurs et 11 réfractaires ; cohorte de 50) : la thyroglobuline diminue progressivement ; l’objectif est l’activité efficace minimale.",
+                      "Responding profile of the article (72.5 % of the 40 classified patients: 29 responders, 11 refractory; cohort of 50): thyroglobulin decreases progressively; the aim is the minimal effective activity.")) + "</p>";
       var thin = pts.filter(function (p, i) { return i % 20 === 0; });
       box.querySelector(".cvt-plot").innerHTML = lineChart([{ pts: thin, color: "#b4513a", label: "Tg (ng/mL)" }],
-        { xlabel: "mois", ylabel: "thyroglobuline (ng/mL)", xmin: 0, xmax: 80, ymin: 0, ymax: Math.max(110, peak * 1.05), aria: "Thyroglobuline sur 80 mois" });
+        { xlabel: tr("mois", "mois"), ylabel: tr("thyroglobuline (ng/mL)", "thyroglobuline (ng/mL)"), xmin: 0, xmax: 80, ymin: 0, ymax: Math.max(110, peak * 1.05), aria: tr("Thyroglobuline sur 80 mois", "Thyroglobuline sur 80 mois") });
     }
     box.addEventListener("input", upd); upd();
   }

@@ -1,0 +1,158 @@
+{
+ "@context": "https://schema.org",
+ "@type": [
+  "SoftwareApplication",
+  "LearningResource"
+ ],
+ "@id": "https://www.cyrilvoyant.com/tools/roc-curve/#tool-spec",
+ "identifier": "roc",
+ "name": "Understand sensitivity, specificity and ROC curves",
+ "alternateName": "Comprendre sensibilité, spécificité et courbe ROC",
+ "description": "Change the threshold, distribution separation and prevalence in a teaching example.",
+ "url": "https://www.cyrilvoyant.com/tools/roc-curve/",
+ "sameAs": [
+  "https://www.cyrilvoyant.com/fr/animations/courbe-roc/",
+  "https://www.cyrilvoyant.com/tools/roc-curve/"
+ ],
+ "inLanguage": [
+  "fr",
+  "en"
+ ],
+ "applicationCategory": "EducationalApplication",
+ "operatingSystem": "Any (web browser)",
+ "isAccessibleForFree": true,
+ "learningResourceType": "teaching",
+ "author": {
+  "@type": "Person",
+  "name": "Cyril Voyant",
+  "identifier": "https://orcid.org/0000-0003-0242-7377"
+ },
+ "license": "https://creativecommons.org/licenses/by/4.0/",
+ "additionalProperty": [
+  {
+   "@type": "PropertyValue",
+   "propertyID": "separation-d",
+   "name": "Separation d (standard deviations)",
+   "alternateName": "Séparation d (écarts-types)",
+   "value": 1.8,
+   "minValue": 0,
+   "maxValue": 4,
+   "unitText": "dimensionless"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "test-threshold-s",
+   "name": "Test threshold s",
+   "alternateName": "Seuil s du test",
+   "value": 1,
+   "minValue": -3,
+   "maxValue": 6,
+   "unitText": "dimensionless"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "prevalence",
+   "name": "Prevalence (share with disease)",
+   "alternateName": "Prévalence (part de malades)",
+   "value": 0.1,
+   "minValue": 0.001,
+   "maxValue": 0.5,
+   "unitText": "%"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:starting-setting-10-prevalence",
+   "name": "Starting setting: 10% prevalence",
+   "alternateName": "Réglage de départ : prévalence 10 %",
+   "value": "{\"separation-d\": 1.8, \"test-threshold-s\": 1, \"prevalence\": 0.1}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:good-test-rare-disease-1",
+   "name": "Good test, rare disease (1%)",
+   "alternateName": "Bon test, maladie rare (1 %)",
+   "value": "{\"separation-d\": 2.55, \"test-threshold-s\": 1.3, \"prevalence\": 0.01}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:same-test-30-prevalence",
+   "name": "Same test, 30% prevalence",
+   "alternateName": "Même test, prévalence 30 %",
+   "value": "{\"separation-d\": 2.55, \"test-threshold-s\": 1.3, \"prevalence\": 0.3}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:low-threshold-few-missed-cases",
+   "name": "Low threshold: few missed cases",
+   "alternateName": "Seuil bas : peu de malades manqués",
+   "value": "{\"separation-d\": 2.55, \"test-threshold-s\": 0.5, \"prevalence\": 0.1}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:high-threshold-few-false-alarms",
+   "name": "High threshold: few false alarms",
+   "alternateName": "Seuil haut : peu de fausses alertes",
+   "value": "{\"separation-d\": 2.55, \"test-threshold-s\": 2.5, \"prevalence\": 0.1}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:useless-test-d-0",
+   "name": "Useless test: d = 0",
+   "alternateName": "Test sans valeur : d = 0",
+   "value": "{\"separation-d\": 0, \"test-threshold-s\": 0, \"prevalence\": 0.1}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:well-separated-test-d-4",
+   "name": "Well separated test: d = 4",
+   "alternateName": "Test très séparé : d = 4",
+   "value": "{\"separation-d\": 4, \"test-threshold-s\": 2, \"prevalence\": 0.1}"
+  }
+ ],
+ "potentialAction": {
+  "@type": "Action",
+  "name": "Explore the tool",
+  "target": {
+   "@type": "EntryPoint",
+   "urlTemplate": "https://www.cyrilvoyant.com/tools/roc-curve/",
+   "actionPlatform": "https://schema.org/DesktopWebPlatform"
+  },
+  "object": [
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "separation-d",
+    "description": "Separation d (standard deviations)",
+    "valueRequired": false,
+    "minValue": 0,
+    "maxValue": 4,
+    "defaultValue": 1.8,
+    "stepValue": 0.05
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "test-threshold-s",
+    "description": "Test threshold s",
+    "valueRequired": false,
+    "minValue": -3,
+    "maxValue": 6,
+    "defaultValue": 1,
+    "stepValue": 0.05
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "prevalence",
+    "description": "Prevalence (share with disease)",
+    "valueRequired": false,
+    "minValue": 0.001,
+    "maxValue": 0.5,
+    "defaultValue": 0.1,
+    "stepValue": 0.001
+   }
+  ]
+ },
+ "about": [
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#roc-curve"
+  }
+ ]
+}

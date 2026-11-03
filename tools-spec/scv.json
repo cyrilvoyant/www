@@ -1,0 +1,405 @@
+{
+ "id": "scv",
+ "schema": "https://www.cyrilvoyant.com/tools-spec.json#1.0",
+ "kind": "calculator",
+ "domain": "energy",
+ "interface_language": "both",
+ "name": {
+  "fr": "Mesurer variabilité et prévisibilité — sCV et F",
+  "en": "Measure variability and forecastability — sCV and F"
+ },
+ "url": {
+  "fr": "https://www.cyrilvoyant.com/fr/outils/variabilite-previsibilite/#try-it",
+  "en": "https://cyrilvoyant.github.io/methods/solar-variability-scv.html#try-it"
+ },
+ "page_title": {
+  "fr": "Mesurer variabilité et prévisibilité : sCV et F",
+  "en": "sCV and F: variability and forecastability of solar irradiance"
+ },
+ "computes": {
+  "fr": "sCV décrit la variabilité d’un signal, F sa prévisibilité, avant tout modèle. Fournir éclairement mesuré et ciel clair, puis les lire à l’horizon choisi.",
+  "en": "sCV describes the variability of a signal, F its forecastability, before any model. Supply measured and clear-sky irradiance, then read them at your chosen horizon."
+ },
+ "summary": {
+  "fr": "Deux ciels peuvent être aussi variables l’un que l’autre, et l’un se prévoir bien mieux que l’autre. sCV mesure l’écart au ciel clair. F dit s’il en reste une mémoire à l’horizon visé.",
+  "en": "Before choosing a forecasting model, it helps to know how difficult the site is. Two numbers answer that: sCV, the variability that clouds add to the course of the sun, and F, how much of that variability can be anticipated at a given horizon."
+ },
+ "parameters": [
+  {
+   "id": "sc-n",
+   "type": "integer",
+   "control": "range",
+   "min": 1,
+   "max": 12,
+   "step": 1,
+   "default": 1,
+   "label": {
+    "fr": "Horizon n",
+    "en": "Horizon n steps"
+   },
+   "meaning": {
+    "fr": "Nombre de pas à l’avance, au plus T/2. sCV n’en dépend pas ; F, si.",
+    "en": null
+   },
+   "unit": {
+    "fr": "pas",
+    "en": "pas"
+   },
+   "unit_source": "display"
+  },
+  {
+   "id": "sc-dd",
+   "type": "number",
+   "control": "range",
+   "min": 0,
+   "max": 0.6,
+   "step": 0.05,
+   "default": 0.2,
+   "label": {
+    "fr": "Plancher diffus d",
+    "en": "Diffuse floor d"
+   },
+   "meaning": {
+    "fr": "La fraction de ciel clair qui reste sous un nuage épais : 0,2 dans l’article. Il fixe l’échelle de sCV, proportionnelle à 1/(1 − d). Les séries chargées restent construites avec d = 0,2.",
+    "en": null
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "unit_source": "no unit shown by the page"
+  },
+  {
+   "id": "sc-T",
+   "type": "integer",
+   "control": "number",
+   "min": 2,
+   "max": null,
+   "step": 1,
+   "default": 24,
+   "label": {
+    "fr": "Pas par jour T",
+    "en": "Steps per day T"
+   },
+   "meaning": {
+    "fr": "Nombre de pas dans une journée : 24 au pas horaire. La mémoire est cherchée entre l’horizon n et T/2.",
+    "en": null
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "unit_source": "no unit shown by the page"
+  },
+  {
+   "id": "sc-d",
+   "type": "text",
+   "control": "textarea",
+   "default": null,
+   "lines": 1440,
+   "preview": "0 0 / 0 0 / 0 0",
+   "label": {
+    "fr": "Deux colonnes, une ligne par pas de temps : éclairement mesuré, puis éclairement de ciel clair, dans la même unité. Point ou virgule décimale.",
+    "en": "Two columns: measured irradiance, clear-sky irradiance (one row per time step). Demo data loaded (hourly); paste your own."
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": null
+  }
+ ],
+ "presets": [
+  {
+   "id": "ciel-clair",
+   "name": {
+    "fr": "Ciel clair",
+    "en": null
+   },
+   "values": {
+    "sc-n": 1,
+    "sc-dd": 0.2,
+    "sc-T": 24
+   },
+   "changes_vs_default": {},
+   "data_preview": "0 0 / 0 0 / 0 0",
+   "shows": {
+    "fr": "L’éclairement suit le ciel clair : sCV = 0, F = 1. Rien à prévoir au-delà du cycle du Soleil. F ne bouge pas avec l’horizon : c’est juste, il n’y a aucun écart à prévoir.",
+    "en": null
+   }
+  },
+  {
+   "id": "voile-leger",
+   "name": {
+    "fr": "Voile léger",
+    "en": null
+   },
+   "values": {
+    "sc-n": 1,
+    "sc-dd": 0.2,
+    "sc-T": 24
+   },
+   "changes_vs_default": {},
+   "data_preview": "0 0 / 0 0 / 0 0",
+   "shows": {
+    "fr": "De petits écarts au ciel clair : sCV faible, donc F reste près de 1 quel que soit l’horizon. Peu de variabilité, peu de difficulté.",
+    "en": null
+   }
+  },
+  {
+   "id": "ciel-fragmente",
+   "name": {
+    "fr": "Ciel fragmenté",
+    "en": null
+   },
+   "values": {
+    "sc-n": 1,
+    "sc-dd": 0.2,
+    "sc-T": 24
+   },
+   "changes_vs_default": {},
+   "data_preview": "0 0 / 0 0 / 0 0",
+   "shows": {
+    "fr": "Des nuages fréquents : la variabilité monte. L’écart au ciel clair garde pourtant la forme de la journée, nul la nuit, fort à midi : ρmax reste élevé à 1 pas.",
+    "en": null
+   }
+  },
+  {
+   "id": "clair-ou-couvert-au-hasard",
+   "name": {
+    "fr": "Clair ou couvert au hasard",
+    "en": null
+   },
+   "values": {
+    "sc-n": 1,
+    "sc-dd": 0.2,
+    "sc-T": 24
+   },
+   "changes_vs_default": {},
+   "data_preview": "0 0 / 0 0 / 0 0",
+   "shows": {
+    "fr": "Chaque heure tire à pile ou face : ciel clair, ou seulement la fraction d de ciel clair. C’est le cas de référence de l’article : sCV proche de 1, et F basse, car peu de mémoire.",
+    "en": null
+   }
+  },
+  {
+   "id": "journees-entieres-couvertes",
+   "name": {
+    "fr": "Journées entières couvertes",
+    "en": null
+   },
+   "values": {
+    "sc-n": 1,
+    "sc-dd": 0.2,
+    "sc-T": 24
+   },
+   "changes_vs_default": {},
+   "data_preview": "0 0 / 0 0 / 0 0",
+   "shows": {
+    "fr": "Même amplitude que le cas précédent, mais le ciel reste le même toute la journée. La variabilité reste forte et la mémoire remonte F : un ciel très variable peut rester prévisible.",
+    "en": null
+   }
+  }
+ ],
+ "actions": [],
+ "variants": [],
+ "outputs": [
+  {
+   "name": {
+    "fr": "sCV",
+    "en": null
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": "L’écart quadratique au ciel clair, rapporté au ciel clair. 0 : ciel clair. 1 : la référence d’un ciel très variable, pas un maximum.",
+    "en": null
+   },
+   "kind": "metric"
+  },
+  {
+   "name": {
+    "fr": "ρmax",
+    "en": null
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": "La mémoire : la plus forte corrélation, en valeur absolue, entre l’écart au ciel clair et lui-même, de n à T/2 pas plus tôt. Atteinte ici à 1 pas.",
+    "en": null
+   },
+   "kind": "metric"
+  },
+  {
+   "name": {
+    "fr": "F",
+    "en": null
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": "Prévisibilité : F = 1 + sCV × (ρmax − 1). Plus elle est haute, plus cet horizon est facile.",
+    "en": null
+   },
+   "kind": "metric"
+  }
+ ],
+ "formulas": [],
+ "definitions": [
+  {
+   "term": "sCV",
+   "meaning": {
+    "fr": "La racine de l’écart quadratique moyen au ciel clair, rapportée à la racine de la moyenne du carré du ciel clair, avec une échelle fixée par d. 0 : ciel clair. Environ 1 : chaque heure clair ou couvert à pile ou face. Ce n’est pas un maximum.",
+    "en": null
+   }
+  },
+  {
+   "term": "F",
+   "meaning": {
+    "fr": "F = 1 + sCV × (ρmax − 1). Comprise entre 1 − sCV et 1. Plus elle est haute, plus cet horizon est facile.",
+    "en": null
+   }
+  },
+  {
+   "term": "ρmax",
+   "meaning": {
+    "fr": "La plus forte autocorrélation, en valeur absolue, de l’écart au ciel clair, entre n et T/2 pas.",
+    "en": null
+   }
+  },
+  {
+   "term": "Plancher diffus d",
+   "meaning": {
+    "fr": "La fraction de ciel clair qui reste sous un nuage épais : 0,2 dans l’article.",
+    "en": null
+   }
+  },
+  {
+   "term": "T et n",
+   "meaning": {
+    "fr": "T : le nombre de pas par jour. n : l’horizon, en pas.",
+    "en": null
+   }
+  }
+ ],
+ "assumptions": {
+  "fr": [],
+  "en": [
+   "A clear-sky model is needed. Use at least a year of data. Keep a time step of a few minutes or more: at very short steps (a second or less) sensor response, over-irradiance at cloud edges and aliasing distort the fluctuations; beyond one hour the half-sample approximation of Eq. (6) may no longer hold."
+  ]
+ },
+ "source": {
+  "dois": [
+   "10.1016/j.renene.2025.123913",
+   "10.5281/zenodo.23562553"
+  ],
+  "repositories": [
+   "https://github.com/cyrilvoyant/solar-variability-scv"
+  ],
+  "related_pages": []
+ },
+ "how_to_explore": {
+  "fr": "Régler les paramètres sur un préréglage (valeurs ci-dessus), lire la phrase affichée par la page puis les sorties ; modifier ensuite un seul paramètre à la fois entre son minimum et son maximum.",
+  "en": "Set the parameters to a preset (values above), read the sentence the page shows then the outputs; then change one parameter at a time between its minimum and maximum."
+ },
+ "exploration": [
+  {
+   "preset": "ciel-clair",
+   "title": {
+    "fr": "Ciel clair",
+    "en": null
+   },
+   "set": {
+    "sc-n": 1,
+    "sc-dd": 0.2,
+    "sc-T": 24
+   },
+   "observe": {
+    "fr": "L’éclairement suit le ciel clair : sCV = 0, F = 1. Rien à prévoir au-delà du cycle du Soleil. F ne bouge pas avec l’horizon : c’est juste, il n’y a aucun écart à prévoir.",
+    "en": null
+   }
+  },
+  {
+   "preset": "voile-leger",
+   "title": {
+    "fr": "Voile léger",
+    "en": null
+   },
+   "set": {
+    "sc-n": 1,
+    "sc-dd": 0.2,
+    "sc-T": 24
+   },
+   "observe": {
+    "fr": "De petits écarts au ciel clair : sCV faible, donc F reste près de 1 quel que soit l’horizon. Peu de variabilité, peu de difficulté.",
+    "en": null
+   }
+  },
+  {
+   "preset": "ciel-fragmente",
+   "title": {
+    "fr": "Ciel fragmenté",
+    "en": null
+   },
+   "set": {
+    "sc-n": 1,
+    "sc-dd": 0.2,
+    "sc-T": 24
+   },
+   "observe": {
+    "fr": "Des nuages fréquents : la variabilité monte. L’écart au ciel clair garde pourtant la forme de la journée, nul la nuit, fort à midi : ρmax reste élevé à 1 pas.",
+    "en": null
+   }
+  },
+  {
+   "preset": "clair-ou-couvert-au-hasard",
+   "title": {
+    "fr": "Clair ou couvert au hasard",
+    "en": null
+   },
+   "set": {
+    "sc-n": 1,
+    "sc-dd": 0.2,
+    "sc-T": 24
+   },
+   "observe": {
+    "fr": "Chaque heure tire à pile ou face : ciel clair, ou seulement la fraction d de ciel clair. C’est le cas de référence de l’article : sCV proche de 1, et F basse, car peu de mémoire.",
+    "en": null
+   }
+  },
+  {
+   "preset": "journees-entieres-couvertes",
+   "title": {
+    "fr": "Journées entières couvertes",
+    "en": null
+   },
+   "set": {
+    "sc-n": 1,
+    "sc-dd": 0.2,
+    "sc-T": 24
+   },
+   "observe": {
+    "fr": "Même amplitude que le cas précédent, mais le ciel reste le même toute la journée. La variabilité reste forte et la mémoire remonte F : un ciel très variable peut rester prévisible.",
+    "en": null
+   }
+  }
+ ],
+ "concepts": [
+  "scv",
+  "forecastability-f"
+ ],
+ "extraction": {
+  "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
+  "roots": [
+   "#try-it"
+  ],
+  "page_errors": [],
+  "fr_en_preset_consistency": null
+ }
+}

@@ -1,0 +1,134 @@
+{
+ "@context": "https://schema.org",
+ "@type": [
+  "SoftwareApplication",
+  "LearningResource"
+ ],
+ "@id": "https://www.cyrilvoyant.com/tools/influential-point-regression/#tool-spec",
+ "identifier": "regr",
+ "name": "Correlation and regression: move a point",
+ "alternateName": "Corrélation et régression : déplacer un point",
+ "description": "Move an outlier and watch the correlation coefficient r, the least-squares line and the p-value change.",
+ "url": "https://www.cyrilvoyant.com/tools/influential-point-regression/",
+ "sameAs": [
+  "https://www.cyrilvoyant.com/fr/animations/point-influent-regression/",
+  "https://www.cyrilvoyant.com/tools/influential-point-regression/"
+ ],
+ "inLanguage": [
+  "fr",
+  "en"
+ ],
+ "applicationCategory": "EducationalApplication",
+ "operatingSystem": "Any (web browser)",
+ "isAccessibleForFree": true,
+ "learningResourceType": "teaching",
+ "author": {
+  "@type": "Person",
+  "name": "Cyril Voyant",
+  "identifier": "https://orcid.org/0000-0003-0242-7377"
+ },
+ "license": "https://creativecommons.org/licenses/by/4.0/",
+ "additionalProperty": [
+  {
+   "@type": "PropertyValue",
+   "propertyID": "orange-point-x",
+   "name": "Orange point x",
+   "alternateName": "x du point orange",
+   "value": 9.5,
+   "minValue": 0,
+   "maxValue": 10,
+   "unitText": "dimensionless"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "orange-point-y",
+   "name": "Orange point y",
+   "alternateName": "y du point orange",
+   "value": 1,
+   "minValue": 0,
+   "maxValue": 10,
+   "unitText": "dimensionless"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "include-the-orange-point",
+   "name": "Include the orange point",
+   "alternateName": "Inclure le point orange",
+   "value": true
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:far-in-x-off-the-trend",
+   "name": "Far in x, off the trend",
+   "alternateName": "Loin en x, hors tendance",
+   "value": "{\"orange-point-x\": 9.5, \"orange-point-y\": 1, \"include-the-orange-point\": true}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:far-in-x-on-the-trend",
+   "name": "Far in x, on the trend",
+   "alternateName": "Loin en x, dans la tendance",
+   "value": "{\"orange-point-x\": 9.5, \"orange-point-y\": 7.5, \"include-the-orange-point\": true}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:at-the-center-off-the-trend",
+   "name": "At the center, off the trend",
+   "alternateName": "Au centre, hors tendance",
+   "value": "{\"orange-point-x\": 4.5, \"orange-point-y\": 9, \"include-the-orange-point\": true}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:without-the-orange-point",
+   "name": "Without the orange point",
+   "alternateName": "Sans le point orange",
+   "value": "{\"orange-point-x\": 9.5, \"orange-point-y\": 1, \"include-the-orange-point\": false}"
+  }
+ ],
+ "potentialAction": {
+  "@type": "Action",
+  "name": "Explore the tool",
+  "target": {
+   "@type": "EntryPoint",
+   "urlTemplate": "https://www.cyrilvoyant.com/tools/influential-point-regression/",
+   "actionPlatform": "https://schema.org/DesktopWebPlatform"
+  },
+  "object": [
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "orange-point-x",
+    "description": "Orange point x",
+    "valueRequired": false,
+    "minValue": 0,
+    "maxValue": 10,
+    "defaultValue": 9.5,
+    "stepValue": 0.1
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "orange-point-y",
+    "description": "Orange point y",
+    "valueRequired": false,
+    "minValue": 0,
+    "maxValue": 10,
+    "defaultValue": 1,
+    "stepValue": 0.1
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "include-the-orange-point",
+    "description": "Include the orange point",
+    "valueRequired": false,
+    "defaultValue": true
+   }
+  ]
+ },
+ "about": [
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#p-value"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#influential-point"
+  }
+ ]
+}

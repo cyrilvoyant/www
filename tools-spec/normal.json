@@ -1,0 +1,506 @@
+{
+ "id": "normal",
+ "schema": "https://www.cyrilvoyant.com/tools-spec.json#1.0",
+ "kind": "teaching",
+ "domain": "learning",
+ "interface_language": "both",
+ "name": {
+  "fr": "Explorer la loi normale",
+  "en": "Explore the normal distribution"
+ },
+ "url": {
+  "fr": "https://www.cyrilvoyant.com/fr/animations/loi-normale/",
+  "en": "https://www.cyrilvoyant.com/tools/normal-distribution/"
+ },
+ "page_title": {
+  "fr": "Loi normale interactive : aire, probabilité et score z",
+  "en": "Interactive normal distribution: area, probability and z-score"
+ },
+ "computes": {
+  "fr": "Passer d’un écart réduit à une probabilité, ou l’inverse.",
+  "en": "Convert a standard score to a probability, or vice versa."
+ },
+ "summary": {
+  "fr": "Dans toute loi normale, environ 95 % des valeurs se trouvent à moins de 1,96 écart-type de la moyenne. Vous passez d’une valeur à une probabilité, et d’une probabilité à un seuil, sans table.",
+  "en": "In any normal distribution, about 95% of values lie within 1.96 standard deviations of the mean. You go from a value to a probability, and from a probability to a threshold, without a table."
+ },
+ "parameters": [
+  {
+   "id": "area",
+   "type": "enum",
+   "control": "select",
+   "default": "lt",
+   "options": [
+    {
+     "value": "lt",
+     "label": "À gauche : P(Z < z)"
+    },
+    {
+     "value": "gt",
+     "label": "À droite : P(Z > z)"
+    },
+    {
+     "value": "two",
+     "label": "Au centre : P(−|z| < Z < |z|)"
+    }
+   ],
+   "label": {
+    "fr": "Aire",
+    "en": "Area"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": null
+  },
+  {
+   "id": "z",
+   "type": "number",
+   "control": "number",
+   "min": null,
+   "max": null,
+   "step": 0.01,
+   "default": 1.96,
+   "label": {
+    "fr": "z (en écarts-types)",
+    "en": "z (standard deviations)"
+   },
+   "meaning": {
+    "fr": "Le score z : le nombre d’écarts-types entre x et la moyenne.",
+    "en": "The z-score: the number of standard deviations between x and the mean."
+   },
+   "unit": {
+    "fr": "en écarts-types",
+    "en": "en écarts-types"
+   },
+   "unit_source": "label"
+  },
+  {
+   "id": "probability",
+   "type": "number",
+   "control": "number",
+   "min": 0.0001,
+   "max": 0.9999,
+   "step": 0.0001,
+   "default": 0.975,
+   "label": {
+    "fr": "probabilité (aire)",
+    "en": "probability (area)"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": {
+    "fr": "aire",
+    "en": "aire"
+   },
+   "unit_source": "label"
+  },
+  {
+   "id": "x",
+   "type": "number",
+   "control": "number",
+   "min": null,
+   "max": null,
+   "step": "any",
+   "default": 1.96,
+   "label": {
+    "fr": "x (valeur)",
+    "en": "x (value)"
+   },
+   "meaning": {
+    "fr": "Une valeur, la moyenne et l’écart-type.",
+    "en": "A value, the mean and the standard deviation."
+   },
+   "unit": {
+    "fr": "valeur",
+    "en": "valeur"
+   },
+   "unit_source": "label"
+  },
+  {
+   "id": "param",
+   "type": "integer",
+   "control": "number",
+   "min": null,
+   "max": null,
+   "step": "any",
+   "default": 0,
+   "label": {
+    "fr": "μ (moyenne)",
+    "en": "μ (mean)"
+   },
+   "meaning": {
+    "fr": "Une valeur, la moyenne et l’écart-type.",
+    "en": "A value, the mean and the standard deviation."
+   },
+   "unit": {
+    "fr": "moyenne",
+    "en": "moyenne"
+   },
+   "unit_source": "label"
+  },
+  {
+   "id": "param_2",
+   "type": "integer",
+   "control": "number",
+   "min": 0,
+   "max": null,
+   "step": "any",
+   "default": 1,
+   "label": {
+    "fr": "σ (écart-type)",
+    "en": "σ (standard deviation)"
+   },
+   "meaning": {
+    "fr": "Une valeur, la moyenne et l’écart-type.",
+    "en": "A value, the mean and the standard deviation."
+   },
+   "unit": {
+    "fr": "standard deviation",
+    "en": "standard deviation"
+   },
+   "unit_source": "label"
+  }
+ ],
+ "presets": [
+  {
+   "id": "97-5-to-the-left-of-1-96",
+   "name": {
+    "fr": "97,5 % à gauche de 1,96",
+    "en": "97.5% to the left of 1.96"
+   },
+   "values": {
+    "area": "lt",
+    "z": 1.96,
+    "probability": 0.975,
+    "x": 1.96,
+    "param": 0,
+    "param_2": 1
+   },
+   "changes_vs_default": {},
+   "shows": {
+    "fr": "L’aire à gauche de z = 1,96 vaut environ 0,975.",
+    "en": "The area to the left of z = 1.96 is about 0.975."
+   }
+  },
+  {
+   "id": "95-in-the-center",
+   "name": {
+    "fr": "95 % au centre",
+    "en": "95% in the center"
+   },
+   "values": {
+    "area": "two",
+    "z": 1.96,
+    "probability": 0.95,
+    "x": 1.95996,
+    "param": 0,
+    "param_2": 1
+   },
+   "changes_vs_default": {
+    "area": "two",
+    "probability": 0.95,
+    "x": 1.95996
+   },
+   "shows": {
+    "fr": "Calcul inverse : partir de 95 % au centre redonne la borne z ≈ 1,96.",
+    "en": "Inverse calculation: starting from 95% in the center gives back the bound z ≈ 1.96."
+   }
+  },
+  {
+   "id": "beyond-2-standard-deviations",
+   "name": {
+    "fr": "Au-delà de 2 écarts-types",
+    "en": "Beyond 2 standard deviations"
+   },
+   "values": {
+    "area": "gt",
+    "z": 2,
+    "probability": 0.0228,
+    "x": 2,
+    "param": 0,
+    "param_2": 1
+   },
+   "changes_vs_default": {
+    "area": "gt",
+    "z": 2,
+    "probability": 0.0228,
+    "x": 2
+   },
+   "shows": {
+    "fr": "Environ 2,3 % des valeurs dépassent la moyenne de plus de 2 écarts-types.",
+    "en": "About 2.3% of values exceed the mean by more than 2 standard deviations."
+   }
+  },
+  {
+   "id": "threshold-of-the-top-10",
+   "name": {
+    "fr": "Seuil des 10 % les plus hauts",
+    "en": "Threshold of the top 10%"
+   },
+   "values": {
+    "area": "gt",
+    "z": 1.2816,
+    "probability": 0.1,
+    "x": 1.28155,
+    "param": 0,
+    "param_2": 1
+   },
+   "changes_vs_default": {
+    "area": "gt",
+    "z": 1.2816,
+    "probability": 0.1,
+    "x": 1.28155
+   },
+   "shows": {
+    "fr": "Une probabilité donne une borne : les 10 % les plus hauts commencent vers z = 1,28.",
+    "en": "A probability gives a bound: the top 10% starts near z = 1.28."
+   }
+  },
+  {
+   "id": "example-x-130-100-15",
+   "name": {
+    "fr": "Exemple : x = 130, μ = 100, σ = 15",
+    "en": "Example: x = 130, μ = 100, σ = 15"
+   },
+   "values": {
+    "area": "lt",
+    "z": 2.0,
+    "probability": 0.9772,
+    "x": 130,
+    "param": 100,
+    "param_2": 15
+   },
+   "changes_vs_default": {
+    "z": 2.0,
+    "probability": 0.9772,
+    "x": 130,
+    "param": 100,
+    "param_2": 15
+   },
+   "shows": {
+    "fr": "Exemple d’école : 130 est à 2 écarts-types de 100. Le score z vaut 2 quelle que soit l’unité.",
+    "en": "Textbook example: 130 is 2 standard deviations from 100. The z-score is 2 whatever the unit."
+   }
+  }
+ ],
+ "actions": [],
+ "variants": [],
+ "outputs": [
+  {
+   "name": {
+    "fr": "Moyenne μ = 0, écart-type σ = 1 → z = (x − μ)/σ",
+    "en": "Mean μ = 0, standard deviation σ = 1 → z = (x − μ)/σ"
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "kind": "reading"
+  },
+  {
+   "name": {
+    "fr": "aire",
+    "en": "area"
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "kind": "reading"
+  }
+ ],
+ "formulas": [
+  {
+   "text": "z = (x − μ)/σ"
+  },
+  {
+   "text": "Φ(z) = P(Z ≤ z)"
+  }
+ ],
+ "definitions": [
+  {
+   "term": "x, μ, σ",
+   "meaning": {
+    "fr": "Une valeur, la moyenne et l’écart-type.",
+    "en": "A value, the mean and the standard deviation."
+   }
+  },
+  {
+   "term": "z",
+   "meaning": {
+    "fr": "Le score z : le nombre d’écarts-types entre x et la moyenne.",
+    "en": "The z-score: the number of standard deviations between x and the mean."
+   }
+  },
+  {
+   "term": "Z, N(0, 1)",
+   "meaning": {
+    "fr": "Une variable normale centrée réduite : de moyenne 0 et d’écart-type 1.",
+    "en": "A standard normal variable: mean 0 and standard deviation 1."
+   }
+  },
+  {
+   "term": "Φ(z), P",
+   "meaning": {
+    "fr": "Φ(z) est la probabilité P que Z reste en dessous de z : l’aire à gauche de z.",
+    "en": "Φ(z) is the probability P that Z stays below z: the area to the left of z."
+   }
+  },
+  {
+   "term": "Que veut dire chaque symbole ?",
+   "meaning": {
+    "fr": "x est une valeur, μ la moyenne et σ l’écart-type. z exprime la distance à μ en nombre d’écarts-types. Z est une variable normale centrée réduite ; P désigne une probabilité. L’aire colorée est une probabilité, tandis que φ(z) est une hauteur de densité, pas une probabilité en un point.",
+    "en": "x is a value, μ the mean and σ the standard deviation. z expresses the distance from μ in standard-deviation units. Z is a standard normal variable; P denotes probability. The shaded area is a probability, whereas φ(z) is a density height, not a probability at a point."
+   }
+  }
+ ],
+ "assumptions": {
+  "fr": [
+   "Le calcul suppose la loi normale choisie ; il ne démontre pas que des mesures sont normales. Un intervalle de population n’est pas un intervalle de confiance d’une moyenne."
+  ],
+  "en": [
+   "The calculation assumes the selected normal distribution; it does not show that measurements are normal. A population interval is not a confidence interval for a mean."
+  ]
+ },
+ "source": {
+  "dois": [],
+  "repositories": [],
+  "related_pages": [
+   {
+    "href": "/fr/enseignement/biostatistique/statistiques-descriptives/",
+    "text": "Le chapitre complet du cours"
+   },
+   {
+    "href": "/fr/animations/test-student/",
+    "text": "Le test de Student : quand l’écart-type est estimé"
+   },
+   {
+    "href": "/fr/animations/courbe-roc/",
+    "text": "La courbe ROC : deux lois normales et un seuil"
+   },
+   {
+    "href": "/fr/animations/intervalles-regression/",
+    "text": "Les intervalles de régression : une application directe"
+   }
+  ]
+ },
+ "how_to_explore": {
+  "fr": "Régler les paramètres sur un préréglage (valeurs ci-dessus), lire la phrase affichée par la page puis les sorties ; modifier ensuite un seul paramètre à la fois entre son minimum et son maximum.",
+  "en": "Set the parameters to a preset (values above), read the sentence the page shows then the outputs; then change one parameter at a time between its minimum and maximum."
+ },
+ "exploration": [
+  {
+   "preset": "97-5-to-the-left-of-1-96",
+   "title": {
+    "fr": "97,5 % à gauche de 1,96",
+    "en": "97.5% to the left of 1.96"
+   },
+   "set": {
+    "area": "lt",
+    "z": 1.96,
+    "probability": 0.975,
+    "x": 1.96,
+    "param": 0,
+    "param_2": 1
+   },
+   "observe": {
+    "fr": "L’aire à gauche de z = 1,96 vaut environ 0,975.",
+    "en": "The area to the left of z = 1.96 is about 0.975."
+   }
+  },
+  {
+   "preset": "95-in-the-center",
+   "title": {
+    "fr": "95 % au centre",
+    "en": "95% in the center"
+   },
+   "set": {
+    "area": "two",
+    "probability": 0.95,
+    "x": 1.95996
+   },
+   "observe": {
+    "fr": "Calcul inverse : partir de 95 % au centre redonne la borne z ≈ 1,96.",
+    "en": "Inverse calculation: starting from 95% in the center gives back the bound z ≈ 1.96."
+   }
+  },
+  {
+   "preset": "beyond-2-standard-deviations",
+   "title": {
+    "fr": "Au-delà de 2 écarts-types",
+    "en": "Beyond 2 standard deviations"
+   },
+   "set": {
+    "area": "gt",
+    "z": 2,
+    "probability": 0.0228,
+    "x": 2
+   },
+   "observe": {
+    "fr": "Environ 2,3 % des valeurs dépassent la moyenne de plus de 2 écarts-types.",
+    "en": "About 2.3% of values exceed the mean by more than 2 standard deviations."
+   }
+  },
+  {
+   "preset": "threshold-of-the-top-10",
+   "title": {
+    "fr": "Seuil des 10 % les plus hauts",
+    "en": "Threshold of the top 10%"
+   },
+   "set": {
+    "area": "gt",
+    "z": 1.2816,
+    "probability": 0.1,
+    "x": 1.28155
+   },
+   "observe": {
+    "fr": "Une probabilité donne une borne : les 10 % les plus hauts commencent vers z = 1,28.",
+    "en": "A probability gives a bound: the top 10% starts near z = 1.28."
+   }
+  },
+  {
+   "preset": "example-x-130-100-15",
+   "title": {
+    "fr": "Exemple : x = 130, μ = 100, σ = 15",
+    "en": "Example: x = 130, μ = 100, σ = 15"
+   },
+   "set": {
+    "z": 2.0,
+    "probability": 0.9772,
+    "x": 130,
+    "param": 100,
+    "param_2": 15
+   },
+   "observe": {
+    "fr": "Exemple d’école : 130 est à 2 écarts-types de 100. Le score z vaut 2 quelle que soit l’unité.",
+    "en": "Textbook example: 130 is 2 standard deviations from 100. The z-score is 2 whatever the unit."
+   }
+  }
+ ],
+ "concepts": [
+  "normal-distribution"
+ ],
+ "extraction": {
+  "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
+  "roots": [
+   "#experience"
+  ],
+  "page_errors": [],
+  "fr_en_preset_consistency": {
+   "presets_compared": 5,
+   "presets_with_different_values_fr_vs_en": []
+  }
+ }
+}

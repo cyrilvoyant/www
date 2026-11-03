@@ -34,6 +34,22 @@ Distinguish published papers, preprints, software and work in preparation. Attri
 - [The approach](https://www.cyrilvoyant.com/approach/) / [La démarche](https://www.cyrilvoyant.com/fr/approche/): the question, the physical model, the data, then the tools and demonstrated benefit of complexity.
 - [Interactive resources JSON](https://www.cyrilvoyant.com/interactive-resources.json): catalog with field, task, type and interface language.
 
+## Ontology and glossary / Ontologie et lexique
+
+- [Ontology of site concepts](https://www.cyrilvoyant.com/ontology/): each notion with its definition, unit, related notions and the page that details it.
+- [concepts.ttl](https://www.cyrilvoyant.com/ontology/concepts.ttl) (Turtle, SKOS) and [concepts.jsonld](https://www.cyrilvoyant.com/ontology/concepts.jsonld): machine-readable form of the same concepts.
+- [Lexique](https://www.cyrilvoyant.com/fr/lexique/) (français) and [Glossary](https://www.cyrilvoyant.com/glossary/) (English): plain-language definitions.
+
+## More entry points
+
+- [Biostatistics for health studies: the course in three chapters](https://www.cyrilvoyant.com/teaching/biostatistics/): English course in three chapters.
+- [Chapter 1: probability, conditional probability, contingency tables and ROC curves](https://www.cyrilvoyant.com/teaching/biostatistics/probabilities/): probabilities.
+- [Chapter 2: descriptive statistics, the normal distribution and hypothesis tests](https://www.cyrilvoyant.com/teaching/biostatistics/descriptive-statistics/): descriptive statistics.
+- [Chapter 3: correlation, linear regression and χ² tests](https://www.cyrilvoyant.com/teaching/biostatistics/correlation-regression/): correlation and regression.
+- [Recherche et projets](https://www.cyrilvoyant.com/fr/projets-de-recherche/): projets de recherche (français).
+- French guides of the technical library: [Tunnel Load Simulator](https://cyrilvoyant.github.io/tools/tunnel-load-simulator-fr.html), [ARTU, exemple guidé](https://cyrilvoyant.github.io/teaching/artu-worked-example-fr.html), [iode radioactif et thyroïde](https://cyrilvoyant.github.io/methods/thyroid-radioiodine-fr.html).
+- Technical library for machines: [llm.md](https://cyrilvoyant.github.io/llm.md), [llms-full.txt](https://cyrilvoyant.github.io/llms-full.txt).
+
 ## Pages
 
 - [Cyril Voyant](https://www.cyrilvoyant.com/): Cyril Voyant, Mines Paris–PSL: rigorous science with sufficient tools; add complexity only when it brings a demonstrated benefit.
@@ -86,13 +102,13 @@ Distinguish published papers, preprints, software and work in preparation. Attri
 - [Physique industrielle : thermodynamique, vapeur d'eau et production de froid](https://www.cyrilvoyant.com/fr/enseignement/physique-industrielle/): Physique industrielle : un cours en 5 chapitres et 139 diapositives, B.U.T. Génie biologique, Sciences de l'aliment et biotechnologie (SAB), 2ᵉ année.
 - [Chapitre 5 : les cycles frigorifiques](https://www.cyrilvoyant.com/fr/enseignement/physique-industrielle/cycles-frigorifiques/): Le cycle en quatre étapes, les états du fluide, le cycle sur le diagramme de Mollier, COP et efficacité, froid industriel…
 - [Chapitre 4 : les cycles thermodynamiques moteurs](https://www.cyrilvoyant.com/fr/enseignement/physique-industrielle/cycles-moteurs/): Premier et second principes, machines thermiques, équipements, cycles thermodynamiques, cycles des machines à vapeur et cycles complexes.
-- [Chapitre 2 : gaz parfaits, gaz réels et diagrammes](https://www.cyrilvoyant.com/fr/enseignement/physique-industrielle/gaz-parfaits-et-reels/): Le gaz parfait et ses limites, enthalpie et entropie, diagrammes de Clapeyron, entropique et de Mollier, lecture du diagramme P-h du R134a, interpolation.
+- [Chapitre 2 : gaz parfaits, gaz réels et diagrammes](https://www.cyrilvoyant.com/fr/enseignement/physique-industrielle/gaz-parfaits-et-reels/): Le gaz parfait et ses limites, enthalpie et entropie, diagrammes de Clapeyron, entropique et de Mollier, lecture du diagramme P-h (pression-enthalpie)…
 - [Chapitre 1 : notions générales de thermodynamique](https://www.cyrilvoyant.com/fr/enseignement/physique-industrielle/notions-de-thermodynamique/): Pression, température, travail et chaleur, chaleur sensible et latente, évaporation, ébullition, point triple et condensation.
 - [Chapitre 3 : la vapeur d'eau](https://www.cyrilvoyant.com/fr/enseignement/physique-industrielle/vapeur-d-eau/): Détente et compression, température et altitude, condensation, pression de vapeur saturante, humidité relative et chaleur latente.
 - [Physique pour les études de santé : ondes électromagnétiques, rayons X et imagerie](https://www.cyrilvoyant.com/fr/enseignement/physique-pass/): Physique PASS : un cours de 110 diapositives et 2 séances d'exercices corrigées (49 diapositives), Première année des études de santé (PASS)…
 - [Exercices dirigés 1 : les ondes électromagnétiques, corrigé](https://www.cyrilvoyant.com/fr/enseignement/physique-pass/ed1-corrige/): Neuf exercices corrigés pas à pas sur les ondes électromagnétiques : énergie et longueur d'onde du photon, électron-volt, fréquence et période…
 - [Exercices dirigés 2 : les ondes électromagnétiques, corrigé](https://www.cyrilvoyant.com/fr/enseignement/physique-pass/ed2-corrige/): Neuf exercices corrigés pas à pas : niveaux d'énergie, absorption et émission, rayons X, atténuation et couche de demi-atténuation, avec l'énoncé en PDF.
-- [Cours : les ondes électromagnétiques et les bases physiques de l'imagerie](https://www.cyrilvoyant.com/fr/enseignement/physique-pass/ondes-electromagnetiques/): De l'onde au photon, du spectre aux niveaux d'énergie, de la spectroscopie aux rayons X, de l'atténuation au scanner.
+- [Cours : les ondes électromagnétiques et les bases physiques de l'imagerie](https://www.cyrilvoyant.com/fr/enseignement/physique-pass/ondes-electromagnetiques/): De l'onde au photon (le grain élémentaire de lumière), du spectre aux niveaux d'énergie, de la spectroscopie aux rayons X, de l'atténuation au scanner.
 - [L'arbre RTVACOS : où votre travail peut-il casser ?](https://www.cyrilvoyant.com/fr/excellence-rtvacos/): Un miroir interactif du cadre RTVACOS : quatre fondations (rigueur, transparence, visibilité, adoption) comme racines.
 - [Ma recherche en 30 secondes](https://www.cyrilvoyant.com/fr/fiche-30-secondes/): La recherche de Cyril Voyant en bref : comprendre le système, choisir un modèle utile, mesurer l'apport des outils, garder l'humain responsable.
 - [L'IA dans la recherche : AI Act, charte de laboratoire et boîte à outils](https://www.cyrilvoyant.com/fr/ia-dans-la-recherche/): L'IA dans la recherche : ce que change l'AI Act, le calendrier, qui est responsable lors d'un transfert, et dix outils pour un laboratoire.
@@ -107,6 +123,7 @@ Distinguish published papers, preprints, software and work in preparation. Attri
 - [Comparer une prévision à la persistance : NICE](https://www.cyrilvoyant.com/fr/outils/nice/): NICE dit si une prévision fait mieux que la persistance : 0 parfaite, 1 persistance, > 1 moins bonne. Testez sur un exemple ou sur vos données.
 - [Mesurer variabilité et prévisibilité : sCV et F](https://www.cyrilvoyant.com/fr/outils/variabilite-previsibilite/): Même variabilité, prévisibilité opposée : sCV mesure l’écart au ciel clair, F dit s’il en reste une mémoire à l’horizon visé. Testez cinq ciels.
 - [Prévoir l'éclairement et son incertitude avec des nombres complexes](https://www.cyrilvoyant.com/fr/prevision-complexe/): Une autorégression complexe à six coefficients prévoit à la fois l'éclairement solaire et sa volatilité ; réglez α et voyez la largeur des intervalles.
+- [Recherche et projets](https://www.cyrilvoyant.com/fr/projets-de-recherche/): Les travaux de Cyril Voyant : variabilité solaire, prévision parcimonieuse, évaluation des prévisions, programmes de recherche en cours et passés.
 - [Recherche : questions, résultats et méthodes](https://www.cyrilvoyant.com/fr/recits/): La plupart des récits suivent le même plan : le constat, la question, la théorie en clair, la place sur l'échelle de la complexité, un exemple chiffré.
 - [Calculateur gratuit de BED et d'EQD2 : LQ ou LQL ?](https://www.cyrilvoyant.com/fr/recits/calculateur-bed-eqd2-lq-lql/): LQL-Equiv calcule BED et EQD2 dans le navigateur en LQ et en LQL. À forte dose par fraction, les modèles divergent : 72,7 Gy et 59,4 Gy pour 15 Gy au rectum.
 - [Comment évaluer une prévision solaire face à la persistance](https://www.cyrilvoyant.com/fr/recits/evaluer-prevision-solaire-persistance/): Comparer une prévision solaire à la persistance sur les mêmes cibles et le même périmètre, avec plusieurs normes d'erreur et un test. NICE en exemple.

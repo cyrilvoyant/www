@@ -1,0 +1,416 @@
+{
+ "id": "wave",
+ "schema": "https://www.cyrilvoyant.com/tools-spec.json#1.0",
+ "kind": "teaching",
+ "domain": "learning",
+ "interface_language": "both",
+ "name": {
+  "fr": "Onde EM animée : E, B et propagation",
+  "en": "Animated EM wave: E, B and propagation"
+ },
+ "url": {
+  "fr": "https://www.cyrilvoyant.com/fr/animations/onde-electromagnetique/",
+  "en": "https://www.cyrilvoyant.com/tools/electromagnetic-wave/"
+ },
+ "page_title": {
+  "fr": "Onde électromagnétique : animation des champs E et B",
+  "en": "Electromagnetic wave: electric and magnetic fields"
+ },
+ "computes": {
+  "fr": "Fréquence, longueur d’onde et champs transversaux ; lecture ralentie avec pause et pas à pas.",
+  "en": "Frequency, wavelength and transverse fields; slow playback, pause and step controls."
+ },
+ "summary": {
+  "fr": "À 50 MHz, le profil de l’onde avance d’environ 6 m toutes les 20 ns, alors qu’en chaque point les champs ne font qu’osciller sur place. Vous distinguez ce qui oscille de ce qui se propage.",
+  "en": "At 50 MHz, the wave profile advances by about 6 m every 20 ns, while at each point the fields only oscillate in place. You separate what oscillates from what travels."
+ },
+ "parameters": [
+  {
+   "id": "amplitude-e0",
+   "type": "number",
+   "control": "range",
+   "min": 0.5,
+   "max": 4,
+   "step": 0.1,
+   "default": 2,
+   "label": {
+    "fr": "Amplitude E₀ (V/m)",
+    "en": "Amplitude E₀ (V/m)"
+   },
+   "meaning": {
+    "fr": "Valeur maximale du champ électrique.",
+    "en": "Largest value of the electric field."
+   },
+   "unit": {
+    "fr": "V/m",
+    "en": "V/m"
+   },
+   "unit_source": "label"
+  },
+  {
+   "id": "frequency",
+   "type": "integer",
+   "control": "range",
+   "min": 10,
+   "max": 100,
+   "step": 1,
+   "default": 50,
+   "label": {
+    "fr": "Fréquence ν (MHz)",
+    "en": "Frequency ν (MHz)"
+   },
+   "meaning": {
+    "fr": "Oscillations par seconde, en millions.",
+    "en": "Oscillations per second, in millions."
+   },
+   "unit": {
+    "fr": "MHz",
+    "en": "MHz"
+   },
+   "unit_source": "label"
+  },
+  {
+   "id": "time-phase-t",
+   "type": "number",
+   "control": "range",
+   "min": 0,
+   "max": 6.28,
+   "step": 0.01,
+   "default": 0,
+   "label": {
+    "fr": "Phase temporelle ωt (rad)",
+    "en": "Time phase ωt (rad)"
+   },
+   "meaning": {
+    "fr": "Moment de l’oscillation : 6,28 rad font un tour complet. Elle déplace la courbe, sans changer les quatre valeurs ci-dessous.",
+    "en": "Moment in the oscillation: 6.28 rad is a full turn. It moves the curve without changing the four values below."
+   },
+   "unit": {
+    "fr": "rad",
+    "en": "rad"
+   },
+   "unit_source": "label"
+  }
+ ],
+ "presets": [
+  {
+   "id": "reference-2-v-m-50-mhz",
+   "name": {
+    "fr": "Référence · 2 V/m, 50 MHz",
+    "en": "Reference · 2 V/m, 50 MHz"
+   },
+   "values": {
+    "amplitude-e0": 2,
+    "frequency": 50,
+    "time-phase-t": 0
+   },
+   "changes_vs_default": {},
+   "shows": {
+    "fr": "À 50 MHz, λ vaut 6,00 m : le tracé de 12 m montre deux longueurs d’onde.",
+    "en": "At 50 MHz, λ is 6.00 m: the 12 m plot shows two wavelengths."
+   }
+  },
+  {
+   "id": "doubled-amplitude-4-v-m",
+   "name": {
+    "fr": "Amplitude doublée · 4 V/m",
+    "en": "Doubled amplitude · 4 V/m"
+   },
+   "values": {
+    "amplitude-e0": 4,
+    "frequency": 50,
+    "time-phase-t": 0
+   },
+   "changes_vs_default": {
+    "amplitude-e0": 4
+   },
+   "shows": {
+    "fr": "L’intensité est multipliée par 4, de 5,31 à 21,24 mW/m² ; la longueur d’onde ne bouge pas.",
+    "en": "The intensity is multiplied by 4, from 5.31 to 21.24 mW/m²; the wavelength does not change."
+   }
+  },
+  {
+   "id": "fm-radio-100-mhz",
+   "name": {
+    "fr": "Radio FM · 100 MHz",
+    "en": "FM radio · 100 MHz"
+   },
+   "values": {
+    "amplitude-e0": 2,
+    "frequency": 100,
+    "time-phase-t": 0
+   },
+   "changes_vs_default": {
+    "frequency": 100
+   },
+   "shows": {
+    "fr": "Fréquence doublée : λ tombe à 3,00 m. L’intensité ne bouge pas : dans cette onde, elle dépend de E₀, pas de ν.",
+    "en": "Doubled frequency: λ falls to 3.00 m. The intensity does not change: in this wave it depends on E₀, not on ν."
+   }
+  },
+  {
+   "id": "shortwave-10-mhz",
+   "name": {
+    "fr": "Ondes courtes · 10 MHz",
+    "en": "Shortwave · 10 MHz"
+   },
+   "values": {
+    "amplitude-e0": 2,
+    "frequency": 10,
+    "time-phase-t": 0
+   },
+   "changes_vs_default": {
+    "frequency": 10
+   },
+   "shows": {
+    "fr": "λ vaut 29,98 m, plus que les 12 m tracés : on ne voit qu’une partie de l’onde. Ce n’est pas une anomalie.",
+    "en": "λ is 29.98 m, more than the 12 m plotted: only part of the wave is visible. This is not an anomaly."
+   }
+  }
+ ],
+ "actions": [
+  {
+   "name": {
+    "fr": "Lancer l’animation",
+    "en": "Play animation"
+   }
+  },
+  {
+   "name": {
+    "fr": "Avancer d’un huitième de période",
+    "en": "Advance by one eighth of a period"
+   }
+  }
+ ],
+ "variants": [],
+ "outputs": [
+  {
+   "name": {
+    "fr": "Longueur d’onde λ",
+    "en": "Wavelength λ"
+   },
+   "unit": {
+    "fr": "m",
+    "en": "m"
+   },
+   "meaning": {
+    "fr": "Distance entre deux crêtes. Dépend seulement de ν.",
+    "en": "Distance between two crests. Depends only on ν."
+   },
+   "kind": "metric"
+  },
+  {
+   "name": {
+    "fr": "Période physique",
+    "en": "Physical period"
+   },
+   "unit": {
+    "fr": "ns",
+    "en": "ns"
+   },
+   "meaning": {
+    "fr": "Durée réelle d’une oscillation, en nanosecondes. Dépend seulement de ν.",
+    "en": "Real duration of one oscillation, in nanoseconds. Depends only on ν."
+   },
+   "kind": "metric"
+  },
+  {
+   "name": {
+    "fr": "Amplitude B₀",
+    "en": "Amplitude B₀"
+   },
+   "unit": {
+    "fr": "nT",
+    "en": "nT"
+   },
+   "meaning": {
+    "fr": "Valeur maximale du champ magnétique. Dépend seulement de E₀.",
+    "en": "Largest value of the magnetic field. Depends only on E₀."
+   },
+   "kind": "metric"
+  },
+  {
+   "name": {
+    "fr": "Intensité moyenne",
+    "en": "Mean intensity"
+   },
+   "unit": {
+    "fr": "mW/m²",
+    "en": "mW/m²"
+   },
+   "meaning": {
+    "fr": "Puissance transportée par mètre carré. Dépend seulement de E₀.",
+    "en": "Power carried per square metre. Depends only on E₀."
+   },
+   "kind": "metric"
+  }
+ ],
+ "formulas": [
+  {
+   "text": "E(x,t) = E_0cos(ωt − kx)"
+  },
+  {
+   "text": "B = E/c"
+  },
+  {
+   "text": "λ = c/ν"
+  },
+  {
+   "text": "I = (ε_0cE_0^2)/2"
+  },
+  {
+   "text": "E(x,t) = E₀ cos(ωt−kx), B = E/c, λ = c/ν et I = ε₀cE₀²/2. x : position ; t : temps ; ω : pulsation ; k : nombre d’onde ; c : vitesse de la lumière dans le vide ; ε₀ : permittivité du vide ; I : intensité moyenne.",
+   "note": true
+  },
+  {
+   "text": "Onde plane progressive, polarisée linéairement, dans le vide, se propageant selon +x.",
+   "note": true
+  }
+ ],
+ "definitions": [
+  {
+   "term": "E, B",
+   "meaning": {
+    "fr": "Les champs électrique et magnétique, perpendiculaires entre eux et à la propagation. E₀ est l’amplitude de E.",
+    "en": "The electric and magnetic fields, perpendicular to each other and to the direction of travel. E₀ is the amplitude of E."
+   }
+  },
+  {
+   "term": "x, t",
+   "meaning": {
+    "fr": "La position le long de la propagation et le temps.",
+    "en": "Position along the direction of travel, and time."
+   }
+  },
+  {
+   "term": "ω, k",
+   "meaning": {
+    "fr": "La pulsation (2π × fréquence) et le nombre d’onde (2π divisé par la longueur d’onde).",
+    "en": "Angular frequency (2π × frequency) and wave number (2π divided by wavelength)."
+   }
+  },
+  {
+   "term": "ν, λ",
+   "meaning": {
+    "fr": "La fréquence et la longueur d’onde.",
+    "en": "Frequency and wavelength."
+   }
+  },
+  {
+   "term": "c, ε₀",
+   "meaning": {
+    "fr": "La vitesse de la lumière et la permittivité électrique du vide.",
+    "en": "The speed of light and the electric permittivity of vacuum."
+   }
+  },
+  {
+   "term": "I",
+   "meaning": {
+    "fr": "L’intensité moyenne : la puissance transportée par unité de surface.",
+    "en": "Mean intensity: the power transported per unit area."
+   }
+  }
+ ],
+ "assumptions": {
+  "fr": [
+   "Onde plane, polarisation linéaire, dans le vide. Le champ B est mis à l’échelle de E pour comparer les formes ; ses valeurs physiques sont affichées à part. L’animation est ralentie : deux secondes pour une période."
+  ],
+  "en": [
+   "Plane wave, linear polarization, in vacuum. B is scaled to E to compare shapes; its physical values are shown separately. The animation is slowed down: two seconds per period."
+  ]
+ },
+ "source": {
+  "dois": [],
+  "repositories": [],
+  "related_pages": [
+   {
+    "href": "/fr/animations/effet-compton/",
+    "text": "Effet Compton : quand le photon rencontre un électron"
+   },
+   {
+    "href": "/fr/animations/attenuation-demi-epaisseur/",
+    "text": "Atténuation dans la matière"
+   },
+   {
+    "href": "/fr/enseignement/physique-pass/ondes-electromagnetiques/",
+    "text": "Le chapitre complet du cours"
+   }
+  ]
+ },
+ "how_to_explore": {
+  "fr": "Régler les paramètres sur un préréglage (valeurs ci-dessus), lire la phrase affichée par la page puis les sorties ; modifier ensuite un seul paramètre à la fois entre son minimum et son maximum.",
+  "en": "Set the parameters to a preset (values above), read the sentence the page shows then the outputs; then change one parameter at a time between its minimum and maximum."
+ },
+ "exploration": [
+  {
+   "preset": "reference-2-v-m-50-mhz",
+   "title": {
+    "fr": "Référence · 2 V/m, 50 MHz",
+    "en": "Reference · 2 V/m, 50 MHz"
+   },
+   "set": {
+    "amplitude-e0": 2,
+    "frequency": 50,
+    "time-phase-t": 0
+   },
+   "observe": {
+    "fr": "À 50 MHz, λ vaut 6,00 m : le tracé de 12 m montre deux longueurs d’onde.",
+    "en": "At 50 MHz, λ is 6.00 m: the 12 m plot shows two wavelengths."
+   }
+  },
+  {
+   "preset": "doubled-amplitude-4-v-m",
+   "title": {
+    "fr": "Amplitude doublée · 4 V/m",
+    "en": "Doubled amplitude · 4 V/m"
+   },
+   "set": {
+    "amplitude-e0": 4
+   },
+   "observe": {
+    "fr": "L’intensité est multipliée par 4, de 5,31 à 21,24 mW/m² ; la longueur d’onde ne bouge pas.",
+    "en": "The intensity is multiplied by 4, from 5.31 to 21.24 mW/m²; the wavelength does not change."
+   }
+  },
+  {
+   "preset": "fm-radio-100-mhz",
+   "title": {
+    "fr": "Radio FM · 100 MHz",
+    "en": "FM radio · 100 MHz"
+   },
+   "set": {
+    "frequency": 100
+   },
+   "observe": {
+    "fr": "Fréquence doublée : λ tombe à 3,00 m. L’intensité ne bouge pas : dans cette onde, elle dépend de E₀, pas de ν.",
+    "en": "Doubled frequency: λ falls to 3.00 m. The intensity does not change: in this wave it depends on E₀, not on ν."
+   }
+  },
+  {
+   "preset": "shortwave-10-mhz",
+   "title": {
+    "fr": "Ondes courtes · 10 MHz",
+    "en": "Shortwave · 10 MHz"
+   },
+   "set": {
+    "frequency": 10
+   },
+   "observe": {
+    "fr": "λ vaut 29,98 m, plus que les 12 m tracés : on ne voit qu’une partie de l’onde. Ce n’est pas une anomalie.",
+    "en": "λ is 29.98 m, more than the 12 m plotted: only part of the wave is visible. This is not an anomaly."
+   }
+  }
+ ],
+ "concepts": [],
+ "extraction": {
+  "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
+  "roots": [
+   "#experience"
+  ],
+  "page_errors": [],
+  "fr_en_preset_consistency": {
+   "presets_compared": 4,
+   "presets_with_different_values_fr_vs_en": []
+  }
+ }
+}

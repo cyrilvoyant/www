@@ -1,0 +1,728 @@
+{
+ "id": "chisquare",
+ "schema": "https://www.cyrilvoyant.com/tools-spec.json#1.0",
+ "kind": "teaching",
+ "domain": "learning",
+ "interface_language": "both",
+ "name": {
+  "fr": "χ² : observés, attendus et contributions",
+  "en": "Chi-square: observed, expected and contributions"
+ },
+ "url": {
+  "fr": "https://www.cyrilvoyant.com/fr/animations/test-khi-deux/",
+  "en": "https://www.cyrilvoyant.com/tools/chi-square-test/"
+ },
+ "page_title": {
+  "fr": "Test du χ² : dé équilibré, observés, attendus et tableau 2×2",
+  "en": "Chi-square test: observed counts, expected counts and contributions"
+ },
+ "computes": {
+  "fr": "Explorer un dé équilibré ou un tableau 2×2 ; visualiser les cellules qui pèsent et les faibles effectifs.",
+  "en": "Explore a fair die or a 2×2 table; visualize cell contributions and small expected counts."
+ },
+ "summary": {
+  "fr": "Sur 120 lancers d’un dé, une seule face sortie 68 fois au lieu de 20 apporte 115,2 des 138,5 points du χ². Vous apprenez à chercher où se trouve l’écart, au lieu de vous arrêter à la p-value.",
+  "en": "Over 120 throws of a die, a single face appearing 68 times instead of 20 contributes 115.2 of the 138.5 points of χ². You learn to look for where the departure lies, instead of stopping at the p-value."
+ },
+ "parameters": [
+  {
+   "id": "question",
+   "type": "enum",
+   "control": "select",
+   "default": "fit",
+   "options": [
+    {
+     "value": "fit",
+     "label": "Dé à six faces : équilibré ?"
+    },
+    {
+     "value": "independence",
+     "label": "Tableau 2×2 : variables indépendantes ?"
+    }
+   ],
+   "label": {
+    "fr": "Question posée",
+    "en": "Question"
+   },
+   "meaning": {
+    "fr": "somme des contributions",
+    "en": "sum of the contributions"
+   },
+   "unit": null
+  },
+  {
+   "id": "face-1",
+   "type": "integer",
+   "control": "number",
+   "min": 0,
+   "max": 10000000,
+   "step": 1,
+   "default": 10,
+   "label": {
+    "fr": "Face 1",
+    "en": "Face 1"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "unit_source": "no unit shown by the page"
+  },
+  {
+   "id": "face-2",
+   "type": "integer",
+   "control": "number",
+   "min": 0,
+   "max": 10000000,
+   "step": 1,
+   "default": 12,
+   "label": {
+    "fr": "Face 2",
+    "en": "Face 2"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "unit_source": "no unit shown by the page"
+  },
+  {
+   "id": "face-3",
+   "type": "integer",
+   "control": "number",
+   "min": 0,
+   "max": 10000000,
+   "step": 1,
+   "default": 11,
+   "label": {
+    "fr": "Face 3",
+    "en": "Face 3"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "unit_source": "no unit shown by the page"
+  },
+  {
+   "id": "face-4",
+   "type": "integer",
+   "control": "number",
+   "min": 0,
+   "max": 10000000,
+   "step": 1,
+   "default": 9,
+   "label": {
+    "fr": "Face 4",
+    "en": "Face 4"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "unit_source": "no unit shown by the page"
+  },
+  {
+   "id": "face-5",
+   "type": "integer",
+   "control": "number",
+   "min": 0,
+   "max": 10000000,
+   "step": 1,
+   "default": 10,
+   "label": {
+    "fr": "Face 5",
+    "en": "Face 5"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "unit_source": "no unit shown by the page"
+  },
+  {
+   "id": "face-6",
+   "type": "integer",
+   "control": "number",
+   "min": 0,
+   "max": 10000000,
+   "step": 1,
+   "default": 68,
+   "label": {
+    "fr": "Face 6",
+    "en": "Face 6"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "unit_source": "no unit shown by the page"
+  }
+ ],
+ "presets": [
+  {
+   "id": "suspect-die-frequent-face-6",
+   "name": {
+    "fr": "Dé suspect : face 6 fréquente",
+    "en": "Suspect die: frequent face 6"
+   },
+   "values": {
+    "question": "fit",
+    "face-1": 10,
+    "face-2": 12,
+    "face-3": 11,
+    "face-4": 9,
+    "face-5": 10,
+    "face-6": 68
+   },
+   "changes_vs_default": {},
+   "shows": {
+    "fr": "120 lancers, 20 attendus par face : la face 6 sort 68 fois et pèse presque tout le χ².",
+    "en": "120 rolls, 20 expected per face: face 6 comes up 68 times and carries nearly all of χ²."
+   }
+  },
+  {
+   "id": "course-table-75-25-and-65-35",
+   "name": {
+    "fr": "Tableau du cours : 75/25 et 65/35",
+    "en": "Course table: 75/25 and 65/35"
+   },
+   "values": {
+    "question": "independence",
+    "face-1": 75,
+    "face-2": 25,
+    "face-3": 65,
+    "face-4": 35
+   },
+   "changes_vs_default": {
+    "question": "independence",
+    "face-1": 75,
+    "face-2": 25,
+    "face-3": 65,
+    "face-4": 35
+   },
+   "shows": {
+    "fr": "Un écart de 10 points entre groupes, sur 100 personnes chacun : H₀ n’est pas rejetée au seuil de 5 %.",
+    "en": "A 10-point gap between groups of 100 people each: H₀ is not rejected at the 5% level."
+   }
+  },
+  {
+   "id": "same-proportions-counts-4",
+   "name": {
+    "fr": "Même répartition, effectifs ×4",
+    "en": "Same proportions, counts ×4"
+   },
+   "values": {
+    "question": "fit",
+    "face-1": 40,
+    "face-2": 48,
+    "face-3": 44,
+    "face-4": 36,
+    "face-5": 40,
+    "face-6": 272
+   },
+   "changes_vs_default": {
+    "face-1": 40,
+    "face-2": 48,
+    "face-3": 44,
+    "face-4": 36,
+    "face-5": 40,
+    "face-6": 272
+   },
+   "shows": {
+    "fr": "Mêmes proportions, quatre fois plus de données : le χ² est multiplié par 4, le même écart devient plus facile à détecter.",
+    "en": "Same proportions, four times the data: χ² is multiplied by 4, so the same gap is easier to detect."
+   }
+  },
+  {
+   "id": "observed-expected",
+   "name": {
+    "fr": "Observés = attendus",
+    "en": "Observed = expected"
+   },
+   "values": {
+    "question": "fit",
+    "face-1": 20,
+    "face-2": 20,
+    "face-3": 20,
+    "face-4": 20,
+    "face-5": 20,
+    "face-6": 20
+   },
+   "changes_vs_default": {
+    "face-1": 20,
+    "face-2": 20,
+    "face-3": 20,
+    "face-4": 20,
+    "face-5": 20,
+    "face-6": 20
+   },
+   "shows": {
+    "fr": "Aucun écart : χ² = 0 et p = 1. Cela ne prouve pas pour autant que H₀ est vraie.",
+    "en": "No gap: χ² = 0 and p = 1. This still does not prove that H₀ is true."
+   }
+  },
+  {
+   "id": "show-small-counts",
+   "name": {
+    "fr": "Voir les faibles effectifs",
+    "en": "Show small counts"
+   },
+   "values": {
+    "question": "fit",
+    "face-1": 1,
+    "face-2": 0,
+    "face-3": 2,
+    "face-4": 0,
+    "face-5": 1,
+    "face-6": 2
+   },
+   "changes_vs_default": {
+    "face-1": 1,
+    "face-2": 0,
+    "face-3": 2,
+    "face-4": 0,
+    "face-5": 1,
+    "face-6": 2
+   },
+   "shows": {
+    "fr": "Effectifs attendus trop faibles : le calcul reste affiché, la conclusion automatique est suspendue.",
+    "en": "Expected counts too small: the calculation stays visible, the automatic conclusion is suspended."
+   }
+  }
+ ],
+ "actions": [],
+ "variants": [
+  {
+   "when": {
+    "question": "independence"
+   },
+   "label": "Tableau 2×2 : variables indépendantes ?",
+   "parameters": [
+    {
+     "id": "question",
+     "type": "enum",
+     "control": "select",
+     "default": "independence",
+     "options": [
+      {
+       "value": "fit",
+       "label": "Dé à six faces : équilibré ?"
+      },
+      {
+       "value": "independence",
+       "label": "Tableau 2×2 : variables indépendantes ?"
+      }
+     ],
+     "label": "Question posée"
+    },
+    {
+     "id": "groupe-a-oui",
+     "type": "integer",
+     "control": "number",
+     "min": 0,
+     "max": 10000000,
+     "step": 1,
+     "default": 75,
+     "label": "Groupe A : oui"
+    },
+    {
+     "id": "groupe-a-non",
+     "type": "integer",
+     "control": "number",
+     "min": 0,
+     "max": 10000000,
+     "step": 1,
+     "default": 25,
+     "label": "Groupe A : non"
+    },
+    {
+     "id": "groupe-b-oui",
+     "type": "integer",
+     "control": "number",
+     "min": 0,
+     "max": 10000000,
+     "step": 1,
+     "default": 65,
+     "label": "Groupe B : oui"
+    },
+    {
+     "id": "groupe-b-non",
+     "type": "integer",
+     "control": "number",
+     "min": 0,
+     "max": 10000000,
+     "step": 1,
+     "default": 35,
+     "label": "Groupe B : non"
+    }
+   ]
+  }
+ ],
+ "outputs": [
+  {
+   "name": {
+    "fr": "χ² de Pearson",
+    "en": "Pearson χ²"
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": "somme des contributions",
+    "en": "sum of the contributions"
+   },
+   "kind": "metric"
+  },
+  {
+   "name": {
+    "fr": "Degrés de liberté",
+    "en": "Degrees of freedom"
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "kind": "metric"
+  },
+  {
+   "name": {
+    "fr": "p-value (loi approchée)",
+    "en": "p-value (approximate distribution)"
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": "écart au moins aussi grand si H₀ est vraie",
+    "en": "a gap at least this large if H₀ holds"
+   },
+   "kind": "metric"
+  },
+  {
+   "name": {
+    "fr": "Effectif total",
+    "en": "Total count"
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "kind": "metric"
+  },
+  {
+   "name": {
+    "fr": "Face 1",
+    "en": "Face 1"
+   },
+   "unit": null,
+   "meaning": {
+    "fr": "Cellule | Observé O | Attendu E | Contribution (O−E)²/E | Face 1",
+    "en": "Cell | Observed O | Expected E | Contribution (O−E)²/E | Face 1"
+   },
+   "kind": "table-row"
+  },
+  {
+   "name": {
+    "fr": "Face 2",
+    "en": "Face 2"
+   },
+   "unit": null,
+   "meaning": {
+    "fr": "Cellule | Observé O | Attendu E | Contribution (O−E)²/E | Face 1",
+    "en": "Cell | Observed O | Expected E | Contribution (O−E)²/E | Face 1"
+   },
+   "kind": "table-row"
+  },
+  {
+   "name": {
+    "fr": "Face 3",
+    "en": "Face 3"
+   },
+   "unit": null,
+   "meaning": {
+    "fr": "Cellule | Observé O | Attendu E | Contribution (O−E)²/E | Face 1",
+    "en": "Cell | Observed O | Expected E | Contribution (O−E)²/E | Face 1"
+   },
+   "kind": "table-row"
+  },
+  {
+   "name": {
+    "fr": "Face 4",
+    "en": "Face 4"
+   },
+   "unit": null,
+   "meaning": {
+    "fr": "Cellule | Observé O | Attendu E | Contribution (O−E)²/E | Face 1",
+    "en": "Cell | Observed O | Expected E | Contribution (O−E)²/E | Face 1"
+   },
+   "kind": "table-row"
+  },
+  {
+   "name": {
+    "fr": "Face 5",
+    "en": "Face 5"
+   },
+   "unit": null,
+   "meaning": {
+    "fr": "Cellule | Observé O | Attendu E | Contribution (O−E)²/E | Face 1",
+    "en": "Cell | Observed O | Expected E | Contribution (O−E)²/E | Face 1"
+   },
+   "kind": "table-row"
+  },
+  {
+   "name": {
+    "fr": "Face 6",
+    "en": "Face 6"
+   },
+   "unit": null,
+   "meaning": {
+    "fr": "Cellule | Observé O | Attendu E | Contribution (O−E)²/E | Face 1",
+    "en": "Cell | Observed O | Expected E | Contribution (O−E)²/E | Face 1"
+   },
+   "kind": "table-row"
+  }
+ ],
+ "formulas": [
+  {
+   "text": "χ^2 = ∑((O − E)^2)/E"
+  }
+ ],
+ "definitions": [
+  {
+   "term": "O, E",
+   "meaning": {
+    "fr": "L’effectif observé et l’effectif attendu sous l’hypothèse testée.",
+    "en": "The observed count and the count expected under the tested hypothesis."
+   }
+  },
+  {
+   "term": "N",
+   "meaning": {
+    "fr": "L’effectif total.",
+    "en": "The total count."
+   }
+  },
+  {
+   "term": "Σ",
+   "meaning": {
+    "fr": "La somme sur toutes les cellules.",
+    "en": "The sum over all cells."
+   }
+  },
+  {
+   "term": "χ²",
+   "meaning": {
+    "fr": "La statistique de test : la somme des contributions (O−E)²/E.",
+    "en": "The test statistic: the sum of the contributions (O−E)²/E."
+   }
+  },
+  {
+   "term": "Degrés de liberté",
+   "meaning": {
+    "fr": "Le paramètre de la loi de référence : 5 pour le dé, 1 pour le tableau 2×2.",
+    "en": "The parameter of the reference distribution: 5 for the die, 1 for the 2×2 table."
+   }
+  },
+  {
+   "term": "p-value",
+   "meaning": {
+    "fr": "La probabilité de dépasser le χ² obtenu si l’hypothèse est vraie, selon la loi approchée. Une petite p-value dit que l’écart est peu compatible avec l’hypothèse, pas qu’il est grand : voir le chapitre Tester une différence et lire son incertitude.",
+    "en": "The probability of exceeding the χ² obtained if the hypothesis is true, under the approximate distribution. A small p-value says the departure is hardly compatible with the hypothesis, not that it is large: see the course chapter Testing a difference and reading its uncertainty."
+   }
+  },
+  {
+   "term": "Que veut dire chaque symbole ?",
+   "meaning": {
+    "fr": "O est un effectif observé, E l’effectif attendu sous l’hypothèse H₀ testée et N l’effectif total. χ² additionne les contributions (O−E)²/E des cellules ; Σ signifie somme. Les degrés de liberté déterminent sa loi de référence. La p-value affichée utilise cette loi approchée : ce n’est pas la probabilité que le dé soit équilibré ou que les variables soient indépendantes.",
+    "en": "O is an observed count, E the count expected under the tested hypothesis H₀, and N the total count. χ² adds the cell contributions (O−E)²/E; Σ means sum. Degrees of freedom select its reference distribution. The reported p-value uses this approximate distribution; it is not the probability that the die is fair or that the variables are independent."
+   }
+  }
+ ],
+ "assumptions": {
+  "fr": [
+   "Le χ² additionne des écarts cellule par cellule, et une seule peut tout porter : dans ce dé suspect, la face 6 fournit à elle seule l’essentiel de la statistique. Modifiez des effectifs et regardez quelle cellule pèse.",
+   "120 lancers, 20 attendus par face : la face 6 sort 68 fois et pèse presque tout le χ².",
+   "Exemple fictif de lancers indépendants d’un dé à six faces. H₀ : chaque face a une probabilité 1/6, soit N/6 occurrences attendues par face (20 pour 120 lancers). Ces valeurs diffèrent de l’exemple des diapositives.",
+   "H₀ rejetée au seuil fixé de 5 %. Les écarts à H₀ sont statistiquement détectables dans ce modèle. La cellule qui pèse le plus : Face 6, 83 % du χ². Une différence dans une cellule peu attendue pèse davantage.",
+   "χ² = Σ (O−E)²/E. Dé équilibré : probabilités fixées à 1/6, E=N/6 et 5 ddl ; pas de paramètre estimé. Indépendance : Eij = total ligne i × total colonne j / N, 1 ddl. Pearson sans correction de continuité ; pas de test exact ni de conclusion causale.",
+   "Conditions : observations indépendantes, catégories exclusives, vrais comptages et non des pourcentages. Le tableau 2×2 ne convient pas à des mesures appariées."
+  ],
+  "en": [
+   "χ² adds up gaps cell by cell, and a single cell can carry it all: in this suspect die, face 6 alone provides most of the statistic. Change the counts and see which cell weighs most.",
+   "120 rolls, 20 expected per face: face 6 comes up 68 times and carries nearly all of χ².",
+   "Fictitious example of independent rolls of a six-sided die. H₀: each face has probability 1/6, giving N/6 expected occurrences per face (20 for 120 rolls). These values differ from the example in the slides.",
+   "H₀ rejected at the prespecified 5% level. Departures from H₀ are statistically detectable under this model. The heaviest cell: Face 6, 83% of χ². A difference in a cell with a smaller expected count carries more weight.",
+   "χ² = Σ (O−E)²/E. Fair die: probabilities fixed at 1/6, E=N/6 and 5 df; no estimated parameter. Independence: Eij = row i total × column j total / N, 1 df. Pearson test without continuity correction; neither an exact test nor a causal conclusion.",
+   "Assumptions: independent observations, mutually exclusive categories, actual counts rather than percentages. This 2×2 test is not for paired observations."
+  ]
+ },
+ "source": {
+  "dois": [],
+  "repositories": [],
+  "related_pages": [
+   {
+    "href": "/fr/enseignement/biostatistique/correlation-regression/",
+    "text": "Le chapitre complet du cours"
+   },
+   {
+    "href": "/fr/animations/test-student/",
+    "text": "Le test de Student : comparer deux moyennes"
+   },
+   {
+    "href": "/fr/animations/courbe-roc/",
+    "text": "La courbe ROC : un autre tableau 2×2, celui du test et de la maladie"
+   }
+  ]
+ },
+ "how_to_explore": {
+  "fr": "Régler les paramètres sur un préréglage (valeurs ci-dessus), lire la phrase affichée par la page puis les sorties ; modifier ensuite un seul paramètre à la fois entre son minimum et son maximum.",
+  "en": "Set the parameters to a preset (values above), read the sentence the page shows then the outputs; then change one parameter at a time between its minimum and maximum."
+ },
+ "exploration": [
+  {
+   "preset": "suspect-die-frequent-face-6",
+   "title": {
+    "fr": "Dé suspect : face 6 fréquente",
+    "en": "Suspect die: frequent face 6"
+   },
+   "set": {
+    "question": "fit",
+    "face-1": 10,
+    "face-2": 12,
+    "face-3": 11,
+    "face-4": 9,
+    "face-5": 10,
+    "face-6": 68
+   },
+   "observe": {
+    "fr": "120 lancers, 20 attendus par face : la face 6 sort 68 fois et pèse presque tout le χ².",
+    "en": "120 rolls, 20 expected per face: face 6 comes up 68 times and carries nearly all of χ²."
+   }
+  },
+  {
+   "preset": "course-table-75-25-and-65-35",
+   "title": {
+    "fr": "Tableau du cours : 75/25 et 65/35",
+    "en": "Course table: 75/25 and 65/35"
+   },
+   "set": {
+    "question": "independence",
+    "face-1": 75,
+    "face-2": 25,
+    "face-3": 65,
+    "face-4": 35
+   },
+   "observe": {
+    "fr": "Un écart de 10 points entre groupes, sur 100 personnes chacun : H₀ n’est pas rejetée au seuil de 5 %.",
+    "en": "A 10-point gap between groups of 100 people each: H₀ is not rejected at the 5% level."
+   }
+  },
+  {
+   "preset": "same-proportions-counts-4",
+   "title": {
+    "fr": "Même répartition, effectifs ×4",
+    "en": "Same proportions, counts ×4"
+   },
+   "set": {
+    "face-1": 40,
+    "face-2": 48,
+    "face-3": 44,
+    "face-4": 36,
+    "face-5": 40,
+    "face-6": 272
+   },
+   "observe": {
+    "fr": "Mêmes proportions, quatre fois plus de données : le χ² est multiplié par 4, le même écart devient plus facile à détecter.",
+    "en": "Same proportions, four times the data: χ² is multiplied by 4, so the same gap is easier to detect."
+   }
+  },
+  {
+   "preset": "observed-expected",
+   "title": {
+    "fr": "Observés = attendus",
+    "en": "Observed = expected"
+   },
+   "set": {
+    "face-1": 20,
+    "face-2": 20,
+    "face-3": 20,
+    "face-4": 20,
+    "face-5": 20,
+    "face-6": 20
+   },
+   "observe": {
+    "fr": "Aucun écart : χ² = 0 et p = 1. Cela ne prouve pas pour autant que H₀ est vraie.",
+    "en": "No gap: χ² = 0 and p = 1. This still does not prove that H₀ is true."
+   }
+  },
+  {
+   "preset": "show-small-counts",
+   "title": {
+    "fr": "Voir les faibles effectifs",
+    "en": "Show small counts"
+   },
+   "set": {
+    "face-1": 1,
+    "face-2": 0,
+    "face-3": 2,
+    "face-4": 0,
+    "face-5": 1,
+    "face-6": 2
+   },
+   "observe": {
+    "fr": "Effectifs attendus trop faibles : le calcul reste affiché, la conclusion automatique est suspendue.",
+    "en": "Expected counts too small: the calculation stays visible, the automatic conclusion is suspended."
+   }
+  }
+ ],
+ "concepts": [
+  "p-value",
+  "chi-square-test"
+ ],
+ "extraction": {
+  "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
+  "roots": [
+   "#experience"
+  ],
+  "page_errors": [],
+  "fr_en_preset_consistency": {
+   "presets_compared": 5,
+   "presets_with_different_values_fr_vs_en": []
+  }
+ }
+}

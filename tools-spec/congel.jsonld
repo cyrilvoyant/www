@@ -1,0 +1,230 @@
+{
+ "@context": "https://schema.org",
+ "@type": [
+  "SoftwareApplication",
+  "LearningResource"
+ ],
+ "@id": "https://www.cyrilvoyant.com/tools/freezing-energy-power/#tool-spec",
+ "identifier": "congel",
+ "name": "Freezing: energy and refrigeration power",
+ "alternateName": "Congeler : énergie et puissance frigorifique",
+ "description": "Split the energy to remove (sensible, latent, sensible) and compute the power for a given duration.",
+ "url": "https://www.cyrilvoyant.com/tools/freezing-energy-power/",
+ "sameAs": [
+  "https://www.cyrilvoyant.com/fr/animations/congelation-energie-puissance/",
+  "https://www.cyrilvoyant.com/tools/freezing-energy-power/"
+ ],
+ "inLanguage": [
+  "fr",
+  "en"
+ ],
+ "applicationCategory": "EducationalApplication",
+ "operatingSystem": "Any (web browser)",
+ "isAccessibleForFree": true,
+ "learningResourceType": "teaching",
+ "author": {
+  "@type": "Person",
+  "name": "Cyril Voyant",
+  "identifier": "https://orcid.org/0000-0003-0242-7377"
+ },
+ "license": "https://creativecommons.org/licenses/by/4.0/",
+ "additionalProperty": [
+  {
+   "@type": "PropertyValue",
+   "propertyID": "mass",
+   "name": "Mass (kg)",
+   "alternateName": "Masse (kg)",
+   "value": 500,
+   "minValue": 10,
+   "maxValue": 2000,
+   "unitText": "kg"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "water-content-w",
+   "name": "Water content w",
+   "alternateName": "Teneur en eau w",
+   "value": 0.75,
+   "minValue": 0.5,
+   "maxValue": 0.95,
+   "unitText": "%"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "fraction-of-water-frozen-g",
+   "name": "Fraction of water frozen g",
+   "alternateName": "Part de l'eau gelée g",
+   "value": 0.9,
+   "minValue": 0.6,
+   "maxValue": 1,
+   "unitText": "%"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "initial-temperature-ti",
+   "name": "Initial temperature Ti",
+   "alternateName": "Température initiale Ti",
+   "value": 15,
+   "minValue": 0,
+   "maxValue": 40,
+   "unitText": "°C"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "freezing-onset-tc",
+   "name": "Freezing onset Tc (°C)",
+   "alternateName": "Début de congélation Tc (°C)",
+   "value": -1.5,
+   "minValue": -5,
+   "maxValue": 0,
+   "unitText": "°C"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "final-temperature-tf",
+   "name": "Final temperature Tf (°C)",
+   "alternateName": "Température finale Tf (°C)",
+   "value": -18,
+   "minValue": -40,
+   "maxValue": -5,
+   "unitText": "°C"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "duration-t",
+   "name": "Duration Δt (h)",
+   "alternateName": "Durée Δt (h)",
+   "value": 4,
+   "minValue": 0.5,
+   "maxValue": 24,
+   "unitText": "h"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:500-kg-in-4-h-75-water",
+   "name": "500 kg in 4 h, 75% water",
+   "alternateName": "500 kg en 4 h, 75 % d’eau",
+   "value": "{\"mass\": 500, \"water-content-w\": 0.75, \"fraction-of-water-frozen-g\": 0.9, \"initial-temperature-ti\": 15, \"freezing-onset-tc\": -1.5, \"final-temperature-tf\": -18, \"duration-t\": 4}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:twice-the-time-8-h",
+   "name": "Twice the time: 8 h",
+   "alternateName": "Deux fois plus de temps : 8 h",
+   "value": "{\"mass\": 500, \"water-content-w\": 0.75, \"fraction-of-water-frozen-g\": 0.9, \"initial-temperature-ti\": 15, \"freezing-onset-tc\": -1.5, \"final-temperature-tf\": -18, \"duration-t\": 8}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:half-the-mass",
+   "name": "Half the mass",
+   "alternateName": "Deux fois moins de masse",
+   "value": "{\"mass\": 250, \"water-content-w\": 0.75, \"fraction-of-water-frozen-g\": 0.9, \"initial-temperature-ti\": 15, \"freezing-onset-tc\": -1.5, \"final-temperature-tf\": -18, \"duration-t\": 4}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:low-water-product-50",
+   "name": "Low-water product: 50%",
+   "alternateName": "Produit pauvre en eau : 50 %",
+   "value": "{\"mass\": 500, \"water-content-w\": 0.5, \"fraction-of-water-frozen-g\": 0.9, \"initial-temperature-ti\": 15, \"freezing-onset-tc\": -1.5, \"final-temperature-tf\": -18, \"duration-t\": 4}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:deep-freezing-to-40-c",
+   "name": "Deep-freezing to −40 °C",
+   "alternateName": "Surgélation à −40 °C",
+   "value": "{\"mass\": 500, \"water-content-w\": 0.75, \"fraction-of-water-frozen-g\": 0.9, \"initial-temperature-ti\": 15, \"freezing-onset-tc\": -1.5, \"final-temperature-tf\": -40, \"duration-t\": 4}"
+  }
+ ],
+ "potentialAction": {
+  "@type": "Action",
+  "name": "Explore the tool",
+  "target": {
+   "@type": "EntryPoint",
+   "urlTemplate": "https://www.cyrilvoyant.com/tools/freezing-energy-power/",
+   "actionPlatform": "https://schema.org/DesktopWebPlatform"
+  },
+  "object": [
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "mass",
+    "description": "Mass (kg)",
+    "valueRequired": false,
+    "minValue": 10,
+    "maxValue": 2000,
+    "defaultValue": 500,
+    "stepValue": 10
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "water-content-w",
+    "description": "Water content w",
+    "valueRequired": false,
+    "minValue": 0.5,
+    "maxValue": 0.95,
+    "defaultValue": 0.75,
+    "stepValue": 0.01
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "fraction-of-water-frozen-g",
+    "description": "Fraction of water frozen g",
+    "valueRequired": false,
+    "minValue": 0.6,
+    "maxValue": 1,
+    "defaultValue": 0.9,
+    "stepValue": 0.01
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "initial-temperature-ti",
+    "description": "Initial temperature Ti",
+    "valueRequired": false,
+    "minValue": 0,
+    "maxValue": 40,
+    "defaultValue": 15,
+    "stepValue": 1
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "freezing-onset-tc",
+    "description": "Freezing onset Tc (°C)",
+    "valueRequired": false,
+    "minValue": -5,
+    "maxValue": 0,
+    "defaultValue": -1.5,
+    "stepValue": 0.1
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "final-temperature-tf",
+    "description": "Final temperature Tf (°C)",
+    "valueRequired": false,
+    "minValue": -40,
+    "maxValue": -5,
+    "defaultValue": -18,
+    "stepValue": 1
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "duration-t",
+    "description": "Duration Δt (h)",
+    "valueRequired": false,
+    "minValue": 0.5,
+    "maxValue": 24,
+    "defaultValue": 4,
+    "stepValue": 0.5
+   }
+  ]
+ },
+ "about": [
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#freezing"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#latent-heat"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#sensible-heat"
+  }
+ ]
+}

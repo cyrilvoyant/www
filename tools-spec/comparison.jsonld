@@ -1,0 +1,257 @@
+{
+ "@context": "https://schema.org",
+ "@type": [
+  "SoftwareApplication",
+  "LearningResource"
+ ],
+ "@id": "https://www.cyrilvoyant.com/tools/forecast-comparison/#tool-spec",
+ "identifier": "comparison",
+ "name": "Compare forecasts: persistence, AR and ELM against horizon",
+ "alternateName": "Comparer des prévisions : persistance, AR et ELM selon l’horizon",
+ "description": "Five models on public Palaiseau data, 30 min to 6 h: error against horizon, NICE, curves; computed by the PV_ELM_pred code. AR: autoregression, a regression on past values. ELM: a frugal neural network.",
+ "url": "https://www.cyrilvoyant.com/tools/forecast-comparison/",
+ "sameAs": [
+  "https://www.cyrilvoyant.com/fr/outils/comparateur-previsions/",
+  "https://www.cyrilvoyant.com/tools/forecast-comparison/"
+ ],
+ "inLanguage": [
+  "fr",
+  "en"
+ ],
+ "applicationCategory": "ScientificApplication",
+ "operatingSystem": "Any (web browser)",
+ "isAccessibleForFree": true,
+ "learningResourceType": "demo",
+ "author": {
+  "@type": "Person",
+  "name": "Cyril Voyant",
+  "identifier": "https://orcid.org/0000-0003-0242-7377"
+ },
+ "license": "https://creativecommons.org/licenses/by/4.0/",
+ "additionalProperty": [
+  {
+   "@type": "PropertyValue",
+   "propertyID": "horizon",
+   "name": "Horizon",
+   "alternateName": "Horizon",
+   "description": "the time between the last known value and the value to forecast, here from 30 minutes to 6 hours.",
+   "value": 0,
+   "minValue": 0,
+   "maxValue": 11,
+   "unitText": "min"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "error-measure",
+   "name": "Error measure",
+   "alternateName": "Mesure de l’erreur",
+   "value": "RMSE"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "times-counted",
+   "name": "Times counted",
+   "alternateName": "Instants comptés",
+   "value": "day"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "persistence",
+   "name": "persistence",
+   "alternateName": "persistance",
+   "description": "copy the last observed value: the minimal reference of any forecast.",
+   "value": true
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "cyclic-persistence",
+   "name": "cyclic persistence",
+   "alternateName": "persistance cyclique",
+   "description": "copy the last observed value: the minimal reference of any forecast.",
+   "value": false
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "blend",
+   "name": "BLEND",
+   "alternateName": "BLEND",
+   "description": "convex combination of persistence and cyclic persistence: two positive weights adding up to 1, one set of weights per half hour of the day, computed on the first half of the data.",
+   "value": false
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "ar-autoregression",
+   "name": "AR autoregression",
+   "alternateName": "autorégression AR",
+   "description": "autoregression: a weighted sum of the values of the last 24 hours and of the time of day and of year, with weights computed by least squares.",
+   "value": true
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "elm",
+   "name": "ELM",
+   "alternateName": "ELM",
+   "description": "Extreme Learning Machine: a neural network with one intermediate layer drawn at random. Only the output weights are computed, by regularized least squares.",
+   "value": true
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "error-colored-for",
+   "name": "Error colored for",
+   "alternateName": "Erreur coloriée pour",
+   "value": "ELM"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:right-away-30-minutes",
+   "name": "Right away: 30 minutes",
+   "alternateName": "Tout de suite : 30 minutes",
+   "value": "{\"horizon\": 0, \"error-measure\": \"RMSE\", \"times-counted\": \"day\", \"persistence\": true, \"cyclic-persistence\": false, \"blend\": false, \"ar-autoregression\": true, \"elm\": true, \"error-colored-for\": \"ELM\"}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:further-ahead-6-hours",
+   "name": "Further ahead: 6 hours",
+   "alternateName": "Plus loin : 6 heures",
+   "value": "{\"horizon\": 11, \"error-measure\": \"RMSE\", \"times-counted\": \"day\", \"persistence\": true, \"cyclic-persistence\": false, \"blend\": false, \"ar-autoregression\": true, \"elm\": true, \"error-colored-for\": \"ELM\"}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:ar-or-elm",
+   "name": "AR or ELM?",
+   "alternateName": "AR ou ELM ?",
+   "value": "{\"horizon\": 11, \"error-measure\": \"RMSE\", \"times-counted\": \"day\", \"persistence\": false, \"cyclic-persistence\": false, \"blend\": false, \"ar-autoregression\": true, \"elm\": true, \"error-colored-for\": \"ELM\"}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:copy-the-day-before",
+   "name": "Copy the day before",
+   "alternateName": "Recopier la veille",
+   "value": "{\"horizon\": 3, \"error-measure\": \"RMSE\", \"times-counted\": \"day\", \"persistence\": true, \"cyclic-persistence\": true, \"blend\": true, \"ar-autoregression\": false, \"elm\": false, \"error-colored-for\": \"BLEND\"}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:worse-than-persistence",
+   "name": "Worse than persistence",
+   "alternateName": "Pire que la persistance",
+   "value": "{\"horizon\": 0, \"error-measure\": \"NICE2\", \"times-counted\": \"day\", \"persistence\": true, \"cyclic-persistence\": true, \"blend\": true, \"ar-autoregression\": false, \"elm\": false, \"error-colored-for\": \"BLEND\"}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:the-night-trap",
+   "name": "The night trap",
+   "alternateName": "Le piège de la nuit",
+   "value": "{\"horizon\": 11, \"error-measure\": \"NICE2\", \"times-counted\": \"all\", \"persistence\": true, \"cyclic-persistence\": false, \"blend\": false, \"ar-autoregression\": true, \"elm\": true, \"error-colored-for\": \"ELM\"}"
+  }
+ ],
+ "potentialAction": {
+  "@type": "Action",
+  "name": "Explore the tool",
+  "target": {
+   "@type": "EntryPoint",
+   "urlTemplate": "https://www.cyrilvoyant.com/tools/forecast-comparison/",
+   "actionPlatform": "https://schema.org/DesktopWebPlatform"
+  },
+  "object": [
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "horizon",
+    "description": "Horizon",
+    "valueRequired": false,
+    "minValue": 0,
+    "maxValue": 11,
+    "defaultValue": 0,
+    "stepValue": 1
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "error-measure",
+    "description": "Error measure",
+    "valueRequired": false,
+    "valuePattern": "^(RMSE|nRMSE|nMAE|NICE2|NICE1|NICE3)$",
+    "defaultValue": "RMSE"
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "times-counted",
+    "description": "Times counted",
+    "valueRequired": false,
+    "valuePattern": "^(day|all)$",
+    "defaultValue": "day"
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "persistence",
+    "description": "persistence",
+    "valueRequired": false,
+    "defaultValue": true
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "cyclic-persistence",
+    "description": "cyclic persistence",
+    "valueRequired": false,
+    "defaultValue": false
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "blend",
+    "description": "BLEND",
+    "valueRequired": false,
+    "defaultValue": false
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "ar-autoregression",
+    "description": "AR autoregression",
+    "valueRequired": false,
+    "defaultValue": true
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "elm",
+    "description": "ELM",
+    "valueRequired": false,
+    "defaultValue": true
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "error-colored-for",
+    "description": "Error colored for",
+    "valueRequired": false,
+    "valuePattern": "^(P|Pc|BLEND|AR|ELM)$",
+    "defaultValue": "ELM"
+   }
+  ]
+ },
+ "citation": [
+  "https://doi.org/10.5281/zenodo.21487267"
+ ],
+ "codeRepository": "https://github.com/cyrilvoyant/PV_ELM_pred",
+ "about": [
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#persistence"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#cyclic-persistence"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#blend"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#elm"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#rmse"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#nrmse"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#nmae"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#nice"
+  }
+ ]
+}

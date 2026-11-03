@@ -1,0 +1,269 @@
+{
+  "schemaVersion": 1,
+  "id": "artu-intuition",
+  "status": "reviewed browser demonstration",
+  "name": {
+    "fr": "ARTU : de la série simulée aux coefficients et à la prévision",
+    "en": "ARTU: from simulated series to coefficients and forecasts"
+  },
+  "source": {
+    "doi": "10.1016/j.renene.2022.04.065",
+    "repository": "https://github.com/cyrilvoyant/ARTU",
+    "tables": "cyrilvoyant/ARTU K_alpha.zip (commit e5ea3ac), tables M(R) of Voyant et al., Renewable Energy 191 (2022) 747-762",
+    "tables_sha256": "1034a2402f50961bb465f1121fcb9e335c2f79cb0953eb9d9a0961b51d5471ff"
+  },
+  "implementation": "https://www.cyrilvoyant.com/assets/artu/artu-intuition.js",
+  "integrationTargets": [
+    "https://cyrilvoyant.github.io/teaching/artu-worked-example-fr.html#intuition",
+    "https://cyrilvoyant.github.io/teaching/artu-worked-example.html#intuition",
+    "https://www.cyrilvoyant.com/fr/outils/artu/#intuition"
+  ],
+  "parameters": [
+    {
+      "id": "phi",
+      "role": "simulated-data generator only, not an ARTU coefficient",
+      "label": {
+        "fr": "Mémoire du bruit",
+        "en": "Noise memory"
+      },
+      "unit": "dimensionless",
+      "minimum": 0,
+      "maximum": 0.95,
+      "step": 0.05,
+      "default": 0.7
+    },
+    {
+      "id": "cycle",
+      "role": "simulated-data generator",
+      "label": {
+        "fr": "Amplitude du cycle",
+        "en": "Cycle amplitude"
+      },
+      "unit": "ratio to trend",
+      "minimum": 0,
+      "maximum": 0.3,
+      "step": 0.025,
+      "default": 0
+    },
+    {
+      "id": "h",
+      "role": "forecast horizon and autocorrelation lags",
+      "label": {
+        "fr": "Horizon de prévision",
+        "en": "Forecast horizon"
+      },
+      "unit": "abstract daytime time steps",
+      "minimum": 1,
+      "maximum": 12,
+      "step": 1,
+      "default": 1
+    },
+    {
+      "id": "R",
+      "role": "published-table selector; does not inject noise",
+      "label": {
+        "fr": "Hypothèse de bruit de mesure",
+        "en": "Measurement-noise assumption"
+      },
+      "unit": "measurement-noise variance / signal variance",
+      "enum": [
+        0.01,
+        0.05,
+        0.1
+      ],
+      "default": 0.05
+    },
+    {
+      "id": "seed",
+      "role": "deterministic generator; new sample button increments by 1",
+      "default": 43,
+      "rng": "32-bit LCG (1664525,1013904223), Box-Muller Gaussian"
+    },
+    {
+      "id": "explainedTargetOffset",
+      "role": "display only, does not affect scores",
+      "minimum": 0,
+      "maximum": 160,
+      "step": 1,
+      "default": 40,
+      "targetIndex": "984 + explainedTargetOffset"
+    },
+    {
+      "id": "mapField",
+      "role": "display only, no forecast change",
+      "enum": [
+        "S",
+        "K",
+        "alpha"
+      ],
+      "default": "S"
+    },
+    {
+      "id": "zoom",
+      "role": "display only; does not alter data, coefficients, forecasts or whole-test scores",
+      "control": "checkbox [data-zoom]",
+      "default": false,
+      "off": {
+        "xIndices": [
+          924,
+          1144
+        ],
+        "yRange": [
+          0,
+          1.2
+        ]
+      },
+      "on": {
+        "xMinimum": "max(984, explainedTargetIndex - 14)",
+        "xMaximum": "min(1144, explainedTargetIndex + 14)",
+        "yMinimum": "minimum of displayed observations, ARTU forecasts and persistence forecasts minus 0.04",
+        "yMaximum": "maximum of displayed observations, ARTU forecasts and persistence forecasts plus 0.04"
+      }
+    }
+  ],
+  "presets": {
+    "random": {
+      "phi": 0,
+      "cycle": 0
+    },
+    "memory": {
+      "phi": 0.9,
+      "cycle": 0
+    },
+    "cycle": {
+      "phi": 0.7,
+      "cycle": 0.2
+    }
+  },
+  "data": {
+    "type": "simulated",
+    "n": 1464,
+    "burnIn": 400,
+    "trainingIndices": [
+      0,
+      959
+    ],
+    "bufferIndices": [
+      960,
+      983
+    ],
+    "testIndices": [
+      984,
+      1463
+    ],
+    "stationaryNoise": "z[t] = phi*z[t-1] + sqrt(1-phi^2)*eta[t], eta~N(0,1)",
+    "signal": "k[t] = clip(.7 + cycle*sin(2*pi*t/24) + .08*z[t], .05, 1.15)",
+    "clippingCountReported": true,
+    "clearSkyConstant": {
+      "value": 800,
+      "unit": "W/m2"
+    }
+  },
+  "formulas": {
+    "acf": "Pearson correlation of lagged pairs, training only",
+    "lookup": "source-grid bilinear interpolation of K and alpha separately",
+    "S": "alpha + K",
+    "P": "alpha*K",
+    "weights": [
+      "S",
+      "-P",
+      "1+P-S"
+    ],
+    "forecast": "min(S*k[target-h] - P*k[target-2*h] + (1+P-S)*training_mean,1.2)",
+    "forecastLowerClipping": false,
+    "persistence": "k[target-h]",
+    "meanReference": "training_mean",
+    "MAE": "mean(abs(forecast-observed))*800 W/m2",
+    "nRMSE": "100*sqrt(mean((forecast-observed)^2))/mean(observed)",
+    "NICE2": "RMSE_ARTU / RMSE_persistence, same test targets and h"
+  },
+  "displayRules": {
+    "niceAboveOne": "> 1",
+    "zeroPersistenceError": "undefined, never divide by zero",
+    "negativeForecasts": "count and warn, do not silently clip",
+    "capCount": "count forecasts exceeding upper cap 1.2",
+    "mapGreyRegion": "rho(2h) < 2*rho(h)^2 - 1, visual mask only; estimated point never projected"
+  },
+  "limitations": [
+    "Illustration, not reproduction of the publication validation.",
+    "Cyclic mean does not meet the strict constant-mean stationarity assumption.",
+    "R is a sensitivity assumption and is not calibrated to injected measurement noise.",
+    "Bilinear interpolation follows published code, including root-branch swaps; not a recomputed optimum.",
+    "No proof of universal superiority; all model comparisons share the same targets."
+  ],
+  "exploration": [
+    "Change noise memory: lag correlations, map point and table weights respond.",
+    "Add a cycle and vary the horizon: positive or negative lag correlations are computed from the same series.",
+    "Change R only: data and correlations remain fixed; colours and coefficients may change, error can remain nearly constant.",
+    "Move the explained target: numerical contributions change; whole-test scores remain fixed.",
+    "Switch map field only: forecast and all scores remain fixed.",
+    "Toggle zoom: only chart ranges change; the explained target and all whole-test scores stay fixed.",
+    "Inspect a map cell with pointer, touch or arrow keys: the inspection crosshair and readout change; the estimated-series circle and forecast stay fixed."
+  ],
+  "verification": {
+    "numericalCases": 432,
+    "script": "reports/artu-pedagogie-20261103/check-intuition.cjs",
+    "independentReview": "reports/artu-pedagogie-20261103/science.md",
+    "scope": "targeted prototype verification, not universal method validation",
+    "numericalScope": "432 cases exercise numerical calculations, a lookup/prediction fixture and forecast-origin causality; they do not automate DOM, zoom, map pointer/keyboard or help-popup behavior.",
+    "interfaceEvidence": {
+      "mobileHelpReadout": "reports/artu-pedagogie-20261103/infobulles-375.json",
+      "scope": "separate recorded interface evidence, not assertions executed by check-intuition.cjs"
+    }
+  },
+  "mapInspection": {
+    "role": "display only; independent of the estimated-series circle and all forecast calculations",
+    "inputs": [
+      "mouse or pen pointermove",
+      "pointerup including touch",
+      "ArrowLeft",
+      "ArrowRight",
+      "ArrowUp",
+      "ArrowDown"
+    ],
+    "keyboardStep": 0.05,
+    "initialKeyboardPosition": "estimated rho(h), rho(2h), unless a previous inspection cursor exists",
+    "coordinateBounds": [
+      -1,
+      1
+    ],
+    "coordinateClippingScope": "inspection cursor only; estimated correlations are never projected",
+    "readout": [
+      "inspected rho(h)",
+      "inspected rho(2h)",
+      "selected map field S, K or alpha from the current R table",
+      "grey-region warning when rho(2h) < 2*rho(h)^2 - 1"
+    ],
+    "effectOnScores": false,
+    "accessibility": {
+      "mapTabindex": 0,
+      "describedBy": "ai-map-readout",
+      "readoutLiveRegion": "polite"
+    }
+  },
+  "dependencies": [
+    {
+      "path": "/assets/artu/artu-tables.json",
+      "role": "published coefficient tables loaded by fetch"
+    },
+    {
+      "path": "/assets/artu/artu-help.js",
+      "role": "local bilingual explanations and precise further-reading links",
+      "global": "ARTUHelp",
+      "loadedBefore": "/assets/artu/artu-intuition.js",
+      "interaction": {
+        "open": "activation of button[data-ai-help] by click, keyboard or touch",
+        "popupRole": "non-modal dialog",
+        "close": [
+          "close button",
+          "Escape",
+          "pointer outside popup and trigger",
+          "focus outside popup and trigger"
+        ],
+        "restoreTriggerFocus": "close button or Escape",
+        "position": "kept within visual viewport; repositioned on scroll and resize"
+      }
+    }
+  ],
+  "revision": "2026-11-03"
+}

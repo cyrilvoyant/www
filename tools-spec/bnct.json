@@ -1,0 +1,426 @@
+{
+ "id": "bnct",
+ "schema": "https://www.cyrilvoyant.com/tools-spec.json#1.0",
+ "kind": "demo",
+ "domain": "medicine",
+ "interface_language": "both",
+ "name": {
+  "fr": "Neutrons atmosphériques et bore : explorer les échelles de dose",
+  "en": "Atmospheric neutrons and boron: explore dose scales"
+ },
+ "url": {
+  "fr": "https://www.cyrilvoyant.com/fr/recits/neutrons-atmospheriques-bnct/#experience",
+  "en": "https://www.cyrilvoyant.com/stories/atmospheric-neutrons-bnct/#experience"
+ },
+ "page_title": {
+  "fr": "Des neutrons atmosphériques à la capture du bore : jusqu’où va l’idée ?",
+  "en": "Atmospheric neutrons and boron capture: how far can the idea go?"
+ },
+ "computes": {
+  "fr": "Suivre une cascade schématique ; distinguer l’exposition en vol de la dose dans un modèle numérique de tumeur, et comparer deux composés boronés, BSH et BPA.",
+  "en": "Follow a schematic cascade; distinguish flight exposure from the dose in a numerical tumour model, and compare two boron carriers, BSH and BPA."
+ },
+ "summary": {
+  "fr": "À l’altitude des avions, les neutrons peuvent bien déclencher des captures dans une tumeur enrichie en bore-10, mais notre calcul de 2011 donne environ 1 µGy par heure en moyenne : il faudrait un million d’heures pour atteindre 1 Gy. Le mécanisme existe, la dose moyenne ne suffit pas pour traiter une tumeur visible.",
+  "en": "At aircraft altitude, neutrons can indeed trigger captures in a boron-10-enriched tumour, but our 2011 calculation gives about 1 µGy per hour on average: reaching 1 Gy would take a million hours. The mechanism exists; the mean dose is not enough to treat a visible tumour."
+ },
+ "parameters": [
+  {
+   "id": "flight-duration",
+   "type": "number",
+   "control": "range",
+   "min": 0.5,
+   "max": 12,
+   "step": 0.5,
+   "default": 1,
+   "label": {
+    "fr": "Durée de vol",
+    "en": "Flight duration"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": {
+    "fr": "h",
+    "en": "h"
+   },
+   "unit_source": "display"
+  },
+  {
+   "id": "boron-10-in-the-model",
+   "type": "integer",
+   "control": "range",
+   "min": 0,
+   "max": 50,
+   "step": 1,
+   "default": 20,
+   "label": {
+    "fr": "Bore-10 dans le modèle",
+    "en": "Boron-10 in the model"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": {
+    "fr": "µg/g",
+    "en": "µg/g"
+   },
+   "unit_source": "display"
+  },
+  {
+   "id": "bnct-carrier",
+   "type": "enum",
+   "control": "select",
+   "default": "BSH",
+   "options": [
+    {
+     "value": "BSH",
+     "label": "BSH"
+    },
+    {
+     "value": "BPA",
+     "label": "BPA"
+    }
+   ],
+   "label": {
+    "fr": "Molécule qui porte le bore (tableau 2 de l’article)",
+    "en": "Molecule carrying the boron (Table 2 of the paper)"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": null
+  },
+  {
+   "id": "neutron-energy",
+   "type": "enum",
+   "control": "select",
+   "default": "1",
+   "options": [
+    {
+     "value": "0",
+     "label": "Neutrons lents (0,025 à 0,5 eV)"
+    },
+    {
+     "value": "1",
+     "label": "Intermédiaires (1 à 500 keV)"
+    },
+    {
+     "value": "2",
+     "label": "Rapides (500 keV à 50 MeV)"
+    }
+   ],
+   "label": {
+    "fr": "Énergie des neutrons",
+    "en": "Neutron energy"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": null
+  }
+ ],
+ "presets": [
+  {
+   "id": "the-papers-case",
+   "name": {
+    "fr": "Le cas de l’article",
+    "en": "The paper’s case"
+   },
+   "values": {
+    "flight-duration": 1,
+    "boron-10-in-the-model": 20,
+    "bnct-carrier": "BSH",
+    "neutron-energy": "1"
+   },
+   "changes_vs_default": {},
+   "shows": {
+    "fr": "Une heure, 20 µg de bore-10 par gramme : le seul point où la dose est chiffrée.",
+    "en": "One hour, 20 µg of boron-10 per gram: the only point where the dose is quantified."
+   }
+  },
+  {
+   "id": "a-long-12-h-flight",
+   "name": {
+    "fr": "Un long vol de 12 h",
+    "en": "A long 12 h flight"
+   },
+   "values": {
+    "flight-duration": 12,
+    "boron-10-in-the-model": 20,
+    "bnct-carrier": "BSH",
+    "neutron-energy": "1"
+   },
+   "changes_vs_default": {
+    "flight-duration": 12
+   },
+   "shows": {
+    "fr": "Douze fois plus d’exposition, et la dose reste à peine au-dessus de 10 µGy.",
+    "en": "Twelve times more exposure, and the dose stays barely above 10 µGy."
+   }
+  },
+  {
+   "id": "more-boron",
+   "name": {
+    "fr": "Plus de bore",
+    "en": "More boron"
+   },
+   "values": {
+    "flight-duration": 1,
+    "boron-10-in-the-model": 50,
+    "bnct-carrier": "BSH",
+    "neutron-energy": "1"
+   },
+   "changes_vs_default": {
+    "boron-10-in-the-model": 50
+   },
+   "shows": {
+    "fr": "50 µg/g, valeur que l’article juge atteignable : 2,5 fois plus d’interactions sur le bore.",
+    "en": "50 µg/g, a value the paper considers reachable: 2.5 times more boron interactions."
+   }
+  },
+  {
+   "id": "no-boron",
+   "name": {
+    "fr": "Sans bore",
+    "en": "No boron"
+   },
+   "values": {
+    "flight-duration": 1,
+    "boron-10-in-the-model": 0,
+    "bnct-carrier": "BSH",
+    "neutron-energy": "1"
+   },
+   "changes_vs_default": {
+    "boron-10-in-the-model": 0
+   },
+   "shows": {
+    "fr": "Sans bore, pas de capture sur le bore : le mécanisme disparaît, le vol reste.",
+    "en": "Without boron there is no boron capture: the mechanism vanishes, the flight remains."
+   }
+  }
+ ],
+ "actions": [
+  {
+   "name": {
+    "fr": "1. Le ciel",
+    "en": "1. The sky"
+   }
+  },
+  {
+   "name": {
+    "fr": "2. Le modèle",
+    "en": "2. The model"
+   }
+  },
+  {
+   "name": {
+    "fr": "3. La capture",
+    "en": "3. The capture"
+   }
+  },
+  {
+   "name": {
+    "fr": "4. La cellule voisine",
+    "en": "4. The neighbouring cell"
+   }
+  },
+  {
+   "name": {
+    "fr": "10 neutrons",
+    "en": "10 neutrons"
+   }
+  },
+  {
+   "name": {
+    "fr": "100 neutrons",
+    "en": "100 neutrons"
+   }
+  },
+  {
+   "name": {
+    "fr": "6 000 neutrons",
+    "en": "6,000 neutrons"
+   }
+  },
+  {
+   "name": {
+    "fr": "60 000 neutrons",
+    "en": "60,000 neutrons"
+   }
+  },
+  {
+   "name": {
+    "fr": "Nouveau tirage",
+    "en": "New draw"
+   }
+  }
+ ],
+ "variants": [],
+ "outputs": [
+  {
+   "name": {
+    "fr": "(n,γ) : absorbé, un photon part",
+    "en": "(n,γ): absorbed, a photon leaves"
+   },
+   "unit": {
+    "fr": "%",
+    "en": "%"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "kind": "metric"
+  },
+  {
+   "name": {
+    "fr": "(n,α) : absorbé, une particule alpha part",
+    "en": "(n,α): absorbed, an alpha particle leaves"
+   },
+   "unit": {
+    "fr": "%",
+    "en": "%"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "kind": "metric"
+  },
+  {
+   "name": {
+    "fr": "(n,p) : un proton part",
+    "en": "(n,p): a proton leaves"
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "kind": "metric"
+  },
+  {
+   "name": {
+    "fr": "(n,n) : le neutron rebondit",
+    "en": "(n,n): the neutron bounces off"
+   },
+   "unit": {
+    "fr": "%",
+    "en": "%"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "kind": "metric"
+  }
+ ],
+ "formulas": [],
+ "definitions": [],
+ "assumptions": {
+  "fr": [
+   "Le cas de l’article : altitude 12 km, latitude 45°, 14,7 neutrons par cm² et par seconde, 10 cm d’eau qui ralentissent les neutrons, 0,5 cm de crâne et une tumeur d’environ 1 g contenant 20 µg de bore-10 par gramme. Un modèle hybride, transport Monte-Carlo et approximations analytiques, estime une dose tumorale moyenne de l’ordre de 1 µGy pour une heure . C’est insuffisant pour traiter une tumeur visible.",
+   "Les curseurs ne refont pas ce calcul : ils mettent à l’échelle le résultat publié, à spectre, géométrie et masse fixés. La durée multiplie la dose et les interactions. Le bore ne multiplie que les interactions, car l’article ne chiffre la dose qu’à 20 µg/g. Cette tumeur est un fantôme , c’est-à-dire un modèle numérique de tissus : sa concentration n’est pas une quantité à administrer à une personne."
+  ],
+  "en": [
+   "The paper’s case: 12 km altitude, 45° latitude, 14.7 neutrons per cm² per second, 10 cm of water slowing the neutrons, 0.5 cm of skull and a tumour of about 1 g with 20 µg of boron-10 per gram. A hybrid model, Monte Carlo transport with analytical approximations, estimates a mean tumour dose of the order of 1 µGy for one hour . That is insufficient to treat a visible tumour.",
+   "The sliders do not redo this calculation: they scale the published result, at fixed spectrum, geometry and mass. Duration multiplies the dose and the interactions. Boron multiplies the interactions only, because the paper quantifies the dose at 20 µg/g only. This tumour is a phantom , that is a numerical model of tissue: its concentration is not an amount to administer to a person."
+  ]
+ },
+ "source": {
+  "dois": [
+   "10.1016/j.apradiso.2009.03.072",
+   "10.1016/j.rpor.2010.11.002",
+   "10.1080/09553002.2025.2535001",
+   "10.1093/jrr/rrx080"
+  ],
+  "repositories": [],
+  "related_pages": []
+ },
+ "how_to_explore": {
+  "fr": "Régler les paramètres sur un préréglage (valeurs ci-dessus), lire la phrase affichée par la page puis les sorties ; modifier ensuite un seul paramètre à la fois entre son minimum et son maximum.",
+  "en": "Set the parameters to a preset (values above), read the sentence the page shows then the outputs; then change one parameter at a time between its minimum and maximum."
+ },
+ "exploration": [
+  {
+   "preset": "the-papers-case",
+   "title": {
+    "fr": "Le cas de l’article",
+    "en": "The paper’s case"
+   },
+   "set": {
+    "flight-duration": 1,
+    "boron-10-in-the-model": 20,
+    "bnct-carrier": "BSH",
+    "neutron-energy": "1"
+   },
+   "observe": {
+    "fr": "Une heure, 20 µg de bore-10 par gramme : le seul point où la dose est chiffrée.",
+    "en": "One hour, 20 µg of boron-10 per gram: the only point where the dose is quantified."
+   }
+  },
+  {
+   "preset": "a-long-12-h-flight",
+   "title": {
+    "fr": "Un long vol de 12 h",
+    "en": "A long 12 h flight"
+   },
+   "set": {
+    "flight-duration": 12
+   },
+   "observe": {
+    "fr": "Douze fois plus d’exposition, et la dose reste à peine au-dessus de 10 µGy.",
+    "en": "Twelve times more exposure, and the dose stays barely above 10 µGy."
+   }
+  },
+  {
+   "preset": "more-boron",
+   "title": {
+    "fr": "Plus de bore",
+    "en": "More boron"
+   },
+   "set": {
+    "boron-10-in-the-model": 50
+   },
+   "observe": {
+    "fr": "50 µg/g, valeur que l’article juge atteignable : 2,5 fois plus d’interactions sur le bore.",
+    "en": "50 µg/g, a value the paper considers reachable: 2.5 times more boron interactions."
+   }
+  },
+  {
+   "preset": "no-boron",
+   "title": {
+    "fr": "Sans bore",
+    "en": "No boron"
+   },
+   "set": {
+    "boron-10-in-the-model": 0
+   },
+   "observe": {
+    "fr": "Sans bore, pas de capture sur le bore : le mécanisme disparaît, le vol reste.",
+    "en": "Without boron there is no boron capture: the mechanism vanishes, the flight remains."
+   }
+  }
+ ],
+ "concepts": [],
+ "extraction": {
+  "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
+  "roots": [
+   "#experience",
+   "#bnct-mc"
+  ],
+  "page_errors": [],
+  "fr_en_preset_consistency": {
+   "presets_compared": 4,
+   "presets_with_different_values_fr_vs_en": []
+  }
+ }
+}

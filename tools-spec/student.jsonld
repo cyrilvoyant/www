@@ -1,0 +1,194 @@
+{
+ "@context": "https://schema.org",
+ "@type": [
+  "SoftwareApplication",
+  "LearningResource"
+ ],
+ "@id": "https://www.cyrilvoyant.com/tools/student-t-test/#tool-spec",
+ "identifier": "student",
+ "name": "Student test: two treatments, t and p-value",
+ "alternateName": "Test de Student : deux traitements, t et p-value",
+ "description": "Compare two treatments with the classic pooled t-test: difference, t statistic, degrees of freedom (df) and rejection regions.",
+ "url": "https://www.cyrilvoyant.com/tools/student-t-test/",
+ "sameAs": [
+  "https://www.cyrilvoyant.com/fr/animations/test-student/",
+  "https://www.cyrilvoyant.com/tools/student-t-test/"
+ ],
+ "inLanguage": [
+  "fr",
+  "en"
+ ],
+ "applicationCategory": "EducationalApplication",
+ "operatingSystem": "Any (web browser)",
+ "isAccessibleForFree": true,
+ "learningResourceType": "teaching",
+ "author": {
+  "@type": "Person",
+  "name": "Cyril Voyant",
+  "identifier": "https://orcid.org/0000-0003-0242-7377"
+ },
+ "license": "https://creativecommons.org/licenses/by/4.0/",
+ "additionalProperty": [
+  {
+   "@type": "PropertyValue",
+   "propertyID": "mean-treatment-a",
+   "name": "Mean Treatment A",
+   "alternateName": "Moyenne Traitement A",
+   "value": 14,
+   "minValue": 0,
+   "maxValue": 100,
+   "unitText": "mmHg"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "standard-deviation-treatment-a",
+   "name": "Standard deviation Treatment A",
+   "alternateName": "Écart-type Traitement A",
+   "value": 5,
+   "minValue": 0.5,
+   "maxValue": 30,
+   "unitText": "mmHg"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "mean-treatment-b",
+   "name": "Mean Treatment B",
+   "alternateName": "Moyenne Traitement B",
+   "value": 8,
+   "minValue": 0,
+   "maxValue": 100,
+   "unitText": "mmHg"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "standard-deviation-treatment-b",
+   "name": "Standard deviation Treatment B",
+   "alternateName": "Écart-type Traitement B",
+   "value": 6,
+   "minValue": 0.5,
+   "maxValue": 30,
+   "unitText": "mmHg"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "patients-per-group-n",
+   "name": "Patients per group n",
+   "alternateName": "Patients par groupe n",
+   "value": 12,
+   "minValue": 3,
+   "maxValue": 60,
+   "unitText": "dimensionless"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:hypertension-12-patients-per-group",
+   "name": "Hypertension, 12 patients per group",
+   "alternateName": "Hypertension, 12 patients par groupe",
+   "value": "{\"mean-treatment-a\": 14, \"standard-deviation-treatment-a\": 5, \"mean-treatment-b\": 8, \"standard-deviation-treatment-b\": 6, \"patients-per-group-n\": 12}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:same-difference-4-patients",
+   "name": "Same difference, 4 patients",
+   "alternateName": "Même écart, 4 patients",
+   "value": "{\"mean-treatment-a\": 14, \"standard-deviation-treatment-a\": 5, \"mean-treatment-b\": 8, \"standard-deviation-treatment-b\": 6, \"patients-per-group-n\": 4}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:same-difference-60-patients",
+   "name": "Same difference, 60 patients",
+   "alternateName": "Même écart, 60 patients",
+   "value": "{\"mean-treatment-a\": 14, \"standard-deviation-treatment-a\": 5, \"mean-treatment-b\": 8, \"standard-deviation-treatment-b\": 6, \"patients-per-group-n\": 60}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:widely-spread-patients",
+   "name": "Widely spread patients",
+   "alternateName": "Patients très dispersés",
+   "value": "{\"mean-treatment-a\": 14, \"standard-deviation-treatment-a\": 25, \"mean-treatment-b\": 8, \"standard-deviation-treatment-b\": 25, \"patients-per-group-n\": 12}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:equal-means",
+   "name": "Equal means",
+   "alternateName": "Moyennes égales",
+   "value": "{\"mean-treatment-a\": 14, \"standard-deviation-treatment-a\": 5, \"mean-treatment-b\": 14, \"standard-deviation-treatment-b\": 6, \"patients-per-group-n\": 12}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:course-example-brocas-area-lesions-slide",
+   "name": "Course example: Broca’s area lesions (slides 94–97)",
+   "alternateName": "Exemple du cours : lésions de l’aire de Broca (diapositives 94 à 97)",
+   "value": "{\"mean-treatment-a\": 36, \"standard-deviation-treatment-a\": 9.4195, \"mean-treatment-b\": 70.25, \"standard-deviation-treatment-b\": 4.6928, \"patients-per-group-n\": 12}"
+  }
+ ],
+ "potentialAction": {
+  "@type": "Action",
+  "name": "Explore the tool",
+  "target": {
+   "@type": "EntryPoint",
+   "urlTemplate": "https://www.cyrilvoyant.com/tools/student-t-test/",
+   "actionPlatform": "https://schema.org/DesktopWebPlatform"
+  },
+  "object": [
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "mean-treatment-a",
+    "description": "Mean Treatment A",
+    "valueRequired": false,
+    "minValue": 0,
+    "maxValue": 100,
+    "defaultValue": 14,
+    "stepValue": 0.25
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "standard-deviation-treatment-a",
+    "description": "Standard deviation Treatment A",
+    "valueRequired": false,
+    "minValue": 0.5,
+    "maxValue": 30,
+    "defaultValue": 5,
+    "stepValue": 0.0001
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "mean-treatment-b",
+    "description": "Mean Treatment B",
+    "valueRequired": false,
+    "minValue": 0,
+    "maxValue": 100,
+    "defaultValue": 8,
+    "stepValue": 0.25
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "standard-deviation-treatment-b",
+    "description": "Standard deviation Treatment B",
+    "valueRequired": false,
+    "minValue": 0.5,
+    "maxValue": 30,
+    "defaultValue": 6,
+    "stepValue": 0.0001
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "patients-per-group-n",
+    "description": "Patients per group n",
+    "valueRequired": false,
+    "minValue": 3,
+    "maxValue": 60,
+    "defaultValue": 12,
+    "stepValue": 1
+   }
+  ]
+ },
+ "about": [
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#p-value"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#student-t-test"
+  }
+ ]
+}

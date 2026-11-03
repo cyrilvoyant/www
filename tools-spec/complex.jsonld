@@ -1,0 +1,143 @@
+{
+ "@context": "https://schema.org",
+ "@type": [
+  "SoftwareApplication",
+  "LearningResource"
+ ],
+ "@id": "https://www.cyrilvoyant.com/complex-valued-forecasting/#tool-spec",
+ "identifier": "complex",
+ "name": "Complex-valued forecasting: set α and the interval width",
+ "alternateName": "Prévision complexe : régler α et la largeur des intervalles",
+ "description": "A complex autoregression forecasts irradiance and its volatility. Set α, the share of measurements left outside the interval, and read μ, the multiplier that sets the width, Gaussian or calibrated; results of the paper (2022).",
+ "url": "https://www.cyrilvoyant.com/complex-valued-forecasting/",
+ "sameAs": [
+  "https://www.cyrilvoyant.com/fr/prevision-complexe/",
+  "https://www.cyrilvoyant.com/complex-valued-forecasting/"
+ ],
+ "inLanguage": [
+  "fr",
+  "en"
+ ],
+ "applicationCategory": "ScientificApplication",
+ "operatingSystem": "Any (web browser)",
+ "isAccessibleForFree": true,
+ "learningResourceType": "demo",
+ "author": {
+  "@type": "Person",
+  "name": "Cyril Voyant",
+  "identifier": "https://orcid.org/0000-0003-0242-7377"
+ },
+ "license": "https://creativecommons.org/licenses/by/4.0/",
+ "additionalProperty": [
+  {
+   "@type": "PropertyValue",
+   "propertyID": "cx-a",
+   "name": "α, share left outside",
+   "alternateName": "α, part laissée hors intervalle",
+   "value": 0.2,
+   "minValue": 0.1,
+   "maxValue": 0.9,
+   "unitText": "dimensionless"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "cx-l",
+   "name": "Horizon",
+   "alternateName": "Horizon",
+   "value": 1,
+   "minValue": 1,
+   "maxValue": 6,
+   "unitText": "h"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "cx-s",
+   "name": "σ̂, forecast volatility",
+   "alternateName": "σ̂, volatilité prévue",
+   "description": "the forecast volatility, without unit. The slider gives example values; in the method, it comes out of the autoregression at each time.",
+   "value": 0.1,
+   "minValue": 0.02,
+   "maxValue": 0.2,
+   "unitText": "dimensionless"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:the-papers-setting",
+   "name": "The paper’s setting",
+   "alternateName": "Le réglage de l’article",
+   "value": "{\"cx-a\": 0.2, \"cx-l\": 1, \"cx-s\": 0.1}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:same-coverage-at-6-h",
+   "name": "Same coverage, at 6 h",
+   "alternateName": "Même couverture, à 6 h",
+   "value": "{\"cx-a\": 0.2, \"cx-l\": 6, \"cx-s\": 0.1}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:demand-90",
+   "name": "Demand 90%",
+   "alternateName": "Exiger 90 %",
+   "value": "{\"cx-a\": 0.1, \"cx-l\": 1, \"cx-s\": 0.1}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:calm-sky",
+   "name": "Calm sky",
+   "alternateName": "Ciel calme",
+   "value": "{\"cx-a\": 0.2, \"cx-l\": 1, \"cx-s\": 0.02}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:unsettled-sky",
+   "name": "Unsettled sky",
+   "alternateName": "Ciel agité",
+   "value": "{\"cx-a\": 0.2, \"cx-l\": 1, \"cx-s\": 0.2}"
+  }
+ ],
+ "potentialAction": {
+  "@type": "Action",
+  "name": "Explore the tool",
+  "target": {
+   "@type": "EntryPoint",
+   "urlTemplate": "https://www.cyrilvoyant.com/complex-valued-forecasting/",
+   "actionPlatform": "https://schema.org/DesktopWebPlatform"
+  },
+  "object": [
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "cx-a",
+    "description": "α, share left outside",
+    "valueRequired": false,
+    "minValue": 0.1,
+    "maxValue": 0.9,
+    "defaultValue": 0.2,
+    "stepValue": 0.01
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "cx-l",
+    "description": "Horizon",
+    "valueRequired": false,
+    "minValue": 1,
+    "maxValue": 6,
+    "defaultValue": 1,
+    "stepValue": 1
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "cx-s",
+    "description": "σ̂, forecast volatility",
+    "valueRequired": false,
+    "minValue": 0.02,
+    "maxValue": 0.2,
+    "defaultValue": 0.1,
+    "stepValue": 0.01
+   }
+  ]
+ },
+ "citation": [
+  "https://doi.org/10.1063/5.0128131"
+ ]
+}

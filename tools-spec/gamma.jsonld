@@ -1,0 +1,223 @@
+{
+ "@context": "https://schema.org",
+ "@type": [
+  "SoftwareApplication",
+  "LearningResource"
+ ],
+ "@id": "https://cyrilvoyant.github.io/methods/gamma-index.html#try-it#tool-spec",
+ "identifier": "gamma",
+ "name": "Displace a forecast and explore the γ-index",
+ "alternateName": "Déplacer une prévision et observer l’indice γ",
+ "description": "The γ-index judges a forecast with tolerances in space, time and intensity. Displace, delay or bias a synthetic cloud and adjust these tolerances.",
+ "url": "https://cyrilvoyant.github.io/methods/gamma-index.html#try-it",
+ "sameAs": [
+  "https://www.cyrilvoyant.com/fr/outils/indice-gamma/#try-it",
+  "https://cyrilvoyant.github.io/methods/gamma-index.html#try-it"
+ ],
+ "inLanguage": [
+  "fr",
+  "en"
+ ],
+ "applicationCategory": "ScientificApplication",
+ "operatingSystem": "Any (web browser)",
+ "isAccessibleForFree": true,
+ "learningResourceType": "calculator",
+ "author": {
+  "@type": "Person",
+  "name": "Cyril Voyant",
+  "identifier": "https://orcid.org/0000-0003-0242-7377"
+ },
+ "license": "https://creativecommons.org/licenses/by/4.0/",
+ "additionalProperty": [
+  {
+   "@type": "PropertyValue",
+   "propertyID": "gm-s",
+   "name": "Cloud displaced north by (across its motion) km",
+   "alternateName": "Décalage vers le nord",
+   "description": "Le nuage prévu est déplacé perpendiculairement à son mouvement.",
+   "value": 2,
+   "minValue": 0,
+   "maxValue": 6,
+   "unitText": "km"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "gm-l",
+   "name": "Forecast late (+) or early (−) by min",
+   "alternateName": "Retard (+) ou avance (−)",
+   "description": "Le nuage se déplace vers l’est à 12 km/h : 30 min de retard le placent 6 km trop à l’ouest.",
+   "value": 0,
+   "minValue": -30,
+   "maxValue": 30,
+   "unitText": "min"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "gm-b",
+   "name": "Intensity bias W/m²",
+   "alternateName": "Biais",
+   "description": "Toute la carte prévue est trop claire (+) ou trop sombre (−), en W/m².",
+   "value": 0,
+   "minValue": -80,
+   "maxValue": 80,
+   "unitText": "W/m²"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "gm-dta",
+   "name": "DTA, spatial km",
+   "alternateName": "DTA",
+   "description": "distance to agreement: spatial tolerance",
+   "value": 2,
+   "minValue": 0.5,
+   "maxValue": 3,
+   "unitText": "km"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "gm-tta",
+   "name": "TTA, temporal min",
+   "alternateName": "TTA",
+   "description": "time to agreement: temporal tolerance",
+   "value": 30,
+   "minValue": 5,
+   "maxValue": 30,
+   "unitText": "min"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "gm-idt",
+   "name": "IDT, intensity W/m²",
+   "alternateName": "IDT",
+   "description": "intensity deviation tolerance, for example 50 W/m², calibrated from sensor uncertainty or grid operational limits",
+   "value": 50,
+   "minValue": 10,
+   "maxValue": 100,
+   "unitText": "W/m²"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:nuage-decale-de-2-km",
+   "name": "Nuage décalé de 2 km",
+   "alternateName": "Nuage décalé de 2 km",
+   "value": "{\"gm-s\": 2, \"gm-l\": 0, \"gm-b\": 0, \"gm-dta\": 2, \"gm-tta\": 30, \"gm-idt\": 50}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:retard-de-30-min",
+   "name": "Retard de 30 min",
+   "alternateName": "Retard de 30 min",
+   "value": "{\"gm-s\": 0, \"gm-l\": 30, \"gm-b\": 0, \"gm-dta\": 2, \"gm-tta\": 30, \"gm-idt\": 50}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:biais-de-80-w-m2",
+   "name": "Biais de 80 W/m²",
+   "alternateName": "Biais de 80 W/m²",
+   "value": "{\"gm-s\": 0, \"gm-l\": 0, \"gm-b\": 80, \"gm-dta\": 2, \"gm-tta\": 30, \"gm-idt\": 50}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:nuage-decale-de-6-km",
+   "name": "Nuage décalé de 6 km",
+   "alternateName": "Nuage décalé de 6 km",
+   "value": "{\"gm-s\": 6, \"gm-l\": 0, \"gm-b\": 0, \"gm-dta\": 2, \"gm-tta\": 30, \"gm-idt\": 50}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:tolerances-strictes",
+   "name": "Tolérances strictes",
+   "alternateName": "Tolérances strictes",
+   "value": "{\"gm-s\": 3, \"gm-l\": 0, \"gm-b\": 0, \"gm-dta\": 0.5, \"gm-tta\": 5, \"gm-idt\": 10}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:tolerances-de-larticle",
+   "name": "Tolérances de l’article",
+   "alternateName": "Tolérances de l’article",
+   "value": "{\"gm-s\": 2, \"gm-l\": 0, \"gm-b\": 0, \"gm-dta\": 2, \"gm-tta\": 30, \"gm-idt\": 50}"
+  }
+ ],
+ "potentialAction": {
+  "@type": "Action",
+  "name": "Explore the tool",
+  "target": {
+   "@type": "EntryPoint",
+   "urlTemplate": "https://cyrilvoyant.github.io/methods/gamma-index.html#try-it",
+   "actionPlatform": "https://schema.org/DesktopWebPlatform"
+  },
+  "object": [
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "gm-s",
+    "description": "Cloud displaced north by (across its motion) km",
+    "valueRequired": false,
+    "minValue": 0,
+    "maxValue": 6,
+    "defaultValue": 2,
+    "stepValue": 0.25
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "gm-l",
+    "description": "Forecast late (+) or early (−) by min",
+    "valueRequired": false,
+    "minValue": -30,
+    "maxValue": 30,
+    "defaultValue": 0,
+    "stepValue": 5
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "gm-b",
+    "description": "Intensity bias W/m²",
+    "valueRequired": false,
+    "minValue": -80,
+    "maxValue": 80,
+    "defaultValue": 0,
+    "stepValue": 5
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "gm-dta",
+    "description": "DTA, spatial km",
+    "valueRequired": false,
+    "minValue": 0.5,
+    "maxValue": 3,
+    "defaultValue": 2,
+    "stepValue": 0.5
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "gm-tta",
+    "description": "TTA, temporal min",
+    "valueRequired": false,
+    "minValue": 5,
+    "maxValue": 30,
+    "defaultValue": 30,
+    "stepValue": 5
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "gm-idt",
+    "description": "IDT, intensity W/m²",
+    "valueRequired": false,
+    "minValue": 10,
+    "maxValue": 100,
+    "defaultValue": 50,
+    "stepValue": 5
+   }
+  ]
+ },
+ "citation": [
+  "https://doi.org/10.1016/j.ijforecast.2026.03.002",
+  "https://doi.org/10.5281/zenodo.21755936",
+  "https://doi.org/10.5281/zenodo.21755937"
+ ],
+ "codeRepository": "https://github.com/cyrilvoyant/temporal-gamma-index",
+ "about": [
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#gamma-index"
+  }
+ ]
+}

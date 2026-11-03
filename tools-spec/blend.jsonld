@@ -1,0 +1,219 @@
+{
+ "@context": "https://schema.org",
+ "@type": [
+  "SoftwareApplication",
+  "LearningResource"
+ ],
+ "@id": "https://cyrilvoyant.github.io/methods/persistence-blend.html#try-it#tool-spec",
+ "identifier": "blend",
+ "name": "Compute BLEND weights",
+ "alternateName": "Calculer les poids de BLEND",
+ "description": "BLEND is a convex combination of persistence and cyclic persistence. See the weights computed on a time series.",
+ "url": "https://cyrilvoyant.github.io/methods/persistence-blend.html#try-it",
+ "sameAs": [
+  "https://www.cyrilvoyant.com/fr/outils/blend/#try-it",
+  "https://cyrilvoyant.github.io/methods/persistence-blend.html#try-it"
+ ],
+ "inLanguage": [
+  "fr",
+  "en"
+ ],
+ "applicationCategory": "ScientificApplication",
+ "operatingSystem": "Any (web browser)",
+ "isAccessibleForFree": true,
+ "learningResourceType": "calculator",
+ "author": {
+  "@type": "Person",
+  "name": "Cyril Voyant",
+  "identifier": "https://orcid.org/0000-0003-0242-7377"
+ },
+ "license": "https://creativecommons.org/licenses/by/4.0/",
+ "additionalProperty": [
+  {
+   "@type": "PropertyValue",
+   "propertyID": "bl-h",
+   "name": "Horizon h steps",
+   "alternateName": "Horizon h",
+   "description": "Nombre de pas entre la dernière valeur connue et la valeur à prévoir.",
+   "value": 1,
+   "minValue": 1,
+   "maxValue": 24,
+   "unitText": "pas"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "bl-ph",
+   "name": "Phase of the origin",
+   "alternateName": "Phase",
+   "description": "Le moment du cycle où part la prévision : ici l’heure de la journée. BLEND a un poids par phase.",
+   "value": 7,
+   "minValue": 1,
+   "maxValue": 24,
+   "unitText": "dimensionless"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "bl-l",
+   "name": "Your λ",
+   "alternateName": "Votre λ",
+   "description": "Le poids de la dernière valeur. λ = 1 : persistance. λ = 0 : persistance cyclique. Entre les deux : un mélange.",
+   "value": 0.5,
+   "minValue": 0,
+   "maxValue": 1,
+   "unitText": "dimensionless"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "bl-w",
+   "name": "Window shown (period)",
+   "alternateName": "Fenêtre affichée",
+   "description": "Change seulement les trois périodes montrées sur le premier graphique. Aucun résultat chiffré n’en dépend.",
+   "value": 1,
+   "minValue": 1,
+   "maxValue": 16,
+   "unitText": "period"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "bl-T",
+   "name": "Period T (steps)",
+   "alternateName": "Période T (pas)",
+   "description": "Nombre de pas dans un cycle : 24 pour une journée au pas horaire, 48 au pas de 30 min.",
+   "value": 24,
+   "minValue": 2,
+   "unitText": "pas"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "bl-d",
+   "name": "One column: the signal, regularly sampled (one row per time step). Demo data loaded (hourly); paste your own.",
+   "alternateName": "Une colonne, une ligne par pas de temps, régulièrement échantillonnée. Il faut au moins trois périodes."
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:demonstration-h-1",
+   "name": "Démonstration, h = 1",
+   "alternateName": "Démonstration, h = 1",
+   "value": "{\"bl-h\": 1, \"bl-ph\": 7, \"bl-l\": 0.5, \"bl-w\": 1, \"bl-T\": 24}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:demonstration-h-12",
+   "name": "Démonstration, h = 12",
+   "alternateName": "Démonstration, h = 12",
+   "value": "{\"bl-h\": 12, \"bl-ph\": 22, \"bl-l\": 0.5, \"bl-w\": 1, \"bl-T\": 24}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:demonstration-h-24",
+   "name": "Démonstration, h = 24",
+   "alternateName": "Démonstration, h = 24",
+   "value": "{\"bl-h\": 24, \"bl-ph\": 1, \"bl-l\": 0.5, \"bl-w\": 1, \"bl-T\": 24}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:pv-reel-1-heure",
+   "name": "PV réel, 1 heure",
+   "alternateName": "PV réel, 1 heure",
+   "value": "{\"bl-h\": 2, \"bl-ph\": 14, \"bl-l\": 0.5, \"bl-w\": 1, \"bl-T\": 48}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:pv-reel-12-heures",
+   "name": "PV réel, 12 heures",
+   "alternateName": "PV réel, 12 heures",
+   "value": "{\"bl-h\": 24, \"bl-ph\": 12, \"bl-l\": 0.5, \"bl-w\": 1, \"bl-T\": 48}"
+  }
+ ],
+ "potentialAction": {
+  "@type": "Action",
+  "name": "Explore the tool",
+  "target": {
+   "@type": "EntryPoint",
+   "urlTemplate": "https://cyrilvoyant.github.io/methods/persistence-blend.html#try-it",
+   "actionPlatform": "https://schema.org/DesktopWebPlatform"
+  },
+  "object": [
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "bl-h",
+    "description": "Horizon h steps",
+    "valueRequired": false,
+    "minValue": 1,
+    "maxValue": 24,
+    "defaultValue": 1,
+    "stepValue": 1
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "bl-ph",
+    "description": "Phase of the origin",
+    "valueRequired": false,
+    "minValue": 1,
+    "maxValue": 24,
+    "defaultValue": 7,
+    "stepValue": 1
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "bl-l",
+    "description": "Your λ",
+    "valueRequired": false,
+    "minValue": 0,
+    "maxValue": 1,
+    "defaultValue": 0.5,
+    "stepValue": 0.01
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "bl-w",
+    "description": "Window shown (period)",
+    "valueRequired": false,
+    "minValue": 1,
+    "maxValue": 16,
+    "defaultValue": 1,
+    "stepValue": 1
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "bl-T",
+    "description": "Period T (steps)",
+    "valueRequired": false,
+    "minValue": 2,
+    "defaultValue": 24,
+    "stepValue": 1
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "bl-d",
+    "description": "One column: the signal, regularly sampled (one row per time step). Demo data loaded (hourly); paste your own.",
+    "valueRequired": false
+   }
+  ]
+ },
+ "citation": [
+  "https://doi.org/10.1016/j.apm.2026.116988",
+  "https://doi.org/10.1016/j.renene.2022.04.065",
+  "https://doi.org/10.1016/j.renene.2025.123913",
+  "https://doi.org/10.5281/zenodo.18812333",
+  "https://doi.org/10.5281/zenodo.23534072"
+ ],
+ "codeRepository": "https://github.com/cyrilvoyant/ARTU",
+ "about": [
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#persistence"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#cyclic-persistence"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#convex-combination"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#cliper"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#blend"
+  }
+ ]
+}

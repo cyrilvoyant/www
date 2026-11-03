@@ -1,0 +1,186 @@
+{
+ "@context": "https://schema.org",
+ "@type": [
+  "SoftwareApplication",
+  "LearningResource"
+ ],
+ "@id": "https://www.cyrilvoyant.com/tools/normal-distribution/#tool-spec",
+ "identifier": "normal",
+ "name": "Explore the normal distribution",
+ "alternateName": "Explorer la loi normale",
+ "description": "Convert a standard score to a probability, or vice versa.",
+ "url": "https://www.cyrilvoyant.com/tools/normal-distribution/",
+ "sameAs": [
+  "https://www.cyrilvoyant.com/fr/animations/loi-normale/",
+  "https://www.cyrilvoyant.com/tools/normal-distribution/"
+ ],
+ "inLanguage": [
+  "fr",
+  "en"
+ ],
+ "applicationCategory": "EducationalApplication",
+ "operatingSystem": "Any (web browser)",
+ "isAccessibleForFree": true,
+ "learningResourceType": "teaching",
+ "author": {
+  "@type": "Person",
+  "name": "Cyril Voyant",
+  "identifier": "https://orcid.org/0000-0003-0242-7377"
+ },
+ "license": "https://creativecommons.org/licenses/by/4.0/",
+ "additionalProperty": [
+  {
+   "@type": "PropertyValue",
+   "propertyID": "area",
+   "name": "Area",
+   "alternateName": "Aire",
+   "value": "lt"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "z",
+   "name": "z (standard deviations)",
+   "alternateName": "z (en écarts-types)",
+   "description": "The z-score: the number of standard deviations between x and the mean.",
+   "value": 1.96,
+   "unitText": "en écarts-types"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "probability",
+   "name": "probability (area)",
+   "alternateName": "probabilité (aire)",
+   "value": 0.975,
+   "minValue": 0.0001,
+   "maxValue": 0.9999,
+   "unitText": "aire"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "x",
+   "name": "x (value)",
+   "alternateName": "x (valeur)",
+   "description": "A value, the mean and the standard deviation.",
+   "value": 1.96,
+   "unitText": "valeur"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "param",
+   "name": "μ (mean)",
+   "alternateName": "μ (moyenne)",
+   "description": "A value, the mean and the standard deviation.",
+   "value": 0,
+   "unitText": "moyenne"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "param_2",
+   "name": "σ (standard deviation)",
+   "alternateName": "σ (écart-type)",
+   "description": "A value, the mean and the standard deviation.",
+   "value": 1,
+   "minValue": 0,
+   "unitText": "standard deviation"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:97-5-to-the-left-of-1-96",
+   "name": "97.5% to the left of 1.96",
+   "alternateName": "97,5 % à gauche de 1,96",
+   "value": "{\"area\": \"lt\", \"z\": 1.96, \"probability\": 0.975, \"x\": 1.96, \"param\": 0, \"param_2\": 1}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:95-in-the-center",
+   "name": "95% in the center",
+   "alternateName": "95 % au centre",
+   "value": "{\"area\": \"two\", \"z\": 1.96, \"probability\": 0.95, \"x\": 1.95996, \"param\": 0, \"param_2\": 1}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:beyond-2-standard-deviations",
+   "name": "Beyond 2 standard deviations",
+   "alternateName": "Au-delà de 2 écarts-types",
+   "value": "{\"area\": \"gt\", \"z\": 2, \"probability\": 0.0228, \"x\": 2, \"param\": 0, \"param_2\": 1}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:threshold-of-the-top-10",
+   "name": "Threshold of the top 10%",
+   "alternateName": "Seuil des 10 % les plus hauts",
+   "value": "{\"area\": \"gt\", \"z\": 1.2816, \"probability\": 0.1, \"x\": 1.28155, \"param\": 0, \"param_2\": 1}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:example-x-130-100-15",
+   "name": "Example: x = 130, μ = 100, σ = 15",
+   "alternateName": "Exemple : x = 130, μ = 100, σ = 15",
+   "value": "{\"area\": \"lt\", \"z\": 2.0, \"probability\": 0.9772, \"x\": 130, \"param\": 100, \"param_2\": 15}"
+  }
+ ],
+ "potentialAction": {
+  "@type": "Action",
+  "name": "Explore the tool",
+  "target": {
+   "@type": "EntryPoint",
+   "urlTemplate": "https://www.cyrilvoyant.com/tools/normal-distribution/",
+   "actionPlatform": "https://schema.org/DesktopWebPlatform"
+  },
+  "object": [
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "area",
+    "description": "Area",
+    "valueRequired": false,
+    "valuePattern": "^(lt|gt|two)$",
+    "defaultValue": "lt"
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "z",
+    "description": "z (standard deviations)",
+    "valueRequired": false,
+    "defaultValue": 1.96,
+    "stepValue": 0.01
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "probability",
+    "description": "probability (area)",
+    "valueRequired": false,
+    "minValue": 0.0001,
+    "maxValue": 0.9999,
+    "defaultValue": 0.975,
+    "stepValue": 0.0001
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "x",
+    "description": "x (value)",
+    "valueRequired": false,
+    "defaultValue": 1.96
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "param",
+    "description": "μ (mean)",
+    "valueRequired": false,
+    "defaultValue": 0
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "param_2",
+    "description": "σ (standard deviation)",
+    "valueRequired": false,
+    "minValue": 0,
+    "defaultValue": 1
+   }
+  ]
+ },
+ "about": [
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#normal-distribution"
+  }
+ ]
+}

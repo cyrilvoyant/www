@@ -1,0 +1,92 @@
+{
+ "@context": "https://schema.org",
+ "@type": [
+  "SoftwareApplication",
+  "LearningResource"
+ ],
+ "@id": "https://www.cyrilvoyant.com/data/#lic-tree#tool-spec",
+ "identifier": "licence",
+ "name": "Explore a licensing choice",
+ "alternateName": "Explorer un choix de licence",
+ "description": "Follow an example decision tree, to be adapted to context and content rights.",
+ "url": "https://www.cyrilvoyant.com/data/#lic-tree",
+ "sameAs": [
+  "https://www.cyrilvoyant.com/fr/donnees/#lic-tree",
+  "https://www.cyrilvoyant.com/data/#lic-tree"
+ ],
+ "inLanguage": [
+  "fr",
+  "en"
+ ],
+ "applicationCategory": "ScientificApplication",
+ "operatingSystem": "Any (web browser)",
+ "isAccessibleForFree": true,
+ "learningResourceType": "decision",
+ "author": {
+  "@type": "Person",
+  "name": "Cyril Voyant",
+  "identifier": "https://orcid.org/0000-0003-0242-7377"
+ },
+ "license": "https://creativecommons.org/licenses/by/4.0/",
+ "additionalProperty": [
+  {
+   "@type": "PropertyValue",
+   "propertyID": "frame",
+   "name": "Does the project framework (contract, funder, chair) impose confidentiality or exclusivity?",
+   "alternateName": "Le cadre du projet (contrat, financeur, chaire) impose-t-il la confidentialité ou l'exclusivité ?"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "open",
+   "name": "Does it impose openness (Horizon Europe, ANR, a chair with an openness clause)?",
+   "alternateName": "Ce cadre impose-t-il l'ouverture (Horizon Europe, ANR, chaire avec clause d'ouverture) ?"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "oss",
+   "name": "Does the clause explicitly require \"open source\" (not only open access to the code)?",
+   "alternateName": "La clause exige-t-elle explicitement l'« open source » (et pas seulement un accès ouvert au code) ?"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "rev",
+   "name": "Is the code meant for a software journal (SoftwareX, JOSS, JORS) or linked to a GPL library?",
+   "alternateName": "Le code est-il destiné à une revue logicielle (SoftwareX, JOSS, JORS) ou lié à une bibliothèque sous GPL ?"
+  }
+ ],
+ "potentialAction": {
+  "@type": "Action",
+  "name": "Explore the tool",
+  "target": {
+   "@type": "EntryPoint",
+   "urlTemplate": "https://www.cyrilvoyant.com/data/#lic-tree",
+   "actionPlatform": "https://schema.org/DesktopWebPlatform"
+  },
+  "object": [
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "frame",
+    "description": "Does the project framework (contract, funder, chair) impose confidentiality or exclusivity?",
+    "valueRequired": false
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "open",
+    "description": "Does it impose openness (Horizon Europe, ANR, a chair with an openness clause)?",
+    "valueRequired": false
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "oss",
+    "description": "Does the clause explicitly require \"open source\" (not only open access to the code)?",
+    "valueRequired": false
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "rev",
+    "description": "Is the code meant for a software journal (SoftwareX, JOSS, JORS) or linked to a GPL library?",
+    "valueRequired": false
+   }
+  ]
+ }
+}

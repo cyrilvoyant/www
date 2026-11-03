@@ -1,0 +1,165 @@
+{
+ "@context": "https://schema.org",
+ "@type": [
+  "SoftwareApplication",
+  "LearningResource"
+ ],
+ "@id": "https://cyrilvoyant.github.io/methods/solar-variability-scv.html#try-it#tool-spec",
+ "identifier": "scv",
+ "name": "Measure variability and forecastability — sCV and F",
+ "alternateName": "Mesurer variabilité et prévisibilité — sCV et F",
+ "description": "sCV describes the variability of a signal, F its forecastability, before any model. Supply measured and clear-sky irradiance, then read them at your chosen horizon.",
+ "url": "https://cyrilvoyant.github.io/methods/solar-variability-scv.html#try-it",
+ "sameAs": [
+  "https://www.cyrilvoyant.com/fr/outils/variabilite-previsibilite/#try-it",
+  "https://cyrilvoyant.github.io/methods/solar-variability-scv.html#try-it"
+ ],
+ "inLanguage": [
+  "fr",
+  "en"
+ ],
+ "applicationCategory": "ScientificApplication",
+ "operatingSystem": "Any (web browser)",
+ "isAccessibleForFree": true,
+ "learningResourceType": "calculator",
+ "author": {
+  "@type": "Person",
+  "name": "Cyril Voyant",
+  "identifier": "https://orcid.org/0000-0003-0242-7377"
+ },
+ "license": "https://creativecommons.org/licenses/by/4.0/",
+ "additionalProperty": [
+  {
+   "@type": "PropertyValue",
+   "propertyID": "sc-n",
+   "name": "Horizon n steps",
+   "alternateName": "Horizon n",
+   "description": "Nombre de pas à l’avance, au plus T/2. sCV n’en dépend pas ; F, si.",
+   "value": 1,
+   "minValue": 1,
+   "maxValue": 12,
+   "unitText": "pas"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "sc-dd",
+   "name": "Diffuse floor d",
+   "alternateName": "Plancher diffus d",
+   "description": "La fraction de ciel clair qui reste sous un nuage épais : 0,2 dans l’article. Il fixe l’échelle de sCV, proportionnelle à 1/(1 − d). Les séries chargées restent construites avec d = 0,2.",
+   "value": 0.2,
+   "minValue": 0,
+   "maxValue": 0.6,
+   "unitText": "dimensionless"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "sc-T",
+   "name": "Steps per day T",
+   "alternateName": "Pas par jour T",
+   "description": "Nombre de pas dans une journée : 24 au pas horaire. La mémoire est cherchée entre l’horizon n et T/2.",
+   "value": 24,
+   "minValue": 2,
+   "unitText": "dimensionless"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "sc-d",
+   "name": "Two columns: measured irradiance, clear-sky irradiance (one row per time step). Demo data loaded (hourly); paste your own.",
+   "alternateName": "Deux colonnes, une ligne par pas de temps : éclairement mesuré, puis éclairement de ciel clair, dans la même unité. Point ou virgule décimale."
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:ciel-clair",
+   "name": "Ciel clair",
+   "alternateName": "Ciel clair",
+   "value": "{\"sc-n\": 1, \"sc-dd\": 0.2, \"sc-T\": 24}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:voile-leger",
+   "name": "Voile léger",
+   "alternateName": "Voile léger",
+   "value": "{\"sc-n\": 1, \"sc-dd\": 0.2, \"sc-T\": 24}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:ciel-fragmente",
+   "name": "Ciel fragmenté",
+   "alternateName": "Ciel fragmenté",
+   "value": "{\"sc-n\": 1, \"sc-dd\": 0.2, \"sc-T\": 24}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:clair-ou-couvert-au-hasard",
+   "name": "Clair ou couvert au hasard",
+   "alternateName": "Clair ou couvert au hasard",
+   "value": "{\"sc-n\": 1, \"sc-dd\": 0.2, \"sc-T\": 24}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:journees-entieres-couvertes",
+   "name": "Journées entières couvertes",
+   "alternateName": "Journées entières couvertes",
+   "value": "{\"sc-n\": 1, \"sc-dd\": 0.2, \"sc-T\": 24}"
+  }
+ ],
+ "potentialAction": {
+  "@type": "Action",
+  "name": "Explore the tool",
+  "target": {
+   "@type": "EntryPoint",
+   "urlTemplate": "https://cyrilvoyant.github.io/methods/solar-variability-scv.html#try-it",
+   "actionPlatform": "https://schema.org/DesktopWebPlatform"
+  },
+  "object": [
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "sc-n",
+    "description": "Horizon n steps",
+    "valueRequired": false,
+    "minValue": 1,
+    "maxValue": 12,
+    "defaultValue": 1,
+    "stepValue": 1
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "sc-dd",
+    "description": "Diffuse floor d",
+    "valueRequired": false,
+    "minValue": 0,
+    "maxValue": 0.6,
+    "defaultValue": 0.2,
+    "stepValue": 0.05
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "sc-T",
+    "description": "Steps per day T",
+    "valueRequired": false,
+    "minValue": 2,
+    "defaultValue": 24,
+    "stepValue": 1
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "sc-d",
+    "description": "Two columns: measured irradiance, clear-sky irradiance (one row per time step). Demo data loaded (hourly); paste your own.",
+    "valueRequired": false
+   }
+  ]
+ },
+ "citation": [
+  "https://doi.org/10.1016/j.renene.2025.123913",
+  "https://doi.org/10.5281/zenodo.23562553"
+ ],
+ "codeRepository": "https://github.com/cyrilvoyant/solar-variability-scv",
+ "about": [
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#scv"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#forecastability-f"
+  }
+ ]
+}

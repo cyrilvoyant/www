@@ -1,0 +1,1388 @@
+[
+ {
+  "id": "Asloune2026Quality",
+  "type": "article-journal",
+  "title": "Quality control of tilted solar irradiance: Asystematic and generalizable procedure",
+  "author": [
+   {
+    "family": "Asloune",
+    "given": "Mohammed"
+   },
+   {
+    "family": "Notton",
+    "given": "Gilles"
+   },
+   {
+    "family": "Voyant",
+    "given": "Cyril"
+   }
+  ],
+  "issued": {
+   "date-parts": [
+    [
+     2026,
+     3
+    ]
+   ]
+  },
+  "DOI": "10.1016/j.renene.2025.125090",
+  "URL": "https://doi.org/10.1016/j.renene.2025.125090",
+  "container-title": "Renewable Energy",
+  "volume": "259",
+  "publisher": "Elsevier BV",
+  "ISSN": "0960-1481",
+  "page": "125090"
+ },
+ {
+  "id": "ElHouari2026Tunnel",
+  "type": "article-journal",
+  "title": "Tunnel Load Simulator: A Monte Carlo framework for synthetic electrical demand modeling of road tunnels",
+  "author": [
+   {
+    "family": "El-Houari",
+    "given": "Haytham"
+   },
+   {
+    "family": "Voyant",
+    "given": "Cyril"
+   }
+  ],
+  "issued": {
+   "date-parts": [
+    [
+     2026,
+     9
+    ]
+   ]
+  },
+  "DOI": "10.1016/j.softx.2026.102946",
+  "URL": "https://doi.org/10.1016/j.softx.2026.102946",
+  "container-title": "SoftwareX",
+  "volume": "35",
+  "publisher": "Elsevier BV",
+  "ISSN": "2352-7110",
+  "page": "102946"
+ },
+ {
+  "id": "FusellaGiuntini2026Computational",
+  "type": "article-journal",
+  "title": "A computational framework for optimizing radioiodine therapy protocols in metastatic thyroid cancer",
+  "author": [
+   {
+    "family": "Fusella Giuntini",
+    "given": "Marie"
+   },
+   {
+    "family": "Voyant",
+    "given": "Cyril"
+   },
+   {
+    "family": "Taieb",
+    "given": "David"
+   },
+   {
+    "family": "Barbolosi",
+    "given": "Dominique"
+   }
+  ],
+  "issued": {
+   "date-parts": [
+    [
+     2026,
+     6
+    ]
+   ]
+  },
+  "DOI": "10.1038/s41598-026-56267-1",
+  "URL": "https://doi.org/10.1038/s41598-026-56267-1",
+  "container-title": "Scientific Reports",
+  "volume": "16",
+  "issue": "1",
+  "publisher": "Springer Science and Business Media LLC",
+  "ISSN": "2045-2322"
+ },
+ {
+  "id": "Harrouch2026Measurement",
+  "type": "article-journal",
+  "title": "Measurement and forecasting of the diffuse fraction of solar irradiance using a hybrid stacking model in Saudi Arabia",
+  "author": [
+   {
+    "family": "Harrouch",
+    "given": "Haifa"
+   },
+   {
+    "family": "Bailek",
+    "given": "Nadjem"
+   },
+   {
+    "family": "Zerouali",
+    "given": "Bilel"
+   },
+   {
+    "family": "Abidi",
+    "given": "Ilyes"
+   },
+   {
+    "family": "Guesmi",
+    "given": "Hanene"
+   },
+   {
+    "family": "Voyant",
+    "given": "Cyril"
+   },
+   {
+    "family": "Younis",
+    "given": "Jihad A."
+   },
+   {
+    "family": "Jebali",
+    "given": "Maher"
+   },
+   {
+    "family": "Triki",
+    "given": "Rabab"
+   }
+  ],
+  "issued": {
+   "date-parts": [
+    [
+     2026,
+     4
+    ]
+   ]
+  },
+  "DOI": "10.1038/s41598-026-49910-4",
+  "URL": "https://doi.org/10.1038/s41598-026-49910-4",
+  "container-title": "Scientific Reports",
+  "volume": "16",
+  "issue": "1",
+  "publisher": "Springer Science and Business Media LLC",
+  "ISSN": "2045-2322"
+ },
+ {
+  "id": "Ioannidis2026Science",
+  "type": "article-journal",
+  "title": "Science-wide mapping of institutions based on affiliated authors' impact and research integrity proxies",
+  "author": [
+   {
+    "family": "Ioannidis",
+    "given": "John"
+   },
+   {
+    "family": "Baas",
+    "given": "Jeroen"
+   },
+   {
+    "family": "Boverhof",
+    "given": "Roy"
+   },
+   {
+    "family": "Voyant",
+    "given": "Cyril"
+   }
+  ],
+  "issued": {
+   "date-parts": [
+    [
+     2026,
+     10
+    ]
+   ]
+  },
+  "DOI": "10.1098/rsos.260870",
+  "URL": "https://doi.org/10.1098/rsos.260870",
+  "container-title": "Royal Society Open Science",
+  "volume": "13",
+  "issue": "10",
+  "publisher": "The Royal Society",
+  "ISSN": "2054-5703"
+ },
+ {
+  "id": "Voyant2026Dose",
+  "type": "article-journal",
+  "title": "Dose equivalence calculation in radiotherapy: A Call for Standardization",
+  "author": [
+   {
+    "family": "Voyant",
+    "given": "Cyril"
+   },
+   {
+    "family": "Julian",
+    "given": "Daniel"
+   }
+  ],
+  "issued": {
+   "date-parts": [
+    [
+     2026,
+     9
+    ]
+   ]
+  },
+  "DOI": "10.1016/j.meddos.2026.08.002",
+  "URL": "https://doi.org/10.1016/j.meddos.2026.08.002",
+  "container-title": "Medical Dosimetry",
+  "publisher": "Elsevier BV",
+  "ISSN": "0958-3947"
+ },
+ {
+  "id": "Voyant2026Lql",
+  "type": "article-journal",
+  "title": "LQL-Equiv-web: a Python library and browser application for linear-quadratic-linear dose equivalence in radiotherapy",
+  "author": [
+   {
+    "family": "Voyant",
+    "given": "Cyril"
+   },
+   {
+    "family": "Julian",
+    "given": "Daniel"
+   }
+  ],
+  "issued": {
+   "date-parts": [
+    [
+     2026,
+     12
+    ]
+   ]
+  },
+  "DOI": "10.1016/j.softx.2026.103085",
+  "URL": "https://doi.org/10.1016/j.softx.2026.103085",
+  "container-title": "SoftwareX",
+  "volume": "36",
+  "publisher": "Elsevier BV",
+  "ISSN": "2352-7110",
+  "page": "103085"
+ },
+ {
+  "id": "Voyant2026Short",
+  "type": "article-journal",
+  "title": "Short-term forecasting of energy production and consumption using extreme learning machine: A comprehensive MIMO based ELM approach",
+  "author": [
+   {
+    "family": "Voyant",
+    "given": "Cyril"
+   },
+   {
+    "family": "Despotovic",
+    "given": "Milan"
+   },
+   {
+    "family": "Garcia-Gutierrez",
+    "given": "Luis"
+   },
+   {
+    "family": "Asloune",
+    "given": "Mohammed"
+   },
+   {
+    "family": "Saint-Drenan",
+    "given": "Yves-Marie"
+   },
+   {
+    "family": "Duchaud",
+    "given": "Jean-Laurent"
+   },
+   {
+    "family": "Faggianelli",
+    "given": "Ghjuvan Antone"
+   },
+   {
+    "family": "Magliaro",
+    "given": "Elena"
+   }
+  ],
+  "issued": {
+   "date-parts": [
+    [
+     2026,
+     5
+    ]
+   ]
+  },
+  "DOI": "10.1016/j.apenergy.2026.127599",
+  "URL": "https://doi.org/10.1016/j.apenergy.2026.127599",
+  "container-title": "Applied Energy",
+  "volume": "410",
+  "publisher": "Elsevier BV",
+  "ISSN": "0306-2619",
+  "page": "127599"
+ },
+ {
+  "id": "Voyant2026Stochastic",
+  "type": "article-journal",
+  "title": "Stochastic coefficient of variation: Assessing the variability and forecastability of solar irradiance",
+  "author": [
+   {
+    "family": "Voyant",
+    "given": "Cyril"
+   },
+   {
+    "family": "Julien",
+    "given": "Alan"
+   },
+   {
+    "family": "Despotovic",
+    "given": "Milan"
+   },
+   {
+    "family": "Notton",
+    "given": "Gilles"
+   },
+   {
+    "family": "Garcia-Gutierrez",
+    "given": "Luis Antonio"
+   },
+   {
+    "family": "Nicolosi",
+    "given": "Claudio Francesco"
+   },
+   {
+    "family": "Blanc",
+    "given": "Philippe"
+   },
+   {
+    "family": "Bright",
+    "given": "Jamie"
+   }
+  ],
+  "issued": {
+   "date-parts": [
+    [
+     2026,
+     1
+    ]
+   ]
+  },
+  "DOI": "10.1016/j.renene.2025.123913",
+  "URL": "https://doi.org/10.1016/j.renene.2025.123913",
+  "container-title": "Renewable Energy",
+  "volume": "256",
+  "publisher": "Elsevier BV",
+  "ISSN": "0960-1481",
+  "page": "123913"
+ },
+ {
+  "id": "Voyant2026Symmetry",
+  "type": "article-journal",
+  "title": "Symmetry-constrained forecasting of periodically correlated energy processes",
+  "author": [
+   {
+    "family": "Voyant",
+    "given": "Cyril"
+   },
+   {
+    "family": "Banes",
+    "given": "Candice"
+   },
+   {
+    "family": "Garcia-Gutierrez",
+    "given": "Luis"
+   },
+   {
+    "family": "Notton",
+    "given": "Gilles"
+   },
+   {
+    "family": "Despotovic",
+    "given": "Milan"
+   },
+   {
+    "family": "Yaseen",
+    "given": "Zaher Mundher"
+   }
+  ],
+  "issued": {
+   "date-parts": [
+    [
+     2026,
+     9
+    ]
+   ]
+  },
+  "DOI": "10.1016/j.apm.2026.116988",
+  "URL": "https://doi.org/10.1016/j.apm.2026.116988",
+  "container-title": "Applied Mathematical Modelling",
+  "volume": "157",
+  "publisher": "Elsevier BV",
+  "ISSN": "0307-904X",
+  "page": "116988"
+ },
+ {
+  "id": "Voyant2026Tolerance",
+  "type": "article-journal",
+  "title": "A tolerance-based framework for spatiotemporal forecast validation using the γ-index",
+  "author": [
+   {
+    "family": "Voyant",
+    "given": "Cyril"
+   }
+  ],
+  "issued": {
+   "date-parts": [
+    [
+     2026,
+     10
+    ]
+   ]
+  },
+  "DOI": "10.1016/j.ijforecast.2026.03.002",
+  "URL": "https://doi.org/10.1016/j.ijforecast.2026.03.002",
+  "container-title": "International Journal of Forecasting",
+  "volume": "42",
+  "issue": "4",
+  "publisher": "Elsevier BV",
+  "ISSN": "0169-2070",
+  "page": "1207-1214"
+ },
+ {
+  "id": "Voyant2026Beyond",
+  "type": "article",
+  "title": "Beyond Publish and Pray: Engineering Research Excellence",
+  "author": [
+   {
+    "family": "Voyant",
+    "given": "Cyril"
+   },
+   {
+    "family": "Amaro e Silva",
+    "given": "Rodrigo"
+   },
+   {
+    "family": "Fichaux",
+    "given": "Nicolas"
+   },
+   {
+    "family": "Menard",
+    "given": "Lionel"
+   },
+   {
+    "family": "Cros",
+    "given": "Sylvain"
+   },
+   {
+    "family": "Mamouri",
+    "given": "Rodanthi-Elisavet"
+   }
+  ],
+  "issued": {
+   "date-parts": [
+    [
+     2026
+    ]
+   ]
+  },
+  "DOI": "10.2139/ssrn.6877118",
+  "URL": "https://doi.org/10.2139/ssrn.6877118"
+ },
+ {
+  "id": "Benkaciali2025Comparative",
+  "type": "article-journal",
+  "title": "Comparative Study of Feature Selection Techniques for Machine Learning-Based Solar Irradiation Forecasting to Facilitate the Sustainable Development of Photovoltaics: Application to Algerian Climatic Conditions",
+  "author": [
+   {
+    "family": "Benkaciali",
+    "given": "Said"
+   },
+   {
+    "family": "Notton",
+    "given": "Gilles"
+   },
+   {
+    "family": "Voyant",
+    "given": "Cyril"
+   }
+  ],
+  "issued": {
+   "date-parts": [
+    [
+     2025,
+     7
+    ]
+   ]
+  },
+  "DOI": "10.3390/su17146400",
+  "URL": "https://doi.org/10.3390/su17146400",
+  "container-title": "Sustainability",
+  "volume": "17",
+  "issue": "14",
+  "publisher": "MDPI AG",
+  "ISSN": "2071-1050",
+  "page": "6400"
+ },
+ {
+  "id": "Despotovic2025Transfer",
+  "type": "article-journal",
+  "title": "Transfer learning for wind speed forecasting: A scalable approach for data-scarce environments",
+  "author": [
+   {
+    "family": "Despotovic",
+    "given": "Milan"
+   },
+   {
+    "family": "Notton",
+    "given": "Gilles"
+   },
+   {
+    "family": "Voyant",
+    "given": "Cyril"
+   }
+  ],
+  "issued": {
+   "date-parts": [
+    [
+     2025,
+     10
+    ]
+   ]
+  },
+  "DOI": "10.1080/15435075.2025.2574524",
+  "URL": "https://doi.org/10.1080/15435075.2025.2574524",
+  "container-title": "International Journal of Green Energy",
+  "volume": "23",
+  "issue": "3",
+  "publisher": "Informa UK Limited",
+  "ISSN": "1543-5083",
+  "page": "669-684"
+ },
+ {
+  "id": "Lauret2025Simple",
+  "type": "article-journal",
+  "title": "A simple method for quickly estimating solar irradiance forecast errors",
+  "author": [
+   {
+    "family": "Lauret",
+    "given": "Philippe"
+   },
+   {
+    "family": "David",
+    "given": "Mathieu"
+   },
+   {
+    "family": "Salle",
+    "given": "Josselin Le Gal La"
+   },
+   {
+    "family": "Lorenz",
+    "given": "Elke"
+   },
+   {
+    "family": "Perez",
+    "given": "Richard"
+   },
+   {
+    "family": "Voyant",
+    "given": "Cyril"
+   }
+  ],
+  "issued": {
+   "date-parts": [
+    [
+     2025,
+     11
+    ]
+   ]
+  },
+  "DOI": "10.1016/j.solener.2025.113821",
+  "URL": "https://doi.org/10.1016/j.solener.2025.113821",
+  "container-title": "Solar Energy",
+  "volume": "301",
+  "publisher": "Elsevier BV",
+  "ISSN": "0038-092X",
+  "page": "113821"
+ },
+ {
+  "id": "Voyant2025Importance",
+  "type": "article-journal",
+  "title": "On the importance of clearsky model in short-term solar radiation forecasting",
+  "author": [
+   {
+    "family": "Voyant",
+    "given": "Cyril"
+   },
+   {
+    "family": "Despotovic",
+    "given": "Milan"
+   },
+   {
+    "family": "Notton",
+    "given": "Gilles"
+   },
+   {
+    "family": "Saint-Drenan",
+    "given": "Yves-Marie"
+   },
+   {
+    "family": "Asloune",
+    "given": "Mohammed"
+   },
+   {
+    "family": "Garcia-Gutierrez",
+    "given": "Luis"
+   }
+  ],
+  "issued": {
+   "date-parts": [
+    [
+     2025,
+     7
+    ]
+   ]
+  },
+  "DOI": "10.1016/j.solener.2025.113490",
+  "URL": "https://doi.org/10.1016/j.solener.2025.113490",
+  "container-title": "Solar Energy",
+  "volume": "294",
+  "publisher": "Elsevier BV",
+  "ISSN": "0038-092X",
+  "page": "113490"
+ },
+ {
+  "id": "Voyant2025Improving",
+  "type": "article-journal",
+  "title": "Improving Clinical Decision-Making in Radiotherapy: A Comparative Analysis of Linear-Quadratic <mml:math xmlns:mml=“http://www.w3.org/1998/Math/MathML” altimg=“si1.svg”><mml:mi mathvariant=“monospace”>L</mml:mi><mml:mi mathvariant=“monospace”>Q</mml:mi></mml:math> and Linear-Quadratic-Linear <mml:math xmlns:mml=“http://www.w3.org/1998/Math/MathML” altimg=“si2.svg”><mml:mi mathvariant=“monospace”>L</mml:mi><mml:mi mathvariant=“monospace”>Q</mml:mi><mml:mi mathvariant=“monospace”>L</mml:mi></mml:math> Dose Models",
+  "author": [
+   {
+    "family": "Voyant",
+    "given": "C."
+   },
+   {
+    "family": "Julian",
+    "given": "D."
+   },
+   {
+    "family": "Muraro",
+    "given": "S."
+   },
+   {
+    "family": "Bodez",
+    "given": "V."
+   },
+   {
+    "family": "Pinpin",
+    "given": "M."
+   },
+   {
+    "family": "Leschi",
+    "given": "D."
+   },
+   {
+    "family": "Oozeer",
+    "given": "R."
+   },
+   {
+    "family": "Wided",
+    "given": "G."
+   },
+   {
+    "family": "Acquaviva",
+    "given": "M.-A."
+   },
+   {
+    "family": "Prapant",
+    "given": "S."
+   },
+   {
+    "family": "Gahbiche",
+    "given": "O."
+   },
+   {
+    "family": "Bouaouina",
+    "given": "N."
+   }
+  ],
+  "issued": {
+   "date-parts": [
+    [
+     2025,
+     9
+    ]
+   ]
+  },
+  "DOI": "10.1016/j.clon.2025.103893",
+  "URL": "https://doi.org/10.1016/j.clon.2025.103893",
+  "container-title": "Clinical Oncology",
+  "volume": "45",
+  "publisher": "Elsevier BV",
+  "ISSN": "0936-6555",
+  "page": "103893"
+ },
+ {
+  "id": "Voyant2025Nice",
+  "type": "article-journal",
+  "title": "NICE k metrics: Unified and multidimensional framework for evaluating deterministic solar forecasting accuracy",
+  "author": [
+   {
+    "family": "Voyant",
+    "given": "Cyril"
+   },
+   {
+    "family": "Despotovic",
+    "given": "Milan"
+   },
+   {
+    "family": "Garcia-Gutierrez",
+    "given": "Luis"
+   },
+   {
+    "family": "Amaro e Silva",
+    "given": "Rodrigo"
+   },
+   {
+    "family": "Lauret",
+    "given": "Philippe"
+   },
+   {
+    "family": "Soubdhan",
+    "given": "Ted"
+   },
+   {
+    "family": "Bailek",
+    "given": "Nadjem"
+   }
+  ],
+  "issued": {
+   "date-parts": [
+    [
+     2025,
+     11
+    ]
+   ]
+  },
+  "DOI": "10.1016/j.seta.2025.104588",
+  "URL": "https://doi.org/10.1016/j.seta.2025.104588",
+  "container-title": "Sustainable Energy Technologies and Assessments",
+  "volume": "83",
+  "publisher": "Elsevier BV",
+  "ISSN": "2213-1388",
+  "page": "104588"
+ },
+ {
+  "id": "Despotovic2024Solar",
+  "type": "article-journal",
+  "title": "Solar irradiance time series forecasting using auto-regressive and extreme learning methods: Influence of transfer learning and clustering",
+  "author": [
+   {
+    "family": "Despotovic",
+    "given": "Milan"
+   },
+   {
+    "family": "Voyant",
+    "given": "Cyril"
+   },
+   {
+    "family": "Garcia-Gutierrez",
+    "given": "Luis"
+   },
+   {
+    "family": "Almorox",
+    "given": "Javier"
+   },
+   {
+    "family": "Notton",
+    "given": "Gilles"
+   }
+  ],
+  "issued": {
+   "date-parts": [
+    [
+     2024,
+     7
+    ]
+   ]
+  },
+  "DOI": "10.1016/j.apenergy.2024.123215",
+  "URL": "https://doi.org/10.1016/j.apenergy.2024.123215",
+  "container-title": "Applied Energy",
+  "volume": "365",
+  "publisher": "Elsevier BV",
+  "ISSN": "0306-2619",
+  "page": "123215"
+ },
+ {
+  "id": "Voyant2024Hybrid",
+  "type": "article-journal",
+  "title": "Hybrid VMAT-3DCRT as breast cancer treatment improvement tool",
+  "author": [
+   {
+    "family": "Voyant",
+    "given": "Cyril"
+   },
+   {
+    "family": "Pinpin",
+    "given": "Morgane"
+   },
+   {
+    "family": "Leschi",
+    "given": "Delphine"
+   },
+   {
+    "family": "Prapant",
+    "given": "Séverine"
+   },
+   {
+    "family": "Savigny",
+    "given": "Françoise"
+   },
+   {
+    "family": "Acquaviva",
+    "given": "Marie-Aimée"
+   }
+  ],
+  "issued": {
+   "date-parts": [
+    [
+     2024,
+     1
+    ]
+   ]
+  },
+  "DOI": "10.1038/s41598-023-50538-x",
+  "URL": "https://doi.org/10.1038/s41598-023-50538-x",
+  "container-title": "Scientific Reports",
+  "volume": "13",
+  "issue": "1",
+  "publisher": "Springer Science and Business Media LLC",
+  "ISSN": "2045-2322"
+ },
+ {
+  "id": "Voyant2022Benchmarks",
+  "type": "article-journal",
+  "title": "Benchmarks for solar radiation time series forecasting",
+  "author": [
+   {
+    "family": "Voyant",
+    "given": "Cyril"
+   },
+   {
+    "family": "Notton",
+    "given": "Gilles"
+   },
+   {
+    "family": "Duchaud",
+    "given": "Jean-Laurent"
+   },
+   {
+    "family": "Gutiérrez",
+    "given": "Luis Antonio García"
+   },
+   {
+    "family": "Bright",
+    "given": "Jamie M."
+   },
+   {
+    "family": "Yang",
+    "given": "Dazhi"
+   }
+  ],
+  "issued": {
+   "date-parts": [
+    [
+     2022,
+     5
+    ]
+   ]
+  },
+  "DOI": "10.1016/j.renene.2022.04.065",
+  "URL": "https://doi.org/10.1016/j.renene.2022.04.065",
+  "container-title": "Renewable Energy",
+  "volume": "191",
+  "publisher": "Elsevier BV",
+  "ISSN": "0960-1481",
+  "page": "747-762"
+ },
+ {
+  "id": "Voyant2022Complex",
+  "type": "article-journal",
+  "title": "Complex-valued time series based solar irradiance forecast",
+  "author": [
+   {
+    "family": "Voyant",
+    "given": "Cyril"
+   },
+   {
+    "family": "Lauret",
+    "given": "Philippe"
+   },
+   {
+    "family": "Notton",
+    "given": "Gilles"
+   },
+   {
+    "family": "Duchaud",
+    "given": "Jean-Laurent"
+   },
+   {
+    "family": "Garcia-Gutierrez",
+    "given": "Luis"
+   },
+   {
+    "family": "Faggianelli",
+    "given": "Ghjuvan Antone"
+   }
+  ],
+  "issued": {
+   "date-parts": [
+    [
+     2022,
+     11
+    ]
+   ]
+  },
+  "DOI": "10.1063/5.0128131",
+  "URL": "https://doi.org/10.1063/5.0128131",
+  "container-title": "Journal of Renewable and Sustainable Energy",
+  "volume": "14",
+  "issue": "6",
+  "publisher": "AIP Publishing",
+  "ISSN": "1941-7012"
+ },
+ {
+  "id": "Yang2020Verification",
+  "type": "article-journal",
+  "title": "Verification of deterministic solar forecasts",
+  "author": [
+   {
+    "family": "Yang",
+    "given": "Dazhi"
+   },
+   {
+    "family": "Alessandrini",
+    "given": "Stefano"
+   },
+   {
+    "family": "Antonanzas",
+    "given": "Javier"
+   },
+   {
+    "family": "Antonanzas-Torres",
+    "given": "Fernando"
+   },
+   {
+    "family": "Badescu",
+    "given": "Viorel"
+   },
+   {
+    "family": "Beyer",
+    "given": "Hans Georg"
+   },
+   {
+    "family": "Blaga",
+    "given": "Robert"
+   },
+   {
+    "family": "Boland",
+    "given": "John"
+   },
+   {
+    "family": "Bright",
+    "given": "Jamie M."
+   },
+   {
+    "family": "Coimbra",
+    "given": "Carlos F.M."
+   },
+   {
+    "family": "David",
+    "given": "Mathieu"
+   },
+   {
+    "family": "Frimane",
+    "given": "Âzeddine"
+   },
+   {
+    "family": "Gueymard",
+    "given": "Christian A."
+   },
+   {
+    "family": "Hong",
+    "given": "Tao"
+   },
+   {
+    "family": "Kay",
+    "given": "Merlinde J."
+   },
+   {
+    "family": "Killinger",
+    "given": "Sven"
+   },
+   {
+    "family": "Kleissl",
+    "given": "Jan"
+   },
+   {
+    "family": "Lauret",
+    "given": "Philippe"
+   },
+   {
+    "family": "Lorenz",
+    "given": "Elke"
+   },
+   {
+    "family": "van der Meer",
+    "given": "Dennis"
+   },
+   {
+    "family": "Paulescu",
+    "given": "Marius"
+   },
+   {
+    "family": "Perez",
+    "given": "Richard"
+   },
+   {
+    "family": "Perpiñán-Lamigueiro",
+    "given": "Oscar"
+   },
+   {
+    "family": "Peters",
+    "given": "Ian Marius"
+   },
+   {
+    "family": "Reikard",
+    "given": "Gordon"
+   },
+   {
+    "family": "Renné",
+    "given": "David"
+   },
+   {
+    "family": "Saint-Drenan",
+    "given": "Yves-Marie"
+   },
+   {
+    "family": "Shuai",
+    "given": "Yong"
+   },
+   {
+    "family": "Urraca",
+    "given": "Ruben"
+   },
+   {
+    "family": "Verbois",
+    "given": "Hadrien"
+   },
+   {
+    "family": "Vignola",
+    "given": "Frank"
+   },
+   {
+    "family": "Voyant",
+    "given": "Cyril"
+   },
+   {
+    "family": "Zhang",
+    "given": "Jie"
+   }
+  ],
+  "issued": {
+   "date-parts": [
+    [
+     2020,
+     11
+    ]
+   ]
+  },
+  "DOI": "10.1016/j.solener.2020.04.019",
+  "URL": "https://doi.org/10.1016/j.solener.2020.04.019",
+  "container-title": "Solar Energy",
+  "volume": "210",
+  "publisher": "Elsevier BV",
+  "ISSN": "0038-092X",
+  "page": "20-37"
+ },
+ {
+  "id": "Voyant2018Solar",
+  "type": "article-journal",
+  "title": "Solar irradiation nowcasting by stochastic persistence: A new parsimonious, simple and efficient forecasting tool",
+  "author": [
+   {
+    "family": "Voyant",
+    "given": "Cyril"
+   },
+   {
+    "family": "Notton",
+    "given": "Gilles"
+   }
+  ],
+  "issued": {
+   "date-parts": [
+    [
+     2018,
+     9
+    ]
+   ]
+  },
+  "DOI": "10.1016/j.rser.2018.04.116",
+  "URL": "https://doi.org/10.1016/j.rser.2018.04.116",
+  "container-title": "Renewable and Sustainable Energy Reviews",
+  "volume": "92",
+  "publisher": "Elsevier BV",
+  "ISSN": "1364-0321",
+  "page": "343-352"
+ },
+ {
+  "id": "Voyant2017Machine",
+  "type": "article-journal",
+  "title": "Machine learning methods for solar radiation forecasting: A review",
+  "author": [
+   {
+    "family": "Voyant",
+    "given": "Cyril"
+   },
+   {
+    "family": "Notton",
+    "given": "Gilles"
+   },
+   {
+    "family": "Kalogirou",
+    "given": "Soteris"
+   },
+   {
+    "family": "Nivet",
+    "given": "Marie-Laure"
+   },
+   {
+    "family": "Paoli",
+    "given": "Christophe"
+   },
+   {
+    "family": "Motte",
+    "given": "Fabrice"
+   },
+   {
+    "family": "Fouilloy",
+    "given": "Alexis"
+   }
+  ],
+  "issued": {
+   "date-parts": [
+    [
+     2017,
+     5
+    ]
+   ]
+  },
+  "DOI": "10.1016/j.renene.2016.12.095",
+  "URL": "https://doi.org/10.1016/j.renene.2016.12.095",
+  "container-title": "Renewable Energy",
+  "volume": "105",
+  "publisher": "Elsevier BV",
+  "ISSN": "0960-1481",
+  "page": "569-582"
+ },
+ {
+  "id": "Voyant2015Statistical",
+  "type": "article-journal",
+  "title": "Statistical parameters as a means to a priori assess the accuracy of solar forecasting models",
+  "author": [
+   {
+    "family": "Voyant",
+    "given": "Cyril"
+   },
+   {
+    "family": "Soubdhan",
+    "given": "Ted"
+   },
+   {
+    "family": "Lauret",
+    "given": "Philippe"
+   },
+   {
+    "family": "David",
+    "given": "Mathieu"
+   },
+   {
+    "family": "Muselli",
+    "given": "Marc"
+   }
+  ],
+  "issued": {
+   "date-parts": [
+    [
+     2015,
+     10
+    ]
+   ]
+  },
+  "DOI": "10.1016/j.energy.2015.07.089",
+  "URL": "https://doi.org/10.1016/j.energy.2015.07.089",
+  "container-title": "Energy",
+  "volume": "90",
+  "publisher": "Elsevier BV",
+  "ISSN": "0360-5442",
+  "page": "671-679"
+ },
+ {
+  "id": "Voyant2014Biological",
+  "type": "article-journal",
+  "title": "Biological effects and equivalent doses in radiotherapy: A software solution",
+  "author": [
+   {
+    "family": "Voyant",
+    "given": "Cyril"
+   },
+   {
+    "family": "Julian",
+    "given": "Daniel"
+   },
+   {
+    "family": "Roustit",
+    "given": "Rudy"
+   },
+   {
+    "family": "Biffi",
+    "given": "Katia"
+   },
+   {
+    "family": "Lantieri",
+    "given": "Céline"
+   }
+  ],
+  "issued": {
+   "date-parts": [
+    [
+     2014,
+     1
+    ]
+   ]
+  },
+  "DOI": "10.1016/j.rpor.2013.08.004",
+  "URL": "https://doi.org/10.1016/j.rpor.2013.08.004",
+  "container-title": "Reports of Practical Oncology & Radiotherapy",
+  "volume": "19",
+  "issue": "1",
+  "publisher": "VM Media SP. zo.o VM Group SK",
+  "ISSN": "1507-1367",
+  "page": "47-55"
+ },
+ {
+  "id": "Voyant2013Hybrid",
+  "type": "article-journal",
+  "title": "Hybrid methodology for hourly global radiation forecasting in Mediterranean area",
+  "author": [
+   {
+    "family": "Voyant",
+    "given": "Cyril"
+   },
+   {
+    "family": "Muselli",
+    "given": "Marc"
+   },
+   {
+    "family": "Paoli",
+    "given": "Christophe"
+   },
+   {
+    "family": "Nivet",
+    "given": "Marie-Laure"
+   }
+  ],
+  "issued": {
+   "date-parts": [
+    [
+     2013,
+     5
+    ]
+   ]
+  },
+  "DOI": "10.1016/j.renene.2012.10.049",
+  "URL": "https://doi.org/10.1016/j.renene.2012.10.049",
+  "container-title": "Renewable Energy",
+  "volume": "53",
+  "publisher": "Elsevier BV",
+  "ISSN": "0960-1481",
+  "page": "1-11"
+ },
+ {
+  "id": "Voyant2012Numerical",
+  "type": "article-journal",
+  "title": "Numerical weather prediction (NWP) and hybrid ARMA/ANN model to predict global radiation",
+  "author": [
+   {
+    "family": "Voyant",
+    "given": "Cyril"
+   },
+   {
+    "family": "Muselli",
+    "given": "Marc"
+   },
+   {
+    "family": "Paoli",
+    "given": "Christophe"
+   },
+   {
+    "family": "Nivet",
+    "given": "Marie-Laure"
+   }
+  ],
+  "issued": {
+   "date-parts": [
+    [
+     2012,
+     3
+    ]
+   ]
+  },
+  "DOI": "10.1016/j.energy.2012.01.006",
+  "URL": "https://doi.org/10.1016/j.energy.2012.01.006",
+  "container-title": "Energy",
+  "volume": "39",
+  "issue": "1",
+  "publisher": "Elsevier BV",
+  "ISSN": "0360-5442",
+  "page": "341-355"
+ },
+ {
+  "id": "Voyant2011Therapeutic",
+  "type": "article-journal",
+  "title": "Therapeutic potential of atmospheric neutrons",
+  "author": [
+   {
+    "family": "Voyant",
+    "given": "Cyril"
+   },
+   {
+    "family": "Roustit",
+    "given": "Rudy"
+   },
+   {
+    "family": "Tatje",
+    "given": "Jennifer"
+   },
+   {
+    "family": "Biffi",
+    "given": "Katia"
+   },
+   {
+    "family": "Leschi",
+    "given": "Delphine"
+   },
+   {
+    "family": "Briançon",
+    "given": "Jérome"
+   },
+   {
+    "family": "Marcovici",
+    "given": "Céline Lantieri"
+   }
+  ],
+  "issued": {
+   "date-parts": [
+    [
+     2011,
+     1
+    ]
+   ]
+  },
+  "DOI": "10.1016/j.rpor.2010.11.002",
+  "URL": "https://doi.org/10.1016/j.rpor.2010.11.002",
+  "container-title": "Reports of Practical Oncology & Radiotherapy",
+  "volume": "16",
+  "issue": "1",
+  "publisher": "VM Media SP. zo.o VM Group SK",
+  "ISSN": "1507-1367",
+  "page": "21-31"
+ }
+]

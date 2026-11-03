@@ -1,0 +1,181 @@
+{
+ "@context": "https://schema.org",
+ "@type": [
+  "SoftwareApplication",
+  "LearningResource"
+ ],
+ "@id": "https://cyrilvoyant.github.io/methods/thyroid-radioiodine.html#try-it#tool-spec",
+ "identifier": "thyroid",
+ "name": "Explore thyroid model profiles",
+ "alternateName": "Explorer les profils du modèle thyroïde",
+ "description": "Choose a profile and protocol; follow simulated thyroglobulin. Research and education use.",
+ "url": "https://cyrilvoyant.github.io/methods/thyroid-radioiodine.html#try-it",
+ "sameAs": [
+  "https://www.cyrilvoyant.com/fr/outils/modele-thyroide/#try-it",
+  "https://cyrilvoyant.github.io/methods/thyroid-radioiodine.html#try-it"
+ ],
+ "inLanguage": [
+  "fr",
+  "en"
+ ],
+ "applicationCategory": "ScientificApplication",
+ "operatingSystem": "Any (web browser)",
+ "isAccessibleForFree": true,
+ "learningResourceType": "calculator",
+ "author": {
+  "@type": "Person",
+  "name": "Cyril Voyant",
+  "identifier": "https://orcid.org/0000-0003-0242-7377"
+ },
+ "license": "https://creativecommons.org/licenses/by/4.0/",
+ "additionalProperty": [
+  {
+   "@type": "PropertyValue",
+   "propertyID": "th-p",
+   "name": "Patient profile",
+   "alternateName": "Profil du modèle",
+   "description": "Défini par le temps de doublement Td des cellules tumorales : la durée en mois pour que leur nombre double sans traitement.",
+   "value": "9.8"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "th-n",
+   "name": "Sessions",
+   "alternateName": "Séances",
+   "description": "Le nombre d’administrations d’iode radioactif.",
+   "value": 4,
+   "minValue": 1,
+   "maxValue": 8,
+   "unitText": "dimensionless"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "th-l",
+   "name": "Months between sessions",
+   "alternateName": "Espacement",
+   "description": "Le nombre de mois entre deux séances.",
+   "value": 3,
+   "minValue": 1,
+   "maxValue": 8,
+   "unitText": "mois"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "th-a",
+   "name": "Activity per session GBq",
+   "alternateName": "Activité par séance",
+   "description": "L’activité d’iode administrée à chaque séance, en gigabecquerels (GBq).",
+   "value": 3.7,
+   "minValue": 1,
+   "maxValue": 8,
+   "unitText": "GBq"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "th-log",
+   "name": "Axe vertical",
+   "alternateName": "Axe vertical",
+   "description": "L’échelle logarithmique montre aussi les très petites valeurs : chaque graduation vaut dix fois la précédente.",
+   "value": "0"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:refractaire-4-seances",
+   "name": "Réfractaire : 4 séances",
+   "alternateName": "Réfractaire : 4 séances",
+   "value": "{\"th-p\": \"9.8\", \"th-n\": 4, \"th-l\": 3, \"th-a\": 3.7, \"th-log\": \"0\"}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:refractaire-8-seances",
+   "name": "Réfractaire : 8 séances",
+   "alternateName": "Réfractaire : 8 séances",
+   "value": "{\"th-p\": \"9.8\", \"th-n\": 8, \"th-l\": 3, \"th-a\": 3.7, \"th-log\": \"0\"}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:repondeur-4-seances",
+   "name": "Répondeur : 4 séances",
+   "alternateName": "Répondeur : 4 séances",
+   "value": "{\"th-p\": \"66.6\", \"th-n\": 4, \"th-l\": 3, \"th-a\": 3.7, \"th-log\": \"0\"}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:repondeur-activite-reduite",
+   "name": "Répondeur : activité réduite",
+   "alternateName": "Répondeur : activité réduite",
+   "value": "{\"th-p\": \"66.6\", \"th-n\": 3, \"th-l\": 6, \"th-a\": 1.1, \"th-log\": \"0\"}"
+  }
+ ],
+ "potentialAction": {
+  "@type": "Action",
+  "name": "Explore the tool",
+  "target": {
+   "@type": "EntryPoint",
+   "urlTemplate": "https://cyrilvoyant.github.io/methods/thyroid-radioiodine.html#try-it",
+   "actionPlatform": "https://schema.org/DesktopWebPlatform"
+  },
+  "object": [
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "th-p",
+    "description": "Patient profile",
+    "valueRequired": false,
+    "valuePattern": "^(9\\.8|66\\.6)$",
+    "defaultValue": "9.8"
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "th-n",
+    "description": "Sessions",
+    "valueRequired": false,
+    "minValue": 1,
+    "maxValue": 8,
+    "defaultValue": 4,
+    "stepValue": 1
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "th-l",
+    "description": "Months between sessions",
+    "valueRequired": false,
+    "minValue": 1,
+    "maxValue": 8,
+    "defaultValue": 3,
+    "stepValue": 1
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "th-a",
+    "description": "Activity per session GBq",
+    "valueRequired": false,
+    "minValue": 1,
+    "maxValue": 8,
+    "defaultValue": 3.7,
+    "stepValue": 0.1
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "th-log",
+    "description": "Axe vertical",
+    "valueRequired": false,
+    "valuePattern": "^(0|1)$",
+    "defaultValue": "0"
+   }
+  ]
+ },
+ "citation": [
+  "https://doi.org/10.1038/s41598-026-56267-1",
+  "https://doi.org/10.26717/BJSTR.2025.62.009789",
+  "https://doi.org/10.5281/zenodo.21496197"
+ ],
+ "codeRepository": "https://github.com/cyrilvoyant/CTD_SIMU_RAI",
+ "about": [
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#thyroglobulin"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#doubling-time"
+  }
+ ]
+}

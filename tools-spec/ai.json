@@ -1,0 +1,416 @@
+{
+ "id": "ai",
+ "schema": "https://www.cyrilvoyant.com/tools-spec.json#1.0",
+ "kind": "decision",
+ "domain": "research",
+ "interface_language": "both",
+ "name": {
+  "fr": "S’orienter dans les responsabilités liées à l’IA",
+  "en": "Explore AI responsibility provisions"
+ },
+ "url": {
+  "fr": "https://www.cyrilvoyant.com/fr/ia-dans-la-recherche/#role-helper",
+  "en": "https://www.cyrilvoyant.com/ai-in-research/#role-helper"
+ },
+ "page_title": {
+  "fr": "L'IA dans la recherche : AI Act, charte de laboratoire et boîte à outils",
+  "en": "AI in research: the AI Act, a lab charter and a toolbox for researchers"
+ },
+ "computes": {
+  "fr": "Répondre à quelques questions sur un système d’IA pour repérer les articles de l’AI Act qui s’appliquent : une orientation, pas un avis juridique.",
+  "en": "Answer a few questions about one AI system to find the AI Act articles that apply: an orientation, not legal advice."
+ },
+ "summary": {
+  "fr": "L'IA générative écrit du code, rédige des articles et trie des données dans tous les laboratoires. Le règlement européen sur l'IA (AI Act) encadre ce que nous construisons et ce que nous transférons.",
+  "en": "Generative AI now writes code, drafts papers and reviews data in every laboratory. The European AI Act sets rules for what we build and what we transfer."
+ },
+ "parameters": [
+  {
+   "id": "sole",
+   "type": "boolean",
+   "control": "button",
+   "options": [
+    {
+     "value": "yes",
+     "label": "Oui"
+    },
+    {
+     "value": "no",
+     "label": "Non"
+    }
+   ],
+   "label": {
+    "fr": "Le système est-il développé et mis en service à la seule fin de la recherche et du développement scientifiques ?",
+    "en": "Is the system developed and put into service for the sole purpose of scientific research and development?"
+   }
+  },
+  {
+   "id": "stage",
+   "type": "boolean",
+   "control": "button",
+   "options": [
+    {
+     "value": "yes",
+     "label": "Oui"
+    },
+    {
+     "value": "no",
+     "label": "Non"
+    }
+   ],
+   "label": {
+    "fr": "Est-il encore au stade de la recherche, des essais ou du développement, avant toute mise sur le marché ou mise en service ?",
+    "en": "Is it still at the stage of research, testing or development, before being placed on the market or put into service?"
+   }
+  },
+  {
+   "id": "real",
+   "type": "boolean",
+   "control": "button",
+   "options": [
+    {
+     "value": "yes",
+     "label": "Oui"
+    },
+    {
+     "value": "no",
+     "label": "Non"
+    }
+   ],
+   "label": {
+    "fr": "Ce travail comporte-t-il des essais en conditions réelles (avec de vrais utilisateurs, données ou opérations hors du laboratoire) ?",
+    "en": "Does this work include testing in real-world conditions (with real users, data or operations outside the lab)?"
+   }
+  },
+  {
+   "id": "name",
+   "type": "boolean",
+   "control": "button",
+   "options": [
+    {
+     "value": "yes",
+     "label": "Oui"
+    },
+    {
+     "value": "no",
+     "label": "Non"
+    }
+   ],
+   "label": {
+    "fr": "Est-il mis sur le marché ou mis en service par votre laboratoire, sous son nom ?",
+    "en": "Is it placed on the market or put into service by your laboratory, under its name?"
+   }
+  },
+  {
+   "id": "third",
+   "type": "boolean",
+   "control": "button",
+   "options": [
+    {
+     "value": "yes",
+     "label": "Oui"
+    },
+    {
+     "value": "no",
+     "label": "Non"
+    }
+   ],
+   "label": {
+    "fr": "Un autre acteur (une entreprise, un partenaire) y appose-t-il son nom, le modifie-t-il substantiellement ou en change-t-il la destination ?",
+    "en": "Does another actor (a company, a partner) put its name on it, substantially modify it or change its intended purpose?"
+   }
+  },
+  {
+   "id": "safety",
+   "type": "boolean",
+   "control": "button",
+   "options": [
+    {
+     "value": "yes",
+     "label": "Oui"
+    },
+    {
+     "value": "no",
+     "label": "Non"
+    }
+   ],
+   "label": {
+    "fr": "Est-il destiné à servir de composant de sécurité dans la gestion ou l'exploitation d'une infrastructure critique (électricité, gaz, chauffage, eau, trafic routier, infrastructure numérique critique) ?",
+    "en": "Is it intended as a safety component in the management or operation of critical infrastructure (electricity, gas, heating, water, road traffic, critical digital infrastructure)?"
+   }
+  },
+  {
+   "id": "people",
+   "type": "boolean",
+   "control": "button",
+   "options": [
+    {
+     "value": "yes",
+     "label": "Oui"
+    },
+    {
+     "value": "no",
+     "label": "Non"
+    }
+   ],
+   "label": {
+    "fr": "Interagit-il avec des personnes ou génère-t-il pour elles du texte, des images, du son ou de la vidéo ?",
+    "en": "Does it interact with people or generate text, images, audio or video for them?"
+   }
+  }
+ ],
+ "presets": [],
+ "actions": [
+  {
+   "name": {
+    "fr": "Oui",
+    "en": "Yes"
+   }
+  },
+  {
+   "name": {
+    "fr": "Non",
+    "en": "No"
+   }
+  }
+ ],
+ "variants": [],
+ "outputs": [
+  {
+   "id": "out26",
+   "name": {
+    "fr": "Hors du champ de l'AI Act (art. 2(6))",
+    "en": "Outside the AI Act (art. 2(6))"
+   },
+   "unit": null,
+   "meaning": {
+    "fr": "Hors du champ de l'AI Act (art. 2(6)) tant que le système sert uniquement la recherche et le développement scientifiques. L'intégrité scientifique, la protection des données (RGPD) et les contrats s'appliquent toujours. Si la destination change, répondez à nouveau.",
+    "en": "Outside the AI Act (art. 2(6)) as long as the system serves only scientific research and development. The duties of research integrity, data protection (GDPR) and the contracts still apply. If the purpose changes, answer again."
+   },
+   "kind": "decision-outcome"
+  },
+  {
+   "id": "out28",
+   "name": {
+    "fr": "Exclu à ce stade (art. 2(8))",
+    "en": "Excluded at this stage (art. 2(8))"
+   },
+   "unit": null,
+   "meaning": {
+    "fr": "Exclu à ce stade (art. 2(8)) : recherche, essais et développement avant la mise sur le marché ou la mise en service. L'exclusion prend fin avec le transfert ou le déploiement.",
+    "en": "Excluded at this stage (art. 2(8)): research, testing and development before placing on the market or putting into service. The exclusion ends with the transfer or the deployment."
+   },
+   "kind": "decision-outcome"
+  },
+  {
+   "id": "real",
+   "name": {
+    "fr": "Non couvert par l'exclusion recherche",
+    "en": "Not covered by the research exclusion"
+   },
+   "unit": null,
+   "meaning": {
+    "fr": "Non couvert par l'exclusion recherche : les essais en conditions réelles sont exceptés de l'art. 2(8). Pour un système à haut risque, ils suivent les règles des essais en conditions réelles (art. 60), ou se déroulent dans un bac à sable réglementaire.",
+    "en": "Not covered by the research exclusion: testing in real-world conditions is excepted from art. 2(8). For a high-risk system, it follows the rules on testing in real-world conditions (art. 60), or takes place in a regulatory sandbox."
+   },
+   "kind": "decision-outcome"
+  },
+  {
+   "id": "provLab",
+   "name": {
+    "fr": "Votre laboratoire est fournisseur",
+    "en": "Your laboratory is the provider"
+   },
+   "unit": null,
+   "meaning": {
+    "fr": "Votre laboratoire est fournisseur (art. 3(3)) : les obligations du fournisseur lui reviennent (art. 16, s'il s'agit de haut risque).",
+    "en": "Your laboratory is the provider (art. 3(3)): the provider's duties fall on it (art. 16, if high-risk)."
+   },
+   "kind": "decision-outcome"
+  },
+  {
+   "id": "provThird",
+   "name": {
+    "fr": "L'autre acteur devient fournisseur",
+    "en": "The other actor becomes the provider"
+   },
+   "unit": null,
+   "meaning": {
+    "fr": "L'autre acteur devient fournisseur (art. 25(1)), et le fournisseur initial coopère et lui fournit les informations nécessaires (art. 25(2)). Votre laboratoire reste responsable de ce qu'il a livré (documentation, licence, accord de consortium).",
+    "en": "The other actor becomes the provider (art. 25(1)), and the initial provider cooperates and supplies the information it needs (art. 25(2)). Your laboratory keeps the responsibility for what it delivered (documentation, licence, consortium agreement)."
+   },
+   "kind": "decision-outcome"
+  },
+  {
+   "id": "provOther",
+   "name": {
+    "fr": "Celui qui le met sur le marché ou en service sous son nom est fournisseur",
+    "en": "Whoever places it on the market or puts it into service under its name is the provider"
+   },
+   "unit": null,
+   "meaning": {
+    "fr": "Celui qui le met sur le marché ou en service sous son nom est fournisseur (art. 3(3)) ; celui qui l'utilise sous son autorité est déployeur (art. 26).",
+    "en": "Whoever places it on the market or puts it into service under its name is the provider (art. 3(3)); whoever uses it under its authority is a deployer (art. 26)."
+   },
+   "kind": "decision-outcome"
+  },
+  {
+   "id": "high",
+   "name": {
+    "fr": "Haut risque (annexe III, point 2)",
+    "en": "High-risk (Annex III, point 2)"
+   },
+   "unit": null,
+   "meaning": {
+    "fr": "Haut risque (annexe III, point 2) : gestion des risques, documentation technique, évaluation de conformité et marquage CE pour le fournisseur ; supervision humaine, surveillance et journaux pour le déployeur. Calendrier de cette page : à partir du 2 décembre 2027.",
+    "en": "High-risk (Annex III, point 2): risk management, technical documentation, conformity assessment and CE marking for the provider; human oversight, monitoring and logs for the deployer. Timeline on this page: from 2 December 2027."
+   },
+   "kind": "decision-outcome"
+  },
+  {
+   "id": "notHigh",
+   "name": {
+    "fr": "Pas un composant de sécurité d'infrastructure critique",
+    "en": "Not a safety component of critical infrastructure"
+   },
+   "unit": null,
+   "meaning": {
+    "fr": "Pas un composant de sécurité d'infrastructure critique : vérifiez les autres usages de l'annexe III et les produits de l'annexe I avant de conclure ; sinon, pas d'obligations de haut risque.",
+    "en": "Not a safety component of critical infrastructure: check the other uses listed in Annex III and the products of Annex I before concluding; otherwise, no high-risk duties."
+   },
+   "kind": "decision-outcome"
+  },
+  {
+   "id": "transp",
+   "name": {
+    "fr": "Obligations de transparence (art. 50)",
+    "en": "Transparency duties (art. 50)"
+   },
+   "unit": null,
+   "meaning": {
+    "fr": "Obligations de transparence (art. 50) : les personnes doivent savoir qu'elles ont affaire à un système d'IA, et les contenus générés doivent être signalés.",
+    "en": "Transparency duties (art. 50): people must know they are dealing with an AI system, and generated content must be marked."
+   },
+   "kind": "decision-outcome"
+  },
+  {
+   "id": "noTransp",
+   "name": {
+    "fr": "noTransp",
+    "en": "noTransp"
+   },
+   "unit": null,
+   "meaning": {
+    "fr": "Pas d'obligation de transparence au titre de l'art. 50 pour cet usage.",
+    "en": "No transparency duty under art. 50 for this use."
+   },
+   "kind": "decision-outcome"
+  }
+ ],
+ "formulas": [],
+ "definitions": [
+  {
+   "term": "RGPD",
+   "meaning": {
+    "fr": "Règlement général sur la protection des données, règlement (UE) 2016/679 : le droit européen des données personnelles. Voir le texte et les explications de la CNIL.",
+    "en": "General Data Protection Regulation, Regulation (EU) 2016/679: the European law on personal data. See the CNIL guide."
+   }
+  },
+  {
+   "term": "AIPD (DPIA en anglais)",
+   "meaning": {
+    "fr": "Analyse d'impact relative à la protection des données (art. 35 du RGPD) : obligatoire quand un traitement de données personnelles est susceptible d'engendrer un risque élevé pour les personnes. Méthode et outil de la CNIL.",
+    "en": "Data Protection Impact Assessment (art. 35 GDPR): required when processing personal data is likely to result in a high risk for people. CNIL method and tool."
+   }
+  },
+  {
+   "term": "FRIA",
+   "meaning": {
+    "fr": "Analyse d'impact sur les droits fondamentaux (art. 27 de l'AI Act) : exigée de certains déployeurs de systèmes à haut risque, surtout les organismes publics et les entités privées qui fournissent un service public, avant la première utilisation.",
+    "en": "Fundamental Rights Impact Assessment (art. 27 AI Act): required from some deployers of high-risk AI systems, mainly public bodies and private entities providing public services, before first use."
+   }
+  },
+  {
+   "term": "MLOps",
+   "meaning": {
+    "fr": "Ensemble des pratiques qui gardent un modèle reproductible et fiable une fois en service : versionnement des données et du code, tests automatisés, suivi des performances et de la dérive, réapprentissage maîtrisé.",
+    "en": "Machine-learning operations: the practices that keep a model reproducible and reliable once in use: versioning of data and code, automated tests, monitoring of performance and drift, controlled retraining."
+   }
+  },
+  {
+   "term": "Plan de gestion des données (PGD, DMP)",
+   "meaning": {
+    "fr": "Document qui décrit comment un projet collecte, documente, stocke, partage et archive ses données, exigé par l'ANR et Horizon Europe ; rédigé en France avec DMP OPIDoR.",
+    "en": "A document describing how a project collects, documents, stores, shares and archives its data, required by ANR and Horizon Europe; written in France with DMP OPIDoR."
+   }
+  },
+  {
+   "term": "Fiche données, fiche modèle",
+   "meaning": {
+    "fr": "Fiches d'une ou deux pages qui décrivent un jeu de données ou un modèle entraîné : origine, contenu, usage prévu, métriques, limites. Le format reprend les propositions « model cards » et « datasheets for datasets » de la communauté de l'apprentissage automatique.",
+    "en": "One- to two-page sheets that describe a dataset or a trained model: origin, content, intended use, metrics, limits. The format follows the \"model cards\" and \"datasheets for datasets\" proposals of the machine-learning community."
+   }
+  },
+  {
+   "term": "Dérive",
+   "meaning": {
+    "fr": "La perte progressive de performance d'un modèle quand les données qu'il reçoit s'éloignent de celles de son apprentissage.",
+    "en": "The gradual loss of performance of a model when the data it receives come to differ from those it was trained on."
+   }
+  },
+  {
+   "term": "DPO",
+   "meaning": {
+    "fr": "Délégué à la protection des données : la personne qui conseille un organisme sur ses obligations au titre du RGPD.",
+    "en": "Data protection officer: the person who advises an organization on its GDPR obligations."
+   }
+  },
+  {
+   "term": "Git, commit, README",
+   "meaning": {
+    "fr": "Git est un outil qui garde toutes les versions d'un code ; un commit est une version enregistrée ; un README est le fichier texte qui présente un projet.",
+    "en": "Git is a tool that keeps every version of a code; a commit is one recorded version; a README is the text file that presents a project."
+   }
+  }
+ ],
+ "assumptions": {
+  "fr": [
+   "Cette page résume des textes publics et le travail d'un laboratoire ; ce n'est pas un avis juridique. Lois nationales, lignes directrices et normes évoluent encore : les dates sont celles vérifiées le 23 octobre 2026. Pour un projet réel, interrogez le service juridique de votre établissement."
+  ],
+  "en": [
+   "This page summarizes public texts and the work of one laboratory; it is not legal advice. National laws, guidance and standards are still moving: dates are given as checked on 23 October 2026. For a real project, ask your institution's legal service."
+  ]
+ },
+ "source": {
+  "dois": [],
+  "repositories": [],
+  "related_pages": [
+   {
+    "href": "/fr/recits/questioning-research/",
+    "text": "Se questionner sur nos façons de faire de la recherche : influence, intégrité, excellence"
+   },
+   {
+    "href": "/fr/recits/websemantic/",
+    "text": "Au modèle de langage la lecture, au code validé le calcul : WebSemantic"
+   },
+   {
+    "href": "/fr/approche/",
+    "text": "La démarche : l'IA à sa place, la confiance démontrée"
+   }
+  ]
+ },
+ "how_to_explore": {
+  "fr": "Régler les paramètres sur un préréglage (valeurs ci-dessus), lire la phrase affichée par la page puis les sorties ; modifier ensuite un seul paramètre à la fois entre son minimum et son maximum.",
+  "en": "Set the parameters to a preset (values above), read the sentence the page shows then the outputs; then change one parameter at a time between its minimum and maximum."
+ },
+ "exploration": [],
+ "concepts": [],
+ "extraction": {
+  "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
+  "roots": [
+   "#role-helper"
+  ],
+  "page_errors": [],
+  "fr_en_preset_consistency": null
+ }
+}

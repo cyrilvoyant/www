@@ -1,0 +1,386 @@
+{
+ "id": "cop",
+ "schema": "https://www.cyrilvoyant.com/tools-spec.json#1.0",
+ "kind": "teaching",
+ "domain": "learning",
+ "interface_language": "both",
+ "name": {
+  "fr": "Machine frigorifique : borne de Carnot du COP",
+  "en": "Refrigerator: Carnot bound of the COP"
+ },
+ "url": {
+  "fr": "https://www.cyrilvoyant.com/fr/animations/cop-carnot-machine-frigorifique/",
+  "en": "https://www.cyrilvoyant.com/tools/refrigerator-carnot-cop/"
+ },
+ "page_title": {
+  "fr": "Machine frigorifique : COP et limite de Carnot",
+  "en": "Refrigeration: coefficient of performance and Carnot limit"
+ },
+ "computes": {
+  "fr": "COP (coefficient de performance) : chaleur extraite par unité de travail reçu. Faire varier les températures d’évaporation et de condensation ; voir pourquoi l’écart coûte cher.",
+  "en": "COP (coefficient of performance): heat removed per unit of work supplied. Vary evaporation and condensation temperatures; see why the temperature lift is costly."
+ },
+ "summary": {
+  "fr": "Entre −10 °C et +40 °C, une machine frigorifique extrait au mieux 5,26 J de chaleur par joule de travail ; entre −40 °C et +20 °C, au mieux 3,89 J. Vous comprenez pourquoi produire du froid coûte plus cher quand l’écart de température grandit.",
+  "en": "Between −10 °C and +40 °C, a refrigerator extracts at best 5.26 J of heat per joule of work; between −40 °C and +20 °C, at best 3.89 J. You understand why producing cold costs more as the temperature gap widens."
+ },
+ "parameters": [
+  {
+   "id": "cold-reservoir-tcold",
+   "type": "integer",
+   "control": "range",
+   "min": -40,
+   "max": 10,
+   "step": 1,
+   "default": -10,
+   "label": {
+    "fr": "Source froide Tf (°C)",
+    "en": "Cold reservoir Tcold (°C)"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": {
+    "fr": "°C",
+    "en": "°C"
+   },
+   "unit_source": "display"
+  },
+  {
+   "id": "hot-reservoir-thot",
+   "type": "integer",
+   "control": "range",
+   "min": 20,
+   "max": 60,
+   "step": 1,
+   "default": 40,
+   "label": {
+    "fr": "Source chaude Tc (°C)",
+    "en": "Hot reservoir Thot (°C)"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": {
+    "fr": "°C",
+    "en": "°C"
+   },
+   "unit_source": "display"
+  }
+ ],
+ "presets": [
+  {
+   "id": "cold-10-c-hot-40-c",
+   "name": {
+    "fr": "Froid −10 °C, chaud +40 °C",
+    "en": "Cold −10 °C, hot +40 °C"
+   },
+   "values": {
+    "cold-reservoir-tcold": -10,
+    "hot-reservoir-thot": 40
+   },
+   "changes_vs_default": {},
+   "shows": {
+    "fr": "263,15/50 = 5,26 : au plus 5,26 J extraits pour 1 J de travail.",
+    "en": "263.15/50 = 5.26: at most 5.26 J removed per 1 J of work."
+   }
+  },
+  {
+   "id": "cold-40-c-hot-20-c",
+   "name": {
+    "fr": "Froid −40 °C, chaud +20 °C",
+    "en": "Cold −40 °C, hot +20 °C"
+   },
+   "values": {
+    "cold-reservoir-tcold": -40,
+    "hot-reservoir-thot": 20
+   },
+   "changes_vs_default": {
+    "cold-reservoir-tcold": -40,
+    "hot-reservoir-thot": 20
+   },
+   "shows": {
+    "fr": "233,15/60 = 3,89 : un écart plus grand, donc plus de travail pour la même chaleur.",
+    "en": "233.15/60 = 3.89: a wider gap, so more work for the same heat."
+   }
+  },
+  {
+   "id": "chill-0-c-room-at-30-c",
+   "name": {
+    "fr": "Conserver : 0 °C, local à +30 °C",
+    "en": "Chill: 0 °C, room at +30 °C"
+   },
+   "values": {
+    "cold-reservoir-tcold": 0,
+    "hot-reservoir-thot": 30
+   },
+   "changes_vs_default": {
+    "cold-reservoir-tcold": 0,
+    "hot-reservoir-thot": 30
+   },
+   "shows": {
+    "fr": "Un écart de 30 K seulement : le COP maximal dépasse 9.",
+    "en": "A gap of only 30 K: the maximum COP exceeds 9."
+   }
+  },
+  {
+   "id": "deep-freeze-30-c-room-at-30-c",
+   "name": {
+    "fr": "Surgeler : −30 °C, local à +30 °C",
+    "en": "Deep-freeze: −30 °C, room at +30 °C"
+   },
+   "values": {
+    "cold-reservoir-tcold": -30,
+    "hot-reservoir-thot": 30
+   },
+   "changes_vs_default": {
+    "cold-reservoir-tcold": -30,
+    "hot-reservoir-thot": 30
+   },
+   "shows": {
+    "fr": "Même local, écart doublé : le COP maximal tombe à environ 4.",
+    "en": "Same room, gap doubled: the maximum COP falls to about 4."
+   }
+  },
+  {
+   "id": "smallest-gap-10-c-and-20-c",
+   "name": {
+    "fr": "Écart minimal : +10 °C et +20 °C",
+    "en": "Smallest gap: +10 °C and +20 °C"
+   },
+   "values": {
+    "cold-reservoir-tcold": 10,
+    "hot-reservoir-thot": 20
+   },
+   "changes_vs_default": {
+    "cold-reservoir-tcold": 10,
+    "hot-reservoir-thot": 20
+   },
+   "shows": {
+    "fr": "Quand l’écart tend vers zéro, la limite s’envole : c’est mathématiquement juste, pas un appareil réel.",
+    "en": "As the gap tends to zero, the limit soars: this is mathematically correct, not a real appliance."
+   }
+  },
+  {
+   "id": "largest-gap-40-c-and-60-c",
+   "name": {
+    "fr": "Écart maximal : −40 °C et +60 °C",
+    "en": "Largest gap: −40 °C and +60 °C"
+   },
+   "values": {
+    "cold-reservoir-tcold": -40,
+    "hot-reservoir-thot": 60
+   },
+   "changes_vs_default": {
+    "cold-reservoir-tcold": -40,
+    "hot-reservoir-thot": 60
+   },
+   "shows": {
+    "fr": "100 K d’écart : le COP maximal n’est plus que de 2,33.",
+    "en": "A 100 K gap: the maximum COP is only 2.33."
+   }
+  }
+ ],
+ "actions": [],
+ "variants": [],
+ "outputs": [
+  {
+   "name": {
+    "fr": "COP de Carnot",
+    "en": "Carnot COP"
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "kind": "reading"
+  },
+  {
+   "name": {
+    "fr": "pour extraire 1 kJ au froid, il faut au moins",
+    "en": "removing 1 kJ from the cold side requires at least"
+   },
+   "unit": {
+    "fr": "kJ de travail",
+    "en": "kJ de travail"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "kind": "reading"
+  }
+ ],
+ "formulas": [
+  {
+   "text": "COP_Carnot = T_f/(T_c − T_f)"
+  },
+  {
+   "text": "COP frigorifique = (chaleur utile extraite)/(travail reçu)"
+  }
+ ],
+ "definitions": [
+  {
+   "term": "COP",
+   "meaning": {
+    "fr": "Le coefficient de performance : la chaleur extraite de la source froide par unité de travail reçu.",
+    "en": "The coefficient of performance: heat extracted from the cold reservoir per unit of work supplied."
+   }
+  },
+  {
+   "term": "Tf, Tc",
+   "meaning": {
+    "fr": "Les températures des sources froide et chaude, en kelvins.",
+    "en": "The temperatures of the cold and hot reservoirs, in kelvins."
+   }
+  },
+  {
+   "term": "Limite de Carnot",
+   "meaning": {
+    "fr": "Le COP maximal d’une machine réversible entre ces deux sources. Voir le moteur de Carnot.",
+    "en": "The maximum COP of a reversible machine between these two reservoirs. See the Carnot engine."
+   }
+  },
+  {
+   "term": "COP > 1",
+   "meaning": {
+    "fr": "Normal : le COP compare une chaleur déplacée à un travail, ce n’est pas un rendement en pourcentage.",
+    "en": "Normal: COP compares heat moved with work; it is not a percentage efficiency."
+   }
+  },
+  {
+   "term": "Que veut dire chaque symbole ?",
+   "meaning": {
+    "fr": "COP signifie coefficient de performance : COP = Qf/W. La limite de Carnot vaut COPC = Tf/(Tc − Tf) en kelvins, avec Tf la source froide et Tc la source chaude. Dans le bilan, Qf est la chaleur extraite au froid (évaporateur), Qc la chaleur rejetée au chaud (condenseur) et W le travail fourni. Ce sont des énergies, pas des températures ; les températures des sources sont converties en kelvins pour la formule de Carnot.",
+    "en": "COP means coefficient of performance: COP = Qcold/W. The Carnot limit is COPC = Tcold/(Thot − Tcold) in kelvins. In the energy balance, Qcold is heat extracted from the cold side (evaporator), Qhot heat rejected to the hot side (condenser) and W work supplied. They are amounts of energy, not temperatures; the reservoir temperatures are converted to kelvins for the Carnot formula."
+   }
+  }
+ ],
+ "assumptions": {
+  "fr": [
+   "Machine réversible entre deux sources : c’est une borne, pas le COP réel d’un appareil. Ventilateurs et pertes ne sont pas modélisés ; les températures sont celles des sources, pas celles du fluide."
+  ],
+  "en": [
+   "Reversible machine between two reservoirs: a bound, not the actual COP of equipment. Fans and losses are not modeled; temperatures are those of the reservoirs, not of the refrigerant."
+  ]
+ },
+ "source": {
+  "dois": [],
+  "repositories": [],
+  "related_pages": [
+   {
+    "href": "/fr/enseignement/physique-industrielle/cycles-frigorifiques/",
+    "text": "Le chapitre complet du cours"
+   },
+   {
+    "href": "/fr/animations/moteur-carnot/",
+    "text": "Le moteur de Carnot : la même limite, côté production de travail"
+   },
+   {
+    "href": "/fr/animations/congelation-energie-puissance/",
+    "text": "La congélation : la chaleur à extraire et la puissance moyenne"
+   }
+  ]
+ },
+ "how_to_explore": {
+  "fr": "Régler les paramètres sur un préréglage (valeurs ci-dessus), lire la phrase affichée par la page puis les sorties ; modifier ensuite un seul paramètre à la fois entre son minimum et son maximum.",
+  "en": "Set the parameters to a preset (values above), read the sentence the page shows then the outputs; then change one parameter at a time between its minimum and maximum."
+ },
+ "exploration": [
+  {
+   "preset": "cold-10-c-hot-40-c",
+   "title": {
+    "fr": "Froid −10 °C, chaud +40 °C",
+    "en": "Cold −10 °C, hot +40 °C"
+   },
+   "set": {
+    "cold-reservoir-tcold": -10,
+    "hot-reservoir-thot": 40
+   },
+   "observe": {
+    "fr": "263,15/50 = 5,26 : au plus 5,26 J extraits pour 1 J de travail.",
+    "en": "263.15/50 = 5.26: at most 5.26 J removed per 1 J of work."
+   }
+  },
+  {
+   "preset": "cold-40-c-hot-20-c",
+   "title": {
+    "fr": "Froid −40 °C, chaud +20 °C",
+    "en": "Cold −40 °C, hot +20 °C"
+   },
+   "set": {
+    "cold-reservoir-tcold": -40,
+    "hot-reservoir-thot": 20
+   },
+   "observe": {
+    "fr": "233,15/60 = 3,89 : un écart plus grand, donc plus de travail pour la même chaleur.",
+    "en": "233.15/60 = 3.89: a wider gap, so more work for the same heat."
+   }
+  },
+  {
+   "preset": "chill-0-c-room-at-30-c",
+   "title": {
+    "fr": "Conserver : 0 °C, local à +30 °C",
+    "en": "Chill: 0 °C, room at +30 °C"
+   },
+   "set": {
+    "cold-reservoir-tcold": 0,
+    "hot-reservoir-thot": 30
+   },
+   "observe": {
+    "fr": "Un écart de 30 K seulement : le COP maximal dépasse 9.",
+    "en": "A gap of only 30 K: the maximum COP exceeds 9."
+   }
+  },
+  {
+   "preset": "smallest-gap-10-c-and-20-c",
+   "title": {
+    "fr": "Écart minimal : +10 °C et +20 °C",
+    "en": "Smallest gap: +10 °C and +20 °C"
+   },
+   "set": {
+    "cold-reservoir-tcold": 10,
+    "hot-reservoir-thot": 20
+   },
+   "observe": {
+    "fr": "Quand l’écart tend vers zéro, la limite s’envole : c’est mathématiquement juste, pas un appareil réel.",
+    "en": "As the gap tends to zero, the limit soars: this is mathematically correct, not a real appliance."
+   }
+  },
+  {
+   "preset": "largest-gap-40-c-and-60-c",
+   "title": {
+    "fr": "Écart maximal : −40 °C et +60 °C",
+    "en": "Largest gap: −40 °C and +60 °C"
+   },
+   "set": {
+    "cold-reservoir-tcold": -40,
+    "hot-reservoir-thot": 60
+   },
+   "observe": {
+    "fr": "100 K d’écart : le COP maximal n’est plus que de 2,33.",
+    "en": "A 100 K gap: the maximum COP is only 2.33."
+   }
+  }
+ ],
+ "concepts": [
+  "cop"
+ ],
+ "extraction": {
+  "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
+  "roots": [
+   "#experience"
+  ],
+  "page_errors": [],
+  "fr_en_preset_consistency": {
+   "presets_compared": 6,
+   "presets_with_different_values_fr_vs_en": []
+  }
+ }
+}

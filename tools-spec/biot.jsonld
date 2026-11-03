@@ -1,0 +1,192 @@
+{
+ "@context": "https://schema.org",
+ "@type": [
+  "SoftwareApplication",
+  "LearningResource"
+ ],
+ "@id": "https://www.cyrilvoyant.com/tools/biot-cooling/#tool-spec",
+ "identifier": "biot",
+ "name": "Cool a food: Biot number, mean and core temperature",
+ "alternateName": "Refroidir un aliment : Biot, température moyenne et à cœur",
+ "description": "Vary the convection coefficient h, the thermal conductivity λ and size; compare the uniform-temperature model with the core temperature.",
+ "url": "https://www.cyrilvoyant.com/tools/biot-cooling/",
+ "sameAs": [
+  "https://www.cyrilvoyant.com/fr/animations/refroidissement-biot/",
+  "https://www.cyrilvoyant.com/tools/biot-cooling/"
+ ],
+ "inLanguage": [
+  "fr",
+  "en"
+ ],
+ "applicationCategory": "EducationalApplication",
+ "operatingSystem": "Any (web browser)",
+ "isAccessibleForFree": true,
+ "learningResourceType": "teaching",
+ "author": {
+  "@type": "Person",
+  "name": "Cyril Voyant",
+  "identifier": "https://orcid.org/0000-0003-0242-7377"
+ },
+ "license": "https://creativecommons.org/licenses/by/4.0/",
+ "additionalProperty": [
+  {
+   "@type": "PropertyValue",
+   "propertyID": "convection-h",
+   "name": "Convection h (W/m²·K)",
+   "alternateName": "Convection h (W/m²·K)",
+   "value": 25,
+   "minValue": 5,
+   "maxValue": 300,
+   "unitText": "W/m²·K"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "length-lc-v-a",
+   "name": "Length Lc = V/A (cm)",
+   "alternateName": "Longueur Lc = V/A (cm)",
+   "description": "The characteristic length: volume divided by heat-transfer area.",
+   "value": 2,
+   "minValue": 0.2,
+   "maxValue": 10,
+   "unitText": "cm"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "conductivity",
+   "name": "Conductivity λ (W/m·K)",
+   "alternateName": "Conductivité λ (W/m·K)",
+   "value": 0.5,
+   "minValue": 0.1,
+   "maxValue": 2,
+   "unitText": "W/m·K"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "initial-temperature-ti",
+   "name": "Initial temperature Ti",
+   "alternateName": "Température initiale Ti",
+   "value": 60,
+   "minValue": 0,
+   "maxValue": 90,
+   "unitText": "°C"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "surroundings-t",
+   "name": "Surroundings T∞",
+   "alternateName": "Milieu extérieur T∞",
+   "value": 2,
+   "minValue": -30,
+   "maxValue": 20,
+   "unitText": "°C"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:thick-food-bi-1",
+   "name": "Thick food: Bi = 1",
+   "alternateName": "Aliment épais : Bi = 1",
+   "value": "{\"convection-h\": 25, \"length-lc-v-a\": 2, \"conductivity\": 0.5, \"initial-temperature-ti\": 60, \"surroundings-t\": 2}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:thin-slice-small-bi",
+   "name": "Thin slice: small Bi",
+   "alternateName": "Tranche fine : Bi petit",
+   "value": "{\"convection-h\": 10, \"length-lc-v-a\": 0.5, \"conductivity\": 2, \"initial-temperature-ti\": 60, \"surroundings-t\": 2}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:only-conductivity-increases",
+   "name": "Only conductivity λ increases",
+   "alternateName": "Seule la conductivité λ augmente",
+   "value": "{\"convection-h\": 25, \"length-lc-v-a\": 2, \"conductivity\": 2, \"initial-temperature-ti\": 60, \"surroundings-t\": 2}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:strong-air-flow-h-100",
+   "name": "Strong air flow: h = 100",
+   "alternateName": "Air très brassé : h = 100",
+   "value": "{\"convection-h\": 100, \"length-lc-v-a\": 2, \"conductivity\": 0.5, \"initial-temperature-ti\": 60, \"surroundings-t\": 2}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:large-piece-lc-6-cm",
+   "name": "Large piece: Lc = 6 cm",
+   "alternateName": "Gros morceau : Lc = 6 cm",
+   "value": "{\"convection-h\": 25, \"length-lc-v-a\": 6, \"conductivity\": 0.5, \"initial-temperature-ti\": 60, \"surroundings-t\": 2}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:warming-ti-below-t",
+   "name": "Warming: Ti below T∞",
+   "alternateName": "Réchauffement : Ti sous T∞",
+   "value": "{\"convection-h\": 25, \"length-lc-v-a\": 2, \"conductivity\": 0.5, \"initial-temperature-ti\": 2, \"surroundings-t\": 20}"
+  }
+ ],
+ "potentialAction": {
+  "@type": "Action",
+  "name": "Explore the tool",
+  "target": {
+   "@type": "EntryPoint",
+   "urlTemplate": "https://www.cyrilvoyant.com/tools/biot-cooling/",
+   "actionPlatform": "https://schema.org/DesktopWebPlatform"
+  },
+  "object": [
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "convection-h",
+    "description": "Convection h (W/m²·K)",
+    "valueRequired": false,
+    "minValue": 5,
+    "maxValue": 300,
+    "defaultValue": 25,
+    "stepValue": 1
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "length-lc-v-a",
+    "description": "Length Lc = V/A (cm)",
+    "valueRequired": false,
+    "minValue": 0.2,
+    "maxValue": 10,
+    "defaultValue": 2,
+    "stepValue": 0.1
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "conductivity",
+    "description": "Conductivity λ (W/m·K)",
+    "valueRequired": false,
+    "minValue": 0.1,
+    "maxValue": 2,
+    "defaultValue": 0.5,
+    "stepValue": 0.05
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "initial-temperature-ti",
+    "description": "Initial temperature Ti",
+    "valueRequired": false,
+    "minValue": 0,
+    "maxValue": 90,
+    "defaultValue": 60,
+    "stepValue": 1
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "surroundings-t",
+    "description": "Surroundings T∞",
+    "valueRequired": false,
+    "minValue": -30,
+    "maxValue": 20,
+    "defaultValue": 2,
+    "stepValue": 1
+   }
+  ]
+ },
+ "about": [
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#biot-number"
+  }
+ ]
+}

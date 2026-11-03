@@ -1,0 +1,5681 @@
+{
+ "@context": {
+  "cv": "https://www.cyrilvoyant.com/ontology/#",
+  "skos": "http://www.w3.org/2004/02/skos/core#",
+  "dcterms": "http://purl.org/dc/terms/",
+  "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+  "schema": "https://schema.org/",
+  "xsd": "http://www.w3.org/2001/XMLSchema#"
+ },
+ "@graph": [
+  {
+   "@id": "cv:cv-concepts",
+   "@type": "skos:ConceptScheme",
+   "dcterms:title": [
+    {
+     "@language": "fr",
+     "@value": "Notions du site"
+    },
+    {
+     "@language": "en",
+     "@value": "Site concepts"
+    }
+   ],
+   "dcterms:creator": {
+    "@id": "https://person.cyrilvoyant.com/#cyril-voyant"
+   },
+   "dcterms:description": [
+    {
+     "@language": "fr",
+     "@value": "Notions de prévision, de dose, de physique médicale, de statistiques et de thermique définies sur www.cyrilvoyant.com."
+    },
+    {
+     "@language": "en",
+     "@value": "Concepts of forecasting, dose, medical physics, statistics and thermal physics defined on www.cyrilvoyant.com."
+    }
+   ],
+   "dcterms:license": {
+    "@id": "https://creativecommons.org/licenses/by/4.0/"
+   },
+   "dcterms:modified": {
+    "@type": "xsd:date",
+    "@value": "2026-11-03"
+   },
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/ontology/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/glossary/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/lexique/"
+    }
+   ],
+   "skos:hasTopConcept": [
+    {
+     "@id": "cv:forecasting"
+    },
+    {
+     "@id": "cv:radiotherapy"
+    },
+    {
+     "@id": "cv:medical-physics"
+    },
+    {
+     "@id": "cv:statistics"
+    },
+    {
+     "@id": "cv:thermal-physics"
+    }
+   ]
+  },
+  {
+   "@id": "cv:forecasting",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "forecasting",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Prévision et évaluation"
+    },
+    {
+     "@language": "en",
+     "@value": "Forecasting and evaluation"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "Une erreur n'a de sens que face à une référence : on décrit le signal, on choisit des références simples, on mesure le gain, puis on complexifie si ce gain le justifie."
+    },
+    {
+     "@language": "en",
+     "@value": "An error only makes sense against a reference: describe the signal, choose simple references, measure the gain, then add complexity only if the gain justifies it."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "prévision solaire"
+    },
+    {
+     "@language": "en",
+     "@value": "solar forecasting"
+    }
+   ],
+   "skos:topConceptOf": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:narrower": [
+    {
+     "@id": "cv:ar2"
+    },
+    {
+     "@id": "cv:artu"
+    },
+    {
+     "@id": "cv:brownian-motion"
+    },
+    {
+     "@id": "cv:climatological-mean"
+    },
+    {
+     "@id": "cv:convex-combination"
+    },
+    {
+     "@id": "cv:cyclic-persistence"
+    },
+    {
+     "@id": "cv:deseasonalization"
+    },
+    {
+     "@id": "cv:difference-to-trend"
+    },
+    {
+     "@id": "cv:elm"
+    },
+    {
+     "@id": "cv:forecast-evaluation"
+    },
+    {
+     "@id": "cv:forecastability-f"
+    },
+    {
+     "@id": "cv:horizon"
+    },
+    {
+     "@id": "cv:malr"
+    },
+    {
+     "@id": "cv:memory-phi"
+    },
+    {
+     "@id": "cv:mimo"
+    },
+    {
+     "@id": "cv:no-free-lunch"
+    },
+    {
+     "@id": "cv:percentile-band-p10-p90"
+    },
+    {
+     "@id": "cv:persistence"
+    },
+    {
+     "@id": "cv:ratio-to-trend"
+    },
+    {
+     "@id": "cv:scv"
+    },
+    {
+     "@id": "cv:simulated-data"
+    },
+    {
+     "@id": "cv:smart-persistence"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:forecast-evaluation"
+    }
+   ],
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/enseignement/cours-prevision-solaire/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/teaching/solar-forecasting-course/"
+    },
+    {
+     "@id": "https://cyrilvoyant.github.io/methods/solar-forecasting-made-simple.html"
+    }
+   ]
+  },
+  {
+   "@id": "cv:radiotherapy",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "radiotherapy",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Radiothérapie"
+    },
+    {
+     "@language": "en",
+     "@value": "Radiotherapy"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "Quand le lien entre un schéma de radiothérapie et son effet biologique est connu, on le calcule directement avec un modèle explicite, sans données d'apprentissage."
+    },
+    {
+     "@language": "en",
+     "@value": "When the link between a radiotherapy schedule and its biological effect is known, it is computed directly with an explicit model, with no training data."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "dose biologique"
+    },
+    {
+     "@language": "en",
+     "@value": "biological dose"
+    }
+   ],
+   "skos:topConceptOf": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:narrower": [
+    {
+     "@id": "cv:alpha-beta"
+    },
+    {
+     "@id": "cv:bed"
+    },
+    {
+     "@id": "cv:doubling-time"
+    },
+    {
+     "@id": "cv:eqd2"
+    },
+    {
+     "@id": "cv:fractionation"
+    },
+    {
+     "@id": "cv:gray"
+    },
+    {
+     "@id": "cv:lq-model"
+    },
+    {
+     "@id": "cv:lql-equiv"
+    },
+    {
+     "@id": "cv:lql-model"
+    },
+    {
+     "@id": "cv:thyroglobulin"
+    },
+    {
+     "@id": "cv:transition-dose"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:bed"
+    },
+    {
+     "@id": "cv:lq-model"
+    }
+   ],
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/recits/lql-equiv/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/stories/lql-equiv/"
+    },
+    {
+     "@id": "https://cyrilvoyant.github.io/tools/lql-equiv.html"
+    }
+   ]
+  },
+  {
+   "@id": "cv:medical-physics",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "medical-physics",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Physique médicale"
+    },
+    {
+     "@language": "en",
+     "@value": "Medical physics"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "Comment un faisceau de photons ou de neutrons traverse la matière et y dépose de l'énergie, des modèles simples aux simulations de transport."
+    },
+    {
+     "@language": "en",
+     "@value": "How a beam of photons or neutrons crosses matter and deposits energy in it, from simple models to transport simulations."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "physique des rayonnements"
+    },
+    {
+     "@language": "en",
+     "@value": "radiation physics"
+    }
+   ],
+   "skos:topConceptOf": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:narrower": [
+    {
+     "@id": "cv:attenuation"
+    },
+    {
+     "@id": "cv:bnct"
+    },
+    {
+     "@id": "cv:compton-effect"
+    },
+    {
+     "@id": "cv:cross-section"
+    },
+    {
+     "@id": "cv:half-value-layer"
+    },
+    {
+     "@id": "cv:macroscopic-cross-section"
+    },
+    {
+     "@id": "cv:mean-free-path"
+    },
+    {
+     "@id": "cv:monte-carlo"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:attenuation"
+    },
+    {
+     "@id": "cv:monte-carlo"
+    }
+   ],
+   "skos:exactMatch": {
+    "@id": "http://www.wikidata.org/entity/Q1120908"
+   },
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/enseignement/physique-pass/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/teaching/"
+    }
+   ]
+  },
+  {
+   "@id": "cv:statistics",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "statistics",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Statistiques"
+    },
+    {
+     "@language": "en",
+     "@value": "Statistics"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "Comparer un écart à son incertitude, mesurer une relation ou une prédiction, et lire un résultat sans le surinterpréter."
+    },
+    {
+     "@language": "en",
+     "@value": "Compare a difference with its uncertainty, measure an association or a prediction, and read a result without over-interpreting it."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "biostatistique"
+    },
+    {
+     "@language": "en",
+     "@value": "biostatistics"
+    }
+   ],
+   "skos:topConceptOf": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:narrower": [
+    {
+     "@id": "cv:chi-square-test"
+    },
+    {
+     "@id": "cv:confidence-interval"
+    },
+    {
+     "@id": "cv:influential-point"
+    },
+    {
+     "@id": "cv:normal-distribution"
+    },
+    {
+     "@id": "cv:p-value"
+    },
+    {
+     "@id": "cv:pearson-correlation"
+    },
+    {
+     "@id": "cv:prediction-interval"
+    },
+    {
+     "@id": "cv:r-squared"
+    },
+    {
+     "@id": "cv:roc-curve"
+    },
+    {
+     "@id": "cv:student-t-test"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:p-value"
+    }
+   ],
+   "skos:exactMatch": {
+    "@id": "http://www.wikidata.org/entity/Q12483"
+   },
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/enseignement/biostatistique/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/teaching/biostatistics/"
+    }
+   ]
+  },
+  {
+   "@id": "cv:thermal-physics",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "thermal-physics",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Thermique et thermodynamique"
+    },
+    {
+     "@language": "en",
+     "@value": "Thermal physics and thermodynamics"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "Échanges de chaleur, cycles moteurs et frigorifiques et limites de Carnot, pour dimensionner un refroidissement, une congélation ou une machine thermique."
+    },
+    {
+     "@language": "en",
+     "@value": "Heat exchange, engine and refrigeration cycles and Carnot limits, to size a cooling, a freezing or a heat engine."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "thermique industrielle"
+    },
+    {
+     "@language": "en",
+     "@value": "industrial thermal physics"
+    }
+   ],
+   "skos:topConceptOf": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:narrower": [
+    {
+     "@id": "cv:biot-number"
+    },
+    {
+     "@id": "cv:carnot-efficiency"
+    },
+    {
+     "@id": "cv:cop"
+    },
+    {
+     "@id": "cv:freezing"
+    },
+    {
+     "@id": "cv:latent-heat"
+    },
+    {
+     "@id": "cv:sensible-heat"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:biot-number"
+    },
+    {
+     "@id": "cv:carnot-efficiency"
+    }
+   ],
+   "skos:exactMatch": {
+    "@id": "http://www.wikidata.org/entity/Q619452"
+   },
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/enseignement/physique-industrielle/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/teaching/"
+    }
+   ]
+  },
+  {
+   "@id": "cv:forecast-evaluation",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "forecast-evaluation",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Évaluation d'une prévision"
+    },
+    {
+     "@language": "en",
+     "@value": "Forecast evaluation"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "Une erreur n'a de sens que face à une référence : mêmes cibles, périmètre annoncé, plusieurs normes d'erreur, puis un test de la différence."
+    },
+    {
+     "@language": "en",
+     "@value": "An error only makes sense against a reference: same targets, stated scope, several error norms, then a test of the difference."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "vérification d'une prévision"
+    },
+    {
+     "@language": "en",
+     "@value": "forecast verification"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:forecasting"
+    }
+   ],
+   "skos:narrower": [
+    {
+     "@id": "cv:gamma-index"
+    },
+    {
+     "@id": "cv:mae"
+    },
+    {
+     "@id": "cv:nice"
+    },
+    {
+     "@id": "cv:nmae"
+    },
+    {
+     "@id": "cv:nrmse"
+    },
+    {
+     "@id": "cv:rmse"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:forecasting"
+    },
+    {
+     "@id": "cv:mae"
+    },
+    {
+     "@id": "cv:nice"
+    },
+    {
+     "@id": "cv:persistence"
+    },
+    {
+     "@id": "cv:rmse"
+    }
+   ],
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/recits/evaluer-prevision-solaire-persistance/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/stories/evaluate-solar-forecast-persistence/"
+    },
+    {
+     "@id": "https://cyrilvoyant.github.io/methods/nice-metrics.html"
+    }
+   ],
+   "dcterms:source": [
+    {
+     "@id": "https://doi.org/10.1016/j.seta.2025.104588"
+    }
+   ]
+  },
+  {
+   "@id": "cv:persistence",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "persistence",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Persistance"
+    },
+    {
+     "@language": "en",
+     "@value": "Persistence"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "La prévision recopie la dernière valeur connue. C'est la référence minimale de toute prévision."
+    },
+    {
+     "@language": "en",
+     "@value": "The forecast copies the last known value. It is the minimal reference of any forecast."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "persistance simple"
+    },
+    {
+     "@language": "en",
+     "@value": "simple persistence"
+    },
+    {
+     "@language": "en",
+     "@value": "naive forecast"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:forecasting"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:ar2"
+    },
+    {
+     "@id": "cv:artu"
+    },
+    {
+     "@id": "cv:blend"
+    },
+    {
+     "@id": "cv:brownian-motion"
+    },
+    {
+     "@id": "cv:climatological-mean"
+    },
+    {
+     "@id": "cv:cliper"
+    },
+    {
+     "@id": "cv:cyclic-persistence"
+    },
+    {
+     "@id": "cv:elm"
+    },
+    {
+     "@id": "cv:forecast-evaluation"
+    },
+    {
+     "@id": "cv:horizon"
+    },
+    {
+     "@id": "cv:nice"
+    },
+    {
+     "@id": "cv:no-free-lunch"
+    },
+    {
+     "@id": "cv:smart-persistence"
+    }
+   ],
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/stories/variability-memory-forecastability/"
+    },
+    {
+     "@id": "https://cyrilvoyant.github.io/methods/persistence-blend.html"
+    }
+   ],
+   "dcterms:source": [
+    {
+     "@id": "https://doi.org/10.1016/j.apm.2026.116988"
+    }
+   ]
+  },
+  {
+   "@id": "cv:cyclic-persistence",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "cyclic-persistence",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Persistance cyclique"
+    },
+    {
+     "@language": "en",
+     "@value": "Cyclic persistence"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "La prévision recopie la valeur un cycle plus tôt, au même moment du cycle."
+    },
+    {
+     "@language": "en",
+     "@value": "The forecast copies the value one cycle earlier, at the same moment of the cycle."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "en",
+     "@value": "cyclic persistence"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:forecasting"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:blend"
+    },
+    {
+     "@id": "cv:persistence"
+    }
+   ],
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/outils/blend/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/latest-publications-and-news/forecasting-with-less/"
+    },
+    {
+     "@id": "https://cyrilvoyant.github.io/methods/persistence-blend.html"
+    }
+   ],
+   "dcterms:source": [
+    {
+     "@id": "https://doi.org/10.1016/j.apm.2026.116988"
+    }
+   ]
+  },
+  {
+   "@id": "cv:smart-persistence",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "smart-persistence",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Persistance de l'indice de ciel clair"
+    },
+    {
+     "@language": "en",
+     "@value": "Smart persistence"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "La persistance appliquée à l'indice de ciel clair (SP : persistance de l'indice de ciel clair), plutôt qu'à l'éclairement brut."
+    },
+    {
+     "@language": "en",
+     "@value": "Persistence applied to the clear-sky index (SP: persistence of the clear-sky index), rather than to raw irradiance."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "smart persistence"
+    },
+    {
+     "@language": "fr",
+     "@value": "persistance intelligente"
+    },
+    {
+     "@language": "en",
+     "@value": "clear-sky-index persistence"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:forecasting"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:clear-sky-index"
+    },
+    {
+     "@id": "cv:persistence"
+    }
+   ],
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/recits/evaluer-prevision-solaire-persistance/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/stories/evaluate-solar-forecast-persistence/"
+    },
+    {
+     "@id": "https://cyrilvoyant.github.io/methods/nice-metrics.html"
+    }
+   ],
+   "dcterms:source": [
+    {
+     "@id": "https://doi.org/10.1016/j.seta.2025.104588"
+    }
+   ]
+  },
+  {
+   "@id": "cv:climatological-mean",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "climatological-mean",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Moyenne"
+    },
+    {
+     "@language": "en",
+     "@value": "Mean"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "La prévision vaut toujours la moyenne du passé."
+    },
+    {
+     "@language": "en",
+     "@value": "The forecast is always the mean of the past."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "moyenne du passé"
+    },
+    {
+     "@language": "fr",
+     "@value": "moyenne climatologique"
+    },
+    {
+     "@language": "en",
+     "@value": "mean of the past"
+    },
+    {
+     "@language": "en",
+     "@value": "climatological mean"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:forecasting"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:cliper"
+    },
+    {
+     "@id": "cv:persistence"
+    }
+   ],
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/stories/variability-memory-forecastability/"
+    },
+    {
+     "@id": "https://cyrilvoyant.github.io/methods/persistence-blend.html"
+    }
+   ],
+   "dcterms:source": [
+    {
+     "@id": "https://doi.org/10.1016/j.apm.2026.116988"
+    }
+   ]
+  },
+  {
+   "@id": "cv:convex-combination",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "convex-combination",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Combinaison convexe"
+    },
+    {
+     "@language": "en",
+     "@value": "Convex combination"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "Deux prévisions pesées par des poids positifs de somme 1, calculés sur le passé. Persistance et moyenne : CLIPER. Persistance et persistance cyclique : BLEND."
+    },
+    {
+     "@language": "en",
+     "@value": "Two forecasts weighed by positive weights adding up to 1, computed on the past. Persistence and the mean: CLIPER. Persistence and cyclic persistence: BLEND."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "poids positifs de somme 1"
+    },
+    {
+     "@language": "en",
+     "@value": "positive weights summing to 1"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:forecasting"
+    }
+   ],
+   "skos:narrower": [
+    {
+     "@id": "cv:blend"
+    },
+    {
+     "@id": "cv:cliper"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:blend"
+    },
+    {
+     "@id": "cv:cliper"
+    },
+    {
+     "@id": "cv:no-free-lunch"
+    }
+   ],
+   "skos:exactMatch": {
+    "@id": "http://www.wikidata.org/entity/Q2627315"
+   },
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/stories/variability-memory-forecastability/"
+    },
+    {
+     "@id": "https://cyrilvoyant.github.io/methods/persistence-blend.html"
+    }
+   ],
+   "dcterms:source": [
+    {
+     "@id": "https://doi.org/10.1016/j.apm.2026.116988"
+    }
+   ]
+  },
+  {
+   "@id": "cv:cliper",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "cliper",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "CLIPER"
+    },
+    {
+     "@language": "en",
+     "@value": "CLIPER"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "La combinaison convexe de la persistance et de la moyenne. Même idée que BLEND, autre partenaire."
+    },
+    {
+     "@language": "en",
+     "@value": "The convex combination of persistence and the mean. Same idea as BLEND, another partner."
+    }
+   ],
+   "schema:unitText": [
+    {
+     "@language": "fr",
+     "@value": "sans unité (poids entre 0 et 1)"
+    },
+    {
+     "@language": "en",
+     "@value": "dimensionless (weights between 0 and 1)"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:convex-combination"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:artu"
+    },
+    {
+     "@id": "cv:blend"
+    },
+    {
+     "@id": "cv:climatological-mean"
+    },
+    {
+     "@id": "cv:convex-combination"
+    },
+    {
+     "@id": "cv:persistence"
+    }
+   ],
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/outils/blend/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/latest-publications-and-news/forecasting-with-less/"
+    },
+    {
+     "@id": "https://cyrilvoyant.github.io/methods/persistence-blend.html"
+    }
+   ],
+   "dcterms:source": [
+    {
+     "@id": "https://doi.org/10.1016/j.apm.2026.116988"
+    }
+   ]
+  },
+  {
+   "@id": "cv:blend",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "blend",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "BLEND"
+    },
+    {
+     "@language": "en",
+     "@value": "BLEND"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "La combinaison convexe de la persistance et de la persistance cyclique : deux poids positifs de somme 1, λ et 1 − λ, calculés à chaque moment du cycle."
+    },
+    {
+     "@language": "en",
+     "@value": "The convex combination of persistence and cyclic persistence: two positive weights adding up to 1, λ and 1 − λ, computed at each moment of the cycle."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "persistance cyclostationnaire"
+    },
+    {
+     "@language": "en",
+     "@value": "cyclostationary persistence"
+    }
+   ],
+   "schema:unitText": [
+    {
+     "@language": "fr",
+     "@value": "sans unité (poids entre 0 et 1)"
+    },
+    {
+     "@language": "en",
+     "@value": "dimensionless (weights between 0 and 1)"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:convex-combination"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:cliper"
+    },
+    {
+     "@id": "cv:convex-combination"
+    },
+    {
+     "@id": "cv:cyclic-persistence"
+    },
+    {
+     "@id": "cv:nice"
+    },
+    {
+     "@id": "cv:persistence"
+    }
+   ],
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/outils/blend/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/latest-publications-and-news/forecasting-with-less/"
+    },
+    {
+     "@id": "https://cyrilvoyant.github.io/methods/persistence-blend.html"
+    }
+   ],
+   "dcterms:source": [
+    {
+     "@id": "https://doi.org/10.1016/j.apm.2026.116988"
+    }
+   ]
+  },
+  {
+   "@id": "cv:artu",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "artu",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "ARTU"
+    },
+    {
+     "@language": "en",
+     "@value": "ARTU"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "Une référence d'ordre deux sur le rapport à la tendance : deux autocorrélations et une table donnent ses trois poids, sur la dernière valeur, la valeur h pas plus tôt et la moyenne."
+    },
+    {
+     "@language": "en",
+     "@value": "A second-order reference on the ratio to trend: two autocorrelations and a table give its three weights, on the last value, the value h steps earlier and the mean."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "en",
+     "@value": "second-order reference"
+    }
+   ],
+   "schema:unitText": [
+    {
+     "@language": "fr",
+     "@value": "sans unité (poids)"
+    },
+    {
+     "@language": "en",
+     "@value": "dimensionless (weights)"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:forecasting"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:cliper"
+    },
+    {
+     "@id": "cv:nice"
+    },
+    {
+     "@id": "cv:persistence"
+    },
+    {
+     "@id": "cv:ratio-to-trend"
+    }
+   ],
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/outils/artu/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/latest-publications-and-news/nice-forecast-evaluation/"
+    },
+    {
+     "@id": "https://cyrilvoyant.github.io/teaching/artu-worked-example.html"
+    }
+   ],
+   "dcterms:source": [
+    {
+     "@id": "https://doi.org/10.1016/j.renene.2022.04.065"
+    }
+   ]
+  },
+  {
+   "@id": "cv:ar2",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "ar2",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "AR(2)"
+    },
+    {
+     "@language": "en",
+     "@value": "AR(2)"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "Une régression sur les deux dernières valeurs connues. Brute : sans retirer le cycle. Elle sert à mesurer ce que le retrait du cycle rapporte."
+    },
+    {
+     "@language": "en",
+     "@value": "A regression on the last two known values. Raw: without removing the cycle. It measures what removing the cycle brings."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "autorégression d'ordre 2"
+    },
+    {
+     "@language": "en",
+     "@value": "second-order autoregression"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:forecasting"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:deseasonalization"
+    },
+    {
+     "@id": "cv:elm"
+    },
+    {
+     "@id": "cv:persistence"
+    }
+   ],
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/stories/variability-memory-forecastability/"
+    },
+    {
+     "@id": "https://cyrilvoyant.github.io/methods/solar-forecasting-made-simple.html"
+    }
+   ]
+  },
+  {
+   "@id": "cv:elm",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "elm",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Extreme Learning Machine (ELM)"
+    },
+    {
+     "@language": "en",
+     "@value": "Extreme learning machine (ELM)"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "Une Extreme Learning Machine garde une couche cachée aléatoire et ajuste les sorties par une résolution analytique, ce qui évite un entraînement profond itératif."
+    },
+    {
+     "@language": "en",
+     "@value": "The Extreme Learning Machine retains a random hidden layer and fits its output coefficients analytically, avoiding iterative deep-network training."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "ELM"
+    },
+    {
+     "@language": "fr",
+     "@value": "apprentissage frugal"
+    },
+    {
+     "@language": "en",
+     "@value": "ELM"
+    },
+    {
+     "@language": "en",
+     "@value": "frugal learner"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:forecasting"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:ar2"
+    },
+    {
+     "@id": "cv:mimo"
+    },
+    {
+     "@id": "cv:persistence"
+    }
+   ],
+   "skos:exactMatch": {
+    "@id": "http://www.wikidata.org/entity/Q21948731"
+   },
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/actualites/why-extreme-learning-machines/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/latest-publications-and-news/why-extreme-learning-machines/"
+    },
+    {
+     "@id": "https://cyrilvoyant.github.io/methods/pv-elm.html"
+    }
+   ],
+   "dcterms:source": [
+    {
+     "@id": "https://doi.org/10.1016/j.apenergy.2026.127599"
+    }
+   ]
+  },
+  {
+   "@id": "cv:mimo",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "mimo",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "MIMO (multi-entrée multi-sortie)"
+    },
+    {
+     "@language": "en",
+     "@value": "MIMO (multiple-input multiple-output)"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "Une architecture multi-entrée multi-sortie : un seul modèle lit l'historique récent de plusieurs signaux et les prévoit ensemble."
+    },
+    {
+     "@language": "en",
+     "@value": "A multiple-input multiple-output architecture: one model reads the recent history of several signals and forecasts them together."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "MIMO-ELM"
+    },
+    {
+     "@language": "en",
+     "@value": "MIMO-ELM"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:forecasting"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:elm"
+    }
+   ],
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/actualites/why-extreme-learning-machines/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/latest-publications-and-news/why-extreme-learning-machines/"
+    },
+    {
+     "@id": "https://cyrilvoyant.github.io/methods/mimo-elm-energy-mix.html"
+    }
+   ],
+   "dcterms:source": [
+    {
+     "@id": "https://doi.org/10.1016/j.apenergy.2026.127599"
+    }
+   ]
+  },
+  {
+   "@id": "cv:horizon",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "horizon",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Horizon de prévision"
+    },
+    {
+     "@language": "en",
+     "@value": "Forecast horizon"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "Le nombre de pas entre la dernière valeur connue et la valeur à prévoir."
+    },
+    {
+     "@language": "en",
+     "@value": "The number of steps between the last known value and the value to forecast."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "horizon"
+    },
+    {
+     "@language": "en",
+     "@value": "horizon"
+    }
+   ],
+   "schema:unitText": [
+    {
+     "@language": "fr",
+     "@value": "pas de temps"
+    },
+    {
+     "@language": "en",
+     "@value": "time steps"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:forecasting"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:forecastability-f"
+    },
+    {
+     "@id": "cv:nice"
+    },
+    {
+     "@id": "cv:persistence"
+    }
+   ],
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/stories/variability-memory-forecastability/"
+    },
+    {
+     "@id": "https://cyrilvoyant.github.io/methods/nice-metrics.html"
+    }
+   ]
+  },
+  {
+   "@id": "cv:clear-sky-index",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "clear-sky-index",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Indice de ciel clair"
+    },
+    {
+     "@language": "en",
+     "@value": "Clear-sky index"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "En solaire, le rapport à la tendance de ciel clair : l'éclairement divisé par l'éclairement de ciel clair."
+    },
+    {
+     "@language": "en",
+     "@value": "In solar forecasting, the ratio to the clear-sky trend: irradiance divided by clear-sky irradiance."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "rapport à la tendance de ciel clair"
+    },
+    {
+     "@language": "en",
+     "@value": "ratio to the clear-sky trend"
+    }
+   ],
+   "schema:unitText": [
+    {
+     "@language": "fr",
+     "@value": "sans unité"
+    },
+    {
+     "@language": "en",
+     "@value": "dimensionless"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:ratio-to-trend"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:ratio-to-trend"
+    },
+    {
+     "@id": "cv:scv"
+    },
+    {
+     "@id": "cv:smart-persistence"
+    }
+   ],
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/stories/variability-memory-forecastability/"
+    },
+    {
+     "@id": "https://cyrilvoyant.github.io/teaching/solar-forecasting-basics.html"
+    }
+   ]
+  },
+  {
+   "@id": "cv:difference-to-trend",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "difference-to-trend",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Différence à la tendance"
+    },
+    {
+     "@language": "en",
+     "@value": "Difference to trend"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "On étudie y − c, l'écart à la tendance c (ici périodique). Adapté à un bruit additif."
+    },
+    {
+     "@language": "en",
+     "@value": "We study y − c, the gap to the cycle c. Suited to additive noise."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "en",
+     "@value": "difference to trend"
+    }
+   ],
+   "schema:unitText": [
+    {
+     "@language": "fr",
+     "@value": "celle du signal"
+    },
+    {
+     "@language": "en",
+     "@value": "same as the signal"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:forecasting"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:deseasonalization"
+    },
+    {
+     "@id": "cv:ratio-to-trend"
+    }
+   ],
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/stories/variability-memory-forecastability/"
+    }
+   ]
+  },
+  {
+   "@id": "cv:ratio-to-trend",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "ratio-to-trend",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Rapport à la tendance"
+    },
+    {
+     "@language": "en",
+     "@value": "Ratio to trend"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "On étudie y / c, avec ici une tendance périodique c. Adapté à un bruit multiplicatif. Avec c le ciel clair : l'indice de ciel clair."
+    },
+    {
+     "@language": "en",
+     "@value": "We study y / c. Suited to multiplicative noise. With c as clear sky: the clear-sky index."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "en",
+     "@value": "ratio to trend"
+    }
+   ],
+   "schema:unitText": [
+    {
+     "@language": "fr",
+     "@value": "sans unité"
+    },
+    {
+     "@language": "en",
+     "@value": "dimensionless"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:forecasting"
+    }
+   ],
+   "skos:narrower": [
+    {
+     "@id": "cv:clear-sky-index"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:artu"
+    },
+    {
+     "@id": "cv:clear-sky-index"
+    },
+    {
+     "@id": "cv:deseasonalization"
+    },
+    {
+     "@id": "cv:difference-to-trend"
+    }
+   ],
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/stories/variability-memory-forecastability/"
+    }
+   ]
+  },
+  {
+   "@id": "cv:deseasonalization",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "deseasonalization",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Désaisonnalisation"
+    },
+    {
+     "@language": "en",
+     "@value": "Deseasonalization"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "Un cycle connu ne se prévoit pas : on le retire, on prévoit le reste, on le remet."
+    },
+    {
+     "@language": "en",
+     "@value": "A known cycle is not forecast: remove it, forecast the rest, put it back."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "retrait du cycle"
+    },
+    {
+     "@language": "en",
+     "@value": "removing the cycle"
+    },
+    {
+     "@language": "en",
+     "@value": "seasonal adjustment"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:forecasting"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:ar2"
+    },
+    {
+     "@id": "cv:difference-to-trend"
+    },
+    {
+     "@id": "cv:ratio-to-trend"
+    }
+   ],
+   "skos:exactMatch": {
+    "@id": "http://www.wikidata.org/entity/Q622893"
+   },
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/stories/variability-memory-forecastability/"
+    },
+    {
+     "@id": "https://cyrilvoyant.github.io/methods/make-stationary.html"
+    }
+   ]
+  },
+  {
+   "@id": "cv:rmse",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "rmse",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "RMSE"
+    },
+    {
+     "@language": "en",
+     "@value": "RMSE"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "La racine de l'erreur quadratique moyenne. Elle donne plus de poids aux grandes erreurs que la MAE."
+    },
+    {
+     "@language": "en",
+     "@value": "The root mean squared error. It gives large errors more weight than the MAE."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "racine de l'erreur quadratique moyenne"
+    },
+    {
+     "@language": "en",
+     "@value": "root mean squared error"
+    }
+   ],
+   "schema:unitText": [
+    {
+     "@language": "fr",
+     "@value": "celle du signal (W/m² pour l'éclairement)"
+    },
+    {
+     "@language": "en",
+     "@value": "same as the signal (W/m² for irradiance)"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:forecast-evaluation"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:forecast-evaluation"
+    },
+    {
+     "@id": "cv:gamma-index"
+    },
+    {
+     "@id": "cv:mae"
+    },
+    {
+     "@id": "cv:nice"
+    },
+    {
+     "@id": "cv:nrmse"
+    }
+   ],
+   "skos:exactMatch": {
+    "@id": "http://www.wikidata.org/entity/Q29037"
+   },
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/recits/evaluer-prevision-solaire-persistance/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/stories/evaluate-solar-forecast-persistence/"
+    },
+    {
+     "@id": "https://cyrilvoyant.github.io/methods/nice-metrics.html"
+    }
+   ],
+   "dcterms:source": [
+    {
+     "@id": "https://doi.org/10.1016/j.seta.2025.104588"
+    }
+   ]
+  },
+  {
+   "@id": "cv:mae",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "mae",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "MAE"
+    },
+    {
+     "@language": "en",
+     "@value": "MAE"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "L'erreur absolue moyenne : la moyenne des écarts en valeur absolue entre prévision et observation."
+    },
+    {
+     "@language": "en",
+     "@value": "The mean absolute error: the average of the absolute gaps between forecast and observation."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "erreur absolue moyenne"
+    },
+    {
+     "@language": "en",
+     "@value": "mean absolute error"
+    }
+   ],
+   "schema:unitText": [
+    {
+     "@language": "fr",
+     "@value": "celle du signal"
+    },
+    {
+     "@language": "en",
+     "@value": "same as the signal"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:forecast-evaluation"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:forecast-evaluation"
+    },
+    {
+     "@id": "cv:nice"
+    },
+    {
+     "@id": "cv:nmae"
+    },
+    {
+     "@id": "cv:rmse"
+    }
+   ],
+   "skos:exactMatch": {
+    "@id": "http://www.wikidata.org/entity/Q6803609"
+   },
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/recits/evaluer-prevision-solaire-persistance/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/stories/evaluate-solar-forecast-persistence/"
+    },
+    {
+     "@id": "https://cyrilvoyant.github.io/methods/nice-metrics.html"
+    }
+   ],
+   "dcterms:source": [
+    {
+     "@id": "https://doi.org/10.1016/j.seta.2025.104588"
+    }
+   ]
+  },
+  {
+   "@id": "cv:nrmse",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "nrmse",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "nRMSE"
+    },
+    {
+     "@language": "en",
+     "@value": "nRMSE"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "La RMSE rapportée à la moyenne du signal (0 pour une prévision parfaite)."
+    },
+    {
+     "@language": "en",
+     "@value": "The RMSE divided by the mean of the signal (0 for a perfect forecast)."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "RMSE normalisée"
+    },
+    {
+     "@language": "en",
+     "@value": "normalized RMSE"
+    }
+   ],
+   "schema:unitText": [
+    {
+     "@language": "fr",
+     "@value": "sans unité (souvent en %)"
+    },
+    {
+     "@language": "en",
+     "@value": "dimensionless (often in %)"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:forecast-evaluation"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:nice"
+    },
+    {
+     "@id": "cv:nmae"
+    },
+    {
+     "@id": "cv:rmse"
+    }
+   ],
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/stories/variability-memory-forecastability/"
+    }
+   ]
+  },
+  {
+   "@id": "cv:nmae",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "nmae",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "nMAE"
+    },
+    {
+     "@language": "en",
+     "@value": "nMAE"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "L'erreur absolue moyenne rapportée à la moyenne du signal."
+    },
+    {
+     "@language": "en",
+     "@value": "The mean absolute error divided by the mean of the signal."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "MAE normalisée"
+    },
+    {
+     "@language": "en",
+     "@value": "normalized MAE"
+    }
+   ],
+   "schema:unitText": [
+    {
+     "@language": "fr",
+     "@value": "sans unité (souvent en %)"
+    },
+    {
+     "@language": "en",
+     "@value": "dimensionless (often in %)"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:forecast-evaluation"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:mae"
+    },
+    {
+     "@id": "cv:nrmse"
+    }
+   ],
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/stories/variability-memory-forecastability/"
+    }
+   ]
+  },
+  {
+   "@id": "cv:nice",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "nice",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "NICE"
+    },
+    {
+     "@language": "en",
+     "@value": "NICE"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "L'erreur de la prévision divisée par celle de la persistance, aux mêmes dates et au même horizon. 0 : parfaite. 1 : autant d'erreur que la persistance. Au-dessus de 1, on l'écrit « > 1 » : moins bonne que la persistance."
+    },
+    {
+     "@language": "en",
+     "@value": "The forecast error divided by that of persistence, at the same dates and horizon. 0: perfect. 1: as much error as persistence. Above 1 it is written “> 1”: worse than persistence."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "NICEᵏ"
+    },
+    {
+     "@language": "fr",
+     "@value": "NICEΣ"
+    },
+    {
+     "@language": "fr",
+     "@value": "indice NICE"
+    },
+    {
+     "@language": "en",
+     "@value": "NICEᵏ"
+    },
+    {
+     "@language": "en",
+     "@value": "NICEΣ"
+    },
+    {
+     "@language": "en",
+     "@value": "NICE index"
+    }
+   ],
+   "schema:unitText": [
+    {
+     "@language": "fr",
+     "@value": "sans unité"
+    },
+    {
+     "@language": "en",
+     "@value": "dimensionless"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:forecast-evaluation"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:artu"
+    },
+    {
+     "@id": "cv:blend"
+    },
+    {
+     "@id": "cv:forecast-evaluation"
+    },
+    {
+     "@id": "cv:horizon"
+    },
+    {
+     "@id": "cv:mae"
+    },
+    {
+     "@id": "cv:nrmse"
+    },
+    {
+     "@id": "cv:persistence"
+    },
+    {
+     "@id": "cv:rmse"
+    }
+   ],
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/outils/nice/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/latest-publications-and-news/nice-forecast-evaluation/"
+    },
+    {
+     "@id": "https://cyrilvoyant.github.io/methods/nice-metrics.html"
+    }
+   ],
+   "dcterms:source": [
+    {
+     "@id": "https://doi.org/10.1016/j.seta.2025.104588"
+    }
+   ]
+  },
+  {
+   "@id": "cv:scv",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "scv",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "sCV"
+    },
+    {
+     "@language": "en",
+     "@value": "sCV"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "La racine de l'écart quadratique moyen au ciel clair, rapportée à la racine de la moyenne du carré du ciel clair. 0 : ciel clair. Environ 1 : chaque heure clair ou couvert à pile ou face. Ce n'est pas un maximum."
+    },
+    {
+     "@language": "en",
+     "@value": "The root of the mean squared departure from clear sky, divided by the root of the mean square of clear sky. 0: clear sky. About 1: each hour clear or overcast on a coin toss. It is not a maximum."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "coefficient de variation stochastique"
+    },
+    {
+     "@language": "en",
+     "@value": "stochastic coefficient of variation"
+    }
+   ],
+   "schema:unitText": [
+    {
+     "@language": "fr",
+     "@value": "sans unité"
+    },
+    {
+     "@language": "en",
+     "@value": "dimensionless"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:forecasting"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:clear-sky-index"
+    },
+    {
+     "@id": "cv:forecastability-f"
+    },
+    {
+     "@id": "cv:malr"
+    }
+   ],
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/outils/variabilite-previsibilite/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/latest-publications-and-news/why-forecast-solar-power/"
+    },
+    {
+     "@id": "https://cyrilvoyant.github.io/methods/solar-variability-scv.html"
+    }
+   ],
+   "dcterms:source": [
+    {
+     "@id": "https://doi.org/10.1016/j.renene.2025.123913"
+    }
+   ]
+  },
+  {
+   "@id": "cv:forecastability-f",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "forecastability-f",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Prévisibilité F"
+    },
+    {
+     "@language": "en",
+     "@value": "Forecastability F"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "F = 1 + sCV × (ρmax − 1), comprise entre 1 − sCV et 1. Plus elle est haute, plus cet horizon est facile à prévoir."
+    },
+    {
+     "@language": "en",
+     "@value": "F = 1 + sCV × (ρmax − 1), between 1 − sCV and 1. The higher it is, the easier that horizon is to forecast."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "indicateur F"
+    },
+    {
+     "@language": "fr",
+     "@value": "prévisibilité"
+    },
+    {
+     "@language": "en",
+     "@value": "F indicator"
+    },
+    {
+     "@language": "en",
+     "@value": "forecastability"
+    }
+   ],
+   "schema:unitText": [
+    {
+     "@language": "fr",
+     "@value": "sans unité"
+    },
+    {
+     "@language": "en",
+     "@value": "dimensionless"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:forecasting"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:horizon"
+    },
+    {
+     "@id": "cv:malr"
+    },
+    {
+     "@id": "cv:memory-phi"
+    },
+    {
+     "@id": "cv:scv"
+    }
+   ],
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/outils/variabilite-previsibilite/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/latest-publications-and-news/why-forecast-solar-power/"
+    },
+    {
+     "@id": "https://cyrilvoyant.github.io/methods/solar-variability-scv.html"
+    }
+   ],
+   "dcterms:source": [
+    {
+     "@id": "https://doi.org/10.1016/j.renene.2025.123913"
+    }
+   ]
+  },
+  {
+   "@id": "cv:gamma-index",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "gamma-index",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Indice γ"
+    },
+    {
+     "@language": "en",
+     "@value": "γ-index"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "Pour chaque pixel prévu, la distance à l'observation la plus proche dans l'espace, le temps et l'intensité, chacun divisé par sa tolérance. γ ≤ 1 : accepté."
+    },
+    {
+     "@language": "en",
+     "@value": "For each forecast pixel, the distance to the nearest observation in space, time and intensity, each divided by its tolerance. γ ≤ 1: accepted."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "indice gamma"
+    },
+    {
+     "@language": "en",
+     "@value": "gamma index"
+    }
+   ],
+   "schema:unitText": [
+    {
+     "@language": "fr",
+     "@value": "sans unité"
+    },
+    {
+     "@language": "en",
+     "@value": "dimensionless"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:forecast-evaluation"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:rmse"
+    }
+   ],
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/outils/indice-gamma/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/latest-publications-and-news/gamma-index-forecast-validation/"
+    },
+    {
+     "@id": "https://cyrilvoyant.github.io/methods/gamma-index.html"
+    }
+   ],
+   "dcterms:source": [
+    {
+     "@id": "https://doi.org/10.1016/j.ijforecast.2026.03.002"
+    }
+   ]
+  },
+  {
+   "@id": "cv:brownian-motion",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "brownian-motion",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Mouvement brownien"
+    },
+    {
+     "@language": "en",
+     "@value": "Brownian motion"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "Chaque valeur est la précédente plus un tirage au hasard : mémoire φ = 1. La persistance y est la meilleure prévision."
+    },
+    {
+     "@language": "en",
+     "@value": "Each value is the previous one plus a random draw: memory φ = 1. Persistence wins on it."
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:forecasting"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:memory-phi"
+    },
+    {
+     "@id": "cv:persistence"
+    }
+   ],
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/stories/variability-memory-forecastability/"
+    }
+   ]
+  },
+  {
+   "@id": "cv:memory-phi",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "memory-phi",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Mémoire φ"
+    },
+    {
+     "@language": "en",
+     "@value": "Memory φ"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "La corrélation entre deux valeurs voisines du bruit. 0 : aucune. 1 : totale."
+    },
+    {
+     "@language": "en",
+     "@value": "The correlation between two neighbouring values of the noise. 0: none. 1: total."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "mémoire du bruit"
+    },
+    {
+     "@language": "en",
+     "@value": "noise memory"
+    }
+   ],
+   "schema:unitText": [
+    {
+     "@language": "fr",
+     "@value": "sans unité (entre 0 et 1)"
+    },
+    {
+     "@language": "en",
+     "@value": "dimensionless (between 0 and 1)"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:forecasting"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:brownian-motion"
+    },
+    {
+     "@id": "cv:forecastability-f"
+    }
+   ],
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/stories/variability-memory-forecastability/"
+    }
+   ]
+  },
+  {
+   "@id": "cv:malr",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "malr",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "MALR (mean absolute log return)"
+    },
+    {
+     "@language": "en",
+     "@value": "MALR (mean absolute log return)"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "Un paramètre issu de l'économétrie qui décrit l'amplitude des changements relatifs. Ce diagnostic empirique ne dispense pas de tester le modèle sur le site et à l'horizon visés."
+    },
+    {
+     "@language": "en",
+     "@value": "A parameter borrowed from econometrics that describes the size of relative changes. This empirical diagnostic does not replace testing the model at the intended site and horizon."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "rendement logarithmique absolu moyen"
+    },
+    {
+     "@language": "en",
+     "@value": "mean absolute log return"
+    }
+   ],
+   "schema:unitText": [
+    {
+     "@language": "fr",
+     "@value": "sans unité"
+    },
+    {
+     "@language": "en",
+     "@value": "dimensionless"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:forecasting"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:forecastability-f"
+    },
+    {
+     "@id": "cv:scv"
+    }
+   ],
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/stories/variability-memory-forecastability/"
+    }
+   ],
+   "dcterms:source": [
+    {
+     "@id": "https://doi.org/10.1016/j.energy.2015.07.089"
+    }
+   ]
+  },
+  {
+   "@id": "cv:no-free-lunch",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "no-free-lunch",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "« No free lunch »"
+    },
+    {
+     "@language": "en",
+     "@value": "“No free lunch”"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "Sous une moyenne uniforme sur l'ensemble des fonctions d'un problème fini, les performances moyennes des algorithmes de recherche considérés coïncident. Ce cadre précis n'est pas la distribution des problèmes solaires réels."
+    },
+    {
+     "@language": "en",
+     "@value": "Under a uniform average over all functions of a finite problem, the average performance of the search algorithms considered coincides. This precise framework is not the distribution of real solar problems."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "théorèmes de no free lunch"
+    },
+    {
+     "@language": "en",
+     "@value": "no free lunch theorems"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:forecasting"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:convex-combination"
+    },
+    {
+     "@id": "cv:persistence"
+    }
+   ],
+   "skos:exactMatch": {
+    "@id": "http://www.wikidata.org/entity/Q255847"
+   },
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/stories/variability-memory-forecastability/"
+    }
+   ]
+  },
+  {
+   "@id": "cv:simulated-data",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "simulated-data",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Données simulées"
+    },
+    {
+     "@language": "en",
+     "@value": "Simulated data"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "Quand on n'a pas encore de mesures, aucun modèle ne peut être entraîné ni validé, mais on peut simuler ce que l'on sait : une première estimation, pas une mesure."
+    },
+    {
+     "@language": "en",
+     "@value": "When there are no measurements yet, no model can be trained or validated, but what is known can be simulated: a first estimate, not a measurement."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "données synthétiques"
+    },
+    {
+     "@language": "en",
+     "@value": "synthetic data"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:forecasting"
+    }
+   ],
+   "skos:narrower": [
+    {
+     "@id": "cv:tls"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:monte-carlo"
+    },
+    {
+     "@id": "cv:percentile-band-p10-p90"
+    },
+    {
+     "@id": "cv:tls"
+    }
+   ],
+   "skos:exactMatch": {
+    "@id": "http://www.wikidata.org/entity/Q7662746"
+   },
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/recits/tunnel-load-simulator/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/stories/tunnel-load-simulator/"
+    },
+    {
+     "@id": "https://cyrilvoyant.github.io/tools/tunnel-load-simulator.html"
+    }
+   ],
+   "dcterms:source": [
+    {
+     "@id": "https://doi.org/10.1016/j.softx.2026.102946"
+    }
+   ]
+  },
+  {
+   "@id": "cv:monte-carlo",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "monte-carlo",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Monte Carlo"
+    },
+    {
+     "@language": "en",
+     "@value": "Monte Carlo"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "Simuler de nombreuses fois avec des tirages aléatoires différents. Plus d'histoires réduisent l'erreur statistique, comme 1/√N pour N histoires ; elles ne corrigent ni une mauvaise géométrie ni de mauvaises données physiques."
+    },
+    {
+     "@language": "en",
+     "@value": "Simulating many times with different random draws. More histories reduce the statistical error, as 1/√N for N histories; they correct neither a wrong geometry nor wrong physical data."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "méthode de Monte-Carlo"
+    },
+    {
+     "@language": "fr",
+     "@value": "Monte-Carlo"
+    },
+    {
+     "@language": "en",
+     "@value": "Monte Carlo method"
+    },
+    {
+     "@language": "en",
+     "@value": "Monte-Carlo"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:medical-physics"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:bnct"
+    },
+    {
+     "@id": "cv:cross-section"
+    },
+    {
+     "@id": "cv:mean-free-path"
+    },
+    {
+     "@id": "cv:medical-physics"
+    },
+    {
+     "@id": "cv:percentile-band-p10-p90"
+    },
+    {
+     "@id": "cv:simulated-data"
+    },
+    {
+     "@id": "cv:tls"
+    }
+   ],
+   "skos:exactMatch": {
+    "@id": "http://www.wikidata.org/entity/Q232207"
+   },
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/recits/neutrons-atmospheriques-bnct/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/stories/atmospheric-neutrons-bnct/"
+    },
+    {
+     "@id": "https://cyrilvoyant.github.io/tools/tunnel-load-simulator.html"
+    }
+   ],
+   "dcterms:source": [
+    {
+     "@id": "https://doi.org/10.1016/j.rpor.2010.11.002"
+    },
+    {
+     "@id": "https://doi.org/10.1016/j.softx.2026.102946"
+    }
+   ]
+  },
+  {
+   "@id": "cv:percentile-band-p10-p90",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "percentile-band-p10-p90",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Bande P10–P90"
+    },
+    {
+     "@language": "en",
+     "@value": "P10–P90 band"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "P10 et P90 sont les centiles 10 et 90 des résultats simulés : la bande P10–P90 contient les 80 % centraux. Elle décrit la variation entre simulations pour les paramètres choisis, pas toute l'incertitude sur un système réel."
+    },
+    {
+     "@language": "en",
+     "@value": "P10 and P90 are the 10th and 90th percentiles of the simulated results: the P10–P90 band contains the central 80 %. It describes variation between runs under the chosen parameters, not all uncertainty about a real system."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "P10 et P90"
+    },
+    {
+     "@language": "fr",
+     "@value": "médiane et bande P10–P90"
+    },
+    {
+     "@language": "en",
+     "@value": "P10 and P90"
+    },
+    {
+     "@language": "en",
+     "@value": "median and P10–P90 band"
+    }
+   ],
+   "schema:unitText": [
+    {
+     "@language": "fr",
+     "@value": "celle de la grandeur simulée"
+    },
+    {
+     "@language": "en",
+     "@value": "same as the simulated quantity"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:forecasting"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:monte-carlo"
+    },
+    {
+     "@id": "cv:simulated-data"
+    },
+    {
+     "@id": "cv:tls"
+    }
+   ],
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/recits/tunnel-load-simulator/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/stories/tunnel-load-simulator/"
+    },
+    {
+     "@id": "https://cyrilvoyant.github.io/tools/tunnel-load-simulator.html"
+    }
+   ],
+   "dcterms:source": [
+    {
+     "@id": "https://doi.org/10.1016/j.softx.2026.102946"
+    }
+   ]
+  },
+  {
+   "@id": "cv:tls",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "tls",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Tunnel Load Simulator (TLS)"
+    },
+    {
+     "@language": "en",
+     "@value": "Tunnel Load Simulator (TLS)"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "Une application open source qui construit la consommation électrique d'un tunnel routier à partir de sa géométrie, du trafic, de l'éclairage et de la ventilation, dit à quel point elle est incertaine et en énonce les limites."
+    },
+    {
+     "@language": "en",
+     "@value": "An open-source application that builds the electricity demand of a road tunnel from its geometry, traffic, lighting and ventilation, says how uncertain it is and states its limits."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "TLS"
+    },
+    {
+     "@language": "fr",
+     "@value": "simulateur de charge de tunnel"
+    },
+    {
+     "@language": "en",
+     "@value": "TLS"
+    },
+    {
+     "@language": "en",
+     "@value": "tunnel load simulator"
+    }
+   ],
+   "schema:unitText": [
+    {
+     "@language": "fr",
+     "@value": "MWh par an, kW"
+    },
+    {
+     "@language": "en",
+     "@value": "MWh per year, kW"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:simulated-data"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:monte-carlo"
+    },
+    {
+     "@id": "cv:percentile-band-p10-p90"
+    },
+    {
+     "@id": "cv:simulated-data"
+    }
+   ],
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/recits/tunnel-load-simulator/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/stories/tunnel-load-simulator/"
+    },
+    {
+     "@id": "https://cyrilvoyant.github.io/tools/tunnel-load-simulator.html"
+    }
+   ],
+   "dcterms:source": [
+    {
+     "@id": "https://doi.org/10.1016/j.softx.2026.102946"
+    }
+   ]
+  },
+  {
+   "@id": "cv:lq-model",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "lq-model",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Modèle linéaire-quadratique (LQ)"
+    },
+    {
+     "@language": "en",
+     "@value": "Linear-quadratic model (LQ)"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "La BED d'une fraction croît en courbe avec la dose, à toutes les doses : la courbe LQ continue de s'infléchir vers le haut quand la dose par fraction augmente."
+    },
+    {
+     "@language": "en",
+     "@value": "The BED of a fraction grows along a curve with dose, at all doses: the LQ curve keeps bending upward as the dose per fraction grows."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "LQ"
+    },
+    {
+     "@language": "en",
+     "@value": "LQ"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:radiotherapy"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:alpha-beta"
+    },
+    {
+     "@id": "cv:bed"
+    },
+    {
+     "@id": "cv:lql-equiv"
+    },
+    {
+     "@id": "cv:lql-model"
+    },
+    {
+     "@id": "cv:radiotherapy"
+    }
+   ],
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/outils/doses-lq-lql/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/stories/lql-equiv/"
+    },
+    {
+     "@id": "https://cyrilvoyant.github.io/tools/lql-equiv.html"
+    }
+   ],
+   "dcterms:source": [
+    {
+     "@id": "https://doi.org/10.1016/j.clon.2025.103893"
+    },
+    {
+     "@id": "https://doi.org/10.1016/j.rpor.2013.08.004"
+    }
+   ]
+  },
+  {
+   "@id": "cv:lql-model",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "lql-model",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Modèle linéaire-quadratique-linéaire (LQL)"
+    },
+    {
+     "@language": "en",
+     "@value": "Linear-quadratic-linear model (LQL)"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "La même courbe que le LQ jusqu'à la dose de transition, puis une droite. Sous la dose de transition, les deux modèles sont identiques."
+    },
+    {
+     "@language": "en",
+     "@value": "The same curve as LQ up to the transition dose, then a straight line. Below the transition dose, the two models are identical."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "LQL"
+    },
+    {
+     "@language": "en",
+     "@value": "LQL"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:radiotherapy"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:bed"
+    },
+    {
+     "@id": "cv:lq-model"
+    },
+    {
+     "@id": "cv:lql-equiv"
+    },
+    {
+     "@id": "cv:transition-dose"
+    }
+   ],
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/outils/doses-lq-lql/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/stories/lql-equiv/"
+    },
+    {
+     "@id": "https://cyrilvoyant.github.io/tools/lql-equiv.html"
+    }
+   ],
+   "dcterms:source": [
+    {
+     "@id": "https://doi.org/10.1016/j.clon.2025.103893"
+    },
+    {
+     "@id": "https://doi.org/10.1016/j.softx.2026.103085"
+    }
+   ]
+  },
+  {
+   "@id": "cv:bed",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "bed",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Dose biologique efficace (BED)"
+    },
+    {
+     "@language": "en",
+     "@value": "Biologically effective dose (BED)"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "Dose en grays qui permet de comparer des fractionnements différents. Pour n fractions de dose d, le modèle LQ donne BED = n · d · (1 + d / (α/β))."
+    },
+    {
+     "@language": "en",
+     "@value": "Dose in grays that makes different fractionations comparable. For n fractions of dose d, the LQ model gives BED = n · d · (1 + d / (α/β))."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "BED"
+    },
+    {
+     "@language": "fr",
+     "@value": "dose biologiquement efficace"
+    },
+    {
+     "@language": "en",
+     "@value": "BED"
+    },
+    {
+     "@language": "en",
+     "@value": "biological effective dose"
+    }
+   ],
+   "schema:unitText": [
+    {
+     "@language": "fr",
+     "@value": "gray (Gy)"
+    },
+    {
+     "@language": "en",
+     "@value": "gray (Gy)"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:radiotherapy"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:alpha-beta"
+    },
+    {
+     "@id": "cv:eqd2"
+    },
+    {
+     "@id": "cv:fractionation"
+    },
+    {
+     "@id": "cv:gray"
+    },
+    {
+     "@id": "cv:lq-model"
+    },
+    {
+     "@id": "cv:lql-equiv"
+    },
+    {
+     "@id": "cv:lql-model"
+    },
+    {
+     "@id": "cv:radiotherapy"
+    }
+   ],
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/outils/doses-lq-lql/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/stories/lql-equiv/"
+    },
+    {
+     "@id": "https://cyrilvoyant.github.io/tools/lql-equiv.html"
+    }
+   ],
+   "dcterms:source": [
+    {
+     "@id": "https://doi.org/10.1016/j.clon.2025.103893"
+    },
+    {
+     "@id": "https://doi.org/10.1016/j.softx.2026.103085"
+    }
+   ]
+  },
+  {
+   "@id": "cv:eqd2",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "eqd2",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Dose équivalente en fractions de 2 Gy (EQD2)"
+    },
+    {
+     "@language": "en",
+     "@value": "Equivalent dose in 2 Gy fractions (EQD2)"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "La traduction de la BED en une dose délivrée par fractions de 2 Gy : EQD2 = BED / (1 + 2/(α/β))."
+    },
+    {
+     "@language": "en",
+     "@value": "The translation of the BED into a dose given in 2 Gy fractions: EQD2 = BED / (1 + 2/(α/β))."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "EQD2"
+    },
+    {
+     "@language": "en",
+     "@value": "EQD2"
+    }
+   ],
+   "schema:unitText": [
+    {
+     "@language": "fr",
+     "@value": "gray (Gy)"
+    },
+    {
+     "@language": "en",
+     "@value": "gray (Gy)"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:radiotherapy"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:alpha-beta"
+    },
+    {
+     "@id": "cv:bed"
+    },
+    {
+     "@id": "cv:fractionation"
+    },
+    {
+     "@id": "cv:lql-equiv"
+    }
+   ],
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/outils/doses-lq-lql/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/stories/lql-equiv/"
+    },
+    {
+     "@id": "https://cyrilvoyant.github.io/tools/lql-equiv.html"
+    }
+   ],
+   "dcterms:source": [
+    {
+     "@id": "https://doi.org/10.1016/j.clon.2025.103893"
+    },
+    {
+     "@id": "https://doi.org/10.1016/j.softx.2026.103085"
+    }
+   ]
+  },
+  {
+   "@id": "cv:alpha-beta",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "alpha-beta",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Rapport α/β"
+    },
+    {
+     "@language": "en",
+     "@value": "α/β ratio"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "Paramètre propre au tissu : il décrit la sensibilité d'un tissu à la taille de chaque fraction. Plus il est faible, plus le tissu est sensible à la dose par fraction (environ 3,9 Gy pour le rectum)."
+    },
+    {
+     "@language": "en",
+     "@value": "A tissue-specific parameter: it describes how sensitive a tissue is to the size of each fraction. The lower it is, the more sensitive the tissue is to the dose per fraction (about 3.9 Gy for the rectum)."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "α/β"
+    },
+    {
+     "@language": "en",
+     "@value": "α/β"
+    }
+   ],
+   "schema:unitText": [
+    {
+     "@language": "fr",
+     "@value": "gray (Gy)"
+    },
+    {
+     "@language": "en",
+     "@value": "gray (Gy)"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:radiotherapy"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:bed"
+    },
+    {
+     "@id": "cv:eqd2"
+    },
+    {
+     "@id": "cv:lq-model"
+    },
+    {
+     "@id": "cv:transition-dose"
+    }
+   ],
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/outils/doses-lq-lql/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/stories/lql-equiv/"
+    },
+    {
+     "@id": "https://cyrilvoyant.github.io/tools/lql-equiv.html"
+    }
+   ],
+   "dcterms:source": [
+    {
+     "@id": "https://doi.org/10.1016/j.clon.2025.103893"
+    }
+   ]
+  },
+  {
+   "@id": "cv:transition-dose",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "transition-dose",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Dose de transition dT"
+    },
+    {
+     "@language": "en",
+     "@value": "Transition dose dT"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "La dose par fraction où le modèle LQL passe de la courbe à la droite (7,8 Gy pour le rectum). Dans la bibliothèque de LQL-Equiv, elle vaut 2 α/β."
+    },
+    {
+     "@language": "en",
+     "@value": "The dose per fraction at which the LQL model changes from a curve to a straight line (7.8 Gy for the rectum). In the LQL-Equiv library it equals 2 α/β."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "dT"
+    },
+    {
+     "@language": "en",
+     "@value": "dT"
+    }
+   ],
+   "schema:unitText": [
+    {
+     "@language": "fr",
+     "@value": "gray (Gy)"
+    },
+    {
+     "@language": "en",
+     "@value": "gray (Gy)"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:radiotherapy"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:alpha-beta"
+    },
+    {
+     "@id": "cv:lql-model"
+    }
+   ],
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/outils/doses-lq-lql/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/stories/lql-equiv/"
+    },
+    {
+     "@id": "https://cyrilvoyant.github.io/tools/lql-equiv.html"
+    }
+   ],
+   "dcterms:source": [
+    {
+     "@id": "https://doi.org/10.1016/j.clon.2025.103893"
+    }
+   ]
+  },
+  {
+   "@id": "cv:fractionation",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "fractionation",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Fractionnement"
+    },
+    {
+     "@language": "en",
+     "@value": "Fractionation"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "Pour n fractions (le nombre de séances), chacune délivrant une dose d en grays, la dose physique ne suffit pas à prédire l'effet biologique, qui dépend aussi de la dose reçue à chaque fraction."
+    },
+    {
+     "@language": "en",
+     "@value": "For n fractions (the number of treatment sessions), each delivering a dose d in grays, physical dose is not enough to predict the biological effect, which also depends on the dose received at each fraction."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "fractions"
+    },
+    {
+     "@language": "fr",
+     "@value": "schéma de traitement"
+    },
+    {
+     "@language": "en",
+     "@value": "fractions"
+    },
+    {
+     "@language": "en",
+     "@value": "treatment schedule"
+    }
+   ],
+   "schema:unitText": [
+    {
+     "@language": "fr",
+     "@value": "n fractions de d Gy"
+    },
+    {
+     "@language": "en",
+     "@value": "n fractions of d Gy"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:radiotherapy"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:bed"
+    },
+    {
+     "@id": "cv:eqd2"
+    },
+    {
+     "@id": "cv:gray"
+    }
+   ],
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/recits/lql-equiv/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/stories/lql-equiv/"
+    },
+    {
+     "@id": "https://cyrilvoyant.github.io/tools/lql-equiv.html"
+    }
+   ],
+   "dcterms:source": [
+    {
+     "@id": "https://doi.org/10.1016/j.clon.2025.103893"
+    }
+   ]
+  },
+  {
+   "@id": "cv:gray",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "gray",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Gray (Gy)"
+    },
+    {
+     "@language": "en",
+     "@value": "Gray (Gy)"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "L'unité de dose physique absorbée : l'énergie déposée par kilogramme de tissu."
+    },
+    {
+     "@language": "en",
+     "@value": "The unit of absorbed physical dose: the energy deposited per kilogram of tissue."
+    }
+   ],
+   "schema:unitText": [
+    {
+     "@language": "fr",
+     "@value": "J/kg"
+    },
+    {
+     "@language": "en",
+     "@value": "J/kg"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:radiotherapy"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:bed"
+    },
+    {
+     "@id": "cv:fractionation"
+    }
+   ],
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/recits/lql-equiv/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/stories/lql-equiv/"
+    }
+   ]
+  },
+  {
+   "@id": "cv:lql-equiv",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "lql-equiv",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "LQL-Equiv"
+    },
+    {
+     "@language": "en",
+     "@value": "LQL-Equiv"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "Un calculateur gratuit et open source (MIT) de BED et d'EQD2 avec les modèles LQ et LQL, dans le navigateur. Outil de recherche et d'enseignement, pas un dispositif médical."
+    },
+    {
+     "@language": "en",
+     "@value": "A free, open-source (MIT) calculator of BED and EQD2 under the LQ and LQL models, in the browser. A research and teaching tool, not a medical device."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "calculateur de BED et d'EQD2"
+    },
+    {
+     "@language": "en",
+     "@value": "BED and EQD2 calculator"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:radiotherapy"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:bed"
+    },
+    {
+     "@id": "cv:eqd2"
+    },
+    {
+     "@id": "cv:lq-model"
+    },
+    {
+     "@id": "cv:lql-model"
+    }
+   ],
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/recits/lql-equiv/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/stories/lql-equiv/"
+    },
+    {
+     "@id": "https://cyrilvoyant.github.io/tools/lql-equiv.html"
+    }
+   ],
+   "dcterms:source": [
+    {
+     "@id": "https://doi.org/10.1016/j.softx.2026.103085"
+    },
+    {
+     "@id": "https://doi.org/10.1016/j.clon.2025.103893"
+    },
+    {
+     "@id": "https://doi.org/10.1016/j.rpor.2013.08.004"
+    }
+   ]
+  },
+  {
+   "@id": "cv:bnct",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "bnct",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "BNCT (thérapie par capture neutronique du bore)"
+    },
+    {
+     "@language": "en",
+     "@value": "BNCT (boron neutron capture therapy)"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "Un composé transporte du bore-10 vers les tissus visés ; quand ce bore capture un neutron, une particule alpha et un noyau de lithium-7 déposent leur énergie sur quelques micromètres."
+    },
+    {
+     "@language": "en",
+     "@value": "A compound carries boron-10 to the target tissue; when this boron captures a neutron, an alpha particle and a lithium-7 nucleus deposit their energy over a few micrometres."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "thérapie par capture neutronique du bore"
+    },
+    {
+     "@language": "en",
+     "@value": "boron neutron capture therapy"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:medical-physics"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:cross-section"
+    },
+    {
+     "@id": "cv:monte-carlo"
+    }
+   ],
+   "skos:exactMatch": {
+    "@id": "http://www.wikidata.org/entity/Q71676169"
+   },
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/recits/neutrons-atmospheriques-bnct/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/stories/atmospheric-neutrons-bnct/"
+    }
+   ],
+   "dcterms:source": [
+    {
+     "@id": "https://doi.org/10.1016/j.rpor.2010.11.002"
+    }
+   ]
+  },
+  {
+   "@id": "cv:cross-section",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "cross-section",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Section efficace"
+    },
+    {
+     "@language": "en",
+     "@value": "Cross section"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "Elle dit à quel point un noyau réagit facilement avec un neutron d'énergie E. Elle s'exprime comme une surface, souvent en barns, sans être la taille du noyau ni, à elle seule, la probabilité de capture."
+    },
+    {
+     "@language": "en",
+     "@value": "It says how readily a nucleus reacts with a neutron of energy E. It is expressed as an area, often in barns, without being the size of the nucleus or, by itself, the probability of capture."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "σ(E)"
+    },
+    {
+     "@language": "en",
+     "@value": "neutron cross section"
+    },
+    {
+     "@language": "en",
+     "@value": "σ(E)"
+    }
+   ],
+   "schema:unitText": [
+    {
+     "@language": "fr",
+     "@value": "barn (surface)"
+    },
+    {
+     "@language": "en",
+     "@value": "barn (area)"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:medical-physics"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:bnct"
+    },
+    {
+     "@id": "cv:macroscopic-cross-section"
+    },
+    {
+     "@id": "cv:mean-free-path"
+    },
+    {
+     "@id": "cv:monte-carlo"
+    }
+   ],
+   "skos:exactMatch": {
+    "@id": "http://www.wikidata.org/entity/Q751259"
+   },
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/recits/neutrons-atmospheriques-bnct/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/stories/atmospheric-neutrons-bnct/"
+    }
+   ],
+   "dcterms:source": [
+    {
+     "@id": "https://doi.org/10.1016/j.rpor.2010.11.002"
+    }
+   ]
+  },
+  {
+   "@id": "cv:macroscopic-cross-section",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "macroscopic-cross-section",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Section efficace macroscopique"
+    },
+    {
+     "@language": "en",
+     "@value": "Macroscopic cross section"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "La section efficace multipliée par le nombre de noyaux par unité de volume : l'inverse d'une longueur. Pour un mélange, Σ additionne ces produits noyau par noyau."
+    },
+    {
+     "@language": "en",
+     "@value": "The cross section multiplied by the number of nuclei per unit volume: an inverse length. For a mixture, Σ adds these products nucleus by nucleus."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "Σ"
+    },
+    {
+     "@language": "en",
+     "@value": "Σ"
+    }
+   ],
+   "schema:unitText": [
+    {
+     "@language": "fr",
+     "@value": "inverse d'une longueur (cm⁻¹)"
+    },
+    {
+     "@language": "en",
+     "@value": "inverse length (cm⁻¹)"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:medical-physics"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:cross-section"
+    },
+    {
+     "@id": "cv:mean-free-path"
+    }
+   ],
+   "skos:exactMatch": {
+    "@id": "http://www.wikidata.org/entity/Q98280520"
+   },
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/recits/neutrons-atmospheriques-bnct/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/stories/atmospheric-neutrons-bnct/"
+    }
+   ],
+   "dcterms:source": [
+    {
+     "@id": "https://doi.org/10.1016/j.rpor.2010.11.002"
+    }
+   ]
+  },
+  {
+   "@id": "cv:mean-free-path",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "mean-free-path",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Libre parcours moyen"
+    },
+    {
+     "@language": "en",
+     "@value": "Mean free path"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "L'inverse de la section efficace macroscopique, L = 1/Σ : la distance moyenne entre deux collisions."
+    },
+    {
+     "@language": "en",
+     "@value": "The inverse of the macroscopic cross section, L = 1/Σ: the average distance between two collisions."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "L = 1/Σ"
+    },
+    {
+     "@language": "en",
+     "@value": "L = 1/Σ"
+    }
+   ],
+   "schema:unitText": [
+    {
+     "@language": "fr",
+     "@value": "longueur (cm)"
+    },
+    {
+     "@language": "en",
+     "@value": "length (cm)"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:medical-physics"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:cross-section"
+    },
+    {
+     "@id": "cv:macroscopic-cross-section"
+    },
+    {
+     "@id": "cv:monte-carlo"
+    }
+   ],
+   "skos:exactMatch": {
+    "@id": "http://www.wikidata.org/entity/Q756307"
+   },
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/recits/neutrons-atmospheriques-bnct/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/stories/atmospheric-neutrons-bnct/"
+    }
+   ],
+   "dcterms:source": [
+    {
+     "@id": "https://doi.org/10.1016/j.rpor.2010.11.002"
+    }
+   ]
+  },
+  {
+   "@id": "cv:compton-effect",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "compton-effect",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Effet Compton"
+    },
+    {
+     "@language": "en",
+     "@value": "Compton scattering"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "La diffusion d'un photon sur un électron : le photon perd de l'énergie et l'électron reçoit une énergie cinétique K. L'énergie au repos de l'électron est 511 keV."
+    },
+    {
+     "@language": "en",
+     "@value": "The scattering of a photon on an electron: the photon loses energy and the electron receives a kinetic energy K. The rest energy of the electron is 511 keV."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "diffusion Compton"
+    },
+    {
+     "@language": "en",
+     "@value": "Compton effect"
+    }
+   ],
+   "schema:unitText": [
+    {
+     "@language": "fr",
+     "@value": "keV"
+    },
+    {
+     "@language": "en",
+     "@value": "keV"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:medical-physics"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:attenuation"
+    }
+   ],
+   "skos:exactMatch": {
+    "@id": "http://www.wikidata.org/entity/Q171516"
+   },
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/animations/effet-compton/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/tools/compton-scattering/"
+    }
+   ]
+  },
+  {
+   "@id": "cv:attenuation",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "attenuation",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Atténuation"
+    },
+    {
+     "@language": "en",
+     "@value": "Attenuation"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "Chaque épaisseur égale à la couche de demi-atténuation divise par deux ce qui reste : c'est une décroissance exponentielle, pas une soustraction."
+    },
+    {
+     "@language": "en",
+     "@value": "Each thickness equal to the half-value layer halves what remains: it is an exponential decay, not a subtraction."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "décroissance exponentielle"
+    },
+    {
+     "@language": "en",
+     "@value": "exponential decay"
+    }
+   ],
+   "schema:unitText": [
+    {
+     "@language": "fr",
+     "@value": "sans unité (fraction transmise)"
+    },
+    {
+     "@language": "en",
+     "@value": "dimensionless (transmitted fraction)"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:medical-physics"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:compton-effect"
+    },
+    {
+     "@id": "cv:half-value-layer"
+    },
+    {
+     "@id": "cv:medical-physics"
+    }
+   ],
+   "skos:exactMatch": {
+    "@id": "http://www.wikidata.org/entity/Q2357982"
+   },
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/animations/attenuation-demi-epaisseur/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/tools/attenuation-half-value-layer/"
+    }
+   ]
+  },
+  {
+   "@id": "cv:half-value-layer",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "half-value-layer",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Couche de demi-atténuation (CDA)"
+    },
+    {
+     "@language": "en",
+     "@value": "Half-value layer (HVL)"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "L'épaisseur de matériau qui divise par deux l'intensité transmise sans diffusion : CDA = ln 2 / μ, avec μ le coefficient d'atténuation linéique."
+    },
+    {
+     "@language": "en",
+     "@value": "The thickness of material that halves the intensity transmitted without scattering: HVL = ln 2 / μ, with μ the linear attenuation coefficient."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "CDA"
+    },
+    {
+     "@language": "fr",
+     "@value": "épaisseur de demi-atténuation"
+    },
+    {
+     "@language": "en",
+     "@value": "HVL"
+    },
+    {
+     "@language": "en",
+     "@value": "half-value thickness"
+    }
+   ],
+   "schema:unitText": [
+    {
+     "@language": "fr",
+     "@value": "longueur (cm)"
+    },
+    {
+     "@language": "en",
+     "@value": "length (cm)"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:medical-physics"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:attenuation"
+    }
+   ],
+   "skos:exactMatch": {
+    "@id": "http://www.wikidata.org/entity/Q127526"
+   },
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/animations/attenuation-demi-epaisseur/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/tools/attenuation-half-value-layer/"
+    }
+   ]
+  },
+  {
+   "@id": "cv:thyroglobulin",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "thyroglobulin",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Thyroglobuline (Tg)"
+    },
+    {
+     "@language": "en",
+     "@value": "Thyroglobulin (Tg)"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "Le marqueur sanguin suivi par le modèle de la thérapie à l'iode radioactif."
+    },
+    {
+     "@language": "en",
+     "@value": "The blood marker followed by the radioiodine therapy model."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "Tg"
+    },
+    {
+     "@language": "en",
+     "@value": "Tg"
+    }
+   ],
+   "schema:unitText": [
+    {
+     "@language": "fr",
+     "@value": "ng/mL"
+    },
+    {
+     "@language": "en",
+     "@value": "ng/mL"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:radiotherapy"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:doubling-time"
+    }
+   ],
+   "skos:exactMatch": {
+    "@id": "http://www.wikidata.org/entity/Q412228"
+   },
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/outils/modele-thyroide/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/stories/thyroid-radioiodine/"
+    },
+    {
+     "@id": "https://cyrilvoyant.github.io/methods/thyroid-radioiodine.html"
+    }
+   ]
+  },
+  {
+   "@id": "cv:doubling-time",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "doubling-time",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Temps de doublement"
+    },
+    {
+     "@language": "en",
+     "@value": "Doubling time"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "La durée, en mois, pour que le nombre de cellules tumorales double sans traitement : 9,8 mois pour le profil réfractaire, 66,6 pour le répondeur dans l'article."
+    },
+    {
+     "@language": "en",
+     "@value": "The time, in months, for the number of tumour cells to double without treatment: 9.8 months for the refractory profile, 66.6 for the responder profile in the paper."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "Td"
+    },
+    {
+     "@language": "en",
+     "@value": "Td"
+    }
+   ],
+   "schema:unitText": [
+    {
+     "@language": "fr",
+     "@value": "mois"
+    },
+    {
+     "@language": "en",
+     "@value": "months"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:radiotherapy"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:thyroglobulin"
+    }
+   ],
+   "skos:exactMatch": {
+    "@id": "http://www.wikidata.org/entity/Q1424376"
+   },
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/outils/modele-thyroide/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/stories/thyroid-radioiodine/"
+    },
+    {
+     "@id": "https://cyrilvoyant.github.io/methods/thyroid-radioiodine.html"
+    }
+   ]
+  },
+  {
+   "@id": "cv:p-value",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "p-value",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "p-value"
+    },
+    {
+     "@language": "en",
+     "@value": "p-value"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "La probabilité, si les moyennes sont égales (ou ρ = 0) et le modèle correct, d'un résultat au moins aussi extrême. Ce n'est pas la probabilité que l'hypothèse soit vraie ; elle ne mesure pas l'importance d'un lien."
+    },
+    {
+     "@language": "en",
+     "@value": "The probability, if the means are equal (or ρ = 0) and the model is correct, of a result at least as extreme. It is not the probability that the hypothesis is true; it does not measure the importance of an association."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "valeur p"
+    },
+    {
+     "@language": "en",
+     "@value": "p value"
+    }
+   ],
+   "schema:unitText": [
+    {
+     "@language": "fr",
+     "@value": "sans unité (entre 0 et 1)"
+    },
+    {
+     "@language": "en",
+     "@value": "dimensionless (between 0 and 1)"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:statistics"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:chi-square-test"
+    },
+    {
+     "@id": "cv:normal-distribution"
+    },
+    {
+     "@id": "cv:r-squared"
+    },
+    {
+     "@id": "cv:roc-curve"
+    },
+    {
+     "@id": "cv:statistics"
+    },
+    {
+     "@id": "cv:student-t-test"
+    }
+   ],
+   "skos:exactMatch": {
+    "@id": "http://www.wikidata.org/entity/Q253255"
+   },
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/animations/test-student/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/tools/student-t-test/"
+    }
+   ]
+  },
+  {
+   "@id": "cv:student-t-test",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "student-t-test",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Test de Student"
+    },
+    {
+     "@language": "en",
+     "@value": "Student t-test"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "Le test divise l'écart entre deux moyennes par son erreur standard : un même écart peut se détacher du hasard d'échantillonnage, ou s'y noyer. Significatif ne veut pas dire important."
+    },
+    {
+     "@language": "en",
+     "@value": "The test divides the difference between two means by its standard error: the same difference can stand out from sampling chance or drown in it. Significant does not mean important."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "test t"
+    },
+    {
+     "@language": "en",
+     "@value": "t-test"
+    }
+   ],
+   "schema:unitText": [
+    {
+     "@language": "fr",
+     "@value": "sans unité (t)"
+    },
+    {
+     "@language": "en",
+     "@value": "dimensionless (t)"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:statistics"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:confidence-interval"
+    },
+    {
+     "@id": "cv:p-value"
+    }
+   ],
+   "skos:exactMatch": {
+    "@id": "http://www.wikidata.org/entity/Q309479"
+   },
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/animations/test-student/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/tools/student-t-test/"
+    }
+   ]
+  },
+  {
+   "@id": "cv:chi-square-test",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "chi-square-test",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Test du χ²"
+    },
+    {
+     "@language": "en",
+     "@value": "Chi-square test"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "La statistique est la somme des contributions (O−E)²/E, avec O l'effectif observé et E l'effectif attendu sous l'hypothèse testée. Une petite p-value dit que l'écart est peu compatible avec l'hypothèse, pas qu'il est grand."
+    },
+    {
+     "@language": "en",
+     "@value": "The statistic is the sum of the contributions (O−E)²/E, with O the observed count and E the count expected under the tested hypothesis. A small p-value says the departure is hardly compatible with the hypothesis, not that it is large."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "test du khi-deux"
+    },
+    {
+     "@language": "fr",
+     "@value": "χ²"
+    },
+    {
+     "@language": "en",
+     "@value": "chi-squared test"
+    },
+    {
+     "@language": "en",
+     "@value": "χ²"
+    }
+   ],
+   "schema:unitText": [
+    {
+     "@language": "fr",
+     "@value": "sans unité"
+    },
+    {
+     "@language": "en",
+     "@value": "dimensionless"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:statistics"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:p-value"
+    }
+   ],
+   "skos:exactMatch": {
+    "@id": "http://www.wikidata.org/entity/Q1071004"
+   },
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/animations/test-khi-deux/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/tools/chi-square-test/"
+    }
+   ]
+  },
+  {
+   "@id": "cv:normal-distribution",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "normal-distribution",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Loi normale"
+    },
+    {
+     "@language": "en",
+     "@value": "Normal distribution"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "Le score z est le nombre d'écarts-types entre x et la moyenne ; Φ(z) est la probabilité qu'une variable normale centrée réduite reste en dessous de z : l'aire à gauche de z."
+    },
+    {
+     "@language": "en",
+     "@value": "The z-score is the number of standard deviations between x and the mean; Φ(z) is the probability that a standard normal variable stays below z: the area to the left of z."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "loi de Gauss"
+    },
+    {
+     "@language": "fr",
+     "@value": "score z"
+    },
+    {
+     "@language": "en",
+     "@value": "Gaussian distribution"
+    },
+    {
+     "@language": "en",
+     "@value": "z-score"
+    }
+   ],
+   "schema:unitText": [
+    {
+     "@language": "fr",
+     "@value": "celle de la variable ; z sans unité"
+    },
+    {
+     "@language": "en",
+     "@value": "that of the variable; z dimensionless"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:statistics"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:confidence-interval"
+    },
+    {
+     "@id": "cv:p-value"
+    }
+   ],
+   "skos:exactMatch": {
+    "@id": "http://www.wikidata.org/entity/Q133871"
+   },
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/animations/loi-normale/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/tools/normal-distribution/"
+    }
+   ]
+  },
+  {
+   "@id": "cv:roc-curve",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "roc-curve",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Courbe ROC"
+    },
+    {
+     "@language": "en",
+     "@value": "ROC curve"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "La sensibilité en fonction du taux de faux positifs 1 − Sp, quand le seuil varie. L'aire sous la courbe (AUC) résume le test sans choisir de seuil."
+    },
+    {
+     "@language": "en",
+     "@value": "Sensitivity against the false-positive rate 1 − Sp as the threshold varies. The area under the curve (AUC) summarizes the test without choosing a threshold."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "AUC"
+    },
+    {
+     "@language": "fr",
+     "@value": "sensibilité et spécificité"
+    },
+    {
+     "@language": "en",
+     "@value": "AUC"
+    },
+    {
+     "@language": "en",
+     "@value": "sensitivity and specificity"
+    }
+   ],
+   "schema:unitText": [
+    {
+     "@language": "fr",
+     "@value": "AUC sans unité (entre 0 et 1)"
+    },
+    {
+     "@language": "en",
+     "@value": "AUC dimensionless (between 0 and 1)"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:statistics"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:p-value"
+    }
+   ],
+   "skos:exactMatch": {
+    "@id": "http://www.wikidata.org/entity/Q327120"
+   },
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/animations/courbe-roc/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/tools/roc-curve/"
+    }
+   ]
+  },
+  {
+   "@id": "cv:r-squared",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "r-squared",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Coefficient de détermination R²"
+    },
+    {
+     "@language": "en",
+     "@value": "Coefficient of determination R²"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "La part de variation décrite par la droite (1 pour une prévision parfaite). Elle ne mesure pas l'importance du lien."
+    },
+    {
+     "@language": "en",
+     "@value": "The share of variation described by the line (1 for a perfect forecast). It does not measure the importance of the association."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "R²"
+    },
+    {
+     "@language": "en",
+     "@value": "R²"
+    }
+   ],
+   "schema:unitText": [
+    {
+     "@language": "fr",
+     "@value": "sans unité (entre 0 et 1)"
+    },
+    {
+     "@language": "en",
+     "@value": "dimensionless (between 0 and 1)"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:statistics"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:influential-point"
+    },
+    {
+     "@id": "cv:p-value"
+    },
+    {
+     "@id": "cv:pearson-correlation"
+    }
+   ],
+   "skos:exactMatch": {
+    "@id": "http://www.wikidata.org/entity/Q192830"
+   },
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/animations/correlation-significativite-r2/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/tools/correlation-significance-r-squared/"
+    }
+   ]
+  },
+  {
+   "@id": "cv:pearson-correlation",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "pearson-correlation",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Corrélation de Pearson"
+    },
+    {
+     "@language": "en",
+     "@value": "Pearson correlation"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "La corrélation de Pearson dans le nuage de points (r) et dans la population (ρ)."
+    },
+    {
+     "@language": "en",
+     "@value": "The Pearson correlation in the scatter (r) and in the population (ρ)."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "coefficient de corrélation r"
+    },
+    {
+     "@language": "en",
+     "@value": "correlation coefficient r"
+    }
+   ],
+   "schema:unitText": [
+    {
+     "@language": "fr",
+     "@value": "sans unité (entre −1 et 1)"
+    },
+    {
+     "@language": "en",
+     "@value": "dimensionless (between −1 and 1)"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:statistics"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:influential-point"
+    },
+    {
+     "@id": "cv:r-squared"
+    }
+   ],
+   "skos:exactMatch": {
+    "@id": "http://www.wikidata.org/entity/Q1136628"
+   },
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/animations/correlation-significativite-r2/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/tools/correlation-significance-r-squared/"
+    }
+   ]
+  },
+  {
+   "@id": "cv:confidence-interval",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "confidence-interval",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Intervalle de confiance"
+    },
+    {
+     "@language": "en",
+     "@value": "Confidence interval"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "Il encadre la moyenne des y en x₀ (bande à 95 %, quantile de Student à n − 2 degrés de liberté)."
+    },
+    {
+     "@language": "en",
+     "@value": "It brackets the mean of y at x₀ (95 % band, Student quantile with n − 2 degrees of freedom)."
+    }
+   ],
+   "schema:unitText": [
+    {
+     "@language": "fr",
+     "@value": "celle de y"
+    },
+    {
+     "@language": "en",
+     "@value": "same as y"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:statistics"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:normal-distribution"
+    },
+    {
+     "@id": "cv:prediction-interval"
+    },
+    {
+     "@id": "cv:student-t-test"
+    }
+   ],
+   "skos:exactMatch": {
+    "@id": "http://www.wikidata.org/entity/Q208498"
+   },
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/animations/intervalles-regression/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/tools/regression-intervals/"
+    }
+   ]
+  },
+  {
+   "@id": "cv:prediction-interval",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "prediction-interval",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Intervalle de prévision"
+    },
+    {
+     "@language": "en",
+     "@value": "Prediction interval"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "Il encadre une nouvelle observation en x₀ : on ajoute 1 sous la racine, d'où une bande plus large que l'intervalle de confiance."
+    },
+    {
+     "@language": "en",
+     "@value": "It brackets a new observation at x₀: add 1 under the root, hence a band wider than the confidence interval."
+    }
+   ],
+   "schema:unitText": [
+    {
+     "@language": "fr",
+     "@value": "celle de y"
+    },
+    {
+     "@language": "en",
+     "@value": "same as y"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:statistics"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:confidence-interval"
+    }
+   ],
+   "skos:exactMatch": {
+    "@id": "http://www.wikidata.org/entity/Q1106171"
+   },
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/animations/intervalles-regression/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/tools/regression-intervals/"
+    }
+   ]
+  },
+  {
+   "@id": "cv:influential-point",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "influential-point",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Point influent"
+    },
+    {
+     "@language": "en",
+     "@value": "Influential point"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "Un point qui déplace la droite des moindres carrés ; le levier est son poids potentiel, d'autant plus grand qu'il est loin en x."
+    },
+    {
+     "@language": "en",
+     "@value": "A point that moves the least-squares line; leverage is its potential weight, greater the farther it lies in x."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "levier"
+    },
+    {
+     "@language": "en",
+     "@value": "leverage"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:statistics"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:pearson-correlation"
+    },
+    {
+     "@id": "cv:r-squared"
+    }
+   ],
+   "skos:exactMatch": {
+    "@id": "http://www.wikidata.org/entity/Q16908492"
+   },
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/animations/point-influent-regression/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/tools/influential-point-regression/"
+    }
+   ]
+  },
+  {
+   "@id": "cv:biot-number",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "biot-number",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Nombre de Biot"
+    },
+    {
+     "@language": "en",
+     "@value": "Biot number"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "La résistance de conduction interne comparée à la résistance de convection en surface."
+    },
+    {
+     "@language": "en",
+     "@value": "Internal conduction resistance compared with surface convection resistance."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "Bi"
+    },
+    {
+     "@language": "en",
+     "@value": "Bi"
+    }
+   ],
+   "schema:unitText": [
+    {
+     "@language": "fr",
+     "@value": "sans unité"
+    },
+    {
+     "@language": "en",
+     "@value": "dimensionless"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:thermal-physics"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:freezing"
+    },
+    {
+     "@id": "cv:thermal-physics"
+    }
+   ],
+   "skos:exactMatch": {
+    "@id": "http://www.wikidata.org/entity/Q864844"
+   },
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/animations/refroidissement-biot/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/tools/biot-cooling/"
+    }
+   ]
+  },
+  {
+   "@id": "cv:cop",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "cop",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Coefficient de performance (COP)"
+    },
+    {
+     "@language": "en",
+     "@value": "Coefficient of performance (COP)"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "La chaleur extraite de la source froide par unité de travail reçu. COP > 1 est normal : ce n'est pas un rendement en pourcentage. Limite de Carnot : le COP maximal d'une machine réversible entre deux sources."
+    },
+    {
+     "@language": "en",
+     "@value": "Heat extracted from the cold reservoir per unit of work supplied. COP > 1 is normal: it is not a percentage efficiency. Carnot limit: the maximum COP of a reversible machine between two reservoirs."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "COP"
+    },
+    {
+     "@language": "en",
+     "@value": "COP"
+    }
+   ],
+   "schema:unitText": [
+    {
+     "@language": "fr",
+     "@value": "sans unité"
+    },
+    {
+     "@language": "en",
+     "@value": "dimensionless"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:thermal-physics"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:carnot-efficiency"
+    }
+   ],
+   "skos:exactMatch": {
+    "@id": "http://www.wikidata.org/entity/Q902090"
+   },
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/animations/cop-carnot-machine-frigorifique/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/tools/refrigerator-carnot-cop/"
+    }
+   ]
+  },
+  {
+   "@id": "cv:carnot-efficiency",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "carnot-efficiency",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Rendement de Carnot"
+    },
+    {
+     "@language": "en",
+     "@value": "Carnot efficiency"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "Le rendement η est le travail W divisé par la chaleur reçue Qchaud ; ηCarnot est sa borne, atteinte par un cycle réversible, sans frottement ni écart de température lors des échanges."
+    },
+    {
+     "@language": "en",
+     "@value": "Efficiency η is the work W divided by the heat received Qhot; ηCarnot is its limit, reached by a reversible cycle, with no friction and no temperature gap during exchanges."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "moteur de Carnot"
+    },
+    {
+     "@language": "fr",
+     "@value": "limite de Carnot"
+    },
+    {
+     "@language": "en",
+     "@value": "Carnot engine"
+    },
+    {
+     "@language": "en",
+     "@value": "Carnot limit"
+    }
+   ],
+   "schema:unitText": [
+    {
+     "@language": "fr",
+     "@value": "sans unité"
+    },
+    {
+     "@language": "en",
+     "@value": "dimensionless"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:thermal-physics"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:cop"
+    },
+    {
+     "@id": "cv:thermal-physics"
+    }
+   ],
+   "skos:exactMatch": {
+    "@id": "http://www.wikidata.org/entity/Q93949862"
+   },
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/animations/moteur-carnot/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/tools/carnot-heat-engine/"
+    }
+   ]
+  },
+  {
+   "@id": "cv:freezing",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "freezing",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Congélation"
+    },
+    {
+     "@language": "en",
+     "@value": "Freezing"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "L'énergie à retirer pour geler une masse d'eau : chaleur sensible (mcΔT) plus chaleur latente, sans changement de température dans ce modèle ; la puissance moyenne est l'énergie divisée par la durée."
+    },
+    {
+     "@language": "en",
+     "@value": "The energy to remove to freeze a mass of water: sensible heat (mcΔT) plus latent heat, with no temperature change in this model; average power is energy divided by duration."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "énergie de congélation"
+    },
+    {
+     "@language": "en",
+     "@value": "freezing energy"
+    }
+   ],
+   "schema:unitText": [
+    {
+     "@language": "fr",
+     "@value": "kJ ou MJ ; puissance en kW"
+    },
+    {
+     "@language": "en",
+     "@value": "kJ or MJ; power in kW"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:thermal-physics"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:biot-number"
+    },
+    {
+     "@id": "cv:latent-heat"
+    },
+    {
+     "@id": "cv:sensible-heat"
+    }
+   ],
+   "skos:exactMatch": {
+    "@id": "http://www.wikidata.org/entity/Q108000"
+   },
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/animations/congelation-energie-puissance/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/tools/freezing-energy-power/"
+    }
+   ]
+  },
+  {
+   "@id": "cv:latent-heat",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "latent-heat",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Chaleur latente"
+    },
+    {
+     "@language": "en",
+     "@value": "Latent heat"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "La chaleur retirée pour geler l'eau, sans changement de température dans ce modèle."
+    },
+    {
+     "@language": "en",
+     "@value": "The heat removed to freeze the water, with no temperature change in this model."
+    }
+   ],
+   "schema:unitText": [
+    {
+     "@language": "fr",
+     "@value": "kJ/kg"
+    },
+    {
+     "@language": "en",
+     "@value": "kJ/kg"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:thermal-physics"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:freezing"
+    },
+    {
+     "@id": "cv:sensible-heat"
+    }
+   ],
+   "skos:exactMatch": {
+    "@id": "http://www.wikidata.org/entity/Q207721"
+   },
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/animations/congelation-energie-puissance/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/tools/freezing-energy-power/"
+    }
+   ]
+  },
+  {
+   "@id": "cv:sensible-heat",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "sensible-heat",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Chaleur sensible"
+    },
+    {
+     "@language": "en",
+     "@value": "Sensible heat"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "La chaleur échangée quand la température change : le terme mcΔT, avec c la capacité thermique massique et ΔT la variation de température."
+    },
+    {
+     "@language": "en",
+     "@value": "The heat exchanged when temperature changes: the term mcΔT, with c the specific heat capacity and ΔT the temperature change."
+    }
+   ],
+   "schema:unitText": [
+    {
+     "@language": "fr",
+     "@value": "kJ"
+    },
+    {
+     "@language": "en",
+     "@value": "kJ"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:thermal-physics"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:freezing"
+    },
+    {
+     "@id": "cv:latent-heat"
+    }
+   ],
+   "skos:exactMatch": {
+    "@id": "http://www.wikidata.org/entity/Q1480581"
+   },
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/animations/congelation-energie-puissance/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/tools/freezing-energy-power/"
+    }
+   ]
+  }
+ ]
+}

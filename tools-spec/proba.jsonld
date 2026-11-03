@@ -1,0 +1,79 @@
+{
+ "@context": "https://schema.org",
+ "@type": [
+  "SoftwareApplication",
+  "LearningResource"
+ ],
+ "@id": "https://www.cyrilvoyant.com/#proba-race#tool-spec",
+ "identifier": "proba",
+ "name": "Watch probabilistic forecasting and its lookup table",
+ "alternateName": "Observer la prévision probabiliste et sa table de correspondance",
+ "description": "Read ELM/persistence bands, coverage (PICP: share of measurements inside the band) and mean band width (MIL) on three selected days.",
+ "url": "https://www.cyrilvoyant.com/#proba-race",
+ "sameAs": [
+  "https://www.cyrilvoyant.com/fr/#proba-race",
+  "https://www.cyrilvoyant.com/#proba-race"
+ ],
+ "inLanguage": [
+  "fr",
+  "en"
+ ],
+ "applicationCategory": "ScientificApplication",
+ "operatingSystem": "Any (web browser)",
+ "isAccessibleForFree": true,
+ "learningResourceType": "demo",
+ "author": {
+  "@type": "Person",
+  "name": "Cyril Voyant",
+  "identifier": "https://orcid.org/0000-0003-0242-7377"
+ },
+ "license": "https://creativecommons.org/licenses/by/4.0/",
+ "additionalProperty": [
+  {
+   "@type": "PropertyValue",
+   "propertyID": "position-in-the-three-days",
+   "name": "Position in the three days",
+   "alternateName": "Position dans les trois jours",
+   "value": 0,
+   "minValue": 0,
+   "maxValue": 143,
+   "unitText": "dimensionless"
+  }
+ ],
+ "potentialAction": {
+  "@type": "Action",
+  "name": "Explore the tool",
+  "target": {
+   "@type": "EntryPoint",
+   "urlTemplate": "https://www.cyrilvoyant.com/#proba-race",
+   "actionPlatform": "https://schema.org/DesktopWebPlatform"
+  },
+  "object": [
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "position-in-the-three-days",
+    "description": "Position in the three days",
+    "valueRequired": false,
+    "minValue": 0,
+    "maxValue": 143,
+    "defaultValue": 0
+   }
+  ]
+ },
+ "citation": [
+  "https://doi.org/10.1016/j.solener.2025.113490",
+  "https://doi.org/10.5281/zenodo.21487267"
+ ],
+ "codeRepository": "https://github.com/cyrilvoyant/PV_ELM_pred",
+ "about": [
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#persistence"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#elm"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#prediction-interval"
+  }
+ ]
+}

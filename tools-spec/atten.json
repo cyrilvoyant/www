@@ -1,0 +1,382 @@
+{
+ "id": "atten",
+ "schema": "https://www.cyrilvoyant.com/tools-spec.json#1.0",
+ "kind": "teaching",
+ "domain": "learning",
+ "interface_language": "both",
+ "name": {
+  "fr": "Explorer l’atténuation et la CDA",
+  "en": "Explore attenuation and half-value layers"
+ },
+ "url": {
+  "fr": "https://www.cyrilvoyant.com/fr/animations/attenuation-demi-epaisseur/",
+  "en": "https://www.cyrilvoyant.com/tools/attenuation-half-value-layer/"
+ },
+ "page_title": {
+  "fr": "Atténuation et couche de demi-atténuation : simulation interactive",
+  "en": "Attenuation and half-value layer: interactive simulator"
+ },
+ "computes": {
+  "fr": "Faire varier l’épaisseur et la couche de demi-atténuation ; lire la fraction transmise.",
+  "en": "Vary thickness and half-value layer; read the transmitted fraction."
+ },
+ "summary": {
+  "fr": "Chaque couche de demi-atténuation divise le faisceau par deux : après trois couches il en reste 12,5 %, et jamais exactement zéro. Vous remplacez l’intuition d’une soustraction par celle d’une décroissance exponentielle.",
+  "en": "Each half-value layer halves the beam: after three layers 12.5% remains, and never exactly zero. You replace the intuition of subtraction with that of exponential decay."
+ },
+ "parameters": [
+  {
+   "id": "half-value-layer-hvl",
+   "type": "number",
+   "control": "range",
+   "min": 0.1,
+   "max": 10,
+   "step": 0.1,
+   "default": 2,
+   "label": {
+    "fr": "Couche de demi-atténuation CDA (cm)",
+    "en": "Half-value layer HVL (cm)"
+   },
+   "meaning": {
+    "fr": "La couche de demi-atténuation : l’épaisseur qui divise cette intensité par deux.",
+    "en": "The half-value layer: the thickness that halves this intensity."
+   },
+   "unit": {
+    "fr": "cm",
+    "en": "cm"
+   },
+   "unit_source": "display"
+  },
+  {
+   "id": "thickness-x",
+   "type": "number",
+   "control": "range",
+   "min": 0,
+   "max": 30,
+   "step": 0.1,
+   "default": 6,
+   "label": {
+    "fr": "Épaisseur x (cm)",
+    "en": "Thickness x (cm)"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": {
+    "fr": "cm",
+    "en": "cm"
+   },
+   "unit_source": "display"
+  }
+ ],
+ "presets": [
+  {
+   "id": "three-layers-6-cm-2-cm-hvl",
+   "name": {
+    "fr": "Trois couches : 6 cm, CDA de 2 cm",
+    "en": "Three layers: 6 cm, 2 cm HVL"
+   },
+   "values": {
+    "half-value-layer-hvl": 2,
+    "thickness-x": 6
+   },
+   "changes_vs_default": {},
+   "shows": {
+    "fr": "Trois divisions par deux : 1/8 transmis, soit 125 photons sur 1000.",
+    "en": "Three halvings: 1/8 transmitted, or 125 photons out of 1000."
+   }
+  },
+  {
+   "id": "one-layer",
+   "name": {
+    "fr": "Une seule couche",
+    "en": "One layer"
+   },
+   "values": {
+    "half-value-layer-hvl": 2,
+    "thickness-x": 2
+   },
+   "changes_vs_default": {
+    "thickness-x": 2
+   },
+   "shows": {
+    "fr": "Par définition de la CDA, la moitié passe.",
+    "en": "By definition of the HVL, half passes through."
+   }
+  },
+  {
+   "id": "thickness-doubled-12-cm",
+   "name": {
+    "fr": "Épaisseur doublée : 12 cm",
+    "en": "Thickness doubled: 12 cm"
+   },
+   "values": {
+    "half-value-layer-hvl": 2,
+    "thickness-x": 12
+   },
+   "changes_vs_default": {
+    "thickness-x": 12
+   },
+   "shows": {
+    "fr": "Pas 1/16 mais 1/64 : deux fois plus de matière élève la fraction transmise au carré.",
+    "en": "Not 1/16 but 1/64: twice the material squares the transmitted fraction."
+   }
+  },
+  {
+   "id": "ten-layers",
+   "name": {
+    "fr": "Dix couches",
+    "en": "Ten layers"
+   },
+   "values": {
+    "half-value-layer-hvl": 2,
+    "thickness-x": 20
+   },
+   "changes_vs_default": {
+    "thickness-x": 20
+   },
+   "shows": {
+    "fr": "Environ 1 photon sur 1000 : c’est peu, mais ce n’est pas zéro.",
+    "en": "About 1 photon in 1000: little, but not zero."
+   }
+  },
+  {
+   "id": "weakly-attenuating-material",
+   "name": {
+    "fr": "Matériau peu atténuant",
+    "en": "Weakly attenuating material"
+   },
+   "values": {
+    "half-value-layer-hvl": 10,
+    "thickness-x": 6
+   },
+   "changes_vs_default": {
+    "half-value-layer-hvl": 10
+   },
+   "shows": {
+    "fr": "À épaisseur égale, une CDA de 10 cm laisse passer près des deux tiers du faisceau.",
+    "en": "For the same thickness, a 10 cm HVL lets through nearly two thirds of the beam."
+   }
+  }
+ ],
+ "actions": [],
+ "variants": [],
+ "outputs": [
+  {
+   "name": {
+    "fr": "μ = ln 2 / CDA",
+    "en": "μ = ln 2 / HVL"
+   },
+   "unit": {
+    "fr": "cm⁻¹",
+    "en": "cm⁻¹"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "kind": "reading"
+  },
+  {
+   "name": {
+    "fr": "N/N₀",
+    "en": "N/N₀"
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "kind": "reading"
+  },
+  {
+   "name": {
+    "fr": "sur 1000 photons,",
+    "en": "out of 1000 photons,"
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "kind": "reading"
+  }
+ ],
+ "formulas": [
+  {
+   "text": "N/N_0 = e^( − μx) = 2^( − x/CDA)"
+  },
+  {
+   "text": "CDA = ln2/μ"
+  }
+ ],
+ "definitions": [
+  {
+   "term": "N₀, N",
+   "meaning": {
+    "fr": "L’intensité du faisceau avant le matériau, et celle transmise sans diffusion.",
+    "en": "The beam intensity before the material, and the intensity transmitted without scattering."
+   }
+  },
+  {
+   "term": "x",
+   "meaning": {
+    "fr": "L’épaisseur traversée.",
+    "en": "The thickness crossed."
+   }
+  },
+  {
+   "term": "μ",
+   "meaning": {
+    "fr": "Le coefficient d’atténuation linéique.",
+    "en": "The linear attenuation coefficient."
+   }
+  },
+  {
+   "term": "CDA",
+   "meaning": {
+    "fr": "La couche de demi-atténuation : l’épaisseur qui divise cette intensité par deux.",
+    "en": "The half-value layer: the thickness that halves this intensity."
+   }
+  },
+  {
+   "term": "e, ln",
+   "meaning": {
+    "fr": "La fonction exponentielle et le logarithme naturel.",
+    "en": "The exponential function and the natural logarithm."
+   }
+  },
+  {
+   "term": "Que veut dire chaque symbole ?",
+   "meaning": {
+    "fr": "N(x) = N₀ e^(−μx) = N₀ / 2^(x/CDA). N₀ est le nombre de photons entrants, N le nombre transmis sans diffusion et x l’épaisseur du matériau. μ est le coefficient d’atténuation linéique ; la CDA est l’épaisseur qui divise la transmission par deux. Cette illustration suppose un faisceau étroit monoénergétique et un matériau homogène ; elle ne calcule ni une protection ni une dose clinique.",
+    "en": "N(x) = N₀ e^(−μx) = N₀ / 2^(x/HVL). N₀ is the incoming photon count, N the transmitted uncollided count and x the material thickness. μ is the linear attenuation coefficient; HVL is the half-value layer, the thickness that halves transmission. This illustration assumes a narrow monoenergetic beam and homogeneous material; it does not calculate shielding or clinical dose."
+   }
+  }
+ ],
+ "assumptions": {
+  "fr": [
+   "Faisceau étroit d’une seule énergie, matériau homogène. Le diffusé, le spectre et la géométrie réelle peuvent invalider ce modèle. Ce n’est pas un calcul de protection ni de dose clinique."
+  ],
+  "en": [
+   "Narrow beam of a single energy, homogeneous material. Scattering, the spectrum and real geometry can invalidate this model. This is not a shielding or clinical-dose calculation."
+  ]
+ },
+ "source": {
+  "dois": [],
+  "repositories": [],
+  "related_pages": [
+   {
+    "href": "/fr/enseignement/physique-pass/ondes-electromagnetiques/",
+    "text": "Le chapitre complet du cours"
+   },
+   {
+    "href": "/fr/animations/effet-compton/",
+    "text": "L’effet Compton : une des interactions qui retirent des photons du faisceau"
+   },
+   {
+    "href": "/fr/animations/onde-electromagnetique/",
+    "text": "L’onde électromagnétique : la nature du rayonnement"
+   }
+  ]
+ },
+ "how_to_explore": {
+  "fr": "Régler les paramètres sur un préréglage (valeurs ci-dessus), lire la phrase affichée par la page puis les sorties ; modifier ensuite un seul paramètre à la fois entre son minimum et son maximum.",
+  "en": "Set the parameters to a preset (values above), read the sentence the page shows then the outputs; then change one parameter at a time between its minimum and maximum."
+ },
+ "exploration": [
+  {
+   "preset": "three-layers-6-cm-2-cm-hvl",
+   "title": {
+    "fr": "Trois couches : 6 cm, CDA de 2 cm",
+    "en": "Three layers: 6 cm, 2 cm HVL"
+   },
+   "set": {
+    "half-value-layer-hvl": 2,
+    "thickness-x": 6
+   },
+   "observe": {
+    "fr": "Trois divisions par deux : 1/8 transmis, soit 125 photons sur 1000.",
+    "en": "Three halvings: 1/8 transmitted, or 125 photons out of 1000."
+   }
+  },
+  {
+   "preset": "one-layer",
+   "title": {
+    "fr": "Une seule couche",
+    "en": "One layer"
+   },
+   "set": {
+    "thickness-x": 2
+   },
+   "observe": {
+    "fr": "Par définition de la CDA, la moitié passe.",
+    "en": "By definition of the HVL, half passes through."
+   }
+  },
+  {
+   "preset": "thickness-doubled-12-cm",
+   "title": {
+    "fr": "Épaisseur doublée : 12 cm",
+    "en": "Thickness doubled: 12 cm"
+   },
+   "set": {
+    "thickness-x": 12
+   },
+   "observe": {
+    "fr": "Pas 1/16 mais 1/64 : deux fois plus de matière élève la fraction transmise au carré.",
+    "en": "Not 1/16 but 1/64: twice the material squares the transmitted fraction."
+   }
+  },
+  {
+   "preset": "ten-layers",
+   "title": {
+    "fr": "Dix couches",
+    "en": "Ten layers"
+   },
+   "set": {
+    "thickness-x": 20
+   },
+   "observe": {
+    "fr": "Environ 1 photon sur 1000 : c’est peu, mais ce n’est pas zéro.",
+    "en": "About 1 photon in 1000: little, but not zero."
+   }
+  },
+  {
+   "preset": "weakly-attenuating-material",
+   "title": {
+    "fr": "Matériau peu atténuant",
+    "en": "Weakly attenuating material"
+   },
+   "set": {
+    "half-value-layer-hvl": 10
+   },
+   "observe": {
+    "fr": "À épaisseur égale, une CDA de 10 cm laisse passer près des deux tiers du faisceau.",
+    "en": "For the same thickness, a 10 cm HVL lets through nearly two thirds of the beam."
+   }
+  }
+ ],
+ "concepts": [
+  "attenuation",
+  "half-value-layer"
+ ],
+ "extraction": {
+  "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
+  "roots": [
+   "#experience"
+  ],
+  "page_errors": [],
+  "fr_en_preset_consistency": {
+   "presets_compared": 5,
+   "presets_with_different_values_fr_vs_en": []
+  }
+ }
+}

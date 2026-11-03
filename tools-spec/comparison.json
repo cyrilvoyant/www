@@ -1,0 +1,681 @@
+{
+ "id": "comparison",
+ "schema": "https://www.cyrilvoyant.com/tools-spec.json#1.0",
+ "kind": "demo",
+ "domain": "energy",
+ "interface_language": "both",
+ "name": {
+  "fr": "Comparer des prévisions : persistance, AR et ELM selon l’horizon",
+  "en": "Compare forecasts: persistence, AR and ELM against horizon"
+ },
+ "url": {
+  "fr": "https://www.cyrilvoyant.com/fr/outils/comparateur-previsions/",
+  "en": "https://www.cyrilvoyant.com/tools/forecast-comparison/"
+ },
+ "page_title": {
+  "fr": "Comparer des prévisions : quand un modèle plus complexe vaut-il la peine ?",
+  "en": "Compare forecasts: when is a more complex model worth it?"
+ },
+ "computes": {
+  "fr": "Cinq modèles sur les données publiques de Palaiseau, de 30 min à 6 h : erreur selon l’horizon, NICE, courbes ; calculs du code PV_ELM_pred. AR : autorégression, une régression sur les valeurs passées. ELM : réseau de neurones frugal.",
+  "en": "Five models on public Palaiseau data, 30 min to 6 h: error against horizon, NICE, curves; computed by the PV_ELM_pred code. AR: autoregression, a regression on past values. ELM: a frugal neural network."
+ },
+ "summary": {
+  "fr": "À 30 minutes, un réseau de neurones ne fait pas mieux qu’une simple autorégression : la RMSE vaut 1,43 kW pour les deux, contre 1,65 kW pour la persistance. À 6 heures, tous deux divisent par environ 2,5 l’erreur de la persistance, et le réseau ne gagne qu’environ 4 % de plus.",
+  "en": "At 30 minutes, a neural network does no better than a simple autoregression: RMSE is 1.43 kW for both, against 1.65 kW for persistence. At 6 hours, both divide the error of persistence by about 2.5, and the network only gains about 4% more."
+ },
+ "parameters": [
+  {
+   "id": "horizon",
+   "type": "integer",
+   "control": "range",
+   "min": 0,
+   "max": 11,
+   "step": 1,
+   "default": 0,
+   "label": {
+    "fr": "Horizon",
+    "en": "Horizon"
+   },
+   "meaning": {
+    "fr": "le temps entre la dernière valeur connue et la valeur à prévoir, ici de 30 minutes à 6 heures.",
+    "en": "the time between the last known value and the value to forecast, here from 30 minutes to 6 hours."
+   },
+   "unit": {
+    "fr": "min",
+    "en": "min"
+   },
+   "unit_source": "display"
+  },
+  {
+   "id": "error-measure",
+   "type": "enum",
+   "control": "select",
+   "default": "RMSE",
+   "options": [
+    {
+     "value": "RMSE",
+     "label": "RMSE, en kW"
+    },
+    {
+     "value": "nRMSE",
+     "label": "nRMSE (RMSE / production moyenne)"
+    },
+    {
+     "value": "nMAE",
+     "label": "nMAE (erreur absolue / production moyenne)"
+    },
+    {
+     "value": "NICE2",
+     "label": "NICE² (RMSE / celle de la persistance)"
+    },
+    {
+     "value": "NICE1",
+     "label": "NICE¹ (erreur absolue / celle de la persistance)"
+    },
+    {
+     "value": "NICE3",
+     "label": "NICE³ (erreur cubique / celle de la persistance)"
+    }
+   ],
+   "label": {
+    "fr": "Mesure de l’erreur",
+    "en": "Error measure"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": null
+  },
+  {
+   "id": "times-counted",
+   "type": "enum",
+   "control": "select",
+   "default": "day",
+   "options": [
+    {
+     "value": "day",
+     "label": "de jour"
+    },
+    {
+     "value": "all",
+     "label": "jour et nuit"
+    }
+   ],
+   "label": {
+    "fr": "Instants comptés",
+    "en": "Times counted"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": null
+  },
+  {
+   "id": "persistence",
+   "type": "boolean",
+   "control": "checkbox",
+   "default": true,
+   "label": {
+    "fr": "persistance",
+    "en": "persistence"
+   },
+   "meaning": {
+    "fr": "recopier la dernière valeur observée : la référence minimale de toute prévision.",
+    "en": "copy the last observed value: the minimal reference of any forecast."
+   },
+   "unit": null,
+   "group": "Modèles affichés"
+  },
+  {
+   "id": "cyclic-persistence",
+   "type": "boolean",
+   "control": "checkbox",
+   "default": false,
+   "label": {
+    "fr": "persistance cyclique",
+    "en": "cyclic persistence"
+   },
+   "meaning": {
+    "fr": "recopier la dernière valeur observée : la référence minimale de toute prévision.",
+    "en": "copy the last observed value: the minimal reference of any forecast."
+   },
+   "unit": null,
+   "group": "Modèles affichés"
+  },
+  {
+   "id": "blend",
+   "type": "boolean",
+   "control": "checkbox",
+   "default": false,
+   "label": {
+    "fr": "BLEND",
+    "en": "BLEND"
+   },
+   "meaning": {
+    "fr": "combinaison convexe de la persistance et de la persistance cyclique : deux poids positifs de somme 1, un jeu de poids par demi-heure de la journée, calculé sur la première moitié des données.",
+    "en": "convex combination of persistence and cyclic persistence: two positive weights adding up to 1, one set of weights per half hour of the day, computed on the first half of the data."
+   },
+   "unit": null,
+   "group": "Modèles affichés"
+  },
+  {
+   "id": "ar-autoregression",
+   "type": "boolean",
+   "control": "checkbox",
+   "default": true,
+   "label": {
+    "fr": "autorégression AR",
+    "en": "AR autoregression"
+   },
+   "meaning": {
+    "fr": "autorégression : une somme pondérée des valeurs des 24 dernières heures et de l’heure du jour et de l’année, avec des poids calculés par moindres carrés.",
+    "en": "autoregression: a weighted sum of the values of the last 24 hours and of the time of day and of year, with weights computed by least squares."
+   },
+   "unit": null,
+   "group": "Modèles affichés"
+  },
+  {
+   "id": "elm",
+   "type": "boolean",
+   "control": "checkbox",
+   "default": true,
+   "label": {
+    "fr": "ELM",
+    "en": "ELM"
+   },
+   "meaning": {
+    "fr": "Extreme Learning Machine : un réseau de neurones à une couche intermédiaire tirée au hasard. Seuls les poids de sortie sont calculés, par moindres carrés régularisés.",
+    "en": "Extreme Learning Machine: a neural network with one intermediate layer drawn at random. Only the output weights are computed, by regularized least squares."
+   },
+   "unit": null,
+   "group": "Modèles affichés"
+  },
+  {
+   "id": "error-colored-for",
+   "type": "enum",
+   "control": "select",
+   "default": "ELM",
+   "options": [
+    {
+     "value": "P",
+     "label": "persistance"
+    },
+    {
+     "value": "Pc",
+     "label": "persistance cyclique"
+    },
+    {
+     "value": "BLEND",
+     "label": "BLEND"
+    },
+    {
+     "value": "AR",
+     "label": "autorégression AR"
+    },
+    {
+     "value": "ELM",
+     "label": "ELM"
+    }
+   ],
+   "label": {
+    "fr": "Erreur coloriée pour",
+    "en": "Error colored for"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": null
+  }
+ ],
+ "presets": [
+  {
+   "id": "right-away-30-minutes",
+   "name": {
+    "fr": "Tout de suite : 30 minutes",
+    "en": "Right away: 30 minutes"
+   },
+   "values": {
+    "horizon": 0,
+    "error-measure": "RMSE",
+    "times-counted": "day",
+    "persistence": true,
+    "cyclic-persistence": false,
+    "blend": false,
+    "ar-autoregression": true,
+    "elm": true,
+    "error-colored-for": "ELM"
+   },
+   "changes_vs_default": {},
+   "shows": {
+    "fr": "À 30 minutes, l’autorégression et le réseau de neurones font jeu égal (RMSE de 1,425 et 1,428 kW). Ils gagnent environ 14 % sur la persistance (1,652 kW). Le modèle le plus complexe n’apporte rien ici.",
+    "en": "At 30 minutes, the autoregression and the neural network are level (RMSE of 1.425 and 1.428 kW). They gain about 14% on persistence (1.652 kW). The more complex model adds nothing here."
+   }
+  },
+  {
+   "id": "further-ahead-6-hours",
+   "name": {
+    "fr": "Plus loin : 6 heures",
+    "en": "Further ahead: 6 hours"
+   },
+   "values": {
+    "horizon": 11,
+    "error-measure": "RMSE",
+    "times-counted": "day",
+    "persistence": true,
+    "cyclic-persistence": false,
+    "blend": false,
+    "ar-autoregression": true,
+    "elm": true,
+    "error-colored-for": "ELM"
+   },
+   "changes_vs_default": {
+    "horizon": 11
+   },
+   "shows": {
+    "fr": "À 6 heures, la persistance décroche (6,760 kW) : elle recopie une valeur de l’autre bout de la journée. L’autorégression et l’ELM divisent cette erreur par environ 2,5 (2,749 et 2,646 kW).",
+    "en": "At 6 hours, persistence falls behind (6.760 kW): it copies a value from another part of the day. The autoregression and the ELM divide this error by about 2.5 (2.749 and 2.646 kW)."
+   }
+  },
+  {
+   "id": "ar-or-elm",
+   "name": {
+    "fr": "AR ou ELM ?",
+    "en": "AR or ELM?"
+   },
+   "values": {
+    "horizon": 11,
+    "error-measure": "RMSE",
+    "times-counted": "day",
+    "persistence": false,
+    "cyclic-persistence": false,
+    "blend": false,
+    "ar-autoregression": true,
+    "elm": true,
+    "error-colored-for": "ELM"
+   },
+   "changes_vs_default": {
+    "horizon": 11,
+    "persistence": false
+   },
+   "shows": {
+    "fr": "À 6 heures, l’ELM gagne environ 4 % sur l’autorégression. Déplacez l’horizon : de 1 h à 6 h, ce gain reste de 3 à 5 %, et il est nul à 30 minutes. C’est à ce gain qu’il faut comparer le coût d’un modèle plus lourd.",
+    "en": "At 6 hours, the ELM gains about 4% on the autoregression. Move the horizon: from 1 h to 6 h, this gain stays at 3 to 5%, and it is nil at 30 minutes. The cost of a heavier model must be weighed against this gain."
+   }
+  },
+  {
+   "id": "copy-the-day-before",
+   "name": {
+    "fr": "Recopier la veille",
+    "en": "Copy the day before"
+   },
+   "values": {
+    "horizon": 3,
+    "error-measure": "RMSE",
+    "times-counted": "day",
+    "persistence": true,
+    "cyclic-persistence": true,
+    "blend": true,
+    "ar-autoregression": false,
+    "elm": false,
+    "error-colored-for": "BLEND"
+   },
+   "changes_vs_default": {
+    "horizon": 3,
+    "cyclic-persistence": true,
+    "blend": true,
+    "ar-autoregression": false,
+    "elm": false,
+    "error-colored-for": "BLEND"
+   },
+   "shows": {
+    "fr": "Recopier la veille coûte toujours 3,240 kW. La persistance est meilleure jusqu’à 1,5 h, puis moins bonne dès 2 h (3,762 kW). BLEND, qui les combine sans aucun réseau, fait mieux que les deux à tous les horizons (2,413 kW à 2 h).",
+    "en": "Copying the day before always costs 3.240 kW. Persistence is better up to 1.5 h, then worse from 2 h (3.762 kW). BLEND, which combines them with no network, beats both at every horizon (2.413 kW at 2 h)."
+   }
+  },
+  {
+   "id": "worse-than-persistence",
+   "name": {
+    "fr": "Pire que la persistance",
+    "en": "Worse than persistence"
+   },
+   "values": {
+    "horizon": 0,
+    "error-measure": "NICE2",
+    "times-counted": "day",
+    "persistence": true,
+    "cyclic-persistence": true,
+    "blend": true,
+    "ar-autoregression": false,
+    "elm": false,
+    "error-colored-for": "BLEND"
+   },
+   "changes_vs_default": {
+    "error-measure": "NICE2",
+    "cyclic-persistence": true,
+    "blend": true,
+    "ar-autoregression": false,
+    "elm": false,
+    "error-colored-for": "BLEND"
+   },
+   "shows": {
+    "fr": "À 30 minutes, recopier la veille fait moins bien que la persistance : NICE² > 1, la courbe sort du graphique par le haut. Elle n’y entre qu’à 2 h. BLEND reste sous 1 dès le départ (0,923).",
+    "en": "At 30 minutes, copying the day before does worse than persistence: NICE² > 1, the curve leaves the chart at the top. It only enters at 2 h. BLEND stays below 1 from the start (0.923)."
+   }
+  },
+  {
+   "id": "the-night-trap",
+   "name": {
+    "fr": "Le piège de la nuit",
+    "en": "The night trap"
+   },
+   "values": {
+    "horizon": 11,
+    "error-measure": "NICE2",
+    "times-counted": "all",
+    "persistence": true,
+    "cyclic-persistence": false,
+    "blend": false,
+    "ar-autoregression": true,
+    "elm": true,
+    "error-colored-for": "ELM"
+   },
+   "changes_vs_default": {
+    "horizon": 11,
+    "error-measure": "NICE2",
+    "times-counted": "all"
+   },
+   "shows": {
+    "fr": "En comptant la nuit, la persistance descend à 0,869 à 6 h : elle semble se battre elle-même. C’est un effet de périmètre, pas un progrès : le masque de nuit corrige des erreurs que la référence brute conserve.",
+    "en": "Counting the night, persistence falls to 0.869 at 6 h: it seems to beat itself. This is a scope effect, not progress: the night mask removes errors that the raw reference keeps."
+   }
+  }
+ ],
+ "actions": [],
+ "variants": [],
+ "outputs": [
+  {
+   "name": {
+    "fr": "Le meilleur des modèles affichés à cet horizon",
+    "en": "The best of the models shown at this horizon"
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "kind": "reading"
+  },
+  {
+   "name": {
+    "fr": "persistance",
+    "en": "persistence"
+   },
+   "unit": null,
+   "meaning": {
+    "fr": "Modèle | RMSE (kW) | nRMSE | nMAE | NICE¹ | NICE² | NICE³ | persistance",
+    "en": "Model | RMSE (kW) | nRMSE | nMAE | NICE¹ | NICE² | NICE³ | persistence"
+   },
+   "kind": "table-row"
+  },
+  {
+   "name": {
+    "fr": "persistance cyclique",
+    "en": "cyclic persistence"
+   },
+   "unit": null,
+   "meaning": {
+    "fr": "Modèle | RMSE (kW) | nRMSE | nMAE | NICE¹ | NICE² | NICE³ | persistance",
+    "en": "Model | RMSE (kW) | nRMSE | nMAE | NICE¹ | NICE² | NICE³ | persistence"
+   },
+   "kind": "table-row"
+  },
+  {
+   "name": {
+    "fr": "BLEND",
+    "en": "BLEND"
+   },
+   "unit": null,
+   "meaning": {
+    "fr": "Modèle | RMSE (kW) | nRMSE | nMAE | NICE¹ | NICE² | NICE³ | persistance",
+    "en": "Model | RMSE (kW) | nRMSE | nMAE | NICE¹ | NICE² | NICE³ | persistence"
+   },
+   "kind": "table-row"
+  },
+  {
+   "name": {
+    "fr": "autorégression AR",
+    "en": "AR autoregression"
+   },
+   "unit": null,
+   "meaning": {
+    "fr": "Modèle | RMSE (kW) | nRMSE | nMAE | NICE¹ | NICE² | NICE³ | persistance",
+    "en": "Model | RMSE (kW) | nRMSE | nMAE | NICE¹ | NICE² | NICE³ | persistence"
+   },
+   "kind": "table-row"
+  },
+  {
+   "name": {
+    "fr": "ELM",
+    "en": "ELM"
+   },
+   "unit": null,
+   "meaning": {
+    "fr": "Modèle | RMSE (kW) | nRMSE | nMAE | NICE¹ | NICE² | NICE³ | persistance",
+    "en": "Model | RMSE (kW) | nRMSE | nMAE | NICE¹ | NICE² | NICE³ | persistence"
+   },
+   "kind": "table-row"
+  }
+ ],
+ "formulas": [],
+ "definitions": [
+  {
+   "term": "Persistance",
+   "meaning": {
+    "fr": "recopier la dernière valeur observée : la référence minimale de toute prévision.",
+    "en": "copy the last observed value: the minimal reference of any forecast."
+   }
+  },
+  {
+   "term": "Persistance cyclique",
+   "meaning": {
+    "fr": "recopier la valeur observée 24 heures avant l’instant visé. Elle suit le cycle du jour, mais ignore la météo du moment.",
+    "en": "copy the value observed 24 hours before the target time. It follows the daily cycle but ignores the current weather."
+   }
+  },
+  {
+   "term": "BLEND",
+   "meaning": {
+    "fr": "combinaison convexe de la persistance et de la persistance cyclique : deux poids positifs de somme 1, un jeu de poids par demi-heure de la journée, calculé sur la première moitié des données.",
+    "en": "convex combination of persistence and cyclic persistence: two positive weights adding up to 1, one set of weights per half hour of the day, computed on the first half of the data."
+   }
+  },
+  {
+   "term": "AR",
+   "meaning": {
+    "fr": "autorégression : une somme pondérée des valeurs des 24 dernières heures et de l’heure du jour et de l’année, avec des poids calculés par moindres carrés.",
+    "en": "autoregression: a weighted sum of the values of the last 24 hours and of the time of day and of year, with weights computed by least squares."
+   }
+  },
+  {
+   "term": "ELM",
+   "meaning": {
+    "fr": "Extreme Learning Machine : un réseau de neurones à une couche intermédiaire tirée au hasard. Seuls les poids de sortie sont calculés, par moindres carrés régularisés.",
+    "en": "Extreme Learning Machine: a neural network with one intermediate layer drawn at random. Only the output weights are computed, by regularized least squares."
+   }
+  },
+  {
+   "term": "Horizon",
+   "meaning": {
+    "fr": "le temps entre la dernière valeur connue et la valeur à prévoir, ici de 30 minutes à 6 heures.",
+    "en": "the time between the last known value and the value to forecast, here from 30 minutes to 6 hours."
+   }
+  },
+  {
+   "term": "RMSE, nRMSE, nMAE",
+   "meaning": {
+    "fr": "la RMSE est la racine de l’erreur quadratique moyenne, en kW ; elle pénalise les grosses erreurs. nRMSE et nMAE rapportent la RMSE et l’erreur absolue moyenne à la production moyenne des instants comptés.",
+    "en": "RMSE is the root mean squared error, in kW; it penalizes large errors. nRMSE and nMAE divide RMSE and the mean absolute error by the mean output of the times counted."
+   }
+  },
+  {
+   "term": "NICE¹, NICE², NICE³",
+   "meaning": {
+    "fr": "l’erreur du modèle divisée par celle de la persistance simple brute (dernière observation, sans masque de nuit), au même horizon : NICE¹ pour l’erreur absolue moyenne, NICE² pour la RMSE, NICE³ pour la racine cubique de la moyenne des erreurs absolues au cube, qui pèse encore plus sur les grosses erreurs. Entre 0 et 1 : la prévision est utile. Au-dessus, elle est moins bonne que la persistance : la page affiche alors « > 1 ».",
+    "en": "the error of the model divided by that of raw simple persistence (last observation, without a night mask), at the same horizon: NICE¹ for the mean absolute error, NICE² for RMSE, NICE³ for the cube root of the mean cubed absolute error, which weighs large errors even more. Between 0 and 1: the forecast is useful. Above, it is worse than persistence: the page then shows \"> 1\"."
+   }
+  },
+  {
+   "term": "De jour / jour et nuit",
+   "meaning": {
+    "fr": "« de jour » ne compte que les instants où le soleil est levé. Les prévisions sont mises à zéro la nuit. Compter la nuit change les valeurs : le périmètre doit accompagner les résultats.",
+    "en": "\"daytime\" counts only the times when the sun is up. Forecasts are set to zero at night. Counting the night changes the values: the scope must accompany the results."
+   }
+  }
+ ],
+ "assumptions": {
+  "fr": [],
+  "en": []
+ },
+ "source": {
+  "dois": [
+   "10.5281/zenodo.21487267"
+  ],
+  "repositories": [
+   "https://github.com/cyrilvoyant/PV_ELM_pred"
+  ],
+  "related_pages": [
+   {
+    "href": "/fr/outils/nice/",
+    "text": "Comparer une prévision à la persistance : NICE"
+   },
+   {
+    "href": "/fr/outils/blend/",
+    "text": "Calculer les poids de BLEND"
+   },
+   {
+    "href": "/fr/outils/variabilite-previsibilite/",
+    "text": "Mesurer variabilité et prévisibilité : sCV et F"
+   }
+  ]
+ },
+ "how_to_explore": {
+  "fr": "Régler les paramètres sur un préréglage (valeurs ci-dessus), lire la phrase affichée par la page puis les sorties ; modifier ensuite un seul paramètre à la fois entre son minimum et son maximum.",
+  "en": "Set the parameters to a preset (values above), read the sentence the page shows then the outputs; then change one parameter at a time between its minimum and maximum."
+ },
+ "exploration": [
+  {
+   "preset": "right-away-30-minutes",
+   "title": {
+    "fr": "Tout de suite : 30 minutes",
+    "en": "Right away: 30 minutes"
+   },
+   "set": {
+    "horizon": 0,
+    "error-measure": "RMSE",
+    "times-counted": "day",
+    "persistence": true,
+    "cyclic-persistence": false,
+    "blend": false,
+    "ar-autoregression": true,
+    "elm": true,
+    "error-colored-for": "ELM"
+   },
+   "observe": {
+    "fr": "À 30 minutes, l’autorégression et le réseau de neurones font jeu égal (RMSE de 1,425 et 1,428 kW). Ils gagnent environ 14 % sur la persistance (1,652 kW). Le modèle le plus complexe n’apporte rien ici.",
+    "en": "At 30 minutes, the autoregression and the neural network are level (RMSE of 1.425 and 1.428 kW). They gain about 14% on persistence (1.652 kW). The more complex model adds nothing here."
+   }
+  },
+  {
+   "preset": "further-ahead-6-hours",
+   "title": {
+    "fr": "Plus loin : 6 heures",
+    "en": "Further ahead: 6 hours"
+   },
+   "set": {
+    "horizon": 11
+   },
+   "observe": {
+    "fr": "À 6 heures, la persistance décroche (6,760 kW) : elle recopie une valeur de l’autre bout de la journée. L’autorégression et l’ELM divisent cette erreur par environ 2,5 (2,749 et 2,646 kW).",
+    "en": "At 6 hours, persistence falls behind (6.760 kW): it copies a value from another part of the day. The autoregression and the ELM divide this error by about 2.5 (2.749 and 2.646 kW)."
+   }
+  },
+  {
+   "preset": "ar-or-elm",
+   "title": {
+    "fr": "AR ou ELM ?",
+    "en": "AR or ELM?"
+   },
+   "set": {
+    "horizon": 11,
+    "persistence": false
+   },
+   "observe": {
+    "fr": "À 6 heures, l’ELM gagne environ 4 % sur l’autorégression. Déplacez l’horizon : de 1 h à 6 h, ce gain reste de 3 à 5 %, et il est nul à 30 minutes. C’est à ce gain qu’il faut comparer le coût d’un modèle plus lourd.",
+    "en": "At 6 hours, the ELM gains about 4% on the autoregression. Move the horizon: from 1 h to 6 h, this gain stays at 3 to 5%, and it is nil at 30 minutes. The cost of a heavier model must be weighed against this gain."
+   }
+  },
+  {
+   "preset": "worse-than-persistence",
+   "title": {
+    "fr": "Pire que la persistance",
+    "en": "Worse than persistence"
+   },
+   "set": {
+    "error-measure": "NICE2",
+    "cyclic-persistence": true,
+    "blend": true,
+    "ar-autoregression": false,
+    "elm": false,
+    "error-colored-for": "BLEND"
+   },
+   "observe": {
+    "fr": "À 30 minutes, recopier la veille fait moins bien que la persistance : NICE² > 1, la courbe sort du graphique par le haut. Elle n’y entre qu’à 2 h. BLEND reste sous 1 dès le départ (0,923).",
+    "en": "At 30 minutes, copying the day before does worse than persistence: NICE² > 1, the curve leaves the chart at the top. It only enters at 2 h. BLEND stays below 1 from the start (0.923)."
+   }
+  },
+  {
+   "preset": "the-night-trap",
+   "title": {
+    "fr": "Le piège de la nuit",
+    "en": "The night trap"
+   },
+   "set": {
+    "horizon": 11,
+    "error-measure": "NICE2",
+    "times-counted": "all"
+   },
+   "observe": {
+    "fr": "En comptant la nuit, la persistance descend à 0,869 à 6 h : elle semble se battre elle-même. C’est un effet de périmètre, pas un progrès : le masque de nuit corrige des erreurs que la référence brute conserve.",
+    "en": "Counting the night, persistence falls to 0.869 at 6 h: it seems to beat itself. This is a scope effect, not progress: the night mask removes errors that the raw reference keeps."
+   }
+  }
+ ],
+ "concepts": [
+  "persistence",
+  "cyclic-persistence",
+  "blend",
+  "elm",
+  "rmse",
+  "nrmse",
+  "nmae",
+  "nice"
+ ],
+ "extraction": {
+  "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
+  "roots": [
+   "#fc"
+  ],
+  "page_errors": [],
+  "fr_en_preset_consistency": {
+   "presets_compared": 6,
+   "presets_with_different_values_fr_vs_en": []
+  }
+ }
+}

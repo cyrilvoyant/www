@@ -1,0 +1,128 @@
+{
+ "@context": "https://schema.org",
+ "@type": [
+  "SoftwareApplication",
+  "LearningResource"
+ ],
+ "@id": "https://www.cyrilvoyant.com/tools/attenuation-half-value-layer/#tool-spec",
+ "identifier": "atten",
+ "name": "Explore attenuation and half-value layers",
+ "alternateName": "Explorer l’atténuation et la CDA",
+ "description": "Vary thickness and half-value layer; read the transmitted fraction.",
+ "url": "https://www.cyrilvoyant.com/tools/attenuation-half-value-layer/",
+ "sameAs": [
+  "https://www.cyrilvoyant.com/fr/animations/attenuation-demi-epaisseur/",
+  "https://www.cyrilvoyant.com/tools/attenuation-half-value-layer/"
+ ],
+ "inLanguage": [
+  "fr",
+  "en"
+ ],
+ "applicationCategory": "EducationalApplication",
+ "operatingSystem": "Any (web browser)",
+ "isAccessibleForFree": true,
+ "learningResourceType": "teaching",
+ "author": {
+  "@type": "Person",
+  "name": "Cyril Voyant",
+  "identifier": "https://orcid.org/0000-0003-0242-7377"
+ },
+ "license": "https://creativecommons.org/licenses/by/4.0/",
+ "additionalProperty": [
+  {
+   "@type": "PropertyValue",
+   "propertyID": "half-value-layer-hvl",
+   "name": "Half-value layer HVL (cm)",
+   "alternateName": "Couche de demi-atténuation CDA (cm)",
+   "description": "The half-value layer: the thickness that halves this intensity.",
+   "value": 2,
+   "minValue": 0.1,
+   "maxValue": 10,
+   "unitText": "cm"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "thickness-x",
+   "name": "Thickness x (cm)",
+   "alternateName": "Épaisseur x (cm)",
+   "value": 6,
+   "minValue": 0,
+   "maxValue": 30,
+   "unitText": "cm"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:three-layers-6-cm-2-cm-hvl",
+   "name": "Three layers: 6 cm, 2 cm HVL",
+   "alternateName": "Trois couches : 6 cm, CDA de 2 cm",
+   "value": "{\"half-value-layer-hvl\": 2, \"thickness-x\": 6}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:one-layer",
+   "name": "One layer",
+   "alternateName": "Une seule couche",
+   "value": "{\"half-value-layer-hvl\": 2, \"thickness-x\": 2}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:thickness-doubled-12-cm",
+   "name": "Thickness doubled: 12 cm",
+   "alternateName": "Épaisseur doublée : 12 cm",
+   "value": "{\"half-value-layer-hvl\": 2, \"thickness-x\": 12}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:ten-layers",
+   "name": "Ten layers",
+   "alternateName": "Dix couches",
+   "value": "{\"half-value-layer-hvl\": 2, \"thickness-x\": 20}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:weakly-attenuating-material",
+   "name": "Weakly attenuating material",
+   "alternateName": "Matériau peu atténuant",
+   "value": "{\"half-value-layer-hvl\": 10, \"thickness-x\": 6}"
+  }
+ ],
+ "potentialAction": {
+  "@type": "Action",
+  "name": "Explore the tool",
+  "target": {
+   "@type": "EntryPoint",
+   "urlTemplate": "https://www.cyrilvoyant.com/tools/attenuation-half-value-layer/",
+   "actionPlatform": "https://schema.org/DesktopWebPlatform"
+  },
+  "object": [
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "half-value-layer-hvl",
+    "description": "Half-value layer HVL (cm)",
+    "valueRequired": false,
+    "minValue": 0.1,
+    "maxValue": 10,
+    "defaultValue": 2,
+    "stepValue": 0.1
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "thickness-x",
+    "description": "Thickness x (cm)",
+    "valueRequired": false,
+    "minValue": 0,
+    "maxValue": 30,
+    "defaultValue": 6,
+    "stepValue": 0.1
+   }
+  ]
+ },
+ "about": [
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#attenuation"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#half-value-layer"
+  }
+ ]
+}

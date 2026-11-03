@@ -1,0 +1,163 @@
+{
+ "@context": "https://schema.org",
+ "@type": [
+  "SoftwareApplication",
+  "LearningResource"
+ ],
+ "@id": "https://www.cyrilvoyant.com/tools/carnot-heat-engine/#tool-spec",
+ "identifier": "engine",
+ "name": "Heat engine: energy balance and Carnot limit",
+ "alternateName": "Moteur thermique à deux sources : bilan et borne de Carnot",
+ "description": "Change reservoir temperatures and read work, rejected heat and reservoir entropy.",
+ "url": "https://www.cyrilvoyant.com/tools/carnot-heat-engine/",
+ "sameAs": [
+  "https://www.cyrilvoyant.com/fr/animations/moteur-carnot/",
+  "https://www.cyrilvoyant.com/tools/carnot-heat-engine/"
+ ],
+ "inLanguage": [
+  "fr",
+  "en"
+ ],
+ "applicationCategory": "EducationalApplication",
+ "operatingSystem": "Any (web browser)",
+ "isAccessibleForFree": true,
+ "learningResourceType": "teaching",
+ "author": {
+  "@type": "Person",
+  "name": "Cyril Voyant",
+  "identifier": "https://orcid.org/0000-0003-0242-7377"
+ },
+ "license": "https://creativecommons.org/licenses/by/4.0/",
+ "additionalProperty": [
+  {
+   "@type": "PropertyValue",
+   "propertyID": "hot-reservoir",
+   "name": "Hot reservoir (°C)",
+   "alternateName": "Source chaude (°C)",
+   "description": "Temperature Thot, where the heat comes from.",
+   "value": 400,
+   "minValue": 100,
+   "maxValue": 700,
+   "unitText": "°C"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "cold-reservoir",
+   "name": "Cold reservoir (°C)",
+   "alternateName": "Source froide (°C)",
+   "description": "Temperature Tcold, where rejected heat goes.",
+   "value": 20,
+   "minValue": -20,
+   "maxValue": 80,
+   "unitText": "°C"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "heat-received-qhot",
+   "name": "Heat received Qhot (J/cycle)",
+   "alternateName": "Chaleur reçue Qchaud (J/cycle)",
+   "description": "Changes the joules, not the efficiencies.",
+   "value": 1000,
+   "minValue": 100,
+   "maxValue": 2000,
+   "unitText": "J/cycle"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "fraction-of-the-carnot-limit",
+   "name": "Fraction of the Carnot limit",
+   "alternateName": "Fraction de la borne de Carnot",
+   "description": "1: perfect engine, called reversible. Lower: an engine with losses.",
+   "value": 0.7,
+   "minValue": 0.1,
+   "maxValue": 1,
+   "unitText": "dimensionless"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:reference-400-c-20-c",
+   "name": "Reference · 400 °C / 20 °C",
+   "alternateName": "Référence · 400 °C / 20 °C",
+   "value": "{\"hot-reservoir\": 400, \"cold-reservoir\": 20, \"heat-received-qhot\": 1000, \"fraction-of-the-carnot-limit\": 0.7}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:small-gap-100-c-80-c",
+   "name": "Small gap · 100 °C / 80 °C",
+   "alternateName": "Faible écart · 100 °C / 80 °C",
+   "value": "{\"hot-reservoir\": 100, \"cold-reservoir\": 80, \"heat-received-qhot\": 1000, \"fraction-of-the-carnot-limit\": 0.7}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:large-gap-700-c-20-c",
+   "name": "Large gap · 700 °C / −20 °C",
+   "alternateName": "Grand écart · 700 °C / −20 °C",
+   "value": "{\"hot-reservoir\": 700, \"cold-reservoir\": -20, \"heat-received-qhot\": 1000, \"fraction-of-the-carnot-limit\": 0.7}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:reversible-limit",
+   "name": "Reversible limit",
+   "alternateName": "Limite réversible",
+   "value": "{\"hot-reservoir\": 400, \"cold-reservoir\": 20, \"heat-received-qhot\": 1000, \"fraction-of-the-carnot-limit\": 1}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:half-the-limit",
+   "name": "Half the limit",
+   "alternateName": "Moitié de la borne",
+   "value": "{\"hot-reservoir\": 400, \"cold-reservoir\": 20, \"heat-received-qhot\": 1000, \"fraction-of-the-carnot-limit\": 0.5}"
+  }
+ ],
+ "potentialAction": {
+  "@type": "Action",
+  "name": "Explore the tool",
+  "target": {
+   "@type": "EntryPoint",
+   "urlTemplate": "https://www.cyrilvoyant.com/tools/carnot-heat-engine/",
+   "actionPlatform": "https://schema.org/DesktopWebPlatform"
+  },
+  "object": [
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "hot-reservoir",
+    "description": "Hot reservoir (°C)",
+    "valueRequired": false,
+    "minValue": 100,
+    "maxValue": 700,
+    "defaultValue": 400,
+    "stepValue": 5
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "cold-reservoir",
+    "description": "Cold reservoir (°C)",
+    "valueRequired": false,
+    "minValue": -20,
+    "maxValue": 80,
+    "defaultValue": 20,
+    "stepValue": 1
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "heat-received-qhot",
+    "description": "Heat received Qhot (J/cycle)",
+    "valueRequired": false,
+    "minValue": 100,
+    "maxValue": 2000,
+    "defaultValue": 1000,
+    "stepValue": 10
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "fraction-of-the-carnot-limit",
+    "description": "Fraction of the Carnot limit",
+    "valueRequired": false,
+    "minValue": 0.1,
+    "maxValue": 1,
+    "defaultValue": 0.7,
+    "stepValue": 0.05
+   }
+  ]
+ }
+}

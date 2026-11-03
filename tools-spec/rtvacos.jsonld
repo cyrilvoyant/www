@@ -1,0 +1,304 @@
+{
+ "@context": "https://schema.org",
+ "@type": [
+  "SoftwareApplication",
+  "LearningResource"
+ ],
+ "@id": "https://www.cyrilvoyant.com/research-excellence-rtvacos/#rtv#tool-spec",
+ "identifier": "rtvacos",
+ "name": "Prepare an RTVACOS action plan",
+ "alternateName": "Préparer un plan d’action RTVACOS",
+ "description": "Explore a reflection framework on rigour, transparency, visibility and adoption; no excellence score.",
+ "url": "https://www.cyrilvoyant.com/research-excellence-rtvacos/#rtv",
+ "sameAs": [
+  "https://www.cyrilvoyant.com/fr/excellence-rtvacos/#rtv",
+  "https://www.cyrilvoyant.com/research-excellence-rtvacos/#rtv"
+ ],
+ "inLanguage": [
+  "fr",
+  "en"
+ ],
+ "applicationCategory": "ScientificApplication",
+ "operatingSystem": "Any (web browser)",
+ "isAccessibleForFree": true,
+ "learningResourceType": "decision",
+ "author": {
+  "@type": "Person",
+  "name": "Cyril Voyant",
+  "identifier": "https://orcid.org/0000-0003-0242-7377"
+ },
+ "license": "https://creativecommons.org/licenses/by/4.0/",
+ "additionalProperty": [
+  {
+   "@type": "PropertyValue",
+   "propertyID": "R1",
+   "name": "A simple reference to beat (persistence, or climatology: the usual average)",
+   "alternateName": "Une référence simple à battre (persistance, ou climatologie : la moyenne habituelle)",
+   "value": false
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "R2",
+   "name": "Separate training and test data, with no information leaking from one to the other",
+   "alternateName": "Des données d'entraînement et de test séparées, sans fuite d'information de l'une vers l'autre",
+   "value": false
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "R3",
+   "name": "Limits and domain of validity written down",
+   "alternateName": "Les limites et le domaine de validité écrits",
+   "value": false
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "T1",
+   "name": "Public code, with a license",
+   "alternateName": "Le code public, avec une licence",
+   "value": false
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "T2",
+   "name": "Data or their access described, with a license",
+   "alternateName": "Les données ou leur accès décrits, avec une licence",
+   "value": false
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "T3",
+   "name": "Tool use declared, AI included",
+   "alternateName": "L'usage des outils déclaré, IA comprise",
+   "value": false
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "V1",
+   "name": "An ORCID and DOIs (article, code, data)",
+   "alternateName": "Un ORCID et des DOI (article, code, données)",
+   "value": false
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "V2",
+   "name": "A clear page: the result, the method, how to cite",
+   "alternateName": "Une page claire : le résultat, la méthode, comment citer",
+   "value": false
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "V3",
+   "name": "Machine-readable metadata (CITATION.cff, JSON-LD)",
+   "alternateName": "Des métadonnées lisibles par les machines (CITATION.cff, JSON-LD)",
+   "value": false
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "A1",
+   "name": "An example that runs in minutes",
+   "alternateName": "Un exemple qui tourne en quelques minutes",
+   "value": false
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "A2",
+   "name": "Documentation for a user who is not the author",
+   "alternateName": "Une documentation pour un utilisateur qui n'est pas l'auteur",
+   "value": false
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "A3",
+   "name": "Real user feedback taken into account",
+   "alternateName": "Un retour d'utilisateur réel pris en compte",
+   "value": false
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "C1",
+   "name": "Co-authors who strengthen a foundation, not only the list",
+   "alternateName": "Des coauteurs qui renforcent une fondation, pas seulement la liste",
+   "value": false
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "C2",
+   "name": "Credited contributions (CRediT, ORCID)",
+   "alternateName": "Des contributions créditées (CRediT, ORCID)",
+   "value": false
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "O1",
+   "name": "A summary for non-specialists",
+   "alternateName": "Un résumé pour non-spécialistes",
+   "value": false
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "O2",
+   "name": "A talk, a course or a video",
+   "alternateName": "Une présentation, un cours ou une vidéo",
+   "value": false
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "S1",
+   "name": "An identified user or decision",
+   "alternateName": "Un utilisateur ou une décision identifiés",
+   "value": false
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "S2",
+   "name": "A partner outside academia",
+   "alternateName": "Un partenaire hors du monde académique",
+   "value": false
+  }
+ ],
+ "potentialAction": {
+  "@type": "Action",
+  "name": "Explore the tool",
+  "target": {
+   "@type": "EntryPoint",
+   "urlTemplate": "https://www.cyrilvoyant.com/research-excellence-rtvacos/#rtv",
+   "actionPlatform": "https://schema.org/DesktopWebPlatform"
+  },
+  "object": [
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "R1",
+    "description": "A simple reference to beat (persistence, or climatology: the usual average)",
+    "valueRequired": false,
+    "defaultValue": false
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "R2",
+    "description": "Separate training and test data, with no information leaking from one to the other",
+    "valueRequired": false,
+    "defaultValue": false
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "R3",
+    "description": "Limits and domain of validity written down",
+    "valueRequired": false,
+    "defaultValue": false
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "T1",
+    "description": "Public code, with a license",
+    "valueRequired": false,
+    "defaultValue": false
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "T2",
+    "description": "Data or their access described, with a license",
+    "valueRequired": false,
+    "defaultValue": false
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "T3",
+    "description": "Tool use declared, AI included",
+    "valueRequired": false,
+    "defaultValue": false
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "V1",
+    "description": "An ORCID and DOIs (article, code, data)",
+    "valueRequired": false,
+    "defaultValue": false
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "V2",
+    "description": "A clear page: the result, the method, how to cite",
+    "valueRequired": false,
+    "defaultValue": false
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "V3",
+    "description": "Machine-readable metadata (CITATION.cff, JSON-LD)",
+    "valueRequired": false,
+    "defaultValue": false
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "A1",
+    "description": "An example that runs in minutes",
+    "valueRequired": false,
+    "defaultValue": false
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "A2",
+    "description": "Documentation for a user who is not the author",
+    "valueRequired": false,
+    "defaultValue": false
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "A3",
+    "description": "Real user feedback taken into account",
+    "valueRequired": false,
+    "defaultValue": false
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "C1",
+    "description": "Co-authors who strengthen a foundation, not only the list",
+    "valueRequired": false,
+    "defaultValue": false
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "C2",
+    "description": "Credited contributions (CRediT, ORCID)",
+    "valueRequired": false,
+    "defaultValue": false
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "O1",
+    "description": "A summary for non-specialists",
+    "valueRequired": false,
+    "defaultValue": false
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "O2",
+    "description": "A talk, a course or a video",
+    "valueRequired": false,
+    "defaultValue": false
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "S1",
+    "description": "An identified user or decision",
+    "valueRequired": false,
+    "defaultValue": false
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "S2",
+    "description": "A partner outside academia",
+    "valueRequired": false,
+    "defaultValue": false
+   }
+  ]
+ },
+ "citation": [
+  "https://doi.org/10.2139/ssrn.6877118"
+ ],
+ "about": [
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#persistence"
+  }
+ ]
+}

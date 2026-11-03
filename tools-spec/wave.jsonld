@@ -1,0 +1,135 @@
+{
+ "@context": "https://schema.org",
+ "@type": [
+  "SoftwareApplication",
+  "LearningResource"
+ ],
+ "@id": "https://www.cyrilvoyant.com/tools/electromagnetic-wave/#tool-spec",
+ "identifier": "wave",
+ "name": "Animated EM wave: E, B and propagation",
+ "alternateName": "Onde EM animée : E, B et propagation",
+ "description": "Frequency, wavelength and transverse fields; slow playback, pause and step controls.",
+ "url": "https://www.cyrilvoyant.com/tools/electromagnetic-wave/",
+ "sameAs": [
+  "https://www.cyrilvoyant.com/fr/animations/onde-electromagnetique/",
+  "https://www.cyrilvoyant.com/tools/electromagnetic-wave/"
+ ],
+ "inLanguage": [
+  "fr",
+  "en"
+ ],
+ "applicationCategory": "EducationalApplication",
+ "operatingSystem": "Any (web browser)",
+ "isAccessibleForFree": true,
+ "learningResourceType": "teaching",
+ "author": {
+  "@type": "Person",
+  "name": "Cyril Voyant",
+  "identifier": "https://orcid.org/0000-0003-0242-7377"
+ },
+ "license": "https://creativecommons.org/licenses/by/4.0/",
+ "additionalProperty": [
+  {
+   "@type": "PropertyValue",
+   "propertyID": "amplitude-e0",
+   "name": "Amplitude E₀ (V/m)",
+   "alternateName": "Amplitude E₀ (V/m)",
+   "description": "Largest value of the electric field.",
+   "value": 2,
+   "minValue": 0.5,
+   "maxValue": 4,
+   "unitText": "V/m"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "frequency",
+   "name": "Frequency ν (MHz)",
+   "alternateName": "Fréquence ν (MHz)",
+   "description": "Oscillations per second, in millions.",
+   "value": 50,
+   "minValue": 10,
+   "maxValue": 100,
+   "unitText": "MHz"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "time-phase-t",
+   "name": "Time phase ωt (rad)",
+   "alternateName": "Phase temporelle ωt (rad)",
+   "description": "Moment in the oscillation: 6.28 rad is a full turn. It moves the curve without changing the four values below.",
+   "value": 0,
+   "minValue": 0,
+   "maxValue": 6.28,
+   "unitText": "rad"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:reference-2-v-m-50-mhz",
+   "name": "Reference · 2 V/m, 50 MHz",
+   "alternateName": "Référence · 2 V/m, 50 MHz",
+   "value": "{\"amplitude-e0\": 2, \"frequency\": 50, \"time-phase-t\": 0}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:doubled-amplitude-4-v-m",
+   "name": "Doubled amplitude · 4 V/m",
+   "alternateName": "Amplitude doublée · 4 V/m",
+   "value": "{\"amplitude-e0\": 4, \"frequency\": 50, \"time-phase-t\": 0}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:fm-radio-100-mhz",
+   "name": "FM radio · 100 MHz",
+   "alternateName": "Radio FM · 100 MHz",
+   "value": "{\"amplitude-e0\": 2, \"frequency\": 100, \"time-phase-t\": 0}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:shortwave-10-mhz",
+   "name": "Shortwave · 10 MHz",
+   "alternateName": "Ondes courtes · 10 MHz",
+   "value": "{\"amplitude-e0\": 2, \"frequency\": 10, \"time-phase-t\": 0}"
+  }
+ ],
+ "potentialAction": {
+  "@type": "Action",
+  "name": "Explore the tool",
+  "target": {
+   "@type": "EntryPoint",
+   "urlTemplate": "https://www.cyrilvoyant.com/tools/electromagnetic-wave/",
+   "actionPlatform": "https://schema.org/DesktopWebPlatform"
+  },
+  "object": [
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "amplitude-e0",
+    "description": "Amplitude E₀ (V/m)",
+    "valueRequired": false,
+    "minValue": 0.5,
+    "maxValue": 4,
+    "defaultValue": 2,
+    "stepValue": 0.1
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "frequency",
+    "description": "Frequency ν (MHz)",
+    "valueRequired": false,
+    "minValue": 10,
+    "maxValue": 100,
+    "defaultValue": 50,
+    "stepValue": 1
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "time-phase-t",
+    "description": "Time phase ωt (rad)",
+    "valueRequired": false,
+    "minValue": 0,
+    "maxValue": 6.28,
+    "defaultValue": 0,
+    "stepValue": 0.01
+   }
+  ]
+ }
+}

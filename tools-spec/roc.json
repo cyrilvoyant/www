@@ -1,0 +1,545 @@
+{
+ "id": "roc",
+ "schema": "https://www.cyrilvoyant.com/tools-spec.json#1.0",
+ "kind": "teaching",
+ "domain": "learning",
+ "interface_language": "both",
+ "name": {
+  "fr": "Comprendre sensibilité, spécificité et courbe ROC",
+  "en": "Understand sensitivity, specificity and ROC curves"
+ },
+ "url": {
+  "fr": "https://www.cyrilvoyant.com/fr/animations/courbe-roc/",
+  "en": "https://www.cyrilvoyant.com/tools/roc-curve/"
+ },
+ "page_title": {
+  "fr": "Courbe ROC interactive : sensibilité, spécificité et prévalence",
+  "en": "Interactive ROC curve: sensitivity, specificity and prevalence"
+ },
+ "computes": {
+  "fr": "Changer le seuil, la séparation des distributions et la prévalence dans un exemple pédagogique.",
+  "en": "Change the threshold, distribution separation and prevalence in a teaching example."
+ },
+ "summary": {
+  "fr": "À 10 % de prévalence, un test à 78,8 % de sensibilité et 84,1 % de spécificité ne donne que 35,6 % de malades parmi les résultats positifs (exemple construit). Vous comprenez ce qu’un résultat positif veut dire, et ce qui dépend de la population.",
+  "en": "At 10% prevalence, a test with 78.8% sensitivity and 84.1% specificity gives only 35.6% of people with the disease among positive results (constructed example). You understand what a positive result means, and what depends on the population."
+ },
+ "parameters": [
+  {
+   "id": "separation-d",
+   "type": "number",
+   "control": "range",
+   "min": 0,
+   "max": 4,
+   "step": 0.05,
+   "default": 1.8,
+   "label": {
+    "fr": "Séparation d (écarts-types)",
+    "en": "Separation d (standard deviations)"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "unit_source": "no unit shown by the page"
+  },
+  {
+   "id": "test-threshold-s",
+   "type": "number",
+   "control": "range",
+   "min": -3,
+   "max": 6,
+   "step": 0.05,
+   "default": 1,
+   "label": {
+    "fr": "Seuil s du test",
+    "en": "Test threshold s"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "unit_source": "no unit shown by the page"
+  },
+  {
+   "id": "prevalence",
+   "type": "number",
+   "control": "range",
+   "min": 0.001,
+   "max": 0.5,
+   "step": 0.001,
+   "default": 0.1,
+   "label": {
+    "fr": "Prévalence (part de malades)",
+    "en": "Prevalence (share with disease)"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": {
+    "fr": "%",
+    "en": "%"
+   },
+   "unit_source": "display"
+  }
+ ],
+ "presets": [
+  {
+   "id": "starting-setting-10-prevalence",
+   "name": {
+    "fr": "Réglage de départ : prévalence 10 %",
+    "en": "Starting setting: 10% prevalence"
+   },
+   "values": {
+    "separation-d": 1.8,
+    "test-threshold-s": 1,
+    "prevalence": 0.1
+   },
+   "changes_vs_default": {},
+   "shows": {
+    "fr": "78,8 % de sensibilité, 84,1 % de spécificité, et seulement 35,6 % de malades parmi les résultats positifs.",
+    "en": "78.8% sensitivity, 84.1% specificity, and only 35.6% of people with the disease among positive results."
+   }
+  },
+  {
+   "id": "good-test-rare-disease-1",
+   "name": {
+    "fr": "Bon test, maladie rare (1 %)",
+    "en": "Good test, rare disease (1%)"
+   },
+   "values": {
+    "separation-d": 2.55,
+    "test-threshold-s": 1.3,
+    "prevalence": 0.01
+   },
+   "changes_vs_default": {
+    "separation-d": 2.55,
+    "test-threshold-s": 1.3,
+    "prevalence": 0.01
+   },
+   "shows": {
+    "fr": "Sensibilité et spécificité proches de 90 %, et pourtant la majorité des résultats positifs sont de fausses alertes.",
+    "en": "Sensitivity and specificity close to 90%, yet most positive results are false alarms."
+   }
+  },
+  {
+   "id": "same-test-30-prevalence",
+   "name": {
+    "fr": "Même test, prévalence 30 %",
+    "en": "Same test, 30% prevalence"
+   },
+   "values": {
+    "separation-d": 2.55,
+    "test-threshold-s": 1.3,
+    "prevalence": 0.3
+   },
+   "changes_vs_default": {
+    "separation-d": 2.55,
+    "test-threshold-s": 1.3,
+    "prevalence": 0.3
+   },
+   "shows": {
+    "fr": "Seule la prévalence a changé : le point ne bouge pas sur la courbe, mais la VPP remonte fortement.",
+    "en": "Only prevalence has changed: the point stays put on the curve, but the PPV rises sharply."
+   }
+  },
+  {
+   "id": "low-threshold-few-missed-cases",
+   "name": {
+    "fr": "Seuil bas : peu de malades manqués",
+    "en": "Low threshold: few missed cases"
+   },
+   "values": {
+    "separation-d": 2.55,
+    "test-threshold-s": 0.5,
+    "prevalence": 0.1
+   },
+   "changes_vs_default": {
+    "separation-d": 2.55,
+    "test-threshold-s": 0.5
+   },
+   "shows": {
+    "fr": "Le point monte sur la courbe : moins de malades manqués, mais plus de fausses alertes.",
+    "en": "The point moves up the curve: fewer missed cases, but more false alarms."
+   }
+  },
+  {
+   "id": "high-threshold-few-false-alarms",
+   "name": {
+    "fr": "Seuil haut : peu de fausses alertes",
+    "en": "High threshold: few false alarms"
+   },
+   "values": {
+    "separation-d": 2.55,
+    "test-threshold-s": 2.5,
+    "prevalence": 0.1
+   },
+   "changes_vs_default": {
+    "separation-d": 2.55,
+    "test-threshold-s": 2.5
+   },
+   "shows": {
+    "fr": "Le point descend : peu de fausses alertes, mais près d’un malade sur deux est manqué.",
+    "en": "The point moves down: few false alarms, but nearly one case in two is missed."
+   }
+  },
+  {
+   "id": "useless-test-d-0",
+   "name": {
+    "fr": "Test sans valeur : d = 0",
+    "en": "Useless test: d = 0"
+   },
+   "values": {
+    "separation-d": 0,
+    "test-threshold-s": 0,
+    "prevalence": 0.1
+   },
+   "changes_vs_default": {
+    "separation-d": 0,
+    "test-threshold-s": 0
+   },
+   "shows": {
+    "fr": "Les deux courbes coïncident : la ROC suit la diagonale, l’AUC vaut 0,5 et la VPP égale la prévalence.",
+    "en": "The two curves coincide: the ROC follows the diagonal, AUC is 0.5 and PPV equals prevalence."
+   }
+  },
+  {
+   "id": "well-separated-test-d-4",
+   "name": {
+    "fr": "Test très séparé : d = 4",
+    "en": "Well separated test: d = 4"
+   },
+   "values": {
+    "separation-d": 4,
+    "test-threshold-s": 2,
+    "prevalence": 0.1
+   },
+   "changes_vs_default": {
+    "separation-d": 4,
+    "test-threshold-s": 2
+   },
+   "shows": {
+    "fr": "Les populations se séparent : la courbe longe le coin supérieur gauche et l’AUC approche 1.",
+    "en": "The populations separate: the curve hugs the upper-left corner and AUC approaches 1."
+   }
+  }
+ ],
+ "actions": [],
+ "variants": [],
+ "outputs": [
+  {
+   "name": {
+    "fr": "Sensibilité Se (malades détectés)",
+    "en": "Sensitivity Se (cases detected)"
+   },
+   "unit": {
+    "fr": "%",
+    "en": "%"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "kind": "reading"
+  },
+  {
+   "name": {
+    "fr": "spécificité Sp (non-malades écartés)",
+    "en": "specificity Sp (people without disease cleared)"
+   },
+   "unit": {
+    "fr": "%",
+    "en": "%"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "kind": "reading"
+  },
+  {
+   "name": {
+    "fr": "AUC (aire sous la courbe)",
+    "en": "AUC (area under the curve)"
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "kind": "reading"
+  },
+  {
+   "name": {
+    "fr": "Test positif : VPP",
+    "en": "Positive test: PPV"
+   },
+   "unit": {
+    "fr": "%",
+    "en": "%"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "kind": "reading"
+  },
+  {
+   "name": {
+    "fr": "test négatif : VPN",
+    "en": "negative test: NPV"
+   },
+   "unit": {
+    "fr": "%",
+    "en": "%"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "kind": "reading"
+  },
+  {
+   "name": {
+    "fr": "Sur 1 000 personnes testées, environ : malades détectés",
+    "en": "Out of 1,000 people tested, about: cases detected"
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "kind": "reading"
+  },
+  {
+   "name": {
+    "fr": "malades manqués",
+    "en": "cases missed"
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "kind": "reading"
+  },
+  {
+   "name": {
+    "fr": "fausses alertes",
+    "en": "false alarms"
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "kind": "reading"
+  }
+ ],
+ "formulas": [
+  {
+   "text": "Se = VP/(VP + FN)"
+  },
+  {
+   "text": "Sp = VN/(VN + FP)"
+  },
+  {
+   "text": "VPP = (Se·p)/(Se·p + (1 − Sp)(1 − p))"
+  }
+ ],
+ "definitions": [
+  {
+   "term": "Courbe ROC",
+   "meaning": {
+    "fr": "La sensibilité en fonction du taux de faux positifs 1 − Sp, quand le seuil varie (Receiver Operating Characteristic).",
+    "en": "Sensitivity against the false-positive rate 1 − Sp as the threshold varies (Receiver Operating Characteristic)."
+   }
+  },
+  {
+   "term": "VP, VN, FP, FN",
+   "meaning": {
+    "fr": "Les vrais positifs, vrais négatifs, faux positifs et faux négatifs.",
+    "en": "True positives, true negatives, false positives and false negatives."
+   }
+  },
+  {
+   "term": "Se, Sp",
+   "meaning": {
+    "fr": "La sensibilité (malades reconnus positifs) et la spécificité (non-malades reconnus négatifs).",
+    "en": "Sensitivity (people with the disease who test positive) and specificity (people without it who test negative)."
+   }
+  },
+  {
+   "term": "p",
+   "meaning": {
+    "fr": "La prévalence : la proportion de malades dans la population.",
+    "en": "Prevalence: the proportion of people with the disease in the population."
+   }
+  },
+  {
+   "term": "VPP, VPN",
+   "meaning": {
+    "fr": "Les valeurs prédictives positive et négative : la probabilité d’être malade si le test est positif, de ne pas l’être s’il est négatif.",
+    "en": "Positive and negative predictive values: the probability of having the disease if the test is positive, of not having it if negative."
+   }
+  },
+  {
+   "term": "AUC",
+   "meaning": {
+    "fr": "L’aire sous la courbe ROC. Elle résume le test sans choisir de seuil.",
+    "en": "The area under the ROC curve. It summarizes the test without choosing a threshold."
+   }
+  },
+  {
+   "term": "Que veut dire chaque symbole ?",
+   "meaning": {
+    "fr": "d sépare les moyennes de deux lois normales de même écart-type ; s est le seuil du test dans ces unités standardisées. Se est la sensibilité, Sp la spécificité et 1−Sp le taux de faux positifs. ROC signifie Receiver Operating Characteristic et AUC son aire. VPP et VPN sont les valeurs prédictives positive et négative. L’indice de Youden combine sensibilité et spécificité ; ce n’est pas une probabilité diagnostique.",
+    "en": "d separates the means of two normal distributions with the same standard deviation; s is the test threshold in these standardized units. Se is sensitivity, Sp specificity, and 1−Sp the false-positive rate. ROC means Receiver Operating Characteristic and AUC its area. PPV and NPV are positive and negative predictive values. Youden’s index combines sensitivity and specificity; it is not a diagnostic probability."
+   }
+  }
+ ],
+ "assumptions": {
+  "fr": [
+   "Deux lois normales de même écart-type : une illustration, pas une évaluation clinique. L’AUC ne donne ni le meilleur seuil, ni la probabilité individuelle d’une maladie."
+  ],
+  "en": [
+   "Two normal distributions with the same standard deviation: an illustration, not a clinical evaluation. AUC gives neither the best threshold nor an individual probability of disease."
+  ]
+ },
+ "source": {
+  "dois": [],
+  "repositories": [],
+  "related_pages": [
+   {
+    "href": "/fr/enseignement/biostatistique/probabilites/",
+    "text": "Le chapitre complet du cours"
+   },
+   {
+    "href": "/fr/animations/loi-normale/",
+    "text": "La loi normale : les deux courbes de cette expérience (hypothèse gaussienne pédagogique, pas une propriété universelle des tests)"
+   },
+   {
+    "href": "/fr/animations/test-khi-deux/",
+    "text": "Le test du χ² : lire un tableau 2×2"
+   }
+  ]
+ },
+ "how_to_explore": {
+  "fr": "Régler les paramètres sur un préréglage (valeurs ci-dessus), lire la phrase affichée par la page puis les sorties ; modifier ensuite un seul paramètre à la fois entre son minimum et son maximum.",
+  "en": "Set the parameters to a preset (values above), read the sentence the page shows then the outputs; then change one parameter at a time between its minimum and maximum."
+ },
+ "exploration": [
+  {
+   "preset": "starting-setting-10-prevalence",
+   "title": {
+    "fr": "Réglage de départ : prévalence 10 %",
+    "en": "Starting setting: 10% prevalence"
+   },
+   "set": {
+    "separation-d": 1.8,
+    "test-threshold-s": 1,
+    "prevalence": 0.1
+   },
+   "observe": {
+    "fr": "78,8 % de sensibilité, 84,1 % de spécificité, et seulement 35,6 % de malades parmi les résultats positifs.",
+    "en": "78.8% sensitivity, 84.1% specificity, and only 35.6% of people with the disease among positive results."
+   }
+  },
+  {
+   "preset": "same-test-30-prevalence",
+   "title": {
+    "fr": "Même test, prévalence 30 %",
+    "en": "Same test, 30% prevalence"
+   },
+   "set": {
+    "separation-d": 2.55,
+    "test-threshold-s": 1.3,
+    "prevalence": 0.3
+   },
+   "observe": {
+    "fr": "Seule la prévalence a changé : le point ne bouge pas sur la courbe, mais la VPP remonte fortement.",
+    "en": "Only prevalence has changed: the point stays put on the curve, but the PPV rises sharply."
+   }
+  },
+  {
+   "preset": "low-threshold-few-missed-cases",
+   "title": {
+    "fr": "Seuil bas : peu de malades manqués",
+    "en": "Low threshold: few missed cases"
+   },
+   "set": {
+    "separation-d": 2.55,
+    "test-threshold-s": 0.5
+   },
+   "observe": {
+    "fr": "Le point monte sur la courbe : moins de malades manqués, mais plus de fausses alertes.",
+    "en": "The point moves up the curve: fewer missed cases, but more false alarms."
+   }
+  },
+  {
+   "preset": "high-threshold-few-false-alarms",
+   "title": {
+    "fr": "Seuil haut : peu de fausses alertes",
+    "en": "High threshold: few false alarms"
+   },
+   "set": {
+    "separation-d": 2.55,
+    "test-threshold-s": 2.5
+   },
+   "observe": {
+    "fr": "Le point descend : peu de fausses alertes, mais près d’un malade sur deux est manqué.",
+    "en": "The point moves down: few false alarms, but nearly one case in two is missed."
+   }
+  },
+  {
+   "preset": "well-separated-test-d-4",
+   "title": {
+    "fr": "Test très séparé : d = 4",
+    "en": "Well separated test: d = 4"
+   },
+   "set": {
+    "separation-d": 4,
+    "test-threshold-s": 2
+   },
+   "observe": {
+    "fr": "Les populations se séparent : la courbe longe le coin supérieur gauche et l’AUC approche 1.",
+    "en": "The populations separate: the curve hugs the upper-left corner and AUC approaches 1."
+   }
+  }
+ ],
+ "concepts": [
+  "roc-curve"
+ ],
+ "extraction": {
+  "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
+  "roots": [
+   "#experience"
+  ],
+  "page_errors": [],
+  "fr_en_preset_consistency": {
+   "presets_compared": 7,
+   "presets_with_different_values_fr_vs_en": []
+  }
+ }
+}

@@ -2160,8 +2160,8 @@
       ],
       "sections": [
         {
-          "title": "Essayer",
-          "anchor": "try-it"
+          "title": "Voir d’où viennent les coefficients d’ARTU",
+          "anchor": "ai-title"
         },
         {
           "title": "Les notions",
@@ -2767,6 +2767,35 @@
         },
         {
           "title": "Essayer dans votre navigateur",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/projets-de-recherche/",
+      "title": "Recherche et projets",
+      "language": "fr",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Variabilité solaire et prévisibilité",
+          "anchor": null
+        },
+        {
+          "title": "Prévision parcimonieuse",
+          "anchor": null
+        },
+        {
+          "title": "Une évaluation adaptée à la question posée",
+          "anchor": null
+        },
+        {
+          "title": "Systèmes énergétiques et physique médicale",
+          "anchor": null
+        },
+        {
+          "title": "Programmes de recherche et collaborations",
           "anchor": null
         }
       ]

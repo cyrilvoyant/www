@@ -1,0 +1,128 @@
+{
+ "@context": "https://schema.org",
+ "@type": [
+  "SoftwareApplication",
+  "LearningResource"
+ ],
+ "@id": "https://www.cyrilvoyant.com/ai-in-research/#role-helper#tool-spec",
+ "identifier": "ai",
+ "name": "Explore AI responsibility provisions",
+ "alternateName": "S’orienter dans les responsabilités liées à l’IA",
+ "description": "Answer a few questions about one AI system to find the AI Act articles that apply: an orientation, not legal advice.",
+ "url": "https://www.cyrilvoyant.com/ai-in-research/#role-helper",
+ "sameAs": [
+  "https://www.cyrilvoyant.com/fr/ia-dans-la-recherche/#role-helper",
+  "https://www.cyrilvoyant.com/ai-in-research/#role-helper"
+ ],
+ "inLanguage": [
+  "fr",
+  "en"
+ ],
+ "applicationCategory": "ScientificApplication",
+ "operatingSystem": "Any (web browser)",
+ "isAccessibleForFree": true,
+ "learningResourceType": "decision",
+ "author": {
+  "@type": "Person",
+  "name": "Cyril Voyant",
+  "identifier": "https://orcid.org/0000-0003-0242-7377"
+ },
+ "license": "https://creativecommons.org/licenses/by/4.0/",
+ "additionalProperty": [
+  {
+   "@type": "PropertyValue",
+   "propertyID": "sole",
+   "name": "Is the system developed and put into service for the sole purpose of scientific research and development?",
+   "alternateName": "Le système est-il développé et mis en service à la seule fin de la recherche et du développement scientifiques ?"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "stage",
+   "name": "Is it still at the stage of research, testing or development, before being placed on the market or put into service?",
+   "alternateName": "Est-il encore au stade de la recherche, des essais ou du développement, avant toute mise sur le marché ou mise en service ?"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "real",
+   "name": "Does this work include testing in real-world conditions (with real users, data or operations outside the lab)?",
+   "alternateName": "Ce travail comporte-t-il des essais en conditions réelles (avec de vrais utilisateurs, données ou opérations hors du laboratoire) ?"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "name",
+   "name": "Is it placed on the market or put into service by your laboratory, under its name?",
+   "alternateName": "Est-il mis sur le marché ou mis en service par votre laboratoire, sous son nom ?"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "third",
+   "name": "Does another actor (a company, a partner) put its name on it, substantially modify it or change its intended purpose?",
+   "alternateName": "Un autre acteur (une entreprise, un partenaire) y appose-t-il son nom, le modifie-t-il substantiellement ou en change-t-il la destination ?"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "safety",
+   "name": "Is it intended as a safety component in the management or operation of critical infrastructure (electricity, gas, heating, water, road traffic, critical digital infrastructure)?",
+   "alternateName": "Est-il destiné à servir de composant de sécurité dans la gestion ou l'exploitation d'une infrastructure critique (électricité, gaz, chauffage, eau, trafic routier, infrastructure numérique critique) ?"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "people",
+   "name": "Does it interact with people or generate text, images, audio or video for them?",
+   "alternateName": "Interagit-il avec des personnes ou génère-t-il pour elles du texte, des images, du son ou de la vidéo ?"
+  }
+ ],
+ "potentialAction": {
+  "@type": "Action",
+  "name": "Explore the tool",
+  "target": {
+   "@type": "EntryPoint",
+   "urlTemplate": "https://www.cyrilvoyant.com/ai-in-research/#role-helper",
+   "actionPlatform": "https://schema.org/DesktopWebPlatform"
+  },
+  "object": [
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "sole",
+    "description": "Is the system developed and put into service for the sole purpose of scientific research and development?",
+    "valueRequired": false
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "stage",
+    "description": "Is it still at the stage of research, testing or development, before being placed on the market or put into service?",
+    "valueRequired": false
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "real",
+    "description": "Does this work include testing in real-world conditions (with real users, data or operations outside the lab)?",
+    "valueRequired": false
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "name",
+    "description": "Is it placed on the market or put into service by your laboratory, under its name?",
+    "valueRequired": false
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "third",
+    "description": "Does another actor (a company, a partner) put its name on it, substantially modify it or change its intended purpose?",
+    "valueRequired": false
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "safety",
+    "description": "Is it intended as a safety component in the management or operation of critical infrastructure (electricity, gas, heating, water, road traffic, critical digital infrastructure)?",
+    "valueRequired": false
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "people",
+    "description": "Does it interact with people or generate text, images, audio or video for them?",
+    "valueRequired": false
+   }
+  ]
+ }
+}

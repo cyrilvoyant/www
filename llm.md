@@ -25,6 +25,18 @@ Cyril Voyant connects medical physics and energy forecasting through modelling f
 - Understand the modelling decisions: https://www.cyrilvoyant.com/approach/ ; français : https://www.cyrilvoyant.com/fr/approche/ .
 - Research integrity → /data/ → /ai-in-research/ → /scientific-publishing-trust/ → /cite/.
 
+## Ontology and glossary
+
+- [Ontology of site concepts](https://www.cyrilvoyant.com/ontology/): each notion of the site with its definition, unit, related notions and the page that details it.
+- Machine-readable: [concepts.ttl](https://www.cyrilvoyant.com/ontology/concepts.ttl) (Turtle, SKOS) and [concepts.jsonld](https://www.cyrilvoyant.com/ontology/concepts.jsonld).
+- Glossary: [Lexique (français)](https://www.cyrilvoyant.com/fr/lexique/), [Glossary (English)](https://www.cyrilvoyant.com/glossary/).
+
+## More entry points
+
+- Biostatistics in English: [course](https://www.cyrilvoyant.com/teaching/biostatistics/), [chapter 1, probabilities](https://www.cyrilvoyant.com/teaching/biostatistics/probabilities/), [chapter 2, descriptive statistics](https://www.cyrilvoyant.com/teaching/biostatistics/descriptive-statistics/), [chapter 3, correlation and regression](https://www.cyrilvoyant.com/teaching/biostatistics/correlation-regression/).
+- Research projects in French: [Projets de recherche](https://www.cyrilvoyant.com/fr/projets-de-recherche/).
+- French guides on the technical library: [Tunnel Load Simulator](https://cyrilvoyant.github.io/tools/tunnel-load-simulator-fr.html), [ARTU, exemple guidé](https://cyrilvoyant.github.io/teaching/artu-worked-example-fr.html), [iode radioactif et thyroïde](https://cyrilvoyant.github.io/methods/thyroid-radioiodine-fr.html); the technical library also has [llm.md](https://cyrilvoyant.github.io/llm.md) and [llms-full.txt](https://cyrilvoyant.github.io/llms-full.txt).
+
 ## Pages by language
 
 ### en
@@ -149,6 +161,7 @@ Cyril Voyant connects medical physics and energy forecasting through modelling f
 - [Comparer une prévision à la persistance : NICE](https://www.cyrilvoyant.com/fr/outils/nice/)
 - [Mesurer variabilité et prévisibilité : sCV et F](https://www.cyrilvoyant.com/fr/outils/variabilite-previsibilite/)
 - [Prévoir l'éclairement et son incertitude avec des nombres complexes](https://www.cyrilvoyant.com/fr/prevision-complexe/)
+- [Recherche et projets](https://www.cyrilvoyant.com/fr/projets-de-recherche/)
 - [Recherche : questions, résultats et méthodes](https://www.cyrilvoyant.com/fr/recits/)
 - [Calculateur gratuit de BED et d'EQD2 : LQ ou LQL ?](https://www.cyrilvoyant.com/fr/recits/calculateur-bed-eqd2-lq-lql/)
 - [Comment évaluer une prévision solaire face à la persistance](https://www.cyrilvoyant.com/fr/recits/evaluer-prevision-solaire-persistance/)

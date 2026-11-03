@@ -1,0 +1,154 @@
+{
+ "@context": "https://schema.org",
+ "@type": [
+  "SoftwareApplication",
+  "LearningResource"
+ ],
+ "@id": "https://www.cyrilvoyant.com/tools/regression-intervals/#tool-spec",
+ "identifier": "intervals",
+ "name": "Regression: confidence or prediction interval?",
+ "alternateName": "Régression : intervalle de confiance ou de prévision ?",
+ "description": "Compare both bands, move x₀, the value where the prediction is made, and recognize extrapolation.",
+ "url": "https://www.cyrilvoyant.com/tools/regression-intervals/",
+ "sameAs": [
+  "https://www.cyrilvoyant.com/fr/animations/intervalles-regression/",
+  "https://www.cyrilvoyant.com/tools/regression-intervals/"
+ ],
+ "inLanguage": [
+  "fr",
+  "en"
+ ],
+ "applicationCategory": "EducationalApplication",
+ "operatingSystem": "Any (web browser)",
+ "isAccessibleForFree": true,
+ "learningResourceType": "teaching",
+ "author": {
+  "@type": "Person",
+  "name": "Cyril Voyant",
+  "identifier": "https://orcid.org/0000-0003-0242-7377"
+ },
+ "license": "https://creativecommons.org/licenses/by/4.0/",
+ "additionalProperty": [
+  {
+   "@type": "PropertyValue",
+   "propertyID": "number-of-points-n",
+   "name": "Number of points n",
+   "alternateName": "Nombre de points n",
+   "value": 20,
+   "minValue": 6,
+   "maxValue": 100,
+   "unitText": "dimensionless"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "residual-standard-deviation-se",
+   "name": "Residual standard deviation se",
+   "alternateName": "Écart-type résiduel se",
+   "value": 1,
+   "minValue": 0.2,
+   "maxValue": 3,
+   "unitText": "dimensionless"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "prediction-input-x0",
+   "name": "Prediction input x₀",
+   "alternateName": "Valeur x₀ à prévoir",
+   "value": 0,
+   "minValue": -4,
+   "maxValue": 4,
+   "unitText": "dimensionless"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:at-the-center-20-points",
+   "name": "At the center, 20 points",
+   "alternateName": "Au centre, 20 points",
+   "value": "{\"number-of-points-n\": 20, \"residual-standard-deviation-se\": 1, \"prediction-input-x0\": 0}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:many-points-100",
+   "name": "Many points: 100",
+   "alternateName": "Beaucoup de points : 100",
+   "value": "{\"number-of-points-n\": 100, \"residual-standard-deviation-se\": 1, \"prediction-input-x0\": 0}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:few-points-6",
+   "name": "Few points: 6",
+   "alternateName": "Peu de points : 6",
+   "value": "{}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:large-spread",
+   "name": "Large spread",
+   "alternateName": "Forte dispersion",
+   "value": "{\"number-of-points-n\": 20, \"residual-standard-deviation-se\": 3, \"prediction-input-x0\": 0}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:at-the-observed-x-boundary",
+   "name": "At the observed x boundary",
+   "alternateName": "À la limite des x observés",
+   "value": "{\"number-of-points-n\": 20, \"residual-standard-deviation-se\": 1, \"prediction-input-x0\": 2}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:extrapolation",
+   "name": "Extrapolation",
+   "alternateName": "En extrapolation",
+   "value": "{\"number-of-points-n\": 20, \"residual-standard-deviation-se\": 1, \"prediction-input-x0\": 3.5}"
+  }
+ ],
+ "potentialAction": {
+  "@type": "Action",
+  "name": "Explore the tool",
+  "target": {
+   "@type": "EntryPoint",
+   "urlTemplate": "https://www.cyrilvoyant.com/tools/regression-intervals/",
+   "actionPlatform": "https://schema.org/DesktopWebPlatform"
+  },
+  "object": [
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "number-of-points-n",
+    "description": "Number of points n",
+    "valueRequired": false,
+    "minValue": 6,
+    "maxValue": 100,
+    "defaultValue": 20,
+    "stepValue": 1
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "residual-standard-deviation-se",
+    "description": "Residual standard deviation se",
+    "valueRequired": false,
+    "minValue": 0.2,
+    "maxValue": 3,
+    "defaultValue": 1,
+    "stepValue": 0.1
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "prediction-input-x0",
+    "description": "Prediction input x₀",
+    "valueRequired": false,
+    "minValue": -4,
+    "maxValue": 4,
+    "defaultValue": 0,
+    "stepValue": 0.1
+   }
+  ]
+ },
+ "about": [
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#confidence-interval"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#prediction-interval"
+  }
+ ]
+}

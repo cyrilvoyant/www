@@ -1,0 +1,469 @@
+{
+ "id": "lql",
+ "schema": "https://www.cyrilvoyant.com/tools-spec.json#1.0",
+ "kind": "calculator",
+ "domain": "medicine",
+ "interface_language": "both",
+ "name": {
+  "fr": "Comparer les doses biologiques LQ et LQL",
+  "en": "Compare LQ and LQL biological doses"
+ },
+ "url": {
+  "fr": "https://www.cyrilvoyant.com/fr/outils/doses-lq-lql/#try-it",
+  "en": "https://cyrilvoyant.github.io/tools/lql-equiv.html#try-it"
+ },
+ "page_title": {
+  "fr": "Comparer les doses biologiques LQ et LQL",
+  "en": "LQL-Equiv: free online EQD2, BED, NTCP and TCP calculator for radiotherapy"
+ },
+ "computes": {
+  "fr": "LQ (linéaire-quadratique) et LQL (linéaire-quadratique-linéaire) sont deux modèles de l’effet d’une dose. Choisir les paramètres et faire varier la dose par fraction. Usage de recherche et d’enseignement.",
+  "en": "LQ (linear-quadratic) and LQL (linear-quadratic-linear) are two models of the effect of a dose. Choose parameters and vary dose per fraction. Research and education use."
+ },
+ "summary": {
+  "fr": "Pour une dose unique de 15 Gy au rectum, le modèle LQ donne une BED de 72,7 Gy, le modèle LQL 59,4 Gy : la valeur LQ est supérieure de 22 %. Sous la dose de transition, les deux modèles sont identiques.",
+  "en": null
+ },
+ "parameters": [
+  {
+   "id": "lq-d",
+   "type": "number",
+   "control": "range",
+   "min": 0.5,
+   "max": 25,
+   "step": 0.1,
+   "default": 15,
+   "label": {
+    "fr": "Dose par fraction d",
+    "en": "Dose per fraction d Gy"
+   },
+   "meaning": {
+    "fr": "La dose d’une séance, en gray (Gy).",
+    "en": null
+   },
+   "unit": {
+    "fr": "Gy",
+    "en": "Gy"
+   },
+   "unit_source": "display"
+  },
+  {
+   "id": "lq-n",
+   "type": "integer",
+   "control": "range",
+   "min": 1,
+   "max": 40,
+   "step": 1,
+   "default": 1,
+   "label": {
+    "fr": "Nombre de fractions n",
+    "en": "Number of fractions n"
+   },
+   "meaning": {
+    "fr": "Le nombre de séances. La BED est proportionnelle à n : l’écart relatif entre LQ et LQL n’en dépend donc pas. C’est normal.",
+    "en": null
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "unit_source": "no unit shown by the page"
+  },
+  {
+   "id": "lq-tis",
+   "type": "enum",
+   "control": "select",
+   "default": "0",
+   "options": [
+    {
+     "value": "0",
+     "label": "Rectum (tissu sain)"
+    },
+    {
+     "value": "1",
+     "label": "Moelle épinière (tissu sain)"
+    },
+    {
+     "value": "2",
+     "label": "Poumon (tissu sain)"
+    },
+    {
+     "value": "3",
+     "label": "Prostate (tumeur)"
+    },
+    {
+     "value": "4",
+     "label": "Tumeur standard"
+    },
+    {
+     "value": "-1",
+     "label": "Réglage libre"
+    }
+   ],
+   "label": {
+    "fr": "Tissu",
+    "en": null
+   },
+   "meaning": {
+    "fr": "Paramètres de la bibliothèque de LQL-Equiv, pour comparer des courbes. Rien ici n’est une recommandation.",
+    "en": null
+   },
+   "unit": null
+  },
+  {
+   "id": "lq-ab",
+   "type": "number",
+   "control": "range",
+   "min": 0.4,
+   "max": 20,
+   "step": 0.1,
+   "default": 3.9,
+   "label": {
+    "fr": "α/β",
+    "en": "α/β (Gy)"
+   },
+   "meaning": {
+    "fr": "Paramètre du modèle linéaire-quadratique, en Gy. Plus il est faible, plus le tissu est sensible à la dose par fraction.",
+    "en": null
+   },
+   "unit": {
+    "fr": "Gy",
+    "en": "Gy"
+   },
+   "unit_source": "display"
+  },
+  {
+   "id": "lq-dt",
+   "type": "number",
+   "control": "range",
+   "min": 0.8,
+   "max": 32,
+   "step": 0.1,
+   "default": 7.8,
+   "label": {
+    "fr": "Dose de transition dT",
+    "en": "Transition dose dT (Gy)"
+   },
+   "meaning": {
+    "fr": "Au-dessus de cette dose par fraction, LQL passe de la courbe à une droite. Dans la bibliothèque de LQL-Equiv, dT = 2 α/β.",
+    "en": null
+   },
+   "unit": {
+    "fr": "Gy",
+    "en": "Gy"
+   },
+   "unit_source": "display"
+  },
+  {
+   "id": "lq-g",
+   "type": "number",
+   "control": "range",
+   "min": 1,
+   "max": 15,
+   "step": 0.1,
+   "default": 5,
+   "label": {
+    "fr": "Pente γ/α",
+    "en": "γ/α (dimensionless tail slope)"
+   },
+   "meaning": {
+    "fr": "La pente de la droite au-dessus de dT, sans unité. LQL-Equiv prend 5.",
+    "en": null
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "unit_source": "no unit shown by the page"
+  }
+ ],
+ "presets": [
+  {
+   "id": "petites-fractions-30-2-gy",
+   "name": {
+    "fr": "Petites fractions : 30 × 2 Gy",
+    "en": null
+   },
+   "values": {
+    "lq-d": 2,
+    "lq-n": 30,
+    "lq-tis": "0",
+    "lq-ab": 3.9,
+    "lq-dt": 7.8,
+    "lq-g": 5
+   },
+   "changes_vs_default": {
+    "lq-d": 2,
+    "lq-n": 30
+   },
+   "shows": {
+    "fr": "La dose par fraction reste sous la dose de transition : LQ et LQL sont le même calcul. Bougez α/β : le résultat change ; l’écart entre les modèles reste nul, et c’est mathématiquement juste.",
+    "en": null
+   }
+  },
+  {
+   "id": "autour-du-seuil-5-8-gy",
+   "name": {
+    "fr": "Autour du seuil : 5 × 8 Gy",
+    "en": null
+   },
+   "values": {
+    "lq-d": 8,
+    "lq-n": 5,
+    "lq-tis": "0",
+    "lq-ab": 3.9,
+    "lq-dt": 7.8,
+    "lq-g": 5
+   },
+   "changes_vs_default": {
+    "lq-d": 8,
+    "lq-n": 5
+   },
+   "shows": {
+    "fr": "Pour le rectum, la dose de transition est 7,8 Gy : on la franchit à peine et les deux modèles restent presque confondus.",
+    "en": null
+   }
+  },
+  {
+   "id": "dose-unique-1-15-gy",
+   "name": {
+    "fr": "Dose unique : 1 × 15 Gy",
+    "en": null
+   },
+   "values": {
+    "lq-d": 15,
+    "lq-n": 1,
+    "lq-tis": "0",
+    "lq-ab": 3.9,
+    "lq-dt": 7.8,
+    "lq-g": 5
+   },
+   "changes_vs_default": {},
+   "shows": {
+    "fr": "Bien au-dessus de la dose de transition du rectum, LQ continue de monter en courbe alors que LQL monte en ligne droite : LQ donne une valeur nettement plus élevée.",
+    "en": null
+   }
+  },
+  {
+   "id": "tres-forte-dose-1-25-gy",
+   "name": {
+    "fr": "Très forte dose : 1 × 25 Gy",
+    "en": null
+   },
+   "values": {
+    "lq-d": 25,
+    "lq-n": 1,
+    "lq-tis": "0",
+    "lq-ab": 3.9,
+    "lq-dt": 7.8,
+    "lq-g": 5
+   },
+   "changes_vs_default": {
+    "lq-d": 25
+   },
+   "shows": {
+    "fr": "L’écart se creuse encore : c’est dans ce domaine que le choix du modèle pèse le plus.",
+    "en": null
+   }
+  }
+ ],
+ "actions": [],
+ "variants": [],
+ "outputs": [
+  {
+   "name": {
+    "fr": "BED LQ",
+    "en": null
+   },
+   "unit": {
+    "fr": "Gy",
+    "en": "Gy"
+   },
+   "meaning": {
+    "fr": "BED = n d (1 + d / (α/β)). La BED, dose biologiquement efficace, permet de comparer des fractionnements différents.",
+    "en": null
+   },
+   "kind": "metric"
+  },
+  {
+   "name": {
+    "fr": "BED LQL",
+    "en": null
+   },
+   "unit": {
+    "fr": "Gy",
+    "en": "Gy"
+   },
+   "meaning": {
+    "fr": "La même formule sous dT ; au-dessus, une droite de pente γ/α.",
+    "en": null
+   },
+   "kind": "metric"
+  },
+  {
+   "name": {
+    "fr": "Raccord à dT",
+    "en": null
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": "La courbe LQ a pour pente 5,0 à dT : 1 + 2 dT / (α/β). Si γ/α vaut cette pente, la droite prolonge la courbe.",
+    "en": null
+   },
+   "kind": "metric"
+  }
+ ],
+ "formulas": [],
+ "definitions": [
+  {
+   "term": "BED",
+   "meaning": {
+    "fr": "Dose biologiquement efficace, en grays (Gy) : elle permet de comparer des fractionnements différents. Elle est calculée ici avant toute correction de prolifération.",
+    "en": null
+   }
+  },
+  {
+   "term": "LQ",
+   "meaning": {
+    "fr": "Modèle linéaire-quadratique : la BED d’une fraction croît en courbe avec la dose, à toutes les doses.",
+    "en": null
+   }
+  },
+  {
+   "term": "LQL",
+   "meaning": {
+    "fr": "Modèle linéaire-quadratique-linéaire : la même courbe jusqu’à la dose de transition, puis une droite.",
+    "en": null
+   }
+  },
+  {
+   "term": "α/β",
+   "meaning": {
+    "fr": "Paramètre propre au tissu, en Gy. Plus il est faible, plus le tissu est sensible à la dose par fraction.",
+    "en": null
+   }
+  },
+  {
+   "term": "Dose de transition dT",
+   "meaning": {
+    "fr": "La dose par fraction où LQL passe à la droite. Dans la bibliothèque de LQL-Equiv, elle vaut 2 α/β.",
+    "en": null
+   }
+  },
+  {
+   "term": "γ/α",
+   "meaning": {
+    "fr": "La pente de la droite, sans unité. Avec γ/α = 5 et dT = 2 α/β, la droite prolonge la courbe sans cassure.",
+    "en": null
+   }
+  }
+ ],
+ "assumptions": {
+  "fr": [],
+  "en": []
+ },
+ "source": {
+  "dois": [
+   "10.1016/j.clon.2025.103893",
+   "10.1016/j.meddos.2026.08.002",
+   "10.1016/j.rpor.2013.08.004",
+   "10.1016/j.softx.2026.103085",
+   "10.1101/2025.03.05.25323402",
+   "10.5281/zenodo.16739882",
+   "10.5281/zenodo.21948623"
+  ],
+  "repositories": [
+   "https://github.com/cyrilvoyant/LQ-Equiv",
+   "https://github.com/cyrilvoyant/LQL-Equiv-web"
+  ],
+  "related_pages": []
+ },
+ "how_to_explore": {
+  "fr": "Régler les paramètres sur un préréglage (valeurs ci-dessus), lire la phrase affichée par la page puis les sorties ; modifier ensuite un seul paramètre à la fois entre son minimum et son maximum.",
+  "en": "Set the parameters to a preset (values above), read the sentence the page shows then the outputs; then change one parameter at a time between its minimum and maximum."
+ },
+ "exploration": [
+  {
+   "preset": "petites-fractions-30-2-gy",
+   "title": {
+    "fr": "Petites fractions : 30 × 2 Gy",
+    "en": null
+   },
+   "set": {
+    "lq-d": 2,
+    "lq-n": 30
+   },
+   "observe": {
+    "fr": "La dose par fraction reste sous la dose de transition : LQ et LQL sont le même calcul. Bougez α/β : le résultat change ; l’écart entre les modèles reste nul, et c’est mathématiquement juste.",
+    "en": null
+   }
+  },
+  {
+   "preset": "autour-du-seuil-5-8-gy",
+   "title": {
+    "fr": "Autour du seuil : 5 × 8 Gy",
+    "en": null
+   },
+   "set": {
+    "lq-d": 8,
+    "lq-n": 5
+   },
+   "observe": {
+    "fr": "Pour le rectum, la dose de transition est 7,8 Gy : on la franchit à peine et les deux modèles restent presque confondus.",
+    "en": null
+   }
+  },
+  {
+   "preset": "dose-unique-1-15-gy",
+   "title": {
+    "fr": "Dose unique : 1 × 15 Gy",
+    "en": null
+   },
+   "set": {
+    "lq-d": 15,
+    "lq-n": 1,
+    "lq-tis": "0",
+    "lq-ab": 3.9,
+    "lq-dt": 7.8,
+    "lq-g": 5
+   },
+   "observe": {
+    "fr": "Bien au-dessus de la dose de transition du rectum, LQ continue de monter en courbe alors que LQL monte en ligne droite : LQ donne une valeur nettement plus élevée.",
+    "en": null
+   }
+  },
+  {
+   "preset": "tres-forte-dose-1-25-gy",
+   "title": {
+    "fr": "Très forte dose : 1 × 25 Gy",
+    "en": null
+   },
+   "set": {
+    "lq-d": 25
+   },
+   "observe": {
+    "fr": "L’écart se creuse encore : c’est dans ce domaine que le choix du modèle pèse le plus.",
+    "en": null
+   }
+  }
+ ],
+ "concepts": [
+  "lq-model",
+  "lql-model",
+  "bed",
+  "alpha-beta",
+  "transition-dose",
+  "gray"
+ ],
+ "extraction": {
+  "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
+  "roots": [
+   "#try-it"
+  ],
+  "page_errors": [],
+  "fr_en_preset_consistency": null
+ }
+}

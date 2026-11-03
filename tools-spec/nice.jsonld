@@ -1,0 +1,128 @@
+{
+ "@context": "https://schema.org",
+ "@type": [
+  "SoftwareApplication",
+  "LearningResource"
+ ],
+ "@id": "https://cyrilvoyant.github.io/methods/nice-metrics.html#try-it#tool-spec",
+ "identifier": "nice",
+ "name": "Compare a forecast with persistence — NICE",
+ "alternateName": "Comparer une prévision à la persistance — NICE",
+ "description": "NICE divides a forecast’s error by that of persistence: 1 means “as good as persistence”, 0 a perfect forecast. Paste observations and forecasts, choose a horizon, read the result.",
+ "url": "https://cyrilvoyant.github.io/methods/nice-metrics.html#try-it",
+ "sameAs": [
+  "https://www.cyrilvoyant.com/fr/outils/nice/#try-it",
+  "https://cyrilvoyant.github.io/methods/nice-metrics.html#try-it"
+ ],
+ "inLanguage": [
+  "fr",
+  "en"
+ ],
+ "applicationCategory": "ScientificApplication",
+ "operatingSystem": "Any (web browser)",
+ "isAccessibleForFree": true,
+ "learningResourceType": "calculator",
+ "author": {
+  "@type": "Person",
+  "name": "Cyril Voyant",
+  "identifier": "https://orcid.org/0000-0003-0242-7377"
+ },
+ "license": "https://creativecommons.org/licenses/by/4.0/",
+ "additionalProperty": [
+  {
+   "@type": "PropertyValue",
+   "propertyID": "ni-n",
+   "name": "Forecast horizon n (steps)",
+   "alternateName": "Horizon n",
+   "description": "Nombre de pas entre la dernière valeur connue et la valeur à prévoir. La persistance recopie l’observation n pas plus tôt. Ici un pas vaut une heure.",
+   "value": 1,
+   "minValue": 1,
+   "maxValue": 12,
+   "unitText": "pas"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "ni-d",
+   "name": "Two columns: observation y(t), forecast of y(t) issued n steps earlier (one row per time step). Demo data loaded (n = 1); paste your own.",
+   "alternateName": "Deux colonnes, une ligne par pas de temps : observation, puis prévision émise n pas plus tôt pour cette même date. Colonnes séparées par une tabulation, un espace ou un point-virgule ; point ou virgule décimale."
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:prevision-de-demonstration",
+   "name": "Prévision de démonstration",
+   "alternateName": "Prévision de démonstration",
+   "value": "{\"ni-n\": 1}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:prevision-parfaite",
+   "name": "Prévision parfaite",
+   "alternateName": "Prévision parfaite",
+   "value": "{\"ni-n\": 1}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:la-persistance-elle-meme",
+   "name": "La persistance elle-même",
+   "alternateName": "La persistance elle-même",
+   "value": "{\"ni-n\": 1}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:la-moyenne",
+   "name": "La moyenne",
+   "alternateName": "La moyenne",
+   "value": "{\"ni-n\": 1}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:quelques-grosses-erreurs",
+   "name": "Quelques grosses erreurs",
+   "alternateName": "Quelques grosses erreurs",
+   "value": "{\"ni-n\": 1}"
+  }
+ ],
+ "potentialAction": {
+  "@type": "Action",
+  "name": "Explore the tool",
+  "target": {
+   "@type": "EntryPoint",
+   "urlTemplate": "https://cyrilvoyant.github.io/methods/nice-metrics.html#try-it",
+   "actionPlatform": "https://schema.org/DesktopWebPlatform"
+  },
+  "object": [
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "ni-n",
+    "description": "Forecast horizon n (steps)",
+    "valueRequired": false,
+    "minValue": 1,
+    "maxValue": 12,
+    "defaultValue": 1,
+    "stepValue": 1
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "ni-d",
+    "description": "Two columns: observation y(t), forecast of y(t) issued n steps earlier (one row per time step). Demo data loaded (n = 1); paste your own.",
+    "valueRequired": false
+   }
+  ]
+ },
+ "citation": [
+  "https://doi.org/10.1016/j.seta.2025.104588",
+  "https://doi.org/10.5281/zenodo.23562549"
+ ],
+ "codeRepository": "https://github.com/cyrilvoyant/PV_ELM_pred",
+ "about": [
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#persistence"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#horizon"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#nice"
+  }
+ ]
+}

@@ -1,0 +1,223 @@
+{
+ "@context": "https://schema.org",
+ "@type": [
+  "SoftwareApplication",
+  "LearningResource"
+ ],
+ "@id": "https://www.cyrilvoyant.com/tools/chi-square-test/#tool-spec",
+ "identifier": "chisquare",
+ "name": "Chi-square: observed, expected and contributions",
+ "alternateName": "χ² : observés, attendus et contributions",
+ "description": "Explore a fair die or a 2×2 table; visualize cell contributions and small expected counts.",
+ "url": "https://www.cyrilvoyant.com/tools/chi-square-test/",
+ "sameAs": [
+  "https://www.cyrilvoyant.com/fr/animations/test-khi-deux/",
+  "https://www.cyrilvoyant.com/tools/chi-square-test/"
+ ],
+ "inLanguage": [
+  "fr",
+  "en"
+ ],
+ "applicationCategory": "EducationalApplication",
+ "operatingSystem": "Any (web browser)",
+ "isAccessibleForFree": true,
+ "learningResourceType": "teaching",
+ "author": {
+  "@type": "Person",
+  "name": "Cyril Voyant",
+  "identifier": "https://orcid.org/0000-0003-0242-7377"
+ },
+ "license": "https://creativecommons.org/licenses/by/4.0/",
+ "additionalProperty": [
+  {
+   "@type": "PropertyValue",
+   "propertyID": "question",
+   "name": "Question",
+   "alternateName": "Question posée",
+   "description": "sum of the contributions",
+   "value": "fit"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "face-1",
+   "name": "Face 1",
+   "alternateName": "Face 1",
+   "value": 10,
+   "minValue": 0,
+   "maxValue": 10000000,
+   "unitText": "dimensionless"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "face-2",
+   "name": "Face 2",
+   "alternateName": "Face 2",
+   "value": 12,
+   "minValue": 0,
+   "maxValue": 10000000,
+   "unitText": "dimensionless"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "face-3",
+   "name": "Face 3",
+   "alternateName": "Face 3",
+   "value": 11,
+   "minValue": 0,
+   "maxValue": 10000000,
+   "unitText": "dimensionless"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "face-4",
+   "name": "Face 4",
+   "alternateName": "Face 4",
+   "value": 9,
+   "minValue": 0,
+   "maxValue": 10000000,
+   "unitText": "dimensionless"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "face-5",
+   "name": "Face 5",
+   "alternateName": "Face 5",
+   "value": 10,
+   "minValue": 0,
+   "maxValue": 10000000,
+   "unitText": "dimensionless"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "face-6",
+   "name": "Face 6",
+   "alternateName": "Face 6",
+   "value": 68,
+   "minValue": 0,
+   "maxValue": 10000000,
+   "unitText": "dimensionless"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:suspect-die-frequent-face-6",
+   "name": "Suspect die: frequent face 6",
+   "alternateName": "Dé suspect : face 6 fréquente",
+   "value": "{\"question\": \"fit\", \"face-1\": 10, \"face-2\": 12, \"face-3\": 11, \"face-4\": 9, \"face-5\": 10, \"face-6\": 68}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:course-table-75-25-and-65-35",
+   "name": "Course table: 75/25 and 65/35",
+   "alternateName": "Tableau du cours : 75/25 et 65/35",
+   "value": "{\"question\": \"independence\", \"face-1\": 75, \"face-2\": 25, \"face-3\": 65, \"face-4\": 35}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:same-proportions-counts-4",
+   "name": "Same proportions, counts ×4",
+   "alternateName": "Même répartition, effectifs ×4",
+   "value": "{\"question\": \"fit\", \"face-1\": 40, \"face-2\": 48, \"face-3\": 44, \"face-4\": 36, \"face-5\": 40, \"face-6\": 272}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:observed-expected",
+   "name": "Observed = expected",
+   "alternateName": "Observés = attendus",
+   "value": "{\"question\": \"fit\", \"face-1\": 20, \"face-2\": 20, \"face-3\": 20, \"face-4\": 20, \"face-5\": 20, \"face-6\": 20}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:show-small-counts",
+   "name": "Show small counts",
+   "alternateName": "Voir les faibles effectifs",
+   "value": "{\"question\": \"fit\", \"face-1\": 1, \"face-2\": 0, \"face-3\": 2, \"face-4\": 0, \"face-5\": 1, \"face-6\": 2}"
+  }
+ ],
+ "potentialAction": {
+  "@type": "Action",
+  "name": "Explore the tool",
+  "target": {
+   "@type": "EntryPoint",
+   "urlTemplate": "https://www.cyrilvoyant.com/tools/chi-square-test/",
+   "actionPlatform": "https://schema.org/DesktopWebPlatform"
+  },
+  "object": [
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "question",
+    "description": "Question",
+    "valueRequired": false,
+    "valuePattern": "^(fit|independence)$",
+    "defaultValue": "fit"
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "face-1",
+    "description": "Face 1",
+    "valueRequired": false,
+    "minValue": 0,
+    "maxValue": 10000000,
+    "defaultValue": 10,
+    "stepValue": 1
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "face-2",
+    "description": "Face 2",
+    "valueRequired": false,
+    "minValue": 0,
+    "maxValue": 10000000,
+    "defaultValue": 12,
+    "stepValue": 1
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "face-3",
+    "description": "Face 3",
+    "valueRequired": false,
+    "minValue": 0,
+    "maxValue": 10000000,
+    "defaultValue": 11,
+    "stepValue": 1
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "face-4",
+    "description": "Face 4",
+    "valueRequired": false,
+    "minValue": 0,
+    "maxValue": 10000000,
+    "defaultValue": 9,
+    "stepValue": 1
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "face-5",
+    "description": "Face 5",
+    "valueRequired": false,
+    "minValue": 0,
+    "maxValue": 10000000,
+    "defaultValue": 10,
+    "stepValue": 1
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "face-6",
+    "description": "Face 6",
+    "valueRequired": false,
+    "minValue": 0,
+    "maxValue": 10000000,
+    "defaultValue": 68,
+    "stepValue": 1
+   }
+  ]
+ },
+ "about": [
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#p-value"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#chi-square-test"
+  }
+ ]
+}

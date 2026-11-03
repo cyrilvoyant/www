@@ -1,0 +1,530 @@
+{
+ "id": "congel",
+ "schema": "https://www.cyrilvoyant.com/tools-spec.json#1.0",
+ "kind": "teaching",
+ "domain": "learning",
+ "interface_language": "both",
+ "name": {
+  "fr": "Congeler : énergie et puissance frigorifique",
+  "en": "Freezing: energy and refrigeration power"
+ },
+ "url": {
+  "fr": "https://www.cyrilvoyant.com/fr/animations/congelation-energie-puissance/",
+  "en": "https://www.cyrilvoyant.com/tools/freezing-energy-power/"
+ },
+ "page_title": {
+  "fr": "Congélation : énergie sensible, chaleur latente et puissance",
+  "en": "Freezing: sensible heat, latent heat and power"
+ },
+ "computes": {
+  "fr": "Décomposer l’énergie à extraire (sensible, latente, sensible) et calculer la puissance pour une durée donnée.",
+  "en": "Split the energy to remove (sensible, latent, sensible) and compute the power for a given duration."
+ },
+ "summary": {
+  "fr": "Avec les réglages initiaux (75 % d’eau, dont 90 % gèle), geler l’eau représente 72 % de l’énergie à retirer. Pour 500 kg en 4 h, la puissance moyenne atteint 10,9 kW.",
+  "en": "With the initial settings (75% water, 90% of which freezes), freezing the water accounts for 72% of the energy to remove. For 500 kg in 4 h, the average power reaches 10.9 kW."
+ },
+ "parameters": [
+  {
+   "id": "mass",
+   "type": "integer",
+   "control": "range",
+   "min": 10,
+   "max": 2000,
+   "step": 10,
+   "default": 500,
+   "label": {
+    "fr": "Masse (kg)",
+    "en": "Mass (kg)"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": {
+    "fr": "kg",
+    "en": "kg"
+   },
+   "unit_source": "display"
+  },
+  {
+   "id": "water-content-w",
+   "type": "number",
+   "control": "range",
+   "min": 0.5,
+   "max": 0.95,
+   "step": 0.01,
+   "default": 0.75,
+   "label": {
+    "fr": "Teneur en eau w",
+    "en": "Water content w"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": {
+    "fr": "%",
+    "en": "%"
+   },
+   "unit_source": "display"
+  },
+  {
+   "id": "fraction-of-water-frozen-g",
+   "type": "number",
+   "control": "range",
+   "min": 0.6,
+   "max": 1,
+   "step": 0.01,
+   "default": 0.9,
+   "label": {
+    "fr": "Part de l'eau gelée g",
+    "en": "Fraction of water frozen g"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": {
+    "fr": "%",
+    "en": "%"
+   },
+   "unit_source": "display"
+  },
+  {
+   "id": "initial-temperature-ti",
+   "type": "integer",
+   "control": "range",
+   "min": 0,
+   "max": 40,
+   "step": 1,
+   "default": 15,
+   "label": {
+    "fr": "Température initiale Ti",
+    "en": "Initial temperature Ti"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": {
+    "fr": "°C",
+    "en": "°C"
+   },
+   "unit_source": "display"
+  },
+  {
+   "id": "freezing-onset-tc",
+   "type": "number",
+   "control": "range",
+   "min": -5,
+   "max": 0,
+   "step": 0.1,
+   "default": -1.5,
+   "label": {
+    "fr": "Début de congélation Tc (°C)",
+    "en": "Freezing onset Tc (°C)"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": {
+    "fr": "°C",
+    "en": "°C"
+   },
+   "unit_source": "display"
+  },
+  {
+   "id": "final-temperature-tf",
+   "type": "integer",
+   "control": "range",
+   "min": -40,
+   "max": -5,
+   "step": 1,
+   "default": -18,
+   "label": {
+    "fr": "Température finale Tf (°C)",
+    "en": "Final temperature Tf (°C)"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": {
+    "fr": "°C",
+    "en": "°C"
+   },
+   "unit_source": "display"
+  },
+  {
+   "id": "duration-t",
+   "type": "number",
+   "control": "range",
+   "min": 0.5,
+   "max": 24,
+   "step": 0.5,
+   "default": 4,
+   "label": {
+    "fr": "Durée Δt (h)",
+    "en": "Duration Δt (h)"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": {
+    "fr": "h",
+    "en": "h"
+   },
+   "unit_source": "display"
+  }
+ ],
+ "presets": [
+  {
+   "id": "500-kg-in-4-h-75-water",
+   "name": {
+    "fr": "500 kg en 4 h, 75 % d’eau",
+    "en": "500 kg in 4 h, 75% water"
+   },
+   "values": {
+    "mass": 500,
+    "water-content-w": 0.75,
+    "fraction-of-water-frozen-g": 0.9,
+    "initial-temperature-ti": 15,
+    "freezing-onset-tc": -1.5,
+    "final-temperature-tf": -18,
+    "duration-t": 4
+   },
+   "changes_vs_default": {},
+   "shows": {
+    "fr": "La chaleur latente domine le bilan.",
+    "en": "Latent heat dominates the balance."
+   }
+  },
+  {
+   "id": "twice-the-time-8-h",
+   "name": {
+    "fr": "Deux fois plus de temps : 8 h",
+    "en": "Twice the time: 8 h"
+   },
+   "values": {
+    "mass": 500,
+    "water-content-w": 0.75,
+    "fraction-of-water-frozen-g": 0.9,
+    "initial-temperature-ti": 15,
+    "freezing-onset-tc": -1.5,
+    "final-temperature-tf": -18,
+    "duration-t": 8
+   },
+   "changes_vs_default": {
+    "duration-t": 8
+   },
+   "shows": {
+    "fr": "L’énergie à retirer n’a pas bougé, c’est juste : seule la puissance moyenne est divisée par deux.",
+    "en": "The energy to remove has not moved, which is correct: only the average power is halved."
+   }
+  },
+  {
+   "id": "half-the-mass",
+   "name": {
+    "fr": "Deux fois moins de masse",
+    "en": "Half the mass"
+   },
+   "values": {
+    "mass": 250,
+    "water-content-w": 0.75,
+    "fraction-of-water-frozen-g": 0.9,
+    "initial-temperature-ti": 15,
+    "freezing-onset-tc": -1.5,
+    "final-temperature-tf": -18,
+    "duration-t": 4
+   },
+   "changes_vs_default": {
+    "mass": 250
+   },
+   "shows": {
+    "fr": "Δh est par kilo et ne change pas : seule la puissance est divisée par deux.",
+    "en": "Δh is per kilogram and does not change: only the power is halved."
+   }
+  },
+  {
+   "id": "low-water-product-50",
+   "name": {
+    "fr": "Produit pauvre en eau : 50 %",
+    "en": "Low-water product: 50%"
+   },
+   "values": {
+    "mass": 500,
+    "water-content-w": 0.5,
+    "fraction-of-water-frozen-g": 0.9,
+    "initial-temperature-ti": 15,
+    "freezing-onset-tc": -1.5,
+    "final-temperature-tf": -18,
+    "duration-t": 4
+   },
+   "changes_vs_default": {
+    "water-content-w": 0.5
+   },
+   "shows": {
+    "fr": "Moins d’eau à geler : le palier raccourcit et la puissance baisse.",
+    "en": "Less water to freeze: the plateau shortens and the power falls."
+   }
+  },
+  {
+   "id": "deep-freezing-to-40-c",
+   "name": {
+    "fr": "Surgélation à −40 °C",
+    "en": "Deep-freezing to −40 °C"
+   },
+   "values": {
+    "mass": 500,
+    "water-content-w": 0.75,
+    "fraction-of-water-frozen-g": 0.9,
+    "initial-temperature-ti": 15,
+    "freezing-onset-tc": -1.5,
+    "final-temperature-tf": -40,
+    "duration-t": 4
+   },
+   "changes_vs_default": {
+    "final-temperature-tf": -40
+   },
+   "shows": {
+    "fr": "Descendre plus bas ajoute peu : le produit congelé a une capacité thermique faible et la chaleur latente reste en tête.",
+    "en": "Going lower adds little: the frozen product has a low heat capacity and latent heat stays ahead."
+   }
+  }
+ ],
+ "actions": [
+  {
+   "name": {
+    "fr": "▶ Congeler",
+    "en": "▶ Freeze"
+   }
+  }
+ ],
+ "variants": [],
+ "outputs": [
+  {
+   "name": {
+    "fr": "Δh",
+    "en": "Δh"
+   },
+   "unit": {
+    "fr": "kJ/kg",
+    "en": "kJ/kg"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "kind": "reading"
+  },
+  {
+   "name": {
+    "fr": "produit frais 59 (19 %),",
+    "en": "fresh product 59 (19%),"
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "kind": "reading"
+  },
+  {
+   "name": {
+    "fr": "Pour 500 kg en 4,0 h, puissance frigorifique moyenne",
+    "en": "For 500 kg in 4.0 h, average cooling power"
+   },
+   "unit": {
+    "fr": "kW",
+    "en": "kW"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "kind": "reading"
+  }
+ ],
+ "formulas": [
+  {
+   "text": "Q = mΔh"
+  },
+  {
+   "text": "P = Q/Δt"
+  }
+ ],
+ "definitions": [
+  {
+   "term": "Q, m",
+   "meaning": {
+    "fr": "L’énergie à retirer et la masse.",
+    "en": "The energy to remove and the mass."
+   }
+  },
+  {
+   "term": "Δh",
+   "meaning": {
+    "fr": "L’énergie à retirer par kilogramme (variation d’enthalpie massique).",
+    "en": "The energy to remove per kilogram (specific enthalpy change)."
+   }
+  },
+  {
+   "term": "P, Δt",
+   "meaning": {
+    "fr": "La puissance moyenne et la durée.",
+    "en": "Average power and duration."
+   }
+  },
+  {
+   "term": "Chaleur sensible",
+   "meaning": {
+    "fr": "La chaleur échangée quand la température change : le terme mcΔT, avec c la capacité thermique massique et ΔT la variation de température.",
+    "en": "The heat exchanged when temperature changes: the term mcΔT, with c the specific heat capacity and ΔT the temperature change."
+   }
+  },
+  {
+   "term": "Chaleur latente",
+   "meaning": {
+    "fr": "La chaleur retirée pour geler l’eau, sans changement de température dans ce modèle.",
+    "en": "The heat removed to freeze the water, with no temperature change in this model."
+   }
+  },
+  {
+   "term": "Que veut dire chaque symbole ?",
+   "meaning": {
+    "fr": "Δh = cp,frais·(Ti − Tc) + w·g·L + cp,congelé·(Tc − Tf) est l’énergie retirée par unité de masse. Ti est la température initiale, Tc celle du début de congélation et Tf la température finale ; cp,frais et cp,congelé sont les capacités thermiques massiques avant et après congélation. w est la teneur en eau et g la part de l’eau qui gèle (toute l’eau ne gèle pas). L = 333 kJ/kg est la chaleur latente par kilogramme d’eau gelée. Pour une masse m, la puissance frigorifique moyenne P est l’énergie totale divisée par la durée Δt.",
+    "en": "Δh = cp,fresh·(Ti − Tc) + w·g·L + cp,frozen·(Tc − Tf) is energy removed per unit mass. Ti is the initial temperature, Tc the onset of freezing and Tf the final temperature; cp,fresh and cp,frozen are the specific heat capacities before and after freezing. w is water content and g the fraction of water that freezes (not all water freezes). L = 333 kJ/kg is the latent heat per kilogram of frozen water. For mass m, average refrigeration power P is total energy divided by duration Δt."
+   }
+  }
+ ],
+ "assumptions": {
+  "fr": [
+   "Bilan simplifié à capacités thermiques fixées, fraction de glace choisie par l’utilisateur. Il ne donne ni la cinétique de congélation, ni la puissance instantanée d’une installation. Toute l’eau d’un aliment ne gèle pas nécessairement."
+  ],
+  "en": [
+   "Simplified balance with fixed heat capacities and a user-selected ice fraction. It gives neither freezing kinetics nor the instantaneous power of an installation. Not all water in food necessarily freezes."
+  ]
+ },
+ "source": {
+  "dois": [],
+  "repositories": [],
+  "related_pages": [
+   {
+    "href": "/fr/enseignement/bases-thermiques-aliments/cours/",
+    "text": "Le chapitre complet du cours"
+   },
+   {
+    "href": "/fr/animations/refroidissement-biot/",
+    "text": "Le nombre de Biot : quand une seule température suffit"
+   },
+   {
+    "href": "/fr/animations/cop-carnot-machine-frigorifique/",
+    "text": "La machine frigorifique : le travail nécessaire pour extraire cette chaleur"
+   }
+  ]
+ },
+ "how_to_explore": {
+  "fr": "Régler les paramètres sur un préréglage (valeurs ci-dessus), lire la phrase affichée par la page puis les sorties ; modifier ensuite un seul paramètre à la fois entre son minimum et son maximum.",
+  "en": "Set the parameters to a preset (values above), read the sentence the page shows then the outputs; then change one parameter at a time between its minimum and maximum."
+ },
+ "exploration": [
+  {
+   "preset": "500-kg-in-4-h-75-water",
+   "title": {
+    "fr": "500 kg en 4 h, 75 % d’eau",
+    "en": "500 kg in 4 h, 75% water"
+   },
+   "set": {
+    "mass": 500,
+    "water-content-w": 0.75,
+    "fraction-of-water-frozen-g": 0.9,
+    "initial-temperature-ti": 15,
+    "freezing-onset-tc": -1.5,
+    "final-temperature-tf": -18,
+    "duration-t": 4
+   },
+   "observe": {
+    "fr": "La chaleur latente domine le bilan.",
+    "en": "Latent heat dominates the balance."
+   }
+  },
+  {
+   "preset": "twice-the-time-8-h",
+   "title": {
+    "fr": "Deux fois plus de temps : 8 h",
+    "en": "Twice the time: 8 h"
+   },
+   "set": {
+    "duration-t": 8
+   },
+   "observe": {
+    "fr": "L’énergie à retirer n’a pas bougé, c’est juste : seule la puissance moyenne est divisée par deux.",
+    "en": "The energy to remove has not moved, which is correct: only the average power is halved."
+   }
+  },
+  {
+   "preset": "half-the-mass",
+   "title": {
+    "fr": "Deux fois moins de masse",
+    "en": "Half the mass"
+   },
+   "set": {
+    "mass": 250
+   },
+   "observe": {
+    "fr": "Δh est par kilo et ne change pas : seule la puissance est divisée par deux.",
+    "en": "Δh is per kilogram and does not change: only the power is halved."
+   }
+  },
+  {
+   "preset": "low-water-product-50",
+   "title": {
+    "fr": "Produit pauvre en eau : 50 %",
+    "en": "Low-water product: 50%"
+   },
+   "set": {
+    "water-content-w": 0.5
+   },
+   "observe": {
+    "fr": "Moins d’eau à geler : le palier raccourcit et la puissance baisse.",
+    "en": "Less water to freeze: the plateau shortens and the power falls."
+   }
+  },
+  {
+   "preset": "deep-freezing-to-40-c",
+   "title": {
+    "fr": "Surgélation à −40 °C",
+    "en": "Deep-freezing to −40 °C"
+   },
+   "set": {
+    "final-temperature-tf": -40
+   },
+   "observe": {
+    "fr": "Descendre plus bas ajoute peu : le produit congelé a une capacité thermique faible et la chaleur latente reste en tête.",
+    "en": "Going lower adds little: the frozen product has a low heat capacity and latent heat stays ahead."
+   }
+  }
+ ],
+ "concepts": [
+  "freezing",
+  "latent-heat",
+  "sensible-heat"
+ ],
+ "extraction": {
+  "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
+  "roots": [
+   "#experience"
+  ],
+  "page_errors": [],
+  "fr_en_preset_consistency": {
+   "presets_compared": 5,
+   "presets_with_different_values_fr_vs_en": []
+  }
+ }
+}

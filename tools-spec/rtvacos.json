@@ -1,0 +1,499 @@
+{
+ "id": "rtvacos",
+ "schema": "https://www.cyrilvoyant.com/tools-spec.json#1.0",
+ "kind": "decision",
+ "domain": "research",
+ "interface_language": "both",
+ "name": {
+  "fr": "Préparer un plan d’action RTVACOS",
+  "en": "Prepare an RTVACOS action plan"
+ },
+ "url": {
+  "fr": "https://www.cyrilvoyant.com/fr/excellence-rtvacos/#rtv",
+  "en": "https://www.cyrilvoyant.com/research-excellence-rtvacos/#rtv"
+ },
+ "page_title": {
+  "fr": "L'arbre RTVACOS : où votre travail peut-il casser ?",
+  "en": "The RTVACOS tree: where can your work break?"
+ },
+ "computes": {
+  "fr": "Parcourir une grille de réflexion sur rigueur, transparence, visibilité et adoption ; aucun score d’excellence.",
+  "en": "Explore a reflection framework on rigour, transparency, visibility and adoption; no excellence score."
+ },
+ "summary": {
+  "fr": "Une recherche n'a d'effet que si elle est trouvée, jugée crédible et réutilisée. Le cadre RTVACOS la décrit comme un système multiplicatif : quatre fondations, dont une seule faiblesse fait chuter l'ensemble, et trois amplificateurs (collaboration, diffusion, pertinence sociétale), qui démultiplient une base solide…",
+  "en": "Research has an effect only if it is found, judged credible and reused. The RTVACOS framework describes this as a multiplicative system: four foundations, where a single weakness drags everything down, and three amplifiers (collaboration, outreach, societal relevance), which scale a solid base but never replace it."
+ },
+ "parameters": [
+  {
+   "id": "R1",
+   "type": "boolean",
+   "control": "checkbox",
+   "default": false,
+   "label": {
+    "fr": "Une référence simple à battre (persistance, ou climatologie : la moyenne habituelle)",
+    "en": "A simple reference to beat (persistence, or climatology: the usual average)"
+   },
+   "tag": {
+    "fr": "fondation",
+    "en": "foundation"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": null,
+   "group": "R · Rigueur (fondation)"
+  },
+  {
+   "id": "R2",
+   "type": "boolean",
+   "control": "checkbox",
+   "default": false,
+   "label": {
+    "fr": "Des données d'entraînement et de test séparées, sans fuite d'information de l'une vers l'autre",
+    "en": "Separate training and test data, with no information leaking from one to the other"
+   },
+   "tag": {
+    "fr": "fondation",
+    "en": "foundation"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": null,
+   "group": "R · Rigueur (fondation)"
+  },
+  {
+   "id": "R3",
+   "type": "boolean",
+   "control": "checkbox",
+   "default": false,
+   "label": {
+    "fr": "Les limites et le domaine de validité écrits",
+    "en": "Limits and domain of validity written down"
+   },
+   "tag": {
+    "fr": "fondation",
+    "en": "foundation"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": null,
+   "group": "R · Rigueur (fondation)"
+  },
+  {
+   "id": "T1",
+   "type": "boolean",
+   "control": "checkbox",
+   "default": false,
+   "label": {
+    "fr": "Le code public, avec une licence",
+    "en": "Public code, with a license"
+   },
+   "tag": {
+    "fr": "fondation",
+    "en": "foundation"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": null,
+   "group": "T · Transparence (fondation)"
+  },
+  {
+   "id": "T2",
+   "type": "boolean",
+   "control": "checkbox",
+   "default": false,
+   "label": {
+    "fr": "Les données ou leur accès décrits, avec une licence",
+    "en": "Data or their access described, with a license"
+   },
+   "tag": {
+    "fr": "fondation",
+    "en": "foundation"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": null,
+   "group": "T · Transparence (fondation)"
+  },
+  {
+   "id": "T3",
+   "type": "boolean",
+   "control": "checkbox",
+   "default": false,
+   "label": {
+    "fr": "L'usage des outils déclaré, IA comprise",
+    "en": "Tool use declared, AI included"
+   },
+   "tag": {
+    "fr": "fondation",
+    "en": "foundation"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": null,
+   "group": "T · Transparence (fondation)"
+  },
+  {
+   "id": "V1",
+   "type": "boolean",
+   "control": "checkbox",
+   "default": false,
+   "label": {
+    "fr": "Un ORCID et des DOI (article, code, données)",
+    "en": "An ORCID and DOIs (article, code, data)"
+   },
+   "tag": {
+    "fr": "fondation",
+    "en": "foundation"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": null,
+   "group": "V · Visibilité (fondation)"
+  },
+  {
+   "id": "V2",
+   "type": "boolean",
+   "control": "checkbox",
+   "default": false,
+   "label": {
+    "fr": "Une page claire : le résultat, la méthode, comment citer",
+    "en": "A clear page: the result, the method, how to cite"
+   },
+   "tag": {
+    "fr": "fondation",
+    "en": "foundation"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": null,
+   "group": "V · Visibilité (fondation)"
+  },
+  {
+   "id": "V3",
+   "type": "boolean",
+   "control": "checkbox",
+   "default": false,
+   "label": {
+    "fr": "Des métadonnées lisibles par les machines (CITATION.cff, JSON-LD)",
+    "en": "Machine-readable metadata (CITATION.cff, JSON-LD)"
+   },
+   "tag": {
+    "fr": "fondation",
+    "en": "foundation"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": null,
+   "group": "V · Visibilité (fondation)"
+  },
+  {
+   "id": "A1",
+   "type": "boolean",
+   "control": "checkbox",
+   "default": false,
+   "label": {
+    "fr": "Un exemple qui tourne en quelques minutes",
+    "en": "An example that runs in minutes"
+   },
+   "tag": {
+    "fr": "fondation",
+    "en": "foundation"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": null,
+   "group": "A · Adoption (fondation)"
+  },
+  {
+   "id": "A2",
+   "type": "boolean",
+   "control": "checkbox",
+   "default": false,
+   "label": {
+    "fr": "Une documentation pour un utilisateur qui n'est pas l'auteur",
+    "en": "Documentation for a user who is not the author"
+   },
+   "tag": {
+    "fr": "fondation",
+    "en": "foundation"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": null,
+   "group": "A · Adoption (fondation)"
+  },
+  {
+   "id": "A3",
+   "type": "boolean",
+   "control": "checkbox",
+   "default": false,
+   "label": {
+    "fr": "Un retour d'utilisateur réel pris en compte",
+    "en": "Real user feedback taken into account"
+   },
+   "tag": {
+    "fr": "fondation",
+    "en": "foundation"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": null,
+   "group": "A · Adoption (fondation)"
+  },
+  {
+   "id": "C1",
+   "type": "boolean",
+   "control": "checkbox",
+   "default": false,
+   "label": {
+    "fr": "Des coauteurs qui renforcent une fondation, pas seulement la liste",
+    "en": "Co-authors who strengthen a foundation, not only the list"
+   },
+   "tag": {
+    "fr": "amplificateur",
+    "en": "amplifier"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": null,
+   "group": "C · Collaboration (amplificateur)"
+  },
+  {
+   "id": "C2",
+   "type": "boolean",
+   "control": "checkbox",
+   "default": false,
+   "label": {
+    "fr": "Des contributions créditées (CRediT, ORCID)",
+    "en": "Credited contributions (CRediT, ORCID)"
+   },
+   "tag": {
+    "fr": "amplificateur",
+    "en": "amplifier"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": null,
+   "group": "C · Collaboration (amplificateur)"
+  },
+  {
+   "id": "O1",
+   "type": "boolean",
+   "control": "checkbox",
+   "default": false,
+   "label": {
+    "fr": "Un résumé pour non-spécialistes",
+    "en": "A summary for non-specialists"
+   },
+   "tag": {
+    "fr": "amplificateur",
+    "en": "amplifier"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": null,
+   "group": "O · Diffusion (amplificateur)"
+  },
+  {
+   "id": "O2",
+   "type": "boolean",
+   "control": "checkbox",
+   "default": false,
+   "label": {
+    "fr": "Une présentation, un cours ou une vidéo",
+    "en": "A talk, a course or a video"
+   },
+   "tag": {
+    "fr": "amplificateur",
+    "en": "amplifier"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": null,
+   "group": "O · Diffusion (amplificateur)"
+  },
+  {
+   "id": "S1",
+   "type": "boolean",
+   "control": "checkbox",
+   "default": false,
+   "label": {
+    "fr": "Un utilisateur ou une décision identifiés",
+    "en": "An identified user or decision"
+   },
+   "tag": {
+    "fr": "amplificateur",
+    "en": "amplifier"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": null,
+   "group": "S · Pertinence sociétale (amplificateur)"
+  },
+  {
+   "id": "S2",
+   "type": "boolean",
+   "control": "checkbox",
+   "default": false,
+   "label": {
+    "fr": "Un partenaire hors du monde académique",
+    "en": "A partner outside academia"
+   },
+   "tag": {
+    "fr": "amplificateur",
+    "en": "amplifier"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": null,
+   "group": "S · Pertinence sociétale (amplificateur)"
+  }
+ ],
+ "presets": [],
+ "actions": [
+  {
+   "name": {
+    "fr": "Tout décocher",
+    "en": "Untick all"
+   }
+  }
+ ],
+ "variants": [],
+ "outputs": [],
+ "formulas": [],
+ "definitions": [],
+ "assumptions": {
+  "fr": [],
+  "en": []
+ },
+ "source": {
+  "dois": [
+   "10.2139/ssrn.6877118"
+  ],
+  "repositories": [],
+  "related_pages": [
+   {
+    "href": "/fr/recits/evaluer-prevision-solaire-persistance/",
+    "text": "Évaluer une prévision face à une référence"
+   },
+   {
+    "href": "/fr/outils/nice/",
+    "text": "Juger une prévision avec NICE"
+   },
+   {
+    "href": "/fr/donnees/",
+    "text": "Préparer ses données"
+   },
+   {
+    "href": "/fr/donnees/#lic-tree",
+    "text": "Choisir une licence"
+   },
+   {
+    "href": "/fr/ia-dans-la-recherche/",
+    "text": "Déclarer l'usage de l'IA"
+   },
+   {
+    "href": "/fr/citer/",
+    "text": "Se faire citer correctement"
+   },
+   {
+    "href": "/fr/actualites/#academic-visibility-why-publishing-isn-t-enough-anymore",
+    "text": "Publier ne suffit plus"
+   },
+   {
+    "href": "/fr/outils/",
+    "text": "Des outils qui tournent dans le navigateur"
+   }
+  ]
+ },
+ "criteria": [
+  [
+   "R",
+   "Rigueur",
+   "root"
+  ],
+  [
+   "T",
+   "Transparence",
+   "root"
+  ],
+  [
+   "V",
+   "Visibilité",
+   "root"
+  ],
+  [
+   "A",
+   "Adoption",
+   "root"
+  ],
+  [
+   "C",
+   "Collaboration",
+   "branch"
+  ],
+  [
+   "O",
+   "Diffusion",
+   "branch"
+  ],
+  [
+   "S",
+   "Pertinence sociétale",
+   "branch"
+  ]
+ ],
+ "how_to_explore": {
+  "fr": "Régler les paramètres sur un préréglage (valeurs ci-dessus), lire la phrase affichée par la page puis les sorties ; modifier ensuite un seul paramètre à la fois entre son minimum et son maximum.",
+  "en": "Set the parameters to a preset (values above), read the sentence the page shows then the outputs; then change one parameter at a time between its minimum and maximum."
+ },
+ "exploration": [],
+ "concepts": [
+  "persistence"
+ ],
+ "extraction": {
+  "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
+  "roots": [
+   "#rtv"
+  ],
+  "page_errors": [],
+  "fr_en_preset_consistency": null
+ }
+}

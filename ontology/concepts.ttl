@@ -1,0 +1,919 @@
+@prefix cv: <https://www.cyrilvoyant.com/ontology/#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Notions du site www.cyrilvoyant.com / Concepts of www.cyrilvoyant.com. CC BY 4.0.
+# Definitions are the wording of the site pages; each concept links to the page that details it.
+
+cv:cv-concepts a skos:ConceptScheme ;
+    dcterms:title "Notions du site"@fr, "Site concepts"@en ;
+    dcterms:description "Notions de prévision, de dose, de physique médicale, de statistiques et de thermique définies sur www.cyrilvoyant.com."@fr, "Concepts of forecasting, dose, medical physics, statistics and thermal physics defined on www.cyrilvoyant.com."@en ;
+    dcterms:creator <https://person.cyrilvoyant.com/#cyril-voyant> ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:modified "2026-11-03"^^xsd:date ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/ontology/>, <https://www.cyrilvoyant.com/glossary/>, <https://www.cyrilvoyant.com/fr/lexique/> ;
+    skos:hasTopConcept cv:forecasting, cv:radiotherapy, cv:medical-physics, cv:statistics, cv:thermal-physics .
+
+cv:forecasting a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "forecasting" ;
+    skos:prefLabel "Prévision et évaluation"@fr, "Forecasting and evaluation"@en ;
+    skos:altLabel "prévision solaire"@fr ;
+    skos:altLabel "solar forecasting"@en ;
+    skos:definition "Une erreur n'a de sens que face à une référence : on décrit le signal, on choisit des références simples, on mesure le gain, puis on complexifie si ce gain le justifie."@fr, "An error only makes sense against a reference: describe the signal, choose simple references, measure the gain, then add complexity only if the gain justifies it."@en ;
+    skos:topConceptOf cv:cv-concepts ;
+    skos:narrower cv:ar2, cv:artu, cv:brownian-motion, cv:climatological-mean, cv:convex-combination, cv:cyclic-persistence, cv:deseasonalization, cv:difference-to-trend, cv:elm, cv:forecast-evaluation, cv:forecastability-f, cv:horizon, cv:malr, cv:memory-phi, cv:mimo, cv:no-free-lunch, cv:percentile-band-p10-p90, cv:persistence, cv:ratio-to-trend, cv:scv, cv:simulated-data, cv:smart-persistence ;
+    skos:related cv:forecast-evaluation ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/enseignement/cours-prevision-solaire/>, <https://www.cyrilvoyant.com/teaching/solar-forecasting-course/>, <https://cyrilvoyant.github.io/methods/solar-forecasting-made-simple.html> .
+
+cv:radiotherapy a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "radiotherapy" ;
+    skos:prefLabel "Radiothérapie"@fr, "Radiotherapy"@en ;
+    skos:altLabel "dose biologique"@fr ;
+    skos:altLabel "biological dose"@en ;
+    skos:definition "Quand le lien entre un schéma de radiothérapie et son effet biologique est connu, on le calcule directement avec un modèle explicite, sans données d'apprentissage."@fr, "When the link between a radiotherapy schedule and its biological effect is known, it is computed directly with an explicit model, with no training data."@en ;
+    skos:topConceptOf cv:cv-concepts ;
+    skos:narrower cv:alpha-beta, cv:bed, cv:doubling-time, cv:eqd2, cv:fractionation, cv:gray, cv:lq-model, cv:lql-equiv, cv:lql-model, cv:thyroglobulin, cv:transition-dose ;
+    skos:related cv:bed, cv:lq-model ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/recits/lql-equiv/>, <https://www.cyrilvoyant.com/stories/lql-equiv/>, <https://cyrilvoyant.github.io/tools/lql-equiv.html> .
+
+cv:medical-physics a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "medical-physics" ;
+    skos:prefLabel "Physique médicale"@fr, "Medical physics"@en ;
+    skos:altLabel "physique des rayonnements"@fr ;
+    skos:altLabel "radiation physics"@en ;
+    skos:definition "Comment un faisceau de photons ou de neutrons traverse la matière et y dépose de l'énergie, des modèles simples aux simulations de transport."@fr, "How a beam of photons or neutrons crosses matter and deposits energy in it, from simple models to transport simulations."@en ;
+    skos:topConceptOf cv:cv-concepts ;
+    skos:narrower cv:attenuation, cv:bnct, cv:compton-effect, cv:cross-section, cv:half-value-layer, cv:macroscopic-cross-section, cv:mean-free-path, cv:monte-carlo ;
+    skos:related cv:attenuation, cv:monte-carlo ;
+    skos:exactMatch <http://www.wikidata.org/entity/Q1120908> ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/enseignement/physique-pass/>, <https://www.cyrilvoyant.com/teaching/> .
+
+cv:statistics a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "statistics" ;
+    skos:prefLabel "Statistiques"@fr, "Statistics"@en ;
+    skos:altLabel "biostatistique"@fr ;
+    skos:altLabel "biostatistics"@en ;
+    skos:definition "Comparer un écart à son incertitude, mesurer une relation ou une prédiction, et lire un résultat sans le surinterpréter."@fr, "Compare a difference with its uncertainty, measure an association or a prediction, and read a result without over-interpreting it."@en ;
+    skos:topConceptOf cv:cv-concepts ;
+    skos:narrower cv:chi-square-test, cv:confidence-interval, cv:influential-point, cv:normal-distribution, cv:p-value, cv:pearson-correlation, cv:prediction-interval, cv:r-squared, cv:roc-curve, cv:student-t-test ;
+    skos:related cv:p-value ;
+    skos:exactMatch <http://www.wikidata.org/entity/Q12483> ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/enseignement/biostatistique/>, <https://www.cyrilvoyant.com/teaching/biostatistics/> .
+
+cv:thermal-physics a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "thermal-physics" ;
+    skos:prefLabel "Thermique et thermodynamique"@fr, "Thermal physics and thermodynamics"@en ;
+    skos:altLabel "thermique industrielle"@fr ;
+    skos:altLabel "industrial thermal physics"@en ;
+    skos:definition "Échanges de chaleur, cycles moteurs et frigorifiques et limites de Carnot, pour dimensionner un refroidissement, une congélation ou une machine thermique."@fr, "Heat exchange, engine and refrigeration cycles and Carnot limits, to size a cooling, a freezing or a heat engine."@en ;
+    skos:topConceptOf cv:cv-concepts ;
+    skos:narrower cv:biot-number, cv:carnot-efficiency, cv:cop, cv:freezing, cv:latent-heat, cv:sensible-heat ;
+    skos:related cv:biot-number, cv:carnot-efficiency ;
+    skos:exactMatch <http://www.wikidata.org/entity/Q619452> ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/enseignement/physique-industrielle/>, <https://www.cyrilvoyant.com/teaching/> .
+
+cv:forecast-evaluation a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "forecast-evaluation" ;
+    skos:prefLabel "Évaluation d'une prévision"@fr, "Forecast evaluation"@en ;
+    skos:altLabel "vérification d'une prévision"@fr ;
+    skos:altLabel "forecast verification"@en ;
+    skos:definition "Une erreur n'a de sens que face à une référence : mêmes cibles, périmètre annoncé, plusieurs normes d'erreur, puis un test de la différence."@fr, "An error only makes sense against a reference: same targets, stated scope, several error norms, then a test of the difference."@en ;
+    skos:broader cv:forecasting ;
+    skos:narrower cv:gamma-index, cv:mae, cv:nice, cv:nmae, cv:nrmse, cv:rmse ;
+    skos:related cv:forecasting, cv:mae, cv:nice, cv:persistence, cv:rmse ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/recits/evaluer-prevision-solaire-persistance/>, <https://www.cyrilvoyant.com/stories/evaluate-solar-forecast-persistence/>, <https://cyrilvoyant.github.io/methods/nice-metrics.html> ;
+    dcterms:source <https://doi.org/10.1016/j.seta.2025.104588> .
+
+cv:persistence a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "persistence" ;
+    skos:prefLabel "Persistance"@fr, "Persistence"@en ;
+    skos:altLabel "persistance simple"@fr ;
+    skos:altLabel "simple persistence"@en, "naive forecast"@en ;
+    skos:definition "La prévision recopie la dernière valeur connue. C'est la référence minimale de toute prévision."@fr, "The forecast copies the last known value. It is the minimal reference of any forecast."@en ;
+    skos:broader cv:forecasting ;
+    skos:related cv:ar2, cv:artu, cv:blend, cv:brownian-motion, cv:climatological-mean, cv:cliper, cv:cyclic-persistence, cv:elm, cv:forecast-evaluation, cv:horizon, cv:nice, cv:no-free-lunch, cv:smart-persistence ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/>, <https://www.cyrilvoyant.com/stories/variability-memory-forecastability/>, <https://cyrilvoyant.github.io/methods/persistence-blend.html> ;
+    dcterms:source <https://doi.org/10.1016/j.apm.2026.116988> .
+
+cv:cyclic-persistence a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "cyclic-persistence" ;
+    skos:prefLabel "Persistance cyclique"@fr, "Cyclic persistence"@en ;
+    skos:altLabel "cyclic persistence"@en ;
+    skos:definition "La prévision recopie la valeur un cycle plus tôt, au même moment du cycle."@fr, "The forecast copies the value one cycle earlier, at the same moment of the cycle."@en ;
+    skos:broader cv:forecasting ;
+    skos:related cv:blend, cv:persistence ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/outils/blend/>, <https://www.cyrilvoyant.com/latest-publications-and-news/forecasting-with-less/>, <https://cyrilvoyant.github.io/methods/persistence-blend.html> ;
+    dcterms:source <https://doi.org/10.1016/j.apm.2026.116988> .
+
+cv:smart-persistence a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "smart-persistence" ;
+    skos:prefLabel "Persistance de l'indice de ciel clair"@fr, "Smart persistence"@en ;
+    skos:altLabel "smart persistence"@fr, "persistance intelligente"@fr ;
+    skos:altLabel "clear-sky-index persistence"@en ;
+    skos:definition "La persistance appliquée à l'indice de ciel clair (SP : persistance de l'indice de ciel clair), plutôt qu'à l'éclairement brut."@fr, "Persistence applied to the clear-sky index (SP: persistence of the clear-sky index), rather than to raw irradiance."@en ;
+    skos:broader cv:forecasting ;
+    skos:related cv:clear-sky-index, cv:persistence ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/recits/evaluer-prevision-solaire-persistance/>, <https://www.cyrilvoyant.com/stories/evaluate-solar-forecast-persistence/>, <https://cyrilvoyant.github.io/methods/nice-metrics.html> ;
+    dcterms:source <https://doi.org/10.1016/j.seta.2025.104588> .
+
+cv:climatological-mean a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "climatological-mean" ;
+    skos:prefLabel "Moyenne"@fr, "Mean"@en ;
+    skos:altLabel "moyenne du passé"@fr, "moyenne climatologique"@fr ;
+    skos:altLabel "mean of the past"@en, "climatological mean"@en ;
+    skos:definition "La prévision vaut toujours la moyenne du passé."@fr, "The forecast is always the mean of the past."@en ;
+    skos:broader cv:forecasting ;
+    skos:related cv:cliper, cv:persistence ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/>, <https://www.cyrilvoyant.com/stories/variability-memory-forecastability/>, <https://cyrilvoyant.github.io/methods/persistence-blend.html> ;
+    dcterms:source <https://doi.org/10.1016/j.apm.2026.116988> .
+
+cv:convex-combination a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "convex-combination" ;
+    skos:prefLabel "Combinaison convexe"@fr, "Convex combination"@en ;
+    skos:altLabel "poids positifs de somme 1"@fr ;
+    skos:altLabel "positive weights summing to 1"@en ;
+    skos:definition "Deux prévisions pesées par des poids positifs de somme 1, calculés sur le passé. Persistance et moyenne : CLIPER. Persistance et persistance cyclique : BLEND."@fr, "Two forecasts weighed by positive weights adding up to 1, computed on the past. Persistence and the mean: CLIPER. Persistence and cyclic persistence: BLEND."@en ;
+    skos:broader cv:forecasting ;
+    skos:narrower cv:blend, cv:cliper ;
+    skos:related cv:blend, cv:cliper, cv:no-free-lunch ;
+    skos:exactMatch <http://www.wikidata.org/entity/Q2627315> ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/>, <https://www.cyrilvoyant.com/stories/variability-memory-forecastability/>, <https://cyrilvoyant.github.io/methods/persistence-blend.html> ;
+    dcterms:source <https://doi.org/10.1016/j.apm.2026.116988> .
+
+cv:cliper a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "cliper" ;
+    skos:prefLabel "CLIPER"@fr, "CLIPER"@en ;
+    skos:definition "La combinaison convexe de la persistance et de la moyenne. Même idée que BLEND, autre partenaire."@fr, "The convex combination of persistence and the mean. Same idea as BLEND, another partner."@en ;
+    schema:unitText "sans unité (poids entre 0 et 1)"@fr, "dimensionless (weights between 0 and 1)"@en ;
+    skos:broader cv:convex-combination ;
+    skos:related cv:artu, cv:blend, cv:climatological-mean, cv:convex-combination, cv:persistence ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/outils/blend/>, <https://www.cyrilvoyant.com/latest-publications-and-news/forecasting-with-less/>, <https://cyrilvoyant.github.io/methods/persistence-blend.html> ;
+    dcterms:source <https://doi.org/10.1016/j.apm.2026.116988> .
+
+cv:blend a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "blend" ;
+    skos:prefLabel "BLEND"@fr, "BLEND"@en ;
+    skos:altLabel "persistance cyclostationnaire"@fr ;
+    skos:altLabel "cyclostationary persistence"@en ;
+    skos:definition "La combinaison convexe de la persistance et de la persistance cyclique : deux poids positifs de somme 1, λ et 1 − λ, calculés à chaque moment du cycle."@fr, "The convex combination of persistence and cyclic persistence: two positive weights adding up to 1, λ and 1 − λ, computed at each moment of the cycle."@en ;
+    schema:unitText "sans unité (poids entre 0 et 1)"@fr, "dimensionless (weights between 0 and 1)"@en ;
+    skos:broader cv:convex-combination ;
+    skos:related cv:cliper, cv:convex-combination, cv:cyclic-persistence, cv:nice, cv:persistence ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/outils/blend/>, <https://www.cyrilvoyant.com/latest-publications-and-news/forecasting-with-less/>, <https://cyrilvoyant.github.io/methods/persistence-blend.html> ;
+    dcterms:source <https://doi.org/10.1016/j.apm.2026.116988> .
+
+cv:artu a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "artu" ;
+    skos:prefLabel "ARTU"@fr, "ARTU"@en ;
+    skos:altLabel "second-order reference"@en ;
+    skos:definition "Une référence d'ordre deux sur le rapport à la tendance : deux autocorrélations et une table donnent ses trois poids, sur la dernière valeur, la valeur h pas plus tôt et la moyenne."@fr, "A second-order reference on the ratio to trend: two autocorrelations and a table give its three weights, on the last value, the value h steps earlier and the mean."@en ;
+    schema:unitText "sans unité (poids)"@fr, "dimensionless (weights)"@en ;
+    skos:broader cv:forecasting ;
+    skos:related cv:cliper, cv:nice, cv:persistence, cv:ratio-to-trend ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/outils/artu/>, <https://www.cyrilvoyant.com/latest-publications-and-news/nice-forecast-evaluation/>, <https://cyrilvoyant.github.io/teaching/artu-worked-example.html> ;
+    dcterms:source <https://doi.org/10.1016/j.renene.2022.04.065> .
+
+cv:ar2 a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "ar2" ;
+    skos:prefLabel "AR(2)"@fr, "AR(2)"@en ;
+    skos:altLabel "autorégression d'ordre 2"@fr ;
+    skos:altLabel "second-order autoregression"@en ;
+    skos:definition "Une régression sur les deux dernières valeurs connues. Brute : sans retirer le cycle. Elle sert à mesurer ce que le retrait du cycle rapporte."@fr, "A regression on the last two known values. Raw: without removing the cycle. It measures what removing the cycle brings."@en ;
+    skos:broader cv:forecasting ;
+    skos:related cv:deseasonalization, cv:elm, cv:persistence ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/>, <https://www.cyrilvoyant.com/stories/variability-memory-forecastability/>, <https://cyrilvoyant.github.io/methods/solar-forecasting-made-simple.html> .
+
+cv:elm a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "elm" ;
+    skos:prefLabel "Extreme Learning Machine (ELM)"@fr, "Extreme learning machine (ELM)"@en ;
+    skos:altLabel "ELM"@fr, "apprentissage frugal"@fr ;
+    skos:altLabel "ELM"@en, "frugal learner"@en ;
+    skos:definition "Une Extreme Learning Machine garde une couche cachée aléatoire et ajuste les sorties par une résolution analytique, ce qui évite un entraînement profond itératif."@fr, "The Extreme Learning Machine retains a random hidden layer and fits its output coefficients analytically, avoiding iterative deep-network training."@en ;
+    skos:broader cv:forecasting ;
+    skos:related cv:ar2, cv:mimo, cv:persistence ;
+    skos:exactMatch <http://www.wikidata.org/entity/Q21948731> ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/actualites/why-extreme-learning-machines/>, <https://www.cyrilvoyant.com/latest-publications-and-news/why-extreme-learning-machines/>, <https://cyrilvoyant.github.io/methods/pv-elm.html> ;
+    dcterms:source <https://doi.org/10.1016/j.apenergy.2026.127599> .
+
+cv:mimo a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "mimo" ;
+    skos:prefLabel "MIMO (multi-entrée multi-sortie)"@fr, "MIMO (multiple-input multiple-output)"@en ;
+    skos:altLabel "MIMO-ELM"@fr ;
+    skos:altLabel "MIMO-ELM"@en ;
+    skos:definition "Une architecture multi-entrée multi-sortie : un seul modèle lit l'historique récent de plusieurs signaux et les prévoit ensemble."@fr, "A multiple-input multiple-output architecture: one model reads the recent history of several signals and forecasts them together."@en ;
+    skos:broader cv:forecasting ;
+    skos:related cv:elm ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/actualites/why-extreme-learning-machines/>, <https://www.cyrilvoyant.com/latest-publications-and-news/why-extreme-learning-machines/>, <https://cyrilvoyant.github.io/methods/mimo-elm-energy-mix.html> ;
+    dcterms:source <https://doi.org/10.1016/j.apenergy.2026.127599> .
+
+cv:horizon a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "horizon" ;
+    skos:prefLabel "Horizon de prévision"@fr, "Forecast horizon"@en ;
+    skos:altLabel "horizon"@fr ;
+    skos:altLabel "horizon"@en ;
+    skos:definition "Le nombre de pas entre la dernière valeur connue et la valeur à prévoir."@fr, "The number of steps between the last known value and the value to forecast."@en ;
+    schema:unitText "pas de temps"@fr, "time steps"@en ;
+    skos:broader cv:forecasting ;
+    skos:related cv:forecastability-f, cv:nice, cv:persistence ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/>, <https://www.cyrilvoyant.com/stories/variability-memory-forecastability/>, <https://cyrilvoyant.github.io/methods/nice-metrics.html> .
+
+cv:clear-sky-index a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "clear-sky-index" ;
+    skos:prefLabel "Indice de ciel clair"@fr, "Clear-sky index"@en ;
+    skos:altLabel "rapport à la tendance de ciel clair"@fr ;
+    skos:altLabel "ratio to the clear-sky trend"@en ;
+    skos:definition "En solaire, le rapport à la tendance de ciel clair : l'éclairement divisé par l'éclairement de ciel clair."@fr, "In solar forecasting, the ratio to the clear-sky trend: irradiance divided by clear-sky irradiance."@en ;
+    schema:unitText "sans unité"@fr, "dimensionless"@en ;
+    skos:broader cv:ratio-to-trend ;
+    skos:related cv:ratio-to-trend, cv:scv, cv:smart-persistence ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/>, <https://www.cyrilvoyant.com/stories/variability-memory-forecastability/>, <https://cyrilvoyant.github.io/teaching/solar-forecasting-basics.html> .
+
+cv:difference-to-trend a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "difference-to-trend" ;
+    skos:prefLabel "Différence à la tendance"@fr, "Difference to trend"@en ;
+    skos:altLabel "difference to trend"@en ;
+    skos:definition "On étudie y − c, l'écart à la tendance c (ici périodique). Adapté à un bruit additif."@fr, "We study y − c, the gap to the cycle c. Suited to additive noise."@en ;
+    schema:unitText "celle du signal"@fr, "same as the signal"@en ;
+    skos:broader cv:forecasting ;
+    skos:related cv:deseasonalization, cv:ratio-to-trend ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/>, <https://www.cyrilvoyant.com/stories/variability-memory-forecastability/> .
+
+cv:ratio-to-trend a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "ratio-to-trend" ;
+    skos:prefLabel "Rapport à la tendance"@fr, "Ratio to trend"@en ;
+    skos:altLabel "ratio to trend"@en ;
+    skos:definition "On étudie y / c, avec ici une tendance périodique c. Adapté à un bruit multiplicatif. Avec c le ciel clair : l'indice de ciel clair."@fr, "We study y / c. Suited to multiplicative noise. With c as clear sky: the clear-sky index."@en ;
+    schema:unitText "sans unité"@fr, "dimensionless"@en ;
+    skos:broader cv:forecasting ;
+    skos:narrower cv:clear-sky-index ;
+    skos:related cv:artu, cv:clear-sky-index, cv:deseasonalization, cv:difference-to-trend ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/>, <https://www.cyrilvoyant.com/stories/variability-memory-forecastability/> .
+
+cv:deseasonalization a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "deseasonalization" ;
+    skos:prefLabel "Désaisonnalisation"@fr, "Deseasonalization"@en ;
+    skos:altLabel "retrait du cycle"@fr ;
+    skos:altLabel "removing the cycle"@en, "seasonal adjustment"@en ;
+    skos:definition "Un cycle connu ne se prévoit pas : on le retire, on prévoit le reste, on le remet."@fr, "A known cycle is not forecast: remove it, forecast the rest, put it back."@en ;
+    skos:broader cv:forecasting ;
+    skos:related cv:ar2, cv:difference-to-trend, cv:ratio-to-trend ;
+    skos:exactMatch <http://www.wikidata.org/entity/Q622893> ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/>, <https://www.cyrilvoyant.com/stories/variability-memory-forecastability/>, <https://cyrilvoyant.github.io/methods/make-stationary.html> .
+
+cv:rmse a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "rmse" ;
+    skos:prefLabel "RMSE"@fr, "RMSE"@en ;
+    skos:altLabel "racine de l'erreur quadratique moyenne"@fr ;
+    skos:altLabel "root mean squared error"@en ;
+    skos:definition "La racine de l'erreur quadratique moyenne. Elle donne plus de poids aux grandes erreurs que la MAE."@fr, "The root mean squared error. It gives large errors more weight than the MAE."@en ;
+    schema:unitText "celle du signal (W/m² pour l'éclairement)"@fr, "same as the signal (W/m² for irradiance)"@en ;
+    skos:broader cv:forecast-evaluation ;
+    skos:related cv:forecast-evaluation, cv:gamma-index, cv:mae, cv:nice, cv:nrmse ;
+    skos:exactMatch <http://www.wikidata.org/entity/Q29037> ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/recits/evaluer-prevision-solaire-persistance/>, <https://www.cyrilvoyant.com/stories/evaluate-solar-forecast-persistence/>, <https://cyrilvoyant.github.io/methods/nice-metrics.html> ;
+    dcterms:source <https://doi.org/10.1016/j.seta.2025.104588> .
+
+cv:mae a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "mae" ;
+    skos:prefLabel "MAE"@fr, "MAE"@en ;
+    skos:altLabel "erreur absolue moyenne"@fr ;
+    skos:altLabel "mean absolute error"@en ;
+    skos:definition "L'erreur absolue moyenne : la moyenne des écarts en valeur absolue entre prévision et observation."@fr, "The mean absolute error: the average of the absolute gaps between forecast and observation."@en ;
+    schema:unitText "celle du signal"@fr, "same as the signal"@en ;
+    skos:broader cv:forecast-evaluation ;
+    skos:related cv:forecast-evaluation, cv:nice, cv:nmae, cv:rmse ;
+    skos:exactMatch <http://www.wikidata.org/entity/Q6803609> ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/recits/evaluer-prevision-solaire-persistance/>, <https://www.cyrilvoyant.com/stories/evaluate-solar-forecast-persistence/>, <https://cyrilvoyant.github.io/methods/nice-metrics.html> ;
+    dcterms:source <https://doi.org/10.1016/j.seta.2025.104588> .
+
+cv:nrmse a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "nrmse" ;
+    skos:prefLabel "nRMSE"@fr, "nRMSE"@en ;
+    skos:altLabel "RMSE normalisée"@fr ;
+    skos:altLabel "normalized RMSE"@en ;
+    skos:definition "La RMSE rapportée à la moyenne du signal (0 pour une prévision parfaite)."@fr, "The RMSE divided by the mean of the signal (0 for a perfect forecast)."@en ;
+    schema:unitText "sans unité (souvent en %)"@fr, "dimensionless (often in %)"@en ;
+    skos:broader cv:forecast-evaluation ;
+    skos:related cv:nice, cv:nmae, cv:rmse ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/>, <https://www.cyrilvoyant.com/stories/variability-memory-forecastability/> .
+
+cv:nmae a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "nmae" ;
+    skos:prefLabel "nMAE"@fr, "nMAE"@en ;
+    skos:altLabel "MAE normalisée"@fr ;
+    skos:altLabel "normalized MAE"@en ;
+    skos:definition "L'erreur absolue moyenne rapportée à la moyenne du signal."@fr, "The mean absolute error divided by the mean of the signal."@en ;
+    schema:unitText "sans unité (souvent en %)"@fr, "dimensionless (often in %)"@en ;
+    skos:broader cv:forecast-evaluation ;
+    skos:related cv:mae, cv:nrmse ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/>, <https://www.cyrilvoyant.com/stories/variability-memory-forecastability/> .
+
+cv:nice a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "nice" ;
+    skos:prefLabel "NICE"@fr, "NICE"@en ;
+    skos:altLabel "NICEᵏ"@fr, "NICEΣ"@fr, "indice NICE"@fr ;
+    skos:altLabel "NICEᵏ"@en, "NICEΣ"@en, "NICE index"@en ;
+    skos:definition "L'erreur de la prévision divisée par celle de la persistance, aux mêmes dates et au même horizon. 0 : parfaite. 1 : autant d'erreur que la persistance. Au-dessus de 1, on l'écrit « > 1 » : moins bonne que la persistance."@fr, "The forecast error divided by that of persistence, at the same dates and horizon. 0: perfect. 1: as much error as persistence. Above 1 it is written “> 1”: worse than persistence."@en ;
+    schema:unitText "sans unité"@fr, "dimensionless"@en ;
+    skos:broader cv:forecast-evaluation ;
+    skos:related cv:artu, cv:blend, cv:forecast-evaluation, cv:horizon, cv:mae, cv:nrmse, cv:persistence, cv:rmse ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/outils/nice/>, <https://www.cyrilvoyant.com/latest-publications-and-news/nice-forecast-evaluation/>, <https://cyrilvoyant.github.io/methods/nice-metrics.html> ;
+    dcterms:source <https://doi.org/10.1016/j.seta.2025.104588> .
+
+cv:scv a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "scv" ;
+    skos:prefLabel "sCV"@fr, "sCV"@en ;
+    skos:altLabel "coefficient de variation stochastique"@fr ;
+    skos:altLabel "stochastic coefficient of variation"@en ;
+    skos:definition "La racine de l'écart quadratique moyen au ciel clair, rapportée à la racine de la moyenne du carré du ciel clair. 0 : ciel clair. Environ 1 : chaque heure clair ou couvert à pile ou face. Ce n'est pas un maximum."@fr, "The root of the mean squared departure from clear sky, divided by the root of the mean square of clear sky. 0: clear sky. About 1: each hour clear or overcast on a coin toss. It is not a maximum."@en ;
+    schema:unitText "sans unité"@fr, "dimensionless"@en ;
+    skos:broader cv:forecasting ;
+    skos:related cv:clear-sky-index, cv:forecastability-f, cv:malr ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/outils/variabilite-previsibilite/>, <https://www.cyrilvoyant.com/latest-publications-and-news/why-forecast-solar-power/>, <https://cyrilvoyant.github.io/methods/solar-variability-scv.html> ;
+    dcterms:source <https://doi.org/10.1016/j.renene.2025.123913> .
+
+cv:forecastability-f a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "forecastability-f" ;
+    skos:prefLabel "Prévisibilité F"@fr, "Forecastability F"@en ;
+    skos:altLabel "indicateur F"@fr, "prévisibilité"@fr ;
+    skos:altLabel "F indicator"@en, "forecastability"@en ;
+    skos:definition "F = 1 + sCV × (ρmax − 1), comprise entre 1 − sCV et 1. Plus elle est haute, plus cet horizon est facile à prévoir."@fr, "F = 1 + sCV × (ρmax − 1), between 1 − sCV and 1. The higher it is, the easier that horizon is to forecast."@en ;
+    schema:unitText "sans unité"@fr, "dimensionless"@en ;
+    skos:broader cv:forecasting ;
+    skos:related cv:horizon, cv:malr, cv:memory-phi, cv:scv ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/outils/variabilite-previsibilite/>, <https://www.cyrilvoyant.com/latest-publications-and-news/why-forecast-solar-power/>, <https://cyrilvoyant.github.io/methods/solar-variability-scv.html> ;
+    dcterms:source <https://doi.org/10.1016/j.renene.2025.123913> .
+
+cv:gamma-index a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "gamma-index" ;
+    skos:prefLabel "Indice γ"@fr, "γ-index"@en ;
+    skos:altLabel "indice gamma"@fr ;
+    skos:altLabel "gamma index"@en ;
+    skos:definition "Pour chaque pixel prévu, la distance à l'observation la plus proche dans l'espace, le temps et l'intensité, chacun divisé par sa tolérance. γ ≤ 1 : accepté."@fr, "For each forecast pixel, the distance to the nearest observation in space, time and intensity, each divided by its tolerance. γ ≤ 1: accepted."@en ;
+    schema:unitText "sans unité"@fr, "dimensionless"@en ;
+    skos:broader cv:forecast-evaluation ;
+    skos:related cv:rmse ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/outils/indice-gamma/>, <https://www.cyrilvoyant.com/latest-publications-and-news/gamma-index-forecast-validation/>, <https://cyrilvoyant.github.io/methods/gamma-index.html> ;
+    dcterms:source <https://doi.org/10.1016/j.ijforecast.2026.03.002> .
+
+cv:brownian-motion a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "brownian-motion" ;
+    skos:prefLabel "Mouvement brownien"@fr, "Brownian motion"@en ;
+    skos:definition "Chaque valeur est la précédente plus un tirage au hasard : mémoire φ = 1. La persistance y est la meilleure prévision."@fr, "Each value is the previous one plus a random draw: memory φ = 1. Persistence wins on it."@en ;
+    skos:broader cv:forecasting ;
+    skos:related cv:memory-phi, cv:persistence ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/>, <https://www.cyrilvoyant.com/stories/variability-memory-forecastability/> .
+
+cv:memory-phi a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "memory-phi" ;
+    skos:prefLabel "Mémoire φ"@fr, "Memory φ"@en ;
+    skos:altLabel "mémoire du bruit"@fr ;
+    skos:altLabel "noise memory"@en ;
+    skos:definition "La corrélation entre deux valeurs voisines du bruit. 0 : aucune. 1 : totale."@fr, "The correlation between two neighbouring values of the noise. 0: none. 1: total."@en ;
+    schema:unitText "sans unité (entre 0 et 1)"@fr, "dimensionless (between 0 and 1)"@en ;
+    skos:broader cv:forecasting ;
+    skos:related cv:brownian-motion, cv:forecastability-f ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/>, <https://www.cyrilvoyant.com/stories/variability-memory-forecastability/> .
+
+cv:malr a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "malr" ;
+    skos:prefLabel "MALR (mean absolute log return)"@fr, "MALR (mean absolute log return)"@en ;
+    skos:altLabel "rendement logarithmique absolu moyen"@fr ;
+    skos:altLabel "mean absolute log return"@en ;
+    skos:definition "Un paramètre issu de l'économétrie qui décrit l'amplitude des changements relatifs. Ce diagnostic empirique ne dispense pas de tester le modèle sur le site et à l'horizon visés."@fr, "A parameter borrowed from econometrics that describes the size of relative changes. This empirical diagnostic does not replace testing the model at the intended site and horizon."@en ;
+    schema:unitText "sans unité"@fr, "dimensionless"@en ;
+    skos:broader cv:forecasting ;
+    skos:related cv:forecastability-f, cv:scv ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/>, <https://www.cyrilvoyant.com/stories/variability-memory-forecastability/> ;
+    dcterms:source <https://doi.org/10.1016/j.energy.2015.07.089> .
+
+cv:no-free-lunch a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "no-free-lunch" ;
+    skos:prefLabel "« No free lunch »"@fr, "“No free lunch”"@en ;
+    skos:altLabel "théorèmes de no free lunch"@fr ;
+    skos:altLabel "no free lunch theorems"@en ;
+    skos:definition "Sous une moyenne uniforme sur l'ensemble des fonctions d'un problème fini, les performances moyennes des algorithmes de recherche considérés coïncident. Ce cadre précis n'est pas la distribution des problèmes solaires réels."@fr, "Under a uniform average over all functions of a finite problem, the average performance of the search algorithms considered coincides. This precise framework is not the distribution of real solar problems."@en ;
+    skos:broader cv:forecasting ;
+    skos:related cv:convex-combination, cv:persistence ;
+    skos:exactMatch <http://www.wikidata.org/entity/Q255847> ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/recits/variabilite-memoire-previsibilite/>, <https://www.cyrilvoyant.com/stories/variability-memory-forecastability/> .
+
+cv:simulated-data a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "simulated-data" ;
+    skos:prefLabel "Données simulées"@fr, "Simulated data"@en ;
+    skos:altLabel "données synthétiques"@fr ;
+    skos:altLabel "synthetic data"@en ;
+    skos:definition "Quand on n'a pas encore de mesures, aucun modèle ne peut être entraîné ni validé, mais on peut simuler ce que l'on sait : une première estimation, pas une mesure."@fr, "When there are no measurements yet, no model can be trained or validated, but what is known can be simulated: a first estimate, not a measurement."@en ;
+    skos:broader cv:forecasting ;
+    skos:narrower cv:tls ;
+    skos:related cv:monte-carlo, cv:percentile-band-p10-p90, cv:tls ;
+    skos:exactMatch <http://www.wikidata.org/entity/Q7662746> ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/recits/tunnel-load-simulator/>, <https://www.cyrilvoyant.com/stories/tunnel-load-simulator/>, <https://cyrilvoyant.github.io/tools/tunnel-load-simulator.html> ;
+    dcterms:source <https://doi.org/10.1016/j.softx.2026.102946> .
+
+cv:monte-carlo a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "monte-carlo" ;
+    skos:prefLabel "Monte Carlo"@fr, "Monte Carlo"@en ;
+    skos:altLabel "méthode de Monte-Carlo"@fr, "Monte-Carlo"@fr ;
+    skos:altLabel "Monte Carlo method"@en, "Monte-Carlo"@en ;
+    skos:definition "Simuler de nombreuses fois avec des tirages aléatoires différents. Plus d'histoires réduisent l'erreur statistique, comme 1/√N pour N histoires ; elles ne corrigent ni une mauvaise géométrie ni de mauvaises données physiques."@fr, "Simulating many times with different random draws. More histories reduce the statistical error, as 1/√N for N histories; they correct neither a wrong geometry nor wrong physical data."@en ;
+    skos:broader cv:medical-physics ;
+    skos:related cv:bnct, cv:cross-section, cv:mean-free-path, cv:medical-physics, cv:percentile-band-p10-p90, cv:simulated-data, cv:tls ;
+    skos:exactMatch <http://www.wikidata.org/entity/Q232207> ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/recits/neutrons-atmospheriques-bnct/>, <https://www.cyrilvoyant.com/stories/atmospheric-neutrons-bnct/>, <https://cyrilvoyant.github.io/tools/tunnel-load-simulator.html> ;
+    dcterms:source <https://doi.org/10.1016/j.rpor.2010.11.002>, <https://doi.org/10.1016/j.softx.2026.102946> .
+
+cv:percentile-band-p10-p90 a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "percentile-band-p10-p90" ;
+    skos:prefLabel "Bande P10–P90"@fr, "P10–P90 band"@en ;
+    skos:altLabel "P10 et P90"@fr, "médiane et bande P10–P90"@fr ;
+    skos:altLabel "P10 and P90"@en, "median and P10–P90 band"@en ;
+    skos:definition "P10 et P90 sont les centiles 10 et 90 des résultats simulés : la bande P10–P90 contient les 80 % centraux. Elle décrit la variation entre simulations pour les paramètres choisis, pas toute l'incertitude sur un système réel."@fr, "P10 and P90 are the 10th and 90th percentiles of the simulated results: the P10–P90 band contains the central 80 %. It describes variation between runs under the chosen parameters, not all uncertainty about a real system."@en ;
+    schema:unitText "celle de la grandeur simulée"@fr, "same as the simulated quantity"@en ;
+    skos:broader cv:forecasting ;
+    skos:related cv:monte-carlo, cv:simulated-data, cv:tls ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/recits/tunnel-load-simulator/>, <https://www.cyrilvoyant.com/stories/tunnel-load-simulator/>, <https://cyrilvoyant.github.io/tools/tunnel-load-simulator.html> ;
+    dcterms:source <https://doi.org/10.1016/j.softx.2026.102946> .
+
+cv:tls a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "tls" ;
+    skos:prefLabel "Tunnel Load Simulator (TLS)"@fr, "Tunnel Load Simulator (TLS)"@en ;
+    skos:altLabel "TLS"@fr, "simulateur de charge de tunnel"@fr ;
+    skos:altLabel "TLS"@en, "tunnel load simulator"@en ;
+    skos:definition "Une application open source qui construit la consommation électrique d'un tunnel routier à partir de sa géométrie, du trafic, de l'éclairage et de la ventilation, dit à quel point elle est incertaine et en énonce les limites."@fr, "An open-source application that builds the electricity demand of a road tunnel from its geometry, traffic, lighting and ventilation, says how uncertain it is and states its limits."@en ;
+    schema:unitText "MWh par an, kW"@fr, "MWh per year, kW"@en ;
+    skos:broader cv:simulated-data ;
+    skos:related cv:monte-carlo, cv:percentile-band-p10-p90, cv:simulated-data ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/recits/tunnel-load-simulator/>, <https://www.cyrilvoyant.com/stories/tunnel-load-simulator/>, <https://cyrilvoyant.github.io/tools/tunnel-load-simulator.html> ;
+    dcterms:source <https://doi.org/10.1016/j.softx.2026.102946> .
+
+cv:lq-model a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "lq-model" ;
+    skos:prefLabel "Modèle linéaire-quadratique (LQ)"@fr, "Linear-quadratic model (LQ)"@en ;
+    skos:altLabel "LQ"@fr ;
+    skos:altLabel "LQ"@en ;
+    skos:definition "La BED d'une fraction croît en courbe avec la dose, à toutes les doses : la courbe LQ continue de s'infléchir vers le haut quand la dose par fraction augmente."@fr, "The BED of a fraction grows along a curve with dose, at all doses: the LQ curve keeps bending upward as the dose per fraction grows."@en ;
+    skos:broader cv:radiotherapy ;
+    skos:related cv:alpha-beta, cv:bed, cv:lql-equiv, cv:lql-model, cv:radiotherapy ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/outils/doses-lq-lql/>, <https://www.cyrilvoyant.com/stories/lql-equiv/>, <https://cyrilvoyant.github.io/tools/lql-equiv.html> ;
+    dcterms:source <https://doi.org/10.1016/j.clon.2025.103893>, <https://doi.org/10.1016/j.rpor.2013.08.004> .
+
+cv:lql-model a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "lql-model" ;
+    skos:prefLabel "Modèle linéaire-quadratique-linéaire (LQL)"@fr, "Linear-quadratic-linear model (LQL)"@en ;
+    skos:altLabel "LQL"@fr ;
+    skos:altLabel "LQL"@en ;
+    skos:definition "La même courbe que le LQ jusqu'à la dose de transition, puis une droite. Sous la dose de transition, les deux modèles sont identiques."@fr, "The same curve as LQ up to the transition dose, then a straight line. Below the transition dose, the two models are identical."@en ;
+    skos:broader cv:radiotherapy ;
+    skos:related cv:bed, cv:lq-model, cv:lql-equiv, cv:transition-dose ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/outils/doses-lq-lql/>, <https://www.cyrilvoyant.com/stories/lql-equiv/>, <https://cyrilvoyant.github.io/tools/lql-equiv.html> ;
+    dcterms:source <https://doi.org/10.1016/j.clon.2025.103893>, <https://doi.org/10.1016/j.softx.2026.103085> .
+
+cv:bed a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "bed" ;
+    skos:prefLabel "Dose biologique efficace (BED)"@fr, "Biologically effective dose (BED)"@en ;
+    skos:altLabel "BED"@fr, "dose biologiquement efficace"@fr ;
+    skos:altLabel "BED"@en, "biological effective dose"@en ;
+    skos:definition "Dose en grays qui permet de comparer des fractionnements différents. Pour n fractions de dose d, le modèle LQ donne BED = n · d · (1 + d / (α/β))."@fr, "Dose in grays that makes different fractionations comparable. For n fractions of dose d, the LQ model gives BED = n · d · (1 + d / (α/β))."@en ;
+    schema:unitText "gray (Gy)"@fr, "gray (Gy)"@en ;
+    skos:broader cv:radiotherapy ;
+    skos:related cv:alpha-beta, cv:eqd2, cv:fractionation, cv:gray, cv:lq-model, cv:lql-equiv, cv:lql-model, cv:radiotherapy ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/outils/doses-lq-lql/>, <https://www.cyrilvoyant.com/stories/lql-equiv/>, <https://cyrilvoyant.github.io/tools/lql-equiv.html> ;
+    dcterms:source <https://doi.org/10.1016/j.clon.2025.103893>, <https://doi.org/10.1016/j.softx.2026.103085> .
+
+cv:eqd2 a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "eqd2" ;
+    skos:prefLabel "Dose équivalente en fractions de 2 Gy (EQD2)"@fr, "Equivalent dose in 2 Gy fractions (EQD2)"@en ;
+    skos:altLabel "EQD2"@fr ;
+    skos:altLabel "EQD2"@en ;
+    skos:definition "La traduction de la BED en une dose délivrée par fractions de 2 Gy : EQD2 = BED / (1 + 2/(α/β))."@fr, "The translation of the BED into a dose given in 2 Gy fractions: EQD2 = BED / (1 + 2/(α/β))."@en ;
+    schema:unitText "gray (Gy)"@fr, "gray (Gy)"@en ;
+    skos:broader cv:radiotherapy ;
+    skos:related cv:alpha-beta, cv:bed, cv:fractionation, cv:lql-equiv ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/outils/doses-lq-lql/>, <https://www.cyrilvoyant.com/stories/lql-equiv/>, <https://cyrilvoyant.github.io/tools/lql-equiv.html> ;
+    dcterms:source <https://doi.org/10.1016/j.clon.2025.103893>, <https://doi.org/10.1016/j.softx.2026.103085> .
+
+cv:alpha-beta a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "alpha-beta" ;
+    skos:prefLabel "Rapport α/β"@fr, "α/β ratio"@en ;
+    skos:altLabel "α/β"@fr ;
+    skos:altLabel "α/β"@en ;
+    skos:definition "Paramètre propre au tissu : il décrit la sensibilité d'un tissu à la taille de chaque fraction. Plus il est faible, plus le tissu est sensible à la dose par fraction (environ 3,9 Gy pour le rectum)."@fr, "A tissue-specific parameter: it describes how sensitive a tissue is to the size of each fraction. The lower it is, the more sensitive the tissue is to the dose per fraction (about 3.9 Gy for the rectum)."@en ;
+    schema:unitText "gray (Gy)"@fr, "gray (Gy)"@en ;
+    skos:broader cv:radiotherapy ;
+    skos:related cv:bed, cv:eqd2, cv:lq-model, cv:transition-dose ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/outils/doses-lq-lql/>, <https://www.cyrilvoyant.com/stories/lql-equiv/>, <https://cyrilvoyant.github.io/tools/lql-equiv.html> ;
+    dcterms:source <https://doi.org/10.1016/j.clon.2025.103893> .
+
+cv:transition-dose a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "transition-dose" ;
+    skos:prefLabel "Dose de transition dT"@fr, "Transition dose dT"@en ;
+    skos:altLabel "dT"@fr ;
+    skos:altLabel "dT"@en ;
+    skos:definition "La dose par fraction où le modèle LQL passe de la courbe à la droite (7,8 Gy pour le rectum). Dans la bibliothèque de LQL-Equiv, elle vaut 2 α/β."@fr, "The dose per fraction at which the LQL model changes from a curve to a straight line (7.8 Gy for the rectum). In the LQL-Equiv library it equals 2 α/β."@en ;
+    schema:unitText "gray (Gy)"@fr, "gray (Gy)"@en ;
+    skos:broader cv:radiotherapy ;
+    skos:related cv:alpha-beta, cv:lql-model ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/outils/doses-lq-lql/>, <https://www.cyrilvoyant.com/stories/lql-equiv/>, <https://cyrilvoyant.github.io/tools/lql-equiv.html> ;
+    dcterms:source <https://doi.org/10.1016/j.clon.2025.103893> .
+
+cv:fractionation a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "fractionation" ;
+    skos:prefLabel "Fractionnement"@fr, "Fractionation"@en ;
+    skos:altLabel "fractions"@fr, "schéma de traitement"@fr ;
+    skos:altLabel "fractions"@en, "treatment schedule"@en ;
+    skos:definition "Pour n fractions (le nombre de séances), chacune délivrant une dose d en grays, la dose physique ne suffit pas à prédire l'effet biologique, qui dépend aussi de la dose reçue à chaque fraction."@fr, "For n fractions (the number of treatment sessions), each delivering a dose d in grays, physical dose is not enough to predict the biological effect, which also depends on the dose received at each fraction."@en ;
+    schema:unitText "n fractions de d Gy"@fr, "n fractions of d Gy"@en ;
+    skos:broader cv:radiotherapy ;
+    skos:related cv:bed, cv:eqd2, cv:gray ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/recits/lql-equiv/>, <https://www.cyrilvoyant.com/stories/lql-equiv/>, <https://cyrilvoyant.github.io/tools/lql-equiv.html> ;
+    dcterms:source <https://doi.org/10.1016/j.clon.2025.103893> .
+
+cv:gray a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "gray" ;
+    skos:prefLabel "Gray (Gy)"@fr, "Gray (Gy)"@en ;
+    skos:definition "L'unité de dose physique absorbée : l'énergie déposée par kilogramme de tissu."@fr, "The unit of absorbed physical dose: the energy deposited per kilogram of tissue."@en ;
+    schema:unitText "J/kg"@fr, "J/kg"@en ;
+    skos:broader cv:radiotherapy ;
+    skos:related cv:bed, cv:fractionation ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/recits/lql-equiv/>, <https://www.cyrilvoyant.com/stories/lql-equiv/> .
+
+cv:lql-equiv a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "lql-equiv" ;
+    skos:prefLabel "LQL-Equiv"@fr, "LQL-Equiv"@en ;
+    skos:altLabel "calculateur de BED et d'EQD2"@fr ;
+    skos:altLabel "BED and EQD2 calculator"@en ;
+    skos:definition "Un calculateur gratuit et open source (MIT) de BED et d'EQD2 avec les modèles LQ et LQL, dans le navigateur. Outil de recherche et d'enseignement, pas un dispositif médical."@fr, "A free, open-source (MIT) calculator of BED and EQD2 under the LQ and LQL models, in the browser. A research and teaching tool, not a medical device."@en ;
+    skos:broader cv:radiotherapy ;
+    skos:related cv:bed, cv:eqd2, cv:lq-model, cv:lql-model ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/recits/lql-equiv/>, <https://www.cyrilvoyant.com/stories/lql-equiv/>, <https://cyrilvoyant.github.io/tools/lql-equiv.html> ;
+    dcterms:source <https://doi.org/10.1016/j.softx.2026.103085>, <https://doi.org/10.1016/j.clon.2025.103893>, <https://doi.org/10.1016/j.rpor.2013.08.004> .
+
+cv:bnct a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "bnct" ;
+    skos:prefLabel "BNCT (thérapie par capture neutronique du bore)"@fr, "BNCT (boron neutron capture therapy)"@en ;
+    skos:altLabel "thérapie par capture neutronique du bore"@fr ;
+    skos:altLabel "boron neutron capture therapy"@en ;
+    skos:definition "Un composé transporte du bore-10 vers les tissus visés ; quand ce bore capture un neutron, une particule alpha et un noyau de lithium-7 déposent leur énergie sur quelques micromètres."@fr, "A compound carries boron-10 to the target tissue; when this boron captures a neutron, an alpha particle and a lithium-7 nucleus deposit their energy over a few micrometres."@en ;
+    skos:broader cv:medical-physics ;
+    skos:related cv:cross-section, cv:monte-carlo ;
+    skos:exactMatch <http://www.wikidata.org/entity/Q71676169> ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/recits/neutrons-atmospheriques-bnct/>, <https://www.cyrilvoyant.com/stories/atmospheric-neutrons-bnct/> ;
+    dcterms:source <https://doi.org/10.1016/j.rpor.2010.11.002> .
+
+cv:cross-section a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "cross-section" ;
+    skos:prefLabel "Section efficace"@fr, "Cross section"@en ;
+    skos:altLabel "σ(E)"@fr ;
+    skos:altLabel "neutron cross section"@en, "σ(E)"@en ;
+    skos:definition "Elle dit à quel point un noyau réagit facilement avec un neutron d'énergie E. Elle s'exprime comme une surface, souvent en barns, sans être la taille du noyau ni, à elle seule, la probabilité de capture."@fr, "It says how readily a nucleus reacts with a neutron of energy E. It is expressed as an area, often in barns, without being the size of the nucleus or, by itself, the probability of capture."@en ;
+    schema:unitText "barn (surface)"@fr, "barn (area)"@en ;
+    skos:broader cv:medical-physics ;
+    skos:related cv:bnct, cv:macroscopic-cross-section, cv:mean-free-path, cv:monte-carlo ;
+    skos:exactMatch <http://www.wikidata.org/entity/Q751259> ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/recits/neutrons-atmospheriques-bnct/>, <https://www.cyrilvoyant.com/stories/atmospheric-neutrons-bnct/> ;
+    dcterms:source <https://doi.org/10.1016/j.rpor.2010.11.002> .
+
+cv:macroscopic-cross-section a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "macroscopic-cross-section" ;
+    skos:prefLabel "Section efficace macroscopique"@fr, "Macroscopic cross section"@en ;
+    skos:altLabel "Σ"@fr ;
+    skos:altLabel "Σ"@en ;
+    skos:definition "La section efficace multipliée par le nombre de noyaux par unité de volume : l'inverse d'une longueur. Pour un mélange, Σ additionne ces produits noyau par noyau."@fr, "The cross section multiplied by the number of nuclei per unit volume: an inverse length. For a mixture, Σ adds these products nucleus by nucleus."@en ;
+    schema:unitText "inverse d'une longueur (cm⁻¹)"@fr, "inverse length (cm⁻¹)"@en ;
+    skos:broader cv:medical-physics ;
+    skos:related cv:cross-section, cv:mean-free-path ;
+    skos:exactMatch <http://www.wikidata.org/entity/Q98280520> ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/recits/neutrons-atmospheriques-bnct/>, <https://www.cyrilvoyant.com/stories/atmospheric-neutrons-bnct/> ;
+    dcterms:source <https://doi.org/10.1016/j.rpor.2010.11.002> .
+
+cv:mean-free-path a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "mean-free-path" ;
+    skos:prefLabel "Libre parcours moyen"@fr, "Mean free path"@en ;
+    skos:altLabel "L = 1/Σ"@fr ;
+    skos:altLabel "L = 1/Σ"@en ;
+    skos:definition "L'inverse de la section efficace macroscopique, L = 1/Σ : la distance moyenne entre deux collisions."@fr, "The inverse of the macroscopic cross section, L = 1/Σ: the average distance between two collisions."@en ;
+    schema:unitText "longueur (cm)"@fr, "length (cm)"@en ;
+    skos:broader cv:medical-physics ;
+    skos:related cv:cross-section, cv:macroscopic-cross-section, cv:monte-carlo ;
+    skos:exactMatch <http://www.wikidata.org/entity/Q756307> ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/recits/neutrons-atmospheriques-bnct/>, <https://www.cyrilvoyant.com/stories/atmospheric-neutrons-bnct/> ;
+    dcterms:source <https://doi.org/10.1016/j.rpor.2010.11.002> .
+
+cv:compton-effect a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "compton-effect" ;
+    skos:prefLabel "Effet Compton"@fr, "Compton scattering"@en ;
+    skos:altLabel "diffusion Compton"@fr ;
+    skos:altLabel "Compton effect"@en ;
+    skos:definition "La diffusion d'un photon sur un électron : le photon perd de l'énergie et l'électron reçoit une énergie cinétique K. L'énergie au repos de l'électron est 511 keV."@fr, "The scattering of a photon on an electron: the photon loses energy and the electron receives a kinetic energy K. The rest energy of the electron is 511 keV."@en ;
+    schema:unitText "keV"@fr, "keV"@en ;
+    skos:broader cv:medical-physics ;
+    skos:related cv:attenuation ;
+    skos:exactMatch <http://www.wikidata.org/entity/Q171516> ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/animations/effet-compton/>, <https://www.cyrilvoyant.com/tools/compton-scattering/> .
+
+cv:attenuation a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "attenuation" ;
+    skos:prefLabel "Atténuation"@fr, "Attenuation"@en ;
+    skos:altLabel "décroissance exponentielle"@fr ;
+    skos:altLabel "exponential decay"@en ;
+    skos:definition "Chaque épaisseur égale à la couche de demi-atténuation divise par deux ce qui reste : c'est une décroissance exponentielle, pas une soustraction."@fr, "Each thickness equal to the half-value layer halves what remains: it is an exponential decay, not a subtraction."@en ;
+    schema:unitText "sans unité (fraction transmise)"@fr, "dimensionless (transmitted fraction)"@en ;
+    skos:broader cv:medical-physics ;
+    skos:related cv:compton-effect, cv:half-value-layer, cv:medical-physics ;
+    skos:exactMatch <http://www.wikidata.org/entity/Q2357982> ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/animations/attenuation-demi-epaisseur/>, <https://www.cyrilvoyant.com/tools/attenuation-half-value-layer/> .
+
+cv:half-value-layer a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "half-value-layer" ;
+    skos:prefLabel "Couche de demi-atténuation (CDA)"@fr, "Half-value layer (HVL)"@en ;
+    skos:altLabel "CDA"@fr, "épaisseur de demi-atténuation"@fr ;
+    skos:altLabel "HVL"@en, "half-value thickness"@en ;
+    skos:definition "L'épaisseur de matériau qui divise par deux l'intensité transmise sans diffusion : CDA = ln 2 / μ, avec μ le coefficient d'atténuation linéique."@fr, "The thickness of material that halves the intensity transmitted without scattering: HVL = ln 2 / μ, with μ the linear attenuation coefficient."@en ;
+    schema:unitText "longueur (cm)"@fr, "length (cm)"@en ;
+    skos:broader cv:medical-physics ;
+    skos:related cv:attenuation ;
+    skos:exactMatch <http://www.wikidata.org/entity/Q127526> ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/animations/attenuation-demi-epaisseur/>, <https://www.cyrilvoyant.com/tools/attenuation-half-value-layer/> .
+
+cv:thyroglobulin a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "thyroglobulin" ;
+    skos:prefLabel "Thyroglobuline (Tg)"@fr, "Thyroglobulin (Tg)"@en ;
+    skos:altLabel "Tg"@fr ;
+    skos:altLabel "Tg"@en ;
+    skos:definition "Le marqueur sanguin suivi par le modèle de la thérapie à l'iode radioactif."@fr, "The blood marker followed by the radioiodine therapy model."@en ;
+    schema:unitText "ng/mL"@fr, "ng/mL"@en ;
+    skos:broader cv:radiotherapy ;
+    skos:related cv:doubling-time ;
+    skos:exactMatch <http://www.wikidata.org/entity/Q412228> ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/outils/modele-thyroide/>, <https://www.cyrilvoyant.com/stories/thyroid-radioiodine/>, <https://cyrilvoyant.github.io/methods/thyroid-radioiodine.html> .
+
+cv:doubling-time a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "doubling-time" ;
+    skos:prefLabel "Temps de doublement"@fr, "Doubling time"@en ;
+    skos:altLabel "Td"@fr ;
+    skos:altLabel "Td"@en ;
+    skos:definition "La durée, en mois, pour que le nombre de cellules tumorales double sans traitement : 9,8 mois pour le profil réfractaire, 66,6 pour le répondeur dans l'article."@fr, "The time, in months, for the number of tumour cells to double without treatment: 9.8 months for the refractory profile, 66.6 for the responder profile in the paper."@en ;
+    schema:unitText "mois"@fr, "months"@en ;
+    skos:broader cv:radiotherapy ;
+    skos:related cv:thyroglobulin ;
+    skos:exactMatch <http://www.wikidata.org/entity/Q1424376> ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/outils/modele-thyroide/>, <https://www.cyrilvoyant.com/stories/thyroid-radioiodine/>, <https://cyrilvoyant.github.io/methods/thyroid-radioiodine.html> .
+
+cv:p-value a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "p-value" ;
+    skos:prefLabel "p-value"@fr, "p-value"@en ;
+    skos:altLabel "valeur p"@fr ;
+    skos:altLabel "p value"@en ;
+    skos:definition "La probabilité, si les moyennes sont égales (ou ρ = 0) et le modèle correct, d'un résultat au moins aussi extrême. Ce n'est pas la probabilité que l'hypothèse soit vraie ; elle ne mesure pas l'importance d'un lien."@fr, "The probability, if the means are equal (or ρ = 0) and the model is correct, of a result at least as extreme. It is not the probability that the hypothesis is true; it does not measure the importance of an association."@en ;
+    schema:unitText "sans unité (entre 0 et 1)"@fr, "dimensionless (between 0 and 1)"@en ;
+    skos:broader cv:statistics ;
+    skos:related cv:chi-square-test, cv:normal-distribution, cv:r-squared, cv:roc-curve, cv:statistics, cv:student-t-test ;
+    skos:exactMatch <http://www.wikidata.org/entity/Q253255> ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/animations/test-student/>, <https://www.cyrilvoyant.com/tools/student-t-test/> .
+
+cv:student-t-test a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "student-t-test" ;
+    skos:prefLabel "Test de Student"@fr, "Student t-test"@en ;
+    skos:altLabel "test t"@fr ;
+    skos:altLabel "t-test"@en ;
+    skos:definition "Le test divise l'écart entre deux moyennes par son erreur standard : un même écart peut se détacher du hasard d'échantillonnage, ou s'y noyer. Significatif ne veut pas dire important."@fr, "The test divides the difference between two means by its standard error: the same difference can stand out from sampling chance or drown in it. Significant does not mean important."@en ;
+    schema:unitText "sans unité (t)"@fr, "dimensionless (t)"@en ;
+    skos:broader cv:statistics ;
+    skos:related cv:confidence-interval, cv:p-value ;
+    skos:exactMatch <http://www.wikidata.org/entity/Q309479> ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/animations/test-student/>, <https://www.cyrilvoyant.com/tools/student-t-test/> .
+
+cv:chi-square-test a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "chi-square-test" ;
+    skos:prefLabel "Test du χ²"@fr, "Chi-square test"@en ;
+    skos:altLabel "test du khi-deux"@fr, "χ²"@fr ;
+    skos:altLabel "chi-squared test"@en, "χ²"@en ;
+    skos:definition "La statistique est la somme des contributions (O−E)²/E, avec O l'effectif observé et E l'effectif attendu sous l'hypothèse testée. Une petite p-value dit que l'écart est peu compatible avec l'hypothèse, pas qu'il est grand."@fr, "The statistic is the sum of the contributions (O−E)²/E, with O the observed count and E the count expected under the tested hypothesis. A small p-value says the departure is hardly compatible with the hypothesis, not that it is large."@en ;
+    schema:unitText "sans unité"@fr, "dimensionless"@en ;
+    skos:broader cv:statistics ;
+    skos:related cv:p-value ;
+    skos:exactMatch <http://www.wikidata.org/entity/Q1071004> ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/animations/test-khi-deux/>, <https://www.cyrilvoyant.com/tools/chi-square-test/> .
+
+cv:normal-distribution a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "normal-distribution" ;
+    skos:prefLabel "Loi normale"@fr, "Normal distribution"@en ;
+    skos:altLabel "loi de Gauss"@fr, "score z"@fr ;
+    skos:altLabel "Gaussian distribution"@en, "z-score"@en ;
+    skos:definition "Le score z est le nombre d'écarts-types entre x et la moyenne ; Φ(z) est la probabilité qu'une variable normale centrée réduite reste en dessous de z : l'aire à gauche de z."@fr, "The z-score is the number of standard deviations between x and the mean; Φ(z) is the probability that a standard normal variable stays below z: the area to the left of z."@en ;
+    schema:unitText "celle de la variable ; z sans unité"@fr, "that of the variable; z dimensionless"@en ;
+    skos:broader cv:statistics ;
+    skos:related cv:confidence-interval, cv:p-value ;
+    skos:exactMatch <http://www.wikidata.org/entity/Q133871> ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/animations/loi-normale/>, <https://www.cyrilvoyant.com/tools/normal-distribution/> .
+
+cv:roc-curve a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "roc-curve" ;
+    skos:prefLabel "Courbe ROC"@fr, "ROC curve"@en ;
+    skos:altLabel "AUC"@fr, "sensibilité et spécificité"@fr ;
+    skos:altLabel "AUC"@en, "sensitivity and specificity"@en ;
+    skos:definition "La sensibilité en fonction du taux de faux positifs 1 − Sp, quand le seuil varie. L'aire sous la courbe (AUC) résume le test sans choisir de seuil."@fr, "Sensitivity against the false-positive rate 1 − Sp as the threshold varies. The area under the curve (AUC) summarizes the test without choosing a threshold."@en ;
+    schema:unitText "AUC sans unité (entre 0 et 1)"@fr, "AUC dimensionless (between 0 and 1)"@en ;
+    skos:broader cv:statistics ;
+    skos:related cv:p-value ;
+    skos:exactMatch <http://www.wikidata.org/entity/Q327120> ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/animations/courbe-roc/>, <https://www.cyrilvoyant.com/tools/roc-curve/> .
+
+cv:r-squared a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "r-squared" ;
+    skos:prefLabel "Coefficient de détermination R²"@fr, "Coefficient of determination R²"@en ;
+    skos:altLabel "R²"@fr ;
+    skos:altLabel "R²"@en ;
+    skos:definition "La part de variation décrite par la droite (1 pour une prévision parfaite). Elle ne mesure pas l'importance du lien."@fr, "The share of variation described by the line (1 for a perfect forecast). It does not measure the importance of the association."@en ;
+    schema:unitText "sans unité (entre 0 et 1)"@fr, "dimensionless (between 0 and 1)"@en ;
+    skos:broader cv:statistics ;
+    skos:related cv:influential-point, cv:p-value, cv:pearson-correlation ;
+    skos:exactMatch <http://www.wikidata.org/entity/Q192830> ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/animations/correlation-significativite-r2/>, <https://www.cyrilvoyant.com/tools/correlation-significance-r-squared/> .
+
+cv:pearson-correlation a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "pearson-correlation" ;
+    skos:prefLabel "Corrélation de Pearson"@fr, "Pearson correlation"@en ;
+    skos:altLabel "coefficient de corrélation r"@fr ;
+    skos:altLabel "correlation coefficient r"@en ;
+    skos:definition "La corrélation de Pearson dans le nuage de points (r) et dans la population (ρ)."@fr, "The Pearson correlation in the scatter (r) and in the population (ρ)."@en ;
+    schema:unitText "sans unité (entre −1 et 1)"@fr, "dimensionless (between −1 and 1)"@en ;
+    skos:broader cv:statistics ;
+    skos:related cv:influential-point, cv:r-squared ;
+    skos:exactMatch <http://www.wikidata.org/entity/Q1136628> ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/animations/correlation-significativite-r2/>, <https://www.cyrilvoyant.com/tools/correlation-significance-r-squared/> .
+
+cv:confidence-interval a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "confidence-interval" ;
+    skos:prefLabel "Intervalle de confiance"@fr, "Confidence interval"@en ;
+    skos:definition "Il encadre la moyenne des y en x₀ (bande à 95 %, quantile de Student à n − 2 degrés de liberté)."@fr, "It brackets the mean of y at x₀ (95 % band, Student quantile with n − 2 degrees of freedom)."@en ;
+    schema:unitText "celle de y"@fr, "same as y"@en ;
+    skos:broader cv:statistics ;
+    skos:related cv:normal-distribution, cv:prediction-interval, cv:student-t-test ;
+    skos:exactMatch <http://www.wikidata.org/entity/Q208498> ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/animations/intervalles-regression/>, <https://www.cyrilvoyant.com/tools/regression-intervals/> .
+
+cv:prediction-interval a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "prediction-interval" ;
+    skos:prefLabel "Intervalle de prévision"@fr, "Prediction interval"@en ;
+    skos:definition "Il encadre une nouvelle observation en x₀ : on ajoute 1 sous la racine, d'où une bande plus large que l'intervalle de confiance."@fr, "It brackets a new observation at x₀: add 1 under the root, hence a band wider than the confidence interval."@en ;
+    schema:unitText "celle de y"@fr, "same as y"@en ;
+    skos:broader cv:statistics ;
+    skos:related cv:confidence-interval ;
+    skos:exactMatch <http://www.wikidata.org/entity/Q1106171> ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/animations/intervalles-regression/>, <https://www.cyrilvoyant.com/tools/regression-intervals/> .
+
+cv:influential-point a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "influential-point" ;
+    skos:prefLabel "Point influent"@fr, "Influential point"@en ;
+    skos:altLabel "levier"@fr ;
+    skos:altLabel "leverage"@en ;
+    skos:definition "Un point qui déplace la droite des moindres carrés ; le levier est son poids potentiel, d'autant plus grand qu'il est loin en x."@fr, "A point that moves the least-squares line; leverage is its potential weight, greater the farther it lies in x."@en ;
+    skos:broader cv:statistics ;
+    skos:related cv:pearson-correlation, cv:r-squared ;
+    skos:exactMatch <http://www.wikidata.org/entity/Q16908492> ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/animations/point-influent-regression/>, <https://www.cyrilvoyant.com/tools/influential-point-regression/> .
+
+cv:biot-number a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "biot-number" ;
+    skos:prefLabel "Nombre de Biot"@fr, "Biot number"@en ;
+    skos:altLabel "Bi"@fr ;
+    skos:altLabel "Bi"@en ;
+    skos:definition "La résistance de conduction interne comparée à la résistance de convection en surface."@fr, "Internal conduction resistance compared with surface convection resistance."@en ;
+    schema:unitText "sans unité"@fr, "dimensionless"@en ;
+    skos:broader cv:thermal-physics ;
+    skos:related cv:freezing, cv:thermal-physics ;
+    skos:exactMatch <http://www.wikidata.org/entity/Q864844> ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/animations/refroidissement-biot/>, <https://www.cyrilvoyant.com/tools/biot-cooling/> .
+
+cv:cop a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "cop" ;
+    skos:prefLabel "Coefficient de performance (COP)"@fr, "Coefficient of performance (COP)"@en ;
+    skos:altLabel "COP"@fr ;
+    skos:altLabel "COP"@en ;
+    skos:definition "La chaleur extraite de la source froide par unité de travail reçu. COP > 1 est normal : ce n'est pas un rendement en pourcentage. Limite de Carnot : le COP maximal d'une machine réversible entre deux sources."@fr, "Heat extracted from the cold reservoir per unit of work supplied. COP > 1 is normal: it is not a percentage efficiency. Carnot limit: the maximum COP of a reversible machine between two reservoirs."@en ;
+    schema:unitText "sans unité"@fr, "dimensionless"@en ;
+    skos:broader cv:thermal-physics ;
+    skos:related cv:carnot-efficiency ;
+    skos:exactMatch <http://www.wikidata.org/entity/Q902090> ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/animations/cop-carnot-machine-frigorifique/>, <https://www.cyrilvoyant.com/tools/refrigerator-carnot-cop/> .
+
+cv:carnot-efficiency a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "carnot-efficiency" ;
+    skos:prefLabel "Rendement de Carnot"@fr, "Carnot efficiency"@en ;
+    skos:altLabel "moteur de Carnot"@fr, "limite de Carnot"@fr ;
+    skos:altLabel "Carnot engine"@en, "Carnot limit"@en ;
+    skos:definition "Le rendement η est le travail W divisé par la chaleur reçue Qchaud ; ηCarnot est sa borne, atteinte par un cycle réversible, sans frottement ni écart de température lors des échanges."@fr, "Efficiency η is the work W divided by the heat received Qhot; ηCarnot is its limit, reached by a reversible cycle, with no friction and no temperature gap during exchanges."@en ;
+    schema:unitText "sans unité"@fr, "dimensionless"@en ;
+    skos:broader cv:thermal-physics ;
+    skos:related cv:cop, cv:thermal-physics ;
+    skos:exactMatch <http://www.wikidata.org/entity/Q93949862> ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/animations/moteur-carnot/>, <https://www.cyrilvoyant.com/tools/carnot-heat-engine/> .
+
+cv:freezing a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "freezing" ;
+    skos:prefLabel "Congélation"@fr, "Freezing"@en ;
+    skos:altLabel "énergie de congélation"@fr ;
+    skos:altLabel "freezing energy"@en ;
+    skos:definition "L'énergie à retirer pour geler une masse d'eau : chaleur sensible (mcΔT) plus chaleur latente, sans changement de température dans ce modèle ; la puissance moyenne est l'énergie divisée par la durée."@fr, "The energy to remove to freeze a mass of water: sensible heat (mcΔT) plus latent heat, with no temperature change in this model; average power is energy divided by duration."@en ;
+    schema:unitText "kJ ou MJ ; puissance en kW"@fr, "kJ or MJ; power in kW"@en ;
+    skos:broader cv:thermal-physics ;
+    skos:related cv:biot-number, cv:latent-heat, cv:sensible-heat ;
+    skos:exactMatch <http://www.wikidata.org/entity/Q108000> ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/animations/congelation-energie-puissance/>, <https://www.cyrilvoyant.com/tools/freezing-energy-power/> .
+
+cv:latent-heat a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "latent-heat" ;
+    skos:prefLabel "Chaleur latente"@fr, "Latent heat"@en ;
+    skos:definition "La chaleur retirée pour geler l'eau, sans changement de température dans ce modèle."@fr, "The heat removed to freeze the water, with no temperature change in this model."@en ;
+    schema:unitText "kJ/kg"@fr, "kJ/kg"@en ;
+    skos:broader cv:thermal-physics ;
+    skos:related cv:freezing, cv:sensible-heat ;
+    skos:exactMatch <http://www.wikidata.org/entity/Q207721> ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/animations/congelation-energie-puissance/>, <https://www.cyrilvoyant.com/tools/freezing-energy-power/> .
+
+cv:sensible-heat a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "sensible-heat" ;
+    skos:prefLabel "Chaleur sensible"@fr, "Sensible heat"@en ;
+    skos:definition "La chaleur échangée quand la température change : le terme mcΔT, avec c la capacité thermique massique et ΔT la variation de température."@fr, "The heat exchanged when temperature changes: the term mcΔT, with c the specific heat capacity and ΔT the temperature change."@en ;
+    schema:unitText "kJ"@fr, "kJ"@en ;
+    skos:broader cv:thermal-physics ;
+    skos:related cv:freezing, cv:latent-heat ;
+    skos:exactMatch <http://www.wikidata.org/entity/Q1480581> ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/animations/congelation-energie-puissance/>, <https://www.cyrilvoyant.com/tools/freezing-energy-power/> .

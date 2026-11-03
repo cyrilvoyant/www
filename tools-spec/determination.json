@@ -1,0 +1,416 @@
+{
+ "id": "determination",
+ "schema": "https://www.cyrilvoyant.com/tools-spec.json#1.0",
+ "kind": "teaching",
+ "domain": "learning",
+ "interface_language": "both",
+ "name": {
+  "fr": "Significativité et R² : quelle variation explique la droite ?",
+  "en": "Significance and R²: how much variation does the line explain?"
+ },
+ "url": {
+  "fr": "https://www.cyrilvoyant.com/fr/animations/correlation-significativite-r2/",
+  "en": "https://www.cyrilvoyant.com/tools/correlation-significance-r-squared/"
+ },
+ "page_title": {
+  "fr": "Corrélation, significativité et R² : animation pour les distinguer",
+  "en": "Correlation, significance and R²: distinguish the concepts"
+ },
+ "computes": {
+  "fr": "Faire varier la corrélation r et l’effectif n ; distinguer la p-value théorique et la variation expliquée dans un nuage pédagogique construit.",
+  "en": "Vary the correlation r and the sample size n; distinguish the theoretical p-value from variation explained in a constructed teaching example."
+ },
+ "summary": {
+  "fr": "Avec r = 0,10, la droite décrit 1 % de la variation, que l’on ait 30 points (p ≈ 0,599) ou 1000 (p ≈ 0,0015). Vous séparez deux questions souvent confondues : le lien est-il détectable, et décrit-il beaucoup ?",
+  "en": "With r = 0.10, the line describes 1% of the variation, whether there are 30 points (p ≈ 0.599) or 1000 (p ≈ 0.0015). You separate two questions that are often confused: is the association detectable, and does it describe much?"
+ },
+ "parameters": [
+  {
+   "id": "correlation-r-of-the-constructed-cloud",
+   "type": "number",
+   "control": "range",
+   "min": -0.95,
+   "max": 0.95,
+   "step": 0.01,
+   "default": 0.3,
+   "label": {
+    "fr": "Corrélation r du nuage construit",
+    "en": "Correlation r of the constructed cloud"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "unit_source": "no unit shown by the page"
+  },
+  {
+   "id": "number-of-points-n",
+   "type": "integer",
+   "control": "range",
+   "min": 10,
+   "max": 1000,
+   "step": 1,
+   "default": 30,
+   "label": {
+    "fr": "Nombre de points n",
+    "en": "Number of points n"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "unit_source": "no unit shown by the page"
+  }
+ ],
+ "presets": [
+  {
+   "id": "moderate-link-30-points",
+   "name": {
+    "fr": "Lien moyen, 30 points",
+    "en": "Moderate link, 30 points"
+   },
+   "values": {
+    "correlation-r-of-the-constructed-cloud": 0.3,
+    "number-of-points-n": 30
+   },
+   "changes_vs_default": {},
+   "shows": {
+    "fr": "La droite explique 9 % de la variation, mais 30 points ne suffisent pas à exclure le hasard au seuil de 5 %.",
+    "en": "The line explains 9% of the variation, but 30 points are not enough to rule out chance at the 5% level."
+   }
+  },
+  {
+   "id": "weak-link-30-points",
+   "name": {
+    "fr": "Lien faible, 30 points",
+    "en": "Weak link, 30 points"
+   },
+   "values": {
+    "correlation-r-of-the-constructed-cloud": 0.1,
+    "number-of-points-n": 30
+   },
+   "changes_vs_default": {
+    "correlation-r-of-the-constructed-cloud": 0.1
+   },
+   "shows": {
+    "fr": "1 % de variation expliquée et une p-value élevée : rien à conclure.",
+    "en": "1% of variation explained and a large p-value: nothing to conclude."
+   }
+  },
+  {
+   "id": "same-link-1-000-points",
+   "name": {
+    "fr": "Même lien, 1 000 points",
+    "en": "Same link, 1,000 points"
+   },
+   "values": {
+    "correlation-r-of-the-constructed-cloud": 0.1,
+    "number-of-points-n": 1000
+   },
+   "changes_vs_default": {
+    "correlation-r-of-the-constructed-cloud": 0.1,
+    "number-of-points-n": 1000
+   },
+   "shows": {
+    "fr": "R² n’a pas bougé, la p-value s’effondre : significatif ne veut pas dire important.",
+    "en": "R² has not moved, the p-value collapses: significant does not mean important."
+   }
+  },
+  {
+   "id": "strong-negative-link-30-points",
+   "name": {
+    "fr": "Fort lien négatif, 30 points",
+    "en": "Strong negative link, 30 points"
+   },
+   "values": {
+    "correlation-r-of-the-constructed-cloud": -0.8,
+    "number-of-points-n": 30
+   },
+   "changes_vs_default": {
+    "correlation-r-of-the-constructed-cloud": -0.8
+   },
+   "shows": {
+    "fr": "Le signe donne le sens : R² vaut 64 %, comme pour une corrélation de +0,8.",
+    "en": "The sign gives the direction: R² is 64%, as for a correlation of +0.8."
+   }
+  },
+  {
+   "id": "no-link-100-points",
+   "name": {
+    "fr": "Aucun lien, 100 points",
+    "en": "No link, 100 points"
+   },
+   "values": {
+    "correlation-r-of-the-constructed-cloud": 0,
+    "number-of-points-n": 100
+   },
+   "changes_vs_default": {
+    "correlation-r-of-the-constructed-cloud": 0,
+    "number-of-points-n": 100
+   },
+   "shows": {
+    "fr": "Corrélation nulle : droite horizontale, R² = 0 et p = 1.",
+    "en": "Zero correlation: horizontal line, R² = 0 and p = 1."
+   }
+  }
+ ],
+ "actions": [],
+ "variants": [],
+ "outputs": [
+  {
+   "name": {
+    "fr": "Corrélation r",
+    "en": "Correlation r"
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": "force et sens du lien, de −1 à +1",
+    "en": "strength and direction, from −1 to +1"
+   },
+   "kind": "metric"
+  },
+  {
+   "name": {
+    "fr": "Variation expliquée R²",
+    "en": "Explained variation R²"
+   },
+   "unit": {
+    "fr": "%",
+    "en": "%"
+   },
+   "meaning": {
+    "fr": "part de variation décrite par la droite",
+    "en": "share of variation described by the line"
+   },
+   "kind": "metric"
+  },
+  {
+   "name": {
+    "fr": "p-value du test de corrélation",
+    "en": "Correlation-test p-value"
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": "lien au moins aussi fort si ρ = 0",
+    "en": "a link at least this strong if ρ = 0"
+   },
+   "kind": "metric"
+  },
+  {
+   "name": {
+    "fr": "Effectif n",
+    "en": "Sample size n"
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "kind": "metric"
+  }
+ ],
+ "formulas": [
+  {
+   "text": "t = rsqrt((n − 2)/(1 − r^2))"
+  },
+  {
+   "text": "R^2 = r^2 = 1 − SSE/SST"
+  }
+ ],
+ "definitions": [
+  {
+   "term": "r, ρ",
+   "meaning": {
+    "fr": "La corrélation de Pearson dans le nuage (r) et dans la population (ρ).",
+    "en": "Pearson correlation in the scatter (r) and in the population (ρ)."
+   }
+  },
+  {
+   "term": "n",
+   "meaning": {
+    "fr": "Le nombre de points.",
+    "en": "The number of points."
+   }
+  },
+  {
+   "term": "t",
+   "meaning": {
+    "fr": "La statistique du test de corrélation nulle.",
+    "en": "The statistic of the zero-correlation test."
+   }
+  },
+  {
+   "term": "R²",
+   "meaning": {
+    "fr": "Le coefficient de détermination : la part de variation décrite par la droite.",
+    "en": "The coefficient of determination: the share of variation described by the line."
+   }
+  },
+  {
+   "term": "SSE, SST",
+   "meaning": {
+    "fr": "La somme des carrés des résidus et la somme des carrés des écarts à la moyenne.",
+    "en": "The sum of squared residuals and the sum of squared deviations from the mean."
+   }
+  },
+  {
+   "term": "p-value",
+   "meaning": {
+    "fr": "La probabilité d’un résultat au moins aussi extrême si ρ = 0. Elle ne mesure pas l’importance du lien. Voir le test de Student.",
+    "en": "The probability of a result at least as extreme if ρ = 0. It does not measure the importance of the association. See the Student test."
+   }
+  },
+  {
+   "term": "Que veut dire chaque symbole ?",
+   "meaning": {
+    "fr": "r est la corrélation de Pearson du nuage ; n son nombre de points. R² est le coefficient de détermination. H₀ suppose une corrélation nulle dans la population (ρ = 0) ; t est sa statistique de test et ν = n−2 ses degrés de liberté. La p-value concerne cette hypothèse dans le modèle indiqué. SST additionne les carrés des écarts à la moyenne, SSE ceux des résidus et SSR ceux des valeurs ajustées à la moyenne. Un résidu est l’écart vertical entre une observation yᵢ et sa valeur ajustée ŷᵢ ; ȳ est la moyenne observée.",
+    "en": "r is the Pearson correlation in the scatterplot; n is the number of points. R² is the coefficient of determination. H₀ assumes zero population correlation (ρ = 0); t is its test statistic and ν = n−2 its degrees of freedom. The p-value concerns this hypothesis under the stated test model. SST sums squared deviations from the mean, SSE squared residuals and SSR squared deviations of fitted values from the mean. A residual is the vertical difference between an observation yᵢ and its fitted value ŷᵢ; ȳ is the observed mean."
+   }
+  }
+ ],
+ "assumptions": {
+  "fr": [
+   "Le nuage est construit pour conserver exactement r : la p-value illustre le test théorique, ce n’est pas une inférence sur ces points. R² ne prouve ni causalité ni performance future."
+  ],
+  "en": [
+   "The scatter is constructed to preserve r exactly: the p-value illustrates the theoretical test, it is not inference on these points. R² proves neither causality nor future performance."
+  ]
+ },
+ "source": {
+  "dois": [],
+  "repositories": [],
+  "related_pages": [
+   {
+    "href": "/fr/enseignement/biostatistique/correlation-regression/",
+    "text": "Le chapitre complet du cours"
+   },
+   {
+    "href": "/fr/animations/point-influent-regression/",
+    "text": "Le point influent : un seul point peut changer r"
+   },
+   {
+    "href": "/fr/animations/intervalles-regression/",
+    "text": "Les intervalles de régression : moyenne ou nouvelle observation"
+   },
+   {
+    "href": "/fr/animations/test-student/",
+    "text": "Le test de Student : la p-value pour deux moyennes"
+   },
+   {
+    "href": "/fr/recits/evaluer-prevision-solaire-persistance/",
+    "text": "Évaluer une prévision : une erreur n’a de sens que face à une référence"
+   }
+  ]
+ },
+ "how_to_explore": {
+  "fr": "Régler les paramètres sur un préréglage (valeurs ci-dessus), lire la phrase affichée par la page puis les sorties ; modifier ensuite un seul paramètre à la fois entre son minimum et son maximum.",
+  "en": "Set the parameters to a preset (values above), read the sentence the page shows then the outputs; then change one parameter at a time between its minimum and maximum."
+ },
+ "exploration": [
+  {
+   "preset": "moderate-link-30-points",
+   "title": {
+    "fr": "Lien moyen, 30 points",
+    "en": "Moderate link, 30 points"
+   },
+   "set": {
+    "correlation-r-of-the-constructed-cloud": 0.3,
+    "number-of-points-n": 30
+   },
+   "observe": {
+    "fr": "La droite explique 9 % de la variation, mais 30 points ne suffisent pas à exclure le hasard au seuil de 5 %.",
+    "en": "The line explains 9% of the variation, but 30 points are not enough to rule out chance at the 5% level."
+   }
+  },
+  {
+   "preset": "weak-link-30-points",
+   "title": {
+    "fr": "Lien faible, 30 points",
+    "en": "Weak link, 30 points"
+   },
+   "set": {
+    "correlation-r-of-the-constructed-cloud": 0.1
+   },
+   "observe": {
+    "fr": "1 % de variation expliquée et une p-value élevée : rien à conclure.",
+    "en": "1% of variation explained and a large p-value: nothing to conclude."
+   }
+  },
+  {
+   "preset": "same-link-1-000-points",
+   "title": {
+    "fr": "Même lien, 1 000 points",
+    "en": "Same link, 1,000 points"
+   },
+   "set": {
+    "correlation-r-of-the-constructed-cloud": 0.1,
+    "number-of-points-n": 1000
+   },
+   "observe": {
+    "fr": "R² n’a pas bougé, la p-value s’effondre : significatif ne veut pas dire important.",
+    "en": "R² has not moved, the p-value collapses: significant does not mean important."
+   }
+  },
+  {
+   "preset": "strong-negative-link-30-points",
+   "title": {
+    "fr": "Fort lien négatif, 30 points",
+    "en": "Strong negative link, 30 points"
+   },
+   "set": {
+    "correlation-r-of-the-constructed-cloud": -0.8
+   },
+   "observe": {
+    "fr": "Le signe donne le sens : R² vaut 64 %, comme pour une corrélation de +0,8.",
+    "en": "The sign gives the direction: R² is 64%, as for a correlation of +0.8."
+   }
+  },
+  {
+   "preset": "no-link-100-points",
+   "title": {
+    "fr": "Aucun lien, 100 points",
+    "en": "No link, 100 points"
+   },
+   "set": {
+    "correlation-r-of-the-constructed-cloud": 0,
+    "number-of-points-n": 100
+   },
+   "observe": {
+    "fr": "Corrélation nulle : droite horizontale, R² = 0 et p = 1.",
+    "en": "Zero correlation: horizontal line, R² = 0 and p = 1."
+   }
+  }
+ ],
+ "concepts": [
+  "p-value",
+  "r-squared"
+ ],
+ "extraction": {
+  "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
+  "roots": [
+   "#experience"
+  ],
+  "page_errors": [],
+  "fr_en_preset_consistency": {
+   "presets_compared": 5,
+   "presets_with_different_values_fr_vs_en": []
+  }
+ }
+}
