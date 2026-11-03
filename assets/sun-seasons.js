@@ -19,20 +19,20 @@
     date: "Date", time: "Instant (UTC)", year: "▶ Une année", day: "▶ Une journée", stop: "❚❚ Pause", months: ["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."],
     jun: "solstice de juin", sep: "équinoxe de septembre", dec: "solstice de décembre", mar: "équinoxe de mars", sun: "Soleil", north: "N",
     zen: "Le Soleil est au zénith à la latitude ", ns: ["N", "S"], seasonsN: ["printemps", "été", "automne", "hiver"], hemN: "Hémisphère nord : ", hemS: "hémisphère sud : ",
-    dist: "Distance au Soleil : facteur E0 = ", distNote: " (la Terre est la plus proche début janvier : ce n'est pas la distance qui fait les saisons, c'est l'inclinaison).",
+    dist: "Facteur de distance E0 = ", distNote: " (1 à la distance moyenne, 1,033 début janvier quand la Terre est au plus près : ce n'est pas la distance qui fait les saisons, c'est l'inclinaison).",
     len: "durée du jour", rise: "lever", set: "coucher", noon: "midi solaire", local: "heure légale", now: "maintenant", elev: "hauteur du Soleil",
     night: "nuit", dayL: "jour", hm: function (m) { var h = Math.floor(m / 60), mn = Math.round(m - 60 * h); if (mn === 60) { h++; mn = 0; } return h ? h + " h " + String(mn).padStart(2, "0") : mn + " min"; },
-    g0: "G0 hors atmosphère (W/m²)", h0: "énergie par jour hors atmosphère (kWh/m²)", utcAx: "heure UTC", dayAx: "jour de l'année", heat: "Hors atmosphère, sur un plan horizontal, selon la date (horizontal) et l'heure UTC (vertical)",
+    g0: "éclairement G0 (W/m²)", h0: "énergie par jour (kWh/m²)", utcAx: "heure UTC", dayAx: "mois de l'année", heat: "Hors atmosphère, sur un plan horizontal, selon la date (horizontal) et l'heure UTC (vertical)",
     ex: ["25/10/2026 : Paris passe à l'heure d'hiver", "29/03/2026 : Paris passe à l'heure d'été", "04/10/2026 : Sydney passe à l'heure d'été"],
     dup: "heure vue deux fois", miss: "une heure sautée juste avant", utcCol: "UTC (une seule horloge)", same: "même instant"
   } : {
     date: "Date", time: "Instant (UTC)", year: "▶ One year", day: "▶ One day", stop: "❚❚ Pause", months: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
     jun: "June solstice", sep: "September equinox", dec: "December solstice", mar: "March equinox", sun: "Sun", north: "N",
     zen: "The Sun is overhead at latitude ", ns: ["N", "S"], seasonsN: ["spring", "summer", "autumn", "winter"], hemN: "Northern hemisphere: ", hemS: "southern hemisphere: ",
-    dist: "Distance to the Sun: factor E0 = ", distNote: " (the Earth is closest in early January: the seasons come from the tilt, not from the distance).",
+    dist: "Distance factor E0 = ", distNote: " (1 at the mean distance, 1.033 in early January when the Earth is closest: the seasons come from the tilt, not from the distance).",
     len: "day length", rise: "sunrise", set: "sunset", noon: "solar noon", local: "legal time", now: "now", elev: "sun elevation",
     night: "night", dayL: "day", hm: function (m) { var h = Math.floor(m / 60), mn = Math.round(m - 60 * h); if (mn === 60) { h++; mn = 0; } return h ? h + " h " + String(mn).padStart(2, "0") : mn + " min"; },
-    g0: "extraterrestrial G0 (W/m²)", h0: "extraterrestrial energy per day (kWh/m²)", utcAx: "UTC hour", dayAx: "day of the year", heat: "Outside the atmosphere, on a horizontal plane, by date (horizontal) and UTC hour (vertical)",
+    g0: "irradiance G0 (W/m²)", h0: "energy per day (kWh/m²)", utcAx: "UTC hour", dayAx: "month of the year", heat: "Outside the atmosphere, on a horizontal plane, by date (horizontal) and UTC hour (vertical)",
     ex: ["25/10/2026: Paris goes back to winter time", "29/03/2026: Paris moves to summer time", "04/10/2026: Sydney moves to summer time"],
     dup: "hour seen twice", miss: "one hour skipped just before", utcCol: "UTC (one single clock)", same: "same instant"
   };
@@ -109,7 +109,14 @@
     });
   });
   box.querySelectorAll("[data-goto]").forEach(function (b) {
-    b.addEventListener("click", function () { var v = b.getAttribute("data-goto").split(","); st.n = +v[0]; st.m = +v[1]; iD.value = st.n; iT.value = st.m; draw(); });
+    b.addEventListener("click", function () {
+      var v = b.getAttribute("data-goto").split(","), note = box.querySelector(".sun-goto-note");
+      if (timer) { clearInterval(timer); timer = null; ctl.querySelectorAll("[data-play]").forEach(function (x) { delete x.dataset.on; x.textContent = x.getAttribute("data-play") === "year" ? L.year : L.day; }); }
+      st.n = +v[0]; st.m = +v[1]; iD.value = st.n; iT.value = st.m;
+      box.querySelectorAll("[data-goto]").forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); });
+      if (note) note.textContent = b.getAttribute("data-note") || "";
+      draw();
+    });
   });
 
   // ------------------------------------------------------------------ 1. the orbit
@@ -119,7 +126,7 @@
     var W = 640, H = 230, cx = 320, cy = 112, rx = 250, ry = 78;
     var defs = el("defs", {}, sO), rg = el("radialGradient", { id: "sunglow" }, defs);
     el("stop", { offset: "0%", "stop-color": "#fff4c2" }, rg); el("stop", { offset: "60%", "stop-color": "#f0c75e" }, rg); el("stop", { offset: "100%", "stop-color": "#f0c75e", "stop-opacity": "0" }, rg);
-    el("ellipse", { cx: cx, cy: cy, rx: rx, ry: ry, fill: "none", stroke: "#9fb0c0", "stroke-dasharray": "4 4" }, sO);
+    el("ellipse", { cx: cx, cy: cy, rx: rx, ry: ry, fill: "none", stroke: "#9fb0c0" }, sO);
     el("circle", { cx: cx, cy: cy, r: 46, fill: "url(#sunglow)" }, sO); el("circle", { cx: cx, cy: cy, r: 22, fill: "#f0c75e" }, sO);
     tx(sO, cx, cy + 4, L.sun, { "text-anchor": "middle", "font-weight": "700" });
     [[172, L.jun], [266, L.sep], [355, L.dec], [79, L.mar]].forEach(function (q) {
@@ -134,7 +141,7 @@
     el("line", { x1: ex - ax * r * 1.6, y1: ey - ay * r * 1.6, x2: ex + ax * r * 1.6, y2: ey + ay * r * 1.6, stroke: "#172536", "stroke-width": 2 }, sO);
     tx(sO, ex + ax * r * 1.9, ey + ay * r * 1.9, L.north, { "text-anchor": "middle", "font-weight": "700" });
     var s = spencer(st.n, st.m / 60), d = s.dec / RAD, k = st.n < 79 || st.n >= 355 ? 3 : st.n < 172 ? 0 : st.n < 266 ? 1 : 2, kS = (k + 2) % 4;
-    oOut.innerHTML = "<b>" + dateLabel(st.n) + " " + YEAR + "</b> · " + L.zen + "<b>" + num(Math.abs(d), 1) + (fr ? " ° " : "° ") + (d >= 0 ? L.ns[0] : L.ns[1]) + "</b> (δ = " + num(d, 2) + (fr ? " °). " : "°). ") +
+    oOut.innerHTML = "<b>" + dateLabel(st.n) + " " + YEAR + "</b> · " + L.zen + "<b>" + num(Math.abs(d), 1) + (fr ? " ° " : "° ") + (d >= 0 ? L.ns[0] : L.ns[1]) + "</b> (" + (fr ? "déclinaison" : "declination") + " δ = " + num(d, 2) + (fr ? " °). " : "°). ") +
       L.hemN + "<b>" + L.seasonsN[k] + "</b>" + (fr ? ", " : "; ") + L.hemS + "<b>" + L.seasonsN[kS] + "</b>. " + L.dist + num(e0(st.n), 3) + L.distNote;
   }
 
@@ -174,7 +181,7 @@
       for (var q = 1; q < seg.length; q++) {
         var a = seg[q - 1], b = seg[q], on = a.lit && b.lit;
         el("line", { x1: a.xy[0], y1: a.xy[1], x2: b.xy[0], y2: b.xy[1], stroke: r[3] ? (on ? r[2] : "#9aa5b1") : r[2], "stroke-width": r[3] ? (a.fr ? 4 : 2) : 1.2,
-          "stroke-dasharray": a.fr ? "" : "3 3", opacity: a.fr ? 1 : 0.7 }, sS);
+          opacity: a.fr ? 1 : 0.45 }, sS);
       }
       if (r[3]) {
         var share = lit / 120, ev = events(r[3].lat, r[3].lon, st.n), lab = seg.reduce(function (m, z) { return z.xy[0] > m.xy[0] ? z : m; });
@@ -197,14 +204,14 @@
     CITIES.forEach(function (c, i) {
       var e = 90 - Math.abs(c.lat - d), x0 = 30 + i * 240, gy = 132, w = 46, er = e * RAD, foot = w / Math.sin(er);
       el("line", { x1: x0, x2: x0 + 210, y1: gy, y2: gy, stroke: "#8a6d3b", "stroke-width": 3 }, sB);
-      var cx = x0 + 105, dx = Math.cos(er), dy = Math.sin(er), L0 = 110;
+      var cx = x0 + 105, dx = Math.cos(er), dy = Math.sin(er), L0 = 88;
       // beam of fixed width arriving from the upper left at elevation e
       var ax = cx - foot / 2, bx = cx + foot / 2;
       el("path", { d: "M" + ax + " " + gy + "L" + (ax - L0 * dx) + " " + (gy - L0 * dy) + "L" + (bx - L0 * dx) + " " + (gy - L0 * dy) + "L" + bx + " " + gy + "Z", fill: "#f0c75e", opacity: .55 }, sB);
       el("line", { x1: ax, x2: bx, y1: gy, y2: gy, stroke: c.c, "stroke-width": 6 }, sB);
       tx(sB, x0, 16, c.n + (fr ? " à midi : Soleil à " : " at noon: Sun at ") + num(e, 0) + "°", { fill: c.c, "font-weight": "700" });
       tx(sB, x0, 148, (fr ? "1 m² de rayons → " : "1 m² of rays → ") + num(1 / Math.sin(er), 2) + (fr ? " m² de sol" : " m² of ground"), { fill: c.c });
-      tx(sB, x0, 30, (fr ? "énergie du jour hors atmosphère : " : "daily energy outside the atmosphere: ") + num(h0(c.lat, c.lon, st.n), 1) + " kWh/m²", {});
+      tx(sB, x0, 33, (fr ? "énergie du jour : " : "energy of the day: ") + num(h0(c.lat, c.lon, st.n), 1) + " kWh/m²", {});
     });
   }
 
@@ -226,22 +233,22 @@
     cx2.strokeStyle = "rgba(23,37,54,.25)"; cx2.lineWidth = 1;
     for (var g = -150; g <= 150; g += 30) { cx2.beginPath(); cx2.moveTo((g + 180) * k, 0); cx2.lineTo((g + 180) * k, H); cx2.stroke(); }
     [-60, -30, 30, 60].forEach(function (g) { cx2.beginPath(); cx2.moveTo(0, (90 - g) * k); cx2.lineTo(W, (90 - g) * k); cx2.stroke(); });
-    cx2.setLineDash([5, 4]); cx2.strokeStyle = "rgba(173,82,0,.6)";
+    cx2.strokeStyle = "rgba(173,82,0,.6)";
     [23.44, -23.44].forEach(function (g) { cx2.beginPath(); cx2.moveTo(0, (90 - g) * k); cx2.lineTo(W, (90 - g) * k); cx2.stroke(); });
-    cx2.setLineDash([]); cx2.strokeStyle = "rgba(23,37,54,.55)"; cx2.beginPath(); cx2.moveTo(0, 90 * k); cx2.lineTo(W, 90 * k); cx2.stroke();
+    cx2.strokeStyle = "rgba(23,37,54,.55)"; cx2.beginPath(); cx2.moveTo(0, 90 * k); cx2.lineTo(W, 90 * k); cx2.stroke();
     cx2.beginPath(); cx2.moveTo(180 * k, 0); cx2.lineTo(180 * k, H); cx2.stroke();
-    cx2.font = (11 * k / 2) + "px system-ui, sans-serif"; cx2.fillStyle = "#172536";
-    cx2.fillText(fr ? "méridien de Greenwich (UTC)" : "Greenwich meridian (UTC)", 180 * k + 4, 12 * k / 2 + 2);
+    cx2.font = (15 * k / 2) + "px system-ui, sans-serif"; cx2.fillStyle = "#172536";
+    cx2.fillText(fr ? "méridien de Greenwich (UTC)" : "Greenwich meridian (UTC)", 180 * k + 6, 15 * k / 2 + 4);
     var slon = -(st.m - 720 + s.eot) / 4; slon = ((slon + 540) % 360) - 180;
     var sx = (slon + 180) * k, sy = (90 - s.dec / RAD) * k;
     cx2.fillStyle = "#f0c75e"; cx2.strokeStyle = "#ad5200"; cx2.lineWidth = 2; cx2.beginPath(); cx2.arc(sx, sy, 9 * k / 2, 0, 2 * Math.PI); cx2.fill(); cx2.stroke();
     CITIES.forEach(function (c) {
       var x = (c.lon + 180) * k, y = (90 - c.lat) * k, e = Math.asin(cosz(c.lat, c.lon, st.n, st.m)) / RAD, lt = local(ms(st.n, st.m), c.tz);
       cx2.fillStyle = c.c; cx2.beginPath(); cx2.arc(x, y, 6 * k / 2, 0, 2 * Math.PI); cx2.fill();
-      cx2.font = "600 " + (13 * k / 2) + "px system-ui, sans-serif"; cx2.fillStyle = "#172536";
+      cx2.font = "600 " + (16 * k / 2) + "px system-ui, sans-serif"; cx2.fillStyle = "#172536";
       var lab = c.n + " " + lt.hm + " (" + lt.off + ") · " + (e > 0 ? num(e, 0) + "°" : L.night);
       var w = cx2.measureText(lab).width, lx = Math.min(W - w - 6, x + 8 * k / 2);
-      cx2.fillStyle = "rgba(255,255,255,.85)"; cx2.fillRect(lx - 3, y - 11 * k / 2 - 4, w + 6, 16 * k / 2); cx2.fillStyle = "#172536"; cx2.fillText(lab, lx, y);
+      cx2.fillStyle = "rgba(255,255,255,.85)"; cx2.fillRect(lx - 4, y - 15 * k / 2, w + 8, 20 * k / 2); cx2.fillStyle = "#172536"; cx2.fillText(lab, lx, y);
     });
   }
 
@@ -249,7 +256,7 @@
   var sR = box.querySelector(".sun-ribbons"), rOut = box.querySelector(".sun-rib-out");
   function ribbons() {
     clear(sR);
-    var x0 = 96, x1 = 630, X = function (m) { return x0 + (x1 - x0) * m / 1440; }, out = "", T0 = Date.UTC(YEAR, 0, st.n);
+    var x0 = 110, x1 = 630, X = function (m) { return x0 + (x1 - x0) * m / 1440; }, out = "", T0 = Date.UTC(YEAR, 0, st.n);
     function offset(c) {                         // legal time minus UTC, in minutes, at noon UTC of the chosen day
       var lt = local(T0 + 720 * 60000, c.tz).hm.split(":"), d = (+lt[0] * 60 + +lt[1]) - 720;
       return d <= -720 ? d + 1440 : d > 840 ? d - 1440 : d;
@@ -260,7 +267,7 @@
       for (var h = 0; h <= 24; h += 3) tx(sR, X(60 * h), y + 1, String(h).padStart(2, "0") + ":00", { "text-anchor": h === 0 ? "start" : h === 24 ? "end" : "middle", "font-weight": "700" });
       tx(sR, x0 - 8, y + 1, "UTC", { "text-anchor": "end", "font-weight": "700" });
     }
-    for (var g = 0; g <= 24; g += 3) el("line", { x1: X(60 * g), x2: X(60 * g), y1: 26, y2: 268, stroke: "#cfd8e3", "stroke-dasharray": "2 3" }, sR);
+    for (var g = 0; g <= 24; g += 3) el("line", { x1: X(60 * g), x2: X(60 * g), y1: 26, y2: 268, stroke: "#e3e8ee" }, sR);
     utcAxis(16); utcAxis(282);
     CITIES.forEach(function (c, i) {
       var y = 72 + i * 104, ev = events(c.lat, c.lon, st.n), off = offset(c), o = (off >= 0 ? "+" : "−") + Math.abs(off / 60);
@@ -281,10 +288,11 @@
       [[ev.rise, L.rise], [ev.noon, L.noon], [ev.set, L.set]].forEach(function (q, j) {
         var mm = ((q[0] % 1440) + 1440) % 1440, anc = mm < 90 ? "start" : mm > 1350 ? "end" : "middle", lt = local(T0 + q[0] * 60000, c.tz).hm;
         el("line", { x1: X(mm), x2: X(mm), y1: y, y2: y + 32, stroke: j === 1 ? "#ad5200" : "#fff", "stroke-width": 2 }, sR);
-        tx(sR, X(mm), y + 44, q[1] + " " + lt, { "text-anchor": anc, fill: "#172536" });
+        tx(sR, X(mm), j === 1 ? y + 60 : y + 45, q[1] + " " + lt, { "text-anchor": anc, fill: "#172536" });
       });
       var ltn = local(T0 + ev.noon * 60000, c.tz);
-      out += "<b style=\"color:" + c.c + "\">" + c.n + "</b> : " + L.len + " <b>" + L.hm(ev.len) + "</b> · " + L.rise + " " + hhmm(ev.rise) + " UTC · " + L.noon + " <b>" + hhmm(ev.noon) + " UTC</b> = " + ltn.hm + " " + L.local + " · " + L.set + " " + hhmm(ev.set) + " UTC<br>";
+      var eve = ev.rise < 0 ? (fr ? " (la veille)" : " (previous day)") : "", nxt = ev.set >= 1440 ? (fr ? " (le lendemain)" : " (next day)") : "";
+      out += "<b style=\"color:" + c.c + "\">" + c.n + (fr ? "</b> : " : "</b>: ") + L.len + " <b>" + L.hm(ev.len) + "</b> · " + L.rise + " " + hhmm(ev.rise) + " UTC" + eve + " · " + L.noon + " <b>" + hhmm(ev.noon) + " UTC</b> = " + ltn.hm + " " + L.local + " · " + L.set + " " + hhmm(ev.set) + " UTC" + nxt + "<br>";
     });
     el("line", { x1: X(st.m), x2: X(st.m), y1: 8, y2: 292, stroke: "#c0392b", "stroke-width": 2.5 }, sR);
     // what each city is living at the chosen instant: one UTC instant, two legal times, two skies
@@ -293,11 +301,12 @@
     var now = "<b>" + hhmm(st.m) + " UTC</b> " + (fr ? "(trait rouge) est le même instant pour les deux villes. " : "(red line) is the same instant for both cities. ");
     CITIES.forEach(function (c) {
       var off = offset(c), o = (off >= 0 ? "+" : "−") + Math.abs(off / 60), lt = local(T0 + st.m * 60000, c.tz).hm, isUp = up(c, st.m), b = gap(c, -1), a = gap(c, 1);
-      now += "<br><b style=\"color:" + c.c + "\">" + c.n + "</b> : UTC " + o + " h = <b>" + lt + "</b> ; " +
+      now += "<br><b style=\"color:" + c.c + "\">" + c.n + (fr ? "</b> : UTC " : "</b>: UTC ") + o + " h = <b>" + lt + (fr ? "</b> ; " : "</b>; ") +
         (isUp ? (fr ? "jour, Soleil levé depuis " : "day, Sun up for ") + L.hm(b) + (fr ? ", coucher dans " : ", sunset in ") + L.hm(a)
               : (fr ? "nuit, Soleil couché depuis " : "night, Sun down for ") + L.hm(b) + (fr ? ", lever dans " : ", sunrise in ") + L.hm(a)) + ".";
     });
-    rOut.innerHTML = '<p class="sun-now">' + now + "</p>" + out;
+    var chg = CITIES.filter(function (c) { return local(T0, c.tz).off !== local(T0 + 86399000, c.tz).off; }).map(function (c) { return c.n; });
+    rOut.innerHTML = '<p class="sun-now">' + now + "</p>" + out + (chg.length ? (fr ? "Ce jour-là, l'horloge de " + chg.join(" et de ") + " change : la graduation de la bande montre le décalage à 12:00 UTC." : "On this day the clock of " + chg.join(" and ") + " changes: the band's scale shows the offset at 12:00 UTC.") : "");
   }
 
   // ------------------------------------------------------------------ 4. double seasonality: heat maps, then the two cycles
@@ -331,7 +340,7 @@
   var H0 = CITIES.map(function (c) { var a = []; for (var n = 1; n <= 365; n++) a.push(h0(c.lat, c.lon, n)); return a; });
   function curves() {
     [[sDay, 0], [sYear, 1]].forEach(function (pair) {
-      var s = pair[0], yr = pair[1], W = 640, H = 220, l = 56, r = 12, t = 12, b = 40;
+      var s = pair[0], yr = pair[1], W = 640, H = 220, l = 56, r = 12, t = 26, b = 40;
       clear(s);
       var ymax = yr ? 12 : 1400, X = yr ? function (n) { return l + (W - l - r) * (n - 1) / 364; } : function (m) { return l + (W - l - r) * m / 1440; }, Y = function (v) { return H - b - (H - t - b) * v / ymax; };
       for (var gk = 0; gk <= 4; gk++) { var v = ymax * gk / 4; el("line", { x1: l, x2: W - r, y1: Y(v), y2: Y(v), stroke: "#e3e8ee" }, s); tx(s, l - 6, Y(v) + 4, num(v, 0), { "text-anchor": "end" }); }
@@ -346,10 +355,10 @@
         el("path", { d: pts.map(function (p, k) { return (k ? "L" : "M") + p[0].toFixed(1) + " " + p[1].toFixed(1); }).join(""), fill: "none", stroke: c.c, "stroke-width": 2.4 }, s);
         var mk = yr ? [X(st.n), Y(H0[i][st.n - 1])] : [X(st.m), Y(g0(c.lat, c.lon, st.n, st.m))];
         el("circle", { cx: mk[0], cy: mk[1], r: 5, fill: c.c }, s);
-        el("rect", { x: W - r - 150 + 75 * i, y: t + 2, width: 14, height: 4, fill: c.c }, s);   // legend
-        tx(s, W - r - 132 + 75 * i, t + 8, c.n, { fill: c.c, "font-weight": "700" });
+        el("rect", { x: W - r - 150 + 75 * i, y: 6, width: 14, height: 4, fill: c.c }, s);   // legend
+        tx(s, W - r - 132 + 75 * i, 13, c.n, { fill: c.c, "font-weight": "700" });
       });
-      el("line", { x1: yr ? X(st.n) : X(st.m), x2: yr ? X(st.n) : X(st.m), y1: t, y2: H - b, stroke: "#c0392b", "stroke-dasharray": "3 3" }, s);
+      el("line", { x1: yr ? X(st.n) : X(st.m), x2: yr ? X(st.n) : X(st.m), y1: t, y2: H - b, stroke: "#c0392b", "stroke-width": 1.5 }, s);
     });
   }
 

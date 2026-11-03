@@ -77,7 +77,7 @@ Zaher Mundher Yaseen: https://orcid.org/0000-0003-3344-214X
 Zhao Zhen: https://orcid.org/0000-0001-5406-6441
 
 /* SITE */
-Last update: 2026-11-02
+Last update: 2026-11-03
 Language: English, French
 Licence of texts and courses: CC BY 4.0
 Standards: HTML5, schema.org JSON-LD, Atom, sitemap, llms.txt

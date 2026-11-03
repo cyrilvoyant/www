@@ -47,8 +47,8 @@
         "en": "Compare a forecast with persistence — NICE"
       },
       "task": {
-        "fr": "Coller observations et prévisions ; choisir l’horizon ; lire les erreurs et les ratios NICE.",
-        "en": "Paste observations and forecasts, choose a horizon, read absolute errors and NICE ratios."
+        "fr": "NICE divise l’erreur d’une prévision par celle de la persistance : 1 signifie « aussi bien que la persistance », 0 une prévision parfaite. Coller observations et prévisions, choisir l’horizon, lire le résultat.",
+        "en": "NICE divides a forecast’s error by that of persistence: 1 means “as good as persistence”, 0 a perfect forecast. Paste observations and forecasts, choose a horizon, read the result."
       },
       "url": {
         "fr": "https://www.cyrilvoyant.com/fr/outils/nice/#try-it",
@@ -65,8 +65,8 @@
         "en": "Compute BLEND weights"
       },
       "task": {
-        "fr": "Explorer les poids d’une référence périodique sur une série temporelle.",
-        "en": "Explore the weights of a periodic reference on a time series."
+        "fr": "BLEND est une combinaison convexe de la persistance et de la persistance cyclique. Voir les poids calculés sur une série temporelle.",
+        "en": "BLEND is a convex combination of persistence and cyclic persistence. See the weights computed on a time series."
       },
       "url": {
         "fr": "https://www.cyrilvoyant.com/fr/outils/blend/#try-it",
@@ -83,8 +83,8 @@
         "en": "Measure variability and forecastability — sCV and F"
       },
       "task": {
-        "fr": "Fournir éclairement mesuré et ciel clair, puis examiner les indicateurs à l’horizon choisi.",
-        "en": "Supply measured and clear-sky irradiance, then examine the indicators at your chosen horizon."
+        "fr": "sCV décrit la variabilité d’un signal, F sa prévisibilité, avant tout modèle. Fournir éclairement mesuré et ciel clair, puis les lire à l’horizon choisi.",
+        "en": "sCV describes the variability of a signal, F its forecastability, before any model. Supply measured and clear-sky irradiance, then read them at your chosen horizon."
       },
       "url": {
         "fr": "https://www.cyrilvoyant.com/fr/outils/variabilite-previsibilite/#try-it",
@@ -101,8 +101,8 @@
         "en": "Displace a forecast and explore the γ-index"
       },
       "task": {
-        "fr": "Déplacer, retarder ou biaiser un nuage synthétique et régler les tolérances.",
-        "en": "Displace, delay or bias a synthetic cloud and adjust the tolerances."
+        "fr": "L’indice γ juge une prévision avec des tolérances d’espace, de temps et d’intensité. Déplacer, retarder ou biaiser un nuage synthétique et régler ces tolérances.",
+        "en": "The γ-index judges a forecast with tolerances in space, time and intensity. Displace, delay or bias a synthetic cloud and adjust these tolerances."
       },
       "url": {
         "fr": "https://www.cyrilvoyant.com/fr/outils/indice-gamma/#try-it",
@@ -119,8 +119,8 @@
         "en": "Explore ARTU coefficients and lookup table"
       },
       "task": {
-        "fr": "Faire varier les autocorrélations et la qualité de mesure ; lire les coefficients.",
-        "en": "Vary autocorrelations and measurement quality; read the coefficients."
+        "fr": "ARTU est une prévision de référence qui s’appuie sur l’autocorrélation du signal (sa ressemblance avec lui-même h et 2h plus tôt, h étant l’horizon). Faire varier ces autocorrélations et la qualité de mesure ; lire coefficients et poids.",
+        "en": "ARTU is a reference forecast built on the autocorrelation of the signal (how much it resembles itself h and 2h earlier, h being the horizon). Vary these autocorrelations and measurement quality; read coefficients and weights."
       },
       "url": {
         "fr": "https://www.cyrilvoyant.com/fr/outils/artu/#try-it",
@@ -137,8 +137,8 @@
         "en": "Compare forecasts: persistence, AR and ELM against horizon"
       },
       "task": {
-        "fr": "Cinq modèles sur les données publiques de Palaiseau, de 30 min à 6 h : erreur selon l’horizon, NICE, courbes ; calculs du code PV_ELM_pred.",
-        "en": "Five models on public Palaiseau data, 30 min to 6 h: error against horizon, NICE, curves; computed by the PV_ELM_pred code."
+        "fr": "Cinq modèles sur les données publiques de Palaiseau, de 30 min à 6 h : erreur selon l’horizon, NICE, courbes ; calculs du code PV_ELM_pred. AR : autorégression, une régression sur les valeurs passées. ELM : réseau de neurones frugal.",
+        "en": "Five models on public Palaiseau data, 30 min to 6 h: error against horizon, NICE, curves; computed by the PV_ELM_pred code. AR: autoregression, a regression on past values. ELM: a frugal neural network."
       },
       "url": {
         "fr": "https://www.cyrilvoyant.com/fr/outils/comparateur-previsions/",
@@ -155,8 +155,8 @@
         "en": "Compare LQ and LQL biological doses"
       },
       "task": {
-        "fr": "Choisir les paramètres et faire varier la dose par fraction. Usage de recherche et d’enseignement.",
-        "en": "Choose parameters and vary dose per fraction. Research and education use."
+        "fr": "LQ (linéaire-quadratique) et LQL (linéaire-quadratique-linéaire) sont deux modèles de l’effet d’une dose. Choisir les paramètres et faire varier la dose par fraction. Usage de recherche et d’enseignement.",
+        "en": "LQ (linear-quadratic) and LQL (linear-quadratic-linear) are two models of the effect of a dose. Choose parameters and vary dose per fraction. Research and education use."
       },
       "url": {
         "fr": "https://www.cyrilvoyant.com/fr/outils/doses-lq-lql/#try-it",
@@ -263,8 +263,8 @@
         "en": "Complex-valued forecasting: set α and the interval width"
       },
       "task": {
-        "fr": "Une autorégression complexe prévoit l’éclairement et sa volatilité ; curseur α, multiplicateur μ gaussien ou calibré, résultats de l’article (2022).",
-        "en": "A complex autoregression forecasts irradiance and its volatility; α slider, Gaussian or calibrated multiplier μ, results of the paper (2022)."
+        "fr": "Une autorégression complexe prévoit l’éclairement et sa volatilité. Régler α, la part de mesures laissée hors intervalle, et lire μ, le multiplicateur qui fixe la largeur, gaussien ou calibré ; résultats de l’article (2022).",
+        "en": "A complex autoregression forecasts irradiance and its volatility. Set α, the share of measurements left outside the interval, and read μ, the multiplier that sets the width, Gaussian or calibrated; results of the paper (2022)."
       },
       "url": {
         "fr": "https://www.cyrilvoyant.com/fr/prevision-complexe/",
@@ -353,8 +353,8 @@
         "en": "Cool a food: Biot number, mean and core temperature"
       },
       "task": {
-        "fr": "Faire varier h, λ et la taille ; comparer le modèle à température uniforme et la température à cœur.",
-        "en": "Vary h, λ and size; compare the uniform-temperature model with the core temperature."
+        "fr": "Faire varier le coefficient de convection h, la conductivité thermique λ et la taille ; comparer le modèle à température uniforme et la température à cœur.",
+        "en": "Vary the convection coefficient h, the thermal conductivity λ and size; compare the uniform-temperature model with the core temperature."
       },
       "url": {
         "fr": "https://www.cyrilvoyant.com/fr/animations/refroidissement-biot/",
@@ -389,8 +389,8 @@
         "en": "Refrigerator: Carnot bound of the COP"
       },
       "task": {
-        "fr": "Faire varier les températures d’évaporation et de condensation ; voir pourquoi l’écart coûte cher.",
-        "en": "Vary evaporation and condensation temperatures; see why the temperature lift is costly."
+        "fr": "COP (coefficient de performance) : chaleur extraite par unité de travail reçu. Faire varier les températures d’évaporation et de condensation ; voir pourquoi l’écart coûte cher.",
+        "en": "COP (coefficient of performance): heat removed per unit of work supplied. Vary evaporation and condensation temperatures; see why the temperature lift is costly."
       },
       "url": {
         "fr": "https://www.cyrilvoyant.com/fr/animations/cop-carnot-machine-frigorifique/",
@@ -407,8 +407,8 @@
         "en": "Correlation and regression: move a point"
       },
       "task": {
-        "fr": "Déplacer un point aberrant et voir r, la droite des moindres carrés et la p-value changer.",
-        "en": "Move an outlier and watch r, the least-squares line and the p-value change."
+        "fr": "Déplacer un point aberrant et voir le coefficient de corrélation r, la droite des moindres carrés et la p-value changer.",
+        "en": "Move an outlier and watch the correlation coefficient r, the least-squares line and the p-value change."
       },
       "url": {
         "fr": "https://www.cyrilvoyant.com/fr/animations/point-influent-regression/",
@@ -443,8 +443,8 @@
         "en": "Explore AI responsibility provisions"
       },
       "task": {
-        "fr": "Parcourir les questions d’orientation du laboratoire ; les références et limites juridiques restent à lire.",
-        "en": "Explore the lab orientation questions; legal references and limitations still need to be read."
+        "fr": "Répondre à quelques questions sur un système d’IA pour repérer les articles de l’AI Act qui s’appliquent : une orientation, pas un avis juridique.",
+        "en": "Answer a few questions about one AI system to find the AI Act articles that apply: an orientation, not legal advice."
       },
       "url": {
         "fr": "https://www.cyrilvoyant.com/fr/ia-dans-la-recherche/#role-helper",
@@ -479,8 +479,8 @@
         "en": "Student test: two treatments, t and p-value"
       },
       "task": {
-        "fr": "Comparer deux traitements avec le test classique à variance commune : écart, t, ddl et zones de rejet.",
-        "en": "Compare two treatments with the classic pooled t-test: difference, t, df and rejection regions."
+        "fr": "Comparer deux traitements avec le test classique à variance commune : écart, statistique t, degrés de liberté (ddl) et zones de rejet.",
+        "en": "Compare two treatments with the classic pooled t-test: difference, t statistic, degrees of freedom (df) and rejection regions."
       },
       "url": {
         "fr": "https://www.cyrilvoyant.com/fr/animations/test-student/",
@@ -497,8 +497,8 @@
         "en": "Significance and R²: how much variation does the line explain?"
       },
       "task": {
-        "fr": "Faire varier r et n ; distinguer la p-value théorique et la variation expliquée dans un nuage pédagogique construit.",
-        "en": "Vary r and n; distinguish the theoretical p-value from variation explained in a constructed teaching example."
+        "fr": "Faire varier la corrélation r et l’effectif n ; distinguer la p-value théorique et la variation expliquée dans un nuage pédagogique construit.",
+        "en": "Vary the correlation r and the sample size n; distinguish the theoretical p-value from variation explained in a constructed teaching example."
       },
       "url": {
         "fr": "https://www.cyrilvoyant.com/fr/animations/correlation-significativite-r2/",
@@ -533,8 +533,8 @@
         "en": "Regression: confidence or prediction interval?"
       },
       "task": {
-        "fr": "Comparer les deux bandes, déplacer x₀ et reconnaître une extrapolation.",
-        "en": "Compare both bands, move x₀ and recognize extrapolation."
+        "fr": "Comparer les deux bandes, déplacer x₀, la valeur où l’on prévoit, et reconnaître une extrapolation.",
+        "en": "Compare both bands, move x₀, the value where the prediction is made, and recognize extrapolation."
       },
       "url": {
         "fr": "https://www.cyrilvoyant.com/fr/animations/intervalles-regression/",

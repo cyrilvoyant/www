@@ -241,11 +241,15 @@
       "citations": [],
       "sections": [
         {
-          "title": "An example",
+          "title": "Examples to copy",
           "anchor": null
         },
         {
           "title": "Team work",
+          "anchor": null
+        },
+        {
+          "title": "Where next?",
           "anchor": null
         }
       ]
@@ -287,15 +291,15 @@
       "citations": [],
       "sections": [
         {
-          "title": "The idea",
+          "title": "The idea: one number for two quantities",
           "anchor": null
         },
         {
-          "title": "Setting α",
+          "title": "Setting the interval",
           "anchor": null
         },
         {
-          "title": "The paper's results (target coverage 80%, test year 2018)",
+          "title": "The paper's results: at 80% target, the right coverage with the shortest intervals",
           "anchor": null
         },
         {
@@ -304,6 +308,10 @@
         },
         {
           "title": "The paper",
+          "anchor": null
+        },
+        {
+          "title": "Try it in your browser",
           "anchor": null
         }
       ]
@@ -358,19 +366,23 @@
       "sections": [
         {
           "title": "The basic rules",
-          "anchor": null
+          "anchor": "rules"
         },
         {
           "title": "An example: Webservice-Energy",
-          "anchor": null
+          "anchor": "webservice-energy"
         },
         {
           "title": "Choosing a license for code and data",
-          "anchor": null
+          "anchor": "license"
         },
         {
           "title": "Glossary",
           "anchor": "glossaire"
+        },
+        {
+          "title": "Where next?",
+          "anchor": null
         }
       ]
     },
@@ -642,6 +654,10 @@
         {
           "title": "Article, auteurs et ressources",
           "anchor": null
+        },
+        {
+          "title": "Essayer dans votre navigateur",
+          "anchor": null
         }
       ]
     },
@@ -677,11 +693,15 @@
       "citations": [],
       "sections": [
         {
-          "title": "La relation à comprendre",
+          "title": "Essayer et interpréter",
           "anchor": null
         },
         {
-          "title": "Essayer et interpréter",
+          "title": "Combien de rayonnement reste-t-il après plusieurs couches de demi-atténuation ?",
+          "anchor": null
+        },
+        {
+          "title": "Les définitions",
           "anchor": null
         },
         {
@@ -689,7 +709,7 @@
           "anchor": null
         },
         {
-          "title": "Approfondir avec le cours",
+          "title": "Aller plus loin",
           "anchor": null
         }
       ]
@@ -702,11 +722,15 @@
       "citations": [],
       "sections": [
         {
-          "title": "La relation à comprendre",
+          "title": "Essayer et interpréter",
           "anchor": null
         },
         {
-          "title": "Essayer et interpréter",
+          "title": "Pourquoi faut-il plus que mcΔT pour dimensionner une congélation ?",
+          "anchor": null
+        },
+        {
+          "title": "Les définitions",
           "anchor": null
         },
         {
@@ -714,7 +738,7 @@
           "anchor": null
         },
         {
-          "title": "Approfondir avec le cours",
+          "title": "Aller plus loin",
           "anchor": null
         }
       ]
@@ -727,11 +751,15 @@
       "citations": [],
       "sections": [
         {
-          "title": "La relation à comprendre",
+          "title": "Essayer et interpréter",
           "anchor": null
         },
         {
-          "title": "Essayer et interpréter",
+          "title": "Pourquoi l’écart de température pénalise-t-il la production de froid ?",
+          "anchor": null
+        },
+        {
+          "title": "Les définitions",
           "anchor": null
         },
         {
@@ -739,7 +767,7 @@
           "anchor": null
         },
         {
-          "title": "Approfondir avec le cours",
+          "title": "Aller plus loin",
           "anchor": null
         }
       ]
@@ -752,11 +780,15 @@
       "citations": [],
       "sections": [
         {
-          "title": "La relation à comprendre",
+          "title": "Essayer et interpréter",
           "anchor": null
         },
         {
-          "title": "Essayer et interpréter",
+          "title": "Un lien statistiquement significatif explique-t-il beaucoup de variation ?",
+          "anchor": null
+        },
+        {
+          "title": "Les définitions",
           "anchor": null
         },
         {
@@ -764,7 +796,7 @@
           "anchor": null
         },
         {
-          "title": "Approfondir avec le cours",
+          "title": "Aller plus loin",
           "anchor": null
         }
       ]
@@ -777,11 +809,15 @@
       "citations": [],
       "sections": [
         {
-          "title": "La relation à comprendre",
+          "title": "Essayer et interpréter",
           "anchor": null
         },
         {
-          "title": "Essayer et interpréter",
+          "title": "Que change un seuil de test, et pourquoi la valeur prédictive dépend-elle de la prévalence ?",
+          "anchor": null
+        },
+        {
+          "title": "Les définitions",
           "anchor": null
         },
         {
@@ -789,7 +825,7 @@
           "anchor": null
         },
         {
-          "title": "Approfondir avec le cours",
+          "title": "Aller plus loin",
           "anchor": null
         }
       ]
@@ -802,11 +838,15 @@
       "citations": [],
       "sections": [
         {
-          "title": "La relation à comprendre",
+          "title": "Essayer et interpréter",
           "anchor": null
         },
         {
-          "title": "Essayer et interpréter",
+          "title": "Comment l’angle de diffusion change-t-il le partage de l’énergie ?",
+          "anchor": null
+        },
+        {
+          "title": "Les définitions",
           "anchor": null
         },
         {
@@ -814,7 +854,7 @@
           "anchor": null
         },
         {
-          "title": "Approfondir avec le cours",
+          "title": "Aller plus loin",
           "anchor": null
         }
       ]
@@ -827,11 +867,15 @@
       "citations": [],
       "sections": [
         {
-          "title": "La relation à comprendre",
+          "title": "Essayer et interpréter",
           "anchor": null
         },
         {
-          "title": "Essayer et interpréter",
+          "title": "Pourquoi l’intervalle d’une nouvelle observation est-il plus large que celui de la moyenne ?",
+          "anchor": null
+        },
+        {
+          "title": "Les définitions",
           "anchor": null
         },
         {
@@ -839,7 +883,7 @@
           "anchor": null
         },
         {
-          "title": "Approfondir avec le cours",
+          "title": "Aller plus loin",
           "anchor": null
         }
       ]
@@ -852,11 +896,15 @@
       "citations": [],
       "sections": [
         {
-          "title": "La relation à comprendre",
+          "title": "Essayer et interpréter",
           "anchor": null
         },
         {
-          "title": "Essayer et interpréter",
+          "title": "Comment passer d’une valeur à une probabilité, ou retrouver un seuil à partir d’une aire ?",
+          "anchor": null
+        },
+        {
+          "title": "Les définitions",
           "anchor": null
         },
         {
@@ -864,7 +912,7 @@
           "anchor": null
         },
         {
-          "title": "Approfondir avec le cours",
+          "title": "Aller plus loin",
           "anchor": null
         }
       ]
@@ -877,11 +925,15 @@
       "citations": [],
       "sections": [
         {
-          "title": "La relation à comprendre",
+          "title": "Essayer et interpréter",
           "anchor": null
         },
         {
-          "title": "Essayer et interpréter",
+          "title": "Pourquoi une machine thermique doit-elle rejeter une partie de la chaleur reçue ?",
+          "anchor": null
+        },
+        {
+          "title": "Les définitions",
           "anchor": null
         },
         {
@@ -889,7 +941,7 @@
           "anchor": null
         },
         {
-          "title": "Approfondir avec le cours",
+          "title": "Aller plus loin",
           "anchor": null
         }
       ]
@@ -902,11 +954,15 @@
       "citations": [],
       "sections": [
         {
-          "title": "La relation à comprendre",
+          "title": "Essayer et interpréter",
           "anchor": null
         },
         {
-          "title": "Essayer et interpréter",
+          "title": "Comment une onde se propage-t-elle si les champs oscillent transversalement ?",
+          "anchor": null
+        },
+        {
+          "title": "Les définitions",
           "anchor": null
         },
         {
@@ -914,7 +970,7 @@
           "anchor": null
         },
         {
-          "title": "Approfondir avec le cours",
+          "title": "Aller plus loin",
           "anchor": null
         }
       ]
@@ -927,11 +983,15 @@
       "citations": [],
       "sections": [
         {
-          "title": "La relation à comprendre",
+          "title": "Essayer et interpréter",
           "anchor": null
         },
         {
-          "title": "Essayer et interpréter",
+          "title": "Comment une seule observation peut-elle modifier la droite, la corrélation et la p-value ?",
+          "anchor": null
+        },
+        {
+          "title": "Les définitions",
           "anchor": null
         },
         {
@@ -939,7 +999,7 @@
           "anchor": null
         },
         {
-          "title": "Approfondir avec le cours",
+          "title": "Aller plus loin",
           "anchor": null
         }
       ]
@@ -952,11 +1012,15 @@
       "citations": [],
       "sections": [
         {
-          "title": "La relation à comprendre",
+          "title": "Essayer et interpréter",
           "anchor": null
         },
         {
-          "title": "Essayer et interpréter",
+          "title": "Quand peut-on remplacer un aliment entier par une seule température ?",
+          "anchor": null
+        },
+        {
+          "title": "Les définitions",
           "anchor": null
         },
         {
@@ -964,7 +1028,7 @@
           "anchor": null
         },
         {
-          "title": "Approfondir avec le cours",
+          "title": "Aller plus loin",
           "anchor": null
         }
       ]
@@ -993,7 +1057,7 @@
           "anchor": null
         },
         {
-          "title": "4. La double saisonnalité du rayonnement",
+          "title": "4. La double saisonnalité de l'éclairement",
           "anchor": null
         },
         {
@@ -1022,11 +1086,15 @@
       "citations": [],
       "sections": [
         {
-          "title": "La relation à comprendre",
+          "title": "Essayer et interpréter",
           "anchor": null
         },
         {
-          "title": "Essayer et interpréter",
+          "title": "Quelles cellules expliquent l’écart entre les observations et l’hypothèse ?",
+          "anchor": null
+        },
+        {
+          "title": "Les définitions",
           "anchor": null
         },
         {
@@ -1034,7 +1102,7 @@
           "anchor": null
         },
         {
-          "title": "Approfondir avec le cours",
+          "title": "Aller plus loin",
           "anchor": null
         }
       ]
@@ -1047,11 +1115,15 @@
       "citations": [],
       "sections": [
         {
-          "title": "La relation à comprendre",
+          "title": "Essayer et interpréter",
           "anchor": null
         },
         {
-          "title": "Essayer et interpréter",
+          "title": "Une différence entre deux moyennes est-elle grande par rapport à son incertitude ?",
+          "anchor": null
+        },
+        {
+          "title": "Les définitions",
           "anchor": null
         },
         {
@@ -1059,7 +1131,7 @@
           "anchor": null
         },
         {
-          "title": "Approfondir avec le cours",
+          "title": "Aller plus loin",
           "anchor": null
         }
       ]
@@ -1113,11 +1185,15 @@
       "citations": [],
       "sections": [
         {
-          "title": "Un exemple",
+          "title": "Des exemples à copier",
           "anchor": null
         },
         {
           "title": "Les travaux d'équipe",
+          "anchor": null
+        },
+        {
+          "title": "Et ensuite ?",
           "anchor": null
         }
       ]
@@ -1160,19 +1236,23 @@
       "sections": [
         {
           "title": "Les règles de base",
-          "anchor": null
+          "anchor": "regles"
         },
         {
           "title": "Un exemple : Webservice-Energy",
-          "anchor": null
+          "anchor": "webservice-energy"
         },
         {
           "title": "Choisir une licence : le code et les données",
-          "anchor": null
+          "anchor": "licence"
         },
         {
           "title": "Glossaire",
           "anchor": "glossaire"
+        },
+        {
+          "title": "Et ensuite ?",
+          "anchor": null
         }
       ]
     },
@@ -1866,7 +1946,15 @@
       "citations": [],
       "sections": [
         {
+          "title": "Renforcer chaque fondation",
+          "anchor": null
+        },
+        {
           "title": "Le cadre",
+          "anchor": null
+        },
+        {
+          "title": "Et ensuite ?",
           "anchor": null
         }
       ]
@@ -1982,6 +2070,10 @@
         {
           "title": "Démontrer la confiance",
           "anchor": "trust"
+        },
+        {
+          "title": "Et ensuite ?",
+          "anchor": null
         }
       ]
     },
@@ -1993,19 +2085,27 @@
       "citations": [],
       "sections": [
         {
-          "title": "Énergie",
+          "title": "Par où commencer ?",
           "anchor": null
+        },
+        {
+          "title": "Énergie",
+          "anchor": "tools-energy"
         },
         {
           "title": "Physique médicale",
-          "anchor": null
+          "anchor": "tools-medicine"
         },
         {
           "title": "Cours et statistiques",
-          "anchor": null
+          "anchor": "tools-learning"
         },
         {
           "title": "Pratiques de recherche",
+          "anchor": "tools-research"
+        },
+        {
+          "title": "Et ensuite ?",
           "anchor": null
         }
       ]
@@ -2056,11 +2156,11 @@
       ],
       "sections": [
         {
-          "title": "Essayer dans le navigateur",
+          "title": "Essayer",
           "anchor": "try-it"
         },
         {
-          "title": "Comprendre les paramètres et les limites",
+          "title": "Les notions",
           "anchor": null
         },
         {
@@ -2160,11 +2260,11 @@
       ],
       "sections": [
         {
-          "title": "Essayer dans le navigateur",
+          "title": "Essayer",
           "anchor": "try-it"
         },
         {
-          "title": "Comprendre les paramètres et les limites",
+          "title": "Les notions",
           "anchor": null
         },
         {
@@ -2181,7 +2281,7 @@
       "citations": [],
       "sections": [
         {
-          "title": "Lire la comparaison",
+          "title": "Les mots de la comparaison",
           "anchor": null
         },
         {
@@ -2345,11 +2445,11 @@
       ],
       "sections": [
         {
-          "title": "Essayer dans le navigateur",
+          "title": "Essayer",
           "anchor": "try-it"
         },
         {
-          "title": "Comprendre les paramètres et les limites",
+          "title": "Les notions",
           "anchor": null
         },
         {
@@ -2382,11 +2482,11 @@
       ],
       "sections": [
         {
-          "title": "Essayer dans le navigateur",
+          "title": "Essayer",
           "anchor": "try-it"
         },
         {
-          "title": "Comprendre les paramètres et les limites",
+          "title": "Les notions",
           "anchor": null
         },
         {
@@ -2476,11 +2576,11 @@
       ],
       "sections": [
         {
-          "title": "Essayer dans le navigateur",
+          "title": "Essayer",
           "anchor": "try-it"
         },
         {
-          "title": "Comprendre les paramètres et les limites",
+          "title": "Les notions",
           "anchor": null
         },
         {
@@ -2542,11 +2642,11 @@
       ],
       "sections": [
         {
-          "title": "Essayer dans le navigateur",
+          "title": "Essayer",
           "anchor": "try-it"
         },
         {
-          "title": "Comprendre les paramètres et les limites",
+          "title": "Les notions",
           "anchor": null
         },
         {
@@ -2617,11 +2717,11 @@
       ],
       "sections": [
         {
-          "title": "Essayer dans le navigateur",
+          "title": "Essayer",
           "anchor": "try-it"
         },
         {
-          "title": "Comprendre les paramètres et les limites",
+          "title": "Les notions",
           "anchor": null
         },
         {
@@ -2642,15 +2742,15 @@
       "citations": [],
       "sections": [
         {
-          "title": "L'idée",
+          "title": "L'idée : un seul nombre pour deux grandeurs",
           "anchor": null
         },
         {
-          "title": "Régler α",
+          "title": "Régler l'intervalle",
           "anchor": null
         },
         {
-          "title": "Les résultats de l'article (couverture visée 80 %, test 2018)",
+          "title": "Les résultats de l'article : à 80 % visés, la bonne couverture avec les intervalles les plus courts",
           "anchor": null
         },
         {
@@ -2773,6 +2873,10 @@
         {
           "title": "Références",
           "anchor": null
+        },
+        {
+          "title": "Essayer dans votre navigateur",
+          "anchor": null
         }
       ]
     },
@@ -2831,20 +2935,16 @@
       "citations": [],
       "sections": [
         {
-          "title": "Avant l’expérience : trois notions clés",
+          "title": "Le résultat : une limite chiffrée, pas un hôpital volant",
+          "anchor": "resultat"
+        },
+        {
+          "title": "Trois notions pour tout suivre",
           "anchor": "reperes-bnct"
         },
         {
-          "title": "Pourquoi cette question appartient à mon parcours",
+          "title": "Du cosmos à la cellule",
           "anchor": null
-        },
-        {
-          "title": "Une cascade dans l’atmosphère, puis une réaction à l’échelle cellulaire",
-          "anchor": null
-        },
-        {
-          "title": "Le résultat : une limite quantitative, pas un hôpital volant validé",
-          "anchor": "resultat"
         },
         {
           "title": "Ce que l’étude apporte à la modélisation",
@@ -2944,6 +3044,10 @@
         },
         {
           "title": "Références",
+          "anchor": null
+        },
+        {
+          "title": "Essayer dans votre navigateur",
           "anchor": null
         }
       ]
@@ -3161,30 +3265,34 @@
       "sections": [
         {
           "title": "Les idées directrices",
-          "anchor": null
+          "anchor": "idees"
         },
         {
           "title": "Les axes de recherche",
-          "anchor": null
+          "anchor": "axes"
         },
         {
           "title": "Les logiciels, avec leur DOI et leur équipe",
-          "anchor": null
+          "anchor": "logiciels"
         },
         {
           "title": "Les cours en accès libre (CC BY 4.0)",
-          "anchor": null
+          "anchor": "cours"
         },
         {
           "title": "Les outils interactifs",
-          "anchor": null
+          "anchor": "outils"
         },
         {
           "title": "Essais et positions",
-          "anchor": null
+          "anchor": "essais"
         },
         {
           "title": "Collaborer, citer",
+          "anchor": null
+        },
+        {
+          "title": "Et ensuite ?",
           "anchor": null
         }
       ]
@@ -3315,6 +3423,10 @@
         {
           "title": "Paper, authors and resources",
           "anchor": null
+        },
+        {
+          "title": "Try it in your browser",
+          "anchor": null
         }
       ]
     },
@@ -3330,6 +3442,10 @@
       "sections": [
         {
           "title": "Paper, authors and resources",
+          "anchor": null
+        },
+        {
+          "title": "Try it in your browser",
           "anchor": null
         }
       ]
@@ -3347,6 +3463,10 @@
         {
           "title": "Paper, authors and resources",
           "anchor": null
+        },
+        {
+          "title": "Try it in your browser",
+          "anchor": null
         }
       ]
     },
@@ -3362,6 +3482,10 @@
       "sections": [
         {
           "title": "Paper, authors and resources",
+          "anchor": null
+        },
+        {
+          "title": "Try it in your browser",
           "anchor": null
         }
       ]
@@ -3383,6 +3507,10 @@
         {
           "title": "Variability, memory and model choice",
           "anchor": null
+        },
+        {
+          "title": "Try it in your browser",
+          "anchor": null
         }
       ]
     },
@@ -3395,30 +3523,34 @@
       "sections": [
         {
           "title": "Main ideas",
-          "anchor": null
+          "anchor": "idees"
         },
         {
           "title": "Research lines",
-          "anchor": null
+          "anchor": "axes"
         },
         {
           "title": "Software, with its DOI and its team",
-          "anchor": null
+          "anchor": "software"
         },
         {
           "title": "Open courses (CC BY 4.0)",
-          "anchor": null
+          "anchor": "courses"
         },
         {
           "title": "Interactive tools",
-          "anchor": null
+          "anchor": "tools"
         },
         {
           "title": "Essays and positions",
-          "anchor": null
+          "anchor": "essays"
         },
         {
           "title": "Collaborate, cite",
+          "anchor": null
+        },
+        {
+          "title": "Where next?",
           "anchor": null
         }
       ]
@@ -3547,7 +3679,15 @@
       "citations": [],
       "sections": [
         {
+          "title": "Strengthen each foundation",
+          "anchor": null
+        },
+        {
           "title": "The framework",
+          "anchor": null
+        },
+        {
+          "title": "Where next?",
           "anchor": null
         }
       ]
@@ -3805,20 +3945,16 @@
       "citations": [],
       "sections": [
         {
-          "title": "Before the experiment: three key ideas",
+          "title": "The finding: a quantified limit, not a flying hospital",
+          "anchor": "resultat"
+        },
+        {
+          "title": "Three ideas to follow everything",
           "anchor": "bnct-primer"
         },
         {
-          "title": "Where this fits in my research",
+          "title": "From the cosmos to the cell",
           "anchor": null
-        },
-        {
-          "title": "An atmospheric cascade, then a cellular-scale reaction",
-          "anchor": null
-        },
-        {
-          "title": "The finding: a quantitative limit, not a validated flying hospital",
-          "anchor": "resultat"
         },
         {
           "title": "What the study contributes to modeling",
@@ -3915,6 +4051,10 @@
         {
           "title": "References",
           "anchor": null
+        },
+        {
+          "title": "Try it in your browser",
+          "anchor": null
         }
       ]
     },
@@ -3954,6 +4094,10 @@
         },
         {
           "title": "Go further",
+          "anchor": null
+        },
+        {
+          "title": "Try it in your browser",
           "anchor": null
         }
       ]
@@ -4027,6 +4171,10 @@
         {
           "title": "Go further",
           "anchor": null
+        },
+        {
+          "title": "Try it in your browser",
+          "anchor": null
         }
       ]
     },
@@ -4062,6 +4210,10 @@
         },
         {
           "title": "References",
+          "anchor": null
+        },
+        {
+          "title": "Try it in your browser",
           "anchor": null
         }
       ]
@@ -4102,6 +4254,10 @@
         },
         {
           "title": "Go further",
+          "anchor": null
+        },
+        {
+          "title": "Try it in your browser",
           "anchor": null
         }
       ]
@@ -4179,6 +4335,10 @@
         {
           "title": "Papers and complete author teams",
           "anchor": "sources"
+        },
+        {
+          "title": "Try it in your browser",
+          "anchor": null
         }
       ]
     },
@@ -4318,6 +4478,10 @@
         {
           "title": "Go further",
           "anchor": null
+        },
+        {
+          "title": "Try it in your browser",
+          "anchor": null
         }
       ]
     },
@@ -4347,6 +4511,10 @@
         {
           "title": "Demonstrate trust",
           "anchor": "trust"
+        },
+        {
+          "title": "Where next?",
+          "anchor": null
         }
       ]
     },
@@ -4358,19 +4526,27 @@
       "citations": [],
       "sections": [
         {
-          "title": "Energy",
+          "title": "Where to start?",
           "anchor": null
+        },
+        {
+          "title": "Energy",
+          "anchor": "tools-energy"
         },
         {
           "title": "Medical physics",
-          "anchor": null
+          "anchor": "tools-medicine"
         },
         {
           "title": "Courses and statistics",
-          "anchor": null
+          "anchor": "tools-learning"
         },
         {
           "title": "Research practices",
+          "anchor": "tools-research"
+        },
+        {
+          "title": "Where next?",
           "anchor": null
         }
       ]
@@ -4383,11 +4559,15 @@
       "citations": [],
       "sections": [
         {
-          "title": "The relationship to understand",
+          "title": "Try it and interpret",
           "anchor": null
         },
         {
-          "title": "Try it and interpret",
+          "title": "How much radiation remains after several half-value layers?",
+          "anchor": null
+        },
+        {
+          "title": "Definitions",
           "anchor": null
         },
         {
@@ -4395,7 +4575,7 @@
           "anchor": null
         },
         {
-          "title": "Go further with the course",
+          "title": "Go further",
           "anchor": null
         }
       ]
@@ -4408,11 +4588,15 @@
       "citations": [],
       "sections": [
         {
-          "title": "The relationship to understand",
+          "title": "Try it and interpret",
           "anchor": null
         },
         {
-          "title": "Try it and interpret",
+          "title": "When can an entire food product be represented by a single temperature?",
+          "anchor": null
+        },
+        {
+          "title": "Definitions",
           "anchor": null
         },
         {
@@ -4420,7 +4604,7 @@
           "anchor": null
         },
         {
-          "title": "Go further with the course",
+          "title": "Go further",
           "anchor": null
         }
       ]
@@ -4433,11 +4617,15 @@
       "citations": [],
       "sections": [
         {
-          "title": "The relationship to understand",
+          "title": "Try it and interpret",
           "anchor": null
         },
         {
-          "title": "Try it and interpret",
+          "title": "Why must a heat engine reject part of the heat it receives?",
+          "anchor": null
+        },
+        {
+          "title": "Definitions",
           "anchor": null
         },
         {
@@ -4445,7 +4633,7 @@
           "anchor": null
         },
         {
-          "title": "Go further with the course",
+          "title": "Go further",
           "anchor": null
         }
       ]
@@ -4458,11 +4646,15 @@
       "citations": [],
       "sections": [
         {
-          "title": "The relationship to understand",
+          "title": "Try it and interpret",
           "anchor": null
         },
         {
-          "title": "Try it and interpret",
+          "title": "Which cells contribute to the discrepancy between observations and the hypothesis?",
+          "anchor": null
+        },
+        {
+          "title": "Definitions",
           "anchor": null
         },
         {
@@ -4470,7 +4662,7 @@
           "anchor": null
         },
         {
-          "title": "Go further with the course",
+          "title": "Go further",
           "anchor": null
         }
       ]
@@ -4483,11 +4675,15 @@
       "citations": [],
       "sections": [
         {
-          "title": "The relationship to understand",
+          "title": "Try it and interpret",
           "anchor": null
         },
         {
-          "title": "Try it and interpret",
+          "title": "How does the scattering angle change the energy shared by a photon and an electron?",
+          "anchor": null
+        },
+        {
+          "title": "Definitions",
           "anchor": null
         },
         {
@@ -4495,7 +4691,7 @@
           "anchor": null
         },
         {
-          "title": "Go further with the course",
+          "title": "Go further",
           "anchor": null
         }
       ]
@@ -4508,11 +4704,15 @@
       "citations": [],
       "sections": [
         {
-          "title": "The relationship to understand",
+          "title": "Try it and interpret",
           "anchor": null
         },
         {
-          "title": "Try it and interpret",
+          "title": "Does a statistically significant association explain much variation?",
+          "anchor": null
+        },
+        {
+          "title": "Definitions",
           "anchor": null
         },
         {
@@ -4520,7 +4720,7 @@
           "anchor": null
         },
         {
-          "title": "Go further with the course",
+          "title": "Go further",
           "anchor": null
         }
       ]
@@ -4533,11 +4733,15 @@
       "citations": [],
       "sections": [
         {
-          "title": "The relationship to understand",
+          "title": "Try it and interpret",
           "anchor": null
         },
         {
-          "title": "Try it and interpret",
+          "title": "How does a wave travel while its fields oscillate transversely?",
+          "anchor": null
+        },
+        {
+          "title": "Definitions",
           "anchor": null
         },
         {
@@ -4545,7 +4749,7 @@
           "anchor": null
         },
         {
-          "title": "Go further with the course",
+          "title": "Go further",
           "anchor": null
         }
       ]
@@ -4558,11 +4762,15 @@
       "citations": [],
       "sections": [
         {
-          "title": "Reading the comparison",
+          "title": "The words of the comparison",
           "anchor": null
         },
         {
           "title": "Software and protocol",
+          "anchor": null
+        },
+        {
+          "title": "Try it in your browser",
           "anchor": null
         }
       ]
@@ -4575,11 +4783,15 @@
       "citations": [],
       "sections": [
         {
-          "title": "The relationship to understand",
+          "title": "Try it and interpret",
           "anchor": null
         },
         {
-          "title": "Try it and interpret",
+          "title": "Why is mcΔT alone insufficient to estimate freezing requirements?",
+          "anchor": null
+        },
+        {
+          "title": "Definitions",
           "anchor": null
         },
         {
@@ -4587,7 +4799,7 @@
           "anchor": null
         },
         {
-          "title": "Go further with the course",
+          "title": "Go further",
           "anchor": null
         }
       ]
@@ -4600,11 +4812,15 @@
       "citations": [],
       "sections": [
         {
-          "title": "The relationship to understand",
+          "title": "Try it and interpret",
           "anchor": null
         },
         {
-          "title": "Try it and interpret",
+          "title": "How can one observation change the fitted line, correlation and p-value?",
+          "anchor": null
+        },
+        {
+          "title": "Definitions",
           "anchor": null
         },
         {
@@ -4612,7 +4828,7 @@
           "anchor": null
         },
         {
-          "title": "Go further with the course",
+          "title": "Go further",
           "anchor": null
         }
       ]
@@ -4625,11 +4841,15 @@
       "citations": [],
       "sections": [
         {
-          "title": "The relationship to understand",
+          "title": "Try it and interpret",
           "anchor": null
         },
         {
-          "title": "Try it and interpret",
+          "title": "How do you convert a value into a probability, or find a threshold from an area?",
+          "anchor": null
+        },
+        {
+          "title": "Definitions",
           "anchor": null
         },
         {
@@ -4637,7 +4857,7 @@
           "anchor": null
         },
         {
-          "title": "Go further with the course",
+          "title": "Go further",
           "anchor": null
         }
       ]
@@ -4650,11 +4870,15 @@
       "citations": [],
       "sections": [
         {
-          "title": "The relationship to understand",
+          "title": "Try it and interpret",
           "anchor": null
         },
         {
-          "title": "Try it and interpret",
+          "title": "Why does a larger temperature difference make refrigeration more demanding?",
+          "anchor": null
+        },
+        {
+          "title": "Definitions",
           "anchor": null
         },
         {
@@ -4662,7 +4886,7 @@
           "anchor": null
         },
         {
-          "title": "Go further with the course",
+          "title": "Go further",
           "anchor": null
         }
       ]
@@ -4675,11 +4899,15 @@
       "citations": [],
       "sections": [
         {
-          "title": "The relationship to understand",
+          "title": "Try it and interpret",
           "anchor": null
         },
         {
-          "title": "Try it and interpret",
+          "title": "Why is the interval for a new observation wider than the interval for the mean?",
+          "anchor": null
+        },
+        {
+          "title": "Definitions",
           "anchor": null
         },
         {
@@ -4687,7 +4915,7 @@
           "anchor": null
         },
         {
-          "title": "Go further with the course",
+          "title": "Go further",
           "anchor": null
         }
       ]
@@ -4700,11 +4928,15 @@
       "citations": [],
       "sections": [
         {
-          "title": "The relationship to understand",
+          "title": "Try it and interpret",
           "anchor": null
         },
         {
-          "title": "Try it and interpret",
+          "title": "What changes with a test threshold, and why do predictive values depend on prevalence?",
+          "anchor": null
+        },
+        {
+          "title": "Definitions",
           "anchor": null
         },
         {
@@ -4712,7 +4944,7 @@
           "anchor": null
         },
         {
-          "title": "Go further with the course",
+          "title": "Go further",
           "anchor": null
         }
       ]
@@ -4725,11 +4957,15 @@
       "citations": [],
       "sections": [
         {
-          "title": "The relationship to understand",
+          "title": "Try it and interpret",
           "anchor": null
         },
         {
-          "title": "Try it and interpret",
+          "title": "Is a difference between means large relative to its uncertainty?",
+          "anchor": null
+        },
+        {
+          "title": "Definitions",
           "anchor": null
         },
         {
@@ -4737,7 +4973,7 @@
           "anchor": null
         },
         {
-          "title": "Go further with the course",
+          "title": "Go further",
           "anchor": null
         }
       ]
@@ -4779,6 +5015,10 @@
         },
         {
           "title": "Method and checks",
+          "anchor": null
+        },
+        {
+          "title": "Try it in your browser",
           "anchor": null
         }
       ]

@@ -52,31 +52,61 @@
   }
   function path(pts) { return pts.map(function (p, k) { return (k ? "L" : "M") + p[0].toFixed(1) + " " + p[1].toFixed(1); }).join(""); }
 
+  function t2(fr, en) { return EN ? en : fr; }
+  function setv(c, v) { c.i.value = v; c.i.dispatchEvent(new Event("input")); }
+  // Presets set the controls by themselves and say, in one sentence, what the reader should conclude.
+  function presets(box, items) {
+    var w = h("div", { role: "group", "aria-label": t2("Cas à essayer", "Cases to try"), style: "display:flex;flex-wrap:wrap;gap:6px 8px;margin:10px 0 4px" }), say = h("p", { "class": "muted", style: "margin:4px 0 10px;font-weight:600", hidden: "" }), bs = [];
+    function mark(b, text) { bs.forEach(function (x) { var on = x === b; x.setAttribute("aria-pressed", on ? "true" : "false"); x.style.background = on ? "var(--link)" : ""; x.style.color = on ? "#fff" : ""; }); say.textContent = text || ""; say.hidden = !text; }
+    items.forEach(function (it) { var b = h("button", { type: "button", "class": "ct-btn", "aria-pressed": "false", style: "margin:0" }); b.textContent = it[0]; b.addEventListener("click", function () { it[1](); mark(b, it[2]); }); bs.push(b); w.appendChild(b); });
+    box.appendChild(w); box.appendChild(say);
+    return { clear: function () { mark(null, ""); }, select: function (i) { mark(bs[i], items[i][2]); } };
+  }
+  // Definitions next to the tool: native details, so keyboard and touch work without any script.
+  function symbols(box, text) { var d = h("details", { style: "margin:8px 0;font-size:.9rem" }), s = h("summary", { style: "cursor:pointer;font-weight:600" }), p = h("p", { "class": "muted", style: "margin:6px 0 0" }); s.textContent = t2("Que veut dire chaque symbole ?", "What does each symbol mean?"); p.textContent = text; d.appendChild(s); d.appendChild(p); box.appendChild(d); }
+  function seeAlso(box, items) { var p = h("p", { "class": "muted", style: "margin:10px 0 0" }), s = t2("À relier : ", "Related: "); p.textContent = s; items.forEach(function (it, i) { if (i) p.appendChild(document.createTextNode(" · ")); var a = h("a", { href: EN ? "/tools/" + it[1] + "/" : "/fr/animations/" + it[0] + "/" }); a.textContent = EN ? it[3] : it[2]; p.appendChild(a); }); box.appendChild(p); }
+  var LINK = { student: ["test-student", "student-t-test", "test de Student", "Student t-test"], corr: ["correlation-significativite-r2", "correlation-significance-r-squared", "corrélation et R²", "correlation and R²"], normal: ["loi-normale", "normal-distribution", "loi normale", "normal distribution"], roc: ["courbe-roc", "roc-curve", "courbe ROC", "ROC curve"], interv: ["intervalles-regression", "regression-intervals", "intervalles de régression", "regression intervals"], compton: ["effet-compton", "compton-scattering", "effet Compton", "Compton scattering"], wave: ["onde-electromagnetique", "electromagnetic-wave", "onde électromagnétique", "electromagnetic wave"], engine: ["moteur-carnot", "carnot-heat-engine", "moteur et limite de Carnot", "heat engine and Carnot limit"], biot: ["refroidissement-biot", "biot-cooling", "refroidissement et nombre de Biot", "cooling and Biot number"], congel: ["congelation-energie-puissance", "freezing-energy-power", "congélation", "freezing"], cop: ["cop-carnot-machine-frigorifique", "refrigerator-carnot-cop", "machine frigorifique", "refrigerator"] };
+  function plain(v) { return String(+(+v).toPrecision(6)).replace(".", EN ? "." : ","); }
+
   /* ROC: two distributions, a threshold, the ROC curve with the current point, Se/Sp/VPP/VPN at a prevalence */
   function roc(box) {
     box.appendChild(h(ht(box), {}, tr("Courbe ROC : déplacez le seuil")));
-    box.appendChild(h("p", { "class": "muted" }, tr("Résultats du test chez les non-malades N(0, 1) et chez les malades N(d, 1). Le seuil classe positif tout résultat au-dessus ; la prévalence change les valeurs prédictives, pas la courbe.")));
-    box.appendChild(h("p", { "class": "ct-note" }, EN?"d separates the means of two normal distributions with the same standard deviation; s is the test threshold in these standardized units. Se is sensitivity, Sp specificity, and 1−Sp the false-positive rate. ROC means Receiver Operating Characteristic and AUC its area. PPV and NPV are positive and negative predictive values. Youden’s index combines sensitivity and specificity; it is not a diagnostic probability.":"d sépare les moyennes de deux lois normales de même écart-type ; s est le seuil du test dans ces unités standardisées. Se est la sensibilité, Sp la spécificité et 1−Sp le taux de faux positifs. ROC signifie Receiver Operating Characteristic et AUC son aire. VPP et VPN sont les valeurs prédictives positive et négative. L’indice de Youden combine sensibilité et spécificité ; ce n’est pas une probabilité diagnostique.")); // READER-KEY
+    box.appendChild(h("p", { "class": "muted" }, t2("Un bon test peut surtout donner de fausses alertes : quand la maladie est rare, la majorité des résultats positifs peut être fausse, alors que la sensibilité et la spécificité n’ont pas changé. Ici, les résultats suivent deux lois normales, décalées de d écarts-types entre non-malades et malades ; tout résultat au-dessus du seuil est positif.", "A good test can still produce mostly false alarms: when a disease is rare, most positive results can be false, although sensitivity and specificity have not changed. Here, results follow two normal distributions, shifted by d standard deviations between people without and with the disease; any result above the threshold is positive.")));
+    symbols(box, EN ? "d separates the means of two normal distributions with the same standard deviation; s is the test threshold in these standardized units. Se is sensitivity, Sp specificity, and 1−Sp the false-positive rate. ROC means Receiver Operating Characteristic and AUC its area. PPV and NPV are positive and negative predictive values. Youden’s index combines sensitivity and specificity; it is not a diagnostic probability." : "d sépare les moyennes de deux lois normales de même écart-type ; s est le seuil du test dans ces unités standardisées. Se est la sensibilité, Sp la spécificité et 1−Sp le taux de faux positifs. ROC signifie Receiver Operating Characteristic et AUC son aire. VPP et VPN sont les valeurs prédictives positive et négative. L’indice de Youden combine sensibilité et spécificité ; ce n’est pas une probabilité diagnostique.");
+    function go(d, s, p) { return function () { setv(cD, d); setv(cS, s); setv(cP, p); }; }
+    var bar = presets(box, [
+      [t2("Réglage de départ : prévalence 10 %", "Starting setting: 10% prevalence"), go(1.8, 1, 0.1), t2("78,8 % de sensibilité, 84,1 % de spécificité, et seulement 35,6 % de malades parmi les résultats positifs.", "78.8% sensitivity, 84.1% specificity, and only 35.6% of people with the disease among positive results.")],
+      [t2("Bon test, maladie rare (1 %)", "Good test, rare disease (1%)"), go(2.55, 1.3, 0.01), t2("Sensibilité et spécificité proches de 90 %, et pourtant la majorité des résultats positifs sont de fausses alertes.", "Sensitivity and specificity close to 90%, yet most positive results are false alarms.")],
+      [t2("Même test, prévalence 30 %", "Same test, 30% prevalence"), go(2.55, 1.3, 0.3), t2("Seule la prévalence a changé : le point ne bouge pas sur la courbe, mais la VPP remonte fortement.", "Only prevalence has changed: the point stays put on the curve, but the PPV rises sharply.")],
+      [t2("Seuil bas : peu de malades manqués", "Low threshold: few missed cases"), go(2.55, 0.5, 0.1), t2("Le point monte sur la courbe : moins de malades manqués, mais plus de fausses alertes.", "The point moves up the curve: fewer missed cases, but more false alarms.")],
+      [t2("Seuil haut : peu de fausses alertes", "High threshold: few false alarms"), go(2.55, 2.5, 0.1), t2("Le point descend : peu de fausses alertes, mais près d’un malade sur deux est manqué.", "The point moves down: few false alarms, but nearly one case in two is missed.")],
+      [t2("Test sans valeur : d = 0", "Useless test: d = 0"), go(0, 0, 0.1), t2("Les deux courbes coïncident : la ROC suit la diagonale, l’AUC vaut 0,5 et la VPP égale la prévalence.", "The two curves coincide: the ROC follows the diagonal, AUC is 0.5 and PPV equals prevalence.")],
+      [t2("Test très séparé : d = 4", "Well separated test: d = 4"), go(4, 2, 0.1), t2("Les populations se séparent : la courbe longe le coin supérieur gauche et l’AUC approche 1.", "The populations separate: the curve hugs the upper-left corner and AUC approaches 1.")]
+    ]);
     var g = h("div", { "class": "ct-grid" }); box.appendChild(g);
     var W = 300, H = 170, sv = el("svg", { viewBox: "0 0 " + W + " " + H, "class": "ct-svg", role: "img", "aria-label": tr("Distributions des résultats et seuil") }, g);
     var R = 170, sr = el("svg", { viewBox: "0 0 " + R + " " + R, "class": "ct-svg ct-sq", role: "img", "aria-label": tr("Courbe ROC") }, g);
-    var cD = slider(tr("Séparation d"), 0, 4, 0.05, 1.8, function (v) { return f(v); }),
-        cS = slider(tr("Seuil s"), -3, 6, 0.05, 1, function (v) { return f(v); }),
-        cP = slider(tr("Prévalence"), 0.001, 0.5, 0.001, 0.1, function (v) { return pct(v); });
+    var cD = slider(t2("Séparation d (écarts-types)", "Separation d (standard deviations)"), 0, 4, 0.05, 1.8, function (v) { return f(v); }),
+        cS = slider(t2("Seuil s du test", "Test threshold s"), -3, 6, 0.05, 1, function (v) { return f(v); }),
+        cP = slider(t2("Prévalence (part de malades)", "Prevalence (share with disease)"), 0.001, 0.5, 0.001, 0.1, function (v) { return pct(v); });
     var ctl = h("div", { "class": "ct-ctl" }); [cD, cS, cP].forEach(function (c) { ctl.appendChild(c.w); }); box.appendChild(ctl);
     var out = h("p", { "class": "ct-out", "aria-live": "polite" }); box.appendChild(out);
+    seeAlso(box, [LINK.normal, LINK.student]);
     var X = function (z) { return 10 + (W - 20) * (z + 3.5) / 10; }, Y = function (v) { return H - 18 - (H - 30) * v / 0.42; };
     el("line", { x1: 10, y1: H - 18, x2: W - 10, y2: H - 18, "class": "ct-ax" }, sv);
+    el("text", { x: W / 2, y: H - 4, "class": "ct-axl", "text-anchor": "middle" }, sv).textContent = t2("résultat du test ; surface colorée : résultats positifs", "test result; shaded area: positive results");
     var aH = el("path", { "class": "ct-a1" }, sv), aS = el("path", { "class": "ct-a2" }, sv), lH = el("path", { "class": "ct-l1" }, sv), lS = el("path", { "class": "ct-l2" }, sv);
     var th = el("line", { "class": "ct-th", y1: 6, y2: H - 18 }, sv);
     el("text", { x: 14, y: 14, "class": "ct-tx1" }, sv).textContent = tr("non-malades");
     var tS = el("text", { y: 14, "class": "ct-tx2" }, sv); tS.textContent = tr("malades");
     var P = function (v) { return 14 + (R - 24) * v; }, Q = function (v) { return R - 14 - (R - 24) * v; };
     el("rect", { x: P(0), y: Q(1), width: P(1) - P(0), height: Q(0) - Q(1), "class": "ct-frame" }, sr);
-    el("line", { x1: P(0), y1: Q(0), x2: P(1), y2: Q(1), "class": "ct-diag" }, sr);
+    var dg = el("line", { x1: P(0), y1: Q(0), x2: P(1), y2: Q(1), "class": "ct-diag" }, sr); dg.style.strokeDasharray = "none"; dg.style.stroke = "var(--muted)";
+    el("text", { x: P(0.56), y: Q(0.42), "class": "ct-axl", transform: "rotate(-45 " + P(0.56) + " " + Q(0.42) + ")" }, sr).textContent = t2("hasard", "chance");
     var aR = el("path", { "class": "ct-a2" }, sr), cR = el("path", { "class": "ct-l2" }, sr), pt = el("circle", { r: 4.5, "class": "ct-pt" }, sr);
-    el("text", { x: P(0.5), y: R - 2, "class": "ct-axl", "text-anchor": "middle" }, sr).textContent = "1 − Sp";
-    el("text", { x: 4, y: Q(0.5), "class": "ct-axl", transform: "rotate(-90 9 " + Q(0.5) + ")", "text-anchor": "middle" }, sr).textContent = "Se";
+    el("text", { x: P(0.5), y: R - 2, "class": "ct-axl", "text-anchor": "middle" }, sr).textContent = t2("1 − Sp (faux positifs)", "1 − Sp (false positives)");
+    el("text", { x: 4, y: Q(0.5), "class": "ct-axl", transform: "rotate(-90 9 " + Q(0.5) + ")", "text-anchor": "middle" }, sr).textContent = t2("Se (sensibilité)", "Se (sensitivity)");
+    function count(v) { return v > 0 && v < 0.5 ? tr("moins de 1") : String(Math.round(v)); }
     function draw() {
       var d = +cD.i.value, s = +cS.i.value, p = +cP.i.value, z, k, A = [], B = [], C = [], D = [];
       for (k = 0; k <= 120; k++) { z = -3.5 + 10 * k / 120; A.push([X(z), Y(CT.phi(z))]); B.push([X(z), Y(CT.phi(z - d))]); }
@@ -84,22 +114,31 @@
       for (k = 0; k <= 60; k++) { z = s + (6.5 - s) * k / 60; C.push([X(z), Y(CT.phi(z))]); D.push([X(z), Y(CT.phi(z - d))]); }
       aH.setAttribute("d", path([[X(s), Y(0)]].concat(C, [[X(6.5), Y(0)]])) + "Z");
       aS.setAttribute("d", path([[X(s), Y(0)]].concat(D, [[X(6.5), Y(0)]])) + "Z");
-      th.setAttribute("x1", X(s)); th.setAttribute("x2", X(s)); tS.setAttribute("x", Math.min(W - 60, X(d) - 20));
+      th.setAttribute("x1", X(s)); th.setAttribute("x2", X(s)); tS.setAttribute("x", Math.max(90, Math.min(W - 60, X(d) - 20)));
       var E = [[P(0), Q(0)]];
       for (k = 0; k <= 80; k++) { z = 6.5 - 10 * k / 80; E.push([P(1 - Phi(z)), Q(1 - Phi(z - d))]); }
       cR.setAttribute("d", path(E)); aR.setAttribute("d", path(E.concat([[P(1), Q(0)]])) + "Z");
       var r = CT.roc(d, s, p); pt.setAttribute("cx", P(1 - r.sp)); pt.setAttribute("cy", Q(r.se));
-      out.innerHTML = "Se = <b>" + pct(r.se) + "</b> · Sp = <b>" + pct(r.sp) + "</b> · AUC = <b>" + f(r.auc, 3) + tr("</b><br>VPP = <b>") + pct(r.vpp) +
-        tr("</b> · VPN = <b>") + pct(r.vpn) + tr("</b> pour une prévalence de ") + pct(p) + tr(" · indice de Youden Se + Sp − 1 = ") + f(r.se + r.sp - 1, 3);
+      out.innerHTML = t2("Sensibilité Se (malades détectés) = <b>", "Sensitivity Se (cases detected) = <b>") + pct(r.se) + t2("</b> · spécificité Sp (non-malades écartés) = <b>", "</b> · specificity Sp (people without disease cleared) = <b>") + pct(r.sp) + t2("</b> · AUC (aire sous la courbe) = <b>", "</b> · AUC (area under the curve) = <b>") + f(r.auc, 3) +
+        t2("</b><br>Test positif : VPP = <b>", "</b><br>Positive test: PPV = <b>") + pct(r.vpp) + t2("</b> de vrais malades · test négatif : VPN = <b>", "</b> truly have the disease · negative test: NPV = <b>") + pct(r.vpn) + t2("</b> de vrais non-malades, pour une prévalence de ", "</b> truly do not, at a prevalence of ") + pct(p) +
+        t2("<br>Sur 1 000 personnes testées, environ : malades détectés <b>", "<br>Out of 1,000 people tested, about: cases detected <b>") + count(1000 * p * r.se) + t2("</b> · malades manqués <b>", "</b> · cases missed <b>") + count(1000 * p * (1 - r.se)) + t2("</b> · fausses alertes <b>", "</b> · false alarms <b>") + count(1000 * (1 - p) * (1 - r.sp)) + "</b>" + tr(" · indice de Youden Se + Sp − 1 = ") + f(r.se + r.sp - 1, 3);
     }
-    [cD, cS, cP].forEach(function (c) { c.i.addEventListener("input", draw); }); draw();
+    [cD, cS, cP].forEach(function (c) { c.i.addEventListener("input", draw); c.i.addEventListener("input", bar.clear); }); draw(); bar.select(0);
   }
 
   /* Normal law: from z to P(Z < z) and back, with the shaded area; or from x, μ, σ */
   function normal(box) {
     box.appendChild(h(ht(box), {}, tr("Table de la loi normale, interactive")));
-    box.appendChild(h("p", { "class": "muted" }, tr("Choisissez une valeur et lisez l'aire, ou choisissez une probabilité et lisez la borne. Tout se fait avec z = (x − μ)/σ.")));
-    box.appendChild(h("p", { "class": "ct-note" }, EN?"x is a value, μ the mean and σ the standard deviation. z expresses the distance from μ in standard-deviation units. Z is a standard normal variable; P denotes probability. The shaded area is a probability, whereas φ(z) is a density height, not a probability at a point.":"x est une valeur, μ la moyenne et σ l’écart-type. z exprime la distance à μ en nombre d’écarts-types. Z est une variable normale centrée réduite ; P désigne une probabilité. L’aire colorée est une probabilité, tandis que φ(z) est une hauteur de densité, pas une probabilité en un point.")); // READER-KEY
+    box.appendChild(h("p", { "class": "muted" }, t2("À 1,96 écart-type de la moyenne, il reste 2,5 % de chaque côté et 95 % au centre. Choisissez une valeur et lisez l’aire, ou choisissez une probabilité et lisez la borne ; z = (x − μ)/σ ramène tout à la même échelle.", "At 1.96 standard deviations from the mean, 2.5% remains on each side and 95% in the center. Choose a value and read its area, or choose a probability and find its threshold; z = (x − μ)/σ puts everything on the same scale.")));
+    symbols(box, EN ? "x is a value, μ the mean and σ the standard deviation. z expresses the distance from μ in standard-deviation units. Z is a standard normal variable; P denotes probability. The shaded area is a probability, whereas φ(z) is a density height, not a probability at a point." : "x est une valeur, μ la moyenne et σ l’écart-type. z exprime la distance à μ en nombre d’écarts-types. Z est une variable normale centrée réduite ; P désigne une probabilité. L’aire colorée est une probabilité, tandis que φ(z) est une hauteur de densité, pas une probabilité en un point.");
+    function go(m, o) { return function () { mode.value = m; im.value = o.mu || 0; is.value = o.sg || 1; if ("z" in o) { iz.value = o.z; fromZ(); } else if ("p" in o) { ip.value = o.p; fromP(); } else { ix.value = o.x; fromX(); } }; }
+    var bar = presets(box, [
+      [t2("97,5 % à gauche de 1,96", "97.5% to the left of 1.96"), go("lt", { z: 1.96 }), t2("L’aire à gauche de z = 1,96 vaut environ 0,975.", "The area to the left of z = 1.96 is about 0.975.")],
+      [t2("95 % au centre", "95% in the center"), go("two", { p: 0.95 }), t2("Calcul inverse : partir de 95 % au centre redonne la borne z ≈ 1,96.", "Inverse calculation: starting from 95% in the center gives back the bound z ≈ 1.96.")],
+      [t2("Au-delà de 2 écarts-types", "Beyond 2 standard deviations"), go("gt", { z: 2 }), t2("Environ 2,3 % des valeurs dépassent la moyenne de plus de 2 écarts-types.", "About 2.3% of values exceed the mean by more than 2 standard deviations.")],
+      [t2("Seuil des 10 % les plus hauts", "Threshold of the top 10%"), go("gt", { p: 0.1 }), t2("Une probabilité donne une borne : les 10 % les plus hauts commencent vers z = 1,28.", "A probability gives a bound: the top 10% starts near z = 1.28.")],
+      [t2("Exemple : x = 130, μ = 100, σ = 15", "Example: x = 130, μ = 100, σ = 15"), go("lt", { mu: 100, sg: 15, x: 130 }), t2("Exemple d’école : 130 est à 2 écarts-types de 100. Le score z vaut 2 quelle que soit l’unité.", "Textbook example: 130 is 2 standard deviations from 100. The z-score is 2 whatever the unit.")]
+    ]);
     var W = 320, H = 150, sv = el("svg", { viewBox: "0 0 " + W + " " + (H + 12), "class": "ct-svg", role: "img", "aria-label": tr("Densité de la loi normale et aire") }, box);
     var X = function (z) { return 10 + (W - 20) * (z + 4) / 8; }, Y = function (v) { return H - 20 - (H - 30) * v / 0.4; };
     var ar = el("path", { "class": "ct-a2" }, sv), ln = el("path", { "class": "ct-l2" }, sv);
@@ -110,12 +149,13 @@
     el("text", { x: 6, y: H - 8, "class": "ct-axl" }, sv).textContent = "z"; el("text", { x: 6, y: H + 6, "class": "ct-axl ct-xl" }, sv).textContent = "x";
     var A = []; for (var k = 0; k <= 120; k++) { var z0 = -4 + 8 * k / 120; A.push([X(z0), Y(CT.phi(z0))]); } ln.setAttribute("d", path(A));
     var row = h("div", { "class": "ct-ctl ct-num" });
-    var mode = h("select", { "aria-label": tr("Aire cherchée") }, '<option value="lt">P(Z &lt; z)</option><option value="gt">P(Z &gt; z)</option><option value="two">P(−|z| &lt; Z &lt; |z|)</option>');
+    var mode = h("select", { "aria-label": tr("Aire cherchée"), style: "width:auto" }, t2('<option value="lt">À gauche : P(Z &lt; z)</option><option value="gt">À droite : P(Z &gt; z)</option><option value="two">Au centre : P(−|z| &lt; Z &lt; |z|)</option>', '<option value="lt">Left: P(Z &lt; z)</option><option value="gt">Right: P(Z &gt; z)</option><option value="two">Center: P(−|z| &lt; Z &lt; |z|)</option>'));
     var iz = h("input", { type: "number", step: "0.01", value: "1.96", "aria-label": "z" }), ip = h("input", { type: "number", step: "0.0001", min: "0.0001", max: "0.9999", value: "0.975", "aria-label": tr("probabilité") });
     var im = h("input", { type: "number", step: "any", value: "0", "aria-label": "μ" }), is = h("input", { type: "number", step: "any", min: "0", value: "1", "aria-label": "σ" }), ix = h("input", { type: "number", step: "any", value: "1.96", "aria-label": "x" });
-    [[tr("Aire"), mode], ["z", iz], [tr("probabilité"), ip], ["x", ix], ["μ", im], ["σ", is]].forEach(function (p) { var l = h("label", {}, "<span>" + p[0] + "</span>"); l.appendChild(p[1]); row.appendChild(l); });
+    [[tr("Aire"), mode], [t2("z (en écarts-types)", "z (standard deviations)"), iz], [t2("probabilité (aire)", "probability (area)"), ip], [t2("x (valeur)", "x (value)"), ix], [t2("μ (moyenne)", "μ (mean)"), im], [t2("σ (écart-type)", "σ (standard deviation)"), is]].forEach(function (p) { var l = h("label", {}, "<span>" + p[0] + "</span>"); l.appendChild(p[1]); row.appendChild(l); });
     box.appendChild(row);
     var out = h("p", { "class": "ct-out", "aria-live": "polite" }); box.appendChild(out);
+    seeAlso(box, [LINK.student, LINK.roc, LINK.interv]);
     function area(z) {
       var m = mode.value, pts = [], a, b, lo, hi;
       if (m === "lt") { a = -4; b = Math.max(-4, Math.min(4, z)); }
@@ -144,33 +184,49 @@
     }
     function fromX() { if (invalid(ix, "x")) return; var z = (+ix.value - +im.value) / (+is.value || 1); iz.value = z.toFixed(4); ip.value = area0(P(z)).toFixed(4); show(z); }
     function show(z) {
-      area(z); var mu = +im.value, sg = +is.value || 1;
-      for (var k = 0; k < xl.length; k++) xl[k].textContent = +(mu + (k - 3) * sg).toPrecision(4);
-      out.innerHTML = "x = " + f(+ix.value, 3) + tr(" pour N(") + f(mu, 3) + tr(" ; ") + f(sg, 3) + ") → z = (x − μ)/σ = <b>" + f(z, 4) + tr("</b> · aire = <b>") + f(area0(P(z)), 4) + tr("</b> · densité φ(z) = ") + f(CT.phi(z), 4);
+      area(z); var mu = +im.value, sg = +is.value || 1, a = area0(P(z)), share = f(100 * a, 2) + PC, az = Math.abs(z), m = mode.value;
+      for (var k = 0; k < xl.length; k++) xl[k].textContent = plain(mu + (k - 3) * sg);
+      var reading = m === "two" ? t2(share + " des valeurs sont entre " + plain(mu - az * sg) + " et " + plain(mu + az * sg) + ".", share + " of values lie between " + plain(mu - az * sg) + " and " + plain(mu + az * sg) + ".")
+        : m === "gt" ? t2(share + " des valeurs sont au-dessus de " + plain(mu + z * sg) + ".", share + " of values lie above " + plain(mu + z * sg) + ".")
+        : t2(share + " des valeurs sont en dessous de " + plain(mu + z * sg) + ".", share + " of values lie below " + plain(mu + z * sg) + ".");
+      out.innerHTML = "<b>" + reading + "</b><br>" + t2("Moyenne μ = ", "Mean μ = ") + plain(mu) + t2(", écart-type σ = ", ", standard deviation σ = ") + plain(sg) + " → z = (x − μ)/σ = <b>" + f(z, 4) + tr("</b> · aire = <b>") + f(a, 4) + tr("</b> · densité φ(z) = ") + f(CT.phi(z), 4);
     }
     iz.addEventListener("input", fromZ); ip.addEventListener("input", fromP); ix.addEventListener("input", fromX);
     // μ and σ describe the population: the measured value x stays, z and the area follow
     im.addEventListener("input", fromX); is.addEventListener("input", fromX); mode.addEventListener("change", fromZ); fromZ();
+    [iz, ip, ix, im, is].forEach(function (i) { i.addEventListener("input", bar.clear); }); mode.addEventListener("change", bar.clear); bar.select(0);
   }
 
   /* Attenuation: a beam crossing a slab, N/N0, the CDA, 1000 photons */
   function atten(box) {
     box.appendChild(h(ht(box), {}, tr("Atténuation d'un faisceau : la couche de demi-atténuation")));
-    box.appendChild(h("p", { "class": "muted" }, tr("N(x) = N₀ e<sup>−μx</sup> = N₀ / 2<sup>x/CDA</sup>. Sur mille photons qui entrent, combien sortent ?")));
-    box.appendChild(h("p", { "class": "ct-note" }, EN?"N₀ is the incoming photon count, N the transmitted uncollided count and x the material thickness. μ is the linear attenuation coefficient; HVL is the half-value layer, the thickness that halves transmission. This illustration assumes a narrow monoenergetic beam and homogeneous material; it does not calculate shielding or clinical dose.":"N₀ est le nombre de photons entrants, N le nombre transmis sans diffusion et x l’épaisseur du matériau. μ est le coefficient d’atténuation linéique ; la CDA est l’épaisseur qui divise la transmission par deux. Cette illustration suppose un faisceau étroit monoénergétique et un matériau homogène ; elle ne calcule ni une protection ni une dose clinique.")); // READER-KEY
+    box.appendChild(h("p", { "class": "muted" }, t2("Chaque couche de demi-atténuation (CDA) divise le faisceau par deux : après trois couches il en reste 12,5 %, et jamais exactement zéro. Ce n’est pas une soustraction : doubler l’épaisseur ne double pas ce qui est arrêté, cela élève la fraction transmise au carré.", "Each half-value layer (HVL) halves the beam: after three layers 12.5% remains, and never exactly zero. This is not a subtraction: doubling the thickness does not double what is stopped, it squares the transmitted fraction.")));
+    symbols(box, EN ? "N(x) = N₀ e^(−μx) = N₀ / 2^(x/HVL). N₀ is the incoming photon count, N the transmitted uncollided count and x the material thickness. μ is the linear attenuation coefficient; HVL is the half-value layer, the thickness that halves transmission. This illustration assumes a narrow monoenergetic beam and homogeneous material; it does not calculate shielding or clinical dose." : "N(x) = N₀ e^(−μx) = N₀ / 2^(x/CDA). N₀ est le nombre de photons entrants, N le nombre transmis sans diffusion et x l’épaisseur du matériau. μ est le coefficient d’atténuation linéique ; la CDA est l’épaisseur qui divise la transmission par deux. Cette illustration suppose un faisceau étroit monoénergétique et un matériau homogène ; elle ne calcule ni une protection ni une dose clinique.");
+    function go(c, x) { return function () { setv(cC, c); setv(cX, x); }; }
+    var bar = presets(box, [
+      [t2("Trois couches : 6 cm, CDA de 2 cm", "Three layers: 6 cm, 2 cm HVL"), go(2, 6), t2("Trois divisions par deux : 1/8 transmis, soit 125 photons sur 1000.", "Three halvings: 1/8 transmitted, or 125 photons out of 1000.")],
+      [t2("Une seule couche", "One layer"), go(2, 2), t2("Par définition de la CDA, la moitié passe.", "By definition of the HVL, half passes through.")],
+      [t2("Épaisseur doublée : 12 cm", "Thickness doubled: 12 cm"), go(2, 12), t2("Pas 1/16 mais 1/64 : deux fois plus de matière élève la fraction transmise au carré.", "Not 1/16 but 1/64: twice the material squares the transmitted fraction.")],
+      [t2("Dix couches", "Ten layers"), go(2, 20), t2("Environ 1 photon sur 1000 : c’est peu, mais ce n’est pas zéro.", "About 1 photon in 1000: little, but not zero.")],
+      [t2("Matériau peu atténuant", "Weakly attenuating material"), go(10, 6), t2("À épaisseur égale, une CDA de 10 cm laisse passer près des deux tiers du faisceau.", "For the same thickness, a 10 cm HVL lets through nearly two thirds of the beam.")]
+    ]);
     var W = 320, H = 150, sv = el("svg", { viewBox: "0 0 " + W + " " + H, "class": "ct-svg", role: "img", "aria-label": tr("Courbe d'atténuation et épaisseur traversée") }, box);
-    var cC = slider(tr("CDA (cm)"), 0.1, 10, 0.1, 2, function (v) { return f(v, 1) + " cm"; }),
+    var cC = slider(t2("Couche de demi-atténuation CDA (cm)", "Half-value layer HVL (cm)"), 0.1, 10, 0.1, 2, function (v) { return f(v, 1) + " cm"; }),
         cX = slider(tr("Épaisseur x (cm)"), 0, 30, 0.1, 6, function (v) { return f(v, 1) + " cm"; });
     var ctl = h("div", { "class": "ct-ctl" }); ctl.appendChild(cC.w); ctl.appendChild(cX.w); box.appendChild(ctl);
     var out = h("p", { "class": "ct-out", "aria-live": "polite" }); box.appendChild(out);
     var X = function (x) { return 34 + (W - 44) * x / 30; }, Y = function (v) { return 10 + (H - 34) * (1 - v); };
     el("line", { x1: 34, y1: Y(0), x2: W - 10, y2: Y(0), "class": "ct-ax" }, sv); el("line", { x1: 34, y1: Y(0), x2: 34, y2: Y(1), "class": "ct-ax" }, sv);
     [0, 0.5, 1].forEach(function (v) { el("text", { x: 28, y: Y(v) + 4, "class": "ct-axl", "text-anchor": "end" }, sv).textContent = f(v, 1); });
-    [0, 10, 20, 30].forEach(function (v) { el("text", { x: X(v), y: H - 8, "class": "ct-axl", "text-anchor": "middle" }, sv).textContent = v + " cm"; });
+    [0, 10, 20, 30].forEach(function (v) { el("text", { x: X(v), y: H - 8, "class": "ct-axl", "text-anchor": v === 30 ? "end" : "middle" }, sv).textContent = v + " cm"; });
+    el("text", { x: X(15), y: H - 8, "class": "ct-axl", "text-anchor": "middle" }, sv).textContent = t2("épaisseur", "thickness");
+    el("text", { x: 8, y: Y(0.5), "class": "ct-axl", "text-anchor": "middle", transform: "rotate(-90 8 " + Y(0.5) + ")" }, sv).textContent = t2("part transmise N/N₀", "transmitted N/N₀");
     var slab = el("rect", { y: Y(1), height: Y(0) - Y(1), x: X(0), "class": "ct-slab" }, sv), cur = el("path", { "class": "ct-l2" }, sv), pt = el("circle", { r: 4.5, "class": "ct-pt" }, sv);
     var ticks = el("g", {}, sv);
+    box.appendChild(h("p", { "class": "muted", style: "margin:6px 0 0" }, t2("Zone colorée : matériau traversé. Petits traits sur l’axe : une CDA de plus. Grille de points : 1000 photons entrants, en bleu ceux qui sortent.", "Shaded area: material crossed. Small ticks on the axis: one more HVL. Dot grid: 1000 incoming photons, those transmitted in blue.")));
     var dots = h("div", { "class": "ct-dots", "aria-hidden": "true" }); box.appendChild(dots);
     for (var k = 0; k < 1000; k++) dots.appendChild(h("i", {}));
+    seeAlso(box, [LINK.compton, LINK.wave]);
     function draw() {
       var c = +cC.i.value, x = +cX.i.value, mu = Math.LN2 / c, A = [], k;
       for (k = 0; k <= 120; k++) { var u = 30 * k / 120; A.push([X(u), Y(CT.atten(mu, u))]); }
@@ -183,9 +239,9 @@
       var sci = function (v) { var p = v.toExponential(2).split("e"), sup = { "-": "⁻", "0": "⁰", "1": "¹", "2": "²", "3": "³", "4": "⁴", "5": "⁵", "6": "⁶", "7": "⁷", "8": "⁸", "9": "⁹" };
         return p[0].replace(".", EN ? "." : ",") + " × 10" + p[1].replace("+", "").split("").map(function (d) { return sup[d]; }).join(""); };
       out.innerHTML = tr("μ = ln 2 / CDA = <b>") + f(mu, 3) + " cm⁻¹</b> · x = " + f(x / c, 2) + tr(" CDA · N/N₀ = <b>") + (r < 0.001 ? sci(r) : f(r, 4)) +
-        tr("</b> · sur 1000 photons, <b>") + (n === 0 ? tr("moins de 1") + tr("</b> sort") : n + tr("</b> sortent")) + (x / c >= 9.95 ? tr(" (10 CDA ≈ 1 sur 1000)") : "");
+        tr("</b> · sur 1000 photons, <b>") + (n === 0 ? tr("moins de 1") + tr("</b> sort") : n + tr("</b> sortent")) + (x / c >= 9.95 && x / c < 10.5 ? tr(" (10 CDA ≈ 1 sur 1000)") : "");
     }
-    [cC, cX].forEach(function (c) { c.i.addEventListener("input", draw); }); draw();
+    [cC, cX].forEach(function (c) { c.i.addEventListener("input", draw); c.i.addEventListener("input", bar.clear); }); draw(); bar.select(0);
   }
 
 
@@ -217,20 +273,32 @@
 
   function biot(box) {
     box.appendChild(h(ht(box), {}, tr("Refroidir un aliment : nombre de Biot, température moyenne et température à cœur")));
-    box.appendChild(h("p", { "class": "muted" }, tr("Bi = h·Lc/λ compare la résistance interne (Lc/λ) à la résistance de surface (1/h). Modèle simple, température uniforme : T(t) = T∞ + (Ti − T∞)·e<sup>−t/τ</sup>, τ = ρ·cp·Lc/h, où λ n'intervient pas. Courbe à cœur : conduction transitoire dans une plaque d'épaisseur 2·Lc (premier terme de la série), qui dépend de λ.")));
-    box.appendChild(h("p", { "class": "ct-note" }, EN?"h describes surface convection, λ thermal conductivity and Lc = V/A the characteristic length (volume divided by exchange area). Ti is the initial temperature and T∞ the surrounding temperature. ρ is density, cp specific heat capacity and τ the uniform-model time constant. Fo is the Fourier number: elapsed time compared with the internal diffusion timescale.":"h décrit la convection en surface, λ la conductivité thermique et Lc = V/A la longueur caractéristique (volume divisé par la surface d’échange). Ti est la température initiale et T∞ celle du milieu extérieur. ρ est la masse volumique, cp la capacité thermique massique et τ le temps caractéristique du modèle uniforme. Fo est le nombre de Fourier : le temps écoulé rapporté à l’échelle de diffusion interne.")); // READER-KEY
+    box.appendChild(h("p", { "class": "muted" }, t2("À Bi = 1, le modèle à température uniforme annonce 116 min pour rattraper 90 % de l’écart ; le cœur de l’aliment en demande 164. Le nombre de Biot dit si une seule température suffit : il compare la résistance de l’intérieur à celle de la surface.", "At Bi = 1, the uniform-temperature model announces 116 min to close 90% of the gap; the core of the food needs 164. The Biot number says whether one temperature is enough: it compares the resistance of the interior with that of the surface.")));
+    symbols(box, EN ? "Bi = h·Lc/λ. h describes surface convection, λ thermal conductivity and Lc = V/A the characteristic length (volume divided by exchange area). Ti is the initial temperature and T∞ the surrounding temperature. Uniform model: T(t) = T∞ + (Ti − T∞)·e^(−t/τ), τ = ρ·cp·Lc/h, with density ρ, specific heat capacity cp and time constant τ. Core and surface curves: transient conduction through a slab of thickness 2·Lc (first series term). Fo is the Fourier number: elapsed time compared with the internal diffusion timescale." : "Bi = h·Lc/λ. h décrit la convection en surface, λ la conductivité thermique et Lc = V/A la longueur caractéristique (volume divisé par la surface d’échange). Ti est la température initiale et T∞ celle du milieu extérieur. Modèle uniforme : T(t) = T∞ + (Ti − T∞)·e^(−t/τ), τ = ρ·cp·Lc/h, avec la masse volumique ρ, la capacité thermique massique cp et le temps caractéristique τ. Courbes à cœur et en surface : conduction transitoire dans une plaque d’épaisseur 2·Lc (premier terme de la série). Fo est le nombre de Fourier : le temps écoulé rapporté à l’échelle de diffusion interne.");
+    function go(hh, L, k, Ti, Te) { return function () { setv(cH, hh); setv(cL, L); setv(cK, k); setv(cTi, Ti); setv(cTe, Te); }; }
+    var bar = presets(box, [
+      [t2("Aliment épais : Bi = 1", "Thick food: Bi = 1"), go(25, 2, 0.5, 60, 2), t2("Le cœur reste nettement en retard sur la surface : une seule température tromperait.", "The core clearly lags behind the surface: a single temperature would mislead.")],
+      [t2("Tranche fine : Bi petit", "Thin slice: small Bi"), go(10, 0.5, 2, 60, 2), t2("Les courbes se confondent : la température reste presque uniforme et le modèle simple suffit.", "The curves merge: temperature stays nearly uniform and the simple model is adequate.")],
+      [t2("Seule la conductivité λ augmente", "Only conductivity λ increases"), go(25, 2, 2, 60, 2), t2("Le temps du modèle simple ne bouge pas : c’est juste, λ n’y intervient pas. Seul le cœur se rapproche.", "The simple-model time does not move: this is correct, since λ is absent from it. Only the core gets closer.")],
+      [t2("Air très brassé : h = 100", "Strong air flow: h = 100"), go(100, 2, 0.5, 60, 2), t2("La surface refroidit vite, mais le cœur est limité par la conduction : Bi = 4.", "The surface cools fast, but the core is limited by conduction: Bi = 4.")],
+      [t2("Gros morceau : Lc = 6 cm", "Large piece: Lc = 6 cm"), go(25, 6, 0.5, 60, 2), t2("Trois fois plus épais : le temps à cœur devient bien plus long que le modèle simple ne l’annonce.", "Three times thicker: the core time becomes much longer than the simple model announces.")],
+      [t2("Réchauffement : Ti sous T∞", "Warming: Ti below T∞"), go(25, 2, 0.5, 2, 20), t2("Mêmes équations, écart de signe opposé : l’aliment se réchauffe.", "Same equations, opposite gap: the food warms up.")]
+    ]);
     var W = 320, H = 150, sv = el("svg", { viewBox: "0 0 " + W + " " + H, "class": "ct-svg", role: "img", "aria-label": tr("Température moyenne et à cœur de l'aliment au cours du temps") }, box);
-    var cH = slider("h (W/m²·K)", 5, 300, 1, 25, function (v) { return f(v, 0); }),
-        cL = slider("Lc = V/A (cm)", 0.2, 10, 0.1, 2, function (v) { return f(v, 1) + " cm"; }),
-        cK = slider("λ (W/m·K)", 0.1, 2, 0.05, 0.5, function (v) { return f(v, 2); }),
-        cTi = slider("Ti (°C)", 0, 90, 1, 60, function (v) { return f(v, 0) + " °C"; }),
-        cTe = slider("T∞ (°C)", -30, 20, 1, 2, function (v) { return f(v, 0) + " °C"; });
+    var cH = slider(t2("Convection h (W/m²·K)", "Convection h (W/m²·K)"), 5, 300, 1, 25, function (v) { return f(v, 0); }),
+        cL = slider(t2("Longueur Lc = V/A (cm)", "Length Lc = V/A (cm)"), 0.2, 10, 0.1, 2, function (v) { return f(v, 1) + " cm"; }),
+        cK = slider(t2("Conductivité λ (W/m·K)", "Conductivity λ (W/m·K)"), 0.1, 2, 0.05, 0.5, function (v) { return f(v, 2); }),
+        cTi = slider(t2("Température initiale Ti", "Initial temperature Ti"), 0, 90, 1, 60, function (v) { return f(v, 0) + " °C"; }),
+        cTe = slider(t2("Milieu extérieur T∞", "Surroundings T∞"), -30, 20, 1, 2, function (v) { return f(v, 0) + " °C"; });
     var ctl = h("div", { "class": "ct-ctl" }); [cH, cL, cK, cTi, cTe].forEach(function (c) { ctl.appendChild(c.w); }); box.appendChild(ctl);
     var leg = h("p", { "class": "muted ct-leg" }, tr('<span class="sw2"></span> température uniforme (modèle simple) &nbsp; <span class="sw3"></span> à cœur (conduction) &nbsp; <span class="sw4"></span> en surface'));
+    leg.querySelector(".sw4").style.borderTop = "2px solid var(--muted)";
     box.appendChild(leg);
     var out = h("p", { "class": "ct-out", "aria-live": "polite" }); box.appendChild(out);
+    seeAlso(box, [LINK.congel, LINK.cop]);
     var rho = 1050, cp = 3600;
     var cur = el("path", { "class": "ct-l2" }, sv), core = el("path", { "class": "ct-l3" }, sv), surf = el("path", { "class": "ct-l4" }, sv), ax = el("g", {}, sv);
+    surf.style.strokeDasharray = "none"; surf.style.stroke = "var(--muted)"; surf.style.opacity = "1";
     function t90core(hh, lam, L, Ti, Te) {          // first time the core has covered 90 % of the gap
       var s = CT.slab(hh * L / lam), a = lam / (rho * cp);
       return Math.max(0, Math.log(s.C / 0.1) / (s.z * s.z)) * L * L / a;
@@ -243,46 +311,58 @@
       var A = [], B = [], C = [];
       for (var k = 0; k <= 120; k++) {
         var t = tmax * k / 120, c = CT.core(hh, lam, Lc, rho, cp, Ti, Te, t);
-        A.push([X(t), Y(CT.lumped(hh, lam, Lc, rho, cp, Ti, Te, t).T)]); B.push([X(t), Y(c.T)]); C.push([X(t), Y(c.Ts)]);
+        A.push([X(t), Y(CT.lumped(hh, lam, Lc, rho, cp, Ti, Te, t).T)]); if (c.fo >= 0.2) { B.push([X(t), Y(c.T)]); C.push([X(t), Y(c.Ts)]); }   // first series term: drawn only where it is valid
       }
       cur.setAttribute("d", path(A)); core.setAttribute("d", path(B)); surf.setAttribute("d", path(C));
       while (ax.firstChild) ax.removeChild(ax.firstChild);
       el("line", { x1: 36, y1: Y(lo), x2: W - 10, y2: Y(lo), "class": "ct-ax" }, ax);
       [hi, lo].forEach(function (T) { el("text", { x: 32, y: Y(T) + 4, "class": "ct-axl", "text-anchor": "end" }, ax).textContent = f(T, 0) + "°"; });
+      el("text", { x: 36, y: H - 6, "class": "ct-axl" }, ax).textContent = "0";
+      el("text", { x: (36 + W - 10) / 2, y: H - 6, "class": "ct-axl", "text-anchor": "middle" }, ax).textContent = t2("temps", "time");
       el("text", { x: W - 10, y: H - 6, "class": "ct-axl", "text-anchor": "end" }, ax).textContent = f(tmax / 3600, 1) + " h";
+      el("text", { x: 8, y: (10 + H - 24) / 2, "class": "ct-axl", "text-anchor": "middle", transform: "rotate(-90 8 " + ((10 + H - 24) / 2) + ")" }, ax).textContent = t2("température", "temperature");
       var ok = r0.bi < 0.1;
       out.innerHTML = "Bi = <b>" + f(r0.bi, 3) + tr("</b> · 90 % de l'écart rattrapé : <b>") + f(t90 / 60, 0) + tr(" min</b> selon le modèle simple, <b>") + f(tc90 / 60, 0) +
         tr(" min</b> à cœur.<br>") + (ok ? tr("Bi &lt; 0,1 : la température reste presque uniforme ; les deux courbes se confondent et le modèle simple suffit.")
         : tr("<b>Bi ≥ 0,1 : le cœur reste en retard sur la surface</b> ; le modèle simple sous-estime le temps à cœur. Augmentez λ ou diminuez Lc pour voir les courbes se rapprocher.")) +
-        tr(" (ρ = 1050 kg/m³, cp = 3,6 kJ/kg·K ; la courbe à cœur, premier terme de la série, n'est exacte qu'après le tout début du refroidissement, Fo &gt; 0,2.)");
+        t2(" (ρ = 1050 kg/m³, cp = 3,6 kJ/kg·K ; les courbes à cœur et en surface, premier terme de la série, ne sont tracées que là où elles sont exactes, Fo &gt; 0,2.)", " (ρ = 1050 kg/m³, cp = 3.6 kJ/kg·K; the core and surface curves, first series term, are drawn only where they are accurate, Fo &gt; 0.2.)");
       if (Ti === Te) out.innerHTML = tr("Aucun écart de température entre l'aliment et son milieu : il n'y a rien à refroidir.");
-      else if (Ti < Te) out.innerHTML = tr("<b>Ti est inférieure à T∞ : l'aliment se réchauffe</b> au lieu de refroidir ; lisez les temps ci-dessous comme des temps de réchauffement.<br>") + out.innerHTML;
+      else if (Ti < Te) out.innerHTML = t2("<b>Ti est inférieure à T∞ : l’aliment se réchauffe</b> au lieu de refroidir ; lisez les temps comme des temps de réchauffement.<br>", "<b>Ti is below T∞: the food warms up</b> instead of cooling; read the times as warming times.<br>") + out.innerHTML;
       box.classList.toggle("ct-warn", !ok);
     }
-    [cH, cL, cK, cTi, cTe].forEach(function (c) { c.i.addEventListener("input", draw); }); draw();
+    [cH, cL, cK, cTi, cTe].forEach(function (c) { c.i.addEventListener("input", draw); c.i.addEventListener("input", bar.clear); }); draw(); bar.select(0);
   }
 
   function congel(box) {
     box.appendChild(h(ht(box), {}, tr("Congeler : suivez le produit, du frais au congelé")));
-    box.appendChild(h("p", { "class": "muted" }, tr("Appuyez sur ▶ : le produit cède sa chaleur kilojoule par kilojoule. La courbe donne sa température selon l'énergie déjà extraite par kilo : ") +
-      tr("trois étapes, Δh = cp,frais·(Ti − Tc) + w·g·L + cp,congelé·(Tc − Tf). w : teneur en eau, g : part de l'eau qui gèle (toute l'eau ne gèle pas), L = 333 kJ/kg.")));
-    box.appendChild(h("p", { "class": "ct-note" }, EN?"Δh is energy removed per unit mass. Ti is the initial temperature, Tc the onset of freezing and Tf the final temperature; cp,fresh and cp,frozen are the specific heat capacities before and after freezing. L is the latent heat per kilogram of frozen water. For mass m, average refrigeration power P is total energy divided by duration Δt.":"Δh est l’énergie retirée par unité de masse. Ti est la température initiale, Tc celle du début de congélation et Tf la température finale ; cp,frais et cp,congelé sont les capacités thermiques massiques avant et après congélation. L est la chaleur latente par kilogramme d’eau gelée. Pour une masse m, la puissance frigorifique moyenne P est l’énergie totale divisée par la durée Δt.")); // READER-KEY
+    box.appendChild(h("p", { "class": "muted" }, t2("Dans cet exemple, geler l’eau représente 72 % de l’énergie à retirer : c’est ce que le calcul mcΔT oublie. Pour 500 kg en 4 h, la puissance moyenne atteint 10,9 kW. Appuyez sur ▶ : le produit cède sa chaleur, et sa température s’arrête pendant le gel.", "In this example, freezing the water accounts for 72% of the energy to remove: this is what the mcΔT calculation leaves out. For 500 kg in 4 h, the average power reaches 10.9 kW. Press ▶: the product releases its heat, and its temperature stops during freezing.")));
+    symbols(box, EN ? "Δh = cp,fresh·(Ti − Tc) + w·g·L + cp,frozen·(Tc − Tf) is energy removed per unit mass. Ti is the initial temperature, Tc the onset of freezing and Tf the final temperature; cp,fresh and cp,frozen are the specific heat capacities before and after freezing. w is water content and g the fraction of water that freezes (not all water freezes). L = 333 kJ/kg is the latent heat per kilogram of frozen water. For mass m, average refrigeration power P is total energy divided by duration Δt." : "Δh = cp,frais·(Ti − Tc) + w·g·L + cp,congelé·(Tc − Tf) est l’énergie retirée par unité de masse. Ti est la température initiale, Tc celle du début de congélation et Tf la température finale ; cp,frais et cp,congelé sont les capacités thermiques massiques avant et après congélation. w est la teneur en eau et g la part de l’eau qui gèle (toute l’eau ne gèle pas). L = 333 kJ/kg est la chaleur latente par kilogramme d’eau gelée. Pour une masse m, la puissance frigorifique moyenne P est l’énergie totale divisée par la durée Δt.");
+    function go(m, w, gg, ti, tc, tf, dt) { return function () { stop(); u = 1; setv(cM, m); setv(cW, w); setv(cG, gg); setv(cTi, ti); setv(cTc, tc); setv(cTf, tf); setv(cDt, dt); }; }
+    var bar0 = presets(box, [
+      [t2("500 kg en 4 h, 75 % d’eau", "500 kg in 4 h, 75% water"), go(500, 0.75, 0.9, 15, -1.5, -18, 4), t2("La chaleur latente domine le bilan.", "Latent heat dominates the balance.")],
+      [t2("Deux fois plus de temps : 8 h", "Twice the time: 8 h"), go(500, 0.75, 0.9, 15, -1.5, -18, 8), t2("L’énergie à retirer n’a pas bougé, c’est juste : seule la puissance moyenne est divisée par deux.", "The energy to remove has not moved, which is correct: only the average power is halved.")],
+      [t2("Deux fois moins de masse", "Half the mass"), go(250, 0.75, 0.9, 15, -1.5, -18, 4), t2("Δh est par kilo et ne change pas : seule la puissance est divisée par deux.", "Δh is per kilogram and does not change: only the power is halved.")],
+      [t2("Produit pauvre en eau : 50 %", "Low-water product: 50%"), go(500, 0.5, 0.9, 15, -1.5, -18, 4), t2("Moins d’eau à geler : le palier raccourcit et la puissance baisse.", "Less water to freeze: the plateau shortens and the power falls.")],
+      [t2("Surgélation à −40 °C", "Deep-freezing to −40 °C"), go(500, 0.75, 0.9, 15, -1.5, -40, 4), t2("Descendre plus bas ajoute peu : le produit congelé a une capacité thermique faible et la chaleur latente reste en tête.", "Going lower adds little: the frozen product has a low heat capacity and latent heat stays ahead.")]
+    ]);
     var W = 640, H = 250, L0 = 60, R0 = 150, T0 = 16, B0 = 46;
-    var sv = el("svg", { viewBox: "0 0 " + W + " " + H, "class": "ct-svg ct-wide", role: "img", "aria-label": tr("Température du produit selon l'énergie extraite, et le produit qui gèle") }, box);
-    var play = h("button", { type: "button", "class": "ct-btn" }, tr("▶ Congeler"));
+    var play = h("button", { type: "button", "class": "ct-btn" }, tr("▶ Congeler")); box.appendChild(play);
+    var sv = el("svg", { viewBox: "0 0 " + W + " " + H, "class": "ct-svg ct-wide", role: "img", "aria-label": tr("Température du produit selon l'énergie extraite, et le produit qui gèle"), style: "max-height:340px" }, box);
     var cM = slider(tr("Masse (kg)"), 10, 2000, 10, 500, function (v) { return f(v, 0) + " kg"; }),
         cW = slider(tr("Teneur en eau w"), 0.5, 0.95, 0.01, 0.75, function (v) { return f(v * 100, 0) + PC; }),
         cG = slider(tr("Part de l'eau gelée g"), 0.6, 1, 0.01, 0.9, function (v) { return f(v * 100, 0) + PC; }),
-        cTi = slider("Ti (°C)", 0, 40, 1, 15, function (v) { return f(v, 0) + " °C"; }),
+        cTi = slider(t2("Température initiale Ti", "Initial temperature Ti"), 0, 40, 1, 15, function (v) { return f(v, 0) + " °C"; }),
         cTc = slider(tr("Début de congélation Tc (°C)"), -5, 0, 0.1, -1.5, function (v) { return f(v, 1) + " °C"; }),
         cTf = slider(tr("Température finale Tf (°C)"), -40, -5, 1, -18, function (v) { return f(v, 0) + " °C"; }),
         cDt = slider(tr("Durée Δt (h)"), 0.5, 24, 0.5, 4, function (v) { return f(v, 1) + " h"; });
-    var ctl = h("div", { "class": "ct-ctl" }); ctl.appendChild(play); [cM, cW, cG, cTi, cTc, cTf, cDt].forEach(function (c) { ctl.appendChild(c.w); }); box.appendChild(ctl);
+    var ctl = h("div", { "class": "ct-ctl" }); [cM, cW, cG, cTi, cTc, cTf, cDt].forEach(function (c) { ctl.appendChild(c.w); }); box.appendChild(ctl);
     var bar = h("div", { "class": "ct-stack", "aria-hidden": "true" }); box.appendChild(bar);
     var leg = h("p", { "class": "muted ct-leg3" }, tr('<span class="k1"></span>1. refroidir le produit frais &nbsp; <span class="k2"></span>2. geler l\'eau (chaleur latente) &nbsp; <span class="k3"></span>3. refroidir le produit congelé'));
     box.appendChild(leg);
     var out = h("p", { "class": "ct-out", "aria-live": "polite" }); box.appendChild(out);
+    seeAlso(box, [LINK.biot, LINK.cop]);
     var u = 1, timer = null, r, Ti, Tc, Tf, g;
+    function stop() { if (timer) { clearInterval(timer); timer = null; } play.textContent = tr("▶ Congeler"); }
     function T(e) {                       // temperature after extracting e kJ/kg (the three straight pieces of the model)
       if (e <= r.a) return Ti - e / 3.6;
       if (e <= r.a + r.b) return Tc;
@@ -295,10 +375,12 @@
       while (sv.firstChild) sv.removeChild(sv.firstChild);
       [[0, r.a, "#8a96a3"], [r.a, r.a + r.b, "#07569a"], [r.a + r.b, r.dh, "#ad5200"]].forEach(function (s) {     // shaded steps
         el("rect", { x: X(s[0]), y: T0, width: Math.max(0, X(s[1]) - X(s[0])), height: H - T0 - B0, fill: s[2], opacity: 0.07 }, sv); });
-      el("line", { x1: L0, x2: W - R0, y1: Y(0), y2: Y(0), stroke: "#9fb0c0", "stroke-dasharray": "3 3" }, sv);
+      el("line", { x1: L0, x2: W - R0, y1: Y(0), y2: Y(0), stroke: "#9fb0c0" }, sv);
       el("text", { x: W - R0 + 4, y: Y(0) + 4, "class": "ct-axl" }, sv).textContent = "0 °C";
       [hi, Tc, lo].forEach(function (t) { el("text", { x: L0 - 6, y: Y(t) + 4, "class": "ct-axl", "text-anchor": "end" }, sv).textContent = f(t, t === Tc ? 1 : 0) + "°"; });
-      [0, r.a, r.a + r.b, r.dh].forEach(function (e, k) { el("text", { x: X(e), y: H - B0 + 16, "class": "ct-axl", "text-anchor": k === 3 ? "end" : "middle" }, sv).textContent = f(e, 0); });
+      var gap = SMALL ? 70 : 28, lastX = -1e9;
+      [0, r.a, r.a + r.b].forEach(function (e) { if (X(e) - lastX < gap || (e && X(r.dh) - X(e) < gap)) return; lastX = X(e); el("text", { x: X(e), y: H - B0 + 16, "class": "ct-axl", "text-anchor": "middle" }, sv).textContent = f(e, 0); });
+      el("text", { x: X(r.dh), y: H - B0 + 16, "class": "ct-axl", "text-anchor": "end" }, sv).textContent = f(r.dh, 0);
       el("text", { x: (L0 + W - R0) / 2, y: H - 8, "class": "ct-axl", "text-anchor": "middle" }, sv).textContent = tr("énergie déjà extraite (kJ par kg de produit)");
       el("text", { x: 14, y: (T0 + H - B0) / 2, "class": "ct-axl", "text-anchor": "middle", transform: "rotate(-90 14 " + ((T0 + H - B0) / 2) + ")" }, sv).textContent = SMALL ? tr("température (°C)") : tr("température du produit (°C)");
       var e1 = u * r.dh, pts = [];
@@ -334,21 +416,30 @@
       u = 0; play.textContent = "❚❚ Pause";
       timer = setInterval(function () { u = Math.min(1, u + 0.006); draw(); if (u >= 1) { clearInterval(timer); timer = null; play.textContent = tr("▶ Recommencer"); } }, 30);
     });
-    [cM, cW, cG, cTi, cTc, cTf, cDt].forEach(function (c) { c.i.addEventListener("input", draw); }); draw();
+    [cM, cW, cG, cTi, cTc, cTf, cDt].forEach(function (c) { c.i.addEventListener("input", draw); c.i.addEventListener("input", bar0.clear); }); draw(); bar0.select(0);
   }
 
   function cop(box) {
     box.appendChild(h(ht(box), {}, tr("Machine frigorifique : combien de travail pour extraire 1 kJ de chaleur au froid ?")));
-    box.appendChild(h("p", { "class": "muted" }, tr("Une machine frigorifique pompe la chaleur du côté froid (évaporateur, Tf) vers le côté chaud (condenseur, Tc), en dépensant du travail W. ") +
-      tr("Le COP compare la chaleur extraite au travail : COP = Q<sub>f</sub>/W. La borne de Carnot, COP<sub>C</sub> = Tf/(Tc − Tf) en kelvins, est le meilleur COP possible ; aucune machine réelle ne l'atteint.")));
-    box.appendChild(h("p", { "class": "ct-note" }, EN?"COP means coefficient of performance. In the energy balance, Qcold is heat extracted from the cold side, Qhot heat rejected to the hot side and W work supplied. They are amounts of energy, not temperatures; the reservoir temperatures are converted to kelvins for the Carnot formula.":"COP signifie coefficient de performance. Dans le bilan, Qf est la chaleur extraite au froid, Qc la chaleur rejetée au chaud et W le travail fourni. Ce sont des énergies, pas des températures ; les températures des sources sont converties en kelvins pour la formule de Carnot.")); // READER-KEY
-    box.appendChild(h("p", {}, tr("La courbe montre la source froide de −40 à +10 °C, pour la source chaude choisie. Par défaut : froid −10 °C, chaud +40 °C, soit 263,15 K et 313,15 K : COP maximal = 263,15/50 = 5,26. Cela signifie au plus 5,26 J extraits pour 1 J de travail. Autre couple de sources : froid −40 °C, chaud +20 °C → 233,15/60 = 3,89. Les curseurs de ce graphique gardent la source chaude entre +20 et +60 °C.")));
+    box.appendChild(h("p", { "class": "muted" }, t2("Entre −10 °C et +40 °C, une machine frigorifique extrait au mieux 5,26 J de chaleur par joule de travail ; entre −40 °C et +20 °C, au mieux 3,89 J. Plus l’écart de température grandit, plus le froid coûte cher. Cette limite de Carnot est un maximum : aucune machine réelle ne l’atteint.", "Between −10 °C and +40 °C, a refrigerator extracts at best 5.26 J of heat per joule of work; between −40 °C and +20 °C, at best 3.89 J. The wider the temperature gap, the more cold costs. This Carnot limit is a maximum: no real machine attains it.")));
+    symbols(box, EN ? "COP means coefficient of performance: COP = Qcold/W. The Carnot limit is COPC = Tcold/(Thot − Tcold) in kelvins. In the energy balance, Qcold is heat extracted from the cold side (evaporator), Qhot heat rejected to the hot side (condenser) and W work supplied. They are amounts of energy, not temperatures; the reservoir temperatures are converted to kelvins for the Carnot formula." : "COP signifie coefficient de performance : COP = Qf/W. La limite de Carnot vaut COPC = Tf/(Tc − Tf) en kelvins, avec Tf la source froide et Tc la source chaude. Dans le bilan, Qf est la chaleur extraite au froid (évaporateur), Qc la chaleur rejetée au chaud (condenseur) et W le travail fourni. Ce sont des énergies, pas des températures ; les températures des sources sont converties en kelvins pour la formule de Carnot.");
+    function go(tf, tc) { return function () { setv(cF, tf); setv(cC, tc); }; }
+    var bar = presets(box, [
+      [t2("Froid −10 °C, chaud +40 °C", "Cold −10 °C, hot +40 °C"), go(-10, 40), t2("263,15/50 = 5,26 : au plus 5,26 J extraits pour 1 J de travail.", "263.15/50 = 5.26: at most 5.26 J removed per 1 J of work.")],
+      [t2("Froid −40 °C, chaud +20 °C", "Cold −40 °C, hot +20 °C"), go(-40, 20), t2("233,15/60 = 3,89 : un écart plus grand, donc plus de travail pour la même chaleur.", "233.15/60 = 3.89: a wider gap, so more work for the same heat.")],
+      [t2("Conserver : 0 °C, local à +30 °C", "Chill: 0 °C, room at +30 °C"), go(0, 30), t2("Un écart de 30 K seulement : le COP maximal dépasse 9.", "A gap of only 30 K: the maximum COP exceeds 9.")],
+      [t2("Surgeler : −30 °C, local à +30 °C", "Deep-freeze: −30 °C, room at +30 °C"), go(-30, 30), t2("Même local, écart doublé : le COP maximal tombe à environ 4.", "Same room, gap doubled: the maximum COP falls to about 4.")],
+      [t2("Écart minimal : +10 °C et +20 °C", "Smallest gap: +10 °C and +20 °C"), go(10, 20), t2("Quand l’écart tend vers zéro, la limite s’envole : c’est mathématiquement juste, pas un appareil réel.", "As the gap tends to zero, the limit soars: this is mathematically correct, not a real appliance.")],
+      [t2("Écart maximal : −40 °C et +60 °C", "Largest gap: −40 °C and +60 °C"), go(-40, 60), t2("100 K d’écart : le COP maximal n’est plus que de 2,33.", "A 100 K gap: the maximum COP is only 2.33.")]
+    ]);
+    box.appendChild(h("p", { "class": "muted", style: "margin:4px 0" }, t2("Courbe : COP maximal selon la source froide, de −40 à +10 °C, pour la source chaude choisie. Point orange : votre réglage. À droite : bilan pour 1 kJ extrait, largeurs proportionnelles aux énergies.", "Curve: maximum COP against the cold side, from −40 to +10 °C, for the chosen hot side. Orange dot: your setting. Right: balance for 1 kJ removed, widths proportional to energies.")));
     var W = 640, H = 230, L0 = 60, R0 = 240, T0 = 14, B0 = 46;
-    var sv = el("svg", { viewBox: "0 0 " + W + " " + H, "class": "ct-svg ct-wide", role: "img", "aria-label": tr("COP de Carnot selon la température d'évaporation, et bilan d'énergie") }, box);
+    var sv = el("svg", { viewBox: "0 0 " + W + " " + H, "class": "ct-svg ct-wide", role: "img", "aria-label": tr("COP de Carnot selon la température d'évaporation, et bilan d'énergie"), style: "max-height:320px" }, box);
     var cF = slider(tr("Source froide Tf (°C)"), -40, 10, 1, -10, function (v) { return f(v, 0) + " °C"; }),
         cC = slider(tr("Source chaude Tc (°C)"), 20, 60, 1, 40, function (v) { return f(v, 0) + " °C"; });
     var ctl = h("div", { "class": "ct-ctl" }); ctl.appendChild(cF.w); ctl.appendChild(cC.w); box.appendChild(ctl);
     var out = h("p", { "class": "ct-out", "aria-live": "polite" }); box.appendChild(out);
+    seeAlso(box, [LINK.engine, LINK.congel, LINK.biot]);
     var plotMax = 15;
     var X = function (t) { return L0 + (W - L0 - R0) * (t + 40) / 50; }, Y = function (c) { return T0 + (H - T0 - B0) * (1 - c / plotMax); };
     function draw() {
@@ -379,11 +470,11 @@
       el("rect", { x: bx + 75 - wc / 2, y: 38, width: wc, height: 40, fill: "#ad5200", opacity: .7 }, sv);
       el("text", SMALL ? { x: bx + 75 - wc / 2 - 6, y: 62, "class": "ct-axl", "text-anchor": "end" } : { x: bx + 75 + wc / 2 + 6, y: 62, "class": "ct-axl" }, sv).textContent = tr("Qc = ") + f(1 + w1, 2) + " kJ";
       el("rect", { x: bx - 40, y: 95 - ww / 2, width: 85, height: ww, fill: "#3c8d5a", opacity: .8 }, sv);
-      el("text", SMALL ? { x: bx + 28, y: 95 + ww / 2 + 18, "class": "ct-axl", "text-anchor": "end" } : { x: bx - 40, y: 95 + ww / 2 + 14, "class": "ct-axl" }, sv).textContent = tr("travail W = ") + f(w1, 2) + " kJ";
+      el("text", { x: bx + 40, y: 95 - ww / 2 - 6, "class": "ct-axl", "text-anchor": "end" }, sv).textContent = (SMALL ? "W = " : tr("travail W = ")) + f(w1, 2) + " kJ";
       out.innerHTML = tr("COP de Carnot = <b>") + f(c, 2) + tr("</b> : pour extraire 1 kJ au froid, il faut au moins <b>") + f(w1, 2) + tr(" kJ de travail</b>, et le condenseur rejette ") + f(1 + w1, 2) +
-        tr(" kJ au chaud. Écart Tc − Tf = ") + f(tc - tf, 0) + tr(" K : plus l'écart grandit, plus la flèche verte (travail) s'épaissit. Surgeler coûte donc plus cher que conserver au frais.");
+        tr(" kJ au chaud. Écart Tc − Tf = ") + f(tc - tf, 0) + t2(" K : plus l’écart grandit, plus la bande verte (travail) s’épaissit. Surgeler coûte donc plus cher que conserver au frais.", " K: as the gap grows, the green band (work) gets thicker. Deep-freezing therefore requires more work per unit of heat removed than chilled storage.");
     }
-    [cF, cC].forEach(function (c) { c.i.addEventListener("input", draw); }); draw();
+    [cF, cC].forEach(function (c) { c.i.addEventListener("input", draw); c.i.addEventListener("input", bar.clear); }); draw(); bar.select(0);
   }
 
 
@@ -424,24 +515,34 @@
 
   function regr(box) {
     box.appendChild(h(ht(box), {}, tr("Corrélation et régression : déplacez un point")));
-    box.appendChild(h("p", { "class": "muted" }, tr("Douze mesures (points bleus) et un point que vous déplacez (orange). r = cov(x, y)/(s<sub>x</sub>·s<sub>y</sub>), droite des moindres carrés y = b<sub>0</sub> + b<sub>1</sub>·x, test de r : t = r·√(n − 2)/√(1 − r²) à n − 2 degrés de liberté.")));
-    box.appendChild(h("p", { "class": "ct-note" }, EN?"x and y are the two coordinates of a point. r is their Pearson correlation, cov their covariance, and sx and sy their standard deviations. b₁ is the fitted slope and b₀ the intercept. n is the number of included points and t the zero-correlation test statistic. R² describes variation explained by this line; the p-value establishes neither causality nor future predictive performance.":"x et y sont les deux coordonnées d’un point. r est leur corrélation de Pearson, cov leur covariance et sx et sy leurs écarts-types. b₁ est la pente ajustée et b₀ l’ordonnée à l’origine. n est le nombre de points inclus et t la statistique du test de corrélation nulle. R² décrit la variation expliquée par cette droite ; la p-value n’établit ni causalité ni performance prédictive future.")); // READER-KEY
-    var W = 320, H = 210, sv = el("svg", { viewBox: "0 0 " + W + " " + H, "class": "ct-svg", role: "img", "aria-label": tr("Nuage de points et droite de régression") }, box);
+    box.appendChild(h("p", { "class": "muted" }, t2("Un seul point peut changer la droite et le coefficient r de tout un nuage, à condition d’être loin en x et hors de la tendance. Douze points d’exemple restent fixes ; déplacez le point orange.", "One point can change the line and the coefficient r of a whole scatter, provided it lies far away in x and off the trend. Twelve example points stay fixed; move the orange point.")));
+    symbols(box, EN ? "x and y are the two coordinates of a point. r = cov(x, y)/(sx·sy) is their Pearson correlation, cov their covariance, and sx and sy their standard deviations. The least-squares line is y = b₀ + b₁·x, with slope b₁ and intercept b₀. n is the number of included points and t = r·√(n − 2)/√(1 − r²) the zero-correlation test statistic, with n − 2 degrees of freedom (df). r² describes variation explained by this line; the p-value establishes neither causality nor future predictive performance." : "x et y sont les deux coordonnées d’un point. r = cov(x, y)/(sx·sy) est leur corrélation de Pearson, cov leur covariance et sx et sy leurs écarts-types. La droite des moindres carrés est y = b₀ + b₁·x, de pente b₁ et d’ordonnée à l’origine b₀. n est le nombre de points inclus et t = r·√(n − 2)/√(1 − r²) la statistique du test de corrélation nulle, à n − 2 degrés de liberté (ddl). r² décrit la variation expliquée par cette droite ; la p-value n’établit ni causalité ni performance prédictive future.");
     var BX = [1.2, 1.9, 2.4, 3.1, 3.6, 4.2, 4.9, 5.5, 6.1, 6.8, 7.4, 8.0],
         BY = [2.6, 2.1, 3.5, 3.2, 4.4, 3.9, 5.1, 4.6, 5.9, 5.4, 6.6, 6.2];
+    var r0 = CT.regress(BX, BY);
+    function go(x, y, on) { return function () { setv(cX, x); setv(cY, y); chk.checked = on; chk.dispatchEvent(new Event("change")); }; }
+    var bar = presets(box, [
+      [t2("Loin en x, hors tendance", "Far in x, off the trend"), go(9.5, 1, true), t2("Le point tire la droite vers lui : la pente et r chutent. C’est l’effet de levier.", "The point pulls the line towards it: the slope and r fall. This is leverage.")],
+      [t2("Loin en x, dans la tendance", "Far in x, on the trend"), go(9.5, Math.round(10 * (r0.b0 + 9.5 * r0.b1)) / 10, true), t2("Même éloignement, mais il confirme la relation : la droite ne bouge presque pas et r monte. Éloigné ne veut pas dire influent.", "Same distance, but it confirms the relationship: the line hardly moves and r rises. Far away does not mean influential.")],
+      [t2("Au centre, hors tendance", "At the center, off the trend"), go(4.5, 9, true), t2("Grand écart vertical, peu de levier : la pente bouge peu, mais r baisse quand même.", "Large vertical gap, little leverage: the slope barely moves, but r still falls.")],
+      [t2("Sans le point orange", "Without the orange point"), go(9.5, 1, false), t2("Les douze points seuls : c’est la droite grise de référence.", "The twelve points alone: this is the grey reference line.")]
+    ]);
+    var W = 320, H = 210, sv = el("svg", { viewBox: "0 0 " + W + " " + H, "class": "ct-svg", role: "img", "aria-label": tr("Nuage de points et droite de régression"), style: "max-height:340px" }, box);
     var cX = slider(tr("x du point orange"), 0, 10, 0.1, 9.5, function (v) { return f(v, 1); }),
         cY = slider(tr("y du point orange"), 0, 10, 0.1, 1, function (v) { return f(v, 1); }),
         cOn = h("label", { "class": "ct-sl" }, tr('<span>Inclure le point orange</span>'));
     var chk = h("input", { type: "checkbox", checked: "" }); cOn.appendChild(chk);
     var ctl = h("div", { "class": "ct-ctl" }); [cX, cY].forEach(function (c) { ctl.appendChild(c.w); }); ctl.appendChild(cOn); box.appendChild(ctl);
+    box.appendChild(h("p", { "class": "muted", style: "margin:6px 0" }, t2('<span style="color:var(--muted);font-weight:700">━</span> droite sans le point orange &nbsp; <span style="color:var(--link);font-weight:700">━</span> droite avec le point orange', '<span style="color:var(--muted);font-weight:700">━</span> line without the orange point &nbsp; <span style="color:var(--link);font-weight:700">━</span> line with the orange point')));
     var out = h("p", { "class": "ct-out", "aria-live": "polite" }); box.appendChild(out);
+    seeAlso(box, [LINK.corr, LINK.interv]);
     var X = function (v) { return 30 + (W - 40) * v / 10; }, Y = function (v) { return H - 24 - (H - 34) * v / 10; };
     el("line", { x1: 30, y1: Y(0), x2: W - 10, y2: Y(0), "class": "ct-ax" }, sv); el("line", { x1: 30, y1: Y(0), x2: 30, y2: Y(10), "class": "ct-ax" }, sv);
     [0, 5, 10].forEach(function (v) { el("text", { x: X(v), y: H - 8, "class": "ct-axl", "text-anchor": "middle" }, sv).textContent = v; el("text", { x: 24, y: Y(v) + 4, "class": "ct-axl", "text-anchor": "end" }, sv).textContent = v; });
+    el("text", { x: X(7.5), y: H - 8, "class": "ct-axl", "text-anchor": "middle" }, sv).textContent = "x"; el("text", { x: 12, y: Y(7.5), "class": "ct-axl" }, sv).textContent = "y";
     var base = el("line", { "class": "ct-l1" }, sv), line = el("line", { "class": "ct-l2" }, sv);
-    BX.forEach(function (x, i) { el("circle", { cx: X(x), cy: Y(BY[i]), r: 4, "class": "ct-dot" }, sv); });
+    BX.forEach(function (x, i) { var c = el("circle", { cx: X(x), cy: Y(BY[i]), r: 4, "class": "ct-dot" }, sv); c.style.fill = "var(--ink)"; c.style.fillOpacity = ".75"; });
     var pt = el("circle", { r: 6, "class": "ct-pt" }, sv);
-    var r0 = CT.regress(BX, BY);
     base.setAttribute("x1", X(0)); base.setAttribute("x2", X(10)); base.setAttribute("y1", Y(r0.b0)); base.setAttribute("y2", Y(r0.b0 + 10 * r0.b1));
     function draw() {
       var on = chk.checked, px = +cX.i.value, py = +cY.i.value;
@@ -449,11 +550,13 @@
       line.setAttribute("x1", X(0)); line.setAttribute("x2", X(10)); line.setAttribute("y1", Y(r.b0)); line.setAttribute("y2", Y(r.b0 + 10 * r.b1));
       pt.setAttribute("cx", X(px)); pt.setAttribute("cy", Y(py)); pt.style.opacity = on ? 1 : 0.25;
       var pv = r.p < 1e-4 ? r.p.toExponential(1).replace(".", EN ? "." : ",") : f(r.p, 4);
-      out.innerHTML = "n = " + r.n + " · r = <b>" + f(r.r, 3) + "</b> · r² = <b>" + f(r.r2, 3) + tr("</b> · droite y = ") + f(r.b0, 2) + " + " + f(r.b1, 3) + "·x<br>t = " + f(r.t, 2) +
+      var slope = (r.b1 < 0 ? " − " : " + ") + f(Math.abs(r.b1), 3);
+      var inside = px >= BX[0] && px <= BX[BX.length - 1];
+      out.innerHTML = "n = " + r.n + " · r = <b>" + f(r.r, 3) + "</b> · r² = <b>" + f(r.r2, 3) + tr("</b> · droite y = ") + f(r.b0, 2) + slope + "·x<br>t = " + f(r.t, 2) +
         " (" + (r.n - 2) + tr(" ddl) · p = <b>") + pv + "</b> " + (r.p < 0.05 ? tr("(lien significatif au risque 5 %)") : tr("(pas significatif au risque 5 %)")) +
-        tr("<br>Sans le point orange : r = ") + f(r0.r, 3) + tr(". Un seul point loin en x tire la droite (bras de levier) : regardez toujours le nuage avant de conclure.");
+        tr("<br>Sans le point orange : r = ") + f(r0.r, 3) + t2(", pente = ", ", slope = ") + f(r0.b1, 3) + (on ? (inside ? t2(". Ce point reste dans l’étendue des x : il a moins de levier sur la pente. Regardez toujours le nuage avant de conclure.", ". This point stays within the range of x: it has less leverage on the slope. Always inspect the scatter plot before drawing conclusions.") : t2(". Ce point est au-delà des autres x : il a beaucoup de levier sur la pente. Regardez toujours le nuage avant de conclure.", ". This point lies beyond the other x values: it has strong leverage on the slope. Always inspect the scatter plot before drawing conclusions.")) : ".");
     }
-    [cX, cY].forEach(function (c) { c.i.addEventListener("input", draw); }); chk.addEventListener("change", draw); draw();
+    [cX, cY].forEach(function (c) { c.i.addEventListener("input", draw); c.i.addEventListener("input", bar.clear); }); chk.addEventListener("change", draw); chk.addEventListener("change", bar.clear); draw(); bar.select(0);
   }
 
   var T = { roc: roc, normal: normal, atten: atten, biot: biot, congel: congel, cop: cop, regr: regr };
