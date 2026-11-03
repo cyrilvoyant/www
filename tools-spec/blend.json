@@ -21,7 +21,7 @@
   "en": "BLEND is a convex combination of persistence and cyclic persistence. See the weights computed on a time series."
  },
  "summary": {
-  "fr": "Deux références gratuites, et leur mélange fait mieux que chacune : sur la puissance PV de Palaiseau à 1 heure, BLEND fait 17 % de RMSE en moins que la meilleure des deux. Son principe : un poids pour chaque moment du cycle.",
+  "fr": "Deux références gratuites (la persistance, qui recopie la dernière valeur connue, et la persistance cyclique, qui recopie la valeur d’une période plus tôt, 24 h pour le solaire), et leur mélange fait mieux que chacune : sur la puissance photovoltaïque (PV) de Palaiseau à 1 heure d’horizon, BLEND fait 17 % de RMSE…",
   "en": "With a clear-sky reference, CLIPER on x/CS beats BLEND on x/CS at all horizons across all test days combined, by 1 to 2 %, and it is simpler. BLEND wins only on stable days, a class known only after the fact."
  },
  "parameters": [
@@ -35,7 +35,7 @@
    "default": 1,
    "label": {
     "fr": "Horizon h",
-    "en": "Horizon h steps"
+    "en": "Horizon h (how far ahead) steps"
    },
    "meaning": {
     "fr": "Nombre de pas entre la dernière valeur connue et la valeur à prévoir.",
@@ -57,7 +57,7 @@
    "default": 7,
    "label": {
     "fr": "Phase",
-    "en": "Phase of the origin"
+    "en": "Phase of the origin (position in the cycle)"
    },
    "meaning": {
     "fr": "Le moment du cycle où part la prévision : ici l’heure de la journée. BLEND a un poids par phase.",
@@ -79,7 +79,7 @@
    "default": 0.5,
    "label": {
     "fr": "Votre λ",
-    "en": "Your λ"
+    "en": "Your λ (weight of the latest value, 0 to 1)"
    },
    "meaning": {
     "fr": "Le poids de la dernière valeur. λ = 1 : persistance. λ = 0 : persistance cyclique. Entre les deux : un mélange.",
@@ -318,6 +318,7 @@
    "kind": "metric"
   }
  ],
+ "outputs_en_page": [],
  "formulas": [],
  "definitions": [
   {
@@ -479,6 +480,7 @@
   "blend"
  ],
  "extraction": {
+  "source_hash": "ce2459ddec4047ca",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#try-it"

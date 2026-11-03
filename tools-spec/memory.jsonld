@@ -44,7 +44,6 @@
    "propertyID": "phi",
    "name": "Memory",
    "alternateName": "Mémoire",
-   "description": "The correlation between two neighbouring values of the noise. 0: none. 1: total.",
    "value": 0.7,
    "minValue": 0,
    "maxValue": 1,

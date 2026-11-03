@@ -21,8 +21,8 @@
   "en": "Convert a standard score to a probability, or vice versa."
  },
  "summary": {
-  "fr": "Dans toute loi normale, environ 95 % des valeurs se trouvent à moins de 1,96 écart-type de la moyenne. Vous passez d’une valeur à une probabilité, et d’une probabilité à un seuil, sans table.",
-  "en": "In any normal distribution, about 95% of values lie within 1.96 standard deviations of the mean. You go from a value to a probability, and from a probability to a threshold, without a table."
+  "fr": "Dans toute loi normale (la courbe en cloche), environ 95 % des valeurs se trouvent à moins de 1,96 écart-type (la dispersion typique) de la moyenne. Vous passez d’une valeur à une probabilité, et d’une probabilité à un seuil, sans table, grâce au score z : le nombre d’écarts-types qui sépare une valeur de la moyenne.",
+  "en": "In any normal distribution (the bell curve), about 95% of values lie within 1.96 standard deviations (the typical spread) of the mean. You go from a value to a probability, and from a probability to a threshold, without a table, thanks to the z-score: the number of standard deviations between a value and the mean."
  },
  "parameters": [
   {
@@ -111,8 +111,8 @@
     "en": "x (value)"
    },
    "meaning": {
-    "fr": "Une valeur, la moyenne et l’écart-type.",
-    "en": "A value, the mean and the standard deviation."
+    "fr": null,
+    "en": null
    },
    "unit": {
     "fr": "valeur",
@@ -122,7 +122,7 @@
   },
   {
    "id": "param",
-   "type": "integer",
+   "type": "number",
    "control": "number",
    "min": null,
    "max": null,
@@ -133,8 +133,8 @@
     "en": "μ (mean)"
    },
    "meaning": {
-    "fr": "Une valeur, la moyenne et l’écart-type.",
-    "en": "A value, the mean and the standard deviation."
+    "fr": null,
+    "en": null
    },
    "unit": {
     "fr": "moyenne",
@@ -144,7 +144,7 @@
   },
   {
    "id": "param_2",
-   "type": "integer",
+   "type": "number",
    "control": "number",
    "min": 0,
    "max": null,
@@ -155,8 +155,8 @@
     "en": "σ (standard deviation)"
    },
    "meaning": {
-    "fr": "Une valeur, la moyenne et l’écart-type.",
-    "en": "A value, the mean and the standard deviation."
+    "fr": null,
+    "en": null
    },
    "unit": {
     "fr": "standard deviation",
@@ -321,6 +321,7 @@
    "kind": "reading"
   }
  ],
+ "outputs_en_page": null,
  "formulas": [
   {
    "text": "z = (x − μ)/σ"
@@ -493,6 +494,7 @@
   "normal-distribution"
  ],
  "extraction": {
+  "source_hash": "500396262d9f889c",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#experience"

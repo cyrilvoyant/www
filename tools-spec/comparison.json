@@ -21,8 +21,8 @@
   "en": "Five models on public Palaiseau data, 30 min to 6 h: error against horizon, NICE, curves; computed by the PV_ELM_pred code. AR: autoregression, a regression on past values. ELM: a frugal neural network."
  },
  "summary": {
-  "fr": "À 30 minutes, un réseau de neurones ne fait pas mieux qu’une simple autorégression : la RMSE vaut 1,43 kW pour les deux, contre 1,65 kW pour la persistance. À 6 heures, tous deux divisent par environ 2,5 l’erreur de la persistance, et le réseau ne gagne qu’environ 4 % de plus.",
-  "en": "At 30 minutes, a neural network does no better than a simple autoregression: RMSE is 1.43 kW for both, against 1.65 kW for persistence. At 6 hours, both divide the error of persistence by about 2.5, and the network only gains about 4% more."
+  "fr": "À 30 minutes d’horizon, un réseau de neurones ne fait pas mieux qu’une simple autorégression (une prévision à partir des valeurs passées) : la RMSE (l’erreur typique, en kilowatts, kW) vaut 1,43 kW pour les deux, contre 1,65 kW pour la persistance (recopier la dernière valeur). À 6 heures, tous deux divisent par…",
+  "en": "At a 30-minute horizon, a neural network does no better than a simple autoregression (a forecast from past values): RMSE (the typical error, in kilowatts, kW) is 1.43 kW for both, against 1.65 kW for persistence (copying the last value). At 6 hours, both divide the error of persistence by about 2.5, and the network…"
  },
  "parameters": [
   {
@@ -139,8 +139,8 @@
     "en": "cyclic persistence"
    },
    "meaning": {
-    "fr": "recopier la dernière valeur observée : la référence minimale de toute prévision.",
-    "en": "copy the last observed value: the minimal reference of any forecast."
+    "fr": "recopier la valeur observée 24 heures avant l’instant visé. Elle suit le cycle du jour, mais ignore la météo du moment.",
+    "en": "copy the value observed 24 hours before the target time. It follows the daily cycle but ignores the current weather."
    },
    "unit": null,
    "group": "Modèles affichés"
@@ -473,6 +473,7 @@
    "kind": "table-row"
   }
  ],
+ "outputs_en_page": null,
  "formulas": [],
  "definitions": [
   {
@@ -668,6 +669,7 @@
   "nice"
  ],
  "extraction": {
+  "source_hash": "9e08bc3e438828de",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#fc"

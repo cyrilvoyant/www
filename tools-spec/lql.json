@@ -21,7 +21,7 @@
   "en": "LQ (linear-quadratic) and LQL (linear-quadratic-linear) are two models of the effect of a dose. Choose parameters and vary dose per fraction. Research and education use."
  },
  "summary": {
-  "fr": "Pour une dose unique de 15 Gy au rectum, le modèle LQ donne une BED de 72,7 Gy, le modèle LQL 59,4 Gy : la valeur LQ est supérieure de 22 %. Sous la dose de transition, les deux modèles sont identiques.",
+  "fr": "Pour une dose unique de 15 Gy (grays, l’unité de dose absorbée) au rectum, le modèle LQ (linéaire-quadratique) donne une BED (dose biologiquement efficace, qui permet de comparer des traitements fractionnés différemment) de 72,7 Gy, le modèle LQL (linéaire-quadratique-linéaire) 59,4 Gy : la valeur LQ est supérieure…",
   "en": null
  },
  "parameters": [
@@ -316,6 +316,7 @@
    "kind": "metric"
   }
  ],
+ "outputs_en_page": [],
  "formulas": [],
  "definitions": [
   {
@@ -459,6 +460,7 @@
   "gray"
  ],
  "extraction": {
+  "source_hash": "d75781abe64ed0a3",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#try-it"

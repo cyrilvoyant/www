@@ -351,6 +351,7 @@
    "kind": "reading"
   }
  ],
+ "outputs_en_page": null,
  "formulas": [
   {
    "text": "Q = mΔh"
@@ -517,6 +518,7 @@
   "sensible-heat"
  ],
  "extraction": {
+  "source_hash": "4b08ba25efce27d5",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#experience"

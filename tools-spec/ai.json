@@ -307,6 +307,7 @@
    "kind": "decision-outcome"
   }
  ],
+ "outputs_en_page": null,
  "formulas": [],
  "definitions": [
   {
@@ -406,6 +407,7 @@
  "exploration": [],
  "concepts": [],
  "extraction": {
+  "source_hash": "76ab32d007bd01e5",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#role-helper"

@@ -21,8 +21,8 @@
   "en": "Move an outlier and watch the correlation coefficient r, the least-squares line and the p-value change."
  },
  "summary": {
-  "fr": "Dans cet exemple, ajouter un seul point éloigné fait tomber la corrélation de 0,948 à 0,348. Vous prenez le réflexe de regarder le nuage avant de conclure.",
-  "en": "In this example, adding one distant point makes the correlation fall from 0.948 to 0.348. You get into the habit of looking at the scatter before concluding."
+  "fr": "Dans cet exemple, ajouter un seul point éloigné fait tomber la corrélation r (sans unité : 1 pour des points parfaitement alignés, 0 pour aucun lien) de 0,948 à 0,348. Vous prenez le réflexe de regarder le nuage avant de conclure.",
+  "en": "In this example, adding one distant point makes the correlation r (unitless: 1 for perfectly aligned points, 0 for no relationship) fall from 0.948 to 0.348. You get into the habit of looking at the scatter before concluding."
  },
  "parameters": [
   {
@@ -99,8 +99,8 @@
    },
    "changes_vs_default": {},
    "shows": {
-    "fr": "Le point tire la droite vers lui : la pente et r chutent. C’est l’effet de levier.",
-    "en": "The point pulls the line towards it: the slope and r fall. This is leverage."
+    "fr": "Le point tire la droite vers lui : la pente et r chutent. C’est l’effet de levier : le poids d’un point éloigné sur la droite.",
+    "en": "The point pulls the line towards it: the slope and r fall. This is leverage: the pull of a distant point on the line."
    }
   },
   {
@@ -211,6 +211,7 @@
    "kind": "reading"
   }
  ],
+ "outputs_en_page": null,
  "formulas": [
   {
    "text": "b_1 = (cov(x,y))/(s_x^2)"
@@ -316,8 +317,8 @@
     "include-the-orange-point": true
    },
    "observe": {
-    "fr": "Le point tire la droite vers lui : la pente et r chutent. C’est l’effet de levier.",
-    "en": "The point pulls the line towards it: the slope and r fall. This is leverage."
+    "fr": "Le point tire la droite vers lui : la pente et r chutent. C’est l’effet de levier : le poids d’un point éloigné sur la droite.",
+    "en": "The point pulls the line towards it: the slope and r fall. This is leverage: the pull of a distant point on the line."
    }
   },
   {
@@ -369,6 +370,7 @@
   "influential-point"
  ],
  "extraction": {
+  "source_hash": "300f4a3db2afabbf",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#experience"

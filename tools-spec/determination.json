@@ -21,8 +21,8 @@
   "en": "Vary the correlation r and the sample size n; distinguish the theoretical p-value from variation explained in a constructed teaching example."
  },
  "summary": {
-  "fr": "Avec r = 0,10, la droite décrit 1 % de la variation, que l’on ait 30 points (p ≈ 0,599) ou 1000 (p ≈ 0,0015). Vous séparez deux questions souvent confondues : le lien est-il détectable, et décrit-il beaucoup ?",
-  "en": "With r = 0.10, the line describes 1% of the variation, whether there are 30 points (p ≈ 0.599) or 1000 (p ≈ 0.0015). You separate two questions that are often confused: is the association detectable, and does it describe much?"
+  "fr": "Avec une corrélation r = 0,10 (sans unité, de −1 à 1), la droite décrit 1 % de la variation (R², le coefficient de détermination), que l’on ait 30 points (p ≈ 0,599) ou 1000 (p ≈ 0,0015). Ici p est la p-value : la probabilité d’un lien au moins aussi fort si les deux grandeurs n’avaient aucun lien.",
+  "en": "With a correlation r = 0.10 (unitless, from −1 to 1), the line describes 1% of the variation (R², the coefficient of determination), whether there are 30 points (p ≈ 0.599) or 1000 (p ≈ 0.0015). Here p is the p-value: the probability of an association at least this strong if the two quantities were unrelated."
  },
  "parameters": [
   {
@@ -226,6 +226,7 @@
    "kind": "metric"
   }
  ],
+ "outputs_en_page": null,
  "formulas": [
   {
    "text": "t = rsqrt((n − 2)/(1 − r^2))"
@@ -403,6 +404,7 @@
   "r-squared"
  ],
  "extraction": {
+  "source_hash": "eabb6a51e041bec1",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#experience"

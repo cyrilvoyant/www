@@ -54,7 +54,6 @@
    "propertyID": "cx-s",
    "name": "σ̂, forecast volatility",
    "alternateName": "σ̂, volatilité prévue",
-   "description": "the forecast volatility, without unit. The slider gives example values; in the method, it comes out of the autoregression at each time.",
    "value": 0.1,
    "minValue": 0.02,
    "maxValue": 0.2,

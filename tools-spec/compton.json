@@ -21,8 +21,8 @@
   "en": "Connect angle with energy and follow the scattered photon and recoil electron in the free-electron model."
  },
  "summary": {
-  "fr": "Un photon de 255,5 keV garde 66,7 % de son énergie après une diffusion à 90°, et seulement la moitié à 180°. Vous lisez, angle par angle, le partage de l’énergie entre le photon et l’électron.",
-  "en": "A 255.5 keV photon keeps 66.7% of its energy after scattering at 90°, and only half at 180°. You read, angle by angle, how the energy is shared between photon and electron."
+  "fr": "Un photon de 255,5 keV (kiloélectronvolts, une unité d’énergie) garde 66,7 % de son énergie après une diffusion à 90° (un choc sur un électron qui le dévie de 90°), et seulement la moitié à 180° (renvoyé en arrière). Vous lisez, angle par angle, le partage de l’énergie entre le photon et l’électron.",
+  "en": "A 255.5 keV photon (kiloelectronvolts, a unit of energy) keeps 66.7% of its energy after scattering at 90° (a collision with an electron that deflects it by 90°), and only half at 180° (sent straight back). You read, angle by angle, how the energy is shared between photon and electron."
  },
  "parameters": [
   {
@@ -263,6 +263,7 @@
    "kind": "metric"
   }
  ],
+ "outputs_en_page": null,
  "formulas": [
   {
    "text": "E^′ = E_0/(1 + E_0/511(1 − cosθ))"
@@ -423,6 +424,7 @@
  ],
  "concepts": [],
  "extraction": {
+  "source_hash": "5e9638731a133e1a",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#experience"

@@ -21,8 +21,8 @@
   "en": "Change the threshold, distribution separation and prevalence in a teaching example."
  },
  "summary": {
-  "fr": "À 10 % de prévalence, un test à 78,8 % de sensibilité et 84,1 % de spécificité ne donne que 35,6 % de malades parmi les résultats positifs (exemple construit). Vous comprenez ce qu’un résultat positif veut dire, et ce qui dépend de la population.",
-  "en": "At 10% prevalence, a test with 78.8% sensitivity and 84.1% specificity gives only 35.6% of people with the disease among positive results (constructed example). You understand what a positive result means, and what depends on the population."
+  "fr": "À 10 % de prévalence (10 % de la population est malade), un test à 78,8 % de sensibilité (il détecte 78,8 % des malades) et 84,1 % de spécificité (il écarte 84,1 % des non-malades) ne donne que 35,6 % de malades parmi les résultats positifs (exemple construit). Vous comprenez ce qu’un résultat positif veut dire, et…",
+  "en": "At 10% prevalence (10% of the population has the disease), a test with 78.8% sensitivity (it detects 78.8% of those with the disease) and 84.1% specificity (it clears 84.1% of those without) gives only 35.6% of people with the disease among positive results (constructed example). You understand what a positive result…"
  },
  "parameters": [
   {
@@ -357,6 +357,7 @@
    "kind": "reading"
   }
  ],
+ "outputs_en_page": null,
  "formulas": [
   {
    "text": "Se = VP/(VP + FN)"
@@ -532,6 +533,7 @@
   "roc-curve"
  ],
  "extraction": {
+  "source_hash": "c595c33b6e9e70bb",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#experience"

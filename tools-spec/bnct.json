@@ -21,8 +21,8 @@
   "en": "Follow a schematic cascade; distinguish flight exposure from the dose in a numerical tumour model, and compare two boron carriers, BSH and BPA."
  },
  "summary": {
-  "fr": "À l’altitude des avions, les neutrons peuvent bien déclencher des captures dans une tumeur enrichie en bore-10, mais notre calcul de 2011 donne environ 1 µGy par heure en moyenne : il faudrait un million d’heures pour atteindre 1 Gy. Le mécanisme existe, la dose moyenne ne suffit pas pour traiter une tumeur visible.",
-  "en": "At aircraft altitude, neutrons can indeed trigger captures in a boron-10-enriched tumour, but our 2011 calculation gives about 1 µGy per hour on average: reaching 1 Gy would take a million hours. The mechanism exists; the mean dose is not enough to treat a visible tumour."
+  "fr": "À l’altitude des avions, les neutrons peuvent bien déclencher des captures dans une tumeur enrichie en bore-10, mais notre calcul de 2011 donne environ 1 µGy (un millionième de gray, l’unité d’énergie absorbée par kilogramme) par heure en moyenne : il faudrait un million d’heures pour atteindre 1 Gy. Le mécanisme…",
+  "en": "At aircraft altitude, neutrons can indeed trigger captures in a boron-10-enriched tumour, but our 2011 calculation gives about 1 µGy (one millionth of a gray, the unit of energy absorbed per kilogram) per hour on average: reaching 1 Gy would take a million hours. The mechanism exists; the mean dose is not enough to…"
  },
  "parameters": [
   {
@@ -323,15 +323,16 @@
    "kind": "metric"
   }
  ],
+ "outputs_en_page": null,
  "formulas": [],
  "definitions": [],
  "assumptions": {
   "fr": [
-   "Le cas de l’article : altitude 12 km, latitude 45°, 14,7 neutrons par cm² et par seconde, 10 cm d’eau qui ralentissent les neutrons, 0,5 cm de crâne et une tumeur d’environ 1 g contenant 20 µg de bore-10 par gramme. Un modèle hybride, transport Monte-Carlo et approximations analytiques, estime une dose tumorale moyenne de l’ordre de 1 µGy pour une heure . C’est insuffisant pour traiter une tumeur visible.",
+   "Le cas de l’article : altitude 12 km, latitude 45°, 14,7 neutrons par cm² et par seconde, 10 cm d’eau qui ralentissent les neutrons, 0,5 cm de crâne et une tumeur d’environ 1 g contenant 20 µg de bore-10 par gramme. Un modèle hybride, transport Monte-Carlo (tirages aléatoires de trajectoires de neutrons) et approximations analytiques, estime une dose tumorale moyenne de l’ordre de 1 µGy pour une heure . C’est insuffisant pour traiter une tumeur visible.",
    "Les curseurs ne refont pas ce calcul : ils mettent à l’échelle le résultat publié, à spectre, géométrie et masse fixés. La durée multiplie la dose et les interactions. Le bore ne multiplie que les interactions, car l’article ne chiffre la dose qu’à 20 µg/g. Cette tumeur est un fantôme , c’est-à-dire un modèle numérique de tissus : sa concentration n’est pas une quantité à administrer à une personne."
   ],
   "en": [
-   "The paper’s case: 12 km altitude, 45° latitude, 14.7 neutrons per cm² per second, 10 cm of water slowing the neutrons, 0.5 cm of skull and a tumour of about 1 g with 20 µg of boron-10 per gram. A hybrid model, Monte Carlo transport with analytical approximations, estimates a mean tumour dose of the order of 1 µGy for one hour . That is insufficient to treat a visible tumour.",
+   "The paper’s case: 12 km altitude, 45° latitude, 14.7 neutrons per cm² per second, 10 cm of water slowing the neutrons, 0.5 cm of skull and a tumour of about 1 g with 20 µg of boron-10 per gram. A hybrid model, Monte Carlo transport (random draws of neutron paths) with analytical approximations, estimates a mean tumour dose of the order of 1 µGy for one hour . That is insufficient to treat a visible tumour.",
    "The sliders do not redo this calculation: they scale the published result, at fixed spectrum, geometry and mass. Duration multiplies the dose and the interactions. Boron multiplies the interactions only, because the paper quantifies the dose at 20 µg/g only. This tumour is a phantom , that is a numerical model of tissue: its concentration is not an amount to administer to a person."
   ]
  },
@@ -412,6 +413,7 @@
  ],
  "concepts": [],
  "extraction": {
+  "source_hash": "b4741964e96fbe3e",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#experience",

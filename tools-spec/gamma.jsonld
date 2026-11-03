@@ -65,7 +65,7 @@
   {
    "@type": "PropertyValue",
    "propertyID": "gm-dta",
-   "name": "DTA, spatial km",
+   "name": "DTA (distance to agreement), spatial km",
    "alternateName": "DTA",
    "description": "distance to agreement: spatial tolerance",
    "value": 2,
@@ -76,7 +76,7 @@
   {
    "@type": "PropertyValue",
    "propertyID": "gm-tta",
-   "name": "TTA, temporal min",
+   "name": "TTA (time to agreement), temporal min",
    "alternateName": "TTA",
    "description": "time to agreement: temporal tolerance",
    "value": 30,
@@ -87,7 +87,7 @@
   {
    "@type": "PropertyValue",
    "propertyID": "gm-idt",
-   "name": "IDT, intensity W/m²",
+   "name": "IDT (intensity difference threshold), intensity W/m²",
    "alternateName": "IDT",
    "description": "intensity deviation tolerance, for example 50 W/m², calibrated from sensor uncertainty or grid operational limits",
    "value": 50,
@@ -180,7 +180,7 @@
    {
     "@type": "PropertyValueSpecification",
     "valueName": "gm-dta",
-    "description": "DTA, spatial km",
+    "description": "DTA (distance to agreement), spatial km",
     "valueRequired": false,
     "minValue": 0.5,
     "maxValue": 3,
@@ -190,7 +190,7 @@
    {
     "@type": "PropertyValueSpecification",
     "valueName": "gm-tta",
-    "description": "TTA, temporal min",
+    "description": "TTA (time to agreement), temporal min",
     "valueRequired": false,
     "minValue": 5,
     "maxValue": 30,
@@ -200,7 +200,7 @@
    {
     "@type": "PropertyValueSpecification",
     "valueName": "gm-idt",
-    "description": "IDT, intensity W/m²",
+    "description": "IDT (intensity difference threshold), intensity W/m²",
     "valueRequired": false,
     "minValue": 10,
     "maxValue": 100,

@@ -21,8 +21,8 @@
   "en": "Compare two treatments with the classic pooled t-test: difference, t statistic, degrees of freedom (df) and rejection regions."
  },
  "summary": {
-  "fr": "Un écart de 6 mmHg entre deux traitements donne p ≈ 0,18 avec 4 patients par groupe, et p ≈ 0,014 avec 12, à moyennes et écarts-types inchangés (exemple construit). Vous apprenez à comparer un écart à son incertitude, et non à lire une p-value seule.",
-  "en": "A 6 mmHg difference between two treatments gives p ≈ 0.18 with 4 patients per group and p ≈ 0.014 with 12, with means and standard deviations unchanged (constructed example). You learn to compare a difference with its uncertainty, rather than read a p-value alone."
+  "fr": "Un écart de 6 mmHg (millimètres de mercure, unité de pression artérielle) entre deux traitements donne p ≈ 0,18 avec 4 patients par groupe, et p ≈ 0,014 avec 12, à moyennes et écarts-types (dispersions) inchangés (exemple construit). Ici p est la p-value : la probabilité d’un écart au moins aussi grand si les deux…",
+  "en": "A 6 mmHg (millimeters of mercury, a unit of blood pressure) difference between two treatments gives p ≈ 0.18 with 4 patients per group and p ≈ 0.014 with 12, with means and standard deviations (spreads) unchanged (constructed example). Here p is the p-value: the probability of a difference at least this large if both…"
  },
  "parameters": [
   {
@@ -354,8 +354,8 @@
     "en": "dimensionless"
    },
    "meaning": {
-    "fr": "seuil à dépasser pour rejeter H₀",
-    "en": "threshold to exceed to reject H₀"
+    "fr": "seuil à dépasser pour rejeter H₀ (α = 5 % : le risque accepté de rejeter H₀ à tort)",
+    "en": "threshold to exceed to reject H₀ (α = 5%: the accepted risk of rejecting H₀ wrongly)"
    },
    "kind": "metric"
   },
@@ -375,6 +375,7 @@
    "kind": "metric"
   }
  ],
+ "outputs_en_page": null,
  "formulas": [
   {
    "text": "t = Δ/(s_psqrt(1/n_1 + 1/n_2))"
@@ -555,6 +556,7 @@
   "student-t-test"
  ],
  "extraction": {
+  "source_hash": "90c77ee17986439f",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#experience"

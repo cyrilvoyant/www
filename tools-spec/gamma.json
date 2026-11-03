@@ -21,7 +21,7 @@
   "en": "The γ-index judges a forecast with tolerances in space, time and intensity. Displace, delay or bias a synthetic cloud and adjust these tolerances."
  },
  "summary": {
-  "fr": "Un nuage bien prévu mais en retard de 30 min coûte 133 W/m² de RMSE ; un biais de 80 W/m² n’en coûte que 80. Pourtant γ accepte 100 % des pixels du premier et 34 % du second.",
+  "fr": "Un nuage bien prévu mais en retard de 30 min coûte 133 W/m² (watts par mètre carré, l’éclairement solaire) de RMSE (racine de l’erreur quadratique moyenne) ; un biais (erreur systématique) de 80 W/m² n’en coûte que 80. Pourtant l’indice γ accepte 100 % des pixels (points de la carte) du premier et 34 % du second.",
   "en": null
  },
  "parameters": [
@@ -101,7 +101,7 @@
    "default": 2,
    "label": {
     "fr": "DTA",
-    "en": "DTA, spatial km"
+    "en": "DTA (distance to agreement), spatial km"
    },
    "meaning": {
     "fr": "Tolérance de distance : le décalage acceptable en km. Une maille de la grille dans l’article, soit environ 2 km.",
@@ -123,7 +123,7 @@
    "default": 30,
    "label": {
     "fr": "TTA",
-    "en": "TTA, temporal min"
+    "en": "TTA (time to agreement), temporal min"
    },
    "meaning": {
     "fr": "Tolérance de temps : le décalage acceptable en minutes. 30 min dans l’article.",
@@ -145,7 +145,7 @@
    "default": 50,
    "label": {
     "fr": "IDT",
-    "en": "IDT, intensity W/m²"
+    "en": "IDT (intensity difference threshold), intensity W/m²"
    },
    "meaning": {
     "fr": "Tolérance d’intensité : l’écart acceptable en W/m². 50 W/m² dans l’article.",
@@ -448,6 +448,7 @@
    "kind": "table-row"
   }
  ],
+ "outputs_en_page": [],
  "formulas": [],
  "definitions": [
   {
@@ -591,6 +592,7 @@
   "gamma-index"
  ],
  "extraction": {
+  "source_hash": "ed1f6e622f4f476a",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#try-it"

@@ -159,6 +159,7 @@
    "kind": "decision-outcome"
   }
  ],
+ "outputs_en_page": null,
  "formulas": [],
  "definitions": [
   {
@@ -302,6 +303,7 @@
  "exploration": [],
  "concepts": [],
  "extraction": {
+  "source_hash": "fb4dac3ff71e5bf6",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#lic-tree"

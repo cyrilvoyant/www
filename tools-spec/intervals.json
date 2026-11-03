@@ -21,8 +21,8 @@
   "en": "Compare both bands, move x₀, the value where the prediction is made, and recognize extrapolation."
  },
  "summary": {
-  "fr": "Avec 20 points et un écart-type résiduel de 1, la moyenne prévue au centre est connue à ±0,47, mais une nouvelle observation seulement à ±2,15. Vous savez quel intervalle répond à quelle question.",
-  "en": "With 20 points and a residual standard deviation of 1, the predicted mean at the center is known to ±0.47, but a new observation only to ±2.15. You know which interval answers which question."
+  "fr": "Avec 20 points et un écart-type résiduel de 1 (la dispersion des points autour de la droite), la moyenne prévue au centre est connue à ±0,47 (intervalle de confiance), mais une nouvelle observation seulement à ±2,15 (intervalle de prévision). Vous savez quel intervalle répond à quelle question.",
+  "en": "With 20 points and a residual standard deviation of 1 (the spread of the points around the line), the predicted mean at the center is known to ±0.47 (confidence interval), but a new observation only to ±2.15 (prediction interval). You know which interval answers which question."
  },
  "parameters": [
   {
@@ -135,10 +135,16 @@
     "fr": "Peu de points : 6",
     "en": "Few points: 6"
    },
-   "values": {},
-   "changes_vs_default": {},
+   "values": {
+    "number-of-points-n": 6,
+    "residual-standard-deviation-se": 1,
+    "prediction-input-x0": 0
+   },
+   "changes_vs_default": {
+    "number-of-points-n": 6
+   },
    "shows": {
-    "fr": null,
+    "fr": "Peu de points : le quantile de Student augmente et les deux bandes s’élargissent.",
     "en": "Few points: the Student quantile rises and both bands widen."
    }
   },
@@ -264,6 +270,7 @@
    "kind": "metric"
   }
  ],
+ "outputs_en_page": null,
  "formulas": [
   {
    "text": "ŷ_0 ± ts_esqrt(1/n + ((x_0 − x̄)^2)/S_xx)"
@@ -395,9 +402,11 @@
     "fr": "Peu de points : 6",
     "en": "Few points: 6"
    },
-   "set": {},
+   "set": {
+    "number-of-points-n": 6
+   },
    "observe": {
-    "fr": null,
+    "fr": "Peu de points : le quantile de Student augmente et les deux bandes s’élargissent.",
     "en": "Few points: the Student quantile rises and both bands widen."
    }
   },
@@ -435,6 +444,7 @@
   "prediction-interval"
  ],
  "extraction": {
+  "source_hash": "6629ae278d280e08",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#experience"
@@ -442,9 +452,7 @@
   "page_errors": [],
   "fr_en_preset_consistency": {
    "presets_compared": 6,
-   "presets_with_different_values_fr_vs_en": [
-    2
-   ]
+   "presets_with_different_values_fr_vs_en": []
   }
  }
 }

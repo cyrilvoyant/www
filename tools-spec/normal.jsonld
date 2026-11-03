@@ -60,7 +60,6 @@
    "propertyID": "x",
    "name": "x (value)",
    "alternateName": "x (valeur)",
-   "description": "A value, the mean and the standard deviation.",
    "value": 1.96,
    "unitText": "valeur"
   },
@@ -69,7 +68,6 @@
    "propertyID": "param",
    "name": "μ (mean)",
    "alternateName": "μ (moyenne)",
-   "description": "A value, the mean and the standard deviation.",
    "value": 0,
    "unitText": "moyenne"
   },
@@ -78,7 +76,6 @@
    "propertyID": "param_2",
    "name": "σ (standard deviation)",
    "alternateName": "σ (écart-type)",
-   "description": "A value, the mean and the standard deviation.",
    "value": 1,
    "minValue": 0,
    "unitText": "standard deviation"

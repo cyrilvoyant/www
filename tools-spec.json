@@ -1,8 +1,8 @@
 {
  "schema_version": "1.0",
  "description": {
-  "fr": "Inventaire partiel de 28 outils : paramètres, préréglages, sorties et hypothèses extraits précédemment des pages. La couverture et les exclusions sont explicites ; ARTU possède sa propre fiche revue.",
-  "en": "Partial inventory of 28 tools: parameters, presets, outputs and assumptions previously extracted from the pages. Coverage and exclusions are explicit; ARTU has its own reviewed specification."
+  "en": "Every interactive tool of the site as data: parameters (min, max, step, default), presets, outputs, formulas, assumptions, exploration. Values are read from the rendered pages, not guessed.",
+  "fr": "Chaque outil interactif du site en données : paramètres (min, max, pas, défaut), préréglages, sorties, formules, hypothèses, exploration. Les valeurs sont lues sur les pages rendues, pas devinées."
  },
  "site": "https://www.cyrilvoyant.com",
  "excluded": {
@@ -36,8 +36,8 @@
     "en": "Change reservoir temperatures and read work, rejected heat and reservoir entropy."
    },
    "summary": {
-    "fr": "Même sans aucune perte, un moteur entre 400 °C et 20 °C ne transforme au plus que 56,5 % de la chaleur reçue en travail. Vous voyez pourquoi cette borne ne dépend que des deux températures.",
-    "en": "Even with no losses at all, an engine between 400 °C and 20 °C turns at most 56.5% of the heat received into work. You see why this limit depends only on the two temperatures."
+    "fr": "Même sans aucune perte, un moteur entre 400 °C et 20 °C ne transforme au plus que 56,5 % de la chaleur reçue en travail (c’est la limite de Carnot). Vous voyez pourquoi cette borne, imposée par le second principe de la thermodynamique, ne dépend que des deux températures absolues (en kelvins : °C + 273,15).",
+    "en": "Even with no losses at all, an engine between 400 °C and 20 °C turns at most 56.5% of the heat received into work (this is the Carnot limit). You see why this limit, set by the second law of thermodynamics, depends only on the two absolute temperatures (in kelvins: °C + 273.15)."
    },
    "parameters": [
     {
@@ -308,6 +308,7 @@
      "kind": "metric"
     }
    ],
+   "outputs_en_page": null,
    "formulas": [
     {
      "text": "η_Carnot = 1 − T_f/T_c"
@@ -476,6 +477,7 @@
    ],
    "concepts": [],
    "extraction": {
+    "source_hash": "faebb89232f72a06",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -510,8 +512,8 @@
     "en": "COP (coefficient of performance): heat removed per unit of work supplied. Vary evaporation and condensation temperatures; see why the temperature lift is costly."
    },
    "summary": {
-    "fr": "Entre −10 °C et +40 °C, une machine frigorifique extrait au mieux 5,26 J de chaleur par joule de travail ; entre −40 °C et +20 °C, au mieux 3,89 J. Vous comprenez pourquoi produire du froid coûte plus cher quand l’écart de température grandit.",
-    "en": "Between −10 °C and +40 °C, a refrigerator extracts at best 5.26 J of heat per joule of work; between −40 °C and +20 °C, at best 3.89 J. You understand why producing cold costs more as the temperature gap widens."
+    "fr": "Entre −10 °C et +40 °C, une machine frigorifique extrait au mieux 5,26 J de chaleur par joule de travail (c’est son COP, coefficient de performance) ; entre −40 °C et +20 °C, au mieux 3,89 J. Ce maximum théorique est la limite de Carnot.",
+    "en": "Between −10 °C and +40 °C, a refrigerator extracts at best 5.26 J of heat per joule of work (its COP, coefficient of performance); between −40 °C and +20 °C, at best 3.89 J. This theoretical maximum is the Carnot limit."
    },
    "parameters": [
     {
@@ -706,6 +708,7 @@
      "kind": "reading"
     }
    ],
+   "outputs_en_page": null,
    "formulas": [
     {
      "text": "COP_Carnot = T_f/(T_c − T_f)"
@@ -862,6 +865,7 @@
     "cop"
    ],
    "extraction": {
+    "source_hash": "fabed06046de3c16",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -896,8 +900,8 @@
     "en": "Connect angle with energy and follow the scattered photon and recoil electron in the free-electron model."
    },
    "summary": {
-    "fr": "Un photon de 255,5 keV garde 66,7 % de son énergie après une diffusion à 90°, et seulement la moitié à 180°. Vous lisez, angle par angle, le partage de l’énergie entre le photon et l’électron.",
-    "en": "A 255.5 keV photon keeps 66.7% of its energy after scattering at 90°, and only half at 180°. You read, angle by angle, how the energy is shared between photon and electron."
+    "fr": "Un photon de 255,5 keV (kiloélectronvolts, une unité d’énergie) garde 66,7 % de son énergie après une diffusion à 90° (un choc sur un électron qui le dévie de 90°), et seulement la moitié à 180° (renvoyé en arrière). Vous lisez, angle par angle, le partage de l’énergie entre le photon et l’électron.",
+    "en": "A 255.5 keV photon (kiloelectronvolts, a unit of energy) keeps 66.7% of its energy after scattering at 90° (a collision with an electron that deflects it by 90°), and only half at 180° (sent straight back). You read, angle by angle, how the energy is shared between photon and electron."
    },
    "parameters": [
     {
@@ -1138,6 +1142,7 @@
      "kind": "metric"
     }
    ],
+   "outputs_en_page": null,
    "formulas": [
     {
      "text": "E^′ = E_0/(1 + E_0/511(1 − cosθ))"
@@ -1298,6 +1303,7 @@
    ],
    "concepts": [],
    "extraction": {
+    "source_hash": "5e9638731a133e1a",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -1329,8 +1335,8 @@
     "en": "Frequency, wavelength and transverse fields; slow playback, pause and step controls."
    },
    "summary": {
-    "fr": "À 50 MHz, le profil de l’onde avance d’environ 6 m toutes les 20 ns, alors qu’en chaque point les champs ne font qu’osciller sur place. Vous distinguez ce qui oscille de ce qui se propage.",
-    "en": "At 50 MHz, the wave profile advances by about 6 m every 20 ns, while at each point the fields only oscillate in place. You separate what oscillates from what travels."
+    "fr": "À 50 MHz (50 millions d’oscillations par seconde), le profil de l’onde avance d’environ 6 m toutes les 20 ns (nanosecondes), alors qu’en chaque point les champs électrique E et magnétique B ne font qu’osciller sur place. Vous distinguez ce qui oscille de ce qui se propage.",
+    "en": "At 50 MHz (50 million oscillations per second), the wave profile advances by about 6 m every 20 ns (nanoseconds), while at each point the electric field E and the magnetic field B only oscillate in place. You separate what oscillates from what travels."
    },
    "parameters": [
     {
@@ -1553,6 +1559,7 @@
      "kind": "metric"
     }
    ],
+   "outputs_en_page": null,
    "formulas": [
     {
      "text": "E(x,t) = E_0cos(ωt − kx)"
@@ -1711,6 +1718,7 @@
    ],
    "concepts": [],
    "extraction": {
+    "source_hash": "616a03c47e5a26f2",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -1745,8 +1753,8 @@
     "en": "Vary thickness and half-value layer; read the transmitted fraction."
    },
    "summary": {
-    "fr": "Chaque couche de demi-atténuation divise le faisceau par deux : après trois couches il en reste 12,5 %, et jamais exactement zéro. Vous remplacez l’intuition d’une soustraction par celle d’une décroissance exponentielle.",
-    "en": "Each half-value layer halves the beam: after three layers 12.5% remains, and never exactly zero. You replace the intuition of subtraction with that of exponential decay."
+    "fr": "Chaque couche de demi-atténuation (CDA : l’épaisseur de matériau qui arrête la moitié du faisceau) divise le faisceau par deux : après trois couches il en reste 12,5 %, et jamais exactement zéro. Vous remplacez l’intuition d’une soustraction par celle d’une décroissance exponentielle : à chaque épaisseur égale, la…",
+    "en": "Each half-value layer (HVL: the thickness of material that stops half the beam) halves the beam: after three layers 12.5% remains, and never exactly zero. You replace the intuition of subtraction with that of exponential decay: over each equal thickness, the same fraction of the beam disappears."
    },
    "parameters": [
     {
@@ -1933,6 +1941,7 @@
      "kind": "reading"
     }
    ],
+   "outputs_en_page": null,
    "formulas": [
     {
      "text": "N/N_0 = e^( − μx) = 2^( − x/CDA)"
@@ -2093,6 +2102,7 @@
     "half-value-layer"
    ],
    "extraction": {
+    "source_hash": "7e2d5f837300cd15",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -2127,12 +2137,12 @@
     "en": "Vary the convection coefficient h, the thermal conductivity λ and size; compare the uniform-temperature model with the core temperature."
    },
    "summary": {
-    "fr": "À Bi = 1, le modèle à température uniforme annonce 116 min pour rattraper 90 % de l’écart ; le cœur de l’aliment en demande 164. Vous savez quand une seule température suffit, et quand elle trompe.",
-    "en": "At Bi = 1, the uniform-temperature model announces 116 min to close 90% of the gap; the core of the food needs 164. You know when one temperature is enough, and when it misleads."
+    "fr": "À Bi = 1 (nombre de Biot, sans unité : la résistance de l’intérieur de l’aliment à la chaleur, comparée à celle de sa surface), le modèle à température uniforme annonce 116 min pour rattraper 90 % de l’écart avec le milieu extérieur ; le cœur de l’aliment en demande 164. Vous savez quand une seule température suffit,…",
+    "en": "At Bi = 1 (the Biot number, unitless: the resistance of the food’s interior to heat compared with that of its surface), the uniform-temperature model announces 116 min to close 90% of the gap with the surrounding medium; the core of the food needs 164. You know when one temperature is enough, and when it misleads."
    },
    "parameters": [
     {
-     "id": "convection-h",
+     "id": "surface-heat-transfer-h",
      "type": "integer",
      "control": "range",
      "min": 5,
@@ -2140,8 +2150,8 @@
      "step": 1,
      "default": 25,
      "label": {
-      "fr": "Convection h (W/m²·K)",
-      "en": "Convection h (W/m²·K)"
+      "fr": "Échange en surface h (W/m²·K)",
+      "en": "Surface heat transfer h (W/m²·K)"
      },
      "meaning": {
       "fr": null,
@@ -2154,7 +2164,7 @@
      "unit_source": "label"
     },
     {
-     "id": "length-lc-v-a",
+     "id": "length-lc-volume-surface",
      "type": "number",
      "control": "range",
      "min": 0.2,
@@ -2162,12 +2172,12 @@
      "step": 0.1,
      "default": 2,
      "label": {
-      "fr": "Longueur Lc = V/A (cm)",
-      "en": "Length Lc = V/A (cm)"
+      "fr": "Longueur Lc = volume/surface (cm)",
+      "en": "Length Lc = volume/surface (cm)"
      },
      "meaning": {
-      "fr": "La longueur caractéristique : le volume divisé par la surface d’échange.",
-      "en": "The characteristic length: volume divided by heat-transfer area."
+      "fr": null,
+      "en": null
      },
      "unit": {
       "fr": "cm",
@@ -2176,7 +2186,7 @@
      "unit_source": "display"
     },
     {
-     "id": "conductivity",
+     "id": "thermal-conductivity",
      "type": "number",
      "control": "range",
      "min": 0.1,
@@ -2184,8 +2194,8 @@
      "step": 0.05,
      "default": 0.5,
      "label": {
-      "fr": "Conductivité λ (W/m·K)",
-      "en": "Conductivity λ (W/m·K)"
+      "fr": "Conductivité thermique λ (W/m·K)",
+      "en": "Thermal conductivity λ (W/m·K)"
      },
      "meaning": {
       "fr": null,
@@ -2228,8 +2238,8 @@
      "step": 1,
      "default": 2,
      "label": {
-      "fr": "Milieu extérieur T∞",
-      "en": "Surroundings T∞"
+      "fr": "Milieu extérieur T∞ (air ou liquide)",
+      "en": "Surroundings T∞ (air or liquid)"
      },
      "meaning": {
       "fr": null,
@@ -2250,9 +2260,9 @@
       "en": "Thick food: Bi = 1"
      },
      "values": {
-      "convection-h": 25,
-      "length-lc-v-a": 2,
-      "conductivity": 0.5,
+      "surface-heat-transfer-h": 25,
+      "length-lc-volume-surface": 2,
+      "thermal-conductivity": 0.5,
       "initial-temperature-ti": 60,
       "surroundings-t": 2
      },
@@ -2269,16 +2279,16 @@
       "en": "Thin slice: small Bi"
      },
      "values": {
-      "convection-h": 10,
-      "length-lc-v-a": 0.5,
-      "conductivity": 2,
+      "surface-heat-transfer-h": 10,
+      "length-lc-volume-surface": 0.5,
+      "thermal-conductivity": 2,
       "initial-temperature-ti": 60,
       "surroundings-t": 2
      },
      "changes_vs_default": {
-      "convection-h": 10,
-      "length-lc-v-a": 0.5,
-      "conductivity": 2
+      "surface-heat-transfer-h": 10,
+      "length-lc-volume-surface": 0.5,
+      "thermal-conductivity": 2
      },
      "shows": {
       "fr": "Les courbes se confondent : la température reste presque uniforme et le modèle simple suffit.",
@@ -2292,14 +2302,14 @@
       "en": "Only conductivity λ increases"
      },
      "values": {
-      "convection-h": 25,
-      "length-lc-v-a": 2,
-      "conductivity": 2,
+      "surface-heat-transfer-h": 25,
+      "length-lc-volume-surface": 2,
+      "thermal-conductivity": 2,
       "initial-temperature-ti": 60,
       "surroundings-t": 2
      },
      "changes_vs_default": {
-      "conductivity": 2
+      "thermal-conductivity": 2
      },
      "shows": {
       "fr": "Le temps du modèle simple ne bouge pas : c’est juste, λ n’y intervient pas. Seul le cœur se rapproche.",
@@ -2313,14 +2323,14 @@
       "en": "Strong air flow: h = 100"
      },
      "values": {
-      "convection-h": 100,
-      "length-lc-v-a": 2,
-      "conductivity": 0.5,
+      "surface-heat-transfer-h": 100,
+      "length-lc-volume-surface": 2,
+      "thermal-conductivity": 0.5,
       "initial-temperature-ti": 60,
       "surroundings-t": 2
      },
      "changes_vs_default": {
-      "convection-h": 100
+      "surface-heat-transfer-h": 100
      },
      "shows": {
       "fr": "La surface refroidit vite, mais le cœur est limité par la conduction : Bi = 4.",
@@ -2334,14 +2344,14 @@
       "en": "Large piece: Lc = 6 cm"
      },
      "values": {
-      "convection-h": 25,
-      "length-lc-v-a": 6,
-      "conductivity": 0.5,
+      "surface-heat-transfer-h": 25,
+      "length-lc-volume-surface": 6,
+      "thermal-conductivity": 0.5,
       "initial-temperature-ti": 60,
       "surroundings-t": 2
      },
      "changes_vs_default": {
-      "length-lc-v-a": 6
+      "length-lc-volume-surface": 6
      },
      "shows": {
       "fr": "Trois fois plus épais : le temps à cœur devient bien plus long que le modèle simple ne l’annonce.",
@@ -2355,9 +2365,9 @@
       "en": "Warming: Ti below T∞"
      },
      "values": {
-      "convection-h": 25,
-      "length-lc-v-a": 2,
-      "conductivity": 0.5,
+      "surface-heat-transfer-h": 25,
+      "length-lc-volume-surface": 2,
+      "thermal-conductivity": 0.5,
       "initial-temperature-ti": 2,
       "surroundings-t": 20
      },
@@ -2420,6 +2430,7 @@
      "kind": "reading"
     }
    ],
+   "outputs_en_page": null,
    "formulas": [
     {
      "text": "Bi = hL_c/λ"
@@ -2520,9 +2531,9 @@
       "en": "Thick food: Bi = 1"
      },
      "set": {
-      "convection-h": 25,
-      "length-lc-v-a": 2,
-      "conductivity": 0.5,
+      "surface-heat-transfer-h": 25,
+      "length-lc-volume-surface": 2,
+      "thermal-conductivity": 0.5,
       "initial-temperature-ti": 60,
       "surroundings-t": 2
      },
@@ -2538,9 +2549,9 @@
       "en": "Thin slice: small Bi"
      },
      "set": {
-      "convection-h": 10,
-      "length-lc-v-a": 0.5,
-      "conductivity": 2
+      "surface-heat-transfer-h": 10,
+      "length-lc-volume-surface": 0.5,
+      "thermal-conductivity": 2
      },
      "observe": {
       "fr": "Les courbes se confondent : la température reste presque uniforme et le modèle simple suffit.",
@@ -2554,7 +2565,7 @@
       "en": "Only conductivity λ increases"
      },
      "set": {
-      "conductivity": 2
+      "thermal-conductivity": 2
      },
      "observe": {
       "fr": "Le temps du modèle simple ne bouge pas : c’est juste, λ n’y intervient pas. Seul le cœur se rapproche.",
@@ -2568,7 +2579,7 @@
       "en": "Large piece: Lc = 6 cm"
      },
      "set": {
-      "length-lc-v-a": 6
+      "length-lc-volume-surface": 6
      },
      "observe": {
       "fr": "Trois fois plus épais : le temps à cœur devient bien plus long que le modèle simple ne l’annonce.",
@@ -2595,6 +2606,7 @@
     "biot-number"
    ],
    "extraction": {
+    "source_hash": "2c6c88ea6f185d18",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -2959,6 +2971,7 @@
      "kind": "reading"
     }
    ],
+   "outputs_en_page": null,
    "formulas": [
     {
      "text": "Q = mΔh"
@@ -3125,6 +3138,7 @@
     "sensible-heat"
    ],
    "extraction": {
+    "source_hash": "4b08ba25efce27d5",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -3159,8 +3173,8 @@
     "en": "Change the threshold, distribution separation and prevalence in a teaching example."
    },
    "summary": {
-    "fr": "À 10 % de prévalence, un test à 78,8 % de sensibilité et 84,1 % de spécificité ne donne que 35,6 % de malades parmi les résultats positifs (exemple construit). Vous comprenez ce qu’un résultat positif veut dire, et ce qui dépend de la population.",
-    "en": "At 10% prevalence, a test with 78.8% sensitivity and 84.1% specificity gives only 35.6% of people with the disease among positive results (constructed example). You understand what a positive result means, and what depends on the population."
+    "fr": "À 10 % de prévalence (10 % de la population est malade), un test à 78,8 % de sensibilité (il détecte 78,8 % des malades) et 84,1 % de spécificité (il écarte 84,1 % des non-malades) ne donne que 35,6 % de malades parmi les résultats positifs (exemple construit). Vous comprenez ce qu’un résultat positif veut dire, et…",
+    "en": "At 10% prevalence (10% of the population has the disease), a test with 78.8% sensitivity (it detects 78.8% of those with the disease) and 84.1% specificity (it clears 84.1% of those without) gives only 35.6% of people with the disease among positive results (constructed example). You understand what a positive result…"
    },
    "parameters": [
     {
@@ -3495,6 +3509,7 @@
      "kind": "reading"
     }
    ],
+   "outputs_en_page": null,
    "formulas": [
     {
      "text": "Se = VP/(VP + FN)"
@@ -3670,6 +3685,7 @@
     "roc-curve"
    ],
    "extraction": {
+    "source_hash": "c595c33b6e9e70bb",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -3704,8 +3720,8 @@
     "en": "Convert a standard score to a probability, or vice versa."
    },
    "summary": {
-    "fr": "Dans toute loi normale, environ 95 % des valeurs se trouvent à moins de 1,96 écart-type de la moyenne. Vous passez d’une valeur à une probabilité, et d’une probabilité à un seuil, sans table.",
-    "en": "In any normal distribution, about 95% of values lie within 1.96 standard deviations of the mean. You go from a value to a probability, and from a probability to a threshold, without a table."
+    "fr": "Dans toute loi normale (la courbe en cloche), environ 95 % des valeurs se trouvent à moins de 1,96 écart-type (la dispersion typique) de la moyenne. Vous passez d’une valeur à une probabilité, et d’une probabilité à un seuil, sans table, grâce au score z : le nombre d’écarts-types qui sépare une valeur de la moyenne.",
+    "en": "In any normal distribution (the bell curve), about 95% of values lie within 1.96 standard deviations (the typical spread) of the mean. You go from a value to a probability, and from a probability to a threshold, without a table, thanks to the z-score: the number of standard deviations between a value and the mean."
    },
    "parameters": [
     {
@@ -3794,8 +3810,8 @@
       "en": "x (value)"
      },
      "meaning": {
-      "fr": "Une valeur, la moyenne et l’écart-type.",
-      "en": "A value, the mean and the standard deviation."
+      "fr": null,
+      "en": null
      },
      "unit": {
       "fr": "valeur",
@@ -3805,7 +3821,7 @@
     },
     {
      "id": "param",
-     "type": "integer",
+     "type": "number",
      "control": "number",
      "min": null,
      "max": null,
@@ -3816,8 +3832,8 @@
       "en": "μ (mean)"
      },
      "meaning": {
-      "fr": "Une valeur, la moyenne et l’écart-type.",
-      "en": "A value, the mean and the standard deviation."
+      "fr": null,
+      "en": null
      },
      "unit": {
       "fr": "moyenne",
@@ -3827,7 +3843,7 @@
     },
     {
      "id": "param_2",
-     "type": "integer",
+     "type": "number",
      "control": "number",
      "min": 0,
      "max": null,
@@ -3838,8 +3854,8 @@
       "en": "σ (standard deviation)"
      },
      "meaning": {
-      "fr": "Une valeur, la moyenne et l’écart-type.",
-      "en": "A value, the mean and the standard deviation."
+      "fr": null,
+      "en": null
      },
      "unit": {
       "fr": "standard deviation",
@@ -4004,6 +4020,7 @@
      "kind": "reading"
     }
    ],
+   "outputs_en_page": null,
    "formulas": [
     {
      "text": "z = (x − μ)/σ"
@@ -4176,6 +4193,7 @@
     "normal-distribution"
    ],
    "extraction": {
+    "source_hash": "500396262d9f889c",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -4210,8 +4228,8 @@
     "en": "Compare two treatments with the classic pooled t-test: difference, t statistic, degrees of freedom (df) and rejection regions."
    },
    "summary": {
-    "fr": "Un écart de 6 mmHg entre deux traitements donne p ≈ 0,18 avec 4 patients par groupe, et p ≈ 0,014 avec 12, à moyennes et écarts-types inchangés (exemple construit). Vous apprenez à comparer un écart à son incertitude, et non à lire une p-value seule.",
-    "en": "A 6 mmHg difference between two treatments gives p ≈ 0.18 with 4 patients per group and p ≈ 0.014 with 12, with means and standard deviations unchanged (constructed example). You learn to compare a difference with its uncertainty, rather than read a p-value alone."
+    "fr": "Un écart de 6 mmHg (millimètres de mercure, unité de pression artérielle) entre deux traitements donne p ≈ 0,18 avec 4 patients par groupe, et p ≈ 0,014 avec 12, à moyennes et écarts-types (dispersions) inchangés (exemple construit). Ici p est la p-value : la probabilité d’un écart au moins aussi grand si les deux…",
+    "en": "A 6 mmHg (millimeters of mercury, a unit of blood pressure) difference between two treatments gives p ≈ 0.18 with 4 patients per group and p ≈ 0.014 with 12, with means and standard deviations (spreads) unchanged (constructed example). Here p is the p-value: the probability of a difference at least this large if both…"
    },
    "parameters": [
     {
@@ -4543,8 +4561,8 @@
       "en": "dimensionless"
      },
      "meaning": {
-      "fr": "seuil à dépasser pour rejeter H₀",
-      "en": "threshold to exceed to reject H₀"
+      "fr": "seuil à dépasser pour rejeter H₀ (α = 5 % : le risque accepté de rejeter H₀ à tort)",
+      "en": "threshold to exceed to reject H₀ (α = 5%: the accepted risk of rejecting H₀ wrongly)"
      },
      "kind": "metric"
     },
@@ -4564,6 +4582,7 @@
      "kind": "metric"
     }
    ],
+   "outputs_en_page": null,
    "formulas": [
     {
      "text": "t = Δ/(s_psqrt(1/n_1 + 1/n_2))"
@@ -4744,6 +4763,7 @@
     "student-t-test"
    ],
    "extraction": {
+    "source_hash": "90c77ee17986439f",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -4778,8 +4798,8 @@
     "en": "Explore a fair die or a 2×2 table; visualize cell contributions and small expected counts."
    },
    "summary": {
-    "fr": "Sur 120 lancers d’un dé, une seule face sortie 68 fois au lieu de 20 apporte 115,2 des 138,5 points du χ². Vous apprenez à chercher où se trouve l’écart, au lieu de vous arrêter à la p-value.",
-    "en": "Over 120 throws of a die, a single face appearing 68 times instead of 20 contributes 115.2 of the 138.5 points of χ². You learn to look for where the departure lies, instead of stopping at the p-value."
+    "fr": "Sur 120 lancers d’un dé, une seule face sortie 68 fois au lieu de 20 apporte 115,2 des 138,5 points du χ² (khi-deux : la mesure globale de l’écart entre effectifs observés et attendus). Vous apprenez à chercher où se trouve l’écart, au lieu de vous arrêter à la p-value (la probabilité d’un écart au moins aussi grand…",
+    "en": "Over 120 throws of a die, a single face appearing 68 times instead of 20 contributes 115.2 of the 138.5 points of χ² (chi-square: the overall measure of the gap between observed and expected counts). You learn to look for where the departure lies, instead of stopping at the p-value (the probability of a gap at least…"
    },
    "parameters": [
     {
@@ -4802,8 +4822,8 @@
       "en": "Question"
      },
      "meaning": {
-      "fr": "somme des contributions",
-      "en": "sum of the contributions"
+      "fr": null,
+      "en": null
      },
      "unit": null
     },
@@ -5274,6 +5294,7 @@
      "kind": "table-row"
     }
    ],
+   "outputs_en_page": null,
    "formulas": [
     {
      "text": "χ^2 = ∑((O − E)^2)/E"
@@ -5332,7 +5353,7 @@
    ],
    "assumptions": {
     "fr": [
-     "Le χ² additionne des écarts cellule par cellule, et une seule peut tout porter : dans ce dé suspect, la face 6 fournit à elle seule l’essentiel de la statistique. Modifiez des effectifs et regardez quelle cellule pèse.",
+     "Le χ² (khi-deux) additionne des écarts cellule par cellule (chacun compare l’effectif observé à celui attendu si H₀, « le dé est équilibré », était vraie), et une seule peut tout porter : dans ce dé suspect, la face 6 fournit à elle seule l’essentiel de la statistique. Modifiez des effectifs et regardez quelle cellule pèse.",
      "120 lancers, 20 attendus par face : la face 6 sort 68 fois et pèse presque tout le χ².",
      "Exemple fictif de lancers indépendants d’un dé à six faces. H₀ : chaque face a une probabilité 1/6, soit N/6 occurrences attendues par face (20 pour 120 lancers). Ces valeurs diffèrent de l’exemple des diapositives.",
      "H₀ rejetée au seuil fixé de 5 %. Les écarts à H₀ sont statistiquement détectables dans ce modèle. La cellule qui pèse le plus : Face 6, 83 % du χ². Une différence dans une cellule peu attendue pèse davantage.",
@@ -5340,7 +5361,7 @@
      "Conditions : observations indépendantes, catégories exclusives, vrais comptages et non des pourcentages. Le tableau 2×2 ne convient pas à des mesures appariées."
     ],
     "en": [
-     "χ² adds up gaps cell by cell, and a single cell can carry it all: in this suspect die, face 6 alone provides most of the statistic. Change the counts and see which cell weighs most.",
+     "χ² (chi-square) adds up gaps cell by cell (each compares the observed count with the one expected if H₀, “the die is fair”, were true), and a single cell can carry it all: in this suspect die, face 6 alone provides most of the statistic. Change the counts and see which cell weighs most.",
      "120 rolls, 20 expected per face: face 6 comes up 68 times and carries nearly all of χ².",
      "Fictitious example of independent rolls of a six-sided die. H₀: each face has probability 1/6, giving N/6 expected occurrences per face (20 for 120 rolls). These values differ from the example in the slides.",
      "H₀ rejected at the prespecified 5% level. Departures from H₀ are statistically detectable under this model. The heaviest cell: Face 6, 83% of χ². A difference in a cell with a smaller expected count carries more weight.",
@@ -5472,6 +5493,7 @@
     "chi-square-test"
    ],
    "extraction": {
+    "source_hash": "ef726508d169ef9e",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -5506,8 +5528,8 @@
     "en": "Vary the correlation r and the sample size n; distinguish the theoretical p-value from variation explained in a constructed teaching example."
    },
    "summary": {
-    "fr": "Avec r = 0,10, la droite décrit 1 % de la variation, que l’on ait 30 points (p ≈ 0,599) ou 1000 (p ≈ 0,0015). Vous séparez deux questions souvent confondues : le lien est-il détectable, et décrit-il beaucoup ?",
-    "en": "With r = 0.10, the line describes 1% of the variation, whether there are 30 points (p ≈ 0.599) or 1000 (p ≈ 0.0015). You separate two questions that are often confused: is the association detectable, and does it describe much?"
+    "fr": "Avec une corrélation r = 0,10 (sans unité, de −1 à 1), la droite décrit 1 % de la variation (R², le coefficient de détermination), que l’on ait 30 points (p ≈ 0,599) ou 1000 (p ≈ 0,0015). Ici p est la p-value : la probabilité d’un lien au moins aussi fort si les deux grandeurs n’avaient aucun lien.",
+    "en": "With a correlation r = 0.10 (unitless, from −1 to 1), the line describes 1% of the variation (R², the coefficient of determination), whether there are 30 points (p ≈ 0.599) or 1000 (p ≈ 0.0015). Here p is the p-value: the probability of an association at least this strong if the two quantities were unrelated."
    },
    "parameters": [
     {
@@ -5711,6 +5733,7 @@
      "kind": "metric"
     }
    ],
+   "outputs_en_page": null,
    "formulas": [
     {
      "text": "t = rsqrt((n − 2)/(1 − r^2))"
@@ -5888,6 +5911,7 @@
     "r-squared"
    ],
    "extraction": {
+    "source_hash": "eabb6a51e041bec1",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -5922,8 +5946,8 @@
     "en": "Compare both bands, move x₀, the value where the prediction is made, and recognize extrapolation."
    },
    "summary": {
-    "fr": "Avec 20 points et un écart-type résiduel de 1, la moyenne prévue au centre est connue à ±0,47, mais une nouvelle observation seulement à ±2,15. Vous savez quel intervalle répond à quelle question.",
-    "en": "With 20 points and a residual standard deviation of 1, the predicted mean at the center is known to ±0.47, but a new observation only to ±2.15. You know which interval answers which question."
+    "fr": "Avec 20 points et un écart-type résiduel de 1 (la dispersion des points autour de la droite), la moyenne prévue au centre est connue à ±0,47 (intervalle de confiance), mais une nouvelle observation seulement à ±2,15 (intervalle de prévision). Vous savez quel intervalle répond à quelle question.",
+    "en": "With 20 points and a residual standard deviation of 1 (the spread of the points around the line), the predicted mean at the center is known to ±0.47 (confidence interval), but a new observation only to ±2.15 (prediction interval). You know which interval answers which question."
    },
    "parameters": [
     {
@@ -6036,10 +6060,16 @@
       "fr": "Peu de points : 6",
       "en": "Few points: 6"
      },
-     "values": {},
-     "changes_vs_default": {},
+     "values": {
+      "number-of-points-n": 6,
+      "residual-standard-deviation-se": 1,
+      "prediction-input-x0": 0
+     },
+     "changes_vs_default": {
+      "number-of-points-n": 6
+     },
      "shows": {
-      "fr": null,
+      "fr": "Peu de points : le quantile de Student augmente et les deux bandes s’élargissent.",
       "en": "Few points: the Student quantile rises and both bands widen."
      }
     },
@@ -6165,6 +6195,7 @@
      "kind": "metric"
     }
    ],
+   "outputs_en_page": null,
    "formulas": [
     {
      "text": "ŷ_0 ± ts_esqrt(1/n + ((x_0 − x̄)^2)/S_xx)"
@@ -6296,9 +6327,11 @@
       "fr": "Peu de points : 6",
       "en": "Few points: 6"
      },
-     "set": {},
+     "set": {
+      "number-of-points-n": 6
+     },
      "observe": {
-      "fr": null,
+      "fr": "Peu de points : le quantile de Student augmente et les deux bandes s’élargissent.",
       "en": "Few points: the Student quantile rises and both bands widen."
      }
     },
@@ -6336,6 +6369,7 @@
     "prediction-interval"
    ],
    "extraction": {
+    "source_hash": "6629ae278d280e08",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -6343,9 +6377,7 @@
     "page_errors": [],
     "fr_en_preset_consistency": {
      "presets_compared": 6,
-     "presets_with_different_values_fr_vs_en": [
-      2
-     ]
+     "presets_with_different_values_fr_vs_en": []
     }
    }
   },
@@ -6372,8 +6404,8 @@
     "en": "Move an outlier and watch the correlation coefficient r, the least-squares line and the p-value change."
    },
    "summary": {
-    "fr": "Dans cet exemple, ajouter un seul point éloigné fait tomber la corrélation de 0,948 à 0,348. Vous prenez le réflexe de regarder le nuage avant de conclure.",
-    "en": "In this example, adding one distant point makes the correlation fall from 0.948 to 0.348. You get into the habit of looking at the scatter before concluding."
+    "fr": "Dans cet exemple, ajouter un seul point éloigné fait tomber la corrélation r (sans unité : 1 pour des points parfaitement alignés, 0 pour aucun lien) de 0,948 à 0,348. Vous prenez le réflexe de regarder le nuage avant de conclure.",
+    "en": "In this example, adding one distant point makes the correlation r (unitless: 1 for perfectly aligned points, 0 for no relationship) fall from 0.948 to 0.348. You get into the habit of looking at the scatter before concluding."
    },
    "parameters": [
     {
@@ -6450,8 +6482,8 @@
      },
      "changes_vs_default": {},
      "shows": {
-      "fr": "Le point tire la droite vers lui : la pente et r chutent. C’est l’effet de levier.",
-      "en": "The point pulls the line towards it: the slope and r fall. This is leverage."
+      "fr": "Le point tire la droite vers lui : la pente et r chutent. C’est l’effet de levier : le poids d’un point éloigné sur la droite.",
+      "en": "The point pulls the line towards it: the slope and r fall. This is leverage: the pull of a distant point on the line."
      }
     },
     {
@@ -6562,6 +6594,7 @@
      "kind": "reading"
     }
    ],
+   "outputs_en_page": null,
    "formulas": [
     {
      "text": "b_1 = (cov(x,y))/(s_x^2)"
@@ -6667,8 +6700,8 @@
       "include-the-orange-point": true
      },
      "observe": {
-      "fr": "Le point tire la droite vers lui : la pente et r chutent. C’est l’effet de levier.",
-      "en": "The point pulls the line towards it: the slope and r fall. This is leverage."
+      "fr": "Le point tire la droite vers lui : la pente et r chutent. C’est l’effet de levier : le poids d’un point éloigné sur la droite.",
+      "en": "The point pulls the line towards it: the slope and r fall. This is leverage: the pull of a distant point on the line."
      }
     },
     {
@@ -6720,6 +6753,7 @@
     "influential-point"
    ],
    "extraction": {
+    "source_hash": "300f4a3db2afabbf",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -6727,6 +6761,521 @@
     "page_errors": [],
     "fr_en_preset_consistency": {
      "presets_compared": 4,
+     "presets_with_different_values_fr_vs_en": []
+    }
+   }
+  },
+  {
+   "id": "sun",
+   "schema": "https://www.cyrilvoyant.com/tools-spec.json#1.0",
+   "kind": "demo",
+   "domain": "energy",
+   "interface_language": "both",
+   "name": {
+    "fr": "Le Soleil, les saisons et l’heure UTC",
+    "en": "The Sun, the seasons and UTC"
+   },
+   "url": {
+    "fr": "https://www.cyrilvoyant.com/fr/animations/soleil-saisons-utc/",
+    "en": "https://www.cyrilvoyant.com/tools/sun-seasons-utc/"
+   },
+   "page_title": {
+    "fr": "Le Soleil, les saisons et l'heure : une seule horloge pour les mesures",
+    "en": "The Sun, the seasons and the clock: one time for every measurement"
+   },
+   "computes": {
+    "fr": "La Terre autour du Soleil, le jour et la nuit, la durée du jour à Paris et à Sydney, la double saisonnalité de l’éclairement et l’horodatage des mesures en UTC.",
+    "en": "The Earth around the Sun, day and night, day length in Paris and Sydney, the double seasonality of irradiance and timestamping measurements in UTC."
+   },
+   "summary": {
+    "fr": "Le 21 juin 2026, le jour dure 16 h 11 à Paris et 9 h 54 à Sydney. Au même instant, 12:00 UTC, il est 14:00 à Paris et 22:00 à Sydney.",
+    "en": "On 21 June 2026, the day lasts 16 h 11 in Paris and 9 h 54 in Sydney. At the same instant, 12:00 UTC, it is 14:00 in Paris and 22:00 in Sydney."
+   },
+   "parameters": [
+    {
+     "id": "sun-d",
+     "type": "integer",
+     "control": "range",
+     "min": 1,
+     "max": 365,
+     "step": 1,
+     "default": 298,
+     "label": {
+      "fr": "Date",
+      "en": "Date"
+     },
+     "meaning": {
+      "fr": null,
+      "en": null
+     },
+     "unit": {
+      "fr": "jour de l'année 2026 (affiché comme une date)",
+      "en": "day of the year 2026 (shown as a date)"
+     },
+     "unit_source": "sun-seasons.js"
+    },
+    {
+     "id": "sun-t",
+     "type": "integer",
+     "control": "range",
+     "min": 0,
+     "max": 1435,
+     "step": 5,
+     "default": 360,
+     "label": {
+      "fr": "Instant (UTC)",
+      "en": "Instant (UTC)"
+     },
+     "meaning": {
+      "fr": "temps universel coordonné : une seule horloge pour toute la Terre, sans heure d'été.",
+      "en": "Coordinated Universal Time: one clock for the whole Earth, without summer time."
+     },
+     "unit": {
+      "fr": "minutes depuis 00:00 UTC (affiché en hh:mm UTC)",
+      "en": "minutes since 00:00 UTC (shown as hh:mm UTC)"
+     },
+     "unit_source": "sun-seasons.js"
+    }
+   ],
+   "presets": [
+    {
+     "id": "autumn-morning-in-paris",
+     "name": {
+      "fr": "Matin d'automne à Paris",
+      "en": "Autumn morning in Paris"
+     },
+     "values": {
+      "sun-d": 298,
+      "sun-t": 360
+     },
+     "changes_vs_default": {},
+     "shows": {
+      "fr": "25 octobre, 06:00 UTC : nuit à Paris, fin d'après-midi à Sydney. Le cas de départ.",
+      "en": "25 October, 06:00 UTC: night in Paris, late afternoon in Sydney. The starting case."
+     }
+    },
+    {
+     "id": "summer-in-paris",
+     "name": {
+      "fr": "Été à Paris",
+      "en": "Summer in Paris"
+     },
+     "values": {
+      "sun-d": 172,
+      "sun-t": 720
+     },
+     "changes_vs_default": {
+      "sun-d": 172,
+      "sun-t": 720
+     },
+     "shows": {
+      "fr": "21 juin, 12:00 UTC : jours les plus longs à Paris, les plus courts à Sydney.",
+      "en": "21 June, 12:00 UTC: the longest days in Paris, the shortest in Sydney."
+     }
+    },
+    {
+     "id": "summer-in-sydney",
+     "name": {
+      "fr": "Été à Sydney",
+      "en": "Summer in Sydney"
+     },
+     "values": {
+      "sun-d": 355,
+      "sun-t": 720
+     },
+     "changes_vs_default": {
+      "sun-d": 355,
+      "sun-t": 720
+     },
+     "shows": {
+      "fr": "21 décembre, 12:00 UTC : tout s'inverse. La Terre est pourtant presque au plus près du Soleil.",
+      "en": "21 December, 12:00 UTC: everything reverses. Yet the Earth is almost at its closest to the Sun."
+     }
+    },
+    {
+     "id": "equinox",
+     "name": {
+      "fr": "Équinoxe",
+      "en": "Equinox"
+     },
+     "values": {
+      "sun-d": 79,
+      "sun-t": 720
+     },
+     "changes_vs_default": {
+      "sun-d": 79,
+      "sun-t": 720
+     },
+     "shows": {
+      "fr": "20 mars, 12:00 UTC : le Soleil est au zénith près de l'équateur et le jour dure environ 12 h aux deux endroits. Les quelques minutes en plus viennent de la réfraction.",
+      "en": "20 March, 12:00 UTC: the Sun is overhead near the equator and the day lasts about 12 h in both places. The few extra minutes come from refraction."
+     }
+    },
+    {
+     "id": "noon-in-sydney",
+     "name": {
+      "fr": "Midi à Sydney",
+      "en": "Noon in Sydney"
+     },
+     "values": {
+      "sun-d": 172,
+      "sun-t": 115
+     },
+     "changes_vs_default": {
+      "sun-d": 172,
+      "sun-t": 115
+     },
+     "shows": {
+      "fr": "21 juin, 01:56 UTC : midi solaire à Sydney alors qu'il fait nuit à Paris.",
+      "en": "21 June, 01:56 UTC: solar noon in Sydney while it is night in Paris."
+     }
+    },
+    {
+     "id": "25-10-2026-paris-goes-back-to-winter-tim",
+     "name": {
+      "fr": "25/10/2026 : Paris passe à l'heure d'hiver",
+      "en": "25/10/2026: Paris goes back to winter time"
+     },
+     "values": {
+      "sun-d": 298,
+      "sun-t": 360
+     },
+     "changes_vs_default": {},
+     "effect": {
+      "fr": "aucun paramètre ne change et la page n'affiche pas de nouvelle phrase",
+      "en": "no parameter changes and the page shows no new sentence"
+     }
+    },
+    {
+     "id": "29-03-2026-paris-moves-to-summer-time",
+     "name": {
+      "fr": "29/03/2026 : Paris passe à l'heure d'été",
+      "en": "29/03/2026: Paris moves to summer time"
+     },
+     "values": {
+      "sun-d": 298,
+      "sun-t": 360
+     },
+     "changes_vs_default": {},
+     "effect": {
+      "fr": "aucun paramètre ne change et la page n'affiche pas de nouvelle phrase",
+      "en": "no parameter changes and the page shows no new sentence"
+     }
+    },
+    {
+     "id": "04-10-2026-sydney-moves-to-summer-time",
+     "name": {
+      "fr": "04/10/2026 : Sydney passe à l'heure d'été",
+      "en": "04/10/2026: Sydney moves to summer time"
+     },
+     "values": {
+      "sun-d": 298,
+      "sun-t": 360
+     },
+     "changes_vs_default": {},
+     "effect": {
+      "fr": "aucun paramètre ne change et la page n'affiche pas de nouvelle phrase",
+      "en": "no parameter changes and the page shows no new sentence"
+     }
+    }
+   ],
+   "actions": [
+    {
+     "name": {
+      "fr": "▶ Une année",
+      "en": "▶ One year"
+     }
+    },
+    {
+     "name": {
+      "fr": "▶ Une journée",
+      "en": "▶ One day"
+     }
+    }
+   ],
+   "variants": [],
+   "outputs": [
+    {
+     "name": {
+      "fr": "La Terre autour du Soleil",
+      "en": "The Earth around the Sun"
+     },
+     "unit": null,
+     "meaning": {
+      "fr": "Énergie du jour : énergie reçue en une journée sur 1 m² horizontal, hors atmosphère.",
+      "en": "Energy of the day: energy received in one day on 1 m² of horizontal surface, outside the atmosphere."
+     },
+     "kind": "figure"
+    },
+    {
+     "name": {
+      "fr": "Pourquoi l'inclinaison fait les saisons : jours plus longs, Soleil plus haut",
+      "en": "Why the tilt makes the seasons: longer days, higher Sun"
+     },
+     "unit": null,
+     "meaning": {
+      "fr": null,
+      "en": null
+     },
+     "kind": "figure"
+    },
+    {
+     "name": {
+      "fr": "Le jour et la nuit sur la Terre",
+      "en": "Day and night on Earth"
+     },
+     "unit": null,
+     "meaning": {
+      "fr": "Partie claire : le jour. Rond jaune : le point où le Soleil est au zénith (à la verticale). Lignes orange : les tropiques, à ±23,44° de latitude, les limites où le Soleil peut passer au zénith. Sur chaque étiquette : l'heure légale (celle des horloges du pays), le décalage à UTC (en heures) et la hauteur du Soleil (son angle au-dessus de l'horizon).",
+      "en": "Light area: day. Yellow disc: the point where the Sun is overhead. Orange lines: the tropics, at ±23.44° of latitude, the limits where the Sun can be overhead. On each label: legal time (the clocks of the country), offset to UTC (in hours) and elevation of the Sun (its angle above the horizon)."
+     },
+     "kind": "figure"
+    },
+    {
+     "name": {
+      "fr": "Une seule horloge (UTC), deux heures locales",
+      "en": "One clock (UTC), two local times"
+     },
+     "unit": null,
+     "meaning": {
+      "fr": null,
+      "en": null
+     },
+     "kind": "figure"
+    },
+    {
+     "name": {
+      "fr": "Hors atmosphère, par date et par heure UTC",
+      "en": "Outside the atmosphere, by date and UTC hour"
+     },
+     "unit": null,
+     "meaning": {
+      "fr": "De bleu nuit (0 W/m²) à jaune pâle (environ 1400 W/m²). Les traits rouges marquent la date et l'instant choisis.",
+      "en": "From night blue (0 W/m²) to pale yellow (about 1400 W/m²). The red lines mark the chosen date and instant."
+     },
+     "kind": "figure"
+    },
+    {
+     "name": {
+      "fr": "Le jour choisi : éclairement hors atmosphère G0 selon l'heure UTC",
+      "en": "The chosen day: extraterrestrial irradiance G0 against UTC hour"
+     },
+     "unit": null,
+     "meaning": {
+      "fr": "Le rond marque la date et l'instant choisis.",
+      "en": "The disc marks the chosen date and instant."
+     },
+     "kind": "figure"
+    },
+    {
+     "name": {
+      "fr": "L'année : énergie reçue par jour, hors atmosphère",
+      "en": "The year: energy received per day, outside the atmosphere"
+     },
+     "unit": null,
+     "meaning": {
+      "fr": null,
+      "en": null
+     },
+     "kind": "figure"
+    },
+    {
+     "name": {
+      "fr": "Le même instant sur trois horloges",
+      "en": "The same instant on three clocks"
+     },
+     "unit": null,
+     "meaning": {
+      "fr": null,
+      "en": null
+     },
+     "kind": "figure"
+    }
+   ],
+   "outputs_en_page": null,
+   "formulas": [
+    {
+     "text": "G0 = Gsc·E0·cos θz"
+    }
+   ],
+   "definitions": [
+    {
+     "term": "Déclinaison δ",
+     "meaning": {
+      "fr": "latitude où le Soleil est au zénith à midi ; de −23,44° à +23,44° au fil de l'année.",
+      "en": "latitude where the Sun is overhead at noon; from −23.44° to +23.44° over the year."
+     }
+    },
+    {
+     "term": "Équation du temps",
+     "meaning": {
+      "fr": "écart, de −14 à +16 minutes, entre le midi solaire vrai et le midi d'un Soleil moyen ; due à l'orbite elliptique et à l'inclinaison.",
+      "en": "difference, from −14 to +16 minutes, between true solar noon and the noon of a mean Sun; due to the elliptical orbit and the tilt."
+     }
+    },
+    {
+     "term": "Temps solaire vrai, angle horaire",
+     "meaning": {
+      "fr": "le temps solaire vrai vaut UTC + équation du temps + 4 min par degré de longitude est ; l'angle horaire est nul au midi solaire et croît de 15° par heure.",
+      "en": "true solar time is UTC + equation of time + 4 min per degree of east longitude; the hour angle is zero at solar noon and grows by 15° per hour."
+     }
+    },
+    {
+     "term": "Angle zénithal θz",
+     "meaning": {
+      "fr": "angle entre la verticale et la direction du Soleil ; cos θz = sin φ sin δ + cos φ cos δ cos h, avec φ la latitude, δ la déclinaison et h l'angle horaire.",
+      "en": "angle between the vertical and the direction of the Sun; cos θz = sin φ sin δ + cos φ cos δ cos h, with φ the latitude, δ the declination and h the hour angle."
+     }
+    },
+    {
+     "term": "Facteur de distance E0",
+     "meaning": {
+      "fr": "correction de la distance Terre-Soleil : 1 à la distance moyenne, 1,033 début janvier, 0,967 début juillet.",
+      "en": "correction for the Earth-Sun distance: 1 at the mean distance, 1.033 in early January, 0.967 in early July."
+     }
+    },
+    {
+     "term": "Réfraction",
+     "meaning": {
+      "fr": "l'atmosphère courbe les rayons : le Soleil reste visible un peu après son coucher géométrique. D'où quelques minutes de jour en plus.",
+      "en": "the atmosphere bends the rays: the Sun stays visible a little after its geometric sunset. Hence a few extra minutes of daylight."
+     }
+    },
+    {
+     "term": "UTC",
+     "meaning": {
+      "fr": "temps universel coordonné : une seule horloge pour toute la Terre, sans heure d'été.",
+      "en": "Coordinated Universal Time: one clock for the whole Earth, without summer time."
+     }
+    },
+    {
+     "term": "Heure légale",
+     "meaning": {
+      "fr": "UTC + un décalage fixé par chaque pays, qui peut changer en été.",
+      "en": "UTC plus an offset set by each country, which may change in summer."
+     }
+    },
+    {
+     "term": "G0",
+     "meaning": {
+      "fr": "éclairement solaire hors atmosphère sur un plan horizontal : une borne que les mesures au sol ne dépassent que rarement, surtout Soleil bas.",
+      "en": "extraterrestrial solar irradiance on a horizontal plane: a bound that ground measurements exceed only rarely, mostly with a low Sun."
+     }
+    }
+   ],
+   "assumptions": {
+    "fr": [],
+    "en": []
+   },
+   "source": {
+    "dois": [],
+    "repositories": [],
+    "related_pages": [
+     {
+      "href": "/fr/outils/variabilite-previsibilite/",
+      "text": "Mesurer variabilité et prévisibilité : sCV et F"
+     },
+     {
+      "href": "/fr/outils/blend/",
+      "text": "Calculer les poids de BLEND"
+     },
+     {
+      "href": "/fr/outils/comparateur-previsions/",
+      "text": "Comparer des prévisions : persistance, AR et ELM"
+     }
+    ]
+   },
+   "how_to_explore": {
+    "fr": "Régler les paramètres sur un préréglage (valeurs ci-dessus), lire la phrase affichée par la page puis les sorties ; modifier ensuite un seul paramètre à la fois entre son minimum et son maximum.",
+    "en": "Set the parameters to a preset (values above), read the sentence the page shows then the outputs; then change one parameter at a time between its minimum and maximum."
+   },
+   "exploration": [
+    {
+     "preset": "autumn-morning-in-paris",
+     "title": {
+      "fr": "Matin d'automne à Paris",
+      "en": "Autumn morning in Paris"
+     },
+     "set": {
+      "sun-d": 298,
+      "sun-t": 360
+     },
+     "observe": {
+      "fr": "25 octobre, 06:00 UTC : nuit à Paris, fin d'après-midi à Sydney. Le cas de départ.",
+      "en": "25 October, 06:00 UTC: night in Paris, late afternoon in Sydney. The starting case."
+     }
+    },
+    {
+     "preset": "summer-in-paris",
+     "title": {
+      "fr": "Été à Paris",
+      "en": "Summer in Paris"
+     },
+     "set": {
+      "sun-d": 172,
+      "sun-t": 720
+     },
+     "observe": {
+      "fr": "21 juin, 12:00 UTC : jours les plus longs à Paris, les plus courts à Sydney.",
+      "en": "21 June, 12:00 UTC: the longest days in Paris, the shortest in Sydney."
+     }
+    },
+    {
+     "preset": "summer-in-sydney",
+     "title": {
+      "fr": "Été à Sydney",
+      "en": "Summer in Sydney"
+     },
+     "set": {
+      "sun-d": 355,
+      "sun-t": 720
+     },
+     "observe": {
+      "fr": "21 décembre, 12:00 UTC : tout s'inverse. La Terre est pourtant presque au plus près du Soleil.",
+      "en": "21 December, 12:00 UTC: everything reverses. Yet the Earth is almost at its closest to the Sun."
+     }
+    },
+    {
+     "preset": "equinox",
+     "title": {
+      "fr": "Équinoxe",
+      "en": "Equinox"
+     },
+     "set": {
+      "sun-d": 79,
+      "sun-t": 720
+     },
+     "observe": {
+      "fr": "20 mars, 12:00 UTC : le Soleil est au zénith près de l'équateur et le jour dure environ 12 h aux deux endroits. Les quelques minutes en plus viennent de la réfraction.",
+      "en": "20 March, 12:00 UTC: the Sun is overhead near the equator and the day lasts about 12 h in both places. The few extra minutes come from refraction."
+     }
+    },
+    {
+     "preset": "noon-in-sydney",
+     "title": {
+      "fr": "Midi à Sydney",
+      "en": "Noon in Sydney"
+     },
+     "set": {
+      "sun-d": 172,
+      "sun-t": 115
+     },
+     "observe": {
+      "fr": "21 juin, 01:56 UTC : midi solaire à Sydney alors qu'il fait nuit à Paris.",
+      "en": "21 June, 01:56 UTC: solar noon in Sydney while it is night in Paris."
+     }
+    }
+   ],
+   "concepts": [],
+   "extraction": {
+    "source_hash": "dfd60bb6a3504dc2",
+    "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
+    "roots": [
+     "#sun"
+    ],
+    "page_errors": [],
+    "fr_en_preset_consistency": {
+     "presets_compared": 8,
      "presets_with_different_values_fr_vs_en": []
     }
    }
@@ -6754,7 +7303,7 @@
     "en": "NICE divides a forecast’s error by that of persistence: 1 means “as good as persistence”, 0 a perfect forecast. Paste observations and forecasts, choose a horizon, read the result."
    },
    "summary": {
-    "fr": "Une RMSE seule ne dit pas si une prévision est bonne. NICE répond : fait-elle mieux que recopier la dernière valeur connue ?",
+    "fr": "Une RMSE (l’erreur typique d’une prévision, dans l’unité de la grandeur prévue) seule ne dit pas si une prévision est bonne. NICE répond : fait-elle mieux que recopier la dernière valeur connue (la persistance) ?",
     "en": null
    },
    "parameters": [
@@ -6968,6 +7517,11 @@
      "kind": "table-row"
     }
    ],
+   "outputs_en_page": [
+    "model error Ek",
+    "simple persistence error",
+    "NICEk"
+   ],
    "formulas": [],
    "definitions": [
     {
@@ -7105,6 +7659,7 @@
     "nice"
    ],
    "extraction": {
+    "source_hash": "e5baec1286f0015b",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#try-it"
@@ -7136,7 +7691,7 @@
     "en": "BLEND is a convex combination of persistence and cyclic persistence. See the weights computed on a time series."
    },
    "summary": {
-    "fr": "Deux références gratuites, et leur mélange fait mieux que chacune : sur la puissance PV de Palaiseau à 1 heure, BLEND fait 17 % de RMSE en moins que la meilleure des deux. Son principe : un poids pour chaque moment du cycle.",
+    "fr": "Deux références gratuites (la persistance, qui recopie la dernière valeur connue, et la persistance cyclique, qui recopie la valeur d’une période plus tôt, 24 h pour le solaire), et leur mélange fait mieux que chacune : sur la puissance photovoltaïque (PV) de Palaiseau à 1 heure d’horizon, BLEND fait 17 % de RMSE…",
     "en": "With a clear-sky reference, CLIPER on x/CS beats BLEND on x/CS at all horizons across all test days combined, by 1 to 2 %, and it is simpler. BLEND wins only on stable days, a class known only after the fact."
    },
    "parameters": [
@@ -7150,7 +7705,7 @@
      "default": 1,
      "label": {
       "fr": "Horizon h",
-      "en": "Horizon h steps"
+      "en": "Horizon h (how far ahead) steps"
      },
      "meaning": {
       "fr": "Nombre de pas entre la dernière valeur connue et la valeur à prévoir.",
@@ -7172,7 +7727,7 @@
      "default": 7,
      "label": {
       "fr": "Phase",
-      "en": "Phase of the origin"
+      "en": "Phase of the origin (position in the cycle)"
      },
      "meaning": {
       "fr": "Le moment du cycle où part la prévision : ici l’heure de la journée. BLEND a un poids par phase.",
@@ -7194,7 +7749,7 @@
      "default": 0.5,
      "label": {
       "fr": "Votre λ",
-      "en": "Your λ"
+      "en": "Your λ (weight of the latest value, 0 to 1)"
      },
      "meaning": {
       "fr": "Le poids de la dernière valeur. λ = 1 : persistance. λ = 0 : persistance cyclique. Entre les deux : un mélange.",
@@ -7433,6 +7988,7 @@
      "kind": "metric"
     }
    ],
+   "outputs_en_page": [],
    "formulas": [],
    "definitions": [
     {
@@ -7594,6 +8150,7 @@
     "blend"
    ],
    "extraction": {
+    "source_hash": "ce2459ddec4047ca",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#try-it"
@@ -7661,7 +8218,7 @@
      "default": 0.2,
      "label": {
       "fr": "Plancher diffus d",
-      "en": "Diffuse floor d"
+      "en": "Diffuse floor d (fraction of light left under thick cloud)"
      },
      "meaning": {
       "fr": "La fraction de ciel clair qui reste sous un nuage épais : 0,2 dans l’article. Il fixe l’échelle de sCV, proportionnelle à 1/(1 − d). Les séries chargées restent construites avec d = 0,2.",
@@ -7854,6 +8411,7 @@
      "kind": "metric"
     }
    ],
+   "outputs_en_page": [],
    "formulas": [],
    "definitions": [
     {
@@ -7999,6 +8557,7 @@
     "forecastability-f"
    ],
    "extraction": {
+    "source_hash": "67879c7349dc9edb",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#try-it"
@@ -8030,7 +8589,7 @@
     "en": "The γ-index judges a forecast with tolerances in space, time and intensity. Displace, delay or bias a synthetic cloud and adjust these tolerances."
    },
    "summary": {
-    "fr": "Un nuage bien prévu mais en retard de 30 min coûte 133 W/m² de RMSE ; un biais de 80 W/m² n’en coûte que 80. Pourtant γ accepte 100 % des pixels du premier et 34 % du second.",
+    "fr": "Un nuage bien prévu mais en retard de 30 min coûte 133 W/m² (watts par mètre carré, l’éclairement solaire) de RMSE (racine de l’erreur quadratique moyenne) ; un biais (erreur systématique) de 80 W/m² n’en coûte que 80. Pourtant l’indice γ accepte 100 % des pixels (points de la carte) du premier et 34 % du second.",
     "en": null
    },
    "parameters": [
@@ -8110,7 +8669,7 @@
      "default": 2,
      "label": {
       "fr": "DTA",
-      "en": "DTA, spatial km"
+      "en": "DTA (distance to agreement), spatial km"
      },
      "meaning": {
       "fr": "Tolérance de distance : le décalage acceptable en km. Une maille de la grille dans l’article, soit environ 2 km.",
@@ -8132,7 +8691,7 @@
      "default": 30,
      "label": {
       "fr": "TTA",
-      "en": "TTA, temporal min"
+      "en": "TTA (time to agreement), temporal min"
      },
      "meaning": {
       "fr": "Tolérance de temps : le décalage acceptable en minutes. 30 min dans l’article.",
@@ -8154,7 +8713,7 @@
      "default": 50,
      "label": {
       "fr": "IDT",
-      "en": "IDT, intensity W/m²"
+      "en": "IDT (intensity difference threshold), intensity W/m²"
      },
      "meaning": {
       "fr": "Tolérance d’intensité : l’écart acceptable en W/m². 50 W/m² dans l’article.",
@@ -8457,6 +9016,7 @@
      "kind": "table-row"
     }
    ],
+   "outputs_en_page": [],
    "formulas": [],
    "definitions": [
     {
@@ -8600,6 +9160,7 @@
     "gamma-index"
    ],
    "extraction": {
+    "source_hash": "ed1f6e622f4f476a",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#try-it"
@@ -8631,7 +9192,7 @@
     "en": "LQ (linear-quadratic) and LQL (linear-quadratic-linear) are two models of the effect of a dose. Choose parameters and vary dose per fraction. Research and education use."
    },
    "summary": {
-    "fr": "Pour une dose unique de 15 Gy au rectum, le modèle LQ donne une BED de 72,7 Gy, le modèle LQL 59,4 Gy : la valeur LQ est supérieure de 22 %. Sous la dose de transition, les deux modèles sont identiques.",
+    "fr": "Pour une dose unique de 15 Gy (grays, l’unité de dose absorbée) au rectum, le modèle LQ (linéaire-quadratique) donne une BED (dose biologiquement efficace, qui permet de comparer des traitements fractionnés différemment) de 72,7 Gy, le modèle LQL (linéaire-quadratique-linéaire) 59,4 Gy : la valeur LQ est supérieure…",
     "en": null
    },
    "parameters": [
@@ -8926,6 +9487,7 @@
      "kind": "metric"
     }
    ],
+   "outputs_en_page": [],
    "formulas": [],
    "definitions": [
     {
@@ -9069,6 +9631,7 @@
     "gray"
    ],
    "extraction": {
+    "source_hash": "d75781abe64ed0a3",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#try-it"
@@ -9100,7 +9663,7 @@
     "en": "Choose a profile and protocol; follow simulated thyroglobulin. Research and education use."
    },
    "summary": {
-    "fr": "Quatre séances identiques, deux profils : après 80 mois, la thyroglobuline simulée vaut 167 ng/mL pour le profil réfractaire, 1,6 ng/mL pour le profil répondeur. Un seul paramètre les sépare, le temps de doublement des cellules tumorales.",
+    "fr": "Quatre séances identiques d’iode radioactif, deux profils : après 80 mois, la thyroglobuline simulée (le marqueur sanguin de la tumeur) vaut 167 ng/mL (nanogrammes par millilitre) pour le profil réfractaire (qui résiste au traitement), 1,6 ng/mL pour le profil répondeur (qui y répond). Un seul paramètre les sépare,…",
     "en": "Three equations describe how metastatic thyroid cancer responds to repeated sessions of radioactive iodine. Calibrated on 50 patients, they explore the number of sessions, the interval between them and the activity before any patient is treated; learning is planned only where the model falls short."
    },
    "parameters": [
@@ -9357,6 +9920,7 @@
      "kind": "metric"
     }
    ],
+   "outputs_en_page": [],
    "formulas": [],
    "definitions": [
     {
@@ -9482,6 +10046,7 @@
     "doubling-time"
    ],
    "extraction": {
+    "source_hash": "4e272c9642114f96",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#try-it"
@@ -9513,8 +10078,8 @@
     "en": "Five models on public Palaiseau data, 30 min to 6 h: error against horizon, NICE, curves; computed by the PV_ELM_pred code. AR: autoregression, a regression on past values. ELM: a frugal neural network."
    },
    "summary": {
-    "fr": "À 30 minutes, un réseau de neurones ne fait pas mieux qu’une simple autorégression : la RMSE vaut 1,43 kW pour les deux, contre 1,65 kW pour la persistance. À 6 heures, tous deux divisent par environ 2,5 l’erreur de la persistance, et le réseau ne gagne qu’environ 4 % de plus.",
-    "en": "At 30 minutes, a neural network does no better than a simple autoregression: RMSE is 1.43 kW for both, against 1.65 kW for persistence. At 6 hours, both divide the error of persistence by about 2.5, and the network only gains about 4% more."
+    "fr": "À 30 minutes d’horizon, un réseau de neurones ne fait pas mieux qu’une simple autorégression (une prévision à partir des valeurs passées) : la RMSE (l’erreur typique, en kilowatts, kW) vaut 1,43 kW pour les deux, contre 1,65 kW pour la persistance (recopier la dernière valeur). À 6 heures, tous deux divisent par…",
+    "en": "At a 30-minute horizon, a neural network does no better than a simple autoregression (a forecast from past values): RMSE (the typical error, in kilowatts, kW) is 1.43 kW for both, against 1.65 kW for persistence (copying the last value). At 6 hours, both divide the error of persistence by about 2.5, and the network…"
    },
    "parameters": [
     {
@@ -9631,8 +10196,8 @@
       "en": "cyclic persistence"
      },
      "meaning": {
-      "fr": "recopier la dernière valeur observée : la référence minimale de toute prévision.",
-      "en": "copy the last observed value: the minimal reference of any forecast."
+      "fr": "recopier la valeur observée 24 heures avant l’instant visé. Elle suit le cycle du jour, mais ignore la météo du moment.",
+      "en": "copy the value observed 24 hours before the target time. It follows the daily cycle but ignores the current weather."
      },
      "unit": null,
      "group": "Modèles affichés"
@@ -9965,6 +10530,7 @@
      "kind": "table-row"
     }
    ],
+   "outputs_en_page": null,
    "formulas": [],
    "definitions": [
     {
@@ -10160,6 +10726,7 @@
     "nice"
    ],
    "extraction": {
+    "source_hash": "9e08bc3e438828de",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#fc"
@@ -10233,8 +10800,8 @@
       "en": "Memory"
      },
      "meaning": {
-      "fr": "La corrélation entre deux valeurs voisines du bruit. 0 : aucune. 1 : totale.",
-      "en": "The correlation between two neighbouring values of the noise. 0: none. 1: total."
+      "fr": null,
+      "en": null
      },
      "unit": {
       "fr": "sans unité",
@@ -10384,50 +10951,50 @@
    "actions": [
     {
      "name": {
-      "fr": "PersistancenRMSE 51 %",
-      "en": "PersistencenRMSE 51 %"
+      "fr": "Persistance nRMSE 51 %",
+      "en": "Persistence nRMSE 51 %"
      }
     },
     {
      "name": {
-      "fr": "MoyennenRMSE 60 %",
-      "en": "MeannRMSE 60 %"
+      "fr": "Moyenne nRMSE 60 %",
+      "en": "Mean nRMSE 60 %"
      }
     },
     {
      "name": {
-      "fr": "Persistance cycliquenRMSE 36 %",
-      "en": "Cyclic persistencenRMSE 36 %"
+      "fr": "Persistance cyclique nRMSE 36 %",
+      "en": "Cyclic persistence nRMSE 36 %"
      }
     },
     {
      "name": {
-      "fr": "CLIPERnRMSE 46 %",
-      "en": "CLIPERnRMSE 46 %"
+      "fr": "CLIPER nRMSE 46 %",
+      "en": "CLIPER nRMSE 46 %"
      }
     },
     {
      "name": {
-      "fr": "BLENDnRMSE 31 %",
-      "en": "BLENDnRMSE 31 %"
+      "fr": "BLEND nRMSE 31 %",
+      "en": "BLEND nRMSE 31 %"
      }
     },
     {
      "name": {
-      "fr": "AR(2) brutnRMSE 41 %",
-      "en": "Raw AR(2)nRMSE 41 %"
+      "fr": "AR(2) brut nRMSE 41 %",
+      "en": "Raw AR(2) nRMSE 41 %"
      }
     },
     {
      "name": {
-      "fr": "Différence à la tendancenRMSE 24 %",
-      "en": "Difference to trendnRMSE 24 %"
+      "fr": "Différence à la tendance nRMSE 24 %",
+      "en": "Difference to trend nRMSE 24 %"
      }
     },
     {
      "name": {
-      "fr": "Rapport à la tendancenRMSE 24 %",
-      "en": "Ratio to trendnRMSE 24 %"
+      "fr": "Rapport à la tendance nRMSE 24 %",
+      "en": "Ratio to trend nRMSE 24 %"
      }
     }
    ],
@@ -10435,8 +11002,8 @@
    "outputs": [
     {
      "name": {
-      "fr": "Différence à la tendancenRMSE",
-      "en": "Difference to trendnRMSE"
+      "fr": "nRMSE",
+      "en": "nRMSE"
      },
      "unit": {
       "fr": "%",
@@ -10605,6 +11172,7 @@
      "kind": "table-row"
     }
    ],
+   "outputs_en_page": null,
    "formulas": [],
    "definitions": [
     {
@@ -10835,6 +11403,7 @@
     "memory-phi"
    ],
    "extraction": {
+    "source_hash": "6c54131a9cf337ee",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -10869,8 +11438,8 @@
     "en": "Follow a schematic cascade; distinguish flight exposure from the dose in a numerical tumour model, and compare two boron carriers, BSH and BPA."
    },
    "summary": {
-    "fr": "À l’altitude des avions, les neutrons peuvent bien déclencher des captures dans une tumeur enrichie en bore-10, mais notre calcul de 2011 donne environ 1 µGy par heure en moyenne : il faudrait un million d’heures pour atteindre 1 Gy. Le mécanisme existe, la dose moyenne ne suffit pas pour traiter une tumeur visible.",
-    "en": "At aircraft altitude, neutrons can indeed trigger captures in a boron-10-enriched tumour, but our 2011 calculation gives about 1 µGy per hour on average: reaching 1 Gy would take a million hours. The mechanism exists; the mean dose is not enough to treat a visible tumour."
+    "fr": "À l’altitude des avions, les neutrons peuvent bien déclencher des captures dans une tumeur enrichie en bore-10, mais notre calcul de 2011 donne environ 1 µGy (un millionième de gray, l’unité d’énergie absorbée par kilogramme) par heure en moyenne : il faudrait un million d’heures pour atteindre 1 Gy. Le mécanisme…",
+    "en": "At aircraft altitude, neutrons can indeed trigger captures in a boron-10-enriched tumour, but our 2011 calculation gives about 1 µGy (one millionth of a gray, the unit of energy absorbed per kilogram) per hour on average: reaching 1 Gy would take a million hours. The mechanism exists; the mean dose is not enough to…"
    },
    "parameters": [
     {
@@ -11171,15 +11740,16 @@
      "kind": "metric"
     }
    ],
+   "outputs_en_page": null,
    "formulas": [],
    "definitions": [],
    "assumptions": {
     "fr": [
-     "Le cas de l’article : altitude 12 km, latitude 45°, 14,7 neutrons par cm² et par seconde, 10 cm d’eau qui ralentissent les neutrons, 0,5 cm de crâne et une tumeur d’environ 1 g contenant 20 µg de bore-10 par gramme. Un modèle hybride, transport Monte-Carlo et approximations analytiques, estime une dose tumorale moyenne de l’ordre de 1 µGy pour une heure . C’est insuffisant pour traiter une tumeur visible.",
+     "Le cas de l’article : altitude 12 km, latitude 45°, 14,7 neutrons par cm² et par seconde, 10 cm d’eau qui ralentissent les neutrons, 0,5 cm de crâne et une tumeur d’environ 1 g contenant 20 µg de bore-10 par gramme. Un modèle hybride, transport Monte-Carlo (tirages aléatoires de trajectoires de neutrons) et approximations analytiques, estime une dose tumorale moyenne de l’ordre de 1 µGy pour une heure . C’est insuffisant pour traiter une tumeur visible.",
      "Les curseurs ne refont pas ce calcul : ils mettent à l’échelle le résultat publié, à spectre, géométrie et masse fixés. La durée multiplie la dose et les interactions. Le bore ne multiplie que les interactions, car l’article ne chiffre la dose qu’à 20 µg/g. Cette tumeur est un fantôme , c’est-à-dire un modèle numérique de tissus : sa concentration n’est pas une quantité à administrer à une personne."
     ],
     "en": [
-     "The paper’s case: 12 km altitude, 45° latitude, 14.7 neutrons per cm² per second, 10 cm of water slowing the neutrons, 0.5 cm of skull and a tumour of about 1 g with 20 µg of boron-10 per gram. A hybrid model, Monte Carlo transport with analytical approximations, estimates a mean tumour dose of the order of 1 µGy for one hour . That is insufficient to treat a visible tumour.",
+     "The paper’s case: 12 km altitude, 45° latitude, 14.7 neutrons per cm² per second, 10 cm of water slowing the neutrons, 0.5 cm of skull and a tumour of about 1 g with 20 µg of boron-10 per gram. A hybrid model, Monte Carlo transport (random draws of neutron paths) with analytical approximations, estimates a mean tumour dose of the order of 1 µGy for one hour . That is insufficient to treat a visible tumour.",
      "The sliders do not redo this calculation: they scale the published result, at fixed spectrum, geometry and mass. Duration multiplies the dose and the interactions. Boron multiplies the interactions only, because the paper quantifies the dose at 20 µg/g only. This tumour is a phantom , that is a numerical model of tissue: its concentration is not an amount to administer to a person."
     ]
    },
@@ -11260,6 +11830,7 @@
    ],
    "concepts": [],
    "extraction": {
+    "source_hash": "b4741964e96fbe3e",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience",
@@ -11356,8 +11927,8 @@
       "en": "σ̂, forecast volatility"
      },
      "meaning": {
-      "fr": "la volatilité prévue, sans unité. Le curseur en donne des valeurs d'exemple ; dans la méthode, elle sort de l'autorégression à chaque instant.",
-      "en": "the forecast volatility, without unit. The slider gives example values; in the method, it comes out of the autoregression at each time."
+      "fr": null,
+      "en": null
      },
      "unit": {
       "fr": "sans unité",
@@ -11510,6 +12081,7 @@
      "kind": "reading"
     }
    ],
+   "outputs_en_page": null,
    "formulas": [
     {
      "text": "z = κ + j·στ"
@@ -11668,6 +12240,7 @@
    ],
    "concepts": [],
    "extraction": {
+    "source_hash": "098117180e2f0c7a",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#cx"
@@ -11771,6 +12344,7 @@
      "kind": "metric"
     }
    ],
+   "outputs_en_page": null,
    "formulas": [],
    "definitions": [
     {
@@ -11909,6 +12483,7 @@
     "prediction-interval"
    ],
    "extraction": {
+    "source_hash": "1ee24b2c829475e5",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#proba-race"
@@ -11953,10 +12528,6 @@
       "fr": "Une référence simple à battre (persistance, ou climatologie : la moyenne habituelle)",
       "en": "A simple reference to beat (persistence, or climatology: the usual average)"
      },
-     "tag": {
-      "fr": "fondation",
-      "en": "foundation"
-     },
      "meaning": {
       "fr": null,
       "en": null
@@ -11972,10 +12543,6 @@
      "label": {
       "fr": "Des données d'entraînement et de test séparées, sans fuite d'information de l'une vers l'autre",
       "en": "Separate training and test data, with no information leaking from one to the other"
-     },
-     "tag": {
-      "fr": "fondation",
-      "en": "foundation"
      },
      "meaning": {
       "fr": null,
@@ -11993,10 +12560,6 @@
       "fr": "Les limites et le domaine de validité écrits",
       "en": "Limits and domain of validity written down"
      },
-     "tag": {
-      "fr": "fondation",
-      "en": "foundation"
-     },
      "meaning": {
       "fr": null,
       "en": null
@@ -12012,10 +12575,6 @@
      "label": {
       "fr": "Le code public, avec une licence",
       "en": "Public code, with a license"
-     },
-     "tag": {
-      "fr": "fondation",
-      "en": "foundation"
      },
      "meaning": {
       "fr": null,
@@ -12033,10 +12592,6 @@
       "fr": "Les données ou leur accès décrits, avec une licence",
       "en": "Data or their access described, with a license"
      },
-     "tag": {
-      "fr": "fondation",
-      "en": "foundation"
-     },
      "meaning": {
       "fr": null,
       "en": null
@@ -12052,10 +12607,6 @@
      "label": {
       "fr": "L'usage des outils déclaré, IA comprise",
       "en": "Tool use declared, AI included"
-     },
-     "tag": {
-      "fr": "fondation",
-      "en": "foundation"
      },
      "meaning": {
       "fr": null,
@@ -12073,10 +12624,6 @@
       "fr": "Un ORCID et des DOI (article, code, données)",
       "en": "An ORCID and DOIs (article, code, data)"
      },
-     "tag": {
-      "fr": "fondation",
-      "en": "foundation"
-     },
      "meaning": {
       "fr": null,
       "en": null
@@ -12092,10 +12639,6 @@
      "label": {
       "fr": "Une page claire : le résultat, la méthode, comment citer",
       "en": "A clear page: the result, the method, how to cite"
-     },
-     "tag": {
-      "fr": "fondation",
-      "en": "foundation"
      },
      "meaning": {
       "fr": null,
@@ -12113,10 +12656,6 @@
       "fr": "Des métadonnées lisibles par les machines (CITATION.cff, JSON-LD)",
       "en": "Machine-readable metadata (CITATION.cff, JSON-LD)"
      },
-     "tag": {
-      "fr": "fondation",
-      "en": "foundation"
-     },
      "meaning": {
       "fr": null,
       "en": null
@@ -12132,10 +12671,6 @@
      "label": {
       "fr": "Un exemple qui tourne en quelques minutes",
       "en": "An example that runs in minutes"
-     },
-     "tag": {
-      "fr": "fondation",
-      "en": "foundation"
      },
      "meaning": {
       "fr": null,
@@ -12153,10 +12688,6 @@
       "fr": "Une documentation pour un utilisateur qui n'est pas l'auteur",
       "en": "Documentation for a user who is not the author"
      },
-     "tag": {
-      "fr": "fondation",
-      "en": "foundation"
-     },
      "meaning": {
       "fr": null,
       "en": null
@@ -12172,10 +12703,6 @@
      "label": {
       "fr": "Un retour d'utilisateur réel pris en compte",
       "en": "Real user feedback taken into account"
-     },
-     "tag": {
-      "fr": "fondation",
-      "en": "foundation"
      },
      "meaning": {
       "fr": null,
@@ -12193,10 +12720,6 @@
       "fr": "Des coauteurs qui renforcent une fondation, pas seulement la liste",
       "en": "Co-authors who strengthen a foundation, not only the list"
      },
-     "tag": {
-      "fr": "amplificateur",
-      "en": "amplifier"
-     },
      "meaning": {
       "fr": null,
       "en": null
@@ -12212,10 +12735,6 @@
      "label": {
       "fr": "Des contributions créditées (CRediT, ORCID)",
       "en": "Credited contributions (CRediT, ORCID)"
-     },
-     "tag": {
-      "fr": "amplificateur",
-      "en": "amplifier"
      },
      "meaning": {
       "fr": null,
@@ -12233,10 +12752,6 @@
       "fr": "Un résumé pour non-spécialistes",
       "en": "A summary for non-specialists"
      },
-     "tag": {
-      "fr": "amplificateur",
-      "en": "amplifier"
-     },
      "meaning": {
       "fr": null,
       "en": null
@@ -12252,10 +12767,6 @@
      "label": {
       "fr": "Une présentation, un cours ou une vidéo",
       "en": "A talk, a course or a video"
-     },
-     "tag": {
-      "fr": "amplificateur",
-      "en": "amplifier"
      },
      "meaning": {
       "fr": null,
@@ -12273,10 +12784,6 @@
       "fr": "Un utilisateur ou une décision identifiés",
       "en": "An identified user or decision"
      },
-     "tag": {
-      "fr": "amplificateur",
-      "en": "amplifier"
-     },
      "meaning": {
       "fr": null,
       "en": null
@@ -12292,10 +12799,6 @@
      "label": {
       "fr": "Un partenaire hors du monde académique",
       "en": "A partner outside academia"
-     },
-     "tag": {
-      "fr": "amplificateur",
-      "en": "amplifier"
      },
      "meaning": {
       "fr": null,
@@ -12316,6 +12819,7 @@
    ],
    "variants": [],
    "outputs": [],
+   "outputs_en_page": null,
    "formulas": [],
    "definitions": [],
    "assumptions": {
@@ -12408,6 +12912,7 @@
     "persistence"
    ],
    "extraction": {
+    "source_hash": "a88a0d5319f30a0a",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#rtv"
@@ -12725,6 +13230,7 @@
      "kind": "decision-outcome"
     }
    ],
+   "outputs_en_page": null,
    "formulas": [],
    "definitions": [
     {
@@ -12824,6 +13330,7 @@
    "exploration": [],
    "concepts": [],
    "extraction": {
+    "source_hash": "76ab32d007bd01e5",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#role-helper"
@@ -12993,6 +13500,7 @@
      "kind": "decision-outcome"
     }
    ],
+   "outputs_en_page": null,
    "formulas": [],
    "definitions": [
     {
@@ -13136,6 +13644,7 @@
    "exploration": [],
    "concepts": [],
    "extraction": {
+    "source_hash": "fb4dac3ff71e5bf6",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#lic-tree"
@@ -13145,13 +13654,6 @@
    }
   }
  ],
- "unreadable": [
-  "sun: Page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:57627/fr/animations/soleil-saisons-utc/\", waiting until \"load\"\n"
- ],
- "coverage_note": {
-  "fr": "Le simulateur Soleil n’a pas été extrait correctement : contrôle restant. Ces fiches ne certifient pas une vérification exhaustive des versions actuelles.",
-  "en": "The Sun simulator was not extracted successfully: review remains. These records do not certify an exhaustive review of current versions."
- },
  "additional_specs": [
   {
    "id": "artu-intuition",

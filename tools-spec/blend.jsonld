@@ -32,7 +32,7 @@
   {
    "@type": "PropertyValue",
    "propertyID": "bl-h",
-   "name": "Horizon h steps",
+   "name": "Horizon h (how far ahead) steps",
    "alternateName": "Horizon h",
    "description": "Nombre de pas entre la dernière valeur connue et la valeur à prévoir.",
    "value": 1,
@@ -43,7 +43,7 @@
   {
    "@type": "PropertyValue",
    "propertyID": "bl-ph",
-   "name": "Phase of the origin",
+   "name": "Phase of the origin (position in the cycle)",
    "alternateName": "Phase",
    "description": "Le moment du cycle où part la prévision : ici l’heure de la journée. BLEND a un poids par phase.",
    "value": 7,
@@ -54,7 +54,7 @@
   {
    "@type": "PropertyValue",
    "propertyID": "bl-l",
-   "name": "Your λ",
+   "name": "Your λ (weight of the latest value, 0 to 1)",
    "alternateName": "Votre λ",
    "description": "Le poids de la dernière valeur. λ = 1 : persistance. λ = 0 : persistance cyclique. Entre les deux : un mélange.",
    "value": 0.5,
@@ -137,7 +137,7 @@
    {
     "@type": "PropertyValueSpecification",
     "valueName": "bl-h",
-    "description": "Horizon h steps",
+    "description": "Horizon h (how far ahead) steps",
     "valueRequired": false,
     "minValue": 1,
     "maxValue": 24,
@@ -147,7 +147,7 @@
    {
     "@type": "PropertyValueSpecification",
     "valueName": "bl-ph",
-    "description": "Phase of the origin",
+    "description": "Phase of the origin (position in the cycle)",
     "valueRequired": false,
     "minValue": 1,
     "maxValue": 24,
@@ -157,7 +157,7 @@
    {
     "@type": "PropertyValueSpecification",
     "valueName": "bl-l",
-    "description": "Your λ",
+    "description": "Your λ (weight of the latest value, 0 to 1)",
     "valueRequired": false,
     "minValue": 0,
     "maxValue": 1,

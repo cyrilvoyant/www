@@ -21,8 +21,8 @@
   "en": "COP (coefficient of performance): heat removed per unit of work supplied. Vary evaporation and condensation temperatures; see why the temperature lift is costly."
  },
  "summary": {
-  "fr": "Entre −10 °C et +40 °C, une machine frigorifique extrait au mieux 5,26 J de chaleur par joule de travail ; entre −40 °C et +20 °C, au mieux 3,89 J. Vous comprenez pourquoi produire du froid coûte plus cher quand l’écart de température grandit.",
-  "en": "Between −10 °C and +40 °C, a refrigerator extracts at best 5.26 J of heat per joule of work; between −40 °C and +20 °C, at best 3.89 J. You understand why producing cold costs more as the temperature gap widens."
+  "fr": "Entre −10 °C et +40 °C, une machine frigorifique extrait au mieux 5,26 J de chaleur par joule de travail (c’est son COP, coefficient de performance) ; entre −40 °C et +20 °C, au mieux 3,89 J. Ce maximum théorique est la limite de Carnot.",
+  "en": "Between −10 °C and +40 °C, a refrigerator extracts at best 5.26 J of heat per joule of work (its COP, coefficient of performance); between −40 °C and +20 °C, at best 3.89 J. This theoretical maximum is the Carnot limit."
  },
  "parameters": [
   {
@@ -217,6 +217,7 @@
    "kind": "reading"
   }
  ],
+ "outputs_en_page": null,
  "formulas": [
   {
    "text": "COP_Carnot = T_f/(T_c − T_f)"
@@ -373,6 +374,7 @@
   "cop"
  ],
  "extraction": {
+  "source_hash": "fabed06046de3c16",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#experience"

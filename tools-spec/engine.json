@@ -21,8 +21,8 @@
   "en": "Change reservoir temperatures and read work, rejected heat and reservoir entropy."
  },
  "summary": {
-  "fr": "Même sans aucune perte, un moteur entre 400 °C et 20 °C ne transforme au plus que 56,5 % de la chaleur reçue en travail. Vous voyez pourquoi cette borne ne dépend que des deux températures.",
-  "en": "Even with no losses at all, an engine between 400 °C and 20 °C turns at most 56.5% of the heat received into work. You see why this limit depends only on the two temperatures."
+  "fr": "Même sans aucune perte, un moteur entre 400 °C et 20 °C ne transforme au plus que 56,5 % de la chaleur reçue en travail (c’est la limite de Carnot). Vous voyez pourquoi cette borne, imposée par le second principe de la thermodynamique, ne dépend que des deux températures absolues (en kelvins : °C + 273,15).",
+  "en": "Even with no losses at all, an engine between 400 °C and 20 °C turns at most 56.5% of the heat received into work (this is the Carnot limit). You see why this limit, set by the second law of thermodynamics, depends only on the two absolute temperatures (in kelvins: °C + 273.15)."
  },
  "parameters": [
   {
@@ -293,6 +293,7 @@
    "kind": "metric"
   }
  ],
+ "outputs_en_page": null,
  "formulas": [
   {
    "text": "η_Carnot = 1 − T_f/T_c"
@@ -461,6 +462,7 @@
  ],
  "concepts": [],
  "extraction": {
+  "source_hash": "faebb89232f72a06",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#experience"

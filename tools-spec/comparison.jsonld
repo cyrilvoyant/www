@@ -67,7 +67,7 @@
    "propertyID": "cyclic-persistence",
    "name": "cyclic persistence",
    "alternateName": "persistance cyclique",
-   "description": "copy the last observed value: the minimal reference of any forecast.",
+   "description": "copy the value observed 24 hours before the target time. It follows the daily cycle but ignores the current weather.",
    "value": false
   },
   {

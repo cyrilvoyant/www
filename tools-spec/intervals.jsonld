@@ -78,7 +78,7 @@
    "propertyID": "preset:few-points-6",
    "name": "Few points: 6",
    "alternateName": "Peu de points : 6",
-   "value": "{}"
+   "value": "{\"number-of-points-n\": 6, \"residual-standard-deviation-se\": 1, \"prediction-input-x0\": 0}"
   },
   {
    "@type": "PropertyValue",

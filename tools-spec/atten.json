@@ -21,8 +21,8 @@
   "en": "Vary thickness and half-value layer; read the transmitted fraction."
  },
  "summary": {
-  "fr": "Chaque couche de demi-atténuation divise le faisceau par deux : après trois couches il en reste 12,5 %, et jamais exactement zéro. Vous remplacez l’intuition d’une soustraction par celle d’une décroissance exponentielle.",
-  "en": "Each half-value layer halves the beam: after three layers 12.5% remains, and never exactly zero. You replace the intuition of subtraction with that of exponential decay."
+  "fr": "Chaque couche de demi-atténuation (CDA : l’épaisseur de matériau qui arrête la moitié du faisceau) divise le faisceau par deux : après trois couches il en reste 12,5 %, et jamais exactement zéro. Vous remplacez l’intuition d’une soustraction par celle d’une décroissance exponentielle : à chaque épaisseur égale, la…",
+  "en": "Each half-value layer (HVL: the thickness of material that stops half the beam) halves the beam: after three layers 12.5% remains, and never exactly zero. You replace the intuition of subtraction with that of exponential decay: over each equal thickness, the same fraction of the beam disappears."
  },
  "parameters": [
   {
@@ -209,6 +209,7 @@
    "kind": "reading"
   }
  ],
+ "outputs_en_page": null,
  "formulas": [
   {
    "text": "N/N_0 = e^( − μx) = 2^( − x/CDA)"
@@ -369,6 +370,7 @@
   "half-value-layer"
  ],
  "extraction": {
+  "source_hash": "7e2d5f837300cd15",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#experience"

@@ -1,0 +1,515 @@
+{
+ "id": "sun",
+ "schema": "https://www.cyrilvoyant.com/tools-spec.json#1.0",
+ "kind": "demo",
+ "domain": "energy",
+ "interface_language": "both",
+ "name": {
+  "fr": "Le Soleil, les saisons et l’heure UTC",
+  "en": "The Sun, the seasons and UTC"
+ },
+ "url": {
+  "fr": "https://www.cyrilvoyant.com/fr/animations/soleil-saisons-utc/",
+  "en": "https://www.cyrilvoyant.com/tools/sun-seasons-utc/"
+ },
+ "page_title": {
+  "fr": "Le Soleil, les saisons et l'heure : une seule horloge pour les mesures",
+  "en": "The Sun, the seasons and the clock: one time for every measurement"
+ },
+ "computes": {
+  "fr": "La Terre autour du Soleil, le jour et la nuit, la durée du jour à Paris et à Sydney, la double saisonnalité de l’éclairement et l’horodatage des mesures en UTC.",
+  "en": "The Earth around the Sun, day and night, day length in Paris and Sydney, the double seasonality of irradiance and timestamping measurements in UTC."
+ },
+ "summary": {
+  "fr": "Le 21 juin 2026, le jour dure 16 h 11 à Paris et 9 h 54 à Sydney. Au même instant, 12:00 UTC, il est 14:00 à Paris et 22:00 à Sydney.",
+  "en": "On 21 June 2026, the day lasts 16 h 11 in Paris and 9 h 54 in Sydney. At the same instant, 12:00 UTC, it is 14:00 in Paris and 22:00 in Sydney."
+ },
+ "parameters": [
+  {
+   "id": "sun-d",
+   "type": "integer",
+   "control": "range",
+   "min": 1,
+   "max": 365,
+   "step": 1,
+   "default": 298,
+   "label": {
+    "fr": "Date",
+    "en": "Date"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": {
+    "fr": "jour de l'année 2026 (affiché comme une date)",
+    "en": "day of the year 2026 (shown as a date)"
+   },
+   "unit_source": "sun-seasons.js"
+  },
+  {
+   "id": "sun-t",
+   "type": "integer",
+   "control": "range",
+   "min": 0,
+   "max": 1435,
+   "step": 5,
+   "default": 360,
+   "label": {
+    "fr": "Instant (UTC)",
+    "en": "Instant (UTC)"
+   },
+   "meaning": {
+    "fr": "temps universel coordonné : une seule horloge pour toute la Terre, sans heure d'été.",
+    "en": "Coordinated Universal Time: one clock for the whole Earth, without summer time."
+   },
+   "unit": {
+    "fr": "minutes depuis 00:00 UTC (affiché en hh:mm UTC)",
+    "en": "minutes since 00:00 UTC (shown as hh:mm UTC)"
+   },
+   "unit_source": "sun-seasons.js"
+  }
+ ],
+ "presets": [
+  {
+   "id": "autumn-morning-in-paris",
+   "name": {
+    "fr": "Matin d'automne à Paris",
+    "en": "Autumn morning in Paris"
+   },
+   "values": {
+    "sun-d": 298,
+    "sun-t": 360
+   },
+   "changes_vs_default": {},
+   "shows": {
+    "fr": "25 octobre, 06:00 UTC : nuit à Paris, fin d'après-midi à Sydney. Le cas de départ.",
+    "en": "25 October, 06:00 UTC: night in Paris, late afternoon in Sydney. The starting case."
+   }
+  },
+  {
+   "id": "summer-in-paris",
+   "name": {
+    "fr": "Été à Paris",
+    "en": "Summer in Paris"
+   },
+   "values": {
+    "sun-d": 172,
+    "sun-t": 720
+   },
+   "changes_vs_default": {
+    "sun-d": 172,
+    "sun-t": 720
+   },
+   "shows": {
+    "fr": "21 juin, 12:00 UTC : jours les plus longs à Paris, les plus courts à Sydney.",
+    "en": "21 June, 12:00 UTC: the longest days in Paris, the shortest in Sydney."
+   }
+  },
+  {
+   "id": "summer-in-sydney",
+   "name": {
+    "fr": "Été à Sydney",
+    "en": "Summer in Sydney"
+   },
+   "values": {
+    "sun-d": 355,
+    "sun-t": 720
+   },
+   "changes_vs_default": {
+    "sun-d": 355,
+    "sun-t": 720
+   },
+   "shows": {
+    "fr": "21 décembre, 12:00 UTC : tout s'inverse. La Terre est pourtant presque au plus près du Soleil.",
+    "en": "21 December, 12:00 UTC: everything reverses. Yet the Earth is almost at its closest to the Sun."
+   }
+  },
+  {
+   "id": "equinox",
+   "name": {
+    "fr": "Équinoxe",
+    "en": "Equinox"
+   },
+   "values": {
+    "sun-d": 79,
+    "sun-t": 720
+   },
+   "changes_vs_default": {
+    "sun-d": 79,
+    "sun-t": 720
+   },
+   "shows": {
+    "fr": "20 mars, 12:00 UTC : le Soleil est au zénith près de l'équateur et le jour dure environ 12 h aux deux endroits. Les quelques minutes en plus viennent de la réfraction.",
+    "en": "20 March, 12:00 UTC: the Sun is overhead near the equator and the day lasts about 12 h in both places. The few extra minutes come from refraction."
+   }
+  },
+  {
+   "id": "noon-in-sydney",
+   "name": {
+    "fr": "Midi à Sydney",
+    "en": "Noon in Sydney"
+   },
+   "values": {
+    "sun-d": 172,
+    "sun-t": 115
+   },
+   "changes_vs_default": {
+    "sun-d": 172,
+    "sun-t": 115
+   },
+   "shows": {
+    "fr": "21 juin, 01:56 UTC : midi solaire à Sydney alors qu'il fait nuit à Paris.",
+    "en": "21 June, 01:56 UTC: solar noon in Sydney while it is night in Paris."
+   }
+  },
+  {
+   "id": "25-10-2026-paris-goes-back-to-winter-tim",
+   "name": {
+    "fr": "25/10/2026 : Paris passe à l'heure d'hiver",
+    "en": "25/10/2026: Paris goes back to winter time"
+   },
+   "values": {
+    "sun-d": 298,
+    "sun-t": 360
+   },
+   "changes_vs_default": {},
+   "effect": {
+    "fr": "aucun paramètre ne change et la page n'affiche pas de nouvelle phrase",
+    "en": "no parameter changes and the page shows no new sentence"
+   }
+  },
+  {
+   "id": "29-03-2026-paris-moves-to-summer-time",
+   "name": {
+    "fr": "29/03/2026 : Paris passe à l'heure d'été",
+    "en": "29/03/2026: Paris moves to summer time"
+   },
+   "values": {
+    "sun-d": 298,
+    "sun-t": 360
+   },
+   "changes_vs_default": {},
+   "effect": {
+    "fr": "aucun paramètre ne change et la page n'affiche pas de nouvelle phrase",
+    "en": "no parameter changes and the page shows no new sentence"
+   }
+  },
+  {
+   "id": "04-10-2026-sydney-moves-to-summer-time",
+   "name": {
+    "fr": "04/10/2026 : Sydney passe à l'heure d'été",
+    "en": "04/10/2026: Sydney moves to summer time"
+   },
+   "values": {
+    "sun-d": 298,
+    "sun-t": 360
+   },
+   "changes_vs_default": {},
+   "effect": {
+    "fr": "aucun paramètre ne change et la page n'affiche pas de nouvelle phrase",
+    "en": "no parameter changes and the page shows no new sentence"
+   }
+  }
+ ],
+ "actions": [
+  {
+   "name": {
+    "fr": "▶ Une année",
+    "en": "▶ One year"
+   }
+  },
+  {
+   "name": {
+    "fr": "▶ Une journée",
+    "en": "▶ One day"
+   }
+  }
+ ],
+ "variants": [],
+ "outputs": [
+  {
+   "name": {
+    "fr": "La Terre autour du Soleil",
+    "en": "The Earth around the Sun"
+   },
+   "unit": null,
+   "meaning": {
+    "fr": "Énergie du jour : énergie reçue en une journée sur 1 m² horizontal, hors atmosphère.",
+    "en": "Energy of the day: energy received in one day on 1 m² of horizontal surface, outside the atmosphere."
+   },
+   "kind": "figure"
+  },
+  {
+   "name": {
+    "fr": "Pourquoi l'inclinaison fait les saisons : jours plus longs, Soleil plus haut",
+    "en": "Why the tilt makes the seasons: longer days, higher Sun"
+   },
+   "unit": null,
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "kind": "figure"
+  },
+  {
+   "name": {
+    "fr": "Le jour et la nuit sur la Terre",
+    "en": "Day and night on Earth"
+   },
+   "unit": null,
+   "meaning": {
+    "fr": "Partie claire : le jour. Rond jaune : le point où le Soleil est au zénith (à la verticale). Lignes orange : les tropiques, à ±23,44° de latitude, les limites où le Soleil peut passer au zénith. Sur chaque étiquette : l'heure légale (celle des horloges du pays), le décalage à UTC (en heures) et la hauteur du Soleil (son angle au-dessus de l'horizon).",
+    "en": "Light area: day. Yellow disc: the point where the Sun is overhead. Orange lines: the tropics, at ±23.44° of latitude, the limits where the Sun can be overhead. On each label: legal time (the clocks of the country), offset to UTC (in hours) and elevation of the Sun (its angle above the horizon)."
+   },
+   "kind": "figure"
+  },
+  {
+   "name": {
+    "fr": "Une seule horloge (UTC), deux heures locales",
+    "en": "One clock (UTC), two local times"
+   },
+   "unit": null,
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "kind": "figure"
+  },
+  {
+   "name": {
+    "fr": "Hors atmosphère, par date et par heure UTC",
+    "en": "Outside the atmosphere, by date and UTC hour"
+   },
+   "unit": null,
+   "meaning": {
+    "fr": "De bleu nuit (0 W/m²) à jaune pâle (environ 1400 W/m²). Les traits rouges marquent la date et l'instant choisis.",
+    "en": "From night blue (0 W/m²) to pale yellow (about 1400 W/m²). The red lines mark the chosen date and instant."
+   },
+   "kind": "figure"
+  },
+  {
+   "name": {
+    "fr": "Le jour choisi : éclairement hors atmosphère G0 selon l'heure UTC",
+    "en": "The chosen day: extraterrestrial irradiance G0 against UTC hour"
+   },
+   "unit": null,
+   "meaning": {
+    "fr": "Le rond marque la date et l'instant choisis.",
+    "en": "The disc marks the chosen date and instant."
+   },
+   "kind": "figure"
+  },
+  {
+   "name": {
+    "fr": "L'année : énergie reçue par jour, hors atmosphère",
+    "en": "The year: energy received per day, outside the atmosphere"
+   },
+   "unit": null,
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "kind": "figure"
+  },
+  {
+   "name": {
+    "fr": "Le même instant sur trois horloges",
+    "en": "The same instant on three clocks"
+   },
+   "unit": null,
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "kind": "figure"
+  }
+ ],
+ "outputs_en_page": null,
+ "formulas": [
+  {
+   "text": "G0 = Gsc·E0·cos θz"
+  }
+ ],
+ "definitions": [
+  {
+   "term": "Déclinaison δ",
+   "meaning": {
+    "fr": "latitude où le Soleil est au zénith à midi ; de −23,44° à +23,44° au fil de l'année.",
+    "en": "latitude where the Sun is overhead at noon; from −23.44° to +23.44° over the year."
+   }
+  },
+  {
+   "term": "Équation du temps",
+   "meaning": {
+    "fr": "écart, de −14 à +16 minutes, entre le midi solaire vrai et le midi d'un Soleil moyen ; due à l'orbite elliptique et à l'inclinaison.",
+    "en": "difference, from −14 to +16 minutes, between true solar noon and the noon of a mean Sun; due to the elliptical orbit and the tilt."
+   }
+  },
+  {
+   "term": "Temps solaire vrai, angle horaire",
+   "meaning": {
+    "fr": "le temps solaire vrai vaut UTC + équation du temps + 4 min par degré de longitude est ; l'angle horaire est nul au midi solaire et croît de 15° par heure.",
+    "en": "true solar time is UTC + equation of time + 4 min per degree of east longitude; the hour angle is zero at solar noon and grows by 15° per hour."
+   }
+  },
+  {
+   "term": "Angle zénithal θz",
+   "meaning": {
+    "fr": "angle entre la verticale et la direction du Soleil ; cos θz = sin φ sin δ + cos φ cos δ cos h, avec φ la latitude, δ la déclinaison et h l'angle horaire.",
+    "en": "angle between the vertical and the direction of the Sun; cos θz = sin φ sin δ + cos φ cos δ cos h, with φ the latitude, δ the declination and h the hour angle."
+   }
+  },
+  {
+   "term": "Facteur de distance E0",
+   "meaning": {
+    "fr": "correction de la distance Terre-Soleil : 1 à la distance moyenne, 1,033 début janvier, 0,967 début juillet.",
+    "en": "correction for the Earth-Sun distance: 1 at the mean distance, 1.033 in early January, 0.967 in early July."
+   }
+  },
+  {
+   "term": "Réfraction",
+   "meaning": {
+    "fr": "l'atmosphère courbe les rayons : le Soleil reste visible un peu après son coucher géométrique. D'où quelques minutes de jour en plus.",
+    "en": "the atmosphere bends the rays: the Sun stays visible a little after its geometric sunset. Hence a few extra minutes of daylight."
+   }
+  },
+  {
+   "term": "UTC",
+   "meaning": {
+    "fr": "temps universel coordonné : une seule horloge pour toute la Terre, sans heure d'été.",
+    "en": "Coordinated Universal Time: one clock for the whole Earth, without summer time."
+   }
+  },
+  {
+   "term": "Heure légale",
+   "meaning": {
+    "fr": "UTC + un décalage fixé par chaque pays, qui peut changer en été.",
+    "en": "UTC plus an offset set by each country, which may change in summer."
+   }
+  },
+  {
+   "term": "G0",
+   "meaning": {
+    "fr": "éclairement solaire hors atmosphère sur un plan horizontal : une borne que les mesures au sol ne dépassent que rarement, surtout Soleil bas.",
+    "en": "extraterrestrial solar irradiance on a horizontal plane: a bound that ground measurements exceed only rarely, mostly with a low Sun."
+   }
+  }
+ ],
+ "assumptions": {
+  "fr": [],
+  "en": []
+ },
+ "source": {
+  "dois": [],
+  "repositories": [],
+  "related_pages": [
+   {
+    "href": "/fr/outils/variabilite-previsibilite/",
+    "text": "Mesurer variabilité et prévisibilité : sCV et F"
+   },
+   {
+    "href": "/fr/outils/blend/",
+    "text": "Calculer les poids de BLEND"
+   },
+   {
+    "href": "/fr/outils/comparateur-previsions/",
+    "text": "Comparer des prévisions : persistance, AR et ELM"
+   }
+  ]
+ },
+ "how_to_explore": {
+  "fr": "Régler les paramètres sur un préréglage (valeurs ci-dessus), lire la phrase affichée par la page puis les sorties ; modifier ensuite un seul paramètre à la fois entre son minimum et son maximum.",
+  "en": "Set the parameters to a preset (values above), read the sentence the page shows then the outputs; then change one parameter at a time between its minimum and maximum."
+ },
+ "exploration": [
+  {
+   "preset": "autumn-morning-in-paris",
+   "title": {
+    "fr": "Matin d'automne à Paris",
+    "en": "Autumn morning in Paris"
+   },
+   "set": {
+    "sun-d": 298,
+    "sun-t": 360
+   },
+   "observe": {
+    "fr": "25 octobre, 06:00 UTC : nuit à Paris, fin d'après-midi à Sydney. Le cas de départ.",
+    "en": "25 October, 06:00 UTC: night in Paris, late afternoon in Sydney. The starting case."
+   }
+  },
+  {
+   "preset": "summer-in-paris",
+   "title": {
+    "fr": "Été à Paris",
+    "en": "Summer in Paris"
+   },
+   "set": {
+    "sun-d": 172,
+    "sun-t": 720
+   },
+   "observe": {
+    "fr": "21 juin, 12:00 UTC : jours les plus longs à Paris, les plus courts à Sydney.",
+    "en": "21 June, 12:00 UTC: the longest days in Paris, the shortest in Sydney."
+   }
+  },
+  {
+   "preset": "summer-in-sydney",
+   "title": {
+    "fr": "Été à Sydney",
+    "en": "Summer in Sydney"
+   },
+   "set": {
+    "sun-d": 355,
+    "sun-t": 720
+   },
+   "observe": {
+    "fr": "21 décembre, 12:00 UTC : tout s'inverse. La Terre est pourtant presque au plus près du Soleil.",
+    "en": "21 December, 12:00 UTC: everything reverses. Yet the Earth is almost at its closest to the Sun."
+   }
+  },
+  {
+   "preset": "equinox",
+   "title": {
+    "fr": "Équinoxe",
+    "en": "Equinox"
+   },
+   "set": {
+    "sun-d": 79,
+    "sun-t": 720
+   },
+   "observe": {
+    "fr": "20 mars, 12:00 UTC : le Soleil est au zénith près de l'équateur et le jour dure environ 12 h aux deux endroits. Les quelques minutes en plus viennent de la réfraction.",
+    "en": "20 March, 12:00 UTC: the Sun is overhead near the equator and the day lasts about 12 h in both places. The few extra minutes come from refraction."
+   }
+  },
+  {
+   "preset": "noon-in-sydney",
+   "title": {
+    "fr": "Midi à Sydney",
+    "en": "Noon in Sydney"
+   },
+   "set": {
+    "sun-d": 172,
+    "sun-t": 115
+   },
+   "observe": {
+    "fr": "21 juin, 01:56 UTC : midi solaire à Sydney alors qu'il fait nuit à Paris.",
+    "en": "21 June, 01:56 UTC: solar noon in Sydney while it is night in Paris."
+   }
+  }
+ ],
+ "concepts": [],
+ "extraction": {
+  "source_hash": "dfd60bb6a3504dc2",
+  "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
+  "roots": [
+   "#sun"
+  ],
+  "page_errors": [],
+  "fr_en_preset_consistency": {
+   "presets_compared": 8,
+   "presets_with_different_values_fr_vs_en": []
+  }
+ }
+}

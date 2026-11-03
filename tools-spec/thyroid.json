@@ -21,7 +21,7 @@
   "en": "Choose a profile and protocol; follow simulated thyroglobulin. Research and education use."
  },
  "summary": {
-  "fr": "Quatre séances identiques, deux profils : après 80 mois, la thyroglobuline simulée vaut 167 ng/mL pour le profil réfractaire, 1,6 ng/mL pour le profil répondeur. Un seul paramètre les sépare, le temps de doublement des cellules tumorales.",
+  "fr": "Quatre séances identiques d’iode radioactif, deux profils : après 80 mois, la thyroglobuline simulée (le marqueur sanguin de la tumeur) vaut 167 ng/mL (nanogrammes par millilitre) pour le profil réfractaire (qui résiste au traitement), 1,6 ng/mL pour le profil répondeur (qui y répond). Un seul paramètre les sépare,…",
   "en": "Three equations describe how metastatic thyroid cancer responds to repeated sessions of radioactive iodine. Calibrated on 50 patients, they explore the number of sessions, the interval between them and the activity before any patient is treated; learning is planned only where the model falls short."
  },
  "parameters": [
@@ -278,6 +278,7 @@
    "kind": "metric"
   }
  ],
+ "outputs_en_page": [],
  "formulas": [],
  "definitions": [
   {
@@ -403,6 +404,7 @@
   "doubling-time"
  ],
  "extraction": {
+  "source_hash": "4e272c9642114f96",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#try-it"

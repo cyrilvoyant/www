@@ -57,7 +57,7 @@
    "default": 0.2,
    "label": {
     "fr": "Plancher diffus d",
-    "en": "Diffuse floor d"
+    "en": "Diffuse floor d (fraction of light left under thick cloud)"
    },
    "meaning": {
     "fr": "La fraction de ciel clair qui reste sous un nuage épais : 0,2 dans l’article. Il fixe l’échelle de sCV, proportionnelle à 1/(1 − d). Les séries chargées restent construites avec d = 0,2.",
@@ -250,6 +250,7 @@
    "kind": "metric"
   }
  ],
+ "outputs_en_page": [],
  "formulas": [],
  "definitions": [
   {
@@ -395,6 +396,7 @@
   "forecastability-f"
  ],
  "extraction": {
+  "source_hash": "67879c7349dc9edb",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#try-it"

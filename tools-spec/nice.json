@@ -21,7 +21,7 @@
   "en": "NICE divides a forecast’s error by that of persistence: 1 means “as good as persistence”, 0 a perfect forecast. Paste observations and forecasts, choose a horizon, read the result."
  },
  "summary": {
-  "fr": "Une RMSE seule ne dit pas si une prévision est bonne. NICE répond : fait-elle mieux que recopier la dernière valeur connue ?",
+  "fr": "Une RMSE (l’erreur typique d’une prévision, dans l’unité de la grandeur prévue) seule ne dit pas si une prévision est bonne. NICE répond : fait-elle mieux que recopier la dernière valeur connue (la persistance) ?",
   "en": null
  },
  "parameters": [
@@ -235,6 +235,11 @@
    "kind": "table-row"
   }
  ],
+ "outputs_en_page": [
+  "model error Ek",
+  "simple persistence error",
+  "NICEk"
+ ],
  "formulas": [],
  "definitions": [
   {
@@ -372,6 +377,7 @@
   "nice"
  ],
  "extraction": {
+  "source_hash": "e5baec1286f0015b",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#try-it"

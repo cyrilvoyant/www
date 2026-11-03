@@ -31,9 +31,9 @@
  "additionalProperty": [
   {
    "@type": "PropertyValue",
-   "propertyID": "convection-h",
-   "name": "Convection h (W/m²·K)",
-   "alternateName": "Convection h (W/m²·K)",
+   "propertyID": "surface-heat-transfer-h",
+   "name": "Surface heat transfer h (W/m²·K)",
+   "alternateName": "Échange en surface h (W/m²·K)",
    "value": 25,
    "minValue": 5,
    "maxValue": 300,
@@ -41,10 +41,9 @@
   },
   {
    "@type": "PropertyValue",
-   "propertyID": "length-lc-v-a",
-   "name": "Length Lc = V/A (cm)",
-   "alternateName": "Longueur Lc = V/A (cm)",
-   "description": "The characteristic length: volume divided by heat-transfer area.",
+   "propertyID": "length-lc-volume-surface",
+   "name": "Length Lc = volume/surface (cm)",
+   "alternateName": "Longueur Lc = volume/surface (cm)",
    "value": 2,
    "minValue": 0.2,
    "maxValue": 10,
@@ -52,9 +51,9 @@
   },
   {
    "@type": "PropertyValue",
-   "propertyID": "conductivity",
-   "name": "Conductivity λ (W/m·K)",
-   "alternateName": "Conductivité λ (W/m·K)",
+   "propertyID": "thermal-conductivity",
+   "name": "Thermal conductivity λ (W/m·K)",
+   "alternateName": "Conductivité thermique λ (W/m·K)",
    "value": 0.5,
    "minValue": 0.1,
    "maxValue": 2,
@@ -73,8 +72,8 @@
   {
    "@type": "PropertyValue",
    "propertyID": "surroundings-t",
-   "name": "Surroundings T∞",
-   "alternateName": "Milieu extérieur T∞",
+   "name": "Surroundings T∞ (air or liquid)",
+   "alternateName": "Milieu extérieur T∞ (air ou liquide)",
    "value": 2,
    "minValue": -30,
    "maxValue": 20,
@@ -85,42 +84,42 @@
    "propertyID": "preset:thick-food-bi-1",
    "name": "Thick food: Bi = 1",
    "alternateName": "Aliment épais : Bi = 1",
-   "value": "{\"convection-h\": 25, \"length-lc-v-a\": 2, \"conductivity\": 0.5, \"initial-temperature-ti\": 60, \"surroundings-t\": 2}"
+   "value": "{\"surface-heat-transfer-h\": 25, \"length-lc-volume-surface\": 2, \"thermal-conductivity\": 0.5, \"initial-temperature-ti\": 60, \"surroundings-t\": 2}"
   },
   {
    "@type": "PropertyValue",
    "propertyID": "preset:thin-slice-small-bi",
    "name": "Thin slice: small Bi",
    "alternateName": "Tranche fine : Bi petit",
-   "value": "{\"convection-h\": 10, \"length-lc-v-a\": 0.5, \"conductivity\": 2, \"initial-temperature-ti\": 60, \"surroundings-t\": 2}"
+   "value": "{\"surface-heat-transfer-h\": 10, \"length-lc-volume-surface\": 0.5, \"thermal-conductivity\": 2, \"initial-temperature-ti\": 60, \"surroundings-t\": 2}"
   },
   {
    "@type": "PropertyValue",
    "propertyID": "preset:only-conductivity-increases",
    "name": "Only conductivity λ increases",
    "alternateName": "Seule la conductivité λ augmente",
-   "value": "{\"convection-h\": 25, \"length-lc-v-a\": 2, \"conductivity\": 2, \"initial-temperature-ti\": 60, \"surroundings-t\": 2}"
+   "value": "{\"surface-heat-transfer-h\": 25, \"length-lc-volume-surface\": 2, \"thermal-conductivity\": 2, \"initial-temperature-ti\": 60, \"surroundings-t\": 2}"
   },
   {
    "@type": "PropertyValue",
    "propertyID": "preset:strong-air-flow-h-100",
    "name": "Strong air flow: h = 100",
    "alternateName": "Air très brassé : h = 100",
-   "value": "{\"convection-h\": 100, \"length-lc-v-a\": 2, \"conductivity\": 0.5, \"initial-temperature-ti\": 60, \"surroundings-t\": 2}"
+   "value": "{\"surface-heat-transfer-h\": 100, \"length-lc-volume-surface\": 2, \"thermal-conductivity\": 0.5, \"initial-temperature-ti\": 60, \"surroundings-t\": 2}"
   },
   {
    "@type": "PropertyValue",
    "propertyID": "preset:large-piece-lc-6-cm",
    "name": "Large piece: Lc = 6 cm",
    "alternateName": "Gros morceau : Lc = 6 cm",
-   "value": "{\"convection-h\": 25, \"length-lc-v-a\": 6, \"conductivity\": 0.5, \"initial-temperature-ti\": 60, \"surroundings-t\": 2}"
+   "value": "{\"surface-heat-transfer-h\": 25, \"length-lc-volume-surface\": 6, \"thermal-conductivity\": 0.5, \"initial-temperature-ti\": 60, \"surroundings-t\": 2}"
   },
   {
    "@type": "PropertyValue",
    "propertyID": "preset:warming-ti-below-t",
    "name": "Warming: Ti below T∞",
    "alternateName": "Réchauffement : Ti sous T∞",
-   "value": "{\"convection-h\": 25, \"length-lc-v-a\": 2, \"conductivity\": 0.5, \"initial-temperature-ti\": 2, \"surroundings-t\": 20}"
+   "value": "{\"surface-heat-transfer-h\": 25, \"length-lc-volume-surface\": 2, \"thermal-conductivity\": 0.5, \"initial-temperature-ti\": 2, \"surroundings-t\": 20}"
   }
  ],
  "potentialAction": {
@@ -134,8 +133,8 @@
   "object": [
    {
     "@type": "PropertyValueSpecification",
-    "valueName": "convection-h",
-    "description": "Convection h (W/m²·K)",
+    "valueName": "surface-heat-transfer-h",
+    "description": "Surface heat transfer h (W/m²·K)",
     "valueRequired": false,
     "minValue": 5,
     "maxValue": 300,
@@ -144,8 +143,8 @@
    },
    {
     "@type": "PropertyValueSpecification",
-    "valueName": "length-lc-v-a",
-    "description": "Length Lc = V/A (cm)",
+    "valueName": "length-lc-volume-surface",
+    "description": "Length Lc = volume/surface (cm)",
     "valueRequired": false,
     "minValue": 0.2,
     "maxValue": 10,
@@ -154,8 +153,8 @@
    },
    {
     "@type": "PropertyValueSpecification",
-    "valueName": "conductivity",
-    "description": "Conductivity λ (W/m·K)",
+    "valueName": "thermal-conductivity",
+    "description": "Thermal conductivity λ (W/m·K)",
     "valueRequired": false,
     "minValue": 0.1,
     "maxValue": 2,
@@ -175,7 +174,7 @@
    {
     "@type": "PropertyValueSpecification",
     "valueName": "surroundings-t",
-    "description": "Surroundings T∞",
+    "description": "Surroundings T∞ (air or liquid)",
     "valueRequired": false,
     "minValue": -30,
     "maxValue": 20,

@@ -21,8 +21,8 @@
   "en": "Frequency, wavelength and transverse fields; slow playback, pause and step controls."
  },
  "summary": {
-  "fr": "À 50 MHz, le profil de l’onde avance d’environ 6 m toutes les 20 ns, alors qu’en chaque point les champs ne font qu’osciller sur place. Vous distinguez ce qui oscille de ce qui se propage.",
-  "en": "At 50 MHz, the wave profile advances by about 6 m every 20 ns, while at each point the fields only oscillate in place. You separate what oscillates from what travels."
+  "fr": "À 50 MHz (50 millions d’oscillations par seconde), le profil de l’onde avance d’environ 6 m toutes les 20 ns (nanosecondes), alors qu’en chaque point les champs électrique E et magnétique B ne font qu’osciller sur place. Vous distinguez ce qui oscille de ce qui se propage.",
+  "en": "At 50 MHz (50 million oscillations per second), the wave profile advances by about 6 m every 20 ns (nanoseconds), while at each point the electric field E and the magnetic field B only oscillate in place. You separate what oscillates from what travels."
  },
  "parameters": [
   {
@@ -245,6 +245,7 @@
    "kind": "metric"
   }
  ],
+ "outputs_en_page": null,
  "formulas": [
   {
    "text": "E(x,t) = E_0cos(ωt − kx)"
@@ -403,6 +404,7 @@
  ],
  "concepts": [],
  "extraction": {
+  "source_hash": "616a03c47e5a26f2",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#experience"

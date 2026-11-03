@@ -21,12 +21,12 @@
   "en": "Vary the convection coefficient h, the thermal conductivity λ and size; compare the uniform-temperature model with the core temperature."
  },
  "summary": {
-  "fr": "À Bi = 1, le modèle à température uniforme annonce 116 min pour rattraper 90 % de l’écart ; le cœur de l’aliment en demande 164. Vous savez quand une seule température suffit, et quand elle trompe.",
-  "en": "At Bi = 1, the uniform-temperature model announces 116 min to close 90% of the gap; the core of the food needs 164. You know when one temperature is enough, and when it misleads."
+  "fr": "À Bi = 1 (nombre de Biot, sans unité : la résistance de l’intérieur de l’aliment à la chaleur, comparée à celle de sa surface), le modèle à température uniforme annonce 116 min pour rattraper 90 % de l’écart avec le milieu extérieur ; le cœur de l’aliment en demande 164. Vous savez quand une seule température suffit,…",
+  "en": "At Bi = 1 (the Biot number, unitless: the resistance of the food’s interior to heat compared with that of its surface), the uniform-temperature model announces 116 min to close 90% of the gap with the surrounding medium; the core of the food needs 164. You know when one temperature is enough, and when it misleads."
  },
  "parameters": [
   {
-   "id": "convection-h",
+   "id": "surface-heat-transfer-h",
    "type": "integer",
    "control": "range",
    "min": 5,
@@ -34,8 +34,8 @@
    "step": 1,
    "default": 25,
    "label": {
-    "fr": "Convection h (W/m²·K)",
-    "en": "Convection h (W/m²·K)"
+    "fr": "Échange en surface h (W/m²·K)",
+    "en": "Surface heat transfer h (W/m²·K)"
    },
    "meaning": {
     "fr": null,
@@ -48,7 +48,7 @@
    "unit_source": "label"
   },
   {
-   "id": "length-lc-v-a",
+   "id": "length-lc-volume-surface",
    "type": "number",
    "control": "range",
    "min": 0.2,
@@ -56,12 +56,12 @@
    "step": 0.1,
    "default": 2,
    "label": {
-    "fr": "Longueur Lc = V/A (cm)",
-    "en": "Length Lc = V/A (cm)"
+    "fr": "Longueur Lc = volume/surface (cm)",
+    "en": "Length Lc = volume/surface (cm)"
    },
    "meaning": {
-    "fr": "La longueur caractéristique : le volume divisé par la surface d’échange.",
-    "en": "The characteristic length: volume divided by heat-transfer area."
+    "fr": null,
+    "en": null
    },
    "unit": {
     "fr": "cm",
@@ -70,7 +70,7 @@
    "unit_source": "display"
   },
   {
-   "id": "conductivity",
+   "id": "thermal-conductivity",
    "type": "number",
    "control": "range",
    "min": 0.1,
@@ -78,8 +78,8 @@
    "step": 0.05,
    "default": 0.5,
    "label": {
-    "fr": "Conductivité λ (W/m·K)",
-    "en": "Conductivity λ (W/m·K)"
+    "fr": "Conductivité thermique λ (W/m·K)",
+    "en": "Thermal conductivity λ (W/m·K)"
    },
    "meaning": {
     "fr": null,
@@ -122,8 +122,8 @@
    "step": 1,
    "default": 2,
    "label": {
-    "fr": "Milieu extérieur T∞",
-    "en": "Surroundings T∞"
+    "fr": "Milieu extérieur T∞ (air ou liquide)",
+    "en": "Surroundings T∞ (air or liquid)"
    },
    "meaning": {
     "fr": null,
@@ -144,9 +144,9 @@
     "en": "Thick food: Bi = 1"
    },
    "values": {
-    "convection-h": 25,
-    "length-lc-v-a": 2,
-    "conductivity": 0.5,
+    "surface-heat-transfer-h": 25,
+    "length-lc-volume-surface": 2,
+    "thermal-conductivity": 0.5,
     "initial-temperature-ti": 60,
     "surroundings-t": 2
    },
@@ -163,16 +163,16 @@
     "en": "Thin slice: small Bi"
    },
    "values": {
-    "convection-h": 10,
-    "length-lc-v-a": 0.5,
-    "conductivity": 2,
+    "surface-heat-transfer-h": 10,
+    "length-lc-volume-surface": 0.5,
+    "thermal-conductivity": 2,
     "initial-temperature-ti": 60,
     "surroundings-t": 2
    },
    "changes_vs_default": {
-    "convection-h": 10,
-    "length-lc-v-a": 0.5,
-    "conductivity": 2
+    "surface-heat-transfer-h": 10,
+    "length-lc-volume-surface": 0.5,
+    "thermal-conductivity": 2
    },
    "shows": {
     "fr": "Les courbes se confondent : la température reste presque uniforme et le modèle simple suffit.",
@@ -186,14 +186,14 @@
     "en": "Only conductivity λ increases"
    },
    "values": {
-    "convection-h": 25,
-    "length-lc-v-a": 2,
-    "conductivity": 2,
+    "surface-heat-transfer-h": 25,
+    "length-lc-volume-surface": 2,
+    "thermal-conductivity": 2,
     "initial-temperature-ti": 60,
     "surroundings-t": 2
    },
    "changes_vs_default": {
-    "conductivity": 2
+    "thermal-conductivity": 2
    },
    "shows": {
     "fr": "Le temps du modèle simple ne bouge pas : c’est juste, λ n’y intervient pas. Seul le cœur se rapproche.",
@@ -207,14 +207,14 @@
     "en": "Strong air flow: h = 100"
    },
    "values": {
-    "convection-h": 100,
-    "length-lc-v-a": 2,
-    "conductivity": 0.5,
+    "surface-heat-transfer-h": 100,
+    "length-lc-volume-surface": 2,
+    "thermal-conductivity": 0.5,
     "initial-temperature-ti": 60,
     "surroundings-t": 2
    },
    "changes_vs_default": {
-    "convection-h": 100
+    "surface-heat-transfer-h": 100
    },
    "shows": {
     "fr": "La surface refroidit vite, mais le cœur est limité par la conduction : Bi = 4.",
@@ -228,14 +228,14 @@
     "en": "Large piece: Lc = 6 cm"
    },
    "values": {
-    "convection-h": 25,
-    "length-lc-v-a": 6,
-    "conductivity": 0.5,
+    "surface-heat-transfer-h": 25,
+    "length-lc-volume-surface": 6,
+    "thermal-conductivity": 0.5,
     "initial-temperature-ti": 60,
     "surroundings-t": 2
    },
    "changes_vs_default": {
-    "length-lc-v-a": 6
+    "length-lc-volume-surface": 6
    },
    "shows": {
     "fr": "Trois fois plus épais : le temps à cœur devient bien plus long que le modèle simple ne l’annonce.",
@@ -249,9 +249,9 @@
     "en": "Warming: Ti below T∞"
    },
    "values": {
-    "convection-h": 25,
-    "length-lc-v-a": 2,
-    "conductivity": 0.5,
+    "surface-heat-transfer-h": 25,
+    "length-lc-volume-surface": 2,
+    "thermal-conductivity": 0.5,
     "initial-temperature-ti": 2,
     "surroundings-t": 20
    },
@@ -314,6 +314,7 @@
    "kind": "reading"
   }
  ],
+ "outputs_en_page": null,
  "formulas": [
   {
    "text": "Bi = hL_c/λ"
@@ -414,9 +415,9 @@
     "en": "Thick food: Bi = 1"
    },
    "set": {
-    "convection-h": 25,
-    "length-lc-v-a": 2,
-    "conductivity": 0.5,
+    "surface-heat-transfer-h": 25,
+    "length-lc-volume-surface": 2,
+    "thermal-conductivity": 0.5,
     "initial-temperature-ti": 60,
     "surroundings-t": 2
    },
@@ -432,9 +433,9 @@
     "en": "Thin slice: small Bi"
    },
    "set": {
-    "convection-h": 10,
-    "length-lc-v-a": 0.5,
-    "conductivity": 2
+    "surface-heat-transfer-h": 10,
+    "length-lc-volume-surface": 0.5,
+    "thermal-conductivity": 2
    },
    "observe": {
     "fr": "Les courbes se confondent : la température reste presque uniforme et le modèle simple suffit.",
@@ -448,7 +449,7 @@
     "en": "Only conductivity λ increases"
    },
    "set": {
-    "conductivity": 2
+    "thermal-conductivity": 2
    },
    "observe": {
     "fr": "Le temps du modèle simple ne bouge pas : c’est juste, λ n’y intervient pas. Seul le cœur se rapproche.",
@@ -462,7 +463,7 @@
     "en": "Large piece: Lc = 6 cm"
    },
    "set": {
-    "length-lc-v-a": 6
+    "length-lc-volume-surface": 6
    },
    "observe": {
     "fr": "Trois fois plus épais : le temps à cœur devient bien plus long que le modèle simple ne l’annonce.",
@@ -489,6 +490,7 @@
   "biot-number"
  ],
  "extraction": {
+  "source_hash": "2c6c88ea6f185d18",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#experience"

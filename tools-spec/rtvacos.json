@@ -34,10 +34,6 @@
     "fr": "Une référence simple à battre (persistance, ou climatologie : la moyenne habituelle)",
     "en": "A simple reference to beat (persistence, or climatology: the usual average)"
    },
-   "tag": {
-    "fr": "fondation",
-    "en": "foundation"
-   },
    "meaning": {
     "fr": null,
     "en": null
@@ -53,10 +49,6 @@
    "label": {
     "fr": "Des données d'entraînement et de test séparées, sans fuite d'information de l'une vers l'autre",
     "en": "Separate training and test data, with no information leaking from one to the other"
-   },
-   "tag": {
-    "fr": "fondation",
-    "en": "foundation"
    },
    "meaning": {
     "fr": null,
@@ -74,10 +66,6 @@
     "fr": "Les limites et le domaine de validité écrits",
     "en": "Limits and domain of validity written down"
    },
-   "tag": {
-    "fr": "fondation",
-    "en": "foundation"
-   },
    "meaning": {
     "fr": null,
     "en": null
@@ -93,10 +81,6 @@
    "label": {
     "fr": "Le code public, avec une licence",
     "en": "Public code, with a license"
-   },
-   "tag": {
-    "fr": "fondation",
-    "en": "foundation"
    },
    "meaning": {
     "fr": null,
@@ -114,10 +98,6 @@
     "fr": "Les données ou leur accès décrits, avec une licence",
     "en": "Data or their access described, with a license"
    },
-   "tag": {
-    "fr": "fondation",
-    "en": "foundation"
-   },
    "meaning": {
     "fr": null,
     "en": null
@@ -133,10 +113,6 @@
    "label": {
     "fr": "L'usage des outils déclaré, IA comprise",
     "en": "Tool use declared, AI included"
-   },
-   "tag": {
-    "fr": "fondation",
-    "en": "foundation"
    },
    "meaning": {
     "fr": null,
@@ -154,10 +130,6 @@
     "fr": "Un ORCID et des DOI (article, code, données)",
     "en": "An ORCID and DOIs (article, code, data)"
    },
-   "tag": {
-    "fr": "fondation",
-    "en": "foundation"
-   },
    "meaning": {
     "fr": null,
     "en": null
@@ -173,10 +145,6 @@
    "label": {
     "fr": "Une page claire : le résultat, la méthode, comment citer",
     "en": "A clear page: the result, the method, how to cite"
-   },
-   "tag": {
-    "fr": "fondation",
-    "en": "foundation"
    },
    "meaning": {
     "fr": null,
@@ -194,10 +162,6 @@
     "fr": "Des métadonnées lisibles par les machines (CITATION.cff, JSON-LD)",
     "en": "Machine-readable metadata (CITATION.cff, JSON-LD)"
    },
-   "tag": {
-    "fr": "fondation",
-    "en": "foundation"
-   },
    "meaning": {
     "fr": null,
     "en": null
@@ -213,10 +177,6 @@
    "label": {
     "fr": "Un exemple qui tourne en quelques minutes",
     "en": "An example that runs in minutes"
-   },
-   "tag": {
-    "fr": "fondation",
-    "en": "foundation"
    },
    "meaning": {
     "fr": null,
@@ -234,10 +194,6 @@
     "fr": "Une documentation pour un utilisateur qui n'est pas l'auteur",
     "en": "Documentation for a user who is not the author"
    },
-   "tag": {
-    "fr": "fondation",
-    "en": "foundation"
-   },
    "meaning": {
     "fr": null,
     "en": null
@@ -253,10 +209,6 @@
    "label": {
     "fr": "Un retour d'utilisateur réel pris en compte",
     "en": "Real user feedback taken into account"
-   },
-   "tag": {
-    "fr": "fondation",
-    "en": "foundation"
    },
    "meaning": {
     "fr": null,
@@ -274,10 +226,6 @@
     "fr": "Des coauteurs qui renforcent une fondation, pas seulement la liste",
     "en": "Co-authors who strengthen a foundation, not only the list"
    },
-   "tag": {
-    "fr": "amplificateur",
-    "en": "amplifier"
-   },
    "meaning": {
     "fr": null,
     "en": null
@@ -293,10 +241,6 @@
    "label": {
     "fr": "Des contributions créditées (CRediT, ORCID)",
     "en": "Credited contributions (CRediT, ORCID)"
-   },
-   "tag": {
-    "fr": "amplificateur",
-    "en": "amplifier"
    },
    "meaning": {
     "fr": null,
@@ -314,10 +258,6 @@
     "fr": "Un résumé pour non-spécialistes",
     "en": "A summary for non-specialists"
    },
-   "tag": {
-    "fr": "amplificateur",
-    "en": "amplifier"
-   },
    "meaning": {
     "fr": null,
     "en": null
@@ -333,10 +273,6 @@
    "label": {
     "fr": "Une présentation, un cours ou une vidéo",
     "en": "A talk, a course or a video"
-   },
-   "tag": {
-    "fr": "amplificateur",
-    "en": "amplifier"
    },
    "meaning": {
     "fr": null,
@@ -354,10 +290,6 @@
     "fr": "Un utilisateur ou une décision identifiés",
     "en": "An identified user or decision"
    },
-   "tag": {
-    "fr": "amplificateur",
-    "en": "amplifier"
-   },
    "meaning": {
     "fr": null,
     "en": null
@@ -373,10 +305,6 @@
    "label": {
     "fr": "Un partenaire hors du monde académique",
     "en": "A partner outside academia"
-   },
-   "tag": {
-    "fr": "amplificateur",
-    "en": "amplifier"
    },
    "meaning": {
     "fr": null,
@@ -397,6 +325,7 @@
  ],
  "variants": [],
  "outputs": [],
+ "outputs_en_page": null,
  "formulas": [],
  "definitions": [],
  "assumptions": {
@@ -489,6 +418,7 @@
   "persistence"
  ],
  "extraction": {
+  "source_hash": "a88a0d5319f30a0a",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#rtv"

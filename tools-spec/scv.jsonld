@@ -43,7 +43,7 @@
   {
    "@type": "PropertyValue",
    "propertyID": "sc-dd",
-   "name": "Diffuse floor d",
+   "name": "Diffuse floor d (fraction of light left under thick cloud)",
    "alternateName": "Plancher diffus d",
    "description": "La fraction de ciel clair qui reste sous un nuage épais : 0,2 dans l’article. Il fixe l’échelle de sCV, proportionnelle à 1/(1 − d). Les séries chargées restent construites avec d = 0,2.",
    "value": 0.2,
@@ -125,7 +125,7 @@
    {
     "@type": "PropertyValueSpecification",
     "valueName": "sc-dd",
-    "description": "Diffuse floor d",
+    "description": "Diffuse floor d (fraction of light left under thick cloud)",
     "valueRequired": false,
     "minValue": 0,
     "maxValue": 0.6,

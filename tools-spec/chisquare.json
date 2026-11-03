@@ -21,8 +21,8 @@
   "en": "Explore a fair die or a 2×2 table; visualize cell contributions and small expected counts."
  },
  "summary": {
-  "fr": "Sur 120 lancers d’un dé, une seule face sortie 68 fois au lieu de 20 apporte 115,2 des 138,5 points du χ². Vous apprenez à chercher où se trouve l’écart, au lieu de vous arrêter à la p-value.",
-  "en": "Over 120 throws of a die, a single face appearing 68 times instead of 20 contributes 115.2 of the 138.5 points of χ². You learn to look for where the departure lies, instead of stopping at the p-value."
+  "fr": "Sur 120 lancers d’un dé, une seule face sortie 68 fois au lieu de 20 apporte 115,2 des 138,5 points du χ² (khi-deux : la mesure globale de l’écart entre effectifs observés et attendus). Vous apprenez à chercher où se trouve l’écart, au lieu de vous arrêter à la p-value (la probabilité d’un écart au moins aussi grand…",
+  "en": "Over 120 throws of a die, a single face appearing 68 times instead of 20 contributes 115.2 of the 138.5 points of χ² (chi-square: the overall measure of the gap between observed and expected counts). You learn to look for where the departure lies, instead of stopping at the p-value (the probability of a gap at least…"
  },
  "parameters": [
   {
@@ -45,8 +45,8 @@
     "en": "Question"
    },
    "meaning": {
-    "fr": "somme des contributions",
-    "en": "sum of the contributions"
+    "fr": null,
+    "en": null
    },
    "unit": null
   },
@@ -517,6 +517,7 @@
    "kind": "table-row"
   }
  ],
+ "outputs_en_page": null,
  "formulas": [
   {
    "text": "χ^2 = ∑((O − E)^2)/E"
@@ -575,7 +576,7 @@
  ],
  "assumptions": {
   "fr": [
-   "Le χ² additionne des écarts cellule par cellule, et une seule peut tout porter : dans ce dé suspect, la face 6 fournit à elle seule l’essentiel de la statistique. Modifiez des effectifs et regardez quelle cellule pèse.",
+   "Le χ² (khi-deux) additionne des écarts cellule par cellule (chacun compare l’effectif observé à celui attendu si H₀, « le dé est équilibré », était vraie), et une seule peut tout porter : dans ce dé suspect, la face 6 fournit à elle seule l’essentiel de la statistique. Modifiez des effectifs et regardez quelle cellule pèse.",
    "120 lancers, 20 attendus par face : la face 6 sort 68 fois et pèse presque tout le χ².",
    "Exemple fictif de lancers indépendants d’un dé à six faces. H₀ : chaque face a une probabilité 1/6, soit N/6 occurrences attendues par face (20 pour 120 lancers). Ces valeurs diffèrent de l’exemple des diapositives.",
    "H₀ rejetée au seuil fixé de 5 %. Les écarts à H₀ sont statistiquement détectables dans ce modèle. La cellule qui pèse le plus : Face 6, 83 % du χ². Une différence dans une cellule peu attendue pèse davantage.",
@@ -583,7 +584,7 @@
    "Conditions : observations indépendantes, catégories exclusives, vrais comptages et non des pourcentages. Le tableau 2×2 ne convient pas à des mesures appariées."
   ],
   "en": [
-   "χ² adds up gaps cell by cell, and a single cell can carry it all: in this suspect die, face 6 alone provides most of the statistic. Change the counts and see which cell weighs most.",
+   "χ² (chi-square) adds up gaps cell by cell (each compares the observed count with the one expected if H₀, “the die is fair”, were true), and a single cell can carry it all: in this suspect die, face 6 alone provides most of the statistic. Change the counts and see which cell weighs most.",
    "120 rolls, 20 expected per face: face 6 comes up 68 times and carries nearly all of χ².",
    "Fictitious example of independent rolls of a six-sided die. H₀: each face has probability 1/6, giving N/6 expected occurrences per face (20 for 120 rolls). These values differ from the example in the slides.",
    "H₀ rejected at the prespecified 5% level. Departures from H₀ are statistically detectable under this model. The heaviest cell: Face 6, 83% of χ². A difference in a cell with a smaller expected count carries more weight.",
@@ -715,6 +716,7 @@
   "chi-square-test"
  ],
  "extraction": {
+  "source_hash": "ef726508d169ef9e",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#experience"

@@ -82,8 +82,8 @@
     "en": "σ̂, forecast volatility"
    },
    "meaning": {
-    "fr": "la volatilité prévue, sans unité. Le curseur en donne des valeurs d'exemple ; dans la méthode, elle sort de l'autorégression à chaque instant.",
-    "en": "the forecast volatility, without unit. The slider gives example values; in the method, it comes out of the autoregression at each time."
+    "fr": null,
+    "en": null
    },
    "unit": {
     "fr": "sans unité",
@@ -236,6 +236,7 @@
    "kind": "reading"
   }
  ],
+ "outputs_en_page": null,
  "formulas": [
   {
    "text": "z = κ + j·στ"
@@ -394,6 +395,7 @@
  ],
  "concepts": [],
  "extraction": {
+  "source_hash": "098117180e2f0c7a",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#cx"

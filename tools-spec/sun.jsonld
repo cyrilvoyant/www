@@ -1,0 +1,141 @@
+{
+ "@context": "https://schema.org",
+ "@type": [
+  "SoftwareApplication",
+  "LearningResource"
+ ],
+ "@id": "https://www.cyrilvoyant.com/tools/sun-seasons-utc/#tool-spec",
+ "identifier": "sun",
+ "name": "The Sun, the seasons and UTC",
+ "alternateName": "Le Soleil, les saisons et l’heure UTC",
+ "description": "The Earth around the Sun, day and night, day length in Paris and Sydney, the double seasonality of irradiance and timestamping measurements in UTC.",
+ "url": "https://www.cyrilvoyant.com/tools/sun-seasons-utc/",
+ "sameAs": [
+  "https://www.cyrilvoyant.com/fr/animations/soleil-saisons-utc/",
+  "https://www.cyrilvoyant.com/tools/sun-seasons-utc/"
+ ],
+ "inLanguage": [
+  "fr",
+  "en"
+ ],
+ "applicationCategory": "ScientificApplication",
+ "operatingSystem": "Any (web browser)",
+ "isAccessibleForFree": true,
+ "learningResourceType": "demo",
+ "author": {
+  "@type": "Person",
+  "name": "Cyril Voyant",
+  "identifier": "https://orcid.org/0000-0003-0242-7377"
+ },
+ "license": "https://creativecommons.org/licenses/by/4.0/",
+ "additionalProperty": [
+  {
+   "@type": "PropertyValue",
+   "propertyID": "sun-d",
+   "name": "Date",
+   "alternateName": "Date",
+   "value": 298,
+   "minValue": 1,
+   "maxValue": 365,
+   "unitText": "day of the year 2026 (shown as a date)"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "sun-t",
+   "name": "Instant (UTC)",
+   "alternateName": "Instant (UTC)",
+   "description": "Coordinated Universal Time: one clock for the whole Earth, without summer time.",
+   "value": 360,
+   "minValue": 0,
+   "maxValue": 1435,
+   "unitText": "minutes since 00:00 UTC (shown as hh:mm UTC)"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:autumn-morning-in-paris",
+   "name": "Autumn morning in Paris",
+   "alternateName": "Matin d'automne à Paris",
+   "value": "{\"sun-d\": 298, \"sun-t\": 360}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:summer-in-paris",
+   "name": "Summer in Paris",
+   "alternateName": "Été à Paris",
+   "value": "{\"sun-d\": 172, \"sun-t\": 720}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:summer-in-sydney",
+   "name": "Summer in Sydney",
+   "alternateName": "Été à Sydney",
+   "value": "{\"sun-d\": 355, \"sun-t\": 720}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:equinox",
+   "name": "Equinox",
+   "alternateName": "Équinoxe",
+   "value": "{\"sun-d\": 79, \"sun-t\": 720}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:noon-in-sydney",
+   "name": "Noon in Sydney",
+   "alternateName": "Midi à Sydney",
+   "value": "{\"sun-d\": 172, \"sun-t\": 115}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:25-10-2026-paris-goes-back-to-winter-tim",
+   "name": "25/10/2026: Paris goes back to winter time",
+   "alternateName": "25/10/2026 : Paris passe à l'heure d'hiver",
+   "value": "{\"sun-d\": 298, \"sun-t\": 360}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:29-03-2026-paris-moves-to-summer-time",
+   "name": "29/03/2026: Paris moves to summer time",
+   "alternateName": "29/03/2026 : Paris passe à l'heure d'été",
+   "value": "{\"sun-d\": 298, \"sun-t\": 360}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:04-10-2026-sydney-moves-to-summer-time",
+   "name": "04/10/2026: Sydney moves to summer time",
+   "alternateName": "04/10/2026 : Sydney passe à l'heure d'été",
+   "value": "{\"sun-d\": 298, \"sun-t\": 360}"
+  }
+ ],
+ "potentialAction": {
+  "@type": "Action",
+  "name": "Explore the tool",
+  "target": {
+   "@type": "EntryPoint",
+   "urlTemplate": "https://www.cyrilvoyant.com/tools/sun-seasons-utc/",
+   "actionPlatform": "https://schema.org/DesktopWebPlatform"
+  },
+  "object": [
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "sun-d",
+    "description": "Date",
+    "valueRequired": false,
+    "minValue": 1,
+    "maxValue": 365,
+    "defaultValue": 298,
+    "stepValue": 1
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "sun-t",
+    "description": "Instant (UTC)",
+    "valueRequired": false,
+    "minValue": 0,
+    "maxValue": 1435,
+    "defaultValue": 360,
+    "stepValue": 5
+   }
+  ]
+ }
+}

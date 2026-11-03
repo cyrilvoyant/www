@@ -60,8 +60,8 @@
     "en": "Memory"
    },
    "meaning": {
-    "fr": "La corrélation entre deux valeurs voisines du bruit. 0 : aucune. 1 : totale.",
-    "en": "The correlation between two neighbouring values of the noise. 0: none. 1: total."
+    "fr": null,
+    "en": null
    },
    "unit": {
     "fr": "sans unité",
@@ -211,50 +211,50 @@
  "actions": [
   {
    "name": {
-    "fr": "PersistancenRMSE 51 %",
-    "en": "PersistencenRMSE 51 %"
+    "fr": "Persistance nRMSE 51 %",
+    "en": "Persistence nRMSE 51 %"
    }
   },
   {
    "name": {
-    "fr": "MoyennenRMSE 60 %",
-    "en": "MeannRMSE 60 %"
+    "fr": "Moyenne nRMSE 60 %",
+    "en": "Mean nRMSE 60 %"
    }
   },
   {
    "name": {
-    "fr": "Persistance cycliquenRMSE 36 %",
-    "en": "Cyclic persistencenRMSE 36 %"
+    "fr": "Persistance cyclique nRMSE 36 %",
+    "en": "Cyclic persistence nRMSE 36 %"
    }
   },
   {
    "name": {
-    "fr": "CLIPERnRMSE 46 %",
-    "en": "CLIPERnRMSE 46 %"
+    "fr": "CLIPER nRMSE 46 %",
+    "en": "CLIPER nRMSE 46 %"
    }
   },
   {
    "name": {
-    "fr": "BLENDnRMSE 31 %",
-    "en": "BLENDnRMSE 31 %"
+    "fr": "BLEND nRMSE 31 %",
+    "en": "BLEND nRMSE 31 %"
    }
   },
   {
    "name": {
-    "fr": "AR(2) brutnRMSE 41 %",
-    "en": "Raw AR(2)nRMSE 41 %"
+    "fr": "AR(2) brut nRMSE 41 %",
+    "en": "Raw AR(2) nRMSE 41 %"
    }
   },
   {
    "name": {
-    "fr": "Différence à la tendancenRMSE 24 %",
-    "en": "Difference to trendnRMSE 24 %"
+    "fr": "Différence à la tendance nRMSE 24 %",
+    "en": "Difference to trend nRMSE 24 %"
    }
   },
   {
    "name": {
-    "fr": "Rapport à la tendancenRMSE 24 %",
-    "en": "Ratio to trendnRMSE 24 %"
+    "fr": "Rapport à la tendance nRMSE 24 %",
+    "en": "Ratio to trend nRMSE 24 %"
    }
   }
  ],
@@ -262,8 +262,8 @@
  "outputs": [
   {
    "name": {
-    "fr": "Différence à la tendancenRMSE",
-    "en": "Difference to trendnRMSE"
+    "fr": "nRMSE",
+    "en": "nRMSE"
    },
    "unit": {
     "fr": "%",
@@ -432,6 +432,7 @@
    "kind": "table-row"
   }
  ],
+ "outputs_en_page": null,
  "formulas": [],
  "definitions": [
   {
@@ -662,6 +663,7 @@
   "memory-phi"
  ],
  "extraction": {
+  "source_hash": "6c54131a9cf337ee",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#experience"
