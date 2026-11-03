@@ -21,8 +21,8 @@
   "en": "Move an outlier and watch the correlation coefficient r, the least-squares line and the p-value change."
  },
  "summary": {
-  "fr": "Dans cet exemple, ajouter un seul point éloigné fait tomber la corrélation r (sans unité : 1 pour des points parfaitement alignés, 0 pour aucun lien) de 0,948 à 0,348. Vous prenez le réflexe de regarder le nuage avant de conclure.",
-  "en": "In this example, adding one distant point makes the correlation r (unitless: 1 for perfectly aligned points, 0 for no relationship) fall from 0.948 to 0.348. You get into the habit of looking at the scatter before concluding."
+  "fr": "Dans cet exemple, ajouter un seul point éloigné fait tomber la corrélation r (sans unité, de −1 à 1 : ±1 pour des points parfaitement alignés, 0 pour aucun lien linéaire) de 0,948 à 0,348. Vous prenez le réflexe de regarder le nuage avant de conclure.",
+  "en": "In this example, adding one distant point makes the correlation r (unitless, from −1 to 1: ±1 for perfectly aligned points, 0 for no linear relationship) fall from 0.948 to 0.348. You get into the habit of looking at the scatter before concluding."
  },
  "parameters": [
   {
@@ -370,7 +370,7 @@
   "influential-point"
  ],
  "extraction": {
-  "source_hash": "04c6cf5243286ea5",
+  "source_hash": "d768344169b9cd0b",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#experience"

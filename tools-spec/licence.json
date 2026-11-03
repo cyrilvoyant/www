@@ -21,8 +21,8 @@
   "en": "Follow an example decision tree, to be adapted to context and content rights."
  },
  "summary": {
-  "fr": "Avec l'IA, n'importe qui écrit en quelques minutes un modèle de prévision ou un réseau de neurones. La méthode n'est plus rare ; les données le sont.",
-  "en": "With AI, anyone writes a forecasting model or a neural network in minutes. The method is no longer scarce; the data are."
+  "fr": "Écrire un modèle de prévision ne suffit pas à le rendre fiable. La qualité des données et la méthode de validation restent déterminantes.",
+  "en": "Writing a forecasting model does not make it reliable. Data quality and the validation method remain essential."
  },
  "parameters": [
   {
@@ -303,7 +303,7 @@
  "exploration": [],
  "concepts": [],
  "extraction": {
-  "source_hash": "3c37795c39e4b79a",
+  "source_hash": "d4605f597f9094c4",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#lic-tree"

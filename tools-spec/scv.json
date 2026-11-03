@@ -22,7 +22,7 @@
  },
  "summary": {
   "fr": "Deux ciels peuvent être aussi variables l’un que l’autre, et l’un se prévoir bien mieux que l’autre. sCV mesure l’écart au ciel clair. F dit s’il en reste une mémoire à l’horizon visé.",
-  "en": "Before choosing a forecasting model, it helps to know how difficult the site is. Two numbers answer that: sCV, the variability that clouds add to the course of the sun, and F, how much of that variability can be anticipated at a given horizon."
+  "en": "Before choosing a forecasting model, it helps to know how difficult the site is. Two numbers answer that: sCV, the variability that clouds add to the course of the sun, and F, a diagnostic of forecast difficulty at a given horizon."
  },
  "parameters": [
   {
@@ -396,7 +396,7 @@
   "forecastability-f"
  ],
  "extraction": {
-  "source_hash": "9de200d8bd924f23",
+  "source_hash": "9678f1cb8b713d12",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#try-it"

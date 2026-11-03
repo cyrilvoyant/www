@@ -15,11 +15,11 @@
 <li><strong>A reference that knows the cycle.</strong> Clear-sky-index persistence (the last clear-sky index, irradiance divided by clear-sky irradiance, repeated), or <a href="/latest-publications-and-news/forecasting-with-less/">BLEND</a>, a convex combination (two positive weights adding up to 1) of immediate memory and the value at the same phase of the cycle. BLEND works from raw irradiance and its weights are in closed form (Voyant et al., 2026).</li>
 <li><strong>An autoregression.</strong> Fitted by least squares (minimizing the sum of squared errors) on recent lags.</li>
 <li><strong>A frugal learner.</strong> An <a href="/latest-publications-and-news/why-extreme-learning-machines/">Extreme Learning Machine</a> (Huang, Zhu and Siew, 2006) keeps a random hidden layer and fits its output weights analytically.</li>
-<li><strong>A deep network.</strong> LSTM (a network that remembers sequences), U-Net (a network designed to read images) or larger, under the same split, horizons and tuning budget (the number of settings tried).</li>
+<li><strong>A deep network.</strong> LSTM (long short-term memory, a network that remembers sequences), U-Net (a network designed to read images) or larger, under the same split, horizons and tuning budget (the number of settings tried).</li>
 </ol>
-<h2>Two published or teaching results</h2>
+<h2>Two results: a teaching example and a published study</h2>
 <p><strong>Ajaccio, 2007 test year, one hour ahead (UE14, the solar forecasting course).</strong> The daytime nRMSE is 22.0 % for <a href="/glossary/#smart-persistence">smart persistence</a> (clear-sky-index persistence), 21.3 % for AR(2) (autoregression on the last two values) and 20.5 % for an ELM. The steps are small, and each is measured.</p>
-<p><strong>Corsican electricity system, six years of hourly data (Applied Energy, 2026).</strong> A multiple-output (MIMO) ELM is compared with persistence, single-output formulations and an LSTM under a realistic tuning budget. At one hour, nRMSE is 0.179 for solar generation.</p>
+<p><strong>Corsican electricity system, six years of hourly data (Applied Energy, 2026).</strong> A multiple-output (MIMO) ELM is compared with persistence, single-output formulations and an LSTM under a realistic tuning budget. One hour ahead, nRMSE is 0.179 for solar generation.</p>
 <h2>What counts as a gain</h2>
 <ul>
 <li>The same targets, scope and horizon for all models.</li>

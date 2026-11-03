@@ -159,7 +159,7 @@
   {
    "term": "Persistance",
    "meaning": {
-    "fr": "La référence la plus simple : demain ressemble à maintenant, la prévision est la dernière valeur observée.",
+    "fr": "La référence la plus simple : le futur proche ressemble à maintenant, la prévision est la dernière valeur observée.",
     "en": "The simplest reference: the near future looks like now, the forecast is the last observed value."
    }
   },
@@ -229,7 +229,7 @@
   "prediction-interval"
  ],
  "extraction": {
-  "source_hash": "985946782de493ce",
+  "source_hash": "014d19749a9bfca1",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#proba-race"

@@ -2296,11 +2296,11 @@
    "skos:definition": [
     {
      "@language": "fr",
-     "@value": "La racine de l'écart quadratique moyen au ciel clair, rapportée à la racine de la moyenne du carré du ciel clair. 0 : ciel clair. Environ 1 : chaque heure clair ou couvert à pile ou face. Ce n'est pas un maximum."
+     "@value": "Indice sans unité d’écart à la courbe de ciel clair, normalisé par l’échelle de cette courbe et le plancher diffus retenu. 0 : ciel clair ; 1 : repère d’une alternance aléatoire équiprobable entre ciel clair et ce plancher, pas une borne supérieure."
     },
     {
      "@language": "en",
-     "@value": "The root of the mean squared departure from clear sky, divided by the root of the mean square of clear sky. 0: clear sky. About 1: each hour clear or overcast on a coin toss. It is not a maximum."
+     "@value": "A dimensionless departure from the clear-sky curve, normalized by that curve’s scale and the chosen diffuse floor. 0: clear sky; 1: the reference case of equally likely random switching between clear sky and that floor, not an upper bound."
     }
    ],
    "skos:altLabel": [

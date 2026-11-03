@@ -312,8 +312,8 @@
   {
    "term": "keV",
    "meaning": {
-    "fr": "Le kiloélectronvolt, unité d’énergie : 1 keV = 1000 eV.",
-    "en": "The kiloelectronvolt, a unit of energy: 1 keV = 1000 eV."
+    "fr": "Le kiloélectronvolt, unité d’énergie : 1 keV = 1 000 eV.",
+    "en": "The kiloelectronvolt, a unit of energy: 1 keV = 1,000 eV."
    }
   }
  ],
@@ -424,7 +424,7 @@
  ],
  "concepts": [],
  "extraction": {
-  "source_hash": "87c3b4f4a7b1412d",
+  "source_hash": "d7dead80998c9d7c",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#experience"

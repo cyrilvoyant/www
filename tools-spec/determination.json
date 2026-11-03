@@ -274,8 +274,8 @@
   {
    "term": "p-value",
    "meaning": {
-    "fr": "La probabilité d’un résultat au moins aussi extrême si ρ = 0. Elle ne mesure pas l’importance du lien. Voir le test de Student.",
-    "en": "The probability of a result at least as extreme if ρ = 0. It does not measure the importance of the association. See the Student test."
+    "fr": "La probabilité d’un résultat au moins aussi extrême si ρ = 0. Petite, elle signale un résultat peu compatible avec ρ = 0 ; elle ne mesure pas l’importance du lien. Voir le test de Student.",
+    "en": "The probability of a result at least as extreme if ρ = 0. A small one flags a result poorly compatible with ρ = 0; it does not measure the importance of the association. See the Student test."
    }
   },
   {
@@ -404,7 +404,7 @@
   "r-squared"
  ],
  "extraction": {
-  "source_hash": "d26cc23c60dccc57",
+  "source_hash": "3d415c96e605d3eb",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#experience"

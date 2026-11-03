@@ -22,6 +22,7 @@ Cyril Voyant connects medical physics and energy forecasting through modelling f
 - Learn: https://www.cyrilvoyant.com/teaching/ ; français : https://www.cyrilvoyant.com/fr/enseignement/ . Course audience and level are specified; most courses are in French, solar course in both languages.
 - Use a tool: https://www.cyrilvoyant.com/tools/ ; français : https://www.cyrilvoyant.com/fr/outils/ . Seven scientific calculators have working French interfaces; their numerical engines match the English originals. Dedicated apps and the comparison tool retain their existing languages. The catalog distinguishes these cases.
 - Interactive resource inventory: https://www.cyrilvoyant.com/interactive-resources.json . Research calculators, teaching demonstrations and hosted applications have distinct purposes.
+- Machine-readable tools: https://www.cyrilvoyant.com/tools-spec.json (index) and https://www.cyrilvoyant.com/tools-spec/<id>.json (one tool, e.g. engine, nice, memory). Read it to know what a tool computes, which parameters it has, the preset values and the sentence the page shows for each, without running the page.
 - Understand the modelling decisions: https://www.cyrilvoyant.com/approach/ ; français : https://www.cyrilvoyant.com/fr/approche/ .
 - Research integrity → /data/ → /ai-in-research/ → /scientific-publishing-trust/ → /cite/.
 

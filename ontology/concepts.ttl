@@ -356,7 +356,7 @@ cv:scv a skos:Concept ;
     skos:prefLabel "sCV"@fr, "sCV"@en ;
     skos:altLabel "coefficient de variation stochastique"@fr ;
     skos:altLabel "stochastic coefficient of variation"@en ;
-    skos:definition "La racine de l'écart quadratique moyen au ciel clair, rapportée à la racine de la moyenne du carré du ciel clair. 0 : ciel clair. Environ 1 : chaque heure clair ou couvert à pile ou face. Ce n'est pas un maximum."@fr, "The root of the mean squared departure from clear sky, divided by the root of the mean square of clear sky. 0: clear sky. About 1: each hour clear or overcast on a coin toss. It is not a maximum."@en ;
+    skos:definition "Indice sans unité d’écart à la courbe de ciel clair, normalisé par l’échelle de cette courbe et le plancher diffus retenu. 0 : ciel clair ; 1 : repère d’une alternance aléatoire équiprobable entre ciel clair et ce plancher, pas une borne supérieure."@fr, "A dimensionless departure from the clear-sky curve, normalized by that curve’s scale and the chosen diffuse floor. 0: clear sky; 1: the reference case of equally likely random switching between clear sky and that floor, not an upper bound."@en ;
     schema:unitText "sans unité"@fr, "dimensionless"@en ;
     skos:broader cv:forecasting ;
     skos:related cv:clear-sky-index, cv:forecastability-f, cv:malr ;

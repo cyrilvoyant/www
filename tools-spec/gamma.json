@@ -468,7 +468,7 @@
   {
    "term": "GPR",
    "meaning": {
-    "fr": "La part des pixels acceptés. L’article propose GPR > 80 % et γ moyen < 0,7 comme repères pratiques.",
+    "fr": "Le taux de réussite gamma (gamma passing rate) : la part des pixels acceptés. L’article propose GPR > 80 % et γ moyen < 0,7 comme repères pratiques.",
     "en": null
    }
   },
@@ -592,7 +592,7 @@
   "gamma-index"
  ],
  "extraction": {
-  "source_hash": "92e29d26a4860b93",
+  "source_hash": "c163da9745d670c6",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#try-it"

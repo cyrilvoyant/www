@@ -21,8 +21,8 @@
   "en": "Vary the convection coefficient h, the thermal conductivity λ and size; compare the uniform-temperature model with the core temperature."
  },
  "summary": {
-  "fr": "À Bi = 1 (nombre de Biot, sans unité : la résistance de l’intérieur de l’aliment à la chaleur, comparée à celle de sa surface), le modèle à température uniforme annonce 116 min pour rattraper 90 % de l’écart avec le milieu extérieur ; le cœur de l’aliment en demande 164. Vous savez quand une seule température suffit,…",
-  "en": "At Bi = 1 (the Biot number, unitless: the resistance of the food’s interior to heat compared with that of its surface), the uniform-temperature model announces 116 min to close 90% of the gap with the surrounding medium; the core of the food needs 164. You know when one temperature is enough, and when it misleads."
+  "fr": "À Bi = 1 (nombre de Biot, sans unité : la résistance de l’intérieur de l’aliment à la chaleur, comparée à celle de sa surface), le modèle à température uniforme annonce 116 min pour rattraper 90 % de l’écart avec le milieu extérieur ; le cœur de l’aliment en demande 164 min. Vous savez quand une seule température…",
+  "en": "At Bi = 1 (the Biot number, unitless: the resistance of the food’s interior to heat compared with that of its surface), the uniform-temperature model announces 116 min to close 90% of the gap with the surrounding medium; the core of the food needs 164 min. You know when one temperature is enough, and when it misleads."
  },
  "parameters": [
   {
@@ -337,8 +337,8 @@
   {
    "term": "h",
    "meaning": {
-    "fr": "Le coefficient de convection en surface.",
-    "en": "The surface convection coefficient."
+    "fr": "Le coefficient de convection en surface, en W/(m²·K).",
+    "en": "The surface convection coefficient, in W/(m²·K)."
    }
   },
   {
@@ -351,8 +351,8 @@
   {
    "term": "λ",
    "meaning": {
-    "fr": "La conductivité thermique de l’aliment.",
-    "en": "The thermal conductivity of the food."
+    "fr": "La conductivité thermique de l’aliment, en W/(m·K).",
+    "en": "The thermal conductivity of the food, in W/(m·K)."
    }
   },
   {
@@ -490,7 +490,7 @@
   "biot-number"
  ],
  "extraction": {
-  "source_hash": "1a1c3c828199b2e2",
+  "source_hash": "737bb1b969fb0992",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#experience"

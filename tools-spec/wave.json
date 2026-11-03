@@ -272,8 +272,8 @@
   {
    "term": "E, B",
    "meaning": {
-    "fr": "Les champs électrique et magnétique, perpendiculaires entre eux et à la propagation. E₀ est l’amplitude de E.",
-    "en": "The electric and magnetic fields, perpendicular to each other and to the direction of travel. E₀ is the amplitude of E."
+    "fr": "Les champs électrique (en V/m) et magnétique (en teslas ; l’outil affiche B en nanoteslas, nT), perpendiculaires entre eux et à la propagation. E₀ est l’amplitude de E.",
+    "en": "The electric (in V/m) and magnetic (in teslas; the tool shows B in nanoteslas, nT) fields, perpendicular to each other and to the direction of travel. E₀ is the amplitude of E."
    }
   },
   {
@@ -307,8 +307,8 @@
   {
    "term": "I",
    "meaning": {
-    "fr": "L’intensité moyenne : la puissance transportée par unité de surface.",
-    "en": "Mean intensity: the power transported per unit area."
+    "fr": "L’intensité moyenne : la puissance transportée par unité de surface, en W/m².",
+    "en": "Mean intensity: the power transported per unit area, in W/m²."
    }
   }
  ],
@@ -404,7 +404,7 @@
  ],
  "concepts": [],
  "extraction": {
-  "source_hash": "51fa74a3d33cefbe",
+  "source_hash": "09044436b7a0121c",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#experience"

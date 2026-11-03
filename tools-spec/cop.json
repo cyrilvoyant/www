@@ -374,7 +374,7 @@
   "cop"
  ],
  "extraction": {
-  "source_hash": "3ec169e5c9dbaf14",
+  "source_hash": "1c90461f296ca4b6",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#experience"

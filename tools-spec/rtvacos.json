@@ -418,7 +418,7 @@
   "persistence"
  ],
  "extraction": {
-  "source_hash": "838217ae7926eef1",
+  "source_hash": "85eb5e71cde019cf",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#rtv"

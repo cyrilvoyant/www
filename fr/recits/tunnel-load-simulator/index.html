@@ -13,7 +13,7 @@
 <p><strong>En bref</strong></p>
 <ul>
 <li>Sans aucune mesure, on peut simuler la consommation électrique d'un tunnel routier à partir de sa géométrie, du trafic, de l'éclairage et de la ventilation : <strong>une année au pas de 10 minutes en environ 150 ms</strong> (millisecondes).</li>
-<li>Pour un tunnel périurbain de 1,5 km à deux tubes, l'exemple public donne une médiane de <strong>3 233 MWh par an</strong> (mégawattheures, une quantité d'énergie) et une pointe de <strong>873 kW</strong> (kilowatts, une puissance instantanée ; la pointe en est le maximum sur l'année) sur 20 tirages Monte Carlo (20 simulations avec des tirages aléatoires différents).</li>
+<li>Pour un tunnel périurbain de 1,5 km à deux tubes, l'exemple public donne une médiane de <strong>3 233 MWh par an</strong> (mégawattheures, une quantité d'énergie) et une pointe de <strong>873 kW</strong> (kilowatts, une puissance instantanée ; la pointe en est le maximum sur l'année) sur 20 tirages Monte-Carlo (20 simulations avec des tirages aléatoires différents).</li>
 <li>Il donne une première estimation, pas une mesure : <strong>à calibrer sur des mesures avant tout usage d'ingénierie</strong>.</li>
 </ul>
 </section>
@@ -29,7 +29,7 @@
 <li>l'<strong>éclairage</strong>, qui dépend de la lumière du jour aux entrées du tunnel et du trafic ;</li>
 <li>la <strong>ventilation</strong>, qui suit le trafic avec ses pointes du matin et du soir, et augmente avec la pente et l'altitude. Elle bondit lors d'<strong>épisodes de pollution</strong> et d'<strong>accidents</strong> tirés au hasard.</li>
 </ul>
-<p>Chaque année est simulée de nombreuses fois avec des tirages aléatoires différents (<strong>Monte Carlo</strong>). La médiane est la valeur centrale des résultats simulés. P10 et P90 sont les centiles 10 et 90 : la bande P10–P90 contient les 80 % centraux de ces résultats. Elle décrit la variation entre simulations pour les paramètres choisis, pas toute l'incertitude sur un tunnel réel.</p>
+<p>Chaque année est simulée de nombreuses fois avec des tirages aléatoires différents (<strong>Monte-Carlo</strong>). La médiane est la valeur centrale des résultats simulés. P10 et P90 sont les centiles 10 et 90 : la bande P10–P90 contient les 80 % centraux de ces résultats. Elle décrit la variation entre simulations pour les paramètres choisis, pas toute l'incertitude sur un tunnel réel.</p>
 <h2>Où l'on se situe sur l'échelle de la complexité</h2>
 <figure class="lvl"><figcaption class="lvl-head"><span class="lvl-title">Quel niveau de complexité pour ce travail ?</span><span class="lvl-now">Niveau 2 sur 6</span></figcaption><ol class="lvl-steps"><li class="lvl-step done" style="--h:1"><span class="lvl-num">1</span> <span>Calcul direct (le lien est connu)</span></li><li class="lvl-step here" style="--h:2" aria-current="step"><span class="lvl-num">2</span> <span>Simulation à partir de ce que l&#x27;on sait</span><span class="lvl-flag">◀ Ce travail s'arrête ici</span></li><li class="lvl-step " style="--h:3"><span class="lvl-num">3</span> <span>Références simples et structurées</span></li><li class="lvl-step " style="--h:4"><span class="lvl-num">4</span> <span>Modèles statistiques</span></li><li class="lvl-step " style="--h:5"><span class="lvl-num">5</span> <span>Apprentissage frugal (ELM, un réseau de neurones frugal)</span></li><li class="lvl-step " style="--h:6"><span class="lvl-num">6</span> <span>Réseaux profonds, modèles de fondation</span></li></ol><p class="lvl-rule">Monter d'un niveau seulement si cela paie. Les niveaux gris n'ont pas été nécessaires. Modèle de langage : non utilisé.</p></figure>
 <p>Deuxième niveau : la <strong>simulation à partir de ce que l'on sait</strong>. Sans mesures locales, rien ne peut être calibré ni validé pour ce tunnel, et rien n'est prétendu : les paramètres sont des ordres de grandeur d'ingénierie, affichés et modifiables.</p>
@@ -45,7 +45,7 @@
 </ul>
 <h2>Études préliminaires rapides, coefficients à calibrer</h2>
 <ul>
-<li><strong>Apports</strong> : des études préliminaires rapides et transparentes (technologie d'éclairage, type de ventilation, niveau de trafic) ; des profils de charge synthétiques pour la recherche sur la gestion de l'énergie et les renouvelables en tunnel ; un cas d'enseignement clair de l'incertitude Monte Carlo.</li>
+<li><strong>Apports</strong> : des études préliminaires rapides et transparentes (technologie d'éclairage, type de ventilation, niveau de trafic) ; des profils de charge synthétiques pour la recherche sur la gestion de l'énergie et les renouvelables en tunnel ; un cas d'enseignement clair de l'incertitude Monte-Carlo.</li>
 <li><strong>Limites</strong> : la bande P10–P90 est <strong>étroite parce qu'elle ne reflète que les événements aléatoires et le bruit du modèle</strong>, pas l'incertitude sur ses paramètres. Les coefficients sont des ordres de grandeur, pas des mesures d'un tunnel donné. Calibrer sur des mesures avant tout usage d'ingénierie ou toute comparaison avec un site réel.</li>
 </ul>
 <h2>Pour aller plus loin</h2>
@@ -53,7 +53,7 @@
 <li><strong>Équations complètes, exemple exécutable et résultats</strong> (en anglais) : <a href="https://cyrilvoyant.github.io/tools/tunnel-load-simulator.html">https://cyrilvoyant.github.io/tools/tunnel-load-simulator.html</a></li>
 <li><strong>L'application web</strong> : <a href="https://tunnel-load-simulator.onrender.com/">ouvrir le Tunnel Load Simulator</a> (hébergement gratuit : le premier réveil peut prendre une minute)</li>
 <li><strong>Article</strong> : H. El-Houari, C. Voyant, <em>SoftwareX</em> 35, 102946 (2026), doi :<a href="https://doi.org/10.1016/j.softx.2026.102946">10.1016/j.softx.2026.102946</a> · <a class="bib-link" href="/bib/ElHouari2026Tunnel.bib" download type="application/x-bibtex" title="BibTeX record">BibTeX</a></li>
-<li><strong>Code</strong> : github.com/cyrilvoyant/tunnel-load-simulator · archive doi :<a href="https://doi.org/10.5281/zenodo.20080042">10.5281/zenodo.20080042</a></li>
+<li><strong>Code</strong> : <a href="https://github.com/cyrilvoyant/tunnel-load-simulator">github.com/cyrilvoyant/tunnel-load-simulator</a> · archive doi :<a href="https://doi.org/10.5281/zenodo.20080042">10.5281/zenodo.20080042</a></li>
 <li>Le simulateur peut aussi être piloté en langage courant grâce à <a href="/fr/recits/websemantic/">WebSemantic</a>.</li>
 <li><strong>La confiance se démontre</strong> : <a href="/fr/approche/">pourquoi calibrer sur des mesures avant tout usage d'ingénierie</a></li>
 </ul></main>

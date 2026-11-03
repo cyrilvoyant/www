@@ -42,8 +42,8 @@
   {
    "@type": "PropertyValue",
    "propertyID": "test-threshold-s",
-   "name": "Test threshold s",
-   "alternateName": "Seuil s du test",
+   "name": "Test threshold s (in standard deviations from the healthy mean)",
+   "alternateName": "Seuil s du test (en écarts-types depuis la moyenne des non-malades)",
    "value": 1,
    "minValue": -3,
    "maxValue": 6,
@@ -131,7 +131,7 @@
    {
     "@type": "PropertyValueSpecification",
     "valueName": "test-threshold-s",
-    "description": "Test threshold s",
+    "description": "Test threshold s (in standard deviations from the healthy mean)",
     "valueRequired": false,
     "minValue": -3,
     "maxValue": 6,

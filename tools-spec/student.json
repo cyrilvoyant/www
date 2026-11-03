@@ -426,8 +426,8 @@
   {
    "term": "p-value",
    "meaning": {
-    "fr": "La probabilité, si les moyennes sont égales et le modèle correct, d’un écart au moins aussi extrême. Ce n’est pas la probabilité que l’hypothèse soit vraie.",
-    "en": "The probability, if the means are equal and the model is correct, of a difference at least as extreme. It is not the probability that the hypothesis is true."
+    "fr": "La probabilité, si les moyennes sont égales et le modèle correct, d’un écart au moins aussi extrême. Ce n’est pas la probabilité que l’hypothèse soit vraie. Petite, elle signale un écart peu compatible avec des moyennes égales (H₀).",
+    "en": "The probability, if the means are equal and the model is correct, of a difference at least as extreme. It is not the probability that the hypothesis is true. A small one flags a difference poorly compatible with equal means (H₀)."
    }
   },
   {
@@ -556,7 +556,7 @@
   "student-t-test"
  ],
  "extraction": {
-  "source_hash": "eb92e5d81a6374e8",
+  "source_hash": "e1b03885a5f003f9",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#experience"

@@ -364,22 +364,22 @@
   {
    "term": "Q, m",
    "meaning": {
-    "fr": "L’énergie à retirer et la masse.",
-    "en": "The energy to remove and the mass."
+    "fr": "L’énergie à retirer (en kJ) et la masse (en kg).",
+    "en": "The energy to remove (in kJ) and the mass (in kg)."
    }
   },
   {
    "term": "Δh",
    "meaning": {
-    "fr": "L’énergie à retirer par kilogramme (variation d’enthalpie massique).",
-    "en": "The energy to remove per kilogram (specific enthalpy change)."
+    "fr": "L’énergie à retirer par kilogramme (variation d’enthalpie massique, en kJ/kg).",
+    "en": "The energy to remove per kilogram (specific enthalpy change, in kJ/kg)."
    }
   },
   {
    "term": "P, Δt",
    "meaning": {
-    "fr": "La puissance moyenne et la durée.",
-    "en": "Average power and duration."
+    "fr": "La puissance moyenne (en kW) et la durée (en heures dans l’outil).",
+    "en": "Average power (in kW) and duration (in hours in the tool)."
    }
   },
   {
@@ -518,7 +518,7 @@
   "sensible-heat"
  ],
  "extraction": {
-  "source_hash": "496f257446a6cdc9",
+  "source_hash": "f88c6bd7cf73b923",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#experience"

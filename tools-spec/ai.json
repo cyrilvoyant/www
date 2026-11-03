@@ -407,7 +407,7 @@
  "exploration": [],
  "concepts": [],
  "extraction": {
-  "source_hash": "fb5f82af256cdbbe",
+  "source_hash": "fe58734b1ecec001",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#role-helper"

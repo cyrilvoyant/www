@@ -33,6 +33,7 @@ Distinguish published papers, preprints, software and work in preparation. Attri
 - [Interactive tools](https://www.cyrilvoyant.com/tools/) / [Outils interactifs](https://www.cyrilvoyant.com/fr/outils/): actual interface language and purpose are explicit; a catalog translation is not an application translation.
 - [The approach](https://www.cyrilvoyant.com/approach/) / [La démarche](https://www.cyrilvoyant.com/fr/approche/): the question, the physical model, the data, then the tools and demonstrated benefit of complexity.
 - [Interactive resources JSON](https://www.cyrilvoyant.com/interactive-resources.json): catalog with field, task, type and interface language.
+- [Tools specification JSON](https://www.cyrilvoyant.com/tools-spec.json): every interactive tool as data (parameters with min, max, step and default, presets, outputs, formulas, assumptions, suggested experiments); one file per tool in [/tools-spec/](https://www.cyrilvoyant.com/tools-spec/) (`<id>.json`, `<id>.jsonld`).
 
 ## Ontology and glossary / Ontologie et lexique
 
@@ -56,7 +57,7 @@ Distinguish published papers, preprints, software and work in preparation. Attri
 - [My research in 30 seconds](https://www.cyrilvoyant.com/30-second-brief/): A concise introduction to Cyril Voyant’s research: understand the system, choose a useful model, measure what tools add and keep people responsible.
 - [About](https://www.cyrilvoyant.com/about/): Background, research, projects, recognition, publications, code and contact of Cyril Voyant, Research Director at Mines Paris – PSL.
 - [AI in research: the AI Act, a lab charter and a toolbox for researchers](https://www.cyrilvoyant.com/ai-in-research/): The European AI Act for researchers: what changes, the timeline, who is responsible when code is transferred, and ten tools for a laboratory.
-- [Understand before you compute: the approach of Cyril Voyant](https://www.cyrilvoyant.com/approach/): Medicine, energy, language: very different questions, one method. People at the center, a model we understand at the core, every tool around it.
+- [Understand before you compute: the approach of Cyril Voyant](https://www.cyrilvoyant.com/approach/): Cyril Voyant's approach: start from the problem, use known relationships directly, add data only where the model falls short.
 - [Cite and reuse our work](https://www.cyrilvoyant.com/cite/): Articles, software, courses, data and texts of this site: the license of each and how to cite it, with the affiliation to the O.I.E.
 - [Collaborate: research projects, studies and adaptation of the tools](https://www.cyrilvoyant.com/collaborate/): Answer a call for projects together, fund a study or a doctorate through Mines Paris – PSL, or start an academic collaboration.
 - [Forecasting irradiance and its uncertainty with complex numbers](https://www.cyrilvoyant.com/complex-valued-forecasting/): A complex autoregression with six coefficients forecasts both solar irradiance and its volatility; set α and see the width of the intervals.
@@ -86,7 +87,7 @@ Distinguish published papers, preprints, software and work in preparation. Attri
 - [Le Soleil, les saisons et l'heure : une seule horloge pour les mesures](https://www.cyrilvoyant.com/fr/animations/soleil-saisons-utc/): Le 21 juin 2026, le jour dure 16 h 11 à Paris et 9 h 54 à Sydney. Animation des saisons et du jour, et pourquoi dater les données solaires en UTC.
 - [Test du χ² : dé équilibré, observés, attendus et tableau 2×2](https://www.cyrilvoyant.com/fr/animations/test-khi-deux/): Pour 120 lancers d’un dé équilibré, 20 résultats attendus par face. Modifiez une face et voyez sa contribution au χ² ; tableau 2×2 du cours.
 - [Test de Student interactif : deux moyennes, dispersion et p-value](https://www.cyrilvoyant.com/fr/animations/test-student/): Même écart, même dispersion, plus de patients : la p-value change. Test de Student à variance commune pour deux traitements, au seuil de 5 %.
-- [Comprendre avant de calculer : la démarche de Cyril Voyant](https://www.cyrilvoyant.com/fr/approche/): Médecine, énergie, langage : des questions très différentes, une même méthode. Au centre, l'humain ; au cœur, un modèle que l'on comprend.
+- [Comprendre avant de calculer : la démarche de Cyril Voyant](https://www.cyrilvoyant.com/fr/approche/): La démarche de Cyril Voyant : partir du problème, utiliser directement les relations connues.
 - [Citer et réutiliser nos travaux](https://www.cyrilvoyant.com/fr/citer/): Articles, logiciels, cours, données et textes du site : la licence de chacun et la façon de le citer, avec l'affiliation au centre O.I.E. de Mines Paris – PSL.
 - [Collaborer : projets de recherche, études et adaptation des outils](https://www.cyrilvoyant.com/fr/collaborer/): Répondre ensemble à un appel à projets, financer une étude ou une thèse avec Mines Paris – PSL, ou engager une collaboration académique.
 - [Les modèles sont dans les données : qualifier, certifier, placer sous licence](https://www.cyrilvoyant.com/fr/donnees/): Avec l'IA, les méthodes sont à portée de tous ; ce qui fait la valeur d'un résultat, ce sont des données qualifiées, certifiées et sous licence claire.

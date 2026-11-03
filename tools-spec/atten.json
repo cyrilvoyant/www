@@ -229,15 +229,15 @@
   {
    "term": "x",
    "meaning": {
-    "fr": "L’épaisseur traversée.",
-    "en": "The thickness crossed."
+    "fr": "L’épaisseur traversée, en cm dans l’outil.",
+    "en": "The thickness crossed, in cm in the tool."
    }
   },
   {
    "term": "μ",
    "meaning": {
-    "fr": "Le coefficient d’atténuation linéique.",
-    "en": "The linear attenuation coefficient."
+    "fr": "Le coefficient d’atténuation linéique, en cm⁻¹ quand x est en cm.",
+    "en": "The linear attenuation coefficient, in cm⁻¹ when x is in cm."
    }
   },
   {
@@ -370,7 +370,7 @@
   "half-value-layer"
  ],
  "extraction": {
-  "source_hash": "81b3ed6b5f1bc7a1",
+  "source_hash": "12447f4c4bca3d67",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#experience"

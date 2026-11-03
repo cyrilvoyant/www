@@ -477,7 +477,7 @@
    ],
    "concepts": [],
    "extraction": {
-    "source_hash": "f013f37b79e49801",
+    "source_hash": "0888144545f71000",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -865,7 +865,7 @@
     "cop"
    ],
    "extraction": {
-    "source_hash": "3ec169e5c9dbaf14",
+    "source_hash": "1c90461f296ca4b6",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -1191,8 +1191,8 @@
     {
      "term": "keV",
      "meaning": {
-      "fr": "Le kiloélectronvolt, unité d’énergie : 1 keV = 1000 eV.",
-      "en": "The kiloelectronvolt, a unit of energy: 1 keV = 1000 eV."
+      "fr": "Le kiloélectronvolt, unité d’énergie : 1 keV = 1 000 eV.",
+      "en": "The kiloelectronvolt, a unit of energy: 1 keV = 1,000 eV."
      }
     }
    ],
@@ -1303,7 +1303,7 @@
    ],
    "concepts": [],
    "extraction": {
-    "source_hash": "87c3b4f4a7b1412d",
+    "source_hash": "d7dead80998c9d7c",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -1586,8 +1586,8 @@
     {
      "term": "E, B",
      "meaning": {
-      "fr": "Les champs électrique et magnétique, perpendiculaires entre eux et à la propagation. E₀ est l’amplitude de E.",
-      "en": "The electric and magnetic fields, perpendicular to each other and to the direction of travel. E₀ is the amplitude of E."
+      "fr": "Les champs électrique (en V/m) et magnétique (en teslas ; l’outil affiche B en nanoteslas, nT), perpendiculaires entre eux et à la propagation. E₀ est l’amplitude de E.",
+      "en": "The electric (in V/m) and magnetic (in teslas; the tool shows B in nanoteslas, nT) fields, perpendicular to each other and to the direction of travel. E₀ is the amplitude of E."
      }
     },
     {
@@ -1621,8 +1621,8 @@
     {
      "term": "I",
      "meaning": {
-      "fr": "L’intensité moyenne : la puissance transportée par unité de surface.",
-      "en": "Mean intensity: the power transported per unit area."
+      "fr": "L’intensité moyenne : la puissance transportée par unité de surface, en W/m².",
+      "en": "Mean intensity: the power transported per unit area, in W/m²."
      }
     }
    ],
@@ -1718,7 +1718,7 @@
    ],
    "concepts": [],
    "extraction": {
-    "source_hash": "51fa74a3d33cefbe",
+    "source_hash": "09044436b7a0121c",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -1961,15 +1961,15 @@
     {
      "term": "x",
      "meaning": {
-      "fr": "L’épaisseur traversée.",
-      "en": "The thickness crossed."
+      "fr": "L’épaisseur traversée, en cm dans l’outil.",
+      "en": "The thickness crossed, in cm in the tool."
      }
     },
     {
      "term": "μ",
      "meaning": {
-      "fr": "Le coefficient d’atténuation linéique.",
-      "en": "The linear attenuation coefficient."
+      "fr": "Le coefficient d’atténuation linéique, en cm⁻¹ quand x est en cm.",
+      "en": "The linear attenuation coefficient, in cm⁻¹ when x is in cm."
      }
     },
     {
@@ -2102,7 +2102,7 @@
     "half-value-layer"
    ],
    "extraction": {
-    "source_hash": "81b3ed6b5f1bc7a1",
+    "source_hash": "12447f4c4bca3d67",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -2137,8 +2137,8 @@
     "en": "Vary the convection coefficient h, the thermal conductivity λ and size; compare the uniform-temperature model with the core temperature."
    },
    "summary": {
-    "fr": "À Bi = 1 (nombre de Biot, sans unité : la résistance de l’intérieur de l’aliment à la chaleur, comparée à celle de sa surface), le modèle à température uniforme annonce 116 min pour rattraper 90 % de l’écart avec le milieu extérieur ; le cœur de l’aliment en demande 164. Vous savez quand une seule température suffit,…",
-    "en": "At Bi = 1 (the Biot number, unitless: the resistance of the food’s interior to heat compared with that of its surface), the uniform-temperature model announces 116 min to close 90% of the gap with the surrounding medium; the core of the food needs 164. You know when one temperature is enough, and when it misleads."
+    "fr": "À Bi = 1 (nombre de Biot, sans unité : la résistance de l’intérieur de l’aliment à la chaleur, comparée à celle de sa surface), le modèle à température uniforme annonce 116 min pour rattraper 90 % de l’écart avec le milieu extérieur ; le cœur de l’aliment en demande 164 min. Vous savez quand une seule température…",
+    "en": "At Bi = 1 (the Biot number, unitless: the resistance of the food’s interior to heat compared with that of its surface), the uniform-temperature model announces 116 min to close 90% of the gap with the surrounding medium; the core of the food needs 164 min. You know when one temperature is enough, and when it misleads."
    },
    "parameters": [
     {
@@ -2453,8 +2453,8 @@
     {
      "term": "h",
      "meaning": {
-      "fr": "Le coefficient de convection en surface.",
-      "en": "The surface convection coefficient."
+      "fr": "Le coefficient de convection en surface, en W/(m²·K).",
+      "en": "The surface convection coefficient, in W/(m²·K)."
      }
     },
     {
@@ -2467,8 +2467,8 @@
     {
      "term": "λ",
      "meaning": {
-      "fr": "La conductivité thermique de l’aliment.",
-      "en": "The thermal conductivity of the food."
+      "fr": "La conductivité thermique de l’aliment, en W/(m·K).",
+      "en": "The thermal conductivity of the food, in W/(m·K)."
      }
     },
     {
@@ -2606,7 +2606,7 @@
     "biot-number"
    ],
    "extraction": {
-    "source_hash": "1a1c3c828199b2e2",
+    "source_hash": "737bb1b969fb0992",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -2984,22 +2984,22 @@
     {
      "term": "Q, m",
      "meaning": {
-      "fr": "L’énergie à retirer et la masse.",
-      "en": "The energy to remove and the mass."
+      "fr": "L’énergie à retirer (en kJ) et la masse (en kg).",
+      "en": "The energy to remove (in kJ) and the mass (in kg)."
      }
     },
     {
      "term": "Δh",
      "meaning": {
-      "fr": "L’énergie à retirer par kilogramme (variation d’enthalpie massique).",
-      "en": "The energy to remove per kilogram (specific enthalpy change)."
+      "fr": "L’énergie à retirer par kilogramme (variation d’enthalpie massique, en kJ/kg).",
+      "en": "The energy to remove per kilogram (specific enthalpy change, in kJ/kg)."
      }
     },
     {
      "term": "P, Δt",
      "meaning": {
-      "fr": "La puissance moyenne et la durée.",
-      "en": "Average power and duration."
+      "fr": "La puissance moyenne (en kW) et la durée (en heures dans l’outil).",
+      "en": "Average power (in kW) and duration (in hours in the tool)."
      }
     },
     {
@@ -3138,7 +3138,7 @@
     "sensible-heat"
    ],
    "extraction": {
-    "source_hash": "496f257446a6cdc9",
+    "source_hash": "f88c6bd7cf73b923",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -3208,8 +3208,8 @@
      "step": 0.05,
      "default": 1,
      "label": {
-      "fr": "Seuil s du test",
-      "en": "Test threshold s"
+      "fr": "Seuil s du test (en écarts-types depuis la moyenne des non-malades)",
+      "en": "Test threshold s (in standard deviations from the healthy mean)"
      },
      "meaning": {
       "fr": null,
@@ -3685,7 +3685,7 @@
     "roc-curve"
    ],
    "extraction": {
-    "source_hash": "994e98a0bdfbd27d",
+    "source_hash": "abb933b8315311fa",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -4193,7 +4193,7 @@
     "normal-distribution"
    ],
    "extraction": {
-    "source_hash": "8a6d776fc26b1576",
+    "source_hash": "2450196e72e37f65",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -4633,8 +4633,8 @@
     {
      "term": "p-value",
      "meaning": {
-      "fr": "La probabilité, si les moyennes sont égales et le modèle correct, d’un écart au moins aussi extrême. Ce n’est pas la probabilité que l’hypothèse soit vraie.",
-      "en": "The probability, if the means are equal and the model is correct, of a difference at least as extreme. It is not the probability that the hypothesis is true."
+      "fr": "La probabilité, si les moyennes sont égales et le modèle correct, d’un écart au moins aussi extrême. Ce n’est pas la probabilité que l’hypothèse soit vraie. Petite, elle signale un écart peu compatible avec des moyennes égales (H₀).",
+      "en": "The probability, if the means are equal and the model is correct, of a difference at least as extreme. It is not the probability that the hypothesis is true. A small one flags a difference poorly compatible with equal means (H₀)."
      }
     },
     {
@@ -4763,7 +4763,7 @@
     "student-t-test"
    ],
    "extraction": {
-    "source_hash": "eb92e5d81a6374e8",
+    "source_hash": "e1b03885a5f003f9",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -5493,7 +5493,7 @@
     "chi-square-test"
    ],
    "extraction": {
-    "source_hash": "d89282a827a68150",
+    "source_hash": "a10ca6a1a53dfe4c",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -5781,8 +5781,8 @@
     {
      "term": "p-value",
      "meaning": {
-      "fr": "La probabilité d’un résultat au moins aussi extrême si ρ = 0. Elle ne mesure pas l’importance du lien. Voir le test de Student.",
-      "en": "The probability of a result at least as extreme if ρ = 0. It does not measure the importance of the association. See the Student test."
+      "fr": "La probabilité d’un résultat au moins aussi extrême si ρ = 0. Petite, elle signale un résultat peu compatible avec ρ = 0 ; elle ne mesure pas l’importance du lien. Voir le test de Student.",
+      "en": "The probability of a result at least as extreme if ρ = 0. A small one flags a result poorly compatible with ρ = 0; it does not measure the importance of the association. See the Student test."
      }
     },
     {
@@ -5911,7 +5911,7 @@
     "r-squared"
    ],
    "extraction": {
-    "source_hash": "d26cc23c60dccc57",
+    "source_hash": "3d415c96e605d3eb",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -6369,7 +6369,7 @@
     "prediction-interval"
    ],
    "extraction": {
-    "source_hash": "efe41e8458917307",
+    "source_hash": "0f195a0f4998480c",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -6404,8 +6404,8 @@
     "en": "Move an outlier and watch the correlation coefficient r, the least-squares line and the p-value change."
    },
    "summary": {
-    "fr": "Dans cet exemple, ajouter un seul point éloigné fait tomber la corrélation r (sans unité : 1 pour des points parfaitement alignés, 0 pour aucun lien) de 0,948 à 0,348. Vous prenez le réflexe de regarder le nuage avant de conclure.",
-    "en": "In this example, adding one distant point makes the correlation r (unitless: 1 for perfectly aligned points, 0 for no relationship) fall from 0.948 to 0.348. You get into the habit of looking at the scatter before concluding."
+    "fr": "Dans cet exemple, ajouter un seul point éloigné fait tomber la corrélation r (sans unité, de −1 à 1 : ±1 pour des points parfaitement alignés, 0 pour aucun lien linéaire) de 0,948 à 0,348. Vous prenez le réflexe de regarder le nuage avant de conclure.",
+    "en": "In this example, adding one distant point makes the correlation r (unitless, from −1 to 1: ±1 for perfectly aligned points, 0 for no linear relationship) fall from 0.948 to 0.348. You get into the habit of looking at the scatter before concluding."
    },
    "parameters": [
     {
@@ -6753,7 +6753,7 @@
     "influential-point"
    ],
    "extraction": {
-    "source_hash": "04c6cf5243286ea5",
+    "source_hash": "d768344169b9cd0b",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -7268,7 +7268,7 @@
    ],
    "concepts": [],
    "extraction": {
-    "source_hash": "0015c2dd0023317f",
+    "source_hash": "621fd88551088b75",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#sun"
@@ -7659,7 +7659,7 @@
     "nice"
    ],
    "extraction": {
-    "source_hash": "e86cfeab21e55d1b",
+    "source_hash": "1f122bab19f5f286",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#try-it"
@@ -8150,7 +8150,7 @@
     "blend"
    ],
    "extraction": {
-    "source_hash": "0e27c4288de8c3e8",
+    "source_hash": "893872df2b7cbd9d",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#try-it"
@@ -8183,7 +8183,7 @@
    },
    "summary": {
     "fr": "Deux ciels peuvent être aussi variables l’un que l’autre, et l’un se prévoir bien mieux que l’autre. sCV mesure l’écart au ciel clair. F dit s’il en reste une mémoire à l’horizon visé.",
-    "en": "Before choosing a forecasting model, it helps to know how difficult the site is. Two numbers answer that: sCV, the variability that clouds add to the course of the sun, and F, how much of that variability can be anticipated at a given horizon."
+    "en": "Before choosing a forecasting model, it helps to know how difficult the site is. Two numbers answer that: sCV, the variability that clouds add to the course of the sun, and F, a diagnostic of forecast difficulty at a given horizon."
    },
    "parameters": [
     {
@@ -8557,7 +8557,7 @@
     "forecastability-f"
    ],
    "extraction": {
-    "source_hash": "9de200d8bd924f23",
+    "source_hash": "9678f1cb8b713d12",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#try-it"
@@ -9036,7 +9036,7 @@
     {
      "term": "GPR",
      "meaning": {
-      "fr": "La part des pixels acceptés. L’article propose GPR > 80 % et γ moyen < 0,7 comme repères pratiques.",
+      "fr": "Le taux de réussite gamma (gamma passing rate) : la part des pixels acceptés. L’article propose GPR > 80 % et γ moyen < 0,7 comme repères pratiques.",
       "en": null
      }
     },
@@ -9160,7 +9160,7 @@
     "gamma-index"
    ],
    "extraction": {
-    "source_hash": "92e29d26a4860b93",
+    "source_hash": "c163da9745d670c6",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#try-it"
@@ -9631,7 +9631,7 @@
     "gray"
    ],
    "extraction": {
-    "source_hash": "e83bd835dc4f3c69",
+    "source_hash": "64814f4d3414e949",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#try-it"
@@ -10046,7 +10046,7 @@
     "doubling-time"
    ],
    "extraction": {
-    "source_hash": "783ad3c64fcfe93c",
+    "source_hash": "7bd72515680db0fb",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#try-it"
@@ -10726,7 +10726,7 @@
     "nice"
    ],
    "extraction": {
-    "source_hash": "7e4b12f78a6c073f",
+    "source_hash": "e7dfa08e810fcfb5",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#fc"
@@ -11403,7 +11403,7 @@
     "memory-phi"
    ],
    "extraction": {
-    "source_hash": "753c132f642043b7",
+    "source_hash": "868c393457a27eb3",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -11830,7 +11830,7 @@
    ],
    "concepts": [],
    "extraction": {
-    "source_hash": "504094aed262f07d",
+    "source_hash": "0bd4b6675fc55ba5",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience",
@@ -12240,7 +12240,7 @@
    ],
    "concepts": [],
    "extraction": {
-    "source_hash": "4a294877bde4b467",
+    "source_hash": "7409f6c84c23fd5d",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#cx"
@@ -12413,7 +12413,7 @@
     {
      "term": "Persistance",
      "meaning": {
-      "fr": "La référence la plus simple : demain ressemble à maintenant, la prévision est la dernière valeur observée.",
+      "fr": "La référence la plus simple : le futur proche ressemble à maintenant, la prévision est la dernière valeur observée.",
       "en": "The simplest reference: the near future looks like now, the forecast is the last observed value."
      }
     },
@@ -12483,7 +12483,7 @@
     "prediction-interval"
    ],
    "extraction": {
-    "source_hash": "985946782de493ce",
+    "source_hash": "014d19749a9bfca1",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#proba-race"
@@ -12912,7 +12912,7 @@
     "persistence"
    ],
    "extraction": {
-    "source_hash": "838217ae7926eef1",
+    "source_hash": "85eb5e71cde019cf",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#rtv"
@@ -13330,7 +13330,7 @@
    "exploration": [],
    "concepts": [],
    "extraction": {
-    "source_hash": "fb5f82af256cdbbe",
+    "source_hash": "fe58734b1ecec001",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#role-helper"
@@ -13362,8 +13362,8 @@
     "en": "Follow an example decision tree, to be adapted to context and content rights."
    },
    "summary": {
-    "fr": "Avec l'IA, n'importe qui écrit en quelques minutes un modèle de prévision ou un réseau de neurones. La méthode n'est plus rare ; les données le sont.",
-    "en": "With AI, anyone writes a forecasting model or a neural network in minutes. The method is no longer scarce; the data are."
+    "fr": "Écrire un modèle de prévision ne suffit pas à le rendre fiable. La qualité des données et la méthode de validation restent déterminantes.",
+    "en": "Writing a forecasting model does not make it reliable. Data quality and the validation method remain essential."
    },
    "parameters": [
     {
@@ -13644,7 +13644,7 @@
    "exploration": [],
    "concepts": [],
    "extraction": {
-    "source_hash": "3c37795c39e4b79a",
+    "source_hash": "d4605f597f9094c4",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#lic-tree"
