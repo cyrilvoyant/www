@@ -477,7 +477,7 @@
    ],
    "concepts": [],
    "extraction": {
-    "source_hash": "7dc6547b9dfb63e3",
+    "source_hash": "bc97780491853b93",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -865,7 +865,7 @@
     "cop"
    ],
    "extraction": {
-    "source_hash": "88fd7d26806ac3c8",
+    "source_hash": "21f50822d93979bb",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -1303,7 +1303,7 @@
    ],
    "concepts": [],
    "extraction": {
-    "source_hash": "05597c3e4c8758f0",
+    "source_hash": "b5b35c4a5d49298b",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -1718,7 +1718,7 @@
    ],
    "concepts": [],
    "extraction": {
-    "source_hash": "e9ba69bb08e86880",
+    "source_hash": "6d52ed3813db9243",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -2102,7 +2102,7 @@
     "half-value-layer"
    ],
    "extraction": {
-    "source_hash": "d39ee03f2b7ec7bd",
+    "source_hash": "8ce1feef58e605e0",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -2606,7 +2606,7 @@
     "biot-number"
    ],
    "extraction": {
-    "source_hash": "81f4b77dafd4e280",
+    "source_hash": "8a1402e94fcf6d72",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -3138,7 +3138,7 @@
     "sensible-heat"
    ],
    "extraction": {
-    "source_hash": "51a92eeadc45ce6c",
+    "source_hash": "23fe1f3eac2bbe02",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -3685,7 +3685,7 @@
     "roc-curve"
    ],
    "extraction": {
-    "source_hash": "c2577726492fc984",
+    "source_hash": "6d4a3d30cec830e9",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -4193,7 +4193,7 @@
     "normal-distribution"
    ],
    "extraction": {
-    "source_hash": "a202c63fddd97ccb",
+    "source_hash": "0b3a1d1accca71b9",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -4763,7 +4763,7 @@
     "student-t-test"
    ],
    "extraction": {
-    "source_hash": "4e6feafa53549635",
+    "source_hash": "f010b70a43e4475d",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -5493,7 +5493,7 @@
     "chi-square-test"
    ],
    "extraction": {
-    "source_hash": "ef50ef5916e52193",
+    "source_hash": "9fa7c0fb7541fe13",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -5911,7 +5911,7 @@
     "r-squared"
    ],
    "extraction": {
-    "source_hash": "f0c8e616149cbfe7",
+    "source_hash": "af093fd84104fb61",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -6369,7 +6369,7 @@
     "prediction-interval"
    ],
    "extraction": {
-    "source_hash": "ec943c2753b8c267",
+    "source_hash": "5c139c571bb4fe55",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -6753,7 +6753,7 @@
     "influential-point"
    ],
    "extraction": {
-    "source_hash": "abca11d9493edc8e",
+    "source_hash": "1592b18593731d46",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -6991,6 +6991,78 @@
       "fr": "▶ Une journée",
       "en": "▶ One day"
      }
+    },
+    {
+     "name": {
+      "fr": "heure d'hiver",
+      "en": "winter time"
+     }
+    },
+    {
+     "name": {
+      "fr": "zénith",
+      "en": "overhead"
+     }
+    },
+    {
+     "name": {
+      "fr": "solstice",
+      "en": "solstice"
+     }
+    },
+    {
+     "name": {
+      "fr": "équinoxes",
+      "en": "equinoxes"
+     }
+    },
+    {
+     "name": {
+      "fr": "méridien",
+      "en": "meridian"
+     }
+    },
+    {
+     "name": {
+      "fr": "équation du temps",
+      "en": "equation of time"
+     }
+    },
+    {
+     "name": {
+      "fr": "crépuscule",
+      "en": "twilight"
+     }
+    },
+    {
+     "name": {
+      "fr": "éclairement",
+      "en": "irradiance"
+     }
+    },
+    {
+     "name": {
+      "fr": "constante solaire",
+      "en": "solar constant"
+     }
+    },
+    {
+     "name": {
+      "fr": "combinaison convexe",
+      "en": "convex combination"
+     }
+    },
+    {
+     "name": {
+      "fr": "heure légale",
+      "en": "Legal time"
+     }
+    },
+    {
+     "name": {
+      "fr": "ISO 8601",
+      "en": "ISO 8601"
+     }
     }
    ],
    "variants": [],
@@ -7096,6 +7168,14 @@
    "formulas": [
     {
      "text": "G0 = Gsc·E0·cos θz"
+    },
+    {
+     "text": "n : jour de l'année (1 à 365) ; h : heure UTC décimale ; t : minutes UTC depuis minuitφ : latitude ; λ : longitude, positive vers l'est (en degrés)",
+     "note": true
+    },
+    {
+     "text": "Source : editorial/charte/sun-seasons.js (fonctions spencer, cosz, e0, g0), identique aux équations de la NOAA.",
+     "note": true
     }
    ],
    "definitions": [
@@ -7168,7 +7248,12 @@
     "en": []
    },
    "source": {
-    "dois": [],
+    "dois": [
+     "10.1002/9781118671603",
+     "10.1016/j.solener.2003.12.003",
+     "10.1029/2010GL045777",
+     "10.21105/joss.05994"
+    ],
     "repositories": [],
     "related_pages": [
      {
@@ -7268,7 +7353,7 @@
    ],
    "concepts": [],
    "extraction": {
-    "source_hash": "e1e8a1258323694e",
+    "source_hash": "411367fa6a14d812",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#sun"
@@ -7659,7 +7744,7 @@
     "nice"
    ],
    "extraction": {
-    "source_hash": "da3d5a832f1da867",
+    "source_hash": "d78442340c56b8aa",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#try-it"
@@ -8150,7 +8235,7 @@
     "blend"
    ],
    "extraction": {
-    "source_hash": "7df761a0859880f3",
+    "source_hash": "3ed594303857d7c8",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#try-it"
@@ -8557,7 +8642,7 @@
     "forecastability-f"
    ],
    "extraction": {
-    "source_hash": "18bf6c30f192adb7",
+    "source_hash": "f8ceb18c4326b067",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#try-it"
@@ -9160,7 +9245,7 @@
     "gamma-index"
    ],
    "extraction": {
-    "source_hash": "2737aa7d31f97d3d",
+    "source_hash": "fb81e0c0e633ddfd",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#try-it"
@@ -9631,7 +9716,7 @@
     "gray"
    ],
    "extraction": {
-    "source_hash": "dc57d1075285257a",
+    "source_hash": "77e377162f4a51c3",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#try-it"
@@ -10046,7 +10131,7 @@
     "doubling-time"
    ],
    "extraction": {
-    "source_hash": "7a66f72bab90661f",
+    "source_hash": "301b42ff6ecbe447",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#try-it"
@@ -10726,7 +10811,7 @@
     "nice"
    ],
    "extraction": {
-    "source_hash": "bc8c556cb51b506b",
+    "source_hash": "2964eb1623771427",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#fc"
@@ -11403,7 +11488,7 @@
     "memory-phi"
    ],
    "extraction": {
-    "source_hash": "37b6607d8ce25c71",
+    "source_hash": "b56c30591f560070",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -11830,7 +11915,7 @@
    ],
    "concepts": [],
    "extraction": {
-    "source_hash": "5855d53d9218157c",
+    "source_hash": "58940f47c5fb09e6",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience",
@@ -12240,7 +12325,7 @@
    ],
    "concepts": [],
    "extraction": {
-    "source_hash": "2412ea5d1567cf60",
+    "source_hash": "c199a20c4d635e25",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#cx"
@@ -12483,7 +12568,7 @@
     "prediction-interval"
    ],
    "extraction": {
-    "source_hash": "f916c5afaace6eb2",
+    "source_hash": "05198ab7d487b207",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#proba-race"
@@ -12942,7 +13027,7 @@
     "metadata"
    ],
    "extraction": {
-    "source_hash": "2271e4ec5505e698",
+    "source_hash": "e9599b8522b3cde2",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#rtv"
@@ -13184,13 +13269,13 @@
     {
      "id": "provThird",
      "name": {
-      "fr": "L'autre acteur devient fournisseur",
-      "en": "The other actor becomes the provider"
+      "fr": "Si le système est à haut risque, l'autre acteur devient fournisseur",
+      "en": "If the system is high-risk, the other actor becomes the provider"
      },
      "unit": null,
      "meaning": {
-      "fr": "L'autre acteur devient fournisseur (art. 25(1)), et le fournisseur initial coopère et lui fournit les informations nécessaires (art. 25(2)). Votre laboratoire reste responsable de ce qu'il a livré (documentation, licence, accord de consortium).",
-      "en": "The other actor becomes the provider (art. 25(1)), and the initial provider cooperates and supplies the information it needs (art. 25(2)). Your laboratory keeps the responsibility for what it delivered (documentation, licence, consortium agreement)."
+      "fr": "Si le système est à haut risque, l'autre acteur devient fournisseur (art. 25(1)), et le fournisseur initial coopère et lui fournit les informations nécessaires (art. 25(2)). Votre laboratoire reste responsable de ce qu'il a livré (documentation, licence, accord de consortium).",
+      "en": "If the system is high-risk, the other actor becomes the provider (art. 25(1)), and the initial provider cooperates and supplies the information it needs (art. 25(2)). Your laboratory keeps the responsibility for what it delivered (documentation, licence, consortium agreement)."
      },
      "kind": "decision-outcome"
     },
@@ -13294,15 +13379,15 @@
     {
      "term": "Plan de gestion des données (PGD, DMP)",
      "meaning": {
-      "fr": "Document qui décrit comment un projet collecte, documente, stocke, partage et archive ses données, exigé par l'ANR et Horizon Europe ; rédigé en France avec DMP OPIDoR.",
-      "en": "A document describing how a project collects, documents, stores, shares and archives its data, required by ANR and Horizon Europe; written in France with DMP OPIDoR."
+      "fr": "Document qui décrit comment un projet collecte, documente, stocke, partage et archive ses données, exigé par l'Agence nationale de la recherche (ANR) et par Horizon Europe (le programme de recherche et d'innovation de l'UE) ; rédigé en France avec DMP OPIDoR.",
+      "en": "A document describing how a project collects, documents, stores, shares and archives its data, required by the French National Research Agency (ANR) and by Horizon Europe (the EU research and innovation program); written in France with DMP OPIDoR."
      }
     },
     {
      "term": "Fiche données, fiche modèle",
      "meaning": {
-      "fr": "Fiches d'une ou deux pages qui décrivent un jeu de données ou un modèle entraîné : origine, contenu, usage prévu, métriques, limites. Le format reprend les propositions « model cards » et « datasheets for datasets » de la communauté de l'apprentissage automatique.",
-      "en": "One- to two-page sheets that describe a dataset or a trained model: origin, content, intended use, metrics, limits. The format follows the \"model cards\" and \"datasheets for datasets\" proposals of the machine-learning community."
+      "fr": "Fiches d'une ou deux pages qui décrivent un jeu de données ou un modèle entraîné : origine, contenu, usage prévu, métriques, limites. Le format reprend « Model cards for model reporting » (Mitchell et al., 2019, doi:10.1145/3287560.3287596) et « Datasheets for datasets » (Gebru et al., 2021, doi:10.1145/3458723).",
+      "en": "One- to two-page sheets that describe a dataset or a trained model: origin, content, intended use, metrics, limits. The format follows \"Model cards for model reporting\" (Mitchell et al., 2019, doi:10.1145/3287560.3287596) and \"Datasheets for datasets\" (Gebru et al., 2021, doi:10.1145/3458723)."
      }
     },
     {
@@ -13325,6 +13410,188 @@
       "fr": "Git est un outil qui garde toutes les versions d'un code ; un commit est une version enregistrée ; un README est le fichier texte qui présente un projet.",
       "en": "Git is a tool that keeps every version of a code; a commit is one recorded version; a README is the text file that presents a project."
      }
+    },
+    {
+     "term": "Marquage CE",
+     "meaning": {
+      "fr": "La marque par laquelle un fournisseur atteste qu'un produit satisfait aux exigences européennes applicables ; pour un système d'IA à haut risque, art. 48 de l'AI Act.",
+      "en": "The mark by which a provider shows that a product meets the applicable EU requirements; for a high-risk AI system, art. 48 of the AI Act."
+     }
+    },
+    {
+     "term": "MLP, ELM",
+     "meaning": {
+      "fr": "Deux sortes de réseaux de neurones. Un perceptron multicouche (MLP) apprend tous ses poids par entraînement ; une machine d'apprentissage extrême (ELM) tire au hasard les poids de sa couche cachée et ne calcule que les poids de sortie, en une étape.",
+      "en": "Two kinds of neural network. A multilayer perceptron (MLP) learns all its weights by training; an extreme learning machine (ELM) draws its hidden-layer weights at random and computes only the output weights, in one step."
+     }
+    },
+    {
+     "term": "Afficher le glossaire (11 termes)",
+     "meaning": {
+      "fr": "",
+      "en": ""
+     }
+    },
+    {
+     "term": "Afficher le glossaire (11 termes)",
+     "meaning": {
+      "fr": "",
+      "en": ""
+     }
+    },
+    {
+     "term": "Afficher le glossaire (11 termes)",
+     "meaning": {
+      "fr": "",
+      "en": ""
+     }
+    },
+    {
+     "term": "Afficher le glossaire (11 termes)",
+     "meaning": {
+      "fr": "",
+      "en": ""
+     }
+    },
+    {
+     "term": "Afficher le glossaire (11 termes)",
+     "meaning": {
+      "fr": "",
+      "en": ""
+     }
+    },
+    {
+     "term": "Afficher le glossaire (11 termes)",
+     "meaning": {
+      "fr": "",
+      "en": ""
+     }
+    },
+    {
+     "term": "Afficher le glossaire (11 termes)",
+     "meaning": {
+      "fr": "",
+      "en": ""
+     }
+    },
+    {
+     "term": "Afficher le glossaire (11 termes)",
+     "meaning": {
+      "fr": "",
+      "en": ""
+     }
+    },
+    {
+     "term": "Afficher le glossaire (11 termes)",
+     "meaning": {
+      "fr": "",
+      "en": ""
+     }
+    },
+    {
+     "term": "Afficher le glossaire (11 termes)",
+     "meaning": {
+      "fr": "",
+      "en": ""
+     }
+    },
+    {
+     "term": "Afficher le glossaire (11 termes)",
+     "meaning": {
+      "fr": "",
+      "en": ""
+     }
+    },
+    {
+     "term": "Afficher le glossaire (11 termes)",
+     "meaning": {
+      "fr": "",
+      "en": ""
+     }
+    },
+    {
+     "term": "Afficher le glossaire (11 termes)",
+     "meaning": {
+      "fr": "",
+      "en": ""
+     }
+    },
+    {
+     "term": "Afficher le glossaire (11 termes)",
+     "meaning": {
+      "fr": "",
+      "en": ""
+     }
+    },
+    {
+     "term": "Afficher le glossaire (11 termes)",
+     "meaning": {
+      "fr": "",
+      "en": ""
+     }
+    },
+    {
+     "term": "Afficher le glossaire (11 termes)",
+     "meaning": {
+      "fr": "",
+      "en": ""
+     }
+    },
+    {
+     "term": "Afficher le glossaire (11 termes)",
+     "meaning": {
+      "fr": "",
+      "en": ""
+     }
+    },
+    {
+     "term": "Afficher le glossaire (11 termes)",
+     "meaning": {
+      "fr": "",
+      "en": ""
+     }
+    },
+    {
+     "term": "Afficher le glossaire (11 termes)",
+     "meaning": {
+      "fr": "",
+      "en": ""
+     }
+    },
+    {
+     "term": "Afficher le glossaire (11 termes)",
+     "meaning": {
+      "fr": "",
+      "en": ""
+     }
+    },
+    {
+     "term": "Afficher le glossaire (11 termes)",
+     "meaning": {
+      "fr": "",
+      "en": ""
+     }
+    },
+    {
+     "term": "Afficher le glossaire (11 termes)",
+     "meaning": {
+      "fr": "",
+      "en": ""
+     }
+    },
+    {
+     "term": "Afficher le glossaire (11 termes)",
+     "meaning": {
+      "fr": "",
+      "en": ""
+     }
+    },
+    {
+     "term": "Afficher le glossaire (11 termes)",
+     "meaning": {
+      "fr": "",
+      "en": ""
+     }
     }
    ],
    "assumptions": {
@@ -13336,7 +13603,10 @@
     ]
    },
    "source": {
-    "dois": [],
+    "dois": [
+     "10.1145/3287560.3287596",
+     "10.1145/3458723"
+    ],
     "repositories": [],
     "related_pages": [
      {
@@ -13367,10 +13637,11 @@
    },
    "exploration": [],
    "concepts": [
+    "elm",
     "data-management-plan"
    ],
    "extraction": {
-    "source_hash": "d3f7ad829746e1dc",
+    "source_hash": "11fed346bd71e20d",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#role-helper"
@@ -13695,7 +13966,7 @@
     "metadata"
    ],
    "extraction": {
-    "source_hash": "81318e76c1cf9ed3",
+    "source_hash": "024ac33a2f01cdc4",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#lic-tree"

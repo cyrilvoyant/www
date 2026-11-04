@@ -39,6 +39,9 @@
      "@id": "https://www.cyrilvoyant.com/about/"
     },
     {
+     "@id": "https://www.cyrilvoyant.com/approach/"
+    },
+    {
      "@id": "https://www.cyrilvoyant.com/fr/a-propos/"
     },
     {
@@ -46,6 +49,9 @@
     },
     {
      "@id": "https://www.cyrilvoyant.com/fr/actualites/why-forecast-solar-power/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/approche/"
     },
     {
      "@id": "https://www.cyrilvoyant.com/fr/enseignement/cours-prevision-solaire/"
@@ -139,6 +145,11 @@
    "name": "www.cyrilvoyant.com/about/"
   },
   {
+   "@id": "https://www.cyrilvoyant.com/approach/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/approach/"
+  },
+  {
    "@id": "https://www.cyrilvoyant.com/fr/a-propos/",
    "@type": "WebPage",
    "name": "www.cyrilvoyant.com/fr/a-propos/"
@@ -152,6 +163,11 @@
    "@id": "https://www.cyrilvoyant.com/fr/actualites/why-forecast-solar-power/",
    "@type": "WebPage",
    "name": "www.cyrilvoyant.com/fr/actualites/why-forecast-solar-power/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/fr/approche/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/fr/approche/"
   },
   {
    "@id": "https://www.cyrilvoyant.com/fr/enseignement/cours-prevision-solaire/",

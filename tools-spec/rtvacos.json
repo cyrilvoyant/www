@@ -448,7 +448,7 @@
   "metadata"
  ],
  "extraction": {
-  "source_hash": "2271e4ec5505e698",
+  "source_hash": "e9599b8522b3cde2",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#rtv"

@@ -125,7 +125,14 @@
    }
   ]
  },
+ "citation": [
+  "https://doi.org/10.1145/3287560.3287596",
+  "https://doi.org/10.1145/3458723"
+ ],
  "about": [
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#elm"
+  },
   {
    "@id": "https://www.cyrilvoyant.com/ontology/#data-management-plan"
   }

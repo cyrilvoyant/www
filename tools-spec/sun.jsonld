@@ -137,5 +137,11 @@
     "stepValue": 1
    }
   ]
- }
+ },
+ "citation": [
+  "https://doi.org/10.1002/9781118671603",
+  "https://doi.org/10.1016/j.solener.2003.12.003",
+  "https://doi.org/10.1029/2010GL045777",
+  "https://doi.org/10.21105/joss.05994"
+ ]
 }

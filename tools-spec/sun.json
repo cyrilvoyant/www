@@ -224,6 +224,78 @@
     "fr": "▶ Une journée",
     "en": "▶ One day"
    }
+  },
+  {
+   "name": {
+    "fr": "heure d'hiver",
+    "en": "winter time"
+   }
+  },
+  {
+   "name": {
+    "fr": "zénith",
+    "en": "overhead"
+   }
+  },
+  {
+   "name": {
+    "fr": "solstice",
+    "en": "solstice"
+   }
+  },
+  {
+   "name": {
+    "fr": "équinoxes",
+    "en": "equinoxes"
+   }
+  },
+  {
+   "name": {
+    "fr": "méridien",
+    "en": "meridian"
+   }
+  },
+  {
+   "name": {
+    "fr": "équation du temps",
+    "en": "equation of time"
+   }
+  },
+  {
+   "name": {
+    "fr": "crépuscule",
+    "en": "twilight"
+   }
+  },
+  {
+   "name": {
+    "fr": "éclairement",
+    "en": "irradiance"
+   }
+  },
+  {
+   "name": {
+    "fr": "constante solaire",
+    "en": "solar constant"
+   }
+  },
+  {
+   "name": {
+    "fr": "combinaison convexe",
+    "en": "convex combination"
+   }
+  },
+  {
+   "name": {
+    "fr": "heure légale",
+    "en": "Legal time"
+   }
+  },
+  {
+   "name": {
+    "fr": "ISO 8601",
+    "en": "ISO 8601"
+   }
   }
  ],
  "variants": [],
@@ -329,6 +401,14 @@
  "formulas": [
   {
    "text": "G0 = Gsc·E0·cos θz"
+  },
+  {
+   "text": "n : jour de l'année (1 à 365) ; h : heure UTC décimale ; t : minutes UTC depuis minuitφ : latitude ; λ : longitude, positive vers l'est (en degrés)",
+   "note": true
+  },
+  {
+   "text": "Source : editorial/charte/sun-seasons.js (fonctions spencer, cosz, e0, g0), identique aux équations de la NOAA.",
+   "note": true
   }
  ],
  "definitions": [
@@ -401,7 +481,12 @@
   "en": []
  },
  "source": {
-  "dois": [],
+  "dois": [
+   "10.1002/9781118671603",
+   "10.1016/j.solener.2003.12.003",
+   "10.1029/2010GL045777",
+   "10.21105/joss.05994"
+  ],
   "repositories": [],
   "related_pages": [
    {
@@ -501,7 +586,7 @@
  ],
  "concepts": [],
  "extraction": {
-  "source_hash": "e1e8a1258323694e",
+  "source_hash": "411367fa6a14d812",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#sun"

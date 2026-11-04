@@ -86,6 +86,7 @@
     var g = h("div", { "class": "ct-grid" }); box.appendChild(g);
     var W = 300, H = 170, sv = el("svg", { viewBox: "0 0 " + W + " " + H, "class": "ct-svg", role: "img", "aria-label": tr("Distributions des résultats et seuil") }, g);
     var R = 170, sr = el("svg", { viewBox: "0 0 " + R + " " + R, "class": "ct-svg ct-sq", role: "img", "aria-label": tr("Courbe ROC") }, g);
+    box.appendChild(h("p", { "class": "muted", style: "margin:4px 0" }, t2("Graphique des distributions : abscisse = résultat du test, en écarts-types depuis la moyenne des non-malades ; ordonnée = densité de probabilité (hauteur relative, sans graduation). Courbe ROC : les deux axes vont de 0 à 1.", "Distribution chart: x-axis = test result, in standard deviations from the mean of people without the disease; y-axis = probability density (relative height, not graduated). ROC curve: both axes run from 0 to 1.")));
     var cD = slider(t2("Séparation d (écarts-types)", "Separation d (standard deviations)"), 0, 4, 0.05, 1.8, function (v) { return f(v); }),
         cS = slider(t2("Seuil s du test (en écarts-types depuis la moyenne des non-malades)", "Test threshold s (in standard deviations from the healthy mean)"), -3, 6, 0.05, 1, function (v) { return f(v); }),
         cP = slider(t2("Prévalence (part de malades)", "Prevalence (share with disease)"), 0.001, 0.5, 0.001, 0.1, function (v) { return pct(v); });
@@ -140,6 +141,7 @@
       [t2("Exemple : x = 130, μ = 100, σ = 15", "Example: x = 130, μ = 100, σ = 15"), go("lt", { mu: 100, sg: 15, x: 130 }), t2("Exemple d’école : 130 est à 2 écarts-types de 100. Le score z vaut 2 quelle que soit l’unité.", "Textbook example: 130 is 2 standard deviations from 100. The z-score is 2 whatever the unit.")]
     ]);
     var W = 320, H = 150, sv = el("svg", { viewBox: "0 0 " + W + " " + (H + 12), "class": "ct-svg", role: "img", "aria-label": tr("Densité de la loi normale et aire") }, box);
+    box.appendChild(h("p", { "class": "muted", style: "margin:4px 0" }, t2("Ordonnée : densité φ(z), sans graduation ; c’est l’aire colorée qui est une probabilité. Abscisse : z en écarts-types et, dessous, x dans l’unité de μ et σ.", "Y-axis: density φ(z), not graduated; the shaded area is the probability. X-axis: z in standard deviations and, below, x in the unit of μ and σ.")));
     var X = function (z) { return 10 + (W - 20) * (z + 4) / 8; }, Y = function (v) { return H - 20 - (H - 30) * v / 0.4; };
     var ar = el("path", { "class": "ct-a2" }, sv), ln = el("path", { "class": "ct-l2" }, sv);
     el("line", { x1: 10, y1: H - 20, x2: W - 10, y2: H - 20, "class": "ct-ax" }, sv);
@@ -361,6 +363,7 @@
     var bar = h("div", { "class": "ct-stack", "aria-hidden": "true" }); box.appendChild(bar);
     var leg = h("p", { "class": "muted ct-leg3" }, tr('<span class="k1"></span>1. refroidir le produit frais &nbsp; <span class="k2"></span>2. geler l\'eau (chaleur latente) &nbsp; <span class="k3"></span>3. refroidir le produit congelé'));
     box.appendChild(leg);
+    box.appendChild(h("p", { "class": "muted", style: "margin:4px 0" }, t2("La masse et la durée ne déplacent pas la courbe : elle est tracée par kilo de produit. Elles ne changent que la puissance moyenne, affichée ci-dessous.", "Mass and duration do not move the curve: it is drawn per kilogram of product. They change only the average power, shown below.")));
     var out = h("p", { "class": "ct-out", "aria-live": "polite" }); box.appendChild(out);
     seeAlso(box, [LINK.biot, LINK.cop]);
     var u = 1, timer = null, r, Ti, Tc, Tf, g;
@@ -535,7 +538,7 @@
         cOn = h("label", { "class": "ct-sl" }, tr('<span>Inclure le point orange</span>'));
     var chk = h("input", { type: "checkbox", checked: "" }); cOn.appendChild(chk);
     var ctl = h("div", { "class": "ct-ctl" }); [cX, cY].forEach(function (c) { ctl.appendChild(c.w); }); ctl.appendChild(cOn); box.appendChild(ctl);
-    box.appendChild(h("p", { "class": "muted", style: "margin:6px 0" }, t2('<span style="color:var(--muted);font-weight:700">━</span> droite sans le point orange &nbsp; <span style="color:var(--link);font-weight:700">━</span> droite avec le point orange', '<span style="color:var(--muted);font-weight:700">━</span> line without the orange point &nbsp; <span style="color:var(--link);font-weight:700">━</span> line with the orange point')));
+    box.appendChild(h("p", { "class": "muted", style: "margin:6px 0" }, t2('<span style="color:var(--muted);font-weight:700">━</span> droite sans le point orange &nbsp; <span style="color:var(--link);font-weight:700">━</span> droite avec le point orange &nbsp; · axes x et y sans unité (valeurs d’exemple)', '<span style="color:var(--muted);font-weight:700">━</span> line without the orange point &nbsp; <span style="color:var(--link);font-weight:700">━</span> line with the orange point &nbsp; · x and y axes unitless (example values)')));
     var out = h("p", { "class": "ct-out", "aria-live": "polite" }); box.appendChild(out);
     seeAlso(box, [LINK.corr, LINK.interv]);
     var X = function (v) { return 30 + (W - 40) * v / 10; }, Y = function (v) { return H - 24 - (H - 34) * v / 10; };

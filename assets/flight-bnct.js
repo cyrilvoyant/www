@@ -42,7 +42,7 @@
       '<figure class="bnct-fig"><h3>' + tr('Il faudrait un million d’heures pour atteindre 1 Gy', 'It would take a million hours to reach 1 Gy') + '</h3><svg data-log viewBox="0 0 640 262" role="img" aria-label="' + tr('Dose cumulée selon la durée, à 1 µGy par heure', 'Cumulative dose against duration, at 1 µGy per hour') + '"></svg><figcaption>' + tr('Échelles logarithmiques : chaque graduation multiplie par 1000. Dose à 20 µg/g. 1 Gy (un million de µGy) est un simple repère de calcul, pas une dose de traitement.', 'Logarithmic scales: each tick multiplies by 1000. Dose at 20 µg/g. 1 Gy (a million µGy) is a plain calculation landmark, not a treatment dose.') + '</figcaption></figure>' +
       '<h3>' + tr('Du ciel à la cellule, en quatre étapes', 'From the sky to the cell, in four stages') + '</h3><div class="bnct-presets" role="group" aria-label="' + tr('Étapes du schéma', 'Stages of the diagram') + '">' + STAGES.map(function (s, i) { return '<button type="button" data-stage="' + i + '">' + s + '</button>'; }).join('') + '</div>' +
       '<div class="bnct-scroll"><svg data-scene viewBox="0 0 760 330" role="img" aria-label="' + tr('Cascade atmosphérique, avion et capture du bore', 'Atmospheric cascade, aircraft and boron capture') + '"></svg></div><p class="bnct-step" aria-live="polite"></p>' +
-      '<h3>' + tr('BSH ou BPA : que devient le neutron qui frappe la molécule ?', 'BSH or BPA: what happens to the neutron hitting the molecule?') + '</h3><p><label for="bnct-carrier">' + tr('Molécule qui porte le bore (tableau 2 de l’article) ', 'Molecule carrying the boron (Table 2 of the paper) ') + '</label><select id="bnct-carrier"><option>BSH</option><option>BPA</option></select></p><div class="bnct-bars"></div><p class="bnct-foot">' + tr('Le choix de la molécule change cette répartition, pas les chiffres du haut : à concentration de bore-10 égale, l’outil n’applique aucun multiplicateur. Ces parts décrivent les réactions une fois le neutron arrivé sur la molécule, pas la chance qu’il y arrive.', 'The choice of molecule changes this distribution, not the figures above: at equal boron-10 concentration the tool applies no multiplier. These shares describe the reactions once a neutron has reached the molecule, not its chance of getting there.') + '</p>';
+      '<h3>' + tr('BSH ou BPA : que devient le neutron qui frappe la molécule ?', 'BSH or BPA: what happens to the neutron hitting the molecule?') + '</h3><p><label for="bnct-carrier">' + tr('Molécule qui porte le bore (tableau 2 de l’article) ', 'Molecule carrying the boron (Table 2 of the paper) ') + '</label><select id="bnct-carrier"><option>BSH</option><option>BPA</option></select></p><div class="bnct-bars"></div><p class="bnct-foot">' + tr('Ces parts ne bougent ni avec la durée ni avec la concentration : ce sont des probabilités conditionnelles (tableau 2), fixées par la molécule. Le choix de la molécule change cette répartition, pas les chiffres du haut : à concentration de bore-10 égale, l’outil n’applique aucun multiplicateur. Ces parts décrivent les réactions une fois le neutron arrivé sur la molécule, pas la chance qu’il y arrive.', 'These shares move with neither the duration nor the concentration: they are conditional probabilities (Table 2), set by the molecule. The choice of molecule changes this distribution, not the figures above: at equal boron-10 concentration the tool applies no multiplier. These shares describe the reactions once a neutron has reached the molecule, not its chance of getting there.') + '</p>';
     var sv = box.querySelector('[data-scene]'), step = 0, travel = 1, anim = 0, target = sv;
     var still = root.matchMedia && root.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var desc = [
@@ -107,7 +107,7 @@
       var t0 = null;
       (function tick(now) { if (t0 === null) t0 = now || 0; travel = Math.min(1, ((now || 0) - t0) / 1100); draw(); if (travel < 1) anim = requestAnimationFrame(tick); })();
     }
-    function logChart(t) {
+    function logChart(t, b) {
       var s = box.querySelector('[data-log]'), x0 = 72, x1 = 626, y0 = 214, y1 = 12, lo = -0.5, hi = 7;
       s.replaceChildren();
       var X = function (h) { return x0 + (x1 - x0) * (Math.log10(h) - lo) / (hi - lo); }, Y = function (d) { return y0 - (y0 - y1) * (Math.log10(d) - lo) / (hi - lo); }, label = function (x, y, c, a) { return node(s, 'text', Object.assign({x: x, y: y, 'font-size': 13.5, fill: '#3f5163', 'font-family': 'system-ui'}, a || {}), c); };
@@ -118,6 +118,7 @@
       node(s, 'circle', {cx: X(1e6), cy: Y(1e6), r: 5, fill: '#a8431f'});
       node(s, 'circle', {cx: X(t), cy: Y(t), r: 7, fill: '#bc690d', stroke: '#fff', 'stroke-width': 2});
       label(X(t) + 12, Y(t) + 5, tr('votre réglage : ', 'your setting: ') + fmt(t) + ' h', {fill: '#8a4510', 'font-weight': 700});
+      if (b !== 20) label(X(t) + 12, Y(t) + 23, tr('dose lue à 20 µg/g : l’article ne la chiffre pas à ', 'dose read at 20 µg/g: the paper does not quantify it at ') + fmt(b) + ' µg/g', {fill: '#8a4510', 'font-size': 12});
       label((x0 + x1) / 2, y0 + 40, tr('durée d’exposition', 'exposure duration'), {'text-anchor': 'middle'});
     }
     function values() {
@@ -137,7 +138,7 @@
         '<article>' + tr('Même vol, référence SIEVERT', 'Same flight, SIEVERT reference') + '<strong>' + fmt(v.flightReferenceMicroSv) + ' µSv</strong><small>' + tr('6,1 µSv par heure × durée : l’outil SIEVERT de l’IRSN sur un Paris–New York, chiffre de l’article. Pas une estimation personnelle.', '6.1 µSv per hour × duration: IRSN’s SIEVERT tool on a Paris–New York flight, as in the paper. Not a personal estimate.') + '</small></article>';
       var a = M.reactions[box.querySelector('select').value], names = [tr('(n,γ) : absorbé, un photon part', '(n,γ): absorbed, a photon leaves'), tr('(n,α) : absorbé, une particule alpha part', '(n,α): absorbed, an alpha particle leaves'), tr('(n,p) : un proton part', '(n,p): a proton leaves'), tr('(n,n) : le neutron rebondit', '(n,n): the neutron bounces off')];
       box.querySelector('.bnct-bars').innerHTML = a.map(function (n, i) { return '<div class="bnct-bar"><span>' + names[i] + '</span><i style="width:' + Math.max(n, .5) + '%"></i><b>' + (i === 2 ? '≈ ' : '') + n + tr(' %', '%') + '</b></div>'; }).join('');
-      logChart(t);
+      logChart(t, b);
     }
     box.querySelectorAll('[data-preset]').forEach(function (e) { e.onclick = function () { var p = PRESETS[+e.dataset.preset]; box.querySelector('[data-time]').value = p[1]; box.querySelector('[data-b]').value = p[2]; values(); }; });
     box.querySelectorAll('[data-stage]').forEach(function (e) { e.onclick = function () { setStage(+e.dataset.stage); }; });

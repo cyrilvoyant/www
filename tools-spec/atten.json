@@ -370,7 +370,7 @@
   "half-value-layer"
  ],
  "extraction": {
-  "source_hash": "d39ee03f2b7ec7bd",
+  "source_hash": "8ce1feef58e605e0",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#experience"

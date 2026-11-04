@@ -231,13 +231,13 @@
   {
    "id": "provThird",
    "name": {
-    "fr": "L'autre acteur devient fournisseur",
-    "en": "The other actor becomes the provider"
+    "fr": "Si le système est à haut risque, l'autre acteur devient fournisseur",
+    "en": "If the system is high-risk, the other actor becomes the provider"
    },
    "unit": null,
    "meaning": {
-    "fr": "L'autre acteur devient fournisseur (art. 25(1)), et le fournisseur initial coopère et lui fournit les informations nécessaires (art. 25(2)). Votre laboratoire reste responsable de ce qu'il a livré (documentation, licence, accord de consortium).",
-    "en": "The other actor becomes the provider (art. 25(1)), and the initial provider cooperates and supplies the information it needs (art. 25(2)). Your laboratory keeps the responsibility for what it delivered (documentation, licence, consortium agreement)."
+    "fr": "Si le système est à haut risque, l'autre acteur devient fournisseur (art. 25(1)), et le fournisseur initial coopère et lui fournit les informations nécessaires (art. 25(2)). Votre laboratoire reste responsable de ce qu'il a livré (documentation, licence, accord de consortium).",
+    "en": "If the system is high-risk, the other actor becomes the provider (art. 25(1)), and the initial provider cooperates and supplies the information it needs (art. 25(2)). Your laboratory keeps the responsibility for what it delivered (documentation, licence, consortium agreement)."
    },
    "kind": "decision-outcome"
   },
@@ -341,15 +341,15 @@
   {
    "term": "Plan de gestion des données (PGD, DMP)",
    "meaning": {
-    "fr": "Document qui décrit comment un projet collecte, documente, stocke, partage et archive ses données, exigé par l'ANR et Horizon Europe ; rédigé en France avec DMP OPIDoR.",
-    "en": "A document describing how a project collects, documents, stores, shares and archives its data, required by ANR and Horizon Europe; written in France with DMP OPIDoR."
+    "fr": "Document qui décrit comment un projet collecte, documente, stocke, partage et archive ses données, exigé par l'Agence nationale de la recherche (ANR) et par Horizon Europe (le programme de recherche et d'innovation de l'UE) ; rédigé en France avec DMP OPIDoR.",
+    "en": "A document describing how a project collects, documents, stores, shares and archives its data, required by the French National Research Agency (ANR) and by Horizon Europe (the EU research and innovation program); written in France with DMP OPIDoR."
    }
   },
   {
    "term": "Fiche données, fiche modèle",
    "meaning": {
-    "fr": "Fiches d'une ou deux pages qui décrivent un jeu de données ou un modèle entraîné : origine, contenu, usage prévu, métriques, limites. Le format reprend les propositions « model cards » et « datasheets for datasets » de la communauté de l'apprentissage automatique.",
-    "en": "One- to two-page sheets that describe a dataset or a trained model: origin, content, intended use, metrics, limits. The format follows the \"model cards\" and \"datasheets for datasets\" proposals of the machine-learning community."
+    "fr": "Fiches d'une ou deux pages qui décrivent un jeu de données ou un modèle entraîné : origine, contenu, usage prévu, métriques, limites. Le format reprend « Model cards for model reporting » (Mitchell et al., 2019, doi:10.1145/3287560.3287596) et « Datasheets for datasets » (Gebru et al., 2021, doi:10.1145/3458723).",
+    "en": "One- to two-page sheets that describe a dataset or a trained model: origin, content, intended use, metrics, limits. The format follows \"Model cards for model reporting\" (Mitchell et al., 2019, doi:10.1145/3287560.3287596) and \"Datasheets for datasets\" (Gebru et al., 2021, doi:10.1145/3458723)."
    }
   },
   {
@@ -372,6 +372,188 @@
     "fr": "Git est un outil qui garde toutes les versions d'un code ; un commit est une version enregistrée ; un README est le fichier texte qui présente un projet.",
     "en": "Git is a tool that keeps every version of a code; a commit is one recorded version; a README is the text file that presents a project."
    }
+  },
+  {
+   "term": "Marquage CE",
+   "meaning": {
+    "fr": "La marque par laquelle un fournisseur atteste qu'un produit satisfait aux exigences européennes applicables ; pour un système d'IA à haut risque, art. 48 de l'AI Act.",
+    "en": "The mark by which a provider shows that a product meets the applicable EU requirements; for a high-risk AI system, art. 48 of the AI Act."
+   }
+  },
+  {
+   "term": "MLP, ELM",
+   "meaning": {
+    "fr": "Deux sortes de réseaux de neurones. Un perceptron multicouche (MLP) apprend tous ses poids par entraînement ; une machine d'apprentissage extrême (ELM) tire au hasard les poids de sa couche cachée et ne calcule que les poids de sortie, en une étape.",
+    "en": "Two kinds of neural network. A multilayer perceptron (MLP) learns all its weights by training; an extreme learning machine (ELM) draws its hidden-layer weights at random and computes only the output weights, in one step."
+   }
+  },
+  {
+   "term": "Afficher le glossaire (11 termes)",
+   "meaning": {
+    "fr": "",
+    "en": ""
+   }
+  },
+  {
+   "term": "Afficher le glossaire (11 termes)",
+   "meaning": {
+    "fr": "",
+    "en": ""
+   }
+  },
+  {
+   "term": "Afficher le glossaire (11 termes)",
+   "meaning": {
+    "fr": "",
+    "en": ""
+   }
+  },
+  {
+   "term": "Afficher le glossaire (11 termes)",
+   "meaning": {
+    "fr": "",
+    "en": ""
+   }
+  },
+  {
+   "term": "Afficher le glossaire (11 termes)",
+   "meaning": {
+    "fr": "",
+    "en": ""
+   }
+  },
+  {
+   "term": "Afficher le glossaire (11 termes)",
+   "meaning": {
+    "fr": "",
+    "en": ""
+   }
+  },
+  {
+   "term": "Afficher le glossaire (11 termes)",
+   "meaning": {
+    "fr": "",
+    "en": ""
+   }
+  },
+  {
+   "term": "Afficher le glossaire (11 termes)",
+   "meaning": {
+    "fr": "",
+    "en": ""
+   }
+  },
+  {
+   "term": "Afficher le glossaire (11 termes)",
+   "meaning": {
+    "fr": "",
+    "en": ""
+   }
+  },
+  {
+   "term": "Afficher le glossaire (11 termes)",
+   "meaning": {
+    "fr": "",
+    "en": ""
+   }
+  },
+  {
+   "term": "Afficher le glossaire (11 termes)",
+   "meaning": {
+    "fr": "",
+    "en": ""
+   }
+  },
+  {
+   "term": "Afficher le glossaire (11 termes)",
+   "meaning": {
+    "fr": "",
+    "en": ""
+   }
+  },
+  {
+   "term": "Afficher le glossaire (11 termes)",
+   "meaning": {
+    "fr": "",
+    "en": ""
+   }
+  },
+  {
+   "term": "Afficher le glossaire (11 termes)",
+   "meaning": {
+    "fr": "",
+    "en": ""
+   }
+  },
+  {
+   "term": "Afficher le glossaire (11 termes)",
+   "meaning": {
+    "fr": "",
+    "en": ""
+   }
+  },
+  {
+   "term": "Afficher le glossaire (11 termes)",
+   "meaning": {
+    "fr": "",
+    "en": ""
+   }
+  },
+  {
+   "term": "Afficher le glossaire (11 termes)",
+   "meaning": {
+    "fr": "",
+    "en": ""
+   }
+  },
+  {
+   "term": "Afficher le glossaire (11 termes)",
+   "meaning": {
+    "fr": "",
+    "en": ""
+   }
+  },
+  {
+   "term": "Afficher le glossaire (11 termes)",
+   "meaning": {
+    "fr": "",
+    "en": ""
+   }
+  },
+  {
+   "term": "Afficher le glossaire (11 termes)",
+   "meaning": {
+    "fr": "",
+    "en": ""
+   }
+  },
+  {
+   "term": "Afficher le glossaire (11 termes)",
+   "meaning": {
+    "fr": "",
+    "en": ""
+   }
+  },
+  {
+   "term": "Afficher le glossaire (11 termes)",
+   "meaning": {
+    "fr": "",
+    "en": ""
+   }
+  },
+  {
+   "term": "Afficher le glossaire (11 termes)",
+   "meaning": {
+    "fr": "",
+    "en": ""
+   }
+  },
+  {
+   "term": "Afficher le glossaire (11 termes)",
+   "meaning": {
+    "fr": "",
+    "en": ""
+   }
   }
  ],
  "assumptions": {
@@ -383,7 +565,10 @@
   ]
  },
  "source": {
-  "dois": [],
+  "dois": [
+   "10.1145/3287560.3287596",
+   "10.1145/3458723"
+  ],
   "repositories": [],
   "related_pages": [
    {
@@ -414,10 +599,11 @@
  },
  "exploration": [],
  "concepts": [
+  "elm",
   "data-management-plan"
  ],
  "extraction": {
-  "source_hash": "d3f7ad829746e1dc",
+  "source_hash": "11fed346bd71e20d",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#role-helper"

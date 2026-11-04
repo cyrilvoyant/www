@@ -145,6 +145,11 @@
     fetch(box.getAttribute("data-src")).then(function (r) { return r.json(); }).then(function (j) {
       D = j; t0 = Date.parse(j.start_utc + "Z");
       dayFmt = new Intl.DateTimeFormat(fr ? "fr-FR" : "en-GB", { weekday: "short", day: "numeric", month: "short", timeZone: "Europe/Paris" });
+      if (!box.querySelector(".pr-yl")) { var yl = document.createElement("small"); yl.className = "pr-yl"; yl.style.display = "block";
+        var top = (D.ymax / 1000).toFixed(1).replace(".", fr ? "," : ".");
+        yl.textContent = fr ? "Ordonnée : puissance AC de la centrale (kW), de 0 en bas à " + top + " kW en haut du cadre. Abscisse : temps (heure de Paris), pas de 30 min ; fond teinté : nuit."
+          : "Y-axis: plant AC power (kW), from 0 at the bottom to " + top + " kW at the top of the frame. X-axis: time (Paris time), 30-min steps; tinted background: night.";
+        cv.parentNode.insertBefore(yl, cv); }
       colours(); prep(); size(); rng.max = String(D.obs.length - 1);
       box.classList.add("ready");
       cur = D.obs.length - 1; draw(); setBtn();

@@ -144,23 +144,23 @@
         },
         {
           "title": "What AI changes in research",
-          "anchor": null
+          "anchor": "ai-changes"
         },
         {
           "title": "The AI Act in plain words",
-          "anchor": null
+          "anchor": "ai-act-plain"
         },
         {
           "title": "The timeline in Europe and in France",
-          "anchor": null
+          "anchor": "timeline"
         },
         {
           "title": "Elsewhere: no equivalent of the AI Act, but rules everywhere",
-          "anchor": null
+          "anchor": "elsewhere"
         },
         {
           "title": "Who is responsible when research code becomes a product?",
-          "anchor": null
+          "anchor": "responsibility"
         },
         {
           "title": "Who is responsible? A one-minute orientation",
@@ -172,15 +172,15 @@
         },
         {
           "title": "The toolbox",
-          "anchor": null
+          "anchor": "toolbox"
         },
         {
           "title": "Glossary",
-          "anchor": null
+          "anchor": "glossary"
         },
         {
           "title": "Official resources",
-          "anchor": null
+          "anchor": "resources"
         },
         {
           "title": "Limits",
@@ -202,11 +202,15 @@
     },
     {
       "url": "https://www.cyrilvoyant.com/approach/",
-      "title": "Understand before you compute: the approach of Cyril Voyant",
+      "title": "Understand before you compute: my approach",
       "language": "en",
       "topics": [],
       "citations": [],
       "sections": [
+        {
+          "title": "The complexity ladder, step by step",
+          "anchor": "cx-title"
+        },
         {
           "title": "One method, every field",
           "anchor": null
@@ -1054,8 +1058,52 @@
       "title": "Le Soleil, les saisons et l'heure : une seule horloge pour les mesures",
       "language": "fr",
       "topics": [],
-      "citations": [],
+      "citations": [
+        {
+          "@type": "CreativeWork",
+          "name": "Spencer, J. W. (1971). Fourier series representation of the position of the Sun. Search, 2(5), 172."
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "NOAA Global Monitoring Laboratory. General Solar Position Calculations.",
+          "url": "https://gml.noaa.gov/grad/solcalc/solareqns.PDF"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Duffie, J. A., Beckman, W. A. (2013). Solar Engineering of Thermal Processes, 4th ed. Wiley.",
+          "url": "https://doi.org/10.1002/9781118671603"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Kopp, G., Lean, J. L. (2011). A new, lower value of total solar irradiance: Evidence and climate significance. Geophysical Research Letters, 38(1).",
+          "url": "https://doi.org/10.1029/2010GL045777"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Reda, I., Andreas, A. (2004). Solar position algorithm for solar radiation applications. Solar Energy, 76(5), 577-589.",
+          "url": "https://doi.org/10.1016/j.solener.2003.12.003"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Anderson, K. S. et al. (2023). pvlib python: 2023 project update. Journal of Open Source Software, 8(92), 5994.",
+          "url": "https://doi.org/10.21105/joss.05994"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "IANA. Time Zone Database.",
+          "url": "https://www.iana.org/time-zones"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Natural Earth. Free vector and raster map data, 1:110m land.",
+          "url": "https://www.naturalearthdata.com/"
+        }
+      ],
       "sections": [
+        {
+          "title": "En bref",
+          "anchor": "brief"
+        },
         {
           "title": "Le cas de départ : le matin du 25 octobre 2026",
           "anchor": null
@@ -1154,11 +1202,15 @@
     },
     {
       "url": "https://www.cyrilvoyant.com/fr/approche/",
-      "title": "Comprendre avant de calculer : la démarche de Cyril Voyant",
+      "title": "Comprendre avant de calculer : ma démarche",
       "language": "fr",
       "topics": [],
       "citations": [],
       "sections": [
+        {
+          "title": "L'échelle de la complexité, marche par marche",
+          "anchor": "cx-title"
+        },
         {
           "title": "Une méthode, tous les domaines",
           "anchor": null
@@ -1511,11 +1563,62 @@
       "title": "Cours : transferts thermiques, refroidissement et congélation des aliments",
       "language": "fr",
       "topics": [],
-      "citations": [],
+      "citations": [
+        {
+          "@type": "Book",
+          "name": "Fundamentals of Heat and Mass Transfer",
+          "bookEdition": "8",
+          "author": [
+            {
+              "@type": "Person",
+              "name": "Theodore L. Bergman"
+            },
+            {
+              "@type": "Person",
+              "name": "Adrienne S. Lavine"
+            },
+            {
+              "@type": "Person",
+              "name": "Frank P. Incropera"
+            },
+            {
+              "@type": "Person",
+              "name": "David P. DeWitt"
+            }
+          ],
+          "publisher": {
+            "@type": "Organization",
+            "name": "Wiley"
+          },
+          "datePublished": "2017"
+        },
+        {
+          "@type": "ScholarlyArticle",
+          "name": "Thermodynamic analysis of the freezing and thawing of foods: enthalpy and apparent specific heat",
+          "author": {
+            "@type": "Person",
+            "name": "C. S. Chen"
+          },
+          "datePublished": "1985",
+          "sameAs": "https://doi.org/10.1111/j.1365-2621.1985.tb13034.x",
+          "isPartOf": {
+            "@type": "Periodical",
+            "name": "Journal of Food Science"
+          }
+        }
+      ],
       "sections": [
+        {
+          "title": "En bref",
+          "anchor": "en-bref"
+        },
         {
           "title": "Le chapitre en 10 points",
           "anchor": "resume"
+        },
+        {
+          "title": "Les mots du cours",
+          "anchor": null
         },
         {
           "title": "Diaporama",
@@ -1528,6 +1631,14 @@
         {
           "title": "Pour aller plus loin : questions et réponses",
           "anchor": "faq"
+        },
+        {
+          "title": "Animations liées",
+          "anchor": "animations"
+        },
+        {
+          "title": "Sources et manuels",
+          "anchor": "sources"
         }
       ]
     },
@@ -1738,11 +1849,49 @@
       "title": "Chapitre 5 : les cycles frigorifiques",
       "language": "fr",
       "topics": [],
-      "citations": [],
+      "citations": [
+        {
+          "@type": "Book",
+          "name": "Thermodynamics: An Engineering Approach",
+          "bookEdition": "9",
+          "isbn": "9781259822674",
+          "author": [
+            {
+              "@type": "Person",
+              "name": "Yunus A. Çengel"
+            },
+            {
+              "@type": "Person",
+              "name": "Michael A. Boles"
+            },
+            {
+              "@type": "Person",
+              "name": "Mehmet Kanoğlu"
+            }
+          ],
+          "publisher": {
+            "@type": "Organization",
+            "name": "McGraw-Hill"
+          },
+          "datePublished": "2019"
+        }
+      ],
       "sections": [
+        {
+          "title": "En bref",
+          "anchor": "en-bref"
+        },
         {
           "title": "Le chapitre en 10 points",
           "anchor": "resume"
+        },
+        {
+          "title": "Lire le cycle frigorifique sur le diagramme de Mollier",
+          "anchor": null
+        },
+        {
+          "title": "Les mots du chapitre",
+          "anchor": null
         },
         {
           "title": "Diaporama",
@@ -1755,6 +1904,14 @@
         {
           "title": "Pour aller plus loin : questions et réponses",
           "anchor": "faq"
+        },
+        {
+          "title": "Animations liées",
+          "anchor": "animations"
+        },
+        {
+          "title": "Sources et manuels",
+          "anchor": "sources"
         }
       ]
     },
@@ -1763,8 +1920,38 @@
       "title": "Chapitre 4 : les cycles thermodynamiques moteurs",
       "language": "fr",
       "topics": [],
-      "citations": [],
+      "citations": [
+        {
+          "@type": "Book",
+          "name": "Thermodynamics: An Engineering Approach",
+          "bookEdition": "9",
+          "isbn": "9781259822674",
+          "author": [
+            {
+              "@type": "Person",
+              "name": "Yunus A. Çengel"
+            },
+            {
+              "@type": "Person",
+              "name": "Michael A. Boles"
+            },
+            {
+              "@type": "Person",
+              "name": "Mehmet Kanoğlu"
+            }
+          ],
+          "publisher": {
+            "@type": "Organization",
+            "name": "McGraw-Hill"
+          },
+          "datePublished": "2019"
+        }
+      ],
       "sections": [
+        {
+          "title": "En bref",
+          "anchor": "en-bref"
+        },
         {
           "title": "Le chapitre en 10 points",
           "anchor": "resume"
@@ -1774,6 +1961,14 @@
           "anchor": null
         },
         {
+          "title": "Le cycle de Beau de Rochas (Otto) sur un diagramme P–V",
+          "anchor": null
+        },
+        {
+          "title": "Les mots du chapitre",
+          "anchor": null
+        },
+        {
           "title": "Diaporama",
           "anchor": "bs-viewer"
         },
@@ -1784,6 +1979,14 @@
         {
           "title": "Pour aller plus loin : questions et réponses",
           "anchor": "faq"
+        },
+        {
+          "title": "Animations liées",
+          "anchor": "animations"
+        },
+        {
+          "title": "Sources et manuels",
+          "anchor": "sources"
         }
       ]
     },
@@ -1817,11 +2020,49 @@
       "title": "Chapitre 1 : notions générales de thermodynamique",
       "language": "fr",
       "topics": [],
-      "citations": [],
+      "citations": [
+        {
+          "@type": "Book",
+          "name": "Thermodynamics: An Engineering Approach",
+          "bookEdition": "9",
+          "isbn": "9781259822674",
+          "author": [
+            {
+              "@type": "Person",
+              "name": "Yunus A. Çengel"
+            },
+            {
+              "@type": "Person",
+              "name": "Michael A. Boles"
+            },
+            {
+              "@type": "Person",
+              "name": "Mehmet Kanoğlu"
+            }
+          ],
+          "publisher": {
+            "@type": "Organization",
+            "name": "McGraw-Hill"
+          },
+          "datePublished": "2019"
+        }
+      ],
       "sections": [
+        {
+          "title": "En bref",
+          "anchor": "en-bref"
+        },
         {
           "title": "Le chapitre en 10 points",
           "anchor": "resume"
+        },
+        {
+          "title": "Comprimer un gaz : isotherme ou adiabatique ?",
+          "anchor": null
+        },
+        {
+          "title": "Les mots du chapitre",
+          "anchor": null
         },
         {
           "title": "Diaporama",
@@ -1834,6 +2075,14 @@
         {
           "title": "Pour aller plus loin : questions et réponses",
           "anchor": "faq"
+        },
+        {
+          "title": "Animations liées",
+          "anchor": "animations"
+        },
+        {
+          "title": "Sources et manuels",
+          "anchor": "sources"
         }
       ]
     },
@@ -1917,11 +2166,61 @@
       "title": "Exercices dirigés 2 : les ondes électromagnétiques, corrigé",
       "language": "fr",
       "topics": [],
-      "citations": [],
+      "citations": [
+        {
+          "@type": "Dataset",
+          "name": "XCOM: Photon Cross Sections Database",
+          "url": "https://physics.nist.gov/PhysRefData/Xcom/Text/intro.html",
+          "creator": {
+            "@type": "Organization",
+            "name": "National Institute of Standards and Technology (NIST)"
+          }
+        },
+        {
+          "@type": "Book",
+          "name": "The Essential Physics of Medical Imaging",
+          "bookEdition": "4",
+          "author": [
+            {
+              "@type": "Person",
+              "name": "Jerrold T. Bushberg"
+            },
+            {
+              "@type": "Person",
+              "name": "J. Anthony Seibert"
+            },
+            {
+              "@type": "Person",
+              "name": "Edwin M. Leidholdt Jr."
+            },
+            {
+              "@type": "Person",
+              "name": "John M. Boone"
+            }
+          ],
+          "publisher": {
+            "@type": "Organization",
+            "name": "Wolters Kluwer"
+          },
+          "datePublished": "2021"
+        }
+      ],
       "sections": [
+        {
+          "title": "En bref",
+          "anchor": "en-bref"
+        },
         {
           "title": "La séance en 10 points",
           "anchor": "resume"
+        },
+        {
+          "title": "Les niveaux d'énergie d'un atome à un électron",
+          "anchor": null
+        },
+        {
+          "title": "Les mots de la séance",
+          "anchor": null
         },
         {
           "title": "Diaporama",
@@ -1934,6 +2233,14 @@
         {
           "title": "Pour aller plus loin : questions et réponses",
           "anchor": "faq"
+        },
+        {
+          "title": "Animations liées",
+          "anchor": "animations"
+        },
+        {
+          "title": "Sources et manuels",
+          "anchor": "sources"
         }
       ]
     },
@@ -1942,8 +2249,54 @@
       "title": "Cours : les ondes électromagnétiques et les bases physiques de l'imagerie",
       "language": "fr",
       "topics": [],
-      "citations": [],
+      "citations": [
+        {
+          "@type": "Book",
+          "name": "The Essential Physics of Medical Imaging",
+          "bookEdition": "4",
+          "author": [
+            {
+              "@type": "Person",
+              "name": "Jerrold T. Bushberg"
+            },
+            {
+              "@type": "Person",
+              "name": "J. Anthony Seibert"
+            },
+            {
+              "@type": "Person",
+              "name": "Edwin M. Leidholdt Jr."
+            },
+            {
+              "@type": "Person",
+              "name": "John M. Boone"
+            }
+          ],
+          "publisher": {
+            "@type": "Organization",
+            "name": "Wolters Kluwer"
+          },
+          "datePublished": "2021"
+        },
+        {
+          "@type": "Dataset",
+          "name": "XCOM: Photon Cross Sections Database",
+          "url": "https://physics.nist.gov/PhysRefData/Xcom/Text/intro.html",
+          "creator": {
+            "@type": "Organization",
+            "name": "National Institute of Standards and Technology (NIST)"
+          }
+        }
+      ],
       "sections": [
+        {
+          "title": "En bref",
+          "anchor": "en-bref"
+        },
+        {
+          "title": "Le chapitre en sept parties",
+          "anchor": null
+        },
         {
           "title": "Le chapitre en 10 points",
           "anchor": "resume"
@@ -1957,6 +2310,14 @@
           "anchor": null
         },
         {
+          "title": "Explorer le spectre : longueur d'onde, énergie du photon, usages",
+          "anchor": null
+        },
+        {
+          "title": "Les mots du cours",
+          "anchor": null
+        },
+        {
           "title": "Diaporama",
           "anchor": "bs-viewer"
         },
@@ -1967,6 +2328,14 @@
         {
           "title": "Pour aller plus loin : questions et réponses",
           "anchor": "faq"
+        },
+        {
+          "title": "Animations liées",
+          "anchor": "animations"
+        },
+        {
+          "title": "Sources et manuels",
+          "anchor": "sources"
         }
       ]
     },
@@ -2036,23 +2405,23 @@
         },
         {
           "title": "Ce que l'IA change dans la recherche",
-          "anchor": null
+          "anchor": "ia-change"
         },
         {
           "title": "L'AI Act, en clair",
-          "anchor": null
+          "anchor": "ai-act-clair"
         },
         {
           "title": "Le calendrier en Europe et en France",
-          "anchor": null
+          "anchor": "calendrier"
         },
         {
           "title": "Ailleurs : pas d'équivalent de l'AI Act, mais des règles partout",
-          "anchor": null
+          "anchor": "ailleurs"
         },
         {
           "title": "Qui est responsable quand un code de recherche devient un produit ?",
-          "anchor": null
+          "anchor": "responsable"
         },
         {
           "title": "Qui est responsable ? Une orientation en une minute",
@@ -2064,15 +2433,15 @@
         },
         {
           "title": "La boîte à outils",
-          "anchor": null
+          "anchor": "boite-outils"
         },
         {
           "title": "Glossaire",
-          "anchor": null
+          "anchor": "glossaire"
         },
         {
           "title": "Ressources officielles",
-          "anchor": null
+          "anchor": "ressources"
         },
         {
           "title": "Limites",
@@ -4662,6 +5031,10 @@
           "anchor": null
         },
         {
+          "title": "The chapter section by section",
+          "anchor": "walkthrough"
+        },
+        {
           "title": "The slides (in French)",
           "anchor": "slides"
         },
@@ -4687,6 +5060,10 @@
           "anchor": null
         },
         {
+          "title": "The chapter section by section",
+          "anchor": "walkthrough"
+        },
+        {
           "title": "The slides (in French)",
           "anchor": "slides"
         },
@@ -4708,6 +5085,10 @@
           "anchor": "summary"
         },
         {
+          "title": "The chapter section by section",
+          "anchor": "walkthrough"
+        },
+        {
           "title": "The slides (in French)",
           "anchor": "slides"
         },
@@ -4725,8 +5106,24 @@
       "citations": [],
       "sections": [
         {
-          "title": "The four courses",
-          "anchor": null
+          "title": "In brief",
+          "anchor": "oc-brief"
+        },
+        {
+          "title": "Biostatistics for health studies",
+          "anchor": "biostat-h"
+        },
+        {
+          "title": "Physics for health studies: electromagnetic waves, X-rays and imaging",
+          "anchor": "physique-pass-h"
+        },
+        {
+          "title": "Industrial physics: thermodynamics, water vapor and refrigeration",
+          "anchor": "physique-industrielle-h"
+        },
+        {
+          "title": "Heat transfer for food engineering: cooling and freezing",
+          "anchor": "bases-thermiques-h"
         }
       ]
     },
@@ -5346,8 +5743,52 @@
       "title": "The Sun, the seasons and the clock: one time for every measurement",
       "language": "en",
       "topics": [],
-      "citations": [],
+      "citations": [
+        {
+          "@type": "CreativeWork",
+          "name": "Spencer, J. W. (1971). Fourier series representation of the position of the Sun. Search, 2(5), 172."
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "NOAA Global Monitoring Laboratory. General Solar Position Calculations.",
+          "url": "https://gml.noaa.gov/grad/solcalc/solareqns.PDF"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Duffie, J. A., Beckman, W. A. (2013). Solar Engineering of Thermal Processes, 4th ed. Wiley.",
+          "url": "https://doi.org/10.1002/9781118671603"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Kopp, G., Lean, J. L. (2011). A new, lower value of total solar irradiance: Evidence and climate significance. Geophysical Research Letters, 38(1).",
+          "url": "https://doi.org/10.1029/2010GL045777"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Reda, I., Andreas, A. (2004). Solar position algorithm for solar radiation applications. Solar Energy, 76(5), 577-589.",
+          "url": "https://doi.org/10.1016/j.solener.2003.12.003"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Anderson, K. S. et al. (2023). pvlib python: 2023 project update. Journal of Open Source Software, 8(92), 5994.",
+          "url": "https://doi.org/10.21105/joss.05994"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "IANA. Time Zone Database.",
+          "url": "https://www.iana.org/time-zones"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Natural Earth. Free vector and raster map data, 1:110m land.",
+          "url": "https://www.naturalearthdata.com/"
+        }
+      ],
       "sections": [
+        {
+          "title": "In brief",
+          "anchor": "brief"
+        },
         {
           "title": "The starting case: the morning of 25 October 2026",
           "anchor": null

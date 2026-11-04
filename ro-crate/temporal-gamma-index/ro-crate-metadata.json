@@ -36,6 +36,9 @@
      "@id": "https://www.cyrilvoyant.com/about/"
     },
     {
+     "@id": "https://www.cyrilvoyant.com/approach/"
+    },
+    {
      "@id": "https://www.cyrilvoyant.com/fr/a-propos/"
     },
     {
@@ -43,6 +46,9 @@
     },
     {
      "@id": "https://www.cyrilvoyant.com/fr/actualites/gamma-index-forecast-validation/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/approche/"
     },
     {
      "@id": "https://www.cyrilvoyant.com/fr/outils/indice-gamma/"
@@ -105,6 +111,11 @@
    "name": "www.cyrilvoyant.com/about/"
   },
   {
+   "@id": "https://www.cyrilvoyant.com/approach/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/approach/"
+  },
+  {
    "@id": "https://www.cyrilvoyant.com/fr/a-propos/",
    "@type": "WebPage",
    "name": "www.cyrilvoyant.com/fr/a-propos/"
@@ -118,6 +129,11 @@
    "@id": "https://www.cyrilvoyant.com/fr/actualites/gamma-index-forecast-validation/",
    "@type": "WebPage",
    "name": "www.cyrilvoyant.com/fr/actualites/gamma-index-forecast-validation/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/fr/approche/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/fr/approche/"
   },
   {
    "@id": "https://www.cyrilvoyant.com/fr/outils/indice-gamma/",

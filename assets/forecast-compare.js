@@ -87,7 +87,7 @@
         return '<label><input type="checkbox" value="' + m + '"> <i style="background:' + COL[m] + '"></i>' + L.names[m] + "</label>";
       }).join("") + "</fieldset>" +
       '<p class="fc-out" aria-live="polite"></p>' +
-      '<h3>' + L.m1 + '</h3><svg class="fc-svg fc-px fc-1" viewBox="0 0 640 280" role="img" aria-label="' + L.m1 + '"></svg><p class="fc-note"></p>' +
+      '<h3>' + L.m1 + '</h3><small class="fc-yl"></small><svg class="fc-svg fc-px fc-1" viewBox="0 0 640 280" role="img" aria-label="' + L.m1 + '"></svg><p class="fc-note"></p>' +
       '<h3>' + L.m2 + '</h3><div class="fc-ctl fc-static"><label><span>' + L.errFor + '</span><select class="fc-e">' + D.models.map(function (m) { return '<option value="' + m + '"' + (m === "ELM" ? " selected" : "") + ">" + L.names[m] + "</option>"; }).join("") + "</select></label></div>" +
       '<svg class="fc-svg fc-px fc-2" viewBox="0 0 640 250" role="img" aria-label="' + L.m2 + '"></svg>' +
       '<p class="fc-leg"><span><i style="background:var(--ink)"></i>' + L.obs + '</span><span><i class="fc-swatch" style="background:#c8452f"></i>' + L.low + '</span><span><i class="fc-swatch" style="background:#2f6fc8"></i>' + L.high + "</span></p>" +
@@ -184,6 +184,7 @@
     box.querySelector(".fc-h output").textContent = hl(h);
     chart1(box.querySelector(".fc-1"), key, hi, mods); chart2(box.querySelector(".fc-2"), hi, mods, box.querySelector(".fc-e").value);
     box.querySelector(".fc-note").textContent = notes(mk, sc, mods);
+    box.querySelector(".fc-yl").textContent = (fr ? "Ordonnée : " : "Y-axis: ") + METRICS.filter(function (m) { return m[0] === mk; })[0][1] + (mk === "RMSE" ? "" : fr ? ", sans unité" : ", unitless") + (isN ? (fr ? " (1 = persistance)" : " (1 = persistence)") : "");
     // Best among the models shown, for the chosen metric (lower is better for all six).
     var best = mods.slice().sort(function (a, b) { return D.metrics[a][key][hi] - D.metrics[b][key][hi]; })[0], msg = L.none;
     if (best) {

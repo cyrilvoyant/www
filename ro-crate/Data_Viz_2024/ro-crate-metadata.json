@@ -36,10 +36,16 @@
      "@id": "https://doi.org/10.1016/j.apenergy.2026.127599"
     },
     {
+     "@id": "https://www.cyrilvoyant.com/approach/"
+    },
+    {
      "@id": "https://www.cyrilvoyant.com/fr/actualites/"
     },
     {
      "@id": "https://www.cyrilvoyant.com/fr/actualites/why-extreme-learning-machines/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/approche/"
     },
     {
      "@id": "https://www.cyrilvoyant.com/fr/recits/reference-prevision-solaire-deep-learning/"
@@ -105,6 +111,11 @@
    "creativeWorkStatus": "published; author version arXiv:2508.12764. The MIMO-MH extension of the Python pipeline belongs to a manuscript in submission: no result of it is reported here."
   },
   {
+   "@id": "https://www.cyrilvoyant.com/approach/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/approach/"
+  },
+  {
    "@id": "https://www.cyrilvoyant.com/fr/actualites/",
    "@type": "WebPage",
    "name": "www.cyrilvoyant.com/fr/actualites/"
@@ -113,6 +124,11 @@
    "@id": "https://www.cyrilvoyant.com/fr/actualites/why-extreme-learning-machines/",
    "@type": "WebPage",
    "name": "www.cyrilvoyant.com/fr/actualites/why-extreme-learning-machines/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/fr/approche/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/fr/approche/"
   },
   {
    "@id": "https://www.cyrilvoyant.com/fr/recits/reference-prevision-solaire-deep-learning/",
