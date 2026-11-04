@@ -716,7 +716,7 @@
   "chi-square-test"
  ],
  "extraction": {
-  "source_hash": "9fa7c0fb7541fe13",
+  "source_hash": "7411e11dc4f3a13f",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#experience"

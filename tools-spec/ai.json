@@ -603,7 +603,7 @@
   "data-management-plan"
  ],
  "extraction": {
-  "source_hash": "11fed346bd71e20d",
+  "source_hash": "a1bd2b7a1e1cad44",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#role-helper"

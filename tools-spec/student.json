@@ -556,7 +556,7 @@
   "student-t-test"
  ],
  "extraction": {
-  "source_hash": "f010b70a43e4475d",
+  "source_hash": "f94b66d77a97ff40",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#experience"

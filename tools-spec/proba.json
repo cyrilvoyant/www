@@ -229,7 +229,7 @@
   "prediction-interval"
  ],
  "extraction": {
-  "source_hash": "05198ab7d487b207",
+  "source_hash": "a6cc8eae70508104",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#proba-race"

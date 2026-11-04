@@ -377,7 +377,7 @@
   "nice"
  ],
  "extraction": {
-  "source_hash": "d78442340c56b8aa",
+  "source_hash": "7cba458ca3bb91f0",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#try-it"

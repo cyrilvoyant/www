@@ -404,7 +404,7 @@
   "doubling-time"
  ],
  "extraction": {
-  "source_hash": "301b42ff6ecbe447",
+  "source_hash": "8f52fab3d06fd08c",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#try-it"

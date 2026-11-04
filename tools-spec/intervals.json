@@ -444,7 +444,7 @@
   "prediction-interval"
  ],
  "extraction": {
-  "source_hash": "5c139c571bb4fe55",
+  "source_hash": "c58484fabbbecc5b",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#experience"
