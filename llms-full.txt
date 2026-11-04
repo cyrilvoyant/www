@@ -547,7 +547,7 @@ Research: questions, findings and methods
  Execute, clarify or refuse: never guess.
  Research practices and assessment
  Demonstrate trust · Research practice Questioning how we do research: influence, integrity, excellence
- With J. P. A. Ioannidis (Stanford), J. Baas and R. Boverhof (Elsevier): influence on a doubling scale, impact next to integrity, excellence as a system.
+ Where to start on research assessment, publishing, AI and data: the RTVACOS tree, the FAIR self-assessment, and work with J. P. A. Ioannidis (Stanford), J. Baas and R. Boverhof (Elsevier) on influence and integrity.
  Demonstrate trust · Research practice AI in research: the AI Act, a lab charter and a toolbox
  The EU AI Act excludes research under conditions, not transfers: timeline, who is responsible, and ten tools for a lab.
  Demonstrate trust · Research practice Academic visibility: why publishing isn't enough anymore
@@ -618,7 +618,7 @@ Recherche : questions, résultats et méthodes
  Exécuter, clarifier ou refuser : jamais deviner.
  Pratiques et évaluation de la recherche
  Démontrer la confiance · Pratique de la recherche Se questionner sur nos façons de faire de la recherche
- Avec J. P. A. Ioannidis (Stanford), J. Baas et R. Boverhof (Elsevier) : l'influence sur une échelle de doublement, l'impact à côté de l'intégrité, l'excellence comme système.
+ Par où commencer sur l'évaluation, l'édition, l'IA et les données : l'arbre RTVACOS, l'autoévaluation FAIR, et les travaux avec J. P. A. Ioannidis (Stanford), J. Baas et R. Boverhof (Elsevier) sur l'influence et l'intégrité.
  Démontrer la confiance · Pratique de la recherche L'IA dans la recherche : AI Act, charte et boîte à outils
  Le règlement européen sur l'IA (AI Act) exclut la recherche sous conditions, pas les transferts : calendrier, responsabilités, et dix outils pour un laboratoire.
  Démontrer la confiance · Pratique de la recherche Visibilité académique : publier ne suffit plus
@@ -1126,9 +1126,15 @@ Understand before you compute: the approach of Cyril Voyant
 URL: https://www.cyrilvoyant.com/scientific-publishing-trust/
 
 Scientific publishing: no verification, no trust
- How can verification become as visible as publication? The number of indexed articles grew by about 47% between 2016 and 2022 [1] , peer review relies on unpaid work, and generative AI makes plausible text almost free. The answer is not more journals: it is to check the data and code behind what is published, with the same rigour Europe now demands of AI systems.
+ How can verification become as visible as publication? The number of indexed articles grew by about 47% between 2016 and 2022 [1] , peer review relies on unpaid work, and Artificial intelligence that produces text, images or code from a prompt. makes plausible text almost free. The answer is not more journals: it is to check the data and code behind what is published, with the same rigor Europe now demands of AI systems.
+ In short
+ The picture. About 47% more indexed articles from 2016 to 2022 [1] , more than 100 million hours of unpaid peer review in 2020 [4] , more than 10,000 retractions in 2023 [5] .
+ What exists opens access. Findable, Accessible, Interoperable, Reusable: principles for data, not a license. principles, open access, the right to deposit: almost no text asks anyone to check that a published result can be reproduced from its data and code.
+ The point of comparison. The Regulation (EU) 2024/1689 on artificial intelligence: obligations depend on the risk level of the AI system. requires of high-risk AI systems what articles lack: data governance, documentation, logs, quality, post-market monitoring.
+ What is missing. Checking data and code, declaring tools (AI included), following the article after publication, recognizing editorial and review work.
+ On this page. Who checks what, step by step ; the detailed sections open with one click.
  Four numbers, four sources
- Indexed articles (Scopus, Web of Science), 2016 = 100
+ Indexed articles ( Elsevier's bibliographic database of articles and citations; Web of Science, from Clarivate, plays the same role. , Web of Science), 2016 = 100
  Hanson et al. 2024 [1]
  Share of papers published by the top five publishers
  Larivière et al. 2015 [2]
@@ -1140,7 +1146,7 @@ Scientific publishing: no verification, no trust
  Aczel et al. 2021 [4]
  Each value is the cited source's; bars are to scale within each card, not across cards.
  From publication to checkable evidence
- 01 Identify DOI (permanent identifier) · authors · version
+ 01 Identify Digital Object Identifier: persistent identifier of an article, a dataset or a software version. (permanent identifier) · authors · version
  02 Execute Data · code · environment
  03 Compare Expected result · tolerance
  04 Challenge Assumptions · limits · transfer
@@ -1152,24 +1158,27 @@ Scientific publishing: no verification, no trust
  Reproduced A documented run recovers a result within a stated tolerance. Are the assumptions and method appropriate?
  Validated for a use Scientific criteria and a domain of application have been examined. What happens outside that domain?
  Connect practices without confusing their purposes
+ Read
  FAIR (findable, accessible, interoperable, reusable) supports discovery and reuse; licenses define permissions; reproducibility lets others check a computation; the AI Act (the EU regulation on AI) regulates specified AI uses. RTVACOS (rigour, transparency, visibility, adoption, collaboration, outreach, societal relevance) connects this work to research excellence. These frameworks complement rather than replace one another.
  The global picture: too many articles, too little verification
  Output that outruns researchers. Articles indexed in Scopus and Web of Science rose by about 47% from 2016 to 2022, faster than the number of scientists; part of the growth came from special issues with shortened review times [1] .
  A concentrated market. Five publishers published more than half of all papers as early as 2013 [2] ; the group that owns the largest reported an adjusted operating margin of 34.8% in 2025 [3] .
  Invisible work. Reviewers gave more than 100 million hours in 2020 [4] , unpaid and almost unrecognized.
- Eroded trust. More than 10,000 papers were retracted in 2023, over 8,000 of them in one publisher's journals, mostly in special issues exploited by paper mills [5] .
+ Eroded trust. More than 10,000 papers were retracted in 2023, over 8,000 of them in one publisher's journals, mostly in special issues exploited by Organizations selling fabricated or falsified articles, often slipped into special issues. [5] .
  AI banned rather than framed. Rules say what not to do, for instance the ban on generative AI in US grant review [6] , rarely what to show.
  What already exists
+ Read
  Level What exists What it covers
- International FAIR principles [8] ; OSTP memo [7] Findable, reusable data; immediate access to articles and data from US federally funded research.
- International JOSS [9] , CODECHECK [10] , ReScience C [11] , SoftwareX [20] Open software review; independent execution of an article's code; published replications; software articles and developer credit (SoftwareX). These initiatives provide different forms of review.
- Europe Council conclusions of May 2023 [12] ; Diamond Open Access action plan [13] ; Open Research Europe [14] Immediate open access as the norm for public research; publishing at no cost to authors or readers.
- Europe CoARA [15] Assessment reform: recognizing contributions other than article counts, peer review included.
+ International FAIR principles [8] ; Office of Science and Technology Policy: the White House office in charge of US science policy. memo [7] Findable, reusable data; immediate access to articles and data from US federally funded research.
+ International Journal of Open Source Software: a journal that reviews research software openly, on GitHub. [9] , A third party runs an article's code and certifies that the reported figures and tables are regenerated; it does not judge scientific validity. [10] , A journal that publishes replications of computational work. [11] , A journal that publishes articles describing research software, with credit to developers. [20] Open software review; independent execution of an article's code; published replications; software articles and developer credit (SoftwareX). These initiatives provide different forms of review.
+ Europe Council conclusions of May 2023 [12] ; Journals free for both authors and readers, funded by institutions. action plan [13] ; The European Commission's open-access publishing platform. [14] Immediate open access as the norm for public research; publishing at no cost to authors or readers.
+ Europe Coalition for Advancing Research Assessment: European coalition to reform research assessment, recognizing the diversity of contributions, not only article counts. [15] Assessment reform: recognizing contributions other than article counts, peer review included.
  Europe AI Act [16] For high-risk AI systems: data, documentation, logs, quality, post-market monitoring.
  France Digital Republic Act, art. 30 [17] Right to post the accepted manuscript in open access after 6 months (12 in the humanities and social sciences).
- France National Plan for Open Science [18] ; HAL; Software Heritage [19] Target of 100% open-access articles by 2030; open research source code; code archiving.
+ France National Plan for Open Science [18] ; French open archive where researchers deposit their publications. ; Universal archive of software source code. [19] Target of 100% open-access articles by 2030; open research source code; code archiving.
  These texts open access . Almost none asks anyone to check that a published result can be reproduced from its data and code.
  Who checks what? The actors, and what each mechanism is designed to cover
+ Read
  Classic peer review FAIR and repositories Licenses JOSS, SoftwareX CODECHECK ReScience C AI Act (AI systems) CoARA
  Who checks? Reviewers and journal editor Repository and data curators No one: the author declares Software-journal reviewers An independent codechecker Another team, then reviewers The provider, often by self-assessment, under market-surveillance authorities Institutions that assess
  Text and reasoning ● · · ◐ · ◐ · ·
@@ -1183,10 +1192,96 @@ Scientific publishing: no verification, no trust
  Credit for checking work · · · · · · · ●
  ● designed for · ◐ partly, depending on venue · · not its purpose
  How to read: each column shows what the mechanism is for, according to its own texts, not how well it is applied. Highlighted rows have one mechanism, or none, designed for them. The AI Act covers high-risk AI systems, not articles: it is a point of comparison here. This is our reading, open to discussion row by row.
+ Step by step: who checks what in an article's life?
+ Pick a step. For each one: what exists, who checks, what remains uncovered. Everything comes from this page's sources and the table above; arrow keys move between steps.
+ 1 Write, with tools (AI included)
+ What exists
+ Rules that mostly say what not to do: for instance, generative AI is banned from US grant review [6] .
+ For comparison, the AI Act requires technical documentation and record-keeping of high-risk AI systems (Art. 11 and 12), not of articles [16] .
+ Who checks?
+ Partly the journal's reviewers and editor; no mechanism in the table is designed for articles.
+ What remains uncovered
+ Declaring the tools used, AI included: neither ban nor silence, a statement of what was used, for what, and what a human checked.
+ In the table “Who checks what?”
+ Declared use of tools, AI included (highlighted row: one mechanism, or none, designed for it) ● AI Act (AI systems) ◐ Classic peer review
+ Learn more: AI in research: declaring tools
+ 2 Submit and get reviewed
+ What exists
+ Classic peer review judges the text and the reasoning.
+ JOSS reviews the software openly, on GitHub [9] .
+ The context: about 47% more indexed articles from 2016 to 2022, faster than the number of scientists, part of them in special issues with shortened review times [1] ; more than 100 million hours of review given in 2020, unpaid [4] .
+ Who checks?
+ The journal's reviewers and editor; software-journal reviewers for the code.
+ What remains uncovered
+ Re-running the computation is not the purpose of classic peer review: checking the data and code of every article that depends on them remains to be done.
+ In the table “Who checks what?”
+ Text and reasoning (highlighted row: one mechanism, or none, designed for it) ● Classic peer review ◐ JOSS, SoftwareX ◐ ReScience C
+ Code (quality, documentation) ● JOSS, SoftwareX ● AI Act (AI systems) ◐ CODECHECK ◐ ReScience C
+ Learn more: From publication to checkable evidence
+ 3 Check the computation
+ What exists
+ CODECHECK: a third party runs an article's code and certifies that the reported figures and tables are regenerated; it does not judge scientific validity [10] .
+ ReScience C publishes replications [11] .
+ Who checks?
+ An independent codechecker (CODECHECK); another team, then reviewers (ReScience C).
+ What remains uncovered
+ Almost no text asks anyone to check that a published result can be reproduced. What is missing is a traceability requirement: frozen versions, documented environment, independent execution, kept records.
+ In the table “Who checks what?”
+ Re-running the computation ● CODECHECK ● ReScience C ◐ JOSS, SoftwareX
+ Result recovered by others (highlighted row: one mechanism, or none, designed for it) ● ReScience C ◐ CODECHECK
+ Learn more: Accessible, executable, reproduced: the levels of evidence
+ 4 Publish and give access
+ What exists
+ United States: immediate access to articles and data from federally funded research [7] .
+ Europe: immediate open access as the norm for public research [12] ; publishing at no cost to authors or readers [13] [14] .
+ France: right to post the accepted manuscript in open access after 6 months (12 in the humanities and social sciences) [17] ; target of 100% open-access articles by 2030 [18] .
+ Who checks?
+ These texts are about access, not verification.
+ What remains uncovered
+ Almost none of these texts asks anyone to check that a published result can be reproduced from its data and code.
+ Learn more: Cite and reuse: crediting teams and versions
+ 5 Reuse the data and code
+ What exists
+ FAIR principles: data that are findable, accessible, interoperable and reusable [8] ; principles, not a license.
+ Licenses: they define reuse permissions.
+ Software Heritage archives the code [19] ; SoftwareX publishes software articles and credits developers [20] .
+ Who checks?
+ The repository and data curators; for licenses, no one: the author declares.
+ What remains uncovered
+ Connecting the frameworks: code licenses, FAIR data and the AI Act talk about the same thing, traceability, but do not cite each other.
+ In the table “Who checks what?”
+ Data (find, reuse) ● FAIR and repositories ● AI Act (AI systems) ◐ Classic peer review ◐ CODECHECK ◐ ReScience C
+ Reuse permissions (highlighted row: one mechanism, or none, designed for it) ● Licenses ◐ FAIR and repositories ◐ JOSS, SoftwareX
+ Learn more: Data: choosing a license · FAIR self-assessment in 20 questions
+ 6 Follow the article after publication
+ What exists
+ Retraction: official withdrawal of a published article for serious error or fraud; the article stays visible, marked as retracted.
+ More than 10,000 papers retracted in 2023, over 8,000 of them in one publisher's journals, mostly in special issues exploited by paper mills [5] .
+ For comparison, the AI Act requires post-market monitoring of high-risk AI systems (Art. 72) [16] .
+ Who checks?
+ Partly the journal and the repository, depending on the venue.
+ What remains uncovered
+ Following the article as one monitors a deployed system: versions, errata, reports, links to corrected datasets.
+ In the table “Who checks what?”
+ Follow-up after publication (highlighted row: one mechanism, or none, designed for it) ● AI Act (AI systems) ◐ Classic peer review ◐ FAIR and repositories
+ Learn more: Research excellence: the RTVACOS tree
+ 7 Assess researchers
+ What exists
+ CoARA: reforming assessment to recognize contributions other than article counts, peer review included [15] .
+ The work to recognize: more than 100 million hours of peer review in 2020 [4] .
+ Who checks?
+ Institutions that assess.
+ What remains uncovered
+ In France, editing a journal, reviewing or checking code is almost absent from career assessment, which counts articles first.
+ In the table “Who checks what?”
+ Credit for checking work (highlighted row: one mechanism, or none, designed for it) ● CoARA
+ Learn more: Research excellence: the RTVACOS tree
  The AI Act as a comparison, not a regulation of papers
- The AI Act requires providers of high-risk AI systems to govern their training, validation and test data (Art. 10), keep technical documentation (Art. 11), log events (Art. 12), run a quality management system (Art. 17) and monitor the system after it is placed on the market (Art. 72) [16] . These obligations overlap with some MLOps practices (running and monitoring machine-learning models in production), without being equivalent. Scientific articles follow different editorial, scientific and sometimes regulatory rules; independent execution is not automatically guaranteed.
+ Read
+ The AI Act requires providers of high-risk AI systems to govern their training, validation and test data (Art. 10), keep technical documentation (Art. 11), log events (Art. 12), run a quality management system (Art. 17) and monitor the system after it is placed on the market (Art. 72) [16] . These obligations overlap with some Machine Learning Operations: engineering practices to version, trace, deploy and monitor learning models. practices (running and monitoring machine-learning models in production), without being equivalent. Scientific articles follow different editorial, scientific and sometimes regulatory rules; independent execution is not automatically guaranteed.
  The regulation also excludes AI developed solely for research (Art. 2(6)). A gap may open: European teams bear the cost of compliance as soon as they deploy, teams outside the regulation do not. The AI Act remains essential all the same: it provides one framework for traceability from data to result. The right answer is not to weaken it but to bring its spirit to publishing.
  France: editorial work that does not count
+ Read
  France has one of the most open-access-friendly legal frameworks in Europe: a mandatory right to deposit, HAL, Software Heritage, a national plan that covers source code [17] [18] . Yet editing a journal, reviewing or checking code is almost absent from career assessment, which counts articles first. The work that guarantees quality is the work that pays least; editors and reviewers become hard to find, and others end up running the reference journals.
  What is missing
  Checking the data and code of every article that depends on them, with a traceability requirement comparable to what the AI Act asks of AI systems: frozen versions, documented environment, independent execution, kept records.
@@ -1198,6 +1293,7 @@ Scientific publishing: no verification, no trust
  No verification, no trust
  An article no one can redo is a claim, not a result. The tools to check exist, AI included; what is missing is making them normal, and recognizing the people who do that work.
  Glossary
+ Read
  Diamond open access
  Journals free for both authors and readers, funded by institutions.
  APC (Article Processing Charge)
@@ -1228,6 +1324,7 @@ Scientific publishing: no verification, no trust
  Do we need new journals?
  Not necessarily. What is missing is verification and recognition of editorial work, not more titles.
  Sources
+ Read
  Hanson, Gómez Barreiro, Crosetto, Brockington (2024). The strain on scientific publishing. Quantitative Science Studies 5(4). doi.org/10.1162/qss_a_00327
  Larivière, Haustein, Mongeon (2015). The oligopoly of academic publishers in the digital era. PLoS ONE 10(6). doi.org/10.1371/journal.pone.0127502
  RELX (2026). RELX 2025 results. www.relx.com/media/press-releases/year-2026/relx-2025-result
@@ -1557,17 +1654,17 @@ Models live in the data: qualify, certify, license
  Under an explicit license : without one, nobody knows what they may do.
  Every acronym on this page (FAIR, DOI, NetCDF-CF, OGC, MIT, GPL…) is explained in the glossary .
  An example: Webservice-Energy
- Webservice-Energy is the spatial data infrastructure of the O.I.E. center (Observation, Impacts, Energy) of Mines Paris – PSL , developed and operated for almost twenty years for energy, the environment and Earth observation, "FAIR by design". Its main architects are Lionel Ménard ( ORCID ) and Raphaël Jolivet ( ORCID ) , both at the O.I.E. center (Observation, Impacts, Energy) of Mines Paris – PSL (contact: lionel.menard@minesparis.psl.eu , raphael.jolivet@minesparis.psl.eu ).
+ Webservice-Energy is the spatial data infrastructure of the O.I.E. center (Observation, Impacts, Energy) of Mines Paris – PSL , developed and operated for almost twenty years for energy, the environment and Earth observation, "FAIR by design". Its main architects are Lionel Ménard ( ORCID ) , the center's FAIR data lead, and Raphaël Jolivet ( ORCID ) , both at the O.I.E. center (Observation, Impacts, Energy) of Mines Paris – PSL (contact: lionel.menard@minesparis.psl.eu , raphael.jolivet@minesparis.psl.eu ).
  Find : a metadata catalogue ( GeoNetwork , ISO 19115/19139, INSPIRE , OGC ) for data, services, publications and software.
  Access : a THREDDS server ( OPeNDAP , NetCDF Subset Service, WMS), OGC map services (WMS, WFS, WCS), remote processing (WPS) and a STAC catalog under development.
  Harmonize ground measurements : the open library libinsitu brings heterogeneous networks to the same NetCDF-CF format, with their quality control.
  Identify and license : DOIs assigned to datasets through DataCite , and a CC BY license.
  Connect : community portal of the Group on Earth Observations (GEO) , Copernicus data ( CAMS for the atmosphere, C3S for the climate), Horizon 2020 and Horizon Europe projects.
  Is my project FAIR?
- A self-assessment grid in 20 questions, five per FAIR principle, places a dataset in about 3 minutes and shows what to work on first. It starts from three prefilled examples, including Webservice-Energy; it is a teaching tool, not a certification.
+ A self-assessment grid in 20 questions, five per FAIR principle, places a dataset in about 3 minutes and shows what to work on first. It starts from three prefilled examples, including Webservice-Energy; it is a teaching tool, not a certification. A grid from the O.I.E. center, after the FAIR approach of Lionel Ménard.
  Open the FAIR self-assessment →
  Choosing a license for code and data
- After the reflection led at the O.I.E. center by Raphaël Jolivet ( ORCID ) . The usual practice is binary: close everything when commercial valorization is hoped for, open everything (CC BY, MIT, Apache, BSD: free licenses that allow reuse with credit) otherwise. It rests on an estimate made too early, and it limits the diffusion of the very work one wants to protect, while diffusion is often what creates opportunities. A middle way exists: non-commercial licenses (CC BY-NC for data, PolyForm Noncommercial for code). They are not "open source" in the OSI sense, but they remain compatible with academic open access and reproducibility, and keep a future valorization possible.
+ After the reflection led at the O.I.E. center by Raphaël Jolivet ( ORCID ) (license contact: raphael.jolivet@minesparis.psl.eu ). The usual practice is binary: close everything when commercial valorization is hoped for, open everything (CC BY, MIT, Apache, BSD: free licenses that allow reuse with credit) otherwise. It rests on an estimate made too early, and it limits the diffusion of the very work one wants to protect, while diffusion is often what creates opportunities. A middle way exists: non-commercial licenses (CC BY-NC for data, PolyForm Noncommercial for code). They are not "open source" in the OSI sense, but they remain compatible with academic open access and reproducibility, and keep a future valorization possible.
  Code and data do not take the same licenses Choice Code (software) Data
  Open MIT , Apache 2.0 , BSD (permissive: free reuse with credit); GPL (copyleft: derived versions stay under the GPL) CC BY (free reuse with credit); CC0 (no conditions); ODbL for a database; Etalab Open License 2.0 for French public data
  Non-commercial PolyForm Noncommercial (research, teaching, personal use, public service, nonprofits) CC BY-NC
@@ -1707,6 +1804,9 @@ URL: https://www.cyrilvoyant.com/tools/fair-self-assessment/
 
 Are my data FAIR? A self-assessment in 20 questions
  In about 3 minutes, see where a dataset stands against the FAIR principles : data that are findable, accessible, interoperable (readable by other software) and reusable. Twenty questions, five per letter; the tool gives a score out of 20 and shows what to work on first.
+ A grid from the O.I.E. center (Observation, Impacts, Energy) of Mines Paris – PSL , drawn from the FAIR practice of Webservice-Energy .
+ FAIR data : Lionel Ménard ( ORCID ), FAIR data lead of the O.I.E. center ( lionel.menard@minesparis.psl.eu );
+ Licenses for code and data : Raphaël Jolivet ( ORCID ) ( raphael.jolivet@minesparis.psl.eu ).
  Who is it for? PhD students, researchers, engineers and data stewards preparing a deposit, a data management plan (DMP, the document that describes how the data of a project will be produced, described, stored and shared) or a publication. Three prefilled examples serve as starting points, including Webservice-Energy , the data infrastructure of the O.I.E. center (Observation, Impacts, Energy) at Mines Paris – PSL. Nothing is sent anywhere: your answers stay in your browser.
  Is my project FAIR enough? An example of a 20-point self-assessment
  This is only an example : a teaching grid proposed here, not a standard or a certification. The questions follow the GO FAIR principles (F1 to R1.3) plus a few practical criteria; the scoring and thresholds are choices of this page. For a reference assessment: the RDA FAIR Data Maturity Model (Research Data Alliance) or the automated tool F-UJI . Acronyms underlined with dots open an explanation on click or tap.
@@ -1730,19 +1830,19 @@ Are my data FAIR? A self-assessment in 20 questions
  the RDA FAIR Data Maturity Model (Research Data Alliance, the international organization that develops recommendations for sharing research data): shared indicators and their priority levels;
  F-UJI , an automated tool that assesses a published dataset from its persistent identifier, for example a DOI (Digital Object Identifier, an identifier that stays valid even if the web address changes).
  How to cite this tool
- Voyant, C. (2026). FAIR self-assessment of research data: an example teaching grid in 20 questions , version 1.0, November 4, 2026. Contributions: L. Ménard and R. Jolivet (O.I.E. center, Mines Paris – PSL). License: CC BY 4.0 (Creative Commons Attribution: free reuse with credit to the author).
+ Ménard, L., Jolivet, R. and Voyant, C., O.I.E. center, Mines Paris – PSL (2026). FAIR self-assessment of research data: an example teaching grid in 20 questions , version 1.0, November 4, 2026. License: CC BY 4.0 (Creative Commons Attribution: free reuse with credit to the source).
  Web address (URL) to cite: https://www.cyrilvoyant.com/tools/fair-self-assessment/
  The same reference in BibTeX (the bibliography format of LaTeX):
- @misc{voyant2026fair,
- author = {Voyant, Cyril},
+ @misc{oie2026fair,
+ author = {M{\'e}nard, Lionel and Jolivet, Rapha{\"e}l and Voyant, Cyril},
  title = {FAIR self-assessment of research data: an example teaching grid in 20 questions},
  year = {2026},
  version = {1.0},
  howpublished = {Web application},
- note = {Version 1.0, November 4, 2026. Contributions: L. Ménard and R. Jolivet (O.I.E. center, Mines Paris -- PSL). License CC BY 4.0},
+ note = {O.I.E. center, Mines Paris -- PSL. Version 1.0, November 4, 2026. License CC BY 4.0},
  url = {https://www.cyrilvoyant.com/tools/fair-self-assessment/}
-} Example and acknowledgments
- The questions and the reference example build on the practice of Webservice-Energy , led at the O.I.E. center by Lionel Ménard ( ORCID ) and Raphaël Jolivet ( ORCID ). Cyril Voyant designed the grid and the tool; any errors are his.
+} Where the grid comes from
+ The questions and the reference example come from the practice of Webservice-Energy , the data infrastructure of the O.I.E. center: the FAIR approach is that of Lionel Ménard ( ORCID ), the center's FAIR data lead ( lionel.menard@minesparis.psl.eu ); the license part follows the reflection of Raphaël Jolivet ( ORCID ) ( raphael.jolivet@minesparis.psl.eu ). Cyril Voyant, co-author, shaped the grid and put it online; any transcription errors are his.
  Go further: data and licenses
  The page Models live in the data explains why data must be qualified and certified, details the example of Webservice-Energy and offers a decision tree to choose a license for code and data.
 
@@ -1751,6 +1851,9 @@ URL: https://www.cyrilvoyant.com/fr/outils/autoevaluation-fair/
 
 Mes données sont-elles FAIR ? Une autoévaluation en 20 questions
  En 3 minutes environ, situez un jeu de données au regard des principes FAIR : des données faciles à trouver ( Findable ), accessibles ( Accessible ), interopérables, c'est-à-dire lisibles par d'autres logiciels ( Interoperable ), et réutilisables ( Reusable ). Vingt questions, cinq par lettre ; l'outil donne un score sur 20 et indique les points à travailler en premier.
+ Une grille du centre O.I.E. (Observation, Impacts, Énergie) de Mines Paris – PSL , tirée de la démarche FAIR de Webservice-Energy .
+ Données FAIR : Lionel Ménard ( ORCID ), responsable FAIR du centre O.I.E. ( lionel.menard@minesparis.psl.eu ) ;
+ Licences du code et des données : Raphaël Jolivet ( ORCID ) ( raphael.jolivet@minesparis.psl.eu ).
  Pour qui ? Doctorants, chercheurs, ingénieurs et gestionnaires de données qui préparent un dépôt, un plan de gestion des données (PGD, le document qui décrit comment les données d'un projet seront produites, décrites, conservées et partagées) ou une publication. Trois exemples préremplis servent de point de départ, dont Webservice-Energy , l'infrastructure de données du centre O.I.E. (Observation, Impacts, Énergie) de Mines Paris – PSL. Rien n'est envoyé : les réponses restent dans votre navigateur.
  Mon projet est-il assez FAIR ? Un exemple d'autoévaluation en 20 points
  Ceci n'est qu'un exemple : une grille pédagogique proposée ici, pas une norme ni une certification. Les questions reprennent les principes GO FAIR (F1 à R1.3) et quelques critères pratiques ; le barème et les seuils sont des choix de cette page. Pour une évaluation de référence : le modèle de maturité FAIR de la RDA (Research Data Alliance) ou l'outil automatique F-UJI . Les sigles soulignés en pointillé s'expliquent d'un clic ou d'un toucher.
@@ -1774,19 +1877,19 @@ Mes données sont-elles FAIR ? Une autoévaluation en 20 questions
  le modèle de maturité FAIR de la RDA (Research Data Alliance, l'association internationale qui élabore des recommandations pour le partage des données de recherche) : des indicateurs communs et leur niveau de priorité ;
  F-UJI , un outil automatique qui évalue un jeu de données publié à partir de son identifiant pérenne, par exemple un DOI ( Digital Object Identifier , un identifiant qui reste valable même si l'adresse du site change).
  Comment citer cet outil
- Voyant, C. (2026). Autoévaluation FAIR des données de recherche : un exemple de grille pédagogique en 20 questions , version 1.0, 4 novembre 2026. Contributions : L. Ménard et R. Jolivet (centre O.I.E., Mines Paris – PSL). Licence CC BY 4.0 (Creative Commons Attribution : réutilisation libre en citant l'auteur).
+ Ménard, L., Jolivet, R. et Voyant, C., centre O.I.E., Mines Paris – PSL (2026). Autoévaluation FAIR des données de recherche : un exemple de grille pédagogique en 20 questions , version 1.0, 4 novembre 2026. Licence CC BY 4.0 (Creative Commons Attribution : réutilisation libre en citant la source).
  Adresse (URL) à citer : https://www.cyrilvoyant.com/fr/outils/autoevaluation-fair/
  La même référence au format BibTeX (le format bibliographique de LaTeX) :
- @misc{voyant2026fairfr,
- author = {Voyant, Cyril},
+ @misc{oie2026fairfr,
+ author = {M{\'e}nard, Lionel and Jolivet, Rapha{\"e}l and Voyant, Cyril},
  title = {Autoévaluation FAIR des données de recherche : un exemple de grille pédagogique en 20 questions},
  year = {2026},
  version = {1.0},
  howpublished = {Web application},
- note = {Version 1.0, 4 novembre 2026. Contributions : L. Ménard et R. Jolivet (centre O.I.E., Mines Paris -- PSL). Licence CC BY 4.0},
+ note = {Centre O.I.E., Mines Paris -- PSL. Version 1.0, 4 novembre 2026. Licence CC BY 4.0},
  url = {https://www.cyrilvoyant.com/fr/outils/autoevaluation-fair/}
-} Exemple et remerciements
- Les questions et l'exemple de référence s'appuient sur la pratique de Webservice-Energy , menée au centre O.I.E. par Lionel Ménard ( ORCID ) et Raphaël Jolivet ( ORCID ). Cyril Voyant a conçu la grille et l'outil ; les éventuelles erreurs sont les siennes.
+} Origine de la grille
+ Les questions et l'exemple de référence viennent de la pratique de Webservice-Energy , l'infrastructure de données du centre O.I.E. : la démarche FAIR est celle de Lionel Ménard ( ORCID ), responsable FAIR du centre ( lionel.menard@minesparis.psl.eu ) ; la partie licences suit la réflexion de Raphaël Jolivet ( ORCID ) ( raphael.jolivet@minesparis.psl.eu ). Cyril Voyant, coauteur, a mis la grille en forme et en ligne ; les éventuelles erreurs de transcription sont les siennes.
  Aller plus loin : données et licences
  La page Les modèles sont dans les données explique pourquoi qualifier et certifier les données, détaille l'exemple de Webservice-Energy et propose un arbre pour choisir une licence pour le code et les données.
 
@@ -2303,34 +2406,58 @@ URL: https://www.cyrilvoyant.com/stories/questioning-research/
 
 Questioning how we do research: influence, integrity, excellence
  Step 5 of 5 · Demonstrate trust See it on the thread Judge against a reference, publish code, data and limits, make research findable and reusable. Trust is demonstrated.
- Research in a changing world also has to examine its own methods. The same approach applies: compare with an explicit reference, look at what a single number hides, and state the limits.
- Who did what. The science-wide map of institutions: John P. A. Ioannidis (Meta-Research Innovation Center at Stanford, Stanford University), Jeroen Baas and Roy Boverhof (Elsevier, Amsterdam), with Cyril Voyant (Mines Paris – PSL, Centre O.I.E.). The Influence Index: Cyril Voyant , Jeroen Baas , Roy Boverhof , Paolo Stringari , Mathilde Marchand-Lasserre and John P. A. Ioannidis . The excellence framework: Cyril Voyant , Rodrigo Amaro e Silva , Nicolas Fichaux , Lionel Menard , Sylvain Cros and Rodanthi-Elisavet Mamouri .
- In brief
- Counting highly cited researchers mixes up size and concentration. A share compared with a neutral 2 % baseline , on a doubling scale, says how concentrated influence is, independently of the size of an institution.
- Impact alone is not enough: a science-wide map of institutions by J. P. A. Ioannidis (Stanford), J. Baas and R. Boverhof (Elsevier) and C. Voyant, in Royal Society Open Science (2026), puts it next to research-integrity proxies : retractions, extreme self-citation, publication in discontinued journals.
- Publishing is no longer enough either: in a saturated system, research must be found, trusted and reused . RTVACOS brings together rigour, transparency, visibility, adoption, collaboration, outreach and societal relevance; it is a reflection framework, not a measured excellence score.
- The finding
- The tools we use to judge research deserve the same scrutiny as the models we use to forecast the sun or compute a dose. A volume indicator rewards size; a single score hides integrity problems; a good paper nobody finds has no impact. Each of these questions has the same answer as elsewhere in this work: an explicit reference, several complementary measures, and stated limits.
- The question
- How should an institution, a funder or a researcher read research performance at a time when output keeps growing and AI writing tools accelerate it further? Which indicators measure what we think they measure?
- The theory, in plain words
- Influence, independently of size. The Stanford–Elsevier Top 2 % lists gather the most-cited 2 % of scientists. With X authors of an institution in those lists among its N eligible authors (those retained in the primary analysis of the dataset), the share is p = X/N . It is compared with the share expected by construction of the lists, p₀ = 0.02 :
+ How is research judged, published, shared and reused, and how could it be done better? This page is a starting point: each card asks one question and leads to the page that answers it in detail, whether an interactive tool, an essay or a guide. The approach is the same as everywhere else on this site: an explicit reference, several complementary measures, and stated limits.
+ Who did what. The science-wide map of institutions: John P. A. Ioannidis (Meta-Research Innovation Center at Stanford, Stanford University), Jeroen Baas and Roy Boverhof (Elsevier, Amsterdam), with Cyril Voyant (Mines Paris – PSL, Centre Observation, Impacts, Energy, O.I.E.). The Influence Index: Cyril Voyant , Jeroen Baas , Roy Boverhof , Paolo Stringari , Mathilde Marchand-Lasserre and John P. A. Ioannidis . The excellence framework: Cyril Voyant , Rodrigo Amaro e Silva , Nicolas Fichaux , Lionel Menard , Sylvain Cros and Rodanthi-Elisavet Mamouri .
+ The question. How should an institution, a funder or a researcher read research performance at a time when output keeps growing and AI writing tools accelerate it further? A volume indicator rewards size; a single score hides integrity problems; a good paper nobody finds has no impact.
+ RTVACOS: where can your work break?
+ Research has an effect only if it is found, judged credible and reused. RTVACOS stands for seven criteria: rigour, transparency, visibility, adoption, collaboration, outreach and societal relevance. The first four are foundations: a weakness in one can undermine the whole. The last three are amplifiers: they strengthen a solid base but cannot replace it. The interactive tree lets you tick what your project already does and see where it is fragile.
+ Open the RTVACOS tree (interactive tool) Strengthen each foundation The talk, summary and references
+ Schematically, E ∝ (R × T × V × A) × (1 + C + O + S) : E denotes the excellence being discussed, each letter one criterion, and the sign ∝ (“proportional to”) expresses a conceptual relationship, not a calibrated equation. RTVACOS is a framework for reflection, not a scoring instrument, and claims no empirical validation.
+ Questions, and where to go next
+ Essay Can we trust what is published?
+ Too many articles, unpaid peer review, retractions and generative AI: what already exists, who checks what, and how checking data and code could become as visible as publishing.
+ Read: scientific publishing and trust →
+ Guide What does AI change for a laboratory?
+ The AI Act, the European Union regulation on artificial intelligence, in plain words: its timeline, who is responsible when research code becomes a product, a lab charter and a toolbox.
+ Read: AI in research →
+ Interactive tool Are my data FAIR?
+ FAIR means findable, accessible, interoperable and reusable. Twenty questions, a score out of 20 and what to fix first.
+ Take the FAIR self-assessment →
+ Guide How should data be qualified and licensed?
+ A model learns only what its data contain: the basic rules, an example (Webservice-Energy) and how to choose a license for code and data.
+ Read: models live in the data → · choose a license
+ Guide How do I cite and reuse this work?
+ The license of each kind of work (articles, software, courses, data, texts) and citation templates to copy.
+ Cite and reuse →
+ On this page How can institutions be compared without rewarding size?
+ The Influence Index compares an institution's share of highly cited authors with a neutral 2 % baseline, on a doubling scale.
+ The Influence Index ↓
+ On this page · article Is impact enough?
+ A science-wide map of institutions, published in Royal Society Open Science (2026), reads impact next to research-integrity proxies.
+ Impact and integrity ↓
+ Post and op-ed (in French) Is publishing still enough?
+ In a saturated system, research must be found, trusted and reused: from SEO (search-engine optimization) to GEO (generative-engine optimization, being found in the answers of AI assistants).
+ Read the post → · op-ed in News Tank Éducation & Recherche (3 March 2026)
+ Essay Why judge every result against a reference?
+ The approach behind this site: trust is demonstrated, with open indicators, code and data published with their limits.
+ Read: the approach →
+ Influence, independently of size
+ The Stanford–Elsevier Top 2 % lists gather the most-cited 2 % of scientists. With X authors of an institution in those lists among its N eligible authors (those retained in the primary analysis of the dataset), the share is p = X/N . It is compared with the share expected by construction of the lists, p₀ = 0.02 :
  I = log₂(p / p₀)
  Here I is the Influence Index (unitless) and log₂ the base-two logarithm: each extra unit corresponds to a doubling. I = 0 means the baseline, I = +1 twice the baseline, I = −1 half of it. The scale is symmetric and does not depend on the size of the institution or on the performance of others. The idea is the same as comparing a forecast with persistence , the reference that copies the last known value: a score means something only against a stated reference.
- Impact and integrity, side by side. The science-wide map published in Royal Society Open Science (2026) adds three indirect indicators (proxies) of possible integrity problems: authorships in papers retracted for reasons other than publisher errors, and the shares of top-cited authors with extreme self-citation or many publications in titles discontinued by Scopus, the bibliographic database.
- Excellence as a system. RTVACOS represents excellence schematically by E ∝ (R × T × V × A) × (1 + C + O + S) . Here E denotes the excellence being discussed; the proportionality sign ∝ expresses a conceptual relationship, not a calibrated equation. The four foundations are rigour ( R ), transparency ( T ), visibility ( V ) and adoption ( A ): weakness in one can undermine the whole. The three amplifiers are collaboration ( C ), outreach ( O ) and societal relevance ( S ); they strengthen a solid base but cannot replace it.
- The example in figures
  The Influence Index on a doubling scale: 1 % gives −1, 2 % gives 0, 4 % gives +1, 8 % gives +2
- An institution where 4 % of the eligible authors are in the Top 2 % lists has I = +1 : twice the baseline. One at 1 % has I = −1 . These shares are illustrative.
+ An institution where 4 % of the eligible authors are in the Top 2 % lists has I = +1 : twice the baseline. One at 1 % has I = −1 . These shares are illustrative. The application of the Influence Index to French universities is a manuscript in submission ( Scientometrics ); its results will be reported once published. Code and processed data are open (see the sources below).
+ Impact and integrity, side by side
+ Impact alone is not enough. The science-wide map of institutions published in Royal Society Open Science (2026) adds three indirect indicators (proxies) of possible integrity problems: authorships in papers retracted for reasons other than publisher errors, and the shares of top-cited authors with extreme self-citation or many publications in titles discontinued by Scopus, the bibliographic database. Its open datasets let anyone redo the analysis.
  Indicators to examine, not judgments
- Brings : indicators that separate size from concentration; impact read together with integrity; open datasets that let anyone redo the analysis; a reflection framework for researchers and institutions on rigour, transparency, visibility and adoption.
- Limits : citation-based indicators are proxies, not judgments of individuals or of quality; integrity proxies flag patterns to examine, not misconduct. RTVACOS is a framework for reflection, not a scoring instrument, and claims no empirical validation. The application of the Influence Index to French universities is a manuscript in submission ( Scientometrics ); its results will be reported once published.
- Go further
+ Brings : indicators that separate size from concentration; impact read together with integrity; open data and code; a reflection framework on rigour, transparency, visibility and adoption.
+ Limits : citation-based indicators are proxies, not judgments of individuals or of quality; integrity proxies flag patterns to examine, not misconduct. RTVACOS is a framework for reflection, not a scoring instrument.
+ Sources
+ DOI: digital object identifier, a permanent link to a publication or a dataset.
  Article : J. P. A. Ioannidis, J. Baas, R. Boverhof, C. Voyant, Science-wide mapping of institutions based on affiliated authors' impact and research integrity proxies, Royal Society Open Science 13, 260870 (2026), doi:10.1098/rsos.260870 (open access) · preprint doi:10.64898/2025.12.16.694665 · data doi:10.17632/jn5j7gjpzj.1
  Influence Index, code and processed data : github.com/cyrilvoyant/influence-index-bibliometrics · doi:10.5281/zenodo.19706465 · manuscript A Log-Based Influence Index for Evaluating Research Institutions (C. Voyant, J. Baas, R. Boverhof, P. Stringari, M. Marchand-Lasserre, J. P. A. Ioannidis), in submission
- Excellence framework (RTVACOS) : C. Voyant, R. Amaro e Silva, N. Fichaux, L. Menard, S. Cros, R.-E. Mamouri, Beyond Publish and Pray: Engineering Research Excellence , SSRN preprint (2026), doi:10.2139/ssrn.6877118 · the talk, summary and references · the RTVACOS tree: where can your work break?
+ Excellence framework (RTVACOS) : C. Voyant, R. Amaro e Silva, N. Fichaux, L. Menard, S. Cros, R.-E. Mamouri, Beyond Publish and Pray: Engineering Research Excellence , preprint on SSRN (Social Science Research Network) (2026), doi:10.2139/ssrn.6877118 · the talk, summary and references · the RTVACOS tree: where can your work break?
  In French : op-ed in News Tank Éducation & Recherche (3 March 2026) and the post Excellence scientifique à l'ère de l'IA : du SEO au GEO on this site
- Trust is demonstrated : open indicators, published with their limits
 
 ---
 URL: https://www.cyrilvoyant.com/stories/satellite-irradiance/
@@ -4319,17 +4446,17 @@ Les modèles sont dans les données : qualifier, certifier, placer sous licenc
  Sous une licence explicite : sans licence, personne ne sait ce qu'il a le droit de faire.
  Chaque sigle de cette page (FAIR, DOI, NetCDF-CF, OGC, MIT, GPL…) est expliqué dans le glossaire .
  Un exemple : Webservice-Energy
- Webservice-Energy est l'infrastructure de données spatiales du centre O.I.E. (Observation, Impacts, Énergie) de Mines Paris – PSL , développée et opérée depuis près de vingt ans pour l'énergie, l'environnement et l'observation de la Terre, avec une démarche « FAIR dès la conception ». Ses principaux artisans sont Lionel Ménard ( ORCID ) et Raphaël Jolivet ( ORCID ) , tous deux au centre O.I.E. (Observation, Impacts, Énergie) de Mines Paris – PSL (contact : lionel.menard@minesparis.psl.eu , raphael.jolivet@minesparis.psl.eu ).
+ Webservice-Energy est l'infrastructure de données spatiales du centre O.I.E. (Observation, Impacts, Énergie) de Mines Paris – PSL , développée et opérée depuis près de vingt ans pour l'énergie, l'environnement et l'observation de la Terre, avec une démarche « FAIR dès la conception ». Ses principaux artisans sont Lionel Ménard ( ORCID ) , responsable FAIR du centre, et Raphaël Jolivet ( ORCID ) , tous deux au centre O.I.E. (Observation, Impacts, Énergie) de Mines Paris – PSL (contact : lionel.menard@minesparis.psl.eu , raphael.jolivet@minesparis.psl.eu ).
  Trouver : un catalogue de métadonnées ( GeoNetwork , normes ISO 19115/19139, INSPIRE , OGC ) qui référence données, services, publications et logiciels.
  Accéder : un serveur THREDDS ( OPeNDAP , NetCDF Subset Service, WMS), des services cartographiques OGC (WMS, WFS, WCS), des traitements à distance (WPS) et un catalogue STAC en développement.
  Harmoniser les mesures au sol : la bibliothèque ouverte libinsitu met des réseaux de mesure hétérogènes au même format NetCDF-CF , avec leur contrôle qualité.
  Identifier et placer sous licence : des DOI attribués aux jeux de données par DataCite , et une licence CC BY.
  Relier : portail communautaire du Group on Earth Observations (GEO) , données de Copernicus ( CAMS pour l'atmosphère, C3S pour le climat), projets européens Horizon 2020 et Horizon Europe .
  Mon projet est-il FAIR ?
- Une grille d'autoévaluation en 20 questions, cinq par principe FAIR, situe un jeu de données en 3 minutes environ et indique les points à travailler en premier. Elle part de trois exemples préremplis, dont Webservice-Energy ; c'est un outil pédagogique, pas une certification.
+ Une grille d'autoévaluation en 20 questions, cinq par principe FAIR, situe un jeu de données en 3 minutes environ et indique les points à travailler en premier. Elle part de trois exemples préremplis, dont Webservice-Energy ; c'est un outil pédagogique, pas une certification. Grille du centre O.I.E., d'après la démarche FAIR de Lionel Ménard.
  Ouvrir l’autoévaluation FAIR →
  Choisir une licence : le code et les données
- D'après la réflexion menée au centre O.I.E. par Raphaël Jolivet ( ORCID ) . La pratique courante est binaire : tout fermer quand on espère une valorisation commerciale, tout ouvrir (CC BY, MIT, Apache, BSD : des licences libres, qui laissent réutiliser en citant l’auteur) sinon. Elle repose sur une estimation faite trop tôt, et elle bride la diffusion des travaux que l'on croit devoir protéger, alors que c'est souvent leur diffusion qui crée des débouchés. Une voie intermédiaire existe : les licences non commerciales (CC BY-NC pour les données, PolyForm Noncommercial pour le code). Elles ne sont pas « open source » au sens de l'OSI, mais elles restent compatibles avec l'accès ouvert académique et la reproductibilité, tout en gardant possible une valorisation future.
+ D'après la réflexion menée au centre O.I.E. par Raphaël Jolivet ( ORCID ) (contact licences : raphael.jolivet@minesparis.psl.eu ). La pratique courante est binaire : tout fermer quand on espère une valorisation commerciale, tout ouvrir (CC BY, MIT, Apache, BSD : des licences libres, qui laissent réutiliser en citant l’auteur) sinon. Elle repose sur une estimation faite trop tôt, et elle bride la diffusion des travaux que l'on croit devoir protéger, alors que c'est souvent leur diffusion qui crée des débouchés. Une voie intermédiaire existe : les licences non commerciales (CC BY-NC pour les données, PolyForm Noncommercial pour le code). Elles ne sont pas « open source » au sens de l'OSI, mais elles restent compatibles avec l'accès ouvert académique et la reproductibilité, tout en gardant possible une valorisation future.
  Le code et les données ne se placent pas sous les mêmes licences Choix Code (logiciel) Données
  Ouvert MIT , Apache 2.0 , BSD (permissives : réutilisation libre en citant) ; GPL (copyleft : les versions dérivées restent sous GPL) CC BY (réutilisation libre en citant) ; CC0 (sans condition) ; ODbL pour une base de données ; Licence Ouverte Etalab 2.0 pour des données publiques françaises
  Non commercial PolyForm Noncommercial (recherche, enseignement, usage personnel, service public, associations) CC BY-NC
@@ -4382,9 +4509,15 @@ Les modèles sont dans les données : qualifier, certifier, placer sous licenc
 URL: https://www.cyrilvoyant.com/fr/edition-scientifique-confiance/
 
 Édition scientifique : sans vérification, pas de confiance
- Comment rendre la vérification aussi visible que la publication ? Le nombre d'articles indexés a crû d'environ 47 % entre 2016 et 2022 [1] , la relecture repose sur un travail gratuit, et l'IA générative rend le texte plausible presque gratuit. La réponse n'est pas d'ajouter des revues : c'est de vérifier les données et le code de ce qui est publié, avec la même exigence que celle que l'Europe impose désormais aux systèmes d'IA.
+ Comment rendre la vérification aussi visible que la publication ? Le nombre d'articles indexés a crû d'environ 47 % entre 2016 et 2022 [1] , la relecture repose sur un travail gratuit, et l' Intelligence artificielle qui produit du texte, des images ou du code à partir d'une consigne. rend le texte plausible presque gratuit. La réponse n'est pas d'ajouter des revues : c'est de vérifier les données et le code de ce qui est publié, avec la même exigence que celle que l'Europe impose désormais aux systèmes d'IA.
+ En bref
+ Le constat. Environ 47 % d'articles indexés en plus de 2016 à 2022 [1] , plus de 100 millions d'heures de relecture non rémunérée en 2020 [4] , plus de 10 000 rétractations en 2023 [5] .
+ Ce qui existe ouvre l'accès. Principes Findable, Accessible, Interoperable, Reusable : faciles à trouver, accessibles, interopérables, réutilisables. Des principes pour les données, pas une licence. , accès ouvert, droit de dépôt : presque aucun texte ne demande de vérifier qu'un résultat publié se reproduit à partir de ses données et de son code.
+ Le point de comparaison. L' Règlement (UE) 2024/1689 sur l'intelligence artificielle : les obligations dépendent du niveau de risque du système d'IA. impose aux systèmes d'IA à haut risque ce qui manque aux articles : gouvernance des données, documentation, traces, qualité, suivi après la mise sur le marché.
+ Ce qui manque. Vérifier les données et le code, déclarer les outils (IA comprise), suivre l'article après publication, reconnaître le travail d'édition et de relecture.
+ Sur cette page. Qui vérifie quoi, étape par étape  ; les sections détaillées s'ouvrent d'un clic.
  Quatre chiffres, quatre sources
- Articles indexés (Scopus, Web of Science), base 100 en 2016
+ Articles indexés ( Base bibliographique d'Elsevier qui recense articles et citations ; Web of Science, de Clarivate, joue le même rôle. , Web of Science), base 100 en 2016
  Hanson et al. 2024 [1]
  Part des articles publiés par les cinq premiers éditeurs
  Larivière et al. 2015 [2]
@@ -4396,7 +4529,7 @@ URL: https://www.cyrilvoyant.com/fr/edition-scientifique-confiance/
  Aczel et al. 2021 [4]
  Chaque valeur est celle de la source citée ; les barres sont à l'échelle à l'intérieur de chaque carte, pas d'une carte à l'autre.
  De la publication à une preuve vérifiable
- 01 Identifier DOI (identifiant permanent) · auteurs · version
+ 01 Identifier Digital Object Identifier : identifiant pérenne d'un article, d'un jeu de données ou d'une version de logiciel. (identifiant permanent) · auteurs · version
  02 Exécuter Données · code · environnement
  03 Comparer Résultat attendu · tolérance
  04 Discuter Hypothèses · limites · transfert
@@ -4408,24 +4541,27 @@ URL: https://www.cyrilvoyant.com/fr/edition-scientifique-confiance/
  Reproduit Une exécution documentée retrouve un résultat dans une tolérance fixée. Les hypothèses et la méthode sont-elles adaptées ?
  Validé pour un usage Des critères scientifiques et un domaine d’application ont été examinés. Que se passe-t-il hors de ce domaine ?
  Relier les pratiques, sans confondre leurs objectifs
+ Lire
  FAIR (trouvable, accessible, interopérable, réutilisable) organise la découverte et la réutilisation ; les licences définissent les permissions ; la reproductibilité permet de vérifier un calcul ; l’AI Act (le règlement européen sur l’IA) encadre des usages précis de l’IA. RTVACOS (rigueur, transparence, visibilité, adoption, collaboration, diffusion, pertinence sociétale) situe ce travail dans une réflexion sur l’excellence scientifique. Aucun de ces cadres ne remplace les autres.
  Le constat mondial : trop d'articles, pas assez de vérification
  Un volume qui dépasse les chercheurs. Les articles indexés dans Scopus et Web of Science ont augmenté d'environ 47 % de 2016 à 2022, plus vite que le nombre de scientifiques ; une part de cette croissance vient de numéros spéciaux aux délais de relecture raccourcis [1] .
  Un marché concentré. Cinq éditeurs publiaient plus de la moitié des articles dès 2013 [2] ; le groupe qui possède le premier d'entre eux affiche une marge opérationnelle ajustée de 34,8 % en 2025 [3] .
  Un travail invisible. Les relecteurs ont donné plus de 100 millions d'heures en 2020 [4] , sans rémunération et presque sans reconnaissance.
- Une confiance entamée. Plus de 10 000 articles ont été rétractés en 2023, dont plus de 8 000 dans les revues d'un seul éditeur, surtout dans des numéros spéciaux exploités par des fabriques d'articles [5] .
+ Une confiance entamée. Plus de 10 000 articles ont été rétractés en 2023, dont plus de 8 000 dans les revues d'un seul éditeur, surtout dans des numéros spéciaux exploités par des Organisations qui vendent des articles fabriqués ou falsifiés, souvent glissés dans des numéros spéciaux. [5] .
  L'IA, interdite plutôt qu'encadrée. Les règles portent sur ce qu'il ne faut pas faire, par exemple l'interdiction de l'IA générative dans l'évaluation des projets aux États-Unis [6] , rarement sur ce qu'il faut montrer.
  Ce qui existe déjà
+ Lire
  Échelle Ce qui existe Ce que cela couvre
- International Principes FAIR [8] ; mémo de l'OSTP [7] Données trouvables et réutilisables ; accès immédiat aux articles et aux données des recherches financées par l'État fédéral américain.
- International JOSS [9] , CODECHECK [10] , ReScience C [11] , SoftwareX [20] Relecture ouverte du logiciel ; exécution indépendante du code d'un article ; réplications publiées ; articles de logiciel et crédit aux développeurs (SoftwareX). Ces dispositifs n’offrent pas la même forme de vérification.
- Europe Conclusions du Conseil de mai 2023 [12] ; plan d'action pour l'accès ouvert diamant [13] ; Open Research Europe [14] Accès ouvert immédiat comme norme pour la recherche publique ; édition sans frais pour les auteurs et les lecteurs.
- Europe CoARA [15] Réforme de l'évaluation : reconnaître d'autres contributions que le nombre d'articles, dont la relecture.
+ International Principes FAIR [8] ; mémo de l' Office of Science and Technology Policy : le bureau de la Maison-Blanche chargé de la politique scientifique des États-Unis. [7] Données trouvables et réutilisables ; accès immédiat aux articles et aux données des recherches financées par l'État fédéral américain.
+ International Journal of Open Source Software : revue qui relit ouvertement, sur GitHub, des logiciels de recherche. [9] , Un tiers exécute le code d'un article et certifie que les figures et tableaux annoncés sont régénérés ; il ne juge pas la validité scientifique. [10] , Revue qui publie des réplications de travaux de calcul. [11] , Revue qui publie des articles décrivant des logiciels de recherche, avec crédit aux développeurs. [20] Relecture ouverte du logiciel ; exécution indépendante du code d'un article ; réplications publiées ; articles de logiciel et crédit aux développeurs (SoftwareX). Ces dispositifs n’offrent pas la même forme de vérification.
+ Europe Conclusions du Conseil de mai 2023 [12] ; plan d'action pour l' Revues gratuites pour les auteurs comme pour les lecteurs, financées par des institutions. [13] ; Plateforme de publication en accès ouvert de la Commission européenne. [14] Accès ouvert immédiat comme norme pour la recherche publique ; édition sans frais pour les auteurs et les lecteurs.
+ Europe Coalition for Advancing Research Assessment : coalition européenne pour réformer l'évaluation de la recherche, en reconnaissant la diversité des contributions, pas seulement le nombre d'articles. [15] Réforme de l'évaluation : reconnaître d'autres contributions que le nombre d'articles, dont la relecture.
  Europe AI Act [16] Pour les systèmes d'IA à haut risque : données, documentation, traces, qualité, suivi après la mise sur le marché.
  France Loi pour une République numérique, art. 30 [17] Droit de déposer le manuscrit accepté en accès ouvert après 6 mois (12 mois en sciences humaines et sociales).
- France Plan national pour la science ouverte [18] ; HAL ; Software Heritage [19] Objectif de 100 % d'articles en accès ouvert en 2030 ; ouverture des codes sources de la recherche ; archivage du code.
+ France Plan national pour la science ouverte [18] ; Archive ouverte française où les chercheurs déposent leurs publications. ; Archive universelle du code source des logiciels. [19] Objectif de 100 % d'articles en accès ouvert en 2030 ; ouverture des codes sources de la recherche ; archivage du code.
  Ces textes ouvrent l' accès . Presque aucun ne demande de vérifier qu'un résultat publié se reproduit à partir de ses données et de son code.
  Qui vérifie quoi ? Les acteurs, et ce que chaque dispositif est conçu pour couvrir
+ Lire
  Relecture classique FAIR et entrepôts Licences JOSS, SoftwareX CODECHECK ReScience C AI Act (systèmes d'IA) CoARA
  Qui vérifie ? Relecteurs et éditeur de la revue Entrepôt et curateurs de données Personne : l'auteur déclare Relecteurs de la revue logicielle Un vérificateur indépendant Une autre équipe, puis des relecteurs Le fournisseur, souvent par autoévaluation, sous le contrôle des autorités de surveillance du marché Les institutions qui évaluent
  Texte et raisonnement ● · · ◐ · ◐ · ·
@@ -4439,10 +4575,96 @@ URL: https://www.cyrilvoyant.com/fr/edition-scientifique-confiance/
  Reconnaissance du travail de vérification · · · · · · · ●
  ● conçu pour · ◐ en partie, selon la revue ou le dépôt · · pas son objet
  Lecture : chaque colonne indique l'objet du dispositif d'après ses propres textes, pas la qualité de son application. Les lignes surlignées n'ont qu'un dispositif, ou aucun, dont ce soit l'objet. L'AI Act couvre les systèmes d'IA à haut risque, pas les articles : il sert ici de point de comparaison. C'est notre lecture, discutable ligne par ligne.
+ Pas à pas : qui vérifie quoi dans la vie d'un article ?
+ Choisissez une étape. Pour chacune : ce qui existe, qui vérifie, ce qui reste à couvrir. Tout vient des sources de cette page et du tableau ci-dessus ; flèches du clavier pour passer d'une étape à l'autre.
+ 1 Écrire, avec des outils (IA comprise)
+ Ce qui existe
+ Des règles qui disent surtout ce qu'il ne faut pas faire : par exemple, l'IA générative est interdite dans l'évaluation des projets aux États-Unis [6] .
+ Pour comparaison, l'AI Act demande documentation technique et journalisation aux systèmes d'IA à haut risque (art. 11 et 12), pas aux articles [16] .
+ Qui vérifie ?
+ En partie les relecteurs et l'éditeur de la revue ; aucun dispositif du tableau n'est conçu pour les articles.
+ Ce qui reste à couvrir
+ Afficher les outils utilisés, IA comprise : ni interdiction ni silence, une déclaration de ce qui a servi, à quoi, et ce qui a été vérifié par un humain.
+ Dans le tableau « Qui vérifie quoi ? »
+ Usage déclaré des outils, IA comprise (ligne surlignée : un dispositif, ou aucun, conçu pour cela) ● AI Act (systèmes d'IA) ◐ Relecture classique
+ Pour aller plus loin : L'IA dans la recherche : déclarer ses outils
+ 2 Soumettre et faire relire
+ Ce qui existe
+ La relecture classique juge le texte et le raisonnement.
+ JOSS relit ouvertement le logiciel, sur GitHub [9] .
+ Le contexte : environ 47 % d'articles indexés en plus de 2016 à 2022, plus vite que le nombre de scientifiques, dont une part dans des numéros spéciaux aux délais de relecture raccourcis [1]  ; plus de 100 millions d'heures de relecture données en 2020, sans rémunération [4] .
+ Qui vérifie ?
+ Relecteurs et éditeur de la revue ; relecteurs de la revue logicielle pour le code.
+ Ce qui reste à couvrir
+ Réexécuter le calcul n'est pas l'objet de la relecture classique : vérifier les données et le code de chaque article qui en dépend reste à faire.
+ Dans le tableau « Qui vérifie quoi ? »
+ Texte et raisonnement (ligne surlignée : un dispositif, ou aucun, conçu pour cela) ● Relecture classique ◐ JOSS, SoftwareX ◐ ReScience C
+ Code (qualité, documentation) ● JOSS, SoftwareX ● AI Act (systèmes d'IA) ◐ CODECHECK ◐ ReScience C
+ Pour aller plus loin : De la publication à une preuve vérifiable
+ 3 Vérifier le calcul
+ Ce qui existe
+ CODECHECK : un tiers exécute le code d'un article et certifie que les figures et tableaux annoncés sont régénérés ; il ne juge pas la validité scientifique [10] .
+ ReScience C publie des réplications [11] .
+ Qui vérifie ?
+ Un vérificateur indépendant (CODECHECK) ; une autre équipe, puis des relecteurs (ReScience C).
+ Ce qui reste à couvrir
+ Presque aucun texte ne demande de vérifier qu'un résultat publié se reproduit. Il manque une exigence de traçabilité : versions figées, environnement documenté, exécution indépendante, traces conservées.
+ Dans le tableau « Qui vérifie quoi ? »
+ Réexécution du calcul ● CODECHECK ● ReScience C ◐ JOSS, SoftwareX
+ Résultat retrouvé par d'autres (ligne surlignée : un dispositif, ou aucun, conçu pour cela) ● ReScience C ◐ CODECHECK
+ Pour aller plus loin : Accessible, exécutable, reproduit : les niveaux de preuve
+ 4 Publier et donner accès
+ Ce qui existe
+ États-Unis : accès immédiat aux articles et aux données des recherches financées par l'État fédéral [7] .
+ Europe : l'accès ouvert immédiat comme norme pour la recherche publique [12]  ; édition sans frais pour les auteurs et les lecteurs [13] [14] .
+ France : droit de déposer le manuscrit accepté en accès ouvert après 6 mois (12 mois en sciences humaines et sociales) [17]  ; objectif de 100 % d'articles en accès ouvert en 2030 [18] .
+ Qui vérifie ?
+ Ces textes portent sur l'accès, pas sur la vérification.
+ Ce qui reste à couvrir
+ Presque aucun de ces textes ne demande de vérifier qu'un résultat publié se reproduit à partir de ses données et de son code.
+ Pour aller plus loin : Citer et réutiliser : créditer les équipes et les versions
+ 5 Réutiliser les données et le code
+ Ce qui existe
+ Principes FAIR : des données faciles à trouver, accessibles, interopérables et réutilisables [8]  ; des principes, pas une licence.
+ Licences : elles définissent les permissions de réutilisation.
+ Software Heritage archive le code [19]  ; SoftwareX publie des articles de logiciel et crédite les développeurs [20] .
+ Qui vérifie ?
+ L'entrepôt et les curateurs de données ; pour les licences, personne : l'auteur déclare.
+ Ce qui reste à couvrir
+ Relier les cadres : licences du code, données FAIR et AI Act parlent de la même chose, la traçabilité, mais ne se citent pas.
+ Dans le tableau « Qui vérifie quoi ? »
+ Données (trouver, réutiliser) ● FAIR et entrepôts ● AI Act (systèmes d'IA) ◐ Relecture classique ◐ CODECHECK ◐ ReScience C
+ Permissions de réutilisation (ligne surlignée : un dispositif, ou aucun, conçu pour cela) ● Licences ◐ FAIR et entrepôts ◐ JOSS, SoftwareX
+ Pour aller plus loin : Données : choisir une licence · Autoévaluation FAIR en 20 questions
+ 6 Suivre l'article après publication
+ Ce qui existe
+ La rétractation : retrait officiel d'un article pour erreur grave ou fraude ; l'article reste visible, marqué comme rétracté.
+ Plus de 10 000 articles rétractés en 2023, dont plus de 8 000 dans les revues d'un seul éditeur, surtout dans des numéros spéciaux exploités par des fabriques d'articles [5] .
+ Pour comparaison, l'AI Act impose aux systèmes d'IA à haut risque une surveillance après la mise sur le marché (art. 72) [16] .
+ Qui vérifie ?
+ En partie la revue et l'entrepôt, selon le lieu de publication.
+ Ce qui reste à couvrir
+ Suivre l'article comme on surveille un système déployé : versions, errata, signalements, liens vers les jeux de données corrigés.
+ Dans le tableau « Qui vérifie quoi ? »
+ Suivi après publication (ligne surlignée : un dispositif, ou aucun, conçu pour cela) ● AI Act (systèmes d'IA) ◐ Relecture classique ◐ FAIR et entrepôts
+ Pour aller plus loin : Excellence scientifique : l'arbre RTVACOS
+ 7 Évaluer les chercheurs
+ Ce qui existe
+ CoARA : réformer l'évaluation pour reconnaître d'autres contributions que le nombre d'articles, dont la relecture [15] .
+ Le travail à reconnaître : plus de 100 millions d'heures de relecture en 2020 [4] .
+ Qui vérifie ?
+ Les institutions qui évaluent.
+ Ce qui reste à couvrir
+ En France, éditer une revue, relire, vérifier un code restent presque absents de l'évaluation des carrières, qui compte d'abord les articles.
+ Dans le tableau « Qui vérifie quoi ? »
+ Reconnaissance du travail de vérification (ligne surlignée : un dispositif, ou aucun, conçu pour cela) ● CoARA
+ Pour aller plus loin : Excellence scientifique : l'arbre RTVACOS
  L’AI Act comme point de comparaison, pas comme règlement des articles
- L'AI Act demande aux fournisseurs de systèmes d'IA à haut risque une gouvernance des données d'entraînement, de validation et de test (art. 10), une documentation technique (art. 11), la journalisation des événements (art. 12), un système de gestion de la qualité (art. 17) et une surveillance après la mise sur le marché (art. 72) [16] . Ces obligations recoupent certaines pratiques MLOps (exploiter et surveiller des modèles d’apprentissage en production), sans se confondre avec elles. Un article scientifique, qui peut fonder une décision médicale ou énergétique, relève de règles éditoriales, scientifiques et, selon le domaine, réglementaires différentes : elles ne garantissent pas une réexécution indépendante du code.
+ Lire
+ L'AI Act demande aux fournisseurs de systèmes d'IA à haut risque une gouvernance des données d'entraînement, de validation et de test (art. 10), une documentation technique (art. 11), la journalisation des événements (art. 12), un système de gestion de la qualité (art. 17) et une surveillance après la mise sur le marché (art. 72) [16] . Ces obligations recoupent certaines pratiques Machine Learning Operations : pratiques d'ingénierie pour versionner, tracer, déployer et surveiller des modèles d'apprentissage. (exploiter et surveiller des modèles d’apprentissage en production), sans se confondre avec elles. Un article scientifique, qui peut fonder une décision médicale ou énergétique, relève de règles éditoriales, scientifiques et, selon le domaine, réglementaires différentes : elles ne garantissent pas une réexécution indépendante du code.
  Le texte exclut par ailleurs l'IA développée pour la seule recherche (art. 2, § 6). Un fossé peut se creuser : les équipes européennes portent le coût de la conformité dès qu'elles déploient, celles des pays hors du règlement non. L'AI Act reste pourtant essentiel : il contribue à un cadre qui exige une traçabilité continue de la donnée au résultat. La bonne réponse n'est pas de l'alléger, mais d'en appliquer l'esprit à la publication.
  En France : un travail d'éditeur qui ne compte pas
+ Lire
  La France a l'un des cadres juridiques les plus favorables à l'accès ouvert d'Europe : droit de dépôt d'ordre public, HAL, Software Heritage, un plan national qui inclut les codes sources [17] [18] . Mais éditer une revue, relire, vérifier un code restent presque absents de l'évaluation des carrières, qui compte d'abord les articles. Le travail qui garantit la qualité est celui qui rapporte le moins ; il devient difficile de trouver des éditeurs et des relecteurs, et l'on laisse à d'autres le pilotage des revues de référence.
  Ce qui manque
  Vérifier les données et le code de chaque article qui en dépend, avec une exigence de traçabilité comparable à celle que l'AI Act demande aux systèmes d'IA : versions figées, environnement documenté, exécution indépendante, traces conservées.
@@ -4454,6 +4676,7 @@ URL: https://www.cyrilvoyant.com/fr/edition-scientifique-confiance/
  Sans vérification, pas de confiance
  Quand un calcul ne peut pas être réexécuté, sa vérification indépendante reste limitée : il faut expliquer pourquoi et fournir les éléments contrôlables. Les outils pour vérifier existent, l'IA comprise ; ce qui manque, c'est de les rendre normaux, et de reconnaître ceux qui font ce travail.
  Glossaire
+ Lire
  Accès ouvert diamant
  Revues gratuites pour les auteurs comme pour les lecteurs, financées par des institutions.
  APC (Article Processing Charge)
@@ -4484,6 +4707,7 @@ URL: https://www.cyrilvoyant.com/fr/edition-scientifique-confiance/
  Faut-il créer de nouvelles revues ?
  Pas forcément. Le manque est dans la vérification et dans la reconnaissance du travail d'édition, pas dans le nombre de titres.
  Sources
+ Lire
  Hanson, Gómez Barreiro, Crosetto, Brockington (2024). The strain on scientific publishing. Quantitative Science Studies 5(4). doi.org/10.1162/qss_a_00327
  Larivière, Haustein, Mongeon (2015). The oligopoly of academic publishers in the digital era. PLoS ONE 10(6). doi.org/10.1371/journal.pone.0127502
  RELX (2026). RELX 2025 results. www.relx.com/media/press-releases/year-2026/relx-2025-result
@@ -4871,7 +5095,7 @@ Cyril Voyant
  Sept sorties, six ans de données : ce que montre MIMO-ELM , Un seul ELM (machine à apprentissage extrême, modèle neuronal frugal) à plusieurs sorties (MIMO) prévoit tout le mix électrique corse.
  Prévision satellite : une maille ou tout le champ ? , Un ELM par maille (une case de la carte satellite ; machine à apprentissage extrême, modèle neuronal frugal) bat le même ELM lisant tout le champ, avec mille fois moins de paramètres.
  Au modèle de langage la lecture, au code validé le calcul , Exécuter, clarifier ou refuser : jamais deviner.
- Se questionner sur nos façons de faire de la recherche , Avec J. P. A. Ioannidis (Stanford), J. Baas et R. Boverhof (Elsevier) : l'influence sur une échelle de doublement, l'impact à côté de l'intégrité, l'excellence comme système.
+ Se questionner sur nos façons de faire de la recherche , Par où commencer sur l'évaluation, l'édition, l'IA et les données : l'arbre RTVACOS, l'autoévaluation FAIR, et les travaux avec J. P. A. Ioannidis (Stanford), J. Baas et R. Boverhof (Elsevier) sur l'influence et l'intégrité.
  L'IA dans la recherche : AI Act, charte et boîte à outils , Le règlement européen sur l'IA (AI Act) exclut la recherche sous conditions, pas les transferts : calendrier, responsabilités, et dix outils pour un laboratoire.
  Même nRMSE, modèles différents : ce que révèle NICE , À nRMSE égale (racine de l’erreur quadratique moyenne rapportée à la moyenne des observations), NICE divise les erreurs d'un modèle par celles de la persistance, qui répète la dernière valeur : un modèle utile se situe entre 0 et 1.
  Une prévision décalée peut rester exploitable : le test gamma , L’indice γ (test gamma) : un test à tolérances venu de la radiothérapie, qui accepte de petits décalages en espace, en temps et en intensité.
@@ -5008,7 +5232,7 @@ Le fil : cinq étapes, une même démarche
  Juger contre une référence, publier code, données et limites, rendre la recherche trouvable et réutilisable.
  Les récits de cette étape
  Démontrer la confiance · Pratique de la recherche Se questionner sur nos façons de faire de la recherche
- Avec J. P. A. Ioannidis (Stanford), J. Baas et R. Boverhof (Elsevier) : l'influence sur une échelle de doublement, l'impact à côté de l'intégrité, l'excellence comme système.
+ Par où commencer sur l'évaluation, l'édition, l'IA et les données : l'arbre RTVACOS, l'autoévaluation FAIR, et les travaux avec J. P. A. Ioannidis (Stanford), J. Baas et R. Boverhof (Elsevier) sur l'influence et l'intégrité.
  Démontrer la confiance · Pratique de la recherche L'IA dans la recherche : AI Act, charte et boîte à outils
  Le règlement européen sur l'IA (AI Act) exclut la recherche sous conditions, pas les transferts : calendrier, responsabilités, et dix outils pour un laboratoire.
  Démontrer la confiance · Énergie Même nRMSE, modèles différents : ce que révèle NICE
@@ -5481,34 +5705,58 @@ URL: https://www.cyrilvoyant.com/fr/recits/questioning-research/
 
 Se questionner sur nos façons de faire de la recherche : influence, intégrité, excellence
  Étape 5 sur 5 · Démontrer la confiance Le voir sur le fil Juger contre une référence, publier code, données et limites, rendre la recherche trouvable et réutilisable. La confiance se démontre.
- Dans un monde en pleine mutation, la recherche doit aussi examiner ses propres méthodes. La même démarche s'applique : comparer à une référence explicite, regarder ce qu'un nombre unique cache, et énoncer les limites.
- Qui a fait quoi. La cartographie mondiale des institutions : John P. A. Ioannidis (Meta-Research Innovation Center at Stanford, université Stanford), Jeroen Baas et Roy Boverhof (Elsevier, Amsterdam), avec Cyril Voyant (Mines Paris – PSL, centre O.I.E.). L'indice d'influence : Cyril Voyant , Jeroen Baas , Roy Boverhof , Paolo Stringari , Mathilde Marchand-Lasserre et John P. A. Ioannidis . Le cadre sur l'excellence : Cyril Voyant , Rodrigo Amaro e Silva , Nicolas Fichaux , Lionel Menard , Sylvain Cros et Rodanthi-Elisavet Mamouri .
- En bref
- Compter les chercheurs très cités mélange taille et concentration. Une part rapportée à une référence neutre de 2 % , sur une échelle de doublement, dit à quel point l'influence est concentrée, indépendamment de la taille d'un établissement.
- L'impact seul ne suffit pas : une cartographie mondiale des institutions, par J. P. A. Ioannidis (Stanford), J. Baas et R. Boverhof (Elsevier) et C. Voyant, dans Royal Society Open Science (2026), le place à côté d' indicateurs d'intégrité  : rétractations, autocitation extrême, publication dans des revues retirées.
- Publier ne suffit plus non plus : dans un système saturé, la recherche doit être trouvée, jugée crédible et réutilisée . RTVACOS réunit rigueur, transparence, visibilité, adoption, collaboration, ouverture et signification sociétale : un cadre de réflexion, pas un score d'excellence mesuré.
- Le constat
- Les outils qui servent à juger la recherche méritent le même examen que les modèles qui prévoient le soleil ou calculent une dose. Un indicateur de volume récompense la taille ; un score unique masque les problèmes d'intégrité ; un bon article que personne ne trouve n'a pas d'impact. Chacune de ces questions reçoit la même réponse qu'ailleurs dans ce travail : une référence explicite, plusieurs mesures complémentaires, et des limites énoncées.
- La question
- Comment un établissement, un financeur ou un chercheur doit-il lire la performance de la recherche, quand la production ne cesse de croître et que les outils d'écriture par IA l'accélèrent encore ? Quels indicateurs mesurent vraiment ce que l'on croit ?
- La théorie, en clair
- L'influence, indépendamment de la taille. Les listes Top 2 % de Stanford et Elsevier réunissent les 2 % de scientifiques les plus cités. Avec X auteurs d'un établissement dans ces listes parmi ses N auteurs éligibles (ceux retenus dans l'analyse principale du jeu de données), la part est p = X/N . On la compare à la part attendue par construction de ces listes, p₀ = 0,02  :
+ Comment la recherche est-elle jugée, publiée, partagée et réutilisée, et comment mieux faire ? Cette page est un point de départ : chaque carte pose une question et mène à la page qui y répond en détail, qu'il s'agisse d'un outil interactif, d'un essai ou d'un guide. La démarche est la même que partout sur ce site : une référence explicite, plusieurs mesures complémentaires et des limites énoncées.
+ Qui a fait quoi. La cartographie mondiale des institutions : John P. A. Ioannidis (Meta-Research Innovation Center at Stanford, université Stanford), Jeroen Baas et Roy Boverhof (Elsevier, Amsterdam), avec Cyril Voyant (Mines Paris – PSL, centre Observation, impacts, énergie, O.I.E.). L'indice d'influence : Cyril Voyant , Jeroen Baas , Roy Boverhof , Paolo Stringari , Mathilde Marchand-Lasserre et John P. A. Ioannidis . Le cadre sur l'excellence : Cyril Voyant , Rodrigo Amaro e Silva , Nicolas Fichaux , Lionel Menard , Sylvain Cros et Rodanthi-Elisavet Mamouri .
+ La question. Comment un établissement, un financeur ou un chercheur doit-il lire la performance de la recherche, quand la production ne cesse de croître et que les outils d'écriture par IA l'accélèrent encore ? Un indicateur de volume récompense la taille ; un score unique masque les problèmes d'intégrité ; un bon article que personne ne trouve n'a pas d'impact.
+ RTVACOS : où votre travail peut-il casser ?
+ Une recherche n'a d'effet que si elle est trouvée, jugée crédible et réutilisée. RTVACOS réunit sept critères : rigueur, transparence, visibilité, adoption, collaboration, ouverture et signification sociétale. Les quatre premiers sont des fondations : une faiblesse de l'un peut compromettre l'ensemble. Les trois derniers sont des amplificateurs : ils renforcent un socle solide sans pouvoir le remplacer. L'arbre interactif permet de cocher ce que votre projet fait déjà et de voir où il est fragile.
+ Ouvrir l'arbre RTVACOS (outil interactif) Renforcer chaque fondation La conférence, le résumé et les références (en anglais)
+ Schématiquement, E ∝ (R × T × V × A) × (1 + C + O + S)  : E désigne l'excellence discutée, chaque lettre un critère, et le signe ∝ (« proportionnel à ») exprime une relation conceptuelle, pas une équation calibrée. RTVACOS est une grille de réflexion, pas un instrument de notation, et ne revendique aucune validation empirique.
+ Les questions, et où aller ensuite
+ Essai Peut-on faire confiance à ce qui est publié ?
+ Trop d'articles, relecture gratuite, rétractations, IA générative : ce qui existe déjà, qui vérifie quoi, et comment la vérification des données et du code pourrait devenir aussi visible que la publication.
+ Lire : édition scientifique et confiance →
+ Guide Que change l'IA pour un laboratoire ?
+ L'AI Act, le règlement européen sur l'intelligence artificielle, en clair : son calendrier, qui est responsable quand un code de recherche devient un produit, une charte de laboratoire et une boîte à outils.
+ Lire : l'IA dans la recherche →
+ Outil interactif Mes données sont-elles FAIR ?
+ FAIR signifie trouvables, accessibles, interopérables et réutilisables. Vingt questions, un score sur 20 et les priorités à traiter.
+ Faire l'autoévaluation FAIR →
+ Guide Comment qualifier les données et choisir leur licence ?
+ Un modèle n'apprend que ce que contiennent ses données : les règles de base, un exemple (Webservice-Energy) et le choix d'une licence pour le code et les données.
+ Lire : les modèles sont dans les données → · choisir une licence
+ Guide Comment citer et réutiliser ces travaux ?
+ La licence de chaque type de travail (articles, logiciels, cours, données, textes) et des modèles de citation à copier.
+ Citer et réutiliser →
+ Sur cette page Comment comparer des établissements sans récompenser la taille ?
+ L'indice d'influence rapporte la part d'auteurs très cités d'un établissement à une référence neutre de 2 %, sur une échelle de doublement.
+ L'indice d'influence ↓
+ Sur cette page · article L'impact suffit-il ?
+ Une cartographie mondiale des institutions, publiée dans Royal Society Open Science (2026), lit l'impact à côté d'indicateurs d'intégrité.
+ Impact et intégrité ↓
+ Billet et tribune Publier suffit-il encore ?
+ Dans un système saturé, la recherche doit être trouvée, jugée crédible et réutilisée : du SEO (optimisation pour les moteurs de recherche) au GEO (optimisation pour les moteurs génératifs, c'est-à-dire être trouvé dans les réponses des assistants d'IA).
+ Lire le billet → · tribune dans News Tank Éducation & ; Recherche (3 mars 2026)
+ Essai Pourquoi juger chaque résultat contre une référence ?
+ La démarche de ce site : la confiance se démontre, avec des indicateurs, du code et des données ouverts, publiés avec leurs limites.
+ Lire : l'approche →
+ L'influence, indépendamment de la taille
+ Les listes Top 2 % de Stanford et Elsevier réunissent les 2 % de scientifiques les plus cités. Avec X auteurs d'un établissement dans ces listes parmi ses N auteurs éligibles (ceux retenus dans l'analyse principale du jeu de données), la part est p = X/N . On la compare à la part attendue par construction de ces listes, p₀ = 0,02  :
  I = log₂(p / p₀)
  Ici, I est l'indice d'influence (sans unité) et log₂ le logarithme en base deux : une unité de plus correspond à un doublement. I = 0 correspond à la référence, I = +1 au double, I = −1 à la moitié. L'échelle est symétrique et ne dépend ni de la taille de l'établissement ni des performances des autres. L'idée est la même que comparer une prévision à la persistance , la référence qui recopie la dernière valeur connue : un score n'a de sens que rapporté à une référence énoncée.
- Impact et intégrité, côte à côte. La cartographie publiée dans Royal Society Open Science (2026) ajoute trois indicateurs de problèmes possibles d'intégrité : les signatures d'articles rétractés pour des raisons autres que des erreurs d'éditeur, et les parts d'auteurs très cités ayant une autocitation extrême ou beaucoup de publications dans des titres retirés de Scopus, la base bibliographique.
- L'excellence comme système. RTVACOS représente schématiquement l'excellence par E ∝ (R × T × V × A) × (1 + C + O + S) . Ici, E désigne l'excellence discutée ; le signe de proportionnalité ∝ exprime une relation conceptuelle, pas une équation calibrée. Les quatre fondations sont la rigueur ( R ), la transparence ( T ), la visibilité ( V ) et l'adoption ( A ) : une faiblesse de l'une peut compromettre l'ensemble. Les trois amplificateurs sont la collaboration ( C ), l'ouverture ( O ) et la signification sociétale ( S ) ; ils renforcent un socle solide sans pouvoir le remplacer.
- L'exemple en chiffres
  L'indice d'influence sur une échelle de doublement : 1 % donne −1, 2 % donne 0, 4 % donne +1, 8 % donne +2
- Un établissement dont 4 % des auteurs éligibles figurent dans les listes Top 2 % a I = +1  : le double de la référence. Un établissement à 1 % a I = −1 . Ces parts sont illustratives.
+ Un établissement dont 4 % des auteurs éligibles figurent dans les listes Top 2 % a I = +1  : le double de la référence. Un établissement à 1 % a I = −1 . Ces parts sont illustratives. L'application de l'indice d'influence aux universités françaises fait l'objet d'un manuscrit en cours de soumission ( Scientometrics ) ; ses résultats seront présentés une fois publiés. Le code et les données traitées sont ouverts (voir les sources ci-dessous).
+ Impact et intégrité, côte à côte
+ L'impact seul ne suffit pas. La cartographie mondiale des institutions publiée dans Royal Society Open Science (2026) ajoute trois indicateurs indirects de problèmes possibles d'intégrité : les signatures d'articles rétractés pour des raisons autres que des erreurs d'éditeur, et les parts d'auteurs très cités ayant une autocitation extrême ou beaucoup de publications dans des titres retirés de Scopus, la base bibliographique. Ses jeux de données ouverts permettent à chacun de refaire l'analyse.
  Des indicateurs à examiner, pas des jugements
- Apports  : des indicateurs qui séparent taille et concentration ; l'impact lu avec l'intégrité ; des jeux de données ouverts qui permettent à chacun de refaire l'analyse ; un cadre de réflexion pour les chercheurs et les établissements sur la rigueur, la transparence, la visibilité et l'adoption.
- Limites  : les indicateurs fondés sur les citations sont des approximations, pas des jugements sur des personnes ou sur la qualité ; les indicateurs d'intégrité signalent des situations à examiner, pas des fautes. RTVACOS est une grille de réflexion, pas un instrument de notation, et ne revendique aucune validation empirique. L'application de l'indice d'influence aux universités françaises fait l'objet d'un manuscrit en cours de soumission ( Scientometrics ) ; ses résultats seront présentés une fois publiés.
- Pour aller plus loin
+ Apports  : des indicateurs qui séparent taille et concentration ; l'impact lu avec l'intégrité ; des données et du code ouverts ; un cadre de réflexion sur la rigueur, la transparence, la visibilité et l'adoption.
+ Limites  : les indicateurs fondés sur les citations sont des approximations, pas des jugements sur des personnes ou sur la qualité ; les indicateurs d'intégrité signalent des situations à examiner, pas des fautes. RTVACOS est une grille de réflexion, pas un instrument de notation.
+ Sources
+ DOI : identifiant numérique d'objet (digital object identifier), un lien permanent vers une publication ou un jeu de données.
  Article  : J. P. A. Ioannidis, J. Baas, R. Boverhof, C. Voyant, Science-wide mapping of institutions based on affiliated authors' impact and research integrity proxies, Royal Society Open Science 13, 260870 (2026), doi :10.1098/rsos.260870 (accès ouvert) · préprint doi :10.64898/2025.12.16.694665 · données doi :10.17632/jn5j7gjpzj.1
  Indice d'influence, code et données traitées  : github.com/cyrilvoyant/influence-index-bibliometrics · doi :10.5281/zenodo.19706465 · manuscrit A Log-Based Influence Index for Evaluating Research Institutions (C. Voyant, J. Baas, R. Boverhof, P. Stringari, M. Marchand-Lasserre, J. P. A. Ioannidis), en cours de soumission
- Cadre sur l'excellence (RTVACOS)  : C. Voyant, R. Amaro e Silva, N. Fichaux, L. Menard, S. Cros, R.-E. Mamouri, Beyond Publish and Pray : Engineering Research Excellence , préprint SSRN (2026), doi :10.2139/ssrn.6877118 · la conférence, le résumé et les références (en anglais) · l'arbre RTVACOS : où votre travail peut-il casser ?
+ Cadre sur l'excellence (RTVACOS)  : C. Voyant, R. Amaro e Silva, N. Fichaux, L. Menard, S. Cros, R.-E. Mamouri, Beyond Publish and Pray : Engineering Research Excellence , préprint sur SSRN (Social Science Research Network, serveur de préprints) (2026), doi :10.2139/ssrn.6877118 · la conférence, le résumé et les références (en anglais) · l'arbre RTVACOS : où votre travail peut-il casser ?
  En français  : tribune dans News Tank Éducation & Recherche (3 mars 2026) et le billet Excellence scientifique à l'ère de l'IA : du SEO au GEO sur ce site
- La confiance se démontre  : des indicateurs ouverts, publiés avec leurs limites
 
 ---
 URL: https://www.cyrilvoyant.com/fr/recits/reference-prevision-solaire-deep-learning/
@@ -7514,7 +7762,7 @@ The thread: five steps, one way of working
  Judge against a reference, publish code, data and limits, make research findable and reusable.
  Stories of this step
  Demonstrate trust · Research practice Questioning how we do research: influence, integrity, excellence
- With J. P. A. Ioannidis (Stanford), J. Baas and R. Boverhof (Elsevier): influence on a doubling scale, impact next to integrity, excellence as a system.
+ Where to start on research assessment, publishing, AI and data: the RTVACOS tree, the FAIR self-assessment, and work with J. P. A. Ioannidis (Stanford), J. Baas and R. Boverhof (Elsevier) on influence and integrity.
  Demonstrate trust · Research practice AI in research: the AI Act, a lab charter and a toolbox
  The EU AI Act excludes research under conditions, not transfers: timeline, who is responsible, and ten tools for a lab.
  Demonstrate trust · Energy When RMSE hides a difference

@@ -395,7 +395,7 @@
  ],
  "concepts": [],
  "extraction": {
-  "source_hash": "edb69c49885fc5ac",
+  "source_hash": "4c4822db787e25c3",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#cx"

@@ -494,7 +494,7 @@
   "normal-distribution"
  ],
  "extraction": {
-  "source_hash": "b930d46733b822ac",
+  "source_hash": "55406abe0823fbf2",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#experience"

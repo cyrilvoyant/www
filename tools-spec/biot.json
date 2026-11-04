@@ -490,7 +490,7 @@
   "biot-number"
  ],
  "extraction": {
-  "source_hash": "2672e9c804797e46",
+  "source_hash": "3b1d2477c8470370",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#experience"

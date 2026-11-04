@@ -135,6 +135,10 @@
       "citations": [],
       "sections": [
         {
+          "title": "The RTVACOS tree: where can my work break?",
+          "anchor": null
+        },
+        {
           "title": "What AI changes in research",
           "anchor": null
         },
@@ -364,6 +368,10 @@
       "topics": [],
       "citations": [],
       "sections": [
+        {
+          "title": "The RTVACOS tree: where can my work break?",
+          "anchor": null
+        },
         {
           "title": "The basic rules",
           "anchor": "rules"
@@ -1239,6 +1247,10 @@
       "citations": [],
       "sections": [
         {
+          "title": "L'arbre RTVACOS : où mon travail peut-il casser ?",
+          "anchor": null
+        },
+        {
           "title": "Les règles de base",
           "anchor": "regles"
         },
@@ -1383,6 +1395,10 @@
       ],
       "sections": [
         {
+          "title": "L'arbre RTVACOS : où mon travail peut-il casser ?",
+          "anchor": null
+        },
+        {
           "title": "Quatre chiffres, quatre sources",
           "anchor": null
         },
@@ -1392,7 +1408,7 @@
         },
         {
           "title": "Relier les pratiques, sans confondre leurs objectifs",
-          "anchor": "connected-practices"
+          "anchor": null
         },
         {
           "title": "Le constat mondial : trop d'articles, pas assez de vérification",
@@ -1404,7 +1420,11 @@
         },
         {
           "title": "Qui vérifie quoi ? Les acteurs, et ce que chaque dispositif est conçu pour couvrir",
-          "anchor": "who-checks-what"
+          "anchor": null
+        },
+        {
+          "title": "Pas à pas : qui vérifie quoi dans la vie d'un article ?",
+          "anchor": "vie-article-h"
         },
         {
           "title": "L’AI Act comme point de comparaison, pas comme règlement des articles",
@@ -1424,7 +1444,7 @@
         },
         {
           "title": "Glossaire",
-          "anchor": "glossaire"
+          "anchor": null
         },
         {
           "title": "Questions et réponses",
@@ -1954,6 +1974,10 @@
       "citations": [],
       "sections": [
         {
+          "title": "L'arbre RTVACOS : où mon travail peut-il casser ?",
+          "anchor": null
+        },
+        {
           "title": "Renforcer chaque fondation",
           "anchor": null
         },
@@ -1994,6 +2018,10 @@
       ],
       "citations": [],
       "sections": [
+        {
+          "title": "L'arbre RTVACOS : où mon travail peut-il casser ?",
+          "anchor": null
+        },
         {
           "title": "Ce que l'IA change dans la recherche",
           "anchor": null
@@ -2205,6 +2233,10 @@
       ],
       "sections": [
         {
+          "title": "L'arbre RTVACOS : où mon travail peut-il casser ?",
+          "anchor": null
+        },
+        {
           "title": "Mon projet est-il assez FAIR ? Un exemple d'autoévaluation en 20 points",
           "anchor": "fair-tool"
         },
@@ -2217,7 +2249,7 @@
           "anchor": "citer"
         },
         {
-          "title": "Exemple et remerciements",
+          "title": "Origine de la grille",
           "anchor": "remerciements"
         },
         {
@@ -3073,27 +3105,31 @@
       "citations": [],
       "sections": [
         {
-          "title": "Le constat",
+          "title": "L'arbre RTVACOS : où mon travail peut-il casser ?",
           "anchor": null
         },
         {
-          "title": "La question",
-          "anchor": null
+          "title": "RTVACOS : où votre travail peut-il casser ?",
+          "anchor": "rtvacos"
         },
         {
-          "title": "La théorie, en clair",
-          "anchor": null
+          "title": "Les questions, et où aller ensuite",
+          "anchor": "questions"
         },
         {
-          "title": "L'exemple en chiffres",
-          "anchor": null
+          "title": "L'influence, indépendamment de la taille",
+          "anchor": "influence"
+        },
+        {
+          "title": "Impact et intégrité, côte à côte",
+          "anchor": "integrity"
         },
         {
           "title": "Des indicateurs à examiner, pas des jugements",
           "anchor": null
         },
         {
-          "title": "Pour aller plus loin",
+          "title": "Sources",
           "anchor": null
         }
       ]
@@ -3765,6 +3801,10 @@
       "citations": [],
       "sections": [
         {
+          "title": "The RTVACOS tree: where can my work break?",
+          "anchor": null
+        },
+        {
           "title": "Strengthen each foundation",
           "anchor": null
         },
@@ -3926,6 +3966,10 @@
       ],
       "sections": [
         {
+          "title": "The RTVACOS tree: where can my work break?",
+          "anchor": null
+        },
+        {
           "title": "Four numbers, four sources",
           "anchor": null
         },
@@ -3935,7 +3979,7 @@
         },
         {
           "title": "Connect practices without confusing their purposes",
-          "anchor": "connected-practices"
+          "anchor": null
         },
         {
           "title": "The global picture: too many articles, too little verification",
@@ -3947,7 +3991,11 @@
         },
         {
           "title": "Who checks what? The actors, and what each mechanism is designed to cover",
-          "anchor": "who-checks-what"
+          "anchor": null
+        },
+        {
+          "title": "Step by step: who checks what in an article's life?",
+          "anchor": "article-life-h"
         },
         {
           "title": "The AI Act as a comparison, not a regulation of papers",
@@ -3967,7 +4015,7 @@
         },
         {
           "title": "Glossary",
-          "anchor": "glossaire"
+          "anchor": null
         },
         {
           "title": "Questions and answers",
@@ -4199,27 +4247,31 @@
       "citations": [],
       "sections": [
         {
-          "title": "The finding",
+          "title": "The RTVACOS tree: where can my work break?",
           "anchor": null
         },
         {
-          "title": "The question",
-          "anchor": null
+          "title": "RTVACOS: where can your work break?",
+          "anchor": "rtvacos"
         },
         {
-          "title": "The theory, in plain words",
-          "anchor": null
+          "title": "Questions, and where to go next",
+          "anchor": "questions"
         },
         {
-          "title": "The example in figures",
-          "anchor": null
+          "title": "Influence, independently of size",
+          "anchor": "influence"
+        },
+        {
+          "title": "Impact and integrity, side by side",
+          "anchor": "integrity"
         },
         {
           "title": "Indicators to examine, not judgments",
           "anchor": null
         },
         {
-          "title": "Go further",
+          "title": "Sources",
           "anchor": null
         }
       ]
@@ -4968,6 +5020,10 @@
       ],
       "sections": [
         {
+          "title": "The RTVACOS tree: where can my work break?",
+          "anchor": null
+        },
+        {
           "title": "Is my project FAIR enough? An example of a 20-point self-assessment",
           "anchor": "fair-tool"
         },
@@ -4980,7 +5036,7 @@
           "anchor": "citer"
         },
         {
-          "title": "Example and acknowledgments",
+          "title": "Where the grid comes from",
           "anchor": "remerciements"
         },
         {
