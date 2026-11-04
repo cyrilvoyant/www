@@ -1,0 +1,1379 @@
+{
+ "id": "fair",
+ "schema": "https://www.cyrilvoyant.com/tools-spec.json#1.0",
+ "kind": "assessment",
+ "domain": "research",
+ "interface_language": "both",
+ "name": {
+  "fr": "Autoévaluation FAIR",
+  "en": "FAIR self-assessment"
+ },
+ "url": {
+  "fr": "https://www.cyrilvoyant.com/fr/outils/autoevaluation-fair/#fair-tool",
+  "en": "https://www.cyrilvoyant.com/tools/fair-self-assessment/#fair-tool"
+ },
+ "page_title": {
+  "fr": "Mes données sont-elles FAIR ? Une autoévaluation en 20 questions",
+  "en": "Are my data FAIR? A self-assessment in 20 questions"
+ },
+ "computes": {
+  "fr": "Score FAIR sur 20 (5 par lettre F, A, I, R) à partir de 20 réponses oui (1), en partie (0,5) ou non (0) ; repères : moins de 5 perfectible, 5 à 10 bon, plus de 10 très bon ; axes prioritaires et facteur limitant (lettre la plus faible).",
+  "en": "FAIR score out of 20 (5 per letter F, A, I, R) from 20 answers yes (1), partly (0.5) or no (0); thresholds: below 5 improvable, 5 to 10 good, above 10 very good; priority axes and limiting factor (weakest letter)."
+ },
+ "summary": {
+  "fr": "En 3 minutes environ, situez un jeu de données au regard des principes FAIR : des données faciles à trouver (Findable), accessibles (Accessible), interopérables, c'est-à-dire lisibles par d'autres logiciels (Interoperable), et réutilisables (Reusable). Vingt questions, cinq par lettre ; l'outil donne un score sur 20 et indique les points à travailler en premier.",
+  "en": "In about 3 minutes, see where a dataset stands against the FAIR principles: data that are findable, accessible, interoperable (readable by other software) and reusable. Twenty questions, five per letter; the tool gives a score out of 20 and shows what to work on first."
+ },
+ "parameters": [
+  {
+   "id": "F1",
+   "type": "number",
+   "control": "button",
+   "group": "F",
+   "principle": {
+    "fr": "Dépôt",
+    "en": "Deposit"
+   },
+   "label": {
+    "fr": "Les données sont-elles déposées dans un entrepôt ou un catalogue en ligne ?",
+    "en": "Are the data deposited in an online repository or catalog?"
+   },
+   "meaning": {
+    "fr": "Pas seulement sur un disque, une clé ou envoyées par courriel. Exemples : Recherche Data Gouv, Zenodo, un catalogue d'établissement comme le géocatalogue de Webservice-Energy.",
+    "en": "Not only on a disk, a USB stick or sent by email. Examples: Zenodo, a national or institutional repository, a catalog such as the Webservice-Energy geocatalog."
+   },
+   "if_missing": {
+    "fr": "Déposer les données dans un entrepôt reconnu (Recherche Data Gouv, Zenodo) ou dans le catalogue de votre centre.",
+    "en": "Deposit the data in a recognized repository (Zenodo, a national repository) or in your center's catalog."
+   },
+   "options": [
+    {
+     "value": 1,
+     "label": {
+      "fr": "oui",
+      "en": "yes"
+     }
+    },
+    {
+     "value": 0.5,
+     "label": {
+      "fr": "en partie",
+      "en": "partly"
+     }
+    },
+    {
+     "value": 0,
+     "label": {
+      "fr": "non",
+      "en": "no"
+     }
+    }
+   ],
+   "min": 0,
+   "max": 1,
+   "step": 0.5,
+   "default": null
+  },
+  {
+   "id": "F2",
+   "type": "number",
+   "control": "button",
+   "group": "F",
+   "principle": "F1",
+   "label": {
+    "fr": "Chaque jeu de données a-t-il un identifiant pérenne (DOI ou autre PID) ?",
+    "en": "Does each dataset have a persistent identifier (DOI or other PID)?"
+   },
+   "meaning": {
+    "fr": "Un DOI (Digital Object Identifier) reste valable même si l'adresse du site change ; il en faut un par version. Webservice-Energy les attribue avec DataCite.",
+    "en": "A DOI (Digital Object Identifier) stays valid even if the website address changes; one per version is needed. Webservice-Energy assigns them through DataCite."
+   },
+   "if_missing": {
+    "fr": "Obtenir un DOI par jeu de données et par version (DataCite, ou automatiquement via l'entrepôt).",
+    "en": "Obtain one DOI per dataset and per version (DataCite, or automatically through the repository)."
+   },
+   "options": [
+    {
+     "value": 1,
+     "label": {
+      "fr": "oui",
+      "en": "yes"
+     }
+    },
+    {
+     "value": 0.5,
+     "label": {
+      "fr": "en partie",
+      "en": "partly"
+     }
+    },
+    {
+     "value": 0,
+     "label": {
+      "fr": "non",
+      "en": "no"
+     }
+    }
+   ],
+   "min": 0,
+   "max": 1,
+   "step": 0.5,
+   "default": null
+  },
+  {
+   "id": "F3",
+   "type": "number",
+   "control": "button",
+   "group": "F",
+   "principle": "F2",
+   "label": {
+    "fr": "Les données sont-elles décrites par des métadonnées riches ?",
+    "en": "Are the data described by rich metadata?"
+   },
+   "meaning": {
+    "fr": "Titre, auteurs, période, lieu, variables, instrument, pas de temps, fuseau horaire : ce qu'un moteur de recherche et un lecteur ont besoin de savoir sans ouvrir le fichier.",
+    "en": "Title, authors, period, place, variables, instrument, time step, time zone: what a search engine and a reader need to know without opening the file."
+   },
+   "if_missing": {
+    "fr": "Rédiger une fiche de métadonnées complète : qui, quoi, où, quand, comment, avec quel instrument.",
+    "en": "Write a complete metadata record: who, what, where, when, how, with which instrument."
+   },
+   "options": [
+    {
+     "value": 1,
+     "label": {
+      "fr": "oui",
+      "en": "yes"
+     }
+    },
+    {
+     "value": 0.5,
+     "label": {
+      "fr": "en partie",
+      "en": "partly"
+     }
+    },
+    {
+     "value": 0,
+     "label": {
+      "fr": "non",
+      "en": "no"
+     }
+    }
+   ],
+   "min": 0,
+   "max": 1,
+   "step": 0.5,
+   "default": null
+  },
+  {
+   "id": "F4",
+   "type": "number",
+   "control": "button",
+   "group": "F",
+   "principle": "F3",
+   "label": {
+    "fr": "Les métadonnées citent-elles explicitement l'identifiant des données qu'elles décrivent ?",
+    "en": "Does the metadata explicitly include the identifier of the data it describes?"
+   },
+   "meaning": {
+    "fr": "La fiche et le jeu de données doivent pointer l'un vers l'autre, sinon on trouve la description sans pouvoir atteindre les données.",
+    "en": "Record and dataset must point to each other; otherwise one finds the description without reaching the data."
+   },
+   "if_missing": {
+    "fr": "Inscrire le DOI des données dans la fiche de métadonnées (et l'inverse sur la page d'atterrissage).",
+    "en": "Write the data DOI in the metadata record (and the reverse on the landing page)."
+   },
+   "options": [
+    {
+     "value": 1,
+     "label": {
+      "fr": "oui",
+      "en": "yes"
+     }
+    },
+    {
+     "value": 0.5,
+     "label": {
+      "fr": "en partie",
+      "en": "partly"
+     }
+    },
+    {
+     "value": 0,
+     "label": {
+      "fr": "non",
+      "en": "no"
+     }
+    }
+   ],
+   "min": 0,
+   "max": 1,
+   "step": 0.5,
+   "default": null
+  },
+  {
+   "id": "F5",
+   "type": "number",
+   "control": "button",
+   "group": "F",
+   "principle": "F4",
+   "label": {
+    "fr": "Les métadonnées sont-elles indexées dans un catalogue interrogeable par des machines ?",
+    "en": "Is the metadata indexed in a catalog that machines can query?"
+   },
+   "meaning": {
+    "fr": "Moissonnage par d'autres catalogues (CSW, OAI-PMH), Google Dataset Search, portail GEO. Le catalogue GeoNetwork de Webservice-Energy est moissonnable (CSW).",
+    "en": "Harvesting by other catalogs (CSW, OAI-PMH), Google Dataset Search, the GEO portal. The Webservice-Energy GeoNetwork catalog can be harvested (CSW)."
+   },
+   "if_missing": {
+    "fr": "Publier les métadonnées dans un catalogue moissonnable (CSW, OAI-PMH) ou dans un entrepôt qui l'est.",
+    "en": "Publish the metadata in a harvestable catalog (CSW, OAI-PMH) or in a repository that is."
+   },
+   "options": [
+    {
+     "value": 1,
+     "label": {
+      "fr": "oui",
+      "en": "yes"
+     }
+    },
+    {
+     "value": 0.5,
+     "label": {
+      "fr": "en partie",
+      "en": "partly"
+     }
+    },
+    {
+     "value": 0,
+     "label": {
+      "fr": "non",
+      "en": "no"
+     }
+    }
+   ],
+   "min": 0,
+   "max": 1,
+   "step": 0.5,
+   "default": null
+  },
+  {
+   "id": "A1",
+   "type": "number",
+   "control": "button",
+   "group": "A",
+   "principle": "A1",
+   "label": {
+    "fr": "Peut-on récupérer les données à partir de leur identifiant, par un lien qui fonctionne ?",
+    "en": "Can the data be retrieved from their identifier, through a working link?"
+   },
+   "meaning": {
+    "fr": "Le DOI mène à une page d'atterrissage, qui mène aux fichiers ou au service. Pas de « disponible sur demande ».",
+    "en": "The DOI leads to a landing page, which leads to the files or the service. No \"available on request\"."
+   },
+   "if_missing": {
+    "fr": "Faire pointer l'identifiant vers une page d'atterrissage qui donne réellement accès aux données.",
+    "en": "Make the identifier resolve to a landing page that really gives access to the data."
+   },
+   "options": [
+    {
+     "value": 1,
+     "label": {
+      "fr": "oui",
+      "en": "yes"
+     }
+    },
+    {
+     "value": 0.5,
+     "label": {
+      "fr": "en partie",
+      "en": "partly"
+     }
+    },
+    {
+     "value": 0,
+     "label": {
+      "fr": "non",
+      "en": "no"
+     }
+    }
+   ],
+   "min": 0,
+   "max": 1,
+   "step": 0.5,
+   "default": null
+  },
+  {
+   "id": "A2",
+   "type": "number",
+   "control": "button",
+   "group": "A",
+   "principle": "A1.1",
+   "label": {
+    "fr": "L'accès passe-t-il par un protocole standard, ouvert et gratuit ?",
+    "en": "Does access use a standard, open and free protocol?"
+   },
+   "meaning": {
+    "fr": "HTTPS, OPeNDAP, API web documentée : aucun logiciel payant ni format d'échange propriétaire pour simplement lire les données.",
+    "en": "HTTPS, OPeNDAP, a documented web API: no paid software or proprietary exchange format just to read the data."
+   },
+   "if_missing": {
+    "fr": "Servir les données par HTTPS ou OPeNDAP plutôt que par un outil propriétaire ou un transfert manuel.",
+    "en": "Serve the data through HTTPS or OPeNDAP rather than a proprietary tool or a manual transfer."
+   },
+   "options": [
+    {
+     "value": 1,
+     "label": {
+      "fr": "oui",
+      "en": "yes"
+     }
+    },
+    {
+     "value": 0.5,
+     "label": {
+      "fr": "en partie",
+      "en": "partly"
+     }
+    },
+    {
+     "value": 0,
+     "label": {
+      "fr": "non",
+      "en": "no"
+     }
+    }
+   ],
+   "min": 0,
+   "max": 1,
+   "step": 0.5,
+   "default": null
+  },
+  {
+   "id": "A3",
+   "type": "number",
+   "control": "button",
+   "group": "A",
+   "principle": "A1.2",
+   "label": {
+    "fr": "Les conditions d'accès sont-elles écrites (libre, sur inscription, restreint) ?",
+    "en": "Are the access conditions written down (open, registration, restricted)?"
+   },
+   "meaning": {
+    "fr": "Accessible ne veut pas dire ouvert à tous : des données sensibles peuvent être restreintes, mais la règle et la procédure doivent être lisibles.",
+    "en": "Accessible does not mean open to everyone: sensitive data can be restricted, but the rule and the procedure must be readable."
+   },
+   "if_missing": {
+    "fr": "Écrire la règle d'accès et la procédure de demande sur la page d'atterrissage.",
+    "en": "Write the access rule and the request procedure on the landing page."
+   },
+   "options": [
+    {
+     "value": 1,
+     "label": {
+      "fr": "oui",
+      "en": "yes"
+     }
+    },
+    {
+     "value": 0.5,
+     "label": {
+      "fr": "en partie",
+      "en": "partly"
+     }
+    },
+    {
+     "value": 0,
+     "label": {
+      "fr": "non",
+      "en": "no"
+     }
+    }
+   ],
+   "min": 0,
+   "max": 1,
+   "step": 0.5,
+   "default": null
+  },
+  {
+   "id": "A4",
+   "type": "number",
+   "control": "button",
+   "group": "A",
+   "principle": "Machine",
+   "label": {
+    "fr": "Un programme peut-il lire les données directement, sans téléchargement manuel ?",
+    "en": "Can a program read the data directly, without a manual download?"
+   },
+   "meaning": {
+    "fr": "API, services OGC (WMS, WCS), serveur THREDDS, catalogue STAC : c'est ce qui permet de réutiliser les données dans une chaîne de calcul.",
+    "en": "API, OGC services (WMS, WCS), THREDDS server, STAC catalog: this is what lets the data be reused in a processing chain."
+   },
+   "if_missing": {
+    "fr": "Ouvrir un accès programmatique : serveur THREDDS/OPeNDAP, service OGC, API ou catalogue STAC.",
+    "en": "Open programmatic access: THREDDS/OPeNDAP server, OGC service, API or STAC catalog."
+   },
+   "options": [
+    {
+     "value": 1,
+     "label": {
+      "fr": "oui",
+      "en": "yes"
+     }
+    },
+    {
+     "value": 0.5,
+     "label": {
+      "fr": "en partie",
+      "en": "partly"
+     }
+    },
+    {
+     "value": 0,
+     "label": {
+      "fr": "non",
+      "en": "no"
+     }
+    }
+   ],
+   "min": 0,
+   "max": 1,
+   "step": 0.5,
+   "default": null
+  },
+  {
+   "id": "A5",
+   "type": "number",
+   "control": "button",
+   "group": "A",
+   "principle": "A2",
+   "label": {
+    "fr": "Les métadonnées restent-elles accessibles même si les données sont retirées, et l'archivage est-il prévu ?",
+    "en": "Does the metadata remain accessible even if the data are withdrawn, and is preservation planned?"
+   },
+   "meaning": {
+    "fr": "La trace d'un jeu de données (sa fiche, son DOI) doit survivre aux données elles-mêmes ; un plan de conservation dit combien de temps et où.",
+    "en": "The trace of a dataset (its record, its DOI) must outlive the data themselves; a preservation plan says how long and where."
+   },
+   "if_missing": {
+    "fr": "Prévoir la conservation : durée, lieu d'archivage, et maintien de la fiche même après retrait des fichiers.",
+    "en": "Plan preservation: duration, archive location, and keeping the record even after the files are withdrawn."
+   },
+   "options": [
+    {
+     "value": 1,
+     "label": {
+      "fr": "oui",
+      "en": "yes"
+     }
+    },
+    {
+     "value": 0.5,
+     "label": {
+      "fr": "en partie",
+      "en": "partly"
+     }
+    },
+    {
+     "value": 0,
+     "label": {
+      "fr": "non",
+      "en": "no"
+     }
+    }
+   ],
+   "min": 0,
+   "max": 1,
+   "step": 0.5,
+   "default": null
+  },
+  {
+   "id": "I1",
+   "type": "number",
+   "control": "button",
+   "group": "I",
+   "principle": "Format",
+   "label": {
+    "fr": "Le format est-il ouvert et non propriétaire ?",
+    "en": "Is the format open and non-proprietary?"
+   },
+   "meaning": {
+    "fr": "CSV documenté, NetCDF, GeoTIFF, Parquet plutôt qu'un classeur Excel ou un fichier MATLAB que seul un logiciel lit correctement.",
+    "en": "Documented CSV, NetCDF, GeoTIFF, Parquet rather than an Excel workbook or a MATLAB file that only one program reads correctly."
+   },
+   "if_missing": {
+    "fr": "Exporter dans un format ouvert (CSV documenté, NetCDF, Parquet) en plus du format de travail.",
+    "en": "Export to an open format (documented CSV, NetCDF, Parquet) in addition to the working format."
+   },
+   "options": [
+    {
+     "value": 1,
+     "label": {
+      "fr": "oui",
+      "en": "yes"
+     }
+    },
+    {
+     "value": 0.5,
+     "label": {
+      "fr": "en partie",
+      "en": "partly"
+     }
+    },
+    {
+     "value": 0,
+     "label": {
+      "fr": "non",
+      "en": "no"
+     }
+    }
+   ],
+   "min": 0,
+   "max": 1,
+   "step": 0.5,
+   "default": null
+  },
+  {
+   "id": "I2",
+   "type": "number",
+   "control": "button",
+   "group": "I",
+   "principle": "Standard",
+   "label": {
+    "fr": "Le format suit-il le standard de la discipline ?",
+    "en": "Does the format follow the standard of the field?"
+   },
+   "meaning": {
+    "fr": "Pour les grilles et séries géophysiques : NetCDF-CF, Zarr, GeoParquet. libinsitu, de Webservice-Energy, convertit des réseaux de mesure hétérogènes en NetCDF-CF.",
+    "en": "For geophysical grids and series: NetCDF-CF, Zarr, GeoParquet. libinsitu, from Webservice-Energy, converts heterogeneous measurement networks to NetCDF-CF."
+   },
+   "if_missing": {
+    "fr": "Adopter le standard de la communauté (NetCDF-CF pour les séries et grilles, GeoParquet pour les objets géographiques).",
+    "en": "Adopt the community standard (NetCDF-CF for series and grids, GeoParquet for geographic features)."
+   },
+   "options": [
+    {
+     "value": 1,
+     "label": {
+      "fr": "oui",
+      "en": "yes"
+     }
+    },
+    {
+     "value": 0.5,
+     "label": {
+      "fr": "en partie",
+      "en": "partly"
+     }
+    },
+    {
+     "value": 0,
+     "label": {
+      "fr": "non",
+      "en": "no"
+     }
+    }
+   ],
+   "min": 0,
+   "max": 1,
+   "step": 0.5,
+   "default": null
+  },
+  {
+   "id": "I3",
+   "type": "number",
+   "control": "button",
+   "group": "I",
+   "principle": "I2",
+   "label": {
+    "fr": "Variables et unités sont-elles nommées avec un vocabulaire partagé ?",
+    "en": "Are variables and units named with a shared vocabulary?"
+   },
+   "meaning": {
+    "fr": "Noms standard CF, unités SI, temps en UTC : « rsds » en W/m² plutôt que « ray_glob » sans unité.",
+    "en": "CF standard names, SI units, time in UTC: \"rsds\" in W/m² rather than \"glob_rad\" with no unit."
+   },
+   "if_missing": {
+    "fr": "Renommer les variables avec un vocabulaire partagé (noms standard CF), unités SI, temps en UTC.",
+    "en": "Rename variables with a shared vocabulary (CF standard names), SI units, time in UTC."
+   },
+   "options": [
+    {
+     "value": 1,
+     "label": {
+      "fr": "oui",
+      "en": "yes"
+     }
+    },
+    {
+     "value": 0.5,
+     "label": {
+      "fr": "en partie",
+      "en": "partly"
+     }
+    },
+    {
+     "value": 0,
+     "label": {
+      "fr": "non",
+      "en": "no"
+     }
+    }
+   ],
+   "min": 0,
+   "max": 1,
+   "step": 0.5,
+   "default": null
+  },
+  {
+   "id": "I4",
+   "type": "number",
+   "control": "button",
+   "group": "I",
+   "principle": "I1",
+   "label": {
+    "fr": "Les métadonnées suivent-elles un schéma standard ?",
+    "en": "Does the metadata follow a standard schema?"
+   },
+   "meaning": {
+    "fr": "ISO 19115/19139, DataCite, DCAT ou schema.org : un schéma que d'autres catalogues savent lire.",
+    "en": "ISO 19115/19139, DataCite, DCAT or schema.org: a schema that other catalogs can read."
+   },
+   "if_missing": {
+    "fr": "Rédiger les métadonnées dans un schéma standard (ISO 19115, DataCite ou DCAT).",
+    "en": "Write the metadata in a standard schema (ISO 19115, DataCite or DCAT)."
+   },
+   "options": [
+    {
+     "value": 1,
+     "label": {
+      "fr": "oui",
+      "en": "yes"
+     }
+    },
+    {
+     "value": 0.5,
+     "label": {
+      "fr": "en partie",
+      "en": "partly"
+     }
+    },
+    {
+     "value": 0,
+     "label": {
+      "fr": "non",
+      "en": "no"
+     }
+    }
+   ],
+   "min": 0,
+   "max": 1,
+   "step": 0.5,
+   "default": null
+  },
+  {
+   "id": "I5",
+   "type": "number",
+   "control": "button",
+   "group": "I",
+   "principle": "I3",
+   "label": {
+    "fr": "Les données renvoient-elles, par leurs identifiants, aux ressources liées ?",
+    "en": "Do the data link, through identifiers, to related resources?"
+   },
+   "meaning": {
+    "fr": "Instrument, jeu de données source, publication, code de traitement, chacun par son DOI ou son URL pérenne.",
+    "en": "Instrument, source dataset, publication, processing code, each by its DOI or persistent URL."
+   },
+   "if_missing": {
+    "fr": "Ajouter des liens qualifiés (DOI, URL pérennes) vers la source, l'instrument, l'article et le code.",
+    "en": "Add qualified links (DOIs, persistent URLs) to the source, the instrument, the paper and the code."
+   },
+   "options": [
+    {
+     "value": 1,
+     "label": {
+      "fr": "oui",
+      "en": "yes"
+     }
+    },
+    {
+     "value": 0.5,
+     "label": {
+      "fr": "en partie",
+      "en": "partly"
+     }
+    },
+    {
+     "value": 0,
+     "label": {
+      "fr": "non",
+      "en": "no"
+     }
+    }
+   ],
+   "min": 0,
+   "max": 1,
+   "step": 0.5,
+   "default": null
+  },
+  {
+   "id": "R1",
+   "type": "number",
+   "control": "button",
+   "group": "R",
+   "principle": "R1.1",
+   "label": {
+    "fr": "Une licence explicite est-elle attachée aux données ?",
+    "en": "Is an explicit licence attached to the data?"
+   },
+   "meaning": {
+    "fr": "Sans licence, personne ne sait ce qu'il a le droit de faire. CC BY ou CC0 pour une diffusion large, CC BY-NC pour protéger une valorisation : voir l'arbre ci-dessous.",
+    "en": "Without a licence, nobody knows what they are allowed to do. CC BY or CC0 for wide diffusion, CC BY-NC to protect a valorization: see the tree below."
+   },
+   "if_missing": {
+    "fr": "Choisir et afficher une licence (voir l'arbre de décision de la page « Les modèles sont dans les données »).",
+    "en": "Choose and display a licence (see the decision tree on the page “Models live in the data”)."
+   },
+   "options": [
+    {
+     "value": 1,
+     "label": {
+      "fr": "oui",
+      "en": "yes"
+     }
+    },
+    {
+     "value": 0.5,
+     "label": {
+      "fr": "en partie",
+      "en": "partly"
+     }
+    },
+    {
+     "value": 0,
+     "label": {
+      "fr": "non",
+      "en": "no"
+     }
+    }
+   ],
+   "min": 0,
+   "max": 1,
+   "step": 0.5,
+   "default": null
+  },
+  {
+   "id": "R2",
+   "type": "number",
+   "control": "button",
+   "group": "R",
+   "principle": "R1.2",
+   "label": {
+    "fr": "La provenance est-elle décrite ?",
+    "en": "Is the provenance described?"
+   },
+   "meaning": {
+    "fr": "Origine, instrument, étalonnage, traitements appliqués, versions : ce qui permet de savoir d'où vient chaque valeur.",
+    "en": "Origin, instrument, calibration, processing applied, versions: what tells where each value comes from."
+   },
+   "if_missing": {
+    "fr": "Documenter la chaîne : origine, instrument, étalonnage, traitements, numéro de version.",
+    "en": "Document the chain: origin, instrument, calibration, processing, version number."
+   },
+   "options": [
+    {
+     "value": 1,
+     "label": {
+      "fr": "oui",
+      "en": "yes"
+     }
+    },
+    {
+     "value": 0.5,
+     "label": {
+      "fr": "en partie",
+      "en": "partly"
+     }
+    },
+    {
+     "value": 0,
+     "label": {
+      "fr": "non",
+      "en": "no"
+     }
+    }
+   ],
+   "min": 0,
+   "max": 1,
+   "step": 0.5,
+   "default": null
+  },
+  {
+   "id": "R3",
+   "type": "number",
+   "control": "button",
+   "group": "R",
+   "principle": {
+    "fr": "Qualité",
+    "en": "Quality"
+   },
+   "label": {
+    "fr": "Un contrôle qualité documenté accompagne-t-il les données ?",
+    "en": "Does a documented quality control come with the data?"
+   },
+   "meaning": {
+    "fr": "Bornes physiques, valeurs figées, horodatage, comparaison à une référence, avec des drapeaux livrés avec les données (procédures de type BSRN pour le rayonnement).",
+    "en": "Physical limits, stuck values, time stamps, comparison with a reference, with flags delivered with the data (BSRN-type procedures for radiation)."
+   },
+   "if_missing": {
+    "fr": "Appliquer un contrôle qualité écrit et livrer ses drapeaux avec les données.",
+    "en": "Apply a written quality control and deliver its flags with the data."
+   },
+   "options": [
+    {
+     "value": 1,
+     "label": {
+      "fr": "oui",
+      "en": "yes"
+     }
+    },
+    {
+     "value": 0.5,
+     "label": {
+      "fr": "en partie",
+      "en": "partly"
+     }
+    },
+    {
+     "value": 0,
+     "label": {
+      "fr": "non",
+      "en": "no"
+     }
+    }
+   ],
+   "min": 0,
+   "max": 1,
+   "step": 0.5,
+   "default": null
+  },
+  {
+   "id": "R4",
+   "type": "number",
+   "control": "button",
+   "group": "R",
+   "principle": "Documentation",
+   "label": {
+    "fr": "Un tiers peut-il les utiliser sans vous contacter ?",
+    "en": "Can a third party use them without contacting you?"
+   },
+   "meaning": {
+    "fr": "Un fichier « lisez-moi », un dictionnaire des variables, un exemple de lecture ou un code d'exemple.",
+    "en": "A readme file, a data dictionary, a reading example or sample code."
+   },
+   "if_missing": {
+    "fr": "Ajouter un lisez-moi, un dictionnaire des variables et un exemple de lecture.",
+    "en": "Add a readme, a data dictionary and a reading example."
+   },
+   "options": [
+    {
+     "value": 1,
+     "label": {
+      "fr": "oui",
+      "en": "yes"
+     }
+    },
+    {
+     "value": 0.5,
+     "label": {
+      "fr": "en partie",
+      "en": "partly"
+     }
+    },
+    {
+     "value": 0,
+     "label": {
+      "fr": "non",
+      "en": "no"
+     }
+    }
+   ],
+   "min": 0,
+   "max": 1,
+   "step": 0.5,
+   "default": null
+  },
+  {
+   "id": "R5",
+   "type": "number",
+   "control": "button",
+   "group": "R",
+   "principle": "R1.3",
+   "label": {
+    "fr": "Les standards de la communauté sont-ils respectés et la citation recommandée est-elle donnée ?",
+    "en": "Are community standards met and is the recommended citation given?"
+   },
+   "meaning": {
+    "fr": "Conventions du domaine respectées, et une phrase « Pour citer ces données : … » avec le DOI.",
+    "en": "Field conventions followed, and a sentence \"To cite these data: ...\" with the DOI."
+   },
+   "if_missing": {
+    "fr": "Indiquer comment citer les données (auteurs, année, titre, DOI) et vérifier les conventions du domaine.",
+    "en": "State how to cite the data (authors, year, title, DOI) and check the field conventions."
+   },
+   "options": [
+    {
+     "value": 1,
+     "label": {
+      "fr": "oui",
+      "en": "yes"
+     }
+    },
+    {
+     "value": 0.5,
+     "label": {
+      "fr": "en partie",
+      "en": "partly"
+     }
+    },
+    {
+     "value": 0,
+     "label": {
+      "fr": "non",
+      "en": "no"
+     }
+    }
+   ],
+   "min": 0,
+   "max": 1,
+   "step": 0.5,
+   "default": null
+  }
+ ],
+ "presets": [
+  {
+   "id": "we",
+   "name": {
+    "fr": "Webservice-Energy",
+    "en": "Webservice-Energy"
+   },
+   "values": {
+    "F1": 1,
+    "F2": 1,
+    "F3": 1,
+    "F4": 1,
+    "F5": 1,
+    "A1": 1,
+    "A2": 1,
+    "A3": 1,
+    "A4": 1,
+    "A5": 0.5,
+    "I1": 1,
+    "I2": 1,
+    "I3": 1,
+    "I4": 1,
+    "I5": 0.5,
+    "R1": 1,
+    "R2": 1,
+    "R3": 1,
+    "R4": 0.5,
+    "R5": 0.5
+   },
+   "changes_vs_default": {
+    "F1": 1,
+    "F2": 1,
+    "F3": 1,
+    "F4": 1,
+    "F5": 1,
+    "A1": 1,
+    "A2": 1,
+    "A3": 1,
+    "A4": 1,
+    "A5": 0.5,
+    "I1": 1,
+    "I2": 1,
+    "I3": 1,
+    "I4": 1,
+    "I5": 0.5,
+    "R1": 1,
+    "R2": 1,
+    "R3": 1,
+    "R4": 0.5,
+    "R5": 0.5
+   },
+   "scores": {
+    "F": 5,
+    "A": 4.5,
+    "I": 4.5,
+    "R": 4.0,
+    "total": 18.0
+   },
+   "shows": {
+    "fr": "Infrastructure de données du centre O.I.E. Fait : catalogue GeoNetwork moissonnable (CSW, métadonnées ISO 19115), DOI attribués avec DataCite, accès THREDDS/OPeNDAP et services OGC (WMS, WCS, WPS), formats NetCDF-CF et Zarr, mesures au sol harmonisées par libinsitu, contrôle qualité de type BSRN, licence CC BY. En partie : plan de conservation, liens vers les ressources liées, documentation pour un tiers, citation recommandée.",
+    "en": "Data infrastructure of the O.I.E. center. Done: harvestable GeoNetwork catalog (CSW, ISO 19115 metadata), DOIs assigned with DataCite, THREDDS/OPeNDAP access and OGC services (WMS, WCS, WPS), NetCDF-CF and Zarr formats, ground measurements harmonized by libinsitu, BSRN-type quality control, CC BY licence. Partly: preservation plan, links to related resources, documentation for a third party, recommended citation."
+   }
+  },
+  {
+   "id": "zenodo",
+   "name": {
+    "fr": "Dépôt avec DOI, fichier CSV",
+    "en": "Deposit with DOI, CSV file"
+   },
+   "values": {
+    "F1": 1,
+    "F2": 1,
+    "F3": 0.5,
+    "F4": 1,
+    "F5": 1,
+    "A1": 1,
+    "A2": 1,
+    "A3": 1,
+    "A4": 0.5,
+    "A5": 1,
+    "I1": 1,
+    "I2": 0,
+    "I3": 0.5,
+    "I4": 1,
+    "I5": 0,
+    "R1": 1,
+    "R2": 0.5,
+    "R3": 0,
+    "R4": 0.5,
+    "R5": 0.5
+   },
+   "changes_vs_default": {
+    "F1": 1,
+    "F2": 1,
+    "F3": 0.5,
+    "F4": 1,
+    "F5": 1,
+    "A1": 1,
+    "A2": 1,
+    "A3": 1,
+    "A4": 0.5,
+    "A5": 1,
+    "I1": 1,
+    "I2": 0,
+    "I3": 0.5,
+    "I4": 1,
+    "I5": 0,
+    "R1": 1,
+    "R2": 0.5,
+    "R3": 0,
+    "R4": 0.5,
+    "R5": 0.5
+   },
+   "scores": {
+    "F": 4.5,
+    "A": 4.5,
+    "I": 2.5,
+    "R": 2.5,
+    "total": 14.0
+   },
+   "shows": {
+    "fr": "Un fichier CSV déposé dans un entrepôt généraliste. Fait : DOI et page d'atterrissage, métadonnées DataCite moissonnées, licence CC BY, téléchargement par HTTPS. Pas fait ou en partie : format standard de la discipline (NetCDF-CF), noms et unités normalisés, liens vers l'instrument et le code, contrôle qualité livré, provenance et documentation succinctes, accès aux valeurs par programme limité au fichier entier.",
+    "en": "A CSV file deposited in a general-purpose repository. Done: DOI and landing page, harvested DataCite metadata, CC BY licence, HTTPS download. Not done or partly: the standard format of the field (NetCDF-CF), standard names and units, links to the instrument and the code, delivered quality control, brief provenance and documentation, programmatic access limited to the whole file."
+   }
+  },
+  {
+   "id": "disk",
+   "name": {
+    "fr": "Tableur sur un disque",
+    "en": "Spreadsheet on a disk"
+   },
+   "values": {
+    "F1": 0,
+    "F2": 0,
+    "F3": 0,
+    "F4": 0,
+    "F5": 0,
+    "A1": 0,
+    "A2": 0,
+    "A3": 0,
+    "A4": 0,
+    "A5": 0,
+    "I1": 0.5,
+    "I2": 0,
+    "I3": 0,
+    "I4": 0,
+    "I5": 0,
+    "R1": 0,
+    "R2": 0.5,
+    "R3": 0,
+    "R4": 0,
+    "R5": 0
+   },
+   "changes_vs_default": {
+    "F1": 0,
+    "F2": 0,
+    "F3": 0,
+    "F4": 0,
+    "F5": 0,
+    "A1": 0,
+    "A2": 0,
+    "A3": 0,
+    "A4": 0,
+    "A5": 0,
+    "I1": 0.5,
+    "I2": 0,
+    "I3": 0,
+    "I4": 0,
+    "I5": 0,
+    "R1": 0,
+    "R2": 0.5,
+    "R3": 0,
+    "R4": 0,
+    "R5": 0
+   },
+   "scores": {
+    "F": 0,
+    "A": 0,
+    "I": 0.5,
+    "R": 0.5,
+    "total": 1.0
+   },
+   "shows": {
+    "fr": "Un classeur Excel sur le disque d'un chercheur, envoyé sur demande. Pas fait : ni dépôt, ni identifiant, ni métadonnées, ni licence, ni accès par programme. En partie : le fichier se lit hors du logiciel d'origine, avec des pertes, et la provenance n'est connue que de son auteur.",
+    "en": "An Excel workbook on a researcher's disk, sent on request. Not done: no deposit, identifier, metadata, licence or programmatic access. Partly: the file can be read outside its original software, with losses, and only its author knows its provenance."
+   }
+  }
+ ],
+ "actions": [
+  {
+   "id": "reset",
+   "label": {
+    "fr": "Tout effacer",
+    "en": "Clear all"
+   }
+  }
+ ],
+ "variants": [],
+ "outputs": [
+  {
+   "id": "F",
+   "name": {
+    "fr": "Score F",
+    "en": "F score"
+   },
+   "unit": "points (0–5)",
+   "kind": "score"
+  },
+  {
+   "id": "A",
+   "name": {
+    "fr": "Score A",
+    "en": "A score"
+   },
+   "unit": "points (0–5)",
+   "kind": "score"
+  },
+  {
+   "id": "I",
+   "name": {
+    "fr": "Score I",
+    "en": "I score"
+   },
+   "unit": "points (0–5)",
+   "kind": "score"
+  },
+  {
+   "id": "R",
+   "name": {
+    "fr": "Score R",
+    "en": "R score"
+   },
+   "unit": "points (0–5)",
+   "kind": "score"
+  },
+  {
+   "id": "total",
+   "name": {
+    "fr": "Score total",
+    "en": "Total score"
+   },
+   "unit": "points (0–20)",
+   "kind": "score"
+  },
+  {
+   "id": "limiting",
+   "name": {
+    "fr": "Facteur limitant",
+    "en": "Limiting factor"
+   },
+   "unit": null,
+   "kind": "text"
+  }
+ ],
+ "formulas": [
+  {
+   "text": "score(L) = Σ_{i=1..5} a(L,i), a ∈ {0, 0.5, 1}; total = score(F) + score(A) + score(I) + score(R)"
+  }
+ ],
+ "definitions": [
+  {
+   "term": "FAIR",
+   "meaning": {
+    "fr": "Trouvable, accessible, interopérable, réutilisable (Findable, Accessible, Interoperable, Reusable).",
+    "en": "Findable, accessible, interoperable, reusable."
+   }
+  }
+ ],
+ "assumptions": {
+  "fr": [
+   "Exemple pédagogique : barème et seuils choisis pour cette page, pas une norme ni une certification."
+  ],
+  "en": [
+   "Teaching example: scoring and thresholds chosen for this page, not a standard or a certification."
+  ]
+ },
+ "source": {
+  "dois": [
+   "10.1038/sdata.2016.18",
+   "10.15497/rda00050"
+  ],
+  "repositories": [],
+  "related_pages": [
+   {
+    "href": "/data/",
+    "text": "Models live in the data"
+   },
+   {
+    "href": "https://www.gofair.foundation/fair-principles",
+    "text": "GO FAIR"
+   },
+   {
+    "href": "https://www.f-uji.net/",
+    "text": "F-UJI"
+   }
+  ]
+ },
+ "how_to_cite": {
+  "fr": "Voyant, C. (2026). Autoévaluation FAIR des données de recherche : un exemple de grille pédagogique en 20 questions, version 1.0, 4 novembre 2026. Contributions : L. Ménard et R. Jolivet (centre O.I.E., Mines Paris – PSL). Licence CC BY 4.0 (Creative Commons Attribution : réutilisation libre en citant l'auteur). https://www.cyrilvoyant.com/fr/outils/autoevaluation-fair/",
+  "en": "Voyant, C. (2026). FAIR self-assessment of research data: an example teaching grid in 20 questions, version 1.0, November 4, 2026. Contributions: L. Ménard and R. Jolivet (O.I.E. center, Mines Paris – PSL). License: CC BY 4.0 (Creative Commons Attribution: free reuse with credit to the author). https://www.cyrilvoyant.com/tools/fair-self-assessment/",
+  "bibtex": "@misc{voyant2026fair,\n  author       = {Voyant, Cyril},\n  title        = {FAIR self-assessment of research data: an example teaching grid in 20 questions},\n  year         = {2026},\n  version      = {1.0},\n  howpublished = {Web application},\n  note         = {Version 1.0, November 4, 2026. Contributions: L. Ménard and R. Jolivet (O.I.E. center, Mines Paris -- PSL). License CC BY 4.0},\n  url          = {https://www.cyrilvoyant.com/tools/fair-self-assessment/}\n}"
+ },
+ "how_to_explore": {
+  "fr": "Choisir un préréglage (Webservice-Energy, dépôt avec DOI, disque local), lire le score et les conseils, puis changer une réponse à la fois.",
+  "en": "Pick a preset (Webservice-Energy, deposit with DOI, local disk), read the score and the advice, then change one answer at a time."
+ },
+ "exploration": [
+  {
+   "preset": "we",
+   "title": {
+    "fr": "Webservice-Energy",
+    "en": "Webservice-Energy"
+   },
+   "set": {
+    "F1": 1,
+    "F2": 1,
+    "F3": 1,
+    "F4": 1,
+    "F5": 1,
+    "A1": 1,
+    "A2": 1,
+    "A3": 1,
+    "A4": 1,
+    "A5": 0.5,
+    "I1": 1,
+    "I2": 1,
+    "I3": 1,
+    "I4": 1,
+    "I5": 0.5,
+    "R1": 1,
+    "R2": 1,
+    "R3": 1,
+    "R4": 0.5,
+    "R5": 0.5
+   },
+   "observe": {
+    "fr": "Infrastructure de données du centre O.I.E. Fait : catalogue GeoNetwork moissonnable (CSW, métadonnées ISO 19115), DOI attribués avec DataCite, accès THREDDS/OPeNDAP et services OGC (WMS, WCS, WPS), formats NetCDF-CF et Zarr, mesures au sol harmonisées par libinsitu, contrôle qualité de type BSRN, licence CC BY. En partie : plan de conservation, liens vers les ressources liées, documentation pour un tiers, citation recommandée.",
+    "en": "Data infrastructure of the O.I.E. center. Done: harvestable GeoNetwork catalog (CSW, ISO 19115 metadata), DOIs assigned with DataCite, THREDDS/OPeNDAP access and OGC services (WMS, WCS, WPS), NetCDF-CF and Zarr formats, ground measurements harmonized by libinsitu, BSRN-type quality control, CC BY licence. Partly: preservation plan, links to related resources, documentation for a third party, recommended citation."
+   }
+  },
+  {
+   "preset": "zenodo",
+   "title": {
+    "fr": "Dépôt avec DOI, fichier CSV",
+    "en": "Deposit with DOI, CSV file"
+   },
+   "set": {
+    "F1": 1,
+    "F2": 1,
+    "F3": 0.5,
+    "F4": 1,
+    "F5": 1,
+    "A1": 1,
+    "A2": 1,
+    "A3": 1,
+    "A4": 0.5,
+    "A5": 1,
+    "I1": 1,
+    "I2": 0,
+    "I3": 0.5,
+    "I4": 1,
+    "I5": 0,
+    "R1": 1,
+    "R2": 0.5,
+    "R3": 0,
+    "R4": 0.5,
+    "R5": 0.5
+   },
+   "observe": {
+    "fr": "Un fichier CSV déposé dans un entrepôt généraliste. Fait : DOI et page d'atterrissage, métadonnées DataCite moissonnées, licence CC BY, téléchargement par HTTPS. Pas fait ou en partie : format standard de la discipline (NetCDF-CF), noms et unités normalisés, liens vers l'instrument et le code, contrôle qualité livré, provenance et documentation succinctes, accès aux valeurs par programme limité au fichier entier.",
+    "en": "A CSV file deposited in a general-purpose repository. Done: DOI and landing page, harvested DataCite metadata, CC BY licence, HTTPS download. Not done or partly: the standard format of the field (NetCDF-CF), standard names and units, links to the instrument and the code, delivered quality control, brief provenance and documentation, programmatic access limited to the whole file."
+   }
+  },
+  {
+   "preset": "disk",
+   "title": {
+    "fr": "Tableur sur un disque",
+    "en": "Spreadsheet on a disk"
+   },
+   "set": {
+    "F1": 0,
+    "F2": 0,
+    "F3": 0,
+    "F4": 0,
+    "F5": 0,
+    "A1": 0,
+    "A2": 0,
+    "A3": 0,
+    "A4": 0,
+    "A5": 0,
+    "I1": 0.5,
+    "I2": 0,
+    "I3": 0,
+    "I4": 0,
+    "I5": 0,
+    "R1": 0,
+    "R2": 0.5,
+    "R3": 0,
+    "R4": 0,
+    "R5": 0
+   },
+   "observe": {
+    "fr": "Un classeur Excel sur le disque d'un chercheur, envoyé sur demande. Pas fait : ni dépôt, ni identifiant, ni métadonnées, ni licence, ni accès par programme. En partie : le fichier se lit hors du logiciel d'origine, avec des pertes, et la provenance n'est connue que de son auteur.",
+    "en": "An Excel workbook on a researcher's disk, sent on request. Not done: no deposit, identifier, metadata, licence or programmatic access. Partly: the file can be read outside its original software, with losses, and only its author knows its provenance."
+   }
+  }
+ ],
+ "concepts": [
+  "fair",
+  "findable",
+  "accessible",
+  "interoperable",
+  "reusable",
+  "persistent-identifier",
+  "metadata",
+  "data-license",
+  "data-management-plan"
+ ],
+ "extraction": {
+  "method": "read from scripts/fair_tool_20261104.py (Q, PRESETS), the data of the rendered tool",
+  "roots": [
+   "#fair-tool"
+  ]
+ }
+}

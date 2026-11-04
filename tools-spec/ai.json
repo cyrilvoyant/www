@@ -405,9 +405,11 @@
   "en": "Set the parameters to a preset (values above), read the sentence the page shows then the outputs; then change one parameter at a time between its minimum and maximum."
  },
  "exploration": [],
- "concepts": [],
+ "concepts": [
+  "data-management-plan"
+ ],
  "extraction": {
-  "source_hash": "fe58734b1ecec001",
+  "source_hash": "007354c6d16f84ac",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#role-helper"

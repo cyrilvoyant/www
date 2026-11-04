@@ -135,26 +135,26 @@
   {
    "id": "oss",
    "name": {
-    "fr": "Licence open source",
-    "en": "Open-source license"
+    "fr": "Licence ouverte.",
+    "en": "Open license."
    },
    "unit": null,
    "meaning": {
-    "fr": "Licence open source (code : MIT, Apache, BSD ou GPL selon les dépendances ; données : CC BY). Diffusion maximale, valorisation commerciale non protégée.",
-    "en": "Open-source license (code: MIT, Apache, BSD or GPL depending on dependencies; data: CC BY). Widest diffusion, commercial valorization not protected."
+    "fr": "Licence ouverte.Code : MIT, Apache 2.0 ou BSD ; GPL si une dépendance l'impose.Données : CC BY (ou CC0, ODbL pour une base).Diffusion maximale, valorisation commerciale non protégée.",
+    "en": "Open license.Code: MIT, Apache 2.0 or BSD; GPL if a dependency requires it.Data: CC BY (or CC0, ODbL for a database).Widest diffusion, commercial valorization not protected."
    },
    "kind": "decision-outcome"
   },
   {
    "id": "nc",
    "name": {
-    "fr": "Licence non commerciale",
-    "en": "Non-commercial license"
+    "fr": "Licence non commerciale.",
+    "en": "Non-commercial license."
    },
    "unit": null,
    "meaning": {
-    "fr": "Licence non commerciale (code : par exemple PolyForm Noncommercial ; données : CC BY-NC). Accès libre pour la recherche, l'enseignement et le service public ; pas « open source » au sens de l'OSI ; valorisation commerciale protégée.",
-    "en": "Non-commercial license (code: for example PolyForm Noncommercial; data: CC BY-NC). Free access for research, teaching and public service; not \"open source\" in the OSI sense; commercial valorization protected."
+    "fr": "Licence non commerciale.Code : PolyForm Noncommercial.Données : CC BY-NC.Accès libre pour la recherche, l'enseignement et le service public ; pas « open source » au sens de l'OSI ; valorisation commerciale protégée.",
+    "en": "Non-commercial license.Code: PolyForm Noncommercial.Data: CC BY-NC.Free access for research, teaching and public service; not \"open source\" in the OSI sense; commercial valorization protected."
    },
    "kind": "decision-outcome"
   }
@@ -301,9 +301,12 @@
   "en": "Set the parameters to a preset (values above), read the sentence the page shows then the outputs; then change one parameter at a time between its minimum and maximum."
  },
  "exploration": [],
- "concepts": [],
+ "concepts": [
+  "fair",
+  "metadata"
+ ],
  "extraction": {
-  "source_hash": "d4605f597f9094c4",
+  "source_hash": "d1319e9132123b8f",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#lic-tree"

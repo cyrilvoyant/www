@@ -650,7 +650,7 @@ Recherche : questions, résultats et méthodes
 URL: https://www.cyrilvoyant.com/tools/
 
 Scientific simulators, animations and calculators
- Change a value and see what happens: 33 tools for courses and research.
+ Change a value and see what happens: 34 tools for courses and research.
  Where to start?
  Choose a forecast One signal, some sliders: see which forecast wins, and why. Judge my forecast Compare your values with persistence using NICE. Revise a course Statistics, physics and heat transfer: one tool per notion. Compare doses LQ or LQL, for research and education. Find a tool Field Interface language
  No tool matches.
@@ -806,6 +806,11 @@ Scientific simulators, animations and calculators
  Follow an example decision tree, to be adapted to context and content rights.
  Open this tool →
  Cite and reuse our work
+ Self-assessment grid · French and English
+ Check whether my data are FAIR
+ Twenty questions, five per FAIR principle (findable, accessible, interoperable, reusable): a score out of 20 and what to fix first; a teaching example, not a certification.
+ Open this tool →
+ Models live in the data: qualify, certify, license
  Technical guides, equations and code · Numerical checks of the seven calculators
  Where next?
  Understand the approach The thread: five steps, from direct computation to trust. See it all on one page Software with DOI and teams, courses, tools and essays. Evaluate a forecast The steps against persistence, with NICE as an example. Cite or reuse The license of each work and examples to copy.
@@ -814,7 +819,7 @@ Scientific simulators, animations and calculators
 URL: https://www.cyrilvoyant.com/fr/outils/
 
 Simulateurs, animations et calculateurs scientifiques
- Changez une valeur et observez : 33 outils pour le cours et la recherche.
+ Changez une valeur et observez : 34 outils pour le cours et la recherche.
  Par où commencer ?
  Choisir une prévision Un signal, des curseurs : voir quelle prévision gagne, et pourquoi. Juger ma prévision Comparer vos valeurs à la persistance avec NICE. Réviser un cours Statistiques, physique et thermique : un outil par notion. Comparer des doses LQ ou LQL, pour la recherche et l’enseignement. Rechercher un outil Domaine Langue de l’interface
  Aucun outil trouvé.
@@ -970,6 +975,11 @@ Simulateurs, animations et calculateurs scientifiques
  Suivre un exemple d’arbre de décision, à adapter au contexte et aux droits sur les contenus.
  Ouvrir cet outil →
  Citer et réutiliser nos travaux
+ Grille d’autoévaluation · Français et anglais
+ Évaluer si mes données sont FAIR
+ Vingt questions, cinq par principe FAIR (trouvable, accessible, interopérable, réutilisable) : un score sur 20 et les points à traiter en premier ; un exemple pédagogique, pas une certification.
+ Ouvrir cet outil →
+ Les modèles sont dans les données : qualifier, certifier, placer sous licence
  Guides techniques, équations et codes · Contrôles numériques des sept calculateurs
  Et ensuite ?
  Comprendre la démarche Le fil : cinq étapes, du calcul direct à la confiance. Tout voir sur une page Logiciels avec DOI et équipes, cours, outils et essais. Évaluer une prévision La marche à suivre face à la persistance, avec NICE en exemple. Citer ou réutiliser La licence de chaque travail et des exemples à copier.
@@ -1025,7 +1035,7 @@ At a glance: research, software, courses and tools
  sCV and forecastability
  γ-index explorer
  ARTU and its table
- All 33 tools, by field
+ All 34 tools, by field
  Essays and positions
  Scientific publishing: no verification, no trust
  AI in research: AI Act, charter and toolbox
@@ -1547,14 +1557,22 @@ Models live in the data: qualify, certify, license
  Under an explicit license : without one, nobody knows what they may do.
  Every acronym on this page (FAIR, DOI, NetCDF-CF, OGC, MIT, GPL…) is explained in the glossary .
  An example: Webservice-Energy
- Webservice-Energy is the spatial data infrastructure of the O.I.E. center (Observation, Impacts, Energy) of Mines Paris – PSL , developed and operated for almost twenty years for energy, the environment and Earth observation, "FAIR by design". Its main architects are Lionel Ménard ( ORCID ) and Raphaël Jolivet (contact: lionel.menard@minesparis.psl.eu , raphael.jolivet@minesparis.psl.eu ).
+ Webservice-Energy is the spatial data infrastructure of the O.I.E. center (Observation, Impacts, Energy) of Mines Paris – PSL , developed and operated for almost twenty years for energy, the environment and Earth observation, "FAIR by design". Its main architects are Lionel Ménard ( ORCID ) and Raphaël Jolivet ( ORCID ) , both at the O.I.E. center (Observation, Impacts, Energy) of Mines Paris – PSL (contact: lionel.menard@minesparis.psl.eu , raphael.jolivet@minesparis.psl.eu ).
  Find : a metadata catalogue ( GeoNetwork , ISO 19115/19139, INSPIRE , OGC ) for data, services, publications and software.
  Access : a THREDDS server ( OPeNDAP , NetCDF Subset Service, WMS), OGC map services (WMS, WFS, WCS), remote processing (WPS) and a STAC catalog under development.
  Harmonize ground measurements : the open library libinsitu brings heterogeneous networks to the same NetCDF-CF format, with their quality control.
  Identify and license : DOIs assigned to datasets through DataCite , and a CC BY license.
  Connect : community portal of the Group on Earth Observations (GEO) , Copernicus data ( CAMS for the atmosphere, C3S for the climate), Horizon 2020 and Horizon Europe projects.
+ Is my project FAIR?
+ A self-assessment grid in 20 questions, five per FAIR principle, places a dataset in about 3 minutes and shows what to work on first. It starts from three prefilled examples, including Webservice-Energy; it is a teaching tool, not a certification.
+ Open the FAIR self-assessment →
  Choosing a license for code and data
- After the reflection led at the O.I.E. center by Raphaël Jolivet . The usual practice is binary: close everything when commercial valorization is hoped for, open everything (CC BY, MIT, Apache, BSD: free licenses that allow reuse with credit) otherwise. It rests on an estimate made too early, and it limits the diffusion of the very work one wants to protect, while diffusion is often what creates opportunities. A middle way exists: non-commercial licenses (CC BY-NC for data, PolyForm Noncommercial for code). They are not "open source" in the OSI sense, but they remain compatible with academic open access and reproducibility, and keep a future valorization possible.
+ After the reflection led at the O.I.E. center by Raphaël Jolivet ( ORCID ) . The usual practice is binary: close everything when commercial valorization is hoped for, open everything (CC BY, MIT, Apache, BSD: free licenses that allow reuse with credit) otherwise. It rests on an estimate made too early, and it limits the diffusion of the very work one wants to protect, while diffusion is often what creates opportunities. A middle way exists: non-commercial licenses (CC BY-NC for data, PolyForm Noncommercial for code). They are not "open source" in the OSI sense, but they remain compatible with academic open access and reproducibility, and keep a future valorization possible.
+ Code and data do not take the same licenses Choice Code (software) Data
+ Open MIT , Apache 2.0 , BSD (permissive: free reuse with credit); GPL (copyleft: derived versions stay under the GPL) CC BY (free reuse with credit); CC0 (no conditions); ODbL for a database; Etalab Open License 2.0 for French public data
+ Non-commercial PolyForm Noncommercial (research, teaching, personal use, public service, nonprofits) CC BY-NC
+ Closed No public release: the contract prevails
+ Avoid A Creative Commons license for code ( Creative Commons advises against it ); no license at all A software license (MIT, GPL) for data; no license at all
  The tree below is an example, nothing fixed : each research center adapts it to its contracts, its partners and its institution's policy.
  Which license? The decision tree
  First: the agreement of every rights holder.
@@ -1683,6 +1701,94 @@ The RTVACOS tree: where can your work break?
  Scientific publishing: no verification, no trust
  Where next?
  Prepare your data The basic rules and the example of Webservice-Energy. Cite or reuse The license of each work and examples to copy. Evaluate a forecast The steps against persistence, with NICE as an example. See it all on one page Software with DOI and teams, courses, tools and essays.
+
+---
+URL: https://www.cyrilvoyant.com/tools/fair-self-assessment/
+
+Are my data FAIR? A self-assessment in 20 questions
+ In about 3 minutes, see where a dataset stands against the FAIR principles : data that are findable, accessible, interoperable (readable by other software) and reusable. Twenty questions, five per letter; the tool gives a score out of 20 and shows what to work on first.
+ Who is it for? PhD students, researchers, engineers and data stewards preparing a deposit, a data management plan (DMP, the document that describes how the data of a project will be produced, described, stored and shared) or a publication. Three prefilled examples serve as starting points, including Webservice-Energy , the data infrastructure of the O.I.E. center (Observation, Impacts, Energy) at Mines Paris – PSL. Nothing is sent anywhere: your answers stay in your browser.
+ Is my project FAIR enough? An example of a 20-point self-assessment
+ This is only an example : a teaching grid proposed here, not a standard or a certification. The questions follow the GO FAIR principles (F1 to R1.3) plus a few practical criteria; the scoring and thresholds are choices of this page. For a reference assessment: the RDA FAIR Data Maturity Model (Research Data Alliance) or the automated tool F-UJI . Acronyms underlined with dots open an explanation on click or tap.
+ Five questions per letter, from the most basic to the most demanding; each "yes" is worth 1 point, "partly" 0.5. Total out of 20. Benchmarks: below 5: needs work ; 5 to 10: good ; above 10: very good . The tool names the axes to work on and, above 10, the limiting factor : the weakest letter, which bounds real reuse.
+ Start from an example:
+ JavaScript is needed for this self-assessment. Webservice-Energy : which component serves which principle?
+ Component F A I R
+ GeoNetwork (CSW) F A R
+ GeoServer (WMS, WCS) A I
+ THREDDS / OPeNDAP / NCSS A I R
+ Toolbox & S3P2 (WPS) I R
+ STAC (REST) F A I
+ libinsitu I R
+ DOI landing pages F R
+ NetCDF-CF / Zarr / GeoParquet I R
+ Mapping drawn up by the Webservice-Energy team (O.I.E. center): each open component covers part of the principles; together they cover them all.
+ Indicative self-assessment based on the GO FAIR principles (F1 to R1.3); it does not replace a data management plan (written for example with DMP OPIDoR ) or the advice of your institution's data service. Your answers stay in your browser.
+ Why this grid?
+ This is only a teaching example , not a standard or a certification. The twenty questions follow the FAIR principles published by Wilkinson et al. (2016) and promoted by the GO FAIR initiative (F1 to F4, A1 and A2, I1 to I3, R1.1 to R1.3), plus a few practical criteria. The scoring (1 point for “yes”, 0.5 for “partly”, 0 otherwise) and the thresholds (5 and 10 out of 20) are choices made for this page: they help you learn what makes data reusable, not rank projects.
+ For a reference assessment, use:
+ the RDA FAIR Data Maturity Model (Research Data Alliance, the international organization that develops recommendations for sharing research data): shared indicators and their priority levels;
+ F-UJI , an automated tool that assesses a published dataset from its persistent identifier, for example a DOI (Digital Object Identifier, an identifier that stays valid even if the web address changes).
+ How to cite this tool
+ Voyant, C. (2026). FAIR self-assessment of research data: an example teaching grid in 20 questions , version 1.0, November 4, 2026. Contributions: L. Ménard and R. Jolivet (O.I.E. center, Mines Paris – PSL). License: CC BY 4.0 (Creative Commons Attribution: free reuse with credit to the author).
+ Web address (URL) to cite: https://www.cyrilvoyant.com/tools/fair-self-assessment/
+ The same reference in BibTeX (the bibliography format of LaTeX):
+ @misc{voyant2026fair,
+ author = {Voyant, Cyril},
+ title = {FAIR self-assessment of research data: an example teaching grid in 20 questions},
+ year = {2026},
+ version = {1.0},
+ howpublished = {Web application},
+ note = {Version 1.0, November 4, 2026. Contributions: L. Ménard and R. Jolivet (O.I.E. center, Mines Paris -- PSL). License CC BY 4.0},
+ url = {https://www.cyrilvoyant.com/tools/fair-self-assessment/}
+} Example and acknowledgments
+ The questions and the reference example build on the practice of Webservice-Energy , led at the O.I.E. center by Lionel Ménard ( ORCID ) and Raphaël Jolivet ( ORCID ). Cyril Voyant designed the grid and the tool; any errors are his.
+ Go further: data and licenses
+ The page Models live in the data explains why data must be qualified and certified, details the example of Webservice-Energy and offers a decision tree to choose a license for code and data.
+
+---
+URL: https://www.cyrilvoyant.com/fr/outils/autoevaluation-fair/
+
+Mes données sont-elles FAIR ? Une autoévaluation en 20 questions
+ En 3 minutes environ, situez un jeu de données au regard des principes FAIR : des données faciles à trouver ( Findable ), accessibles ( Accessible ), interopérables, c'est-à-dire lisibles par d'autres logiciels ( Interoperable ), et réutilisables ( Reusable ). Vingt questions, cinq par lettre ; l'outil donne un score sur 20 et indique les points à travailler en premier.
+ Pour qui ? Doctorants, chercheurs, ingénieurs et gestionnaires de données qui préparent un dépôt, un plan de gestion des données (PGD, le document qui décrit comment les données d'un projet seront produites, décrites, conservées et partagées) ou une publication. Trois exemples préremplis servent de point de départ, dont Webservice-Energy , l'infrastructure de données du centre O.I.E. (Observation, Impacts, Énergie) de Mines Paris – PSL. Rien n'est envoyé : les réponses restent dans votre navigateur.
+ Mon projet est-il assez FAIR ? Un exemple d'autoévaluation en 20 points
+ Ceci n'est qu'un exemple : une grille pédagogique proposée ici, pas une norme ni une certification. Les questions reprennent les principes GO FAIR (F1 à R1.3) et quelques critères pratiques ; le barème et les seuils sont des choix de cette page. Pour une évaluation de référence : le modèle de maturité FAIR de la RDA (Research Data Alliance) ou l'outil automatique F-UJI . Les sigles soulignés en pointillé s'expliquent d'un clic ou d'un toucher.
+ Cinq questions par lettre, de la plus élémentaire à la plus exigeante ; chaque réponse « oui » vaut 1 point, « en partie » 0,5. Total sur 20. Repères : moins de 5 : perfectible ; de 5 à 10 : bon ; plus de 10 : très bon . L'outil indique les axes à privilégier et, au-dessus de 10, le facteur limitant : la lettre la plus faible, qui borne la réutilisation réelle.
+ Partir d'un exemple :
+ JavaScript is needed for this self-assessment. Webservice-Energy : quel composant sert quel principe ?
+ Composant F A I R
+ GeoNetwork (CSW) F A R
+ GeoServer (WMS, WCS) A I
+ THREDDS / OPeNDAP / NCSS A I R
+ Toolbox & S3P2 (WPS) I R
+ STAC (REST) F A I
+ libinsitu I R
+ DOI landing pages F R
+ NetCDF-CF / Zarr / GeoParquet I R
+ Correspondance établie par l'équipe Webservice-Energy (centre O.I.E.) : chaque composant ouvert couvre une partie des principes, l'ensemble les couvre tous.
+ Autoévaluation indicative fondée sur les principes FAIR de GO FAIR (F1 à R1.3) ; elle ne remplace ni un plan de gestion des données (par exemple rédigé avec DMP OPIDoR ) ni l'avis de l'atelier de la donnée de votre établissement. Vos réponses restent dans votre navigateur.
+ Pourquoi cette grille ?
+ Ce n'est qu'un exemple pédagogique , pas une norme ni une certification. Les vingt questions suivent les principes FAIR publiés par Wilkinson et al. (2016) et repris par l'initiative GO FAIR (F1 à F4, A1 et A2, I1 à I3, R1.1 à R1.3), complétés par quelques critères pratiques. Le barème (1 point pour « oui », 0,5 pour « en partie », 0 sinon) et les repères (5 et 10 sur 20) sont des choix de cette page : ils servent à apprendre à reconnaître ce qui rend des données réutilisables, pas à classer des projets.
+ Pour une évaluation de référence, utilisez :
+ le modèle de maturité FAIR de la RDA (Research Data Alliance, l'association internationale qui élabore des recommandations pour le partage des données de recherche) : des indicateurs communs et leur niveau de priorité ;
+ F-UJI , un outil automatique qui évalue un jeu de données publié à partir de son identifiant pérenne, par exemple un DOI ( Digital Object Identifier , un identifiant qui reste valable même si l'adresse du site change).
+ Comment citer cet outil
+ Voyant, C. (2026). Autoévaluation FAIR des données de recherche : un exemple de grille pédagogique en 20 questions , version 1.0, 4 novembre 2026. Contributions : L. Ménard et R. Jolivet (centre O.I.E., Mines Paris – PSL). Licence CC BY 4.0 (Creative Commons Attribution : réutilisation libre en citant l'auteur).
+ Adresse (URL) à citer : https://www.cyrilvoyant.com/fr/outils/autoevaluation-fair/
+ La même référence au format BibTeX (le format bibliographique de LaTeX) :
+ @misc{voyant2026fairfr,
+ author = {Voyant, Cyril},
+ title = {Autoévaluation FAIR des données de recherche : un exemple de grille pédagogique en 20 questions},
+ year = {2026},
+ version = {1.0},
+ howpublished = {Web application},
+ note = {Version 1.0, 4 novembre 2026. Contributions : L. Ménard et R. Jolivet (centre O.I.E., Mines Paris -- PSL). Licence CC BY 4.0},
+ url = {https://www.cyrilvoyant.com/fr/outils/autoevaluation-fair/}
+} Exemple et remerciements
+ Les questions et l'exemple de référence s'appuient sur la pratique de Webservice-Energy , menée au centre O.I.E. par Lionel Ménard ( ORCID ) et Raphaël Jolivet ( ORCID ). Cyril Voyant a conçu la grille et l'outil ; les éventuelles erreurs sont les siennes.
+ Aller plus loin : données et licences
+ La page Les modèles sont dans les données explique pourquoi qualifier et certifier les données, détaille l'exemple de Webservice-Energy et propose un arbre pour choisir une licence pour le code et les données.
 
 ---
 URL: https://www.cyrilvoyant.com/tools/forecast-comparison/
@@ -4213,14 +4319,22 @@ Les modèles sont dans les données : qualifier, certifier, placer sous licenc
  Sous une licence explicite : sans licence, personne ne sait ce qu'il a le droit de faire.
  Chaque sigle de cette page (FAIR, DOI, NetCDF-CF, OGC, MIT, GPL…) est expliqué dans le glossaire .
  Un exemple : Webservice-Energy
- Webservice-Energy est l'infrastructure de données spatiales du centre O.I.E. (Observation, Impacts, Énergie) de Mines Paris – PSL , développée et opérée depuis près de vingt ans pour l'énergie, l'environnement et l'observation de la Terre, avec une démarche « FAIR dès la conception ». Ses principaux artisans sont Lionel Ménard ( ORCID ) et Raphaël Jolivet (contact : lionel.menard@minesparis.psl.eu , raphael.jolivet@minesparis.psl.eu ).
+ Webservice-Energy est l'infrastructure de données spatiales du centre O.I.E. (Observation, Impacts, Énergie) de Mines Paris – PSL , développée et opérée depuis près de vingt ans pour l'énergie, l'environnement et l'observation de la Terre, avec une démarche « FAIR dès la conception ». Ses principaux artisans sont Lionel Ménard ( ORCID ) et Raphaël Jolivet ( ORCID ) , tous deux au centre O.I.E. (Observation, Impacts, Énergie) de Mines Paris – PSL (contact : lionel.menard@minesparis.psl.eu , raphael.jolivet@minesparis.psl.eu ).
  Trouver : un catalogue de métadonnées ( GeoNetwork , normes ISO 19115/19139, INSPIRE , OGC ) qui référence données, services, publications et logiciels.
  Accéder : un serveur THREDDS ( OPeNDAP , NetCDF Subset Service, WMS), des services cartographiques OGC (WMS, WFS, WCS), des traitements à distance (WPS) et un catalogue STAC en développement.
  Harmoniser les mesures au sol : la bibliothèque ouverte libinsitu met des réseaux de mesure hétérogènes au même format NetCDF-CF , avec leur contrôle qualité.
  Identifier et placer sous licence : des DOI attribués aux jeux de données par DataCite , et une licence CC BY.
  Relier : portail communautaire du Group on Earth Observations (GEO) , données de Copernicus ( CAMS pour l'atmosphère, C3S pour le climat), projets européens Horizon 2020 et Horizon Europe .
+ Mon projet est-il FAIR ?
+ Une grille d'autoévaluation en 20 questions, cinq par principe FAIR, situe un jeu de données en 3 minutes environ et indique les points à travailler en premier. Elle part de trois exemples préremplis, dont Webservice-Energy ; c'est un outil pédagogique, pas une certification.
+ Ouvrir l’autoévaluation FAIR →
  Choisir une licence : le code et les données
- D'après la réflexion menée au centre O.I.E. par Raphaël Jolivet . La pratique courante est binaire : tout fermer quand on espère une valorisation commerciale, tout ouvrir (CC BY, MIT, Apache, BSD : des licences libres, qui laissent réutiliser en citant l’auteur) sinon. Elle repose sur une estimation faite trop tôt, et elle bride la diffusion des travaux que l'on croit devoir protéger, alors que c'est souvent leur diffusion qui crée des débouchés. Une voie intermédiaire existe : les licences non commerciales (CC BY-NC pour les données, PolyForm Noncommercial pour le code). Elles ne sont pas « open source » au sens de l'OSI, mais elles restent compatibles avec l'accès ouvert académique et la reproductibilité, tout en gardant possible une valorisation future.
+ D'après la réflexion menée au centre O.I.E. par Raphaël Jolivet ( ORCID ) . La pratique courante est binaire : tout fermer quand on espère une valorisation commerciale, tout ouvrir (CC BY, MIT, Apache, BSD : des licences libres, qui laissent réutiliser en citant l’auteur) sinon. Elle repose sur une estimation faite trop tôt, et elle bride la diffusion des travaux que l'on croit devoir protéger, alors que c'est souvent leur diffusion qui crée des débouchés. Une voie intermédiaire existe : les licences non commerciales (CC BY-NC pour les données, PolyForm Noncommercial pour le code). Elles ne sont pas « open source » au sens de l'OSI, mais elles restent compatibles avec l'accès ouvert académique et la reproductibilité, tout en gardant possible une valorisation future.
+ Le code et les données ne se placent pas sous les mêmes licences Choix Code (logiciel) Données
+ Ouvert MIT , Apache 2.0 , BSD (permissives : réutilisation libre en citant) ; GPL (copyleft : les versions dérivées restent sous GPL) CC BY (réutilisation libre en citant) ; CC0 (sans condition) ; ODbL pour une base de données ; Licence Ouverte Etalab 2.0 pour des données publiques françaises
+ Non commercial PolyForm Noncommercial (recherche, enseignement, usage personnel, service public, associations) CC BY-NC
+ Fermé Pas de diffusion publique : le contrat prime
+ À éviter Une licence Creative Commons pour du code ( Creative Commons le déconseille ) ; aucune licence Une licence logicielle (MIT, GPL) pour des données ; aucune licence
  L'arbre ci-dessous est un exemple, rien de figé : chaque centre de recherche l'adapte à ses contrats, à ses partenaires et à la politique de son établissement.
  Quelle licence ? L'arbre de décision
  Préalable : l'accord de tous les titulaires de droits.
@@ -5680,7 +5794,7 @@ Vue d'ensemble : recherche, logiciels, cours et outils
  sCV et prévisibilité
  Explorateur de l'indice γ
  ARTU et sa table
- Les 33 outils, par domaine
+ Les 34 outils, par domaine
  Essais et positions
  Édition scientifique : sans vérification, pas de confiance
  L'IA dans la recherche : AI Act, charte et boîte à outils

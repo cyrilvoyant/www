@@ -35,7 +35,7 @@ Jaap van den Herik: https://orcid.org/0000-0001-9751-761X
 Jamie M. Bright: https://orcid.org/0000-0002-9465-3453
 Jan Kleissl: https://orcid.org/0000-0003-4364-0211
 Javier Almorox: https://orcid.org/0000-0003-1523-0979
-Jean Laurent Duchaud: https://orcid.org/0000-0001-7490-7260
+Jean-Laurent Duchaud: https://orcid.org/0000-0001-7490-7260
 Jeroen Baas: https://orcid.org/0000-0001-8005-4153
 Jihad A. Younis: https://orcid.org/0000-0001-7116-3251
 John P. A. Ioannidis: https://orcid.org/0000-0003-3118-6859
@@ -77,7 +77,7 @@ Zaher Mundher Yaseen: https://orcid.org/0000-0003-3344-214X
 Zhao Zhen: https://orcid.org/0000-0001-5406-6441
 
 /* SITE */
-Last update: 2026-11-03
+Last update: 2026-11-04
 Language: English, French
 Licence of texts and courses: CC BY 4.0
 Standards: HTML5, schema.org JSON-LD, Atom, sitemap, llms.txt

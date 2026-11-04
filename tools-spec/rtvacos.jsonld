@@ -299,6 +299,9 @@
  "about": [
   {
    "@id": "https://www.cyrilvoyant.com/ontology/#persistence"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#metadata"
   }
  ]
 }

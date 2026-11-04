@@ -415,10 +415,11 @@
  },
  "exploration": [],
  "concepts": [
-  "persistence"
+  "persistence",
+  "metadata"
  ],
  "extraction": {
-  "source_hash": "85eb5e71cde019cf",
+  "source_hash": "b6bdec4a99f3b984",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#rtv"

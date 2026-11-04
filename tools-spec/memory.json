@@ -663,7 +663,7 @@
   "memory-phi"
  ],
  "extraction": {
-  "source_hash": "868c393457a27eb3",
+  "source_hash": "8245e2a96a0ee529",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#experience"

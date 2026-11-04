@@ -124,5 +124,10 @@
     "valueRequired": false
    }
   ]
- }
+ },
+ "about": [
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#data-management-plan"
+  }
+ ]
 }

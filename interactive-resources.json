@@ -470,6 +470,24 @@
       }
     },
     {
+      "id": "fair",
+      "domain": "research",
+      "kind": "assessment",
+      "interface_language": "both",
+      "name": {
+        "fr": "Évaluer si mes données sont FAIR",
+        "en": "Check whether my data are FAIR"
+      },
+      "task": {
+        "fr": "Vingt questions, cinq par principe FAIR (trouvable, accessible, interopérable, réutilisable) : un score sur 20 et les points à traiter en premier ; un exemple pédagogique, pas une certification.",
+        "en": "Twenty questions, five per FAIR principle (findable, accessible, interoperable, reusable): a score out of 20 and what to fix first; a teaching example, not a certification."
+      },
+      "url": {
+        "fr": "https://www.cyrilvoyant.com/fr/outils/autoevaluation-fair/",
+        "en": "https://www.cyrilvoyant.com/tools/fair-self-assessment/"
+      }
+    },
+    {
       "id": "student",
       "domain": "learning",
       "kind": "teaching",

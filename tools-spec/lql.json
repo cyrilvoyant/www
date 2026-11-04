@@ -460,7 +460,7 @@
   "gray"
  ],
  "extraction": {
-  "source_hash": "64814f4d3414e949",
+  "source_hash": "70037bd7cd9fa1d0",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#try-it"

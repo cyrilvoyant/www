@@ -373,6 +373,10 @@
           "anchor": "webservice-energy"
         },
         {
+          "title": "Is my project FAIR?",
+          "anchor": "fair-tool"
+        },
+        {
           "title": "Choosing a license for code and data",
           "anchor": "license"
         },
@@ -1241,6 +1245,10 @@
         {
           "title": "Un exemple : Webservice-Energy",
           "anchor": "webservice-energy"
+        },
+        {
+          "title": "Mon projet est-il FAIR ?",
+          "anchor": "fair-tool"
         },
         {
           "title": "Choisir une licence : le code et les données",
@@ -2170,6 +2178,51 @@
         {
           "title": "Travaux et équipes de référence",
           "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/outils/autoevaluation-fair/",
+      "title": "Mes données sont-elles FAIR ? Une autoévaluation en 20 questions",
+      "language": "fr",
+      "topics": [],
+      "citations": [
+        {
+          "@type": "ScholarlyArticle",
+          "name": "The FAIR Guiding Principles for scientific data management and stewardship",
+          "url": "https://doi.org/10.1038/sdata.2016.18"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "FAIR Data Maturity Model: specification and guidelines (Research Data Alliance)",
+          "url": "https://doi.org/10.15497/rda00050"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "F-UJI automated FAIR data assessment tool",
+          "url": "https://www.f-uji.net/"
+        }
+      ],
+      "sections": [
+        {
+          "title": "Mon projet est-il assez FAIR ? Un exemple d'autoévaluation en 20 points",
+          "anchor": "fair-tool"
+        },
+        {
+          "title": "Pourquoi cette grille ?",
+          "anchor": "pourquoi"
+        },
+        {
+          "title": "Comment citer cet outil",
+          "anchor": "citer"
+        },
+        {
+          "title": "Exemple et remerciements",
+          "anchor": "remerciements"
+        },
+        {
+          "title": "Aller plus loin : données et licences",
+          "anchor": "donnees"
         }
       ]
     },
@@ -4888,6 +4941,51 @@
         {
           "title": "Go further",
           "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/tools/fair-self-assessment/",
+      "title": "Are my data FAIR? A self-assessment in 20 questions",
+      "language": "en",
+      "topics": [],
+      "citations": [
+        {
+          "@type": "ScholarlyArticle",
+          "name": "The FAIR Guiding Principles for scientific data management and stewardship",
+          "url": "https://doi.org/10.1038/sdata.2016.18"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "FAIR Data Maturity Model: specification and guidelines (Research Data Alliance)",
+          "url": "https://doi.org/10.15497/rda00050"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "F-UJI automated FAIR data assessment tool",
+          "url": "https://www.f-uji.net/"
+        }
+      ],
+      "sections": [
+        {
+          "title": "Is my project FAIR enough? An example of a 20-point self-assessment",
+          "anchor": "fair-tool"
+        },
+        {
+          "title": "Why this grid?",
+          "anchor": "pourquoi"
+        },
+        {
+          "title": "How to cite this tool",
+          "anchor": "citer"
+        },
+        {
+          "title": "Example and acknowledgments",
+          "anchor": "remerciements"
+        },
+        {
+          "title": "Go further: data and licenses",
+          "anchor": "donnees"
         }
       ]
     },

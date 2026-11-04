@@ -24,7 +24,8 @@ Cyril Voyant connects medical physics and energy forecasting through modelling f
 - Interactive resource inventory: https://www.cyrilvoyant.com/interactive-resources.json . Research calculators, teaching demonstrations and hosted applications have distinct purposes.
 - Machine-readable tools: https://www.cyrilvoyant.com/tools-spec.json (index) and https://www.cyrilvoyant.com/tools-spec/<id>.json (one tool, e.g. engine, nice, memory). Read it to know what a tool computes, which parameters it has, the preset values and the sentence the page shows for each, without running the page.
 - Understand the modelling decisions: https://www.cyrilvoyant.com/approach/ ; français : https://www.cyrilvoyant.com/fr/approche/ .
-- Research integrity → /data/ → /ai-in-research/ → /scientific-publishing-trust/ → /cite/.
+- Check whether research data are FAIR (findable, accessible, interoperable, reusable): https://www.cyrilvoyant.com/tools/fair-self-assessment/ ; français : https://www.cyrilvoyant.com/fr/outils/autoevaluation-fair/ . Twenty questions, five per letter, scored 1, 0.5 or 0; a teaching example built on GO FAIR, with the RDA FAIR Data Maturity Model and F-UJI as reference assessments. Cite it with the BibTeX given on the page.
+- Research integrity → /data/ → /tools/fair-self-assessment/ → /ai-in-research/ → /scientific-publishing-trust/ → /cite/.
 
 ## Ontology and glossary
 
@@ -90,6 +91,7 @@ Cyril Voyant connects medical physics and energy forecasting through modelling f
 - [Compton scattering: angle and energy sharing](https://www.cyrilvoyant.com/tools/compton-scattering/)
 - [Correlation, significance and R²: distinguish the concepts](https://www.cyrilvoyant.com/tools/correlation-significance-r-squared/)
 - [Electromagnetic wave: electric and magnetic fields](https://www.cyrilvoyant.com/tools/electromagnetic-wave/)
+- [Are my data FAIR? A self-assessment in 20 questions](https://www.cyrilvoyant.com/tools/fair-self-assessment/)
 - [Compare forecasts: when is a more complex model worth it?](https://www.cyrilvoyant.com/tools/forecast-comparison/)
 - [Freezing: sensible heat, latent heat and power](https://www.cyrilvoyant.com/tools/freezing-energy-power/)
 - [Regression and an influential point: move an observation](https://www.cyrilvoyant.com/tools/influential-point-regression/)
@@ -154,6 +156,7 @@ Cyril Voyant connects medical physics and energy forecasting through modelling f
 - [Le fil : cinq étapes, une même démarche](https://www.cyrilvoyant.com/fr/le-fil/)
 - [Simulateurs, animations et calculateurs scientifiques](https://www.cyrilvoyant.com/fr/outils/)
 - [Explorer les coefficients et la table ARTU](https://www.cyrilvoyant.com/fr/outils/artu/)
+- [Mes données sont-elles FAIR ? Une autoévaluation en 20 questions](https://www.cyrilvoyant.com/fr/outils/autoevaluation-fair/)
 - [Calculer les poids de BLEND](https://www.cyrilvoyant.com/fr/outils/blend/)
 - [Comparer des prévisions : quand un modèle plus complexe vaut-il la peine ?](https://www.cyrilvoyant.com/fr/outils/comparateur-previsions/)
 - [Comparer les doses biologiques LQ et LQL](https://www.cyrilvoyant.com/fr/outils/doses-lq-lql/)

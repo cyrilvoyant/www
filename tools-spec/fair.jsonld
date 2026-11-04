@@ -1,0 +1,458 @@
+{
+ "@context": "https://schema.org",
+ "@type": [
+  "SoftwareApplication",
+  "LearningResource"
+ ],
+ "@id": "https://www.cyrilvoyant.com/tools/fair-self-assessment/#fair-tool#tool-spec",
+ "identifier": "fair",
+ "name": "FAIR self-assessment",
+ "alternateName": "Autoévaluation FAIR",
+ "description": "FAIR score out of 20 (5 per letter F, A, I, R) from 20 answers yes (1), partly (0.5) or no (0); thresholds: below 5 improvable, 5 to 10 good, above 10 very good; priority axes and limiting factor (weakest letter).",
+ "url": "https://www.cyrilvoyant.com/tools/fair-self-assessment/#fair-tool",
+ "sameAs": [
+  "https://www.cyrilvoyant.com/fr/outils/autoevaluation-fair/#fair-tool",
+  "https://www.cyrilvoyant.com/tools/fair-self-assessment/#fair-tool"
+ ],
+ "inLanguage": [
+  "fr",
+  "en"
+ ],
+ "applicationCategory": "ScientificApplication",
+ "operatingSystem": "Any (web browser)",
+ "isAccessibleForFree": true,
+ "learningResourceType": "assessment",
+ "author": {
+  "@type": "Person",
+  "name": "Cyril Voyant",
+  "identifier": "https://orcid.org/0000-0003-0242-7377"
+ },
+ "license": "https://creativecommons.org/licenses/by/4.0/",
+ "additionalProperty": [
+  {
+   "@type": "PropertyValue",
+   "propertyID": "F1",
+   "name": "Are the data deposited in an online repository or catalog?",
+   "alternateName": "Les données sont-elles déposées dans un entrepôt ou un catalogue en ligne ?",
+   "description": "Not only on a disk, a USB stick or sent by email. Examples: Zenodo, a national or institutional repository, a catalog such as the Webservice-Energy geocatalog.",
+   "minValue": 0,
+   "maxValue": 1
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "F2",
+   "name": "Does each dataset have a persistent identifier (DOI or other PID)?",
+   "alternateName": "Chaque jeu de données a-t-il un identifiant pérenne (DOI ou autre PID) ?",
+   "description": "A DOI (Digital Object Identifier) stays valid even if the website address changes; one per version is needed. Webservice-Energy assigns them through DataCite.",
+   "minValue": 0,
+   "maxValue": 1
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "F3",
+   "name": "Are the data described by rich metadata?",
+   "alternateName": "Les données sont-elles décrites par des métadonnées riches ?",
+   "description": "Title, authors, period, place, variables, instrument, time step, time zone: what a search engine and a reader need to know without opening the file.",
+   "minValue": 0,
+   "maxValue": 1
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "F4",
+   "name": "Does the metadata explicitly include the identifier of the data it describes?",
+   "alternateName": "Les métadonnées citent-elles explicitement l'identifiant des données qu'elles décrivent ?",
+   "description": "Record and dataset must point to each other; otherwise one finds the description without reaching the data.",
+   "minValue": 0,
+   "maxValue": 1
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "F5",
+   "name": "Is the metadata indexed in a catalog that machines can query?",
+   "alternateName": "Les métadonnées sont-elles indexées dans un catalogue interrogeable par des machines ?",
+   "description": "Harvesting by other catalogs (CSW, OAI-PMH), Google Dataset Search, the GEO portal. The Webservice-Energy GeoNetwork catalog can be harvested (CSW).",
+   "minValue": 0,
+   "maxValue": 1
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "A1",
+   "name": "Can the data be retrieved from their identifier, through a working link?",
+   "alternateName": "Peut-on récupérer les données à partir de leur identifiant, par un lien qui fonctionne ?",
+   "description": "The DOI leads to a landing page, which leads to the files or the service. No \"available on request\".",
+   "minValue": 0,
+   "maxValue": 1
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "A2",
+   "name": "Does access use a standard, open and free protocol?",
+   "alternateName": "L'accès passe-t-il par un protocole standard, ouvert et gratuit ?",
+   "description": "HTTPS, OPeNDAP, a documented web API: no paid software or proprietary exchange format just to read the data.",
+   "minValue": 0,
+   "maxValue": 1
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "A3",
+   "name": "Are the access conditions written down (open, registration, restricted)?",
+   "alternateName": "Les conditions d'accès sont-elles écrites (libre, sur inscription, restreint) ?",
+   "description": "Accessible does not mean open to everyone: sensitive data can be restricted, but the rule and the procedure must be readable.",
+   "minValue": 0,
+   "maxValue": 1
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "A4",
+   "name": "Can a program read the data directly, without a manual download?",
+   "alternateName": "Un programme peut-il lire les données directement, sans téléchargement manuel ?",
+   "description": "API, OGC services (WMS, WCS), THREDDS server, STAC catalog: this is what lets the data be reused in a processing chain.",
+   "minValue": 0,
+   "maxValue": 1
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "A5",
+   "name": "Does the metadata remain accessible even if the data are withdrawn, and is preservation planned?",
+   "alternateName": "Les métadonnées restent-elles accessibles même si les données sont retirées, et l'archivage est-il prévu ?",
+   "description": "The trace of a dataset (its record, its DOI) must outlive the data themselves; a preservation plan says how long and where.",
+   "minValue": 0,
+   "maxValue": 1
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "I1",
+   "name": "Is the format open and non-proprietary?",
+   "alternateName": "Le format est-il ouvert et non propriétaire ?",
+   "description": "Documented CSV, NetCDF, GeoTIFF, Parquet rather than an Excel workbook or a MATLAB file that only one program reads correctly.",
+   "minValue": 0,
+   "maxValue": 1
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "I2",
+   "name": "Does the format follow the standard of the field?",
+   "alternateName": "Le format suit-il le standard de la discipline ?",
+   "description": "For geophysical grids and series: NetCDF-CF, Zarr, GeoParquet. libinsitu, from Webservice-Energy, converts heterogeneous measurement networks to NetCDF-CF.",
+   "minValue": 0,
+   "maxValue": 1
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "I3",
+   "name": "Are variables and units named with a shared vocabulary?",
+   "alternateName": "Variables et unités sont-elles nommées avec un vocabulaire partagé ?",
+   "description": "CF standard names, SI units, time in UTC: \"rsds\" in W/m² rather than \"glob_rad\" with no unit.",
+   "minValue": 0,
+   "maxValue": 1
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "I4",
+   "name": "Does the metadata follow a standard schema?",
+   "alternateName": "Les métadonnées suivent-elles un schéma standard ?",
+   "description": "ISO 19115/19139, DataCite, DCAT or schema.org: a schema that other catalogs can read.",
+   "minValue": 0,
+   "maxValue": 1
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "I5",
+   "name": "Do the data link, through identifiers, to related resources?",
+   "alternateName": "Les données renvoient-elles, par leurs identifiants, aux ressources liées ?",
+   "description": "Instrument, source dataset, publication, processing code, each by its DOI or persistent URL.",
+   "minValue": 0,
+   "maxValue": 1
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "R1",
+   "name": "Is an explicit licence attached to the data?",
+   "alternateName": "Une licence explicite est-elle attachée aux données ?",
+   "description": "Without a licence, nobody knows what they are allowed to do. CC BY or CC0 for wide diffusion, CC BY-NC to protect a valorization: see the tree below.",
+   "minValue": 0,
+   "maxValue": 1
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "R2",
+   "name": "Is the provenance described?",
+   "alternateName": "La provenance est-elle décrite ?",
+   "description": "Origin, instrument, calibration, processing applied, versions: what tells where each value comes from.",
+   "minValue": 0,
+   "maxValue": 1
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "R3",
+   "name": "Does a documented quality control come with the data?",
+   "alternateName": "Un contrôle qualité documenté accompagne-t-il les données ?",
+   "description": "Physical limits, stuck values, time stamps, comparison with a reference, with flags delivered with the data (BSRN-type procedures for radiation).",
+   "minValue": 0,
+   "maxValue": 1
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "R4",
+   "name": "Can a third party use them without contacting you?",
+   "alternateName": "Un tiers peut-il les utiliser sans vous contacter ?",
+   "description": "A readme file, a data dictionary, a reading example or sample code.",
+   "minValue": 0,
+   "maxValue": 1
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "R5",
+   "name": "Are community standards met and is the recommended citation given?",
+   "alternateName": "Les standards de la communauté sont-ils respectés et la citation recommandée est-elle donnée ?",
+   "description": "Field conventions followed, and a sentence \"To cite these data: ...\" with the DOI.",
+   "minValue": 0,
+   "maxValue": 1
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:we",
+   "name": "Webservice-Energy",
+   "alternateName": "Webservice-Energy",
+   "value": "{\"F1\": 1, \"F2\": 1, \"F3\": 1, \"F4\": 1, \"F5\": 1, \"A1\": 1, \"A2\": 1, \"A3\": 1, \"A4\": 1, \"A5\": 0.5, \"I1\": 1, \"I2\": 1, \"I3\": 1, \"I4\": 1, \"I5\": 0.5, \"R1\": 1, \"R2\": 1, \"R3\": 1, \"R4\": 0.5, \"R5\": 0.5}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:zenodo",
+   "name": "Deposit with DOI, CSV file",
+   "alternateName": "Dépôt avec DOI, fichier CSV",
+   "value": "{\"F1\": 1, \"F2\": 1, \"F3\": 0.5, \"F4\": 1, \"F5\": 1, \"A1\": 1, \"A2\": 1, \"A3\": 1, \"A4\": 0.5, \"A5\": 1, \"I1\": 1, \"I2\": 0, \"I3\": 0.5, \"I4\": 1, \"I5\": 0, \"R1\": 1, \"R2\": 0.5, \"R3\": 0, \"R4\": 0.5, \"R5\": 0.5}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:disk",
+   "name": "Spreadsheet on a disk",
+   "alternateName": "Tableur sur un disque",
+   "value": "{\"F1\": 0, \"F2\": 0, \"F3\": 0, \"F4\": 0, \"F5\": 0, \"A1\": 0, \"A2\": 0, \"A3\": 0, \"A4\": 0, \"A5\": 0, \"I1\": 0.5, \"I2\": 0, \"I3\": 0, \"I4\": 0, \"I5\": 0, \"R1\": 0, \"R2\": 0.5, \"R3\": 0, \"R4\": 0, \"R5\": 0}"
+  }
+ ],
+ "potentialAction": {
+  "@type": "Action",
+  "name": "Explore the tool",
+  "target": {
+   "@type": "EntryPoint",
+   "urlTemplate": "https://www.cyrilvoyant.com/tools/fair-self-assessment/#fair-tool",
+   "actionPlatform": "https://schema.org/DesktopWebPlatform"
+  },
+  "object": [
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "F1",
+    "description": "Are the data deposited in an online repository or catalog?",
+    "valueRequired": false,
+    "minValue": 0,
+    "maxValue": 1,
+    "stepValue": 0.5
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "F2",
+    "description": "Does each dataset have a persistent identifier (DOI or other PID)?",
+    "valueRequired": false,
+    "minValue": 0,
+    "maxValue": 1,
+    "stepValue": 0.5
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "F3",
+    "description": "Are the data described by rich metadata?",
+    "valueRequired": false,
+    "minValue": 0,
+    "maxValue": 1,
+    "stepValue": 0.5
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "F4",
+    "description": "Does the metadata explicitly include the identifier of the data it describes?",
+    "valueRequired": false,
+    "minValue": 0,
+    "maxValue": 1,
+    "stepValue": 0.5
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "F5",
+    "description": "Is the metadata indexed in a catalog that machines can query?",
+    "valueRequired": false,
+    "minValue": 0,
+    "maxValue": 1,
+    "stepValue": 0.5
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "A1",
+    "description": "Can the data be retrieved from their identifier, through a working link?",
+    "valueRequired": false,
+    "minValue": 0,
+    "maxValue": 1,
+    "stepValue": 0.5
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "A2",
+    "description": "Does access use a standard, open and free protocol?",
+    "valueRequired": false,
+    "minValue": 0,
+    "maxValue": 1,
+    "stepValue": 0.5
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "A3",
+    "description": "Are the access conditions written down (open, registration, restricted)?",
+    "valueRequired": false,
+    "minValue": 0,
+    "maxValue": 1,
+    "stepValue": 0.5
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "A4",
+    "description": "Can a program read the data directly, without a manual download?",
+    "valueRequired": false,
+    "minValue": 0,
+    "maxValue": 1,
+    "stepValue": 0.5
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "A5",
+    "description": "Does the metadata remain accessible even if the data are withdrawn, and is preservation planned?",
+    "valueRequired": false,
+    "minValue": 0,
+    "maxValue": 1,
+    "stepValue": 0.5
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "I1",
+    "description": "Is the format open and non-proprietary?",
+    "valueRequired": false,
+    "minValue": 0,
+    "maxValue": 1,
+    "stepValue": 0.5
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "I2",
+    "description": "Does the format follow the standard of the field?",
+    "valueRequired": false,
+    "minValue": 0,
+    "maxValue": 1,
+    "stepValue": 0.5
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "I3",
+    "description": "Are variables and units named with a shared vocabulary?",
+    "valueRequired": false,
+    "minValue": 0,
+    "maxValue": 1,
+    "stepValue": 0.5
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "I4",
+    "description": "Does the metadata follow a standard schema?",
+    "valueRequired": false,
+    "minValue": 0,
+    "maxValue": 1,
+    "stepValue": 0.5
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "I5",
+    "description": "Do the data link, through identifiers, to related resources?",
+    "valueRequired": false,
+    "minValue": 0,
+    "maxValue": 1,
+    "stepValue": 0.5
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "R1",
+    "description": "Is an explicit licence attached to the data?",
+    "valueRequired": false,
+    "minValue": 0,
+    "maxValue": 1,
+    "stepValue": 0.5
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "R2",
+    "description": "Is the provenance described?",
+    "valueRequired": false,
+    "minValue": 0,
+    "maxValue": 1,
+    "stepValue": 0.5
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "R3",
+    "description": "Does a documented quality control come with the data?",
+    "valueRequired": false,
+    "minValue": 0,
+    "maxValue": 1,
+    "stepValue": 0.5
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "R4",
+    "description": "Can a third party use them without contacting you?",
+    "valueRequired": false,
+    "minValue": 0,
+    "maxValue": 1,
+    "stepValue": 0.5
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "R5",
+    "description": "Are community standards met and is the recommended citation given?",
+    "valueRequired": false,
+    "minValue": 0,
+    "maxValue": 1,
+    "stepValue": 0.5
+   }
+  ]
+ },
+ "citation": [
+  "https://doi.org/10.1038/sdata.2016.18",
+  "https://doi.org/10.15497/rda00050"
+ ],
+ "about": [
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#fair"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#findable"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#accessible"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#interoperable"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#reusable"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#persistent-identifier"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#metadata"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#data-license"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#data-management-plan"
+  }
+ ]
+}

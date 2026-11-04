@@ -480,7 +480,7 @@
   "blend"
  ],
  "extraction": {
-  "source_hash": "893872df2b7cbd9d",
+  "source_hash": "8f6e1eead6315019",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#try-it"

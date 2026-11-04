@@ -88,5 +88,13 @@
     "valueRequired": false
    }
   ]
- }
+ },
+ "about": [
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#fair"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#metadata"
+  }
+ ]
 }

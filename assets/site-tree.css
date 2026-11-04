@@ -86,3 +86,4 @@
 @media(max-width:720px){.reading-bar{gap:3px;padding:0 2px}.reading-bar a,.reading-bar .site-tree-trigger{padding:0 8px;min-width:40px;height:40px}.reading-bar .rb-up .rb-title,.reading-bar .rb-next .rb-title{display:none}.reading-bar .rb-next .rb-word,.reading-bar .rb-up .rb-word{display:inline}}
 @media(prefers-reduced-motion:reduce){.site-tree,.site-tree-list details>summary::before{transition:none}}
 @media(prefers-reduced-motion:reduce){.reading-bar a,.reading-bar .site-tree-trigger{transition:none}}
+@media(min-width:721px){.site-tree .site-search{display:none}}

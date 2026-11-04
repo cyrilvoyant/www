@@ -27,11 +27,11 @@
    "dcterms:description": [
     {
      "@language": "fr",
-     "@value": "Notions de prévision, de dose, de physique médicale, de statistiques et de thermique définies sur www.cyrilvoyant.com."
+     "@value": "Notions de prévision, de dose, de physique médicale, de statistiques, de thermique et de données de recherche définies sur www.cyrilvoyant.com."
     },
     {
      "@language": "en",
-     "@value": "Concepts of forecasting, dose, medical physics, statistics and thermal physics defined on www.cyrilvoyant.com."
+     "@value": "Concepts of forecasting, dose, medical physics, statistics, thermal physics and research data defined on www.cyrilvoyant.com."
     }
    ],
    "dcterms:license": {
@@ -67,6 +67,9 @@
     },
     {
      "@id": "cv:thermal-physics"
+    },
+    {
+     "@id": "cv:research-data"
     }
    ]
   },
@@ -5674,6 +5677,634 @@
     },
     {
      "@id": "https://www.cyrilvoyant.com/tools/freezing-energy-power/"
+    }
+   ]
+  },
+  {
+   "@id": "cv:research-data",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "research-data",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Données de recherche"
+    },
+    {
+     "@language": "en",
+     "@value": "Research data"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "Les mesures, observations et simulations sur lesquelles reposent les résultats : un modèle ne vaut que ce que valent ses données, qui doivent être qualifiées, décrites et placées sous licence."
+    },
+    {
+     "@language": "en",
+     "@value": "The measurements, observations and simulations on which results rest: a model is only as good as its data, which must be qualified, described and licensed."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "données scientifiques"
+    },
+    {
+     "@language": "en",
+     "@value": "scientific data"
+    }
+   ],
+   "skos:topConceptOf": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:narrower": [
+    {
+     "@id": "cv:data-license"
+    },
+    {
+     "@id": "cv:data-management-plan"
+    },
+    {
+     "@id": "cv:fair"
+    },
+    {
+     "@id": "cv:metadata"
+    },
+    {
+     "@id": "cv:persistent-identifier"
+    }
+   ],
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/donnees/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/data/"
+    }
+   ]
+  },
+  {
+   "@id": "cv:fair",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "fair",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Principes FAIR"
+    },
+    {
+     "@language": "en",
+     "@value": "FAIR principles"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "Quatre principes pour que des données soient trouvables (Findable), accessibles (Accessible), interopérables (Interoperable) et réutilisables (Reusable), par les humains comme par les machines."
+    },
+    {
+     "@language": "en",
+     "@value": "Four principles that make data findable, accessible, interoperable and reusable, by humans and by machines."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "FAIR"
+    },
+    {
+     "@language": "fr",
+     "@value": "données FAIR"
+    },
+    {
+     "@language": "en",
+     "@value": "FAIR"
+    },
+    {
+     "@language": "en",
+     "@value": "FAIR data"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:research-data"
+    }
+   ],
+   "skos:narrower": [
+    {
+     "@id": "cv:accessible"
+    },
+    {
+     "@id": "cv:findable"
+    },
+    {
+     "@id": "cv:interoperable"
+    },
+    {
+     "@id": "cv:reusable"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:data-management-plan"
+    }
+   ],
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/outils/autoevaluation-fair/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/tools/fair-self-assessment/"
+    }
+   ],
+   "dcterms:source": [
+    {
+     "@id": "https://doi.org/10.1038/sdata.2016.18"
+    }
+   ]
+  },
+  {
+   "@id": "cv:findable",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "findable",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Trouvable"
+    },
+    {
+     "@language": "en",
+     "@value": "Findable"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "Premier principe FAIR : des données dotées d'un identifiant pérenne, décrites par des métadonnées riches et référencées dans un catalogue ou un entrepôt où l'on peut les chercher."
+    },
+    {
+     "@language": "en",
+     "@value": "First FAIR principle: data with a persistent identifier, described by rich metadata and listed in a catalog or repository where they can be searched."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "F de FAIR"
+    },
+    {
+     "@language": "en",
+     "@value": "F in FAIR"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:fair"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:metadata"
+    },
+    {
+     "@id": "cv:persistent-identifier"
+    }
+   ],
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/outils/autoevaluation-fair/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/tools/fair-self-assessment/"
+    }
+   ]
+  },
+  {
+   "@id": "cv:accessible",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "accessible",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Accessible"
+    },
+    {
+     "@language": "en",
+     "@value": "Accessible"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "Deuxième principe FAIR : données et métadonnées récupérables à partir de leur identifiant par un protocole ouvert et standard (par exemple HTTPS), avec authentification si nécessaire ; les métadonnées restent accessibles même quand les données ne le sont plus."
+    },
+    {
+     "@language": "en",
+     "@value": "Second FAIR principle: data and metadata retrievable from their identifier through an open, standard protocol (for example HTTPS), with authentication where needed; the metadata remain accessible even when the data no longer are."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "A de FAIR"
+    },
+    {
+     "@language": "en",
+     "@value": "A in FAIR"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:fair"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:persistent-identifier"
+    }
+   ],
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/outils/autoevaluation-fair/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/tools/fair-self-assessment/"
+    }
+   ]
+  },
+  {
+   "@id": "cv:interoperable",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "interoperable",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Interopérable"
+    },
+    {
+     "@language": "en",
+     "@value": "Interoperable"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "Troisième principe FAIR : données et métadonnées dans des formats et des vocabulaires partagés (par exemple NetCDF-CF), lisibles par d'autres logiciels et reliées à d'autres données."
+    },
+    {
+     "@language": "en",
+     "@value": "Third FAIR principle: data and metadata in shared formats and vocabularies (for example NetCDF-CF), readable by other software and linked to other data."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "I de FAIR"
+    },
+    {
+     "@language": "fr",
+     "@value": "interopérabilité"
+    },
+    {
+     "@language": "en",
+     "@value": "I in FAIR"
+    },
+    {
+     "@language": "en",
+     "@value": "interoperability"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:fair"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:metadata"
+    }
+   ],
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/outils/autoevaluation-fair/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/tools/fair-self-assessment/"
+    }
+   ]
+  },
+  {
+   "@id": "cv:reusable",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "reusable",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Réutilisable"
+    },
+    {
+     "@language": "en",
+     "@value": "Reusable"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "Quatrième principe FAIR : des données que d'autres peuvent réutiliser, grâce à une licence claire, une provenance décrite et le respect des normes de la communauté."
+    },
+    {
+     "@language": "en",
+     "@value": "Fourth FAIR principle: data that others can reuse, thanks to a clear license, a described provenance and community standards."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "R de FAIR"
+    },
+    {
+     "@language": "en",
+     "@value": "R in FAIR"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:fair"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:data-license"
+    }
+   ],
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/outils/autoevaluation-fair/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/tools/fair-self-assessment/"
+    }
+   ]
+  },
+  {
+   "@id": "cv:persistent-identifier",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "persistent-identifier",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Identifiant pérenne"
+    },
+    {
+     "@language": "en",
+     "@value": "Persistent identifier"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "Identifiant qui désigne durablement un objet (jeu de données, logiciel, article, personne), même si son adresse web change : DOI (Digital Object Identifier) pour les données et les publications, ORCID pour les chercheurs."
+    },
+    {
+     "@language": "en",
+     "@value": "Identifier that designates an object (dataset, software, article, person) for the long term, even if its web address changes: DOI (Digital Object Identifier) for data and publications, ORCID for researchers."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "PID"
+    },
+    {
+     "@language": "fr",
+     "@value": "DOI"
+    },
+    {
+     "@language": "en",
+     "@value": "PID"
+    },
+    {
+     "@language": "en",
+     "@value": "DOI"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:research-data"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:accessible"
+    },
+    {
+     "@id": "cv:findable"
+    },
+    {
+     "@id": "cv:metadata"
+    }
+   ],
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/donnees/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/data/"
+    }
+   ]
+  },
+  {
+   "@id": "cv:metadata",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "metadata",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Métadonnées"
+    },
+    {
+     "@language": "en",
+     "@value": "Metadata"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "Données qui décrivent des données : titre, auteurs, période, lieu, variables, unités, instrument, pas de temps, traitements ; ce qu'il faut savoir pour trouver et réutiliser un jeu de données sans ouvrir le fichier."
+    },
+    {
+     "@language": "en",
+     "@value": "Data that describe data: title, authors, period, place, variables, units, instrument, time step, processing; what one needs to know to find and reuse a dataset without opening the file."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "fiche de métadonnées"
+    },
+    {
+     "@language": "en",
+     "@value": "metadata record"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:research-data"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:findable"
+    },
+    {
+     "@id": "cv:interoperable"
+    },
+    {
+     "@id": "cv:persistent-identifier"
+    }
+   ],
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/donnees/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/data/"
+    }
+   ]
+  },
+  {
+   "@id": "cv:data-license",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "data-license",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Licence de données"
+    },
+    {
+     "@language": "en",
+     "@value": "Data license"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "Texte qui dit ce que chacun a le droit de faire des données (copier, modifier, redistribuer, usage commercial ou non), par exemple CC BY (Creative Commons Attribution) ; sans licence, personne ne sait ce qu'il peut faire."
+    },
+    {
+     "@language": "en",
+     "@value": "Text that states what anyone may do with the data (copy, modify, redistribute, commercial use or not), for example CC BY (Creative Commons Attribution); without a license, nobody knows what they may do."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "licence CC BY"
+    },
+    {
+     "@language": "en",
+     "@value": "CC BY license"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:research-data"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:reusable"
+    }
+   ],
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/donnees/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/data/"
+    }
+   ]
+  },
+  {
+   "@id": "cv:data-management-plan",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "data-management-plan",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Plan de gestion des données"
+    },
+    {
+     "@language": "en",
+     "@value": "Data management plan"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "Document qui décrit comment les données d'un projet seront produites, décrites, conservées et partagées, souvent exigé par les financeurs ; il prépare des données FAIR dès le début du projet."
+    },
+    {
+     "@language": "en",
+     "@value": "Document that describes how the data of a project will be produced, described, stored and shared, often required by funders; it prepares FAIR data from the start of the project."
+    }
+   ],
+   "skos:altLabel": [
+    {
+     "@language": "fr",
+     "@value": "PGD"
+    },
+    {
+     "@language": "en",
+     "@value": "DMP"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:research-data"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:fair"
+    }
+   ],
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/outils/autoevaluation-fair/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/tools/fair-self-assessment/"
     }
    ]
   }
