@@ -417,7 +417,7 @@
   "data-management-plan"
  ],
  "extraction": {
-  "source_hash": "a1e159057992a6f0",
+  "source_hash": "d3f7ad829746e1dc",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#role-helper"

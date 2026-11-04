@@ -33,6 +33,9 @@
      "@id": "https://doi.org/10.1016/j.renene.2025.123913"
     },
     {
+     "@id": "https://www.cyrilvoyant.com/30-second-brief/"
+    },
+    {
      "@id": "https://www.cyrilvoyant.com/about/"
     },
     {
@@ -46,6 +49,9 @@
     },
     {
      "@id": "https://www.cyrilvoyant.com/fr/enseignement/cours-prevision-solaire/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/fiche-30-secondes/"
     },
     {
      "@id": "https://www.cyrilvoyant.com/fr/outils/variabilite-previsibilite/"
@@ -123,6 +129,11 @@
    "creativeWorkStatus": "published; author version arXiv:2506.21807"
   },
   {
+   "@id": "https://www.cyrilvoyant.com/30-second-brief/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/30-second-brief/"
+  },
+  {
    "@id": "https://www.cyrilvoyant.com/about/",
    "@type": "WebPage",
    "name": "www.cyrilvoyant.com/about/"
@@ -146,6 +157,11 @@
    "@id": "https://www.cyrilvoyant.com/fr/enseignement/cours-prevision-solaire/",
    "@type": "WebPage",
    "name": "www.cyrilvoyant.com/fr/enseignement/cours-prevision-solaire/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/fr/fiche-30-secondes/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/fr/fiche-30-secondes/"
   },
   {
    "@id": "https://www.cyrilvoyant.com/fr/outils/variabilite-previsibilite/",

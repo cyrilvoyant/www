@@ -477,7 +477,7 @@
    ],
    "concepts": [],
    "extraction": {
-    "source_hash": "c51ed63ef42fc3fa",
+    "source_hash": "7dc6547b9dfb63e3",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -865,7 +865,7 @@
     "cop"
    ],
    "extraction": {
-    "source_hash": "344edb2f441cf991",
+    "source_hash": "88fd7d26806ac3c8",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -1303,7 +1303,7 @@
    ],
    "concepts": [],
    "extraction": {
-    "source_hash": "0595c038f57c143f",
+    "source_hash": "05597c3e4c8758f0",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -1718,7 +1718,7 @@
    ],
    "concepts": [],
    "extraction": {
-    "source_hash": "e1c4b44ebede5814",
+    "source_hash": "e9ba69bb08e86880",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -2102,7 +2102,7 @@
     "half-value-layer"
    ],
    "extraction": {
-    "source_hash": "58bb12531564fdb8",
+    "source_hash": "d39ee03f2b7ec7bd",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -2606,7 +2606,7 @@
     "biot-number"
    ],
    "extraction": {
-    "source_hash": "3b1d2477c8470370",
+    "source_hash": "81f4b77dafd4e280",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -3138,7 +3138,7 @@
     "sensible-heat"
    ],
    "extraction": {
-    "source_hash": "24b0e71e9bb6bde1",
+    "source_hash": "51a92eeadc45ce6c",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -3685,7 +3685,7 @@
     "roc-curve"
    ],
    "extraction": {
-    "source_hash": "94600673e808e5a4",
+    "source_hash": "c2577726492fc984",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -4193,7 +4193,7 @@
     "normal-distribution"
    ],
    "extraction": {
-    "source_hash": "55406abe0823fbf2",
+    "source_hash": "a202c63fddd97ccb",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -4424,7 +4424,7 @@
      },
      "shows": {
       "fr": "Toujours 6 mmHg, mais noyés dans une forte dispersion : H₀ n’est pas rejetée.",
-      "en": null
+      "en": "Still 6 mmHg, but lost in a large spread: H₀ is not rejected."
      }
     },
     {
@@ -4763,7 +4763,7 @@
     "student-t-test"
    ],
    "extraction": {
-    "source_hash": "561d648c2839e298",
+    "source_hash": "4e6feafa53549635",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -4771,9 +4771,7 @@
     "page_errors": [],
     "fr_en_preset_consistency": {
      "presets_compared": 6,
-     "presets_with_different_values_fr_vs_en": [
-      3
-     ]
+     "presets_with_different_values_fr_vs_en": []
     }
    }
   },
@@ -5495,7 +5493,7 @@
     "chi-square-test"
    ],
    "extraction": {
-    "source_hash": "ddfba72ec721bb6e",
+    "source_hash": "ef50ef5916e52193",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -5913,7 +5911,7 @@
     "r-squared"
    ],
    "extraction": {
-    "source_hash": "6df709a91747fba5",
+    "source_hash": "f0c8e616149cbfe7",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -6371,7 +6369,7 @@
     "prediction-interval"
    ],
    "extraction": {
-    "source_hash": "2d6f8ec36512c580",
+    "source_hash": "ec943c2753b8c267",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -6755,7 +6753,7 @@
     "influential-point"
    ],
    "extraction": {
-    "source_hash": "b0e8a6d19c1dfbc5",
+    "source_hash": "abca11d9493edc8e",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -7270,7 +7268,7 @@
    ],
    "concepts": [],
    "extraction": {
-    "source_hash": "0b608e4249237cdf",
+    "source_hash": "e1e8a1258323694e",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#sun"
@@ -7661,7 +7659,7 @@
     "nice"
    ],
    "extraction": {
-    "source_hash": "055c6f154f872301",
+    "source_hash": "da3d5a832f1da867",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#try-it"
@@ -8152,7 +8150,7 @@
     "blend"
    ],
    "extraction": {
-    "source_hash": "a40c1fd3e7fd1477",
+    "source_hash": "7df761a0859880f3",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#try-it"
@@ -8559,7 +8557,7 @@
     "forecastability-f"
    ],
    "extraction": {
-    "source_hash": "e779919d07fc3f63",
+    "source_hash": "18bf6c30f192adb7",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#try-it"
@@ -9162,7 +9160,7 @@
     "gamma-index"
    ],
    "extraction": {
-    "source_hash": "060490faf8583ead",
+    "source_hash": "2737aa7d31f97d3d",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#try-it"
@@ -9633,7 +9631,7 @@
     "gray"
    ],
    "extraction": {
-    "source_hash": "e60563ad98c19a43",
+    "source_hash": "dc57d1075285257a",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#try-it"
@@ -10048,7 +10046,7 @@
     "doubling-time"
    ],
    "extraction": {
-    "source_hash": "952b12e7a37af645",
+    "source_hash": "7a66f72bab90661f",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#try-it"
@@ -10728,7 +10726,7 @@
     "nice"
    ],
    "extraction": {
-    "source_hash": "f035c8aa0d5abc6d",
+    "source_hash": "bc8c556cb51b506b",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#fc"
@@ -11405,7 +11403,7 @@
     "memory-phi"
    ],
    "extraction": {
-    "source_hash": "df2fbd86a7514e01",
+    "source_hash": "37b6607d8ce25c71",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -11832,7 +11830,7 @@
    ],
    "concepts": [],
    "extraction": {
-    "source_hash": "9583b62a9da9bd25",
+    "source_hash": "5855d53d9218157c",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience",
@@ -12242,7 +12240,7 @@
    ],
    "concepts": [],
    "extraction": {
-    "source_hash": "4c4822db787e25c3",
+    "source_hash": "2412ea5d1567cf60",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#cx"
@@ -12485,7 +12483,7 @@
     "prediction-interval"
    ],
    "extraction": {
-    "source_hash": "31f550e734cf1fed",
+    "source_hash": "f916c5afaace6eb2",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#proba-race"
@@ -12944,7 +12942,7 @@
     "metadata"
    ],
    "extraction": {
-    "source_hash": "8c83563c30e5fd30",
+    "source_hash": "2271e4ec5505e698",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#rtv"
@@ -13372,7 +13370,7 @@
     "data-management-plan"
    ],
    "extraction": {
-    "source_hash": "a1e159057992a6f0",
+    "source_hash": "d3f7ad829746e1dc",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#role-helper"
@@ -13697,7 +13695,7 @@
     "metadata"
    ],
    "extraction": {
-    "source_hash": "ad13de1654f6f7f9",
+    "source_hash": "81318e76c1cf9ed3",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#lic-tree"

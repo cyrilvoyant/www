@@ -217,7 +217,7 @@
    },
    "shows": {
     "fr": "Toujours 6 mmHg, mais noyés dans une forte dispersion : H₀ n’est pas rejetée.",
-    "en": null
+    "en": "Still 6 mmHg, but lost in a large spread: H₀ is not rejected."
    }
   },
   {
@@ -556,7 +556,7 @@
   "student-t-test"
  ],
  "extraction": {
-  "source_hash": "561d648c2839e298",
+  "source_hash": "4e6feafa53549635",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#experience"
@@ -564,9 +564,7 @@
   "page_errors": [],
   "fr_en_preset_consistency": {
    "presets_compared": 6,
-   "presets_with_different_values_fr_vs_en": [
-    3
-   ]
+   "presets_with_different_values_fr_vs_en": []
   }
  }
 }

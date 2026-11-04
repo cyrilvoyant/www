@@ -370,7 +370,7 @@
   "influential-point"
  ],
  "extraction": {
-  "source_hash": "b0e8a6d19c1dfbc5",
+  "source_hash": "abca11d9493edc8e",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#experience"

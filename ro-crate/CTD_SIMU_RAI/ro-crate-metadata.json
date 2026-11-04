@@ -42,6 +42,12 @@
      "@id": "https://doi.org/10.1038/s41598-026-56267-1"
     },
     {
+     "@id": "https://www.cyrilvoyant.com/30-second-brief/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/fiche-30-secondes/"
+    },
+    {
      "@id": "https://www.cyrilvoyant.com/fr/outils/modele-thyroide/"
     },
     {
@@ -116,6 +122,16 @@
    "@type": "ScholarlyArticle",
    "name": "M. Fusella Giuntini, C. Voyant, D. Taieb, D. Barbolosi. A computational framework for optimizing radioiodine therapy protocols in metastatic thyroid cancer. Scientific Reports 16 (2026) 27179",
    "creativeWorkStatus": "published, open access"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/30-second-brief/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/30-second-brief/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/fr/fiche-30-secondes/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/fr/fiche-30-secondes/"
   },
   {
    "@id": "https://www.cyrilvoyant.com/fr/outils/modele-thyroide/",

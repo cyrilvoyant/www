@@ -8,9 +8,19 @@ URL: https://www.cyrilvoyant.com/about/
 
 About
  I am a physicist and Research Director at Mines Paris – PSL , within the Centre Observation, Impacts, Energy (O.I.E.), and Visiting Professor at the University of Kragujevac , Serbia. I build physical and statistical models to inform decisions in energy and medicine, with people at the center and AI as one tool among others. Our work connects solar and photovoltaic forecasting, time series and frugal AI. My background also includes medical physics.
+ In brief
+ Physicist, Research Director at Mines Paris – PSL since 2024, after medical physics in radiotherapy from 2003 to 2024.
+ Two fields, one way of working: energy forecasting and medical physics, with the model at the core, people at the center and AI as a tool at the edge.
+ All public work is gathered at a glance ; the short version: in 30 seconds .
  Background
- I trained in fundamental physics, qualified as a medical physicist in 2003, and completed my PhD on solar radiation time series in 2011. I pursued energy research alongside clinical work as a medical physicist at Polyclinique Saint-Roch, Montpellier (2003–2006), then CHD Castelluccio, Ajaccio (2006–2024), before joining Mines Paris – PSL as Research Director in 2024. My appointments at the University of Corsica ended in 2024; since then I have taught there as a part-time lecturer (vacataire).
+ I trained in fundamental physics, qualified as a medical physicist in 2003, and completed my PhD on solar radiation time series in 2011. I pursued energy research alongside clinical work as a medical physicist at Polyclinique Saint-Roch, Montpellier (2003–2006), then the Castelluccio hospital in Ajaccio (2006–2024), before joining Mines Paris – PSL as Research Director in 2024. My appointments at the University of Corsica ended in 2024; since then I have taught there as a part-time lecturer (vacataire).
  My experience in radiotherapy and measurement informs how I approach uncertainty, model evaluation and scientific software. Read my academic CV .
+ The path in five dates; each one leads to the work that came out of it.
+ 2003–2006 Montpellier, Polyclinique Saint-Roch Medical physicist in radiotherapy: dose, measurement, quality assurance. Medical physics stories
+ 2006–2024 Ajaccio, Castelluccio hospital Medical physicist, then head of the Medical Physics and Radiation Protection Unit (2020–2024). Models born in the clinic. Dose equivalence (LQL-Equiv) · thyroid cancer and radioiodine
+ 2011 PhD, University of Corsica: time series and solar radiation Energy research, carried out alongside clinical work. Evaluate a solar forecast against persistence
+ 2019 HDR (habilitation to supervise research), University of Corsica From solar irradiation forecasting to life sciences, through numerical simulation. The common approach
+ Since 2024 Sophia Antipolis, Mines Paris – PSL, O.I.E. center Research Director: forecasting, model evaluation and frugal AI, as a team. The thread connecting this work · the map of the work
  Photovoltaic installation on a coastal research platform in Corsica.
  Radiotherapy linear accelerator and treatment-planning images, illustrating my medical physics background.
  Current research
@@ -18,8 +28,16 @@ About
  Recent papers introduce the sCV and forecastability indices (sCV: variability caused by clouds; F: how forecastable the signal is), develop BLEND forecasting (a better persistence forecast: the last value mixed with the value one cycle earlier), and examine tolerance-based validation with the γ-index (a test that accepts small shifts in space, time and intensity).
  Research themes and project portfolio · Implementation guides and code
  Research projects
- Our current collaborative work includes Fine4Cast (2023–2028), the ELECTRE program, and the Mines Paris – PSL / University of Corsica / CNRS research agreement (2024–2027). These activities connect forecasting, AI and energy management.
- Earlier work includes SAPHIR, HyLES, INTELPOLY and the TILOS island demonstrator. Explore the research themes and project portfolio .
+ Our current collaborative work:
+ Fine4Cast (2023–2028): forecasting renewable production and consumption from minutes to days at fine geographic resolution. Funded by the ANR (the French National Research Agency) within PEPR TASE (PEPR: one of the French priority research programs).
+ ELECTRE (since 2025): a program of the Carnot M.I.N.E.S institute, which brings together research teams of the Écoles des Mines; scientific coordination of the parts on AI for energy, forecasting and multi-source systems.
+ Mines Paris – PSL / University of Corsica / CNRS agreement (CNRS: the French National Centre for Scientific Research; 2024–2027): solar forecasting and energy-management algorithms for microgrids (small local electricity networks).
+ Earlier programs:
+ SAPHIR (ANR project started in January 2022): sensor-augmented weather prediction at high resolution, combining observations and numerical modeling.
+ HyLES (ANR, 2021–2024): integrating hydrogen into weakly interconnected electricity networks.
+ INTELPOLY (COST Action, 2021–2025; COST: European Cooperation in Science and Technology): diagnosis, control and cybersecurity of polygeneration (several forms of energy produced on one site) and hybrid-storage installations.
+ TILOS (Horizon 2020, the EU research framework program; February 2015 – January 2019; Technology Innovation for the Local Scale, Optimum Integration of Battery Energy Storage): a demonstrator on the Greek island of Tilos, combining battery storage and renewable generation. CORDIS record .
+ Partners and official records: research themes and projects .
  Recognition and service
  I serve as Editorial Board Member of Scientific Reports and on the Sustainability editorial board. I also contribute to research-proposal evaluation (Swiss National Science Foundation, Swiss Cancer Research, Kuwait Foundation for the Advancement of Sciences), doctoral supervision and the ETIP PV (European Technology and Innovation Platform for Photovoltaics, PV) working group on Digital PV, Grid and Storage.
  Selected distinctions include the PVSEC Award (Hamburg, 2009) of the Photovoltaic Solar Energy Conference and the City of Nice Prize (2012) . Appointments, service and career .
@@ -29,6 +47,9 @@ About
  Explore my code GitHub · methods and software · Zenodo · research record
  Get in touch LinkedIn · cyril.voyant@minesparis.psl.eu
  Read next
+ At a glance : the map of the work, software with DOIs, courses and tools
+ The thread : five steps, from direct computation to demonstrated trust
+ In 30 seconds : the short version
  Understand before you compute : how a problem leads to a method, from direct computation to learning
  Stories : each method told through a real question, in plain words
  AI in research : the European AI Act (the EU regulation on AI), responsibility and a toolbox for laboratories
@@ -38,7 +59,7 @@ About
  Collaborate : research projects, studies and adaptation of the tools
  Methods and code : theory, worked examples and open code for every method
  Contact
- Cyril Voyant , Research Director (HDR, PhD), Mines Paris – PSL · Centre Observation, Impacts, Energy (O.I.E.), Campus Pierre Laffitte, 1 rue Claude Daunesse, CS 10207, F-06904 Sophia Antipolis Cedex, France
+ Cyril Voyant , Research Director (HDR: habilitation to supervise research; PhD), Mines Paris – PSL · Centre Observation, Impacts, Energy (O.I.E.), Campus Pierre Laffitte, 1 rue Claude Daunesse, CS 10207, F-06904 Sophia Antipolis Cedex, France
  cyril.voyant@minesparis.psl.eu · (+33) 7 86 82 68 63 · LinkedIn · ResearchGate · Google Scholar · ORCID · HAL · GitHub · person.cyrilvoyant.com
 
 ---
@@ -257,46 +278,120 @@ Chapter 3: correlation, linear regression and χ² tests
 URL: https://www.cyrilvoyant.com/fr/projets-de-recherche/
 
 Recherche et projets
- De la variabilité solaire aux prévisions utiles
- Mes recherches à Mines Paris – PSL / O.I.E. (centre Observation, Impacts, Énergie) portent sur ce qui peut être prédit, sur l'information dont un modèle a besoin et sur la façon d'évaluer une prévision en fonction de l'usage visé. Elles relient la physique statistique, les séries temporelles, l'apprentissage automatique et les systèmes énergétiques, avec un fil continu en physique médicale.
+ Mes recherches au centre Centre Observation, Impacts, Énergie de Mines Paris – PSL, à Sophia Antipolis. de Mines Paris – PSL portent sur trois questions : qu'est-ce qui est prévisible, de combien de modèle a-t-on besoin, et comment juger une prévision selon son usage. Elles s'appuient sur des programmes collectifs, présentés ici avec leurs dates et leurs partenaires.
+ En bref
+ Trois axes. Variabilité et prévisibilité solaires (sCV, F) ; prévision parcimonieuse (persistance, BLEND, ELM) ; évaluation adaptée à la question (NICE, indice γ).
+ Des applications. Systèmes énergétiques insulaires, stockage et micro-réseaux ; en physique médicale, l'équivalence de dose en radiothérapie.
+ Des programmes. Trois en cours (Fine4Cast, coordination scientifique d' Projet phare de l'institut Carnot M.I.N.E.S sur l'électrification des usages (2023-2026) : matériaux, stockage, procédés industriels, pertinence et limites de l'électrification. , convention avec l'université de Corse et le Centre national de la recherche scientifique, principal organisme public de recherche en France. ) et quatre achevés depuis 2015, sur une frise par domaine.
+ Des preuves vérifiables. Chaque axe renvoie à l'article publié, au récit qui l'explique et au code ouvert.
  Variabilité solaire et prévisibilité
- Un cycle journalier marqué peut masquer la variabilité due aux nuages. Le coefficient de variation stochastique (sCV) sépare ces deux effets : il mesure la variabilité due aux nuages une fois écarté le cycle journalier. L'indice de prévisibilité F ( forecastability ) étudie comment cette variabilité se relie à l'erreur de prévision. L'évaluation publiée porte sur 68 stations espagnoles.
- Lire le récit sur sCV et la prévisibilité · Quelle prévision pour quel signal ? · article dans Renewable Energy (en anglais)
+ Un cycle journalier marqué peut masquer la variabilité due aux nuages. Le coefficient de variation stochastique (sCV) sépare ces deux effets : il mesure la variabilité due aux nuages une fois écarté le cycle journalier. L'indice de prévisibilité F ( forecastability ) relie cette variabilité à l'erreur de prévision attendue. L'évaluation publiée porte sur 68 stations espagnoles.
+ Le récit sur sCV et la prévisibilité · Quelle prévision pour quel signal ? · l'outil interactif · article dans Renewable Energy (en anglais)
  Prévision parcimonieuse
- J'étudie comment la structure d'un signal et la complexité d'un modèle influencent la qualité d'une prévision. Cela couvre les modèles autorégressifs, les Extreme Learning Machines (ELM, réseaux de neurones à une couche cachée dont seuls les poids de sortie sont calculés), le prétraitement par ciel clair (l'éclairement théorique en l'absence de nuages) et la persistance cyclostationnaire. La persistance, prévision de référence, reprend la dernière valeur observée ; une série cyclostationnaire est une série dont les propriétés statistiques se répètent périodiquement, ici chaque jour. BLEND exploite cette structure périodiquement corrélée pour améliorer une persistance de référence, sans entraîner de modèle de prévision ; l'étude distincte MIMO-ELM (plusieurs entrées, plusieurs sorties) prévoit conjointement sept signaux énergétiques.
+ J'étudie comment la structure d'un signal et la complexité d'un modèle influencent la qualité d'une prévision : modèles autorégressifs (la prévision est une somme pondérée des valeurs passées), Extreme Learning Machines (ELM, réseaux de neurones à une couche cachée dont seuls les poids de sortie sont calculés), prétraitement par ciel clair (l'éclairement théorique sans nuages) et persistance cyclostationnaire. La persistance, prévision de référence, reprend la dernière valeur observée ; une série cyclostationnaire a des propriétés statistiques qui se répètent périodiquement, ici chaque jour. BLEND exploite cette structure pour améliorer la persistance sans entraîner de modèle ; l'étude distincte MIMO-ELM (plusieurs entrées, plusieurs sorties) prévoit conjointement sept signaux énergétiques.
  BLEND expliqué · calculer les poids de BLEND · résultats et limites de MIMO-ELM · guide de mise en œuvre des ELM (en anglais)
  Une évaluation adaptée à la question posée
- Les métriques NICE mesurent les erreurs par rapport à une persistance de référence, pour plusieurs normes d'erreur. L'indice γ (gamma) évalue l'accord entre prévision et observation dans des tolérances explicites d'espace, de temps et d'intensité. Ces deux approches complètent les métriques usuelles ; leur interprétation dépend de la référence, de l'échantillonnage et des tolérances.
- NICE expliqué · l'indice γ expliqué · méthodes et code public (en anglais)
+ Les métriques NICE rapportent les erreurs d'un modèle à celles de la persistance, pour plusieurs normes d'erreur. L'indice γ (gamma) juge l'accord entre prévision et observation dans des tolérances explicites d'espace, de temps et d'intensité. Ces deux approches complètent les métriques usuelles ; leur lecture dépend de la référence, de l'échantillonnage et des tolérances.
+ NICE expliqué · l'outil NICE · l'indice γ expliqué · l'outil indice γ
  Systèmes énergétiques et physique médicale
- Les prévisions soutiennent l'exploitation des systèmes photovoltaïques, du stockage et des micro-réseaux (petits réseaux électriques locaux). Nos projets relient la prévision à la gestion de l'énergie et à la commande, en particulier dans les systèmes insulaires. En physique médicale, je m'intéresse à l'équivalence de dose radiobiologique, à la modélisation en radiothérapie et à la cinétique de l’iode radioactif.
- LQL-Equiv et l'équivalence de dose radiobiologique · enseigner ces méthodes
+ Les prévisions servent à piloter des systèmes photovoltaïques, du stockage et des micro-réseaux (petits réseaux électriques locaux). Nos projets relient la prévision à la gestion de l'énergie et à la commande, en particulier dans les systèmes insulaires. En physique médicale, je travaille sur l'équivalence de dose radiobiologique, la modélisation en radiothérapie et la cinétique de l'iode radioactif.
+ LQL-Equiv et l'équivalence de dose · modéliser l'iode radioactif · la consommation des tunnels routiers · enseigner ces méthodes
  Explorer les méthodes et reproduire les exemples
- sCV et prévisibilité F : définitions, figures et code MATLAB · métriques NICE et implémentation ouverte (guides en anglais).
- Quelle part d'information spatiale aide la prévision satellite de l'éclairement ? (en anglais) Comparaison par maille, par voisinage et sur tout le champ ; article en préparation, avec un banc d'essai public MATLAB/Python et l'attribution des données SoDa/HelioClim-3. Résumé en français : une maille, un voisinage ou tout le champ ?
+ sCV et prévisibilité F : définitions, figures et code MATLAB · métriques NICE et implémentation ouverte · BLEND : méthode et code · indice γ : méthode et code
+ Quelle part d'information spatiale aide la prévision satellite de l'éclairement ? Comparaison par maille, par voisinage et sur tout le champ ; article en préparation, avec un banc d'essai public MATLAB/Python et l'attribution des données SoDa/HelioClim-3 : une maille, un voisinage ou tout le champ ?
  Programmes de recherche et collaborations
- Je contribue à des programmes collaboratifs sur la prévision, l'intégration des énergies renouvelables et la gestion de l'énergie. Le portefeuille ci-dessous distingue les programmes en cours des collaborations antérieures. Les fiches officielles des projets sont liées lorsqu'elles existent.
+ Je contribue à des programmes collectifs sur la prévision, l'intégration des énergies renouvelables et la gestion de l'énergie. La frise les situe dans le temps et par domaine ; les fiches donnent le financeur, les partenaires et le lien vers la fiche officielle quand elle existe. Survolez, touchez ou sélectionnez un sigle souligné en pointillé pour sa définition.
+ Prévision
+ Stockage, hydrogène, îles
+ Systèmes et électrification
+ TILOS févr. 2015 – janv. 2019
+ HyLES 2021 – 2024 (42 mois)
+ INTELPOLY 2021 – 2025
+ SAPHIR janv. 2022, 48 mois prévus
+ ELECTRE 2023 – 2026 ; coordination depuis 2025
+ Fine4Cast 2023 – 2028
+ Convention Mines Paris – Corse – CNRS 2024 – 2027
+ 2015 2018 2021 2024 2027 Programmes de recherche auxquels je contribue, par domaine (années au plus près de la fiche officielle ; mois quand elle le précise). Le trait vertical marque novembre 2026 ; pour ELECTRE, la partie encadrée correspond à ma coordination. Chaque ligne mène à la fiche du programme.
  Programmes en cours
- Fine4Cast · ANR / PEPR TASE · 2023–2028 Prévision de la production et de la consommation d'énergies renouvelables, de quelques minutes à quelques jours, à fine résolution géographique. Présentation du programme (en anglais).
- ELECTRE · Mines Carnot · depuis 2025 Coordination scientifique des volets consacrés à l'IA pour l'énergie, à la prévision et aux systèmes multi-sources.
- Convention Mines Paris – PSL / Université de Corse / CNRS · 2024–2027 Prévision solaire intermittente et algorithmes de gestion de l'énergie pour des micro-réseaux intelligents.
- Programmes antérieurs
- SAPHIR · ANR · projet commencé en janvier 2022 Prévision météorologique à haute résolution augmentée par des capteurs, combinant observations et modélisation numérique. Fiche du projet sur le site de l'ANR (durée initiale : 48 mois).
- HyLES · ANR · 2021–2024 Intégration de l'hydrogène dans des réseaux faiblement interconnectés, avec FEMTO-ST, LE2P, UPF et UCPP-SPE.
- INTELPOLY · Action COST · 2021–2025 Diagnostic, commande et cybersécurité d'installations de polygénération et de stockage hybride.
- TILOS · Horizon 2020 Intégration locale d'un stockage par batteries et d'une production renouvelable dans un démonstrateur insulaire. Le projet financé s'est déroulé de février 2015 à janvier 2019. Fiche du projet sur CORDIS (en anglais).
+ Fine4Cast Agence nationale de la recherche : l'agence publique française qui finance la recherche sur appels à projets. / Programme et équipement prioritaire de recherche « Technologies avancées des systèmes énergétiques », financé par France 2030 et opéré par l'ANR ; il soutient une recherche amont (niveaux de maturité 1 à 4). · 2023-2028
+ Prévoir la production renouvelable et la consommation, de quelques minutes à quelques jours, à fine résolution géographique et temporelle (titre complet : Next Generation Energy Demand and Renewable Production Forecasting Tools for Fine Geographical and Temporal Scales ).
+ Présentation du projet (en anglais) · le PEPR TASE sur le site de l’ANR
+ ELECTRE Institut Institut Carnot « Méthodes innovantes pour l'entreprise et la société » : recherche partenariale des écoles des Mines, de l'ENSTA Paris et de l'École polytechnique, labellisée Carnot depuis 2006 ; l'association ARMINES y gère les contrats. · projets 2023-2026 · coordination scientifique depuis 2025
+ Électrification des usages : matériaux, stockage, procédés industriels, pertinence et limites de l'électrification. Je coordonne les volets IA pour l'énergie, prévision et systèmes multi-sources.
+ Fiche du projet (institut Carnot M.I.N.E.S) · journée de clôture, 18 novembre 2026
+ Convention Mines Paris – PSL, université de Corse, CNRS Centre national de la recherche scientifique, principal organisme public de recherche en France. · 2024-2027
+ Prévision du solaire intermittent et algorithmes de gestion de l'énergie pour des micro-réseaux intelligents.
+ Programmes achevés
+ SAPHIR Agence nationale de la recherche : l'agence publique française qui finance la recherche sur appels à projets. · janvier 2022, durée initiale 48 mois
+ Prévisions météorologiques à haute résolution améliorées par des données de capteurs, en combinant observations et modélisation numérique. Coordination : laboratoire Laboratoire Sciences pour l'environnement, université de Corse et CNRS. , avec le Laboratoire d'aérologie et Inria.
+ Fiche du projet ANR-21-CE04-0014
+ HyLES Agence nationale de la recherche : l'agence publique française qui finance la recherche sur appels à projets. · 2021-2024 (42 mois)
+ Intégration de l'hydrogène dans les réseaux faiblement ou non interconnectés : Corse, La Réunion, Polynésie française. Avec Institut Franche-Comté Électronique Mécanique Thermique et Optique – Sciences et Technologies (Besançon), coordinateur de HyLES. , Laboratoire d'énergétique, d'électronique et procédés, université de La Réunion. , Université de la Polynésie française, partenaire de HyLES par son laboratoire GEPASUD (Géosciences du Pacifique Sud). et Università di Corsica Pasquale Paoli, laboratoire Sciences pour l'environnement (SPE), unité mixte avec le CNRS. .
+ Fiche du projet ANR-20-CE05-0035
+ INTELPOLY Action European Cooperation in Science and Technology : programme européen qui finance la mise en réseau de chercheurs (les « Actions »), pas la recherche elle-même. · 2021-2025
+ Diagnostic, commande et cybersécurité d'installations de polygénération (production combinée d'électricité, de chaleur ou de froid) et de stockage hybride.
+ TILOS Programme-cadre de l'Union européenne pour la recherche et l'innovation, 2014-2020. · février 2015 – janvier 2019
+ Technology Innovation for the Local Scale, Optimum Integration of Battery Energy Storage  : stockage par batteries et production renouvelable intégrés sur l'île grecque de Tilos, démonstrateur suivi par d'autres îles dont la Corse.
+ Fiche du projet sur Community Research and Development Information Service : la base officielle des projets financés par l'Union européenne.
  Plateformes et autres collaborations
- MYRTE , prévision solaire à court terme pour le stockage d'hydrogène et la gestion couplée production–charge. RESINTER / PAGLIA-ORBA , commande prédictive d'un réseau d'électricité renouvelable. ISERBATURB , intégration de systèmes renouvelables dans les bâtiments et les milieux urbains. Coopération franco-polonaise , échanges sur l'intégration des énergies renouvelables dans les micro-réseaux insulaires. Université technique de Sofia / Erasmus , co-construction d'une école d'été sur les énergies renouvelables.
- CV académique (en anglais) · liste complète des publications · cyril.voyant@minesparis.psl.eu
+ Plateforme de recherche de l'université de Corse, près d'Ajaccio, qui associe un champ photovoltaïque et un stockage par hydrogène raccordés au réseau de l'île.  : prévision solaire à court terme pour le stockage par hydrogène et la gestion couplée production–consommation.
+ RESINTER / PAGLIA-ORBA : commande prédictive d'un réseau d'électricité renouvelable.
+ ISERBATURB : intégration de systèmes renouvelables dans les bâtiments et les milieux urbains.
+ Coopération franco-polonaise : échanges sur l'intégration des énergies renouvelables dans les micro-réseaux insulaires.
+ Université technique de Sofia / Programme de l'Union européenne pour l'éducation, la formation et la mobilité des étudiants et des enseignants.  : co-construction d'une école d'été sur les énergies renouvelables.
+ Sigles et organismes (texte brut)
+ ANR
+ Agence nationale de la recherche : l'agence publique française qui finance la recherche sur appels à projets.
+ PEPR TASE
+ Programme et équipement prioritaire de recherche « Technologies avancées des systèmes énergétiques », financé par France 2030 et opéré par l'ANR ; il soutient une recherche amont (niveaux de maturité 1 à 4).
+ Carnot M.I.N.E.S
+ Institut Carnot « Méthodes innovantes pour l'entreprise et la société » : recherche partenariale des écoles des Mines, de l'ENSTA Paris et de l'École polytechnique, labellisée Carnot depuis 2006 ; l'association ARMINES y gère les contrats.
+ ELECTRE
+ Projet phare de l'institut Carnot M.I.N.E.S sur l'électrification des usages (2023-2026) : matériaux, stockage, procédés industriels, pertinence et limites de l'électrification.
+ CNRS
+ Centre national de la recherche scientifique, principal organisme public de recherche en France.
+ O.I.E.
+ Centre Observation, Impacts, Énergie de Mines Paris – PSL, à Sophia Antipolis.
+ SPE
+ Laboratoire Sciences pour l'environnement, université de Corse et CNRS.
+ FEMTO-ST
+ Institut Franche-Comté Électronique Mécanique Thermique et Optique – Sciences et Technologies (Besançon), coordinateur de HyLES.
+ LE2P
+ Laboratoire d'énergétique, d'électronique et procédés, université de La Réunion.
+ UPF
+ Université de la Polynésie française, partenaire de HyLES par son laboratoire GEPASUD (Géosciences du Pacifique Sud).
+ UCPP-SPE
+ Università di Corsica Pasquale Paoli, laboratoire Sciences pour l'environnement (SPE), unité mixte avec le CNRS.
+ COST
+ European Cooperation in Science and Technology : programme européen qui finance la mise en réseau de chercheurs (les « Actions »), pas la recherche elle-même.
+ Horizon 2020
+ Programme-cadre de l'Union européenne pour la recherche et l'innovation, 2014-2020.
+ CORDIS
+ Community Research and Development Information Service : la base officielle des projets financés par l'Union européenne.
+ MYRTE
+ Plateforme de recherche de l'université de Corse, près d'Ajaccio, qui associe un champ photovoltaïque et un stockage par hydrogène raccordés au réseau de l'île.
+ Erasmus
+ Programme de l'Union européenne pour l'éducation, la formation et la mobilité des étudiants et des enseignants.
+ CV académique (en anglais) · À propos · Actualités · liste complète des publications · cyril.voyant@minesparis.psl.eu
 
 ---
 URL: https://www.cyrilvoyant.com/fr/a-propos/
 
 À propos
  Je suis physicien et directeur de recherche à Mines Paris – PSL , au centre Observation, Impacts, Énergie (O.I.E.), et professeur invité à l'université de Kragujevac , en Serbie. Je construis des modèles physiques et statistiques pour éclairer des décisions en énergie et en médecine, l'humain au centre et l'IA comme un outil parmi d'autres. Nos travaux relient la prévision solaire et photovoltaïque, les séries temporelles et l'IA frugale. Mon parcours comprend aussi la physique médicale.
+ En bref
+ Physicien, directeur de recherche à Mines Paris – PSL depuis 2024, après la physique médicale en radiothérapie, de 2003 à 2024.
+ Deux domaines, une démarche : la prévision en énergie et la physique médicale, avec le modèle au cœur, l'humain au centre et l'IA comme outil en périphérie.
+ Tout le travail public est rassemblé dans la vue d'ensemble ; la version courte : en 30 secondes .
  Parcours
- J'ai étudié la physique fondamentale, obtenu ma qualification de physicien médical en 2003 et soutenu en 2011 une thèse sur les séries temporelles du rayonnement solaire. J'ai mené la recherche en énergie en parallèle de mon activité clinique, comme physicien médical à la Polyclinique Saint-Roch de Montpellier (2003–2006) puis au CHD Castelluccio d'Ajaccio (2006–2024), avant de rejoindre Mines Paris – PSL comme directeur de recherche en 2024. Mes fonctions à l'université de Corse ont pris fin en 2024 ; j'y interviens depuis comme vacataire.
+ J'ai étudié la physique fondamentale, obtenu ma qualification de physicien médical en 2003 et soutenu en 2011 une thèse sur les séries temporelles du rayonnement solaire. J'ai mené la recherche en énergie en parallèle de mon activité clinique, comme physicien médical à la Polyclinique Saint-Roch de Montpellier (2003–2006) puis au centre hospitalier de Castelluccio, à Ajaccio (2006–2024), avant de rejoindre Mines Paris – PSL comme directeur de recherche en 2024. Mes fonctions à l'université de Corse ont pris fin en 2024 ; j'y interviens depuis comme vacataire.
  Mon expérience de la radiothérapie et de la mesure nourrit ma façon d'aborder l'incertitude, l'évaluation des modèles et les logiciels scientifiques. Lire mon CV académique (en anglais) .
+ Le parcours en cinq dates ; chaque étape mène aux travaux qui en sont issus.
+ 2003–2006 Montpellier, Polyclinique Saint-Roch Physicien médical en radiothérapie : la dose, la mesure, le contrôle de qualité. Les récits de physique médicale
+ 2006–2024 Ajaccio, centre hospitalier de Castelluccio Physicien médical, puis responsable de l’unité de physique médicale et de radioprotection (2020–2024). Des modèles nés de la clinique. L’équivalence de dose (LQL-Equiv) · la thyroïde et l’iode radioactif
+ 2011 Thèse à l’université de Corse : séries temporelles et rayonnement solaire La recherche en énergie, menée à côté de l’activité clinique. Évaluer une prévision solaire face à la persistance
+ 2019 HDR (habilitation à diriger des recherches), université de Corse De la prévision du rayonnement solaire aux sciences du vivant, par la simulation numérique. La démarche commune
+ Depuis 2024 Sophia Antipolis, Mines Paris – PSL, centre O.I.E. Directeur de recherche : prévision, évaluation des modèles et IA frugale, en équipe. Le fil qui relie ces travaux · la carte du travail
  Installation photovoltaïque sur une plateforme de recherche côtière en Corse.
  Accélérateur linéaire de radiothérapie et images de planification de traitement, en écho à mon parcours en physique médicale.
  Recherche actuelle
@@ -304,8 +399,16 @@ URL: https://www.cyrilvoyant.com/fr/a-propos/
  Des articles récents introduisent les indices sCV et de prévisibilité (sCV : variabilité due aux nuages ; F : prévisibilité du signal), développent la prévision BLEND (une meilleure persistance : la dernière valeur mélangée à celle d’un cycle plus tôt) et examinent la validation par tolérances avec l'indice γ (un test qui accepte de petits décalages en espace, en temps et en intensité).
  Thèmes de recherche et portefeuille de projets · Guides de mise en œuvre et code (en anglais)
  Projets de recherche
- Nos travaux collaboratifs en cours comprennent Fine4Cast (2023–2028), le programme ELECTRE et la convention de recherche Mines Paris – PSL / université de Corse / CNRS (2024–2027). Ces activités relient la prévision, l'IA et la gestion de l'énergie.
- Parmi les travaux antérieurs figurent SAPHIR, HyLES, INTELPOLY et le démonstrateur insulaire TILOS. Explorer les thèmes de recherche et le portefeuille de projets .
+ Nos travaux collaboratifs en cours :
+ Fine4Cast (2023–2028) : prévoir la production et la consommation d'énergies renouvelables, de quelques minutes à quelques jours, à fine résolution géographique. Financement ANR (Agence nationale de la recherche), dans le cadre du PEPR TASE (PEPR : programme et équipement prioritaire de recherche).
+ ELECTRE (depuis 2025) : programme de l'institut Carnot M.I.N.E.S, qui regroupe des équipes de recherche des Écoles des Mines ; coordination scientifique des volets consacrés à l'IA pour l'énergie, à la prévision et aux systèmes multi-sources.
+ Convention Mines Paris – PSL / université de Corse / CNRS (Centre national de la recherche scientifique ; 2024–2027) : prévision solaire et algorithmes de gestion de l'énergie pour des micro-réseaux (petits réseaux électriques locaux).
+ Programmes antérieurs :
+ SAPHIR (projet ANR commencé en janvier 2022) : prévision météorologique à haute résolution augmentée par des capteurs, combinant observations et modélisation numérique.
+ HyLES (ANR, 2021–2024) : intégrer l'hydrogène dans des réseaux électriques faiblement interconnectés.
+ INTELPOLY (Action COST, 2021–2025 ; COST : programme européen de coopération en science et technologie) : diagnostic, commande et cybersécurité d'installations de polygénération (plusieurs énergies produites sur un même site) et de stockage hybride.
+ TILOS (Horizon 2020, le programme-cadre européen de recherche ; février 2015 – janvier 2019 ; Technology Innovation for the Local Scale, Optimum Integration of Battery Energy Storage ) : un démonstrateur sur l'île grecque de Tilos, alliant stockage par batteries et production renouvelable. Fiche CORDIS .
+ Partenaires et fiches officielles : thèmes de recherche et projets .
  Distinctions et engagements
  Je suis membre du comité éditorial (Editorial Board Member) de Scientific Reports et du comité éditorial de Sustainability . Je contribue aussi à l'évaluation de projets de recherche (Fonds national suisse de la recherche scientifique, Recherche suisse contre le cancer, Kuwait Foundation for the Advancement of Sciences), à l'encadrement doctoral et au groupe de travail de l'ETIP PV (plateforme européenne de technologie et d’innovation pour le photovoltaïque, PV) sur le PV numérique, le réseau et le stockage (Digital PV, Grid and Storage).
  Parmi les distinctions : le PVSEC Award (Hambourg, 2009) de la conférence sur l’énergie solaire photovoltaïque, et le prix de la Ville de Nice (2012) . Fonctions, engagements et carrière (CV en anglais) .
@@ -315,6 +418,9 @@ URL: https://www.cyrilvoyant.com/fr/a-propos/
  Explorer mon code GitHub · méthodes et logiciels (en anglais) · Zenodo · dossier de recherche
  Me contacter LinkedIn · cyril.voyant@minesparis.psl.eu
  À lire ensuite
+ Vue d'ensemble : la carte du travail, les logiciels avec leur DOI, les cours et les outils
+ Le fil : cinq étapes, du calcul direct à la confiance démontrée
+ En 30 secondes : la version courte
  La démarche : comment un problème mène à une méthode, du calcul direct à l'apprentissage
  Récits : chaque méthode racontée à partir d'une vraie question, en mots simples
  L'IA dans la recherche : l'AI Act européen (le règlement de l’UE sur l’IA), la responsabilité et une boîte à outils pour les laboratoires
@@ -324,7 +430,7 @@ URL: https://www.cyrilvoyant.com/fr/a-propos/
  Collaborer : projets de recherche, études et adaptation des outils
  Méthodes et code (en anglais) : théorie, exemples détaillés et code ouvert pour chaque méthode
  Contact
- Cyril Voyant , directeur de recherche Mines Paris – PSL (HDR, Dr) · Centre Observation, Impacts, Énergie (O.I.E.), Campus Pierre Laffitte, 1 rue Claude Daunesse, CS 10207, F-06904 Sophia Antipolis Cedex
+ Cyril Voyant , directeur de recherche Mines Paris – PSL (HDR, habilitation à diriger des recherches ; docteur) · Centre Observation, Impacts, Énergie (O.I.E.), Campus Pierre Laffitte, 1 rue Claude Daunesse, CS 10207, F-06904 Sophia Antipolis Cedex
  cyril.voyant@minesparis.psl.eu · (+33) 7 86 82 68 63 · LinkedIn · ResearchGate · Google Scholar · ORCID · HAL · GitHub · person.cyrilvoyant.com
 
 ---
@@ -989,6 +1095,44 @@ URL: https://www.cyrilvoyant.com/overview/
 
 At a glance: research, software, courses and tools
  The public work of Cyril Voyant in medical physics and energy forecasting, courses and software included, each item linked to its source: paper, DOI (permanent identifier), repository, team. Free to reuse, crediting the authors. The short version, in 30 seconds ; the thread connecting this work .
+ In brief
+ One way of working in five steps: compute when the link is known, complete the model when it falls short, learn frugally when a relation is missing, then make the tool usable and demonstrate that it works.
+ Three fields: energy, medical physics and research practice, carried out with the co-authors named on each page.
+ Everything is public: 15 software packages with DOIs, 5 courses under the CC BY 4.0 license (free reuse, crediting the authors) and tools to try in the browser.
+ Map of the work
+ At the core : the model At the center : people, who ask the question and decide At the edge : AI, one tool among others
+ Step 1
+ Is the link between causes and effects known?
+ Compute directly
+ Which forecast for which signal?
+ sCV and F: cloud-driven variability and how forecastable a site is DOI
+ Tunnel Load Simulator: the electricity demand of road tunnels DOI
+ LQL-Equiv: equivalent doses in radiotherapy (LQ, the linear-quadratic model, and LQL, which turns linear again at high doses) DOI
+ Atmospheric neutrons and BNCT (boron neutron capture therapy): quantify the limit
+ Step 2
+ Is the model enough?
+ Hybridize
+ BLEND: persistence mixed with the value one cycle earlier DOI
+ Thyroid cancer and radioiodine: model first DOI
+ Step 3
+ Are the useful relations known?
+ Learn frugally
+ MIMO-ELM (multiple inputs and outputs, frugal learning): seven signals of the Corsican grid DOI
+ Satellite forecasting: one cell or the whole field? DOI
+ Compare persistence, autoregression (AR) and ELM
+ Step 4
+ How can people use these tools?
+ AI in its place
+ WebSemantic: the language model reads, the validated code computes
+ Who is responsible? The EU regulation on AI (AI Act)
+ Step 5
+ How do we know it works?
+ Demonstrate trust
+ NICE: the error divided by that of persistence DOI
+ γ-index: tolerate small shifts DOI
+ Questioning how we do research DOI
+ The RTVACOS tree: seven criteria, from rigor to societal relevance
+ How to read it: depending on what is already known, compute, complete a model or learn from data (steps 1 to 3); then make the tool usable (4) and demonstrate that it works (5). The dot gives the field; “DOI” leads to the archived software. Each step is told in the thread .
  Main ideas
  Understand before you compute Start from the human question, model the system, then choose the tool. Beat a simple reference Every forecast is first compared with persistence (the last value copied); a model that does not beat it adds nothing. Complexity must pay A frugal model (ELM: neural network with random input weights; autoregression: weighted sum of past values) first; heavier only if the gain is shown. Trust is demonstrated Public code, data, licenses and verification; AI is a tool, declared. Research lines
  Solar and energy forecasting Persistence (copy the last known value), BLEND (a mix of persistence and the value one cycle earlier), ELM and the Corsican electricity mix (a frugal neural model whose output weights alone are fitted), dimensionality reduction (keep only the part of the input that serves the forecast).
@@ -997,32 +1141,32 @@ At a glance: research, software, courses and tools
  AI and language Language models as interfaces to validated codes.
  Assessing research Influence index (a log-based measure of an institution's influence), the RTVACOS framework (seven criteria, from rigor to societal relevance), scientific publishing .
  Software, with its DOI and its team
- NICEᵏ: normalized forecast errors compared with simple persistence (MATLAB) Cyril Voyant · repository · MIT
- sCV and F: variability and forecastability of solar irradiance (MATLAB) Cyril Voyant · repository · MIT
- The γ-index: tolerance-based validation of spatio-temporal forecast fields (MATLAB) Cyril Voyant · repository · MIT
- ARTU: second-order autoregressive reference method for solar radiation forecasting Cyril Voyant · repository · MIT
- BLEND and CLIPER: persistence operators for cyclostationary energy processes (MATLAB) Cyril Voyant , Candice Banes , Luis Garcia-Gutierrez , Gilles Notton , Milan Despotovic , Zaher Mundher Yaseen · repository · MIT
- Per-cell, spatial and compressed forecasters of satellite solar irradiance: benchmark code (MATLAB, Python) Cyril Voyant , Andreas Kazantzidis , Jan Kleissl · repository · MIT
- MIMO-ELM forecasting of the Corsican electricity mix (MATLAB, Python, EDF open data) Cyril Voyant , Yoan Jheelan · repository · GPL-3.0
- PV_ELM_pred: benchmark of persistence, BLEND, autoregression and ELM variants for PV forecasting (Python) Martin Leiva, Xavier Silvani , Gilles Notton , Cyril Voyant , Alan Julien · repository · MIT
- Make_Stationary: deseasonalization benchmark for renewable-energy time series (MATLAB) Maklewa Agoundedemba , Cyril Voyant , Milan Despotovic , Luis Antonio Garcia-Gutierrez , Gilles Notton · repository · GPL-3.0
- Filter and wrapper diagnostics of dimensionality reduction for endogenous PV power forecasting (MATLAB) Hassen Bouzgou , Gabriel Chesnoiu , Claudio F. Nicolosi , Adrien Chatel , Gilles Notton , Lionel Menard , Cyril Voyant · repository · MIT
- RAIR-Sim: compartmental simulator of radioactive iodine therapy response in metastatic thyroid cancer (MATLAB) Marie Fusella Giuntini , Cyril Voyant , David Taieb , Dominique Barbolosi · repository · MIT
- Influence Index: a log-based measure of research influence for institutions (MATLAB, processed data) Cyril Voyant , Jeroen Baas , Roy Boverhof , Paolo Stringari , Mathilde Marchand-Lasserre , John P. A. Ioannidis · repository · MIT
- LQL-Equiv 2014: biologically equivalent dose calculation in radiotherapy (MATLAB application) Cyril Voyant , Daniel Julian · repository · MIT
- Tunnel Load Simulator: synthetic electricity demand of road tunnels (Python, Streamlit) Haytham El-Houari , Cyril Voyant · repository · MIT
- LQL-Equiv-web 3.0: biologically equivalent doses in radiotherapy (Python, browser) Cyril Voyant , Daniel Julian · repository · MIT
+ NICEᵏ: normalized forecast errors compared with simple persistence (MATLAB) A forecast's error divided by that of persistence (copying the last value): useful between 0 and 1. MATLAB: a numerical computing language. Cyril Voyant · repository · MIT
+ sCV and F: variability and forecastability of solar irradiance (MATLAB) sCV: cloud-driven variability; F: how forecastable the signal is, both computed before any model. Cyril Voyant · repository · MIT
+ The γ-index: tolerance-based validation of spatio-temporal forecast fields (MATLAB) A test that accepts small shifts in space, time and intensity. Cyril Voyant · repository · MIT
+ ARTU: second-order autoregressive reference method for solar radiation forecasting A reference forecast: a weighted sum of the last two values (second-order autoregression). Cyril Voyant · repository · MIT
+ BLEND and CLIPER: persistence operators for cyclostationary energy processes (MATLAB) BLEND mixes persistence with the value one cycle earlier; CLIPER mixes it with the mean. Cyclostationary: whose statistics repeat every cycle. Cyril Voyant , Candice Banes , Luis Garcia-Gutierrez , Gilles Notton , Milan Despotovic , Zaher Mundher Yaseen · repository · MIT
+ Per-cell, spatial and compressed forecasters of satellite solar irradiance: benchmark code (MATLAB, Python) Forecast satellite-derived solar irradiance cell by cell, or over the whole field at once. Cyril Voyant , Andreas Kazantzidis , Jan Kleissl · repository · MIT
+ MIMO-ELM forecasting of the Corsican electricity mix (MATLAB, Python, EDF open data) MIMO: multiple inputs, multiple outputs; ELM: a neural network whose output weights alone are fitted; EDF: Électricité de France, whose open data describe the Corsican mix. Cyril Voyant , Yoan Jheelan · repository · GPL-3.0
+ PV_ELM_pred: benchmark of persistence, BLEND, autoregression and ELM variants for PV forecasting (Python) PV: photovoltaic. A benchmark: persistence, BLEND, autoregression and ELM variants on the same data. Martin Leiva, Xavier Silvani , Gilles Notton , Cyril Voyant , Alan Julien · repository · MIT
+ Make_Stationary: deseasonalization benchmark for renewable-energy time series (MATLAB) Remove the seasonal cycle of a series before forecasting it (deseasonalization), and compare the ways to do it. Maklewa Agoundedemba , Cyril Voyant , Milan Despotovic , Luis Antonio Garcia-Gutierrez , Gilles Notton · repository · GPL-3.0
+ Filter and wrapper diagnostics of dimensionality reduction for endogenous PV power forecasting (MATLAB) Keep only the part of the input that serves the forecast: filter (a criterion independent of the model) or wrapper (the model judges). Hassen Bouzgou , Gabriel Chesnoiu , Claudio F. Nicolosi , Adrien Chatel , Gilles Notton , Lionel Menard , Cyril Voyant · repository · MIT
+ RAIR-Sim: compartmental simulator of radioactive iodine therapy response in metastatic thyroid cancer (MATLAB) RAIR-Sim is the simulator's name: the response of metastases to radioiodine therapy, described by a compartmental model. Marie Fusella Giuntini , Cyril Voyant , David Taieb , Dominique Barbolosi · repository · MIT
+ Influence Index: a log-based measure of research influence for institutions (MATLAB, processed data) A log-based measure of an institution's influence that does not reward size. Cyril Voyant , Jeroen Baas , Roy Boverhof , Paolo Stringari , Mathilde Marchand-Lasserre , John P. A. Ioannidis · repository · MIT
+ LQL-Equiv 2014: biologically equivalent dose calculation in radiotherapy (MATLAB application) The 2014 MATLAB version: LQ, linear-quadratic model; LQL, linear-quadratic-linear. Cyril Voyant , Daniel Julian · repository · MIT
+ Tunnel Load Simulator: synthetic electricity demand of road tunnels (Python, Streamlit) Synthetic electricity demand of road tunnels; Streamlit: a web interface written in Python. Haytham El-Houari , Cyril Voyant · repository · MIT
+ LQL-Equiv-web 3.0: biologically equivalent doses in radiotherapy (Python, browser) Version 3.0, in Python, computing in the browser. Cyril Voyant , Daniel Julian · repository · MIT
  Open courses (CC BY 4.0)
  Forecasting the intermittent solar resource Mines Paris – PSL engineering curriculum, applied research project (teaching unit UE14) · 59 slides · English and French · CC BY 4.0
- Biostatistics for health studies First-year health studies (PASS, UE8) · 3 chapters, 246 slides in French · summaries, experiments and FAQ in English · CC BY 4.0
+ Biostatistics for health studies First-year health studies (PASS, the French first-year health program; UE8, its teaching unit 8) · 3 chapters, 246 slides in French · summaries, experiments and FAQ in English · CC BY 4.0
  Physics for health studies: electromagnetic waves, X-rays and imaging (in French) First-year health studies (PASS), physical bases of medical imaging · 110-slide lecture and 2 corrected exercise sessions · in French · CC BY 4.0
- Industrial physics: thermodynamics, water vapor and refrigeration (in French) B.U.T. biological engineering, food science and biotechnology, 2nd year · 5 chapters, 139 slides and handouts · in French · CC BY 4.0
+ Industrial physics: thermodynamics, water vapor and refrigeration (in French) B.U.T. (French bachelor of technology) biological engineering, food science and biotechnology, 2nd year · 5 chapters, 139 slides and handouts · in French · CC BY 4.0
  Heat transfer for food engineering (in French) B.U.T. biological engineering, food science and biotechnology, 1st year · 24 slides · in French · CC BY 4.0
  Interactive tools
  Probabilistic forecast, demonstration over three days: ELM against persistence
  Which forecast for which signal?
  Forecast comparison
- ROC curve
+ ROC curve (a test's sensitivity against its false-positive rate)
  Normal distribution
  Attenuation
  The RTVACOS tree
@@ -1041,8 +1185,43 @@ At a glance: research, software, courses and tools
  AI in research: AI Act, charter and toolbox
  Models live in the data
  Research excellence in 2026: beyond publish and pray
+ Words used on this page
+ DOI
+ Permanent identifier of a paper or archived software: the link stays valid even if the website changes.
+ Persistance / persistence
+ The forecast copies the last known value; it is the reference to beat.
+ BLEND, CLIPER
+ Two mixes of simple references: persistence with the value one cycle earlier (BLEND), or with the mean (CLIPER).
+ ELM
+ Extreme learning machine: a one-hidden-layer neural network with random input weights; only the output weights are computed.
+ MIMO
+ Multiple inputs, multiple outputs: one model forecasts several signals.
+ NICE
+ A forecast's error divided by that of persistence; between 0 and 1, the forecast adds something.
+ sCV, F
+ Cloud-driven variability and the forecastability of a signal, computed before any model.
+ Indice γ / γ-index
+ A test that accepts small shifts in space, time and intensity.
+ LQ, LQL
+ Linear-quadratic and linear-quadratic-linear models of the effect of a radiation dose on tissue.
+ BNCT
+ Boron neutron capture therapy.
+ PV, EDF
+ Photovoltaic; Électricité de France, the French utility.
+ MATLAB
+ A numerical computing language and environment.
+ CC BY 4.0
+ Creative Commons Attribution license: free reuse, provided the authors are credited.
+ AI Act
+ The European Union regulation on artificial intelligence.
+ RTVACOS
+ Seven criteria: rigor, transparency, visibility, adoption, collaboration, outreach, societal relevance.
+ ROC
+ ROC (receiver operating characteristic) curve: a test's sensitivity against its false-positive rate.
+ PASS, UE, B.U.T.
+ The French first-year health program; teaching unit; French bachelor of technology.
  Collaborate, cite
- To extend a piece of work: collaborate . To reuse it: cite and reuse . Full publication list: HAL , ORCID . For machines: llms.txt , llms-full.txt , Atom feed .
+ Who does this work: about , or in 30 seconds . To extend a piece of work: collaborate . To reuse it: cite and reuse . Full publication list: HAL , ORCID . For machines: llms.txt , llms-full.txt , Atom feed .
  Where next?
  Understand the approach The thread: five steps, from direct computation to trust. Try a tool Change a value and see what changes, in your browser. Take a course Five open courses, under a CC BY 4.0 license. Cite or reuse The license of each work and examples to copy.
 
@@ -1053,8 +1232,21 @@ Ma recherche en 30 secondes
  Je suis physicien et directeur de recherche à Mines Paris – PSL. Je construis et évalue des modèles pour éclairer des décisions en énergie et en physique médicale.
  Le fil conducteur
  Je pars du phénomène, de la question humaine et de la décision à éclairer. Si la relation est connue, je la calcule directement ; si le modèle est incomplet, je le complète ; si une relation manque, j’évalue ce que l’apprentissage apporte face à une référence explicite. Je n’ajoute de complexité que si le gain est démontré. L’IA est un outil parmi d’autres ; la méthode, la vérification et la responsabilité restent centrales.
+ 1 Calculer directement Le lien entre causes et effets est-il connu ?
+ 2 Hybrider Le modèle suffit-il ?
+ 3 Apprendre frugalement Les relations utiles sont-elles connues ?
+ 4 L'IA à sa place Comment rendre ces outils utilisables ?
+ 5 Démontrer la confiance Comment savoir que ça marche ?
+ Les étapes 1 à 3 dépendent de ce que l'on sait déjà ; l'IA reste un outil (4) ; tout se vérifie (5).
+ Trois articles repères
+ Stochastic coefficient of variation: Assessing the variability and forecastability of solar irradiance , Renewable Energy , 2026 · le récit
+ LQL-Equiv-web: a Python library and browser application for linear-quadratic-linear dose equivalence in radiotherapy , SoftwareX , 2026 · le récit
+ A computational framework for optimizing radioiodine therapy protocols in metastatic thyroid cancer , Scientific Reports , 2026 · le récit
+ Articles écrits à plusieurs : les coauteurs sont nommés sur chaque récit. Liste complète : HAL .
  Pour commencer
  Recherche : résultats, limites, équipes et articles
+ Vue d'ensemble : tout le travail public, avec les DOI (identifiants permanents)
+ À propos : parcours et projets
  Démonstration : comparer la persistance (recopier la dernière valeur), l’autorégression (AR) et l’ELM (réseau de neurones frugal)
  CV (page en anglais)
  Identité académique (page en anglais)
@@ -1070,8 +1262,21 @@ My research in 30 seconds
  I am a physicist and Research Director at Mines Paris – PSL. I build and evaluate models to help inform decisions in energy and medical physics.
  The thread connecting my work
  I start from the phenomenon, the human question and the decision to inform. If the relation is known, I compute it directly; if a model is incomplete, I complement it; if a relation is missing, I measure what learning adds against an explicit reference. I add complexity only when its benefit is demonstrated. AI is one tool among others; method, verification and responsibility remain central.
+ 1 Compute directly Is the link between causes and effects known?
+ 2 Hybridize Is the model enough?
+ 3 Learn frugally Are the useful relations known?
+ 4 AI in its place How can people use these tools?
+ 5 Demonstrate trust How do we know it works?
+ Steps 1 to 3 depend on what is already known; AI stays a tool (4); everything is checked (5).
+ Three reference papers
+ Stochastic coefficient of variation: Assessing the variability and forecastability of solar irradiance , Renewable Energy , 2026 · the story
+ LQL-Equiv-web: a Python library and browser application for linear-quadratic-linear dose equivalence in radiotherapy , SoftwareX , 2026 · the story
+ A computational framework for optimizing radioiodine therapy protocols in metastatic thyroid cancer , Scientific Reports , 2026 · the story
+ Papers written with others: the co-authors are named on each story. Full list: HAL .
  Start here
  Research: findings, limitations, teams and papers
+ At a glance: all public work, with DOIs (permanent identifiers)
+ About: background and projects
  Demonstration: compare persistence (copy the last value), autoregression (AR) and the ELM (a frugal neural network)
  CV
  Academic identity
@@ -2304,26 +2509,55 @@ Open courses in French: biostatistics, medical physics, industrial physics and f
 URL: https://www.cyrilvoyant.com/stories/bed-eqd2-calculator-lq-lql/
 
 Free BED and EQD2 calculator: LQ or LQL?
- LQL-Equiv is a free, open-source (MIT) calculator of biologically effective dose (BED) and of the equivalent dose in 2 Gy fractions (EQD2; Gy is the gray, the unit of absorbed dose) under the linear-quadratic (LQ) and linear-quadratic-linear (LQL) models. It runs in the browser, and nothing entered leaves the page. Its authors are Cyril Voyant and Daniel Julian. It is a research and teaching tool, not a medical device: not for choosing or changing a prescription.
+ LQL-Equiv is a free, open-source (MIT) calculator of biologically effective dose (BED) and of the equivalent dose in 2 Gy fractions (EQD2; Gy is the gray, the unit of absorbed dose) under the linear-quadratic (LQ) and linear-quadratic-linear (LQL) models. It runs in the browser, and nothing entered leaves the page.
+ Its authors are Cyril Voyant and Daniel Julian. It is a research and teaching tool, not a medical device: not for choosing or changing a prescription.
  Cyril Voyant · Mines Paris – PSL, Centre O.I.E. · 2 November 2026
- Reading the quantities. BED is biologically effective dose; EQD2 is the equivalent dose expressed in 2 Gy fractions. LQ means linear-quadratic and LQL linear-quadratic-linear. n counts fractions, d is dose per fraction and Gy is the gray (energy deposited per unit mass). The tissue parameter α/β (how sensitive the tissue is to the size of each fraction) and transition dose d T are expressed in Gy. NTCP and TCP denote normal-tissue complication and tumour-control probabilities within the stated model.
+ In brief
+ BED and EQD2 put different radiotherapy schedules on one scale; the model, LQ or LQL, must be stated.
+ For one 15 Gy fraction to the rectum, BED is 72.7 Gy under LQ and 59.4 Gy under LQL.
+ LQL-Equiv computes in the browser; it is a research and teaching tool, not a medical device.
+ Reading the quantities.
+ BED is biologically effective dose; EQD2 is the equivalent dose expressed in 2 Gy fractions.
+ LQ means linear-quadratic and LQL linear-quadratic-linear. n counts fractions, d is dose per fraction and Gy is the gray (energy deposited per unit mass).
+ The tissue parameter α/β (how sensitive the tissue is to the size of each fraction) and transition dose d T are expressed in Gy.
+ NTCP and TCP denote normal-tissue complication and tumour-control probabilities within the stated model.
  LQ or LQL?
  For n fractions of dose d, the linear-quadratic model gives BED = n · d · (1 + d / (α/β)) , and EQD2 = BED / (1 + 2/(α/β)) . The LQ curve keeps bending upward as the dose per fraction grows. The LQL model keeps it up to a transition dose d T , then continues in a straight line.
  Below the transition dose, the two models agree. Above it, they part. For one fraction of 15 Gy to the rectum (α/β = 3.9 Gy, d T = 7.8 Gy):
  LQ: 15 × (1 + 15/3.9) = 72.7 Gy ;
  LQL: 7.8 × (1 + 7.8/3.9) + 5 × (15 − 7.8) = 59.4 Gy , or 18 % lower (5 is the dimensionless slope of the linear part).
  The model must therefore be stated whenever hypofractionated (fewer, larger fractions) and conventional schedules are compared.
+ Reading the formula
+ Reading the formula. Shape of the BED of one fraction against dose, for the rectum example above. Only the two values at 15 Gy are results; the curves show the shape. Select a term to find it on the diagram.
+ The linear-quadratic model: the red curve keeps bending upward as the dose per fraction d grows. n counts the fractions.
+ Below d T , LQ and LQL give the same BED. In LQL-Equiv, d T = 2 · α/β for every tissue: 7.8 Gy for the rectum (α/β = 3.9 Gy).
+ Above d T , the blue curve goes on as a straight line of slope 5, with no kink: at d T = 2 · α/β, the slope of the LQ curve is also 1 + 2 · d T / (α/β) = 5.
+ For one 15 Gy fraction to the rectum: 72.7 Gy under LQ, 59.4 Gy under LQL, 18 % lower. The further d lies above d T , the wider the gap.
+ The dose that, given in 2 Gy fractions, has the same BED. 2 Gy lies below d T : at this reference dose LQ and LQL agree, so the choice of model only acts on the schedule studied.
+ No dose is computed on this page. The application adds what this hand calculation leaves out: proliferation (Dale's model for the tumor, Van Dyk's for normal tissue), treatment gaps and two fractions a day; its results may therefore differ. Open LQL-Equiv to compute a schedule.
+ Plain text: BED_LQ = n*d*(1 + d/(a/b)); BED_LQL = n*(dT*(1 + dT/(a/b)) + 5*(d - dT)) if d > dT; EQD2 = BED/(1 + 2/(a/b)); dT = 2*(a/b) in LQL-Equiv.
  What the calculator covers
  Documented parameters for 34 organs at risk and 20 tumour sites.
  Treatment gaps, two fractions a day and tumour repopulation.
  NTCP and TCP as model illustrations, never validated against clinical outcomes.
  The 2026 version reproduces the 2014 software on 4,438 schedules: 69,125 of 69,131 values agree.
+ Two documented examples
+ The LQL-Equiv README gives two cases computed by the application, against the standard tumor of its library (proliferation of 0.66 Gy per day after 21 days; reference dose 2 Gy). These are its results, copied as published.
+ 25 × 2 Gy, prolonged by a treatment gap: EQD2 (Gy) Gap Standard tumor Proliferation switched off
+ 0 days 50.00 50.00
+ 10 days 37.48 50.00
+ 30 days 19.20 50.00
+ 20 × 3 Gy, a shortened schedule (Gy) BED EQD2
+ Standard tumor 73.38 80.66
+ Proliferation switched off 78.00 65.00
+ A ten-day gap costs 12.5 Gy of EQD2. The shortened schedule gains because the reference schedule matched to it runs longer and loses more to proliferation. Details and other cases: LQL-Equiv README .
  Other calculators
  Other tools exist, such as the eviQ BED and EQD2 calculators . Check which model and which α/β each one uses before comparing results.
  Limits
  The result is only as good as the model and its parameters (α/β, d T , slope of the linear tail), which remain uncertain.
  To read and to use
  Open the calculator · the story · equations and validation · code
+ See also: atmospheric neutrons and boron neutron capture therapy (BNCT) · attenuation and half-value layer , an interactive tool from the physics course
  References
  Cyril Voyant , Daniel Julian . LQL-Equiv . SoftwareX 36, 103085 (2026).
  Cyril Voyant , Daniel Julian , Stéphane Muraro , Véronique Bodez , Morgane Pinpin , Delphine Leschi, Rudy Oozeer, Guiddi Wided, Marie-Aimée Acquaviva , Sylvain Prapant, Omar Gahbiche, Noureddine Bouaouina . Improving clinical decision-making in radiotherapy: a comparative analysis of linear-quadratic (LQ) and linear-quadratic-linear (LQL) dose models . Clinical Oncology 45, 103893 (2025).
@@ -2333,9 +2567,20 @@ Free BED and EQD2 calculator: LQ or LQL?
 URL: https://www.cyrilvoyant.com/stories/evaluate-solar-forecast-persistence/
 
 How to evaluate a solar forecast against persistence
- Compare the model with persistence (the forecast that repeats the last observed value) on the same targets, horizon (the delay between the last known value and the time forecast) and scope, report more than one error norm, then test the difference. The ratio of the model's error to that of persistence says what the model adds. The NICEᵏ metrics (Voyant et al., 2025) build this ratio for norms of order one, two and three (mean absolute error, root mean squared error, and its cubic counterpart).
+ Compare the model with persistence (the forecast that repeats the last observed value) on the same targets, horizon (the delay between the last known value and the time forecast) and scope, report more than one error norm, then test the difference.
+ The ratio of the model's error to that of persistence says what the model adds. The NICEᵏ metrics (Voyant et al., 2025) build this ratio for norms of order one, two and three (mean absolute error, root mean squared error, and its cubic counterpart).
  Cyril Voyant · Mines Paris – PSL, Centre O.I.E. · 2 November 2026
- Reading the quantities. MAE is mean absolute error; RMSE is root mean squared error and gives large errors more weight. nRMSE normalizes RMSE by the mean observation on the evaluated data. AR is autoregression; ELM (extreme learning machine) fits output weights while keeping a fixed random hidden layer. In the NICE formulas, the subscript p denotes persistence; the statistical p-value reported by a test is a different quantity. sCV (stochastic coefficient of variation) measures how far irradiance departs from the clear-sky curve: 0 under a clear sky, 1 for a sky that alternates at random between clear sky and thick cloud. F (forecastability) lies between 1 − sCV, when those departures keep no memory, and 1, when they are perfectly correlated in time; unlike sCV, it depends on the horizon (the delay between the last known value and the time forecast). Both are explained, with an interactive page, in Which forecast for which signal? ; the study is summarized in sCV and F, explained ; equations and code are on the methods page .
+ In brief
+ A forecast is judged against a named reference: simple persistence, smart persistence or BLEND.
+ Same model, different reference: in Ajaccio, AR (2) scores about +0.41 against simple persistence, but +0.03 against smart persistence.
+ Report several error norms on the same targets, then test the difference; the NICE metrics divide each norm by that of persistence.
+ Reading the quantities.
+ MAE is mean absolute error; RMSE is root mean squared error and gives large errors more weight. nRMSE normalizes RMSE by the mean observation on the evaluated data.
+ AR is autoregression; ELM (extreme learning machine) fits output weights while keeping a fixed random hidden layer.
+ In the NICE formulas, the subscript p denotes persistence; the statistical p-value reported by a test is a different quantity.
+ sCV (stochastic coefficient of variation) measures how far irradiance departs from the clear-sky curve: 0 under a clear sky, 1 for a sky that alternates at random between clear sky and thick cloud.
+ F (forecastability) lies between 1 − sCV, when those departures keep no memory, and 1, when they are perfectly correlated in time; unlike sCV, it depends on the horizon (the delay between the last known value and the time forecast).
+ Both are explained, with an interactive page, in Which forecast for which signal? ; the study is summarized in sCV and F, explained ; equations and code are on the methods page .
  The steps
  Name the reference. Say which persistence is used: last observation, clear-sky-index persistence (it repeats the last clear-sky index: irradiance divided by clear-sky irradiance), or a phase-aware reference such as BLEND (a convex combination of persistence and cyclic persistence, the value one cycle earlier). A skill score (the gain over the reference) means little without this.
  Use the same targets. Same site, period, horizon and forecast times for the model and the reference.
@@ -2343,6 +2588,19 @@ How to evaluate a solar forecast against persistence
  Report several norms. MAE and RMSE do not weight large errors alike. Keep absolute errors next to relative scores.
  Test the difference. Compare error distributions across stations or periods, for instance with a Wilcoxon test (it compares two series of errors through their ranks).
  Describe the signal. A large error does not mean the same thing under a regular sky and under strongly fluctuating irradiance. sCV and F characterize variability and forecastability before algorithms are compared.
+ Same model, different reference: a worked example
+ The published table of the solar forecasting course gives, for the same test year, the error of five forecasts. Changing the reference or the scope changes the score of one and the same model: this is why steps 1 and 3 matter.
+ Same model, different reference. One-hour irradiance forecast, Ajaccio, 2007 test year (UE14 course). Pick the reference and the scope: the nRMSE values are those of the published table; the score is read against the chosen reference.
+ Reference: Scope: Forecast nRMSE (lower is better) Score
+ Clear sky alone 39.9 % −0.10
+ Simple persistence 36.4 % reference
+ Smart persistence 22.0 % +0.40
+ AR(2) 21.3 % +0.41
+ ELM, 50 neurons 20.5 % +0.44
+ AR(2), same year, same horizon, daytime: score +0.41 against simple persistence, +0.03 against smart persistence. Only the name of the reference has changed.
+ Score = 1 − model nRMSE / reference nRMSE, on the same scope (hence the same mean). With smart persistence in daytime, the scores shown are those of the published table; otherwise they are computed here from the rounded nRMSE values (possible difference of 0.01).
+ Published NICEΣ (against simple persistence, daytime): 0.59 for smart persistence, 0.58 for AR(2), 0.55 for the ELM, above 1 for clear sky alone. Source: solar forecasting course · table and code .
+ With night hours, the nRMSE of AR(2) goes from 21.3 % to 30.1 %: its RMSE falls (from 79 to 56 W/m²; at night every forecast is right), but the mean observation is halved (from 372 to 186 W/m²). Against the same reference, the score barely moves. Hence: name the reference, and state the scope.
  NICE, a worked case
  NICE¹ = MAE / MAE p and NICE² = RMSE / RMSE p , where p is simple persistence at the same horizon. NICE³ uses the cube root of the mean cubed absolute error. NICEΣ combines the three.
  A useful predictor lies between 0 and 1. Above 1, the model does worse than the simplest predictor, or there is a numerical or other problem.
@@ -2353,6 +2611,7 @@ How to evaluate a solar forecast against persistence
  The NICE study, explained · theory, code and runnable example
  Compare forecasts interactively : persistence, BLEND, AR and ELM on public data
  sCV and F : how variable and how forecastable is the signal
+ The solar forecasting course : the Ajaccio example above, step by step
  Other references: Yang et al. (2020) on the verification of deterministic forecasts; Marquez and Coimbra on a metric relating forecast uncertainty to variability
  References
  Cyril Voyant , Milan Despotovic , Luis Garcia-Gutierrez , Rodrigo Amaro e Silva , Philippe Lauret , Ted Soubdhan , Nadjem Bailek . NICEᵏ metrics: Unified and multidimensional framework for evaluating deterministic solar forecasting accuracy . Sustainable Energy Technologies and Assessments 83, 104588 (2025).
@@ -2549,7 +2808,16 @@ URL: https://www.cyrilvoyant.com/stories/solar-forecast-baseline-deep-learning/
 Which baseline must a solar model beat? When is deep learning worth it?
  Start with persistence (it repeats the last observed value), then a phase-aware reference, an autoregression (the next value predicted from a linear combination of recent ones) and a frugal learner (a small model fitted in one calculation). Keep a deep network only if it brings a measured gain on the same protocol. Deep learning can be worth it. It has to show this against references that cost almost nothing to run.
  Cyril Voyant · Mines Paris – PSL, Centre O.I.E. · 2 November 2026
- Reading the quantities. MAE is mean absolute error; RMSE is root mean squared error and gives large errors more weight. nRMSE normalizes RMSE by the mean observation on the evaluated data. AR is autoregression; ELM (extreme learning machine) fits output weights while keeping a fixed random hidden layer. In the NICE formulas, the subscript p denotes persistence; the statistical p-value reported by a test is a different quantity. sCV (stochastic coefficient of variation) measures how far irradiance departs from the clear-sky curve: 0 under a clear sky, 1 for a sky that alternates at random between clear sky and thick cloud. F (forecastability) lies between 1 − sCV, when those departures keep no memory, and 1, when they are perfectly correlated in time; unlike sCV, it depends on the horizon (the delay between the last known value and the time forecast). Both are explained, with an interactive page, in Which forecast for which signal? ; the study is summarized in sCV and F, explained ; equations and code are on the methods page .
+ In brief
+ Test in order: persistence, a reference that knows the cycle, an autoregression, a frugal learner, and only then a deep network.
+ In Ajaccio, one hour ahead, each step gains little: daytime relative error of 22.0 % ( smart persistence ), 21.3 % (autoregression) then 20.5 % ( ELM ), while cost and data needs go up.
+ Keep a deep network if it does better on the same protocol, with its cost reported.
+ Reading the quantities.
+ MAE is mean absolute error; RMSE is root mean squared error and gives large errors more weight. nRMSE normalizes RMSE by the mean observation on the evaluated data.
+ AR is autoregression; ELM (extreme learning machine) fits output weights while keeping a fixed random hidden layer.
+ sCV (stochastic coefficient of variation) measures how far irradiance departs from the clear-sky curve: 0 under a clear sky, 1 for a sky that alternates at random between clear sky and thick cloud.
+ F (forecastability) lies between 1 − sCV, when those departures keep no memory, and 1, when they are perfectly correlated in time; unlike sCV, it depends on the horizon (the delay between the last known value and the time forecast).
+ Both are explained, with an interactive page, in Which forecast for which signal? ; the study is summarized in sCV and F, explained ; equations and code are on the methods page .
  What to test, in order
  Simple persistence. The last observed value: the minimal reference of any forecast.
  A reference that knows the cycle. Clear-sky-index persistence (the last clear-sky index, irradiance divided by clear-sky irradiance, repeated), or BLEND , a convex combination (two positive weights adding up to 1) of immediate memory and the value at the same phase of the cycle. BLEND works from raw irradiance and its weights are in closed form (Voyant et al., 2026).
@@ -2557,11 +2825,28 @@ Which baseline must a solar model beat? When is deep learning worth it?
  A frugal learner. An Extreme Learning Machine (Huang, Zhu and Siew, 2006) keeps a random hidden layer and fits its output weights analytically.
  A deep network. LSTM (long short-term memory, a network that remembers sequences), U-Net (a network designed to read images) or larger, under the same split, horizons and tuning budget (the number of settings tried).
  Two results: a teaching example and a published study
- Ajaccio, 2007 test year, one hour ahead (UE14, the solar forecasting course). The daytime nRMSE is 22.0 % for smart persistence (clear-sky-index persistence), 21.3 % for AR(2) (autoregression on the last two values) and 20.5 % for an ELM. The steps are small, and each is measured.
+ Ajaccio, 2007 test year, one hour ahead (UE14, the solar forecasting course). The daytime nRMSE is 22.0 % for smart persistence (here the last gap to the clear-sky curve is carried forward, as in the course), 21.3 % for AR(2) (autoregression on the last two values) and 20.5 % for an ELM. The steps are small, and each is measured.
+ The ladder of references. Daytime relative error (nRMSE, lower is better) one hour ahead, Ajaccio, 2007 test year (UE14 course). Select a step to see what it costs and what it gains.
+ 1 · Simple persistence
+ It repeats the last measured value: no coefficient, no training. It is the floor; a model that does not beat it adds nothing.
+ Daytime nRMSE: 36.4 %.
+ 2 · Smart persistence
+ It carries forward the last gap to the clear-sky curve: it knows the solar cycle and fits nothing; one hour of data is enough. BLEND is another reference of this kind.
+ Daytime nRMSE: 22.0 %. It divides the RMSE of simple persistence by 1.7: this is the highest step.
+ 3 · AR(2)
+ Two coefficients fitted by least squares, 6 ms to fit. One month of data is enough: with a one-month sliding window, nRMSE stays at 21.5 %.
+ Daytime nRMSE: 21.3 %, 3 % better than smart persistence.
+ 4 · ELM, 50 neurons
+ 51 fitted coefficients (plus 150 drawn at random), 58 ms per draw. It needs several years of data: with one month only, nRMSE rises to 25.6 %.
+ Daytime nRMSE: 20.5 %, 7 % better than smart persistence.
+ 5 · Deep network
+ The course gives no figure for it. Keep a deep network if it goes below 20.5 % on the same test year, in daytime, one hour ahead, with its cost reported: parameters, training time, data needed.
+ The more parameters a model has, the more data it needs: step 4 already shows this.
+ Timings on a laptop: only orders of magnitude matter. Source: solar forecasting course · cost table , section 8.
  Corsican electricity system, six years of hourly data (Applied Energy, 2026). A multiple-output (MIMO) ELM is compared with persistence, single-output formulations and an LSTM under a realistic tuning budget. One hour ahead, nRMSE is 0.179 for solar generation.
  What counts as a gain
  The same targets, scope and horizon for all models.
- Training rows kept apart from evaluation rows, including any scaling (normalization of the inputs).
+ Training rows kept apart from evaluation rows, including any scaling (normalisation of the inputs).
  A difference tested across stations or periods, not only an average.
  Costs reported with the error: parameters, training time, what the device can store.
  The signal described next to the score: with sCV and F (see the box above), a reader can tell a regular sky from a hard-to-forecast one.
@@ -2572,7 +2857,7 @@ Which baseline must a solar model beat? When is deep learning worth it?
  BLEND explained · MIMO-ELM explained · the course
  How to evaluate a solar forecast against persistence
  References
- Cyril Voyant , Candice Banes , Luis Garcia-Gutierrez , Gilles Notton , Milan Despotovic , Zaher Mundher Yaseen . Symmetry-constrained forecasting of periodically correlated energy processes . Applied Mathematical Modeling 157, 116988 (2026).
+ Cyril Voyant , Candice Banes , Luis Garcia-Gutierrez , Gilles Notton , Milan Despotovic , Zaher Mundher Yaseen . Symmetry-constrained forecasting of periodically correlated energy processes . Applied Mathematical Modelling 157, 116988 (2026).
  Cyril Voyant , Milan Despotovic , Luis Garcia-Gutierrez , Mohammed Asloune , Yves-Marie Saint-Drenan , Jean-Laurent Duchaud , Ghjuvan Antone Faggianelli , Elena Magliaro . Short-term forecasting of energy production and consumption using extreme learning machine: A comprehensive MIMO based ELM approach . Applied Energy 410, 127599 (2026).
  Try it in your browser
  Compare forecasts: persistence, AR and ELM : AR is autoregression on the latest values, ELM an extreme learning machine; error against horizon (the forecast lead time) on public data.
@@ -3769,7 +4054,12 @@ URL: https://www.cyrilvoyant.com/fr/actualites/
 
 Actualités : publications, logiciels et essais
  Publications, logiciels, nominations et essais, dans l'ordre de leur parution sur ce site ; pour un article ou un logiciel, la date indiquée est celle de la publication, pas celle du billet, et ne suit donc pas toujours cet ordre. Chaque billet s'ouvre sur place ; les récits de recherche, classés par étape de la méthode, sont sur la page Récits . Flux Atom .
- Thème Année 24 billets affichés
+ En bref
+ 24 billets (2025–2026) : 14 articles, 2 logiciels, 4 essais, 1 projet et 3 billets de parcours.
+ Parcourir, puis ouvrir. Chaque fiche donne la date de publication, les coauteurs et un résumé court ; le billet complet s'ouvre sur place.
+ Filtrer par type, thème ou année. Les cinq articles principaux renvoient à une version expliquée, avec figures et limites.
+ Suivre avec le flux Atom  ; les récits de recherche, classés par étape de la méthode, sont sur la page Récits .
+ Thème Type Année 24 billets affichés
  Publié le 24 octobre 2026 · Pratique de la recherche
  Édition scientifique : sans vérification des données et du code, pas de confiance
  Cyril Voyant
@@ -3784,16 +4074,16 @@ Actualités : publications, logiciels et essais
  ELECTRE fédère une quinzaine de laboratoires, centres et instituts de l'institut Carnot M.I.N.E.S autour de 13 projets de recherche (2023-2026) sur l'électrification des usages, des matériaux au stockage, aux procédés industriels et aux limites de l'électrification. Sa journée de clôture a lieu le 18 novembre 2026 à Mines Paris – PSL, Sophia Antipolis.
  Lire le billet complet
  Billet d’origine, première personne.
- Électrifier les transports, le chauffage, la climatisation et les procédés industriels est l'un des principaux leviers pour réduire les émissions de gaz à effet de serre et la dépendance aux énergies fossiles, à plus forte raison avec un mix électrique décarboné et des politiques de sobriété. ELECTRE , projet phare de l'institut Carnot M.I.N.E.S, mobilise les moyens de ressourcement scientifique de l'institut sur les questions que cela pose, tout au long de la chaîne de valeur.
+ Électrifier les transports, le chauffage, la climatisation et les procédés industriels est l'un des principaux leviers pour réduire les émissions de gaz à effet de serre et la dépendance aux énergies fossiles, à plus forte raison avec un mix électrique décarboné et des politiques de sobriété. ELECTRE , projet phare de l'institut Institut Carnot « Méthodes innovantes pour l'entreprise et la société » : recherche partenariale des écoles des Mines, de l'ENSTA Paris et de l'École polytechnique, labellisée Carnot depuis 2006 ; l'association ARMINES y gère les contrats. , mobilise les moyens de ressourcement scientifique de l'institut sur les questions que cela pose, tout au long de la chaîne de valeur.
  Qui le pilote. Delphine Gilges-Crampont , Annette Massias et Cyril Voyant (coordinateur scientifique, centre O.I.E., Mines Paris – PSL) travaillent à trois sur le projet. Contact : delphine.gilges-crampont@minesparis.psl.eu , annette.massias@minesparis.psl.eu , cyril.voyant@minesparis.psl.eu .
- Quatre axes, 13 projets de recherche (2023-2026) , portés par des laboratoires de Mines Paris – PSL, IMT Mines Albi, IMT Mines Alès, Mines Saint-Étienne, IMT Atlantique et IMT Nord Europe, avec leurs partenaires :
+ Quatre axes, 13 projets de recherche (2023-2026) , portés par des laboratoires de Mines Paris – PSL, Institut Mines-Télécom : établissement public qui regroupe des écoles d'ingénieurs, dont IMT Mines Albi, IMT Mines Alès, IMT Atlantique et IMT Nord Europe. Mines Albi, IMT Mines Alès, Mines Saint-Étienne, IMT Atlantique et IMT Nord Europe, avec leurs partenaires :
  Les matériaux des composants de la transition : titane recyclé pour la catalyse ou les batteries, membranes composites pour la conversion électrochimique, alliages biopolymères conducteurs, pièces d'aluminium par fusion laser sur lit de poudre, jumeaux numériques de structures composites, batteries lithium-ion et départs de feu dans les centres de tri.
- Le stockage pour intégrer les renouvelables : systèmes décentralisés avec hydrogène, stockage par air comprimé quasi isotherme couplé au photovoltaïque résidentiel, modèles multi-échelles des réseaux avec véhicules électriques et renouvelables (projet inter-Carnot VE4FLEX avec Énergies du Futur).
+ Le stockage pour intégrer les renouvelables : systèmes décentralisés avec hydrogène, stockage par air comprimé quasi isotherme couplé au photovoltaïque résidentiel, modèles multi-échelles des réseaux avec véhicules électriques et renouvelables (projet inter-Carnot Projet inter-Carnot mené avec l'institut Carnot Énergies du Futur : modèles multi-échelles de réseaux électriques avec véhicules électriques et énergies renouvelables. avec Énergies du Futur).
  L'électrification des procédés : procédés hybrides électrique, combustion et hydrogène.
- La pertinence et les limites de l'électrification : matériaux critiques, prospective environnementale intégrant les risques NATECH, vision commune de la recherche sur la mobilité électrique, organisation des marchés de la pompe à chaleur.
+ La pertinence et les limites de l'électrification : matériaux critiques, prospective environnementale intégrant les risques Accident technologique déclenché par un aléa naturel (séisme, inondation, foudre, feu de forêt). , vision commune de la recherche sur la mobilité électrique, organisation des marchés de la pompe à chaleur.
  Journée de clôture, 18 novembre 2026 , campus Pierre Laffitte, Mines Paris – PSL, Sophia Antipolis : L'électrification des usages : technologies, intégration et soutenabilité ? Résultats des projets, keynote industrielle d'EDF sur son plan d'électrification, sessions sur les technologies et solutions, sur l'intégration au système électrique (réseaux, flexibilité, pilotage) et sur les impacts, démonstrateurs et posters (dont l'infrastructure d'essais SIXGRID), table ronde et temps d'échange avec les équipes pour envisager des collaborations. Programme · Inscription .
  Pour aller plus loin : le projet ELECTRE et le portrait de son coordinateur sur le site du Carnot M.I.N.E.S. Pour monter un projet avec les équipes : Collaborer .
- 2026 · Nominations et distinctions
+ 2026 · Parcours
  Professeur invité à l'université de Kragujevac (Serbie)
  Titre du billet d'origine : Visiting Professor at the University of Kragujevac, Serbia
  Cyril Voyant et Gilles Notton
@@ -3801,12 +4091,12 @@ Actualités : publications, logiciels et essais
  Lire le billet complet
  Billet d’origine, première personne.
  Cyril Voyant
- J’ai l’honneur d’avoir été nommé professeur invité à la Faculté d’ingénierie de l’Université de Kragujevac, avec mon collègue et ami le Prof. Gilles Notton.
+ J’ai été nommé professeur invité à la Faculté d’ingénierie de l’Université de Kragujevac, avec mon collègue et ami le Prof. Gilles Notton.
  Cette nomination formalise une coopération ancienne et productive entre Mines Paris – PSL, l’Université de Corse et l’Université de Kragujevac (Prof. Milan Despotovic). Cette collaboration s’est développée sur plusieurs années à travers des recherches communes, des échanges universitaires, des activités Erasmus et des initiatives de projets européens.
  Intérêt scientifique et pratique
  Notre travail commun porte sur les systèmes d’énergies renouvelables, la prévision de l’éclairement solaire, la modélisation numérique, la qualification des données et les méthodes fondées sur l’IA conçues pour les contraintes opérationnelles. La collaboration est particulièrement précieuse parce qu’elle relie des expertises complémentaires, des contextes territoriaux différents et des enjeux énergétiques concrets à travers l’Europe.
  Message clé
- Au-delà de la reconnaissance personnelle, cette nomination renforce un partenariat scientifique et pédagogique actif entre la France, la Corse et la Serbie. Elle ouvre de nouvelles perspectives de publications communes, de mobilité étudiante, d’activités d’enseignement et de futurs projets européens dans le domaine de la transition énergétique.
+ Cette nomination renforce un partenariat scientifique et pédagogique actif entre la France, la Corse et la Serbie. Elle ouvre de nouvelles perspectives de publications communes, de mobilité étudiante, d’activités d’enseignement et de futurs projets européens dans le domaine de la transition énergétique.
  Annonce officielle de la Faculté d’ingénierie de l’Université de Kragujevac
  Annonce de la Faculté d’ingénierie (en anglais)
  Annonce officielle en serbe de la Faculté d’ingénierie de l’Université de Kragujevac
@@ -3979,19 +4269,19 @@ Actualités : publications, logiciels et essais
  https://youtu.be/eMp0uyl59d4?si=Wie-VqNsiuIgpejp
  https://www.linkedin.com/posts/cyril-voyant-2a7767192_research-excellence-in-2026-how-to-make-share-7432067381817974785-zzC8?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC1Rit8BFvxlNepkgPDj3oO6WQ4Z1ztQQXI
  https://x.com/cvoyant1/status/2026701715769114811
- 2026 · Nominations et distinctions
+ 2026 · Parcours
  Nommé membre du comité éditorial de Scientific Reports (Nature Portfolio)
  Titre du billet d'origine : Appointed Editorial Board Member of Scientific Reports (Nature Portfolio)
  Une revue pluridisciplinaire qui couvre tous les domaines scientifiques ; ce rôle prolonge mon parcours de directeur de recherche à Mines Paris – PSL (centre O.I.E.).
  Lire le billet complet
  Billet d’origine, première personne.
  Cyril Voyant
- Nommé membre du comité éditorial de Scientific Reports (Nature Portfolio), revue multidisciplinaire à comité de lecture à fort impact.
+ Nommé membre du comité éditorial de Scientific Reports (Nature Portfolio), revue multidisciplinaire à comité de lecture.
  Traitement des soumissions dans mes domaines d’expertise :
  Énergies renouvelables : prévision de l’éclairement solaire (GHI), ML appliqué au PV/hybridation, micro-réseaux
  Physique médicale : radiothérapie, radiobiologie, dosimétrie équivalente
- Cette fonction s’inscrit dans mon parcours de directeur de recherche à Mines Paris – PSL, O.I.E. (depuis 2024), avec >130 publications à comité de lecture (h-index ~35, >7000 citations en 2026, Stanford Top 2%). Scientific Reports couvre tous les domaines scientifiques.
- L’équipe éditoriale réunit >2000 experts du monde entier ( https://www.nature.com/srep/about/editors ). Ma nomination met en lumière la recherche interdisciplinaire française en énergie/ML/médecine.
+ Cette fonction s’inscrit dans mon parcours de directeur de recherche à Mines Paris – PSL, O.I.E. (depuis 2024). Scientific Reports couvre tous les domaines scientifiques.
+ L’équipe éditoriale réunit >2000 experts du monde entier ( https://www.nature.com/srep/about/editors ).
  Liens
  Profil : https://www.cyrilvoyant.com
  HAL : https://cv.hal.science/cyril-voyant
@@ -4028,16 +4318,15 @@ Actualités : publications, logiciels et essais
  Ensemble, ces deux articles dessinent une trajectoire de recherche claire :
  - une contribution méthodologique qui montre comment des dynamiques individualisées peuvent être formellement modélisées ;
  - une synthèse conceptuelle montrant comment ce travail s’inscrit dans les efforts internationaux en médecine nucléaire computationnelle et les fait progresser.
- 2025 · Nominations et distinctions
- Dans le classement Stanford-Elsevier 2025 des 2 % de chercheurs les plus cités
- Titre du billet d'origine : Grateful to be included in the 2025 Stanford-Elsevier Top 2% Scientists ranking.
- Une reconnaissance pour les travaux menés à Mines Paris – PSL en prévision solaire, systèmes photovoltaïques, IA pour l'énergie et physique médicale.
+ 2025 · Parcours
+ Dans la mise à jour 2025 de la base de citations Stanford–Elsevier (2 % les plus cités)
+ La mise à jour 2025 de la base Stanford–Elsevier d'indicateurs de citation (Ioannidis, version 8) inclut Cyril Voyant : score composite parmi les 100 000 premiers ou dans les 2 % supérieurs du sous-domaine. Ce qu'elle mesure, et ce qu'elle ne mesure pas, est détaillé plus bas.
  Lire le billet complet
- Billet d’origine, première personne.
- Fier de contribuer à la recherche en prévision solaire, systèmes PV, IA pour l’énergie et physique médicale à Mines Paris – PSL.
- Merci à tous les collaborateurs et étudiants pour leur rôle essentiel.
- La liste Stanford-Elsevier Top 2% Scientists recense les chercheurs les plus cités au monde à l’aide d’un indicateur composite standardisé fondé sur les données bibliométriques de Scopus, dont le nombre total de citations, le h-index, des indices ajustés selon la co-signature et des métriques d’impact normalisées par domaine. Elle fournit des classements sur l’ensemble de la carrière et sur une seule année, pour toutes les disciplines scientifiques.
- J’ai l’honneur de figurer dans l’édition 2025 de ce classement, et je suis particulièrement fier de contribuer aux bons résultats de Mines Paris – PSL , qui se classe parmi les principaux établissements au monde, avec environ 10 % de ses enseignants-chercheurs reconnus dans la cohorte Top 2%.
+ Réécrit au neutre le 4 novembre 2026, avec la source des données ; le billet d’origine était une annonce à la première personne.
+ Le fait. Cyril Voyant figure dans la mise à jour d’août 2025 de la base Updated science-wide author databases of standardized citation indicators ( John P. A. Ioannidis , Elsevier Data Repository, version 8, publiée le 19 septembre 2025, doi: 10.17632/btchxktzyw.8 ), souvent appelée « liste Stanford–Elsevier des 2 % ».
+ Ce qu’elle mesure. Un indicateur composite de citations (c-score) calculé à partir des profils Scopus. Il compte l’impact (les citations) plutôt que le nombre d’articles et tient compte de la co-signature et de la place d’auteur (seul, premier, dernier). Un chercheur est retenu si son c-score est parmi les 100 000 premiers, avec ou sans autocitations, ou dans les 2 % supérieurs de son sous-domaine (22 domaines et 174 sous-domaines de la classification Science-Metrix). Deux listes coexistent : la carrière entière (citations jusqu’à fin 2024) et la seule année 2024.
+ Ce qu’elle ne mesure pas. La description du jeu de données prévient elle-même que toute métrique de citation a ses limites et doit être utilisée avec discernement, et que l’absence de la liste ne signifie pas un travail médiocre. Un nombre de citations ne dit rien de la possibilité de vérifier les données et le code d’un article : voir les critères RTVACOS et qui vérifie ce qui est publié .
+ L’image est le visuel publié par Mines Paris – PSL sur ses chercheurs présents dans la liste 2025 ( publication de l’établissement ). Merci aux coauteurs et aux étudiants dont le travail se reflète dans ces citations.
  Publié en ligne le 13 octobre 2025 · Énergie : prévision et systèmes
  Apprentissage par transfert pour prévoir le vent là où les données manquent
  Titre du billet d'origine : Transfer Learning for Wind Speed Forecasting: A Scalable Approach for Data-Scarce Environments
@@ -5640,26 +5929,55 @@ Prévoir l'éclairement et son incertitude avec des nombres complexes
 URL: https://www.cyrilvoyant.com/fr/recits/calculateur-bed-eqd2-lq-lql/
 
 Calculateur gratuit de BED et d'EQD2 : LQ ou LQL ?
- LQL-Equiv est un calculateur gratuit et open source (MIT) de dose biologiquement efficace (BED) et de dose équivalente en fractions de 2 Gy (EQD2 ; le gray, Gy, est l'unité de dose absorbée) avec les modèles linéaire-quadratique (LQ) et linéaire-quadratique-linéaire (LQL). Il fonctionne dans le navigateur, et rien de ce qui est saisi ne quitte la page. Ses auteurs sont Cyril Voyant et Daniel Julian. C'est un outil de recherche et d'enseignement, pas un dispositif médical : il ne sert ni à choisir ni à modifier une prescription.
+ LQL-Equiv est un calculateur gratuit et open source (MIT) de dose biologiquement efficace (BED) et de dose équivalente en fractions de 2 Gy (EQD2 ; le gray, Gy, est l'unité de dose absorbée) avec les modèles linéaire-quadratique (LQ) et linéaire-quadratique-linéaire (LQL). Il fonctionne dans le navigateur, et rien de ce qui est saisi ne quitte la page.
+ Ses auteurs sont Cyril Voyant et Daniel Julian. C'est un outil de recherche et d'enseignement, pas un dispositif médical : il ne sert ni à choisir ni à modifier une prescription.
  Cyril Voyant · Mines Paris – PSL, Centre O.I.E. · 2 novembre 2026
- Repères de lecture. BED désigne la dose biologiquement efficace ; EQD2 la dose équivalente exprimée en fractions de 2 Gy. LQ signifie linéaire-quadratique et LQL linéaire-quadratique-linéaire. n compte les fractions, d est la dose par fraction et Gy le gray (énergie déposée par unité de masse). Le paramètre tissulaire α/β (sensibilité du tissu à la taille de chaque fraction) et la dose de transition d T s’expriment en Gy. NTCP et TCP désignent les probabilités de complication des tissus sains et de contrôle tumoral dans le modèle indiqué.
+ En bref
+ BED et EQD2 ramènent des schémas de radiothérapie différents à une même échelle ; le modèle, LQ ou LQL, doit être indiqué.
+ Pour une fraction de 15 Gy au rectum, la BED vaut 72,7 Gy en LQ et 59,4 Gy en LQL.
+ LQL-Equiv calcule dans le navigateur ; c'est un outil de recherche et d'enseignement, pas un dispositif médical.
+ Repères de lecture.
+ BED désigne la dose biologiquement efficace ; EQD2 la dose équivalente exprimée en fractions de 2 Gy.
+ LQ signifie linéaire-quadratique et LQL linéaire-quadratique-linéaire. n compte les fractions, d est la dose par fraction et Gy le gray (énergie déposée par unité de masse).
+ Le paramètre tissulaire α/β (sensibilité du tissu à la taille de chaque fraction) et la dose de transition d T s’expriment en Gy.
+ NTCP et TCP désignent les probabilités de complication des tissus sains et de contrôle tumoral dans le modèle indiqué.
  LQ ou LQL ?
  Pour n fractions de dose d, le modèle linéaire-quadratique donne BED = n · d · (1 + d / (α/β)) , et EQD2 = BED / (1 + 2/(α/β)) . La courbe LQ continue de s'infléchir vers le haut quand la dose par fraction augmente. Le modèle LQL la conserve jusqu'à une dose de transition d T , puis continue en ligne droite.
  Sous la dose de transition, les deux modèles sont d'accord. Au-dessus, ils s'écartent. Pour une fraction de 15 Gy au rectum (α/β = 3,9 Gy, d T = 7,8 Gy) :
  LQ : 15 × (1 + 15/3,9) = 72,7 Gy ;
  LQL : 7,8 × (1 + 7,8/3,9) + 5 × (15 − 7,8) = 59,4 Gy , soit 18 % de moins (5 est la pente, sans unité, de la partie linéaire).
  Le modèle doit donc être indiqué dès qu'on compare des schémas hypofractionnés (moins de fractions, plus grosses) et conventionnels.
+ Lire la formule
+ Lire la formule. Allure de la BED d'une fraction en fonction de la dose, pour l'exemple du rectum ci-dessus. Seules les deux valeurs à 15 Gy sont des résultats ; les courbes montrent la forme. Touchez un terme pour le repérer sur le schéma.
+ Le modèle linéaire-quadratique : la courbe rouge s'infléchit toujours plus vers le haut quand la dose par fraction d augmente. n compte les fractions.
+ Sous d T , LQ et LQL donnent la même BED. Dans LQL-Equiv, d T = 2 · α/β pour tous les tissus : 7,8 Gy pour le rectum (α/β = 3,9 Gy).
+ Au-dessus de d T , la courbe bleue continue en ligne droite de pente 5, sans cassure : à d T = 2 · α/β, la pente de la courbe LQ vaut aussi 1 + 2 · d T / (α/β) = 5.
+ Pour une fraction de 15 Gy au rectum : 72,7 Gy en LQ, 59,4 Gy en LQL, soit 18 % de moins. Plus d s'éloigne de d T , plus l'écart grandit.
+ La dose qui, donnée en fractions de 2 Gy, a la même BED. 2 Gy est sous d T  : à cette dose de référence, LQ et LQL sont d'accord, et le choix du modèle ne joue que sur le schéma étudié.
+ Aucun calcul de dose n'est fait sur cette page. L'application ajoute ce que ce calcul à la main ignore : la prolifération (modèle de Dale pour la tumeur, de Van Dyk pour les tissus sains), les interruptions et deux fractions par jour ; ses résultats peuvent donc différer. Ouvrir LQL-Equiv pour calculer un schéma.
+ En texte brut : BED_LQ = n*d*(1 + d/(a/b)) ; BED_LQL = n*(dT*(1 + dT/(a/b)) + 5*(d - dT)) si d > dT ; EQD2 = BED/(1 + 2/(a/b)) ; dT = 2*(a/b) dans LQL-Equiv.
  Ce que couvre le calculateur
  Paramètres documentés pour 34 organes à risque et 20 localisations tumorales.
  Interruptions, deux fractions par jour et repopulation tumorale.
  NTCP et TCP comme illustrations de modèle, jamais validées sur des résultats cliniques.
  La version 2026 reproduit le logiciel de 2014 sur 4 438 schémas : 69 125 valeurs sur 69 131 concordent.
+ Deux exemples documentés
+ Le README de LQL-Equiv donne deux cas calculés par l'application, contre la tumeur standard de sa bibliothèque (prolifération de 0,66 Gy par jour après 21 jours ; dose de référence 2 Gy). Ce sont ses résultats, recopiés tels quels.
+ 25 × 2 Gy, prolongé par une interruption : EQD2 (Gy) Interruption Tumeur standard Prolifération désactivée
+ 0 jour 50,00 50,00
+ 10 jours 37,48 50,00
+ 30 jours 19,20 50,00
+ 20 × 3 Gy, schéma raccourci (Gy) BED EQD2
+ Tumeur standard 73,38 80,66
+ Prolifération désactivée 78,00 65,00
+ Une interruption de dix jours coûte 12,5 Gy d'EQD2. Le schéma raccourci gagne parce que le schéma de référence qui lui correspond dure plus longtemps et perd davantage à la prolifération. Détails et autres cas : README de LQL-Equiv (en anglais).
  Autres calculateurs
  D'autres outils existent, comme les calculateurs BED et EQD2 d'eviQ . Vérifiez quel modèle et quel α/β chacun utilise avant de comparer les résultats.
  Limites
  Le résultat ne vaut que ce que valent le modèle et ses paramètres (α/β, d T , pente de la partie linéaire), qui restent incertains.
  À lire et à utiliser
  Ouvrir le calculateur · comparer LQ et LQL · le récit · équations et validation · code
+ Voir aussi : neutrons atmosphériques et capture neutronique par le bore (BNCT) · atténuation et épaisseur de demi-atténuation , animation du cours de physique
  Références
  Cyril Voyant , Daniel Julian . LQL-Equiv . SoftwareX 36, 103085 (2026).
  Cyril Voyant , Daniel Julian , Stéphane Muraro , Véronique Bodez , Morgane Pinpin , Delphine Leschi, Rudy Oozeer, Guiddi Wided, Marie-Aimée Acquaviva , Sylvain Prapant, Omar Gahbiche, Noureddine Bouaouina . Improving clinical decision-making in radiotherapy: a comparative analysis of linear-quadratic (LQ) and linear-quadratic-linear (LQL) dose models . Clinical Oncology 45, 103893 (2025).
@@ -5669,9 +5987,21 @@ Calculateur gratuit de BED et d'EQD2 : LQ ou LQL ?
 URL: https://www.cyrilvoyant.com/fr/recits/evaluer-prevision-solaire-persistance/
 
 Comment évaluer une prévision solaire face à la persistance
- Comparez le modèle à la persistance (la prévision qui répète la dernière valeur observée) sur les mêmes cibles, le même horizon (le délai entre la dernière valeur connue et l’instant prévu) et le même périmètre, donnez plus d'une norme d'erreur, puis testez la différence. Le rapport entre l'erreur du modèle et celle de la persistance dit ce que le modèle apporte. Les métriques NICEᵏ (Voyant et al., 2025) construisent ce rapport pour les normes d'ordre un, deux et trois (erreur absolue moyenne, racine de l’erreur quadratique moyenne, et racine cubique de la moyenne des erreurs absolues au cube).
+ Comparez le modèle à la persistance (la prévision qui répète la dernière valeur observée) sur les mêmes cibles, le même horizon (le délai entre la dernière valeur connue et l’instant prévu) et le même périmètre, donnez plus d'une norme d'erreur, puis testez la différence.
+ Le rapport entre l'erreur du modèle et celle de la persistance dit ce que le modèle apporte. Les métriques NICEᵏ (Voyant et al., 2025) construisent ce rapport pour les normes d'ordre un, deux et trois (erreur absolue moyenne, racine de l’erreur quadratique moyenne, et racine cubique de la moyenne des erreurs absolues au cube).
  Cyril Voyant · Mines Paris – PSL, Centre O.I.E. · 2 novembre 2026
- Repères de lecture. La MAE est la moyenne des erreurs absolues ; la RMSE est la racine de la moyenne des erreurs au carré et donne plus de poids aux grandes erreurs. La nRMSE rapporte la RMSE à la moyenne des observations évaluées. AR désigne l’autorégression ; ELM (extreme learning machine) ajuste les poids de sortie en gardant une couche cachée aléatoire fixe. Dans les formules NICE, l’indice p désigne la persistance ; la p-value statistique d’un test est une autre quantité. sCV (coefficient de variation stochastique) mesure l’écart de l’éclairement à la courbe de ciel clair : 0 par ciel clair, 1 pour un ciel qui alterne au hasard entre ciel clair et nuage épais. F (prévisibilité) est compris entre 1 − sCV, quand ces écarts n’ont aucune mémoire, et 1, quand ils sont parfaitement corrélés dans le temps ; contrairement à sCV, il dépend de l’horizon (le délai entre la dernière valeur connue et l’instant prévu). Les deux sont expliqués, avec une page interactive, dans Quelle prévision pour quel signal ? ; l’étude est résumée dans sCV et F, expliqués ; équations et code sont sur la page des méthodes (en anglais).
+ En bref
+ Une prévision se juge face à une référence nommée : persistance simple, persistance intelligente ou BLEND.
+ Même modèle, autre référence : à Ajaccio, l' AR (2) a un score d'environ +0,41 face à la persistance simple, mais de +0,03 face à la persistance intelligente.
+ Donner plusieurs normes d'erreur sur les mêmes cibles, puis tester la différence ; les métriques NICE rapportent chaque norme à celle de la persistance.
+ Repères de lecture.
+ La MAE est la moyenne des erreurs absolues ; la RMSE est la racine de la moyenne des erreurs au carré et donne plus de poids aux grandes erreurs.
+ La nRMSE rapporte la RMSE à la moyenne des observations évaluées.
+ AR désigne l’autorégression ; ELM (extreme learning machine) ajuste les poids de sortie en gardant une couche cachée aléatoire fixe.
+ Dans les formules NICE, l’indice p désigne la persistance ; la p-value statistique d’un test est une autre quantité.
+ sCV (coefficient de variation stochastique) mesure l’écart de l’éclairement à la courbe de ciel clair : 0 par ciel clair, 1 pour un ciel qui alterne au hasard entre ciel clair et nuage épais.
+ F (prévisibilité) est compris entre 1 − sCV, quand ces écarts n’ont aucune mémoire, et 1, quand ils sont parfaitement corrélés dans le temps ; contrairement à sCV, il dépend de l’horizon (le délai entre la dernière valeur connue et l’instant prévu).
+ Les deux sont expliqués, avec une page interactive, dans Quelle prévision pour quel signal ? ; l’étude est résumée dans sCV et F, expliqués ; équations et code sont sur la page des méthodes (en anglais).
  La marche à suivre
  Nommer la référence. Dire quelle persistance est utilisée : dernière observation, persistance de l’indice de ciel clair (elle répète le dernier indice de ciel clair : éclairement divisé par l’éclairement par ciel clair), ou référence qui tient compte de la phase comme BLEND (combinaison convexe de la persistance et de la persistance cyclique, la valeur un cycle plus tôt). Sans cela, un score de compétence (le gain par rapport à la référence) dit peu de chose.
  Garder les mêmes cibles. Même site, même période, même horizon et mêmes instants pour le modèle et la référence.
@@ -5679,6 +6009,19 @@ Comment évaluer une prévision solaire face à la persistance
  Donner plusieurs normes. La MAE et la RMSE ne pèsent pas les grandes erreurs de la même façon. Garder les erreurs absolues à côté des scores relatifs.
  Tester la différence. Comparer les distributions d'erreurs entre stations ou périodes, par exemple avec un test de Wilcoxon (il compare deux séries d'erreurs par leurs rangs).
  Décrire le signal. Une grande erreur ne veut pas dire la même chose sous un ciel régulier et avec un éclairement très fluctuant. sCV et F caractérisent la variabilité et la prévisibilité avant de comparer des algorithmes.
+ Même modèle, autre référence : un exemple chiffré
+ Le tableau publié du cours de prévision solaire donne, pour la même année de test, l'erreur de cinq prévisions. Changer de référence ou de périmètre change le score d'un même modèle : c'est la raison des étapes 1 et 3.
+ Même modèle, autre référence. Prévision de l'éclairement à une heure, Ajaccio, année de test 2007 (cours UE14). Choisissez la référence et le périmètre : les nRMSE sont celles du tableau publié, le score se lit face à la référence choisie.
+ Référence : Périmètre : Prévision nRMSE (plus bas = mieux) Score
+ Ciel clair seul 39,9 % −0,10
+ Persistance simple 36,4 % référence
+ Persistance intelligente 22,0 % +0,40
+ AR(2) 21,3 % +0,41
+ ELM, 50 neurones 20,5 % +0,44
+ AR(2), même année, même horizon, de jour : score +0,41 face à la persistance simple, +0,03 face à la persistance intelligente. Seul le nom de la référence a changé.
+ Score = 1 − nRMSE du modèle / nRMSE de la référence, sur le même périmètre (donc la même moyenne). Avec la persistance intelligente de jour, les scores affichés sont ceux du tableau publié ; dans les autres cas, ils sont calculés ici à partir des nRMSE arrondies (écart possible de 0,01).
+ NICEΣ publié (face à la persistance simple, de jour) : 0,59 pour la persistance intelligente, 0,58 pour l'AR(2), 0,55 pour l'ELM, plus de 1 pour le ciel clair seul. Source : cours de prévision solaire · tableau et code (en anglais).
+ Avec la nuit, la nRMSE de l'AR(2) passe de 21,3 % à 30,1 % : sa RMSE baisse (de 79 à 56 W/m², la nuit tout le monde a raison), mais la moyenne des observations est divisée par deux (de 372 à 186 W/m²). Face à une même référence, le score bouge à peine. Il faut donc nommer la référence et annoncer le périmètre.
  NICE, un exemple complet
  NICE¹ = MAE / MAE p et NICE² = RMSE / RMSE p , où p est la persistance simple au même horizon. NICE³ utilise la racine cubique de la moyenne des erreurs absolues au cube. NICEΣ combine les trois.
  Un prédicteur utile se situe entre 0 et 1. Au-dessus de 1, le modèle fait moins bien que le plus simple des prédicteurs, ou il y a un problème numérique ou autre.
@@ -5689,6 +6032,7 @@ Comment évaluer une prévision solaire face à la persistance
  L'étude NICE expliquée · calculer NICE · théorie, code et exemple exécutable
  Comparer des prévisions : persistance, BLEND, AR et ELM sur données publiques
  sCV et F : variabilité et prévisibilité du signal
+ Le cours de prévision solaire : l’exemple d’Ajaccio ci-dessus, pas à pas
  Autres références : Yang et al. (2020) sur la vérification des prévisions déterministes ; Marquez et Coimbra sur une métrique reliant l'incertitude de prévision à la variabilité
  Références
  Cyril Voyant , Milan Despotovic , Luis Garcia-Gutierrez , Rodrigo Amaro e Silva , Philippe Lauret , Ted Soubdhan , Nadjem Bailek . NICEᵏ metrics: Unified and multidimensional framework for evaluating deterministic solar forecasting accuracy . Sustainable Energy Technologies and Assessments 83, 104588 (2025).
@@ -5838,7 +6182,17 @@ URL: https://www.cyrilvoyant.com/fr/recits/reference-prevision-solaire-deep-lear
 Quelle référence une prévision solaire doit-elle battre ? Quand le deep learning vaut-il la peine ?
  Commencez par la persistance (elle répète la dernière valeur observée), puis une référence qui connaît la phase, une autorégression (la prochaine valeur prévue par une combinaison linéaire des dernières) et un apprentissage frugal (un petit modèle ajusté en un seul calcul). Gardez un réseau profond seulement s'il apporte un gain mesuré sur le même protocole. Le deep learning peut valoir la peine. Il doit le montrer face à des références qui ne coûtent presque rien.
  Cyril Voyant · Mines Paris – PSL, Centre O.I.E. · 2 novembre 2026
- Repères de lecture. La MAE est la moyenne des erreurs absolues ; la RMSE est la racine de la moyenne des erreurs au carré et donne plus de poids aux grandes erreurs. La nRMSE rapporte la RMSE à la moyenne des observations évaluées. AR désigne l’autorégression ; ELM (extreme learning machine) ajuste les poids de sortie en gardant une couche cachée aléatoire fixe. Dans les formules NICE, l’indice p désigne la persistance ; la p-value statistique d’un test est une autre quantité. sCV (coefficient de variation stochastique) mesure l’écart de l’éclairement à la courbe de ciel clair : 0 par ciel clair, 1 pour un ciel qui alterne au hasard entre ciel clair et nuage épais. F (prévisibilité) est compris entre 1 − sCV, quand ces écarts n’ont aucune mémoire, et 1, quand ils sont parfaitement corrélés dans le temps ; contrairement à sCV, il dépend de l’ horizon (le délai entre la dernière valeur connue et l’instant prévu). Les deux sont expliqués, avec une page interactive, dans Quelle prévision pour quel signal ? ; l’étude est résumée dans sCV et F, expliqués ; équations et code sont sur la page des méthodes (en anglais).
+ En bref
+ Tester dans l'ordre : persistance, référence qui connaît le cycle, autorégression, apprentissage frugal, puis seulement un réseau profond.
+ À Ajaccio, à une heure, chaque marche gagne peu : erreur relative de jour de 22,0 % (persistance intelligente), 21,3 % (autorégression) puis 20,5 % ( ELM ), pour un coût et des besoins en données qui montent.
+ Un réseau profond se garde s'il fait mieux sur le même protocole, avec son coût affiché.
+ Repères de lecture.
+ La MAE est la moyenne des erreurs absolues ; la RMSE est la racine de la moyenne des erreurs au carré et donne plus de poids aux grandes erreurs.
+ La nRMSE rapporte la RMSE à la moyenne des observations évaluées.
+ AR désigne l’autorégression ; ELM (extreme learning machine) ajuste les poids de sortie en gardant une couche cachée aléatoire fixe.
+ sCV (coefficient de variation stochastique) mesure l’écart de l’éclairement à la courbe de ciel clair : 0 par ciel clair, 1 pour un ciel qui alterne au hasard entre ciel clair et nuage épais.
+ F (prévisibilité) est compris entre 1 − sCV, quand ces écarts n’ont aucune mémoire, et 1, quand ils sont parfaitement corrélés dans le temps ; contrairement à sCV, il dépend de l’ horizon (le délai entre la dernière valeur connue et l’instant prévu).
+ Les deux sont expliqués, avec une page interactive, dans Quelle prévision pour quel signal ? ; l’étude est résumée dans sCV et F, expliqués ; équations et code sont sur la page des méthodes (en anglais).
  Quoi tester, dans l'ordre
  La persistance simple. La dernière valeur observée : la référence minimale de toute prévision.
  Une référence qui connaît le cycle. La persistance de l'indice de ciel clair (le dernier éclairement divisé par l'éclairement par ciel clair, répété), ou BLEND , combinaison convexe (deux poids positifs de somme 1) de la mémoire immédiate et de la valeur à la même phase du cycle. BLEND part de l'éclairement brut et ses poids ont une forme analytique (Voyant et al., 2026).
@@ -5846,7 +6200,24 @@ Quelle référence une prévision solaire doit-elle battre ? Quand le deep lea
  Un apprentissage frugal. Une Extreme Learning Machine (Huang, Zhu et Siew, 2006) garde une couche cachée aléatoire et calcule analytiquement ses poids de sortie.
  Un réseau profond. LSTM (long short-term memory, réseau qui garde la mémoire des suites), U-Net (réseau conçu pour lire des images) ou plus grand, avec le même découpage, les mêmes horizons et le même budget de réglage (le nombre de configurations essayées).
  Deux résultats : un exemple de cours, une étude publiée
- Ajaccio, année de test 2007, à l’horizon d’une heure (UE14, le cours de prévision solaire). La nRMSE de jour vaut 22,0 % pour la smart persistence (persistance de l’indice de ciel clair), 21,3 % pour AR(2) (autorégression sur les deux dernières valeurs) et 20,5 % pour un ELM. Les marches sont petites, et chacune est mesurée.
+ Ajaccio, année de test 2007, à l’horizon d’une heure (UE14, le cours de prévision solaire). La nRMSE de jour vaut 22,0 % pour la smart persistence (ici, le dernier écart à la courbe de ciel clair est reporté, comme dans le cours), 21,3 % pour AR(2) (autorégression sur les deux dernières valeurs) et 20,5 % pour un ELM. Les marches sont petites, et chacune est mesurée.
+ L'escalier des références. Erreur relative de jour (nRMSE, plus bas = mieux) à une heure, Ajaccio, année de test 2007 (cours UE14). Touchez une marche pour voir ce qu'elle coûte et ce qu'elle gagne.
+ 1 · Persistance simple
+ Elle répète la dernière valeur mesurée : aucun coefficient, aucun apprentissage. C'est le plancher ; un modèle qui ne la bat pas n'apporte rien.
+ nRMSE de jour : 36,4 %.
+ 2 · Persistance intelligente
+ Elle reporte le dernier écart à la courbe de ciel clair : elle connaît le cycle du Soleil, sans rien ajuster ; une heure de données suffit. BLEND est une autre référence de ce type.
+ nRMSE de jour : 22,0 %. Elle divise la RMSE de la persistance simple par 1,7 : c'est la plus haute marche.
+ 3 · AR(2)
+ Deux coefficients estimés par moindres carrés, 6 ms d'ajustement. Un mois de données suffit : avec une fenêtre glissante d'un mois, la nRMSE reste à 21,5 %.
+ nRMSE de jour : 21,3 %, soit 3 % de mieux que la persistance intelligente.
+ 4 · ELM, 50 neurones
+ 51 coefficients ajustés (plus 150 tirés au hasard), 58 ms par tirage. Il lui faut plusieurs années de données : avec un mois seulement, la nRMSE remonte à 25,6 %.
+ nRMSE de jour : 20,5 %, soit 7 % de mieux que la persistance intelligente.
+ 5 · Réseau profond
+ Le cours n'en donne pas de chiffre. Un réseau profond se garde s'il passe sous 20,5 % sur la même année de test, de jour, à une heure, avec son coût affiché : paramètres, temps d'apprentissage, données nécessaires.
+ Plus un modèle a de paramètres, plus il lui faut de données : la marche 4 le montre déjà.
+ Temps mesurés sur un ordinateur portable : seuls les ordres de grandeur comptent. Source : cours de prévision solaire · tableau des coûts , section 8 (en anglais).
  Système électrique corse, six ans de données horaires (Applied Energy, 2026). Un ELM à sorties multiples (MIMO) est comparé à la persistance, à des formulations à sortie unique et à un LSTM avec un budget de réglage réaliste. À l’horizon d’une heure, la nRMSE vaut 0,179 pour la production solaire.
  Ce qui compte comme un gain
  Les mêmes cibles, le même périmètre et le même horizon pour tous les modèles.
@@ -6070,6 +6441,44 @@ URL: https://www.cyrilvoyant.com/fr/vue-d-ensemble/
 
 Vue d'ensemble : recherche, logiciels, cours et outils
  Les travaux publics de Cyril Voyant en physique médicale et en prévision énergétique, cours et logiciels compris, chacun relié à sa source : article, DOI (identifiant permanent), dépôt, équipe. Réutilisation libre, en citant les auteurs. La version courte, en 30 secondes ; le fil qui relie ces travaux .
+ En bref
+ Une même démarche en cinq étapes : calculer quand le lien est connu, compléter le modèle quand il ne suffit pas, apprendre frugalement quand une relation manque, puis rendre l'outil utilisable et démontrer qu'il fonctionne.
+ Trois domaines : l'énergie, la physique médicale et la pratique de la recherche, menés avec les coauteurs nommés sur chaque page.
+ Tout est public : 15 logiciels avec DOI, 5 cours sous licence CC BY 4.0 (réutilisation libre en citant les auteurs) et des outils à essayer dans le navigateur.
+ La carte du travail
+ Au cœur : le modèle Au centre : l'humain, qui pose la question et décide En périphérie : l'IA, un outil parmi d'autres
+ Étape 1
+ Le lien entre causes et effets est-il connu ?
+ Calculer directement
+ Quelle prévision pour quel signal ?
+ sCV et F : la variabilité due aux nuages et la prévisibilité d'un site DOI
+ Tunnel Load Simulator : la demande électrique des tunnels routiers DOI
+ LQL-Equiv : doses équivalentes en radiothérapie (modèles LQ, linéaire-quadratique, et LQL, qui redevient linéaire aux fortes doses) DOI
+ Neutrons atmosphériques et BNCT (thérapie par capture neutronique du bore) : quantifier la limite
+ Étape 2
+ Le modèle suffit-il ?
+ Hybrider
+ BLEND : la persistance mêlée à la valeur d'un cycle plus tôt DOI
+ Thyroïde et iode radioactif : le modèle d'abord DOI
+ Étape 3
+ Les relations utiles sont-elles connues ?
+ Apprendre frugalement
+ MIMO-ELM (plusieurs entrées et sorties, apprentissage frugal) : sept signaux du réseau électrique corse DOI
+ Satellite : prévoir une maille ou tout le champ ? DOI
+ Comparer persistance, autorégression (AR) et ELM
+ Étape 4
+ Comment rendre ces outils utilisables ?
+ L'IA à sa place
+ WebSemantic : au modèle de langage la lecture, au code validé le calcul
+ Qui est responsable ? Le règlement européen sur l'IA (AI Act)
+ Étape 5
+ Comment savoir que ça marche ?
+ Démontrer la confiance
+ NICE : l'erreur rapportée à celle de la persistance DOI
+ Indice γ : tolérer de petits décalages DOI
+ Se questionner sur nos façons de faire de la recherche DOI
+ L'arbre RTVACOS : sept critères, de la rigueur à la pertinence sociétale
+ Lecture : selon ce que l'on sait déjà, on calcule, on complète un modèle ou l'on apprend des données (étapes 1 à 3) ; puis on rend l'outil utilisable (4) et on démontre qu'il fonctionne (5). La pastille indique le domaine ; « DOI » mène au logiciel archivé. Chaque étape est racontée dans le fil .
  Les idées directrices
  Comprendre avant de calculer Partir de la question humaine, modéliser le système, puis seulement choisir l'outil. Battre une référence simple Toute prévision se compare d'abord à la persistance (la dernière valeur recopiée) ; un modèle qui ne la bat pas n'apporte rien. La complexité doit payer Un modèle frugal (ELM : réseau neuronal à poids d’entrée aléatoires ; autorégression : somme pondérée des valeurs passées) d'abord ; plus lourd seulement si le gain est démontré. La confiance se démontre Code, données, licences et vérification publics ; l'IA est un outil, déclaré. Les axes de recherche
  Prévision solaire et énergétique Persistance (recopier la dernière valeur connue), BLEND (mélange de la persistance et de la valeur un cycle plus tôt), ELM et mix électrique corse (un modèle neuronal frugal dont seuls les poids de sortie sont ajustés), réduction de dimension (ne garder de l’entrée que ce qui sert la prévision).
@@ -6078,32 +6487,32 @@ Vue d'ensemble : recherche, logiciels, cours et outils
  IA et langage Les modèles de langage comme interfaces vers des codes validés.
  Évaluer la recherche Indice d'influence (mesure logarithmique de l'influence d'une institution), cadre RTVACOS (sept critères, de la rigueur à la pertinence sociétale), édition scientifique .
  Les logiciels, avec leur DOI et leur équipe
- NICEᵏ: normalized forecast errors compared with simple persistence (MATLAB) Cyril Voyant · dépôt · MIT
- sCV and F: variability and forecastability of solar irradiance (MATLAB) Cyril Voyant · dépôt · MIT
- The γ-index: tolerance-based validation of spatio-temporal forecast fields (MATLAB) Cyril Voyant · dépôt · MIT
- ARTU: second-order autoregressive reference method for solar radiation forecasting Cyril Voyant · dépôt · MIT
- BLEND and CLIPER: persistence operators for cyclostationary energy processes (MATLAB) Cyril Voyant , Candice Banes , Luis Garcia-Gutierrez , Gilles Notton , Milan Despotovic , Zaher Mundher Yaseen · dépôt · MIT
- Per-cell, spatial and compressed forecasters of satellite solar irradiance: benchmark code (MATLAB, Python) Cyril Voyant , Andreas Kazantzidis , Jan Kleissl · dépôt · MIT
- MIMO-ELM forecasting of the Corsican electricity mix (MATLAB, Python, EDF open data) Cyril Voyant , Yoan Jheelan · dépôt · GPL-3.0
- PV_ELM_pred: benchmark of persistence, BLEND, autoregression and ELM variants for PV forecasting (Python) Martin Leiva, Xavier Silvani , Gilles Notton , Cyril Voyant , Alan Julien · dépôt · MIT
- Make_Stationary: deseasonalization benchmark for renewable-energy time series (MATLAB) Maklewa Agoundedemba , Cyril Voyant , Milan Despotovic , Luis Antonio Garcia-Gutierrez , Gilles Notton · dépôt · GPL-3.0
- Filter and wrapper diagnostics of dimensionality reduction for endogenous PV power forecasting (MATLAB) Hassen Bouzgou , Gabriel Chesnoiu , Claudio F. Nicolosi , Adrien Chatel , Gilles Notton , Lionel Menard , Cyril Voyant · dépôt · MIT
- RAIR-Sim: compartmental simulator of radioactive iodine therapy response in metastatic thyroid cancer (MATLAB) Marie Fusella Giuntini , Cyril Voyant , David Taieb , Dominique Barbolosi · dépôt · MIT
- Influence Index: a log-based measure of research influence for institutions (MATLAB, processed data) Cyril Voyant , Jeroen Baas , Roy Boverhof , Paolo Stringari , Mathilde Marchand-Lasserre , John P. A. Ioannidis · dépôt · MIT
- LQL-Equiv 2014: biologically equivalent dose calculation in radiotherapy (MATLAB application) Cyril Voyant , Daniel Julian · dépôt · MIT
- Tunnel Load Simulator: synthetic electricity demand of road tunnels (Python, Streamlit) Haytham El-Houari , Cyril Voyant · dépôt · MIT
- LQL-Equiv-web 3.0: biologically equivalent doses in radiotherapy (Python, browser) Cyril Voyant , Daniel Julian · dépôt · MIT
+ NICEᵏ: normalized forecast errors compared with simple persistence (MATLAB) L'erreur d'une prévision divisée par celle de la persistance (recopier la dernière valeur) : utile entre 0 et 1. MATLAB : un langage de calcul numérique. Cyril Voyant · dépôt · MIT
+ sCV and F: variability and forecastability of solar irradiance (MATLAB) sCV : la variabilité due aux nuages ; F : la prévisibilité du signal, calculées avant tout modèle. Cyril Voyant · dépôt · MIT
+ The γ-index: tolerance-based validation of spatio-temporal forecast fields (MATLAB) Un test qui accepte de petits décalages en espace, en temps et en intensité. Cyril Voyant · dépôt · MIT
+ ARTU: second-order autoregressive reference method for solar radiation forecasting Une prévision de référence : une somme pondérée des deux dernières valeurs (autorégression d'ordre 2). Cyril Voyant · dépôt · MIT
+ BLEND and CLIPER: persistence operators for cyclostationary energy processes (MATLAB) BLEND mêle la persistance à la valeur d'un cycle plus tôt ; CLIPER la mêle à la moyenne. Cyclostationnaire : dont la statistique se répète à chaque cycle. Cyril Voyant , Candice Banes , Luis Garcia-Gutierrez , Gilles Notton , Milan Despotovic , Zaher Mundher Yaseen · dépôt · MIT
+ Per-cell, spatial and compressed forecasters of satellite solar irradiance: benchmark code (MATLAB, Python) Prévoir l'éclairement solaire vu par satellite maille par maille, ou sur tout le champ à la fois. Cyril Voyant , Andreas Kazantzidis , Jan Kleissl · dépôt · MIT
+ MIMO-ELM forecasting of the Corsican electricity mix (MATLAB, Python, EDF open data) MIMO : plusieurs entrées, plusieurs sorties ; ELM : un réseau de neurones dont seuls les poids de sortie sont ajustés ; EDF : Électricité de France, dont les données ouvertes décrivent le mix corse. Cyril Voyant , Yoan Jheelan · dépôt · GPL-3.0
+ PV_ELM_pred: benchmark of persistence, BLEND, autoregression and ELM variants for PV forecasting (Python) PV : photovoltaïque. Un banc d'essai : persistance, BLEND, autorégression et variantes d'ELM sur les mêmes données. Martin Leiva, Xavier Silvani , Gilles Notton , Cyril Voyant , Alan Julien · dépôt · MIT
+ Make_Stationary: deseasonalization benchmark for renewable-energy time series (MATLAB) Retirer le cycle saisonnier d'une série avant de la prévoir (désaisonnalisation), et comparer les façons de le faire. Maklewa Agoundedemba , Cyril Voyant , Milan Despotovic , Luis Antonio Garcia-Gutierrez , Gilles Notton · dépôt · GPL-3.0
+ Filter and wrapper diagnostics of dimensionality reduction for endogenous PV power forecasting (MATLAB) Ne garder de l'entrée que ce qui sert la prévision : filtre (critère indépendant du modèle) ou enveloppe (wrapper, le modèle juge). Hassen Bouzgou , Gabriel Chesnoiu , Claudio F. Nicolosi , Adrien Chatel , Gilles Notton , Lionel Menard , Cyril Voyant · dépôt · MIT
+ RAIR-Sim: compartmental simulator of radioactive iodine therapy response in metastatic thyroid cancer (MATLAB) RAIR-Sim est le nom du simulateur : la réponse des métastases au traitement par iode radioactif, décrite par un modèle à compartiments. Marie Fusella Giuntini , Cyril Voyant , David Taieb , Dominique Barbolosi · dépôt · MIT
+ Influence Index: a log-based measure of research influence for institutions (MATLAB, processed data) Une mesure logarithmique de l'influence d'une institution, qui ne récompense pas la taille. Cyril Voyant , Jeroen Baas , Roy Boverhof , Paolo Stringari , Mathilde Marchand-Lasserre , John P. A. Ioannidis · dépôt · MIT
+ LQL-Equiv 2014: biologically equivalent dose calculation in radiotherapy (MATLAB application) La version MATLAB de 2014 : LQ, modèle linéaire-quadratique ; LQL, linéaire-quadratique-linéaire. Cyril Voyant , Daniel Julian · dépôt · MIT
+ Tunnel Load Simulator: synthetic electricity demand of road tunnels (Python, Streamlit) La demande électrique synthétique des tunnels routiers ; Streamlit : une interface web écrite en Python. Haytham El-Houari , Cyril Voyant · dépôt · MIT
+ LQL-Equiv-web 3.0: biologically equivalent doses in radiotherapy (Python, browser) La version 3.0, en Python, qui calcule dans le navigateur. Cyril Voyant , Daniel Julian · dépôt · MIT
  Les cours en accès libre (CC BY 4.0)
  Prévoir la ressource solaire intermittente Mines Paris – PSL, cycle ingénieur civil, projet de recherche appliquée (unité d'enseignement UE14) · 59 diapositives · français et anglais · CC BY 4.0
- Biostatistique pour les études de santé Première année des études de santé (PASS, UE8) · 3 chapitres, 246 diapositives · CC BY 4.0
+ Biostatistique pour les études de santé Première année des études de santé (PASS, parcours d’accès spécifique santé ; UE8, son unité d’enseignement 8) · 3 chapitres, 246 diapositives · CC BY 4.0
  Physique pour les études de santé : ondes électromagnétiques, rayons X et imagerie Première année des études de santé (PASS), bases physiques des explorations médicales · cours de 110 diapositives et 2 séances d'exercices corrigées · CC BY 4.0
- Physique industrielle : thermodynamique, vapeur d'eau et production de froid B.U.T. Génie biologique, Sciences de l'aliment et biotechnologie, 2ᵉ année · 5 chapitres, 139 diapositives et un polycopié · CC BY 4.0
+ Physique industrielle : thermodynamique, vapeur d'eau et production de froid B.U.T. (bachelor universitaire de technologie) Génie biologique, Sciences de l'aliment et biotechnologie, 2ᵉ année · 5 chapitres, 139 diapositives et un polycopié · CC BY 4.0
  Bases de thermique pour le génie industriel alimentaire B.U.T. Génie biologique, Sciences de l'aliment et biotechnologie, 1ʳᵉ année · 24 diapositives · CC BY 4.0
  Les outils interactifs
  Prévision probabiliste, démonstration sur trois jours : ELM contre persistance
  Quelle prévision pour quel signal ?
  Comparateur de prévisions
- Courbe ROC
+ Courbe ROC (sensibilité d'un test selon son taux de faux positifs)
  Loi normale
  Atténuation
  L'arbre RTVACOS
@@ -6122,8 +6531,43 @@ Vue d'ensemble : recherche, logiciels, cours et outils
  L'IA dans la recherche : AI Act, charte et boîte à outils
  Les modèles sont dans les données
  L'excellence scientifique en 2026 : au-delà de « publier et prier »
+ Les mots de cette page
+ DOI
+ Identifiant permanent d'un article ou d'un logiciel archivé : le lien reste valable même si le site change.
+ Persistance / persistence
+ La prévision recopie la dernière valeur connue ; c'est la référence à battre.
+ BLEND, CLIPER
+ Deux mélanges de références simples : la persistance avec la valeur d'un cycle plus tôt (BLEND), ou avec la moyenne (CLIPER).
+ ELM
+ Extreme learning machine : réseau de neurones à une couche cachée, aux poids d'entrée tirés au hasard ; seuls les poids de sortie sont calculés.
+ MIMO
+ Plusieurs entrées, plusieurs sorties : un seul modèle prévoit plusieurs signaux.
+ NICE
+ L'erreur d'une prévision divisée par celle de la persistance ; entre 0 et 1, la prévision apporte quelque chose.
+ sCV, F
+ La variabilité due aux nuages et la prévisibilité d'un signal, calculées avant tout modèle.
+ Indice γ / γ-index
+ Un test qui accepte de petits décalages en espace, en temps et en intensité.
+ LQ, LQL
+ Modèles linéaire-quadratique et linéaire-quadratique-linéaire de l'effet d'une dose de rayonnement sur les tissus.
+ BNCT
+ Thérapie par capture neutronique du bore.
+ PV, EDF
+ Photovoltaïque ; Électricité de France.
+ MATLAB
+ Un langage et un environnement de calcul numérique.
+ CC BY 4.0
+ Licence Creative Commons Attribution : réutilisation libre, à condition de citer les auteurs.
+ AI Act
+ Le règlement européen sur l'intelligence artificielle.
+ RTVACOS
+ Sept critères : rigueur, transparence, visibilité, adoption, collaboration, diffusion, pertinence sociétale.
+ ROC
+ Courbe ROC (receiver operating characteristic) : la sensibilité d'un test selon son taux de faux positifs.
+ PASS, UE, B.U.T.
+ Parcours d'accès spécifique santé (première année des études de santé) ; unité d'enseignement ; bachelor universitaire de technologie.
  Collaborer, citer
- Pour prolonger un travail : collaborer . Pour le réutiliser : citer et réutiliser . Publications complètes : HAL , ORCID . Pour les machines : llms.txt , llms-full.txt , flux Atom .
+ Qui mène ces travaux : à propos , ou en 30 secondes . Pour prolonger un travail : collaborer . Pour le réutiliser : citer et réutiliser . Publications complètes : HAL , ORCID . Pour les machines : llms.txt , llms-full.txt , flux Atom .
  Et ensuite ?
  Comprendre la démarche Le fil : cinq étapes, du calcul direct à la confiance. Essayer un outil Changer une valeur et voir ce qui change, dans le navigateur. Suivre un cours Cinq cours en accès libre, sous licence CC BY 4.0. Citer ou réutiliser La licence de chaque travail et des exemples à copier.
 
@@ -6288,7 +6732,12 @@ URL: https://www.cyrilvoyant.com/latest-publications-and-news/
 
 News: publications, software and essays
  Publications, software releases, appointments and essays, in the order they were posted on this site; for a paper or a software release, the date shown is that of the publication, not of the post, so dates do not always follow that order. Each post opens in place; the research stories, classified by step of the method, are on the Stories page. Atom feed .
- Theme Year 24 posts shown
+ In brief
+ 24 posts (2025–2026): 14 papers, 2 software releases, 4 essays, 1 project and 3 career items.
+ Scan, then open. Each card gives the date of publication, the co-authors and a short summary; the full post opens in place.
+ Filter by type, theme or year. The five main papers link to an explained version with figures and limits.
+ Follow with the Atom feed ; the research stories, ordered by step of the method, are on the Stories page.
+ Theme Type Year 24 posts shown
  Posted 24 October 2026 · Research practice
  Scientific publishing: no verification of data and code, no trust
  Cyril Voyant
@@ -6303,28 +6752,28 @@ News: publications, software and essays
  ELECTRE brings together about fifteen laboratories, centers and institutes of the Carnot M.I.N.E.S institute around 13 research projects (2023–2026) on the electrification of uses, from materials to storage, industrial processes and the limits of electrification. Its closing workshop is on 18 November 2026, Mines Paris – PSL, Sophia Antipolis.
  Read the full post
  Original post, first person.
- Electrifying transport, heating, cooling and industrial processes is one of the main levers to cut greenhouse-gas emissions and the dependence on fossil fuels, all the more when it goes with a low-carbon electricity mix and sobriety. ELECTRE , a flagship project of the Carnot M.I.N.E.S institute, uses the institute's scientific resources to address the questions this raises, along the whole value chain.
+ Electrifying transport, heating, cooling and industrial processes is one of the main levers to cut greenhouse-gas emissions and the dependence on fossil fuels, all the more when it goes with a low-carbon electricity mix and sobriety. ELECTRE , a flagship project of the Carnot institute “Innovative methods for companies and society”: partnership research of the Écoles des Mines, ENSTA Paris and École polytechnique, holding the Carnot label since 2006; the ARMINES association manages the contracts. institute, uses the institute's scientific resources to address the questions this raises, along the whole value chain.
  Who runs it. Delphine Gilges-Crampont , Annette Massias and Cyril Voyant (scientific coordinator, Centre O.I.E., Mines Paris – PSL) work on the project as a team of three. Contact: delphine.gilges-crampont@minesparis.psl.eu , annette.massias@minesparis.psl.eu , cyril.voyant@minesparis.psl.eu .
- Four axes, 13 research projects (2023–2026) , carried by laboratories of Mines Paris – PSL, IMT Mines Albi, IMT Mines Alès, Mines Saint-Étienne, IMT Atlantique and IMT Nord Europe, with partners:
+ Four axes, 13 research projects (2023–2026) , carried by laboratories of Mines Paris – PSL, Institut Mines-Télécom: a public institution grouping engineering schools, including IMT Mines Albi, IMT Mines Alès, IMT Atlantique and IMT Nord Europe. Mines Albi, IMT Mines Alès, Mines Saint-Étienne, IMT Atlantique and IMT Nord Europe, with partners:
  Materials for the components of the transition : recycled titanium for catalysis or batteries, composite membranes for electrochemical conversion, conductive biopolymer alloys, laser powder-bed aluminium parts, digital twins of composite structures, lithium-ion batteries and fires in waste-sorting centers.
- Energy storage to integrate renewables : decentralized systems with hydrogen, quasi-isothermal compressed-air storage coupled with rooftop PV, and multi-scale models of grids with electric vehicles and renewables (inter-Carnot project VE4FLEX with Energies du Futur).
+ Energy storage to integrate renewables : decentralized systems with hydrogen, quasi-isothermal compressed-air storage coupled with rooftop PV, and multi-scale models of grids with electric vehicles and renewables (inter-Carnot project Inter-Carnot project with the Carnot institute Energies du Futur: multi-scale models of electricity grids with electric vehicles and renewables. with Energies du Futur).
  Electrification of processes : hybrid electric, combustion and hydrogen processes.
- Relevance and limits of electrification : critical materials, environmental foresight including NATECH risks, a shared view of research on electric mobility, and the organization of heat-pump markets.
+ Relevance and limits of electrification : critical materials, environmental foresight including A technological accident triggered by a natural hazard (earthquake, flood, lightning, wildfire). risks, a shared view of research on electric mobility, and the organization of heat-pump markets.
  Closing workshop, 18 November 2026 , Campus Pierre Laffitte, Mines Paris – PSL, Sophia Antipolis: Electrification of uses: technologies, integration and sustainability? Results of the projects, an industrial keynote by EDF on its electrification plan, sessions on technologies and solutions, on integration into the power system (grids, flexibility, control) and on impacts, demonstrators and posters (among them the SIXGRID test infrastructure), a round table and time to meet the teams and discuss collaborations. Program · Registration .
  Read more: the ELECTRE project and portrait of its coordinator on the Carnot M.I.N.E.S site. To build a project with the teams: Collaborate .
- 2026 · Appointments and recognition
+ 2026 · Career
  Visiting Professor at the University of Kragujevac, Serbia
  Cyril Voyant and Gilles Notton
- I am honored to have been appointed Visiting Professor at the Faculty of Engineering, University of Kragujevac, together with my colleague and friend Prof. Gilles Notton.
+ I have been appointed Visiting Professor at the Faculty of Engineering, University of Kragujevac, together with my colleague and friend Prof. Gilles Notton.
  Read the full post
  Original post, first person.
  Cyril Voyant
- I am honoured to have been appointed Visiting Professor at the Faculty of Engineering, University of Kragujevac, together with my colleague and friend Prof. Gilles Notton.
+ I have been appointed Visiting Professor at the Faculty of Engineering, University of Kragujevac, together with my colleague and friend Prof. Gilles Notton.
  This appointment formalises a long-standing and productive cooperation between Mines Paris-PSL, the University of Corsica, and the University of Kragujevac (Prof. Milan Despotovic). This collaboration has developed over several years through joint research, academic exchanges, Erasmus activities, and European project initiatives.
  Scientific and practical interest
  Our common work focuses on renewable energy systems, solar irradiance forecasting, numerical modeling, data qualification, and AI-based methods designed for operational constraints. The collaboration is particularly valuable because it connects complementary expertise, different territorial contexts, and practical energy challenges across Europe.
  Key message
- Beyond the personal recognition, this appointment strengthens an active scientific and educational partnership between France, Corsica, and Serbia. It opens new perspectives for joint publications, student mobility, teaching activities, and future European projects in the field of energy transition.
+ This appointment strengthens an active scientific and educational partnership between France, Corsica, and Serbia. It opens new perspectives for joint publications, student mobility, teaching activities, and future European projects in the field of energy transition.
  Official announcement of Faculty of Engineering, University of Kragujevac
  Announcement of the Faculty of Engineering (English)
  Official announcement in Serbian of Faculty of Engineering, University of Kragujevac
@@ -6491,18 +6940,18 @@ News: publications, software and essays
  https://youtu.be/eMp0uyl59d4?si=Wie-VqNsiuIgpejp
  https://www.linkedin.com/posts/cyril-voyant-2a7767192_research-excellence-in-2026-how-to-make-share-7432067381817974785-zzC8?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC1Rit8BFvxlNepkgPDj3oO6WQ4Z1ztQQXI
  https://x.com/cvoyant1/status/2026701715769114811
- 2026 · Appointments and recognition
+ 2026 · Career
  Appointed Editorial Board Member of Scientific Reports (Nature Portfolio)
- This role aligns with my trajectory as Research Director at Mines Paris – PSL O.I.E. (since 2024), with >130 peer-reviewed publications (h-index ~35, >7000 citations, Stanford Top 2%). Scientific Reports covers all scientific domains.
+ This role aligns with my trajectory as Research Director at Mines Paris – PSL O.I.E. (since 2024). Scientific Reports covers all scientific domains.
  Read the full post
  Original post, first person.
  Cyril Voyant
- Appointed Editorial Board Member of Scientific Reports (Nature Portfolio), a multidisciplinary peer-reviewed journal with strong impact.
+ Appointed Editorial Board Member of Scientific Reports (Nature Portfolio), a multidisciplinary peer-reviewed journal.
  Handling submissions in my areas of expertise:
  Renewable energy: Solar irradiance forecasting (GHI), ML applied to PV/hybridation, microgrids
  Medical physics: Radiotherapy , radiobiology, equivalent dosimetry
- This role aligns with my trajectory as Research Director at Mines Paris – PSL O.I.E. (since 2024), with >130 peer-reviewed publications (h-index ~35, >7000 citations in 2026, Stanford Top 2%). Scientific Reports covers all scientific domains.
- The editorial team comprises >2000 global experts ( https://www.nature.com/srep/about/editors ). My appointment highlights French interdisciplinary research in energy/ML/medicine. .
+ This role aligns with my trajectory as Research Director at Mines Paris – PSL O.I.E. (since 2024). Scientific Reports covers all scientific domains.
+ The editorial team comprises >2000 global experts ( https://www.nature.com/srep/about/editors ).
  Links
  Profile: https://www.cyrilvoyant.com
  HAL: https://cv.hal.science/cyril-voyant
@@ -6537,15 +6986,15 @@ News: publications, software and essays
  Together, these two papers articulate a clear research trajectory:
  -a methodological contribution that demonstrates how individualized dynamics can be formally modeled;
  -a conceptual synthesis showing how this work aligns with, and advances, international efforts in computational nuclear medicine
- 2025 · Appointments and recognition
- Grateful to be included in the 2025 Stanford-Elsevier Top 2% Scientists ranking.
- Proud to contribute to research in solar forecasting, PV systems, AI for energy, and medical physics at Mines Paris – PSL.
+ 2025 · Career
+ Listed in the 2025 update of the Stanford–Elsevier citation database (top 2 %)
+ The 2025 update of the Stanford–Elsevier database of standardized citation indicators (Ioannidis, version 8) includes Cyril Voyant: a composite citation score in the top 100,000 overall or the top 2 % of the sub-field. What it measures, and what it does not, is below.
  Read the full post
- Original post, first person.
- Proud to contribute to research in solar forecasting, PV systems, AI for energy, and medical physics at Mines Paris – PSL.
- Thanks to all collaborators and students for their essential role.
- The Stanford-Elsevier Top 2% Scientists list identifies the world's most cited researchers using a standardized composite indicator based on Scopus bibliometric data, including total citations, h-index, co-authorship-adjusted indices, and field-normalized impact metrics. It provides both career-long and single-year rankings across all scientific disciplines.
- I am honored to be included in the 2025 edition of this ranking, and particularly proud to contribute to the strong performance of Mines Paris – PSL , which ranks among the leading institutions worldwide, with approximately 10% of its faculty members recognized in the Top 2% cohort.
+ Rewritten in neutral wording on 4 November 2026, with the source of the data; the original post was a first-person announcement.
+ The fact. Cyril Voyant appears in the August 2025 data update of the Updated science-wide author databases of standardized citation indicators ( John P. A. Ioannidis , Elsevier Data Repository, version 8, published 19 September 2025, doi: 10.17632/btchxktzyw.8 ), often called the “Stanford–Elsevier top 2 % list”.
+ What it measures. A composite citation indicator (c-score) computed from Scopus profiles. It counts impact (citations) rather than the number of papers, and takes co-authorship and author position (single, first, last) into account. Scientists are listed when their c-score is in the top 100,000, with or without self-citations, or in the top 2 % of their sub-field (22 fields and 174 sub-fields of the Science-Metrix classification). There are two lists: the whole career (citations to the end of 2024) and the single year 2024.
+ What it does not measure. The dataset description itself warns that all citation metrics have limitations and should be used judiciously, and that absence from the list does not mean poor work. A citation count says nothing about whether the data and code behind a paper can be checked: see the RTVACOS criteria and who checks what gets published .
+ The image is the graphic published by Mines Paris – PSL about its researchers in the 2025 list ( institutional post ). Thanks to the co-authors and students whose work these citations reflect.
  Published online 13 October 2025 · Energy: forecasting and systems
  Transfer Learning for Wind Speed Forecasting: A Scalable Approach for Data-Scarce Environments
  Milan Despotović , Gilles Notton , Cyril Voyant
@@ -6901,9 +7350,13 @@ URL: https://www.cyrilvoyant.com/prevision-solaire-faire-simple/
 
 Prévision solaire : faire simple
  Étape 1 sur 5 · Calculer directement Le voir sur le fil Quand le lien est connu, on le calcule avec un modèle explicite, calibré et validé sur des données ; on n'ajoute de l'apprentissage que pour un bénéfice démontré. Le modèle au cœur.
- RECHERCHES, MÉTHODES ET CODE OUVERT
  Prévoir le solaire, c’est distinguer ce que l’on sait déjà (le mouvement du Soleil) de ce qu’il reste à anticiper : les nuages, la dynamique locale et l’état réel du système. Mes travaux et ceux de mes collègues relient cette question à l’évaluation des prévisions et au choix de modèles utiles et déployables.
  Ce parcours rassemble les idées, leurs preuves et les outils pour les examiner. Chaque étude liée précise ses auteurs, ses sources et ses limites.
+ En bref
+ Prévoir le solaire, c'est séparer ce que l'on sait déjà (la course du Soleil, le ciel clair) de ce qu'il reste à anticiper : les nuages.
+ Cinq étapes, dans l'ordre : comprendre ce qui reste prévisible (sCV, la variabilité due aux nuages ; F, la prévisibilité) ; choisir une référence difficile à battre ( persistance , ARTU , BLEND ) ; mesurer l'amélioration avec NICE (erreurs rapportées à la persistance) ; distinguer erreur d'intensité et décalage ( indice γ ) ; justifier toute complexité ajoutée.
+ Chaque étape renvoie à un article publié, à son code ouvert et à ses limites.
+ En anglais : le guide Solar forecasting, made simple , qui suit la même démarche (avec sa propre version française sur cyrilvoyant.github.io).
  Read the guide in English · Guides techniques et code
  Lire le signal avant de choisir le modèle. Ces trois journées du cours de prévision solaire UE14 (en anglais) illustrent un ciel clair, une journée variable et un ciel couvert. Le panneau inférieur montre ici la différence à la tendance de ciel clair (notée CSI dans le support), et non un rapport. Cette figure pédagogique d’Ajaccio sert à expliquer le problème ; elle ne constitue pas un résultat des manuscrits sur la dimension ou la frugalité.
  1 · Comprendre ce qui reste prévisible
@@ -6916,7 +7369,7 @@ Prévision solaire : faire simple
  Une erreur brute ne dit pas toujours ce qu’un modèle apporte. NICE organise l’évaluation relativement à des références explicites : c’est l’erreur du modèle divisée par celle de la persistance (0 : parfait ; 1 : autant d’erreur que la persistance ; au-dessus de 1, la persistance fait mieux). L’interprétation exige les mêmes observations et horizons, ainsi qu’une définition claire du score. Une amélioration statistique n’est pas automatiquement une valeur économique.
  L’étude NICE et ses coauteurs · Définitions, code et références
  4 · Distinguer erreur d’intensité et décalage
- Une structure nuageuse légèrement décalée peut être pénalisée fortement par une comparaison point par point. Mon travail sur l’ indice γ (γ-index) de validation accepte un point prévu si une observation voisine l’appuie, en combinant des tolérances d’espace, de temps et d’intensité. Leur choix doit correspondre à l’application : une tolérance généreuse n’est pas une meilleure prévision. Cette adaptation ne revendique pas l’invention du gamma-index de physique médicale.
+ Une structure nuageuse légèrement décalée peut être pénalisée fortement par une comparaison point par point. Mon travail sur l’indice γ (γ-index) de validation accepte un point prévu si une observation voisine l’appuie, en combinant des tolérances d’espace, de temps et d’intensité. Leur choix doit correspondre à l’application : une tolérance généreuse n’est pas une meilleure prévision. Cette adaptation ne revendique pas l’invention du gamma-index de physique médicale.
  L’étude et ses limites · Le guide technique · Article scientifique
  5 · Justifier la complexité ajoutée
  Réduire la dimension de l’historique (le résumer en moins de variables) et réduire la capacité du modèle (son nombre de paramètres) sont deux leviers distincts. Il faut vérifier l’utilité prédictive de la représentation, compter toute la chaîne et mesurer les contraintes réelles de déploiement. La petite taille ne remplace pas une comparaison solide.
@@ -6975,37 +7428,101 @@ Prévision solaire : modèles frugaux
 URL: https://www.cyrilvoyant.com/research-projects/
 
 Research and projects
- From solar variability to useful forecasts
- My research at Mines Paris – PSL / O.I.E. examines what can be predicted, which information a model needs, and how to evaluate a forecast for its intended use. The work connects statistical physics, time series, machine learning and energy systems, with a continuing strand in medical physics.
+ My research at the Observation, Impacts, Energy center of Mines Paris – PSL, in Sophia Antipolis. center of Mines Paris – PSL asks three questions: what is predictable, how much model is needed, and how to judge a forecast for its intended use. It relies on collective programs, shown here with their dates and partners.
+ In brief
+ Three strands. Solar variability and forecastability (sCV, F); parsimonious forecasting (persistence, BLEND, ELM); evaluation that matches the question (NICE, γ-index).
+ Applications. Island energy systems, storage and microgrids; in medical physics, dose equivalence in radiotherapy.
+ Programs. Three current ones (Fine4Cast, scientific coordination of Flagship project of the Carnot M.I.N.E.S institute on the electrification of uses (2023-2026): materials, storage, industrial processes, relevance and limits of electrification. , an agreement with the University of Corsica and the Center national de la recherche scientifique, the main French public research organization. ) and four completed since 2015, on a timeline by domain.
+ Checkable evidence. Each strand links to the published paper, the story that explains it and the open code.
  Solar variability and forecastability
- A strong daily cycle can conceal the variability caused by clouds. The stochastic coefficient of variation (sCV) separates these effects; the forecastability index F studies how this variability relates to prediction error. The published evaluation includes 68 Spanish stations.
- Read the sCV and forecastability story · Renewable Energy paper
+ A strong daily cycle can hide the variability caused by clouds. The stochastic coefficient of variation (sCV) separates the two: it measures cloud-driven variability once the daily cycle is set aside. The forecastability index F relates this variability to the forecast error one can expect. The published evaluation covers 68 Spanish stations.
+ The sCV and forecastability story · Which forecast for which signal? · method and MATLAB code · Renewable Energy paper
  Parsimonious forecasting
- I study how signal structure and model complexity affect forecast quality. This includes autoregressive models (the forecast is a weighted sum of past values), Extreme Learning Machines (ELM: one-hidden-layer neural networks whose only computed weights are the output weights), clear-sky preprocessing (the clear-sky irradiance is the theoretical irradiance without clouds) and cyclostationary persistence. Persistence, the reference forecast, repeats the last observed value; a cyclostationary series is one whose statistical properties repeat periodically, here every day. BLEND uses periodically correlated structure to improve a persistence reference without training a forecasting model; the separate MIMO-ELM study (multiple inputs, multiple outputs) forecasts seven energy signals jointly.
- BLEND explained · MIMO-ELM results and limits · ELM implementation guide
+ I study how the structure of a signal and the complexity of a model shape forecast quality: autoregressive models (the forecast is a weighted sum of past values), Extreme Learning Machines (ELM: one-hidden-layer neural networks whose only computed weights are the output weights), clear-sky preprocessing (the theoretical irradiance without clouds) and cyclostationary persistence. Persistence, the reference forecast, repeats the last observed value; a cyclostationary series has statistical properties that repeat periodically, here every day. BLEND uses this structure to improve on persistence without training a model; the separate MIMO-ELM study (multiple inputs, multiple outputs) forecasts seven energy signals jointly.
+ BLEND explained · BLEND method and code · MIMO-ELM results and limits · ELM implementation guide
  Evaluation that matches the question
- NICE metrics measure errors relative to a persistence baseline across several error norms. The γ-index evaluates agreement within explicit spatial, temporal and intensity tolerances. Both approaches complement conventional metrics; their interpretation depends on the baseline, sampling and tolerances.
- NICE explained · The γ-index explained · Methods and public code
+ NICE metrics divide a model's errors by those of persistence, for several error norms. The γ-index (gamma) judges agreement between forecast and observation within explicit tolerances in space, time and intensity. Both complement the usual metrics; how to read them depends on the baseline, the sampling and the tolerances.
+ NICE explained · NICE method and code · The γ-index explained · γ-index method and code
  Energy systems and medical physics
- Forecasts support the operation of photovoltaic systems, storage and microgrids (small local electricity networks). Our project work connects prediction to energy management and control, particularly in island systems. In medical physics, my interests include radiobiological dose equivalence, radiotherapy modeling and radioiodine kinetics.
- LQL-Equiv and radiobiological dose equivalence · Teaching these methods
+ Forecasts are used to run photovoltaic systems, storage and microgrids (small local electricity networks). Our projects connect forecasting to energy management and control, especially in island systems. In medical physics, I work on radiobiological dose equivalence, radiotherapy modeling and radioiodine kinetics.
+ LQL-Equiv and dose equivalence · modeling radioiodine · the electricity use of road tunnels · teaching these methods
  Explore the methods and reproduce the examples
- sCV and forecastability F: definitions, figures and MATLAB code · NICE metrics and the open implementation .
- How much spatial information helps satellite irradiance forecasting? Per-cell, patch and whole-field comparisons; manuscript in preparation, with a public MATLAB/Python benchmark and SoDa/HelioClim-3 data attribution.
+ sCV and forecastability F: definitions, figures and MATLAB code · NICE metrics and the open implementation · BLEND: method and code · γ-index: method and code
+ How much spatial information helps satellite irradiance forecasting? Per-cell, patch and whole-field comparisons; manuscript in preparation, with a public MATLAB/Python benchmark and SoDa/HelioClim-3 data attribution: one cell, a patch or the whole field?
  Research programs and collaborations
- I contribute to collaborative programs in forecasting, renewable integration and energy management. The portfolio below separates current programs from earlier collaborations. Official project records are linked where available.
+ I contribute to collective programs on forecasting, renewable integration and energy management. The timeline places them in time and by domain; the cards give the funder, the partners and the official record when one exists. Hover, tap or focus a dotted acronym for its definition.
+ Forecasting
+ Storage, hydrogen, islands
+ Systems and electrification
+ TILOS Feb 2015 – Jan 2019
+ HyLES 2021 – 2024 (42 months)
+ INTELPOLY 2021 – 2025
+ SAPHIR Jan 2022, 48 months planned
+ ELECTRE 2023 – 2026; coordination since 2025
+ Fine4Cast 2023 – 2028
+ Mines Paris – Corsica – CNRS agreement 2024 – 2027
+ 2015 2018 2021 2024 2027 Research programs I contribute to, by domain (years as close as possible to the official record; months when it gives them). The vertical line marks November 2026; for ELECTRE, the outlined part is my coordination. Each row leads to the program card.
  Current programs
- Fine4Cast · ANR / PEPR TASE · 2023–2028 Forecasting renewable production and consumption from minutes to days at fine geographic resolution. Program overview .
- ELECTRE · Mines Carnot · since 2025 Scientific coordination of the components addressing AI for energy, forecasting and multi-source systems.
- Mines Paris – PSL / University of Corsica / CNRS agreement · 2024–2027 Intermittent solar forecasting and energy-management algorithms for smart microgrids.
- Earlier programs
- SAPHIR · ANR · project started January 2022 Sensor-augmented weather prediction at high resolution, combining observations and numerical modeling. ANR project record (initial duration: 48 months).
- HyLES · ANR · 2021–2024 Hydrogen integration in weakly interconnected networks, with FEMTO-ST, LE2P, UPF and UCPP-SPE.
- INTELPOLY · COST Action · 2021–2025 Diagnosis, control and cybersecurity of polygeneration and hybrid-storage installations.
- TILOS · Horizon 2020 Local integration of battery storage and renewable generation in an island demonstrator. The funded project ran from February 2015 to January 2019. CORDIS project record .
+ Fine4Cast Agence nationale de la recherche: the French public agency that funds research through competitive calls. / Priority research program (PEPR) on advanced technologies for energy systems (TASE), funded by France 2030 and operated by the ANR; it supports upstream research (readiness levels 1 to 4). · 2023–2028
+ Forecasting renewable production and demand, from minutes to days ahead, at fine geographical and temporal resolution (full title: Next Generation Energy Demand and Renewable Production Forecasting Tools for Fine Geographical and Temporal Scales).
+ Project overview · PEPR TASE on the ANR website
+ ELECTRE Carnot institute “Innovative methods for companies and society”: partnership research of the Écoles des Mines, ENSTA Paris and École polytechnique, holding the Carnot label since 2006; the ARMINES association manages the contracts. institute · projects 2023–2026 · scientific coordination since 2025
+ Electrification of uses: materials, storage, industrial processes, relevance and limits of electrification. I coordinate the components on AI for energy, forecasting and multi-source systems.
+ Project page (Carnot M.I.N.E.S institute, in French) · closing workshop, 18 November 2026
+ Mines Paris – PSL, University of Corsica, CNRS agreement Center national de la recherche scientifique, the main French public research organization. · 2024–2027
+ Forecasting intermittent solar power and energy-management algorithms for smart microgrids.
+ Completed programs
+ SAPHIR Agence nationale de la recherche: the French public agency that funds research through competitive calls. · January 2022, initial duration 48 months
+ High-resolution weather forecasts improved by sensor data, combining observations and numerical modeling. Coordinated by the Sciences for the Environment laboratory, University of Corsica and CNRS. laboratory, with the Laboratoire d'aérologie and Inria.
+ ANR project record ANR-21-CE04-0014
+ HyLES Agence nationale de la recherche: the French public agency that funds research through competitive calls. · 2021–2024 (42 months)
+ Hydrogen integration in weakly or non-interconnected grids: Corsica, La Réunion, French Polynesia. With Franche-Comté Electronics, Mechanics, Thermal Science and Optics – Sciences and Technologies institute (Besançon), coordinator of HyLES. , Laboratory of energetics, electronics and processes, University of La Réunion. , University of French Polynesia, a HyLES partner through its GEPASUD laboratory (South Pacific geosciences). and Università di Corsica Pasquale Paoli, Sciences for the Environment laboratory (SPE), a joint unit with the CNRS. .
+ ANR project record ANR-20-CE05-0035
+ INTELPOLY European Cooperation in Science and Technology: a European program that funds networks of researchers (the “Actions”), not the research itself. Action · 2021–2025
+ Diagnosis, control and cybersecurity of polygeneration plants (combined production of electricity, heat or cooling) and hybrid storage.
+ TILOS The European Union framework program for research and innovation, 2014-2020. · February 2015 – January 2019
+ Technology Innovation for the Local Scale, Optimum Integration of Battery Energy Storage: battery storage and renewable generation integrated on the Greek island of Tilos, a demonstrator followed by other islands including Corsica.
+ Project record on Community Research and Development Information Service: the official database of EU-funded projects.
  Platforms and other collaborations
- MYRTE , short-term solar forecasting for hydrogen storage and coupled production–load management. RESINTER / PAGLIA-ORBA , predictive control of a renewable electricity network. ISERBATURB , integration of renewable systems into buildings and urban environments. Franco-Polish cooperation , exchanges on renewable integration in island microgrids. Technical University of Sofia / Erasmus , co-construction of a renewable-energy summer school.
- Academic CV · Full publication record · cyril.voyant@minesparis.psl.eu
+ University of Corsica research platform near Ajaccio that couples a photovoltaic field with hydrogen storage, connected to the island grid. : short-term solar forecasting for hydrogen storage and coupled production–demand management.
+ RESINTER / PAGLIA-ORBA: predictive control of a renewable electricity network.
+ ISERBATURB: integration of renewable systems into buildings and urban environments.
+ Franco-Polish cooperation: exchanges on renewable integration in island microgrids.
+ Technical University of Sofia / The European Union program for education, training and the mobility of students and staff. : co-design of a renewable-energy summer school.
+ Acronyms and organizations (plain text)
+ ANR
+ Agence nationale de la recherche: the French public agency that funds research through competitive calls.
+ PEPR TASE
+ Priority research program (PEPR) on advanced technologies for energy systems (TASE), funded by France 2030 and operated by the ANR; it supports upstream research (readiness levels 1 to 4).
+ Carnot M.I.N.E.S
+ Carnot institute “Innovative methods for companies and society”: partnership research of the Écoles des Mines, ENSTA Paris and École polytechnique, holding the Carnot label since 2006; the ARMINES association manages the contracts.
+ ELECTRE
+ Flagship project of the Carnot M.I.N.E.S institute on the electrification of uses (2023-2026): materials, storage, industrial processes, relevance and limits of electrification.
+ CNRS
+ Center national de la recherche scientifique, the main French public research organization.
+ O.I.E.
+ Observation, Impacts, Energy center of Mines Paris – PSL, in Sophia Antipolis.
+ SPE
+ Sciences for the Environment laboratory, University of Corsica and CNRS.
+ FEMTO-ST
+ Franche-Comté Electronics, Mechanics, Thermal Science and Optics – Sciences and Technologies institute (Besançon), coordinator of HyLES.
+ LE2P
+ Laboratory of energetics, electronics and processes, University of La Réunion.
+ UPF
+ University of French Polynesia, a HyLES partner through its GEPASUD laboratory (South Pacific geosciences).
+ UCPP-SPE
+ Università di Corsica Pasquale Paoli, Sciences for the Environment laboratory (SPE), a joint unit with the CNRS.
+ COST
+ European Cooperation in Science and Technology: a European program that funds networks of researchers (the “Actions”), not the research itself.
+ Horizon 2020
+ The European Union framework program for research and innovation, 2014-2020.
+ CORDIS
+ Community Research and Development Information Service: the official database of EU-funded projects.
+ MYRTE
+ University of Corsica research platform near Ajaccio that couples a photovoltaic field with hydrogen storage, connected to the island grid.
+ Erasmus
+ The European Union program for education, training and the mobility of students and staff.
+ Academic CV · About · News · Full publication record · cyril.voyant@minesparis.psl.eu
 
 ---
 URL: https://www.cyrilvoyant.com/teaching/solar-forecasting-course/

@@ -82,6 +82,10 @@
           "anchor": null
         },
         {
+          "title": "Three reference papers",
+          "anchor": null
+        },
+        {
           "title": "Start here",
           "anchor": null
         }
@@ -544,7 +548,7 @@
           "anchor": null
         },
         {
-          "title": "Dans le classement Stanford-Elsevier 2025 des 2 % de chercheurs les plus cités",
+          "title": "Dans la mise à jour 2025 de la base de citations Stanford–Elsevier (2 % les plus cités)",
           "anchor": null
         },
         {
@@ -2007,6 +2011,10 @@
           "anchor": null
         },
         {
+          "title": "Trois articles repères",
+          "anchor": null
+        },
+        {
           "title": "Pour commencer",
           "anchor": null
         }
@@ -2885,7 +2893,7 @@
         },
         {
           "title": "Programmes de recherche et collaborations",
-          "anchor": null
+          "anchor": "programmes"
         }
       ]
     },
@@ -2941,7 +2949,15 @@
       "citations": [],
       "sections": [
         {
+          "title": "En bref",
+          "anchor": null
+        },
+        {
           "title": "LQ ou LQL ?",
+          "anchor": null
+        },
+        {
+          "title": "Lire la formule",
           "anchor": null
         },
         {
@@ -2977,7 +2993,15 @@
       "citations": [],
       "sections": [
         {
+          "title": "En bref",
+          "anchor": null
+        },
+        {
           "title": "La marche à suivre",
+          "anchor": null
+        },
+        {
+          "title": "Même modèle, autre référence : un exemple chiffré",
           "anchor": null
         },
         {
@@ -3148,6 +3172,10 @@
       ],
       "citations": [],
       "sections": [
+        {
+          "title": "En bref",
+          "anchor": null
+        },
         {
           "title": "Quoi tester, dans l'ordre",
           "anchor": null
@@ -3390,6 +3418,10 @@
       "citations": [],
       "sections": [
         {
+          "title": "La carte du travail",
+          "anchor": "carte"
+        },
+        {
           "title": "Les idées directrices",
           "anchor": "idees"
         },
@@ -3412,6 +3444,10 @@
         {
           "title": "Essais et positions",
           "anchor": "essais"
+        },
+        {
+          "title": "Les mots de cette page",
+          "anchor": "mots"
         },
         {
           "title": "Collaborer, citer",
@@ -3483,7 +3519,7 @@
           "anchor": null
         },
         {
-          "title": "Grateful to be included in the 2025 Stanford-Elsevier Top 2% Scientists ranking.",
+          "title": "Listed in the 2025 update of the Stanford–Elsevier citation database (top 2 %)",
           "anchor": null
         },
         {
@@ -3648,6 +3684,10 @@
       "citations": [],
       "sections": [
         {
+          "title": "Map of the work",
+          "anchor": "map"
+        },
+        {
           "title": "Main ideas",
           "anchor": "idees"
         },
@@ -3670,6 +3710,10 @@
         {
           "title": "Essays and positions",
           "anchor": "essays"
+        },
+        {
+          "title": "Words used on this page",
+          "anchor": "words"
         },
         {
           "title": "Collaborate, cite",
@@ -3851,7 +3895,7 @@
         },
         {
           "title": "Research programs and collaborations",
-          "anchor": null
+          "anchor": "programmes"
         }
       ]
     },
@@ -4139,7 +4183,15 @@
       "citations": [],
       "sections": [
         {
+          "title": "In brief",
+          "anchor": null
+        },
+        {
           "title": "LQ or LQL?",
+          "anchor": null
+        },
+        {
+          "title": "Reading the formula",
           "anchor": null
         },
         {
@@ -4175,7 +4227,15 @@
       "citations": [],
       "sections": [
         {
+          "title": "In brief",
+          "anchor": null
+        },
+        {
           "title": "The steps",
+          "anchor": null
+        },
+        {
+          "title": "Same model, different reference: a worked example",
           "anchor": null
         },
         {
@@ -4334,6 +4394,10 @@
       ],
       "citations": [],
       "sections": [
+        {
+          "title": "In brief",
+          "anchor": null
+        },
         {
           "title": "What to test, in order",
           "anchor": null

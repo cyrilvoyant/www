@@ -533,7 +533,7 @@
   "roc-curve"
  ],
  "extraction": {
-  "source_hash": "94600673e808e5a4",
+  "source_hash": "c2577726492fc984",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#experience"

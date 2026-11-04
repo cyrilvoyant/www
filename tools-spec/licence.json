@@ -314,7 +314,7 @@
   "metadata"
  ],
  "extraction": {
-  "source_hash": "ad13de1654f6f7f9",
+  "source_hash": "81318e76c1cf9ed3",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#lic-tree"

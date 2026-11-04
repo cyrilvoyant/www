@@ -36,6 +36,12 @@
      "@id": "https://doi.org/10.1016/j.softx.2026.103085"
     },
     {
+     "@id": "https://www.cyrilvoyant.com/30-second-brief/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/fiche-30-secondes/"
+    },
+    {
      "@id": "https://www.cyrilvoyant.com/fr/outils/doses-lq-lql/"
     },
     {
@@ -101,6 +107,16 @@
    "@type": "ScholarlyArticle",
    "name": "C. Voyant, D. Julian. LQL-Equiv. SoftwareX 36 (2026) 103085; and Voyant et al., Reports of Practical Oncology and Radiotherapy 19(1) (2014) 47–55",
    "creativeWorkStatus": "published"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/30-second-brief/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/30-second-brief/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/fr/fiche-30-secondes/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/fr/fiche-30-secondes/"
   },
   {
    "@id": "https://www.cyrilvoyant.com/fr/outils/doses-lq-lql/",

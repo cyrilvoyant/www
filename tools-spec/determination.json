@@ -404,7 +404,7 @@
   "r-squared"
  ],
  "extraction": {
-  "source_hash": "6df709a91747fba5",
+  "source_hash": "f0c8e616149cbfe7",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#experience"
