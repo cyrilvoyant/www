@@ -291,6 +291,14 @@
   "repositories": [],
   "related_pages": [
    {
+    "href": "/fr/recits/questioning-research/#integrity",
+    "text": "Puis évaluerL'impact suffit-il ?Impact et intégrité, avec J. P. A. Ioannidisune carte des institutions publiée dans Royal Society Open Science (2026) lit l'impact à côté d'indicateurs d'intégrité."
+   },
+   {
+    "href": "/fr/recits/questioning-research/#influence",
+    "text": "Puis évaluerComparer sans récompenser la tailleL'indice d'influencela part d'auteurs très cités rapportée à la référence de 2 %, sur une échelle de doublement (méthode ; article soumis)."
+   },
+   {
     "href": "/fr/animations/soleil-saisons-utc/",
     "text": "horodatage"
    }
@@ -306,7 +314,7 @@
   "metadata"
  ],
  "extraction": {
-  "source_hash": "9ba8d7b8894be94b",
+  "source_hash": "ad13de1654f6f7f9",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#lic-tree"

@@ -12823,7 +12823,36 @@
    "outputs": [],
    "outputs_en_page": null,
    "formulas": [],
-   "definitions": [],
+   "definitions": [
+    {
+     "term": "E",
+     "meaning": {
+      "fr": "l'excellence de la recherche, comprise comme capacité d'impact : la capacité d'un travail à être trouvé, jugé fiable, reproduit et utilisé par d'autres.",
+      "en": "research excellence, operationalized as impact capacity: the capacity of a piece of work to be found, trusted, reproduced and used by others."
+     }
+    },
+    {
+     "term": "∝",
+     "meaning": {
+      "fr": "« est proportionnel à ». Les auteurs ont choisi ce symbole plutôt que « = » à dessein : l'équation ne produit pas une note à comparer entre chercheurs ou institutions, c'est une heuristique (une règle de raisonnement) qui encode une dépendance logique.",
+      "en": "“is proportional to”. The authors chose this symbol over “=” on purpose: the equation does not produce a score to compare researchers or institutions; it is a heuristic (a rule of reasoning) that encodes a logical dependency."
+     }
+    },
+    {
+     "term": "R, T, V, A",
+     "meaning": {
+      "fr": "les quatre fondations, premier facteur : rigueur, transparence, visibilité, potentiel d'adoption. Leur produit tend vers zéro dès qu'un seul de ces termes tend vers zéro.",
+      "en": "the four foundations, first factor: Rigor, Transparency, Visibility, Adoption potential. Their product approaches zero as soon as any single term approaches zero."
+     }
+    },
+    {
+     "term": "C, O, S",
+     "meaning": {
+      "fr": "les trois amplificateurs, second facteur : collaboration, diffusion (outreach), pertinence sociétale. Ils démultiplient une fondation déjà solide mais apportent peu si elle est faible. Avec « 1 + », des amplificateurs nuls laissent le second facteur à 1 : seules les fondations comptent alors.",
+      "en": "the three amplifiers, second factor: Collaboration, Outreach, Societal relevance. They scale an already solid foundation but add little if it is weak. Thanks to the “1 +”, zero amplifiers leave the second factor at 1: only the foundations count."
+     }
+    }
+   ],
    "assumptions": {
     "fr": [],
     "en": []
@@ -12834,6 +12863,14 @@
     ],
     "repositories": [],
     "related_pages": [
+     {
+      "href": "/fr/recits/questioning-research/#integrity",
+      "text": "Puis évaluerL'impact suffit-il ?Impact et intégrité, avec J. P. A. Ioannidisune carte des institutions publiée dans Royal Society Open Science (2026) lit l'impact à côté d'indicateurs d'intégrité."
+     },
+     {
+      "href": "/fr/recits/questioning-research/#influence",
+      "text": "Puis évaluerComparer sans récompenser la tailleL'indice d'influencela part d'auteurs très cités rapportée à la référence de 2 %, sur une échelle de doublement (méthode ; article soumis)."
+     },
      {
       "href": "/fr/recits/evaluer-prevision-solaire-persistance/",
       "text": "Évaluer une prévision face à une référence"
@@ -12857,14 +12894,6 @@
      {
       "href": "/fr/citer/",
       "text": "Se faire citer correctement"
-     },
-     {
-      "href": "/fr/actualites/#academic-visibility-why-publishing-isn-t-enough-anymore",
-      "text": "Publier ne suffit plus"
-     },
-     {
-      "href": "/fr/outils/",
-      "text": "Des outils qui tournent dans le navigateur"
      }
     ]
    },
@@ -12915,7 +12944,7 @@
     "metadata"
    ],
    "extraction": {
-    "source_hash": "b332504cf250ec79",
+    "source_hash": "8c83563c30e5fd30",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#rtv"
@@ -13313,6 +13342,14 @@
     "repositories": [],
     "related_pages": [
      {
+      "href": "/fr/recits/questioning-research/#integrity",
+      "text": "Puis évaluerL'impact suffit-il ?Impact et intégrité, avec J. P. A. Ioannidisune carte des institutions publiée dans Royal Society Open Science (2026) lit l'impact à côté d'indicateurs d'intégrité."
+     },
+     {
+      "href": "/fr/recits/questioning-research/#influence",
+      "text": "Puis évaluerComparer sans récompenser la tailleL'indice d'influencela part d'auteurs très cités rapportée à la référence de 2 %, sur une échelle de doublement (méthode ; article soumis)."
+     },
+     {
       "href": "/fr/recits/questioning-research/",
       "text": "Se questionner sur nos façons de faire de la recherche : influence, intégrité, excellence"
      },
@@ -13335,7 +13372,7 @@
     "data-management-plan"
    ],
    "extraction": {
-    "source_hash": "47c9c34bf2ebe350",
+    "source_hash": "a1e159057992a6f0",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#role-helper"
@@ -13637,6 +13674,14 @@
     "repositories": [],
     "related_pages": [
      {
+      "href": "/fr/recits/questioning-research/#integrity",
+      "text": "Puis évaluerL'impact suffit-il ?Impact et intégrité, avec J. P. A. Ioannidisune carte des institutions publiée dans Royal Society Open Science (2026) lit l'impact à côté d'indicateurs d'intégrité."
+     },
+     {
+      "href": "/fr/recits/questioning-research/#influence",
+      "text": "Puis évaluerComparer sans récompenser la tailleL'indice d'influencela part d'auteurs très cités rapportée à la référence de 2 %, sur une échelle de doublement (méthode ; article soumis)."
+     },
+     {
       "href": "/fr/animations/soleil-saisons-utc/",
       "text": "horodatage"
      }
@@ -13652,7 +13697,7 @@
     "metadata"
    ],
    "extraction": {
-    "source_hash": "9ba8d7b8894be94b",
+    "source_hash": "ad13de1654f6f7f9",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#lic-tree"

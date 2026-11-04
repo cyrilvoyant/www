@@ -387,6 +387,14 @@
   "repositories": [],
   "related_pages": [
    {
+    "href": "/fr/recits/questioning-research/#integrity",
+    "text": "Puis évaluerL'impact suffit-il ?Impact et intégrité, avec J. P. A. Ioannidisune carte des institutions publiée dans Royal Society Open Science (2026) lit l'impact à côté d'indicateurs d'intégrité."
+   },
+   {
+    "href": "/fr/recits/questioning-research/#influence",
+    "text": "Puis évaluerComparer sans récompenser la tailleL'indice d'influencela part d'auteurs très cités rapportée à la référence de 2 %, sur une échelle de doublement (méthode ; article soumis)."
+   },
+   {
     "href": "/fr/recits/questioning-research/",
     "text": "Se questionner sur nos façons de faire de la recherche : influence, intégrité, excellence"
    },
@@ -409,7 +417,7 @@
   "data-management-plan"
  ],
  "extraction": {
-  "source_hash": "47c9c34bf2ebe350",
+  "source_hash": "a1e159057992a6f0",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#role-helper"
