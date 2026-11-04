@@ -3402,22 +3402,82 @@ URL: https://www.cyrilvoyant.com/stories/websemantic/
 
 Let the language model read, let the validated code compute: WebSemantic
  Step 4 of 5 · AI in its place See it on the thread Language models help people use validated tools; the calculation, the checking and the responsibility stay with validated codes and people. Every tool, at the periphery.
- Language models are good at understanding a request written in plain words. They are not a substitute for a validated scientific code. WebSemantic gives each one its role, and asks the person whenever something is missing.
+ Ask for a scientific simulation in plain words, without an AI guessing the missing values. WebSemantic lets the language model translate the request into variables, asks the person for whatever is missing, and leaves every number to a validated, pinned scientific code.
  Cyril Voyant · Mines Paris – PSL, Centre O.I.E.
  In brief
- Left alone, a language model fills missing inputs by guessing: in plausible interpretations, such guesses changed a computed result by up to a factor of 2.6 and moved a complication probability from 3 % to 47 % .
- WebSemantic separates the roles: the language model maps words to variables; a validator decides to execute, clarify or refuse ; an unchanged, validated code computes every number.
- On 78 cases, adding a reading contract to the documentation cut premature calculations from 26 % to 6 % (Mistral-Small) and from 52 % to 23 % (Codestral).
- The finding
- Language models become useful in science when they are kept in their place: reading and translating the request. Computing stays with codes whose validity is known. When an input is missing, the right answer is a question, not a guess.
- The question
- Can a language model run a scientific simulation on someone's behalf? It can, but it will happily fill in what was not said: "a weak updraft" becomes 0.1 m/s, "the usual dose" becomes 3 Gy, and the code runs on values nobody stated. The result looks precise and may be wrong.
- The theory, in plain words
- Each code is described once, in a contract : what each variable means, its unit, what may be assumed by default and what must be asked. Every input of a scenario carries its value, its unit, its origin (stated by the person, unit conversion, declared default, assumption) and whether the person accepted it. The rule is simple:
- execute only if every required input is stated, or is a sourced assumption the person accepted, and every unit and constraint is satisfied;
- clarify if an input is missing, ambiguous or not accepted;
- refuse if the request is outside the code's domain, or if the code's files do not match their fingerprint.
- The validator never invents a value. The scientific code is pinned to a precise version, checked before each run, and returns its results with a full record of where every number came from.
+ A language model reads a written request very well, but readily fills in what was not said. In a scientific calculation, a guessed value gives a result that looks precise and may be wrong.
+ WebSemantic separates three roles: the language model translates words into variables; a validator decides to execute, clarify or refuse ; a validated, unchanged code computes every number.
+ Every result comes with its units, the origin of every input and the exact version of the code: it can be rerun and checked.
+ The problem, and for whom
+ Validated scientific codes are precise but demanding: each parameter, its unit and its bounds must be known. An engineer sizing a road tunnel, a radiotherapy researcher comparing two treatment schedules, a teacher showing a model to students do not always have that time. Language models offer a shortcut: "simulate one week for a short tunnel with light traffic". The risk is that they fill the gaps themselves: "a weak updraft" becomes 0.1 m/s, "the usual dose" becomes 3 Gy (the gray, unit of absorbed dose), and the code runs on values nobody stated.
+ The question is therefore: how can we use plain-language reading without losing what makes a validated code valuable, namely known inputs and traceable results?
+ The idea: from text to a verifiable result
+ Step
+ Who acts
+ What comes out
+ 1. Text
+ The person
+ A request in English or French
+ 2. Variables
+ The language model
+ The code's variables, each with its unit, its origin and the words that justify it
+ 3. Decision
+ The validator
+ Execute, clarify (a question to the person) or refuse
+ 4. Calculation
+ The validated, pinned code
+ The numbers, and only it
+ 5. Record
+ WebSemantic
+ Tables, units, origin of every input, code version and file fingerprints
+ The chain: request, language model, validator, validated code, result
+ The core is the contract : a description, written once per code, of each variable (meaning, unit, bounds, default value, accepted everyday words). The same description produces the contract read by the language model, the checking rules and the citation metadata: one definition, several uses.
+ What the language model does, and what it does not
+ It does
+ It does not
+ Read the request and restate it in three sentences
+ Compute any result
+ Link each word to a variable of the contract
+ Invent a value absent from the request
+ Convert a stated unit (2 km → 2000 m)
+ Choose a default or a convention alone: it proposes, the person accepts
+ Ask when a word is ambiguous
+ Change the scientific code or its assumptions
+ Report a conflict between two values
+ Decide for the person
+ If the language model makes a mistake, the validator stops it: a value without an origin, an inconsistent unit or a bound that is exceeded prevents the calculation.
+ Definitions
+ Term
+ Definition
+ Language model
+ A neural network trained on large text corpora, which predicts and produces text.
+ Contract
+ The reading rules of a code: meaning, unit and bounds of each variable, what may be proposed by default, what must be asked.
+ Origin of an input
+ Where the value comes from: stated by the person, unit conversion, declared default, qualitative convention. The last two count only once accepted.
+ Qualitative convention
+ The value the contract attaches to an everyday word, parameter by parameter ("short tunnel" → 375 m). It is proposed, never imposed.
+ Validator
+ The program that checks a scenario and returns one decision: execute, clarify or refuse. It never invents a value.
+ Validated, pinned code
+ A published, checked code used without modification at a precise version; its files are checked against a fingerprint (SHA-256) before each run.
+ Provenance
+ The record of where each number comes from: inputs, the person's agreement, code version.
+ EQD2
+ The total dose which, given in 2 Gy fractions, would have the same biological effect as the schedule studied.
+ A simulated example, step by step
+ Road tunnel (Tunnel Load Simulator, TLS). Request: "Simulate one week of electricity demand for a short twin-tube tunnel, LED lighting, light traffic."
+ "one week" → 7 days, stated ; "twin-tube" → 2 tubes, stated ;
+ "short tunnel" → 375 m, proposed convention ; "light traffic" → traffic level 0.3, proposed convention ;
+ "LED lighting": the contract knows "LED adaptive" and "LED fixed". The word is ambiguous: clarify , and the question is asked;
+ the other variables (ventilation, altitude…) receive their declared defaults, shown to the person.
+ Once the person has chosen the lighting and accepted the conventions and defaults, the decision becomes execute . TLS, and TLS alone, returns the energy, the peak power and the load factor, with their units and the list of inputs. A request to certify the consumption of a real tunnel is refused : it is outside the code's domain.
+ Radiotherapy, fictitious case (LQL-Equiv). Complete scenario: rectum (organ at risk) and prostate (target), 39 fractions of 2 Gy, every input stated and accepted. Decision: execute ; LQL-Equiv returns an EQD2 of 78.0 Gy. The result can be checked by hand: at 2 Gy per fraction, the EQD2 equals the total dose, 39 × 2 = 78 Gy. Remove the dose per fraction: the decision becomes clarify , and nothing is computed. When two schedules are compared, the best schedule in WebSemantic is an equivalent one (same EQD2, computed by LQL-Equiv), not one chosen from a complication probability.
+ First results (preliminary)
+ These figures come from an evaluation that has not yet been published. Each one is a preliminary, unpublished result (paper in preparation) and may change.
+ Why guessing matters. In simulations of plausible numerical readings of the same vague words, the guessed values changed a computed result by up to a factor of 2.6, and moved a normal-tissue complication probability (NTCP) from 3 % to 47 %. Preliminary, unpublished result (paper in preparation).
+ What the contract changes. On 78 cases, each asked with and without the contract, three times, a premature calculation (one launched before every required input was stated or accepted) became less frequent when the contract was added to the documentation: from 26 % to 6 % (Mistral-Small), 17 % to 1 % (Qwen2.5), 52 % to 23 % (Codestral) and 25 % to 3 % (Gemini). Preliminary, unpublished result (paper in preparation).
+ The NTCP figure only shows how much a guess can move a result. It is not a criterion: in WebSemantic, the best schedule is judged by equivalence (same EQD2), not by NTCP.
  Where it sits on the complexity ladder
  What level of complexity for this work? Level 2 of 6
  1 Direct calculation (the link is known)
@@ -3427,21 +3487,22 @@ Let the language model read, let the validated code compute: WebSemantic
  5 Frugal learning (ELM, a frugal neural network)
  6 Deep networks, foundation models ◀ The language model reads the request
  Climb a level only if it pays. The grey levels were not needed. A language model reads the request; it is an interface to the validated code.
- WebSemantic does use the top rung: a large language model, a deep network, reads the request . But it computes nothing: it hands validated variables down to the low rungs, direct calculation and simulation, where the validated codes compute . AI belongs in every toolbox, not in every solution.
- The chain: request, language model, validator, validated code, result
- The example in figures
- A complete radiotherapy research scenario (rectum and prostate, 39 fractions of 2 Gy, every input stated and accepted): the validator answers execute , and LQL-Equiv returns an EQD2 of 78.0 Gy. Remove the dose per fraction from the same scenario: the answer becomes clarify , "an explicit value or accepted assumption is required", and nothing is computed.
- Premature calculations, with and without the contract
- What it brings, and its limits
- Brings : scientific codes usable in plain language, in English or French, without hiding assumptions. Every result comes with its units, sources and code version. The same approach works for very different codes: road-tunnel energy demand (Tunnel Load Simulator), radiotherapy dose equivalence (LQL-Equiv) and cloud physics (pyrcel).
- Limits : a valid contract does not guarantee that the request was understood correctly, nor that the scientific model is right for the question. The evidence covers 78 cases; the associated paper is in preparation. LQL-Equiv runs on fictitious scenarios, for research and teaching only.
- Go further
- Decision rule, runnable example and figures : https://cyrilvoyant.github.io/tools/websemantic.html
- The web app : cyrilvoyant-websemantic.static.hf.space (TLS and LQL-Equiv in the browser)
- Code : github.com/cyrilvoyant/websemantic · archive doi: 10.5281/zenodo.23238902 · pip install websemantic · instructions for agents in llm.md
- Codes it drives :
- Tunnel Load Simulator, SoftwareX 35, 102946 (2026);
- LQL-Equiv-web, SoftwareX 36, 103085 (2026).
+ The complexity ladder ranks methods from direct calculation (bottom rung) to deep networks (top rung). WebSemantic uses the top rung to read : the language model is a deep network. The calculation stays at the bottom, in direct calculation (LQL-Equiv) and simulation (TLS). AI: essential in the toolbox, never mandatory in the solution.
+ Limits, and what remains to be shown
+ A valid scenario does not guarantee that the request was understood, nor that the scientific model suits the question: the three-sentence restatement is there for the person to check.
+ The validator is only as good as the contract: a word absent from its tables has no value, and the machine asks.
+ LQL-Equiv is for research and teaching, on fictitious scenarios. It is not a medical device; no patient data is used; the practitioner decides.
+ The first results above are preliminary and unpublished (paper in preparation): they may change after peer review.
+ In the web app, the request's words are sent through a relay to an external language model (Mistral); the calculations run in the browser.
+ Further reading
+ Try it : the web app , free, nothing to install, in English or French (TLS and LQL-Equiv in the browser).
+ Decision rule, runnable example and figures : methods page
+ Code : github.com/cyrilvoyant/websemantic · archive doi:10.5281/zenodo.23238902 · pip install websemantic · instructions for agents in llm.md in the repository
+ The codes it drives :
+ Tunnel Load Simulator , SoftwareX 35, 102946 (2026); the story: electricity demand of road tunnels ;
+ LQL-Equiv-web , SoftwareX 36, 103085 (2026); the story: radiobiological dose equivalence ;
+ pyrcel , a third-party cloud-physics code, driven through the Python route.
+ Related pages : AI in research · The thread, step 4 · Glossary
  The approach behind this work : Understand before you compute
 
 ---
@@ -6876,22 +6937,82 @@ URL: https://www.cyrilvoyant.com/fr/recits/websemantic/
 
 Au modèle de langage la lecture, au code validé le calcul : WebSemantic
  Étape 4 sur 5 · L'IA à sa place Le voir sur le fil Les modèles de langage aident à utiliser des outils validés ; le calcul, la vérification et la responsabilité restent aux codes validés et aux personnes. Tous les outils, en périphérie.
- Les modèles de langage comprennent bien une demande écrite en mots simples. Ils ne remplacent pas un code scientifique validé. WebSemantic donne à chacun son rôle, et interroge la personne dès qu'il manque quelque chose.
+ Demander une simulation scientifique en mots simples, sans qu'une IA devine les valeurs manquantes. WebSemantic laisse le modèle de langage traduire la demande en variables, demande à la personne ce qui manque, et confie chaque nombre à un code scientifique validé et figé.
  Cyril Voyant · Mines Paris – PSL, centre O.I.E.
  En bref
- Laissé seul, un modèle de langage comble les entrées manquantes en devinant : selon les interprétations plausibles, ces suppositions ont changé un résultat calculé jusqu'à un facteur 2,6 et fait passer une probabilité de complication de 3 % à 47 % .
- WebSemantic sépare les rôles : le modèle de langage relie les mots aux variables ; un validateur décide d' exécuter, clarifier ou refuser  ; un code validé, inchangé, calcule chaque nombre.
- Sur 78 cas, ajouter un contrat de lecture à la documentation a fait baisser les calculs prématurés de 26 % à 6 % (Mistral-Small) et de 52 % à 23 % (Codestral).
- Le constat
- Les modèles de langage deviennent utiles en science quand on les garde à leur place : lire et traduire la demande. Le calcul reste aux codes dont la validité est connue. Quand une entrée manque, la bonne réponse est une question, pas une supposition.
- La question
- Un modèle de langage peut-il lancer une simulation scientifique pour quelqu'un ? Il le peut, mais il comble volontiers ce qui n'a pas été dit : « un faible courant ascendant » devient 0,1 m/s, « la dose habituelle » devient 3 Gy, et le code tourne sur des valeurs que personne n'a données. Le résultat paraît précis et peut être faux.
- La théorie, en clair
- Chaque code est décrit une fois, dans un contrat  : ce que signifie chaque variable, son unité, ce qui peut être supposé par défaut et ce qui doit être demandé. Chaque entrée d'un scénario porte sa valeur, son unité, son origine (dite par la personne, conversion d'unité, défaut déclaré, hypothèse) et l'accord de la personne. La règle est simple :
- exécuter seulement si chaque entrée nécessaire est donnée, ou est une hypothèse sourcée que la personne a acceptée, et si chaque unité et chaque contrainte sont respectées ;
- clarifier si une entrée manque, est ambiguë ou n'est pas acceptée ;
- refuser si la demande sort du domaine du code, ou si les fichiers du code ne correspondent pas à leur empreinte.
- Le validateur n'invente jamais de valeur. Le code scientifique est figé sur une version précise, vérifié avant chaque exécution, et rend ses résultats avec la trace complète de l'origine de chaque nombre.
+ Un modèle de langage lit très bien une demande écrite, mais comble volontiers ce qui n'a pas été dit. Dans un calcul scientifique, une valeur devinée donne un résultat précis en apparence, et peut-être faux.
+ WebSemantic sépare trois rôles : le modèle de langage traduit les mots en variables ; un validateur décide d' exécuter, clarifier ou refuser  ; un code validé, inchangé, calcule chaque nombre.
+ Chaque résultat est rendu avec ses unités, l'origine de chaque entrée et la version exacte du code : on peut le refaire et le vérifier.
+ Le problème, et pour qui
+ Les codes scientifiques validés sont précis mais exigeants : il faut connaître chaque paramètre, son unité, ses bornes. L'ingénieur qui dimensionne un tunnel routier, le chercheur en radiothérapie qui compare deux schémas de traitement, l'enseignant qui montre un modèle à ses étudiants n'ont pas toujours ce temps. Les modèles de langage offrent un raccourci : « simule une semaine pour un tunnel court à faible trafic ». Le risque est qu'ils remplissent eux-mêmes les trous : « un faible courant ascendant » devient 0,1 m/s, « la dose habituelle » devient 3 Gy (le gray, unité de dose absorbée), et le code tourne sur des valeurs que personne n'a données.
+ D'où la question : comment profiter de la lecture du langage courant sans perdre ce qui fait la valeur d'un code validé, des entrées connues et des résultats traçables ?
+ L'idée : du texte au résultat vérifiable
+ Étape
+ Qui agit
+ Ce qui en sort
+ 1. Texte
+ La personne
+ Une demande en français ou en anglais
+ 2. Variables
+ Le modèle de langage
+ Les variables du code, chacune avec son unité, son origine et les mots qui la justifient
+ 3. Décision
+ Le validateur
+ Exécuter, clarifier (une question à la personne) ou refuser
+ 4. Calcul
+ Le code validé, figé
+ Les nombres, et lui seul
+ 5. Trace
+ WebSemantic
+ Tableaux, unités, origine de chaque entrée, version du code et empreintes des fichiers
+ La chaîne : demande, modèle de langage, validateur, code validé, résultat
+ Le cœur est le contrat  : une description, écrite une fois par code, de chaque variable (sens, unité, bornes, valeur par défaut, mots courants admis). La même description produit le contrat lu par le modèle de langage, les règles de vérification et les métadonnées de citation : une seule définition, plusieurs usages.
+ Ce que fait le modèle de langage, et ce qu'il ne fait pas
+ Il fait
+ Il ne fait pas
+ Lire la demande et la reformuler en trois phrases
+ Calculer un résultat
+ Relier chaque mot à une variable du contrat
+ Inventer une valeur absente de la demande
+ Convertir une unité donnée (2 km → 2000 m)
+ Choisir seul un défaut ou une convention : il propose, la personne accepte
+ Poser la question quand un mot est ambigu
+ Modifier le code scientifique ou ses hypothèses
+ Signaler un conflit entre deux valeurs
+ Décider à la place de la personne
+ Si le modèle de langage se trompe, le validateur bloque : une valeur sans origine, une unité incohérente ou une borne dépassée empêchent le calcul.
+ Les définitions
+ Terme
+ Définition
+ Modèle de langage
+ Un réseau de neurones entraîné sur de grands corpus de textes, qui prédit et produit du texte.
+ Contrat
+ Les règles de lecture d'un code : sens, unité et bornes de chaque variable, ce qui peut être proposé par défaut, ce qui doit être demandé.
+ Origine d'une entrée
+ D'où vient la valeur : dite par la personne, conversion d'unité, défaut déclaré, convention qualitative. Les deux dernières ne comptent qu'une fois acceptées.
+ Convention qualitative
+ La valeur que le contrat associe à un mot courant, paramètre par paramètre (« tunnel court » → 375 m). Elle est proposée, jamais imposée.
+ Validateur
+ Le programme qui vérifie un scénario et rend une seule décision : exécuter, clarifier ou refuser. Il n'invente aucune valeur.
+ Code validé, figé
+ Un code publié et vérifié, utilisé sans modification à une version précise ; ses fichiers sont contrôlés par une empreinte (SHA-256) avant chaque calcul.
+ Provenance
+ La trace de l'origine de chaque nombre : entrées, accord de la personne, version du code.
+ EQD2
+ La dose totale qui, donnée en fractions de 2 Gy, aurait le même effet biologique que le schéma étudié.
+ Un exemple simulé, pas à pas
+ Tunnel routier (Tunnel Load Simulator, TLS). Demande : « Simule une semaine de consommation électrique d'un tunnel court à deux tubes, éclairage LED, trafic faible. »
+ « une semaine » → 7 jours, dit  ; « deux tubes » → 2, dit  ;
+ « tunnel court » → 375 m, convention proposée  ; « trafic faible » → niveau de trafic 0,3, convention proposée  ;
+ « éclairage LED » : le contrat connaît « LED adaptatif » et « LED fixe ». Le mot est ambigu : clarifier , et la question est posée ;
+ les autres variables (ventilation, altitude…) reçoivent leurs défauts déclarés, montrés à la personne.
+ Quand la personne a choisi l'éclairage et accepté conventions et défauts, la décision devient exécuter . TLS, et lui seul, rend l'énergie, la puissance de pointe et le facteur de charge, avec leurs unités et la liste des entrées. Une demande de certification de la consommation d'un tunnel réel est refusée  : elle sort du domaine du code.
+ Radiothérapie, cas fictif (LQL-Equiv). Scénario complet : rectum (organe à protéger) et prostate (cible), 39 fractions de 2 Gy, chaque entrée donnée et acceptée. Décision : exécuter  ; LQL-Equiv rend une EQD2 de 78,0 Gy. Le résultat se vérifie à la main : à 2 Gy par fraction, l'EQD2 égale la dose totale, 39 × 2 = 78 Gy. Retirez la dose par fraction : la décision devient clarifier , et rien n'est calculé. Pour comparer deux schémas, le meilleur schéma au sens de WebSemantic est un schéma équivalent (même EQD2, calculée par LQL-Equiv), pas un schéma choisi d'après une probabilité de complication.
+ Premiers résultats (préliminaires)
+ Ces chiffres viennent d'une évaluation qui n'est pas encore publiée. Chacun est un résultat préliminaire, non publié (article en préparation) et peut changer.
+ Pourquoi deviner pèse. Dans des simulations de lectures numériques plausibles des mêmes mots vagues, les valeurs devinées ont changé un résultat calculé jusqu'à un facteur 2,6, et fait passer une probabilité de complication des tissus sains (NTCP) de 3 % à 47 %. Résultat préliminaire, non publié (article en préparation).
+ Ce que change le contrat. Sur 78 cas, chacun posé avec et sans le contrat, trois fois, un calcul prématuré (lancé avant que chaque entrée nécessaire soit donnée ou acceptée) est devenu plus rare quand le contrat s'ajoutait à la documentation : de 26 % à 6 % (Mistral-Small), de 17 % à 1 % (Qwen2.5), de 52 % à 23 % (Codestral) et de 25 % à 3 % (Gemini). Résultat préliminaire, non publié (article en préparation).
+ Le chiffre de NTCP montre seulement combien une supposition peut déplacer un résultat. Ce n'est pas un critère : dans WebSemantic, le meilleur schéma se juge par équivalence (même EQD2), pas par la NTCP.
  Où l'on se situe sur l'échelle de la complexité
  Quel niveau de complexité pour ce travail ? Niveau 2 sur 6
  1 Calcul direct (le lien est connu)
@@ -6901,21 +7022,22 @@ Au modèle de langage la lecture, au code validé le calcul : WebSemantic
  5 Apprentissage frugal (ELM, un réseau de neurones frugal)
  6 Réseaux profonds, modèles de fondation ◀ Le modèle de langage lit la demande
  Monter d'un niveau seulement si cela paie. Les niveaux gris n'ont pas été nécessaires. Un modèle de langage lit la demande ; il sert d'interface vers le code validé.
- WebSemantic utilise bien la marche du haut : un grand modèle de langage, un réseau profond, lit la demande . Mais il ne calcule rien : il transmet des variables validées aux marches basses, calcul direct et simulation, où les codes validés calculent . L'IA : indispensable dans la boîte à outils, jamais obligatoire dans la solution.
- La chaîne : demande, modèle de langage, validateur, code validé, résultat
- L'exemple en chiffres
- Un scénario complet de recherche en radiothérapie (rectum et prostate, 39 fractions de 2 Gy, chaque entrée donnée et acceptée) : le validateur répond exécuter , et LQL-Equiv renvoie une EQD2 de 78,0 Gy. Retirez la dose par fraction du même scénario : la réponse devient clarifier , « une valeur explicite ou une hypothèse acceptée est nécessaire », et rien n'est calculé.
- Calculs prématurés, avec et sans contrat
- Ce que cela apporte, et les limites
- Apports  : des codes scientifiques utilisables en langage courant, en français ou en anglais, sans hypothèses cachées. Chaque résultat est rendu avec ses unités, ses sources et la version du code. La même démarche fonctionne pour des codes très différents : consommation des tunnels routiers (Tunnel Load Simulator), équivalence de dose en radiothérapie (LQL-Equiv) et physique des nuages (pyrcel).
- Limites  : un contrat valide ne garantit pas que la demande a été bien comprise, ni que le modèle scientifique convient à la question. Les preuves portent sur 78 cas ; l'article associé est en préparation. LQL-Equiv fonctionne sur des scénarios fictifs, pour la recherche et l'enseignement seulement.
+ L'échelle de la complexité range les méthodes du calcul direct (marche du bas) aux réseaux profonds (marche du haut). WebSemantic emploie la marche du haut pour lire  : le modèle de langage est un réseau profond. Le calcul reste en bas, en calcul direct (LQL-Equiv) et en simulation (TLS). L'IA : indispensable dans la boîte à outils, jamais obligatoire dans la solution.
+ Les limites, et ce qui reste à établir
+ Un scénario valide ne garantit pas que la demande a été bien comprise, ni que le modèle scientifique convient à la question : la reformulation en trois phrases sert à ce contrôle, par la personne.
+ Le validateur ne vaut que ce que vaut le contrat : un mot absent de ses tables n'a pas de valeur, et la machine le demande.
+ LQL-Equiv sert à la recherche et à l'enseignement, sur des scénarios fictifs. Ce n'est pas un dispositif médical ; aucune donnée de patient n'est utilisée ; le praticien décide.
+ Les premiers résultats ci-dessus sont préliminaires et non publiés (article en préparation) : ils peuvent changer après relecture par les pairs.
+ Dans l'application web, les mots de la demande passent par un relais vers un modèle de langage externe (Mistral) ; les calculs se font dans le navigateur.
  Pour aller plus loin
- Règle de décision, exemple exécutable et figures (en anglais) : https://cyrilvoyant.github.io/tools/websemantic.html
- L'application web  : cyrilvoyant-websemantic.static.hf.space (TLS et LQL-Equiv dans le navigateur)
- Code  : github.com/cyrilvoyant/websemantic · archive doi : 10.5281/zenodo.23238902 · pip install websemantic · instructions pour les agents dans llm.md
+ Essayer  : l'application web , gratuite, sans installation, en français ou en anglais (TLS et LQL-Equiv dans le navigateur).
+ Règle de décision, exemple exécutable et figures (en anglais) : page des méthodes
+ Code  : github.com/cyrilvoyant/websemantic · archive doi :10.5281/zenodo.23238902 · pip install websemantic · instructions pour les agents dans llm.md du dépôt
  Les codes pilotés  :
- Tunnel Load Simulator, SoftwareX 35, 102946 (2026) ;
- LQL-Equiv-web, SoftwareX 36, 103085 (2026).
+ Tunnel Load Simulator , SoftwareX 35, 102946 (2026) ; le récit : la consommation des tunnels routiers  ;
+ LQL-Equiv-web , SoftwareX 36, 103085 (2026) ; le récit : l'équivalence de dose en radiobiologie  ;
+ pyrcel , code de physique des nuages d'un autre auteur, piloté par la voie Python.
+ Pages liées  : L'IA dans la recherche · Le fil, étape 4 · Lexique
  La démarche derrière ce travail  : Comprendre avant de calculer
 
 ---

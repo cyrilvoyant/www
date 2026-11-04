@@ -3750,15 +3750,27 @@
       "citations": [],
       "sections": [
         {
-          "title": "Le constat",
+          "title": "Le problème, et pour qui",
           "anchor": null
         },
         {
-          "title": "La question",
+          "title": "L'idée : du texte au résultat vérifiable",
           "anchor": null
         },
         {
-          "title": "La théorie, en clair",
+          "title": "Ce que fait le modèle de langage, et ce qu'il ne fait pas",
+          "anchor": null
+        },
+        {
+          "title": "Les définitions",
+          "anchor": null
+        },
+        {
+          "title": "Un exemple simulé, pas à pas",
+          "anchor": null
+        },
+        {
+          "title": "Premiers résultats (préliminaires)",
           "anchor": null
         },
         {
@@ -3766,11 +3778,7 @@
           "anchor": null
         },
         {
-          "title": "L'exemple en chiffres",
-          "anchor": null
-        },
-        {
-          "title": "Ce que cela apporte, et les limites",
+          "title": "Les limites, et ce qui reste à établir",
           "anchor": null
         },
         {
@@ -4932,15 +4940,27 @@
       "citations": [],
       "sections": [
         {
-          "title": "The finding",
+          "title": "The problem, and for whom",
           "anchor": null
         },
         {
-          "title": "The question",
+          "title": "The idea: from text to a verifiable result",
           "anchor": null
         },
         {
-          "title": "The theory, in plain words",
+          "title": "What the language model does, and what it does not",
+          "anchor": null
+        },
+        {
+          "title": "Definitions",
+          "anchor": null
+        },
+        {
+          "title": "A simulated example, step by step",
+          "anchor": null
+        },
+        {
+          "title": "First results (preliminary)",
           "anchor": null
         },
         {
@@ -4948,15 +4968,11 @@
           "anchor": null
         },
         {
-          "title": "The example in figures",
+          "title": "Limits, and what remains to be shown",
           "anchor": null
         },
         {
-          "title": "What it brings, and its limits",
-          "anchor": null
-        },
-        {
-          "title": "Go further",
+          "title": "Further reading",
           "anchor": null
         }
       ]
