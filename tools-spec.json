@@ -4493,31 +4493,16 @@
     },
     {
      "name": {
-      "fr": "2. Écart-type commun sₚ",
-      "en": "2. Pooled standard deviation sₚ"
+      "fr": "2. Erreur standard de Δ",
+      "en": "2. Standard error of Δ"
      },
      "unit": {
       "fr": "mmHg",
       "en": "mmHg"
      },
      "meaning": {
-      "fr": "dispersion commune estimée",
-      "en": "estimated common spread"
-     },
-     "kind": "metric"
-    },
-    {
-     "name": {
-      "fr": "Erreur standard de Δ",
-      "en": "Standard error of Δ"
-     },
-     "unit": {
-      "fr": "mmHg",
-      "en": "mmHg"
-     },
-     "meaning": {
-      "fr": "incertitude sur l’écart Δ",
-      "en": "uncertainty on the difference Δ"
+      "fr": "√(s₁²/n₁ + s₂²/n₂) : l’incertitude sur Δ",
+      "en": "√(s₁²/n₁ + s₂²/n₂): the uncertainty on Δ"
      },
      "kind": "metric"
     },
@@ -4538,16 +4523,16 @@
     },
     {
      "name": {
-      "fr": "ddl = n₁ + n₂ − 2",
-      "en": "df = n₁ + n₂ − 2"
+      "fr": "ddl de Welch ν",
+      "en": "Welch df ν"
      },
      "unit": {
       "fr": "sans unité",
       "en": "dimensionless"
      },
      "meaning": {
-      "fr": "degrés de liberté",
-      "en": "degrees of freedom"
+      "fr": "degrés de liberté, entre min(n₁, n₂) − 1 et n₁ + n₂ − 2",
+      "en": "degrees of freedom, between min(n₁, n₂) − 1 and n₁ + n₂ − 2"
      },
      "kind": "metric"
     },
@@ -4640,8 +4625,8 @@
     {
      "term": "Que veut dire chaque symbole ?",
      "meaning": {
-      "fr": "Δ est l’écart des moyennes ; s₁ et s₂ les écarts-types des groupes et sₚ leur estimation commune. n₁ et n₂ sont les effectifs, tous deux égaux au curseur n. H₀ suppose les moyennes des populations égales. t exprime Δ en unités d’erreur standard, ddl signifie degrés de liberté et α = 5 % est le seuil de rejet. La p-value est une probabilité de résultats au moins aussi extrêmes sous H₀ et le modèle du test, pas la probabilité que H₀ soit vraie.",
-      "en": "Δ is the difference between group means; s₁ and s₂ are group standard deviations and sₚ their pooled estimate. n₁ and n₂ are group sizes, both equal to the n control. H₀ assumes equal population means. t expresses Δ in standard-error units, df means degrees of freedom, and α = 5% is the rejection threshold. The p-value is a probability of results at least as extreme under H₀ and the test model, not the probability that H₀ is true."
+      "fr": "Δ est l’écart des moyennes ; s₁ et s₂ les écarts-types des groupes (non supposés égaux : test de Welch). n₁ et n₂ sont les effectifs, tous deux égaux au curseur n. H₀ suppose les moyennes des populations égales. t exprime Δ en unités d’erreur standard, ddl signifie degrés de liberté et α = 5 % est le seuil de rejet. La p-value est une probabilité de résultats au moins aussi extrêmes sous H₀ et le modèle du test, pas la probabilité que H₀ soit vraie.",
+      "en": "Δ is the difference between group means; s₁ and s₂ are group standard deviations (not assumed equal: Welch test). n₁ and n₂ are group sizes, both equal to the n control. H₀ assumes equal population means. t expresses Δ in standard-error units, df means degrees of freedom, and α = 5% is the rejection threshold. The p-value is a probability of results at least as extreme under H₀ and the test model, not the probability that H₀ is true."
      }
     }
    ],
@@ -4763,7 +4748,7 @@
     "student-t-test"
    ],
    "extraction": {
-    "source_hash": "f94b66d77a97ff40",
+    "source_hash": "d91ed608d3461324",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -5669,7 +5654,26 @@
      }
     }
    ],
-   "actions": [],
+   "actions": [
+    {
+     "name": {
+      "fr": "la décomposition de quelques écarts",
+      "en": "the split of a few deviations"
+     }
+    },
+    {
+     "name": {
+      "fr": "tous les résidus",
+      "en": "all residuals"
+     }
+    },
+    {
+     "name": {
+      "fr": "le nuage seul",
+      "en": "the scatter only"
+     }
+    }
+   ],
    "variants": [],
    "outputs": [
     {
@@ -5736,7 +5740,40 @@
    "outputs_en_page": null,
    "formulas": [
     {
+     "text": "R^2 = (SC_(Ŷ))/SC_Y"
+    },
+    {
+     "text": "= 2,7/30,0"
+    },
+    {
+     "text": "= 0,090"
+    },
+    {
+     "text": "= r^2 = (0,300)^2"
+    },
+    {
      "text": "t = rsqrt((n − 2)/(1 − r^2))"
+    },
+    {
+     "text": "= 0,300×sqrt(28/0,910)"
+    },
+    {
+     "text": "= 1,66"
+    },
+    {
+     "text": "ν = n − 2 = 28,"
+    },
+    {
+     "text": "p = 0,1072"
+    },
+    {
+     "text": "SC_Y = ∑i(y_i − ȳ)^2,"
+    },
+    {
+     "text": "SC_(Ŷ) = ∑i(ŷ_i − ȳ)^2,"
+    },
+    {
+     "text": "SC_rés = ∑i(y_i − ŷ_i)^2"
     },
     {
      "text": "R^2 = r^2 = 1 − SSE/SST"
@@ -5788,7 +5825,7 @@
     {
      "term": "Que veut dire chaque symbole ?",
      "meaning": {
-      "fr": "r est la corrélation de Pearson du nuage ; n son nombre de points. R² est le coefficient de détermination. H₀ suppose une corrélation nulle dans la population (ρ = 0) ; t est sa statistique de test et ν = n−2 ses degrés de liberté. La p-value concerne cette hypothèse dans le modèle indiqué. SST additionne les carrés des écarts à la moyenne, SSE ceux des résidus et SSR ceux des valeurs ajustées à la moyenne. Un résidu est l’écart vertical entre une observation yᵢ et sa valeur ajustée ŷᵢ ; ȳ est la moyenne observée.",
+      "fr": "r est la corrélation de Pearson du nuage ; n son nombre de points. R² est le coefficient de détermination. H₀ suppose une corrélation nulle dans la population (ρ = 0) ; t est sa statistique de test et ν = n−2 ses degrés de liberté. La p-value concerne cette hypothèse dans le modèle indiqué. SC_Y (SST en anglais) additionne les carrés des écarts à la moyenne, SC_rés (SSE) ceux des résidus et SC_Ŷ (SSR) ceux des valeurs ajustées à la moyenne. Un résidu est l’écart vertical entre une observation yᵢ et sa valeur ajustée ŷᵢ ; ȳ est la moyenne observée.",
       "en": "r is the Pearson correlation in the scatterplot; n is the number of points. R² is the coefficient of determination. H₀ assumes zero population correlation (ρ = 0); t is its test statistic and ν = n−2 its degrees of freedom. The p-value concerns this hypothesis under the stated test model. SST sums squared deviations from the mean, SSE squared residuals and SSR squared deviations of fitted values from the mean. A residual is the vertical difference between an observation yᵢ and its fitted value ŷᵢ; ȳ is the observed mean."
      }
     }
@@ -5911,7 +5948,7 @@
     "r-squared"
    ],
    "extraction": {
-    "source_hash": "3e031bd834968662",
+    "source_hash": "c44289419a4cd9d6",
     "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
     "roots": [
      "#experience"
@@ -13976,6 +14013,1699 @@
    }
   },
   {
+   "id": "probabilistic-solar",
+   "schema": "https://www.cyrilvoyant.com/tools-spec.json#1.0",
+   "kind": "demo",
+   "domain": "energy",
+   "interface_language": "both",
+   "name": {
+    "fr": "Prévision probabiliste",
+    "en": "Probabilistic solar forecasting"
+   },
+   "url": {
+    "fr": "https://www.cyrilvoyant.com/fr/outils/prevision-probabiliste/",
+    "en": "https://www.cyrilvoyant.com/tools/probabilistic-solar-forecasting/"
+   },
+   "page_title": {
+    "fr": "Prévision solaire probabiliste : intervalle de confiance, intervalle de prévision et PICP",
+    "en": "Probabilistic solar forecasting: confidence interval, prediction interval and PICP"
+   },
+   "computes": {
+    "fr": "GHI horaire à Ajaccio : intervalle de confiance ou de prévision, pourquoi ±2σ échoue, prédiction conforme sans fuite, PICP et CRPS en direct.",
+    "en": "Hourly solar irradiance at Ajaccio: confidence vs prediction interval, why ±2σ fails, leakage-free conformal prediction, live PICP and CRPS."
+   },
+   "summary": {
+    "fr": "Une prévision de rayonnement solaire a besoin d’une marge. À Ajaccio, en 2007, pour l’heure suivante, la valeur moyenne prévue par l’autorégression est connue à ±0,5 W/m² près (intervalle de confiance), mais la marge qui vise à contenir 95 % des prochaines mesures est de ±174 W/m² (intervalle de prévision ; 95,2 %…",
+    "en": "A solar irradiance forecast needs a margin. At Ajaccio, in 2007, one hour ahead, the mean value forecast by the autoregression is known to ±0.5 W/m² (confidence interval), but the margin that aims to contain 95% of the next measurements is ±174 W/m² (prediction interval; 95.2% measured in 2007)."
+   },
+   "parameters": [
+    {
+     "id": "pf-model",
+     "type": "enum",
+     "control": "select",
+     "default": "AR",
+     "options": [
+      {
+       "value": "P",
+       "label": "Persistance"
+      },
+      {
+       "value": "SP",
+       "label": "Persistance intelligente"
+      },
+      {
+       "value": "AR",
+       "label": "AR"
+      },
+      {
+       "value": "ELM",
+       "label": "ELM"
+      }
+     ],
+     "label": {
+      "fr": "Modèle?",
+      "en": "Model?"
+     },
+     "meaning": {
+      "fr": null,
+      "en": null
+     },
+     "unit": null
+    },
+    {
+     "id": "pf-method",
+     "type": "enum",
+     "control": "select",
+     "default": "conf",
+     "options": [
+      {
+       "value": "gauss",
+       "label": "Gauss ±z·RMSE"
+      },
+      {
+       "value": "conf",
+       "label": "Conforme"
+      },
+      {
+       "value": "hour",
+       "label": "Conforme par heure"
+      },
+      {
+       "value": "cs",
+       "label": "Conforme par ciel clair"
+      }
+     ],
+     "label": {
+      "fr": "Intervalle de prévision?",
+      "en": "Prediction interval?"
+     },
+     "meaning": {
+      "fr": null,
+      "en": null
+     },
+     "unit": null
+    },
+    {
+     "id": "pf-level",
+     "type": "integer",
+     "control": "range",
+     "min": 50,
+     "max": 99,
+     "step": 1,
+     "default": 95,
+     "label": {
+      "fr": "Niveau nominal?",
+      "en": "Nominal level?"
+     },
+     "meaning": {
+      "fr": null,
+      "en": null
+     },
+     "unit": {
+      "fr": "%",
+      "en": "%"
+     },
+     "unit_source": "display"
+    },
+    {
+     "id": "pf-day",
+     "type": "integer",
+     "control": "range",
+     "min": 0,
+     "max": 364,
+     "step": 1,
+     "default": 74,
+     "label": {
+      "fr": "Date (2007)",
+      "en": "Date (2007)"
+     },
+     "meaning": {
+      "fr": null,
+      "en": null
+     },
+     "unit": {
+      "fr": "mars",
+      "en": "mars"
+     },
+     "unit_source": "display"
+    },
+    {
+     "id": "pf-win",
+     "type": "integer",
+     "control": "range",
+     "min": 1,
+     "max": 7,
+     "step": 1,
+     "default": 3,
+     "label": {
+      "fr": "Fenêtre?",
+      "en": "Window?"
+     },
+     "meaning": {
+      "fr": null,
+      "en": null
+     },
+     "unit": {
+      "fr": "j",
+      "en": "j"
+     },
+     "unit_source": "display"
+    },
+    {
+     "id": "pf-ci",
+     "type": "boolean",
+     "control": "checkbox",
+     "default": true,
+     "label": {
+      "fr": "Intervalle de confiance?",
+      "en": "Confidence interval?"
+     },
+     "meaning": {
+      "fr": null,
+      "en": null
+     },
+     "unit": null
+    }
+   ],
+   "presets": [],
+   "actions": [],
+   "variants": [],
+   "outputs": [
+    {
+     "name": {
+      "fr": "PICP, fenêtre?",
+      "en": "PICP, window?"
+     },
+     "unit": {
+      "fr": "%",
+      "en": "%"
+     },
+     "meaning": {
+      "fr": null,
+      "en": null
+     },
+     "kind": "metric"
+    },
+    {
+     "name": {
+      "fr": "PICP, toute l’année 2007?",
+      "en": "PICP, whole of 2007?"
+     },
+     "unit": {
+      "fr": "%",
+      "en": "%"
+     },
+     "meaning": {
+      "fr": null,
+      "en": null
+     },
+     "kind": "metric"
+    },
+    {
+     "name": {
+      "fr": "Largeur de bande moyenne, 2007?",
+      "en": "Mean band width, 2007?"
+     },
+     "unit": {
+      "fr": "sans unité",
+      "en": "dimensionless"
+     },
+     "meaning": {
+      "fr": null,
+      "en": null
+     },
+     "kind": "metric"
+    },
+    {
+     "name": {
+      "fr": "IC : demi-largeur moyenne?",
+      "en": "CI: mean half-width?"
+     },
+     "unit": {
+      "fr": "sans unité",
+      "en": "dimensionless"
+     },
+     "meaning": {
+      "fr": null,
+      "en": null
+     },
+     "kind": "metric"
+    },
+    {
+     "name": {
+      "fr": "CRPS, 2007?",
+      "en": "CRPS, 2007?"
+     },
+     "unit": {
+      "fr": "W/m²",
+      "en": "W/m²"
+     },
+     "meaning": {
+      "fr": null,
+      "en": null
+     },
+     "kind": "metric"
+    },
+    {
+     "name": {
+      "fr": "Moyenne du GHI de jour, 2007?",
+      "en": "Mean daytime GHI, 2007?"
+     },
+     "unit": null,
+     "meaning": {
+      "fr": "Moyenne du GHI de jour, 2007?",
+      "en": "Mean daytime GHI, 2007?"
+     },
+     "kind": "table-row"
+    },
+    {
+     "name": {
+      "fr": "Écart-type de la série σGHI, 2007?",
+      "en": "Standard deviation of the series σGHI, 2007?"
+     },
+     "unit": null,
+     "meaning": {
+      "fr": "Moyenne du GHI de jour, 2007?",
+      "en": "Mean daytime GHI, 2007?"
+     },
+     "kind": "table-row"
+    },
+    {
+     "name": {
+      "fr": "RMSE du modèle, calibration 2006?",
+      "en": "Model RMSE, calibration 2006?"
+     },
+     "unit": null,
+     "meaning": {
+      "fr": "Moyenne du GHI de jour, 2007?",
+      "en": "Mean daytime GHI, 2007?"
+     },
+     "kind": "table-row"
+    },
+    {
+     "name": {
+      "fr": "RMSE du modèle, test 2007",
+      "en": "Model RMSE, test 2007"
+     },
+     "unit": null,
+     "meaning": {
+      "fr": "Moyenne du GHI de jour, 2007?",
+      "en": "Mean daytime GHI, 2007?"
+     },
+     "kind": "table-row"
+    },
+    {
+     "name": {
+      "fr": "Demi-largeur de l’intervalle choisi?",
+      "en": "Half-width of the chosen interval?"
+     },
+     "unit": null,
+     "meaning": {
+      "fr": "Moyenne du GHI de jour, 2007?",
+      "en": "Mean daytime GHI, 2007?"
+     },
+     "kind": "table-row"
+    }
+   ],
+   "outputs_en_page": null,
+   "formulas": [
+    {
+     "text": "σ_GHI"
+    },
+    {
+     "text": "e = GHI − GHÎ"
+    },
+    {
+     "text": "RMSE^2 = écart-type^2 + biais^2"
+    },
+    {
+     "text": "σ_GHI^2 = 1/N∑t = 1N(GHI_t − GHI)^2"
+    },
+    {
+     "text": "RMSE^2 = 1/N∑t = 1N(GHI_t − GHÎ_t)^2"
+    },
+    {
+     "text": "RMSE^2 = σ_e^2 + e^2,e = 1/N∑t = 1Ne_t(biais)"
+    },
+    {
+     "text": "[GHÎ_t − z_(1 − α/2)RMSE;GHÎ_t + z_(1 − α/2)RMSE]"
+    },
+    {
+     "text": "GHI"
+    },
+    {
+     "text": "GHÎ"
+    },
+    {
+     "text": "e_t = GHI_t − GHÎ_t"
+    },
+    {
+     "text": "σ_e"
+    },
+    {
+     "text": "z_(1 − α/2)"
+    },
+    {
+     "text": "GHÎ±q"
+    },
+    {
+     "text": "GHÎ±k_ασ̂"
+    },
+    {
+     "text": "k_α"
+    },
+    {
+     "text": "σ̂ = RMSE"
+    },
+    {
+     "text": "q = k_αRMSE"
+    },
+    {
+     "text": "GHÎ±μGHI_csσ̂"
+    },
+    {
+     "text": "GHI_cs"
+    },
+    {
+     "text": "σ̂"
+    },
+    {
+     "text": "GHÎ±k_αGHI_csσ̂"
+    },
+    {
+     "text": "s_i = |GHI_i − GHÎ_i|,i = 1,…,n"
+    },
+    {
+     "text": "q = s_((k)),k = ⌈(n + 1)(1 − α)⌉"
+    },
+    {
+     "text": "[max(GHÎ_t − q,0);GHÎ_t + q]"
+    },
+    {
+     "text": "s_((k))"
+    },
+    {
+     "text": "s_i"
+    },
+    {
+     "text": "q_(g(t))"
+    },
+    {
+     "text": "GHI_cs,t"
+    },
+    {
+     "text": "q = k_αRMSE⟺k_α = q/RMSE"
+    },
+    {
+     "text": "[max(GHÎ_t − q_(g(t)),0);GHÎ_t + q_(g(t))]"
+    },
+    {
+     "text": "PICP = 100/N∑t = 1N1[L_t ≤ GHI_t ≤ U_t]"
+    },
+    {
+     "text": "W = 1/N∑t = 1N(U_t − L_t)"
+    },
+    {
+     "text": "L_t"
+    },
+    {
+     "text": "U_t"
+    },
+    {
+     "text": "W"
+    },
+    {
+     "text": "|2τ − 1|"
+    },
+    {
+     "text": "CRPS_t = ∫_( − ∞)^( + ∞)(F_t(x) − 1[x ≥ GHI_t])^2dx"
+    },
+    {
+     "text": "CRPS_t ≈ 2/M∑i = 1Mρ_τ_i(GHI_t − Q_τ_i,t),τ_i = i/100"
+    },
+    {
+     "text": "ρ_τ(u) = u(τ − 1[u<0])"
+    },
+    {
+     "text": "CRPS = 1/N∑t = 1NCRPS_t,nCRPS = CRPS/GHI"
+    },
+    {
+     "text": "F_t"
+    },
+    {
+     "text": "Q_τ,t"
+    },
+    {
+     "text": "ρ_τ"
+    },
+    {
+     "text": "|GHI_t − GHÎ_t|"
+    },
+    {
+     "text": "GHÎ_(t + 1) = GHI_t"
+    },
+    {
+     "text": "GHÎ_(t + 1) = GHI_t − GHI_cs,t + GHI_(cs,t + 1)"
+    },
+    {
+     "text": "y_t = GHI_t − GHI_cs,t − μ"
+    },
+    {
+     "text": "ŷ_(t + 1) = ∑j = 1pw_jy_(t − j + 1)"
+    },
+    {
+     "text": "GHÎ_(t + 1) = max(ŷ_(t + 1) + μ + GHI_(cs,t + 1),0)"
+    },
+    {
+     "text": "GHÎ_(t + 1)±z_(1 − α/2)ssqrt(𝐱_t^(⊤)(𝐗^(⊤)𝐗)^( − 1)𝐱_t)"
+    },
+    {
+     "text": "(𝐗^(⊤)𝐗)^( − 1)→(𝐇^(⊤)𝐇 + λ𝐈)^( − 1)𝐇^(⊤)𝐇(𝐇^(⊤)𝐇 + λ𝐈)^( − 1)"
+    },
+    {
+     "text": "ŷ"
+    },
+    {
+     "text": "x_t"
+    },
+    {
+     "text": "k_d"
+    },
+    {
+     "text": "ŷ±k_ασ̂"
+    },
+    {
+     "text": "σGHI2=1N∑t=1N(GHIt−GHI)2",
+     "note": true
+    },
+    {
+     "text": "RMSE2=1N∑t=1N(GHIt−GHÎt)2",
+     "note": true
+    },
+    {
+     "text": "RMSE2=σe2+e2,e=1N∑t=1Net (biais)",
+     "note": true
+    },
+    {
+     "text": "[GHÎt−z1−α/2RMSE;GHÎt+z1−α/2RMSE]",
+     "note": true
+    },
+    {
+     "text": "GHI (surmonté d’une barre) est la moyenne des mesures, GHÎ (avec un chapeau) la prévision, N leur nombre, et=GHIt−GHÎt le résidu, σe l’écart-type des résidus, ē leur moyenne (le biais), z1−α/2 le quantile de la loi normale centrée réduite (1,96 pour 95 %, voir la loi normale). Cette bande a la même largeur à toute heure : c’est l’hypothèse d’homoscédasticité. Elle ne contient 1 − α des mesures que si les résidus suivent une loi normale.",
+     "note": true
+    },
+    {
+     "text": "si=|GHIi−GHÎi|,i=1,…,n",
+     "note": true
+    },
+    {
+     "text": "q=s(k),k=⌈(n+1)(1−α)⌉",
+     "note": true
+    },
+    {
+     "text": "[max(GHÎt−q,0);GHÎt+q]",
+     "note": true
+    },
+    {
+     "text": "s(k) est la k-ième plus petite des n valeurs si, et ⌈·⌉ arrondit à l’entier supérieur ; le « + 1 » corrige la taille finie de l’échantillon. Si les erreurs de calibration et de test sont échangeables (même loi, ordre indifférent), la probabilité qu’une nouvelle mesure tombe dans l’intervalle est au moins 1 − α, sur l’ensemble des heures. Ce n’est pas une garantie heure par heure. Des données horaires ne sont ni indépendantes ni échangeables (une heure ressemble à la précédente, et 2007 n’est pas 2006) : cette garantie théorique ne s’applique donc plus d’elle-même. La couverture est mesurée sur 2007, sans en déduire de garantie : 95,2 % sur l’ensemble des heures, 88,5 % les jours variables. La première ligne ci-dessous relie q au multiplicateur kα de la table de correspondance. Versions par heure et par classe de ciel clair : le même calcul est fait dans chaque groupe g, avec les seules erreurs de ce groupe, et l’intervalle de l’heure t utilise la marge qg(t) de son groupe, où g(t) est l’heure de t ou la classe de GHIcs,t.",
+     "note": true
+    },
+    {
+     "text": "q=kαRMSE⟺kα=qRMSE",
+     "note": true
+    },
+    {
+     "text": "[max(GHÎt−qg(t),0);GHÎt+qg(t)]",
+     "note": true
+    },
+    {
+     "text": "La borne basse est ramenée à 0 car le rayonnement n’est jamais négatif ; cela ne change pas la couverture.",
+     "note": true
+    },
+    {
+     "text": "PICP=100N∑t=1N1[Lt≤GHIt≤Ut]",
+     "note": true
+    },
+    {
+     "text": "W=1N∑t=1N(Ut−Lt)",
+     "note": true
+    },
+    {
+     "text": "Lt et Ut sont les bornes basse et haute, N le nombre d’heures de jour, 1[·] vaut 1 si la condition est vraie et 0 sinon, W est la largeur de bande moyenne.",
+     "note": true
+    },
+    {
+     "text": "CRPSt=∫−∞+∞(Ft(x)−1[x≥GHIt])2dx",
+     "note": true
+    },
+    {
+     "text": "CRPSt≈2M∑i=1Mρτi(GHIt−Qτi,t),τi=i100",
+     "note": true
+    },
+    {
+     "text": "ρτ(u)=u(τ−1[u<0])",
+     "note": true
+    },
+    {
+     "text": "CRPS=1N∑t=1NCRPSt,nCRPS=CRPSGHI",
+     "note": true
+    },
+    {
+     "text": "Ft est la fonction de répartition prédite pour l’heure t (la probabilité prédite que la mesure soit inférieure à x), Qτ,t son centile τ, M = 99 le nombre de centiles, et ρτ la « perte pinball », qui pèse davantage une mesure tombée loin dans une queue jugée peu probable. La deuxième ligne approche la première à partir des centiles ; l’écart disparaît quand leur nombre augmente. Si tous les centiles valent la prévision, la deuxième ligne donne |GHIt−GHÎt| : en moyenne, la MAE. GHI est le GHI moyen des N heures de jour.",
+     "note": true
+    },
+    {
+     "text": "yt=GHIt−GHIcs,t−μ",
+     "note": true
+    },
+    {
+     "text": "ŷt+1=∑j=1pwjyt−j+1",
+     "note": true
+    },
+    {
+     "text": "GHÎt+1=max(ŷt+1+μ+GHIcs,t+1,0)",
+     "note": true
+    },
+    {
+     "text": "GHÎt+1±z1−α/2s𝐱t⊤(𝐗⊤𝐗)−1𝐱t",
+     "note": true
+    },
+    {
+     "text": "(𝐗⊤𝐗)−1→(𝐇⊤𝐇+λ𝐈)−1𝐇⊤𝐇(𝐇⊤𝐇+λ𝐈)−1",
+     "note": true
+    },
+    {
+     "text": "ŷ est la prévision de y, μ la moyenne de GHI − GHIcs sur l’apprentissage, w les coefficients, p = 2 l’ordre, xt le vecteur des p dernières valeurs de y, X la matrice de tous ces vecteurs sur l’apprentissage, s l’écart-type des résidus d’apprentissage. Pour l’ELM (seconde ligne), x est remplacé par h, la sortie de la couche cachée, et (XTX)−1 par sa forme régularisée, où H rassemble les sorties cachées de l’apprentissage, I est la matrice identité et λ = 10−3. Ces formules supposent des résidus indépendants : l’IC réel est un peu plus large, mais reste de l’ordre du W/m².",
+     "note": true
+    }
+   ],
+   "definitions": [
+    {
+     "term": "Intervalle de confiance (IC)",
+     "meaning": {
+      "fr": "Il répond à « où est la moyenne des mesures que l’on obtiendrait dans cette situation ? ». Il ne contient que l’incertitude sur les paramètres du modèle, estimés sur un nombre fini de données. Il se resserre quand on ajoute des données : avec 8 ans d’apprentissage, il fait ici ±0,5 W/m² pour l’AR et ±1,9 W/m² pour l’ELM. La persistance n’a aucun paramètre estimé : son IC se réduit à la ligne.",
+      "en": "It answers “where is the mean of the measurements we would get in this situation?”. It only holds the uncertainty on the model parameters, estimated from a finite amount of data. It shrinks as data are added: with 8 years of training, it is ±0.5 W/m² here for AR and ±1.9 W/m² for ELM. Persistence has no estimated parameter: its CI reduces to the line."
+     }
+    },
+    {
+     "term": "Intervalle de prévision (IP)",
+     "meaning": {
+      "fr": "Il répond à « où tombera la prochaine mesure ? ». Il ajoute à l’IC la dispersion propre des mesures autour de leur moyenne : un nuage qui passe ou non. Cette part ne disparaît pas avec plus de données. C’est l’intervalle utile pour gérer un réseau ou une batterie.",
+      "en": "It answers “where will the next measurement fall?”. It adds to the CI the spread of the measurements around their mean: a cloud passes or not. This part does not vanish with more data. It is the interval that matters to run a grid or a battery."
+     }
+    },
+    {
+     "term": "Niveau nominal 1 − α",
+     "meaning": {
+      "fr": "La part des mesures que l’intervalle de prévision vise à contenir, par exemple 95 % (α = 0,05, la part laissée dehors).",
+      "en": "The share of measurements the prediction interval aims to contain, for example 95% (α = 0.05, the share left outside)."
+     }
+    },
+    {
+     "term": "Écart-type de la série, σGHI",
+     "meaning": {
+      "fr": "La dispersion des mesures autour de leur moyenne. De jour en 2007 : moyenne 372 W/m², σGHI = 282 W/m². Il mélange la nuit qui tombe, les saisons et les nuages : tout ce qu’un modèle sait déjà prévoir.",
+      "en": "The spread of the measurements around their mean. Daytime 2007: mean 372 W/m², σGHI = 282 W/m². It mixes nightfall, seasons and clouds: everything a model already knows how to forecast."
+     }
+    },
+    {
+     "term": "Résidu e",
+     "meaning": {
+      "fr": "La mesure moins la prévision : e=GHI−GHÎ, en W/m².",
+      "en": "Measurement minus forecast: e=GHI−GHÎ, in W/m²."
+     }
+    },
+    {
+     "term": "RMSE",
+     "meaning": {
+      "fr": "Root mean square error : la racine de la moyenne des résidus au carré. C’est la dispersion des mesures autour de la prévision. Si les résidus sont en moyenne nuls (pas de biais), la RMSE est exactement leur écart-type ; sinon, RMSE2=écart-type2+biais2. Pour l’AR, sur l’année de calibration 2006 : biais -6,6 W/m², écart-type des résidus 77,4 W/m², RMSE 77,7 W/m². Le biais est faible, les deux se confondent presque.",
+      "en": "Root mean square error: the square root of the mean squared residual. It is the spread of the measurements around the forecast. If the residuals average zero (no bias), the RMSE is exactly their standard deviation; otherwise, RMSE2=standard deviation2+bias2. For AR, on the 2006 calibration year: bias -6.6 W/m², residual standard deviation 77.4 W/m², RMSE 77.7 W/m². The bias is small, so the two almost coincide."
+     }
+    },
+    {
+     "term": "PICP",
+     "meaning": {
+      "fr": "Prediction interval coverage probability : la part des mesures tombées dans leur intervalle, en %. On la compare au niveau nominal : à 95 %, une PICP de 95 % est fiable, de 90 % trop optimiste, de 99 % trop prudente.",
+      "en": "Prediction interval coverage probability: the share of measurements that fell inside their interval, in %. It is compared with the nominal level: at 95%, a PICP of 95% is reliable, 90% too optimistic, 99% too cautious."
+     }
+    },
+    {
+     "term": "Largeur de bande moyenne",
+     "meaning": {
+      "fr": "La largeur de bande est l’écart entre la borne haute et la borne basse de l’intervalle de prévision, en W/m². On en donne la moyenne sur les heures de jour ; entre parenthèses, la même rapportée au GHI moyen de jour (372 W/m²). Appelée MIL (mean interval length) dans nos articles.",
+      "en": "The band width is the distance between the upper and lower bounds of the prediction interval, in W/m². Its mean over daytime hours is given; in brackets, the same relative to the mean daytime GHI (372 W/m²). Called MIL (mean interval length) in our papers."
+     }
+    },
+    {
+     "term": "Persistance",
+     "meaning": {
+      "fr": "La prochaine heure sera comme la dernière : GHÎt+1=GHIt. Simple, mais elle ignore que le Soleil monte ou descend.",
+      "en": "The next hour will be like the last one: GHÎt+1=GHIt. Simple, but it ignores that the Sun rises or sets."
+     }
+    },
+    {
+     "term": "Persistance intelligente",
+     "meaning": {
+      "fr": "On garde l’écart au ciel clair : GHÎt+1=GHIt−GHIcs,t+GHIcs,t+1, où GHIcs est le rayonnement par ciel clair (sans nuage) calculé par le modèle Solis.",
+      "en": "The gap to the clear sky is kept: GHÎt+1=GHIt−GHIcs,t+GHIcs,t+1, where GHIcs is the clear-sky (cloudless) irradiance computed by the Solis model."
+     }
+    },
+    {
+     "term": "AR",
+     "meaning": {
+      "fr": "Autorégression : une somme pondérée des 2 dernières valeurs de l’indice de ciel clair additif (GHI − GHIcs, centré), coefficients estimés par moindres carrés.",
+      "en": "Autoregression: a weighted sum of the last 2 values of the additive clear-sky index (GHI − GHIcs, centred), coefficients estimated by least squares."
+     }
+    },
+    {
+     "term": "ELM",
+     "meaning": {
+      "fr": "Extreme learning machine : un petit réseau de neurones (20 neurones cachés tirés au hasard puis fixés, seuls les poids de sortie sont calculés), sur les mêmes entrées que l’AR. Il est expliqué sur la page sur les modèles frugaux. Son IC est calculé à neurones cachés fixés.",
+      "en": "Extreme learning machine: a small neural network (20 hidden neurons drawn at random then fixed, only the output weights are computed), on the same inputs as AR. It is explained on the frugal forecasting page. Its CI is computed with the hidden neurons held fixed."
+     }
+    }
+   ],
+   "assumptions": {
+    "fr": [],
+    "en": []
+   },
+   "source": {
+    "dois": [
+     "10.1007/b106715",
+     "10.1016/j.solener.2025.113490",
+     "10.1063/5.0128131",
+     "10.5281/zenodo.23620101"
+    ],
+    "repositories": [],
+    "related_pages": []
+   },
+   "how_to_explore": {
+    "fr": "Régler les paramètres sur un préréglage (valeurs ci-dessus), lire la phrase affichée par la page puis les sorties ; modifier ensuite un seul paramètre à la fois entre son minimum et son maximum.",
+    "en": "Set the parameters to a preset (values above), read the sentence the page shows then the outputs; then change one parameter at a time between its minimum and maximum."
+   },
+   "exploration": [],
+   "concepts": [
+    "persistence",
+    "smart-persistence",
+    "elm",
+    "rmse",
+    "confidence-interval",
+    "prediction-interval"
+   ],
+   "extraction": {
+    "source_hash": "7eaa6de8b866ccc8",
+    "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
+    "roots": [
+     "#pf-tool"
+    ],
+    "page_errors": [],
+    "fr_en_preset_consistency": null
+   }
+  },
+  {
+   "id": "pv-forecasting-modes",
+   "schema": "https://www.cyrilvoyant.com/tools-spec.json#1.0",
+   "kind": null,
+   "domain": null,
+   "interface_language": null,
+   "name": {
+    "fr": "Prévoir la puissance photovoltaïque : directement, ou en passant par l’éclairement ?",
+    "en": "Forecast photovoltaic power: directly, or through irradiance?"
+   },
+   "url": {
+    "fr": "https://www.cyrilvoyant.com/fr/outils/modes-prevision-pv/",
+    "en": "https://www.cyrilvoyant.com/tools/pv-forecasting-modes/"
+   },
+   "page_title": {
+    "fr": "Prévoir la puissance photovoltaïque : directement, ou en passant par l’éclairement ?",
+    "en": "Forecast photovoltaic power: directly, or through irradiance?"
+   },
+   "computes": {
+    "fr": "Pour prévoir la production d’une centrale photovoltaïque (PV), on peut prévoir directement sa puissance, ou prévoir d’abord l’éclairement solaire, puis le convertir en puissance. Cette page compare les trois voies sur 15 mois de mesures ouvertes (la première moitié pour l’apprentissage, la seconde pour le test), avec…",
+    "en": "To forecast the output of a photovoltaic (PV) plant, one can forecast its power directly, or first forecast the solar irradiance and then convert it into power. This page compares the three routes over 15 months of open measurements (the first half for training, the second for testing), with the same forecasting…"
+   },
+   "summary": {
+    "fr": "Pour prévoir la production d’une centrale photovoltaïque (PV), on peut prévoir directement sa puissance, ou prévoir d’abord l’éclairement solaire, puis le convertir en puissance. Cette page compare les trois voies sur 15 mois de mesures ouvertes (la première moitié pour l’apprentissage, la seconde pour le test), avec…",
+    "en": "To forecast the output of a photovoltaic (PV) plant, one can forecast its power directly, or first forecast the solar irradiance and then convert it into power. This page compares the three routes over 15 months of open measurements (the first half for training, the second for testing), with the same forecasting…"
+   },
+   "parameters": [
+    {
+     "id": "pvm-m",
+     "type": "enum",
+     "control": "select",
+     "default": "ELM",
+     "options": [
+      {
+       "value": "P",
+       "label": "persistance"
+      },
+      {
+       "value": "BLEND",
+       "label": "BLEND"
+      },
+      {
+       "value": "AR",
+       "label": "autorégression AR"
+      },
+      {
+       "value": "ELM",
+       "label": "ELM"
+      }
+     ],
+     "label": {
+      "fr": "Modèle de prévision",
+      "en": "Forecasting model"
+     },
+     "meaning": {
+      "fr": null,
+      "en": null
+     },
+     "unit": null
+    },
+    {
+     "id": "pvm-h",
+     "type": "integer",
+     "control": "range",
+     "min": 0,
+     "max": 5,
+     "step": 1,
+     "default": 1,
+     "label": {
+      "fr": "Horizon",
+      "en": "Horizon"
+     },
+     "meaning": {
+      "fr": "le délai entre la dernière mesure connue et l’instant prévu, ici de 30 minutes à 6 heures, au pas de 30 minutes.",
+      "en": "the time between the last known measurement and the forecast time, here from 30 minutes to 6 hours, in 30-minute steps."
+     },
+     "unit": {
+      "fr": "h",
+      "en": "h"
+     },
+     "unit_source": "display"
+    },
+    {
+     "id": "pvm-k",
+     "type": "enum",
+     "control": "select",
+     "default": "1",
+     "options": [
+      {
+       "value": "0.5",
+       "label": "divisée par 2 (3,72 kWc)"
+      },
+      {
+       "value": "1",
+       "label": "telle quelle (7,44 kWc)"
+      },
+      {
+       "value": "2",
+       "label": "doublée (14,88 kWc)"
+      }
+     ],
+     "label": {
+      "fr": "Puissance crête installée",
+      "en": "Installed peak power"
+     },
+     "meaning": {
+      "fr": null,
+      "en": null
+     },
+     "unit": null
+    },
+    {
+     "id": "pvm-n",
+     "type": "boolean",
+     "control": "checkbox",
+     "default": false,
+     "label": {
+      "fr": "PV direct sur P / Pcagit seulement si la puissance crête change",
+      "en": "PV direct on P / Pcacts only when the peak power changes"
+     },
+     "meaning": {
+      "fr": "photovoltaïque ; PV désigne aussi la puissance électrique (courant alternatif) produite par la centrale, en kilowatts (kW).",
+      "en": "photovoltaic; PV also denotes the electric (AC) power produced by the plant, in kilowatts (kW)."
+     },
+     "unit": null
+    },
+    {
+     "id": "pvm-d",
+     "type": "integer",
+     "control": "range",
+     "min": 0,
+     "max": 226,
+     "step": 1,
+     "default": 89,
+     "label": {
+      "fr": "Premier jour affiché",
+      "en": "First day shown"
+     },
+     "meaning": {
+      "fr": null,
+      "en": null
+     },
+     "unit": {
+      "fr": "sans unité",
+      "en": "dimensionless"
+     },
+     "unit_source": "no unit shown by the page"
+    },
+    {
+     "id": "pvm-cs",
+     "type": "enum",
+     "control": "select",
+     "default": "0",
+     "options": [
+      {
+       "value": "0.6",
+       "label": "60 % de Pc (4,46 kW)"
+      },
+      {
+       "value": "0.3",
+       "label": "30 % de Pc (2,23 kW)"
+      },
+      {
+       "value": "0",
+       "label": "0 (arrêt)"
+      }
+     ],
+     "label": {
+      "fr": "Limite imposée",
+      "en": "Imposed limit"
+     },
+     "meaning": {
+      "fr": null,
+      "en": null
+     },
+     "unit": null
+    },
+    {
+     "id": "pvm-ca",
+     "type": "enum",
+     "control": "select",
+     "default": "d1",
+     "options": [
+      {
+       "value": "d1",
+       "label": "la veille"
+      },
+      {
+       "value": "h2",
+       "label": "2 h avant"
+      },
+      {
+       "value": "none",
+       "label": "non annoncée"
+      }
+     ],
+     "label": {
+      "fr": "Annonce",
+      "en": "Announcement"
+     },
+     "meaning": {
+      "fr": null,
+      "en": null
+     },
+     "unit": null
+    },
+    {
+     "id": "pvm-cv",
+     "type": "enum",
+     "control": "select",
+     "default": "raw",
+     "options": [
+      {
+       "value": "raw",
+       "label": "en kW mesurés"
+      },
+      {
+       "value": "divA",
+       "label": "divisé par la puissance disponible annoncée"
+      },
+      {
+       "value": "mask",
+       "label": "divisé par la puissance disponible, heures à 0 masquées"
+      }
+     ],
+     "label": {
+      "fr": "PV direct",
+      "en": "PV direct"
+     },
+     "meaning": {
+      "fr": "photovoltaïque ; PV désigne aussi la puissance électrique (courant alternatif) produite par la centrale, en kilowatts (kW).",
+      "en": "photovoltaic; PV also denotes the electric (AC) power produced by the plant, in kilowatts (kW)."
+     },
+     "unit": null
+    },
+    {
+     "id": "pvm-ce",
+     "type": "integer",
+     "control": "range",
+     "min": 0,
+     "max": 7,
+     "step": 1,
+     "default": 0,
+     "label": {
+      "fr": "Événement",
+      "en": "Event"
+     },
+     "meaning": {
+      "fr": null,
+      "en": null
+     },
+     "unit": {
+      "fr": "sans unité",
+      "en": "dimensionless"
+     },
+     "unit_source": "no unit shown by the page"
+    }
+   ],
+   "presets": [],
+   "actions": [],
+   "variants": [],
+   "outputs": [
+    {
+     "name": {
+      "fr": "La voie la plus juste ici",
+      "en": "The most accurate route here"
+     },
+     "unit": {
+      "fr": "sans unité",
+      "en": "dimensionless"
+     },
+     "meaning": {
+      "fr": null,
+      "en": null
+     },
+     "kind": "reading"
+    },
+    {
+     "name": {
+      "fr": "PV direct",
+      "en": "PV direct"
+     },
+     "unit": null,
+     "meaning": {
+      "fr": "Voie | RMSE (kW) | nRMSE | NICE¹ | NICE² | NICE³ | NICEΣ | PV direct",
+      "en": "Route | RMSE (kW) | nRMSE | NICE¹ | NICE² | NICE³ | NICEΣ | PV direct"
+     },
+     "kind": "table-row"
+    },
+    {
+     "name": {
+      "fr": "GTI puis PV",
+      "en": "GTI then PV"
+     },
+     "unit": null,
+     "meaning": {
+      "fr": "Voie | RMSE (kW) | nRMSE | NICE¹ | NICE² | NICE³ | NICEΣ | PV direct",
+      "en": "Route | RMSE (kW) | nRMSE | NICE¹ | NICE² | NICE³ | NICEΣ | PV direct"
+     },
+     "kind": "table-row"
+    },
+    {
+     "name": {
+      "fr": "GHI puis GTI puis PV",
+      "en": "GHI then GTI then PV"
+     },
+     "unit": null,
+     "meaning": {
+      "fr": "Voie | RMSE (kW) | nRMSE | NICE¹ | NICE² | NICE³ | NICEΣ | PV direct",
+      "en": "Route | RMSE (kW) | nRMSE | NICE¹ | NICE² | NICE³ | NICEΣ | PV direct"
+     },
+     "kind": "table-row"
+    }
+   ],
+   "outputs_en_page": null,
+   "formulas": [
+    {
+     "text": "GTI = DNIcosθ + DHI(1 + cosβ)/2 + ρGHI(1 − cosβ)/2"
+    },
+    {
+     "text": "PV = PRP_cGTI/(1000W/m^2)"
+    },
+    {
+     "text": "e = PV̂ − PV"
+    },
+    {
+     "text": "PV̂ = C(T(GHÎ))"
+    },
+    {
+     "text": "e = C(T(GHÎ)) − C(T(GHI))⏟e_1prévision + C(T(GHI)) − C(GTI)⏟e_2transposition + C(GTI) − PV⏟e_3conversion"
+    },
+    {
+     "text": "⟨e^2⟩ = ⟨e_1^2⟩ + ⟨e_2^2⟩ + ⟨e_3^2⟩ + 2(⟨e_1e_2⟩ + ⟨e_1e_3⟩ + ⟨e_2e_3⟩)"
+    },
+    {
+     "text": "RMSE ≈ sqrt(RMSE_1^2 + RMSE_2^2 + RMSE_3^2)"
+    },
+    {
+     "text": "C(GTI) = PRP_cGTI/1000⟹e_1 = PRP_c/1000(T(GHÎ) − T(GHI))"
+    },
+    {
+     "text": "s_i = (⟨e_i^2⟩)/(∑_j⟨e_j^2⟩),ρ = (⟨e^2⟩ − ∑_j⟨e_j^2⟩)/(⟨e^2⟩)"
+    },
+    {
+     "text": "nRMSE = (sqrt(⟨e^2⟩))/(⟨PV⟩),NICE^k = ((⟨|e|^k⟩)^(1/k))/((⟨|e_pers|^k⟩)^(1/k)),k = 1,2,3"
+    },
+    {
+     "text": "x = PV/P_c,PV̂ = P_cx̂"
+    },
+    {
+     "text": "A = {sP_cpendant l'écrêtementP_csinon,PV̂←min(PV̂,A),x = PV/AP_c"
+    },
+    {
+     "text": "θ est l’angle entre le soleil et la normale aux panneaux, β l’inclinaison des panneaux, ρ = 0,2 la part de lumière renvoyée par le sol (albédo). DNI est compté perpendiculairement aux rayons du soleil.",
+     "note": true
+    },
+    {
+     "text": "PV en kW, Pc en kWc, GTI en W/m². Calculs avec la bibliothèque pvlib.",
+     "note": true
+    }
+   ],
+   "definitions": [
+    {
+     "term": "PV",
+     "meaning": {
+      "fr": "photovoltaïque ; PV désigne aussi la puissance électrique (courant alternatif) produite par la centrale, en kilowatts (kW).",
+      "en": "photovoltaic; PV also denotes the electric (AC) power produced by the plant, in kilowatts (kW)."
+     }
+    },
+    {
+     "term": "Pc",
+     "meaning": {
+      "fr": "la puissance crête : la puissance des panneaux sous 1000 W/m² et à 25 °C, 7,44 kWc ici. Le scénario de capacité la divise par 2 ou la double.",
+      "en": "the peak power: the power of the panels under 1000 W/m² and at 25 °C, 7.44 kWp here. The capacity scenario halves or doubles it."
+     }
+    },
+    {
+     "term": "GHI",
+     "meaning": {
+      "fr": "Global Horizontal Irradiance : l’éclairement solaire reçu par une surface horizontale, en watts par mètre carré (W/m²). C’est la grandeur la plus souvent mesurée et prévue.",
+      "en": "Global Horizontal Irradiance: the solar irradiance received by a horizontal surface, in watts per square metre (W/m²). It is the quantity most often measured and forecast."
+     }
+    },
+    {
+     "term": "GTI",
+     "meaning": {
+      "fr": "Global Tilted Irradiance : l’éclairement reçu dans le plan incliné des panneaux, en W/m². C’est lui que les panneaux convertissent en électricité.",
+      "en": "Global Tilted Irradiance: the irradiance received in the tilted plane of the panels, in W/m². This is what the panels convert into electricity."
+     }
+    },
+    {
+     "term": "Transposition T",
+     "meaning": {
+      "fr": "le calcul qui passe du GHI au GTI (modèles d’Erbs et de Liu et Jordan, voir plus haut).",
+      "en": "the calculation from GHI to GTI (models of Erbs and of Liu and Jordan, see above)."
+     }
+    },
+    {
+     "term": "Conversion C",
+     "meaning": {
+      "fr": "le calcul qui passe du GTI à la puissance : PV = PR × Pc × GTI / 1000, avec PR = 0,92.",
+      "en": "the calculation from GTI to power: PV = PR × Pc × GTI / 1000, with PR = 0.92."
+     }
+    },
+    {
+     "term": "Horizon",
+     "meaning": {
+      "fr": "le délai entre la dernière mesure connue et l’instant prévu, ici de 30 minutes à 6 heures, au pas de 30 minutes.",
+      "en": "the time between the last known measurement and the forecast time, here from 30 minutes to 6 hours, in 30-minute steps."
+     }
+    },
+    {
+     "term": "Apprentissage, test",
+     "meaning": {
+      "fr": "les modèles sont ajustés une seule fois sur la première moitié des données (juin 2018 à mi-janvier 2019), puis évalués, sans réajustement, sur la seconde (mi-janvier à août 2019).",
+      "en": "the models are fitted once on the first half of the data (June 2018 to mid-January 2019), then evaluated, without refitting, on the second (mid-January to August 2019)."
+     }
+    },
+    {
+     "term": "Persistance",
+     "meaning": {
+      "fr": "recopier la dernière valeur connue. C’est la référence minimale.",
+      "en": "copy the last known value. It is the minimal reference."
+     }
+    },
+    {
+     "term": "BLEND",
+     "meaning": {
+      "fr": "un mélange de la persistance et de la valeur de la veille à la même heure, avec un poids par demi-heure de la journée.",
+      "en": "a mix of persistence and of the value of the day before at the same time, with one weight per half hour of the day."
+     }
+    },
+    {
+     "term": "AR",
+     "meaning": {
+      "fr": "autorégression : une somme pondérée des 48 dernières valeurs (24 h) et de l’heure et du jour de l’année (sous forme de sinus et cosinus), avec des poids calculés par moindres carrés.",
+      "en": "autoregression: a weighted sum of the last 48 values (24 h) and of the hour and day of the year (as sines and cosines), with weights computed by least squares."
+     }
+    },
+    {
+     "term": "ELM",
+     "meaning": {
+      "fr": "Extreme Learning Machine : un réseau de neurones à une couche cachée de 500 neurones tirés au hasard, dont seuls les poids de sortie sont calculés. 100 tirages sont essayés ; le meilleur est choisi par validation croisée dans le temps. Mêmes entrées que l’AR.",
+      "en": "Extreme Learning Machine: a neural network with one hidden layer of 500 neurons drawn at random, of which only the output weights are computed. 100 draws are tried; the best is chosen by cross-validation in time. Same inputs as AR."
+     }
+    },
+    {
+     "term": "RMSE, nRMSE",
+     "meaning": {
+      "fr": "la RMSE est la racine de l’erreur quadratique moyenne, en kW ; elle pèse plus sur les grosses erreurs. La nRMSE la divise par la production moyenne mesurée.",
+      "en": "RMSE is the root mean squared error, in kW; it weighs large errors more. nRMSE divides it by the mean measured output."
+     }
+    },
+    {
+     "term": "NICE¹, NICE², NICE³, NICEΣ",
+     "meaning": {
+      "fr": "l’erreur divisée par celle de la persistance de la puissance PV, aux mêmes instants : NICE¹ pour l’erreur absolue moyenne, NICE² pour la RMSE, NICE³ pour l’erreur cubique, NICEΣ pour leur moyenne. Sous 1, la prévision fait mieux que la persistance ; au-dessus, la page affiche « > 1 ».",
+      "en": "the error divided by that of persistence of the PV power, at the same times: NICE¹ for the mean absolute error, NICE² for RMSE, NICE³ for the cubic error, NICEΣ for their mean. Below 1, the forecast beats persistence; above, the page shows \"> 1\"."
+     }
+    },
+    {
+     "term": "Écrêtement",
+     "meaning": {
+      "fr": "une limite de puissance imposée à la centrale (par le gestionnaire du réseau, par exemple), ici de 10 h à 14 h UTC (temps universel coordonné, 12 h à 16 h à l’heure d’été danoise).",
+      "en": "a power limit imposed on the plant (by the grid operator, for example), here from 10:00 to 14:00 UTC (Coordinated Universal Time, 12:00 to 16:00 Danish summer time)."
+     }
+    },
+    {
+     "term": "Puissance disponible",
+     "meaning": {
+      "fr": "la puissance que la centrale a le droit de produire : Pc en temps normal, la limite annoncée pendant l’écrêtement.",
+      "en": "the power the plant is allowed to produce: Pc normally, the announced limit during curtailment."
+     }
+    }
+   ],
+   "assumptions": {
+    "fr": [
+     "Le gestionnaire du réseau peut imposer une limite de puissance, annoncée à l’avance ou non. Choisissez la limite, l’annonce, et la façon dont PV direct traite ses entrées. La bande colorée marque l’écrêtement ; le trait plein marque son début."
+    ],
+    "en": [
+     "The grid operator may impose a power limit, announced in advance or not. Choose the limit, the announcement, and how PV direct treats its inputs. The coloured band marks the curtailment; the solid line marks its start."
+    ]
+   },
+   "source": {
+    "dois": [
+     "10.1016/0038-092X(63)90006-9",
+     "10.1016/0038-092X(82)90302-4",
+     "10.1016/j.dib.2022.108046",
+     "10.1016/j.seta.2025.104588",
+     "10.11583/DTU.17040767",
+     "10.21105/joss.00884",
+     "10.5281/zenodo.21487267",
+     "10.5281/zenodo.23620101"
+    ],
+    "repositories": [
+     "https://github.com/cyrilvoyant/PV_ELM_pred"
+    ],
+    "related_pages": []
+   },
+   "how_to_explore": {
+    "fr": "Régler les paramètres sur un préréglage (valeurs ci-dessus), lire la phrase affichée par la page puis les sorties ; modifier ensuite un seul paramètre à la fois entre son minimum et son maximum.",
+    "en": "Set the parameters to a preset (values above), read the sentence the page shows then the outputs; then change one parameter at a time between its minimum and maximum."
+   },
+   "exploration": [],
+   "concepts": [
+    "persistence",
+    "blend",
+    "elm",
+    "rmse",
+    "nrmse",
+    "nice"
+   ],
+   "extraction": {
+    "source_hash": "a202d01073c0167d",
+    "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
+    "roots": [
+     "#pvm",
+     "#pvm-cut"
+    ],
+    "page_errors": [],
+    "fr_en_preset_consistency": null
+   }
+  },
+  {
+   "id": "jarque-bera",
+   "schema": "https://www.cyrilvoyant.com/tools-spec.json#1.0",
+   "kind": null,
+   "domain": null,
+   "interface_language": null,
+   "name": {
+    "fr": "Test de normalité en ligne : Jarque-Bera, Shapiro-Wilk, Kolmogorov",
+    "en": "Normality test online: Jarque-Bera, Shapiro-Wilk, Kolmogorov"
+   },
+   "url": {
+    "fr": "https://www.cyrilvoyant.com/fr/outils/test-jarque-bera/",
+    "en": "https://www.cyrilvoyant.com/tools/jarque-bera-test/"
+   },
+   "page_title": {
+    "fr": "Test de normalité en ligne : Jarque-Bera, Shapiro-Wilk, Kolmogorov",
+    "en": "Normality test online: Jarque-Bera, Shapiro-Wilk, Kolmogorov"
+   },
+   "computes": {
+    "fr": "Loi normale ou pas ? Avec 100 valeurs tirées d’une loi normale, les trois tests concluent « compatible » (Jarque-Bera p = 0,30, Shapiro-Wilk p = 0,24) ; un seul point ajouté à 4,2 écarts-types de la moyenne suffit à faire rejeter la normalité.",
+    "en": "Normal or not? With 100 values drawn from a normal law, all three tests say “compatible” (Jarque-Bera p = 0.30, Shapiro-Wilk p = 0.24); a single point added 4.2 standard deviations from the mean is enough to reject normality."
+   },
+   "summary": {
+    "fr": "Loi normale ou pas ? Avec 100 valeurs tirées d’une loi normale, les trois tests concluent « compatible » (Jarque-Bera p = 0,30, Shapiro-Wilk p = 0,24) ; un seul point ajouté à 4,2 écarts-types de la moyenne suffit à faire rejeter la normalité.",
+    "en": "Normal or not? With 100 values drawn from a normal law, all three tests say “compatible” (Jarque-Bera p = 0.30, Shapiro-Wilk p = 0.24); a single point added 4.2 standard deviations from the mean is enough to reject normality."
+   },
+   "parameters": [
+    {
+     "id": "bl-1",
+     "type": "integer",
+     "control": "range",
+     "min": 10,
+     "max": 1000,
+     "step": 1,
+     "default": 100,
+     "label": {
+      "fr": "Nombre de points n",
+      "en": "Number of points n"
+     },
+     "meaning": {
+      "fr": null,
+      "en": null
+     },
+     "unit": {
+      "fr": "sans unité",
+      "en": "dimensionless"
+     },
+     "unit_source": "no unit shown by the page"
+    },
+    {
+     "id": "bl-2",
+     "type": "number",
+     "control": "range",
+     "min": 0,
+     "max": 1,
+     "step": 0.05,
+     "default": 0,
+     "label": {
+      "fr": "Écart à la loi normale (0 = aucun)",
+      "en": "Departure from normality (0 = none)"
+     },
+     "meaning": {
+      "fr": null,
+      "en": null
+     },
+     "unit": {
+      "fr": "sans unité",
+      "en": "dimensionless"
+     },
+     "unit_source": "no unit shown by the page"
+    },
+    {
+     "id": "bl-3",
+     "type": "number",
+     "control": "range",
+     "min": -8,
+     "max": 8,
+     "step": 0.1,
+     "default": 4,
+     "label": {
+      "fr": "Point extrême, en écarts-types de la moyenne",
+      "en": "Extreme point, in standard deviations from the mean"
+     },
+     "meaning": {
+      "fr": null,
+      "en": null
+     },
+     "unit": {
+      "fr": "sans unité",
+      "en": "dimensionless"
+     },
+     "unit_source": "no unit shown by the page"
+    },
+    {
+     "id": "bl-4",
+     "type": "boolean",
+     "control": "checkbox",
+     "default": false,
+     "label": {
+      "fr": "Ajouter le point extrême (orange)",
+      "en": "Add the extreme point (orange)"
+     },
+     "meaning": {
+      "fr": null,
+      "en": null
+     },
+     "unit": null
+    }
+   ],
+   "presets": [
+    {
+     "id": "normal",
+     "name": {
+      "fr": "Normale",
+      "en": "Normal"
+     },
+     "values": {},
+     "changes_vs_default": {}
+    },
+    {
+     "id": "skewed-right-tail",
+     "name": {
+      "fr": "Asymétrique (queue à droite)",
+      "en": "Skewed (right tail)"
+     },
+     "values": {},
+     "changes_vs_default": {}
+    },
+    {
+     "id": "heavy-tails",
+     "name": {
+      "fr": "Queues épaisses",
+      "en": "Heavy tails"
+     },
+     "values": {},
+     "changes_vs_default": {}
+    },
+    {
+     "id": "flat-uniform",
+     "name": {
+      "fr": "Plate (uniforme)",
+      "en": "Flat (uniform)"
+     },
+     "values": {},
+     "changes_vs_default": {}
+    },
+    {
+     "id": "two-humps",
+     "name": {
+      "fr": "Deux bosses",
+      "en": "Two humps"
+     },
+     "values": {},
+     "changes_vs_default": {}
+    }
+   ],
+   "actions": [
+    {
+     "name": {
+      "fr": "Nouveau tirage",
+      "en": "New draw"
+     }
+    },
+    {
+     "name": {
+      "fr": "Retirer les points cliqués",
+      "en": "Remove clicked points"
+     }
+    }
+   ],
+   "variants": [],
+   "outputs": [
+    {
+     "name": {
+      "fr": "n",
+      "en": "n"
+     },
+     "unit": {
+      "fr": "sans unité",
+      "en": "dimensionless"
+     },
+     "meaning": {
+      "fr": null,
+      "en": null
+     },
+     "kind": "metric"
+    },
+    {
+     "name": {
+      "fr": "Moyenne x̄",
+      "en": "Mean x̄"
+     },
+     "unit": {
+      "fr": "sans unité",
+      "en": "dimensionless"
+     },
+     "meaning": {
+      "fr": null,
+      "en": null
+     },
+     "kind": "metric"
+    },
+    {
+     "name": {
+      "fr": "Écart-type s",
+      "en": "Standard deviation s"
+     },
+     "unit": {
+      "fr": "sans unité",
+      "en": "dimensionless"
+     },
+     "meaning": {
+      "fr": "dénominateur n − 1",
+      "en": "denominator n − 1"
+     },
+     "kind": "metric"
+    },
+    {
+     "name": {
+      "fr": "Asymétrie S",
+      "en": "Skewness S"
+     },
+     "unit": {
+      "fr": "sans unité",
+      "en": "dimensionless"
+     },
+     "meaning": {
+      "fr": "S > 0 : queue à droite",
+      "en": "S > 0: right tail"
+     },
+     "kind": "metric"
+    },
+    {
+     "name": {
+      "fr": "Excès d’aplatissement C",
+      "en": "Excess kurtosis C"
+     },
+     "unit": {
+      "fr": "sans unité",
+      "en": "dimensionless"
+     },
+     "meaning": {
+      "fr": "C > 0 : queues épaisses",
+      "en": "C > 0: heavy tails"
+     },
+     "kind": "metric"
+    },
+    {
+     "name": {
+      "fr": "JB",
+      "en": "JB"
+     },
+     "unit": {
+      "fr": "sans unité",
+      "en": "dimensionless"
+     },
+     "meaning": {
+      "fr": "seuil 5,99",
+      "en": "threshold 5.99"
+     },
+     "kind": "metric"
+    },
+    {
+     "name": {
+      "fr": "p-value",
+      "en": "p-value"
+     },
+     "unit": {
+      "fr": "sans unité",
+      "en": "dimensionless"
+     },
+     "meaning": {
+      "fr": null,
+      "en": null
+     },
+     "kind": "metric"
+    }
+   ],
+   "outputs_en_page": null,
+   "formulas": [
+    {
+     "text": "x̄ = 1/n∑i = 1nx_i,s = sqrt(1/(n − 1)∑_(i = 1)^n(x_i − x̄)^2)"
+    },
+    {
+     "text": "S = 1/n∑i = 1n((x_i − x̄)/s)^3,C = 1/n∑i = 1n((x_i − x̄)/s)^4 − 3"
+    },
+    {
+     "text": "JB = n/6(S^2 + (C^2)/4),p = e^( − JB/2)"
+    },
+    {
+     "text": "W = ((∑_(i = 1)^na_ix_((i)))^2)/(∑_(i = 1)^n(x_i − x̄)^2)"
+    },
+    {
+     "text": "D = max_x|F_n(x) − Φ((x − x̄)/s)|"
+    },
+    {
+     "text": "x¯=1n∑i=1nxi,s=1n−1∑i=1n(xi−x¯)2",
+     "note": true
+    },
+    {
+     "text": "S=1n∑i=1n(xi−x¯s)3,C=1n∑i=1n(xi−x¯s)4−3",
+     "note": true
+    },
+    {
+     "text": "JB=n6(S2+C24),p=e−JB/2",
+     "note": true
+    },
+    {
+     "text": "Où : n est le nombre de valeurs xᵢ, x̄ leur moyenne, s leur écart-type, S l’asymétrie, C l’excès d’aplatissement, JB la statistique de Jarque-Bera et p la p-value.",
+     "note": true
+    },
+    {
+     "text": "Sous H₀, JB suit approximativement la loi du χ² à 2 degrés de liberté, dont la fonction de survie est simple : p = e−JB/2. Avec ce seuil asymptotique, une valeur de JB inférieure au seuil conduit à ne pas rejeter la normalité.",
+     "note": true
+    },
+    {
+     "text": "Les logiciels (scipy, R) calculent S et C avec des moments divisés par n (écart-type sans le n − 1) : les valeurs diffèrent un peu pour les petits échantillons, et se rejoignent quand n grandit. Le labo affiche les deux.",
+     "note": true
+    },
+    {
+     "text": "W=(∑i=1naix(i))2∑i=1n(xi−x¯)2",
+     "note": true
+    },
+    {
+     "text": "Où : x₍ᵢ₎ est la i-ème plus petite valeur, x̄ la moyenne, et les aᵢ des poids fixés par n, tirés des quantiles attendus de la loi normale (aᵢ < 0 pour les petites valeurs, aᵢ > 0 pour les grandes, Σaᵢ² = 1). W est le carré de la corrélation entre les valeurs triées et ces poids : 1 si les points sont parfaitement alignés sur la droite de Henry. La p-value suit l’approximation de Royston (1995), celle de scipy et de R.",
+     "note": true
+    },
+    {
+     "text": "D=maxx|Fn(x)−Φ(x−x¯s)|",
+     "note": true
+    },
+    {
+     "text": "Où : Fn(x) est la proportion des n valeurs inférieures ou égales à x (fonction de répartition empirique), Φ la fonction de répartition de la loi normale centrée réduite, x̄ et s la moyenne et l’écart-type de l’échantillon. Comme x̄ et s sont estimés sur les mêmes données, la table classique de Kolmogorov-Smirnov serait trop indulgente : on utilise celle de Lilliefors (approximation de Dallal et Wilkinson, 1986, précise pour p < 0,10 ; au-delà, le labo affiche « p > 0,10 »).",
+     "note": true
+    }
+   ],
+   "definitions": [
+    {
+     "term": "n, xᵢ",
+     "meaning": {
+      "fr": "Le nombre de valeurs et chaque valeur de l’échantillon.",
+      "en": "The number of values and each value of the sample."
+     }
+    },
+    {
+     "term": "x̄, s",
+     "meaning": {
+      "fr": "La moyenne et l’écart-type de l’échantillon (s calculé avec n − 1, comme dans le cours).",
+      "en": "The sample mean and standard deviation (s computed with n − 1, as in the course)."
+     }
+    },
+    {
+     "term": "S (skewness, asymétrie)",
+     "meaning": {
+      "fr": "La moyenne des écarts réduits (xᵢ − x̄)/s élevés au cube. 0 pour une distribution symétrique ; S > 0 : queue à droite ; S < 0 : queue à gauche.",
+      "en": "The mean of the cubed standardized deviations (xᵢ − x̄)/s. 0 for a symmetric distribution; S > 0: right tail; S < 0: left tail."
+     }
+    },
+    {
+     "term": "C (kurtosis en excès, aplatissement)",
+     "meaning": {
+      "fr": "La moyenne des écarts réduits à la puissance 4, moins 3. 0 pour la loi normale (« mésocurtique ») ; C > 0 : queues plus épaisses ; C < 0 : distribution plus plate.",
+      "en": "The mean of the standardized deviations to the fourth power, minus 3. 0 for the normal law (“mesokurtic”); C > 0: heavier tails; C < 0: flatter distribution."
+     }
+    },
+    {
+     "term": "JB",
+     "meaning": {
+      "fr": "La statistique de Jarque-Bera, (n/6)(S² + C²/4) : elle grandit avec l’asymétrie, l’aplatissement et la taille de l’échantillon.",
+      "en": "The Jarque-Bera statistic, (n/6)(S² + C²/4): it grows with skewness, kurtosis and sample size."
+     }
+    },
+    {
+     "term": "χ² à 2 ddl",
+     "meaning": {
+      "fr": "La loi limite de JB sous normalité. Son seuil à 5 % vaut environ 5,99 ; la lecture est indicative sur les petits échantillons.",
+      "en": "The limiting distribution of JB under normality. Its 5% cutoff is about 5.99; for small samples the reading is illustrative."
+     }
+    },
+    {
+     "term": "H₀, p-value",
+     "meaning": {
+      "fr": "H₀ : les données viennent d’une loi normale. p est la probabilité, sous H₀, d’une statistique au moins aussi grande que celle observée. Avec l’approximation du χ², p < 5 % correspond à JB supérieur au seuil asymptotique.",
+      "en": "H₀: the data come from a normal law. p is the probability under H₀ of a statistic at least as large as the observed one. With the χ² approximation, p < 5% corresponds to JB above the asymptotic cutoff."
+     }
+    },
+    {
+     "term": "W (Shapiro-Wilk)",
+     "meaning": {
+      "fr": "Mesure à quel point les valeurs triées s’alignent sur la droite de Henry, entre 0 et 1. W proche de 1 : données compatibles avec la normale ; W petit : on rejette H₀.",
+      "en": "Measures how well the sorted values line up on the Q-Q line, between 0 and 1. W close to 1: data compatible with the normal law; small W: H₀ is rejected."
+     }
+    },
+    {
+     "term": "D (Kolmogorov-Smirnov, version de Lilliefors)",
+     "meaning": {
+      "fr": "Le plus grand écart vertical entre la fonction de répartition des données et celle de la loi normale de même x̄ et s. D grand : on rejette H₀.",
+      "en": "The largest vertical gap between the cumulative distribution of the data and that of the normal law with the same x̄ and s. Large D: H₀ is rejected."
+     }
+    },
+    {
+     "term": "Droite de Henry (diagramme quantile-quantile)",
+     "meaning": {
+      "fr": "Chaque valeur triée est placée face au quantile de la loi normale de même rang. Si les données sont normales, les points suivent la droite x̄ + s·z.",
+      "en": "Each sorted value is plotted against the normal quantile of the same rank. If the data are normal, the points follow the line x̄ + s·z."
+     }
+    }
+   ],
+   "assumptions": {
+    "fr": [
+     "La loi du χ² n’est qu’une approximation, valable pour des échantillons assez grands. Avec peu de données, le test manque de puissance : ne pas rejeter la normalité ne prouve pas qu’elle est vraie. Avec beaucoup de données, au contraire, de petits écarts sans conséquence deviennent significatifs. Regardez toujours l’histogramme et la droite de Henry en plus du test."
+    ],
+    "en": [
+     "The χ² law is only an approximation, valid for fairly large samples. With few data the test lacks power: not rejecting normality does not prove it. With many data, on the contrary, small harmless departures become significant. Always look at the histogram and the Q-Q plot besides the test."
+    ]
+   },
+   "source": {
+    "dois": [
+     "10.5281/zenodo.23620235"
+    ],
+    "repositories": [],
+    "related_pages": [
+     {
+      "href": "/fr/enseignement/biostatistique/statistiques-descriptives/",
+      "text": "Le chapitre complet du cours"
+     },
+     {
+      "href": "/fr/outils/loi-normale/",
+      "text": "La loi normale : aire, probabilité et score z"
+     },
+     {
+      "href": "/fr/outils/test-student/",
+      "text": "Le test Z et le test de Student"
+     },
+     {
+      "href": "/fr/outils/test-khi-deux/",
+      "text": "Le test du χ²"
+     }
+    ]
+   },
+   "how_to_explore": {
+    "fr": "Régler les paramètres sur un préréglage (valeurs ci-dessus), lire la phrase affichée par la page puis les sorties ; modifier ensuite un seul paramètre à la fois entre son minimum et son maximum.",
+    "en": "Set the parameters to a preset (values above), read the sentence the page shows then the outputs; then change one parameter at a time between its minimum and maximum."
+   },
+   "exploration": [],
+   "concepts": [
+    "p-value",
+    "chi-square-test",
+    "normal-distribution"
+   ],
+   "extraction": {
+    "source_hash": "f61feed3b3e03cb0",
+    "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
+    "roots": [
+     "[data-bl=jb]"
+    ],
+    "page_errors": [],
+    "fr_en_preset_consistency": null
+   }
+  },
+  {
    "id": "fair",
    "schema": "https://www.cyrilvoyant.com/tools-spec.json#1.0",
    "kind": "assessment",
@@ -14476,12 +16206,12 @@
       "en": "Is the format open and non-proprietary?"
      },
      "meaning": {
-      "fr": "CSV documenté, NetCDF, GeoTIFF, Parquet plutôt qu'un classeur Excel ou un fichier MATLAB que seul un logiciel lit correctement.",
-      "en": "Documented CSV, NetCDF, GeoTIFF, Parquet rather than an Excel workbook or a MATLAB file that only one program reads correctly."
+      "fr": "NetCDF, GeoTIFF, Parquet, Zarr plutôt qu'un classeur Excel, un fichier MATLAB ou un CSV, à proscrire dans une démarche FAIR : ni schéma, ni unités, ni métadonnées dans le fichier.",
+      "en": "NetCDF, GeoTIFF, Parquet, Zarr rather than an Excel workbook, a MATLAB file or a CSV, which should be avoided in a FAIR approach: no schema, no units, no metadata in the file."
      },
      "if_missing": {
-      "fr": "Exporter dans un format ouvert (CSV documenté, NetCDF, Parquet) en plus du format de travail.",
-      "en": "Export to an open format (documented CSV, NetCDF, Parquet) in addition to the working format."
+      "fr": "Exporter dans un format ouvert et autodécrit (NetCDF, Parquet, Zarr) en plus du format de travail.",
+      "en": "Export to an open self-describing format (NetCDF, Parquet, Zarr) in addition to the working format."
      },
      "options": [
       {
@@ -14951,12 +16681,12 @@
       "I2": 1,
       "I3": 1,
       "I4": 1,
-      "I5": 0.5,
+      "I5": 1,
       "R1": 1,
       "R2": 1,
       "R3": 1,
       "R4": 0.5,
-      "R5": 0.5
+      "R5": 1
      },
      "changes_vs_default": {
       "F1": 1,
@@ -14973,23 +16703,23 @@
       "I2": 1,
       "I3": 1,
       "I4": 1,
-      "I5": 0.5,
+      "I5": 1,
       "R1": 1,
       "R2": 1,
       "R3": 1,
       "R4": 0.5,
-      "R5": 0.5
+      "R5": 1
      },
      "scores": {
       "F": 5,
       "A": 4.5,
-      "I": 4.5,
-      "R": 4.0,
-      "total": 18.0
+      "I": 5,
+      "R": 4.5,
+      "total": 19.0
      },
      "shows": {
-      "fr": "Infrastructure de données du centre O.I.E. Fait : catalogue GeoNetwork moissonnable (CSW, métadonnées ISO 19115), DOI attribués avec DataCite, accès THREDDS/OPeNDAP et services OGC (WMS, WCS, WPS), formats NetCDF-CF et Zarr, mesures au sol harmonisées par libinsitu, contrôle qualité de type BSRN, licence CC BY. En partie : plan de conservation, liens vers les ressources liées, documentation pour un tiers, citation recommandée.",
-      "en": "Data infrastructure of the O.I.E. center. Done: harvestable GeoNetwork catalog (CSW, ISO 19115 metadata), DOIs assigned with DataCite, THREDDS/OPeNDAP access and OGC services (WMS, WCS, WPS), NetCDF-CF and Zarr formats, ground measurements harmonized by libinsitu, BSRN-type quality control, CC BY licence. Partly: preservation plan, links to related resources, documentation for a third party, recommended citation."
+      "fr": "IDS du centre O.I.E. Fait : catalogue GeoNetwork moissonnable (CSW, métadonnées ISO 19115), catalogue STAC (SpatioTemporal Asset Catalogs) avec API (Application Programming Interface), DOI DataCite ajoutés à la demande, citations proposées pour chaque composant, accès THREDDS/OPeNDAP et services OGC (WMS, WCS, WPS), formats NetCDF-CF et Zarr, mesures au sol harmonisées par libinsitu, contrôle qualité de type BSRN, licence CC BY. En partie : plan de conservation, documentation pour un tiers.",
+      "en": "SDI of the O.I.E. center. Done: harvestable GeoNetwork catalog (CSW, ISO 19115 metadata), STAC catalog (SpatioTemporal Asset Catalogs) with an API (Application Programming Interface), DataCite DOIs added on request, citations offered for each component, THREDDS/OPeNDAP access and OGC services (WMS, WCS, WPS), NetCDF-CF and Zarr formats, ground measurements harmonized by libinsitu, BSRN-type quality control, CC BY licence. Partly: preservation plan, documentation for a third party."
      }
     },
     {
@@ -15002,16 +16732,16 @@
       "F1": 1,
       "F2": 1,
       "F3": 0.5,
-      "F4": 1,
+      "F4": 0.5,
       "F5": 1,
       "A1": 1,
       "A2": 1,
       "A3": 1,
-      "A4": 0.5,
+      "A4": 0,
       "A5": 1,
-      "I1": 1,
+      "I1": 0,
       "I2": 0,
-      "I3": 0.5,
+      "I3": 0,
       "I4": 1,
       "I5": 0,
       "R1": 1,
@@ -15024,16 +16754,16 @@
       "F1": 1,
       "F2": 1,
       "F3": 0.5,
-      "F4": 1,
+      "F4": 0.5,
       "F5": 1,
       "A1": 1,
       "A2": 1,
       "A3": 1,
-      "A4": 0.5,
+      "A4": 0,
       "A5": 1,
-      "I1": 1,
+      "I1": 0,
       "I2": 0,
-      "I3": 0.5,
+      "I3": 0,
       "I4": 1,
       "I5": 0,
       "R1": 1,
@@ -15043,15 +16773,15 @@
       "R5": 0.5
      },
      "scores": {
-      "F": 4.5,
-      "A": 4.5,
-      "I": 2.5,
+      "F": 4.0,
+      "A": 4,
+      "I": 1,
       "R": 2.5,
-      "total": 14.0
+      "total": 11.5
      },
      "shows": {
-      "fr": "Un fichier CSV déposé dans un entrepôt généraliste. Fait : DOI et page d'atterrissage, métadonnées DataCite moissonnées, licence CC BY, téléchargement par HTTPS. Pas fait ou en partie : format standard de la discipline (NetCDF-CF), noms et unités normalisés, liens vers l'instrument et le code, contrôle qualité livré, provenance et documentation succinctes, accès aux valeurs par programme limité au fichier entier.",
-      "en": "A CSV file deposited in a general-purpose repository. Done: DOI and landing page, harvested DataCite metadata, CC BY licence, HTTPS download. Not done or partly: the standard format of the field (NetCDF-CF), standard names and units, links to the instrument and the code, delivered quality control, brief provenance and documentation, programmatic access limited to the whole file."
+      "fr": "Un fichier CSV déposé dans un entrepôt généraliste ; le CSV est à proscrire dans une démarche FAIR. Fait : DOI et page d'atterrissage, métadonnées DataCite moissonnées, licence CC BY, téléchargement par HTTPS. Pas fait ou en partie : format ouvert et autodécrit (NetCDF-CF), noms et unités normalisés, métadonnées riches, liens vers l'instrument et le code, contrôle qualité livré, provenance et documentation succinctes, accès aux valeurs par programme limité au fichier entier.",
+      "en": "A CSV file deposited in a general-purpose repository; CSV should be avoided in a FAIR approach. Done: DOI and landing page, harvested DataCite metadata, CC BY licence, HTTPS download. Not done or partly: an open self-describing format (NetCDF-CF), standard names and units, rich metadata, links to the instrument and the code, delivered quality control, brief provenance and documentation, programmatic access limited to the whole file."
      }
     },
     {
@@ -15257,16 +16987,16 @@
       "I2": 1,
       "I3": 1,
       "I4": 1,
-      "I5": 0.5,
+      "I5": 1,
       "R1": 1,
       "R2": 1,
       "R3": 1,
       "R4": 0.5,
-      "R5": 0.5
+      "R5": 1
      },
      "observe": {
-      "fr": "Infrastructure de données du centre O.I.E. Fait : catalogue GeoNetwork moissonnable (CSW, métadonnées ISO 19115), DOI attribués avec DataCite, accès THREDDS/OPeNDAP et services OGC (WMS, WCS, WPS), formats NetCDF-CF et Zarr, mesures au sol harmonisées par libinsitu, contrôle qualité de type BSRN, licence CC BY. En partie : plan de conservation, liens vers les ressources liées, documentation pour un tiers, citation recommandée.",
-      "en": "Data infrastructure of the O.I.E. center. Done: harvestable GeoNetwork catalog (CSW, ISO 19115 metadata), DOIs assigned with DataCite, THREDDS/OPeNDAP access and OGC services (WMS, WCS, WPS), NetCDF-CF and Zarr formats, ground measurements harmonized by libinsitu, BSRN-type quality control, CC BY licence. Partly: preservation plan, links to related resources, documentation for a third party, recommended citation."
+      "fr": "IDS du centre O.I.E. Fait : catalogue GeoNetwork moissonnable (CSW, métadonnées ISO 19115), catalogue STAC (SpatioTemporal Asset Catalogs) avec API (Application Programming Interface), DOI DataCite ajoutés à la demande, citations proposées pour chaque composant, accès THREDDS/OPeNDAP et services OGC (WMS, WCS, WPS), formats NetCDF-CF et Zarr, mesures au sol harmonisées par libinsitu, contrôle qualité de type BSRN, licence CC BY. En partie : plan de conservation, documentation pour un tiers.",
+      "en": "SDI of the O.I.E. center. Done: harvestable GeoNetwork catalog (CSW, ISO 19115 metadata), STAC catalog (SpatioTemporal Asset Catalogs) with an API (Application Programming Interface), DataCite DOIs added on request, citations offered for each component, THREDDS/OPeNDAP access and OGC services (WMS, WCS, WPS), NetCDF-CF and Zarr formats, ground measurements harmonized by libinsitu, BSRN-type quality control, CC BY licence. Partly: preservation plan, documentation for a third party."
      }
     },
     {
@@ -15279,16 +17009,16 @@
       "F1": 1,
       "F2": 1,
       "F3": 0.5,
-      "F4": 1,
+      "F4": 0.5,
       "F5": 1,
       "A1": 1,
       "A2": 1,
       "A3": 1,
-      "A4": 0.5,
+      "A4": 0,
       "A5": 1,
-      "I1": 1,
+      "I1": 0,
       "I2": 0,
-      "I3": 0.5,
+      "I3": 0,
       "I4": 1,
       "I5": 0,
       "R1": 1,
@@ -15298,8 +17028,8 @@
       "R5": 0.5
      },
      "observe": {
-      "fr": "Un fichier CSV déposé dans un entrepôt généraliste. Fait : DOI et page d'atterrissage, métadonnées DataCite moissonnées, licence CC BY, téléchargement par HTTPS. Pas fait ou en partie : format standard de la discipline (NetCDF-CF), noms et unités normalisés, liens vers l'instrument et le code, contrôle qualité livré, provenance et documentation succinctes, accès aux valeurs par programme limité au fichier entier.",
-      "en": "A CSV file deposited in a general-purpose repository. Done: DOI and landing page, harvested DataCite metadata, CC BY licence, HTTPS download. Not done or partly: the standard format of the field (NetCDF-CF), standard names and units, links to the instrument and the code, delivered quality control, brief provenance and documentation, programmatic access limited to the whole file."
+      "fr": "Un fichier CSV déposé dans un entrepôt généraliste ; le CSV est à proscrire dans une démarche FAIR. Fait : DOI et page d'atterrissage, métadonnées DataCite moissonnées, licence CC BY, téléchargement par HTTPS. Pas fait ou en partie : format ouvert et autodécrit (NetCDF-CF), noms et unités normalisés, métadonnées riches, liens vers l'instrument et le code, contrôle qualité livré, provenance et documentation succinctes, accès aux valeurs par programme limité au fichier entier.",
+      "en": "A CSV file deposited in a general-purpose repository; CSV should be avoided in a FAIR approach. Done: DOI and landing page, harvested DataCite metadata, CC BY licence, HTTPS download. Not done or partly: an open self-describing format (NetCDF-CF), standard names and units, rich metadata, links to the instrument and the code, delivered quality control, brief provenance and documentation, programmatic access limited to the whole file."
      }
     },
     {

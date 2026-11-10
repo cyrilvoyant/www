@@ -148,6 +148,9 @@
      "@id": "cv:forecastability-f"
     },
     {
+     "@id": "cv:gti"
+    },
+    {
      "@id": "cv:horizon"
     },
     {
@@ -169,6 +172,12 @@
      "@id": "cv:persistence"
     },
     {
+     "@id": "cv:picp"
+    },
+    {
+     "@id": "cv:pv-curtailment"
+    },
+    {
      "@id": "cv:ratio-to-trend"
     },
     {
@@ -179,6 +188,9 @@
     },
     {
      "@id": "cv:smart-persistence"
+    },
+    {
+     "@id": "cv:split-conformal"
     }
    ],
    "skos:related": [
@@ -430,6 +442,9 @@
      "@id": "cv:influential-point"
     },
     {
+     "@id": "cv:jarque-bera"
+    },
+    {
      "@id": "cv:normal-distribution"
     },
     {
@@ -449,6 +464,9 @@
     },
     {
      "@id": "cv:student-t-test"
+    },
+    {
+     "@id": "cv:z-test"
     }
    ],
    "skos:related": [
@@ -4594,6 +4612,9 @@
      "@id": "cv:chi-square-test"
     },
     {
+     "@id": "cv:jarque-bera"
+    },
+    {
      "@id": "cv:normal-distribution"
     },
     {
@@ -4607,6 +4628,9 @@
     },
     {
      "@id": "cv:student-t-test"
+    },
+    {
+     "@id": "cv:z-test"
     }
    ],
    "skos:exactMatch": {
@@ -4835,7 +4859,13 @@
      "@id": "cv:confidence-interval"
     },
     {
+     "@id": "cv:jarque-bera"
+    },
+    {
      "@id": "cv:p-value"
+    },
+    {
+     "@id": "cv:z-test"
     }
    ],
    "skos:exactMatch": {
@@ -5184,6 +5214,12 @@
    "skos:related": [
     {
      "@id": "cv:confidence-interval"
+    },
+    {
+     "@id": "cv:picp"
+    },
+    {
+     "@id": "cv:split-conformal"
     }
    ],
    "skos:exactMatch": {
@@ -6305,6 +6341,304 @@
     },
     {
      "@id": "https://www.cyrilvoyant.com/tools/fair-self-assessment/"
+    }
+   ]
+  },
+  {
+   "@id": "cv:jarque-bera",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "jarque-bera",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Test de Jarque-Bera"
+    },
+    {
+     "@language": "en",
+     "@value": "Jarque–Bera test"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "Combine l’asymétrie et l’excès d’aplatissement pour évaluer la normalité. Le seuil du χ² est asymptotique."
+    },
+    {
+     "@language": "en",
+     "@value": "Combines skewness and excess kurtosis to assess normality. The chi-square cutoff is asymptotic."
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:statistics"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:normal-distribution"
+    },
+    {
+     "@id": "cv:p-value"
+    }
+   ],
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/outils/test-jarque-bera/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/tools/jarque-bera-test/"
+    }
+   ]
+  },
+  {
+   "@id": "cv:z-test",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "z-test",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Test Z"
+    },
+    {
+     "@language": "en",
+     "@value": "z test"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "Compare la moyenne observée à une valeur de référence en unités d’erreur standard, lorsque l’écart-type de population est connu."
+    },
+    {
+     "@language": "en",
+     "@value": "Compares a sample mean with a reference value in standard-error units when the population standard deviation is known."
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:statistics"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:normal-distribution"
+    },
+    {
+     "@id": "cv:p-value"
+    }
+   ],
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/animations/test-student/#test-z"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/tools/student-t-test/#z-test"
+    }
+   ]
+  },
+  {
+   "@id": "cv:picp",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "picp",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Couverture empirique des intervalles de prévision (PICP)"
+    },
+    {
+     "@language": "en",
+     "@value": "Prediction interval coverage probability (PICP)"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "Proportion des observations de test qui tombent dans les bornes de leur intervalle de prévision."
+    },
+    {
+     "@language": "en",
+     "@value": "Fraction of test observations that fall between the bounds of their prediction intervals."
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:forecasting"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:prediction-interval"
+    },
+    {
+     "@id": "cv:split-conformal"
+    }
+   ],
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/outils/prevision-probabiliste/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/tools/probabilistic-solar-forecasting/"
+    }
+   ]
+  },
+  {
+   "@id": "cv:split-conformal",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "split-conformal",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Prédiction conforme par séparation"
+    },
+    {
+     "@language": "en",
+     "@value": "Split conformal prediction"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "Calibre une marge sur des erreurs d’un ensemble distinct de l’apprentissage. La garantie théorique suppose des scores échangeables."
+    },
+    {
+     "@language": "en",
+     "@value": "Calibrates a margin on errors from a set separate from training. The theoretical guarantee assumes exchangeable scores."
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:forecasting"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:picp"
+    },
+    {
+     "@id": "cv:prediction-interval"
+    }
+   ],
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/outils/prevision-probabiliste/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/tools/probabilistic-solar-forecasting/"
+    }
+   ]
+  },
+  {
+   "@id": "cv:gti",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "gti",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Éclairement dans le plan des panneaux (GTI)"
+    },
+    {
+     "@language": "en",
+     "@value": "Global tilted irradiance (GTI)"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "Puissance solaire incidente par unité de surface dans le plan incliné du champ photovoltaïque, en W/m²."
+    },
+    {
+     "@language": "en",
+     "@value": "Incident solar power per unit area in the tilted plane of a photovoltaic array, measured in W/m²."
+    }
+   ],
+   "schema:unitText": [
+    {
+     "@language": "fr",
+     "@value": "W/m²"
+    },
+    {
+     "@language": "en",
+     "@value": "W/m²"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:forecasting"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:pv-curtailment"
+    }
+   ],
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/outils/modes-prevision-pv/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/tools/pv-forecasting-modes/"
+    }
+   ]
+  },
+  {
+   "@id": "cv:pv-curtailment",
+   "@type": "skos:Concept",
+   "skos:inScheme": {
+    "@id": "cv:cv-concepts"
+   },
+   "skos:notation": "pv-curtailment",
+   "skos:prefLabel": [
+    {
+     "@language": "fr",
+     "@value": "Écrêtement de la production photovoltaïque"
+    },
+    {
+     "@language": "en",
+     "@value": "Photovoltaic curtailment"
+    }
+   ],
+   "skos:definition": [
+    {
+     "@language": "fr",
+     "@value": "Limite imposée à la puissance injectée, en dessous de ce que le champ pourrait produire. L’annonce peut être connue ou inconnue au moment de la prévision."
+    },
+    {
+     "@language": "en",
+     "@value": "A limit on exported power below what the array could produce. The announcement may or may not be known at forecast issue time."
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "cv:forecasting"
+    }
+   ],
+   "skos:related": [
+    {
+     "@id": "cv:gti"
+    }
+   ],
+   "rdfs:seeAlso": [
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/outils/modes-prevision-pv/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/tools/pv-forecasting-modes/"
     }
    ]
   }

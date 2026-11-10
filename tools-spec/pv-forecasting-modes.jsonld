@@ -1,0 +1,226 @@
+{
+ "@context": "https://schema.org",
+ "@type": [
+  "SoftwareApplication",
+  "LearningResource"
+ ],
+ "@id": "https://www.cyrilvoyant.com/tools/pv-forecasting-modes/#tool-spec",
+ "identifier": "pv-forecasting-modes",
+ "name": "Forecast photovoltaic power: directly, or through irradiance?",
+ "alternateName": "Prévoir la puissance photovoltaïque : directement, ou en passant par l’éclairement ?",
+ "description": "To forecast the output of a photovoltaic (PV) plant, one can forecast its power directly, or first forecast the solar irradiance and then convert it into power. This page compares the three routes over 15 months of open measurements (the first half for training, the second for testing), with the same forecasting…",
+ "url": "https://www.cyrilvoyant.com/tools/pv-forecasting-modes/",
+ "sameAs": [
+  "https://www.cyrilvoyant.com/fr/outils/modes-prevision-pv/",
+  "https://www.cyrilvoyant.com/tools/pv-forecasting-modes/"
+ ],
+ "inLanguage": [
+  "fr",
+  "en"
+ ],
+ "applicationCategory": "ScientificApplication",
+ "operatingSystem": "Any (web browser)",
+ "isAccessibleForFree": true,
+ "author": {
+  "@type": "Person",
+  "name": "Cyril Voyant",
+  "identifier": "https://orcid.org/0000-0003-0242-7377"
+ },
+ "license": "https://creativecommons.org/licenses/by/4.0/",
+ "additionalProperty": [
+  {
+   "@type": "PropertyValue",
+   "propertyID": "pvm-m",
+   "name": "Forecasting model",
+   "alternateName": "Modèle de prévision",
+   "value": "ELM"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "pvm-h",
+   "name": "Horizon",
+   "alternateName": "Horizon",
+   "description": "the time between the last known measurement and the forecast time, here from 30 minutes to 6 hours, in 30-minute steps.",
+   "value": 1,
+   "minValue": 0,
+   "maxValue": 5,
+   "unitText": "h"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "pvm-k",
+   "name": "Installed peak power",
+   "alternateName": "Puissance crête installée",
+   "value": "1"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "pvm-n",
+   "name": "PV direct on P / Pcacts only when the peak power changes",
+   "alternateName": "PV direct sur P / Pcagit seulement si la puissance crête change",
+   "description": "photovoltaic; PV also denotes the electric (AC) power produced by the plant, in kilowatts (kW).",
+   "value": false
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "pvm-d",
+   "name": "First day shown",
+   "alternateName": "Premier jour affiché",
+   "value": 89,
+   "minValue": 0,
+   "maxValue": 226,
+   "unitText": "dimensionless"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "pvm-cs",
+   "name": "Imposed limit",
+   "alternateName": "Limite imposée",
+   "value": "0"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "pvm-ca",
+   "name": "Announcement",
+   "alternateName": "Annonce",
+   "value": "d1"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "pvm-cv",
+   "name": "PV direct",
+   "alternateName": "PV direct",
+   "description": "photovoltaic; PV also denotes the electric (AC) power produced by the plant, in kilowatts (kW).",
+   "value": "raw"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "pvm-ce",
+   "name": "Event",
+   "alternateName": "Événement",
+   "value": 0,
+   "minValue": 0,
+   "maxValue": 7,
+   "unitText": "dimensionless"
+  }
+ ],
+ "potentialAction": {
+  "@type": "Action",
+  "name": "Explore the tool",
+  "target": {
+   "@type": "EntryPoint",
+   "urlTemplate": "https://www.cyrilvoyant.com/tools/pv-forecasting-modes/",
+   "actionPlatform": "https://schema.org/DesktopWebPlatform"
+  },
+  "object": [
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "pvm-m",
+    "description": "Forecasting model",
+    "valueRequired": false,
+    "valuePattern": "^(P|BLEND|AR|ELM)$",
+    "defaultValue": "ELM"
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "pvm-h",
+    "description": "Horizon",
+    "valueRequired": false,
+    "minValue": 0,
+    "maxValue": 5,
+    "defaultValue": 1,
+    "stepValue": 1
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "pvm-k",
+    "description": "Installed peak power",
+    "valueRequired": false,
+    "valuePattern": "^(0\\.5|1|2)$",
+    "defaultValue": "1"
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "pvm-n",
+    "description": "PV direct on P / Pcacts only when the peak power changes",
+    "valueRequired": false,
+    "defaultValue": false
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "pvm-d",
+    "description": "First day shown",
+    "valueRequired": false,
+    "minValue": 0,
+    "maxValue": 226,
+    "defaultValue": 89,
+    "stepValue": 1
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "pvm-cs",
+    "description": "Imposed limit",
+    "valueRequired": false,
+    "valuePattern": "^(0\\.6|0\\.3|0)$",
+    "defaultValue": "0"
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "pvm-ca",
+    "description": "Announcement",
+    "valueRequired": false,
+    "valuePattern": "^(d1|h2|none)$",
+    "defaultValue": "d1"
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "pvm-cv",
+    "description": "PV direct",
+    "valueRequired": false,
+    "valuePattern": "^(raw|divA|mask)$",
+    "defaultValue": "raw"
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "pvm-ce",
+    "description": "Event",
+    "valueRequired": false,
+    "minValue": 0,
+    "maxValue": 7,
+    "defaultValue": 0,
+    "stepValue": 1
+   }
+  ]
+ },
+ "citation": [
+  "https://doi.org/10.1016/0038-092X(63)90006-9",
+  "https://doi.org/10.1016/0038-092X(82)90302-4",
+  "https://doi.org/10.1016/j.dib.2022.108046",
+  "https://doi.org/10.1016/j.seta.2025.104588",
+  "https://doi.org/10.11583/DTU.17040767",
+  "https://doi.org/10.21105/joss.00884",
+  "https://doi.org/10.5281/zenodo.21487267",
+  "https://doi.org/10.5281/zenodo.23620101"
+ ],
+ "codeRepository": "https://github.com/cyrilvoyant/PV_ELM_pred",
+ "about": [
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#persistence"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#blend"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#elm"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#rmse"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#nrmse"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#nice"
+  }
+ ]
+}

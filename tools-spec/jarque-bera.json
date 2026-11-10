@@ -1,0 +1,460 @@
+{
+ "id": "jarque-bera",
+ "schema": "https://www.cyrilvoyant.com/tools-spec.json#1.0",
+ "kind": null,
+ "domain": null,
+ "interface_language": null,
+ "name": {
+  "fr": "Test de normalité en ligne : Jarque-Bera, Shapiro-Wilk, Kolmogorov",
+  "en": "Normality test online: Jarque-Bera, Shapiro-Wilk, Kolmogorov"
+ },
+ "url": {
+  "fr": "https://www.cyrilvoyant.com/fr/outils/test-jarque-bera/",
+  "en": "https://www.cyrilvoyant.com/tools/jarque-bera-test/"
+ },
+ "page_title": {
+  "fr": "Test de normalité en ligne : Jarque-Bera, Shapiro-Wilk, Kolmogorov",
+  "en": "Normality test online: Jarque-Bera, Shapiro-Wilk, Kolmogorov"
+ },
+ "computes": {
+  "fr": "Loi normale ou pas ? Avec 100 valeurs tirées d’une loi normale, les trois tests concluent « compatible » (Jarque-Bera p = 0,30, Shapiro-Wilk p = 0,24) ; un seul point ajouté à 4,2 écarts-types de la moyenne suffit à faire rejeter la normalité.",
+  "en": "Normal or not? With 100 values drawn from a normal law, all three tests say “compatible” (Jarque-Bera p = 0.30, Shapiro-Wilk p = 0.24); a single point added 4.2 standard deviations from the mean is enough to reject normality."
+ },
+ "summary": {
+  "fr": "Loi normale ou pas ? Avec 100 valeurs tirées d’une loi normale, les trois tests concluent « compatible » (Jarque-Bera p = 0,30, Shapiro-Wilk p = 0,24) ; un seul point ajouté à 4,2 écarts-types de la moyenne suffit à faire rejeter la normalité.",
+  "en": "Normal or not? With 100 values drawn from a normal law, all three tests say “compatible” (Jarque-Bera p = 0.30, Shapiro-Wilk p = 0.24); a single point added 4.2 standard deviations from the mean is enough to reject normality."
+ },
+ "parameters": [
+  {
+   "id": "bl-1",
+   "type": "integer",
+   "control": "range",
+   "min": 10,
+   "max": 1000,
+   "step": 1,
+   "default": 100,
+   "label": {
+    "fr": "Nombre de points n",
+    "en": "Number of points n"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "unit_source": "no unit shown by the page"
+  },
+  {
+   "id": "bl-2",
+   "type": "number",
+   "control": "range",
+   "min": 0,
+   "max": 1,
+   "step": 0.05,
+   "default": 0,
+   "label": {
+    "fr": "Écart à la loi normale (0 = aucun)",
+    "en": "Departure from normality (0 = none)"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "unit_source": "no unit shown by the page"
+  },
+  {
+   "id": "bl-3",
+   "type": "number",
+   "control": "range",
+   "min": -8,
+   "max": 8,
+   "step": 0.1,
+   "default": 4,
+   "label": {
+    "fr": "Point extrême, en écarts-types de la moyenne",
+    "en": "Extreme point, in standard deviations from the mean"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "unit_source": "no unit shown by the page"
+  },
+  {
+   "id": "bl-4",
+   "type": "boolean",
+   "control": "checkbox",
+   "default": false,
+   "label": {
+    "fr": "Ajouter le point extrême (orange)",
+    "en": "Add the extreme point (orange)"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": null
+  }
+ ],
+ "presets": [
+  {
+   "id": "normal",
+   "name": {
+    "fr": "Normale",
+    "en": "Normal"
+   },
+   "values": {},
+   "changes_vs_default": {}
+  },
+  {
+   "id": "skewed-right-tail",
+   "name": {
+    "fr": "Asymétrique (queue à droite)",
+    "en": "Skewed (right tail)"
+   },
+   "values": {},
+   "changes_vs_default": {}
+  },
+  {
+   "id": "heavy-tails",
+   "name": {
+    "fr": "Queues épaisses",
+    "en": "Heavy tails"
+   },
+   "values": {},
+   "changes_vs_default": {}
+  },
+  {
+   "id": "flat-uniform",
+   "name": {
+    "fr": "Plate (uniforme)",
+    "en": "Flat (uniform)"
+   },
+   "values": {},
+   "changes_vs_default": {}
+  },
+  {
+   "id": "two-humps",
+   "name": {
+    "fr": "Deux bosses",
+    "en": "Two humps"
+   },
+   "values": {},
+   "changes_vs_default": {}
+  }
+ ],
+ "actions": [
+  {
+   "name": {
+    "fr": "Nouveau tirage",
+    "en": "New draw"
+   }
+  },
+  {
+   "name": {
+    "fr": "Retirer les points cliqués",
+    "en": "Remove clicked points"
+   }
+  }
+ ],
+ "variants": [],
+ "outputs": [
+  {
+   "name": {
+    "fr": "n",
+    "en": "n"
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "kind": "metric"
+  },
+  {
+   "name": {
+    "fr": "Moyenne x̄",
+    "en": "Mean x̄"
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "kind": "metric"
+  },
+  {
+   "name": {
+    "fr": "Écart-type s",
+    "en": "Standard deviation s"
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": "dénominateur n − 1",
+    "en": "denominator n − 1"
+   },
+   "kind": "metric"
+  },
+  {
+   "name": {
+    "fr": "Asymétrie S",
+    "en": "Skewness S"
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": "S > 0 : queue à droite",
+    "en": "S > 0: right tail"
+   },
+   "kind": "metric"
+  },
+  {
+   "name": {
+    "fr": "Excès d’aplatissement C",
+    "en": "Excess kurtosis C"
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": "C > 0 : queues épaisses",
+    "en": "C > 0: heavy tails"
+   },
+   "kind": "metric"
+  },
+  {
+   "name": {
+    "fr": "JB",
+    "en": "JB"
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": "seuil 5,99",
+    "en": "threshold 5.99"
+   },
+   "kind": "metric"
+  },
+  {
+   "name": {
+    "fr": "p-value",
+    "en": "p-value"
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "kind": "metric"
+  }
+ ],
+ "outputs_en_page": null,
+ "formulas": [
+  {
+   "text": "x̄ = 1/n∑i = 1nx_i,s = sqrt(1/(n − 1)∑_(i = 1)^n(x_i − x̄)^2)"
+  },
+  {
+   "text": "S = 1/n∑i = 1n((x_i − x̄)/s)^3,C = 1/n∑i = 1n((x_i − x̄)/s)^4 − 3"
+  },
+  {
+   "text": "JB = n/6(S^2 + (C^2)/4),p = e^( − JB/2)"
+  },
+  {
+   "text": "W = ((∑_(i = 1)^na_ix_((i)))^2)/(∑_(i = 1)^n(x_i − x̄)^2)"
+  },
+  {
+   "text": "D = max_x|F_n(x) − Φ((x − x̄)/s)|"
+  },
+  {
+   "text": "x¯=1n∑i=1nxi,s=1n−1∑i=1n(xi−x¯)2",
+   "note": true
+  },
+  {
+   "text": "S=1n∑i=1n(xi−x¯s)3,C=1n∑i=1n(xi−x¯s)4−3",
+   "note": true
+  },
+  {
+   "text": "JB=n6(S2+C24),p=e−JB/2",
+   "note": true
+  },
+  {
+   "text": "Où : n est le nombre de valeurs xᵢ, x̄ leur moyenne, s leur écart-type, S l’asymétrie, C l’excès d’aplatissement, JB la statistique de Jarque-Bera et p la p-value.",
+   "note": true
+  },
+  {
+   "text": "Sous H₀, JB suit approximativement la loi du χ² à 2 degrés de liberté, dont la fonction de survie est simple : p = e−JB/2. Avec ce seuil asymptotique, une valeur de JB inférieure au seuil conduit à ne pas rejeter la normalité.",
+   "note": true
+  },
+  {
+   "text": "Les logiciels (scipy, R) calculent S et C avec des moments divisés par n (écart-type sans le n − 1) : les valeurs diffèrent un peu pour les petits échantillons, et se rejoignent quand n grandit. Le labo affiche les deux.",
+   "note": true
+  },
+  {
+   "text": "W=(∑i=1naix(i))2∑i=1n(xi−x¯)2",
+   "note": true
+  },
+  {
+   "text": "Où : x₍ᵢ₎ est la i-ème plus petite valeur, x̄ la moyenne, et les aᵢ des poids fixés par n, tirés des quantiles attendus de la loi normale (aᵢ < 0 pour les petites valeurs, aᵢ > 0 pour les grandes, Σaᵢ² = 1). W est le carré de la corrélation entre les valeurs triées et ces poids : 1 si les points sont parfaitement alignés sur la droite de Henry. La p-value suit l’approximation de Royston (1995), celle de scipy et de R.",
+   "note": true
+  },
+  {
+   "text": "D=maxx|Fn(x)−Φ(x−x¯s)|",
+   "note": true
+  },
+  {
+   "text": "Où : Fn(x) est la proportion des n valeurs inférieures ou égales à x (fonction de répartition empirique), Φ la fonction de répartition de la loi normale centrée réduite, x̄ et s la moyenne et l’écart-type de l’échantillon. Comme x̄ et s sont estimés sur les mêmes données, la table classique de Kolmogorov-Smirnov serait trop indulgente : on utilise celle de Lilliefors (approximation de Dallal et Wilkinson, 1986, précise pour p < 0,10 ; au-delà, le labo affiche « p > 0,10 »).",
+   "note": true
+  }
+ ],
+ "definitions": [
+  {
+   "term": "n, xᵢ",
+   "meaning": {
+    "fr": "Le nombre de valeurs et chaque valeur de l’échantillon.",
+    "en": "The number of values and each value of the sample."
+   }
+  },
+  {
+   "term": "x̄, s",
+   "meaning": {
+    "fr": "La moyenne et l’écart-type de l’échantillon (s calculé avec n − 1, comme dans le cours).",
+    "en": "The sample mean and standard deviation (s computed with n − 1, as in the course)."
+   }
+  },
+  {
+   "term": "S (skewness, asymétrie)",
+   "meaning": {
+    "fr": "La moyenne des écarts réduits (xᵢ − x̄)/s élevés au cube. 0 pour une distribution symétrique ; S > 0 : queue à droite ; S < 0 : queue à gauche.",
+    "en": "The mean of the cubed standardized deviations (xᵢ − x̄)/s. 0 for a symmetric distribution; S > 0: right tail; S < 0: left tail."
+   }
+  },
+  {
+   "term": "C (kurtosis en excès, aplatissement)",
+   "meaning": {
+    "fr": "La moyenne des écarts réduits à la puissance 4, moins 3. 0 pour la loi normale (« mésocurtique ») ; C > 0 : queues plus épaisses ; C < 0 : distribution plus plate.",
+    "en": "The mean of the standardized deviations to the fourth power, minus 3. 0 for the normal law (“mesokurtic”); C > 0: heavier tails; C < 0: flatter distribution."
+   }
+  },
+  {
+   "term": "JB",
+   "meaning": {
+    "fr": "La statistique de Jarque-Bera, (n/6)(S² + C²/4) : elle grandit avec l’asymétrie, l’aplatissement et la taille de l’échantillon.",
+    "en": "The Jarque-Bera statistic, (n/6)(S² + C²/4): it grows with skewness, kurtosis and sample size."
+   }
+  },
+  {
+   "term": "χ² à 2 ddl",
+   "meaning": {
+    "fr": "La loi limite de JB sous normalité. Son seuil à 5 % vaut environ 5,99 ; la lecture est indicative sur les petits échantillons.",
+    "en": "The limiting distribution of JB under normality. Its 5% cutoff is about 5.99; for small samples the reading is illustrative."
+   }
+  },
+  {
+   "term": "H₀, p-value",
+   "meaning": {
+    "fr": "H₀ : les données viennent d’une loi normale. p est la probabilité, sous H₀, d’une statistique au moins aussi grande que celle observée. Avec l’approximation du χ², p < 5 % correspond à JB supérieur au seuil asymptotique.",
+    "en": "H₀: the data come from a normal law. p is the probability under H₀ of a statistic at least as large as the observed one. With the χ² approximation, p < 5% corresponds to JB above the asymptotic cutoff."
+   }
+  },
+  {
+   "term": "W (Shapiro-Wilk)",
+   "meaning": {
+    "fr": "Mesure à quel point les valeurs triées s’alignent sur la droite de Henry, entre 0 et 1. W proche de 1 : données compatibles avec la normale ; W petit : on rejette H₀.",
+    "en": "Measures how well the sorted values line up on the Q-Q line, between 0 and 1. W close to 1: data compatible with the normal law; small W: H₀ is rejected."
+   }
+  },
+  {
+   "term": "D (Kolmogorov-Smirnov, version de Lilliefors)",
+   "meaning": {
+    "fr": "Le plus grand écart vertical entre la fonction de répartition des données et celle de la loi normale de même x̄ et s. D grand : on rejette H₀.",
+    "en": "The largest vertical gap between the cumulative distribution of the data and that of the normal law with the same x̄ and s. Large D: H₀ is rejected."
+   }
+  },
+  {
+   "term": "Droite de Henry (diagramme quantile-quantile)",
+   "meaning": {
+    "fr": "Chaque valeur triée est placée face au quantile de la loi normale de même rang. Si les données sont normales, les points suivent la droite x̄ + s·z.",
+    "en": "Each sorted value is plotted against the normal quantile of the same rank. If the data are normal, the points follow the line x̄ + s·z."
+   }
+  }
+ ],
+ "assumptions": {
+  "fr": [
+   "La loi du χ² n’est qu’une approximation, valable pour des échantillons assez grands. Avec peu de données, le test manque de puissance : ne pas rejeter la normalité ne prouve pas qu’elle est vraie. Avec beaucoup de données, au contraire, de petits écarts sans conséquence deviennent significatifs. Regardez toujours l’histogramme et la droite de Henry en plus du test."
+  ],
+  "en": [
+   "The χ² law is only an approximation, valid for fairly large samples. With few data the test lacks power: not rejecting normality does not prove it. With many data, on the contrary, small harmless departures become significant. Always look at the histogram and the Q-Q plot besides the test."
+  ]
+ },
+ "source": {
+  "dois": [
+   "10.5281/zenodo.23620235"
+  ],
+  "repositories": [],
+  "related_pages": [
+   {
+    "href": "/fr/enseignement/biostatistique/statistiques-descriptives/",
+    "text": "Le chapitre complet du cours"
+   },
+   {
+    "href": "/fr/outils/loi-normale/",
+    "text": "La loi normale : aire, probabilité et score z"
+   },
+   {
+    "href": "/fr/outils/test-student/",
+    "text": "Le test Z et le test de Student"
+   },
+   {
+    "href": "/fr/outils/test-khi-deux/",
+    "text": "Le test du χ²"
+   }
+  ]
+ },
+ "how_to_explore": {
+  "fr": "Régler les paramètres sur un préréglage (valeurs ci-dessus), lire la phrase affichée par la page puis les sorties ; modifier ensuite un seul paramètre à la fois entre son minimum et son maximum.",
+  "en": "Set the parameters to a preset (values above), read the sentence the page shows then the outputs; then change one parameter at a time between its minimum and maximum."
+ },
+ "exploration": [],
+ "concepts": [
+  "p-value",
+  "chi-square-test",
+  "normal-distribution"
+ ],
+ "extraction": {
+  "source_hash": "f61feed3b3e03cb0",
+  "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
+  "roots": [
+   "[data-bl=jb]"
+  ],
+  "page_errors": [],
+  "fr_en_preset_consistency": null
+ }
+}

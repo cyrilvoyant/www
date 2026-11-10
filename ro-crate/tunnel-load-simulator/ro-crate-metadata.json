@@ -36,13 +36,28 @@
      "@id": "https://doi.org/10.1016/j.softx.2026.102946"
     },
     {
+     "@id": "https://www.cyrilvoyant.com/approach/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/bib/"
+    },
+    {
      "@id": "https://www.cyrilvoyant.com/fr/actualites/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/approche/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/lexique/"
     },
     {
      "@id": "https://www.cyrilvoyant.com/fr/recits/tunnel-load-simulator/"
     },
     {
      "@id": "https://www.cyrilvoyant.com/fr/vue-d-ensemble/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/glossary/"
     },
     {
      "@id": "https://www.cyrilvoyant.com/latest-publications-and-news/"
@@ -99,9 +114,29 @@
    "creativeWorkStatus": "published"
   },
   {
+   "@id": "https://www.cyrilvoyant.com/approach/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/approach/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/bib/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/bib/"
+  },
+  {
    "@id": "https://www.cyrilvoyant.com/fr/actualites/",
    "@type": "WebPage",
    "name": "www.cyrilvoyant.com/fr/actualites/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/fr/approche/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/fr/approche/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/fr/lexique/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/fr/lexique/"
   },
   {
    "@id": "https://www.cyrilvoyant.com/fr/recits/tunnel-load-simulator/",
@@ -112,6 +147,11 @@
    "@id": "https://www.cyrilvoyant.com/fr/vue-d-ensemble/",
    "@type": "WebPage",
    "name": "www.cyrilvoyant.com/fr/vue-d-ensemble/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/glossary/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/glossary/"
   },
   {
    "@id": "https://www.cyrilvoyant.com/latest-publications-and-news/",

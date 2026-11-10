@@ -33,7 +33,13 @@
      "@id": "https://doi.org/10.1016/j.renene.2022.04.065"
     },
     {
+     "@id": "https://www.cyrilvoyant.com/bib/"
+    },
+    {
      "@id": "https://www.cyrilvoyant.com/fr/enseignement/cours-prevision-solaire/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/lexique/"
     },
     {
      "@id": "https://www.cyrilvoyant.com/fr/outils/artu/"
@@ -43,6 +49,9 @@
     },
     {
      "@id": "https://www.cyrilvoyant.com/fr/vue-d-ensemble/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/glossary/"
     },
     {
      "@id": "https://www.cyrilvoyant.com/overview/"
@@ -88,9 +97,19 @@
    "creativeWorkStatus": "published; technical note ARTU.pdf in the repository"
   },
   {
+   "@id": "https://www.cyrilvoyant.com/bib/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/bib/"
+  },
+  {
    "@id": "https://www.cyrilvoyant.com/fr/enseignement/cours-prevision-solaire/",
    "@type": "WebPage",
    "name": "www.cyrilvoyant.com/fr/enseignement/cours-prevision-solaire/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/fr/lexique/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/fr/lexique/"
   },
   {
    "@id": "https://www.cyrilvoyant.com/fr/outils/artu/",
@@ -106,6 +125,11 @@
    "@id": "https://www.cyrilvoyant.com/fr/vue-d-ensemble/",
    "@type": "WebPage",
    "name": "www.cyrilvoyant.com/fr/vue-d-ensemble/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/glossary/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/glossary/"
   },
   {
    "@id": "https://www.cyrilvoyant.com/overview/",

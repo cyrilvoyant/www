@@ -25,7 +25,7 @@ cv:forecasting a skos:Concept ;
     skos:altLabel "solar forecasting"@en ;
     skos:definition "Une erreur n'a de sens que face à une référence : on décrit le signal, on choisit des références simples, on mesure le gain, puis on complexifie si ce gain le justifie."@fr, "An error only makes sense against a reference: describe the signal, choose simple references, measure the gain, then add complexity only if the gain justifies it."@en ;
     skos:topConceptOf cv:cv-concepts ;
-    skos:narrower cv:ar2, cv:artu, cv:brownian-motion, cv:climatological-mean, cv:convex-combination, cv:cyclic-persistence, cv:deseasonalization, cv:difference-to-trend, cv:elm, cv:forecast-evaluation, cv:forecastability-f, cv:horizon, cv:malr, cv:memory-phi, cv:mimo, cv:no-free-lunch, cv:percentile-band-p10-p90, cv:persistence, cv:ratio-to-trend, cv:scv, cv:simulated-data, cv:smart-persistence ;
+    skos:narrower cv:ar2, cv:artu, cv:brownian-motion, cv:climatological-mean, cv:convex-combination, cv:cyclic-persistence, cv:deseasonalization, cv:difference-to-trend, cv:elm, cv:forecast-evaluation, cv:forecastability-f, cv:gti, cv:horizon, cv:malr, cv:memory-phi, cv:mimo, cv:no-free-lunch, cv:percentile-band-p10-p90, cv:persistence, cv:picp, cv:pv-curtailment, cv:ratio-to-trend, cv:scv, cv:simulated-data, cv:smart-persistence, cv:split-conformal ;
     skos:related cv:forecast-evaluation ;
     rdfs:seeAlso <https://www.cyrilvoyant.com/fr/enseignement/cours-prevision-solaire/>, <https://www.cyrilvoyant.com/teaching/solar-forecasting-course/>, <https://cyrilvoyant.github.io/methods/solar-forecasting-made-simple.html> .
 
@@ -62,7 +62,7 @@ cv:statistics a skos:Concept ;
     skos:altLabel "biostatistics"@en ;
     skos:definition "Comparer un écart à son incertitude, mesurer une relation ou une prédiction, et lire un résultat sans le surinterpréter."@fr, "Compare a difference with its uncertainty, measure an association or a prediction, and read a result without over-interpreting it."@en ;
     skos:topConceptOf cv:cv-concepts ;
-    skos:narrower cv:chi-square-test, cv:confidence-interval, cv:influential-point, cv:normal-distribution, cv:p-value, cv:pearson-correlation, cv:prediction-interval, cv:r-squared, cv:roc-curve, cv:student-t-test ;
+    skos:narrower cv:chi-square-test, cv:confidence-interval, cv:influential-point, cv:jarque-bera, cv:normal-distribution, cv:p-value, cv:pearson-correlation, cv:prediction-interval, cv:r-squared, cv:roc-curve, cv:student-t-test, cv:z-test ;
     skos:related cv:p-value ;
     skos:exactMatch <http://www.wikidata.org/entity/Q12483> ;
     rdfs:seeAlso <https://www.cyrilvoyant.com/fr/enseignement/biostatistique/>, <https://www.cyrilvoyant.com/teaching/biostatistics/> .
@@ -728,7 +728,7 @@ cv:p-value a skos:Concept ;
     skos:definition "La probabilité, si les moyennes sont égales (ou ρ = 0) et le modèle correct, d'un résultat au moins aussi extrême. Ce n'est pas la probabilité que l'hypothèse soit vraie ; elle ne mesure pas l'importance d'un lien."@fr, "The probability, if the means are equal (or ρ = 0) and the model is correct, of a result at least as extreme. It is not the probability that the hypothesis is true; it does not measure the importance of an association."@en ;
     schema:unitText "sans unité (entre 0 et 1)"@fr, "dimensionless (between 0 and 1)"@en ;
     skos:broader cv:statistics ;
-    skos:related cv:chi-square-test, cv:normal-distribution, cv:r-squared, cv:roc-curve, cv:statistics, cv:student-t-test ;
+    skos:related cv:chi-square-test, cv:jarque-bera, cv:normal-distribution, cv:r-squared, cv:roc-curve, cv:statistics, cv:student-t-test, cv:z-test ;
     skos:exactMatch <http://www.wikidata.org/entity/Q253255> ;
     rdfs:seeAlso <https://www.cyrilvoyant.com/fr/animations/test-student/>, <https://www.cyrilvoyant.com/tools/student-t-test/> .
 
@@ -767,7 +767,7 @@ cv:normal-distribution a skos:Concept ;
     skos:definition "Le score z est le nombre d'écarts-types entre x et la moyenne ; Φ(z) est la probabilité qu'une variable normale centrée réduite reste en dessous de z : l'aire à gauche de z."@fr, "The z-score is the number of standard deviations between x and the mean; Φ(z) is the probability that a standard normal variable stays below z: the area to the left of z."@en ;
     schema:unitText "celle de la variable ; z sans unité"@fr, "that of the variable; z dimensionless"@en ;
     skos:broader cv:statistics ;
-    skos:related cv:confidence-interval, cv:p-value ;
+    skos:related cv:confidence-interval, cv:jarque-bera, cv:p-value, cv:z-test ;
     skos:exactMatch <http://www.wikidata.org/entity/Q133871> ;
     rdfs:seeAlso <https://www.cyrilvoyant.com/fr/animations/loi-normale/>, <https://www.cyrilvoyant.com/tools/normal-distribution/> .
 
@@ -828,7 +828,7 @@ cv:prediction-interval a skos:Concept ;
     skos:definition "Il encadre une nouvelle observation en x₀ : on ajoute 1 sous la racine, d'où une bande plus large que l'intervalle de confiance."@fr, "It brackets a new observation at x₀: add 1 under the root, hence a band wider than the confidence interval."@en ;
     schema:unitText "celle de y"@fr, "same as y"@en ;
     skos:broader cv:statistics ;
-    skos:related cv:confidence-interval ;
+    skos:related cv:confidence-interval, cv:picp, cv:split-conformal ;
     skos:exactMatch <http://www.wikidata.org/entity/Q1106171> ;
     rdfs:seeAlso <https://www.cyrilvoyant.com/fr/animations/intervalles-regression/>, <https://www.cyrilvoyant.com/tools/regression-intervals/> .
 
@@ -1029,3 +1029,58 @@ cv:data-management-plan a skos:Concept ;
     skos:broader cv:research-data ;
     skos:related cv:fair ;
     rdfs:seeAlso <https://www.cyrilvoyant.com/fr/outils/autoevaluation-fair/>, <https://www.cyrilvoyant.com/tools/fair-self-assessment/> .
+
+cv:jarque-bera a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "jarque-bera" ;
+    skos:prefLabel "Test de Jarque-Bera"@fr, "Jarque–Bera test"@en ;
+    skos:definition "Combine l’asymétrie et l’excès d’aplatissement pour évaluer la normalité. Le seuil du χ² est asymptotique."@fr, "Combines skewness and excess kurtosis to assess normality. The chi-square cutoff is asymptotic."@en ;
+    skos:broader cv:statistics ;
+    skos:related cv:normal-distribution, cv:p-value ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/outils/test-jarque-bera/>, <https://www.cyrilvoyant.com/tools/jarque-bera-test/> .
+
+cv:z-test a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "z-test" ;
+    skos:prefLabel "Test Z"@fr, "z test"@en ;
+    skos:definition "Compare la moyenne observée à une valeur de référence en unités d’erreur standard, lorsque l’écart-type de population est connu."@fr, "Compares a sample mean with a reference value in standard-error units when the population standard deviation is known."@en ;
+    skos:broader cv:statistics ;
+    skos:related cv:normal-distribution, cv:p-value ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/animations/test-student/#test-z>, <https://www.cyrilvoyant.com/tools/student-t-test/#z-test> .
+
+cv:picp a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "picp" ;
+    skos:prefLabel "Couverture empirique des intervalles de prévision (PICP)"@fr, "Prediction interval coverage probability (PICP)"@en ;
+    skos:definition "Proportion des observations de test qui tombent dans les bornes de leur intervalle de prévision."@fr, "Fraction of test observations that fall between the bounds of their prediction intervals."@en ;
+    skos:broader cv:forecasting ;
+    skos:related cv:prediction-interval, cv:split-conformal ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/outils/prevision-probabiliste/>, <https://www.cyrilvoyant.com/tools/probabilistic-solar-forecasting/> .
+
+cv:split-conformal a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "split-conformal" ;
+    skos:prefLabel "Prédiction conforme par séparation"@fr, "Split conformal prediction"@en ;
+    skos:definition "Calibre une marge sur des erreurs d’un ensemble distinct de l’apprentissage. La garantie théorique suppose des scores échangeables."@fr, "Calibrates a margin on errors from a set separate from training. The theoretical guarantee assumes exchangeable scores."@en ;
+    skos:broader cv:forecasting ;
+    skos:related cv:picp, cv:prediction-interval ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/outils/prevision-probabiliste/>, <https://www.cyrilvoyant.com/tools/probabilistic-solar-forecasting/> .
+
+cv:gti a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "gti" ;
+    skos:prefLabel "Éclairement dans le plan des panneaux (GTI)"@fr, "Global tilted irradiance (GTI)"@en ;
+    skos:definition "Puissance solaire incidente par unité de surface dans le plan incliné du champ photovoltaïque, en W/m²."@fr, "Incident solar power per unit area in the tilted plane of a photovoltaic array, measured in W/m²."@en ;
+    schema:unitText "W/m²"@fr, "W/m²"@en ;
+    skos:broader cv:forecasting ;
+    skos:related cv:pv-curtailment ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/outils/modes-prevision-pv/>, <https://www.cyrilvoyant.com/tools/pv-forecasting-modes/> .
+
+cv:pv-curtailment a skos:Concept ;
+    skos:inScheme cv:cv-concepts ;
+    skos:notation "pv-curtailment" ;
+    skos:prefLabel "Écrêtement de la production photovoltaïque"@fr, "Photovoltaic curtailment"@en ;
+    skos:definition "Limite imposée à la puissance injectée, en dessous de ce que le champ pourrait produire. L’annonce peut être connue ou inconnue au moment de la prévision."@fr, "A limit on exported power below what the array could produce. The announcement may or may not be known at forecast issue time."@en ;
+    skos:broader cv:forecasting ;
+    skos:related cv:gti ;
+    rdfs:seeAlso <https://www.cyrilvoyant.com/fr/outils/modes-prevision-pv/>, <https://www.cyrilvoyant.com/tools/pv-forecasting-modes/> .

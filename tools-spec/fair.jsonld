@@ -124,7 +124,7 @@
    "propertyID": "I1",
    "name": "Is the format open and non-proprietary?",
    "alternateName": "Le format est-il ouvert et non propriétaire ?",
-   "description": "Documented CSV, NetCDF, GeoTIFF, Parquet rather than an Excel workbook or a MATLAB file that only one program reads correctly.",
+   "description": "NetCDF, GeoTIFF, Parquet, Zarr rather than an Excel workbook, a MATLAB file or a CSV, which should be avoided in a FAIR approach: no schema, no units, no metadata in the file.",
    "minValue": 0,
    "maxValue": 1
   },
@@ -214,14 +214,14 @@
    "propertyID": "preset:we",
    "name": "Webservice-Energy",
    "alternateName": "Webservice-Energy",
-   "value": "{\"F1\": 1, \"F2\": 1, \"F3\": 1, \"F4\": 1, \"F5\": 1, \"A1\": 1, \"A2\": 1, \"A3\": 1, \"A4\": 1, \"A5\": 0.5, \"I1\": 1, \"I2\": 1, \"I3\": 1, \"I4\": 1, \"I5\": 0.5, \"R1\": 1, \"R2\": 1, \"R3\": 1, \"R4\": 0.5, \"R5\": 0.5}"
+   "value": "{\"F1\": 1, \"F2\": 1, \"F3\": 1, \"F4\": 1, \"F5\": 1, \"A1\": 1, \"A2\": 1, \"A3\": 1, \"A4\": 1, \"A5\": 0.5, \"I1\": 1, \"I2\": 1, \"I3\": 1, \"I4\": 1, \"I5\": 1, \"R1\": 1, \"R2\": 1, \"R3\": 1, \"R4\": 0.5, \"R5\": 1}"
   },
   {
    "@type": "PropertyValue",
    "propertyID": "preset:zenodo",
    "name": "Deposit with DOI, CSV file",
    "alternateName": "Dépôt avec DOI, fichier CSV",
-   "value": "{\"F1\": 1, \"F2\": 1, \"F3\": 0.5, \"F4\": 1, \"F5\": 1, \"A1\": 1, \"A2\": 1, \"A3\": 1, \"A4\": 0.5, \"A5\": 1, \"I1\": 1, \"I2\": 0, \"I3\": 0.5, \"I4\": 1, \"I5\": 0, \"R1\": 1, \"R2\": 0.5, \"R3\": 0, \"R4\": 0.5, \"R5\": 0.5}"
+   "value": "{\"F1\": 1, \"F2\": 1, \"F3\": 0.5, \"F4\": 0.5, \"F5\": 1, \"A1\": 1, \"A2\": 1, \"A3\": 1, \"A4\": 0, \"A5\": 1, \"I1\": 0, \"I2\": 0, \"I3\": 0, \"I4\": 1, \"I5\": 0, \"R1\": 1, \"R2\": 0.5, \"R3\": 0, \"R4\": 0.5, \"R5\": 0.5}"
   },
   {
    "@type": "PropertyValue",

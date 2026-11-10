@@ -612,6 +612,60 @@
         "fr": "https://www.cyrilvoyant.com/fr/animations/moteur-carnot/",
         "en": "https://www.cyrilvoyant.com/tools/carnot-heat-engine/"
       }
+    },
+    {
+      "id": "probabilistic-solar",
+      "domain": "energy",
+      "kind": "demo",
+      "interface_language": "both",
+      "name": {
+        "fr": "Prévision probabiliste",
+        "en": "Probabilistic solar forecasting"
+      },
+      "task": {
+        "fr": "GHI horaire à Ajaccio : intervalle de confiance ou de prévision, pourquoi ±2σ échoue, prédiction conforme sans fuite, PICP et CRPS en direct.",
+        "en": "Hourly solar irradiance at Ajaccio: confidence vs prediction interval, why ±2σ fails, leakage-free conformal prediction, live PICP and CRPS."
+      },
+      "url": {
+        "fr": "https://www.cyrilvoyant.com/fr/outils/prevision-probabiliste/",
+        "en": "https://www.cyrilvoyant.com/tools/probabilistic-solar-forecasting/"
+      }
+    },
+    {
+      "id": "pv",
+      "domain": "energy",
+      "kind": "demo",
+      "interface_language": "both",
+      "name": {
+        "fr": "Modes de prévision PV",
+        "en": "PV forecasting modes"
+      },
+      "task": {
+        "fr": "Prévoir la puissance photovoltaïque directement, ou par l’éclairement (GTI, GHI) puis conversion : erreur de chaque étape, nRMSE et NICE en direct, puissance crête et écrêtement, sur les données ouvertes SOLETE.",
+        "en": "Forecast photovoltaic power directly, or through irradiance (GTI, GHI) then conversion: error of each stage, live nRMSE and NICE, peak power and curtailment, on the open SOLETE data."
+      },
+      "url": {
+        "fr": "https://www.cyrilvoyant.com/fr/outils/modes-prevision-pv/",
+        "en": "https://www.cyrilvoyant.com/tools/pv-forecasting-modes/"
+      }
+    },
+    {
+      "id": "jb",
+      "domain": "learning",
+      "kind": "demo",
+      "interface_language": "both",
+      "name": {
+        "fr": "Test de Jarque-Bera",
+        "en": "Jarque–Bera test"
+      },
+      "task": {
+        "fr": "Loi normale ou pas ? Histogramme, droite de Henry et trois tests (Jarque-Bera, Shapiro-Wilk, Kolmogorov-Smirnov) : ajoutez des points et comparez.",
+        "en": "Normal or not? Histogram, Q-Q plot and three tests (Jarque-Bera, Shapiro-Wilk, Kolmogorov-Smirnov): add points and compare the verdicts."
+      },
+      "url": {
+        "fr": "https://www.cyrilvoyant.com/fr/outils/test-jarque-bera/",
+        "en": "https://www.cyrilvoyant.com/tools/jarque-bera-test/"
+      }
     }
   ]
 }

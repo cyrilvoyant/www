@@ -36,6 +36,9 @@
      "@id": "https://www.cyrilvoyant.com/approach/"
     },
     {
+     "@id": "https://www.cyrilvoyant.com/bib/"
+    },
+    {
      "@id": "https://www.cyrilvoyant.com/fr/actualites/"
     },
     {
@@ -48,6 +51,12 @@
      "@id": "https://www.cyrilvoyant.com/fr/enseignement/cours-prevision-solaire/"
     },
     {
+     "@id": "https://www.cyrilvoyant.com/fr/lexique/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/outils/modes-prevision-pv/"
+    },
+    {
      "@id": "https://www.cyrilvoyant.com/fr/outils/nice/"
     },
     {
@@ -58,6 +67,9 @@
     },
     {
      "@id": "https://www.cyrilvoyant.com/fr/vue-d-ensemble/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/glossary/"
     },
     {
      "@id": "https://www.cyrilvoyant.com/latest-publications-and-news/"
@@ -76,6 +88,9 @@
     },
     {
      "@id": "https://www.cyrilvoyant.com/teaching/solar-forecasting-course/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/tools/pv-forecasting-modes/"
     }
    ],
    "keywords": [
@@ -120,6 +135,11 @@
    "name": "www.cyrilvoyant.com/approach/"
   },
   {
+   "@id": "https://www.cyrilvoyant.com/bib/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/bib/"
+  },
+  {
    "@id": "https://www.cyrilvoyant.com/fr/actualites/",
    "@type": "WebPage",
    "name": "www.cyrilvoyant.com/fr/actualites/"
@@ -140,6 +160,16 @@
    "name": "www.cyrilvoyant.com/fr/enseignement/cours-prevision-solaire/"
   },
   {
+   "@id": "https://www.cyrilvoyant.com/fr/lexique/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/fr/lexique/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/fr/outils/modes-prevision-pv/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/fr/outils/modes-prevision-pv/"
+  },
+  {
    "@id": "https://www.cyrilvoyant.com/fr/outils/nice/",
    "@type": "WebPage",
    "name": "www.cyrilvoyant.com/fr/outils/nice/"
@@ -158,6 +188,11 @@
    "@id": "https://www.cyrilvoyant.com/fr/vue-d-ensemble/",
    "@type": "WebPage",
    "name": "www.cyrilvoyant.com/fr/vue-d-ensemble/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/glossary/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/glossary/"
   },
   {
    "@id": "https://www.cyrilvoyant.com/latest-publications-and-news/",
@@ -188,6 +223,11 @@
    "@id": "https://www.cyrilvoyant.com/teaching/solar-forecasting-course/",
    "@type": "WebPage",
    "name": "www.cyrilvoyant.com/teaching/solar-forecasting-course/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/tools/pv-forecasting-modes/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/tools/pv-forecasting-modes/"
   }
  ]
 }

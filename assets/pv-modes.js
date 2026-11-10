@@ -55,11 +55,11 @@
       out.stage_rmse = mse.map(Math.sqrt);
       out.share = mse.map(function (v) { return v / tot; });
       out.inter = (out.RMSE * out.RMSE - tot) / (out.RMSE * out.RMSE);
-      out.monthly_nrmse = [];
+      out.monthly_rmse = [];          // RMSE in kW, month by month (NaN for a month outside the test half)
       for (var mo = 0; mo < 12; mo++) {
-        var se = 0, sy = 0, c = 0;
-        for (j = 0; j < L; j++) if (S.month[idx[j]] === mo) { se += (f[j] - y[j]) * (f[j] - y[j]); sy += y[j]; c++; }
-        out.monthly_nrmse.push(Math.sqrt(se / c) / (sy / c));
+        var se = 0, c = 0;
+        for (j = 0; j < L; j++) if (S.month[idx[j]] === mo) { se += (f[j] - y[j]) * (f[j] - y[j]); c++; }
+        out.monthly_rmse.push(c ? Math.sqrt(se / c) : NaN);
       }
       out.f = f; out.idx = idx;
       return out;
@@ -119,32 +119,35 @@
     model: "Modèle de prévision", hz: "Horizon", cap: "Puissance crête installée", norm: "PV direct sur P / P<sub>c</sub>",
     models: { P: "persistance", BLEND: "BLEND", AR: "autorégression AR", ELM: "ELM" },
     about: "Ces modèles sont expliqués ailleurs : ",
-    capo: [["0.5", "divisée par 2 (5 kW)"], ["1", "telle quelle (10 kW)"], ["2", "doublée (20 kW)"]],
+    capo: function (pc) { return [["0.5", "divisée par 2 (" + num(pc / 2, 2) + " kWc)"], ["1", "telle quelle (" + num(pc, 2) + " kWc)"], ["2", "doublée (" + num(2 * pc, 2) + " kWc)"]]; },
     modes: { pv: "PV direct", gti: "GTI puis PV", ghi: "GHI puis GTI puis PV" },
     t1: "L’erreur des trois voies sur l’année d’évaluation", th: ["Voie", "RMSE (kW)", "nRMSE", "NICE¹", "NICE²", "NICE³", "NICE<sup>Σ</sup>"],
-    cap1: "Les trois voies, même modèle, même horizon, instants de jour du 1er septembre 2018 au 31 août 2019",
-    t2: "D’où vient l’erreur finale ?", t3: "Trois jours : mesure et prévisions", t4: "Mois par mois : la nRMSE des trois voies",
+    cap1: "Les trois voies, même modèle, même horizon : instants de jour du 15 janvier au 31 août 2019 (moitié de test, jamais vue pendant l’apprentissage)",
+    t2: "D’où vient l’erreur finale ?", t3: "Trois jours : la mesure (en noir) et la prévision de chaque voie", t4: "Mois par mois : l’erreur des trois voies (RMSE, en kW)",
+    r3: "RMSE sur ces 3 jours : ", fcLeg: "en couleur : la prévision de la voie, une voie par graphique",
     stages: { ghi: "prévision de GHI", tr: "transposition GHI → GTI", gti: "prévision de GTI", conv: "conversion GTI → PV", pv: "prévision de PV" },
     unitW: "W/m²", kw: "kW", meas: "mesure", day: "Premier jour affiché",
     inter: function (v) { return v >= 0 ? "Termes croisés : +" + pct(v) + " de l’erreur quadratique finale (les erreurs des étapes vont un peu dans le même sens)." : "Termes croisés : −" + pct(-v) + " de l’erreur quadratique finale (les erreurs des étapes se compensent en partie)."; },
     one: "Une seule étape : toute l’erreur vient de la prévision de la puissance.",
-    sh: "part de l’erreur quadratique", rm: "erreur propre (RMSE, en kW de PV)", nat: "dans son unité",
+    sh: "part des carrés d’étape hors termes croisés", rm: "erreur propre (RMSE, en kW de PV)", nat: "dans son unité",
     over: "> 1", best: "La voie la plus juste ici : ",
     capNote: {
       same: "Puissance crête inchangée : diviser par P<sub>c</sub> ne change rien, les prévisions sont identiques.",
       norm: "PV direct travaille sur P / P<sub>c</sub> avec la nouvelle P<sub>c</sub> : le modèle figé revoit des valeurs familières, et l’erreur relative (nRMSE, NICE) revient à celle de la centrale d’origine. Les voies par l’éclairement, elles, n’ont besoin que de la nouvelle P<sub>c</sub> dans la conversion.",
-      raw: "PV direct reçoit des kilowatts qu’il n’a jamais vus : son apprentissage est figé sur une centrale de 10 kW. La persistance et BLEND n’en souffrent pas (elles recopient les valeurs) ; l’AR, presque linéaire, un peu ; l’ELM, non linéaire, davantage. Cochez « PV direct sur P / P<sub>c</sub> » pour corriger. Les voies par l’éclairement ne bougent pas : il suffit de changer P<sub>c</sub> dans la conversion."
+      raw: "PV direct reçoit des kilowatts qu’il n’a jamais vus : son apprentissage est figé sur la centrale réelle (P<sub>c</sub> = 7,44 kWc). La persistance et BLEND n’en souffrent pas (elles recopient les valeurs) ; l’AR, presque linéaire, un peu ; l’ELM, non linéaire, davantage. Cochez « PV direct sur P / P<sub>c</sub> » pour corriger. Les voies par l’éclairement ne bougent pas : il suffit de changer P<sub>c</sub> dans la conversion."
     },
     mon: ["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."],
-    monNote: "En hiver, le soleil est bas, la production faible, et l’apprentissage figé n’a vu qu’un été : l’erreur relative monte pour toutes les voies, et davantage pour la voie GHI, car la transposition amplifie les erreurs quand le soleil est bas.",
-    cutT: "Écrêtement : la centrale doit limiter sa puissance", lim: "Limite imposée", limo: [["0.6", "60 % de P<sub>c</sub> (6 kW)"], ["0.3", "30 % de P<sub>c</sub> (3 kW)"], ["0", "0 (arrêt)"]],
+    monNote: "L’erreur est donnée en kW, sans la diviser par la production moyenne : en janvier, la production est si faible que l’erreur relative (nRMSE) deviendrait énorme sans rien dire de la qualité des voies. En kW, l’erreur suit le soleil : petite en hiver, plus grande au printemps et en été, quand les nuages passent devant un soleil fort.",
+    cutT: "Écrêtement : la centrale doit limiter sa puissance", lim: "Limite imposée", limo: function (pc) { return [["0.6", "60 % de P<sub>c</sub> (" + num(0.6 * pc, 2) + " kW)"], ["0.3", "30 % de P<sub>c</sub> (" + num(0.3 * pc, 2) + " kW)"], ["0", "0 (arrêt)"]]; },
     ann: "Annonce", anno: [["d1", "la veille"], ["h2", "2 h avant"], ["none", "non annoncée"]],
     var: "PV direct", varo: [["raw", "en kW mesurés"], ["divA", "divisé par la puissance disponible annoncée"], ["mask", "divisé par la puissance disponible, heures à 0 masquées"]],
     ev: "Événement", evs: "8 journées ensoleillées de l’été 2019, écrêtées de 10 h à 14 h UTC",
     sameCtl: function (m, h) { return "Modèle et horizon : ceux du panneau du haut (" + m + ", " + h + ")."; },
     start: "début de l’écrêtement", end: "fin", annMark: "annonce (2 h avant)", annD1: "annoncé la veille",
     th2: ["Voie", "pendant (RMSE, kW)", "après, jusqu’au soir du lendemain (RMSE, kW)"],
-    noNice: "NICE n’est pas affiché ici : pendant et juste après un écrêtement, la persistance recopie une valeur d’une autre heure du jour (par exemple celle du petit matin à 6 h d’horizon), et le rapport ne dit plus rien de la qualité de la prévision.",
+    zero: "0 (connu d’avance)", zeroNote: "Arrêt annoncé : pendant l’écrêtement, la mesure vaut 0 et chaque prévision émise après l’annonce est plafonnée à 0. L’erreur y est donc nulle par construction, pour toutes les voies : il n’y a rien à prévoir. La différence entre les voies se joue après l’écrêtement.",
+    normHint: "agit seulement si la puissance crête change",
+    noNice: "NICE n’est pas affiché ici : pendant et juste après un écrêtement, la persistance recopie une valeur d’une autre heure du jour (par exemple celle du petit matin à 6 h d’horizon), et le rapport répond moins directement à la question opérationnelle que l’erreur en kW.",
     capT: "Sur les 8 événements, au modèle et à l’horizon choisis",
     failT: function (a, b) { return "échoue : " + a + " prévisions sur " + b + " impossibles (division par zéro)"; },
     measC: "mesure (écrêtée)"
@@ -153,32 +156,35 @@
     model: "Forecasting model", hz: "Horizon", cap: "Installed peak power", norm: "PV direct on P / P<sub>c</sub>",
     models: { P: "persistence", BLEND: "BLEND", AR: "AR autoregression", ELM: "ELM" },
     about: "These models are explained elsewhere: ",
-    capo: [["0.5", "halved (5 kW)"], ["1", "as is (10 kW)"], ["2", "doubled (20 kW)"]],
+    capo: function (pc) { return [["0.5", "halved (" + num(pc / 2, 2) + " kWp)"], ["1", "as is (" + num(pc, 2) + " kWp)"], ["2", "doubled (" + num(2 * pc, 2) + " kWp)"]]; },
     modes: { pv: "PV direct", gti: "GTI then PV", ghi: "GHI then GTI then PV" },
     t1: "The error of the three routes over the evaluation year", th: ["Route", "RMSE (kW)", "nRMSE", "NICE¹", "NICE²", "NICE³", "NICE<sup>Σ</sup>"],
-    cap1: "The three routes, same model, same horizon, daytime from 1 September 2018 to 31 August 2019",
-    t2: "Where does the final error come from?", t3: "Three days: measurement and forecasts", t4: "Month by month: the nRMSE of the three routes",
+    cap1: "The three routes, same model, same horizon: daytime from 15 January to 31 August 2019 (test half, never seen during training)",
+    t2: "Where does the final error come from?", t3: "Three days: the measurement (black) and the forecast of each route", t4: "Month by month: the error of the three routes (RMSE, in kW)",
+    r3: "RMSE over these 3 days: ", fcLeg: "in colour: the forecast of the route, one route per chart",
     stages: { ghi: "GHI forecast", tr: "transposition GHI → GTI", gti: "GTI forecast", conv: "conversion GTI → PV", pv: "PV forecast" },
     unitW: "W/m²", kw: "kW", meas: "measurement", day: "First day shown",
     inter: function (v) { return v >= 0 ? "Cross terms: +" + pct(v) + " of the final squared error (the stage errors lean slightly the same way)." : "Cross terms: −" + pct(-v) + " of the final squared error (the stage errors partly cancel)."; },
     one: "One stage only: all the error comes from the power forecast.",
-    sh: "share of the squared error", rm: "own error (RMSE, in kW of PV)", nat: "in its own unit",
+    sh: "share of stage squares before cross terms", rm: "own error (RMSE, in kW of PV)", nat: "in its own unit",
     over: "> 1", best: "The most accurate route here: ",
     capNote: {
       same: "Peak power unchanged: dividing by P<sub>c</sub> changes nothing, the forecasts are identical.",
       norm: "PV direct works on P / P<sub>c</sub> with the new P<sub>c</sub>: the frozen model sees familiar values again, and the relative error (nRMSE, NICE) returns to that of the original plant. The irradiance routes only need the new P<sub>c</sub> in the conversion.",
-      raw: "PV direct receives kilowatts it has never seen: its training is frozen on a 10 kW plant. Persistence and BLEND do not suffer (they copy values); AR, almost linear, a little; ELM, nonlinear, more. Tick \"PV direct on P / P<sub>c</sub>\" to fix it. The irradiance routes do not move: changing P<sub>c</sub> in the conversion is enough."
+      raw: "PV direct receives kilowatts it has never seen: its training is frozen on the real plant (P<sub>c</sub> = 7.44 kWp). Persistence and BLEND do not suffer (they copy values); AR, almost linear, a little; ELM, nonlinear, more. Tick \"PV direct on P / P<sub>c</sub>\" to fix it. The irradiance routes do not move: changing P<sub>c</sub> in the conversion is enough."
     },
     mon: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-    monNote: "In winter the sun is low, the output small, and the frozen training has only seen one summer: the relative error rises for every route, and more for the GHI route, because the transposition amplifies errors when the sun is low.",
-    cutT: "Curtailment: the plant must limit its power", lim: "Imposed limit", limo: [["0.6", "60% of P<sub>c</sub> (6 kW)"], ["0.3", "30% of P<sub>c</sub> (3 kW)"], ["0", "0 (shut down)"]],
+    monNote: "The error is given in kW, without dividing it by the mean output: in January the output is so small that the relative error (nRMSE) would become huge without saying anything about the quality of the routes. In kW, the error follows the sun: small in winter, larger in spring and summer, when clouds pass in front of a strong sun.",
+    cutT: "Curtailment: the plant must limit its power", lim: "Imposed limit", limo: function (pc) { return [["0.6", "60% of P<sub>c</sub> (" + num(0.6 * pc, 2) + " kW)"], ["0.3", "30% of P<sub>c</sub> (" + num(0.3 * pc, 2) + " kW)"], ["0", "0 (shut down)"]]; },
     ann: "Announcement", anno: [["d1", "the day before"], ["h2", "2 h before"], ["none", "not announced"]],
     var: "PV direct", varo: [["raw", "in measured kW"], ["divA", "divided by the announced available power"], ["mask", "divided by the available power, zero hours masked"]],
     ev: "Event", evs: "8 sunny days of summer 2019, curtailed from 10:00 to 14:00 UTC",
     sameCtl: function (m, h) { return "Model and horizon: those of the panel above (" + m + ", " + h + ")."; },
     start: "start of curtailment", end: "end", annMark: "announcement (2 h before)", annD1: "announced the day before",
     th2: ["Route", "during (RMSE, kW)", "after, until the next evening (RMSE, kW)"],
-    noNice: "NICE is not shown here: during and just after a curtailment, persistence copies a value from another time of day (for instance the early morning at a 6-hour horizon), and the ratio no longer says anything about the quality of the forecast.",
+    zero: "0 (known in advance)", zeroNote: "Announced shutdown: during the curtailment the measurement is 0 and every forecast issued after the announcement is capped at 0. The error there is therefore zero by construction, for every route: there is nothing to forecast. The difference between the routes shows after the curtailment.",
+    normHint: "acts only when the peak power changes",
+    noNice: "NICE is not shown here: during and just after a curtailment, persistence copies a value from another time of day (for instance the early morning at a 6-hour horizon), and the ratio is less directly useful for this operational question than the error in kW.",
     capT: "Over the 8 events, at the chosen model and horizon",
     failT: function (a, b) { return "fails: " + a + " of " + b + " forecasts impossible (division by zero)"; },
     measC: "measurement (curtailed)"
@@ -200,7 +206,7 @@
   function path(pts) { var s = "", up = false; pts.forEach(function (p) { if (!isFinite(p[1])) { up = false; return; } s += (up ? "L" : "M") + p[0].toFixed(1) + " " + p[1].toFixed(1); up = true; }); return s; }
   function sel(id, opts, val) { return '<select id="' + id + '">' + opts.map(function (o) { return '<option value="' + o[0] + '"' + (o[0] === val ? " selected" : "") + ">" + o[1].replace(/<[^>]+>/g, "") + "</option>"; }).join("") + "</select>"; }
 
-  var S = null, st = { m: "AR", hi: 1, k: 1, norm: false, d: 0, s: 0, ann: "d1", v: "raw", e: 0 };
+  var S = null, st = { m: "ELM", hi: 1, k: 1, norm: false, d: 0, s: 0, ann: "d1", v: "raw", e: 0 };
   box.innerHTML = '<p class="fc-note">' + L.load + "</p>";
   fetch(box.getAttribute("data-src")).then(function (r) { return r.json(); }).then(function (D) {
     S = core.prep(D); st.d = D.profile_day; build(); if (cutBox) buildCut();
@@ -213,8 +219,8 @@
       '<div class="fc-ctl">' +
       "<label>" + L.model + sel("pvm-m", D.models.map(function (m) { return [m, L.models[m]]; }), st.m) + "</label>" +
       '<label class="fc-h">' + L.hz + SEP + '<output id="pvm-ho"></output><input id="pvm-h" type="range" min="0" max="' + (D.horizons.length - 1) + '" step="1" value="' + st.hi + '" aria-label="' + L.hz + '"></label>' +
-      "<label>" + L.cap + sel("pvm-k", L.capo, "1") + "</label>" +
-      '<label class="pvm-chk"><span><input id="pvm-n" type="checkbox"> ' + L.norm + "</span></label></div>" +
+      "<label>" + L.cap + sel("pvm-k", L.capo(S.pc), "1") + "</label>" +
+      '<label class="pvm-chk"><span><input id="pvm-n" type="checkbox" disabled> ' + L.norm + '</span><span class="pvm-sm" id="pvm-nh">' + L.normHint + "</span></label></div>" +
       '<p class="fc-note">' + L.about + D.models.map(function (m) { return '<a href="' + LINK[m] + '">' + L.models[m] + "</a>"; }).join(" · ") + "</p>" +
       '<h3 class="fc-pt">' + L.t1 + '</h3><div class="fc-tw"><table class="fc-t" id="pvm-t"></table></div><p class="fc-out" id="pvm-best"></p><p class="fc-note" id="pvm-capn"></p>' +
       "<h3>" + L.t2 + '</h3><div class="pvm-cards" id="pvm-cards"></div>' +
@@ -226,7 +232,7 @@
     on("pvm-k", "change", function (e) { st.k = +e.target.value; draw(); });
     on("pvm-n", "change", function (e) { st.norm = e.target.checked; draw(); });
     on("pvm-d", "input", function (e) { st.d = +e.target.value; drawProfile(); });
-    document.getElementById("pvm-leg").innerHTML = '<span><i style="background:var(--ink)"></i>' + L.meas + "</span>" + MODES.map(function (md) { return '<span><i style="background:' + COL[md] + '"></i>' + L.modes[md] + "</span>"; }).join("");
+    document.getElementById("pvm-leg").innerHTML = '<span><i style="background:var(--ink)"></i>' + L.meas + "</span><span>" + L.fcLeg + "</span>";
     var t; window.addEventListener("resize", function () { clearTimeout(t); t = setTimeout(function () { draw(); if (cutBox) drawCut(); }, 150); });
     draw();
   }
@@ -243,6 +249,7 @@
       }).join("") + "</tbody>";
     document.getElementById("pvm-best").innerHTML = L.best + "<strong>" + L.modes[best] + "</strong> (" + L.models[st.m] + ", " + hl(H()) + ").";
     document.getElementById("pvm-capn").innerHTML = st.k === 1 ? L.capNote.same : st.norm ? L.capNote.norm : L.capNote.raw;
+    var nb = document.getElementById("pvm-n"); nb.disabled = st.k === 1; document.getElementById("pvm-nh").style.visibility = st.k === 1 ? "visible" : "hidden";
     drawCards(); drawProfile(); drawMonths();
     if (cutBox && cutBox.firstChild && document.getElementById("pvm-cs")) drawCut();
   }
@@ -278,25 +285,33 @@
     var d = new Date(t);
     return d.toLocaleDateString(fr ? "fr-FR" : "en-GB", { day: "numeric", month: "short", year: withYear ? "numeric" : undefined, timeZone: "UTC" });
   }
-  function profileChart(svg, series, t0idx, ndays, opt) {
-    var W = size(svg, 280), Hh = 280, pl = 42, pr = 10, pt = 12, pb = 30, n = ndays * 48;
+  // small multiples: one panel per route, the measurement (black) in each, the same vertical scale everywhere
+  function profileChart(svg, meas, panels, t0idx, ndays, opt) {
+    var ph = 118, th = 20, gap = 14, pl = 42, pr = 10, pt = 6, pb = 26, n = ndays * 48;
+    var Hh = pt + panels.length * (th + ph + gap) - gap + pb, W = size(svg, Hh);
     clear(svg);
-    var ymax = 0; series.forEach(function (s) { s.v.forEach(function (v) { if (isFinite(v) && v > ymax) ymax = v; }); });
+    var ymax = 0; [meas].concat(panels.map(function (p) { return p.v; })).forEach(function (a) { a.forEach(function (v) { if (isFinite(v) && v > ymax) ymax = v; }); });
     ymax = Math.max(1, Math.ceil(ymax));
-    var X = function (i) { return pl + (W - pl - pr) * i / n; }, Y = function (v) { return pt + (Hh - pt - pb) * (1 - v / ymax); };
-    if (opt && opt.zone) opt.zone.forEach(function (z) { el("rect", { x: X(z[0]), y: pt, width: X(z[1]) - X(z[0]), height: Hh - pt - pb, "class": "fc-zone" }, svg); });
-    var step = ymax > 8 ? Math.ceil(ymax / 5) : ymax > 4 ? 2 : 1;
-    for (var v = 0; v <= ymax; v += step) { el("line", { x1: pl, x2: W - pr, y1: Y(v), y2: Y(v), "class": "fc-grid" }, svg); txt("text", { x: pl - 6, y: Y(v) + 4, "text-anchor": "end", "class": "fc-ax" }, svg, num(v, 0)); }
-    txt("text", { x: 4, y: pt + 2, "class": "fc-ax", "dominant-baseline": "hanging", transform: "rotate(-90 4 " + (pt + 2) + ")", "text-anchor": "end" }, svg, L.kw);
-    for (var d = 0; d <= ndays; d++) { el("line", { x1: X(d * 48), x2: X(d * 48), y1: pt, y2: Hh - pb, "class": "fc-grid" }, svg); if (d < ndays) txt("text", { x: X(d * 48 + 24), y: Hh - 10, "text-anchor": "middle", "class": "fc-ax" }, svg, dateLabel(S.t0 + (t0idx + d * 48) * 1800e3, d === 0)); }
-    if (opt && opt.marks) opt.marks.forEach(function (mk) {
-      el("line", { x1: X(mk.i), x2: X(mk.i), y1: pt, y2: Hh - pb, style: "stroke:" + mk.c, "stroke-width": mk.w || 2, "stroke-dasharray": mk.dash || "none" }, svg);
-      txt("text", { x: X(mk.i) + (mk.left ? -4 : 4), y: pt + 12 + (mk.dy || 0), "text-anchor": mk.left ? "end" : "start", "class": "fc-ax pvm-mk", style: "fill:" + mk.c }, svg, mk.t);
+    var step = ymax > 6 ? Math.ceil(ymax / 3) : ymax > 3 ? 2 : 1;
+    var X = function (i) { return pl + (W - pl - pr) * i / n; };
+    panels.forEach(function (pn, q) {
+      var top = pt + q * (th + ph + gap) + th, Y = function (v) { return top + ph * (1 - v / ymax); };
+      txt("text", { x: pl, y: top - 6, "class": "fc-ax pvm-pt", style: "fill:" + pn.c }, svg, pn.t);
+      if (pn.note) txt("text", { x: W - pr, y: top - 6, "text-anchor": "end", "class": "fc-ax" }, svg, pn.note);
+      if (opt && opt.zone) opt.zone.forEach(function (z) { el("rect", { x: X(z[0]), y: top, width: X(z[1]) - X(z[0]), height: ph, "class": "fc-zone" }, svg); });
+      for (var v = 0; v <= ymax; v += step) { el("line", { x1: pl, x2: W - pr, y1: Y(v), y2: Y(v), "class": "fc-grid" }, svg); txt("text", { x: pl - 6, y: Y(v) + 4, "text-anchor": "end", "class": "fc-ax" }, svg, num(v, 0)); }
+      txt("text", { x: 4, y: top, "class": "fc-ax", "dominant-baseline": "hanging", transform: "rotate(-90 4 " + top + ")", "text-anchor": "end" }, svg, L.kw);
+      for (var d = 0; d <= ndays; d++) el("line", { x1: X(d * 48), x2: X(d * 48), y1: top, y2: top + ph, "class": "fc-grid" }, svg);
+      if (opt && opt.marks) opt.marks.forEach(function (mk) {
+        el("line", { x1: X(mk.i), x2: X(mk.i), y1: top, y2: top + ph, style: "stroke:" + mk.c, "stroke-width": mk.w || 2, "stroke-dasharray": mk.dash || "none" }, svg);
+        if (q === 0 && mk.t) txt("text", { x: X(mk.i) + (mk.left ? -4 : 4), y: top + 12 + (mk.dy || 0), "text-anchor": mk.left ? "end" : "start", "class": "fc-ax pvm-mk", style: "fill:" + mk.c }, svg, mk.t);
+      });
+      el("path", { d: path(meas.map(function (v, i) { return [X(i + 0.5), Y(v)]; })), "class": "fc-obs" }, svg);
+      el("path", { d: path(pn.v.map(function (v, i) { return [X(i + 0.5), Y(v)]; })), "class": "fc-line", style: "stroke:" + pn.c }, svg);
     });
-    series.forEach(function (s) {
-      el("path", { d: path(s.v.map(function (v, i) { return [X(i + 0.5), Y(v)]; })), "class": s.obs ? "fc-obs" : "fc-line fc-thin", style: s.obs ? "" : "stroke:" + s.c }, svg);
-    });
+    for (var d = 0; d < ndays; d++) txt("text", { x: X(d * 48 + 24), y: Hh - 8, "text-anchor": "middle", "class": "fc-ax" }, svg, dateLabel(S.t0 + (t0idx + d * 48) * 1800e3, d === 0));
   }
+  function rmse3(meas, f) { var se = 0, c = 0; for (var i = 0; i < meas.length; i++) if (meas[i] > 0 || f[i] > 0) { se += (f[i] - meas[i]) * (f[i] - meas[i]); c++; } return c ? Math.sqrt(se / c) : NaN; }
   function drawProfile() {
     var d0 = st.d * 48, n = 144, k = st.k;
     document.getElementById("pvm-do").textContent = dateLabel(S.t0 + d0 * 1800e3, true);
@@ -312,23 +327,23 @@
     });
     var svg = document.getElementById("pvm-prof");
     svg.setAttribute("aria-label", L.t3);
-    profileChart(svg, MODES.map(function (md) { return { v: fc[md], c: COL[md] }; }).concat([{ v: meas, c: "var(--ink)", obs: true }]), d0, 3);
+    profileChart(svg, meas, MODES.map(function (md) { return { v: fc[md], c: COL[md], t: L.modes[md], note: L.r3 + num(rmse3(meas, fc[md]), 2) + " " + L.kw }; }), d0, 3);
   }
   function drawMonths() {
     var svg = document.getElementById("pvm-mon"), W = size(svg, 240), Hh = 240, pl = 42, pr = 10, pt = 12, pb = 28;
     clear(svg); svg.setAttribute("aria-label", L.t4);
-    var order = [8, 9, 10, 11, 0, 1, 2, 3, 4, 5, 6, 7], ymax = 0;
-    MODES.forEach(function (md) { R[md].monthly_nrmse.forEach(function (v) { ymax = Math.max(ymax, v); }); });
-    ymax = Math.ceil(ymax * 2) / 2;
-    var X = function (i) { return pl + (W - pl - pr) * (i + 0.5) / 12; }, Y = function (v) { return pt + (Hh - pt - pb) * (1 - v / ymax); };
-    var stp = ymax > 6 ? 2 : ymax > 3 ? 1 : 0.5;
-    for (var v = 0; v <= ymax + 1e-9; v += stp) { el("line", { x1: pl, x2: W - pr, y1: Y(v), y2: Y(v), "class": "fc-grid" }, svg); txt("text", { x: pl - 6, y: Y(v) + 4, "text-anchor": "end", "class": "fc-ax" }, svg, num(v, stp < 1 ? 1 : 0)); }
-    txt("text", { x: 4, y: pt + 2, "class": "fc-ax", transform: "rotate(-90 4 " + (pt + 2) + ")", "text-anchor": "end", "dominant-baseline": "hanging" }, svg, "nRMSE");
+    var order = [], ymax = 0, m0 = S.month[0];
+    for (var q = 0; q < 12; q++) { var mo = (m0 + q) % 12; if (isFinite(R.pv.monthly_rmse[mo])) order.push(mo); }
+    MODES.forEach(function (md) { order.forEach(function (mo) { ymax = Math.max(ymax, R[md].monthly_rmse[mo]); }); });
+    var stp = ymax > 2 ? 0.5 : ymax > 1 ? 0.25 : 0.1; ymax = Math.ceil(ymax / stp) * stp;
+    var X = function (i) { return pl + (W - pl - pr) * (i + 0.5) / order.length; }, Y = function (v) { return pt + (Hh - pt - pb) * (1 - v / ymax); };
+    for (var v = 0; v <= ymax + 1e-9; v += stp) { el("line", { x1: pl, x2: W - pr, y1: Y(v), y2: Y(v), "class": "fc-grid" }, svg); txt("text", { x: pl - 6, y: Y(v) + 4, "text-anchor": "end", "class": "fc-ax" }, svg, num(v, stp < 0.5 ? 2 : 1)); }
+    txt("text", { x: 4, y: pt + 2, "class": "fc-ax", transform: "rotate(-90 4 " + (pt + 2) + ")", "text-anchor": "end", "dominant-baseline": "hanging" }, svg, "RMSE (" + L.kw + ")");
     order.forEach(function (mo, i) { txt("text", { x: X(i), y: Hh - 8, "text-anchor": "middle", "class": "fc-ax" }, svg, L.mon[mo]); });
     MODES.forEach(function (md) {
-      var pts = order.map(function (mo, i) { return [X(i), Y(R[md].monthly_nrmse[mo])]; });
-      el("path", { d: path(pts), "class": "fc-line", stroke: COL[md] }, svg);
-      pts.forEach(function (p) { el("circle", { cx: p[0], cy: p[1], r: 3, fill: COL[md] }, svg); });
+      var pts = order.map(function (mo, i) { return [X(i), Y(R[md].monthly_rmse[mo])]; });
+      el("path", { d: path(pts), "class": "fc-line", style: "stroke:" + COL[md] }, svg);
+      pts.forEach(function (p) { el("circle", { cx: p[0], cy: p[1], r: 3.5, style: "fill:" + COL[md] }, svg); });
     });
   }
 
@@ -336,7 +351,7 @@
   function buildCut() {
     var CU = S.D.curt;
     cutBox.innerHTML = '<div class="fc-ctl fc-static">' +
-      "<label>" + L.lim + sel("pvm-cs", L.limo, "0") + "</label>" +
+      "<label>" + L.lim + sel("pvm-cs", L.limo(S.pc), "0") + "</label>" +
       "<label>" + L.ann + sel("pvm-ca", L.anno, "d1") + "</label>" +
       "<label>" + L.var + sel("pvm-cv", L.varo, "raw") + "</label>" +
       '<label class="fc-h">' + L.ev + SEP + '<output id="pvm-eo"></output><input id="pvm-ce" type="range" min="0" max="' + (CU.events.length - 1) + '" step="1" value="0"></label></div>' +
@@ -347,7 +362,7 @@
     on("pvm-ca", function (e) { st.ann = e.target.value; drawCut(); });
     on("pvm-cv", function (e) { st.v = e.target.value; drawCut(); });
     on("pvm-ce", function (e) { st.e = +e.target.value; drawCut(); });
-    document.getElementById("pvm-cleg").innerHTML = '<span><i style="background:var(--ink)"></i>' + L.measC + "</span>" + MODES.map(function (md) { return '<span><i style="background:' + COL[md] + '"></i>' + L.modes[md] + "</span>"; }).join("") + '<span><i class="fc-swatch" style="background:#a8431f"></i>' + L.start + " – " + L.end + "</span>";
+    document.getElementById("pvm-cleg").innerHTML = '<span><i style="background:var(--ink)"></i>' + L.measC + "</span><span>" + L.fcLeg + "</span>" + '<span><i class="fc-swatch" style="background:#a8431f"></i>' + L.start + " – " + L.end + "</span>";
     drawCut();
   }
   function drawCut() {
@@ -368,13 +383,15 @@
     if (st.ann === "h2") marks.push({ i: 48 + CU.i_known + 1, c: "var(--focus)", t: L.annMark, dash: "4 3", w: 1.5, dy: 28 });
     if (st.ann === "d1") marks.push({ i: 0, c: "var(--focus)", t: L.annD1, dash: "4 3", w: 1.5, dy: 28 });
     var svg = document.getElementById("pvm-cprof"); svg.setAttribute("aria-label", L.cutT);
-    profileChart(svg, MODES.map(function (m2) { return { v: fc[m2], c: COL[m2] }; }).concat([{ v: meas, c: "var(--ink)", obs: true }]), d0, 3, { zone: [[48 + CU.w0, 48 + CU.w1]], marks: marks });
-    var cell = function (r) { return r.fail ? '<td class="pvm-fail">' + L.failT(r.fail, r.n) + "</td>" : "<td>" + num(r.RMSE, 3) + "</td>"; };
-    var bestOf = function (per) { var b = null; MODES.forEach(function (m2) { var r = res[per + "|" + m2]; if (!r.fail && (b === null || r.RMSE < res[per + "|" + b].RMSE - 1e-9)) b = m2; }); return b; };
+    profileChart(svg, meas, MODES.map(function (m2) { return { v: fc[m2], c: COL[m2], t: L.modes[m2] }; }), d0, 3, { zone: [[48 + CU.w0, 48 + CU.w1]], marks: marks });
+    var triv = function (r) { return !r.fail && st.s === 0 && r.RMSE < 5e-4; };
+    var anyTriv = MODES.some(function (m2) { return triv(res["during|" + m2]); });
+    var cell = function (r) { return r.fail ? '<td class="pvm-fail">' + L.failT(r.fail, r.n) + "</td>" : triv(r) ? '<td class="pvm-triv">' + L.zero + "</td>" : "<td>" + num(r.RMSE, 3) + "</td>"; };
+    var bestOf = function (per) { var b = null; MODES.forEach(function (m2) { var r = res[per + "|" + m2]; if (!r.fail && !triv(r) && (b === null || r.RMSE < res[per + "|" + b].RMSE - 1e-9)) b = m2; }); return b; };
     var bd = bestOf("during"), ba = bestOf("after");
     document.getElementById("pvm-ct").innerHTML = "<caption>" + L.capT + "</caption><thead><tr>" + L.th2.map(function (x) { return '<th scope="col">' + x + "</th>"; }).join("") + "</tr></thead><tbody>" +
       MODES.map(function (m2) { return '<tr><th scope="row"><i style="background:' + COL[m2] + '"></i>' + L.modes[m2] + "</th>" + cell(res["during|" + m2]).replace("<td>", m2 === bd ? '<td class="pvm-b">' : "<td>") + cell(res["after|" + m2]).replace("<td>", m2 === ba ? '<td class="pvm-b">' : "<td>") + "</tr>"; }).join("") + "</tbody>";
-    document.getElementById("pvm-cnote").innerHTML = cutNote(res, bd, ba) + '<p class="fc-note">' + L.noNice + "</p>";
+    document.getElementById("pvm-cnote").innerHTML = (anyTriv ? "<p>" + L.zeroNote + "</p>" : "") + cutNote(res, bd, ba) + '<p class="fc-note">' + L.noNice + "</p>";
   }
   function cutNote(res, bd, ba) {
     var f = fr, s = st.s, a = st.ann, v = st.v, out = [];

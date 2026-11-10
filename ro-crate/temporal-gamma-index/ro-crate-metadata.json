@@ -39,6 +39,9 @@
      "@id": "https://www.cyrilvoyant.com/approach/"
     },
     {
+     "@id": "https://www.cyrilvoyant.com/bib/"
+    },
+    {
      "@id": "https://www.cyrilvoyant.com/fr/a-propos/"
     },
     {
@@ -51,10 +54,16 @@
      "@id": "https://www.cyrilvoyant.com/fr/approche/"
     },
     {
+     "@id": "https://www.cyrilvoyant.com/fr/lexique/"
+    },
+    {
      "@id": "https://www.cyrilvoyant.com/fr/outils/indice-gamma/"
     },
     {
      "@id": "https://www.cyrilvoyant.com/fr/vue-d-ensemble/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/glossary/"
     },
     {
      "@id": "https://www.cyrilvoyant.com/latest-publications-and-news/"
@@ -116,6 +125,11 @@
    "name": "www.cyrilvoyant.com/approach/"
   },
   {
+   "@id": "https://www.cyrilvoyant.com/bib/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/bib/"
+  },
+  {
    "@id": "https://www.cyrilvoyant.com/fr/a-propos/",
    "@type": "WebPage",
    "name": "www.cyrilvoyant.com/fr/a-propos/"
@@ -136,6 +150,11 @@
    "name": "www.cyrilvoyant.com/fr/approche/"
   },
   {
+   "@id": "https://www.cyrilvoyant.com/fr/lexique/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/fr/lexique/"
+  },
+  {
    "@id": "https://www.cyrilvoyant.com/fr/outils/indice-gamma/",
    "@type": "WebPage",
    "name": "www.cyrilvoyant.com/fr/outils/indice-gamma/"
@@ -144,6 +163,11 @@
    "@id": "https://www.cyrilvoyant.com/fr/vue-d-ensemble/",
    "@type": "WebPage",
    "name": "www.cyrilvoyant.com/fr/vue-d-ensemble/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/glossary/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/glossary/"
   },
   {
    "@id": "https://www.cyrilvoyant.com/latest-publications-and-news/",

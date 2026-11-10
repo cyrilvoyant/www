@@ -184,3 +184,9 @@ Cyril Voyant connects medical physics and energy forecasting through modelling f
 - [Prévision solaire : modèles frugaux](https://www.cyrilvoyant.com/prevision-solaire-modeles-frugaux/)
 
 This optional navigation document is not a search-engine standard or a guarantee of indexing, training inclusion or citation.
+
+## New bilingual teaching labs
+
+- [Probabilistic solar forecasting](https://www.cyrilvoyant.com/tools/probabilistic-solar-forecasting/) / [Prévision probabiliste](https://www.cyrilvoyant.com/fr/outils/prevision-probabiliste/).
+- [PV forecasting modes](https://www.cyrilvoyant.com/tools/pv-forecasting-modes/) / [Modes de prévision PV](https://www.cyrilvoyant.com/fr/outils/modes-prevision-pv/).
+- [Jarque–Bera test](https://www.cyrilvoyant.com/tools/jarque-bera-test/) / [Test de Jarque-Bera](https://www.cyrilvoyant.com/fr/outils/test-jarque-bera/).

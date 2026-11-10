@@ -1,0 +1,523 @@
+{
+ "id": "pv-forecasting-modes",
+ "schema": "https://www.cyrilvoyant.com/tools-spec.json#1.0",
+ "kind": null,
+ "domain": null,
+ "interface_language": null,
+ "name": {
+  "fr": "Prévoir la puissance photovoltaïque : directement, ou en passant par l’éclairement ?",
+  "en": "Forecast photovoltaic power: directly, or through irradiance?"
+ },
+ "url": {
+  "fr": "https://www.cyrilvoyant.com/fr/outils/modes-prevision-pv/",
+  "en": "https://www.cyrilvoyant.com/tools/pv-forecasting-modes/"
+ },
+ "page_title": {
+  "fr": "Prévoir la puissance photovoltaïque : directement, ou en passant par l’éclairement ?",
+  "en": "Forecast photovoltaic power: directly, or through irradiance?"
+ },
+ "computes": {
+  "fr": "Pour prévoir la production d’une centrale photovoltaïque (PV), on peut prévoir directement sa puissance, ou prévoir d’abord l’éclairement solaire, puis le convertir en puissance. Cette page compare les trois voies sur 15 mois de mesures ouvertes (la première moitié pour l’apprentissage, la seconde pour le test), avec…",
+  "en": "To forecast the output of a photovoltaic (PV) plant, one can forecast its power directly, or first forecast the solar irradiance and then convert it into power. This page compares the three routes over 15 months of open measurements (the first half for training, the second for testing), with the same forecasting…"
+ },
+ "summary": {
+  "fr": "Pour prévoir la production d’une centrale photovoltaïque (PV), on peut prévoir directement sa puissance, ou prévoir d’abord l’éclairement solaire, puis le convertir en puissance. Cette page compare les trois voies sur 15 mois de mesures ouvertes (la première moitié pour l’apprentissage, la seconde pour le test), avec…",
+  "en": "To forecast the output of a photovoltaic (PV) plant, one can forecast its power directly, or first forecast the solar irradiance and then convert it into power. This page compares the three routes over 15 months of open measurements (the first half for training, the second for testing), with the same forecasting…"
+ },
+ "parameters": [
+  {
+   "id": "pvm-m",
+   "type": "enum",
+   "control": "select",
+   "default": "ELM",
+   "options": [
+    {
+     "value": "P",
+     "label": "persistance"
+    },
+    {
+     "value": "BLEND",
+     "label": "BLEND"
+    },
+    {
+     "value": "AR",
+     "label": "autorégression AR"
+    },
+    {
+     "value": "ELM",
+     "label": "ELM"
+    }
+   ],
+   "label": {
+    "fr": "Modèle de prévision",
+    "en": "Forecasting model"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": null
+  },
+  {
+   "id": "pvm-h",
+   "type": "integer",
+   "control": "range",
+   "min": 0,
+   "max": 5,
+   "step": 1,
+   "default": 1,
+   "label": {
+    "fr": "Horizon",
+    "en": "Horizon"
+   },
+   "meaning": {
+    "fr": "le délai entre la dernière mesure connue et l’instant prévu, ici de 30 minutes à 6 heures, au pas de 30 minutes.",
+    "en": "the time between the last known measurement and the forecast time, here from 30 minutes to 6 hours, in 30-minute steps."
+   },
+   "unit": {
+    "fr": "h",
+    "en": "h"
+   },
+   "unit_source": "display"
+  },
+  {
+   "id": "pvm-k",
+   "type": "enum",
+   "control": "select",
+   "default": "1",
+   "options": [
+    {
+     "value": "0.5",
+     "label": "divisée par 2 (3,72 kWc)"
+    },
+    {
+     "value": "1",
+     "label": "telle quelle (7,44 kWc)"
+    },
+    {
+     "value": "2",
+     "label": "doublée (14,88 kWc)"
+    }
+   ],
+   "label": {
+    "fr": "Puissance crête installée",
+    "en": "Installed peak power"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": null
+  },
+  {
+   "id": "pvm-n",
+   "type": "boolean",
+   "control": "checkbox",
+   "default": false,
+   "label": {
+    "fr": "PV direct sur P / Pcagit seulement si la puissance crête change",
+    "en": "PV direct on P / Pcacts only when the peak power changes"
+   },
+   "meaning": {
+    "fr": "photovoltaïque ; PV désigne aussi la puissance électrique (courant alternatif) produite par la centrale, en kilowatts (kW).",
+    "en": "photovoltaic; PV also denotes the electric (AC) power produced by the plant, in kilowatts (kW)."
+   },
+   "unit": null
+  },
+  {
+   "id": "pvm-d",
+   "type": "integer",
+   "control": "range",
+   "min": 0,
+   "max": 226,
+   "step": 1,
+   "default": 89,
+   "label": {
+    "fr": "Premier jour affiché",
+    "en": "First day shown"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "unit_source": "no unit shown by the page"
+  },
+  {
+   "id": "pvm-cs",
+   "type": "enum",
+   "control": "select",
+   "default": "0",
+   "options": [
+    {
+     "value": "0.6",
+     "label": "60 % de Pc (4,46 kW)"
+    },
+    {
+     "value": "0.3",
+     "label": "30 % de Pc (2,23 kW)"
+    },
+    {
+     "value": "0",
+     "label": "0 (arrêt)"
+    }
+   ],
+   "label": {
+    "fr": "Limite imposée",
+    "en": "Imposed limit"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": null
+  },
+  {
+   "id": "pvm-ca",
+   "type": "enum",
+   "control": "select",
+   "default": "d1",
+   "options": [
+    {
+     "value": "d1",
+     "label": "la veille"
+    },
+    {
+     "value": "h2",
+     "label": "2 h avant"
+    },
+    {
+     "value": "none",
+     "label": "non annoncée"
+    }
+   ],
+   "label": {
+    "fr": "Annonce",
+    "en": "Announcement"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": null
+  },
+  {
+   "id": "pvm-cv",
+   "type": "enum",
+   "control": "select",
+   "default": "raw",
+   "options": [
+    {
+     "value": "raw",
+     "label": "en kW mesurés"
+    },
+    {
+     "value": "divA",
+     "label": "divisé par la puissance disponible annoncée"
+    },
+    {
+     "value": "mask",
+     "label": "divisé par la puissance disponible, heures à 0 masquées"
+    }
+   ],
+   "label": {
+    "fr": "PV direct",
+    "en": "PV direct"
+   },
+   "meaning": {
+    "fr": "photovoltaïque ; PV désigne aussi la puissance électrique (courant alternatif) produite par la centrale, en kilowatts (kW).",
+    "en": "photovoltaic; PV also denotes the electric (AC) power produced by the plant, in kilowatts (kW)."
+   },
+   "unit": null
+  },
+  {
+   "id": "pvm-ce",
+   "type": "integer",
+   "control": "range",
+   "min": 0,
+   "max": 7,
+   "step": 1,
+   "default": 0,
+   "label": {
+    "fr": "Événement",
+    "en": "Event"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "unit_source": "no unit shown by the page"
+  }
+ ],
+ "presets": [],
+ "actions": [],
+ "variants": [],
+ "outputs": [
+  {
+   "name": {
+    "fr": "La voie la plus juste ici",
+    "en": "The most accurate route here"
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "kind": "reading"
+  },
+  {
+   "name": {
+    "fr": "PV direct",
+    "en": "PV direct"
+   },
+   "unit": null,
+   "meaning": {
+    "fr": "Voie | RMSE (kW) | nRMSE | NICE¹ | NICE² | NICE³ | NICEΣ | PV direct",
+    "en": "Route | RMSE (kW) | nRMSE | NICE¹ | NICE² | NICE³ | NICEΣ | PV direct"
+   },
+   "kind": "table-row"
+  },
+  {
+   "name": {
+    "fr": "GTI puis PV",
+    "en": "GTI then PV"
+   },
+   "unit": null,
+   "meaning": {
+    "fr": "Voie | RMSE (kW) | nRMSE | NICE¹ | NICE² | NICE³ | NICEΣ | PV direct",
+    "en": "Route | RMSE (kW) | nRMSE | NICE¹ | NICE² | NICE³ | NICEΣ | PV direct"
+   },
+   "kind": "table-row"
+  },
+  {
+   "name": {
+    "fr": "GHI puis GTI puis PV",
+    "en": "GHI then GTI then PV"
+   },
+   "unit": null,
+   "meaning": {
+    "fr": "Voie | RMSE (kW) | nRMSE | NICE¹ | NICE² | NICE³ | NICEΣ | PV direct",
+    "en": "Route | RMSE (kW) | nRMSE | NICE¹ | NICE² | NICE³ | NICEΣ | PV direct"
+   },
+   "kind": "table-row"
+  }
+ ],
+ "outputs_en_page": null,
+ "formulas": [
+  {
+   "text": "GTI = DNIcosθ + DHI(1 + cosβ)/2 + ρGHI(1 − cosβ)/2"
+  },
+  {
+   "text": "PV = PRP_cGTI/(1000W/m^2)"
+  },
+  {
+   "text": "e = PV̂ − PV"
+  },
+  {
+   "text": "PV̂ = C(T(GHÎ))"
+  },
+  {
+   "text": "e = C(T(GHÎ)) − C(T(GHI))⏟e_1prévision + C(T(GHI)) − C(GTI)⏟e_2transposition + C(GTI) − PV⏟e_3conversion"
+  },
+  {
+   "text": "⟨e^2⟩ = ⟨e_1^2⟩ + ⟨e_2^2⟩ + ⟨e_3^2⟩ + 2(⟨e_1e_2⟩ + ⟨e_1e_3⟩ + ⟨e_2e_3⟩)"
+  },
+  {
+   "text": "RMSE ≈ sqrt(RMSE_1^2 + RMSE_2^2 + RMSE_3^2)"
+  },
+  {
+   "text": "C(GTI) = PRP_cGTI/1000⟹e_1 = PRP_c/1000(T(GHÎ) − T(GHI))"
+  },
+  {
+   "text": "s_i = (⟨e_i^2⟩)/(∑_j⟨e_j^2⟩),ρ = (⟨e^2⟩ − ∑_j⟨e_j^2⟩)/(⟨e^2⟩)"
+  },
+  {
+   "text": "nRMSE = (sqrt(⟨e^2⟩))/(⟨PV⟩),NICE^k = ((⟨|e|^k⟩)^(1/k))/((⟨|e_pers|^k⟩)^(1/k)),k = 1,2,3"
+  },
+  {
+   "text": "x = PV/P_c,PV̂ = P_cx̂"
+  },
+  {
+   "text": "A = {sP_cpendant l'écrêtementP_csinon,PV̂←min(PV̂,A),x = PV/AP_c"
+  },
+  {
+   "text": "θ est l’angle entre le soleil et la normale aux panneaux, β l’inclinaison des panneaux, ρ = 0,2 la part de lumière renvoyée par le sol (albédo). DNI est compté perpendiculairement aux rayons du soleil.",
+   "note": true
+  },
+  {
+   "text": "PV en kW, Pc en kWc, GTI en W/m². Calculs avec la bibliothèque pvlib.",
+   "note": true
+  }
+ ],
+ "definitions": [
+  {
+   "term": "PV",
+   "meaning": {
+    "fr": "photovoltaïque ; PV désigne aussi la puissance électrique (courant alternatif) produite par la centrale, en kilowatts (kW).",
+    "en": "photovoltaic; PV also denotes the electric (AC) power produced by the plant, in kilowatts (kW)."
+   }
+  },
+  {
+   "term": "Pc",
+   "meaning": {
+    "fr": "la puissance crête : la puissance des panneaux sous 1000 W/m² et à 25 °C, 7,44 kWc ici. Le scénario de capacité la divise par 2 ou la double.",
+    "en": "the peak power: the power of the panels under 1000 W/m² and at 25 °C, 7.44 kWp here. The capacity scenario halves or doubles it."
+   }
+  },
+  {
+   "term": "GHI",
+   "meaning": {
+    "fr": "Global Horizontal Irradiance : l’éclairement solaire reçu par une surface horizontale, en watts par mètre carré (W/m²). C’est la grandeur la plus souvent mesurée et prévue.",
+    "en": "Global Horizontal Irradiance: the solar irradiance received by a horizontal surface, in watts per square metre (W/m²). It is the quantity most often measured and forecast."
+   }
+  },
+  {
+   "term": "GTI",
+   "meaning": {
+    "fr": "Global Tilted Irradiance : l’éclairement reçu dans le plan incliné des panneaux, en W/m². C’est lui que les panneaux convertissent en électricité.",
+    "en": "Global Tilted Irradiance: the irradiance received in the tilted plane of the panels, in W/m². This is what the panels convert into electricity."
+   }
+  },
+  {
+   "term": "Transposition T",
+   "meaning": {
+    "fr": "le calcul qui passe du GHI au GTI (modèles d’Erbs et de Liu et Jordan, voir plus haut).",
+    "en": "the calculation from GHI to GTI (models of Erbs and of Liu and Jordan, see above)."
+   }
+  },
+  {
+   "term": "Conversion C",
+   "meaning": {
+    "fr": "le calcul qui passe du GTI à la puissance : PV = PR × Pc × GTI / 1000, avec PR = 0,92.",
+    "en": "the calculation from GTI to power: PV = PR × Pc × GTI / 1000, with PR = 0.92."
+   }
+  },
+  {
+   "term": "Horizon",
+   "meaning": {
+    "fr": "le délai entre la dernière mesure connue et l’instant prévu, ici de 30 minutes à 6 heures, au pas de 30 minutes.",
+    "en": "the time between the last known measurement and the forecast time, here from 30 minutes to 6 hours, in 30-minute steps."
+   }
+  },
+  {
+   "term": "Apprentissage, test",
+   "meaning": {
+    "fr": "les modèles sont ajustés une seule fois sur la première moitié des données (juin 2018 à mi-janvier 2019), puis évalués, sans réajustement, sur la seconde (mi-janvier à août 2019).",
+    "en": "the models are fitted once on the first half of the data (June 2018 to mid-January 2019), then evaluated, without refitting, on the second (mid-January to August 2019)."
+   }
+  },
+  {
+   "term": "Persistance",
+   "meaning": {
+    "fr": "recopier la dernière valeur connue. C’est la référence minimale.",
+    "en": "copy the last known value. It is the minimal reference."
+   }
+  },
+  {
+   "term": "BLEND",
+   "meaning": {
+    "fr": "un mélange de la persistance et de la valeur de la veille à la même heure, avec un poids par demi-heure de la journée.",
+    "en": "a mix of persistence and of the value of the day before at the same time, with one weight per half hour of the day."
+   }
+  },
+  {
+   "term": "AR",
+   "meaning": {
+    "fr": "autorégression : une somme pondérée des 48 dernières valeurs (24 h) et de l’heure et du jour de l’année (sous forme de sinus et cosinus), avec des poids calculés par moindres carrés.",
+    "en": "autoregression: a weighted sum of the last 48 values (24 h) and of the hour and day of the year (as sines and cosines), with weights computed by least squares."
+   }
+  },
+  {
+   "term": "ELM",
+   "meaning": {
+    "fr": "Extreme Learning Machine : un réseau de neurones à une couche cachée de 500 neurones tirés au hasard, dont seuls les poids de sortie sont calculés. 100 tirages sont essayés ; le meilleur est choisi par validation croisée dans le temps. Mêmes entrées que l’AR.",
+    "en": "Extreme Learning Machine: a neural network with one hidden layer of 500 neurons drawn at random, of which only the output weights are computed. 100 draws are tried; the best is chosen by cross-validation in time. Same inputs as AR."
+   }
+  },
+  {
+   "term": "RMSE, nRMSE",
+   "meaning": {
+    "fr": "la RMSE est la racine de l’erreur quadratique moyenne, en kW ; elle pèse plus sur les grosses erreurs. La nRMSE la divise par la production moyenne mesurée.",
+    "en": "RMSE is the root mean squared error, in kW; it weighs large errors more. nRMSE divides it by the mean measured output."
+   }
+  },
+  {
+   "term": "NICE¹, NICE², NICE³, NICEΣ",
+   "meaning": {
+    "fr": "l’erreur divisée par celle de la persistance de la puissance PV, aux mêmes instants : NICE¹ pour l’erreur absolue moyenne, NICE² pour la RMSE, NICE³ pour l’erreur cubique, NICEΣ pour leur moyenne. Sous 1, la prévision fait mieux que la persistance ; au-dessus, la page affiche « > 1 ».",
+    "en": "the error divided by that of persistence of the PV power, at the same times: NICE¹ for the mean absolute error, NICE² for RMSE, NICE³ for the cubic error, NICEΣ for their mean. Below 1, the forecast beats persistence; above, the page shows \"> 1\"."
+   }
+  },
+  {
+   "term": "Écrêtement",
+   "meaning": {
+    "fr": "une limite de puissance imposée à la centrale (par le gestionnaire du réseau, par exemple), ici de 10 h à 14 h UTC (temps universel coordonné, 12 h à 16 h à l’heure d’été danoise).",
+    "en": "a power limit imposed on the plant (by the grid operator, for example), here from 10:00 to 14:00 UTC (Coordinated Universal Time, 12:00 to 16:00 Danish summer time)."
+   }
+  },
+  {
+   "term": "Puissance disponible",
+   "meaning": {
+    "fr": "la puissance que la centrale a le droit de produire : Pc en temps normal, la limite annoncée pendant l’écrêtement.",
+    "en": "the power the plant is allowed to produce: Pc normally, the announced limit during curtailment."
+   }
+  }
+ ],
+ "assumptions": {
+  "fr": [
+   "Le gestionnaire du réseau peut imposer une limite de puissance, annoncée à l’avance ou non. Choisissez la limite, l’annonce, et la façon dont PV direct traite ses entrées. La bande colorée marque l’écrêtement ; le trait plein marque son début."
+  ],
+  "en": [
+   "The grid operator may impose a power limit, announced in advance or not. Choose the limit, the announcement, and how PV direct treats its inputs. The coloured band marks the curtailment; the solid line marks its start."
+  ]
+ },
+ "source": {
+  "dois": [
+   "10.1016/0038-092X(63)90006-9",
+   "10.1016/0038-092X(82)90302-4",
+   "10.1016/j.dib.2022.108046",
+   "10.1016/j.seta.2025.104588",
+   "10.11583/DTU.17040767",
+   "10.21105/joss.00884",
+   "10.5281/zenodo.21487267",
+   "10.5281/zenodo.23620101"
+  ],
+  "repositories": [
+   "https://github.com/cyrilvoyant/PV_ELM_pred"
+  ],
+  "related_pages": []
+ },
+ "how_to_explore": {
+  "fr": "Régler les paramètres sur un préréglage (valeurs ci-dessus), lire la phrase affichée par la page puis les sorties ; modifier ensuite un seul paramètre à la fois entre son minimum et son maximum.",
+  "en": "Set the parameters to a preset (values above), read the sentence the page shows then the outputs; then change one parameter at a time between its minimum and maximum."
+ },
+ "exploration": [],
+ "concepts": [
+  "persistence",
+  "blend",
+  "elm",
+  "rmse",
+  "nrmse",
+  "nice"
+ ],
+ "extraction": {
+  "source_hash": "a202d01073c0167d",
+  "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
+  "roots": [
+   "#pvm",
+   "#pvm-cut"
+  ],
+  "page_errors": [],
+  "fr_en_preset_consistency": null
+ }
+}

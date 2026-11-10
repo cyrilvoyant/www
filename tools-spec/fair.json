@@ -499,12 +499,12 @@
     "en": "Is the format open and non-proprietary?"
    },
    "meaning": {
-    "fr": "CSV documenté, NetCDF, GeoTIFF, Parquet plutôt qu'un classeur Excel ou un fichier MATLAB que seul un logiciel lit correctement.",
-    "en": "Documented CSV, NetCDF, GeoTIFF, Parquet rather than an Excel workbook or a MATLAB file that only one program reads correctly."
+    "fr": "NetCDF, GeoTIFF, Parquet, Zarr plutôt qu'un classeur Excel, un fichier MATLAB ou un CSV, à proscrire dans une démarche FAIR : ni schéma, ni unités, ni métadonnées dans le fichier.",
+    "en": "NetCDF, GeoTIFF, Parquet, Zarr rather than an Excel workbook, a MATLAB file or a CSV, which should be avoided in a FAIR approach: no schema, no units, no metadata in the file."
    },
    "if_missing": {
-    "fr": "Exporter dans un format ouvert (CSV documenté, NetCDF, Parquet) en plus du format de travail.",
-    "en": "Export to an open format (documented CSV, NetCDF, Parquet) in addition to the working format."
+    "fr": "Exporter dans un format ouvert et autodécrit (NetCDF, Parquet, Zarr) en plus du format de travail.",
+    "en": "Export to an open self-describing format (NetCDF, Parquet, Zarr) in addition to the working format."
    },
    "options": [
     {
@@ -974,12 +974,12 @@
     "I2": 1,
     "I3": 1,
     "I4": 1,
-    "I5": 0.5,
+    "I5": 1,
     "R1": 1,
     "R2": 1,
     "R3": 1,
     "R4": 0.5,
-    "R5": 0.5
+    "R5": 1
    },
    "changes_vs_default": {
     "F1": 1,
@@ -996,23 +996,23 @@
     "I2": 1,
     "I3": 1,
     "I4": 1,
-    "I5": 0.5,
+    "I5": 1,
     "R1": 1,
     "R2": 1,
     "R3": 1,
     "R4": 0.5,
-    "R5": 0.5
+    "R5": 1
    },
    "scores": {
     "F": 5,
     "A": 4.5,
-    "I": 4.5,
-    "R": 4.0,
-    "total": 18.0
+    "I": 5,
+    "R": 4.5,
+    "total": 19.0
    },
    "shows": {
-    "fr": "Infrastructure de données du centre O.I.E. Fait : catalogue GeoNetwork moissonnable (CSW, métadonnées ISO 19115), DOI attribués avec DataCite, accès THREDDS/OPeNDAP et services OGC (WMS, WCS, WPS), formats NetCDF-CF et Zarr, mesures au sol harmonisées par libinsitu, contrôle qualité de type BSRN, licence CC BY. En partie : plan de conservation, liens vers les ressources liées, documentation pour un tiers, citation recommandée.",
-    "en": "Data infrastructure of the O.I.E. center. Done: harvestable GeoNetwork catalog (CSW, ISO 19115 metadata), DOIs assigned with DataCite, THREDDS/OPeNDAP access and OGC services (WMS, WCS, WPS), NetCDF-CF and Zarr formats, ground measurements harmonized by libinsitu, BSRN-type quality control, CC BY licence. Partly: preservation plan, links to related resources, documentation for a third party, recommended citation."
+    "fr": "IDS du centre O.I.E. Fait : catalogue GeoNetwork moissonnable (CSW, métadonnées ISO 19115), catalogue STAC (SpatioTemporal Asset Catalogs) avec API (Application Programming Interface), DOI DataCite ajoutés à la demande, citations proposées pour chaque composant, accès THREDDS/OPeNDAP et services OGC (WMS, WCS, WPS), formats NetCDF-CF et Zarr, mesures au sol harmonisées par libinsitu, contrôle qualité de type BSRN, licence CC BY. En partie : plan de conservation, documentation pour un tiers.",
+    "en": "SDI of the O.I.E. center. Done: harvestable GeoNetwork catalog (CSW, ISO 19115 metadata), STAC catalog (SpatioTemporal Asset Catalogs) with an API (Application Programming Interface), DataCite DOIs added on request, citations offered for each component, THREDDS/OPeNDAP access and OGC services (WMS, WCS, WPS), NetCDF-CF and Zarr formats, ground measurements harmonized by libinsitu, BSRN-type quality control, CC BY licence. Partly: preservation plan, documentation for a third party."
    }
   },
   {
@@ -1025,16 +1025,16 @@
     "F1": 1,
     "F2": 1,
     "F3": 0.5,
-    "F4": 1,
+    "F4": 0.5,
     "F5": 1,
     "A1": 1,
     "A2": 1,
     "A3": 1,
-    "A4": 0.5,
+    "A4": 0,
     "A5": 1,
-    "I1": 1,
+    "I1": 0,
     "I2": 0,
-    "I3": 0.5,
+    "I3": 0,
     "I4": 1,
     "I5": 0,
     "R1": 1,
@@ -1047,16 +1047,16 @@
     "F1": 1,
     "F2": 1,
     "F3": 0.5,
-    "F4": 1,
+    "F4": 0.5,
     "F5": 1,
     "A1": 1,
     "A2": 1,
     "A3": 1,
-    "A4": 0.5,
+    "A4": 0,
     "A5": 1,
-    "I1": 1,
+    "I1": 0,
     "I2": 0,
-    "I3": 0.5,
+    "I3": 0,
     "I4": 1,
     "I5": 0,
     "R1": 1,
@@ -1066,15 +1066,15 @@
     "R5": 0.5
    },
    "scores": {
-    "F": 4.5,
-    "A": 4.5,
-    "I": 2.5,
+    "F": 4.0,
+    "A": 4,
+    "I": 1,
     "R": 2.5,
-    "total": 14.0
+    "total": 11.5
    },
    "shows": {
-    "fr": "Un fichier CSV déposé dans un entrepôt généraliste. Fait : DOI et page d'atterrissage, métadonnées DataCite moissonnées, licence CC BY, téléchargement par HTTPS. Pas fait ou en partie : format standard de la discipline (NetCDF-CF), noms et unités normalisés, liens vers l'instrument et le code, contrôle qualité livré, provenance et documentation succinctes, accès aux valeurs par programme limité au fichier entier.",
-    "en": "A CSV file deposited in a general-purpose repository. Done: DOI and landing page, harvested DataCite metadata, CC BY licence, HTTPS download. Not done or partly: the standard format of the field (NetCDF-CF), standard names and units, links to the instrument and the code, delivered quality control, brief provenance and documentation, programmatic access limited to the whole file."
+    "fr": "Un fichier CSV déposé dans un entrepôt généraliste ; le CSV est à proscrire dans une démarche FAIR. Fait : DOI et page d'atterrissage, métadonnées DataCite moissonnées, licence CC BY, téléchargement par HTTPS. Pas fait ou en partie : format ouvert et autodécrit (NetCDF-CF), noms et unités normalisés, métadonnées riches, liens vers l'instrument et le code, contrôle qualité livré, provenance et documentation succinctes, accès aux valeurs par programme limité au fichier entier.",
+    "en": "A CSV file deposited in a general-purpose repository; CSV should be avoided in a FAIR approach. Done: DOI and landing page, harvested DataCite metadata, CC BY licence, HTTPS download. Not done or partly: an open self-describing format (NetCDF-CF), standard names and units, rich metadata, links to the instrument and the code, delivered quality control, brief provenance and documentation, programmatic access limited to the whole file."
    }
   },
   {
@@ -1280,16 +1280,16 @@
     "I2": 1,
     "I3": 1,
     "I4": 1,
-    "I5": 0.5,
+    "I5": 1,
     "R1": 1,
     "R2": 1,
     "R3": 1,
     "R4": 0.5,
-    "R5": 0.5
+    "R5": 1
    },
    "observe": {
-    "fr": "Infrastructure de données du centre O.I.E. Fait : catalogue GeoNetwork moissonnable (CSW, métadonnées ISO 19115), DOI attribués avec DataCite, accès THREDDS/OPeNDAP et services OGC (WMS, WCS, WPS), formats NetCDF-CF et Zarr, mesures au sol harmonisées par libinsitu, contrôle qualité de type BSRN, licence CC BY. En partie : plan de conservation, liens vers les ressources liées, documentation pour un tiers, citation recommandée.",
-    "en": "Data infrastructure of the O.I.E. center. Done: harvestable GeoNetwork catalog (CSW, ISO 19115 metadata), DOIs assigned with DataCite, THREDDS/OPeNDAP access and OGC services (WMS, WCS, WPS), NetCDF-CF and Zarr formats, ground measurements harmonized by libinsitu, BSRN-type quality control, CC BY licence. Partly: preservation plan, links to related resources, documentation for a third party, recommended citation."
+    "fr": "IDS du centre O.I.E. Fait : catalogue GeoNetwork moissonnable (CSW, métadonnées ISO 19115), catalogue STAC (SpatioTemporal Asset Catalogs) avec API (Application Programming Interface), DOI DataCite ajoutés à la demande, citations proposées pour chaque composant, accès THREDDS/OPeNDAP et services OGC (WMS, WCS, WPS), formats NetCDF-CF et Zarr, mesures au sol harmonisées par libinsitu, contrôle qualité de type BSRN, licence CC BY. En partie : plan de conservation, documentation pour un tiers.",
+    "en": "SDI of the O.I.E. center. Done: harvestable GeoNetwork catalog (CSW, ISO 19115 metadata), STAC catalog (SpatioTemporal Asset Catalogs) with an API (Application Programming Interface), DataCite DOIs added on request, citations offered for each component, THREDDS/OPeNDAP access and OGC services (WMS, WCS, WPS), NetCDF-CF and Zarr formats, ground measurements harmonized by libinsitu, BSRN-type quality control, CC BY licence. Partly: preservation plan, documentation for a third party."
    }
   },
   {
@@ -1302,16 +1302,16 @@
     "F1": 1,
     "F2": 1,
     "F3": 0.5,
-    "F4": 1,
+    "F4": 0.5,
     "F5": 1,
     "A1": 1,
     "A2": 1,
     "A3": 1,
-    "A4": 0.5,
+    "A4": 0,
     "A5": 1,
-    "I1": 1,
+    "I1": 0,
     "I2": 0,
-    "I3": 0.5,
+    "I3": 0,
     "I4": 1,
     "I5": 0,
     "R1": 1,
@@ -1321,8 +1321,8 @@
     "R5": 0.5
    },
    "observe": {
-    "fr": "Un fichier CSV déposé dans un entrepôt généraliste. Fait : DOI et page d'atterrissage, métadonnées DataCite moissonnées, licence CC BY, téléchargement par HTTPS. Pas fait ou en partie : format standard de la discipline (NetCDF-CF), noms et unités normalisés, liens vers l'instrument et le code, contrôle qualité livré, provenance et documentation succinctes, accès aux valeurs par programme limité au fichier entier.",
-    "en": "A CSV file deposited in a general-purpose repository. Done: DOI and landing page, harvested DataCite metadata, CC BY licence, HTTPS download. Not done or partly: the standard format of the field (NetCDF-CF), standard names and units, links to the instrument and the code, delivered quality control, brief provenance and documentation, programmatic access limited to the whole file."
+    "fr": "Un fichier CSV déposé dans un entrepôt généraliste ; le CSV est à proscrire dans une démarche FAIR. Fait : DOI et page d'atterrissage, métadonnées DataCite moissonnées, licence CC BY, téléchargement par HTTPS. Pas fait ou en partie : format ouvert et autodécrit (NetCDF-CF), noms et unités normalisés, métadonnées riches, liens vers l'instrument et le code, contrôle qualité livré, provenance et documentation succinctes, accès aux valeurs par programme limité au fichier entier.",
+    "en": "A CSV file deposited in a general-purpose repository; CSV should be avoided in a FAIR approach. Done: DOI and landing page, harvested DataCite metadata, CC BY licence, HTTPS download. Not done or partly: an open self-describing format (NetCDF-CF), standard names and units, rich metadata, links to the instrument and the code, delivered quality control, brief provenance and documentation, programmatic access limited to the whole file."
    }
   },
   {

@@ -1,0 +1,710 @@
+{
+ "id": "probabilistic-solar",
+ "schema": "https://www.cyrilvoyant.com/tools-spec.json#1.0",
+ "kind": "demo",
+ "domain": "energy",
+ "interface_language": "both",
+ "name": {
+  "fr": "Prévision probabiliste",
+  "en": "Probabilistic solar forecasting"
+ },
+ "url": {
+  "fr": "https://www.cyrilvoyant.com/fr/outils/prevision-probabiliste/",
+  "en": "https://www.cyrilvoyant.com/tools/probabilistic-solar-forecasting/"
+ },
+ "page_title": {
+  "fr": "Prévision solaire probabiliste : intervalle de confiance, intervalle de prévision et PICP",
+  "en": "Probabilistic solar forecasting: confidence interval, prediction interval and PICP"
+ },
+ "computes": {
+  "fr": "GHI horaire à Ajaccio : intervalle de confiance ou de prévision, pourquoi ±2σ échoue, prédiction conforme sans fuite, PICP et CRPS en direct.",
+  "en": "Hourly solar irradiance at Ajaccio: confidence vs prediction interval, why ±2σ fails, leakage-free conformal prediction, live PICP and CRPS."
+ },
+ "summary": {
+  "fr": "Une prévision de rayonnement solaire a besoin d’une marge. À Ajaccio, en 2007, pour l’heure suivante, la valeur moyenne prévue par l’autorégression est connue à ±0,5 W/m² près (intervalle de confiance), mais la marge qui vise à contenir 95 % des prochaines mesures est de ±174 W/m² (intervalle de prévision ; 95,2 %…",
+  "en": "A solar irradiance forecast needs a margin. At Ajaccio, in 2007, one hour ahead, the mean value forecast by the autoregression is known to ±0.5 W/m² (confidence interval), but the margin that aims to contain 95% of the next measurements is ±174 W/m² (prediction interval; 95.2% measured in 2007)."
+ },
+ "parameters": [
+  {
+   "id": "pf-model",
+   "type": "enum",
+   "control": "select",
+   "default": "AR",
+   "options": [
+    {
+     "value": "P",
+     "label": "Persistance"
+    },
+    {
+     "value": "SP",
+     "label": "Persistance intelligente"
+    },
+    {
+     "value": "AR",
+     "label": "AR"
+    },
+    {
+     "value": "ELM",
+     "label": "ELM"
+    }
+   ],
+   "label": {
+    "fr": "Modèle?",
+    "en": "Model?"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": null
+  },
+  {
+   "id": "pf-method",
+   "type": "enum",
+   "control": "select",
+   "default": "conf",
+   "options": [
+    {
+     "value": "gauss",
+     "label": "Gauss ±z·RMSE"
+    },
+    {
+     "value": "conf",
+     "label": "Conforme"
+    },
+    {
+     "value": "hour",
+     "label": "Conforme par heure"
+    },
+    {
+     "value": "cs",
+     "label": "Conforme par ciel clair"
+    }
+   ],
+   "label": {
+    "fr": "Intervalle de prévision?",
+    "en": "Prediction interval?"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": null
+  },
+  {
+   "id": "pf-level",
+   "type": "integer",
+   "control": "range",
+   "min": 50,
+   "max": 99,
+   "step": 1,
+   "default": 95,
+   "label": {
+    "fr": "Niveau nominal?",
+    "en": "Nominal level?"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": {
+    "fr": "%",
+    "en": "%"
+   },
+   "unit_source": "display"
+  },
+  {
+   "id": "pf-day",
+   "type": "integer",
+   "control": "range",
+   "min": 0,
+   "max": 364,
+   "step": 1,
+   "default": 74,
+   "label": {
+    "fr": "Date (2007)",
+    "en": "Date (2007)"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": {
+    "fr": "mars",
+    "en": "mars"
+   },
+   "unit_source": "display"
+  },
+  {
+   "id": "pf-win",
+   "type": "integer",
+   "control": "range",
+   "min": 1,
+   "max": 7,
+   "step": 1,
+   "default": 3,
+   "label": {
+    "fr": "Fenêtre?",
+    "en": "Window?"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": {
+    "fr": "j",
+    "en": "j"
+   },
+   "unit_source": "display"
+  },
+  {
+   "id": "pf-ci",
+   "type": "boolean",
+   "control": "checkbox",
+   "default": true,
+   "label": {
+    "fr": "Intervalle de confiance?",
+    "en": "Confidence interval?"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "unit": null
+  }
+ ],
+ "presets": [],
+ "actions": [],
+ "variants": [],
+ "outputs": [
+  {
+   "name": {
+    "fr": "PICP, fenêtre?",
+    "en": "PICP, window?"
+   },
+   "unit": {
+    "fr": "%",
+    "en": "%"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "kind": "metric"
+  },
+  {
+   "name": {
+    "fr": "PICP, toute l’année 2007?",
+    "en": "PICP, whole of 2007?"
+   },
+   "unit": {
+    "fr": "%",
+    "en": "%"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "kind": "metric"
+  },
+  {
+   "name": {
+    "fr": "Largeur de bande moyenne, 2007?",
+    "en": "Mean band width, 2007?"
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "kind": "metric"
+  },
+  {
+   "name": {
+    "fr": "IC : demi-largeur moyenne?",
+    "en": "CI: mean half-width?"
+   },
+   "unit": {
+    "fr": "sans unité",
+    "en": "dimensionless"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "kind": "metric"
+  },
+  {
+   "name": {
+    "fr": "CRPS, 2007?",
+    "en": "CRPS, 2007?"
+   },
+   "unit": {
+    "fr": "W/m²",
+    "en": "W/m²"
+   },
+   "meaning": {
+    "fr": null,
+    "en": null
+   },
+   "kind": "metric"
+  },
+  {
+   "name": {
+    "fr": "Moyenne du GHI de jour, 2007?",
+    "en": "Mean daytime GHI, 2007?"
+   },
+   "unit": null,
+   "meaning": {
+    "fr": "Moyenne du GHI de jour, 2007?",
+    "en": "Mean daytime GHI, 2007?"
+   },
+   "kind": "table-row"
+  },
+  {
+   "name": {
+    "fr": "Écart-type de la série σGHI, 2007?",
+    "en": "Standard deviation of the series σGHI, 2007?"
+   },
+   "unit": null,
+   "meaning": {
+    "fr": "Moyenne du GHI de jour, 2007?",
+    "en": "Mean daytime GHI, 2007?"
+   },
+   "kind": "table-row"
+  },
+  {
+   "name": {
+    "fr": "RMSE du modèle, calibration 2006?",
+    "en": "Model RMSE, calibration 2006?"
+   },
+   "unit": null,
+   "meaning": {
+    "fr": "Moyenne du GHI de jour, 2007?",
+    "en": "Mean daytime GHI, 2007?"
+   },
+   "kind": "table-row"
+  },
+  {
+   "name": {
+    "fr": "RMSE du modèle, test 2007",
+    "en": "Model RMSE, test 2007"
+   },
+   "unit": null,
+   "meaning": {
+    "fr": "Moyenne du GHI de jour, 2007?",
+    "en": "Mean daytime GHI, 2007?"
+   },
+   "kind": "table-row"
+  },
+  {
+   "name": {
+    "fr": "Demi-largeur de l’intervalle choisi?",
+    "en": "Half-width of the chosen interval?"
+   },
+   "unit": null,
+   "meaning": {
+    "fr": "Moyenne du GHI de jour, 2007?",
+    "en": "Mean daytime GHI, 2007?"
+   },
+   "kind": "table-row"
+  }
+ ],
+ "outputs_en_page": null,
+ "formulas": [
+  {
+   "text": "σ_GHI"
+  },
+  {
+   "text": "e = GHI − GHÎ"
+  },
+  {
+   "text": "RMSE^2 = écart-type^2 + biais^2"
+  },
+  {
+   "text": "σ_GHI^2 = 1/N∑t = 1N(GHI_t − GHI)^2"
+  },
+  {
+   "text": "RMSE^2 = 1/N∑t = 1N(GHI_t − GHÎ_t)^2"
+  },
+  {
+   "text": "RMSE^2 = σ_e^2 + e^2,e = 1/N∑t = 1Ne_t(biais)"
+  },
+  {
+   "text": "[GHÎ_t − z_(1 − α/2)RMSE;GHÎ_t + z_(1 − α/2)RMSE]"
+  },
+  {
+   "text": "GHI"
+  },
+  {
+   "text": "GHÎ"
+  },
+  {
+   "text": "e_t = GHI_t − GHÎ_t"
+  },
+  {
+   "text": "σ_e"
+  },
+  {
+   "text": "z_(1 − α/2)"
+  },
+  {
+   "text": "GHÎ±q"
+  },
+  {
+   "text": "GHÎ±k_ασ̂"
+  },
+  {
+   "text": "k_α"
+  },
+  {
+   "text": "σ̂ = RMSE"
+  },
+  {
+   "text": "q = k_αRMSE"
+  },
+  {
+   "text": "GHÎ±μGHI_csσ̂"
+  },
+  {
+   "text": "GHI_cs"
+  },
+  {
+   "text": "σ̂"
+  },
+  {
+   "text": "GHÎ±k_αGHI_csσ̂"
+  },
+  {
+   "text": "s_i = |GHI_i − GHÎ_i|,i = 1,…,n"
+  },
+  {
+   "text": "q = s_((k)),k = ⌈(n + 1)(1 − α)⌉"
+  },
+  {
+   "text": "[max(GHÎ_t − q,0);GHÎ_t + q]"
+  },
+  {
+   "text": "s_((k))"
+  },
+  {
+   "text": "s_i"
+  },
+  {
+   "text": "q_(g(t))"
+  },
+  {
+   "text": "GHI_cs,t"
+  },
+  {
+   "text": "q = k_αRMSE⟺k_α = q/RMSE"
+  },
+  {
+   "text": "[max(GHÎ_t − q_(g(t)),0);GHÎ_t + q_(g(t))]"
+  },
+  {
+   "text": "PICP = 100/N∑t = 1N1[L_t ≤ GHI_t ≤ U_t]"
+  },
+  {
+   "text": "W = 1/N∑t = 1N(U_t − L_t)"
+  },
+  {
+   "text": "L_t"
+  },
+  {
+   "text": "U_t"
+  },
+  {
+   "text": "W"
+  },
+  {
+   "text": "|2τ − 1|"
+  },
+  {
+   "text": "CRPS_t = ∫_( − ∞)^( + ∞)(F_t(x) − 1[x ≥ GHI_t])^2dx"
+  },
+  {
+   "text": "CRPS_t ≈ 2/M∑i = 1Mρ_τ_i(GHI_t − Q_τ_i,t),τ_i = i/100"
+  },
+  {
+   "text": "ρ_τ(u) = u(τ − 1[u<0])"
+  },
+  {
+   "text": "CRPS = 1/N∑t = 1NCRPS_t,nCRPS = CRPS/GHI"
+  },
+  {
+   "text": "F_t"
+  },
+  {
+   "text": "Q_τ,t"
+  },
+  {
+   "text": "ρ_τ"
+  },
+  {
+   "text": "|GHI_t − GHÎ_t|"
+  },
+  {
+   "text": "GHÎ_(t + 1) = GHI_t"
+  },
+  {
+   "text": "GHÎ_(t + 1) = GHI_t − GHI_cs,t + GHI_(cs,t + 1)"
+  },
+  {
+   "text": "y_t = GHI_t − GHI_cs,t − μ"
+  },
+  {
+   "text": "ŷ_(t + 1) = ∑j = 1pw_jy_(t − j + 1)"
+  },
+  {
+   "text": "GHÎ_(t + 1) = max(ŷ_(t + 1) + μ + GHI_(cs,t + 1),0)"
+  },
+  {
+   "text": "GHÎ_(t + 1)±z_(1 − α/2)ssqrt(𝐱_t^(⊤)(𝐗^(⊤)𝐗)^( − 1)𝐱_t)"
+  },
+  {
+   "text": "(𝐗^(⊤)𝐗)^( − 1)→(𝐇^(⊤)𝐇 + λ𝐈)^( − 1)𝐇^(⊤)𝐇(𝐇^(⊤)𝐇 + λ𝐈)^( − 1)"
+  },
+  {
+   "text": "ŷ"
+  },
+  {
+   "text": "x_t"
+  },
+  {
+   "text": "k_d"
+  },
+  {
+   "text": "ŷ±k_ασ̂"
+  },
+  {
+   "text": "σGHI2=1N∑t=1N(GHIt−GHI)2",
+   "note": true
+  },
+  {
+   "text": "RMSE2=1N∑t=1N(GHIt−GHÎt)2",
+   "note": true
+  },
+  {
+   "text": "RMSE2=σe2+e2,e=1N∑t=1Net (biais)",
+   "note": true
+  },
+  {
+   "text": "[GHÎt−z1−α/2RMSE;GHÎt+z1−α/2RMSE]",
+   "note": true
+  },
+  {
+   "text": "GHI (surmonté d’une barre) est la moyenne des mesures, GHÎ (avec un chapeau) la prévision, N leur nombre, et=GHIt−GHÎt le résidu, σe l’écart-type des résidus, ē leur moyenne (le biais), z1−α/2 le quantile de la loi normale centrée réduite (1,96 pour 95 %, voir la loi normale). Cette bande a la même largeur à toute heure : c’est l’hypothèse d’homoscédasticité. Elle ne contient 1 − α des mesures que si les résidus suivent une loi normale.",
+   "note": true
+  },
+  {
+   "text": "si=|GHIi−GHÎi|,i=1,…,n",
+   "note": true
+  },
+  {
+   "text": "q=s(k),k=⌈(n+1)(1−α)⌉",
+   "note": true
+  },
+  {
+   "text": "[max(GHÎt−q,0);GHÎt+q]",
+   "note": true
+  },
+  {
+   "text": "s(k) est la k-ième plus petite des n valeurs si, et ⌈·⌉ arrondit à l’entier supérieur ; le « + 1 » corrige la taille finie de l’échantillon. Si les erreurs de calibration et de test sont échangeables (même loi, ordre indifférent), la probabilité qu’une nouvelle mesure tombe dans l’intervalle est au moins 1 − α, sur l’ensemble des heures. Ce n’est pas une garantie heure par heure. Des données horaires ne sont ni indépendantes ni échangeables (une heure ressemble à la précédente, et 2007 n’est pas 2006) : cette garantie théorique ne s’applique donc plus d’elle-même. La couverture est mesurée sur 2007, sans en déduire de garantie : 95,2 % sur l’ensemble des heures, 88,5 % les jours variables. La première ligne ci-dessous relie q au multiplicateur kα de la table de correspondance. Versions par heure et par classe de ciel clair : le même calcul est fait dans chaque groupe g, avec les seules erreurs de ce groupe, et l’intervalle de l’heure t utilise la marge qg(t) de son groupe, où g(t) est l’heure de t ou la classe de GHIcs,t.",
+   "note": true
+  },
+  {
+   "text": "q=kαRMSE⟺kα=qRMSE",
+   "note": true
+  },
+  {
+   "text": "[max(GHÎt−qg(t),0);GHÎt+qg(t)]",
+   "note": true
+  },
+  {
+   "text": "La borne basse est ramenée à 0 car le rayonnement n’est jamais négatif ; cela ne change pas la couverture.",
+   "note": true
+  },
+  {
+   "text": "PICP=100N∑t=1N1[Lt≤GHIt≤Ut]",
+   "note": true
+  },
+  {
+   "text": "W=1N∑t=1N(Ut−Lt)",
+   "note": true
+  },
+  {
+   "text": "Lt et Ut sont les bornes basse et haute, N le nombre d’heures de jour, 1[·] vaut 1 si la condition est vraie et 0 sinon, W est la largeur de bande moyenne.",
+   "note": true
+  },
+  {
+   "text": "CRPSt=∫−∞+∞(Ft(x)−1[x≥GHIt])2dx",
+   "note": true
+  },
+  {
+   "text": "CRPSt≈2M∑i=1Mρτi(GHIt−Qτi,t),τi=i100",
+   "note": true
+  },
+  {
+   "text": "ρτ(u)=u(τ−1[u<0])",
+   "note": true
+  },
+  {
+   "text": "CRPS=1N∑t=1NCRPSt,nCRPS=CRPSGHI",
+   "note": true
+  },
+  {
+   "text": "Ft est la fonction de répartition prédite pour l’heure t (la probabilité prédite que la mesure soit inférieure à x), Qτ,t son centile τ, M = 99 le nombre de centiles, et ρτ la « perte pinball », qui pèse davantage une mesure tombée loin dans une queue jugée peu probable. La deuxième ligne approche la première à partir des centiles ; l’écart disparaît quand leur nombre augmente. Si tous les centiles valent la prévision, la deuxième ligne donne |GHIt−GHÎt| : en moyenne, la MAE. GHI est le GHI moyen des N heures de jour.",
+   "note": true
+  },
+  {
+   "text": "yt=GHIt−GHIcs,t−μ",
+   "note": true
+  },
+  {
+   "text": "ŷt+1=∑j=1pwjyt−j+1",
+   "note": true
+  },
+  {
+   "text": "GHÎt+1=max(ŷt+1+μ+GHIcs,t+1,0)",
+   "note": true
+  },
+  {
+   "text": "GHÎt+1±z1−α/2s𝐱t⊤(𝐗⊤𝐗)−1𝐱t",
+   "note": true
+  },
+  {
+   "text": "(𝐗⊤𝐗)−1→(𝐇⊤𝐇+λ𝐈)−1𝐇⊤𝐇(𝐇⊤𝐇+λ𝐈)−1",
+   "note": true
+  },
+  {
+   "text": "ŷ est la prévision de y, μ la moyenne de GHI − GHIcs sur l’apprentissage, w les coefficients, p = 2 l’ordre, xt le vecteur des p dernières valeurs de y, X la matrice de tous ces vecteurs sur l’apprentissage, s l’écart-type des résidus d’apprentissage. Pour l’ELM (seconde ligne), x est remplacé par h, la sortie de la couche cachée, et (XTX)−1 par sa forme régularisée, où H rassemble les sorties cachées de l’apprentissage, I est la matrice identité et λ = 10−3. Ces formules supposent des résidus indépendants : l’IC réel est un peu plus large, mais reste de l’ordre du W/m².",
+   "note": true
+  }
+ ],
+ "definitions": [
+  {
+   "term": "Intervalle de confiance (IC)",
+   "meaning": {
+    "fr": "Il répond à « où est la moyenne des mesures que l’on obtiendrait dans cette situation ? ». Il ne contient que l’incertitude sur les paramètres du modèle, estimés sur un nombre fini de données. Il se resserre quand on ajoute des données : avec 8 ans d’apprentissage, il fait ici ±0,5 W/m² pour l’AR et ±1,9 W/m² pour l’ELM. La persistance n’a aucun paramètre estimé : son IC se réduit à la ligne.",
+    "en": "It answers “where is the mean of the measurements we would get in this situation?”. It only holds the uncertainty on the model parameters, estimated from a finite amount of data. It shrinks as data are added: with 8 years of training, it is ±0.5 W/m² here for AR and ±1.9 W/m² for ELM. Persistence has no estimated parameter: its CI reduces to the line."
+   }
+  },
+  {
+   "term": "Intervalle de prévision (IP)",
+   "meaning": {
+    "fr": "Il répond à « où tombera la prochaine mesure ? ». Il ajoute à l’IC la dispersion propre des mesures autour de leur moyenne : un nuage qui passe ou non. Cette part ne disparaît pas avec plus de données. C’est l’intervalle utile pour gérer un réseau ou une batterie.",
+    "en": "It answers “where will the next measurement fall?”. It adds to the CI the spread of the measurements around their mean: a cloud passes or not. This part does not vanish with more data. It is the interval that matters to run a grid or a battery."
+   }
+  },
+  {
+   "term": "Niveau nominal 1 − α",
+   "meaning": {
+    "fr": "La part des mesures que l’intervalle de prévision vise à contenir, par exemple 95 % (α = 0,05, la part laissée dehors).",
+    "en": "The share of measurements the prediction interval aims to contain, for example 95% (α = 0.05, the share left outside)."
+   }
+  },
+  {
+   "term": "Écart-type de la série, σGHI",
+   "meaning": {
+    "fr": "La dispersion des mesures autour de leur moyenne. De jour en 2007 : moyenne 372 W/m², σGHI = 282 W/m². Il mélange la nuit qui tombe, les saisons et les nuages : tout ce qu’un modèle sait déjà prévoir.",
+    "en": "The spread of the measurements around their mean. Daytime 2007: mean 372 W/m², σGHI = 282 W/m². It mixes nightfall, seasons and clouds: everything a model already knows how to forecast."
+   }
+  },
+  {
+   "term": "Résidu e",
+   "meaning": {
+    "fr": "La mesure moins la prévision : e=GHI−GHÎ, en W/m².",
+    "en": "Measurement minus forecast: e=GHI−GHÎ, in W/m²."
+   }
+  },
+  {
+   "term": "RMSE",
+   "meaning": {
+    "fr": "Root mean square error : la racine de la moyenne des résidus au carré. C’est la dispersion des mesures autour de la prévision. Si les résidus sont en moyenne nuls (pas de biais), la RMSE est exactement leur écart-type ; sinon, RMSE2=écart-type2+biais2. Pour l’AR, sur l’année de calibration 2006 : biais -6,6 W/m², écart-type des résidus 77,4 W/m², RMSE 77,7 W/m². Le biais est faible, les deux se confondent presque.",
+    "en": "Root mean square error: the square root of the mean squared residual. It is the spread of the measurements around the forecast. If the residuals average zero (no bias), the RMSE is exactly their standard deviation; otherwise, RMSE2=standard deviation2+bias2. For AR, on the 2006 calibration year: bias -6.6 W/m², residual standard deviation 77.4 W/m², RMSE 77.7 W/m². The bias is small, so the two almost coincide."
+   }
+  },
+  {
+   "term": "PICP",
+   "meaning": {
+    "fr": "Prediction interval coverage probability : la part des mesures tombées dans leur intervalle, en %. On la compare au niveau nominal : à 95 %, une PICP de 95 % est fiable, de 90 % trop optimiste, de 99 % trop prudente.",
+    "en": "Prediction interval coverage probability: the share of measurements that fell inside their interval, in %. It is compared with the nominal level: at 95%, a PICP of 95% is reliable, 90% too optimistic, 99% too cautious."
+   }
+  },
+  {
+   "term": "Largeur de bande moyenne",
+   "meaning": {
+    "fr": "La largeur de bande est l’écart entre la borne haute et la borne basse de l’intervalle de prévision, en W/m². On en donne la moyenne sur les heures de jour ; entre parenthèses, la même rapportée au GHI moyen de jour (372 W/m²). Appelée MIL (mean interval length) dans nos articles.",
+    "en": "The band width is the distance between the upper and lower bounds of the prediction interval, in W/m². Its mean over daytime hours is given; in brackets, the same relative to the mean daytime GHI (372 W/m²). Called MIL (mean interval length) in our papers."
+   }
+  },
+  {
+   "term": "Persistance",
+   "meaning": {
+    "fr": "La prochaine heure sera comme la dernière : GHÎt+1=GHIt. Simple, mais elle ignore que le Soleil monte ou descend.",
+    "en": "The next hour will be like the last one: GHÎt+1=GHIt. Simple, but it ignores that the Sun rises or sets."
+   }
+  },
+  {
+   "term": "Persistance intelligente",
+   "meaning": {
+    "fr": "On garde l’écart au ciel clair : GHÎt+1=GHIt−GHIcs,t+GHIcs,t+1, où GHIcs est le rayonnement par ciel clair (sans nuage) calculé par le modèle Solis.",
+    "en": "The gap to the clear sky is kept: GHÎt+1=GHIt−GHIcs,t+GHIcs,t+1, where GHIcs is the clear-sky (cloudless) irradiance computed by the Solis model."
+   }
+  },
+  {
+   "term": "AR",
+   "meaning": {
+    "fr": "Autorégression : une somme pondérée des 2 dernières valeurs de l’indice de ciel clair additif (GHI − GHIcs, centré), coefficients estimés par moindres carrés.",
+    "en": "Autoregression: a weighted sum of the last 2 values of the additive clear-sky index (GHI − GHIcs, centred), coefficients estimated by least squares."
+   }
+  },
+  {
+   "term": "ELM",
+   "meaning": {
+    "fr": "Extreme learning machine : un petit réseau de neurones (20 neurones cachés tirés au hasard puis fixés, seuls les poids de sortie sont calculés), sur les mêmes entrées que l’AR. Il est expliqué sur la page sur les modèles frugaux. Son IC est calculé à neurones cachés fixés.",
+    "en": "Extreme learning machine: a small neural network (20 hidden neurons drawn at random then fixed, only the output weights are computed), on the same inputs as AR. It is explained on the frugal forecasting page. Its CI is computed with the hidden neurons held fixed."
+   }
+  }
+ ],
+ "assumptions": {
+  "fr": [],
+  "en": []
+ },
+ "source": {
+  "dois": [
+   "10.1007/b106715",
+   "10.1016/j.solener.2025.113490",
+   "10.1063/5.0128131",
+   "10.5281/zenodo.23620101"
+  ],
+  "repositories": [],
+  "related_pages": []
+ },
+ "how_to_explore": {
+  "fr": "Régler les paramètres sur un préréglage (valeurs ci-dessus), lire la phrase affichée par la page puis les sorties ; modifier ensuite un seul paramètre à la fois entre son minimum et son maximum.",
+  "en": "Set the parameters to a preset (values above), read the sentence the page shows then the outputs; then change one parameter at a time between its minimum and maximum."
+ },
+ "exploration": [],
+ "concepts": [
+  "persistence",
+  "smart-persistence",
+  "elm",
+  "rmse",
+  "confidence-interval",
+  "prediction-interval"
+ ],
+ "extraction": {
+  "source_hash": "7eaa6de8b866ccc8",
+  "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
+  "roots": [
+   "#pf-tool"
+  ],
+  "page_errors": [],
+  "fr_en_preset_consistency": null
+ }
+}

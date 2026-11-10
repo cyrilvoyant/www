@@ -286,31 +286,16 @@
   },
   {
    "name": {
-    "fr": "2. Écart-type commun sₚ",
-    "en": "2. Pooled standard deviation sₚ"
+    "fr": "2. Erreur standard de Δ",
+    "en": "2. Standard error of Δ"
    },
    "unit": {
     "fr": "mmHg",
     "en": "mmHg"
    },
    "meaning": {
-    "fr": "dispersion commune estimée",
-    "en": "estimated common spread"
-   },
-   "kind": "metric"
-  },
-  {
-   "name": {
-    "fr": "Erreur standard de Δ",
-    "en": "Standard error of Δ"
-   },
-   "unit": {
-    "fr": "mmHg",
-    "en": "mmHg"
-   },
-   "meaning": {
-    "fr": "incertitude sur l’écart Δ",
-    "en": "uncertainty on the difference Δ"
+    "fr": "√(s₁²/n₁ + s₂²/n₂) : l’incertitude sur Δ",
+    "en": "√(s₁²/n₁ + s₂²/n₂): the uncertainty on Δ"
    },
    "kind": "metric"
   },
@@ -331,16 +316,16 @@
   },
   {
    "name": {
-    "fr": "ddl = n₁ + n₂ − 2",
-    "en": "df = n₁ + n₂ − 2"
+    "fr": "ddl de Welch ν",
+    "en": "Welch df ν"
    },
    "unit": {
     "fr": "sans unité",
     "en": "dimensionless"
    },
    "meaning": {
-    "fr": "degrés de liberté",
-    "en": "degrees of freedom"
+    "fr": "degrés de liberté, entre min(n₁, n₂) − 1 et n₁ + n₂ − 2",
+    "en": "degrees of freedom, between min(n₁, n₂) − 1 and n₁ + n₂ − 2"
    },
    "kind": "metric"
   },
@@ -433,8 +418,8 @@
   {
    "term": "Que veut dire chaque symbole ?",
    "meaning": {
-    "fr": "Δ est l’écart des moyennes ; s₁ et s₂ les écarts-types des groupes et sₚ leur estimation commune. n₁ et n₂ sont les effectifs, tous deux égaux au curseur n. H₀ suppose les moyennes des populations égales. t exprime Δ en unités d’erreur standard, ddl signifie degrés de liberté et α = 5 % est le seuil de rejet. La p-value est une probabilité de résultats au moins aussi extrêmes sous H₀ et le modèle du test, pas la probabilité que H₀ soit vraie.",
-    "en": "Δ is the difference between group means; s₁ and s₂ are group standard deviations and sₚ their pooled estimate. n₁ and n₂ are group sizes, both equal to the n control. H₀ assumes equal population means. t expresses Δ in standard-error units, df means degrees of freedom, and α = 5% is the rejection threshold. The p-value is a probability of results at least as extreme under H₀ and the test model, not the probability that H₀ is true."
+    "fr": "Δ est l’écart des moyennes ; s₁ et s₂ les écarts-types des groupes (non supposés égaux : test de Welch). n₁ et n₂ sont les effectifs, tous deux égaux au curseur n. H₀ suppose les moyennes des populations égales. t exprime Δ en unités d’erreur standard, ddl signifie degrés de liberté et α = 5 % est le seuil de rejet. La p-value est une probabilité de résultats au moins aussi extrêmes sous H₀ et le modèle du test, pas la probabilité que H₀ soit vraie.",
+    "en": "Δ is the difference between group means; s₁ and s₂ are group standard deviations (not assumed equal: Welch test). n₁ and n₂ are group sizes, both equal to the n control. H₀ assumes equal population means. t expresses Δ in standard-error units, df means degrees of freedom, and α = 5% is the rejection threshold. The p-value is a probability of results at least as extreme under H₀ and the test model, not the probability that H₀ is true."
    }
   }
  ],
@@ -556,7 +541,7 @@
   "student-t-test"
  ],
  "extraction": {
-  "source_hash": "f94b66d77a97ff40",
+  "source_hash": "d91ed608d3461324",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#experience"

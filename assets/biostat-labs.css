@@ -1,0 +1,71 @@
+/* Biostatistics labs, 10 November 2026: complements stats-tools.css (same charter: teal #087e8b, ink #193d5b, orange #e07b39). */
+.bl-lab .st-intro b { color:var(--ink,#193d5b); }
+.bl-h { font-size:1.12rem; margin:26px 0 6px; }
+.bl-h4 { font-weight:650; margin:18px 0 4px; font-size:.95rem; }
+.bl-checks { display:flex; flex-wrap:wrap; gap:8px 22px; margin:6px 0 14px; font-size:.92rem; }
+.bl-check { display:inline-flex; align-items:center; gap:6px; cursor:pointer; }
+.bl-check input { width:18px; height:18px; accent-color:#087e8b; }
+.st-control select { font:inherit; color:var(--ink,#193d5b); background:var(--paper,#fff); border:1px solid #aebfcb; border-radius:8px; padding:8px; }
+.st-control input[type=range]:disabled { opacity:.35; }
+.bl-verdict { margin:14px 0; padding:14px 16px; border-radius:12px; background:var(--paper,#fff); border:1px solid #d3e0e7; border-left:6px solid #8aa3b1; line-height:1.6; }
+.bl-verdict.is-sig { border-left-color:#087e8b; }
+.bl-verdict.is-ns { border-left-color:#c98a3c; }
+.bl-verdict p { margin:10px 0 0; }
+.bl-gauge { position:relative; height:16px; border-radius:8px; background:#eef3f6; margin:22px 0 2px; }
+.bl-gauge-fill { position:absolute; left:0; top:0; bottom:0; border-radius:8px; background:#1d5f8a; }
+.is-ns .bl-gauge-fill { background:#c98a3c; }
+.bl-gauge-alpha { position:absolute; top:-6px; bottom:-6px; width:3px; margin-left:-1px; background:#b03a2e; }
+.bl-gauge-lab { position:absolute; top:-22px; transform:translateX(-50%); font-size:.76rem; color:#b03a2e; white-space:nowrap; }
+.bl-gauge-scale { display:flex; justify-content:space-between; font-size:.76rem; color:var(--muted,#536777); }
+.bl-ctable table { min-width:320px; }
+.bl-ctable td { padding:4px; }
+.bl-cell { display:flex; flex-direction:column; align-items:flex-start; gap:2px; width:100%; min-width:84px; padding:8px 10px; border:1px solid #cbdbe3; border-radius:10px; background:var(--paper,#fff); color:var(--ink,#193d5b); font:inherit; text-align:left; cursor:pointer; }
+.bl-cell b { font-size:1.1rem; font-variant-numeric:tabular-nums; }
+.bl-cell small { font-size:.74rem; color:var(--muted,#536777); }
+.bl-cell[aria-pressed=true] { border:2px solid #e07b39; background:#fff6ef; }
+.bl-jbbar { position:relative; overflow:visible; background:#eef3f6; }
+.bl-jbbar i { position:absolute; top:-5px; bottom:-5px; width:3px; background:#b03a2e; }
+.bl-var { margin:10px 0; }
+.bl-eq { margin:16px 0; border:1px solid #d3e0e7; border-radius:12px; padding:4px 16px; background:var(--paper,#fff); }
+.bl-eq>summary { cursor:pointer; font-weight:600; padding:10px 0; }
+.bl-ex { margin:22px 0; }
+.bl-ex>ol>li { margin:0 0 16px; line-height:1.6; }
+.bl-ex details { margin:6px 0 0; }
+.bl-ex details>summary { cursor:pointer; font-weight:600; color:#087e8b; }
+.bl-load { margin-left:6px; border:1px solid #9cb8c5; border-radius:100px; padding:4px 11px; background:var(--paper,#fff); color:var(--ink,#193d5b); font:inherit; font-size:.82rem; cursor:pointer; }
+.bl-load:hover { border-color:#087e8b; background:#eaf5f5; }
+.bl-cite { margin:30px 0 10px; }
+.bl-cite pre { overflow-x:auto; padding:14px; border-radius:10px; background:#f3f7f9; border:1px solid #d3e0e7; font-size:.8rem; line-height:1.5; white-space:pre; }
+.bl-copy { border:1px solid #9cb8c5; border-radius:8px; padding:5px 11px; background:var(--paper,#fff); color:var(--ink,#193d5b); font:inherit; font-size:.82rem; cursor:pointer; }
+.bl-key { margin:16px 0; padding:14px 18px; border-radius:12px; background:var(--soft,#edf4f6); line-height:1.65; }
+@media(max-width:500px){ .bl-cell{min-width:64px;padding:6px} .bl-gauge-lab{font-size:.7rem} }
+.bl-eq .eq-block { overflow-x:auto; overflow-y:hidden; padding:6px 4px; }
+.bl-math { margin:14px 0; text-align:center; }
+.bl-math math, .bl-eq .eq math { font-size:1.32em; font-family:"Latin Modern Math","STIX Two Math","Cambria Math",math; color:var(--ink,#193d5b); }
+@media(max-width:500px){ .bl-math math, .bl-eq .eq math { font-size:1.08em; } }
+/* Normality lab (Jarque-Bera, Shapiro-Wilk, Lilliefors) */
+.bl-h0 { border-left:6px solid #193d5b; }
+.bl-btn { border:1px solid #9cb8c5; border-radius:100px; padding:5px 14px; background:var(--paper,#fff); color:var(--ink,#193d5b); font:inherit; font-size:.88rem; cursor:pointer; }
+.bl-btn:hover { border-color:#087e8b; background:#eaf5f5; }
+.bl-banner { display:flex; flex-direction:column; gap:4px; margin:14px 0; padding:14px 18px; border-radius:14px; border:2px solid; line-height:1.5; transition:background .2s,border-color .2s; }
+.bl-banner strong { font-size:1.35rem; }
+.bl-banner.is-ok { background:#eaf6ef; } .bl-banner.is-mid { background:#fdf4e3; } .bl-banner.is-no { background:#fbecea; }
+.bl-jbgrid { display:grid; grid-template-columns:3fr 2fr; gap:12px; align-items:start; }
+@media(max-width:760px){ .bl-jbgrid { grid-template-columns:1fr; } }
+.bl-swatch { background:linear-gradient(90deg,#a9d8bd 33%,#f3d08f 33% 66%,#f2aaa0 66%); }
+.bl-tablewrap { overflow-x:auto; }
+.bl-cmp { width:100%; border-collapse:collapse; font-size:.92rem; }
+.bl-cmp th, .bl-cmp td { padding:8px 10px; border-bottom:1px solid #d3e0e7; text-align:left; vertical-align:middle; }
+.bl-cmp th { font-size:.82rem; text-transform:uppercase; letter-spacing:.03em; color:#5a7180; }
+.bl-chip { display:inline-block; padding:3px 10px; border-radius:100px; font-size:.82rem; font-weight:600; white-space:nowrap; }
+.bl-chip.is-ok { background:#dff1e6; color:#1f6b41; } .bl-chip.is-no { background:#f9dcd8; color:#9b2c20; }
+/* Variance decomposition (regression lab), same design as the stats-tools R² tool */
+.bl-seg { display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 6px; font-size:.9rem; }
+.bl-seg button { border:1px solid #9cb8c5; border-radius:100px; padding:6px 13px; background:var(--paper,#fff); color:var(--ink,#193d5b); font:inherit; font-size:.85rem; cursor:pointer; }
+.bl-seg button[aria-pressed=true] { background:#193d5b; border-color:#193d5b; color:#fff; }
+.bl-keynote { flex-basis:100%; color:var(--muted,#536777); font-size:.86rem; }
+.bl-vt { margin:14px 0 8px; padding:14px 16px; border:1px solid #d3e0e7; border-radius:12px; background:var(--paper,#fff); }
+.bl-vt-title { margin:0 0 10px; line-height:1.5; } .bl-vt-title span { color:var(--muted,#536777); white-space:nowrap; }
+.bl-vt-bar { display:flex; height:30px; border-radius:8px; overflow:hidden; background:#eef3f6; } .bl-vt-bar span { transition:width .25s; }
+.bl-vt-lab { display:flex; justify-content:space-between; gap:12px; margin-top:8px; font-size:.88rem; line-height:1.45; }
+@media(max-width:500px){ .bl-vt-lab { font-size:.82rem; } }

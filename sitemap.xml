@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://www.cyrilvoyant.com/</loc><lastmod>2026-11-03</lastmod></url>
   <url><loc>https://www.cyrilvoyant.com/30-second-brief/</loc><lastmod>2026-11-04</lastmod></url>
   <url><loc>https://www.cyrilvoyant.com/about/</loc><lastmod>2026-11-04</lastmod></url>
@@ -140,4 +140,10 @@
   <url><loc>https://www.cyrilvoyant.com/glossary/</loc><lastmod>2026-11-04</lastmod></url>
   <url><loc>https://www.cyrilvoyant.com/fr/lexique/</loc><lastmod>2026-11-04</lastmod></url>
   <url><loc>https://www.cyrilvoyant.com/bib/</loc><lastmod>2026-11-04</lastmod></url>
+  <url><loc>https://www.cyrilvoyant.com/tools/probabilistic-solar-forecasting/</loc><lastmod>2026-11-10</lastmod><xhtml:link rel="alternate" hreflang="fr" href="https://www.cyrilvoyant.com/fr/outils/prevision-probabiliste/" /><xhtml:link rel="alternate" hreflang="en" href="https://www.cyrilvoyant.com/tools/probabilistic-solar-forecasting/" /><xhtml:link rel="alternate" hreflang="x-default" href="https://www.cyrilvoyant.com/tools/probabilistic-solar-forecasting/" /></url>
+  <url><loc>https://www.cyrilvoyant.com/fr/outils/prevision-probabiliste/</loc><lastmod>2026-11-10</lastmod><xhtml:link rel="alternate" hreflang="fr" href="https://www.cyrilvoyant.com/fr/outils/prevision-probabiliste/" /><xhtml:link rel="alternate" hreflang="en" href="https://www.cyrilvoyant.com/tools/probabilistic-solar-forecasting/" /><xhtml:link rel="alternate" hreflang="x-default" href="https://www.cyrilvoyant.com/tools/probabilistic-solar-forecasting/" /></url>
+  <url><loc>https://www.cyrilvoyant.com/tools/pv-forecasting-modes/</loc><lastmod>2026-11-10</lastmod><xhtml:link rel="alternate" hreflang="fr" href="https://www.cyrilvoyant.com/fr/outils/modes-prevision-pv/" /><xhtml:link rel="alternate" hreflang="en" href="https://www.cyrilvoyant.com/tools/pv-forecasting-modes/" /><xhtml:link rel="alternate" hreflang="x-default" href="https://www.cyrilvoyant.com/tools/pv-forecasting-modes/" /></url>
+  <url><loc>https://www.cyrilvoyant.com/fr/outils/modes-prevision-pv/</loc><lastmod>2026-11-10</lastmod><xhtml:link rel="alternate" hreflang="fr" href="https://www.cyrilvoyant.com/fr/outils/modes-prevision-pv/" /><xhtml:link rel="alternate" hreflang="en" href="https://www.cyrilvoyant.com/tools/pv-forecasting-modes/" /><xhtml:link rel="alternate" hreflang="x-default" href="https://www.cyrilvoyant.com/tools/pv-forecasting-modes/" /></url>
+  <url><loc>https://www.cyrilvoyant.com/tools/jarque-bera-test/</loc><lastmod>2026-11-10</lastmod><xhtml:link rel="alternate" hreflang="fr" href="https://www.cyrilvoyant.com/fr/outils/test-jarque-bera/" /><xhtml:link rel="alternate" hreflang="en" href="https://www.cyrilvoyant.com/tools/jarque-bera-test/" /><xhtml:link rel="alternate" hreflang="x-default" href="https://www.cyrilvoyant.com/tools/jarque-bera-test/" /></url>
+  <url><loc>https://www.cyrilvoyant.com/fr/outils/test-jarque-bera/</loc><lastmod>2026-11-10</lastmod><xhtml:link rel="alternate" hreflang="fr" href="https://www.cyrilvoyant.com/fr/outils/test-jarque-bera/" /><xhtml:link rel="alternate" hreflang="en" href="https://www.cyrilvoyant.com/tools/jarque-bera-test/" /><xhtml:link rel="alternate" hreflang="x-default" href="https://www.cyrilvoyant.com/tools/jarque-bera-test/" /></url>
 </urlset>

@@ -36,6 +36,12 @@
      "@id": "https://doi.org/10.1016/j.rpor.2013.08.004"
     },
     {
+     "@id": "https://www.cyrilvoyant.com/bib/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/fr/lexique/"
+    },
+    {
      "@id": "https://www.cyrilvoyant.com/fr/outils/doses-lq-lql/"
     },
     {
@@ -46,6 +52,9 @@
     },
     {
      "@id": "https://www.cyrilvoyant.com/fr/vue-d-ensemble/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/glossary/"
     },
     {
      "@id": "https://www.cyrilvoyant.com/overview/"
@@ -102,6 +111,16 @@
    "creativeWorkStatus": "published, open access (PMC4055002)"
   },
   {
+   "@id": "https://www.cyrilvoyant.com/bib/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/bib/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/fr/lexique/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/fr/lexique/"
+  },
+  {
    "@id": "https://www.cyrilvoyant.com/fr/outils/doses-lq-lql/",
    "@type": "WebPage",
    "name": "www.cyrilvoyant.com/fr/outils/doses-lq-lql/"
@@ -120,6 +139,11 @@
    "@id": "https://www.cyrilvoyant.com/fr/vue-d-ensemble/",
    "@type": "WebPage",
    "name": "www.cyrilvoyant.com/fr/vue-d-ensemble/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/glossary/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/glossary/"
   },
   {
    "@id": "https://www.cyrilvoyant.com/overview/",

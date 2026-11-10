@@ -1,0 +1,166 @@
+{
+ "@context": "https://schema.org",
+ "@type": [
+  "SoftwareApplication",
+  "LearningResource"
+ ],
+ "@id": "https://www.cyrilvoyant.com/tools/jarque-bera-test/#tool-spec",
+ "identifier": "jarque-bera",
+ "name": "Normality test online: Jarque-Bera, Shapiro-Wilk, Kolmogorov",
+ "alternateName": "Test de normalité en ligne : Jarque-Bera, Shapiro-Wilk, Kolmogorov",
+ "description": "Normal or not? With 100 values drawn from a normal law, all three tests say “compatible” (Jarque-Bera p = 0.30, Shapiro-Wilk p = 0.24); a single point added 4.2 standard deviations from the mean is enough to reject normality.",
+ "url": "https://www.cyrilvoyant.com/tools/jarque-bera-test/",
+ "sameAs": [
+  "https://www.cyrilvoyant.com/fr/outils/test-jarque-bera/",
+  "https://www.cyrilvoyant.com/tools/jarque-bera-test/"
+ ],
+ "inLanguage": [
+  "fr",
+  "en"
+ ],
+ "applicationCategory": "ScientificApplication",
+ "operatingSystem": "Any (web browser)",
+ "isAccessibleForFree": true,
+ "author": {
+  "@type": "Person",
+  "name": "Cyril Voyant",
+  "identifier": "https://orcid.org/0000-0003-0242-7377"
+ },
+ "license": "https://creativecommons.org/licenses/by/4.0/",
+ "additionalProperty": [
+  {
+   "@type": "PropertyValue",
+   "propertyID": "bl-1",
+   "name": "Number of points n",
+   "alternateName": "Nombre de points n",
+   "value": 100,
+   "minValue": 10,
+   "maxValue": 1000,
+   "unitText": "dimensionless"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "bl-2",
+   "name": "Departure from normality (0 = none)",
+   "alternateName": "Écart à la loi normale (0 = aucun)",
+   "value": 0,
+   "minValue": 0,
+   "maxValue": 1,
+   "unitText": "dimensionless"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "bl-3",
+   "name": "Extreme point, in standard deviations from the mean",
+   "alternateName": "Point extrême, en écarts-types de la moyenne",
+   "value": 4,
+   "minValue": -8,
+   "maxValue": 8,
+   "unitText": "dimensionless"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "bl-4",
+   "name": "Add the extreme point (orange)",
+   "alternateName": "Ajouter le point extrême (orange)",
+   "value": false
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:normal",
+   "name": "Normal",
+   "alternateName": "Normale",
+   "value": "{}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:skewed-right-tail",
+   "name": "Skewed (right tail)",
+   "alternateName": "Asymétrique (queue à droite)",
+   "value": "{}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:heavy-tails",
+   "name": "Heavy tails",
+   "alternateName": "Queues épaisses",
+   "value": "{}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:flat-uniform",
+   "name": "Flat (uniform)",
+   "alternateName": "Plate (uniforme)",
+   "value": "{}"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "preset:two-humps",
+   "name": "Two humps",
+   "alternateName": "Deux bosses",
+   "value": "{}"
+  }
+ ],
+ "potentialAction": {
+  "@type": "Action",
+  "name": "Explore the tool",
+  "target": {
+   "@type": "EntryPoint",
+   "urlTemplate": "https://www.cyrilvoyant.com/tools/jarque-bera-test/",
+   "actionPlatform": "https://schema.org/DesktopWebPlatform"
+  },
+  "object": [
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "bl-1",
+    "description": "Number of points n",
+    "valueRequired": false,
+    "minValue": 10,
+    "maxValue": 1000,
+    "defaultValue": 100,
+    "stepValue": 1
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "bl-2",
+    "description": "Departure from normality (0 = none)",
+    "valueRequired": false,
+    "minValue": 0,
+    "maxValue": 1,
+    "defaultValue": 0,
+    "stepValue": 0.05
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "bl-3",
+    "description": "Extreme point, in standard deviations from the mean",
+    "valueRequired": false,
+    "minValue": -8,
+    "maxValue": 8,
+    "defaultValue": 4,
+    "stepValue": 0.1
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "bl-4",
+    "description": "Add the extreme point (orange)",
+    "valueRequired": false,
+    "defaultValue": false
+   }
+  ]
+ },
+ "citation": [
+  "https://doi.org/10.5281/zenodo.23620235"
+ ],
+ "about": [
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#p-value"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#chi-square-test"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#normal-distribution"
+  }
+ ]
+}

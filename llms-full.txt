@@ -10425,3 +10425,4295 @@ Pourquoi l'électron Compton n'emporte-t-il jamais toute l'énergie du photon ?
 La conservation de l'énergie et de la quantité de mouvement impose un photon diffusé ; l'énergie transférée est maximale en rétrodiffusion, E_c,max = E₀ · 2α/(1 + 2α) avec α = E₀/(m_e c²), toujours inférieure à E₀.
 Pourquoi filtrer le faisceau à la sortie du tube ?
 Les photons de basse énergie sont absorbés dans les premiers centimètres de tissu : ils irradient le patient sans contribuer à l'image. La filtration les retire et durcit le faisceau, au prix d'une légère perte de contraste.
+
+---
+URL: https://www.cyrilvoyant.com/fr/outils/prevision-probabiliste/
+
+Prévision solaire probabiliste : intervalle de confiance, intervalle de prévision et PICP
+Une prévision de rayonnement solaire a besoin d’une marge.
+À Ajaccio, en 2007, pour l’heure suivante, la valeur moyenne prévue par l’autorégression est connue à ±0,5 W/m² près (intervalle de confiance), mais la marge qui vise à contenir 95 % des prochaines mesures est de ±174 W/m² (intervalle de prévision ; 95,2 % mesurés en 2007). Cette page montre pourquoi ces deux marges diffèrent, pourquoi « prévision ± 2 RMSE » se trompe, et comment la prédiction conforme la règle sur des données.
+Expérience du cours de prévision solaire. Les chiffres sont recalculés ici à partir des mesures ; ce ne sont pas des résultats d’article. Méthode des intervalles :
+Voyant et al., Solar Energy 2025 et JRSE 2022
+.
+version anglaise
+.
+Essayer
+Chaque point noir est une mesure horaire du GHI (
+global horizontal irradiance
+, le rayonnement solaire global reçu par une surface horizontale, en W/m²). La ligne bleue est la prévision faite une heure avant. La bande bleu clair est l’
+intervalle de prévision
+: là où la prochaine mesure devrait tomber. La fine bande orange, souvent invisible tant elle est étroite, est l’
+intervalle de confiance
+de la prévision moyenne. Les points rouges sont les mesures tombées hors de la bande.
+Modèle
+?
+Intervalle de prévision
+?
+Niveau nominal
+?
+95 %
+Date (2007)
+Fenêtre
+?
+Intervalle de confiance
+?
+mesure ·
+mesure hors de l’intervalle de prévision ·
+prévision à 1 h ·
+intervalle de prévision ·
+intervalle de confiance
+PICP, fenêtre
+?
+PICP, toute l’année 2007
+?
+Largeur de bande moyenne, 2007
+?
+IC : demi-largeur moyenne
+?
+CRPS, 2007
+?
+PICP par heure de la journée, 2007 (heure de fin de mesure). Ligne orange : niveau nominal.
+PICP par type de journée, 2007, et largeur de bande moyenne de l’intervalle (W/m²) sous chaque barre.
+Écart-type de la série ou RMSE du modèle
+Moyenne du GHI de jour, 2007
+?
+Écart-type de la série
+σ
+G
+H
+I
+, 2007
+?
+RMSE du modèle, calibration 2006
+?
+RMSE du modèle, test 2007
+Demi-largeur de l’intervalle choisi
+?
+Deux intervalles, deux questions
+Intervalle de confiance (IC)
+Il répond à « où est la
+moyenne
+des mesures que l’on obtiendrait dans cette situation ? ». Il ne contient que l’incertitude sur les paramètres du modèle, estimés sur un nombre fini de données. Il se resserre quand on ajoute des données : avec 8 ans d’apprentissage, il fait ici ±0,5 W/m² pour l’AR et ±1,9 W/m² pour l’ELM. La persistance n’a aucun paramètre estimé : son IC se réduit à la ligne.
+Intervalle de prévision (IP)
+Il répond à « où tombera la
+prochaine mesure
+? ». Il ajoute à l’IC la dispersion propre des mesures autour de leur moyenne : un nuage qui passe ou non. Cette part ne disparaît pas avec plus de données. C’est l’intervalle utile pour gérer un réseau ou une batterie.
+Niveau nominal 1 − α
+La part des mesures que l’intervalle de prévision vise à contenir, par exemple 95 % (α = 0,05, la part laissée dehors).
+La même distinction, sur une simple droite de régression :
+intervalle de confiance ou de prévision ?
+Écart-type de la série ou erreur du modèle ?
+Deux nombres se ressemblent par leur nom et n’ont rien à voir :
+Écart-type de la série,
+σ
+G
+H
+I
+La dispersion des mesures autour de
+leur moyenne
+. De jour en 2007 : moyenne 372 W/m²,
+σ
+G
+H
+I
+= 282 W/m². Il mélange la nuit qui tombe, les saisons et les nuages : tout ce qu’un modèle sait déjà prévoir.
+Résidu e
+La mesure moins la prévision :
+e
+=
+G
+H
+I
+−
+G
+H
+I
+̂
+, en W/m².
+RMSE
+Root mean square error
+: la racine de la moyenne des résidus au carré. C’est la dispersion des mesures autour de
+la prévision
+. Si les résidus sont en moyenne nuls (pas de biais), la RMSE est exactement leur écart-type ; sinon,
+R
+M
+S
+E
+2
+=
+écart-type
+2
++
+biais
+2
+. Pour l’AR, sur l’année de calibration 2006 : biais -6,6 W/m², écart-type des résidus 77,4 W/m², RMSE 77,7 W/m². Le biais est faible, les deux se confondent presque.
+Prévision ± 2
+σ
+G
+H
+I
+donnerait une bande de ±564 W/m² : presque tout le ciel. Prévision ± 2 RMSE (exactement 1,96 RMSE à 95 %) est la recette classique. Elle suppose deux choses : des résidus
+gaussiens
+(en cloche, sans queues épaisses) et
+homoscédastiques
+(de même dispersion à toute heure et par tout temps). Aucune n’est vraie pour le rayonnement solaire :
+sur toute l’année 2007, la bande ±1,96 RMSE de l’AR contient 93,4 % des mesures au lieu de 95 % ;
+par heure, de 86 % (heure 12, vers midi, quand le rayonnement est fort et les nuages coûtent cher) à 98 % ; et au moins 98 % aux heures du lever et du coucher du Soleil, où les erreurs sont petites ;
+par type de journée : 98,4 % les jours clairs (la bande est trop large), 85,2 % les jours variables (trop étroite), 89,7 % les jours couverts.
+Activez « Gauss ±z·RMSE » ci-dessus et regardez les deux petits graphiques : les barres s’écartent de la ligne de cible. L’histogramme des résidus montre aussi un pic trop pointu et des queues trop épaisses pour une cloche de Gauss. Pour explorer comment l’asymétrie et les queues s’écartent de la normale,
+essayer le test de Jarque-Bera
+.
+Formules : écart-type, RMSE et intervalle gaussien
+σ
+G
+H
+I
+2
+=
+1
+N
+∑
+t
+=
+1
+N
+(
+G
+H
+I
+t
+−
+G
+H
+I
+)
+2
+R
+M
+S
+E
+2
+=
+1
+N
+∑
+t
+=
+1
+N
+(
+G
+H
+I
+t
+−
+G
+H
+I
+̂
+t
+)
+2
+R
+M
+S
+E
+2
+=
+σ
+e
+2
++
+e
+2
+,
+e
+=
+1
+N
+∑
+t
+=
+1
+N
+e
+t
+(biais)
+[
+G
+H
+I
+̂
+t
+−
+z
+1
+−
+α
+/
+2
+R
+M
+S
+E
+;
+G
+H
+I
+̂
+t
++
+z
+1
+−
+α
+/
+2
+R
+M
+S
+E
+]
+G
+H
+I
+(surmonté d’une barre) est la moyenne des mesures,
+G
+H
+I
+̂
+(avec un chapeau) la prévision, N leur nombre,
+e
+t
+=
+G
+H
+I
+t
+−
+G
+H
+I
+̂
+t
+le résidu,
+σ
+e
+l’écart-type des résidus, ē leur moyenne (le biais),
+z
+1
+−
+α
+/
+2
+le quantile de la loi normale centrée réduite (1,96 pour 95 %, voir
+la loi normale
+). Cette bande a la même largeur à toute heure : c’est l’hypothèse d’homoscédasticité. Elle ne contient 1 − α des mesures que si les résidus suivent une loi normale.
+La prédiction conforme, sans fuite
+La prédiction conforme (
+split conformal prediction
+) ne suppose aucune loi. Elle mesure directement, sur des données que le modèle n’a jamais vues, de combien il se trompe, et en tire la marge.
+Apprentissage, 1998-2005
+: on estime les coefficients du modèle.
+Calibration, 2006
+: on prévoit cette année sans toucher au modèle, et l’on range les 4380 erreurs absolues de jour |e|. La marge q est celle qui laisse au plus 5 % des erreurs au-dessus : ici q = 174 W/m² pour l’AR à 95 %.
+Test, 2007
+: l’intervalle est
+G
+H
+I
+̂
+±
+q
+, et l’on compte les mesures dedans. Rien de 2007 n’a servi avant.
+Pourquoi trois années séparées ? Si l’on calibrait sur les années d’apprentissage, le modèle aurait déjà « vu » ces erreurs, plus petites que celles qu’il fera en vrai : la marge serait trop étroite. C’est une
+fuite
+d’information. De même, l’ordre de l’AR et la taille de l’ELM ont été choisis sur 2005 seulement.
+Résultat pour l’AR à 95 % : 95,2 % de couverture en 2007, pour une largeur de bande moyenne de 318 W/m².
+Trois façons de régler la marge
+Les trois versions du menu « Intervalle de prévision » suivent la même idée, celle de nos articles sur la
+place du modèle de ciel clair
+(Solar Energy, 2025, annexe C) et sur la
+prévision à valeurs complexes
+(JRSE, 2022). L’intervalle s’écrit
+G
+H
+I
+̂
+±
+k
+α
+σ
+̂
+. Le multiplicateur
+k
+α
+n’est pas pris dans la loi normale : il est lu dans une
+table de correspondance
+construite à partir des erreurs réellement commises. Ce qui change d’une version à l’autre, c’est le nombre de tables : une seule, une par heure, ou une par niveau de ciel clair. Sur cette page, chaque table est calculée sur l’année 2006, à part de l’apprentissage, pour éviter la fuite.
+AR, niveau nominal 95 %, test 2007. Couverture (PICP), largeur de bande moyenne et CRPS (score de toute la distribution, plus petit = meilleur,
+voir plus bas
+).
+Marge
+Nombre de tables
+?
+PICP 2007
+?
+Jours clairs
+?
+Jours variables
+Jours couverts
+Par heure, 8 h–17 h
+?
+Largeur de bande
+?
+CRPS
+?
+Gauss ±1,96 RMSE (référence)
+0 (loi normale)
+93,4 %
+98,4 %
+85,2 %
+89,7 %
+86–98 %
+280 W/m²
+39,0 W/m²
+1. Une seule marge
+1
+95,2 %
+98,9 %
+88,5 %
+94,0 %
+90–98 %
+318 W/m²
+37,4 W/m²
+2. Une marge par heure
+14
+94,5 %
+97,6 %
+89,2 %
+92,7 %
+93–98 %
+319 W/m²
+37,3 W/m²
+3. Une marge par classe de ciel clair
+?
+7
+94,6 %
+98,1 %
+89,7 %
+90,2 %
+92–97 %
+325 W/m²
+37,2 W/m²
+1. Une seule marge : la table de correspondance
+C’est la méthode de l’annexe C de l’article de 2025. On calcule les erreurs de prévision, puis on cherche, pour chaque niveau 1 − α, le multiplicateur
+k
+α
+qui donne la bonne couverture. On le range dans une table, dont on se sert ensuite pour toute nouvelle prévision. Dans l’article, la table dépend du site et de l’horizon ; ici, un site et un horizon, donc une seule table. Avec
+σ
+̂
+=
+R
+M
+S
+E
+, la marge vaut
+q
+=
+k
+α
+R
+M
+S
+E
+, le quantile des erreurs absolues : c’est exactement la prédiction conforme découpée.
+La table dit déjà pourquoi la loi normale se trompe. Sur les erreurs de 2006 :
+Niveau 1 − α
+80 %
+90 %
+95 %
+99 %
+k
+α
+lu dans les erreurs
+?
+0,96
+1,60
+2,25
+3,77
+z
+1
+−
+α
+/
+2
+de la loi normale
+?
+1,28
+1,64
+1,96
+2,58
+À 80 %, les erreurs demandent un multiplicateur plus petit que la loi normale : beaucoup d’heures ont une erreur presque nulle (le pic de l’histogramme). À 99 %, il en faut un bien plus grand : les grosses erreurs, quand un nuage passe, sont plus fréquentes que ne le prévoit une cloche de Gauss (les queues). Une seule table corrige le niveau global ; elle garde la même marge à toute heure.
+2. Une marge par heure
+Cette variante n’est pas dans nos articles : c’est une adaptation proposée pour cette page.
+Au lieu d’une table, on en construit une par heure de la journée (14 heures ont du Soleil assez souvent en 2006). À 9 h, on ne compare la prévision qu’aux erreurs de 9 h de l’année de calibration. La marge suit alors le Soleil : de 69 W/m² aux heures extrêmes à 222 W/m² vers midi, pour l’AR à 95 %. L’heure est connue avant la mesure, on a donc le droit de s’en servir.
+Résultat : de 8 h à 17 h, la couverture va de 93 à 98 %, au lieu de 86 à 98 % pour l’intervalle gaussien, pour une largeur de bande moyenne presque identique. Aux heures du lever et du coucher, qui n’ont du Soleil qu’une partie de l’année, la table repose sur peu d’erreurs et la couverture reste instable (de 84 à 99 %). En statistique, faire un calcul conforme séparé dans chaque groupe s’appelle la prédiction conforme « de Mondrian ».
+3. Une marge par classe de ciel clair
+L’article de 2022 rend l’intervalle proportionnel au rayonnement de ciel clair :
+G
+H
+I
+̂
+±
+μ
+G
+H
+I
+c
+s
+σ
+̂
+. L’idée est la même ici, sous une forme plus robuste.
+G
+H
+I
+c
+s
+est le rayonnement que l’on mesurerait à cette heure-là sans aucun nuage (modèle Solis) : il se calcule à l’avance pour n’importe quelle date, à partir de la seule position du Soleil et de l’atmosphère moyenne. On range les heures en 7 classes de
+G
+H
+I
+c
+s
+, des tranches de 150 W/m² (0–150, 150–300 … 750–900, plus de 900 W/m²), et l’on construit une table par classe. Avantage sur l’heure : la classe tient compte de la saison (midi en décembre ressemble à 9 h en juin). La marge va de 72 à 266 W/m².
+Ce n’est pas une classe de nébulosité.
+La classe dit combien de Soleil il
+pourrait
+y avoir, pas s’il y aura des nuages, que l’on ne connaît pas à l’avance. Et le découpage en tranches de 150 W/m² est un choix arbitraire, fait avant de regarder 2007, qui laisse au moins 168 erreurs de calibration dans chaque classe. Ce choix ne pèse pas sur le résultat : avec des tranches de 100, 200 ou 300 W/m², ou avec 4, 7 ou 10 classes de même effectif, la PICP 2007 de l’AR à 95 % reste entre 94,6 et 94,8 %, la largeur de bande entre 321 et 328 W/m², et le CRPS entre 37,2 et 37,4 W/m².
+Pourquoi des classes plutôt qu’une marge proportionnelle ? Si l’on divise l’erreur par
+G
+H
+I
+c
+s
+, les heures de Soleil bas, où
+G
+H
+I
+c
+s
+est minuscule, donnent des rapports énormes, et l’intervalle s’élargit partout : 682 W/m² de largeur de bande moyenne pour l’AR à 95 % (94,5 % de couverture), contre 325 W/m² avec les classes.
+Ce qu’aucune des trois ne règle
+Les jours variables restent sous la cible (88,5, 89,2 et 89,7 %), et les jours clairs au-dessus. Ni l’heure ni le ciel clair ne disent si un nuage arrive. Il faut pour cela une grandeur connue à l’avance qui mesure l’agitation du ciel : c’est le rôle de la volatilité
+σ
+̂
+prévue par la
+prévision à valeurs complexes
+. L’étape suivante serait donc l’intervalle complet de l’article de 2022,
+G
+H
+I
+̂
+±
+k
+α
+G
+H
+I
+c
+s
+σ
+̂
+, avec sa table calibrée sur une année séparée.
+Formules : quantile conforme, table de correspondance et marges par groupe
+s
+i
+=
+|
+G
+H
+I
+i
+−
+G
+H
+I
+̂
+i
+|
+,
+i
+=
+1
+,
+…
+,
+n
+q
+=
+s
+(
+k
+)
+,
+k
+=
+⌈
+(
+n
++
+1
+)
+(
+1
+−
+α
+)
+⌉
+[
+max
+(
+G
+H
+I
+̂
+t
+−
+q
+,
+0
+)
+;
+G
+H
+I
+̂
+t
++
+q
+]
+s
+(
+k
+)
+est la k-ième plus petite des n valeurs
+s
+i
+, et ⌈·⌉ arrondit à l’entier supérieur ; le « + 1 » corrige la taille finie de l’échantillon. Si les erreurs de calibration et de test sont échangeables (même loi, ordre indifférent), la probabilité qu’une nouvelle mesure tombe dans l’intervalle est au moins 1 − α, sur l’ensemble des heures. Ce n’est pas une garantie heure par heure. Des données horaires ne sont ni indépendantes ni échangeables (une heure ressemble à la précédente, et 2007 n’est pas 2006) : cette garantie théorique ne s’applique donc plus d’elle-même. La couverture est mesurée sur 2007, sans en déduire de garantie : 95,2 % sur l’ensemble des heures, 88,5 % les jours variables. La première ligne ci-dessous relie q au multiplicateur
+k
+α
+de la table de correspondance. Versions par heure et par classe de ciel clair : le même calcul est fait dans chaque groupe g, avec les seules erreurs de ce groupe, et l’intervalle de l’heure t utilise la marge
+q
+g
+(
+t
+)
+de son groupe, où g(t) est l’heure de t ou la classe de
+G
+H
+I
+c
+s
+,
+t
+.
+q
+=
+k
+α
+R
+M
+S
+E
+⟺
+k
+α
+=
+q
+R
+M
+S
+E
+[
+max
+(
+G
+H
+I
+̂
+t
+−
+q
+g
+(
+t
+)
+,
+0
+)
+;
+G
+H
+I
+̂
+t
++
+q
+g
+(
+t
+)
+]
+La borne basse est ramenée à 0 car le rayonnement n’est jamais négatif ; cela ne change pas la couverture.
+PICP et largeur de bande moyenne
+PICP
+Prediction interval coverage probability
+: la part des mesures tombées dans leur intervalle, en %. On la compare au niveau nominal : à 95 %, une PICP de 95 % est fiable, de 90 % trop optimiste, de 99 % trop prudente.
+Largeur de bande moyenne
+La
+largeur de bande
+est l’écart entre la borne haute et la borne basse de l’intervalle de prévision, en W/m². On en donne la moyenne sur les heures de jour ; entre parenthèses, la même rapportée au GHI moyen de jour (372 W/m²). Appelée MIL (
+mean interval length
+) dans nos articles.
+Il faut lire les deux ensemble. Un intervalle immense atteint toujours sa cible et ne sert à rien ; un intervalle étroit qui la manque est trompeur. Le bon intervalle atteint la cible avec la plus petite largeur. Ces scores ne comptent que les heures de jour : la nuit, prévision et mesure valent 0.
+Formules : PICP et largeur de bande
+P
+I
+C
+P
+=
+100
+N
+∑
+t
+=
+1
+N
+1
+[
+L
+t
+≤
+G
+H
+I
+t
+≤
+U
+t
+]
+W
+=
+1
+N
+∑
+t
+=
+1
+N
+(
+U
+t
+−
+L
+t
+)
+L
+t
+et
+U
+t
+sont les bornes basse et haute, N le nombre d’heures de jour,
+1
+[·] vaut 1 si la condition est vraie et 0 sinon,
+W
+est la largeur de bande moyenne.
+Le CRPS : noter toute la distribution d’un coup
+La PICP et la largeur de bande jugent un intervalle à un seul niveau. Or chaque méthode du menu fournit en fait toute une famille d’intervalles emboîtés, de 1 % à 99 % : c’est une
+distribution prédictive
+, la loi de probabilité attendue pour la prochaine mesure. Le
+CRPS
+(
+continuous ranked probability score
+, score de probabilité ordonné continu) note cette distribution en une seule fois. Il s’exprime en W/m², comme une erreur, et
+plus il est petit, mieux c’est
+. Il pénalise à la fois une distribution mal placée (la mesure tombe là où elle était jugée improbable) et une distribution trop étalée.
+Pour une prévision sans marge, le CRPS est exactement l’erreur absolue : sa moyenne est la
+MAE
+(
+mean absolute error
+, erreur absolue moyenne). C’est pourquoi notre
+article de 2022
+le présente comme la contrepartie probabiliste de la MAE. La comparaison est donc directe : l’écart entre la MAE et le CRPS mesure ce que la marge apporte. Le
+nCRPS
+divise le CRPS par le GHI moyen de jour (372 W/m²), pour comparer des sites ou des périodes ; l’outil l’affiche à côté du CRPS.
+CRPS des heures de jour en 2007 (W/m²), selon le modèle et la façon de régler la marge. MAE : la prévision seule, sans marge.
+Modèle
+MAE
+?
+CRPS, Gauss
+Une seule marge
+Par heure
+Par classe de ciel clair
+Persistance
+110,6
+75,2
+74,6
+71,4
+73,7
+Persistance intelligente
+47,0
+40,0
+38,2
+38,1
+38,0
+AR
+46,7
+39,0
+37,4
+37,3
+37,2
+ELM
+44,9
+37,5
+35,9
+35,8
+35,8
+Pour l’AR, la marge fait passer l’erreur de 46,7 W/m² (MAE) à un CRPS de 37,2 W/m², soit 20 % de moins. Pour chaque modèle, les marges lues dans les erreurs font mieux que la loi normale. Pour l’AR, la persistance intelligente et l’ELM, les trois versions conformes sont presque à égalité : conditionner sur l’heure ou sur le ciel clair répartit mieux la couverture, mais change peu le score d’ensemble. La persistance fait exception : la marge par heure l’améliore nettement (74,6 → 71,4 W/m²), car ses erreurs dépendent beaucoup de l’heure (elle ignore que le Soleil se lève ou se couche). Enfin, les modèles se classent comme pour la MAE : le CRPS dépend d’abord de la qualité de la prévision centrale.
+Le CRPS ne dépend pas du niveau nominal choisi dans l’outil, puisqu’il utilise tous les niveaux à la fois. Le calcul suit l’annexe D de notre
+article de 2025
+, qui décrit la distribution par ses quantiles plutôt que par une formule. Ici, 99 centiles : le centile τ (la valeur que la mesure a une probabilité τ de ne pas dépasser) est une borne de l’intervalle de niveau
+|
+2
+τ
+−
+1
+|
+. Par exemple, les centiles 2,5 % et 97,5 % sont les bornes de l’intervalle à 95 %.
+Formules : CRPS, centiles et nCRPS
+C
+R
+P
+S
+t
+=
+∫
+−
+∞
++
+∞
+(
+F
+t
+(
+x
+)
+−
+1
+[
+x
+≥
+G
+H
+I
+t
+]
+)
+2
+d
+x
+C
+R
+P
+S
+t
+≈
+2
+M
+∑
+i
+=
+1
+M
+ρ
+τ
+i
+(
+G
+H
+I
+t
+−
+Q
+τ
+i
+,
+t
+)
+,
+τ
+i
+=
+i
+100
+ρ
+τ
+(
+u
+)
+=
+u
+(
+τ
+−
+1
+[
+u
+<
+0
+]
+)
+C
+R
+P
+S
+=
+1
+N
+∑
+t
+=
+1
+N
+C
+R
+P
+S
+t
+,
+n
+C
+R
+P
+S
+=
+C
+R
+P
+S
+G
+H
+I
+F
+t
+est la fonction de répartition prédite pour l’heure t (la probabilité prédite que la mesure soit inférieure à x),
+Q
+τ
+,
+t
+son centile τ, M = 99 le nombre de centiles, et
+ρ
+τ
+la « perte pinball », qui pèse davantage une mesure tombée loin dans une queue jugée peu probable. La deuxième ligne approche la première à partir des centiles ; l’écart disparaît quand leur nombre augmente. Si tous les centiles valent la prévision, la deuxième ligne donne
+|
+G
+H
+I
+t
+−
+G
+H
+I
+̂
+t
+|
+: en moyenne, la MAE.
+G
+H
+I
+est le GHI moyen des N heures de jour.
+Les quatre modèles
+Tous prévoient l’heure suivante (horizon 1 h) à partir des mesures passées. Les règles sont celles du cours : prévision nulle quand le Soleil est sous l’horizon, jamais de prévision négative.
+Persistance
+La prochaine heure sera comme la dernière :
+G
+H
+I
+̂
+t
++
+1
+=
+G
+H
+I
+t
+. Simple, mais elle ignore que le Soleil monte ou descend.
+Persistance intelligente
+On garde l’écart au ciel clair :
+G
+H
+I
+̂
+t
++
+1
+=
+G
+H
+I
+t
+−
+G
+H
+I
+c
+s
+,
+t
++
+G
+H
+I
+c
+s
+,
+t
++
+1
+, où
+G
+H
+I
+c
+s
+est le rayonnement par ciel clair (sans nuage) calculé par le modèle Solis.
+AR
+Autorégression : une somme pondérée des 2 dernières valeurs de l’indice de ciel clair additif (GHI −
+G
+H
+I
+c
+s
+, centré), coefficients estimés par moindres carrés.
+ELM
+Extreme learning machine
+: un petit réseau de neurones (20 neurones cachés tirés au hasard puis fixés, seuls les poids de sortie sont calculés), sur les mêmes entrées que l’AR. Il est expliqué sur
+la page sur les modèles frugaux
+. Son IC est calculé à neurones cachés fixés.
+Erreurs de jour sur 2006 (RMSE) : persistance 132 W/m², persistance intelligente 80 W/m², AR 78 W/m², ELM 76 W/m². Comparer ces modèles selon l’horizon :
+le comparateur de prévisions
+.
+Formules : modèles et intervalle de confiance
+y
+t
+=
+G
+H
+I
+t
+−
+G
+H
+I
+c
+s
+,
+t
+−
+μ
+y
+̂
+t
++
+1
+=
+∑
+j
+=
+1
+p
+w
+j
+y
+t
+−
+j
++
+1
+G
+H
+I
+̂
+t
++
+1
+=
+max
+(
+y
+̂
+t
++
+1
++
+μ
++
+G
+H
+I
+c
+s
+,
+t
++
+1
+,
+0
+)
+G
+H
+I
+̂
+t
++
+1
+±
+z
+1
+−
+α
+/
+2
+s
+𝐱
+t
+⊤
+(
+𝐗
+⊤
+𝐗
+)
+−
+1
+𝐱
+t
+(
+𝐗
+⊤
+𝐗
+)
+−
+1
+→
+(
+𝐇
+⊤
+𝐇
++
+λ
+𝐈
+)
+−
+1
+𝐇
+⊤
+𝐇
+(
+𝐇
+⊤
+𝐇
++
+λ
+𝐈
+)
+−
+1
+y
+̂
+est la prévision de y, μ la moyenne de GHI −
+G
+H
+I
+c
+s
+sur l’apprentissage, w les coefficients, p = 2 l’ordre,
+x
+t
+le vecteur des p dernières valeurs de y, X la matrice de tous ces vecteurs sur l’apprentissage, s l’écart-type des résidus d’apprentissage. Pour l’ELM (seconde ligne), x est remplacé par h, la sortie de la couche cachée, et (X
+T
+X)
+−1
+par sa forme régularisée, où H rassemble les sorties cachées de l’apprentissage, I est la matrice identité et λ = 10
+−3
+. Ces formules supposent des résidus indépendants : l’IC réel est un peu plus large, mais reste de l’ordre du W/m².
+Données et découpage
+GHI horaire mesuré à Ajaccio (Corse), fichier du cours (station 20004002), converti de J/cm² en Wh/m² ; chaque valeur est la moyenne de l’heure écoulée, notée par son heure de fin. Années de 8 760 heures. Apprentissage 1998-2005, calibration 2006, test 2007. Types de journée en 2007, d’après
+k
+d
+, le rapport entre le rayonnement mesuré et le rayonnement de ciel clair cumulés sur la journée : claire si
+k
+d
+≥ 0,9 (205 jours), variable si 0,5 ≤
+k
+d
+< 0,9 (111 jours), couverte si
+k
+d
+< 0,5 (49 jours). Le type de journée n’est connu qu’après coup : il sert à juger, pas à construire l’intervalle.
+À garder en tête :
+un seul site, un seul horizon (1 h), des données horaires ; le niveau nominal est réglable de 50 à 99 %. La garantie conforme théorique suppose des données échangeables, ce que ne sont pas ces mesures horaires, et ne porterait de toute façon que sur l’ensemble des heures : la couverture affichée est mesurée sur 2007, pas garantie. Les résultats changeraient pour un autre climat ou un autre horizon.
+Pour aller plus loin :
+prévision à valeurs complexes : régler α et la largeur des intervalles
+·
+l’animation probabiliste et sa table de correspondance
+·
+juger une prévision avec NICE
+·
+variabilité et prévisibilité, sCV et F
+·
+le cours de prévision solaire
+Références : d’où vient la méthode
+Les intervalles de cette page appliquent la méthode de ces deux articles :
+Cyril Voyant, Milan Despotovic, Gilles Notton, Yves-Marie Saint-Drenan, Mohammed Asloune, Luis Garcia-Gutierrez.
+On the importance of clearsky model in short-term solar radiation forecasting
+.
+Solar Energy
+294, 113490 (2025). doi:
+10.1016/j.solener.2025.113490
+·
+arXiv:2503.07647
+Intervalle
+y
+̂
+±
+k
+α
+σ
+̂
+avec un multiplicateur
+k
+α
+lu dans une table de correspondance construite sur les erreurs observées, sans loi supposée (annexe C) ; PICP, MIL, score d’intervalle et CRPS calculé sur les quantiles (section 2.3 et annexe D, repris dans la section « Le CRPS »). C’est la méthode « une seule marge » de cette page.
+Cyril Voyant, Philippe Lauret, Gilles Notton, Jean-Laurent Duchaud, Luis Garcia-Gutierrez, Ghjuvan Antone Faggianelli.
+Complex-valued time series based solar irradiance forecast
+.
+Journal of Renewable and Sustainable Energy
+14(6), 066502 (2022). doi:
+10.1063/5.0128131
+·
+arXiv:2203.06701
+Intervalle proportionnel au ciel clair,
+G
+H
+I
+̂
+±
+μ
+G
+H
+I
+c
+s
+σ
+̂
+, avec un multiplicateur μ calibré sur les données plutôt que tiré de la loi normale, et une volatilité
+σ
+̂
+prévue. Base de la version « par classe de ciel clair » et de l’étape suivante proposée. Le CRPS y est présenté comme la contrepartie probabiliste de la MAE (figure 4).
+Ce qui est propre à cette page : la calibration sur une année séparée (2006) plutôt que sur l’apprentissage, et les versions par heure et par classe de ciel clair. Le cadre statistique général, la prédiction conforme, et sa version par groupes, dite de Mondrian, sont décrits par V. Vovk, A. Gammerman et G. Shafer,
+Algorithmic Learning in a Random World
+, Springer, 2005 (doi:
+10.1007/b106715
+).
+
+---
+URL: https://www.cyrilvoyant.com/fr/outils/modes-prevision-pv/
+
+Prévoir la puissance photovoltaïque : directement, ou en passant par l’éclairement ?
+Pour prévoir la production d’une centrale photovoltaïque (PV), on peut prévoir directement sa puissance, ou prévoir d’abord l’éclairement solaire, puis le convertir en puissance. Cette page compare les trois voies sur 15 mois de mesures ouvertes (la première moitié pour l’apprentissage, la seconde pour le test), avec les mêmes modèles de prévision.
+À 1 heure d’horizon, avec un ELM, l’erreur relative (nRMSE) vaut 0,42 en PV direct, 0,43 en passant par le GTI, 0,49 en partant du GHI.
+Chaque étape ajoutée apporte sa propre erreur ; la page montre combien pèse chacune.
+PV direct
+PV mesuré
+modèle
+PV prévu
+GTI puis PV
+GTI mesuré
+modèle
+GTI prévu
+C
+PV prévu
+GHI puis GTI puis PV
+GHI mesuré
+modèle
+GHI prévu
+T
+GTI
+C
+PV prévu
+T : transposition (de l’éclairement horizontal à l’éclairement des panneaux). C : conversion (de l’éclairement des panneaux à la puissance).
+Ce qu’il faut retenir
+PV direct et GTI puis PV font presque jeu égal
+: 0,76 kW contre 0,79 kW de RMSE (ELM, 1 h). La conversion GTI → PV, ici une simple proportion, ajoute peu d’erreur.
+Partir du GHI ajoute une étape, la transposition, et son erreur
+: 0,89 kW. Dans cette voie, la transposition pèse 13 % de l’erreur quadratique, la prévision du GHI 82 %.
+Si la centrale change de taille
+, les voies par l’éclairement n’ont qu’à changer P
+c
+dans la conversion ; PV direct doit travailler sur la puissance relative P / P
+c
+, sinon son modèle figé se trompe.
+Si le réseau impose un arrêt
+, l’éclairement n’en garde aucune trace ; PV direct, lui, garde des zéros dans ses 24 h d’entrées et prévoit trop bas ensuite (0,98 kW contre 0,57 kW). Diviser par la puissance disponible et masquer les heures à 0 le corrige (0,62 kW).
+Les données, la centrale et les deux étapes physiques
+SOLETE et Risø.
+SOLETE est le nom du jeu de données ; Risø est le lieu de mesure, un campus de l’Université technique du Danemark (DTU) près de Roskilde. Le jeu, publié en accès libre par D. V. Pombo (licence CC BY 4.0), mesure au même endroit le GHI, le GTI et la puissance d’une petite centrale PV, de juin 2018 à septembre 2019. Il permet donc de comparer les trois voies sur les mêmes instants.
+La centrale et sa puissance crête P
+c
+.
+P
+c
+est la puissance que donnent les panneaux dans les conditions standard de test : un éclairement de 1000 W/m² et des cellules à 25 °C. Ici, P
+c
+= 7,44 kWc (kilowatts crête) : 36 modules de 165 W et 12 modules de 125 W. L’onduleur, qui transforme le courant continu en courant alternatif, est de 10 kW.
+Transposition T (GHI → GTI)
+, les deux modèles standard les plus simples. Le modèle d’
+Erbs et al. (1982)
+sépare le GHI en une part directe (DNI, le rayonnement venu tout droit du soleil) et une part diffuse (DHI, venue du reste du ciel). Le modèle de ciel isotrope de
+Liu et Jordan (1963)
+projette ensuite ces deux parts sur le plan des panneaux, en supposant le diffus égal dans toutes les directions, et ajoute le sol réfléchi. L’inclinaison et l’orientation des panneaux ne sont pas données avec les données : elles sont ajustées sur la moitié d’apprentissage (53° d’inclinaison, orientation 196°, 180° étant plein sud).
+Conversion C (GTI → PV)
+, le modèle le plus simple : la puissance est proportionnelle au GTI, comme dans
+PVWatts
+(Dobos, 2014) sans l’effet de la température. Le rapport de performance PR = 0,92, ajusté sur la moitié d’apprentissage, regroupe toutes les pertes (onduleur, câbles, température, poussière).
+Les deux formules
+G
+T
+I
+=
+D
+N
+I
+cos
+θ
++
+D
+H
+I
+1
++
+cos
+β
+2
++
+ρ
+G
+H
+I
+1
+−
+cos
+β
+2
+θ est l’angle entre le soleil et la normale aux panneaux, β l’inclinaison des panneaux, ρ = 0,2 la part de lumière renvoyée par le sol (albédo). DNI est compté perpendiculairement aux rayons du soleil.
+P
+V
+=
+P
+R
+P
+c
+G
+T
+I
+1000
+W
+/
+m
+2
+PV en kW, P
+c
+en kWc, GTI en W/m². Calculs avec la bibliothèque
+pvlib
+.
+Essayer : les trois voies sur la période de test
+Choisissez un modèle et un horizon : le tableau, les disques et les graphiques se recalculent. Le modèle par défaut est l’ELM.
+JavaScript est nécessaire pour les graphiques ; les définitions, la théorie et les sources restent lisibles ci-dessous.
+Quand le réseau limite la puissance
+Le gestionnaire du réseau peut imposer une limite de puissance, annoncée à l’avance ou non. Choisissez la limite, l’annonce, et la façon dont PV direct traite ses entrées. La bande colorée marque l’écrêtement ; le trait plein marque son début.
+Ce que montrent les données (ELM, 1 h)
+Arrêt annoncé, PV direct en kW
+: après l’écrêtement, ses entrées gardent des zéros pendant 24 h, et il prévoit trop bas : 0,98 kW de RMSE après l’écrêtement, contre 0,57 kW pour GTI puis PV.
+PV direct divisé par la puissance disponible
+: pendant un arrêt, c’est une division par zéro ; 271 prévisions sur 351 deviennent impossibles après l’écrêtement.
+Proposition testée : diviser par la puissance disponible annoncée et masquer les heures à 0
+(remplacées par la valeur de la veille). Plus de division par zéro, et PV direct revient à 0,62 kW après l’écrêtement. Mais avec une limite à 60 %, la même division gonfle les valeurs qui n’atteignaient pas la limite : 1,16 kW pendant l’écrêtement, contre 0,25 kW sans division.
+Voies par l’éclairement
+: leurs entrées ne voient pas l’écrêtement ; elles s’ajustent par la puissance crête et la consigne annoncée.
+Arrêt non annoncé
+: aucune voie ne connaît la limite ; seul PV direct voit la baisse dans sa dernière valeur, une fois l’écrêtement commencé. Pendant l’écrêtement, la voie la plus juste est PV direct (2,53 kW ; PV direct 2,53, GTI puis PV 5,17).
+Théorie : comment l’erreur se propage et s’additionne
+Notations : PV est la puissance mesurée, GHI et GTI les éclairements mesurés ; un chapeau désigne une prévision (par exemple GHI chapeau, le GHI prévu). T est la transposition (GHI → GTI), C la conversion (GTI → PV). L’erreur finale est
+e
+=
+P
+V
+^
+−
+P
+V
+. Dans la voie GHI puis GTI puis PV :
+P
+V
+^
+=
+C
+(
+T
+(
+G
+H
+I
+^
+)
+)
+On ajoute et on retire les mêmes quantités. L’erreur finale devient exactement la somme de trois erreurs d’étape, toutes en kW : e₁ vient de la prévision du GHI, e₂ de la transposition (appliquée au GHI mesuré), e₃ de la conversion (appliquée au GTI mesuré).
+e
+=
+C
+(
+T
+(
+G
+H
+I
+^
+)
+)
+−
+C
+(
+T
+(
+G
+H
+I
+)
+)
+⏟
+e
+1
+prévision
++
+C
+(
+T
+(
+G
+H
+I
+)
+)
+−
+C
+(
+G
+T
+I
+)
+⏟
+e
+2
+transposition
++
+C
+(
+G
+T
+I
+)
+−
+P
+V
+⏟
+e
+3
+conversion
+En moyenne sur la période de test (les crochets ⟨ ⟩ désignent une moyenne), l’erreur quadratique finale est la somme des erreurs quadratiques des étapes, plus des termes croisés :
+⟨
+e
+2
+⟩
+=
+⟨
+e
+1
+2
+⟩
++
+⟨
+e
+2
+2
+⟩
++
+⟨
+e
+3
+2
+⟩
++
+2
+(
+⟨
+e
+1
+e
+2
+⟩
++
+⟨
+e
+1
+e
+3
+⟩
++
+⟨
+e
+2
+e
+3
+⟩
+)
+Si la moyenne de chaque produit d’erreurs entre deux étapes est nulle sur la période évaluée, les termes croisés disparaissent et les carrés des RMSE s’additionnent. L’indépendance seule ne suffit pas si les erreurs sont biaisées.
+R
+M
+S
+E
+≈
+R
+M
+S
+E
+1
+2
++
+R
+M
+S
+E
+2
+2
++
+R
+M
+S
+E
+3
+2
+La voie GTI puis PV n’a que deux étapes (prévision du GTI, conversion) ; PV direct n’en a qu’une. Comme la conversion est une simple proportion, elle multiplie l’erreur de prévision par un facteur fixe ; la transposition, elle, l’amplifie quand le soleil est bas devant des panneaux inclinés :
+C
+(
+G
+T
+I
+)
+=
+P
+R
+P
+c
+G
+T
+I
+1000
+⟹
+e
+1
+=
+P
+R
+P
+c
+1000
+(
+T
+(
+G
+H
+I
+^
+)
+−
+T
+(
+G
+H
+I
+)
+)
+Le disque montre la part s
+i
+de chaque étape dans la somme des erreurs quadratiques des étapes, avant prise en compte des termes croisés. Le texte sous le disque indique séparément ρ, la contribution relative des termes croisés :
+s
+i
+=
+⟨
+e
+i
+2
+⟩
+∑
+j
+⟨
+e
+j
+2
+⟩
+,
+ρ
+=
+⟨
+e
+2
+⟩
+−
+∑
+j
+⟨
+e
+j
+2
+⟩
+⟨
+e
+2
+⟩
+Exemple (ELM, 1 h, puissance crête inchangée) : RMSE des étapes 0,931, 0,376 et 0,212 kW ; RMSE finale 0,894 kW ; ρ = -0,32, négatif : les erreurs des étapes se compensent en partie.
+Les mesures d’erreur, avec e
+pers
+l’erreur de la persistance de PV au même horizon :
+n
+R
+M
+S
+E
+=
+⟨
+e
+2
+⟩
+⟨
+P
+V
+⟩
+,
+N
+I
+C
+E
+k
+=
+(
+⟨
+|
+e
+|
+k
+⟩
+)
+1
+/
+k
+(
+⟨
+|
+e
+p
+e
+r
+s
+|
+k
+⟩
+)
+1
+/
+k
+,
+k
+=
+1
+,
+2
+,
+3
+Changement de puissance crête : PV direct peut travailler sur la puissance relative x, puis revenir aux kW.
+x
+=
+P
+V
+P
+c
+,
+P
+V
+^
+=
+P
+c
+x
+^
+Écrêtement, avec s la part de P
+c
+autorisée et A la puissance disponible : une prévision qui connaît l’annonce est plafonnée à A ; la variante « divisée par la puissance disponible » remplace P
+c
+par A dans la division, ce qui divise par 0 quand s = 0.
+A
+=
+{
+s
+P
+c
+pendant l'écrêtement
+P
+c
+sinon
+,
+P
+V
+^
+←
+min
+(
+P
+V
+^
+,
+A
+)
+,
+x
+=
+P
+V
+A
+P
+c
+Protocole et limites
+Données.
+SOLETE, version 3 (D. V. Pombo, DTU), licence CC BY 4.0, mesurées à Risø (55,69° N, 12,10° E). Le fichier au pas de 5 minutes est moyenné ici au pas de 30 minutes, en UTC. La colonne d’élévation solaire du fichier est décalée d’une heure ; la position du soleil est recalculée avec pvlib.
+Apprentissage figé.
+Tous les modèles, la transposition et la conversion sont ajustés une seule fois sur la première moitié (1er juin 2018 – 14 janvier 2019), comme le découpage 50/50 de PV_ELM_pred, puis évalués sans réajustement sur la seconde (15 janvier – 31 août 2019), aux instants de jour (soleil au-dessus de l’horizon). Les prévisions sont mises à 0 la nuit et bornées à 0 en bas.
+Modèles.
+Ceux du code publié
+PV_ELM_pred
+, importés sans modification : persistance, BLEND, autorégression par moindres carrés, ELM à régularisation ridge (500 neurones, 100 tirages, validation croisée temporelle). Entrées : 48 valeurs passées (24 h), centrées-réduites avec les statistiques de l’apprentissage, et l’heure et le jour de l’année à l’instant visé (sinus et cosinus), comme dans PV_ELM_pred.
+Calcul en direct.
+Les prévisions sont calculées en Python et arrondies à 10 W ; la page en recalcule toutes les erreurs dans votre navigateur.
+Limites.
+Une seule centrale, un seul climat ; une transposition et une conversion volontairement simples, ajustées sur les mêmes données. La conversion ignore la température des modules. Écrêtements simulés sur 8 journées ensoleillées de l’été 2019, écartées d’au moins 4 jours. C’est un calcul pédagogique sur données ouvertes, pas le résultat d’un article.
+Les mots de la page
+PV
+photovoltaïque ; PV désigne aussi la puissance électrique (courant alternatif) produite par la centrale, en kilowatts (kW).
+P
+c
+la puissance crête : la puissance des panneaux sous 1000 W/m² et à 25 °C, 7,44 kWc ici. Le scénario de capacité la divise par 2 ou la double.
+GHI
+Global Horizontal Irradiance
+: l’éclairement solaire reçu par une surface horizontale, en watts par mètre carré (W/m²). C’est la grandeur la plus souvent mesurée et prévue.
+GTI
+Global Tilted Irradiance
+: l’éclairement reçu dans le plan incliné des panneaux, en W/m². C’est lui que les panneaux convertissent en électricité.
+Transposition T
+le calcul qui passe du GHI au GTI (modèles d’Erbs et de Liu et Jordan, voir plus haut).
+Conversion C
+le calcul qui passe du GTI à la puissance : PV = PR × P
+c
+× GTI / 1000, avec PR = 0,92.
+Horizon
+le délai entre la dernière mesure connue et l’instant prévu, ici de 30 minutes à 6 heures, au pas de 30 minutes.
+Apprentissage, test
+les modèles sont ajustés une seule fois sur la première moitié des données (juin 2018 à mi-janvier 2019), puis évalués, sans réajustement, sur la seconde (mi-janvier à août 2019).
+Persistance
+recopier la dernière valeur connue. C’est la référence minimale.
+BLEND
+un mélange de la persistance et de la valeur de la veille à la même heure, avec un poids par demi-heure de la journée.
+AR
+autorégression : une somme pondérée des 48 dernières valeurs (24 h) et de l’heure et du jour de l’année (sous forme de sinus et cosinus), avec des poids calculés par moindres carrés.
+ELM
+Extreme Learning Machine
+: un réseau de neurones à une couche cachée de 500 neurones tirés au hasard, dont seuls les poids de sortie sont calculés. 100 tirages sont essayés ; le meilleur est choisi par validation croisée dans le temps. Mêmes entrées que l’AR.
+RMSE, nRMSE
+la RMSE est la racine de l’erreur quadratique moyenne, en kW ; elle pèse plus sur les grosses erreurs. La nRMSE la divise par la production moyenne mesurée.
+NICE¹, NICE², NICE³, NICE
+Σ
+l’erreur divisée par celle de la persistance de la puissance PV, aux mêmes instants : NICE¹ pour l’erreur absolue moyenne, NICE² pour la RMSE, NICE³ pour l’erreur cubique, NICE
+Σ
+pour leur moyenne. Sous 1, la prévision fait mieux que la persistance ; au-dessus, la page affiche « > 1 ».
+Écrêtement
+une limite de puissance imposée à la centrale (par le gestionnaire du réseau, par exemple), ici de 10 h à 14 h UTC (temps universel coordonné, 12 h à 16 h à l’heure d’été danoise).
+Puissance disponible
+la puissance que la centrale a le droit de produire : P
+c
+en temps normal, la limite annoncée pendant l’écrêtement.
+Pour aller plus loin :
+comparer des prévisions selon l’horizon
+·
+calculer NICE sur vos données
+·
+régler les poids de BLEND
+·
+le cours de prévision solaire
+.
+Données, code et références
+Données : D. V. Pombo, O. Gehrke, H. W. Bindner,
+SOLETE
+, Data in Brief 42 (2022) 108046 ; jeu de données
+doi:10.11583/DTU.17040767
+, licence
+CC BY 4.0
+. Modèles :
+PV_ELM_pred
+(
+Zenodo
+), licence MIT. Métriques :
+NICE
+k
+. Transposition :
+Erbs et al., Solar Energy 28 (1982) 293
+et
+Liu et Jordan, Solar Energy 7 (1963) 53
+, avec
+pvlib
+. Conversion :
+Dobos, PVWatts Version 5 Manual, NREL (2014)
+. Calculs :
+work/pv_modes
+de ce site.
+
+---
+URL: https://www.cyrilvoyant.com/fr/outils/test-jarque-bera/
+
+Test de normalité en ligne : Jarque-Bera, Shapiro-Wilk, Kolmogorov
+Loi normale ou pas ? Avec 100 valeurs tirées d’une loi normale, les trois tests concluent « compatible » (Jarque-Bera p = 0,30, Shapiro-Wilk p = 0,24) ; un seul point ajouté à 4,2 écarts-types de la moyenne suffit à faire rejeter la normalité.
+Vous apprenez à lire un histogramme et une droite de Henry, puis à comparer trois tests de normalité, condition des tests de Student et du test Z.
+Expérience du cours, dont les valeurs sont calculées dans le modèle indiqué et ne sont pas des résultats de recherche :
+le chapitre et ses diapositives
+(partie « Moments d’ordre 3 et 4 » et « Test de normalité ») ·
+toutes les expériences
+·
+version anglaise
+.
+JavaScript est nécessaire pour les curseurs. Les explications, formules et exercices ci-dessous restent accessibles.
+Essayer et interpréter
+L’hypothèse testée est écrite en haut du labo :
+H₀ : les données suivent une loi normale
+. Choisissez une forme (normale, asymétrique, queues épaisses, plate, deux bosses), réglez l’écart à la loi normale et le nombre de points n. Le bandeau de couleur donne le verdict en clair : vert si aucun test ne rejette H₀, rouge si les trois la rejettent, orange s’ils ne sont pas d’accord. L’histogramme prend la même couleur et porte la courbe normale de même moyenne et même écart-type ; la droite de Henry montre où les points s’écartent. Cliquez sur l’histogramme pour ajouter des valeurs, ou placez le point extrême et faites-le glisser : la courbe du bas indique à partir d’où chaque test rejette la normalité.
+Pourquoi tester la normalité ?
+Le test Z, le test de Student et les intervalles de confiance supposent des données (ou des moyennes) de loi normale. Le cours le rappelle : il faut vérifier cette hypothèse, au moins a posteriori. Le test de Jarque-Bera, celui du cours, compare deux formes de la distribution à celles de la loi normale : sa symétrie (S = 0) et son aplatissement (C = 0). Le labo le compare à deux tests très utilisés : Shapiro-Wilk et Kolmogorov-Smirnov.
+Les définitions
+n, xᵢ
+Le nombre de valeurs et chaque valeur de l’échantillon.
+x̄, s
+La moyenne et l’écart-type de l’échantillon (s calculé avec n − 1, comme dans le cours).
+S (skewness, asymétrie)
+La moyenne des écarts réduits (xᵢ − x̄)/s élevés au cube. 0 pour une distribution symétrique ; S > 0 : queue à droite ; S < 0 : queue à gauche.
+C (kurtosis en excès, aplatissement)
+La moyenne des écarts réduits à la puissance 4, moins 3. 0 pour la loi normale (« mésocurtique ») ; C > 0 : queues plus épaisses ; C < 0 : distribution plus plate.
+JB
+La statistique de Jarque-Bera, (n/6)(S² + C²/4) : elle grandit avec l’asymétrie, l’aplatissement et la taille de l’échantillon.
+χ² à 2 ddl
+La loi limite de JB sous normalité. Son seuil à 5 % vaut environ 5,99 ; la lecture est indicative sur les petits échantillons.
+H₀, p-value
+H₀ : les données viennent d’une loi normale. p est la probabilité, sous H₀, d’une statistique au moins aussi grande que celle observée. Avec l’approximation du χ², p < 5 % correspond à JB supérieur au seuil asymptotique.
+W (Shapiro-Wilk)
+Mesure à quel point les valeurs triées s’alignent sur la droite de Henry, entre 0 et 1. W proche de 1 : données compatibles avec la normale ; W petit : on rejette H₀.
+D (Kolmogorov-Smirnov, version de Lilliefors)
+Le plus grand écart vertical entre la fonction de répartition des données et celle de la loi normale de même x̄ et s. D grand : on rejette H₀.
+Droite de Henry (diagramme quantile-quantile)
+Chaque valeur triée est placée face au quantile de la loi normale de même rang. Si les données sont normales, les points suivent la droite x̄ + s·z.
+Voir les formules
+x
+¯
+=
+1
+n
+∑
+i
+=
+1
+n
+x
+i
+,
+s
+=
+1
+n
+−
+1
+∑
+i
+=
+1
+n
+(
+x
+i
+−
+x
+¯
+)
+2
+S
+=
+1
+n
+∑
+i
+=
+1
+n
+(
+x
+i
+−
+x
+¯
+s
+)
+3
+,
+C
+=
+1
+n
+∑
+i
+=
+1
+n
+(
+x
+i
+−
+x
+¯
+s
+)
+4
+−
+3
+J
+B
+=
+n
+6
+(
+S
+2
++
+C
+2
+4
+)
+,
+p
+=
+e
+−
+J
+B
+/
+2
+Où : n est le nombre de valeurs xᵢ, x̄ leur moyenne, s leur écart-type, S l’asymétrie, C l’excès d’aplatissement, JB la statistique de Jarque-Bera et p la p-value.
+Sous H₀, JB suit approximativement la loi du χ² à 2 degrés de liberté, dont la fonction de survie est simple : p = e
+−JB/2
+. Avec ce seuil asymptotique, une valeur de JB inférieure au seuil conduit à ne pas rejeter la normalité.
+Les logiciels (scipy, R) calculent S et C avec des moments divisés par n (écart-type sans le n − 1) : les valeurs diffèrent un peu pour les petits échantillons, et se rejoignent quand n grandit. Le labo affiche les deux.
+Voir les formules de Shapiro-Wilk et de Kolmogorov-Smirnov
+W
+=
+(
+∑
+i
+=
+1
+n
+a
+i
+x
+(
+i
+)
+)
+2
+∑
+i
+=
+1
+n
+(
+x
+i
+−
+x
+¯
+)
+2
+Où : x₍ᵢ₎ est la i-ème plus petite valeur, x̄ la moyenne, et les aᵢ des poids fixés par n, tirés des quantiles attendus de la loi normale (aᵢ < 0 pour les petites valeurs, aᵢ > 0 pour les grandes, Σaᵢ² = 1). W est le carré de la corrélation entre les valeurs triées et ces poids : 1 si les points sont parfaitement alignés sur la droite de Henry. La p-value suit l’approximation de Royston (1995), celle de scipy et de R.
+D
+=
+max
+x
+|
+F
+n
+(
+x
+)
+−
+Φ
+(
+x
+−
+x
+¯
+s
+)
+|
+Où : F
+n
+(x) est la proportion des n valeurs inférieures ou égales à x (fonction de répartition empirique), Φ la fonction de répartition de la loi normale centrée réduite, x̄ et s la moyenne et l’écart-type de l’échantillon. Comme x̄ et s sont estimés sur les mêmes données, la table classique de Kolmogorov-Smirnov serait trop indulgente : on utilise celle de Lilliefors (approximation de Dallal et Wilkinson, 1986, précise pour p < 0,10 ; au-delà, le labo affiche « p > 0,10 »).
+Hypothèses et limites
+La loi du χ² n’est qu’une approximation, valable pour des échantillons assez grands. Avec peu de données, le test manque de puissance : ne pas rejeter la normalité ne prouve pas qu’elle est vraie. Avec beaucoup de données, au contraire, de petits écarts sans conséquence deviennent significatifs. Regardez toujours l’histogramme et la droite de Henry en plus du test.
+Quel test choisir ?
+Shapiro-Wilk
+: le plus puissant pour les petits et moyens échantillons (de 3 à 5 000 valeurs) ; c’est le choix par défaut des logiciels.
+Jarque-Bera
+: simple à calculer à la main (S et C), il cible l’asymétrie et les queues ; sa p-value est asymptotique, donc fiable surtout pour les grands échantillons.
+Kolmogorov-Smirnov (Lilliefors)
+: il compare les fonctions de répartition ; il réagit surtout au centre de la distribution et peu aux queues : c’est le moins puissant des trois.
+Les échantillons du labo sont tirés au hasard (générateur reproductible) dans des lois choisies pour l’exemple ; « Nouveau tirage » change l’échantillon.
+Exercices
+Les deux premiers sont des calculs à la main du cours (diapositive « Moments d’ordre 3 et 4 »), aucun sujet d’examen.
+Calcul à la main (exercice du cours).
+x = 2, 6, 8, 8, 9, 9, 10, 11, 11, 12, 12, 14, 18 ; on donne x̄ = 10,0 et s = 3,873. Calculer S et C.
+Voir la correction
+Les écarts à la moyenne sont symétriques : S = 0. Σ((x − x̄)/s)⁴/13 = 2,999 donc C = −0,001 ≈ 0 : jeu mésocurtique et symétrique. JB ≈ 0, p ≈ 1 : rien ne permet de rejeter la normalité (n = 13 reste petit).
+Second calcul du cours.
+x = 7, 7, 7, 8, 8, 9, 9, 10, 11, 11, 12, 12, 13, 13, 13, 18 ; x̄ = 10,5 et s = 2,989. Calculer S, C puis JB.
+Voir la correction
+S = +0,72 (queue à droite, due surtout au 18) et C = −0,0005 ≈ 0. JB = 16/6 × (0,72² + 0) = 1,40 < 5,99, p = 0,50 : on ne rejette pas la normalité.
+Un point suffit-il ?
+Partez de l’échantillon « Normale » de 100 valeurs et ajoutez le point extrême. À partir de combien d’écarts-types de la moyenne la normalité est-elle rejetée ?
+Voir la correction
+Lisez la courbe du bas : Jarque-Bera et Shapiro-Wilk deviennent significatifs dès 4,2 écarts-types, au-dessus comme en dessous de la moyenne (à 4,0 : JB = 3,6, p = 0,17 ; Shapiro-Wilk p = 0,060). Kolmogorov-Smirnov ne réagit presque pas : un point isolé change à peine l’écart maximal D entre les deux fonctions de répartition.
+L’effet de n.
+Choisissez « Asymétrique », réglez l’écart à la loi normale sur 0,3 et faites passer n de 30 à 300. Que deviennent JB et le verdict ?
+Voir la correction
+Avec 30 points, JB = 1,4 (p = 0,50) : les trois tests ne rejettent pas H₀, l’asymétrie passe inaperçue. Avec 300 points tirés de la même loi, JB = 40 (p < 0,0001) et les trois tests rejettent H₀. JB est proportionnel à n : avec beaucoup de données, un petit écart à la normalité devient détectable ; avec peu de données, ne pas rejeter ne prouve pas la normalité.
+Les tests sont-ils d’accord ?
+Chargez l’exemple « Plate (uniforme) » (100 points), puis « Queues épaisses ». Quels tests rejettent la normalité ?
+Voir la correction
+Distribution plate : Shapiro-Wilk rejette H₀ (p = 0,012), mais pas Jarque-Bera (p = 0,092) ni Kolmogorov-Smirnov (p = 0,060) : bandeau orange, cas limite. Queues épaisses : seul Jarque-Bera rejette (p = 0,044 ; Shapiro-Wilk p = 0,15). Chaque test regarde un aspect différent de la forme : on regarde toujours l’histogramme et la droite de Henry avant de conclure.
+Aller plus loin
+Le chapitre complet du cours
+: la loi normale, les moments et les tests de moyennes
+La loi normale : aire, probabilité et score z
+Le test Z et le test de Student
+, qui supposent la normalité
+Le test du χ²
+: la même loi, pour des effectifs
+
+---
+URL: https://www.cyrilvoyant.com/tools/probabilistic-solar-forecasting/
+
+Probabilistic solar forecasting: confidence interval, prediction interval and PICP
+A solar irradiance forecast needs a margin.
+At Ajaccio, in 2007, one hour ahead, the mean value forecast by the autoregression is known to ±0.5 W/m² (confidence interval), but the margin that aims to contain 95% of the next measurements is ±174 W/m² (prediction interval; 95.2% measured in 2007). This page shows why the two margins differ, why “forecast ± 2 RMSE” goes wrong, and how conformal prediction sets the margin from data.
+An experiment from the solar forecasting course. The numbers are recomputed here from the measurements; they are not results from a paper. Interval method:
+Voyant et al., Solar Energy 2025 and JRSE 2022
+.
+French version
+.
+Try it
+Each black dot is an hourly measurement of GHI (global horizontal irradiance, the solar radiation received by a horizontal surface, in W/m²). The blue line is the forecast made one hour before. The light blue band is the
+prediction interval
+: where the next measurement should fall. The thin orange band, often invisible because it is so narrow, is the
+confidence interval
+of the mean forecast. Red dots are measurements that fell outside the band.
+Model
+?
+Prediction interval
+?
+Nominal level
+?
+95 %
+Date (2007)
+Window
+?
+Confidence interval
+?
+measurement ·
+measurement outside the prediction interval ·
+1 h forecast ·
+prediction interval ·
+confidence interval
+PICP, window
+?
+PICP, whole of 2007
+?
+Mean band width, 2007
+?
+CI: mean half-width
+?
+CRPS, 2007
+?
+PICP by hour of the day, 2007 (end hour of the measurement). Orange line: nominal level.
+PICP by type of day, 2007, and mean band width (W/m²) under each bar.
+Standard deviation of the series or RMSE of the model
+Mean daytime GHI, 2007
+?
+Standard deviation of the series
+σ
+G
+H
+I
+, 2007
+?
+Model RMSE, calibration 2006
+?
+Model RMSE, test 2007
+Half-width of the chosen interval
+?
+Two intervals, two questions
+Confidence interval (CI)
+It answers “where is the
+mean
+of the measurements we would get in this situation?”. It only holds the uncertainty on the model parameters, estimated from a finite amount of data. It shrinks as data are added: with 8 years of training, it is ±0.5 W/m² here for AR and ±1.9 W/m² for ELM. Persistence has no estimated parameter: its CI reduces to the line.
+Prediction interval (PI)
+It answers “where will the
+next measurement
+fall?”. It adds to the CI the spread of the measurements around their mean: a cloud passes or not. This part does not vanish with more data. It is the interval that matters to run a grid or a battery.
+Nominal level 1 − α
+The share of measurements the prediction interval aims to contain, for example 95% (α = 0.05, the share left outside).
+The same distinction on a simple regression line:
+confidence or prediction interval?
+Standard deviation of the series or error of the model?
+Two numbers with similar names that have nothing in common:
+Standard deviation of the series,
+σ
+G
+H
+I
+The spread of the measurements around
+their mean
+. Daytime 2007: mean 372 W/m²,
+σ
+G
+H
+I
+= 282 W/m². It mixes nightfall, seasons and clouds: everything a model already knows how to forecast.
+Residual e
+Measurement minus forecast:
+e
+=
+G
+H
+I
+−
+G
+H
+I
+̂
+, in W/m².
+RMSE
+Root mean square error: the square root of the mean squared residual. It is the spread of the measurements around
+the forecast
+. If the residuals average zero (no bias), the RMSE is exactly their standard deviation; otherwise,
+R
+M
+S
+E
+2
+=
+standard deviation
+2
++
+bias
+2
+. For AR, on the 2006 calibration year: bias -6.6 W/m², residual standard deviation 77.4 W/m², RMSE 77.7 W/m². The bias is small, so the two almost coincide.
+Forecast ± 2
+σ
+G
+H
+I
+would give a band of ±564 W/m²: almost the whole sky. Forecast ± 2 RMSE (exactly 1.96 RMSE at 95%) is the classical recipe. It assumes two things:
+Gaussian
+residuals (bell-shaped, without heavy tails) and
+homoscedastic
+residuals (the same spread at every hour and in every weather). Neither holds for solar irradiance:
+over the whole of 2007, the AR ±1.96 RMSE band contains 93.4% of the measurements instead of 95%;
+by hour, from 86% (hour 12, around noon, when irradiance is high and clouds are costly) to 98%; and at least 98% at sunrise and sunset hours, where errors are small;
+by type of day: 98.4% on clear days (the band is too wide), 85.2% on variable days (too narrow), 89.7% on overcast days.
+Select “Gauss ±z·RMSE” above and look at the two small charts: the bars move away from the target line. The residual histogram also shows a peak too sharp and tails too heavy for a Gaussian bell. To explore departures from normality in skewness and tail weight,
+try the Jarque–Bera test
+.
+Formulas: standard deviation, RMSE and Gaussian interval
+σ
+G
+H
+I
+2
+=
+1
+N
+∑
+t
+=
+1
+N
+(
+G
+H
+I
+t
+−
+G
+H
+I
+)
+2
+R
+M
+S
+E
+2
+=
+1
+N
+∑
+t
+=
+1
+N
+(
+G
+H
+I
+t
+−
+G
+H
+I
+̂
+t
+)
+2
+R
+M
+S
+E
+2
+=
+σ
+e
+2
++
+e
+2
+,
+e
+=
+1
+N
+∑
+t
+=
+1
+N
+e
+t
+(biais)
+[
+G
+H
+I
+̂
+t
+−
+z
+1
+−
+α
+/
+2
+R
+M
+S
+E
+;
+G
+H
+I
+̂
+t
++
+z
+1
+−
+α
+/
+2
+R
+M
+S
+E
+]
+G
+H
+I
+(with a bar) is the mean of the measurements,
+G
+H
+I
+̂
+(with a hat) the forecast, N their number,
+e
+t
+=
+G
+H
+I
+t
+−
+G
+H
+I
+̂
+t
+the residual,
+σ
+e
+the residual standard deviation, ē their mean (the bias),
+z
+1
+−
+α
+/
+2
+the quantile of the standard normal distribution (1.96 for 95%, see
+the normal distribution
+). This band has the same width at every hour: that is the homoscedasticity assumption. It contains 1 − α of the measurements only if the residuals follow a normal distribution.
+Conformal prediction, without leakage
+Split conformal prediction assumes no distribution. It measures directly, on data the model has never seen, how wrong it is, and derives the margin from that.
+Training, 1998-2005
+: the model coefficients are estimated.
+Calibration, 2006
+: this year is forecast without touching the model, and the 4380 daytime absolute errors |e| are sorted. The margin q is the one that leaves at most 5% of the errors above it: here q = 174 W/m² for AR at 95%.
+Test, 2007
+: the interval is
+G
+H
+I
+̂
+±
+q
+, and the measurements inside are counted. Nothing from 2007 was used before.
+Why three separate years? Calibrating on the training years would use errors the model has already “seen”, smaller than the ones it will really make: the margin would be too narrow. That is information
+leakage
+. Likewise, the AR order and the ELM size were chosen on 2005 only.
+Result for AR at 95%: 95.2% coverage in 2007, with a mean band width of 318 W/m².
+Three ways to set the margin
+The three versions in the “Prediction interval” menu follow the same idea, that of our papers on the
+role of the clear-sky model
+(Solar Energy, 2025, Appendix C) and on
+complex-valued forecasting
+(JRSE, 2022). The interval is written
+G
+H
+I
+̂
+±
+k
+α
+σ
+̂
+. The multiplier
+k
+α
+is not taken from the normal distribution: it is read from a
+lookup table
+built from the errors actually made. What changes from one version to the next is the number of tables: one, one per hour, or one per clear-sky level. On this page, each table is computed on the year 2006, apart from training, to avoid leakage.
+AR, nominal level 95%, test 2007. Coverage (PICP), mean band width and CRPS (score of the whole distribution, lower is better,
+see below
+).
+Margin
+Number of tables
+?
+PICP 2007
+?
+Clear days
+?
+Variable days
+Overcast days
+By hour, 8:00–17:00
+?
+Band width
+?
+CRPS
+?
+Gauss ±1.96 RMSE (reference)
+0 (normal law)
+93.4%
+98.4%
+85.2%
+89.7%
+86–98%
+280 W/m²
+39.0 W/m²
+1. A single margin
+1
+95.2%
+98.9%
+88.5%
+94.0%
+90–98%
+318 W/m²
+37.4 W/m²
+2. One margin per hour
+14
+94.5%
+97.6%
+89.2%
+92.7%
+93–98%
+319 W/m²
+37.3 W/m²
+3. One margin per clear-sky class
+?
+7
+94.6%
+98.1%
+89.7%
+90.2%
+92–97%
+325 W/m²
+37.2 W/m²
+1. A single margin: the lookup table
+This is the method of Appendix C of the 2025 paper. The forecast errors are computed, then, for each level 1 − α, the multiplier
+k
+α
+giving the right coverage is found. It is stored in a table, which is then used for every new forecast. In the paper, the table depends on the site and the horizon; here, one site and one horizon, so a single table. With
+σ
+̂
+=
+R
+M
+S
+E
+, the margin is
+q
+=
+k
+α
+R
+M
+S
+E
+, the quantile of the absolute errors: this is exactly split conformal prediction.
+The table already shows why the normal distribution goes wrong. On the 2006 errors:
+Level 1 − α
+80%
+90%
+95%
+99%
+k
+α
+read from the errors
+?
+0.96
+1.60
+2.25
+3.77
+z
+1
+−
+α
+/
+2
+of the normal law
+?
+1.28
+1.64
+1.96
+2.58
+At 80%, the errors call for a smaller multiplier than the normal law: many hours have an error close to zero (the peak of the histogram). At 99%, a much larger one is needed: large errors, when a cloud passes, are more frequent than a Gaussian bell predicts (the tails). A single table corrects the overall level; it keeps the same margin at every hour.
+2. One margin per hour
+This variant is not in our papers: it is an adaptation proposed for this page.
+Instead of one table, one is built per hour of the day (14 hours have Sun often enough in 2006). At 9:00, the forecast is only compared with the 9:00 errors of the calibration year. The margin then follows the Sun: from 69 W/m² at the extreme hours to 222 W/m² around noon, for AR at 95%. The hour is known before the measurement, so it may be used.
+Result: from 8:00 to 17:00, coverage ranges from 93 to 98%, instead of 86 to 98% for the Gaussian interval, for an almost identical mean band width. At sunrise and sunset hours, which only have Sun part of the year, the table rests on few errors and coverage stays unstable (from 84 to 99%). In statistics, running a separate conformal computation in each group is called “Mondrian” conformal prediction.
+3. One margin per clear-sky class
+The 2022 paper makes the interval proportional to the clear-sky irradiance:
+G
+H
+I
+̂
+±
+μ
+G
+H
+I
+c
+s
+σ
+̂
+. The idea is the same here, in a more robust form.
+G
+H
+I
+c
+s
+is the irradiance that would be measured at that hour without any cloud (Solis model): it can be computed in advance for any date, from the Sun’s position and an average atmosphere only. The hours are sorted into 7 classes of
+G
+H
+I
+c
+s
+, slices of 150 W/m² (0–150, 150–300 … 750–900, above 900 W/m²), and one table is built per class. Its advantage over the hour: the class accounts for the season (noon in December resembles 9:00 in June). The margin ranges from 72 to 266 W/m².
+This is not a cloudiness class.
+The class says how much Sun there
+could
+be, not whether there will be clouds, which is not known in advance. And slicing by 150 W/m² is an arbitrary choice, made before looking at 2007, which leaves at least 168 calibration errors in each class. This choice does not drive the result: with slices of 100, 200 or 300 W/m², or with 4, 7 or 10 equal-count classes, the 2007 PICP of AR at 95% stays between 94.6 and 94.8%, the band width between 321 and 328 W/m², and the CRPS between 37.2 and 37.4 W/m².
+Why classes rather than a proportional margin? Dividing the error by
+G
+H
+I
+c
+s
+gives huge ratios at low-Sun hours, where
+G
+H
+I
+c
+s
+is tiny, and the interval widens everywhere: 682 W/m² mean band width for AR at 95% (94.5% coverage), against 325 W/m² with classes.
+What none of the three fixes
+Variable days stay below target (88.5, 89.2 and 89.7%), and clear days above. Neither the hour nor the clear sky tells whether a cloud is coming. That requires a quantity known in advance that measures how agitated the sky is: the role of the volatility
+σ
+̂
+forecast by
+complex-valued forecasting
+. The next step would therefore be the full interval of the 2022 paper,
+G
+H
+I
+̂
+±
+k
+α
+G
+H
+I
+c
+s
+σ
+̂
+, with its table calibrated on a separate year.
+Formulas: conformal quantile, lookup table and per-group margins
+s
+i
+=
+|
+G
+H
+I
+i
+−
+G
+H
+I
+̂
+i
+|
+,
+i
+=
+1
+,
+…
+,
+n
+q
+=
+s
+(
+k
+)
+,
+k
+=
+⌈
+(
+n
++
+1
+)
+(
+1
+−
+α
+)
+⌉
+[
+max
+(
+G
+H
+I
+̂
+t
+−
+q
+,
+0
+)
+;
+G
+H
+I
+̂
+t
++
+q
+]
+s
+(
+k
+)
+is the k-th smallest of the n values
+s
+i
+, and ⌈·⌉ rounds up to the next integer; the “+ 1” corrects for the finite sample size. If calibration and test errors are exchangeable (same distribution, order irrelevant), the probability that a new measurement falls in the interval is at least 1 − α, over all hours. It is not a guarantee hour by hour. Hourly data are neither independent nor exchangeable (one hour resembles the previous one, and 2007 is not 2006): this theoretical guarantee therefore no longer applies automatically. Coverage is measured on 2007, without inferring a guarantee from it: 95.2% over all hours, 88.5% on variable days. The first line below links q to the multiplier
+k
+α
+of the lookup table. Versions by hour and by clear-sky class: the same computation is made inside each group g, with that group’s errors only, and the interval at hour t uses the margin
+q
+g
+(
+t
+)
+of its group, where g(t) is the hour of t or the class of
+G
+H
+I
+c
+s
+,
+t
+.
+q
+=
+k
+α
+R
+M
+S
+E
+⟺
+k
+α
+=
+q
+R
+M
+S
+E
+[
+max
+(
+G
+H
+I
+̂
+t
+−
+q
+g
+(
+t
+)
+,
+0
+)
+;
+G
+H
+I
+̂
+t
++
+q
+g
+(
+t
+)
+]
+The lower bound is set to 0 because irradiance is never negative; this does not change the coverage.
+PICP and mean band width
+PICP
+Prediction interval coverage probability: the share of measurements that fell inside their interval, in %. It is compared with the nominal level: at 95%, a PICP of 95% is reliable, 90% too optimistic, 99% too cautious.
+Mean band width
+The
+band width
+is the distance between the upper and lower bounds of the prediction interval, in W/m². Its mean over daytime hours is given; in brackets, the same relative to the mean daytime GHI (372 W/m²). Called MIL (mean interval length) in our papers.
+Read both together. A huge interval always meets its target and is useless; a narrow interval that misses it is misleading. The good interval meets the target with the smallest width. These scores only count daytime hours: at night, forecast and measurement are 0.
+Formulas: PICP and band width
+P
+I
+C
+P
+=
+100
+N
+∑
+t
+=
+1
+N
+1
+[
+L
+t
+≤
+G
+H
+I
+t
+≤
+U
+t
+]
+W
+=
+1
+N
+∑
+t
+=
+1
+N
+(
+U
+t
+−
+L
+t
+)
+L
+t
+and
+U
+t
+are the lower and upper bounds, N the number of daytime hours,
+1
+[·] equals 1 if the condition is true and 0 otherwise,
+W
+is the mean band width.
+The CRPS: scoring the whole distribution at once
+PICP and band width judge an interval at a single level. Yet each method in the menu actually provides a whole family of nested intervals, from 1% to 99%: a
+predictive distribution
+, the probability law expected for the next measurement. The
+CRPS
+(continuous ranked probability score) scores this distribution in one go. It is expressed in W/m², like an error, and
+lower is better
+. It penalises both a badly placed distribution (the measurement falls where it was judged unlikely) and an overly spread one.
+For a forecast without a margin, the CRPS is exactly the absolute error: its mean is the
+MAE
+(mean absolute error). This is why our
+2022 paper
+presents it as the probabilistic counterpart of the MAE. The comparison is therefore direct: the gap between MAE and CRPS measures what the margin brings. The
+nCRPS
+divides the CRPS by the mean daytime GHI (372 W/m²), to compare sites or periods; the tool shows it next to the CRPS.
+Daytime CRPS in 2007 (W/m²), by model and way of setting the margin. MAE: the forecast alone, without a margin.
+Model
+MAE
+?
+CRPS, Gauss
+A single margin
+By hour
+By clear-sky class
+Persistence
+110.6
+75.2
+74.6
+71.4
+73.7
+Smart persistence
+47.0
+40.0
+38.2
+38.1
+38.0
+AR
+46.7
+39.0
+37.4
+37.3
+37.2
+ELM
+44.9
+37.5
+35.9
+35.8
+35.8
+For AR, the margin takes the error from 46.7 W/m² (MAE) to a CRPS of 37.2 W/m², 20% less. For every model, margins read from the errors do better than the normal law. For AR, smart persistence and ELM, the three conformal versions are almost tied: conditioning on the hour or the clear sky spreads the coverage better but changes the overall score little. Persistence is the exception: the per-hour margin clearly improves it (74.6 → 71.4 W/m²), because its errors depend strongly on the hour (it ignores that the Sun rises or sets). Finally, the models rank as for the MAE: the CRPS depends first on the quality of the central forecast.
+The CRPS does not depend on the nominal level chosen in the tool, since it uses all levels at once. The computation follows Appendix D of our
+2025 paper
+, which describes the distribution by its quantiles rather than by a formula. Here, 99 percentiles: percentile τ (the value the measurement has probability τ of not exceeding) is a bound of the interval of level
+|
+2
+τ
+−
+1
+|
+. For example, percentiles 2.5% and 97.5% are the bounds of the 95% interval.
+Formulas: CRPS, percentiles and nCRPS
+C
+R
+P
+S
+t
+=
+∫
+−
+∞
++
+∞
+(
+F
+t
+(
+x
+)
+−
+1
+[
+x
+≥
+G
+H
+I
+t
+]
+)
+2
+d
+x
+C
+R
+P
+S
+t
+≈
+2
+M
+∑
+i
+=
+1
+M
+ρ
+τ
+i
+(
+G
+H
+I
+t
+−
+Q
+τ
+i
+,
+t
+)
+,
+τ
+i
+=
+i
+100
+ρ
+τ
+(
+u
+)
+=
+u
+(
+τ
+−
+1
+[
+u
+<
+0
+]
+)
+C
+R
+P
+S
+=
+1
+N
+∑
+t
+=
+1
+N
+C
+R
+P
+S
+t
+,
+n
+C
+R
+P
+S
+=
+C
+R
+P
+S
+G
+H
+I
+F
+t
+is the predicted cumulative distribution function for hour t (the predicted probability that the measurement is below x),
+Q
+τ
+,
+t
+its percentile τ, M = 99 the number of percentiles, and
+ρ
+τ
+the “pinball loss”, which weighs more a measurement falling far into a tail judged unlikely. The second line approximates the first from the percentiles; the gap vanishes as their number grows. If all percentiles equal the forecast, the second line gives
+|
+G
+H
+I
+t
+−
+G
+H
+I
+̂
+t
+|
+: on average, the MAE.
+G
+H
+I
+is the mean GHI of the N daytime hours.
+The four models
+All forecast the next hour (1 h horizon) from past measurements. The rules are those of the course: zero forecast when the Sun is below the horizon, never a negative forecast.
+Persistence
+The next hour will be like the last one:
+G
+H
+I
+̂
+t
++
+1
+=
+G
+H
+I
+t
+. Simple, but it ignores that the Sun rises or sets.
+Smart persistence
+The gap to the clear sky is kept:
+G
+H
+I
+̂
+t
++
+1
+=
+G
+H
+I
+t
+−
+G
+H
+I
+c
+s
+,
+t
++
+G
+H
+I
+c
+s
+,
+t
++
+1
+, where
+G
+H
+I
+c
+s
+is the clear-sky (cloudless) irradiance computed by the Solis model.
+AR
+Autoregression: a weighted sum of the last 2 values of the additive clear-sky index (GHI −
+G
+H
+I
+c
+s
+, centred), coefficients estimated by least squares.
+ELM
+Extreme learning machine: a small neural network (20 hidden neurons drawn at random then fixed, only the output weights are computed), on the same inputs as AR. It is explained on
+the frugal forecasting page
+. Its CI is computed with the hidden neurons held fixed.
+Daytime errors on 2006 (RMSE): persistence 132 W/m², smart persistence 80 W/m², AR 78 W/m², ELM 76 W/m². Comparing these models against horizon:
+the forecast comparison tool
+.
+Formulas: models and confidence interval
+y
+t
+=
+G
+H
+I
+t
+−
+G
+H
+I
+c
+s
+,
+t
+−
+μ
+y
+̂
+t
++
+1
+=
+∑
+j
+=
+1
+p
+w
+j
+y
+t
+−
+j
++
+1
+G
+H
+I
+̂
+t
++
+1
+=
+max
+(
+y
+̂
+t
++
+1
++
+μ
++
+G
+H
+I
+c
+s
+,
+t
++
+1
+,
+0
+)
+G
+H
+I
+̂
+t
++
+1
+±
+z
+1
+−
+α
+/
+2
+s
+𝐱
+t
+⊤
+(
+𝐗
+⊤
+𝐗
+)
+−
+1
+𝐱
+t
+(
+𝐗
+⊤
+𝐗
+)
+−
+1
+→
+(
+𝐇
+⊤
+𝐇
++
+λ
+𝐈
+)
+−
+1
+𝐇
+⊤
+𝐇
+(
+𝐇
+⊤
+𝐇
++
+λ
+𝐈
+)
+−
+1
+y
+̂
+is the forecast of y, μ the mean of GHI −
+G
+H
+I
+c
+s
+over training, w the coefficients, p = 2 the order,
+x
+t
+the vector of the last p values of y, X the matrix of all these vectors over training, s the standard deviation of the training residuals. For ELM (second line), x is replaced by h, the hidden-layer output, and (X
+T
+X)
+−1
+by its regularized form, where H gathers the hidden outputs over training, I is the identity matrix and λ = 10
+−3
+. These formulas assume independent residuals: the real CI is somewhat wider, but stays of the order of 1 W/m².
+Data and split
+Hourly GHI measured at Ajaccio (Corsica), course file (station 20004002), converted from J/cm² to Wh/m²; each value is the mean of the past hour, labelled by its end hour. Years of 8,760 hours. Training 1998-2005, calibration 2006, test 2007. Types of day in 2007, from
+k
+d
+, the ratio of measured to clear-sky irradiance summed over the day: clear if
+k
+d
+≥ 0.9 (205 days), variable if 0.5 ≤
+k
+d
+< 0.9 (111 days), overcast if
+k
+d
+< 0.5 (49 days). The type of day is only known afterwards: it is used to judge, not to build the interval.
+Keep in mind:
+one site, one horizon (1 h), hourly data; the nominal level can be set from 50 to 99%. The theoretical conformal guarantee assumes exchangeable data, which these hourly measurements are not, and would in any case only hold over all hours: the coverage shown is measured on 2007, not guaranteed. Results would change for another climate or another horizon.
+Going further:
+complex-valued forecasting: set α and the interval width
+·
+the probabilistic animation and its lookup table
+·
+judge a forecast with NICE
+·
+variability and forecastability, sCV and F
+·
+courses
+References: where the method comes from
+The intervals on this page apply the method of these two papers:
+Cyril Voyant, Milan Despotovic, Gilles Notton, Yves-Marie Saint-Drenan, Mohammed Asloune, Luis Garcia-Gutierrez.
+On the importance of clearsky model in short-term solar radiation forecasting
+.
+Solar Energy
+294, 113490 (2025). doi:
+10.1016/j.solener.2025.113490
+·
+arXiv:2503.07647
+Interval
+y
+̂
+±
+k
+α
+σ
+̂
+with a multiplier
+k
+α
+read from a lookup table built on the observed errors, with no assumed distribution (Appendix C); PICP, MIL, interval score and CRPS computed from quantiles (Section 2.3 and Appendix D, used in the “CRPS” section). This is the “single margin” method of this page.
+Cyril Voyant, Philippe Lauret, Gilles Notton, Jean-Laurent Duchaud, Luis Garcia-Gutierrez, Ghjuvan Antone Faggianelli.
+Complex-valued time series based solar irradiance forecast
+.
+Journal of Renewable and Sustainable Energy
+14(6), 066502 (2022). doi:
+10.1063/5.0128131
+·
+arXiv:2203.06701
+Interval proportional to the clear sky,
+G
+H
+I
+̂
+±
+μ
+G
+H
+I
+c
+s
+σ
+̂
+, with a multiplier μ calibrated on data rather than taken from the normal law, and a forecast volatility
+σ
+̂
+. Basis of the “by clear-sky class” version and of the proposed next step. The CRPS is presented there as the probabilistic counterpart of the MAE (Figure 4).
+What is specific to this page: calibration on a separate year (2006) rather than on training data, and the versions by hour and by clear-sky class. The general statistical framework, conformal prediction, and its per-group version, called Mondrian, are described by V. Vovk, A. Gammerman and G. Shafer,
+Algorithmic Learning in a Random World
+, Springer, 2005 (doi:
+10.1007/b106715
+).
+
+---
+URL: https://www.cyrilvoyant.com/tools/pv-forecasting-modes/
+
+Forecast photovoltaic power: directly, or through irradiance?
+To forecast the output of a photovoltaic (PV) plant, one can forecast its power directly, or first forecast the solar irradiance and then convert it into power. This page compares the three routes over 15 months of open measurements (the first half for training, the second for testing), with the same forecasting models.
+At a 1-hour horizon, with an ELM, the relative error (nRMSE) is 0.42 for PV direct, 0.43 through GTI, 0.49 starting from GHI.
+Each added step brings its own error; the page shows how much each one weighs.
+PV direct
+PV measured
+model
+PV forecast
+GTI → PV
+GTI measured
+model
+GTI forecast
+C
+PV forecast
+GHI → GTI → PV
+GHI measured
+model
+GHI forecast
+T
+GTI
+C
+PV forecast
+T: transposition (from horizontal irradiance to the irradiance on the panels). C: conversion (from the irradiance on the panels to power).
+What to remember
+PV direct and GTI then PV are almost level
+: 0.76 kW against 0.79 kW RMSE (ELM, 1 h). The GTI → PV conversion, here a simple proportion, adds little error.
+Starting from GHI adds one step, the transposition, and its error
+: 0.89 kW. In this route the transposition weighs 13% of the squared error, the GHI forecast 82%.
+If the plant changes size
+, the irradiance routes only change P
+c
+in the conversion; PV direct must work on the relative power P / P
+c
+, otherwise its frozen model errs.
+If the grid imposes a shutdown
+, the irradiance keeps no trace of it; PV direct keeps zeros in its 24 h of inputs and forecasts too low afterwards (0.98 kW against 0.57 kW). Dividing by the available power and masking the zero hours fixes it (0.62 kW).
+The data, the plant and the two physical steps
+SOLETE and Risø.
+SOLETE is the name of the dataset; Risø is the place of measurement, a campus of the Technical University of Denmark (DTU) near Roskilde. The dataset, published openly by D. V. Pombo (CC BY 4.0 licence), measures at the same place the GHI, the GTI and the power of a small PV plant, from June 2018 to September 2019. It therefore allows the three routes to be compared at the same instants.
+The plant and its peak power P
+c
+.
+P
+c
+is the power the panels deliver under standard test conditions: an irradiance of 1000 W/m² and cells at 25 °C. Here P
+c
+= 7.44 kWp (kilowatts peak): 36 modules of 165 W and 12 modules of 125 W. The inverter, which turns direct current into alternating current, is rated 10 kW.
+Transposition T (GHI → GTI)
+, the two simplest standard models. The model of
+Erbs et al. (1982)
+splits GHI into a direct part (DNI, the radiation coming straight from the sun) and a diffuse part (DHI, coming from the rest of the sky). The isotropic sky model of
+Liu and Jordan (1963)
+then projects both parts on the plane of the panels, assuming the diffuse light equal in every direction, and adds the light reflected by the ground. The tilt and orientation of the panels are not given with the data: they are fitted on the training half (53° tilt, orientation 196°, 180° being due south).
+Conversion C (GTI → PV)
+, the simplest model: the power is proportional to GTI, as in
+PVWatts
+(Dobos, 2014) without the temperature effect. The performance ratio PR = 0.92, fitted on the training half, gathers all the losses (inverter, cables, temperature, dust).
+The two formulas
+G
+T
+I
+=
+D
+N
+I
+cos
+θ
++
+D
+H
+I
+1
++
+cos
+β
+2
++
+ρ
+G
+H
+I
+1
+−
+cos
+β
+2
+θ is the angle between the sun and the normal to the panels, β the tilt of the panels, ρ = 0.2 the share of light sent back by the ground (albedo). DNI is counted perpendicular to the sun’s rays.
+P
+V
+=
+P
+R
+P
+c
+G
+T
+I
+1000
+W
+/
+m
+2
+PV in kW, P
+c
+in kWp, GTI in W/m². Computed with the
+pvlib
+library.
+Try it: the three routes over the test period
+Choose a model and a horizon: the table, the discs and the charts are recomputed. The default model is the ELM.
+JavaScript is needed for the charts; the definitions, the theory and the sources remain readable below.
+When the grid limits the power
+The grid operator may impose a power limit, announced in advance or not. Choose the limit, the announcement, and how PV direct treats its inputs. The coloured band marks the curtailment; the solid line marks its start.
+What the data show (ELM, 1 h)
+Announced shutdown, PV direct in kW
+: after the curtailment, its inputs keep zeros for 24 h, and it forecasts too low: 0.98 kW RMSE after the curtailment, against 0.57 kW for GTI then PV.
+PV direct divided by the available power
+: during a shutdown, this is a division by zero; 271 of 351 forecasts become impossible after the curtailment.
+Tested proposal: divide by the announced available power and mask the zero hours
+(replaced by the value of the day before). No more division by zero, and PV direct returns to 0.62 kW after the curtailment. But with a 60% limit, the same division inflates the values that did not reach the limit: 1.16 kW during the curtailment, against 0.25 kW without division.
+Irradiance routes
+: their inputs do not see the curtailment; they adjust through the peak power and the announced set-point.
+Not announced
+: no route knows the limit; only PV direct sees the drop in its last value, once the curtailment has started. During the curtailment, the most accurate route is PV direct (2.53 kW; PV direct 2.53, GTI then PV 5.17).
+Theory: how the error propagates and adds up
+Notation: PV is the measured power, GHI and GTI the measured irradiances; a hat denotes a forecast (for instance GHI hat, the forecast GHI). T is the transposition (GHI → GTI), C the conversion (GTI → PV). The final error is
+e
+=
+P
+V
+^
+−
+P
+V
+. In the route GHI then GTI then PV:
+P
+V
+^
+=
+C
+(
+T
+(
+G
+H
+I
+^
+)
+)
+Adding and removing the same quantities, the final error becomes exactly the sum of three stage errors, all in kW: e₁ comes from the GHI forecast, e₂ from the transposition (applied to the measured GHI), e₃ from the conversion (applied to the measured GTI).
+e
+=
+C
+(
+T
+(
+G
+H
+I
+^
+)
+)
+−
+C
+(
+T
+(
+G
+H
+I
+)
+)
+⏟
+e
+1
+forecast
++
+C
+(
+T
+(
+G
+H
+I
+)
+)
+−
+C
+(
+G
+T
+I
+)
+⏟
+e
+2
+transposition
++
+C
+(
+G
+T
+I
+)
+−
+P
+V
+⏟
+e
+3
+conversion
+On average over the test period (the brackets ⟨ ⟩ denote a mean), the final squared error is the sum of the squared errors of the stages, plus cross terms:
+⟨
+e
+2
+⟩
+=
+⟨
+e
+1
+2
+⟩
++
+⟨
+e
+2
+2
+⟩
++
+⟨
+e
+3
+2
+⟩
++
+2
+(
+⟨
+e
+1
+e
+2
+⟩
++
+⟨
+e
+1
+e
+3
+⟩
++
+⟨
+e
+2
+e
+3
+⟩
+)
+If the mean product of the errors from each pair of stages is zero over the evaluation period, the cross terms vanish and the squared RMSEs add up. Independence alone is not enough when errors are biased.
+R
+M
+S
+E
+≈
+R
+M
+S
+E
+1
+2
++
+R
+M
+S
+E
+2
+2
++
+R
+M
+S
+E
+3
+2
+The GTI then PV route has only two stages (GTI forecast, conversion); PV direct has one. As the conversion is a simple proportion, it multiplies the forecast error by a fixed factor; the transposition amplifies it when the sun is low in front of tilted panels:
+C
+(
+G
+T
+I
+)
+=
+P
+R
+P
+c
+G
+T
+I
+1000
+⟹
+e
+1
+=
+P
+R
+P
+c
+1000
+(
+T
+(
+G
+H
+I
+^
+)
+−
+T
+(
+G
+H
+I
+)
+)
+The disc shows each stage’s share s
+i
+of the sum of stage squared errors, before cross terms. The text below gives ρ separately, the relative contribution of the cross terms:
+s
+i
+=
+⟨
+e
+i
+2
+⟩
+∑
+j
+⟨
+e
+j
+2
+⟩
+,
+ρ
+=
+⟨
+e
+2
+⟩
+−
+∑
+j
+⟨
+e
+j
+2
+⟩
+⟨
+e
+2
+⟩
+Example (ELM, 1 h, peak power unchanged): stage RMSEs 0.931, 0.376 and 0.212 kW; final RMSE 0.894 kW; ρ = -0.32, negative: the stage errors partly cancel.
+The error measures, with e
+pers
+the error of persistence of PV at the same horizon:
+n
+R
+M
+S
+E
+=
+⟨
+e
+2
+⟩
+⟨
+P
+V
+⟩
+,
+N
+I
+C
+E
+k
+=
+(
+⟨
+|
+e
+|
+k
+⟩
+)
+1
+/
+k
+(
+⟨
+|
+e
+p
+e
+r
+s
+|
+k
+⟩
+)
+1
+/
+k
+,
+k
+=
+1
+,
+2
+,
+3
+Change of peak power: PV direct can work on the relative power x, then return to kW.
+x
+=
+P
+V
+P
+c
+,
+P
+V
+^
+=
+P
+c
+x
+^
+Curtailment, with s the allowed share of P
+c
+and A the available power: a forecast that knows the announcement is capped at A; the variant "divided by the available power" replaces P
+c
+by A in the division, which divides by 0 when s = 0.
+A
+=
+{
+s
+P
+c
+during the curtailment
+P
+c
+otherwise
+,
+P
+V
+^
+←
+min
+(
+P
+V
+^
+,
+A
+)
+,
+x
+=
+P
+V
+A
+P
+c
+Protocol and limits
+Data.
+SOLETE, version 3 (D. V. Pombo, DTU), CC BY 4.0 licence, measured at Risø (55.69° N, 12.10° E). The 5-minute file is averaged here to 30-minute steps, in UTC. The solar-elevation column of the file is one hour off; the sun position is recomputed with pvlib.
+Frozen training.
+Every model, the transposition and the conversion are fitted once on the first half (1 June 2018 – 14 January 2019), like the 50/50 split of PV_ELM_pred, then evaluated without refitting on the second (15 January – 31 August 2019), at daytime (sun above the horizon). Forecasts are set to 0 at night and bounded below by 0.
+Models.
+Those of the published
+PV_ELM_pred
+code, imported without change: persistence, BLEND, least-squares autoregression, ridge-regularised ELM (500 neurons, 100 draws, temporal cross-validation). Inputs: 48 past values (24 h), standardised with the training statistics, and the hour and day of the year at the target time (sines and cosines), as in PV_ELM_pred.
+Live computation.
+The forecasts are computed in Python and rounded to 10 W; the page recomputes all the errors in your browser.
+Limits.
+One plant, one climate; a deliberately simple transposition and conversion, fitted on the same data. The conversion ignores module temperature. Curtailments simulated on 8 sunny days of summer 2019, at least 4 days apart. This is a teaching calculation on open data, not the result of an article.
+The words of the page
+PV
+photovoltaic; PV also denotes the electric (AC) power produced by the plant, in kilowatts (kW).
+P
+c
+the peak power: the power of the panels under 1000 W/m² and at 25 °C, 7.44 kWp here. The capacity scenario halves or doubles it.
+GHI
+Global Horizontal Irradiance: the solar irradiance received by a horizontal surface, in watts per square metre (W/m²). It is the quantity most often measured and forecast.
+GTI
+Global Tilted Irradiance: the irradiance received in the tilted plane of the panels, in W/m². This is what the panels convert into electricity.
+Transposition T
+the calculation from GHI to GTI (models of Erbs and of Liu and Jordan, see above).
+Conversion C
+the calculation from GTI to power: PV = PR × P
+c
+× GTI / 1000, with PR = 0.92.
+Horizon
+the time between the last known measurement and the forecast time, here from 30 minutes to 6 hours, in 30-minute steps.
+Training, test
+the models are fitted once on the first half of the data (June 2018 to mid-January 2019), then evaluated, without refitting, on the second (mid-January to August 2019).
+Persistence
+copy the last known value. It is the minimal reference.
+BLEND
+a mix of persistence and of the value of the day before at the same time, with one weight per half hour of the day.
+AR
+autoregression: a weighted sum of the last 48 values (24 h) and of the hour and day of the year (as sines and cosines), with weights computed by least squares.
+ELM
+Extreme Learning Machine: a neural network with one hidden layer of 500 neurons drawn at random, of which only the output weights are computed. 100 draws are tried; the best is chosen by cross-validation in time. Same inputs as AR.
+RMSE, nRMSE
+RMSE is the root mean squared error, in kW; it weighs large errors more. nRMSE divides it by the mean measured output.
+NICE¹, NICE², NICE³, NICE
+Σ
+the error divided by that of persistence of the PV power, at the same times: NICE¹ for the mean absolute error, NICE² for RMSE, NICE³ for the cubic error, NICE
+Σ
+for their mean. Below 1, the forecast beats persistence; above, the page shows "> 1".
+Curtailment
+a power limit imposed on the plant (by the grid operator, for example), here from 10:00 to 14:00 UTC (Coordinated Universal Time, 12:00 to 16:00 Danish summer time).
+Available power
+the power the plant is allowed to produce: P
+c
+normally, the announced limit during curtailment.
+Going further:
+compare forecasts against horizon
+·
+the NICE metrics
+·
+BLEND weights
+·
+the solar forecasting course
+.
+Data, code and references
+Data: D. V. Pombo, O. Gehrke, H. W. Bindner,
+SOLETE
+, Data in Brief 42 (2022) 108046; dataset
+doi:10.11583/DTU.17040767
+, licence
+CC BY 4.0
+. Models:
+PV_ELM_pred
+(
+Zenodo
+), MIT licence. Metrics:
+NICE
+k
+. Transposition:
+Erbs et al., Solar Energy 28 (1982) 293
+and
+Liu and Jordan, Solar Energy 7 (1963) 53
+, with
+pvlib
+. Conversion:
+Dobos, PVWatts Version 5 Manual, NREL (2014)
+. Computations:
+work/pv_modes
+of this site.
+
+---
+URL: https://www.cyrilvoyant.com/tools/jarque-bera-test/
+
+Normality test online: Jarque-Bera, Shapiro-Wilk, Kolmogorov
+Normal or not? With 100 values drawn from a normal law, all three tests say “compatible” (Jarque-Bera p = 0.30, Shapiro-Wilk p = 0.24); a single point added 4.2 standard deviations from the mean is enough to reject normality.
+You learn to read a histogram and a Q-Q plot, then to compare three normality tests, a condition of the Student t test and the z test.
+Course experiment; values are computed in the stated model and are not research results:
+the chapter and its slides
+(parts “Third and fourth moments” and “Normality test”) ·
+all experiments
+·
+French version
+.
+JavaScript is needed for the sliders. The explanations, formulas and exercises below remain available.
+Try and interpret
+The tested hypothesis is written at the top of the lab:
+H₀: the data follow a normal law
+. Choose a shape (normal, skewed, heavy tails, flat, two humps), set the departure from normality and the number of points n. The coloured banner gives the verdict in plain words: green if no test rejects H₀, red if all three reject it, orange if they disagree. The histogram takes the same colour and carries the normal curve with the same mean and standard deviation; the Q-Q plot shows where the points depart. Click on the histogram to add values, or place the extreme point and slide it: the bottom curve shows from where each test rejects normality.
+Why test normality?
+The z test, the Student t test and confidence intervals assume data (or means) following a normal law. As the course recalls, this assumption must be checked, at least a posteriori. The Jarque-Bera test, the course one, compares two features of the distribution with those of the normal law: its symmetry (S = 0) and its tail weight (C = 0). The lab compares it with two widely used tests: Shapiro-Wilk and Kolmogorov-Smirnov.
+Definitions
+n, xᵢ
+The number of values and each value of the sample.
+x̄, s
+The sample mean and standard deviation (s computed with n − 1, as in the course).
+S (skewness)
+The mean of the cubed standardized deviations (xᵢ − x̄)/s. 0 for a symmetric distribution; S > 0: right tail; S < 0: left tail.
+C (excess kurtosis)
+The mean of the standardized deviations to the fourth power, minus 3. 0 for the normal law (“mesokurtic”); C > 0: heavier tails; C < 0: flatter distribution.
+JB
+The Jarque-Bera statistic, (n/6)(S² + C²/4): it grows with skewness, kurtosis and sample size.
+χ² with 2 df
+The limiting distribution of JB under normality. Its 5% cutoff is about 5.99; for small samples the reading is illustrative.
+H₀, p-value
+H₀: the data come from a normal law. p is the probability under H₀ of a statistic at least as large as the observed one. With the χ² approximation, p < 5% corresponds to JB above the asymptotic cutoff.
+W (Shapiro-Wilk)
+Measures how well the sorted values line up on the Q-Q line, between 0 and 1. W close to 1: data compatible with the normal law; small W: H₀ is rejected.
+D (Kolmogorov-Smirnov, Lilliefors version)
+The largest vertical gap between the cumulative distribution of the data and that of the normal law with the same x̄ and s. Large D: H₀ is rejected.
+Q-Q plot (normal quantile plot)
+Each sorted value is plotted against the normal quantile of the same rank. If the data are normal, the points follow the line x̄ + s·z.
+Show the formulas
+x
+¯
+=
+1
+n
+∑
+i
+=
+1
+n
+x
+i
+,
+s
+=
+1
+n
+−
+1
+∑
+i
+=
+1
+n
+(
+x
+i
+−
+x
+¯
+)
+2
+S
+=
+1
+n
+∑
+i
+=
+1
+n
+(
+x
+i
+−
+x
+¯
+s
+)
+3
+,
+C
+=
+1
+n
+∑
+i
+=
+1
+n
+(
+x
+i
+−
+x
+¯
+s
+)
+4
+−
+3
+J
+B
+=
+n
+6
+(
+S
+2
++
+C
+2
+4
+)
+,
+p
+=
+e
+−
+J
+B
+/
+2
+Where: n is the number of values xᵢ, x̄ their mean, s their standard deviation, S the skewness, C the excess kurtosis, JB the Jarque-Bera statistic and p the p-value.
+Under H₀, JB approximately follows the χ² law with 2 degrees of freedom, whose survival function is simple: p = e
+−JB/2
+. With this asymptotic cutoff, a JB value below the cutoff means normality is not rejected.
+Software (scipy, R) computes S and C with moments divided by n (standard deviation without the n − 1): values differ slightly for small samples and converge as n grows. The lab shows both.
+Show the Shapiro-Wilk and Kolmogorov-Smirnov formulas
+W
+=
+(
+∑
+i
+=
+1
+n
+a
+i
+x
+(
+i
+)
+)
+2
+∑
+i
+=
+1
+n
+(
+x
+i
+−
+x
+¯
+)
+2
+Where: x₍ᵢ₎ is the i-th smallest value, x̄ the mean, and the aᵢ are weights set by n, derived from the expected quantiles of the normal law (aᵢ < 0 for small values, aᵢ > 0 for large ones, Σaᵢ² = 1). W is the squared correlation between the sorted values and these weights: 1 when the points are perfectly aligned on the Q-Q line. The p-value uses Royston’s (1995) approximation, as in scipy and R.
+D
+=
+max
+x
+|
+F
+n
+(
+x
+)
+−
+Φ
+(
+x
+−
+x
+¯
+s
+)
+|
+Where: F
+n
+(x) is the share of the n values less than or equal to x (empirical cumulative distribution), Φ the cumulative distribution of the standard normal law, x̄ and s the sample mean and standard deviation. Because x̄ and s are estimated from the same data, the classical Kolmogorov-Smirnov table would be too lenient: the Lilliefors table is used (Dallal and Wilkinson’s 1986 approximation, accurate for p < 0.10; above, the lab shows “p > 0.10”).
+Assumptions and limits
+The χ² law is only an approximation, valid for fairly large samples. With few data the test lacks power: not rejecting normality does not prove it. With many data, on the contrary, small harmless departures become significant. Always look at the histogram and the Q-Q plot besides the test.
+Which test to choose?
+Shapiro-Wilk
+: the most powerful for small and medium samples (3 to 5,000 values); the default choice in statistical software.
+Jarque-Bera
+: easy to compute by hand (S and C), it targets asymmetry and tails; its p-value is asymptotic, so it is reliable mostly for large samples.
+Kolmogorov-Smirnov (Lilliefors)
+: it compares cumulative distributions; it reacts mostly to the centre of the distribution and little to the tails: the least powerful of the three.
+Lab samples are drawn at random (reproducible generator) from laws chosen for the example; “New draw” changes the sample.
+Exercises
+The first two are hand calculations from the course (slide “Third and fourth moments”), no exam paper.
+Hand calculation (course exercise).
+x = 2, 6, 8, 8, 9, 9, 10, 11, 11, 12, 12, 14, 18; given x̄ = 10.0 and s = 3.873. Compute S and C.
+Show the answer
+The deviations from the mean are symmetric: S = 0. Σ((x − x̄)/s)⁴/13 = 2.999 so C = −0.001 ≈ 0: a mesokurtic, symmetric set. JB ≈ 0, p ≈ 1: nothing allows rejecting normality (n = 13 remains small).
+Second course calculation.
+x = 7, 7, 7, 8, 8, 9, 9, 10, 11, 11, 12, 12, 13, 13, 13, 18; x̄ = 10.5 and s = 2.989. Compute S, C, then JB.
+Show the answer
+S = +0.72 (right tail, mostly due to the 18) and C = −0.0005 ≈ 0. JB = 16/6 × (0.72² + 0) = 1.40 < 5.99, p = 0.50: normality is not rejected.
+Is one point enough?
+Start from the “Normal” sample of 100 values and add the extreme point. From how many standard deviations away from the mean is normality rejected?
+Show the answer
+Read the bottom curve: Jarque-Bera and Shapiro-Wilk become significant from 4.2 standard deviations, above or below the mean (at 4.0: JB = 3.6, p = 0.17; Shapiro-Wilk p = 0.060). Kolmogorov-Smirnov barely reacts: one isolated point hardly changes the largest gap D between the two cumulative distributions.
+The effect of n.
+Choose “Skewed”, set the departure from normality to 0.3 and raise n from 30 to 300. What happens to JB and to the verdict?
+Show the answer
+With 30 points, JB = 1.4 (p = 0.50): none of the three tests rejects H₀, the skewness goes unnoticed. With 300 points drawn from the same law, JB = 40 (p < 0.0001) and all three tests reject H₀. JB is proportional to n: with many data, a small departure from normality becomes detectable; with few data, not rejecting does not prove normality.
+Do the tests agree?
+Load the “Flat (uniform)” example (100 points), then “Heavy tails”. Which tests reject normality?
+Show the answer
+Flat distribution: Shapiro-Wilk rejects H₀ (p = 0.012), but neither Jarque-Bera (p = 0.092) nor Kolmogorov-Smirnov (p = 0.060): orange banner, a borderline case. Heavy tails: only Jarque-Bera rejects (p = 0.044; Shapiro-Wilk p = 0.15). Each test looks at a different feature of the shape: always look at the histogram and the Q-Q plot before concluding.
+Going further
+The full course chapter
+: the normal law, moments and tests on means
+The normal distribution: area, probability and z-score
+The z test and the Student t test
+, which assume normality
+The χ² test
+: the same law, for counts
+
+---
+URL: https://www.cyrilvoyant.com/fr/outils/autoevaluation-fair/
+
+Mes données sont-elles FAIR ? Une autoévaluation en 20 questions
+En 3 minutes environ, situez un jeu de données au regard des principes FAIR
+: des données faciles à trouver (
+Findable
+), accessibles (
+Accessible
+), interopérables, c'est-à-dire lisibles par d'autres logiciels (
+Interoperable
+), et réutilisables (
+Reusable
+). Vingt questions, cinq par lettre ; l'outil donne un score sur 20 et indique les points à travailler en premier.
+Une grille du
+centre O.I.E. (Observation, Impacts, Énergie) de Mines Paris – PSL
+, tirée de la démarche FAIR de l'Infrastructure de Données Spatiale (IDS)
+Webservice-Energy
+.
+Données FAIR
+:
+Lionel Ménard
+(
+ORCID
+) du centre O.I.E. (
+lionel.menard@minesparis.psl.eu
+) ;
+Licences du code et des données
+:
+Raphaël Jolivet
+(
+ORCID
+) (
+raphael.jolivet@minesparis.psl.eu
+).
+Pour qui ?
+Doctorants, chercheurs, ingénieurs et gestionnaires de données qui préparent un dépôt, un plan de gestion des données (PGD, le document qui décrit comment les données d'un projet seront produites, décrites, conservées et partagées) ou une publication. Trois exemples préremplis servent de point de départ, dont
+Webservice-Energy
+, l'IDS du centre O.I.E. Rien n'est envoyé : les réponses restent dans votre navigateur.
+Mon projet est-il assez FAIR ? Un exemple d'autoévaluation en 20 points
+Ceci n'est qu'un exemple
+: une grille pédagogique proposée ici, pas une norme ni une certification. Les questions reprennent les principes
+GO FAIR
+(F1 à R1.3) et quelques critères pratiques ; le barème et les seuils sont des choix de cette page. Pour une évaluation de référence : le
+modèle de maturité FAIR de la RDA
+(Research Data Alliance) ou l'outil automatique
+F-UJI
+. Les sigles soulignés en pointillé s'expliquent d'un clic ou d'un toucher.
+Cinq questions par lettre, de la plus élémentaire à la plus exigeante ; chaque réponse « oui » vaut 1 point, « en partie » 0,5. Total sur 20. Repères :
+moins de 5 : perfectible
+;
+de 5 à 10 : bon
+;
+plus de 10 : très bon
+. L'outil indique les axes à privilégier et, au-dessus de 10, le
+facteur limitant
+: la lettre la plus faible, qui borne la réutilisation réelle.
+Partir d'un exemple :
+JavaScript is needed for this self-assessment.
+Webservice-Energy
+: quel composant sert quel principe ?
+Composant
+F
+A
+I
+R
+GeoNetwork (CSW)
+F
+A
+I
+R
+GeoServer (WMS, WCS)
+A
+I
+THREDDS / OPeNDAP / NCSS
+A
+I
+R
+Toolbox & S3P2 (WPS)
+A
+I
+STAC (REST)
+F
+A
+I
+libinsitu
+I
+R
+DOI landing pages
+F
+R
+NetCDF-CF / Zarr / GeoParquet
+I
+R
+Correspondance établie par le centre O.I.E. : chaque composant ouvert couvre une partie des principes, l'ensemble les couvre tous. Lecture simplifiée en oui/non : un composant peut servir un principe en partie.
+Autoévaluation indicative fondée sur les principes FAIR de GO FAIR (F1 à R1.3) ; elle ne remplace ni un plan de gestion des données (par exemple rédigé avec
+DMP OPIDoR
+) ni l'avis de l'atelier de la donnée de votre établissement. Vos réponses restent dans votre navigateur.
+Pourquoi cette grille ?
+Ce n'est qu'un exemple pédagogique
+, pas une norme ni une certification. Les vingt questions suivent les principes FAIR publiés par
+Wilkinson et al. (2016)
+et repris par l'initiative
+GO FAIR
+(F1 à F4, A1 et A2, I1 à I3, R1.1 à R1.3), complétés par quelques critères pratiques. Le barème (1 point pour « oui », 0,5 pour « en partie », 0 sinon) et les repères (5 et 10 sur 20) sont des choix de cette page : ils servent à apprendre à reconnaître ce qui rend des données réutilisables, pas à classer des projets.
+Pour une évaluation de référence, utilisez :
+le
+modèle de maturité FAIR de la RDA
+(Research Data Alliance, l'association internationale qui élabore des recommandations pour le partage des données de recherche) : des indicateurs communs et leur niveau de priorité ;
+F-UJI
+, un outil automatique qui évalue un jeu de données publié à partir de son identifiant pérenne, par exemple un DOI (
+Digital Object Identifier
+, un identifiant qui reste valable même si l'adresse du site change).
+Comment citer cet outil
+Ménard, L., Jolivet, R. et Voyant, C., centre O.I.E., Mines Paris – PSL (2026).
+Autoévaluation FAIR des données de recherche : un exemple de grille pédagogique en 20 questions
+, version 1.0, 4 novembre 2026. Licence CC BY 4.0 (Creative Commons Attribution : réutilisation libre en citant la source).
+Adresse (URL) à citer :
+https://www.cyrilvoyant.com/fr/outils/autoevaluation-fair/
+La même référence au format BibTeX (le format bibliographique de LaTeX) :
+@misc{oie2026fairfr,
+  author       = {M{\'e}nard, Lionel and Jolivet, Rapha{\"e}l and Voyant, Cyril},
+  title        = {Autoévaluation FAIR des données de recherche : un exemple de grille pédagogique en 20 questions},
+  year         = {2026},
+  version      = {1.0},
+  howpublished = {Web application},
+  note         = {Centre O.I.E., Mines Paris -- PSL. Version 1.0, 4 novembre 2026. Licence CC BY 4.0},
+  url          = {https://www.cyrilvoyant.com/fr/outils/autoevaluation-fair/}
+}
+Origine de la grille
+Les questions et l'exemple de référence viennent de la pratique de
+Webservice-Energy
+, l'IDS du centre O.I.E. : la démarche FAIR est celle de
+Lionel Ménard
+(
+ORCID
+) du centre (
+lionel.menard@minesparis.psl.eu
+) ; la partie licences suit la réflexion de
+Raphaël Jolivet
+(
+ORCID
+) (
+raphael.jolivet@minesparis.psl.eu
+). Cyril Voyant, coauteur, a mis la grille en forme et en ligne ; les éventuelles erreurs de transcription sont les siennes.
+Aller plus loin : données et licences
+La page
+Les modèles sont dans les données
+explique pourquoi qualifier et certifier les données, détaille
+l'exemple de Webservice-Energy
+et propose un
+arbre pour choisir une licence
+pour le code et les données.
+Exemples : Webservice-Energy, 19 sur 20 ; dépôt avec DOI et fichier CSV, 11,5 sur 20.
+
+---
+URL: https://www.cyrilvoyant.com/tools/fair-self-assessment/
+
+Are my data FAIR? A self-assessment in 20 questions
+In about 3 minutes, see where a dataset stands against the FAIR principles
+: data that are findable, accessible, interoperable (readable by other software) and reusable. Twenty questions, five per letter; the tool gives a score out of 20 and shows what to work on first.
+A grid from the
+O.I.E. center (Observation, Impacts, Energy) of Mines Paris – PSL
+, drawn from the FAIR practice of the Spatial Data Infrastructure (SDI)
+Webservice-Energy
+.
+FAIR data
+:
+Lionel Ménard
+(
+ORCID
+) of the O.I.E. center (
+lionel.menard@minesparis.psl.eu
+);
+Licenses for code and data
+:
+Raphaël Jolivet
+(
+ORCID
+) (
+raphael.jolivet@minesparis.psl.eu
+).
+Who is it for?
+PhD students, researchers, engineers and data stewards preparing a deposit, a data management plan (DMP, the document that describes how the data of a project will be produced, described, stored and shared) or a publication. Three prefilled examples serve as starting points, including
+Webservice-Energy
+, the SDI of the O.I.E. center. Nothing is sent anywhere: your answers stay in your browser.
+Is my project FAIR enough? An example of a 20-point self-assessment
+This is only an example
+: a teaching grid proposed here, not a standard or a certification. The questions follow the
+GO FAIR
+principles (F1 to R1.3) plus a few practical criteria; the scoring and thresholds are choices of this page. For a reference assessment: the
+RDA FAIR Data Maturity Model
+(Research Data Alliance) or the automated tool
+F-UJI
+. Acronyms underlined with dots open an explanation on click or tap.
+Five questions per letter, from the most basic to the most demanding; each "yes" is worth 1 point, "partly" 0.5. Total out of 20. Benchmarks:
+below 5: needs work
+;
+5 to 10: good
+;
+above 10: very good
+. The tool names the axes to work on and, above 10, the
+limiting factor
+: the weakest letter, which bounds real reuse.
+Start from an example:
+JavaScript is needed for this self-assessment.
+Webservice-Energy
+: which component serves which principle?
+Component
+F
+A
+I
+R
+GeoNetwork (CSW)
+F
+A
+I
+R
+GeoServer (WMS, WCS)
+A
+I
+THREDDS / OPeNDAP / NCSS
+A
+I
+R
+Toolbox & S3P2 (WPS)
+A
+I
+STAC (REST)
+F
+A
+I
+libinsitu
+I
+R
+DOI landing pages
+F
+R
+NetCDF-CF / Zarr / GeoParquet
+I
+R
+Mapping drawn up by the O.I.E. center: each open component covers part of the principles; together they cover them all. Simplified yes/no reading: a component may serve a principle only in part.
+Indicative self-assessment based on the GO FAIR principles (F1 to R1.3); it does not replace a data management plan (written for example with
+DMP OPIDoR
+) or the advice of your institution's data service. Your answers stay in your browser.
+Why this grid?
+This is only a teaching example
+, not a standard or a certification. The twenty questions follow the FAIR principles published by
+Wilkinson et al. (2016)
+and promoted by the
+GO FAIR
+initiative (F1 to F4, A1 and A2, I1 to I3, R1.1 to R1.3), plus a few practical criteria. The scoring (1 point for “yes”, 0.5 for “partly”, 0 otherwise) and the thresholds (5 and 10 out of 20) are choices made for this page: they help you learn what makes data reusable, not rank projects.
+For a reference assessment, use:
+the
+RDA FAIR Data Maturity Model
+(Research Data Alliance, the international organization that develops recommendations for sharing research data): shared indicators and their priority levels;
+F-UJI
+, an automated tool that assesses a published dataset from its persistent identifier, for example a DOI (Digital Object Identifier, an identifier that stays valid even if the web address changes).
+How to cite this tool
+Ménard, L., Jolivet, R. and Voyant, C., O.I.E. center, Mines Paris – PSL (2026).
+FAIR self-assessment of research data: an example teaching grid in 20 questions
+, version 1.0, November 4, 2026. License: CC BY 4.0 (Creative Commons Attribution: free reuse with credit to the source).
+Web address (URL) to cite:
+https://www.cyrilvoyant.com/tools/fair-self-assessment/
+The same reference in BibTeX (the bibliography format of LaTeX):
+@misc{oie2026fair,
+  author       = {M{\'e}nard, Lionel and Jolivet, Rapha{\"e}l and Voyant, Cyril},
+  title        = {FAIR self-assessment of research data: an example teaching grid in 20 questions},
+  year         = {2026},
+  version      = {1.0},
+  howpublished = {Web application},
+  note         = {O.I.E. center, Mines Paris -- PSL. Version 1.0, November 4, 2026. License CC BY 4.0},
+  url          = {https://www.cyrilvoyant.com/tools/fair-self-assessment/}
+}
+Where the grid comes from
+The questions and the reference example come from the practice of
+Webservice-Energy
+, the SDI of the O.I.E. center: the FAIR approach is that of
+Lionel Ménard
+(
+ORCID
+) of the center (
+lionel.menard@minesparis.psl.eu
+); the license part follows the reflection of
+Raphaël Jolivet
+(
+ORCID
+) (
+raphael.jolivet@minesparis.psl.eu
+). Cyril Voyant, co-author, shaped the grid and put it online; any transcription errors are his.
+Go further: data and licenses
+The page
+Models live in the data
+explains why data must be qualified and certified, details
+the example of Webservice-Energy
+and offers a
+decision tree to choose a license
+for code and data.
+Examples: Webservice-Energy, 19 out of 20; deposit with a DOI and CSV file, 11.5 out of 20.

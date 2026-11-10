@@ -218,3 +218,9 @@ This navigation file is optional reading guidance, not a guarantee of inclusion 
 
 - [Reading map](https://www.cyrilvoyant.com/llm.md)
 - [Page and evidence catalog](https://www.cyrilvoyant.com/research-catalog.json)
+
+## New bilingual teaching labs
+
+- [Probabilistic solar forecasting](https://www.cyrilvoyant.com/tools/probabilistic-solar-forecasting/) / [Prévision probabiliste](https://www.cyrilvoyant.com/fr/outils/prevision-probabiliste/).
+- [PV forecasting modes](https://www.cyrilvoyant.com/tools/pv-forecasting-modes/) / [Modes de prévision PV](https://www.cyrilvoyant.com/fr/outils/modes-prevision-pv/).
+- [Jarque–Bera test](https://www.cyrilvoyant.com/tools/jarque-bera-test/) / [Test de Jarque-Bera](https://www.cyrilvoyant.com/fr/outils/test-jarque-bera/).

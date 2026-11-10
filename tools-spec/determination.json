@@ -162,7 +162,26 @@
    }
   }
  ],
- "actions": [],
+ "actions": [
+  {
+   "name": {
+    "fr": "la décomposition de quelques écarts",
+    "en": "the split of a few deviations"
+   }
+  },
+  {
+   "name": {
+    "fr": "tous les résidus",
+    "en": "all residuals"
+   }
+  },
+  {
+   "name": {
+    "fr": "le nuage seul",
+    "en": "the scatter only"
+   }
+  }
+ ],
  "variants": [],
  "outputs": [
   {
@@ -229,7 +248,40 @@
  "outputs_en_page": null,
  "formulas": [
   {
+   "text": "R^2 = (SC_(Ŷ))/SC_Y"
+  },
+  {
+   "text": "= 2,7/30,0"
+  },
+  {
+   "text": "= 0,090"
+  },
+  {
+   "text": "= r^2 = (0,300)^2"
+  },
+  {
    "text": "t = rsqrt((n − 2)/(1 − r^2))"
+  },
+  {
+   "text": "= 0,300×sqrt(28/0,910)"
+  },
+  {
+   "text": "= 1,66"
+  },
+  {
+   "text": "ν = n − 2 = 28,"
+  },
+  {
+   "text": "p = 0,1072"
+  },
+  {
+   "text": "SC_Y = ∑i(y_i − ȳ)^2,"
+  },
+  {
+   "text": "SC_(Ŷ) = ∑i(ŷ_i − ȳ)^2,"
+  },
+  {
+   "text": "SC_rés = ∑i(y_i − ŷ_i)^2"
   },
   {
    "text": "R^2 = r^2 = 1 − SSE/SST"
@@ -281,7 +333,7 @@
   {
    "term": "Que veut dire chaque symbole ?",
    "meaning": {
-    "fr": "r est la corrélation de Pearson du nuage ; n son nombre de points. R² est le coefficient de détermination. H₀ suppose une corrélation nulle dans la population (ρ = 0) ; t est sa statistique de test et ν = n−2 ses degrés de liberté. La p-value concerne cette hypothèse dans le modèle indiqué. SST additionne les carrés des écarts à la moyenne, SSE ceux des résidus et SSR ceux des valeurs ajustées à la moyenne. Un résidu est l’écart vertical entre une observation yᵢ et sa valeur ajustée ŷᵢ ; ȳ est la moyenne observée.",
+    "fr": "r est la corrélation de Pearson du nuage ; n son nombre de points. R² est le coefficient de détermination. H₀ suppose une corrélation nulle dans la population (ρ = 0) ; t est sa statistique de test et ν = n−2 ses degrés de liberté. La p-value concerne cette hypothèse dans le modèle indiqué. SC_Y (SST en anglais) additionne les carrés des écarts à la moyenne, SC_rés (SSE) ceux des résidus et SC_Ŷ (SSR) ceux des valeurs ajustées à la moyenne. Un résidu est l’écart vertical entre une observation yᵢ et sa valeur ajustée ŷᵢ ; ȳ est la moyenne observée.",
     "en": "r is the Pearson correlation in the scatterplot; n is the number of points. R² is the coefficient of determination. H₀ assumes zero population correlation (ρ = 0); t is its test statistic and ν = n−2 its degrees of freedom. The p-value concerns this hypothesis under the stated test model. SST sums squared deviations from the mean, SSE squared residuals and SSR squared deviations of fitted values from the mean. A residual is the vertical difference between an observation yᵢ and its fitted value ŷᵢ; ȳ is the observed mean."
    }
   }
@@ -404,7 +456,7 @@
   "r-squared"
  ],
  "extraction": {
-  "source_hash": "3e031bd834968662",
+  "source_hash": "c44289419a4cd9d6",
   "method": "rendered page (Playwright, msedge, local static server), presets replayed on a fresh page each",
   "roots": [
    "#experience"

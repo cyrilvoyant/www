@@ -1,0 +1,174 @@
+{
+ "@context": "https://schema.org",
+ "@type": [
+  "SoftwareApplication",
+  "LearningResource"
+ ],
+ "@id": "https://www.cyrilvoyant.com/tools/probabilistic-solar-forecasting/#tool-spec",
+ "identifier": "probabilistic-solar",
+ "name": "Probabilistic solar forecasting",
+ "alternateName": "Prévision probabiliste",
+ "description": "Hourly solar irradiance at Ajaccio: confidence vs prediction interval, why ±2σ fails, leakage-free conformal prediction, live PICP and CRPS.",
+ "url": "https://www.cyrilvoyant.com/tools/probabilistic-solar-forecasting/",
+ "sameAs": [
+  "https://www.cyrilvoyant.com/fr/outils/prevision-probabiliste/",
+  "https://www.cyrilvoyant.com/tools/probabilistic-solar-forecasting/"
+ ],
+ "inLanguage": [
+  "fr",
+  "en"
+ ],
+ "applicationCategory": "ScientificApplication",
+ "operatingSystem": "Any (web browser)",
+ "isAccessibleForFree": true,
+ "learningResourceType": "demo",
+ "author": {
+  "@type": "Person",
+  "name": "Cyril Voyant",
+  "identifier": "https://orcid.org/0000-0003-0242-7377"
+ },
+ "license": "https://creativecommons.org/licenses/by/4.0/",
+ "additionalProperty": [
+  {
+   "@type": "PropertyValue",
+   "propertyID": "pf-model",
+   "name": "Model?",
+   "alternateName": "Modèle?",
+   "value": "AR"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "pf-method",
+   "name": "Prediction interval?",
+   "alternateName": "Intervalle de prévision?",
+   "value": "conf"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "pf-level",
+   "name": "Nominal level?",
+   "alternateName": "Niveau nominal?",
+   "value": 95,
+   "minValue": 50,
+   "maxValue": 99,
+   "unitText": "%"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "pf-day",
+   "name": "Date (2007)",
+   "alternateName": "Date (2007)",
+   "value": 74,
+   "minValue": 0,
+   "maxValue": 364,
+   "unitText": "mars"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "pf-win",
+   "name": "Window?",
+   "alternateName": "Fenêtre?",
+   "value": 3,
+   "minValue": 1,
+   "maxValue": 7,
+   "unitText": "j"
+  },
+  {
+   "@type": "PropertyValue",
+   "propertyID": "pf-ci",
+   "name": "Confidence interval?",
+   "alternateName": "Intervalle de confiance?",
+   "value": true
+  }
+ ],
+ "potentialAction": {
+  "@type": "Action",
+  "name": "Explore the tool",
+  "target": {
+   "@type": "EntryPoint",
+   "urlTemplate": "https://www.cyrilvoyant.com/tools/probabilistic-solar-forecasting/",
+   "actionPlatform": "https://schema.org/DesktopWebPlatform"
+  },
+  "object": [
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "pf-model",
+    "description": "Model?",
+    "valueRequired": false,
+    "valuePattern": "^(P|SP|AR|ELM)$",
+    "defaultValue": "AR"
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "pf-method",
+    "description": "Prediction interval?",
+    "valueRequired": false,
+    "valuePattern": "^(gauss|conf|hour|cs)$",
+    "defaultValue": "conf"
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "pf-level",
+    "description": "Nominal level?",
+    "valueRequired": false,
+    "minValue": 50,
+    "maxValue": 99,
+    "defaultValue": 95,
+    "stepValue": 1
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "pf-day",
+    "description": "Date (2007)",
+    "valueRequired": false,
+    "minValue": 0,
+    "maxValue": 364,
+    "defaultValue": 74,
+    "stepValue": 1
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "pf-win",
+    "description": "Window?",
+    "valueRequired": false,
+    "minValue": 1,
+    "maxValue": 7,
+    "defaultValue": 3,
+    "stepValue": 1
+   },
+   {
+    "@type": "PropertyValueSpecification",
+    "valueName": "pf-ci",
+    "description": "Confidence interval?",
+    "valueRequired": false,
+    "defaultValue": true
+   }
+  ]
+ },
+ "citation": [
+  "https://doi.org/10.1007/b106715",
+  "https://doi.org/10.1016/j.solener.2025.113490",
+  "https://doi.org/10.1063/5.0128131",
+  "https://doi.org/10.5281/zenodo.23620101"
+ ],
+ "about": [
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#persistence"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#smart-persistence"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#elm"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#rmse"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#confidence-interval"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/ontology/#prediction-interval"
+  }
+ ]
+}

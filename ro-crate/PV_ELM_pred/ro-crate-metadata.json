@@ -54,6 +54,9 @@
      "@id": "https://www.cyrilvoyant.com/fr/outils/comparateur-previsions/"
     },
     {
+     "@id": "https://www.cyrilvoyant.com/fr/outils/modes-prevision-pv/"
+    },
+    {
      "@id": "https://www.cyrilvoyant.com/fr/vue-d-ensemble/"
     },
     {
@@ -64,6 +67,9 @@
     },
     {
      "@id": "https://www.cyrilvoyant.com/tools/forecast-comparison/"
+    },
+    {
+     "@id": "https://www.cyrilvoyant.com/tools/pv-forecasting-modes/"
     }
    ],
    "keywords": [
@@ -146,6 +152,11 @@
    "name": "www.cyrilvoyant.com/fr/outils/comparateur-previsions/"
   },
   {
+   "@id": "https://www.cyrilvoyant.com/fr/outils/modes-prevision-pv/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/fr/outils/modes-prevision-pv/"
+  },
+  {
    "@id": "https://www.cyrilvoyant.com/fr/vue-d-ensemble/",
    "@type": "WebPage",
    "name": "www.cyrilvoyant.com/fr/vue-d-ensemble/"
@@ -164,6 +175,11 @@
    "@id": "https://www.cyrilvoyant.com/tools/forecast-comparison/",
    "@type": "WebPage",
    "name": "www.cyrilvoyant.com/tools/forecast-comparison/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/tools/pv-forecasting-modes/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/tools/pv-forecasting-modes/"
   }
  ]
 }

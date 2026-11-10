@@ -47,3 +47,20 @@
 .st-contribution { display:block;height:6px;background:#dc924c;margin-top:6px;max-width:100%;border-radius:3px; }
 @media(max-width:760px){.st-axis{font-size:18px}}
 @media(max-width:500px){.st-metrics{grid-template-columns:1fr 1fr}.st-controls{grid-template-columns:1fr 1fr}.st-control span{font-size:.82rem}.st-lab{padding:14px}.st-axis{font-size:23px}}
+
+/* r2-redesign-20261110: correlation / R² tool */
+.st-seg { display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:14px 0 6px;font-size:.9rem; }
+.st-seg button { border:1px solid #9cb8c5;border-radius:100px;padding:6px 13px;background:var(--paper,#fff);color:var(--ink,#193d5b);font:inherit;font-size:.85rem;cursor:pointer; }
+.st-seg button[aria-pressed=true] { background:#193d5b;border-color:#193d5b;color:#fff; }
+.st-keynote { flex-basis:100%;color:var(--muted,#536777);font-size:.86rem; }
+.st-vt { margin:18px 0 8px;padding:14px 16px;border:1px solid #d3e0e7;border-radius:12px;background:var(--paper,#fff); }
+.st-vt-title { margin:0 0 10px;line-height:1.5; } .st-vt-eq { color:var(--muted,#536777);white-space:nowrap; }
+.st-vt-bar { display:flex;height:30px;border-radius:8px;overflow:hidden;background:#eef3f6; } .st-vt-bar span { transition:width .25s; }
+.st-vt-lab { display:flex;justify-content:space-between;gap:12px;margin-top:8px;font-size:.88rem;line-height:1.45; }
+.st-fx { margin:12px 0;padding:10px 16px;border-radius:12px;background:var(--soft,#edf4f6); } .st-fx summary { cursor:pointer;font-weight:600; }
+.st-eqrow { display:flex;flex-wrap:wrap;justify-content:center;align-items:center;column-gap:.3em;row-gap:8px;margin:14px 0; }
+.st-fx math { font-size:1.22em;font-family:"Latin Modern Math","STIX Two Math","Cambria Math",math; }
+.st-where { font-size:.9rem;line-height:1.9;margin:8px 0 0; }
+.st-tip { position:relative;display:inline-block;padding:0 3px;border-radius:4px;background:#dcecef;border-bottom:1px dotted #087e8b;cursor:help;font-weight:600; }
+.st-tip:hover::after, .st-tip:focus::after { content:attr(data-tip);position:absolute;left:50%;bottom:calc(100% + 6px);transform:translateX(-50%);width:max-content;max-width:min(280px,80vw);padding:7px 10px;border-radius:8px;background:#193d5b;color:#fff;font-weight:400;font-size:.8rem;line-height:1.4;white-space:normal;z-index:20;box-shadow:0 4px 14px rgba(0,0,0,.18); }
+@media(max-width:500px){ .st-fx math { font-size:1.02em; } .st-vt-lab { font-size:.82rem; } }

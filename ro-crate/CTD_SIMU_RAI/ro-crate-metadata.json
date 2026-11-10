@@ -48,6 +48,9 @@
      "@id": "https://www.cyrilvoyant.com/approach/"
     },
     {
+     "@id": "https://www.cyrilvoyant.com/bib/"
+    },
+    {
      "@id": "https://www.cyrilvoyant.com/fr/approche/"
     },
     {
@@ -138,6 +141,11 @@
    "@id": "https://www.cyrilvoyant.com/approach/",
    "@type": "WebPage",
    "name": "www.cyrilvoyant.com/approach/"
+  },
+  {
+   "@id": "https://www.cyrilvoyant.com/bib/",
+   "@type": "WebPage",
+   "name": "www.cyrilvoyant.com/bib/"
   },
   {
    "@id": "https://www.cyrilvoyant.com/fr/approche/",
