@@ -671,3 +671,9 @@ main pre { white-space: pre-wrap; overflow-wrap: anywhere; }
 .search-refinements label{flex:1 1 200px}.search-refinements select{width:100%;padding:.65rem;border:1px solid #8fa3b8;border-radius:6px;background:white;font:inherit}
 .search-suggestions{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap}.search-suggestions button,#search-status button{border:1px solid #8fa3b8;border-radius:20px;padding:.4rem .75rem;color:#07569a;background:#fff;font:inherit;cursor:pointer}
 .search-results small{display:block;color:#46586a;margin:.25rem 0}.search-results li{padding:1rem;border:1px solid #d2dce6;border-radius:8px;background:#fff}.search-results a{font-size:1.15rem;font-weight:650}
+
+/* Audit 11/11/2026, T1 and T2: nothing may push the page sideways on a phone. */
+main code { overflow-wrap: anywhere; }
+@media (max-width: 700px) {
+  main table:not(.fc-t):not(.slide-table) { display: block; max-width: 100%; overflow-x: auto; }
+}
