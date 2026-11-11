@@ -15725,7 +15725,7 @@
    },
    "computes": {
     "fr": "Score FAIR sur 20 (5 par lettre F, A, I, R) à partir de 20 réponses oui (1), en partie (0,5) ou non (0) ; repères : moins de 5 perfectible, 5 à 10 bon, plus de 10 très bon ; axes prioritaires et facteur limitant (lettre la plus faible).",
-    "en": "FAIR score out of 20 (5 per letter F, A, I, R) from 20 answers yes (1), partly (0.5) or no (0); thresholds: below 5 improvable, 5 to 10 good, above 10 very good; priority axes and limiting factor (weakest letter)."
+    "en": "FAIR score out of 20 (5 per letter F, A, I, R) from 20 answers yes (1), partly (0.5) or no (0); thresholds: below 7 improvable, 7 to under 14 good, 14 and above very good; priority axes and limiting factor (weakest letter)."
    },
    "summary": {
     "fr": "En 3 minutes environ, situez un jeu de données au regard des principes FAIR : des données faciles à trouver (Findable), accessibles (Accessible), interopérables, c'est-à-dire lisibles par d'autres logiciels (Interoperable), et réutilisables (Reusable). Vingt questions, cinq par lettre ; l'outil donne un score sur 20 et indique les points à travailler en premier.",
@@ -16206,8 +16206,8 @@
       "en": "Is the format open and non-proprietary?"
      },
      "meaning": {
-      "fr": "NetCDF, GeoTIFF, Parquet, Zarr plutôt qu'un classeur Excel, un fichier MATLAB ou un CSV, à proscrire dans une démarche FAIR : ni schéma, ni unités, ni métadonnées dans le fichier.",
-      "en": "NetCDF, GeoTIFF, Parquet, Zarr rather than an Excel workbook, a MATLAB file or a CSV, which should be avoided in a FAIR approach: no schema, no units, no metadata in the file."
+      "fr": "NetCDF, GeoTIFF, Parquet, Zarr plutôt qu'un classeur Excel, un fichier MATLAB ou un CSV simple, à proscrire dans une démarche FAIR : ni schéma, ni unités, ni métadonnées dans le fichier. Un CSV livré avec ses métadonnées (schéma, unités, licence dans un fichier joint) reste acceptable.",
+      "en": "NetCDF, GeoTIFF, Parquet, Zarr rather than an Excel workbook, a MATLAB file or a plain CSV, which should be avoided in a FAIR approach: no schema, no units, no metadata in the file. A CSV shipped with its metadata (schema, units, licence in a companion file) remains acceptable."
      },
      "if_missing": {
       "fr": "Exporter dans un format ouvert et autodécrit (NetCDF, Parquet, Zarr) en plus du format de travail.",
@@ -16725,8 +16725,8 @@
     {
      "id": "zenodo",
      "name": {
-      "fr": "Dépôt avec DOI, fichier CSV",
-      "en": "Deposit with DOI, CSV file"
+      "fr": "Dépôt avec DOI, CSV simple",
+      "en": "Deposit with DOI, plain CSV"
      },
      "values": {
       "F1": 1,
@@ -16780,8 +16780,8 @@
       "total": 11.5
      },
      "shows": {
-      "fr": "Un fichier CSV déposé dans un entrepôt généraliste ; le CSV est à proscrire dans une démarche FAIR. Fait : DOI et page d'atterrissage, métadonnées DataCite moissonnées, licence CC BY, téléchargement par HTTPS. Pas fait ou en partie : format ouvert et autodécrit (NetCDF-CF), noms et unités normalisés, métadonnées riches, liens vers l'instrument et le code, contrôle qualité livré, provenance et documentation succinctes, accès aux valeurs par programme limité au fichier entier.",
-      "en": "A CSV file deposited in a general-purpose repository; CSV should be avoided in a FAIR approach. Done: DOI and landing page, harvested DataCite metadata, CC BY licence, HTTPS download. Not done or partly: an open self-describing format (NetCDF-CF), standard names and units, rich metadata, links to the instrument and the code, delivered quality control, brief provenance and documentation, programmatic access limited to the whole file."
+      "fr": "Un fichier CSV simple, sans métadonnées jointes, déposé dans un entrepôt généraliste ; le CSV simple est à proscrire dans une démarche FAIR. Fait : DOI et page d'atterrissage, métadonnées DataCite moissonnées, licence CC BY, téléchargement par HTTPS. Pas fait ou en partie : format ouvert et autodécrit (NetCDF-CF), noms et unités normalisés, métadonnées riches, liens vers l'instrument et le code, contrôle qualité livré, provenance et documentation succinctes, accès aux valeurs par programme limité au fichier entier.",
+      "en": "A plain CSV file, with no companion metadata, deposited in a general-purpose repository; a plain CSV should be avoided in a FAIR approach. Done: DOI and landing page, harvested DataCite metadata, CC BY licence, HTTPS download. Not done or partly: an open self-describing format (NetCDF-CF), standard names and units, rich metadata, links to the instrument and the code, delivered quality control, brief provenance and documentation, programmatic access limited to the whole file."
      }
     },
     {
@@ -17002,8 +17002,8 @@
     {
      "preset": "zenodo",
      "title": {
-      "fr": "Dépôt avec DOI, fichier CSV",
-      "en": "Deposit with DOI, CSV file"
+      "fr": "Dépôt avec DOI, CSV simple",
+      "en": "Deposit with DOI, plain CSV"
      },
      "set": {
       "F1": 1,
@@ -17028,8 +17028,8 @@
       "R5": 0.5
      },
      "observe": {
-      "fr": "Un fichier CSV déposé dans un entrepôt généraliste ; le CSV est à proscrire dans une démarche FAIR. Fait : DOI et page d'atterrissage, métadonnées DataCite moissonnées, licence CC BY, téléchargement par HTTPS. Pas fait ou en partie : format ouvert et autodécrit (NetCDF-CF), noms et unités normalisés, métadonnées riches, liens vers l'instrument et le code, contrôle qualité livré, provenance et documentation succinctes, accès aux valeurs par programme limité au fichier entier.",
-      "en": "A CSV file deposited in a general-purpose repository; CSV should be avoided in a FAIR approach. Done: DOI and landing page, harvested DataCite metadata, CC BY licence, HTTPS download. Not done or partly: an open self-describing format (NetCDF-CF), standard names and units, rich metadata, links to the instrument and the code, delivered quality control, brief provenance and documentation, programmatic access limited to the whole file."
+      "fr": "Un fichier CSV simple, sans métadonnées jointes, déposé dans un entrepôt généraliste ; le CSV simple est à proscrire dans une démarche FAIR. Fait : DOI et page d'atterrissage, métadonnées DataCite moissonnées, licence CC BY, téléchargement par HTTPS. Pas fait ou en partie : format ouvert et autodécrit (NetCDF-CF), noms et unités normalisés, métadonnées riches, liens vers l'instrument et le code, contrôle qualité livré, provenance et documentation succinctes, accès aux valeurs par programme limité au fichier entier.",
+      "en": "A plain CSV file, with no companion metadata, deposited in a general-purpose repository; a plain CSV should be avoided in a FAIR approach. Done: DOI and landing page, harvested DataCite metadata, CC BY licence, HTTPS download. Not done or partly: an open self-describing format (NetCDF-CF), standard names and units, rich metadata, links to the instrument and the code, delivered quality control, brief provenance and documentation, programmatic access limited to the whole file."
      }
     },
     {

@@ -2363,7 +2363,7 @@ Are my data FAIR? A self-assessment in 20 questions
  Who is it for? PhD students, researchers, engineers and data stewards preparing a deposit, a data management plan (DMP, the document that describes how the data of a project will be produced, described, stored and shared) or a publication. Three prefilled examples serve as starting points, including Webservice-Energy , the data infrastructure of the O.I.E. center (Observation, Impacts, Energy) at Mines Paris – PSL. Nothing is sent anywhere: your answers stay in your browser.
  Is my project FAIR enough? An example of a 20-point self-assessment
  This is only an example : a teaching grid proposed here, not a standard or a certification. The questions follow the GO FAIR principles (F1 to R1.3) plus a few practical criteria; the scoring and thresholds are choices of this page. For a reference assessment: the RDA FAIR Data Maturity Model (Research Data Alliance) or the automated tool F-UJI . Acronyms underlined with dots open an explanation on click or tap.
- Five questions per letter, from the most basic to the most demanding; each "yes" is worth 1 point, "partly" 0.5. Total out of 20. Benchmarks: below 5: needs work ; 5 to 10: good ; above 10: very good . The tool names the axes to work on and, above 10, the limiting factor : the weakest letter, which bounds real reuse.
+ Five questions per letter, from the most basic to the most demanding; each "yes" is worth 1 point, "partly" 0.5. Total out of 20. Benchmarks: below 7: needs work ; 7 to under 14: good ; 14 and above: very good . The tool names the axes to work on and the limiting factor : the weakest letter, which bounds real reuse.
  Start from an example:
  JavaScript is needed for this self-assessment. Webservice-Energy : which component serves which principle?
  Component F A I R
@@ -2410,7 +2410,7 @@ Mes données sont-elles FAIR ? Une autoévaluation en 20 questions
  Pour qui ? Doctorants, chercheurs, ingénieurs et gestionnaires de données qui préparent un dépôt, un plan de gestion des données (PGD, le document qui décrit comment les données d'un projet seront produites, décrites, conservées et partagées) ou une publication. Trois exemples préremplis servent de point de départ, dont Webservice-Energy , l'infrastructure de données du centre O.I.E. (Observation, Impacts, Énergie) de Mines Paris – PSL. Rien n'est envoyé : les réponses restent dans votre navigateur.
  Mon projet est-il assez FAIR ? Un exemple d'autoévaluation en 20 points
  Ceci n'est qu'un exemple : une grille pédagogique proposée ici, pas une norme ni une certification. Les questions reprennent les principes GO FAIR (F1 à R1.3) et quelques critères pratiques ; le barème et les seuils sont des choix de cette page. Pour une évaluation de référence : le modèle de maturité FAIR de la RDA (Research Data Alliance) ou l'outil automatique F-UJI . Les sigles soulignés en pointillé s'expliquent d'un clic ou d'un toucher.
- Cinq questions par lettre, de la plus élémentaire à la plus exigeante ; chaque réponse « oui » vaut 1 point, « en partie » 0,5. Total sur 20. Repères : moins de 5 : perfectible ; de 5 à 10 : bon ; plus de 10 : très bon . L'outil indique les axes à privilégier et, au-dessus de 10, le facteur limitant : la lettre la plus faible, qui borne la réutilisation réelle.
+ Cinq questions par lettre, de la plus élémentaire à la plus exigeante ; chaque réponse « oui » vaut 1 point, « en partie » 0,5. Total sur 20. Repères : moins de 7 : perfectible ; de 7 à moins de 14 : bon ; à partir de 14 : très bon . L'outil indique les axes à privilégier et le facteur limitant : la lettre la plus faible, qui borne la réutilisation réelle.
  Partir d'un exemple :
  JavaScript is needed for this self-assessment. Webservice-Energy : quel composant sert quel principe ?
  Composant F A I R
@@ -14467,13 +14467,12 @@ modèle de maturité FAIR de la RDA
 F-UJI
 . Les sigles soulignés en pointillé s'expliquent d'un clic ou d'un toucher.
 Cinq questions par lettre, de la plus élémentaire à la plus exigeante ; chaque réponse « oui » vaut 1 point, « en partie » 0,5. Total sur 20. Repères :
-moins de 5 : perfectible
+moins de 7 : perfectible
 ;
-de 5 à 10 : bon
+de 7 à moins de 14 : bon
 ;
-plus de 10 : très bon
-. L'outil indique les axes à privilégier et, au-dessus de 10, le
-facteur limitant
+à partir de 14 : très bon
+. L'outil indique les axes à privilégier et le facteur limitant
 : la lettre la plus faible, qui borne la réutilisation réelle.
 Partir d'un exemple :
 JavaScript is needed for this self-assessment.
@@ -14614,13 +14613,12 @@ RDA FAIR Data Maturity Model
 F-UJI
 . Acronyms underlined with dots open an explanation on click or tap.
 Five questions per letter, from the most basic to the most demanding; each "yes" is worth 1 point, "partly" 0.5. Total out of 20. Benchmarks:
-below 5: needs work
+below 7: needs work
 ;
-5 to 10: good
+7 to under 14: good
 ;
-above 10: very good
-. The tool names the axes to work on and, above 10, the
-limiting factor
+14 and above: very good
+. The tool names the axes to work on and the limiting factor
 : the weakest letter, which bounds real reuse.
 Start from an example:
 JavaScript is needed for this self-assessment.
