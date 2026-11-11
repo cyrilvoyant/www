@@ -666,6 +666,114 @@
         "fr": "https://www.cyrilvoyant.com/fr/outils/test-jarque-bera/",
         "en": "https://www.cyrilvoyant.com/tools/jarque-bera-test/"
       }
+    },
+    {
+      "id": "dew-point",
+      "domain": "learning",
+      "kind": "teaching",
+      "interface_language": "fr",
+      "name": {
+        "fr": "Air humide et point de rosée",
+        "en": "Humid air and dew point"
+      },
+      "task": {
+        "fr": "Varier la température, la pression et la teneur en eau pour voir quand la condensation commence.",
+        "en": "Vary temperature, pressure and water content to see when condensation starts."
+      },
+      "url": {
+        "fr": "https://www.cyrilvoyant.com/fr/enseignement/physique-industrielle/vapeur-d-eau/#air-humide",
+        "en": "https://www.cyrilvoyant.com/fr/enseignement/physique-industrielle/vapeur-d-eau/#air-humide"
+      }
+    },
+    {
+      "id": "gas-compression",
+      "domain": "learning",
+      "kind": "teaching",
+      "interface_language": "fr",
+      "name": {
+        "fr": "Compression d’un gaz : isotherme ou adiabatique",
+        "en": "Gas compression: isothermal or adiabatic"
+      },
+      "task": {
+        "fr": "Comparer les deux courbes pression-volume à partir du même état initial.",
+        "en": "Compare the two pressure–volume curves from the same initial state."
+      },
+      "url": {
+        "fr": "https://www.cyrilvoyant.com/fr/enseignement/physique-industrielle/notions-de-thermodynamique/#lp-visuel",
+        "en": "https://www.cyrilvoyant.com/fr/enseignement/physique-industrielle/notions-de-thermodynamique/#lp-visuel"
+      }
+    },
+    {
+      "id": "otto-cycle",
+      "domain": "learning",
+      "kind": "teaching",
+      "interface_language": "fr",
+      "name": {
+        "fr": "Cycle de Beau de Rochas (Otto)",
+        "en": "Otto cycle"
+      },
+      "task": {
+        "fr": "Modifier le rapport de compression et lire le cycle sur le diagramme pression-volume.",
+        "en": "Change the compression ratio and read the cycle on the pressure–volume diagram."
+      },
+      "url": {
+        "fr": "https://www.cyrilvoyant.com/fr/enseignement/physique-industrielle/cycles-moteurs/#lp-visuel",
+        "en": "https://www.cyrilvoyant.com/fr/enseignement/physique-industrielle/cycles-moteurs/#lp-visuel"
+      }
+    },
+    {
+      "id": "mollier-cycle",
+      "domain": "learning",
+      "kind": "teaching",
+      "interface_language": "fr",
+      "name": {
+        "fr": "Cycle frigorifique sur le diagramme de Mollier",
+        "en": "Refrigeration cycle on a Mollier diagram"
+      },
+      "task": {
+        "fr": "Faire varier la surchauffe et le sous-refroidissement, puis observer le cycle et son bilan.",
+        "en": "Vary superheating and subcooling, then observe the cycle and its energy balance."
+      },
+      "url": {
+        "fr": "https://www.cyrilvoyant.com/fr/enseignement/physique-industrielle/cycles-frigorifiques/#lp-visuel",
+        "en": "https://www.cyrilvoyant.com/fr/enseignement/physique-industrielle/cycles-frigorifiques/#lp-visuel"
+      }
+    },
+    {
+      "id": "em-spectrum",
+      "domain": "learning",
+      "kind": "teaching",
+      "interface_language": "fr",
+      "name": {
+        "fr": "Spectre électromagnétique et énergie du photon",
+        "en": "Electromagnetic spectrum and photon energy"
+      },
+      "task": {
+        "fr": "Faire varier la longueur d’onde et relier domaine spectral, énergie du photon et usages.",
+        "en": "Vary wavelength and connect spectral bands, photon energy and applications."
+      },
+      "url": {
+        "fr": "https://www.cyrilvoyant.com/fr/enseignement/physique-pass/ondes-electromagnetiques/#lp-visuel",
+        "en": "https://www.cyrilvoyant.com/fr/enseignement/physique-pass/ondes-electromagnetiques/#lp-visuel"
+      }
+    },
+    {
+      "id": "atomic-energy-levels",
+      "domain": "learning",
+      "kind": "teaching",
+      "interface_language": "fr",
+      "name": {
+        "fr": "Transitions dans un atome à un électron",
+        "en": "Transitions in a one-electron atom"
+      },
+      "task": {
+        "fr": "Choisir un ion et deux niveaux d’énergie pour explorer la transition ou l’ionisation.",
+        "en": "Select an ion and two energy levels to explore a transition or ionization."
+      },
+      "url": {
+        "fr": "https://www.cyrilvoyant.com/fr/enseignement/physique-pass/ed2-corrige/#lp-visuel",
+        "en": "https://www.cyrilvoyant.com/fr/enseignement/physique-pass/ed2-corrige/#lp-visuel"
+      }
     }
   ]
 }
