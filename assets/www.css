@@ -677,3 +677,16 @@ main code { overflow-wrap: anywhere; }
 @media (max-width: 700px) {
   main table:not(.fc-t):not(.slide-table) { display: block; max-width: 100%; overflow-x: auto; }
 }
+
+/* Quick navigation on long pages (audit 11/11/2026, lot 3). Shown on phones and tablets only. */
+.quick-nav { display: none; }
+@media (max-width: 900px) {
+  .quick-nav { display: flex; flex-direction: column; gap: 8px; margin: 12px 0 18px; }
+  .quick-nav .quick-tool { align-self: flex-start; display: inline-block; min-height: 40px; line-height: 40px; padding: 0 16px; border-radius: 999px; background: #0b5394; color: #fff; font-weight: 700; text-decoration: none; }
+  .quick-nav .auto-toc { border: 1px solid var(--line, #d8e0e8); border-radius: 10px; background: var(--paper, #fff); padding: 4px 12px; }
+  .quick-nav .auto-toc summary { cursor: pointer; font-weight: 700; min-height: 40px; line-height: 40px; }
+  .quick-nav .auto-toc ol { margin: 4px 0 10px; padding-left: 22px; }
+  .quick-nav .auto-toc li { margin: 0; }
+  .quick-nav .auto-toc a { display: block; padding: 7px 0; }
+  main h2, #fair-tool, #pvm, #try-it { scroll-margin-top: 60px; }
+}
