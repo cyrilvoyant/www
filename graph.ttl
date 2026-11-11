@@ -1214,16 +1214,7 @@
     schema:publisher <https://person.cyrilvoyant.com/#cyril-voyant> ;
     schema:url "https://www.cyrilvoyant.com/fr/outils/artu/" .
 
-<https://www.cyrilvoyant.com/fr/outils/attenuation-demi-epaisseur/#page> a schema:WebPage ;
-    schema:author <https://person.cyrilvoyant.com/#cyril-voyant> ;
-    schema:description "Avec une CDA de 2 cm et 6 cm de matériau, il reste 1/8 du faisceau, soit 12,5 %. Doublez l’épaisseur : 1/64, et non zéro." ;
-    schema:inLanguage "fr" ;
-    schema:isPartOf <https://www.cyrilvoyant.com/#website> ;
-    schema:license "https://creativecommons.org/licenses/by/4.0/" ;
-    schema:name "Atténuation et demi-atténuation : simulateur interactif" ;
-    schema:publisher <https://person.cyrilvoyant.com/#cyril-voyant> ;
-    schema:translationOfWork <https://www.cyrilvoyant.com/tools/attenuation-half-value-layer/#page> ;
-    schema:url "https://www.cyrilvoyant.com/fr/outils/attenuation-demi-epaisseur/" .
+
 
 <https://www.cyrilvoyant.com/fr/outils/blend/#page> a schema:LearningResource ;
     schema:about <https://www.cyrilvoyant.com/ontology/#blend> ;
@@ -1240,50 +1231,13 @@
     schema:publisher <https://person.cyrilvoyant.com/#cyril-voyant> ;
     schema:url "https://www.cyrilvoyant.com/fr/outils/blend/" .
 
-<https://www.cyrilvoyant.com/fr/outils/congelation-energie-puissance/#page> a schema:WebPage ;
-    schema:author <https://person.cyrilvoyant.com/#cyril-voyant> ;
-    schema:description "Énergie sensible et chaleur latente : doublez la durée, l’énergie ne change pas et la puissance moyenne est divisée par deux." ;
-    schema:inLanguage "fr" ;
-    schema:isPartOf <https://www.cyrilvoyant.com/#website> ;
-    schema:license "https://creativecommons.org/licenses/by/4.0/" ;
-    schema:name "Congélation : chaleur latente, énergie et puissance" ;
-    schema:publisher <https://person.cyrilvoyant.com/#cyril-voyant> ;
-    schema:translationOfWork <https://www.cyrilvoyant.com/tools/freezing-energy-power/#page> ;
-    schema:url "https://www.cyrilvoyant.com/fr/outils/congelation-energie-puissance/" .
 
-<https://www.cyrilvoyant.com/fr/outils/cop-carnot-machine-frigorifique/#page> a schema:WebPage ;
-    schema:author <https://person.cyrilvoyant.com/#cyril-voyant> ;
-    schema:description "Entre −10 °C et +40 °C, COP maximal de 5,26 ; entre −40 °C et +20 °C, 3,89. Voyez ce que coûte l’écart de température." ;
-    schema:inLanguage "fr" ;
-    schema:isPartOf <https://www.cyrilvoyant.com/#website> ;
-    schema:license "https://creativecommons.org/licenses/by/4.0/" ;
-    schema:name "COP d’une machine frigorifique et limite de Carnot" ;
-    schema:publisher <https://person.cyrilvoyant.com/#cyril-voyant> ;
-    schema:translationOfWork <https://www.cyrilvoyant.com/tools/refrigerator-carnot-cop/#page> ;
-    schema:url "https://www.cyrilvoyant.com/fr/outils/cop-carnot-machine-frigorifique/" .
 
-<https://www.cyrilvoyant.com/fr/outils/correlation-significativite-r2/#page> a schema:WebPage ;
-    schema:author <https://person.cyrilvoyant.com/#cyril-voyant> ;
-    schema:description "Avec r = 0,10, R² reste à 1 % alors que p passe de 0,599 (n = 30) à 0,0015 (n = 1000). Distinguez significativité et variation décrite." ;
-    schema:inLanguage "fr" ;
-    schema:isPartOf <https://www.cyrilvoyant.com/#website> ;
-    schema:keywords "corrélation de Pearson, coefficient de détermination R², régression linéaire, test de Student sur la pente, ordonnée à l’origine, centrage, valeur aberrante, biostatistique" ;
-    schema:license "https://creativecommons.org/licenses/by/4.0/" ;
-    schema:name "Corrélation, significativité et R² : à ne pas confondre" ;
-    schema:publisher <https://person.cyrilvoyant.com/#cyril-voyant> ;
-    schema:translationOfWork <https://www.cyrilvoyant.com/tools/correlation-significance-r-squared/#page> ;
-    schema:url "https://www.cyrilvoyant.com/fr/outils/correlation-significativite-r2/" .
 
-<https://www.cyrilvoyant.com/fr/outils/courbe-roc/#page> a schema:WebPage ;
-    schema:author <https://person.cyrilvoyant.com/#cyril-voyant> ;
-    schema:description "Le seuil déplace le point sur la courbe ROC ; la prévalence ne change, elle, que les valeurs prédictives. Manipulez les deux." ;
-    schema:inLanguage "fr" ;
-    schema:isPartOf <https://www.cyrilvoyant.com/#website> ;
-    schema:license "https://creativecommons.org/licenses/by/4.0/" ;
-    schema:name "Courbe ROC : seuil, sensibilité, spécificité, prévalence" ;
-    schema:publisher <https://person.cyrilvoyant.com/#cyril-voyant> ;
-    schema:translationOfWork <https://www.cyrilvoyant.com/tools/roc-curve/#page> ;
-    schema:url "https://www.cyrilvoyant.com/fr/outils/courbe-roc/" .
+
+
+
+
 
 <https://www.cyrilvoyant.com/fr/outils/doses-lq-lql/#page> a schema:LearningResource ;
     schema:about <https://www.cyrilvoyant.com/ontology/#bed>,
@@ -1303,16 +1257,7 @@
     schema:publisher <https://person.cyrilvoyant.com/#cyril-voyant> ;
     schema:url "https://www.cyrilvoyant.com/fr/outils/doses-lq-lql/" .
 
-<https://www.cyrilvoyant.com/fr/outils/effet-compton/#page> a schema:WebPage ;
-    schema:author <https://person.cyrilvoyant.com/#cyril-voyant> ;
-    schema:description "À 255,5 keV et 180°, photon et électron se partagent l’énergie à parts égales (127,75 keV). Réglez l’angle et l’énergie incidente." ;
-    schema:inLanguage "fr" ;
-    schema:isPartOf <https://www.cyrilvoyant.com/#website> ;
-    schema:license "https://creativecommons.org/licenses/by/4.0/" ;
-    schema:name "Effet Compton : angle, photon diffusé et électron" ;
-    schema:publisher <https://person.cyrilvoyant.com/#cyril-voyant> ;
-    schema:translationOfWork <https://www.cyrilvoyant.com/tools/compton-scattering/#page> ;
-    schema:url "https://www.cyrilvoyant.com/fr/outils/effet-compton/" .
+
 
 <https://www.cyrilvoyant.com/fr/outils/indice-gamma/#page> a schema:LearningResource ;
     schema:about <https://www.cyrilvoyant.com/ontology/#gamma-index> ;
@@ -1327,29 +1272,9 @@
     schema:publisher <https://person.cyrilvoyant.com/#cyril-voyant> ;
     schema:url "https://www.cyrilvoyant.com/fr/outils/indice-gamma/" .
 
-<https://www.cyrilvoyant.com/fr/outils/intervalles-regression/#page> a schema:WebPage ;
-    schema:author <https://person.cyrilvoyant.com/#cyril-voyant> ;
-    schema:description "Pour n = 20 et se = 1 : ±0,47 pour la moyenne, ±2,15 pour une nouvelle observation. Déplacez x₀ et comparez les deux intervalles." ;
-    schema:inLanguage "fr" ;
-    schema:isPartOf <https://www.cyrilvoyant.com/#website> ;
-    schema:keywords "intervalle de confiance, intervalle de prévision, régression linéaire, test de la pente, biostatistique" ;
-    schema:license "https://creativecommons.org/licenses/by/4.0/" ;
-    schema:name "Régression : intervalle de confiance et de prévision" ;
-    schema:publisher <https://person.cyrilvoyant.com/#cyril-voyant> ;
-    schema:translationOfWork <https://www.cyrilvoyant.com/tools/regression-intervals/#page> ;
-    schema:url "https://www.cyrilvoyant.com/fr/outils/intervalles-regression/" .
 
-<https://www.cyrilvoyant.com/fr/outils/loi-normale/#page> a schema:WebPage ;
-    schema:author <https://person.cyrilvoyant.com/#cyril-voyant> ;
-    schema:description "À z = 1,96, l’aire à gauche est d’environ 0,975 ; entre −1,96 et +1,96, environ 95 %. Passez de la valeur à la probabilité, et inversement." ;
-    schema:inLanguage "fr" ;
-    schema:isPartOf <https://www.cyrilvoyant.com/#website> ;
-    schema:keywords "loi normale, score z, aire sous la courbe, test Z, test de normalité, Jarque-Bera, biostatistique" ;
-    schema:license "https://creativecommons.org/licenses/by/4.0/" ;
-    schema:name "Loi normale : aire, probabilité et score z" ;
-    schema:publisher <https://person.cyrilvoyant.com/#cyril-voyant> ;
-    schema:translationOfWork <https://www.cyrilvoyant.com/tools/normal-distribution/#page> ;
-    schema:url "https://www.cyrilvoyant.com/fr/outils/loi-normale/" .
+
+
 
 <https://www.cyrilvoyant.com/fr/outils/modele-thyroide/#page> a schema:LearningResource ;
     schema:about <https://www.cyrilvoyant.com/ontology/#doubling-time> ;
@@ -1364,16 +1289,7 @@
     schema:publisher <https://person.cyrilvoyant.com/#cyril-voyant> ;
     schema:url "https://www.cyrilvoyant.com/fr/outils/modele-thyroide/" .
 
-<https://www.cyrilvoyant.com/fr/outils/moteur-carnot/#page> a schema:WebPage ;
-    schema:author <https://person.cyrilvoyant.com/#cyril-voyant> ;
-    schema:description "Entre 400 °C et 20 °C, un moteur transforme au plus 56,5 % de la chaleur en travail : 564,5 J sur 1000 J. Explorez le cycle et le bilan." ;
-    schema:inLanguage "fr" ;
-    schema:isPartOf <https://www.cyrilvoyant.com/#website> ;
-    schema:license "https://creativecommons.org/licenses/by/4.0/" ;
-    schema:name "Moteur thermique et limite de Carnot : cycle et bilan" ;
-    schema:publisher <https://person.cyrilvoyant.com/#cyril-voyant> ;
-    schema:translationOfWork <https://www.cyrilvoyant.com/tools/carnot-heat-engine/#page> ;
-    schema:url "https://www.cyrilvoyant.com/fr/outils/moteur-carnot/" .
+
 
 <https://www.cyrilvoyant.com/fr/outils/nice/#page> a schema:LearningResource ;
     schema:about <https://www.cyrilvoyant.com/ontology/#nice>,
@@ -1389,50 +1305,13 @@
     schema:publisher <https://person.cyrilvoyant.com/#cyril-voyant> ;
     schema:url "https://www.cyrilvoyant.com/fr/outils/nice/" .
 
-<https://www.cyrilvoyant.com/fr/outils/onde-electromagnetique/#page> a schema:WebPage ;
-    schema:author <https://person.cyrilvoyant.com/#cyril-voyant> ;
-    schema:description "À 50 MHz dans le vide : longueur d’onde d’environ 6 m, période de 20 ns. Animez les champs E et B d’une onde plane et suivez sa propagation." ;
-    schema:inLanguage "fr" ;
-    schema:isPartOf <https://www.cyrilvoyant.com/#website> ;
-    schema:license "https://creativecommons.org/licenses/by/4.0/" ;
-    schema:name "Onde électromagnétique : champs E et B animés" ;
-    schema:publisher <https://person.cyrilvoyant.com/#cyril-voyant> ;
-    schema:translationOfWork <https://www.cyrilvoyant.com/tools/electromagnetic-wave/#page> ;
-    schema:url "https://www.cyrilvoyant.com/fr/outils/onde-electromagnetique/" .
 
-<https://www.cyrilvoyant.com/fr/outils/point-influent-regression/#page> a schema:WebPage ;
-    schema:author <https://person.cyrilvoyant.com/#cyril-voyant> ;
-    schema:description "Déplacez le point orange puis désactivez-le : pente, r et p-value changent. Éloigné mais aligné, ou hors de l’alignement ? Comparez." ;
-    schema:inLanguage "fr" ;
-    schema:isPartOf <https://www.cyrilvoyant.com/#website> ;
-    schema:keywords "point influent, valeur aberrante, régression linéaire, test de Student sur la pente, p-value, corrélation, centrage, biostatistique" ;
-    schema:license "https://creativecommons.org/licenses/by/4.0/" ;
-    schema:name "Régression : l’effet d’un point influent sur la droite" ;
-    schema:publisher <https://person.cyrilvoyant.com/#cyril-voyant> ;
-    schema:translationOfWork <https://www.cyrilvoyant.com/tools/influential-point-regression/#page> ;
-    schema:url "https://www.cyrilvoyant.com/fr/outils/point-influent-regression/" .
 
-<https://www.cyrilvoyant.com/fr/outils/refroidissement-biot/#page> a schema:WebPage ;
-    schema:author <https://person.cyrilvoyant.com/#cyril-voyant> ;
-    schema:description "Avec h = 25 W/m²/K, Lc = 0,02 m et λ = 0,5 W/m/K, Bi = 1 : surface et cœur diffèrent. Quand une seule température suffit-elle ?" ;
-    schema:inLanguage "fr" ;
-    schema:isPartOf <https://www.cyrilvoyant.com/#website> ;
-    schema:license "https://creativecommons.org/licenses/by/4.0/" ;
-    schema:name "Nombre de Biot : refroidir un aliment, surface et cœur" ;
-    schema:publisher <https://person.cyrilvoyant.com/#cyril-voyant> ;
-    schema:translationOfWork <https://www.cyrilvoyant.com/tools/biot-cooling/#page> ;
-    schema:url "https://www.cyrilvoyant.com/fr/outils/refroidissement-biot/" .
 
-<https://www.cyrilvoyant.com/fr/outils/soleil-saisons-utc/#page> a schema:WebPage ;
-    schema:author <https://person.cyrilvoyant.com/#cyril-voyant> ;
-    schema:description "Le 21 juin 2026, le jour dure 16 h 11 à Paris et 9 h 54 à Sydney. Saisons, jour et nuit, et pourquoi dater les mesures solaires en UTC." ;
-    schema:inLanguage "fr" ;
-    schema:isPartOf <https://www.cyrilvoyant.com/#website> ;
-    schema:license "https://creativecommons.org/licenses/by/4.0/" ;
-    schema:name "Soleil, saisons et heure UTC : dater les mesures" ;
-    schema:publisher <https://person.cyrilvoyant.com/#cyril-voyant> ;
-    schema:translationOfWork <https://www.cyrilvoyant.com/tools/sun-seasons-utc/#page> ;
-    schema:url "https://www.cyrilvoyant.com/fr/outils/soleil-saisons-utc/" .
+
+
+
+
 
 <https://www.cyrilvoyant.com/fr/outils/test-jarque-bera/#learning> a schema:LearningResource ;
     schema:about [ a schema:DefinedTerm ;
@@ -1460,29 +1339,9 @@
     schema:teaches "Décider si des données sont compatibles avec une loi normale à partir de l’asymétrie et de l’aplatissement (test de Jarque-Bera)" ;
     schema:url "https://www.cyrilvoyant.com/fr/outils/test-jarque-bera/" .
 
-<https://www.cyrilvoyant.com/fr/outils/test-khi-deux/#page> a schema:WebPage ;
-    schema:author <https://person.cyrilvoyant.com/#cyril-voyant> ;
-    schema:description "120 lancers d’un dé équilibré : 20 attendus par face. Modifiez une face, lisez sa contribution au χ², puis testez le tableau 2×2 du cours." ;
-    schema:inLanguage "fr" ;
-    schema:isPartOf <https://www.cyrilvoyant.com/#website> ;
-    schema:keywords "test du khi-deux, χ², variables qualitatives, tableau de contingence, effectifs attendus, degrés de liberté, test d’indépendance, test d’ajustement, biostatistique" ;
-    schema:license "https://creativecommons.org/licenses/by/4.0/" ;
-    schema:name "Test du χ² : observés, attendus et contributions" ;
-    schema:publisher <https://person.cyrilvoyant.com/#cyril-voyant> ;
-    schema:translationOfWork <https://www.cyrilvoyant.com/tools/chi-square-test/#page> ;
-    schema:url "https://www.cyrilvoyant.com/fr/outils/test-khi-deux/" .
 
-<https://www.cyrilvoyant.com/fr/outils/test-student/#page> a schema:WebPage ;
-    schema:author <https://person.cyrilvoyant.com/#cyril-voyant> ;
-    schema:description "Mêmes moyennes, mêmes écarts-types, plus de patients : la p-value change. Test de Student à variance commune, au seuil de 5 %, à manipuler." ;
-    schema:inLanguage "fr" ;
-    schema:isPartOf <https://www.cyrilvoyant.com/#website> ;
-    schema:keywords "test Z, test de Student, comparaison de deux moyennes, p-value, risque alpha 5 %, hypothèse nulle, valeur aberrante, biostatistique, PASS" ;
-    schema:license "https://creativecommons.org/licenses/by/4.0/" ;
-    schema:name "Test de Student : comparer deux moyennes en ligne" ;
-    schema:publisher <https://person.cyrilvoyant.com/#cyril-voyant> ;
-    schema:translationOfWork <https://www.cyrilvoyant.com/tools/student-t-test/#page> ;
-    schema:url "https://www.cyrilvoyant.com/fr/outils/test-student/" .
+
+
 
 <https://www.cyrilvoyant.com/fr/outils/variabilite-previsibilite/#page> a schema:LearningResource ;
     schema:about <https://www.cyrilvoyant.com/ontology/#forecastability-f>,
@@ -9348,7 +9207,7 @@
             schema:name "Outils interactifs" ;
             schema:position 2 ],
         [ a schema:ListItem ;
-            schema:item "https://www.cyrilvoyant.com/fr/outils/congelation-energie-puissance/" ;
+            schema:item "https://www.cyrilvoyant.com/fr/animations/congelation-energie-puissance/" ;
             schema:name "Congélation : chaleur latente, énergie et puissance" ;
             schema:position 3 ] .
 
@@ -9362,7 +9221,7 @@
             schema:name "Accueil" ;
             schema:position 1 ],
         [ a schema:ListItem ;
-            schema:item "https://www.cyrilvoyant.com/fr/outils/moteur-carnot/" ;
+            schema:item "https://www.cyrilvoyant.com/fr/animations/moteur-carnot/" ;
             schema:name "Moteur thermique et limite de Carnot : cycle et bilan" ;
             schema:position 3 ] .
 
@@ -9376,7 +9235,7 @@
             schema:name "Accueil" ;
             schema:position 1 ],
         [ a schema:ListItem ;
-            schema:item "https://www.cyrilvoyant.com/fr/outils/onde-electromagnetique/" ;
+            schema:item "https://www.cyrilvoyant.com/fr/animations/onde-electromagnetique/" ;
             schema:name "Onde électromagnétique : champs E et B animés" ;
             schema:position 3 ] .
 
@@ -10734,7 +10593,7 @@
         [ a schema:ListItem ;
             schema:name "Explorer la loi normale" ;
             schema:position 18 ;
-            schema:url "https://www.cyrilvoyant.com/fr/outils/loi-normale/" ],
+            schema:url "https://www.cyrilvoyant.com/fr/animations/loi-normale/" ],
         [ a schema:ListItem ;
             schema:name "Comparer les doses biologiques LQ et LQL" ;
             schema:position 9 ;
@@ -10742,19 +10601,19 @@
         [ a schema:ListItem ;
             schema:name "Machine frigorifique : borne de Carnot du COP" ;
             schema:position 22 ;
-            schema:url "https://www.cyrilvoyant.com/fr/outils/cop-carnot-machine-frigorifique/" ],
+            schema:url "https://www.cyrilvoyant.com/fr/animations/cop-carnot-machine-frigorifique/" ],
         [ a schema:ListItem ;
             schema:name "Test de Student : deux traitements, t et p-value" ;
             schema:position 28 ;
-            schema:url "https://www.cyrilvoyant.com/fr/outils/test-student/" ],
+            schema:url "https://www.cyrilvoyant.com/fr/animations/test-student/" ],
         [ a schema:ListItem ;
             schema:name "Explorer l’atténuation et la CDA" ;
             schema:position 19 ;
-            schema:url "https://www.cyrilvoyant.com/fr/outils/attenuation-demi-epaisseur/" ],
+            schema:url "https://www.cyrilvoyant.com/fr/animations/attenuation-demi-epaisseur/" ],
         [ a schema:ListItem ;
             schema:name "Refroidir un aliment : Biot, température moyenne et à cœur" ;
             schema:position 20 ;
-            schema:url "https://www.cyrilvoyant.com/fr/outils/refroidissement-biot/" ],
+            schema:url "https://www.cyrilvoyant.com/fr/animations/refroidissement-biot/" ],
         [ a schema:ListItem ;
             schema:name "Calculer les poids de BLEND" ;
             schema:position 4 ;
@@ -10762,7 +10621,7 @@
         [ a schema:ListItem ;
             schema:name "Le Soleil, les saisons et l’heure UTC" ;
             schema:position 14 ;
-            schema:url "https://www.cyrilvoyant.com/fr/outils/soleil-saisons-utc/" ],
+            schema:url "https://www.cyrilvoyant.com/fr/animations/soleil-saisons-utc/" ],
         [ a schema:ListItem ;
             schema:name "Observer la prévision probabiliste et sa table de correspondance" ;
             schema:position 16 ;
@@ -10770,11 +10629,11 @@
         [ a schema:ListItem ;
             schema:name "Moteur thermique à deux sources : bilan et borne de Carnot" ;
             schema:position 34 ;
-            schema:url "https://www.cyrilvoyant.com/fr/outils/moteur-carnot/" ],
+            schema:url "https://www.cyrilvoyant.com/fr/animations/moteur-carnot/" ],
         [ a schema:ListItem ;
             schema:name "χ² : observés, attendus et contributions" ;
             schema:position 30 ;
-            schema:url "https://www.cyrilvoyant.com/fr/outils/test-khi-deux/" ],
+            schema:url "https://www.cyrilvoyant.com/fr/animations/test-khi-deux/" ],
         [ a schema:ListItem ;
             schema:name "Ouvrir l’application LQL-Equiv complète" ;
             schema:position 11 ;
@@ -10802,7 +10661,7 @@
         [ a schema:ListItem ;
             schema:name "Onde EM animée : E, B et propagation" ;
             schema:position 32 ;
-            schema:url "https://www.cyrilvoyant.com/fr/outils/onde-electromagnetique/" ],
+            schema:url "https://www.cyrilvoyant.com/fr/animations/onde-electromagnetique/" ],
         [ a schema:ListItem ;
             schema:name "Neutrons atmosphériques et bore : explorer les échelles de dose" ;
             schema:position 2 ;
@@ -10818,11 +10677,11 @@
         [ a schema:ListItem ;
             schema:name "Régression : intervalle de confiance ou de prévision ?" ;
             schema:position 31 ;
-            schema:url "https://www.cyrilvoyant.com/fr/outils/intervalles-regression/" ],
+            schema:url "https://www.cyrilvoyant.com/fr/animations/intervalles-regression/" ],
         [ a schema:ListItem ;
             schema:name "Compton : angle et partage de l’énergie" ;
             schema:position 33 ;
-            schema:url "https://www.cyrilvoyant.com/fr/outils/effet-compton/" ],
+            schema:url "https://www.cyrilvoyant.com/fr/animations/effet-compton/" ],
         [ a schema:ListItem ;
             schema:name "Mesurer variabilité et prévisibilité — sCV et F" ;
             schema:position 5 ;
@@ -10834,11 +10693,11 @@
         [ a schema:ListItem ;
             schema:name "Significativité et R² : quelle variation explique la droite ?" ;
             schema:position 29 ;
-            schema:url "https://www.cyrilvoyant.com/fr/outils/correlation-significativite-r2/" ],
+            schema:url "https://www.cyrilvoyant.com/fr/animations/correlation-significativite-r2/" ],
         [ a schema:ListItem ;
             schema:name "Comprendre sensibilité, spécificité et courbe ROC" ;
             schema:position 17 ;
-            schema:url "https://www.cyrilvoyant.com/fr/outils/courbe-roc/" ],
+            schema:url "https://www.cyrilvoyant.com/fr/animations/courbe-roc/" ],
         [ a schema:ListItem ;
             schema:name "Explorer un choix de licence" ;
             schema:position 26 ;
@@ -10846,7 +10705,7 @@
         [ a schema:ListItem ;
             schema:name "Congeler : énergie et puissance frigorifique" ;
             schema:position 21 ;
-            schema:url "https://www.cyrilvoyant.com/fr/outils/congelation-energie-puissance/" ],
+            schema:url "https://www.cyrilvoyant.com/fr/animations/congelation-energie-puissance/" ],
         [ a schema:ListItem ;
             schema:name "Simuler la demande électrique d’un tunnel — TLS" ;
             schema:position 13 ;
@@ -10858,7 +10717,7 @@
         [ a schema:ListItem ;
             schema:name "Corrélation et régression : déplacer un point" ;
             schema:position 23 ;
-            schema:url "https://www.cyrilvoyant.com/fr/outils/point-influent-regression/" ],
+            schema:url "https://www.cyrilvoyant.com/fr/animations/point-influent-regression/" ],
         [ a schema:ListItem ;
             schema:name "Quelle prévision pour quel signal ?" ;
             schema:position 1 ;
@@ -11077,7 +10936,7 @@
 
 [] a schema:BreadcrumbList ;
     schema:itemListElement [ a schema:ListItem ;
-            schema:item "https://www.cyrilvoyant.com/fr/outils/courbe-roc/" ;
+            schema:item "https://www.cyrilvoyant.com/fr/animations/courbe-roc/" ;
             schema:name "Courbe ROC : seuil, sensibilité, spécificité, prévalence" ;
             schema:position 3 ],
         [ a schema:ListItem ;
@@ -11111,7 +10970,7 @@
 
 [] a schema:BreadcrumbList ;
     schema:itemListElement [ a schema:ListItem ;
-            schema:item "https://www.cyrilvoyant.com/fr/outils/attenuation-demi-epaisseur/" ;
+            schema:item "https://www.cyrilvoyant.com/fr/animations/attenuation-demi-epaisseur/" ;
             schema:name "Atténuation et demi-atténuation : simulateur interactif" ;
             schema:position 3 ],
         [ a schema:ListItem ;
@@ -11265,7 +11124,7 @@
             schema:name "Accueil" ;
             schema:position 1 ],
         [ a schema:ListItem ;
-            schema:item "https://www.cyrilvoyant.com/fr/outils/refroidissement-biot/" ;
+            schema:item "https://www.cyrilvoyant.com/fr/animations/refroidissement-biot/" ;
             schema:name "Nombre de Biot : refroidir un aliment, surface et cœur" ;
             schema:position 3 ],
         [ a schema:ListItem ;
@@ -11275,7 +11134,7 @@
 
 [] a schema:BreadcrumbList ;
     schema:itemListElement [ a schema:ListItem ;
-            schema:item "https://www.cyrilvoyant.com/fr/outils/cop-carnot-machine-frigorifique/" ;
+            schema:item "https://www.cyrilvoyant.com/fr/animations/cop-carnot-machine-frigorifique/" ;
             schema:name "COP d’une machine frigorifique et limite de Carnot" ;
             schema:position 3 ],
         [ a schema:ListItem ;
@@ -11297,7 +11156,7 @@
             schema:name "Accueil" ;
             schema:position 1 ],
         [ a schema:ListItem ;
-            schema:item "https://www.cyrilvoyant.com/fr/outils/test-student/" ;
+            schema:item "https://www.cyrilvoyant.com/fr/animations/test-student/" ;
             schema:name "Test de Student : comparer deux moyennes en ligne" ;
             schema:position 3 ] .
 
@@ -11537,7 +11396,7 @@
 
 [] a schema:BreadcrumbList ;
     schema:itemListElement [ a schema:ListItem ;
-            schema:item "https://www.cyrilvoyant.com/fr/outils/effet-compton/" ;
+            schema:item "https://www.cyrilvoyant.com/fr/animations/effet-compton/" ;
             schema:name "Effet Compton : angle, photon diffusé et électron" ;
             schema:position 3 ],
         [ a schema:ListItem ;
@@ -12040,7 +11899,7 @@
 
 [] a schema:BreadcrumbList ;
     schema:itemListElement [ a schema:ListItem ;
-            schema:item "https://www.cyrilvoyant.com/fr/outils/intervalles-regression/" ;
+            schema:item "https://www.cyrilvoyant.com/fr/animations/intervalles-regression/" ;
             schema:name "Régression : intervalle de confiance et de prévision" ;
             schema:position 3 ],
         [ a schema:ListItem ;
@@ -12068,7 +11927,7 @@
 
 [] a schema:BreadcrumbList ;
     schema:itemListElement [ a schema:ListItem ;
-            schema:item "https://www.cyrilvoyant.com/fr/outils/correlation-significativite-r2/" ;
+            schema:item "https://www.cyrilvoyant.com/fr/animations/correlation-significativite-r2/" ;
             schema:name "Corrélation, significativité et R² : à ne pas confondre" ;
             schema:position 3 ],
         [ a schema:ListItem ;
@@ -12273,7 +12132,7 @@
             schema:name "Outils interactifs" ;
             schema:position 2 ],
         [ a schema:ListItem ;
-            schema:item "https://www.cyrilvoyant.com/fr/outils/point-influent-regression/" ;
+            schema:item "https://www.cyrilvoyant.com/fr/animations/point-influent-regression/" ;
             schema:name "Régression : l’effet d’un point influent sur la droite" ;
             schema:position 3 ] .
 
@@ -12379,7 +12238,7 @@
 
 [] a schema:BreadcrumbList ;
     schema:itemListElement [ a schema:ListItem ;
-            schema:item "https://www.cyrilvoyant.com/fr/outils/loi-normale/" ;
+            schema:item "https://www.cyrilvoyant.com/fr/animations/loi-normale/" ;
             schema:name "Loi normale : aire, probabilité et score z" ;
             schema:position 3 ],
         [ a schema:ListItem ;
@@ -13344,7 +13203,7 @@
             schema:name "Outils interactifs" ;
             schema:position 2 ],
         [ a schema:ListItem ;
-            schema:item "https://www.cyrilvoyant.com/fr/outils/soleil-saisons-utc/" ;
+            schema:item "https://www.cyrilvoyant.com/fr/animations/soleil-saisons-utc/" ;
             schema:name "Soleil, saisons et heure UTC : dater les mesures" ;
             schema:position 3 ],
         [ a schema:ListItem ;
@@ -13403,7 +13262,7 @@
             schema:name "Outils interactifs" ;
             schema:position 2 ],
         [ a schema:ListItem ;
-            schema:item "https://www.cyrilvoyant.com/fr/outils/test-khi-deux/" ;
+            schema:item "https://www.cyrilvoyant.com/fr/animations/test-khi-deux/" ;
             schema:name "Test du χ² : observés, attendus et contributions" ;
             schema:position 3 ] .
 
