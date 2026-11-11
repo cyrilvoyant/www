@@ -2360,7 +2360,7 @@ Are my data FAIR? A self-assessment in 20 questions
  A grid from the O.I.E. center (Observation, Impacts, Energy) of Mines Paris – PSL , drawn from the FAIR practice of Webservice-Energy .
  FAIR data : Lionel Ménard ( ORCID ) of the O.I.E. center ( lionel.menard@minesparis.psl.eu );
  Licenses for code and data : Raphaël Jolivet ( ORCID ) ( raphael.jolivet@minesparis.psl.eu ).
- Who is it for? PhD students, researchers, engineers and data stewards preparing a deposit, a data management plan (DMP, the document that describes how the data of a project will be produced, described, stored and shared) or a publication. Three prefilled examples serve as starting points, including Webservice-Energy , the data infrastructure of the O.I.E. center (Observation, Impacts, Energy) at Mines Paris – PSL. Nothing is sent anywhere: your answers stay in your browser.
+ Who is it for? PhD students, researchers, engineers and data stewards preparing a deposit, a data management plan (DMP, the document that describes how the data of a project will be produced, described, stored and shared) or a publication. Three prefilled examples serve as starting points, including Webservice-Energy , the data infrastructure of the O.I.E. center (Observation, Impacts, Energy) at Mines Paris – PSL.
  Is my project FAIR enough? An example of a 20-point self-assessment
  This is only an example : a teaching grid proposed here, not a standard or a certification. The questions follow the GO FAIR principles (F1 to R1.3) plus a few practical criteria; the scoring and thresholds are choices of this page. For a reference assessment: the RDA FAIR Data Maturity Model (Research Data Alliance) or the automated tool F-UJI . Acronyms underlined with dots open an explanation on click or tap.
  Five questions per letter, from the most basic to the most demanding; each "yes" is worth 1 point, "partly" 0.5. Total out of 20. Benchmarks: below 7: needs work ; 7 to under 14: good ; 14 and above: very good . The tool names the axes to work on and the limiting factor : the weakest letter, which bounds real reuse.
@@ -2370,13 +2370,14 @@ Are my data FAIR? A self-assessment in 20 questions
  GeoNetwork (CSW) F A R
  GeoServer (WMS, WCS) A I
  THREDDS / OPeNDAP / NCSS A I R
- Toolbox & S3P2 (WPS) I R
+ Toolbox & S3P2 (WPS) A I R
  STAC (REST) F A I
  libinsitu I R
  DOI landing pages F R
  NetCDF-CF / Zarr / GeoParquet I R
- Mapping drawn up by the Webservice-Energy team (O.I.E. center): each open component covers part of the principles; together they cover them all.
- Indicative self-assessment based on the GO FAIR principles (F1 to R1.3); it does not replace a data management plan (written for example with DMP OPIDoR ) or the advice of your institution's data service. Your answers stay in your browser.
+ Mapping drawn up by the O.I.E. center: each open component covers part of the principles; together they cover them all. Simplified yes/no reading: a component may serve a principle only in part. For Toolbox and S3P2, R refers to reusing the processes through their WPS interfaces; check the license and reuse conditions of the data separately.
+ Toolbox (WPS): https://toolbox.1.webservice-energy.org/service/wps?service=WPS&request=GetCapabilities | S3P2 (WPS): https://s3p2.oie-lab.net/service/wps?service=WPS&request=GetCapabilities | STAC: https://stac.webservice-energy.org/ | STAC API: https://stac.webservice-energy.org/api/
+ Indicative self-assessment based on the GO FAIR principles (F1 to R1.3); it does not replace a data management plan (written for example with DMP OPIDoR ) or the advice of your institution's data service.
  Why this grid?
  This is only a teaching example , not a standard or a certification. The twenty questions follow the FAIR principles published by Wilkinson et al. (2016) and promoted by the GO FAIR initiative (F1 to F4, A1 and A2, I1 to I3, R1.1 to R1.3), plus a few practical criteria. The scoring (1 point for “yes”, 0.5 for “partly”, 0 otherwise) and the thresholds (5 and 10 out of 20) are choices made for this page: they help you learn what makes data reusable, not rank projects.
  For a reference assessment, use:
@@ -2407,7 +2408,7 @@ Mes données sont-elles FAIR ? Une autoévaluation en 20 questions
  Une grille du centre O.I.E. (Observation, Impacts, Énergie) de Mines Paris – PSL , tirée de la démarche FAIR de Webservice-Energy .
  Données FAIR : Lionel Ménard ( ORCID ) du centre O.I.E. ( lionel.menard@minesparis.psl.eu ) ;
  Licences du code et des données : Raphaël Jolivet ( ORCID ) ( raphael.jolivet@minesparis.psl.eu ).
- Pour qui ? Doctorants, chercheurs, ingénieurs et gestionnaires de données qui préparent un dépôt, un plan de gestion des données (PGD, le document qui décrit comment les données d'un projet seront produites, décrites, conservées et partagées) ou une publication. Trois exemples préremplis servent de point de départ, dont Webservice-Energy , l'infrastructure de données du centre O.I.E. (Observation, Impacts, Énergie) de Mines Paris – PSL. Rien n'est envoyé : les réponses restent dans votre navigateur.
+ Pour qui ? Doctorants, chercheurs, ingénieurs et gestionnaires de données qui préparent un dépôt, un plan de gestion des données (PGD, le document qui décrit comment les données d'un projet seront produites, décrites, conservées et partagées) ou une publication. Trois exemples préremplis servent de point de départ, dont Webservice-Energy , l'infrastructure de données du centre O.I.E. (Observation, Impacts, Énergie) de Mines Paris – PSL.
  Mon projet est-il assez FAIR ? Un exemple d'autoévaluation en 20 points
  Ceci n'est qu'un exemple : une grille pédagogique proposée ici, pas une norme ni une certification. Les questions reprennent les principes GO FAIR (F1 à R1.3) et quelques critères pratiques ; le barème et les seuils sont des choix de cette page. Pour une évaluation de référence : le modèle de maturité FAIR de la RDA (Research Data Alliance) ou l'outil automatique F-UJI . Les sigles soulignés en pointillé s'expliquent d'un clic ou d'un toucher.
  Cinq questions par lettre, de la plus élémentaire à la plus exigeante ; chaque réponse « oui » vaut 1 point, « en partie » 0,5. Total sur 20. Repères : moins de 7 : perfectible ; de 7 à moins de 14 : bon ; à partir de 14 : très bon . L'outil indique les axes à privilégier et le facteur limitant : la lettre la plus faible, qui borne la réutilisation réelle.
@@ -2417,13 +2418,14 @@ Mes données sont-elles FAIR ? Une autoévaluation en 20 questions
  GeoNetwork (CSW) F A R
  GeoServer (WMS, WCS) A I
  THREDDS / OPeNDAP / NCSS A I R
- Toolbox & S3P2 (WPS) I R
+ Toolbox & S3P2 (WPS) A I R
  STAC (REST) F A I
  libinsitu I R
  DOI landing pages F R
  NetCDF-CF / Zarr / GeoParquet I R
- Correspondance établie par l'équipe Webservice-Energy (centre O.I.E.) : chaque composant ouvert couvre une partie des principes, l'ensemble les couvre tous.
- Autoévaluation indicative fondée sur les principes FAIR de GO FAIR (F1 à R1.3) ; elle ne remplace ni un plan de gestion des données (par exemple rédigé avec DMP OPIDoR ) ni l'avis de l'atelier de la donnée de votre établissement. Vos réponses restent dans votre navigateur.
+ Correspondance établie par le centre O.I.E. : chaque composant ouvert couvre une partie des principes, l'ensemble les couvre tous. Lecture simplifiée en oui/non : un composant peut servir un principe en partie. Pour Toolbox et S3P2, le R désigne la réutilisation des traitements via leurs interfaces WPS ; la licence et les conditions de réutilisation des données se vérifient séparément.
+ Toolbox (WPS): https://toolbox.1.webservice-energy.org/service/wps?service=WPS&request=GetCapabilities | S3P2 (WPS): https://s3p2.oie-lab.net/service/wps?service=WPS&request=GetCapabilities | STAC: https://stac.webservice-energy.org/ | STAC API: https://stac.webservice-energy.org/api/
+ Autoévaluation indicative fondée sur les principes FAIR de GO FAIR (F1 à R1.3) ; elle ne remplace ni un plan de gestion des données (par exemple rédigé avec DMP OPIDoR ) ni l'avis de l'atelier de la donnée de votre établissement.
  Pourquoi cette grille ?
  Ce n'est qu'un exemple pédagogique , pas une norme ni une certification. Les vingt questions suivent les principes FAIR publiés par Wilkinson et al. (2016) et repris par l'initiative GO FAIR (F1 à F4, A1 et A2, I1 à I3, R1.1 à R1.3), complétés par quelques critères pratiques. Le barème (1 point pour « oui », 0,5 pour « en partie », 0 sinon) et les repères (5 et 10 sur 20) sont des choix de cette page : ils servent à apprendre à reconnaître ce qui rend des données réutilisables, pas à classer des projets.
  Pour une évaluation de référence, utilisez :
@@ -14456,7 +14458,7 @@ raphael.jolivet@minesparis.psl.eu
 Pour qui ?
 Doctorants, chercheurs, ingénieurs et gestionnaires de données qui préparent un dépôt, un plan de gestion des données (PGD, le document qui décrit comment les données d'un projet seront produites, décrites, conservées et partagées) ou une publication. Trois exemples préremplis servent de point de départ, dont
 Webservice-Energy
-, l'IDS du centre O.I.E. Rien n'est envoyé : les réponses restent dans votre navigateur.
+, l'IDS du centre O.I.E.
 Mon projet est-il assez FAIR ? Un exemple d'autoévaluation en 20 points
 Ceci n'est qu'un exemple
 : une grille pédagogique proposée ici, pas une norme ni une certification. Les questions reprennent les principes
@@ -14498,6 +14500,7 @@ R
 Toolbox & S3P2 (WPS)
 A
 I
+R
 STAC (REST)
 F
 A
@@ -14511,10 +14514,11 @@ R
 NetCDF-CF / Zarr / GeoParquet
 I
 R
-Correspondance établie par le centre O.I.E. : chaque composant ouvert couvre une partie des principes, l'ensemble les couvre tous. Lecture simplifiée en oui/non : un composant peut servir un principe en partie.
+Correspondance établie par le centre O.I.E. : chaque composant ouvert couvre une partie des principes, l'ensemble les couvre tous. Lecture simplifiée en oui/non : un composant peut servir un principe en partie. Pour Toolbox et S3P2, le R désigne la réutilisation des traitements via leurs interfaces WPS ; la licence et les conditions de réutilisation des données se vérifient séparément.
+Toolbox (WPS): https://toolbox.1.webservice-energy.org/service/wps?service=WPS&request=GetCapabilities | S3P2 (WPS): https://s3p2.oie-lab.net/service/wps?service=WPS&request=GetCapabilities | STAC: https://stac.webservice-energy.org/ | STAC API: https://stac.webservice-energy.org/api/
 Autoévaluation indicative fondée sur les principes FAIR de GO FAIR (F1 à R1.3) ; elle ne remplace ni un plan de gestion des données (par exemple rédigé avec
 DMP OPIDoR
-) ni l'avis de l'atelier de la donnée de votre établissement. Vos réponses restent dans votre navigateur.
+) ni l'avis de l'atelier de la donnée de votre établissement.
 Pourquoi cette grille ?
 Ce n'est qu'un exemple pédagogique
 , pas une norme ni une certification. Les vingt questions suivent les principes FAIR publiés par
@@ -14602,7 +14606,7 @@ raphael.jolivet@minesparis.psl.eu
 Who is it for?
 PhD students, researchers, engineers and data stewards preparing a deposit, a data management plan (DMP, the document that describes how the data of a project will be produced, described, stored and shared) or a publication. Three prefilled examples serve as starting points, including
 Webservice-Energy
-, the SDI of the O.I.E. center. Nothing is sent anywhere: your answers stay in your browser.
+, the SDI of the O.I.E. center.
 Is my project FAIR enough? An example of a 20-point self-assessment
 This is only an example
 : a teaching grid proposed here, not a standard or a certification. The questions follow the
@@ -14644,6 +14648,7 @@ R
 Toolbox & S3P2 (WPS)
 A
 I
+R
 STAC (REST)
 F
 A
@@ -14657,10 +14662,11 @@ R
 NetCDF-CF / Zarr / GeoParquet
 I
 R
-Mapping drawn up by the O.I.E. center: each open component covers part of the principles; together they cover them all. Simplified yes/no reading: a component may serve a principle only in part.
+Mapping drawn up by the O.I.E. center: each open component covers part of the principles; together they cover them all. Simplified yes/no reading: a component may serve a principle only in part. For Toolbox and S3P2, R refers to reusing the processes through their WPS interfaces; check the license and reuse conditions of the data separately.
+Toolbox (WPS): https://toolbox.1.webservice-energy.org/service/wps?service=WPS&request=GetCapabilities | S3P2 (WPS): https://s3p2.oie-lab.net/service/wps?service=WPS&request=GetCapabilities | STAC: https://stac.webservice-energy.org/ | STAC API: https://stac.webservice-energy.org/api/
 Indicative self-assessment based on the GO FAIR principles (F1 to R1.3); it does not replace a data management plan (written for example with
 DMP OPIDoR
-) or the advice of your institution's data service. Your answers stay in your browser.
+) or the advice of your institution's data service.
 Why this grid?
 This is only a teaching example
 , not a standard or a certification. The twenty questions follow the FAIR principles published by
