@@ -159,11 +159,14 @@
     series.forEach(function (s) {
       if (s.marker) { g += '<circle cx="' + X(s.pts[0][0]) + '" cy="' + Y(s.pts[0][1]) + '" r="5" fill="' + s.color + '"/>'; return; }
       var d = s.pts.map(function (p, j) { return (j ? "L" : "M") + X(p[0]).toFixed(1) + " " + Y(p[1]).toFixed(1); }).join(" ");
-      g += '<path d="' + d + '" fill="none" stroke="' + s.color + '" stroke-width="2"' + (s.dash ? ' stroke-dasharray="5 4"' : "") + "/>";
+      g += '<path d="' + d + '" fill="none" stroke="' + s.color + '" stroke-width="2"' + (s.dash ? ' stroke-dasharray="' + (s.dash === "dotted" ? "2 4" : "5 4") + '"' : "") + "/>";
     });
     g += "</svg>";
     var leg = '<p class="cvt-legend">' + series.filter(function (s) { return s.label; }).map(function (s) {
-      return '<span><i style="background:' + s.color + '"></i>' + s.label + "</span>"; }).join("") + "</p>";
+      var swatch = s.marker ? "width:8px;height:8px;border-radius:50%;background:" + s.color
+        : s.dash ? "height:0;background:none;border-top:2px " + (s.dash === "dotted" ? "dotted " : "dashed ") + s.color
+        : "background:" + s.color;
+      return '<span><i aria-hidden="true" style="' + swatch + '"></i>' + s.label + "</span>"; }).join("") + "</p>";
     return leg + g;
   }
   var TESTS = '<p class="cvt-note">Comparaison au code de référence : <a href="https://cyrilvoyant.github.io/tools/js-tests.html">page de vérification</a>. Les calculs restent dans votre navigateur ; les valeurs saisies ne sont pas envoyées.</p>';
@@ -285,9 +288,17 @@
     var st = document.createElement("style"); st.id = "cvt-layout";
     st.textContent = ".cvt-sticky{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.95);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);border:1px solid #d8e0e8;border-radius:10px;padding:8px 12px;margin:8px 0;box-shadow:0 2px 8px rgba(23,37,54,.06)}" +
       ".cvt-sticky{width:min(1280px,calc(100vw - 32px));margin-left:calc(50% - min(640px,calc(50vw - 16px)));box-sizing:border-box}.cvt-sticky .cvt-grid{margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:4px 16px}.cvt-sticky .cvt-hint{margin:4px 0 0}.cvt-datadet{margin:6px 0}.cvt-datadet summary{cursor:pointer;font-weight:600}" +
+      '[data-tool="blend"] .cvt-sticky{top:calc(var(--xs-h,0px) + 52px);z-index:12}' +
       ".cvt-2x2{display:grid;grid-template-columns:1fr 1fr;gap:12px;width:min(1280px,calc(100vw - 32px));position:relative;left:50%;transform:translateX(-50%)}" +
       ".cvt-cell{border:1px solid #d8e0e8;border-radius:10px;padding:10px;background:#fff;min-width:0}.cvt-cell h3{margin:0 0 4px;font-size:1rem}" +
-      "@media (max-width:900px){.cvt-2x2{grid-template-columns:1fr;width:auto;left:0;transform:none}.cvt-sticky{width:auto;margin-left:0}.cvt-sticky .cvt-grid{grid-template-columns:1fr 1fr}}";
+      "@media (max-width:900px){.cvt-2x2{grid-template-columns:1fr;width:auto;left:0;transform:none}.cvt-sticky{width:auto;margin-left:0}.cvt-sticky .cvt-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}" +
+      '@media (max-width:600px){[data-tool="blend"] .cvt-sticky{padding:6px 8px}' +
+      '[data-tool="blend"] .cvt-sticky .cvt-grid{gap:4px 10px}' +
+      '[data-tool="blend"] .cvt-sticky :is(.cvt-num,.cvt-row){font-size:.83rem;line-height:1.2}' +
+      '[data-tool="blend"] .cvt-sticky .cvt-row{grid-template-columns:minmax(0,1fr) auto;gap:2px 4px}' +
+      '[data-tool="blend"] .cvt-sticky .cvt-row output{min-width:0}' +
+      '[data-tool="blend"] .cvt-sticky .cvt-num input{width:3.8em;min-width:0}' +
+      '[data-tool="blend"] .bl-real{font-size:.8rem;line-height:1.2;padding:5px 9px}}';
     document.head.appendChild(st);
   }
   function mountBLEND(box) {
@@ -301,18 +312,24 @@
     box.innerHTML = '<details class="cvt-datadet"><summary>' + tr("Données : démo, PV réel ou les vôtres", "Données : démo, PV réel ou les vôtres") + '</summary>' +
       dataBox("bl-d", ["x"], tr("Une colonne : signal régulièrement échantillonné (une ligne par pas de temps). Exemple horaire chargé ; vous pouvez coller vos données.", "Une colonne : le signal régulièrement échantillonné (une ligne par pas de temps). Exemple horaire chargé ; vous pouvez coller vos données.")) + "</details>" +
       '<div class="cvt-sticky"><div class="cvt-grid">' + num(tr("Période T (pas)", "Période T (pas)"), "bl-T", 24, 1) +
-      slider(tr("Horizon h (distance de prévision)", "Horizon h (how far ahead)"), "bl-h", 1, 24, 1, 1, tr("pas", "pas")) +
+      slider(tr("Horizon h (pas)", "Horizon h (steps)"), "bl-h", 1, 24, 1, 1, "") +
       slider(tr("Fenêtre affichée (période)", "Fenêtre affichée (période)"), "bl-w", 1, 30, 1, 1, "") +
-      slider(tr("Phase de l’origine (position dans le cycle)", "Phase of the origin (position in the cycle)"), "bl-ph", 1, 24, 1, 1, "") +
-      slider(tr("Votre λ (poids de la dernière valeur, de 0 à 1)", "Your λ (weight of the latest value, 0 to 1)"), "bl-l", 0, 1, 0.01, 0.5, "") + "</div>" +
-      '<p class="cvt-hint"><button type="button" class="cvt-btn bl-real">' + tr("Charger des données PV réelles (Palaiseau, 40 jours, pas de 30 min)", "Charger des données PV réelles (Palaiseau, 40 jours, pas de 30 min)") + '</button> <span class="bl-src"></span></p></div>' +
+      slider(tr("Départ dans le cycle", "Start within the cycle"), "bl-ph", 1, 24, 1, 1, "") +
+      slider(tr("Votre λ", "Votre λ"), "bl-l", 0, 1, 0.01, 0.5, "") + "</div>" +
+      '<p class="cvt-hint"><button type="button" class="cvt-btn bl-real">' + tr("Charger les données PV de Palaiseau", "Load Palaiseau PV data") + '</button> <span class="bl-src"></span></p></div>' +
       '<div class="cvt-out" aria-live="polite"></div><div class="cvt-2x2">' +
-      '<div class="cvt-cell"><h3>' + tr("1. Trois périodes entières, de nuit à nuit", "1. Trois périodes entières, de nuit à nuit") + '</h3><div class="cvt-plot bl-p1"></div></div>' +
+      '<div class="cvt-cell"><h3>' + tr("1. Trois périodes entières, de nuit à nuit", "1. Trois périodes entières, de nuit à nuit") + '</h3><p class="cvt-hint">' +
+      tr("Le mélange manuel utilise votre λ pour toute la fenêtre. BLEND garde son poids ajusté séparément à chaque position du cycle.",
+         "The manual forecast uses your λ throughout the window. BLEND keeps its own fitted weight for each position in the cycle.") +
+      '</p><div class="cvt-plot bl-p1"></div></div>' +
       '<div class="cvt-cell"><h3>' + tr("2. Réglez λ vous-même", "2. Réglez λ vous-même") + '</h3><p class="cvt-hint">' +
-      tr("À une phase donnée, la prévision vaut (1 − λ) × la valeur une période plus tôt + λ × la dernière valeur. L’erreur quadratique moyenne est une parabole en λ ; la RMSE affichée a le même minimum. λ = 0 donne la persistance cyclique, λ = 1 la persistance, et BLEND prend le minimum des moindres carrés dans [0, 1].",
-         "À une phase donnée de la période, la prévision vaut (1 − λ) × la valeur une période plus tôt + λ × la dernière valeur. Son erreur quadratique moyenne est une parabole en λ ; la RMSE affichée est sa racine carrée et a le même minimum. λ = 0 donne la persistance cyclique, λ = 1 la persistance, et BLEND prend le minimum des moindres carrés dans [0, 1].") + '</p>' +
+      tr("Pour chaque cible, on mélange la mesure prise une période avant cette cible et la dernière mesure connue au départ. λ est le poids de cette dernière mesure. L’erreur quadratique moyenne est une parabole en λ ; la RMSE affichée a le même minimum. λ = 0 donne la persistance cyclique, λ = 1 la persistance, et BLEND prend le minimum des moindres carrés dans [0, 1].",
+         "For each target, blend the observation one period before the target with the latest observation available at the start. λ is the weight of that latest observation. Son erreur quadratique moyenne est une parabole en λ ; la RMSE affichée est sa racine carrée et a le même minimum. λ = 0 donne la persistance cyclique, λ = 1 la persistance, et BLEND prend le minimum des moindres carrés dans [0, 1].") + '</p>' +
       '<div class="cvt-out bl-o2" aria-live="polite"></div><div class="cvt-plot bl-p2"></div></div>' +
-      '<div class="cvt-cell"><h3>' + tr("λ à chaque phase", "λ at every phase") + '</h3><div class="cvt-plot bl-p3"></div></div>' +
+      '<div class="cvt-cell"><h3>' + tr("Le poids de BLEND selon le départ", "BLEND weight by forecast start") + '</h3><p class="cvt-hint">' +
+      tr("Le départ est l’instant de la dernière mesure connue. La position 1 est le premier pas du cycle. Dans les données de Palaiseau, c’est minuit UTC : la position 5 correspond à 02 h 00. La cible est h pas après le départ.",
+         "A forecast starts at the latest known observation. Position 1 is the first step in the cycle. In the Palaiseau data that is midnight UTC, so position 5 is 02:00 UTC. The target is h steps after the start.") +
+      '</p><div class="cvt-plot bl-p3"></div></div>' +
       '<div class="cvt-cell"><h3>' + tr("3. Ce que le mélange apporte, horizon par horizon", "3. Ce que le mélange apporte, horizon par horizon") + '</h3><div class="cvt-plot bl-p4"></div><div class="cvt-out bl-o4"></div></div></div>' +
       '<p class="cvt-hint">' + tr("Poids ajustés sur toute la série : diagnostic sur les données d’ajustement, comme dans le code de référence par défaut. Pour évaluer une prévision, ajustez sur une période d’entraînement et testez sur une autre période.",
         "Poids ajustés sur toute la série : diagnostic sur les données d’ajustement, comme dans le code de référence par défaut. Pour évaluer une prévision, ajustez sur une période d’entraînement puis testez sur une autre période.") + '</p>' + tests;
@@ -338,21 +355,30 @@
       var x = parseCols(box.querySelector("#bl-d").value).map(function (r) { return r[0]; }), T = Math.round(+box.querySelector("#bl-T").value), hEl = box.querySelector("#bl-h");
       hEl.max = Math.max(1, T); var h = +hEl.value; box.querySelector("#bl-h-o").textContent = h;
       if (!(T >= 2) || x.length < 3 * T || h > T) { box.querySelector(".cvt-out").innerHTML = "<p>" + tr("Il faut au moins trois périodes de données et h ≤ T.", "Il faut au moins trois périodes de données et h ≤ T.") + "</p>"; return; }
-      var e = errs(x, T, h), best = Math.min(e.p, e.c), gain = 100 * (1 - e.b.rmse / best);
+      var e = errs(x, T, h), best = Math.min(e.p, e.c), gain = best > 0 ? 100 * (1 - e.b.rmse / best) : NaN;
       box.querySelector(".cvt-out").innerHTML = "<p>" + tr("RMSE sur les mêmes cibles", "RMSE on the same targets") + " : BLEND <strong>" + local(e.b.rmse, 1) + "</strong> · " + tr("persistance", "persistance") + " " + local(e.p, 1) +
-        " · " + tr("persistance cyclique", "persistance cyclique") + " " + local(e.c, 1) + ".</p><p>" + tr("À cet horizon, BLEND est", "At this horizon, BLEND is") + " <strong>" + local(gain, 1) + " %</strong> " + tr("sous la meilleure des deux persistances", "below the better of the two persistences") + ", " +
-        (e.p < e.c ? tr("la persistance.", "la persistance.") : tr("la persistance cyclique.", "la persistance cyclique.")) + "</p>";
+        " · " + tr("persistance cyclique", "persistance cyclique") + " " + local(e.c, 1) + ".</p>" + (h === T
+        ? "<p>" + tr("À h = T, les deux persistances donnent la même prévision pour chaque cible. Modifier λ ne change alors aucune prévision.",
+          "At h = T, both persistence forecasts coincide at every target. Changing λ has no effect on the forecasts.") + "</p>"
+        : best > 0 ? "<p>" + tr("À cet horizon, BLEND est", "At this horizon, BLEND is") + " <strong>" + local(gain, 1) + " %</strong> " + tr("sous la meilleure des deux persistances", "below the better of the two persistences") + ", " +
+        (e.p < e.c ? tr("la persistance.", "la persistance.") : tr("la persistance cyclique.", "la persistance cyclique.")) + "</p>" : "");
       // 1. the forecast itself over three whole periods, starting in the middle of the night
       var q0 = nightStart(x, T), k0 = ((q0 - T - h) % T + 2 * T) % T, nper = Math.max(1, Math.floor((e.b.pred.length - k0) / T) - 2), wEl = box.querySelector("#bl-w");
       wEl.max = nper; if (+wEl.value > nper) wEl.value = nper;
       var w = +wEl.value; box.querySelector("#bl-w-o").textContent = w;
-      var i0 = k0 + (w - 1) * T, P = [], C = [], B = [], O = [];
+      var lu = +box.querySelector("#bl-l").value;
+      var i0 = k0 + (w - 1) * T, P = [], C = [], B = [], O = [], M = [];
       for (var k = i0; k < Math.min(e.b.pred.length, i0 + 3 * T + 1); k++) {
         var t = T + 1 + k, s = (k - i0) / T;
-        O.push([s, x[t + h - 1]]); P.push([s, x[t - 1]]); C.push([s, x[t + h - T - 1]]); B.push([s, e.b.pred[k]]);
+        var latest = x[t - 1], previousCycle = x[t + h - T - 1];
+        O.push([s, x[t + h - 1]]);
+        P.push([s, latest]); C.push([s, previousCycle]); B.push([s, e.b.pred[k]]);
+        M.push([s, (1 - lu) * previousCycle + lu * latest]);
       }
       box.querySelector(".bl-p1").innerHTML = lineChart([
-        { pts: O, color: "#172536", label: "observation" }, { pts: P, color: "#ad5200", label: tr("persistance (dernière valeur)", "persistance (dernière valeur)"), dash: true },
+        { pts: O, color: "#172536", label: "observation" },
+        { pts: M, color: "#7252a3", label: tr("mélange manuel", "manual forecast") + " (λ = " + local(lu, 2) + ")", dash: "dotted" },
+        { pts: P, color: "#ad5200", label: tr("persistance (dernière valeur)", "persistance (dernière valeur)"), dash: true },
         { pts: C, color: "#8a96a3", label: tr("persistance cyclique (une période plus tôt)", "persistance cyclique (une période plus tôt)"), dash: true }, { pts: B, color: "#3c8d5a", label: "BLEND" }],
         { xlabel: tr("périodes dans la fenêtre (chaque graduation : milieu de la nuit)", "périodes dans la fenêtre (chaque graduation : milieu de la nuit)"), ylabel: "signal", xmin: 0, xmax: 3, aria: tr("Prévisions et observation sur trois périodes entières", "Prévisions et observation sur trois périodes entières") });
       // 2. the parabola at one phase, with the reader's lambda and the least-squares one
@@ -362,19 +388,19 @@
         var bp = 0; e.b.lambda.forEach(function (l, p) { if (Math.abs(l - 0.5) < Math.abs(e.b.lambda[bp] - 0.5)) bp = p; });
         phEl.value = bp + 1; lastKey = key;
       }
-      var p = +phEl.value - 1, lu = +box.querySelector("#bl-l").value, ls = e.b.lambda[p], ys = [], rs = [], cs = [];
+      var p = +phEl.value - 1, ls = e.b.lambda[p], ys = [], rs = [], cs = [];
       box.querySelector("#bl-ph-o").textContent = p + 1; box.querySelector("#bl-l-o").textContent = local(lu, 2);
       for (t = T + 1; t <= x.length - h; t++) if ((t - 1) % T === p) { ys.push(x[t + h - 1]); rs.push(x[t - 1]); cs.push(x[t + h - T - 1]); }
       function E(l) { var s2 = 0; for (var i = 0; i < ys.length; i++) s2 += Math.pow(ys[i] - (1 - l) * cs[i] - l * rs[i], 2); return Math.sqrt(s2 / ys.length); }
       var par = []; for (var j = 0; j <= 50; j++) par.push([j / 50, E(j / 50)]);
-      box.querySelector(".bl-o2").innerHTML = "<p>" + tr("Phase", "Phase") + " " + (p + 1) + " (" + ys.length + " " + tr("cibles", "targets") + ") : " + tr("persistance cyclique", "persistance cyclique") + " (λ = 0) " + local(E(0), 1) + " · " + tr("persistance", "persistance") + " (λ = 1) " + local(E(1), 1) +
+      box.querySelector(".bl-o2").innerHTML = "<p>" + tr("Départ au pas", "Start at step") + " " + (p + 1) + " (" + ys.length + " " + tr("cibles", "targets") + ") : " + tr("persistance cyclique", "persistance cyclique") + " (λ = 0) " + local(E(0), 1) + " · " + tr("persistance", "persistance") + " (λ = 1) " + local(E(1), 1) +
         " · " + tr("votre λ", "your λ") + " = " + local(lu, 2) + " : <strong>" + local(E(lu), 1) + "</strong> · BLEND λ = " + local(ls, 2) + " : <strong>" + local(E(ls), 1) + "</strong>.</p>";
       box.querySelector(".bl-p2").innerHTML = lineChart([{ pts: par, color: "#3c8d5a", label: tr("RMSE de cette phase selon λ", "RMSE à cette phase selon λ") },
-        { pts: [[lu, E(lu)]], color: "#ad5200", marker: true }, { pts: [[ls, E(ls)]], color: "#3c8d5a", marker: true }],
+        { pts: [[lu, E(lu)]], color: "#7252a3", marker: true, label: tr("votre λ", "your λ") }, { pts: [[ls, E(ls)]], color: "#3c8d5a", marker: true, label: tr("λ de BLEND", "BLEND λ") }],
         { xlabel: tr("λ (0 = période précédente, 1 = dernière valeur)", "λ (0 = une période plus tôt, 1 = dernière valeur)"), ylabel: "RMSE", xmin: 0, xmax: 1, ymin: 0.8 * E(ls), aria: tr("Erreur à une phase selon le poids du mélange", "Erreur à une phase selon le poids du mélange") });
       box.querySelector(".bl-p3").innerHTML = lineChart([{ pts: e.b.lambda.map(function (l, i) { return [i + 1, l]; }), color: "#3c8d5a", label: tr("BLEND λ à chaque phase (point : phase ci-dessus)", "λ de BLEND à chaque phase (le point : la phase choisie)") },
         { pts: [[p + 1, ls]], color: "#3c8d5a", marker: true }],
-        { xlabel: tr("phase à l’origine", "phase de l’origine"), ylabel: "λ", xmin: 1, xmax: T, ymin: 0, ymax: 1, aria: tr("Poids BLEND selon la phase", "Poids BLEND selon la phase") });
+        { xlabel: tr("pas de départ dans le cycle", "start step within the cycle"), ylabel: "λ", xmin: 1, xmax: T, ymin: 0, ymax: 1, aria: tr("Poids BLEND selon la phase", "Poids BLEND selon la phase") });
       // 3. gain over the better persistence, for every horizon up to one period
       var G = [], cross = 0;
       for (var hh = 1; hh <= T; hh++) { var r = errs(x, T, hh), refError = Math.min(r.p, r.c); if (refError > 0) G.push([hh, 100 * (1 - r.b.rmse / refError)]); if (!cross && r.c <= r.p) cross = hh; }
@@ -693,6 +719,8 @@
     st.textContent =
       ".cvfr .cvt-sticky{position:sticky;z-index:5;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin:8px 0;box-shadow:0 2px 8px rgba(23,37,54,.08)}" +
       "@media(max-width:760px){.cvfr .cvt-sticky{position:static}}" +
+      '.cvfr[data-tool="blend"] .cvt-sticky{position:sticky;top:calc(var(--xs-h,0px) + 52px);z-index:12}' +
+      '@media(max-width:760px){.cvfr[data-tool="blend"] .cvfr-ctls{grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 10px}.cvfr[data-tool="blend"] .cvt-sticky{padding:6px 8px;line-height:1.25}.cvfr[data-tool="blend"] .cvfr-ctl label{font-size:.82rem}}' +
       ".cvfr-panel{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin:8px 0}" +
       ".cvfr-presets{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}" +
       ".cvfr-pre{font:inherit;font-size:.92rem;font-weight:600;padding:8px 14px;border:1px solid var(--line);border-radius:999px;background:var(--paper);color:var(--ink);cursor:pointer}" +
@@ -799,11 +827,15 @@
         if (!isFinite(p[1]) || p[1] > yTop || p[1] < yBot) { pen = false; return; }   // hors de l'axe : le trait s'interrompt, il ne simule pas un plateau
         d += (pen ? "L" : "M") + X(p[0]).toFixed(1) + " " + Y(p[1]).toFixed(1); pen = true;
       });
-      g += '<path d="' + d + '" fill="none" stroke="' + s.color + '" stroke-width="' + (s.thin ? 1.6 : 2.4) + '"/>';
+      g += '<path d="' + d + '" fill="none" stroke="' + s.color + '" stroke-width="' + (s.thin ? 1.6 : 2.4) + '"' +
+        (s.dash ? ' stroke-dasharray="' + (s.dash === "dotted" ? "2 4" : "5 4") + '"' : "") + '/>';
     });
     g += "</svg>";
     var leg = series.filter(function (s) { return s.label; });
-    return g + (leg.length ? '<p class="cvfr-leg">' + leg.map(function (s) { return '<span><i style="background:' + s.color + '"></i>' + s.label + "</span>"; }).join("") + "</p>" : "");
+    return g + (leg.length ? '<p class="cvfr-leg">' + leg.map(function (s) { var swatch = s.marker ? "width:8px;height:8px;border-radius:50%;background:" + s.color
+        : s.dash ? "height:0;background:none;border-top:2px " + (s.dash === "dotted" ? "dotted " : "dashed ") + s.color
+        : "background:" + s.color;
+      return '<span><i aria-hidden="true" style="' + swatch + '"></i>' + s.label + "</span>"; }).join("") + "</p>" : "");
   }
   var CHECK = '<p class="cvfr-note">Calculs comparés au code de référence : <a href="https://cyrilvoyant.github.io/tools/js-tests.html">cas de vérification</a> (page en anglais). Tout reste dans votre navigateur ; rien n’est envoyé.</p>';
 
@@ -894,12 +926,12 @@
     ];
     box.innerHTML = presets(P) + '<div class="cvt-sticky"><div class="cvfr-ctls">' +
       slide({ id: "bl-h", label: "Horizon h", min: 1, max: 24, step: 1, val: 1, tip: "Nombre de pas entre la dernière valeur connue et la valeur à prévoir." }) +
-      slide({ id: "bl-ph", label: "Phase", min: 1, max: 24, step: 1, val: 1, tip: "Le moment du cycle où part la prévision : ici l’heure de la journée. BLEND a un poids par phase." }) +
-      slide({ id: "bl-l", label: "Votre λ", min: 0, max: 1, step: 0.01, val: 0.5, tip: "Le poids de la dernière valeur. λ = 1 : persistance. λ = 0 : persistance cyclique. Entre les deux : un mélange." }) +
+      slide({ id: "bl-ph", label: "Départ dans le cycle", min: 1, max: 24, step: 1, val: 1, tip: "Position dans le cycle de la dernière mesure connue. La cible est h pas plus tard." }) +
+      slide({ id: "bl-l", label: "Votre λ", min: 0, max: 1, step: 0.01, val: 0.5, tip: "Le poids de la dernière valeur. λ = 1 : persistance. λ = 0 : persistance cyclique. Entre les deux, le même poids s’applique à toute la courbe du mélange manuel." }) +
       slide({ id: "bl-w", label: "Fenêtre affichée", min: 1, max: 30, step: 1, val: 1, tip: "Change seulement les trois périodes montrées sur le premier graphique. Aucun résultat chiffré n’en dépend." }) +
       '<div class="cvfr-ctl"><label for="bl-T">Période T (pas)</label>' + tip("Nombre de pas dans un cycle : 24 pour une journée au pas horaire, 48 au pas de 30 min.") + '<input type="number" id="bl-T" min="2" step="1" value="24"></div></div></div>' +
       '<div class="cvfr-verdict cvt-out" aria-live="polite"></div><div class="cvfr-cards bl-c"></div>' +
-      '<div class="cvfr-charts">' + fig("Trois périodes, de nuit à nuit", "bl-p1", "") + fig("Réglez λ : la RMSE de cette phase", "bl-p2", "<span class=\"bl-o2\"></span>") + fig("Le poids λ de BLEND à chaque phase", "bl-p3", "1 : confiance dans la dernière valeur. 0 : dans la valeur une période plus tôt. Quand les deux sont toujours égales, comme en pleine nuit, aucune information : λ = 0 par convention.") + fig("Ce que le mélange apporte selon l’horizon", "bl-p4", "<span class=\"bl-o4\"></span>") + "</div>" +
+      '<div class="cvfr-charts">' + fig("Trois périodes, de nuit à nuit", "bl-p1", "Le mélange manuel utilise votre λ pour toute la fenêtre. BLEND garde son poids ajusté à chaque position du cycle.") + fig("Réglez λ : la RMSE de cette phase", "bl-p2", "<span class=\"bl-o2\"></span>") + fig("Le poids de BLEND selon le départ", "bl-p3", "Le départ est l’instant de la dernière mesure connue. À Palaiseau, le pas 1 correspond à minuit UTC, et le pas 5 à 02 h 00. La cible est h pas après le départ. Si les deux persistances sont toujours égales à un pas donné, BLEND prend λ = 0 par convention.") + fig("Ce que le mélange apporte selon l’horizon", "bl-p4", "<span class=\"bl-o4\"></span>") + "</div>" +
       '<details class="cvfr-det"><summary>Voir ou coller vos données</summary><label class="cvt-data" for="bl-d"><span>Une colonne, une ligne par pas de temps, régulièrement échantillonnée. Il faut au moins trois périodes.</span><textarea id="bl-d" rows="6" spellcheck="false"></textarea></label><p class="bl-src cvfr-note"></p></details>' +
       '<p class="cvfr-note">Les poids sont calculés sur toute la série, comme le code de référence par défaut. Le gain mesure ce que le mélange peut apporter, pas une performance future : pour évaluer, calculez les poids sur une période et testez sur une autre.</p>' + CHECK;
     var ta = $(box, "#bl-d"), lastKey = "";
@@ -929,22 +961,30 @@
       var q0 = nightStart(x, T), k0 = ((q0 - T - h) % T + 2 * T) % T, nper = Math.max(1, Math.floor((e.b.pred.length - k0) / T) - 2), wEl = $(box, "#bl-w");
       wEl.max = nper; if (+wEl.value > nper) wEl.value = nper;
       var w = +wEl.value; setOut(box, "bl-w", w + " / " + nper);
-      var i0 = k0 + (w - 1) * T, Pp = [], Cc = [], Bb = [], O = [];
-      for (var k = i0; k < Math.min(e.b.pred.length, i0 + 3 * T + 1); k++) { var t = T + 1 + k, s = (k - i0) / T; O.push([s, x[t + h - 1]]); Pp.push([s, x[t - 1]]); Cc.push([s, x[t + h - T - 1]]); Bb.push([s, e.b.pred[k]]); }
-      $(box, ".bl-p1").innerHTML = plot([{ pts: O, color: "#172536", label: "observation" }, { pts: Pp, color: "#ad5200", label: "persistance", thin: true }, { pts: Cc, color: "#8052a2", label: "persistance cyclique", thin: true }, { pts: Bb, color: "#0f8a7e", label: "BLEND" }], { xlabel: "périodes (chaque graduation : milieu de la nuit)", ylabel: "signal", xmin: 0, xmax: 3, aria: "Prévisions et observation sur trois périodes" });
+      var lu = val(box, "bl-l");
+      var i0 = k0 + (w - 1) * T, Pp = [], Cc = [], Bb = [], O = [], M = [];
+      for (var k = i0; k < Math.min(e.b.pred.length, i0 + 3 * T + 1); k++) {
+        var t = T + 1 + k, s = (k - i0) / T, latest = x[t - 1], previousCycle = x[t + h - T - 1];
+        O.push([s, x[t + h - 1]]); Pp.push([s, latest]); Cc.push([s, previousCycle]); Bb.push([s, e.b.pred[k]]);
+        M.push([s, (1 - lu) * previousCycle + lu * latest]);
+      }
+      $(box, ".bl-p1").innerHTML = plot([ { pts: O, color: "#172536", label: "observation" },
+        { pts: M, color: "#7252a3", label: "mélange manuel (λ = " + fr(lu, 2) + ")", dash: "dotted" },
+        { pts: Pp, color: "#ad5200", label: "persistance", thin: true, dash: true },
+        { pts: Cc, color: "#697989", label: "persistance cyclique", thin: true, dash: true }, { pts: Bb, color: "#0f8a7e", label: "BLEND" }], { xlabel: "périodes (chaque graduation : milieu de la nuit)", ylabel: "signal", xmin: 0, xmax: 3, aria: "Prévisions et observation sur trois périodes" });
       var phEl = $(box, "#bl-ph"), key = T + "|" + h + "|" + x.length + "|" + x[0];
       phEl.max = T;
       if (key !== lastKey) { var bp = 0; e.b.lambda.forEach(function (l, p) { if (Math.abs(l - 0.5) < Math.abs(e.b.lambda[bp] - 0.5)) bp = p; }); phEl.value = bp + 1; lastKey = key; }
-      var p = +phEl.value - 1, lu = val(box, "bl-l"), ls = e.b.lambda[p], ys = [], rs = [], cs = [];
+      var p = +phEl.value - 1, ls = e.b.lambda[p], ys = [], rs = [], cs = [];
       setOut(box, "bl-ph", (p + 1) + " / " + T); setOut(box, "bl-l", fr(lu, 2));
       for (t = T + 1; t <= x.length - h; t++) if ((t - 1) % T === p) { ys.push(x[t + h - 1]); rs.push(x[t - 1]); cs.push(x[t + h - T - 1]); }
       function E(l) { var s2 = 0; for (var i = 0; i < ys.length; i++) s2 += Math.pow(ys[i] - (1 - l) * cs[i] - l * rs[i], 2); return Math.sqrt(s2 / ys.length); }
       var par = []; for (var j = 0; j <= 50; j++) par.push([j / 50, E(j / 50)]);
       var flat = Math.abs(E(0) - E(1)) < 1e-9 && Math.abs(E(0) - E(0.5)) < 1e-9;
       $(box, ".bl-o2").innerHTML = flat ? "La courbe est plate à cette phase : les deux persistances y donnent la même valeur (en pleine nuit, ou à h = T). Votre λ ne change rien : c’est normal." :
-        "Phase " + (p + 1) + " : votre λ = " + fr(lu, 2) + " donne " + fr(E(lu), 1) + " ; le minimum, celui de BLEND, est λ = " + fr(ls, 2) + " avec " + fr(E(ls), 1) + ".";
-      $(box, ".bl-p2").innerHTML = plot([{ pts: par, color: "#0f8a7e", label: "RMSE selon λ" }, { pts: [[lu, E(lu)]], color: "#ad5200", marker: true, label: "votre λ" }, { pts: [[ls, E(ls)]], color: "#0f8a7e", marker: true, label: "λ de BLEND" }], { xlabel: "λ (0 : persistance cyclique, 1 : persistance)", ylabel: "RMSE", xmin: 0, xmax: 1, ymin: 0, aria: "Erreur à une phase selon le poids du mélange" });
-      $(box, ".bl-p3").innerHTML = plot([{ pts: e.b.lambda.map(function (l, i) { return [i + 1, l]; }), color: "#0f8a7e" }, { pts: [[p + 1, ls]], color: "#0f8a7e", marker: true }], { xlabel: "phase", ylabel: "λ", xmin: 1, xmax: T, ymin: 0, ymax: 1, aria: "Poids de BLEND selon la phase" });
+        "Départ au pas " + (p + 1) + " : votre λ = " + fr(lu, 2) + " donne " + fr(E(lu), 1) + " ; le minimum, celui de BLEND, est λ = " + fr(ls, 2) + " avec " + fr(E(ls), 1) + ".";
+      $(box, ".bl-p2").innerHTML = plot([{ pts: par, color: "#0f8a7e", label: "RMSE selon λ" }, { pts: [[lu, E(lu)]], color: "#7252a3", marker: true, label: "votre λ" }, { pts: [[ls, E(ls)]], color: "#0f8a7e", marker: true, label: "λ de BLEND" }], { xlabel: "λ (0 : persistance cyclique, 1 : persistance)", ylabel: "RMSE", xmin: 0, xmax: 1, ymin: 0, aria: "Erreur à une phase selon le poids du mélange" });
+      $(box, ".bl-p3").innerHTML = plot([{ pts: e.b.lambda.map(function (l, i) { return [i + 1, l]; }), color: "#0f8a7e" }, { pts: [[p + 1, ls]], color: "#0f8a7e", marker: true }], { xlabel: "pas de départ dans le cycle", ylabel: "λ", xmin: 1, xmax: T, ymin: 0, ymax: 1, aria: "Poids de BLEND selon la phase" });
       var G = [], cross = 0;
       for (var hh = 1; hh <= T; hh++) { var r = errs(x, T, hh), ref = Math.min(r.p, r.c); if (ref > 0) G.push([hh, 100 * (1 - r.b.rmse / ref)]); if (!cross && r.c <= r.p) cross = hh; }
       var GS = [{ pts: G, color: "#0f8a7e" }]; if (isFinite(gain)) GS.push({ pts: [[h, gain]], color: "#0f8a7e", marker: true });
