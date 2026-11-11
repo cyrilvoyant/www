@@ -1,0 +1,20 @@
+{
+  "title": "www.cyrilvoyant.com: research stories, open courses and interactive scientific tools",
+  "upload_type": "other",
+  "description": "<p>Archived snapshot of the website <a href=\"https://www.cyrilvoyant.com/\">www.cyrilvoyant.com</a> by Cyril Voyant (Mines Paris – PSL, Centre O.I.E.): plain-language accounts of published studies in energy and medical physics, open university courses, and interactive tools that let readers rerun each experiment in a browser, in English and French.</p><p>Each page names its own authors and sources. Published articles, software and courses keep their own DOIs, listed as related identifiers; this record gives a stable reference for the pages that have none.</p>",
+  "creators": [
+    {"name": "Voyant, Cyril", "affiliation": "Mines Paris – PSL, Centre O.I.E.", "orcid": "0000-0003-0242-7377"}
+  ],
+  "license": "cc-by-4.0",
+  "language": "eng",
+  "keywords": ["solar forecasting", "photovoltaic power", "medical physics", "radiotherapy", "open educational resources", "interactive tools", "open science", "FAIR data"],
+  "related_identifiers": [
+    {"identifier": "https://www.cyrilvoyant.com/", "relation": "isIdenticalTo", "scheme": "url"},
+    {"identifier": "10.5281/zenodo.23620101", "relation": "references", "scheme": "doi"},
+    {"identifier": "10.5281/zenodo.23620235", "relation": "references", "scheme": "doi"},
+    {"identifier": "10.5281/zenodo.23620486", "relation": "references", "scheme": "doi"},
+    {"identifier": "10.5281/zenodo.23620536", "relation": "references", "scheme": "doi"},
+    {"identifier": "10.5281/zenodo.23621245", "relation": "references", "scheme": "doi"},
+    {"identifier": "10.5281/zenodo.21487267", "relation": "references", "scheme": "doi"}
+  ]
+}
