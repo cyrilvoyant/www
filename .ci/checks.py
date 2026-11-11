@@ -6,6 +6,17 @@ from html.parser import HTMLParser
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SITE = "https://www.cyrilvoyant.com"
 NO_SHARE_IMAGE_OK = set()  # pages allowed without og:image
+SITE_DOI = (ROOT / ".ci/site-doi.txt").read_text(encoding="utf-8").strip()
+# These narratives are frozen independently of the site release.
+FROZEN_CITATION_PAGES = {"/fr/recits/websemantic/", "/stories/websemantic/"}
+CITE_BLOCK = re.compile(
+    r'<details\b[^>]*data-cite-page="[^"]*"[^>]*>.*?</details>'
+    r'|<section\b[^>]*class="bl-cite"[^>]*>.*?</section>'
+    r'|<h2 id="citer">.*?<pre class="bibtex"><code>.*?</code></pre>',
+    re.S,
+)
+BIB_DOI = re.compile(r"(?m)^\s*doi\s*=\s*\{(10\.\d{4,9}/[^{}\s]+)\}")
+
 
 
 class Page(HTMLParser):
@@ -31,6 +42,14 @@ class Page(HTMLParser):
 
     def handle_data(self, data):
         if self._ld is not None: self._ld.append(data)
+
+
+def graph_nodes(raw):
+    try:
+        data = json.loads(raw)
+    except ValueError:
+        return []
+    return data.get("@graph", [data]) if isinstance(data, dict) else []
 
 
 def url_of(f):
@@ -87,7 +106,19 @@ for lang, path, pat in (("fr", "fr/outils/index.html", r"(\d+) outils pour le co
     if not m or int(m.group(1)) != n: errors.append(f"{path}: announces {m.group(1) if m else '?'} tools, lists {n}")
 
 for u in sorted(canonical):
-    s = re.sub(r"<[^>]+>", " ", pages[u][0].read_text(encoding="utf8", errors="replace"))
+    source = pages[u][0].read_text(encoding="utf8", errors="replace")
+    if u not in FROZEN_CITATION_PAGES:
+        block = CITE_BLOCK.search(source)
+        if not block or not BIB_DOI.search(block[0]):
+            errors.append(f"{u}: no DOI in the page citation block")
+        website = next((
+            node for raw in pages[u][1].ld
+            for node in graph_nodes(raw)
+            if node.get("@id") == SITE + "/#website"
+        ), {})
+        if website.get("identifier", {}).get("value") != SITE_DOI:
+            errors.append(f"{u}: missing site DOI in WebSite JSON-LD")
+    s = re.sub(r"<[^>]+>", " ", source)
     if re.search(r"nRMSE[^.]{0,60}\d\d[,.]\d(?:&nbsp;|\s)%", s): warnings.append(f"{u}: nRMSE written as a percentage")
 
 print(f"pages {len(pages)} | indexable {len(indexable)} | sitemap {len(sm)}")

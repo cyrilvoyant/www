@@ -17,6 +17,8 @@
 
 ## Identity and primary sources
 
+- [Website DOI](https://doi.org/10.5281/zenodo.24136645) (all archived versions).
+
 - [Identity](https://person.cyrilvoyant.com/): shared person identifier https://person.cyrilvoyant.com/#cyril-voyant.
 - [ORCID](https://orcid.org/0000-0003-0242-7377): scholarly identity.
 - Editorial Board Member, [Scientific Reports (Nature Portfolio)](https://www.nature.com/srep/about/editors); Editorial Board Member, [Sustainability (MDPI), Energy Sustainability section](https://www.mdpi.com/journal/sustainability/sectioneditors/energy_sustainability).
