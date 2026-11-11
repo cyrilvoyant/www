@@ -208,9 +208,18 @@
 
   var S = null, st = { m: "ELM", hi: 1, k: 1, norm: false, d: 0, s: 0, ann: "d1", v: "raw", e: 0 };
   box.innerHTML = '<p class="fc-note">' + L.load + "</p>";
-  fetch(box.getAttribute("data-src")).then(function (r) { return r.json(); }).then(function (D) {
-    S = core.prep(D); st.d = D.profile_day; build(); if (cutBox) buildCut();
-  }).catch(function () { box.innerHTML = '<p class="fc-note">' + L.fail + "</p>"; });
+  // The data file is large: fetch it only when a tool comes near the screen (audit T3).
+  var started = false;
+  function start() {
+    if (started) return; started = true;
+    fetch(box.getAttribute("data-src")).then(function (r) { return r.json(); }).then(function (D) {
+      S = core.prep(D); st.d = D.profile_day; build(); if (cutBox) buildCut();
+    }).catch(function () { box.innerHTML = '<p class="fc-note">' + L.fail + "</p>"; });
+  }
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (es) { if (es.some(function (e) { return e.isIntersecting; })) { io.disconnect(); start(); } }, { rootMargin: "1200px 0px" });
+    io.observe(box); if (cutBox) io.observe(cutBox);
+  } else start();
 
   function H() { return S.D.horizons[st.hi]; }
   function build() {
