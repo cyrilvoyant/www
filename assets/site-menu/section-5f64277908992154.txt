@@ -1,0 +1,1 @@
+<ul><li><a href="/fr/le-fil/#compute">Étape 1 · Calculer directement</a></li><li><a href="/fr/le-fil/#hybrid">Étape 2 · Hybrider</a></li><li><a href="/fr/le-fil/#learn">Étape 3 · Apprendre frugalement</a></li><li><a href="/fr/le-fil/#ai">Étape 4 · L’IA à sa place</a></li><li><a href="/fr/le-fil/#trust">Étape 5 · Démontrer la confiance</a></li></ul>

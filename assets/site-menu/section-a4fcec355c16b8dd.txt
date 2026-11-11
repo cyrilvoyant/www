@@ -1,0 +1,1 @@
+<ul><li><a href="/30-second-brief/">My research in 30 seconds</a></li><li><a href="/overview/">At a glance: research, software, courses and tools</a></li><li><a href="/about/">Background and contact</a></li><li><a href="/cv/">Curriculum vitae</a></li><li><a href="/research-projects/">Research and projects</a></li><li><a href="/search/">Search the site</a></li></ul>

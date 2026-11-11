@@ -1,0 +1,1 @@
+<ul><li><a href="/the-thread/#compute">Step 1 · Compute directly</a></li><li><a href="/the-thread/#hybrid">Step 2 · Hybridize</a></li><li><a href="/the-thread/#learn">Step 3 · Learn frugally</a></li><li><a href="/the-thread/#ai">Step 4 · AI in its place</a></li><li><a href="/the-thread/#trust">Step 5 · Demonstrate trust</a></li></ul>
