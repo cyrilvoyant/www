@@ -11669,6 +11669,7 @@ c
 , sinon son modèle figé se trompe.
 Si le réseau impose un arrêt
 , l’éclairement n’en garde aucune trace ; PV direct, lui, garde des zéros dans ses 24 h d’entrées et prévoit trop bas ensuite (0,98 kW contre 0,57 kW). Diviser par la puissance disponible et masquer les heures à 0 le corrige (0,62 kW).
+Ces résultats dépendent aussi des modèles de transposition et de conversion. La voie qui part du GHI utilise une transposition à ciel isotrope après la décomposition d’Erbs. Les deux voies indirectes utilisent ensuite une conversion GTI → puissance proportionnelle avec un rapport de performance constant. Un modèle de ciel anisotrope, comme Perez, ou une conversion qui tient compte de la température des cellules et de l’onduleur pourrait changer les erreurs et le classement. Nous gardons ces modèles frugaux comme références. Pour justifier une étape plus complexe, il faudrait mesurer son gain sur les mêmes instants de test, aux mêmes horizons, avec un ajustement sur les seules données d’apprentissage.
 Les données, la centrale et les deux étapes physiques
 SOLETE et Risø.
 SOLETE est le nom du jeu de données ; Risø est le lieu de mesure, un campus de l’Université technique du Danemark (DTU) près de Roskilde. Le jeu, publié en accès libre par D. V. Pombo (licence CC BY 4.0), mesure au même endroit le GHI, le GTI et la puissance d’une petite centrale PV, de juin 2018 à septembre 2019. Il permet donc de comparer les trois voies sur les mêmes instants.
@@ -13660,6 +13661,7 @@ c
 , otherwise its frozen model errs.
 If the grid imposes a shutdown
 , the irradiance keeps no trace of it; PV direct keeps zeros in its 24 h of inputs and forecasts too low afterwards (0.98 kW against 0.57 kW). Dividing by the available power and masking the zero hours fixes it (0.62 kW).
+These results also depend on the transposition and power conversion models. The route starting from GHI uses isotropic-sky transposition after Erbs decomposition. Both indirect routes then use a proportional GTI-to-power conversion with a constant performance ratio. An anisotropic sky model such as Perez, or a power model that accounts for cell temperature and the inverter, could change the errors and ranking. We use these simple models as baselines. To justify a more complex step, measure its gain on the same test timestamps and at the same forecast horizons, fitting on the training data alone.
 The data, the plant and the two physical steps
 SOLETE and Risø.
 SOLETE is the name of the dataset; Risø is the place of measurement, a campus of the Technical University of Denmark (DTU) near Roskilde. The dataset, published openly by D. V. Pombo (CC BY 4.0 licence), measures at the same place the GHI, the GTI and the power of a small PV plant, from June 2018 to September 2019. It therefore allows the three routes to be compared at the same instants.
@@ -14524,7 +14526,7 @@ L’Infrastructure de Données Spatiale (IDS) propose des citations à plusieurs
 - Fiche THREDDS du fichier ABC-Rad de la station de Bondville: https://tds.webservice-energy.org/thredds/catalog/abc-rad/catalog.html?dataset=abc-rad/ABC-Rad_BON_DSA.nc
 - Collection STAC Open-source All-Sky Imager: https://stac.webservice-energy.org/collections/allskyimager
 I3 · Comment relier les ressources ?
-Webservice-Energy est enregistré auprès de DataCite (https://www.datacite.org/). Les DOI sont ajoutés à la demande et relient les ressources à leur notice ou à leur collection :
+Webservice-Energy est enregistré auprès de DataCite. Les DOI sont ajoutés à la demande et relient les ressources à leur notice ou à leur collection :
 - Open-source All-Sky Imager: https://doi.org/10.23646/7vqh-ty18
 - ABC-Rad: https://doi.org/10.23646/384592a6-1d67-46f6-995d-8202bf51f190
 CSW interroge le catalogue de métadonnées, WMS affiche une carte et WCS fournit les valeurs d’une grille. Les liens WPS ouvrent les capacités du service en XML ; l’API STAC répond en JSON.
@@ -14569,7 +14571,7 @@ Webservice-Energy
 Lionel Ménard
 (
 ORCID
-) du centre (
+) du centre O.I.E. (
 lionel.menard@minesparis.psl.eu
 ) ; la partie licences suit la réflexion de
 Raphaël Jolivet
@@ -14684,7 +14686,7 @@ The Spatial Data Infrastructure (SDI) provides suggested citations in several pl
 - THREDDS record for the ABC-Rad file from the Bondville station: https://tds.webservice-energy.org/thredds/catalog/abc-rad/catalog.html?dataset=abc-rad/ABC-Rad_BON_DSA.nc
 - Open-source All-Sky Imager STAC collection: https://stac.webservice-energy.org/collections/allskyimager
 I3 · How are resources linked?
-Webservice-Energy is registered with DataCite (https://www.datacite.org/). DOIs are added on request and link resources to their records or collections:
+Webservice-Energy is registered with DataCite. DOIs are added on request and link resources to their records or collections:
 - Open-source All-Sky Imager: https://doi.org/10.23646/7vqh-ty18
 - ABC-Rad: https://doi.org/10.23646/384592a6-1d67-46f6-995d-8202bf51f190
 CSW queries the metadata catalog, WMS displays a map, and WCS provides the grid values. The WPS links open the service capabilities in XML; the STAC API returns JSON.
@@ -14727,7 +14729,7 @@ Webservice-Energy
 Lionel Ménard
 (
 ORCID
-) of the center (
+) of the O.I.E. center (
 lionel.menard@minesparis.psl.eu
 ); the license part follows the reflection of
 Raphaël Jolivet
