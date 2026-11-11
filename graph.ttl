@@ -7984,7 +7984,6 @@
             schema:name "Centre O.I.E. (Observation, Impacts, Energy), Mines Paris – PSL" ;
             schema:url "https://www.oie.minesparis.psl.eu/" ] ;
     schema:email "lionel.menard@minesparis.psl.eu" ;
-    schema:jobTitle "FAIR data lead" ;
     schema:name "Lionel Menard",
         "Lionel Ménard" ;
     schema:sameAs "https://orcid.org/0009-0002-2156-8538",

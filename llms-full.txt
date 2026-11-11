@@ -2191,7 +2191,7 @@ Models live in the data: qualify, certify, license
  Under an explicit license : without one, nobody knows what they may do.
  Every acronym on this page (FAIR, DOI, NetCDF-CF, OGC, MIT, GPL…) is explained in the glossary .
  An example: Webservice-Energy
- Webservice-Energy is the spatial data infrastructure of the O.I.E. center (Observation, Impacts, Energy) of Mines Paris – PSL , developed and operated for almost twenty years for energy, the environment and Earth observation, "FAIR by design". Its main architects are Lionel Ménard ( ORCID ) , the center's FAIR data lead, and Raphaël Jolivet ( ORCID ) , both at the O.I.E. center (Observation, Impacts, Energy) of Mines Paris – PSL (contact: lionel.menard@minesparis.psl.eu , raphael.jolivet@minesparis.psl.eu ).
+ Webservice-Energy is the spatial data infrastructure of the O.I.E. center (Observation, Impacts, Energy) of Mines Paris – PSL , developed and operated for almost twenty years for energy, the environment and Earth observation, "FAIR by design". Its main architects are Lionel Ménard ( ORCID ) and Raphaël Jolivet ( ORCID ) , both at the O.I.E. center (Observation, Impacts, Energy) of Mines Paris – PSL (contact: lionel.menard@minesparis.psl.eu , raphael.jolivet@minesparis.psl.eu ).
  Find : a metadata catalogue ( GeoNetwork , ISO 19115/19139, INSPIRE , OGC ) for data, services, publications and software.
  Access : a THREDDS server ( OPeNDAP , NetCDF Subset Service, WMS), OGC map services (WMS, WFS, WCS), remote processing (WPS) and a STAC catalog under development.
  Harmonize ground measurements : the open library libinsitu brings heterogeneous networks to the same NetCDF-CF format, with their quality control.
@@ -2358,7 +2358,7 @@ URL: https://www.cyrilvoyant.com/tools/fair-self-assessment/
 Are my data FAIR? A self-assessment in 20 questions
  In about 3 minutes, see where a dataset stands against the FAIR principles : data that are findable, accessible, interoperable (readable by other software) and reusable. Twenty questions, five per letter; the tool gives a score out of 20 and shows what to work on first.
  A grid from the O.I.E. center (Observation, Impacts, Energy) of Mines Paris – PSL , drawn from the FAIR practice of Webservice-Energy .
- FAIR data : Lionel Ménard ( ORCID ), FAIR data lead of the O.I.E. center ( lionel.menard@minesparis.psl.eu );
+ FAIR data : Lionel Ménard ( ORCID ) of the O.I.E. center ( lionel.menard@minesparis.psl.eu );
  Licenses for code and data : Raphaël Jolivet ( ORCID ) ( raphael.jolivet@minesparis.psl.eu ).
  Who is it for? PhD students, researchers, engineers and data stewards preparing a deposit, a data management plan (DMP, the document that describes how the data of a project will be produced, described, stored and shared) or a publication. Three prefilled examples serve as starting points, including Webservice-Energy , the data infrastructure of the O.I.E. center (Observation, Impacts, Energy) at Mines Paris – PSL. Nothing is sent anywhere: your answers stay in your browser.
  Is my project FAIR enough? An example of a 20-point self-assessment
@@ -2395,7 +2395,7 @@ Are my data FAIR? A self-assessment in 20 questions
  note = {O.I.E. center, Mines Paris -- PSL. Version 1.0, November 4, 2026. License CC BY 4.0},
  url = {https://www.cyrilvoyant.com/tools/fair-self-assessment/}
 } Where the grid comes from
- The questions and the reference example come from the practice of Webservice-Energy , the data infrastructure of the O.I.E. center: the FAIR approach is that of Lionel Ménard ( ORCID ), the center's FAIR data lead ( lionel.menard@minesparis.psl.eu ); the license part follows the reflection of Raphaël Jolivet ( ORCID ) ( raphael.jolivet@minesparis.psl.eu ). Cyril Voyant, co-author, shaped the grid and put it online; any transcription errors are his.
+ The questions and the reference example come from the practice of Webservice-Energy , the data infrastructure of the O.I.E. center: the FAIR approach is that of Lionel Ménard ( ORCID ) of the center ( lionel.menard@minesparis.psl.eu ); the license part follows the reflection of Raphaël Jolivet ( ORCID ) ( raphael.jolivet@minesparis.psl.eu ). Cyril Voyant, co-author, shaped the grid and put it online; any transcription errors are his.
  Go further: data and licenses
  The page Models live in the data explains why data must be qualified and certified, details the example of Webservice-Energy and offers a decision tree to choose a license for code and data.
 
@@ -2405,7 +2405,7 @@ URL: https://www.cyrilvoyant.com/fr/outils/autoevaluation-fair/
 Mes données sont-elles FAIR ? Une autoévaluation en 20 questions
  En 3 minutes environ, situez un jeu de données au regard des principes FAIR : des données faciles à trouver ( Findable ), accessibles ( Accessible ), interopérables, c'est-à-dire lisibles par d'autres logiciels ( Interoperable ), et réutilisables ( Reusable ). Vingt questions, cinq par lettre ; l'outil donne un score sur 20 et indique les points à travailler en premier.
  Une grille du centre O.I.E. (Observation, Impacts, Énergie) de Mines Paris – PSL , tirée de la démarche FAIR de Webservice-Energy .
- Données FAIR : Lionel Ménard ( ORCID ), responsable FAIR du centre O.I.E. ( lionel.menard@minesparis.psl.eu ) ;
+ Données FAIR : Lionel Ménard ( ORCID ) du centre O.I.E. ( lionel.menard@minesparis.psl.eu ) ;
  Licences du code et des données : Raphaël Jolivet ( ORCID ) ( raphael.jolivet@minesparis.psl.eu ).
  Pour qui ? Doctorants, chercheurs, ingénieurs et gestionnaires de données qui préparent un dépôt, un plan de gestion des données (PGD, le document qui décrit comment les données d'un projet seront produites, décrites, conservées et partagées) ou une publication. Trois exemples préremplis servent de point de départ, dont Webservice-Energy , l'infrastructure de données du centre O.I.E. (Observation, Impacts, Énergie) de Mines Paris – PSL. Rien n'est envoyé : les réponses restent dans votre navigateur.
  Mon projet est-il assez FAIR ? Un exemple d'autoévaluation en 20 points
@@ -2442,7 +2442,7 @@ Mes données sont-elles FAIR ? Une autoévaluation en 20 questions
  note = {Centre O.I.E., Mines Paris -- PSL. Version 1.0, 4 novembre 2026. Licence CC BY 4.0},
  url = {https://www.cyrilvoyant.com/fr/outils/autoevaluation-fair/}
 } Origine de la grille
- Les questions et l'exemple de référence viennent de la pratique de Webservice-Energy , l'infrastructure de données du centre O.I.E. : la démarche FAIR est celle de Lionel Ménard ( ORCID ), responsable FAIR du centre ( lionel.menard@minesparis.psl.eu ) ; la partie licences suit la réflexion de Raphaël Jolivet ( ORCID ) ( raphael.jolivet@minesparis.psl.eu ). Cyril Voyant, coauteur, a mis la grille en forme et en ligne ; les éventuelles erreurs de transcription sont les siennes.
+ Les questions et l'exemple de référence viennent de la pratique de Webservice-Energy , l'infrastructure de données du centre O.I.E. : la démarche FAIR est celle de Lionel Ménard ( ORCID ) du centre ( lionel.menard@minesparis.psl.eu ) ; la partie licences suit la réflexion de Raphaël Jolivet ( ORCID ) ( raphael.jolivet@minesparis.psl.eu ). Cyril Voyant, coauteur, a mis la grille en forme et en ligne ; les éventuelles erreurs de transcription sont les siennes.
  Aller plus loin : données et licences
  La page Les modèles sont dans les données explique pourquoi qualifier et certifier les données, détaille l'exemple de Webservice-Energy et propose un arbre pour choisir une licence pour le code et les données.
 
@@ -5296,7 +5296,7 @@ Les modèles sont dans les données : qualifier, certifier, placer sous licenc
  Sous une licence explicite : sans licence, personne ne sait ce qu'il a le droit de faire.
  Chaque sigle de cette page (FAIR, DOI, NetCDF-CF, OGC, MIT, GPL…) est expliqué dans le glossaire .
  Un exemple : Webservice-Energy
- Webservice-Energy est l'infrastructure de données spatiales du centre O.I.E. (Observation, Impacts, Énergie) de Mines Paris – PSL , développée et opérée depuis près de vingt ans pour l'énergie, l'environnement et l'observation de la Terre, avec une démarche « FAIR dès la conception ». Ses principaux artisans sont Lionel Ménard ( ORCID ) , responsable FAIR du centre, et Raphaël Jolivet ( ORCID ) , tous deux au centre O.I.E. (Observation, Impacts, Énergie) de Mines Paris – PSL (contact : lionel.menard@minesparis.psl.eu , raphael.jolivet@minesparis.psl.eu ).
+ Webservice-Energy est l'infrastructure de données spatiales du centre O.I.E. (Observation, Impacts, Énergie) de Mines Paris – PSL , développée et opérée depuis près de vingt ans pour l'énergie, l'environnement et l'observation de la Terre, avec une démarche « FAIR dès la conception ». Ses principaux artisans sont Lionel Ménard ( ORCID ) et Raphaël Jolivet ( ORCID ) , tous deux au centre O.I.E. (Observation, Impacts, Énergie) de Mines Paris – PSL (contact : lionel.menard@minesparis.psl.eu , raphael.jolivet@minesparis.psl.eu ).
  Trouver : un catalogue de métadonnées ( GeoNetwork , normes ISO 19115/19139, INSPIRE , OGC ) qui référence données, services, publications et logiciels.
  Accéder : un serveur THREDDS ( OPeNDAP , NetCDF Subset Service, WMS), des services cartographiques OGC (WMS, WFS, WCS), des traitements à distance (WPS) et un catalogue STAC en développement.
  Harmoniser les mesures au sol : la bibliothèque ouverte libinsitu met des réseaux de mesure hétérogènes au même format NetCDF-CF , avec leur contrôle qualité.
