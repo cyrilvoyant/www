@@ -2396,7 +2396,7 @@ Are my data FAIR? A self-assessment in 20 questions
  note = {O.I.E. center, Mines Paris -- PSL. Version 1.0, November 4, 2026. License CC BY 4.0},
  url = {https://www.cyrilvoyant.com/tools/fair-self-assessment/}
 } Where the grid comes from
- The questions and the reference example come from the practice of Webservice-Energy , the data infrastructure of the O.I.E. center: the FAIR approach is that of Lionel Ménard ( ORCID ) of the center ( lionel.menard@minesparis.psl.eu ); the license part follows the reflection of Raphaël Jolivet ( ORCID ) ( raphael.jolivet@minesparis.psl.eu ). Cyril Voyant, co-author, shaped the grid and put it online; any transcription errors are his.
+ The questions and the reference example come from the practice of Webservice-Energy , the data infrastructure of the O.I.E. center: the FAIR approach is that of Lionel Ménard ( ORCID ) of the center ( lionel.menard@minesparis.psl.eu ); the license part follows the reflection of Raphaël Jolivet ( ORCID ) ( raphael.jolivet@minesparis.psl.eu ). Cyril Voyant, co-author, shaped the grid and put it online.
  Go further: data and licenses
  The page Models live in the data explains why data must be qualified and certified, details the example of Webservice-Energy and offers a decision tree to choose a license for code and data.
 
@@ -2444,7 +2444,7 @@ Mes données sont-elles FAIR ? Une autoévaluation en 20 questions
  note = {Centre O.I.E., Mines Paris -- PSL. Version 1.0, 4 novembre 2026. Licence CC BY 4.0},
  url = {https://www.cyrilvoyant.com/fr/outils/autoevaluation-fair/}
 } Origine de la grille
- Les questions et l'exemple de référence viennent de la pratique de Webservice-Energy , l'infrastructure de données du centre O.I.E. : la démarche FAIR est celle de Lionel Ménard ( ORCID ) du centre ( lionel.menard@minesparis.psl.eu ) ; la partie licences suit la réflexion de Raphaël Jolivet ( ORCID ) ( raphael.jolivet@minesparis.psl.eu ). Cyril Voyant, coauteur, a mis la grille en forme et en ligne ; les éventuelles erreurs de transcription sont les siennes.
+ Les questions et l'exemple de référence viennent de la pratique de Webservice-Energy , l'infrastructure de données du centre O.I.E. : la démarche FAIR est celle de Lionel Ménard ( ORCID ) du centre ( lionel.menard@minesparis.psl.eu ) ; la partie licences suit la réflexion de Raphaël Jolivet ( ORCID ) ( raphael.jolivet@minesparis.psl.eu ). Cyril Voyant, coauteur, a mis la grille en forme et en ligne.
  Aller plus loin : données et licences
  La page Les modèles sont dans les données explique pourquoi qualifier et certifier les données, détaille l'exemple de Webservice-Energy et propose un arbre pour choisir une licence pour le code et les données.
 
@@ -14579,7 +14579,7 @@ Raphaël Jolivet
 ORCID
 ) (
 raphael.jolivet@minesparis.psl.eu
-). Cyril Voyant, coauteur, a mis la grille en forme et en ligne ; les éventuelles erreurs de transcription sont les siennes.
+). Cyril Voyant, coauteur, a mis la grille en forme et en ligne.
 Aller plus loin : données et licences
 La page
 Les modèles sont dans les données
@@ -14737,7 +14737,7 @@ Raphaël Jolivet
 ORCID
 ) (
 raphael.jolivet@minesparis.psl.eu
-). Cyril Voyant, co-author, shaped the grid and put it online; any transcription errors are his.
+). Cyril Voyant, co-author, shaped the grid and put it online.
 Go further: data and licenses
 The page
 Models live in the data
