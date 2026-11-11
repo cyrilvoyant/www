@@ -1011,8 +1011,8 @@
     "total": 19.0
    },
    "shows": {
-    "fr": "IDS du centre O.I.E. Fait : catalogue GeoNetwork moissonnable (CSW, métadonnées ISO 19115), catalogue STAC (SpatioTemporal Asset Catalogs) avec API (Application Programming Interface), DOI DataCite ajoutés à la demande, citations proposées pour chaque composant, accès THREDDS/OPeNDAP et services OGC (WMS, WCS, WPS), formats NetCDF-CF et Zarr, mesures au sol harmonisées par libinsitu, contrôle qualité de type BSRN, licence CC BY. En partie : plan de conservation, documentation pour un tiers.",
-    "en": "SDI of the O.I.E. center. Done: harvestable GeoNetwork catalog (CSW, ISO 19115 metadata), STAC catalog (SpatioTemporal Asset Catalogs) with an API (Application Programming Interface), DataCite DOIs added on request, citations offered for each component, THREDDS/OPeNDAP access and OGC services (WMS, WCS, WPS), NetCDF-CF and Zarr formats, ground measurements harmonized by libinsitu, BSRN-type quality control, CC BY licence. Partly: preservation plan, documentation for a third party."
+    "fr": "IDS du centre O.I.E. Fait : catalogue GeoNetwork moissonnable (CSW, métadonnées ISO 19115), catalogue STAC (SpatioTemporal Asset Catalogs) avec API (Application Programming Interface), DOI enregistrés via DataCite à la demande, propositions de citation selon les composants et les demandes, accès THREDDS/OPeNDAP et services OGC (WMS, WCS, WPS), formats NetCDF-CF et Zarr, mesures au sol harmonisées par libinsitu, contrôle qualité de type BSRN, licence CC BY. En partie : plan de conservation, documentation pour un tiers.",
+    "en": "SDI of the O.I.E. center. Done: harvestable GeoNetwork catalog (CSW, ISO 19115 metadata), STAC catalog (SpatioTemporal Asset Catalogs) with an API (Application Programming Interface), DOIs registered through DataCite on request, suggested citations depending on the component and the request, THREDDS/OPeNDAP access and OGC services (WMS, WCS, WPS), NetCDF-CF and Zarr formats, ground measurements harmonized by libinsitu, BSRN-type quality control, CC BY licence. Partly: preservation plan, documentation for a third party."
    }
   },
   {
@@ -1288,8 +1288,8 @@
     "R5": 1
    },
    "observe": {
-    "fr": "IDS du centre O.I.E. Fait : catalogue GeoNetwork moissonnable (CSW, métadonnées ISO 19115), catalogue STAC (SpatioTemporal Asset Catalogs) avec API (Application Programming Interface), DOI DataCite ajoutés à la demande, citations proposées pour chaque composant, accès THREDDS/OPeNDAP et services OGC (WMS, WCS, WPS), formats NetCDF-CF et Zarr, mesures au sol harmonisées par libinsitu, contrôle qualité de type BSRN, licence CC BY. En partie : plan de conservation, documentation pour un tiers.",
-    "en": "SDI of the O.I.E. center. Done: harvestable GeoNetwork catalog (CSW, ISO 19115 metadata), STAC catalog (SpatioTemporal Asset Catalogs) with an API (Application Programming Interface), DataCite DOIs added on request, citations offered for each component, THREDDS/OPeNDAP access and OGC services (WMS, WCS, WPS), NetCDF-CF and Zarr formats, ground measurements harmonized by libinsitu, BSRN-type quality control, CC BY licence. Partly: preservation plan, documentation for a third party."
+    "fr": "IDS du centre O.I.E. Fait : catalogue GeoNetwork moissonnable (CSW, métadonnées ISO 19115), catalogue STAC (SpatioTemporal Asset Catalogs) avec API (Application Programming Interface), DOI enregistrés via DataCite à la demande, propositions de citation selon les composants et les demandes, accès THREDDS/OPeNDAP et services OGC (WMS, WCS, WPS), formats NetCDF-CF et Zarr, mesures au sol harmonisées par libinsitu, contrôle qualité de type BSRN, licence CC BY. En partie : plan de conservation, documentation pour un tiers.",
+    "en": "SDI of the O.I.E. center. Done: harvestable GeoNetwork catalog (CSW, ISO 19115 metadata), STAC catalog (SpatioTemporal Asset Catalogs) with an API (Application Programming Interface), DOIs registered through DataCite on request, suggested citations depending on the component and the request, THREDDS/OPeNDAP access and OGC services (WMS, WCS, WPS), NetCDF-CF and Zarr formats, ground measurements harmonized by libinsitu, BSRN-type quality control, CC BY licence. Partly: preservation plan, documentation for a third party."
    }
   },
   {

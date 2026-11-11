@@ -2376,7 +2376,7 @@ Are my data FAIR? A self-assessment in 20 questions
  DOI landing pages F R
  NetCDF-CF / Zarr / GeoParquet I R
  Mapping drawn up by the O.I.E. center: each open component covers part of the principles; together they cover them all. Simplified yes/no reading: a component may serve a principle only in part. For Toolbox and S3P2, R refers to reusing the processes through their WPS interfaces; check the license and reuse conditions of the data separately.
- Toolbox (WPS): https://toolbox.1.webservice-energy.org/service/wps?service=WPS&request=GetCapabilities | S3P2 (WPS): https://s3p2.oie-lab.net/service/wps?service=WPS&request=GetCapabilities | STAC: https://stac.webservice-energy.org/ | STAC API: https://stac.webservice-energy.org/api/
+ Toolbox (WPS, XML): https://toolbox.1.webservice-energy.org/service/wps?service=WPS&request=GetCapabilities | S3P2 (WPS, XML): https://s3p2.oie-lab.net/service/wps?service=WPS&request=GetCapabilities | STAC: https://stac.webservice-energy.org/ | STAC API (JSON): https://stac.webservice-energy.org/api/
  Indicative self-assessment based on the GO FAIR principles (F1 to R1.3); it does not replace a data management plan (written for example with DMP OPIDoR ) or the advice of your institution's data service.
  Why this grid?
  This is only a teaching example , not a standard or a certification. The twenty questions follow the FAIR principles published by Wilkinson et al. (2016) and promoted by the GO FAIR initiative (F1 to F4, A1 and A2, I1 to I3, R1.1 to R1.3), plus a few practical criteria. The scoring (1 point for “yes”, 0.5 for “partly”, 0 otherwise) and the thresholds (5 and 10 out of 20) are choices made for this page: they help you learn what makes data reusable, not rank projects.
@@ -2424,7 +2424,7 @@ Mes données sont-elles FAIR ? Une autoévaluation en 20 questions
  DOI landing pages F R
  NetCDF-CF / Zarr / GeoParquet I R
  Correspondance établie par le centre O.I.E. : chaque composant ouvert couvre une partie des principes, l'ensemble les couvre tous. Lecture simplifiée en oui/non : un composant peut servir un principe en partie. Pour Toolbox et S3P2, le R désigne la réutilisation des traitements via leurs interfaces WPS ; la licence et les conditions de réutilisation des données se vérifient séparément.
- Toolbox (WPS): https://toolbox.1.webservice-energy.org/service/wps?service=WPS&request=GetCapabilities | S3P2 (WPS): https://s3p2.oie-lab.net/service/wps?service=WPS&request=GetCapabilities | STAC: https://stac.webservice-energy.org/ | STAC API: https://stac.webservice-energy.org/api/
+ Toolbox (WPS, XML): https://toolbox.1.webservice-energy.org/service/wps?service=WPS&request=GetCapabilities | S3P2 (WPS, XML): https://s3p2.oie-lab.net/service/wps?service=WPS&request=GetCapabilities | STAC: https://stac.webservice-energy.org/ | STAC API (JSON): https://stac.webservice-energy.org/api/
  Autoévaluation indicative fondée sur les principes FAIR de GO FAIR (F1 à R1.3) ; elle ne remplace ni un plan de gestion des données (par exemple rédigé avec DMP OPIDoR ) ni l'avis de l'atelier de la donnée de votre établissement.
  Pourquoi cette grille ?
  Ce n'est qu'un exemple pédagogique , pas une norme ni une certification. Les vingt questions suivent les principes FAIR publiés par Wilkinson et al. (2016) et repris par l'initiative GO FAIR (F1 à F4, A1 et A2, I1 à I3, R1.1 à R1.3), complétés par quelques critères pratiques. Le barème (1 point pour « oui », 0,5 pour « en partie », 0 sinon) et les repères (5 et 10 sur 20) sont des choix de cette page : ils servent à apprendre à reconnaître ce qui rend des données réutilisables, pas à classer des projets.
@@ -14515,7 +14515,19 @@ NetCDF-CF / Zarr / GeoParquet
 I
 R
 Correspondance établie par le centre O.I.E. : chaque composant ouvert couvre une partie des principes, l'ensemble les couvre tous. Lecture simplifiée en oui/non : un composant peut servir un principe en partie. Pour Toolbox et S3P2, le R désigne la réutilisation des traitements via leurs interfaces WPS ; la licence et les conditions de réutilisation des données se vérifient séparément.
-Toolbox (WPS): https://toolbox.1.webservice-energy.org/service/wps?service=WPS&request=GetCapabilities | S3P2 (WPS): https://s3p2.oie-lab.net/service/wps?service=WPS&request=GetCapabilities | STAC: https://stac.webservice-energy.org/ | STAC API: https://stac.webservice-energy.org/api/
+Toolbox (WPS, XML): https://toolbox.1.webservice-energy.org/service/wps?service=WPS&request=GetCapabilities | S3P2 (WPS, XML): https://s3p2.oie-lab.net/service/wps?service=WPS&request=GetCapabilities | STAC: https://stac.webservice-energy.org/ | STAC API (JSON): https://stac.webservice-energy.org/api/
+Exemple Webservice-Energy : citations et DOI
+R · Où trouver les citations ?
+L’Infrastructure de Données Spatiale (IDS) propose des citations à plusieurs endroits, selon le composant et les demandes :
+- Notice GeoNetwork d’ABC-Rad: https://geocatalog.webservice-energy.org/geonetwork/srv/fre/catalog.search#/metadata/384592a6-1d67-46f6-995d-8202bf51f190
+- Page d’atterrissage DOI d’ABC-Rad (proposition de citation): https://geocatalog.webservice-energy.org/geonetwork/catalog/doi-landing.html?uuid=384592a6-1d67-46f6-995d-8202bf51f190
+- Fiche THREDDS du fichier ABC-Rad de la station de Bondville: https://tds.webservice-energy.org/thredds/catalog/abc-rad/catalog.html?dataset=abc-rad/ABC-Rad_BON_DSA.nc
+- Collection STAC Open-source All-Sky Imager: https://stac.webservice-energy.org/collections/allskyimager
+I3 · Comment relier les ressources ?
+Webservice-Energy est enregistré auprès de DataCite (https://www.datacite.org/). Les DOI sont ajoutés à la demande et relient les ressources à leur notice ou à leur collection :
+- Open-source All-Sky Imager: https://doi.org/10.23646/7vqh-ty18
+- ABC-Rad: https://doi.org/10.23646/384592a6-1d67-46f6-995d-8202bf51f190
+CSW interroge le catalogue de métadonnées, WMS affiche une carte et WCS fournit les valeurs d’une grille. Les liens WPS ouvrent les capacités du service en XML ; l’API STAC répond en JSON.
 Autoévaluation indicative fondée sur les principes FAIR de GO FAIR (F1 à R1.3) ; elle ne remplace ni un plan de gestion des données (par exemple rédigé avec
 DMP OPIDoR
 ) ni l'avis de l'atelier de la donnée de votre établissement.
@@ -14663,7 +14675,19 @@ NetCDF-CF / Zarr / GeoParquet
 I
 R
 Mapping drawn up by the O.I.E. center: each open component covers part of the principles; together they cover them all. Simplified yes/no reading: a component may serve a principle only in part. For Toolbox and S3P2, R refers to reusing the processes through their WPS interfaces; check the license and reuse conditions of the data separately.
-Toolbox (WPS): https://toolbox.1.webservice-energy.org/service/wps?service=WPS&request=GetCapabilities | S3P2 (WPS): https://s3p2.oie-lab.net/service/wps?service=WPS&request=GetCapabilities | STAC: https://stac.webservice-energy.org/ | STAC API: https://stac.webservice-energy.org/api/
+Toolbox (WPS, XML): https://toolbox.1.webservice-energy.org/service/wps?service=WPS&request=GetCapabilities | S3P2 (WPS, XML): https://s3p2.oie-lab.net/service/wps?service=WPS&request=GetCapabilities | STAC: https://stac.webservice-energy.org/ | STAC API (JSON): https://stac.webservice-energy.org/api/
+Webservice-Energy example: citations and DOIs
+R · Where can I find citations?
+The Spatial Data Infrastructure (SDI) provides suggested citations in several places, depending on the component and the request:
+- ABC-Rad GeoNetwork record: https://geocatalog.webservice-energy.org/geonetwork/srv/eng/catalog.search#/metadata/384592a6-1d67-46f6-995d-8202bf51f190
+- ABC-Rad DOI landing page (suggested citation): https://geocatalog.webservice-energy.org/geonetwork/catalog/doi-landing.html?uuid=384592a6-1d67-46f6-995d-8202bf51f190
+- THREDDS record for the ABC-Rad file from the Bondville station: https://tds.webservice-energy.org/thredds/catalog/abc-rad/catalog.html?dataset=abc-rad/ABC-Rad_BON_DSA.nc
+- Open-source All-Sky Imager STAC collection: https://stac.webservice-energy.org/collections/allskyimager
+I3 · How are resources linked?
+Webservice-Energy is registered with DataCite (https://www.datacite.org/). DOIs are added on request and link resources to their records or collections:
+- Open-source All-Sky Imager: https://doi.org/10.23646/7vqh-ty18
+- ABC-Rad: https://doi.org/10.23646/384592a6-1d67-46f6-995d-8202bf51f190
+CSW queries the metadata catalog, WMS displays a map, and WCS provides the grid values. The WPS links open the service capabilities in XML; the STAC API returns JSON.
 Indicative self-assessment based on the GO FAIR principles (F1 to R1.3); it does not replace a data management plan (written for example with
 DMP OPIDoR
 ) or the advice of your institution's data service.
