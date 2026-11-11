@@ -16202,8 +16202,8 @@
      "group": "I",
      "principle": "Format",
      "label": {
-      "fr": "Le format est-il ouvert et non propriétaire ?",
-      "en": "Is the format open and non-proprietary?"
+      "fr": "Le format est-il ouvert et autodécrit ? CSV simple : non. CSV avec en-tête et métadonnées jointes : en partie. NetCDF, Parquet, Zarr : oui.",
+      "en": "Is the format open and self-describing? Plain CSV: no. CSV with a header and companion metadata: partly. NetCDF, Parquet, Zarr: yes."
      },
      "meaning": {
       "fr": "NetCDF, GeoTIFF, Parquet, Zarr plutôt qu'un classeur Excel, un fichier MATLAB ou un CSV simple, à proscrire dans une démarche FAIR : ni schéma, ni unités, ni métadonnées dans le fichier. Un CSV livré avec ses métadonnées (schéma, unités, licence dans un fichier joint) reste acceptable.",
