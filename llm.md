@@ -101,6 +101,12 @@ Cyril Voyant connects medical physics and energy forecasting through modelling f
 - [Interactive ROC curve: sensitivity, specificity and prevalence](https://www.cyrilvoyant.com/tools/roc-curve/)
 - [Interactive t-test: means, variability and p-values](https://www.cyrilvoyant.com/tools/student-t-test/)
 - [The Sun, the seasons and the clock: one time for every measurement](https://www.cyrilvoyant.com/tools/sun-seasons-utc/)
+- [Ontology of the site](https://www.cyrilvoyant.com/ontology/)
+- [Glossary: the notions of this site](https://www.cyrilvoyant.com/glossary/)
+- [Cite these papers: BibTeX, RIS and CSL-JSON](https://www.cyrilvoyant.com/bib/)
+- [Probabilistic solar forecasting: confidence interval, prediction interval and PICP](https://www.cyrilvoyant.com/tools/probabilistic-solar-forecasting/)
+- [Forecast photovoltaic power: directly, or through irradiance?](https://www.cyrilvoyant.com/tools/pv-forecasting-modes/)
+- [Normality test online: Jarque-Bera, Shapiro-Wilk, Kolmogorov](https://www.cyrilvoyant.com/tools/jarque-bera-test/)
 
 ### fr
 
@@ -182,11 +188,9 @@ Cyril Voyant connects medical physics and energy forecasting through modelling f
 - [Prévision PV : réduire la dimension](https://www.cyrilvoyant.com/prevision-pv-reduction-dimension/)
 - [Prévision solaire : faire simple](https://www.cyrilvoyant.com/prevision-solaire-faire-simple/)
 - [Prévision solaire : modèles frugaux](https://www.cyrilvoyant.com/prevision-solaire-modeles-frugaux/)
+- [Lexique : les notions du site](https://www.cyrilvoyant.com/fr/lexique/)
+- [Prévision solaire probabiliste : intervalle de confiance, intervalle de prévision et PICP](https://www.cyrilvoyant.com/fr/outils/prevision-probabiliste/)
+- [Prévoir la puissance photovoltaïque : directement, ou en passant par l’éclairement ?](https://www.cyrilvoyant.com/fr/outils/modes-prevision-pv/)
+- [Test de normalité en ligne : Jarque-Bera, Shapiro-Wilk, Kolmogorov](https://www.cyrilvoyant.com/fr/outils/test-jarque-bera/)
 
 This optional navigation document is not a search-engine standard or a guarantee of indexing, training inclusion or citation.
-
-## New bilingual teaching labs
-
-- [Probabilistic solar forecasting](https://www.cyrilvoyant.com/tools/probabilistic-solar-forecasting/) / [Prévision probabiliste](https://www.cyrilvoyant.com/fr/outils/prevision-probabiliste/).
-- [PV forecasting modes](https://www.cyrilvoyant.com/tools/pv-forecasting-modes/) / [Modes de prévision PV](https://www.cyrilvoyant.com/fr/outils/modes-prevision-pv/).
-- [Jarque–Bera test](https://www.cyrilvoyant.com/tools/jarque-bera-test/) / [Test de Jarque-Bera](https://www.cyrilvoyant.com/fr/outils/test-jarque-bera/).

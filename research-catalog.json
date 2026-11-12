@@ -796,9 +796,19 @@
       "url": "https://www.cyrilvoyant.com/fr/animations/correlation-significativite-r2/",
       "title": "Corrélation, significativité et R² : animation pour les distinguer",
       "language": "fr",
-      "topics": [],
+      "topics": [
+        "corrélation de Pearson, coefficient de détermination R², régression linéaire, test de Student sur la pente, ordonnée à l’origine, centrage, valeur aberrante, biostatistique"
+      ],
       "citations": [],
       "sections": [
+        {
+          "title": "Pearson, R² et droite de régression sur un nuage reconstitué",
+          "anchor": "pearson-r2-droite"
+        },
+        {
+          "title": "Exercices",
+          "anchor": "exercices"
+        },
         {
           "title": "Essayer et interpréter",
           "anchor": null
@@ -818,6 +828,10 @@
         {
           "title": "Aller plus loin",
           "anchor": null
+        },
+        {
+          "title": "Citer cette page",
+          "anchor": "citer"
         }
       ]
     },
@@ -883,9 +897,15 @@
       "url": "https://www.cyrilvoyant.com/fr/animations/intervalles-regression/",
       "title": "Régression : intervalle de confiance et intervalle de prévision",
       "language": "fr",
-      "topics": [],
+      "topics": [
+        "intervalle de confiance, intervalle de prévision, régression linéaire, test de la pente, biostatistique"
+      ],
       "citations": [],
       "sections": [
+        {
+          "title": "Tester la droite",
+          "anchor": "tests-droite"
+        },
         {
           "title": "Essayer et interpréter",
           "anchor": null
@@ -905,6 +925,10 @@
         {
           "title": "Aller plus loin",
           "anchor": null
+        },
+        {
+          "title": "Citer cette page",
+          "anchor": "citer"
         }
       ]
     },
@@ -912,9 +936,15 @@
       "url": "https://www.cyrilvoyant.com/fr/animations/loi-normale/",
       "title": "Loi normale interactive : aire, probabilité et score z",
       "language": "fr",
-      "topics": [],
+      "topics": [
+        "loi normale, score z, aire sous la courbe, test Z, test de normalité, Jarque-Bera, biostatistique"
+      ],
       "citations": [],
       "sections": [
+        {
+          "title": "De la loi normale aux tests",
+          "anchor": "tester"
+        },
         {
           "title": "Essayer et interpréter",
           "anchor": null
@@ -934,6 +964,10 @@
         {
           "title": "Aller plus loin",
           "anchor": null
+        },
+        {
+          "title": "Citer cette page",
+          "anchor": "citer"
         }
       ]
     },
@@ -944,6 +978,10 @@
       "topics": [],
       "citations": [],
       "sections": [
+        {
+          "title": "Questions sur le cycle de Carnot",
+          "anchor": "carnot-questions-title"
+        },
         {
           "title": "Essayer et interpréter",
           "anchor": null
@@ -999,9 +1037,19 @@
       "url": "https://www.cyrilvoyant.com/fr/animations/point-influent-regression/",
       "title": "Régression et point influent : déplacer une observation",
       "language": "fr",
-      "topics": [],
+      "topics": [
+        "point influent, valeur aberrante, régression linéaire, test de Student sur la pente, p-value, corrélation, centrage, biostatistique"
+      ],
       "citations": [],
       "sections": [
+        {
+          "title": "Le test de Student sur la pente, avec un point extrême",
+          "anchor": "pente-point-extreme"
+        },
+        {
+          "title": "Exercices",
+          "anchor": "exercices"
+        },
         {
           "title": "Essayer et interpréter",
           "anchor": null
@@ -1021,6 +1069,10 @@
         {
           "title": "Aller plus loin",
           "anchor": null
+        },
+        {
+          "title": "Citer cette page",
+          "anchor": "citer"
         }
       ]
     },
@@ -1146,9 +1198,19 @@
       "url": "https://www.cyrilvoyant.com/fr/animations/test-khi-deux/",
       "title": "Test du χ² : dé équilibré, observés, attendus et tableau 2×2",
       "language": "fr",
-      "topics": [],
+      "topics": [
+        "test du khi-deux, χ², variables qualitatives, tableau de contingence, effectifs attendus, degrés de liberté, test d’indépendance, test d’ajustement, biostatistique"
+      ],
       "citations": [],
       "sections": [
+        {
+          "title": "Le χ² sur des données qualitatives, pas à pas",
+          "anchor": "khi-deux-qualitatif"
+        },
+        {
+          "title": "Exercices",
+          "anchor": "exercices"
+        },
         {
           "title": "Essayer et interpréter",
           "anchor": null
@@ -1168,6 +1230,10 @@
         {
           "title": "Aller plus loin",
           "anchor": null
+        },
+        {
+          "title": "Citer cette page",
+          "anchor": "citer"
         }
       ]
     },
@@ -1175,9 +1241,23 @@
       "url": "https://www.cyrilvoyant.com/fr/animations/test-student/",
       "title": "Test de Student interactif : deux moyennes, dispersion et p-value",
       "language": "fr",
-      "topics": [],
+      "topics": [
+        "test Z, test de Student, comparaison de deux moyennes, p-value, risque alpha 5 %, hypothèse nulle, valeur aberrante, biostatistique, PASS"
+      ],
       "citations": [],
       "sections": [
+        {
+          "title": "Test Z : comparer une moyenne à une valeur de la population",
+          "anchor": "test-z"
+        },
+        {
+          "title": "Deux échantillons : quand un point fait basculer le test",
+          "anchor": "deux-echantillons"
+        },
+        {
+          "title": "Exercices",
+          "anchor": "exercices"
+        },
         {
           "title": "Essayer et interpréter",
           "anchor": null
@@ -1197,6 +1277,10 @@
         {
           "title": "Aller plus loin",
           "anchor": null
+        },
+        {
+          "title": "Citer cette page",
+          "anchor": "citer"
         }
       ]
     },
@@ -1671,6 +1755,10 @@
       "citations": [],
       "sections": [
         {
+          "title": "En bref",
+          "anchor": "en-bref"
+        },
+        {
           "title": "Le chapitre en 10 points",
           "anchor": "resume"
         },
@@ -1687,6 +1775,10 @@
           "anchor": null
         },
         {
+          "title": "Les mots du chapitre",
+          "anchor": null
+        },
+        {
           "title": "Diaporama",
           "anchor": "bs-viewer"
         },
@@ -1697,6 +1789,10 @@
         {
           "title": "Pour aller plus loin : questions et réponses",
           "anchor": "faq"
+        },
+        {
+          "title": "Sources et manuels",
+          "anchor": "sources"
         }
       ]
     },
@@ -1708,8 +1804,16 @@
       "citations": [],
       "sections": [
         {
+          "title": "En bref",
+          "anchor": "en-bref"
+        },
+        {
           "title": "Le chapitre en 10 points",
           "anchor": "resume"
+        },
+        {
+          "title": "Les mots du chapitre",
+          "anchor": null
         },
         {
           "title": "Diaporama",
@@ -1722,6 +1826,10 @@
         {
           "title": "Pour aller plus loin : questions et réponses",
           "anchor": "faq"
+        },
+        {
+          "title": "Sources et manuels",
+          "anchor": "sources"
         }
       ]
     },
@@ -1733,11 +1841,19 @@
       "citations": [],
       "sections": [
         {
+          "title": "En bref",
+          "anchor": "en-bref"
+        },
+        {
           "title": "Le chapitre en 10 points",
           "anchor": "resume"
         },
         {
           "title": "Tester une différence et lire son incertitude",
+          "anchor": null
+        },
+        {
+          "title": "Les mots du chapitre",
           "anchor": null
         },
         {
@@ -1751,6 +1867,10 @@
         {
           "title": "Pour aller plus loin : questions et réponses",
           "anchor": "faq"
+        },
+        {
+          "title": "Sources et manuels",
+          "anchor": "sources"
         }
       ]
     },
@@ -1998,8 +2118,16 @@
       "citations": [],
       "sections": [
         {
+          "title": "En bref",
+          "anchor": "en-bref"
+        },
+        {
           "title": "Le chapitre en 10 points",
           "anchor": "resume"
+        },
+        {
+          "title": "Les mots du chapitre",
+          "anchor": null
         },
         {
           "title": "Diaporama",
@@ -2012,6 +2140,10 @@
         {
           "title": "Pour aller plus loin : questions et réponses",
           "anchor": "faq"
+        },
+        {
+          "title": "Sources et manuels",
+          "anchor": "sources"
         }
       ]
     },
@@ -2094,8 +2226,20 @@
       "citations": [],
       "sections": [
         {
+          "title": "En bref",
+          "anchor": "en-bref"
+        },
+        {
           "title": "Le chapitre en 10 points",
           "anchor": "resume"
+        },
+        {
+          "title": "Les mots du chapitre",
+          "anchor": null
+        },
+        {
+          "title": "Air humide et point de rosée",
+          "anchor": "air-humide"
         },
         {
           "title": "Diaporama",
@@ -2108,6 +2252,10 @@
         {
           "title": "Pour aller plus loin : questions et réponses",
           "anchor": "faq"
+        },
+        {
+          "title": "Sources et manuels",
+          "anchor": "sources"
         }
       ]
     },
@@ -2144,8 +2292,16 @@
       "citations": [],
       "sections": [
         {
+          "title": "En bref",
+          "anchor": "en-bref"
+        },
+        {
           "title": "La séance en 10 points",
           "anchor": "resume"
+        },
+        {
+          "title": "Les mots de la séance",
+          "anchor": null
         },
         {
           "title": "Diaporama",
@@ -2158,6 +2314,10 @@
         {
           "title": "Pour aller plus loin : questions et réponses",
           "anchor": "faq"
+        },
+        {
+          "title": "Sources et manuels",
+          "anchor": "sources"
         }
       ]
     },
@@ -2626,10 +2786,6 @@
           "anchor": "pourquoi"
         },
         {
-          "title": "Comment citer cet outil",
-          "anchor": "citer"
-        },
-        {
           "title": "Origine de la grille",
           "anchor": "remerciements"
         },
@@ -2736,6 +2892,10 @@
         {
           "title": "Les notions",
           "anchor": null
+        },
+        {
+          "title": "Hypothèses et limites",
+          "anchor": "limites"
         },
         {
           "title": "Travaux et équipes de référence",
@@ -2923,6 +3083,10 @@
           "anchor": null
         },
         {
+          "title": "Hypothèses et limites",
+          "anchor": "limites"
+        },
+        {
           "title": "Travaux et équipes de référence",
           "anchor": null
         }
@@ -2958,6 +3122,10 @@
         {
           "title": "Les notions",
           "anchor": null
+        },
+        {
+          "title": "Hypothèses et limites",
+          "anchor": "limites"
         },
         {
           "title": "Travaux et équipes de référence",
@@ -3054,6 +3222,10 @@
           "anchor": null
         },
         {
+          "title": "Hypothèses et limites",
+          "anchor": "limites"
+        },
+        {
           "title": "Travaux et équipes de référence",
           "anchor": null
         }
@@ -3118,6 +3290,10 @@
         {
           "title": "Les notions",
           "anchor": null
+        },
+        {
+          "title": "Hypothèses et limites",
+          "anchor": "limites"
         },
         {
           "title": "Travaux et équipes de référence",
@@ -3193,6 +3369,10 @@
         {
           "title": "Les notions",
           "anchor": null
+        },
+        {
+          "title": "Hypothèses et limites",
+          "anchor": "limites"
         },
         {
           "title": "Travaux et équipes de référence",
@@ -5031,6 +5211,10 @@
       "citations": [],
       "sections": [
         {
+          "title": "In brief",
+          "anchor": "en-bref"
+        },
+        {
           "title": "The chapter in 10 points",
           "anchor": "summary"
         },
@@ -5055,8 +5239,16 @@
           "anchor": "slides"
         },
         {
+          "title": "The words of the chapter",
+          "anchor": null
+        },
+        {
           "title": "Going further: questions and answers",
           "anchor": "faq"
+        },
+        {
+          "title": "Sources and textbooks",
+          "anchor": "sources"
         }
       ]
     },
@@ -5067,6 +5259,10 @@
       "topics": [],
       "citations": [],
       "sections": [
+        {
+          "title": "In brief",
+          "anchor": "en-bref"
+        },
         {
           "title": "The chapter in 10 points",
           "anchor": "summary"
@@ -5084,8 +5280,16 @@
           "anchor": "slides"
         },
         {
+          "title": "The words of the chapter",
+          "anchor": null
+        },
+        {
           "title": "Going further: questions and answers",
           "anchor": "faq"
+        },
+        {
+          "title": "Sources and textbooks",
+          "anchor": "sources"
         }
       ]
     },
@@ -5096,6 +5300,10 @@
       "topics": [],
       "citations": [],
       "sections": [
+        {
+          "title": "In brief",
+          "anchor": "en-bref"
+        },
         {
           "title": "The chapter in 10 points",
           "anchor": "summary"
@@ -5109,8 +5317,16 @@
           "anchor": "slides"
         },
         {
+          "title": "The words of the chapter",
+          "anchor": null
+        },
+        {
           "title": "Going further: questions and answers",
           "anchor": "faq"
+        },
+        {
+          "title": "Sources and textbooks",
+          "anchor": "sources"
         }
       ]
     },
@@ -5344,6 +5560,10 @@
       "citations": [],
       "sections": [
         {
+          "title": "Questions about the Carnot cycle",
+          "anchor": "carnot-questions-title"
+        },
+        {
           "title": "Try it and interpret",
           "anchor": null
         },
@@ -5369,9 +5589,19 @@
       "url": "https://www.cyrilvoyant.com/tools/chi-square-test/",
       "title": "Chi-square test: observed counts, expected counts and contributions",
       "language": "en",
-      "topics": [],
+      "topics": [
+        "chi-square test, χ², categorical data, contingency table, expected counts, degrees of freedom, independence test, goodness of fit, biostatistics"
+      ],
       "citations": [],
       "sections": [
+        {
+          "title": "The χ² on qualitative data, step by step",
+          "anchor": "chi-square-categorical"
+        },
+        {
+          "title": "Exercises",
+          "anchor": "exercises"
+        },
         {
           "title": "Try it and interpret",
           "anchor": null
@@ -5391,6 +5621,10 @@
         {
           "title": "Go further",
           "anchor": null
+        },
+        {
+          "title": "Cite this page",
+          "anchor": "cite"
         }
       ]
     },
@@ -5427,9 +5661,19 @@
       "url": "https://www.cyrilvoyant.com/tools/correlation-significance-r-squared/",
       "title": "Correlation, significance and R²: distinguish the concepts",
       "language": "en",
-      "topics": [],
+      "topics": [
+        "Pearson correlation, coefficient of determination R², linear regression, slope t test, intercept, centring, outlier, biostatistics"
+      ],
       "citations": [],
       "sections": [
+        {
+          "title": "Pearson, R² and the regression line on reconstructed points",
+          "anchor": "pearson-r2-line"
+        },
+        {
+          "title": "Exercises",
+          "anchor": "exercises"
+        },
         {
           "title": "Try it and interpret",
           "anchor": null
@@ -5449,6 +5693,10 @@
         {
           "title": "Go further",
           "anchor": null
+        },
+        {
+          "title": "Cite this page",
+          "anchor": "cite"
         }
       ]
     },
@@ -5517,10 +5765,6 @@
           "anchor": "pourquoi"
         },
         {
-          "title": "How to cite this tool",
-          "anchor": "citer"
-        },
-        {
           "title": "Where the grid comes from",
           "anchor": "remerciements"
         },
@@ -5584,9 +5828,19 @@
       "url": "https://www.cyrilvoyant.com/tools/influential-point-regression/",
       "title": "Regression and an influential point: move an observation",
       "language": "en",
-      "topics": [],
+      "topics": [
+        "influential point, outlier, linear regression, slope t test, p-value, correlation, centring, biostatistics"
+      ],
       "citations": [],
       "sections": [
+        {
+          "title": "The Student t test on the slope, with an extreme point",
+          "anchor": "slope-extreme-point"
+        },
+        {
+          "title": "Exercises",
+          "anchor": "exercises"
+        },
         {
           "title": "Try it and interpret",
           "anchor": null
@@ -5606,6 +5860,10 @@
         {
           "title": "Go further",
           "anchor": null
+        },
+        {
+          "title": "Cite this page",
+          "anchor": "cite"
         }
       ]
     },
@@ -5613,9 +5871,15 @@
       "url": "https://www.cyrilvoyant.com/tools/normal-distribution/",
       "title": "Interactive normal distribution: area, probability and z-score",
       "language": "en",
-      "topics": [],
+      "topics": [
+        "normal distribution, z score, area under the curve, z test, normality test, Jarque-Bera, biostatistics"
+      ],
       "citations": [],
       "sections": [
+        {
+          "title": "From the normal law to tests",
+          "anchor": "testing"
+        },
         {
           "title": "Try it and interpret",
           "anchor": null
@@ -5635,6 +5899,10 @@
         {
           "title": "Go further",
           "anchor": null
+        },
+        {
+          "title": "Cite this page",
+          "anchor": "cite"
         }
       ]
     },
@@ -5671,9 +5939,15 @@
       "url": "https://www.cyrilvoyant.com/tools/regression-intervals/",
       "title": "Regression: confidence interval and prediction interval",
       "language": "en",
-      "topics": [],
+      "topics": [
+        "confidence interval, prediction interval, linear regression, slope test, biostatistics"
+      ],
       "citations": [],
       "sections": [
+        {
+          "title": "Testing the line",
+          "anchor": "testing-the-line"
+        },
         {
           "title": "Try it and interpret",
           "anchor": null
@@ -5693,6 +5967,10 @@
         {
           "title": "Go further",
           "anchor": null
+        },
+        {
+          "title": "Cite this page",
+          "anchor": "cite"
         }
       ]
     },
@@ -5729,9 +6007,23 @@
       "url": "https://www.cyrilvoyant.com/tools/student-t-test/",
       "title": "Interactive t-test: means, variability and p-values",
       "language": "en",
-      "topics": [],
+      "topics": [
+        "z test, Student t test, two-sample comparison, p-value, 5% significance level, null hypothesis, outlier, biostatistics"
+      ],
       "citations": [],
       "sections": [
+        {
+          "title": "z test: comparing a mean with a population value",
+          "anchor": "z-test"
+        },
+        {
+          "title": "Two samples: when one point tips the test",
+          "anchor": "two-samples"
+        },
+        {
+          "title": "Exercises",
+          "anchor": "exercises"
+        },
         {
           "title": "Try it and interpret",
           "anchor": null
@@ -5751,6 +6043,10 @@
         {
           "title": "Go further",
           "anchor": null
+        },
+        {
+          "title": "Cite this page",
+          "anchor": "cite"
         }
       ]
     },
@@ -5840,6 +6136,592 @@
         {
           "title": "Try it in your browser",
           "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/ontology/",
+      "title": "Ontology of the site",
+      "language": "en",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Read it",
+          "anchor": null
+        },
+        {
+          "title": "Machine-readable files",
+          "anchor": null
+        },
+        {
+          "title": "Index of addresses",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/glossary/",
+      "title": "Glossary: the notions of this site",
+      "language": "en",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Domains",
+          "anchor": null
+        },
+        {
+          "title": "Forecasting and evaluation",
+          "anchor": "forecasting"
+        },
+        {
+          "title": "Radiotherapy",
+          "anchor": "radiotherapy"
+        },
+        {
+          "title": "Medical physics",
+          "anchor": "medical-physics"
+        },
+        {
+          "title": "Statistics",
+          "anchor": "statistics"
+        },
+        {
+          "title": "Thermal physics and thermodynamics",
+          "anchor": "thermal-physics"
+        },
+        {
+          "title": "Research data",
+          "anchor": "research-data"
+        },
+        {
+          "title": "Files for machines",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/lexique/",
+      "title": "Lexique : les notions du site",
+      "language": "fr",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Domaines",
+          "anchor": null
+        },
+        {
+          "title": "Prévision et évaluation",
+          "anchor": "forecasting"
+        },
+        {
+          "title": "Radiothérapie",
+          "anchor": "radiotherapy"
+        },
+        {
+          "title": "Physique médicale",
+          "anchor": "medical-physics"
+        },
+        {
+          "title": "Statistiques",
+          "anchor": "statistics"
+        },
+        {
+          "title": "Thermique et thermodynamique",
+          "anchor": "thermal-physics"
+        },
+        {
+          "title": "Données de recherche",
+          "anchor": "research-data"
+        },
+        {
+          "title": "Fichiers pour les machines",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/bib/",
+      "title": "Cite these papers: BibTeX, RIS and CSL-JSON",
+      "language": "en",
+      "topics": [],
+      "citations": [],
+      "sections": [
+        {
+          "title": "2026",
+          "anchor": "y2026"
+        },
+        {
+          "title": "2025",
+          "anchor": "y2025"
+        },
+        {
+          "title": "2024",
+          "anchor": "y2024"
+        },
+        {
+          "title": "2022",
+          "anchor": "y2022"
+        },
+        {
+          "title": "2020",
+          "anchor": "y2020"
+        },
+        {
+          "title": "2018",
+          "anchor": "y2018"
+        },
+        {
+          "title": "2017",
+          "anchor": "y2017"
+        },
+        {
+          "title": "2015",
+          "anchor": "y2015"
+        },
+        {
+          "title": "2014",
+          "anchor": "y2014"
+        },
+        {
+          "title": "2013",
+          "anchor": "y2013"
+        },
+        {
+          "title": "2012",
+          "anchor": "y2012"
+        },
+        {
+          "title": "2011",
+          "anchor": "y2011"
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/tools/probabilistic-solar-forecasting/",
+      "title": "Probabilistic solar forecasting: confidence interval, prediction interval and PICP",
+      "language": "en",
+      "topics": [
+        "probabilistic solar forecasting, prediction interval, confidence interval, conformal prediction, split conformal, PICP, CRPS, continuous ranked probability score, prediction interval coverage probability, mean interval length, RMSE, standard deviation, heteroscedasticity, GHI, global horizontal irradiance, clear-sky index, persistence, AR, ELM, Ajaccio, course"
+      ],
+      "citations": [
+        {
+          "@type": "ScholarlyArticle",
+          "name": "On the importance of clearsky model in short-term solar radiation forecasting",
+          "url": "https://doi.org/10.1016/j.solener.2025.113490",
+          "datePublished": "2025",
+          "isPartOf": {
+            "@type": "Periodical",
+            "name": "Solar Energy"
+          },
+          "author": [
+            {
+              "@type": "Person",
+              "name": "Cyril Voyant"
+            },
+            {
+              "@type": "Person",
+              "name": "Milan Despotovic"
+            },
+            {
+              "@type": "Person",
+              "name": "Gilles Notton"
+            },
+            {
+              "@type": "Person",
+              "name": "Yves-Marie Saint-Drenan"
+            },
+            {
+              "@type": "Person",
+              "name": "Mohammed Asloune"
+            },
+            {
+              "@type": "Person",
+              "name": "Luis Garcia-Gutierrez"
+            }
+          ]
+        },
+        {
+          "@type": "ScholarlyArticle",
+          "name": "Complex-valued time series based solar irradiance forecast",
+          "url": "https://doi.org/10.1063/5.0128131",
+          "datePublished": "2022",
+          "isPartOf": {
+            "@type": "Periodical",
+            "name": "Journal of Renewable and Sustainable Energy"
+          },
+          "author": [
+            {
+              "@type": "Person",
+              "name": "Cyril Voyant"
+            },
+            {
+              "@type": "Person",
+              "name": "Philippe Lauret"
+            },
+            {
+              "@type": "Person",
+              "name": "Gilles Notton"
+            },
+            {
+              "@type": "Person",
+              "name": "Jean-Laurent Duchaud"
+            },
+            {
+              "@type": "Person",
+              "name": "Luis Garcia-Gutierrez"
+            },
+            {
+              "@type": "Person",
+              "name": "Ghjuvan Antone Faggianelli"
+            }
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "title": "Try it",
+          "anchor": "try-it"
+        },
+        {
+          "title": "Two intervals, two questions",
+          "anchor": null
+        },
+        {
+          "title": "Standard deviation of the series or error of the model?",
+          "anchor": null
+        },
+        {
+          "title": "Conformal prediction, without leakage",
+          "anchor": null
+        },
+        {
+          "title": "Three ways to set the margin",
+          "anchor": "three-ways"
+        },
+        {
+          "title": "PICP and mean band width",
+          "anchor": null
+        },
+        {
+          "title": "The CRPS: scoring the whole distribution at once",
+          "anchor": "crps"
+        },
+        {
+          "title": "The four models",
+          "anchor": null
+        },
+        {
+          "title": "Data and split",
+          "anchor": null
+        },
+        {
+          "title": "References: where the method comes from",
+          "anchor": "references"
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/outils/prevision-probabiliste/",
+      "title": "Prévision solaire probabiliste : intervalle de confiance, intervalle de prévision et PICP",
+      "language": "fr",
+      "topics": [
+        "prévision solaire probabiliste, intervalle de prévision, intervalle de confiance, prédiction conforme, conformal prediction, PICP, CRPS, largeur de bande moyenne d'intervalle, RMSE, écart-type, hétéroscédasticité, GHI, rayonnement global horizontal, indice de ciel clair, persistance, AR, ELM, Ajaccio, cours"
+      ],
+      "citations": [
+        {
+          "@type": "ScholarlyArticle",
+          "name": "On the importance of clearsky model in short-term solar radiation forecasting",
+          "url": "https://doi.org/10.1016/j.solener.2025.113490",
+          "datePublished": "2025",
+          "isPartOf": {
+            "@type": "Periodical",
+            "name": "Solar Energy"
+          },
+          "author": [
+            {
+              "@type": "Person",
+              "name": "Cyril Voyant"
+            },
+            {
+              "@type": "Person",
+              "name": "Milan Despotovic"
+            },
+            {
+              "@type": "Person",
+              "name": "Gilles Notton"
+            },
+            {
+              "@type": "Person",
+              "name": "Yves-Marie Saint-Drenan"
+            },
+            {
+              "@type": "Person",
+              "name": "Mohammed Asloune"
+            },
+            {
+              "@type": "Person",
+              "name": "Luis Garcia-Gutierrez"
+            }
+          ]
+        },
+        {
+          "@type": "ScholarlyArticle",
+          "name": "Complex-valued time series based solar irradiance forecast",
+          "url": "https://doi.org/10.1063/5.0128131",
+          "datePublished": "2022",
+          "isPartOf": {
+            "@type": "Periodical",
+            "name": "Journal of Renewable and Sustainable Energy"
+          },
+          "author": [
+            {
+              "@type": "Person",
+              "name": "Cyril Voyant"
+            },
+            {
+              "@type": "Person",
+              "name": "Philippe Lauret"
+            },
+            {
+              "@type": "Person",
+              "name": "Gilles Notton"
+            },
+            {
+              "@type": "Person",
+              "name": "Jean-Laurent Duchaud"
+            },
+            {
+              "@type": "Person",
+              "name": "Luis Garcia-Gutierrez"
+            },
+            {
+              "@type": "Person",
+              "name": "Ghjuvan Antone Faggianelli"
+            }
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "title": "Essayer",
+          "anchor": "essayer"
+        },
+        {
+          "title": "Deux intervalles, deux questions",
+          "anchor": null
+        },
+        {
+          "title": "Écart-type de la série ou erreur du modèle ?",
+          "anchor": null
+        },
+        {
+          "title": "La prédiction conforme, sans fuite",
+          "anchor": null
+        },
+        {
+          "title": "Trois façons de régler la marge",
+          "anchor": "trois-facons"
+        },
+        {
+          "title": "PICP et largeur de bande moyenne",
+          "anchor": null
+        },
+        {
+          "title": "Le CRPS : noter toute la distribution d’un coup",
+          "anchor": "crps"
+        },
+        {
+          "title": "Les quatre modèles",
+          "anchor": null
+        },
+        {
+          "title": "Données et découpage",
+          "anchor": null
+        },
+        {
+          "title": "Références : d’où vient la méthode",
+          "anchor": "references"
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/tools/pv-forecasting-modes/",
+      "title": "Forecast photovoltaic power: directly, or through irradiance?",
+      "language": "en",
+      "topics": [
+        "photovoltaic forecasting",
+        "PV power forecast",
+        "GHI",
+        "GTI",
+        "transposition",
+        "error propagation",
+        "curtailment",
+        "nRMSE",
+        "NICE",
+        "ELM",
+        "BLEND",
+        "SOLETE"
+      ],
+      "citations": [],
+      "sections": [
+        {
+          "title": "What to remember",
+          "anchor": null
+        },
+        {
+          "title": "The data, the plant and the two physical steps",
+          "anchor": null
+        },
+        {
+          "title": "Try it: the three routes over the test period",
+          "anchor": null
+        },
+        {
+          "title": "When the grid limits the power",
+          "anchor": null
+        },
+        {
+          "title": "The words of the page",
+          "anchor": null
+        },
+        {
+          "title": "Data, code and references",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/outils/modes-prevision-pv/",
+      "title": "Prévoir la puissance photovoltaïque : directement, ou en passant par l’éclairement ?",
+      "language": "fr",
+      "topics": [
+        "prévision photovoltaïque",
+        "prévision PV",
+        "GHI",
+        "GTI",
+        "transposition",
+        "propagation d’erreur",
+        "écrêtement",
+        "nRMSE",
+        "NICE",
+        "ELM",
+        "BLEND",
+        "SOLETE"
+      ],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Ce qu’il faut retenir",
+          "anchor": null
+        },
+        {
+          "title": "Les données, la centrale et les deux étapes physiques",
+          "anchor": null
+        },
+        {
+          "title": "Essayer : les trois voies sur la période de test",
+          "anchor": null
+        },
+        {
+          "title": "Quand le réseau limite la puissance",
+          "anchor": null
+        },
+        {
+          "title": "Les mots de la page",
+          "anchor": null
+        },
+        {
+          "title": "Données, code et références",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/tools/jarque-bera-test/",
+      "title": "Normality test online: Jarque-Bera, Shapiro-Wilk, Kolmogorov",
+      "language": "en",
+      "topics": [
+        "Jarque-Bera test, normality test, Shapiro-Wilk, Kolmogorov-Smirnov, Lilliefors, Q-Q plot, skewness, kurtosis, normal distribution, biostatistics"
+      ],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Try and interpret",
+          "anchor": null
+        },
+        {
+          "title": "Why test normality?",
+          "anchor": null
+        },
+        {
+          "title": "Definitions",
+          "anchor": null
+        },
+        {
+          "title": "Assumptions and limits",
+          "anchor": null
+        },
+        {
+          "title": "Which test to choose?",
+          "anchor": null
+        },
+        {
+          "title": "Exercises",
+          "anchor": "exercises"
+        },
+        {
+          "title": "Going further",
+          "anchor": null
+        },
+        {
+          "title": "Cite this page",
+          "anchor": "cite"
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/outils/test-jarque-bera/",
+      "title": "Test de normalité en ligne : Jarque-Bera, Shapiro-Wilk, Kolmogorov",
+      "language": "fr",
+      "topics": [
+        "test de Jarque-Bera, test de normalité, Shapiro-Wilk, Kolmogorov-Smirnov, Lilliefors, droite de Henry, asymétrie, aplatissement, loi normale, biostatistique, PASS"
+      ],
+      "citations": [],
+      "sections": [
+        {
+          "title": "Essayer et interpréter",
+          "anchor": null
+        },
+        {
+          "title": "Pourquoi tester la normalité ?",
+          "anchor": null
+        },
+        {
+          "title": "Les définitions",
+          "anchor": null
+        },
+        {
+          "title": "Hypothèses et limites",
+          "anchor": null
+        },
+        {
+          "title": "Quel test choisir ?",
+          "anchor": null
+        },
+        {
+          "title": "Exercices",
+          "anchor": "exercices"
+        },
+        {
+          "title": "Aller plus loin",
+          "anchor": null
+        },
+        {
+          "title": "Citer cette page",
+          "anchor": "citer"
         }
       ]
     }
