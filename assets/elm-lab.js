@@ -130,8 +130,15 @@
     for (i = 0; i < n; i++) { r = H[i]; var z = (S.y[i] - mu) / sd; for (j = 0; j < nh; j++) { rhs[j] += r[j] * z; for (k = 0; k < nh; k++) G[j][k] += r[j] * r[k]; } }
     var beta = solve(G, rhs, lam), pred = new Float64Array(S.m), p;
     for (i = 0; i < S.m; i++) { r = H[i]; p = 0; for (j = 0; j < nh; j++) p += r[j] * beta[j]; p = p * sd + mu; pred[i] = (S.D.clip && p < 0) ? 0 : p; }
+    /* linear reference (AR): same inputs plus an intercept, least squares (tiny ridge 1e-8 so that the system is always solvable) */
+    var na = S.d + 1, GA = [], ra = new Float64Array(na), x, a = new Float64Array(na), arp = new Float64Array(S.m);
+    for (i = 0; i < na; i++) GA.push(new Float64Array(na));
+    for (i = 0; i < n; i++) { x = S.X[i]; a[0] = 1; for (j = 1; j < na; j++) a[j] = x[j - 1]; for (j = 0; j < na; j++) { ra[j] += a[j] * S.y[i]; for (k = 0; k < na; k++) GA[j][k] += a[j] * a[k]; } }
+    var w = solve(GA, ra, 1e-8);
+    for (i = 0; i < S.m; i++) { x = S.X[i]; p = w[0]; for (j = 1; j < na; j++) p += w[j] * x[j - 1]; arp[i] = (S.D.clip && p < 0) ? 0 : p; }
     return { pred: pred, S: S, train: metrics(S, 0, n, function (i) { return pred[i]; }), test: metrics(S, n, S.m, function (i) { return pred[i]; }),
-      pers: metrics(S, n, S.m, function (i) { return data[i + S.LB - 1]; }) };
+      pers: metrics(S, n, S.m, function (i) { return data[i + S.LB - 1]; }),
+      ar: { pred: arp, coefs: na, train: metrics(S, 0, n, function (i) { return arp[i]; }), test: metrics(S, n, S.m, function (i) { return arp[i]; }) } };
   }
   function search(D, LB, nh, grid, seed, cyc) {   // synchronous version, used by the check; the page runs the same steps in slices
     var S = prepare(D, LB, cyc !== false), rnd = mulberry32(seed), best = { cv: Infinity }, cands = [], c, q, L, row;
@@ -140,7 +147,7 @@
       for (q = 0; q < grid.length; q++) if (row[q] < best.cv) best = { cv: row[q], L: L, lam: grid[q], c: c };
     }
     var R = refit(S, best.L, best.lam);
-    return { cands: cands, best: best.c, lam: best.lam, cv: best.cv, train: R.train, test: R.test, pers: R.pers };
+    return { cands: cands, best: best.c, lam: best.lam, cv: best.cv, train: R.train, test: R.test, pers: R.pers, ar: R.ar };
   }
   function parse(text) {
     var out = [], bad = 0;
@@ -161,28 +168,29 @@
     return '<select id="' + id + '">' + vals.map(function (v) { return '<option value="' + v + '"' + (v === def ? " selected" : "") + ">" + v + (suffix || "") + "</option>"; }).join("") +
       '<option value="opt"' + (def === "opt" ? " selected" : "") + ">" + OPT + " (" + vals.join(", ") + ")</option></select>";
   }
-  var st = { lb: 6, nh: 25, rg: "opt", cyc: true, seed: 42, view: "test", run: 0, res: null, D: SYN, user: false };
+  var st = { lb: 6, nh: 25, rg: "opt", cyc: true, day: 0, seed: 42, view: "test", run: 0, res: null, D: SYN, user: false };
   box.innerHTML =
     '<div class="el-ctl"><label>' + T("Entrées : valeurs passées", "Inputs: past values") + " " + sel("el-lb", LBS, 6) + "</label>" +
     "<label>" + T("Neurones cachés", "Hidden neurons") + " " + sel("el-nh", NHS, 25) + "</label>" +
     "<label>Ridge : λ " + '<select id="el-rg"><option value="opt" selected>' + OPT + ' (1, 10, 25)</option><option value="1">1</option><option value="10">10</option><option value="25">25</option><option value="1e-6">' + T("sans Ridge (10⁻⁶, presque 0)", "no Ridge (10⁻⁶, almost 0)") + "</option></select></label>" +
-    '<label class="el-chk"><span><input type="checkbox" id="el-cyc" checked> ' + T("+ 4 entrées d’horloge", "+ 4 clock inputs") + "</span><small>" + T("sin et cos de l’heure, sin et cos du jour de l’année", "sin and cos of the hour, sin and cos of the day of the year") + "</small></label>" +
+    '<label class="el-chk"><span><input type="checkbox" id="el-cyc" checked> ' + T("+ 4 entrées d’horloge", "+ 4 clock inputs") + "</span><small>sin(2πh/24), cos(2πh/24), sin(2π" + T("j", "d") + "/365" + T(",", ".") + "25), cos(2π" + T("j", "d") + "/365" + T(",", ".") + "25)</small></label>" +
     '<button type="button" id="el-new">' + T("Relancer avec 100 nouveaux candidats", "Run again with 100 new candidates") + "</button></div>" +
-    '<p class="muted el-hint">' + T("Chaque réglage peut être fixé ou mis sur « optimiser » : un, deux ou les trois. Les combinaisons sont alors toutes essayées (recherche sur grille), avec 100 candidats chacune.", "Each setting can be fixed or set to “optimise”: one, two or all three. Every combination is then tried (grid search), with 100 candidates each.") + "</p>" +
-    "<h3>" + T("1. L’optimisation, sur les 80 % d’apprentissage", "1. The optimisation, on the 80% training part") + "</h3>" +
+    '<p class="muted el-hint">' + T("Chaque réglage peut être fixé ou mis sur « optimiser » : un, deux ou les trois. Toutes les combinaisons sont alors essayées (recherche sur grille), avec 100 candidats chacune.", "Each setting can be fixed or set to “optimise”: one, two or all three. Every combination is then tried (grid search), with 100 candidates each.") + "</p>" +
+    '<p class="el-msg el-status" id="el-optmsg" aria-live="polite"></p>' +
+    '<p class="el-tabs" role="group" aria-label="' + T("Période affichée", "Period shown") + '"><button type="button" data-v="train" aria-pressed="false">' + T("Apprentissage (80 %)", "Training (80%)") + '</button><button type="button" data-v="test" class="on" aria-pressed="true">' + T("Test (20 %, jamais vu)", "Test (20%, never seen)") + "</button></p>" +
+    '<svg id="el-plot" viewBox="0 0 640 250" role="img" aria-label="' + T("Mesure, prévisions de l’ELM et du modèle linéaire AR, persistance, sur trois jours", "Measurement, ELM and linear AR forecasts, persistence, over three days") + '"></svg>' +
+    '<p class="el-scroll"><label for="el-day">' + T("Faire défiler les jours", "Scroll through the days") + '</label> <input type="range" id="el-day" min="0" max="0" step="1" value="0"> <span id="el-daylab" class="muted"></span></p>' +
+    '<p class="el-leg"><span class="k3"></span>' + T("mesure", "measurement") + ' <span class="k4"></span>ELM <span class="k6"></span>' + T("AR (modèle linéaire)", "AR (linear model)") + ' <span class="k2"></span>' + T("persistance", "persistence") + "</p>" +
+    '<div class="el-wrap" id="el-met" aria-live="polite"></div>' +
+    '<details class="el-more"><summary>' + T("Voir l’optimisation : les 100 candidats et la grille", "Show the optimisation: the 100 candidates and the grid") + "</summary>" +
     '<div class="el-wrap" id="el-grid"></div>' +
     '<svg id="el-opt" viewBox="0 0 640 230" role="img" aria-label="' + T("Erreur de validation de chacun des 100 candidats", "Validation error of each of the 100 candidates") + '"></svg>' +
-    '<p class="el-msg" id="el-optmsg" aria-live="polite"></p>' +
-    "<h3>" + T("2. Le résultat : trois jours consécutifs", "2. The result: three consecutive days") + "</h3>" +
-    '<p class="el-tabs" role="group" aria-label="' + T("Période affichée", "Period shown") + '"><button type="button" data-v="train" aria-pressed="false">' + T("Apprentissage (80 %)", "Training (80%)") + '</button><button type="button" data-v="test" class="on" aria-pressed="true">' + T("Test (20 %, jamais vu)", "Test (20%, never seen)") + "</button></p>" +
-    '<svg id="el-plot" viewBox="0 0 640 250" role="img" aria-label="' + T("Mesure, prévision de l’ELM et persistance sur trois jours", "Measurement, ELM forecast and persistence over three days") + '"></svg>' +
-    '<p class="el-leg"><span class="k3"></span>' + T("mesure", "measurement") + ' <span class="k4"></span>ELM <span class="k2"></span>' + T("persistance (dernière valeur connue)", "persistence (last known value)") + "</p>" +
-    '<div class="el-wrap" id="el-met" aria-live="polite"></div>' +
-    "<h3>" + T("3. Le modèle retenu", "3. The model kept") + "</h3>" +
+    '<p class="el-msg" id="el-optnote"></p></details>' +
+    '<details class="el-more"><summary>' + T("Voir le modèle retenu : schéma et comptes", "Show the model kept: diagram and counts") + "</summary>" +
     '<svg id="el-net" viewBox="0 0 640 272" role="img" aria-label="' + T("Schéma du réseau retenu : entrées, couche cachée aléatoire et figée, poids de sortie ajustés", "Diagram of the network kept: inputs, random frozen hidden layer, fitted output weights") + '"></svg>' +
     '<p class="el-leg"><span class="k5"></span>' + T("liaisons tirées au hasard, jamais modifiées", "connections drawn at random, never changed") + ' <span class="k4"></span>' + T("poids calculés en une résolution", "weights computed in one solve") + "</p>" +
-    '<div class="el-cards"></div>' +
-    '<details class="el-user"><summary>' + T("Essayer avec mes données", "Try with my own data") + "</summary>" +
+    '<div class="el-cards"></div></details>' +
+    '<details class="el-more el-user"><summary>' + T("Essayer avec mes données", "Try with my own data") + "</summary>" +
     "<p>" + T("Collez une série à pas de temps régulier, une valeur par ligne (espaces et points-virgules acceptés ; virgule ou point décimal). De " + NMIN + " à " + NMAX + " valeurs : au-delà, seules les " + NMAX + " premières sont gardées. Les 80 premiers pour cent servent à l’apprentissage et à l’optimisation, les 20 derniers au test. Vos données restent dans votre navigateur : rien n’est envoyé.",
       "Paste a series with a regular time step, one value per line (spaces and semicolons accepted; decimal comma or point). From " + NMIN + " to " + NMAX + " values: beyond that, only the first " + NMAX + " are kept. The first 80 percent are used for training and optimisation, the last 20 percent for the test. Your data stay in your browser: nothing is sent.") + "</p>" +
     "<label>" + T("Pas de temps", "Time step") + ' <select id="el-spd"><option value="24">1 h</option><option value="48">30 min</option><option value="96">15 min</option><option value="144">10 min</option><option value="1">' + T("1 jour", "1 day") + "</option></select></label>" +
@@ -230,6 +238,10 @@
     var S = R.S, D = S.D, spd = D.spd, n = Math.max(3 * spd, 60), a = st.view === "train" ? 0 : S.sp, b = st.view === "train" ? S.sp : S.m, i0 = a, i, k;
     n = Math.min(n, b - a);
     if (spd > 1) { var sh = (spd - ((a + S.off) % spd)) % spd; if (a + sh + n <= b) i0 = a + sh; }   // start at midnight when possible
+    var stepn = spd > 1 ? spd : Math.max(1, Math.floor(n / 3)), maxk = Math.max(0, Math.floor((b - i0 - n) / stepn)), sl = q("#el-day");
+    if (st.day > maxk) st.day = maxk; sl.max = maxk; sl.value = st.day; sl.disabled = maxk === 0; i0 += st.day * stepn;
+    q("#el-daylab").textContent = spd > 1 ? T("jours ", "days ") + (Math.floor((i0 + S.off) / spd) + 1) + T(" à ", " to ") + (Math.floor((i0 + S.off + n - 1) / spd) + 1) + T(" sur ", " of ") + Math.ceil(D.data.length / spd)
+      : T("valeurs ", "values ") + (i0 + S.off + 1) + T(" à ", " to ") + (i0 + S.off + n);
     var lo = Infinity, hi = -Infinity; for (i = 0; i < D.data.length; i++) { if (D.data[i] < lo) lo = D.data[i]; if (D.data[i] > hi) hi = D.data[i]; }
     if (lo > 0 && lo < 0.3 * hi) lo = 0; if (hi === lo) hi = lo + 1; hi += 0.05 * (hi - lo);
     var X0 = 56, X1 = 632, Y0 = 215, Y1 = 24;
@@ -244,6 +256,7 @@
     function night(i, v) { return D.isday[i + S.off] ? v : 0; }
     sp.appendChild(el("path", { d: path(function (i) { return S.y[i]; }), "class": "el-true" }));
     sp.appendChild(el("path", { d: path(function (i) { return night(i, D.data[i + S.LB - 1]); }), "class": "el-pers" }));
+    sp.appendChild(el("path", { d: path(function (i) { return night(i, R.ar.pred[i]); }), "class": "el-ar" }));
     sp.appendChild(el("path", { d: path(function (i) { return night(i, R.pred[i]); }), "class": "el-fit" }));
   }
   function drawNet(P) {            // diagram of the configuration kept: inputs, random frozen hidden layer, fitted output weights
@@ -276,28 +289,35 @@
   }
   function finish(R, P, ms) {
     drawNet(P);
-    var nh = P.best.nh, d = P.best.lb + (st.cyc ? 4 : 0), gain = R.pers.nrmse - R.test.nrmse, msg, M = [R.train, R.test, R.pers];
-    function row(name, fn, tip) { return "<tr><th>" + name + (tip ? ' <small>' + tip + "</small>" : "") + "</th>" + M.map(function (m) { return "<td>" + fn(m) + "</td>"; }).join("") + "</tr>"; }
-    q("#el-met").innerHTML = '<table class="el-mt"><thead><tr><th></th><th>' + T("ELM, apprentissage", "ELM, training") + "</th><th>" + T("ELM, test", "ELM, test") + "</th><th>" + T("Persistance, test", "Persistence, test") + "</th></tr></thead><tbody>" +
-      row("RMSE" + (st.user ? "" : " (W)"), function (m) { return fv(m.rmse); }) +
-      row("nRMSE", function (m) { return m.mean > 0 ? f(m.nrmse, 3) : "–"; }) +
-      row("nMAE", function (m) { return m.mean > 0 ? f(m.nmae, 3) : "–"; }) +
-      row("nMBE", function (m) { return m.mean > 0 ? f(100 * m.nmbe, 1) + " %" : "–"; }) +
-      row("R²", function (m) { return f(m.r2, 3); }) +
-      row(T("Moyenne des mesures", "Mean of the measurements") + (st.user ? "" : " (W)"), function (m) { return fv(m.mean); }) + "</tbody></table>" +
-      '<p class="muted el-hint">' + T("nRMSE, nMAE et nMBE sont divisés par la moyenne des mesures de la période. L’apprentissage et le test n’ont pas la même moyenne : un RMSE plus grand peut donc donner un nRMSE plus petit. Pour comparer deux périodes, regardez le RMSE et le R² ; pour comparer deux modèles sur la même période, le nRMSE.", "nRMSE, nMAE and nMBE are divided by the mean of the measurements of the period. Training and test do not have the same mean: a larger RMSE can therefore give a smaller nRMSE. To compare two periods, look at RMSE and R²; to compare two models on the same period, nRMSE.") + "</p>";
+    var nh = P.best.nh, d = P.best.lb + (st.cyc ? 4 : 0), cols = [R.train, R.test, R.ar.test, R.pers], ok = R.test.mean > 0, msg;
+    function row(name, get, fmt, mode) {      // the best of the three test columns is set in bold
+      var v = cols.map(get), best = -1, bs = 0, i, sc;
+      if (mode) for (i = 1; i < 4; i++) { if (!isFinite(v[i])) continue; sc = mode === "max" ? -v[i] : mode === "abs" ? Math.abs(v[i]) : v[i]; if (best < 0 || sc < bs) { best = i; bs = sc; } }
+      return "<tr><th>" + name + "</th>" + v.map(function (x, i) { return "<td" + (i === best ? ' class="el-bestv"' : "") + ">" + fmt(x) + "</td>"; }).join("") + "</tr>";
+    }
+    function f3(x) { return ok ? f(x, 3) : "–"; }
+    q("#el-met").innerHTML = '<table class="el-mt"><thead><tr><th></th><th>' + T("ELM, apprentissage", "ELM, training") + "</th><th>" + T("ELM, test", "ELM, test") + "</th><th>" + T("AR, test", "AR, test") + "</th><th>" + T("Persistance, test", "Persistence, test") + "</th></tr></thead><tbody>" +
+      row("RMSE" + (st.user ? "" : " (W)"), function (m) { return m.rmse; }, fv, "min") +
+      row("nRMSE", function (m) { return m.nrmse; }, f3, ok && "min") +
+      row("nMAE", function (m) { return m.nmae; }, f3, ok && "min") +
+      row("nMBE", function (m) { return m.nmbe; }, function (x) { return ok ? f(100 * x, 1) + " %" : "–"; }, ok && "abs") +
+      row("R²", function (m) { return m.r2; }, function (x) { return f(x, 3); }, "max") +
+      row(T("Moyenne des mesures", "Mean of the measurements") + (st.user ? "" : " (W)"), function (m) { return m.mean; }, fv, null) + "</tbody></table>" +
+      '<p class="muted el-hint">' + T("En gras : le meilleur des trois modèles sur le test. AR : modèle linéaire sur les mêmes entrées (" + R.ar.coefs + " coefficients). nRMSE, nMAE et nMBE sont divisés par la moyenne des mesures de la période : l’apprentissage et le test n’ont pas la même moyenne, donc un RMSE plus grand peut donner un nRMSE plus petit. Pour comparer deux périodes, regardez le RMSE et le R² ; pour comparer deux modèles sur la même période, le nRMSE.",
+        "In bold: the best of the three models on the test set. AR: linear model on the same inputs (" + R.ar.coefs + " coefficients). nRMSE, nMAE and nMBE are divided by the mean of the measurements of the period: training and test do not have the same mean, so a larger RMSE can give a smaller nRMSE. To compare two periods, look at RMSE and R²; to compare two models on the same period, nRMSE.") + "</p>";
     if (!isFinite(R.test.rmse)) msg = "";
     else if (R.test.rmse > R.pers.rmse) msg = T("Ici, l’ELM fait moins bien que la persistance sur le test.", "Here the ELM does worse than persistence on the test set.");
     else if (R.test.rmse > 1.25 * R.train.rmse) msg = T("L’erreur de test dépasse nettement l’erreur d’apprentissage : le modèle a appris du bruit (sur-apprentissage).", "The test error is well above the training error: the model has learnt noise (overfitting).");
     else msg = T("L’erreur de test reste proche de l’erreur d’apprentissage : le modèle généralise.", "The test error stays close to the training error: the model generalizes.");
+    if (msg) msg += R.test.rmse < R.ar.test.rmse ? T(" Face au modèle linéaire AR, l’ELM gagne ", " Against the linear AR model, the ELM gains ") + fv(R.ar.test.rmse - R.test.rmse) + T(unit() + " de RMSE", unit() + " in RMSE") + (ok ? " (" + f(R.ar.test.nrmse - R.test.nrmse, 3) + T(" de nRMSE)", " in nRMSE)") : "") + "."
+      : T(" Le modèle linéaire AR fait ici aussi bien ou mieux que l’ELM : la couche non linéaire n’apporte rien.", " The linear AR model does as well as or better than the ELM here: the non-linear layer brings nothing.");
+    q("#el-met").insertAdjacentHTML("beforeend", '<p class="el-msg">' + msg + clipNote(R) + (ok ? "" : T(" La moyenne des mesures n’est pas positive : les erreurs normalisées ne sont pas affichées.", " The mean of the measurements is not positive: normalized errors are not shown.")) + "</p>");
     q(".el-cards").innerHTML =
       card(T("Réglages retenus", "Settings kept"), P.best.lb + " · " + nh + " · " + lamTxt(P.best.lam), T("entrées · neurones · λ", "inputs · neurons · λ")) +
       card(T("Coefficients ajustés", "Fitted coefficients"), String(nh), T("les poids de sortie β, un par neurone", "the output weights β, one per neuron")) +
       card(T("Nombres tirés au hasard", "Random numbers drawn"), f(nh * (d + 1), 0), nh + " × (" + P.best.lb + (st.cyc ? T(" passées + 4 horloge", " past + 4 clock") : T(" passées", " past")) + T(" + 1 biais), figés", " + 1 bias), frozen")) +
       card(T("Résolutions linéaires", "Linear solves"), f(P.solves + 1, 0), T("aucune descente de gradient", "no gradient descent")) +
-      card(T("Temps de calcul", "Computing time"), f(ms / 1000, 1) + " s", T("toute l’optimisation, dans votre navigateur", "the whole optimisation, in your browser")) +
-      '<p class="el-msg">' + msg + (gain > 0 && msg && R.test.mean > 0 ? T(" Gain sur la persistance : ", " Gain over persistence: ") + f(gain, 3) + T(" de nRMSE.", " in nRMSE.") : "") +
-      clipNote(R) + (R.test.mean > 0 ? "" : T(" La moyenne des mesures n’est pas positive : les erreurs normalisées ne sont pas affichées.", " The mean of the measurements is not positive: normalized errors are not shown.")) + "</p>";
+      card(T("Temps de calcul", "Computing time"), f(ms / 1000, 1) + " s", T("toute l’optimisation, dans votre navigateur", "the whole optimisation, in your browser"));
   }
   function clipNote(R) {
     if (!st.user) return "";
@@ -308,7 +328,7 @@
     var P = { lbs: st.lb === "opt" ? LBS : [st.lb], nhs: st.nh === "opt" ? NHS : [st.nh], cv: [], cur: null, best: null, solves: 0 };
     P.lbs.forEach(function () { P.cv.push(P.nhs.map(function () { return null; })); });
     var ci = 0, cj = 0, S = null, rnd = null, cell = null, vals = [], c = 0, t0 = performance.now(), msgEl = q("#el-optmsg"), multi = P.lbs.length * P.nhs.length > 1;
-    st.res = null; clr(sp); clr(so); clr(q("#el-net")); q(".el-cards").innerHTML = ""; q("#el-met").innerHTML = "";
+    st.res = null; st.day = 0; q("#el-optnote").textContent = ""; clr(sp); clr(so); clr(q("#el-net")); q(".el-cards").innerHTML = ""; q("#el-met").innerHTML = "";
     function slice() {
       if (id !== st.run) return;
       var t1 = performance.now(), L, row, k, m, lb = P.lbs[ci], nh = P.nhs[cj];
@@ -331,7 +351,8 @@
       P.cur = null; drawGrid(P); var B = P.best; drawOpt(B.vals, B.c, true);
       var R = refit(B.S, B.L, B.lam); st.res = R;
       var lo = Math.min.apply(null, B.vals), hi = Math.max.apply(null, B.vals);
-      msgEl.innerHTML = "<strong>" + T("Retenu : ", "Kept: ") + B.lb + T(" entrées, ", " inputs, ") + B.nh + T(" neurones, λ = ", " neurons, λ = ") + lamTxt(B.lam) + T(", candidat n° ", ", candidate no. ") + (B.c + 1) + ".</strong> " +
+      msgEl.innerHTML = "<strong>" + T("Retenu : ", "Kept: ") + B.lb + T(" entrées, ", " inputs, ") + B.nh + T(" neurones, λ = ", " neurons, λ = ") + lamTxt(B.lam) + T(", candidat n° ", ", candidate no. ") + (B.c + 1) + T(" sur 100", " of 100") + ".</strong>";
+      q("#el-optnote").innerHTML =
         T("Pour ce réglage, l’erreur de validation va de ", "For this setting, the validation error ranges from ") + fv(lo) + T(" à ", " to ") + fv(hi) + unit() +
         T(" selon le tirage : le hasard compte, d’où les 100 candidats. Chaque point est la moyenne de 4 validations successives, toujours sur des valeurs postérieures à l’ajustement. Le test n’a servi à aucun de ces choix.", " depending on the draw: chance matters, hence the 100 candidates. Each dot is the mean of 4 successive validations, always on values later than the fit. The test set played no part in these choices.");
       drawPlot(); finish(R, P, performance.now() - t0);
@@ -342,11 +363,12 @@
   q("#el-lb").addEventListener("change", function () { st.lb = num(this.value); start(); });
   q("#el-nh").addEventListener("change", function () { st.nh = num(this.value); start(); });
   q("#el-rg").addEventListener("change", function () { st.rg = num(this.value); start(); });
+  q("#el-day").addEventListener("input", function () { st.day = +this.value; drawPlot(); });
   q("#el-cyc").addEventListener("change", function () { st.cyc = this.checked; start(); });
   q("#el-new").addEventListener("click", function () { st.seed += 1; start(); });
   Array.prototype.forEach.call(box.querySelectorAll(".el-tabs button"), function (b) {
     b.addEventListener("click", function () {
-      st.view = b.getAttribute("data-v");
+      st.view = b.getAttribute("data-v"); st.day = 0;
       Array.prototype.forEach.call(box.querySelectorAll(".el-tabs button"), function (o) { o.classList.toggle("on", o === b); o.setAttribute("aria-pressed", o === b ? "true" : "false"); });
       drawPlot();
     });
@@ -358,7 +380,7 @@
     var k = st.D.data.length, tr = Math.floor(RATIO * k);
     m.textContent = T(k + " valeurs utilisées" + (n > NMAX ? " (sur " + n + " collées)" : "") + " : environ " + tr + " pour l’apprentissage et l’optimisation, " + (k - tr) + " pour le test." + (p.bad ? " " + p.bad + " élément(s) non numérique(s) ignoré(s)." : "") + " Toutes les valeurs sont notées (pas de masque de nuit).",
       k + " values used" + (n > NMAX ? " (out of " + n + " pasted)" : "") + ": about " + tr + " for training and optimisation, " + (k - tr) + " for the test." + (p.bad ? " " + p.bad + " non-numeric item(s) ignored." : "") + " Every value is scored (no night mask).");
-    start(); q("#el-opt").scrollIntoView({ block: "center", behavior: "smooth" });
+    start(); q("#el-optmsg").scrollIntoView({ block: "center", behavior: "smooth" });
   });
   q("#el-back").addEventListener("click", function () { st.D = SYN; st.user = false; q("#el-umsg").textContent = ""; start(); });
   start();
