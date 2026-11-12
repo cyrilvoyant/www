@@ -731,6 +731,10 @@
         {
           "title": "Aller plus loin",
           "anchor": null
+        },
+        {
+          "title": "Sources",
+          "anchor": "sources"
         }
       ]
     },
@@ -760,6 +764,10 @@
         {
           "title": "Aller plus loin",
           "anchor": null
+        },
+        {
+          "title": "Sources",
+          "anchor": "sources"
         }
       ]
     },
@@ -890,6 +898,10 @@
         {
           "title": "Aller plus loin",
           "anchor": null
+        },
+        {
+          "title": "Sources",
+          "anchor": "sources"
         }
       ]
     },
@@ -1102,6 +1114,10 @@
         {
           "title": "Aller plus loin",
           "anchor": null
+        },
+        {
+          "title": "Sources",
+          "anchor": "sources"
         }
       ]
     },
@@ -5520,6 +5536,10 @@
         {
           "title": "Go further",
           "anchor": null
+        },
+        {
+          "title": "Sources",
+          "anchor": "sources"
         }
       ]
     },
@@ -5549,6 +5569,10 @@
         {
           "title": "Go further",
           "anchor": null
+        },
+        {
+          "title": "Sources",
+          "anchor": "sources"
         }
       ]
     },
@@ -5654,6 +5678,10 @@
         {
           "title": "Go further",
           "anchor": null
+        },
+        {
+          "title": "Sources",
+          "anchor": "sources"
         }
       ]
     },
@@ -5821,6 +5849,10 @@
         {
           "title": "Go further",
           "anchor": null
+        },
+        {
+          "title": "Sources",
+          "anchor": "sources"
         }
       ]
     },
@@ -6722,6 +6754,134 @@
         {
           "title": "Citer cette page",
           "anchor": "citer"
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/tools/extreme-learning-machine/",
+      "title": "Understanding the ELM (Extreme Learning Machine)",
+      "language": "en",
+      "topics": [
+        "ELM, extreme learning machine, closed form, Ridge regression, random hidden layer, temporal cross-validation, photovoltaic forecasting, frugality"
+      ],
+      "citations": [
+        {
+          "@type": "ScholarlyArticle",
+          "name": "Extreme learning machine: Theory and applications",
+          "url": "https://doi.org/10.1016/j.neucom.2005.12.126",
+          "datePublished": "2006",
+          "isPartOf": {
+            "@type": "Periodical",
+            "name": "Neurocomputing"
+          },
+          "author": [
+            {
+              "@type": "Person",
+              "name": "Guang-Bin Huang"
+            },
+            {
+              "@type": "Person",
+              "name": "Qin-Yu Zhu"
+            },
+            {
+              "@type": "Person",
+              "name": "Chee-Kheong Siew"
+            }
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "title": "Try it",
+          "anchor": "try-it"
+        },
+        {
+          "title": "The recipe, in five steps",
+          "anchor": "recipe"
+        },
+        {
+          "title": "Five trials to run",
+          "anchor": "observe"
+        },
+        {
+          "title": "Why this model",
+          "anchor": "why"
+        },
+        {
+          "title": "The words of this page",
+          "anchor": "words"
+        },
+        {
+          "title": "Assumptions and limits",
+          "anchor": "limits"
+        },
+        {
+          "title": "Sources",
+          "anchor": "sources"
+        }
+      ]
+    },
+    {
+      "url": "https://www.cyrilvoyant.com/fr/outils/elm-extreme-learning-machine/",
+      "title": "Comprendre l’ELM (Extreme Learning Machine)",
+      "language": "fr",
+      "topics": [
+        "ELM, extreme learning machine, forme fermée, Ridge, couche cachée aléatoire, validation croisée temporelle, prévision photovoltaïque, frugalité"
+      ],
+      "citations": [
+        {
+          "@type": "ScholarlyArticle",
+          "name": "Extreme learning machine: Theory and applications",
+          "url": "https://doi.org/10.1016/j.neucom.2005.12.126",
+          "datePublished": "2006",
+          "isPartOf": {
+            "@type": "Periodical",
+            "name": "Neurocomputing"
+          },
+          "author": [
+            {
+              "@type": "Person",
+              "name": "Guang-Bin Huang"
+            },
+            {
+              "@type": "Person",
+              "name": "Qin-Yu Zhu"
+            },
+            {
+              "@type": "Person",
+              "name": "Chee-Kheong Siew"
+            }
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "title": "Essayer",
+          "anchor": "essayer"
+        },
+        {
+          "title": "La recette, en cinq étapes",
+          "anchor": "recette"
+        },
+        {
+          "title": "Cinq essais à faire",
+          "anchor": "observer"
+        },
+        {
+          "title": "Pourquoi ce modèle",
+          "anchor": "pourquoi"
+        },
+        {
+          "title": "Les mots de la page",
+          "anchor": "mots"
+        },
+        {
+          "title": "Hypothèses et limites",
+          "anchor": "limites"
+        },
+        {
+          "title": "Sources",
+          "anchor": "sources"
         }
       ]
     }

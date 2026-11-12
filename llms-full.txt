@@ -1016,7 +1016,7 @@ Recherche : questions, résultats et méthodes
 URL: https://www.cyrilvoyant.com/tools/
 
 Scientific simulators, animations and calculators
- Change a value and see what happens: 43 tools for courses and research.
+ Change a value and see what happens: 44 tools for courses and research.
  Where to start?
  Choose a forecast One signal, some sliders: see which forecast wins, and why. Judge my forecast Compare your values with persistence using NICE. Revise a course Statistics, physics and heat transfer: one tool per notion. Compare doses LQ or LQL, for research and education. Find a tool Field Interface language
  No tool matches.
@@ -1185,7 +1185,7 @@ Scientific simulators, animations and calculators
 URL: https://www.cyrilvoyant.com/fr/outils/
 
 Simulateurs, animations et calculateurs scientifiques
- Changez une valeur et observez : 43 outils pour le cours et la recherche.
+ Changez une valeur et observez : 44 outils pour le cours et la recherche.
  Par où commencer ?
  Choisir une prévision Un signal, des curseurs : voir quelle prévision gagne, et pourquoi. Juger ma prévision Comparer vos valeurs à la persistance avec NICE. Réviser un cours Statistiques, physique et thermique : un outil par notion. Comparer des doses LQ ou LQL, pour la recherche et l’enseignement. Rechercher un outil Domaine Langue de l’interface
  Aucun outil trouvé.
@@ -1439,7 +1439,7 @@ At a glance: research, software, courses and tools
  sCV and forecastability
  γ-index explorer
  ARTU and its table
- All 43 tools, by field
+ All 44 tools, by field
  Essays and positions
  Scientific publishing: no verification, no trust
  AI in research: AI Act, charter and toolbox
@@ -7131,7 +7131,7 @@ Vue d'ensemble : recherche, logiciels, cours et outils
  sCV et prévisibilité
  Explorateur de l'indice γ
  ARTU et sa table
- Les 43 outils, par domaine
+ Les 44 outils, par domaine
  Essais et positions
  Édition scientifique : sans vérification, pas de confiance
  L'IA dans la recherche : AI Act, charte et boîte à outils

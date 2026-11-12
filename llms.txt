@@ -225,4 +225,5 @@ This navigation file is optional reading guidance, not a guarantee of inclusion 
 
 - [Probabilistic solar forecasting](https://www.cyrilvoyant.com/tools/probabilistic-solar-forecasting/) / [Prévision probabiliste](https://www.cyrilvoyant.com/fr/outils/prevision-probabiliste/).
 - [PV forecasting modes](https://www.cyrilvoyant.com/tools/pv-forecasting-modes/) / [Modes de prévision PV](https://www.cyrilvoyant.com/fr/outils/modes-prevision-pv/).
+- [Extreme Learning Machine (ELM) explained](https://www.cyrilvoyant.com/tools/extreme-learning-machine/) / [Comprendre l’ELM](https://www.cyrilvoyant.com/fr/outils/elm-extreme-learning-machine/): random frozen hidden layer, closed-form Ridge output weights, 100 candidate layers ranked by temporal cross-validation, grid search over inputs, hidden neurons and λ, 80/20 split, RMSE, nRMSE, nMAE, nMBE and R² on training and test; live applet (example series or pasted data, computed in the browser) following PV_ELM_pred.
 - [Jarque–Bera test](https://www.cyrilvoyant.com/tools/jarque-bera-test/) / [Test de Jarque-Bera](https://www.cyrilvoyant.com/fr/outils/test-jarque-bera/).
