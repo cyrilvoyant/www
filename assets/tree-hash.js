@@ -28,6 +28,10 @@
     link.setAttribute('aria-current', 'location');
     for (let d = link.closest('details'); d; d = d.parentElement.closest('details')) d.open = true;
     if (!section) return;
+    // steps written at build time from the site-wide reading order (page_steps_20261113.py), so they match the pages'
+    const tpl = document.getElementById('tree-hash-steps');
+    const built = tpl && [...tpl.content.querySelectorAll('nav')].find(n => n.dataset.hash === location.hash.slice(1));
+    if (built) { const n = built.cloneNode(true); n.classList.add('tree-hash-steps'); section.after(n); return; }
     const items = [...link.closest('ul').children].map(li => li.querySelector(':scope > a[href]'))
       .filter(a => a && a.getAttribute('href').startsWith('/') && !/\((anglais|French)\)$/.test(a.textContent.trim()));
     const i = items.indexOf(link), prev = items[i - 1], next = items[i + 1];

@@ -34,6 +34,8 @@ else if(cur){const seen=new Set();const seq=[...topLi.querySelectorAll('a:not(.t
  while(d&&!up){const h=d.querySelector(':scope>a.tree-hub');if(h&&h!==cur&&same(h))up=h;d=d.parentElement.closest('details')}
  if(!up){const h=tree.querySelector('.tree-home a');if(h&&h!==cur)up=h}
  if(!cur.classList.contains('tree-hub')){const items=[...cur.closest('ul').children].filter(li=>li.querySelector(':scope>a'));const n=items.indexOf(cur.closest('li'));if(items.length>1&&n>=0)pos=(n+1)+' / '+items.length}}
+const st=isHome?null:document.querySelector('.site-page-steps:not(.tree-hash-steps)');
+if(st){const f=x=>{if(!x)return null;const e=document.createElement('a');e.href=x.getAttribute('href');e.textContent=x.querySelector('strong')?.textContent||'';return e};prev=f(st.querySelector('a.previous'));next=f(st.querySelector('a.next'))}
 const bar=document.createElement('nav');bar.className='reading-bar';bar.setAttribute('aria-label',fr?'Parcours de lecture':'Reading path');
 const link=(a,cls,before,word,after,aria,rel)=>{const e=document.createElement('a');e.href=a.href;e.className=cls;const t=label(a);e.title=aria+' : '+t;e.setAttribute('aria-label',aria+' : '+t);if(rel)e.rel=rel;e.innerHTML=(before?'<span aria-hidden="true">'+before+'</span>':'')+'<span class="rb-title"></span>'+(word?'<span class="rb-word">'+word+'</span>':'')+(after?'<span aria-hidden="true">'+after+'</span>':'');e.querySelector('.rb-title').textContent=t;return e};
 trigger.lastElementChild&&(trigger.lastElementChild.textContent=T.menu);bar.appendChild(trigger);
