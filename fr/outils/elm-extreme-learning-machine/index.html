@@ -19,7 +19,10 @@
 .el-leg span:first-child{margin-left:0}.el-leg .k4{border-color:#b8306b}.el-leg .k2{border-top:2px dashed var(--muted)}
 .el-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-top:8px}
 .el-card{border:1px solid var(--line);border-radius:8px;padding:8px 10px}.el-card span,.el-card small{display:block;font-size:.8rem;color:var(--muted)}.el-card b{font-size:1.25rem}
-.el-msg{margin:8px 0;grid-column:1/-1}.el-steps li{margin:.5em 0}.el-try td,.el-try th{padding:6px 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.el-w-r{stroke:var(--muted);stroke-width:.7;opacity:.45}.el-w-b{stroke:#b8306b;stroke-width:1.6}.el-n-in{fill:var(--paper);stroke:var(--ink);stroke-width:1.6}.el-n-ck{fill:var(--paper);stroke:#0f8a7e;stroke-width:2}
+.el-n-h{fill:var(--paper);stroke:var(--muted);stroke-width:1.6}.el-n-out{fill:#b8306b}.el-sig{fill:var(--muted);font-size:11px}.el-dots{fill:var(--muted);font-size:18px}.el-cap{fill:var(--ink);font-size:13px;font-weight:600}
+.el-cap-r{fill:var(--muted);font-weight:400}.el-cap-b{fill:#b8306b}.el-leg .k5{border-top:1px solid var(--muted)}#elm-lab #el-net{max-width:640px}
+.el-chk span{color:var(--ink);font-size:.95rem}.el-chk small{font-size:.78rem}.el-msg{margin:8px 0;grid-column:1/-1}.el-steps li{margin:.5em 0}.el-try td,.el-try th{padding:6px 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
 .el-try{border-collapse:collapse;width:100%;font-size:.95rem}.el-wrap{overflow-x:auto}
 .el-heat,.el-mt{border-collapse:collapse;font-size:.9rem;margin:6px 0 10px}.el-heat caption,.el-mt caption{caption-side:top;text-align:left;color:var(--muted);font-size:.85rem;padding-bottom:4px}
 .el-heat th,.el-heat td,.el-mt th,.el-mt td{border:1px solid var(--line);padding:5px 10px;text-align:right;white-space:nowrap}.el-mt th:first-child,.el-heat th:first-child{text-align:left}
@@ -38,19 +41,20 @@
 
 <h2 id="recette">La recette, en cinq étapes</h2>
 <ol class="el-steps">
-<li><strong>Les entrées.</strong> Les dernières valeurs mesurées (1 à 24 heures), centrées et réduites, plus quatre repères d’horloge : sinus et cosinus de l’heure, sinus et cosinus du jour de l’année. On note <em>x</em> ce vecteur.</li>
+<li><strong>Les entrées.</strong> Les dernières valeurs mesurées (1 à 24 heures), centrées et réduites, plus quatre entrées d’horloge, que l’on peut décocher : sinus et cosinus de l’heure, sinus et cosinus du jour de l’année. On note <em>x</em> ce vecteur.</li>
 <li><strong>Le hasard.</strong> Chaque neurone caché reçoit des poids tirés uniformément entre −1 et 1 et un biais tiré entre 0 et 1. Ils ne changent plus jamais. La sortie des neurones forme la matrice <em>H</em> (une ligne par heure, une colonne par neurone) :<math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mrow><mi>H</mi><mo>&#x0003D;</mo><mi>&#x003C3;</mi><mrow><mo stretchy="true" fence="true" form="prefix">&#x00028;</mo><mi>X</mi><msup><mi>W</mi><mrow><mo>&#x022A4;</mo></mrow></msup><mo>&#x0002B;</mo><mi>b</mi><mo stretchy="true" fence="true" form="postfix">&#x00029;</mo></mrow><mo>&#x0002C;</mo><mspace width="2em" /><mi>&#x003C3;</mi><mo stretchy="false">&#x00028;</mo><mi>a</mi><mo stretchy="false">&#x00029;</mo><mo>&#x0003D;</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>1</mn><mo>&#x0002B;</mo><msup><mi>e</mi><mrow><mo>&#x02212;</mo><mi>a</mi></mrow></msup></mrow></mfrac></mrow></math></li>
 <li><strong>L’apprentissage.</strong> Seuls les poids de sortie β sont ajustés. La cible est centrée et réduite (<em>z</em>), puis β est le minimum exact de ‖<em>H</em>β − <em>z</em>‖² + λ‖β‖² :<math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mrow><mover accent="true"><mrow><mi>&#x003B2;</mi></mrow><mo stretchy="true">&#x00302;</mo></mover><mo>&#x0003D;</mo><msup><mrow><mo stretchy="true" fence="true" form="prefix">&#x00028;</mo><msup><mi>H</mi><mrow><mo>&#x022A4;</mo></mrow></msup><mi>H</mi><mo>&#x0002B;</mo><mi>&#x003BB;</mi><mi>I</mi><mo stretchy="true" fence="true" form="postfix">&#x00029;</mo></mrow><mrow><mo>&#x02212;</mo><mn>1</mn></mrow></msup><msup><mi>H</mi><mrow><mo>&#x022A4;</mo></mrow></msup><mi>z</mi></mrow></math>C’est la <strong>forme fermée</strong> : une résolution linéaire, pas de taux d’apprentissage, pas de minimum local. Le terme λ (Ridge) pénalise les grands poids ; avec λ proche de 0, on retrouve les moindres carrés ordinaires.</li>
 <li><strong>L’optimisation.</strong> Le tirage compte : deux couches aléatoires ne se valent pas. On en tire 100, et pour chacune on essaie λ = 1, 10 et 25. Chaque couple est noté par validation croisée temporelle : on ajuste sur le début de l’apprentissage, on valide sur les heures qui suivent, quatre fois avec une fenêtre d’ajustement de plus en plus longue. Le couple dont l’erreur moyenne de validation est la plus petite est retenu, puis réajusté sur tout l’apprentissage. Pour optimiser aussi le nombre d’entrées et de neurones, on répète cette recherche pour chaque combinaison : c’est la recherche sur grille.</li>
 <li><strong>Le test.</strong> L’apprentissage et l’optimisation utilisent les premiers 80 % de la série (32 jours). Les 20 % restants (8 jours) ne servent qu’une fois, à la fin. Les prévisions négatives sont ramenées à 0 et la nuit est mise à 0. Le nRMSE est le RMSE des heures de jour divisé par la moyenne des mesures de jour.</li>
 </ol>
 
-<h2 id="observer">Cinq essais à faire</h2>
+<h2 id="observer">Six essais à faire</h2>
 <div class="el-wrap"><table class="el-try"><thead><tr><th>Réglage</th><th>Ce que l’on voit</th><th>Ce que cela apprend</th></tr></thead><tbody>
 <tr><td>6 entrées, 5 neurones</td><td>Erreur de validation de 77,3 à 203,6 W selon le tirage</td><td>Avec peu de neurones, le hasard pèse lourd : chercher parmi 100 candidats est indispensable.</td></tr>
 <tr><td>6 entrées, 100 neurones</td><td>De 61,3 à 64,9 W ; nRMSE de test 0,198, contre 0,196 avec 25 neurones</td><td>Avec beaucoup de neurones, les tirages se ressemblent. Mais quatre fois plus de neurones n’améliorent pas le test.</td></tr>
 <tr><td>1 entrée, 100 neurones, sans Ridge</td><td>nRMSE d’apprentissage 0,200, de test 0,476 (persistance : 0,328)</td><td>Sans régularisation, le modèle apprend le bruit : très bon sur l’apprentissage, mauvais sur le test. Avec Ridge optimisé : 0,187.</td></tr>
 <tr><td>24 entrées, 5 neurones</td><td>nRMSE de test 0,330 (persistance : 0,328)</td><td>Plus d’entrées ne suffit pas : 5 neurones ne peuvent pas résumer 28 entrées.</td></tr>
+<tr><td>6 entrées, 25 neurones, sans les 4 entrées d’horloge</td><td>nRMSE de test 0,229, contre 0,196 avec</td><td>Les sinus et cosinus donnent l’heure au modèle : il n’a plus à la deviner à partir des dernières valeurs.</td></tr>
 <tr><td>Les trois sur « optimiser »</td><td>25 combinaisons ; retenu : 12 entrées, 100 neurones, λ = 1 ; nRMSE de test 0,198</td><td>La grille choisit la meilleure validation (61,0 W, contre 62,7 W pour 6 entrées et 25 neurones). Sur le test, l’écart est négligeable : à performance égale, on garde le modèle le plus petit.</td></tr>
 </tbody></table></div>
 
@@ -72,7 +76,7 @@
 <dt>nMAE, nMBE, R²</dt><dd>Erreur absolue moyenne et biais moyen (prévision moins mesure), divisés par la moyenne des mesures ; part de la variance des mesures expliquée par la prévision.</dd>
 <dt>Validation croisée temporelle</dt><dd>On valide toujours sur des heures postérieures à celles de l’ajustement, pour ne jamais utiliser le futur.</dd>
 <dt>Persistance</dt><dd>Prévision de référence : la prochaine valeur sera égale à la dernière mesurée.</dd>
-<dt>nRMSE</dt><dd>Racine de l’erreur quadratique moyenne, divisée par la moyenne des mesures. Écrit en fraction : 0,22 signifie 22 % de la moyenne.</dd>
+<dt>nRMSE</dt><dd>Racine de l’erreur quadratique moyenne (RMSE), divisée par la moyenne des mesures de la période. Écrit en fraction : 0,22 signifie 22 % de la moyenne. Deux périodes de moyennes différentes ne se comparent pas par leur nRMSE : sur l’exemple, le RMSE est de 85,4 W en apprentissage et 85,5 W en test, mais le nRMSE passe de 0,234 à 0,196, parce que les jours de test sont plus ensoleillés.</dd>
 </dl>
 
 <h2 id="limites">Hypothèses et limites</h2>

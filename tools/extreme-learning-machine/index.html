@@ -19,7 +19,10 @@
 .el-leg span:first-child{margin-left:0}.el-leg .k4{border-color:#b8306b}.el-leg .k2{border-top:2px dashed var(--muted)}
 .el-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-top:8px}
 .el-card{border:1px solid var(--line);border-radius:8px;padding:8px 10px}.el-card span,.el-card small{display:block;font-size:.8rem;color:var(--muted)}.el-card b{font-size:1.25rem}
-.el-msg{margin:8px 0;grid-column:1/-1}.el-steps li{margin:.5em 0}.el-try td,.el-try th{padding:6px 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.el-w-r{stroke:var(--muted);stroke-width:.7;opacity:.45}.el-w-b{stroke:#b8306b;stroke-width:1.6}.el-n-in{fill:var(--paper);stroke:var(--ink);stroke-width:1.6}.el-n-ck{fill:var(--paper);stroke:#0f8a7e;stroke-width:2}
+.el-n-h{fill:var(--paper);stroke:var(--muted);stroke-width:1.6}.el-n-out{fill:#b8306b}.el-sig{fill:var(--muted);font-size:11px}.el-dots{fill:var(--muted);font-size:18px}.el-cap{fill:var(--ink);font-size:13px;font-weight:600}
+.el-cap-r{fill:var(--muted);font-weight:400}.el-cap-b{fill:#b8306b}.el-leg .k5{border-top:1px solid var(--muted)}#elm-lab #el-net{max-width:640px}
+.el-chk span{color:var(--ink);font-size:.95rem}.el-chk small{font-size:.78rem}.el-msg{margin:8px 0;grid-column:1/-1}.el-steps li{margin:.5em 0}.el-try td,.el-try th{padding:6px 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
 .el-try{border-collapse:collapse;width:100%;font-size:.95rem}.el-wrap{overflow-x:auto}
 .el-heat,.el-mt{border-collapse:collapse;font-size:.9rem;margin:6px 0 10px}.el-heat caption,.el-mt caption{caption-side:top;text-align:left;color:var(--muted);font-size:.85rem;padding-bottom:4px}
 .el-heat th,.el-heat td,.el-mt th,.el-mt td{border:1px solid var(--line);padding:5px 10px;text-align:right;white-space:nowrap}.el-mt th:first-child,.el-heat th:first-child{text-align:left}
@@ -38,19 +41,20 @@
 
 <h2 id="recipe">The recipe, in five steps</h2>
 <ol class="el-steps">
-<li><strong>The inputs.</strong> The last measured values (1 to 24 hours), centred and scaled, plus four clock features: sine and cosine of the hour, sine and cosine of the day of the year. This vector is written <em>x</em>.</li>
+<li><strong>The inputs.</strong> The last measured values (1 to 24 hours), centred and scaled, plus four clock inputs, which can be unticked: sine and cosine of the hour, sine and cosine of the day of the year. This vector is written <em>x</em>.</li>
 <li><strong>Chance.</strong> Each hidden neuron receives weights drawn uniformly between −1 and 1 and a bias drawn between 0 and 1. They never change afterwards. The neuron outputs form the matrix <em>H</em> (one row per hour, one column per neuron):<math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mrow><mi>H</mi><mo>&#x0003D;</mo><mi>&#x003C3;</mi><mrow><mo stretchy="true" fence="true" form="prefix">&#x00028;</mo><mi>X</mi><msup><mi>W</mi><mrow><mo>&#x022A4;</mo></mrow></msup><mo>&#x0002B;</mo><mi>b</mi><mo stretchy="true" fence="true" form="postfix">&#x00029;</mo></mrow><mo>&#x0002C;</mo><mspace width="2em" /><mi>&#x003C3;</mi><mo stretchy="false">&#x00028;</mo><mi>a</mi><mo stretchy="false">&#x00029;</mo><mo>&#x0003D;</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>1</mn><mo>&#x0002B;</mo><msup><mi>e</mi><mrow><mo>&#x02212;</mo><mi>a</mi></mrow></msup></mrow></mfrac></mrow></math></li>
 <li><strong>Training.</strong> Only the output weights β are fitted. The target is centred and scaled (<em>z</em>), then β is the exact minimum of ‖<em>H</em>β − <em>z</em>‖² + λ‖β‖²:<math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mrow><mover accent="true"><mrow><mi>&#x003B2;</mi></mrow><mo stretchy="true">&#x00302;</mo></mover><mo>&#x0003D;</mo><msup><mrow><mo stretchy="true" fence="true" form="prefix">&#x00028;</mo><msup><mi>H</mi><mrow><mo>&#x022A4;</mo></mrow></msup><mi>H</mi><mo>&#x0002B;</mo><mi>&#x003BB;</mi><mi>I</mi><mo stretchy="true" fence="true" form="postfix">&#x00029;</mo></mrow><mrow><mo>&#x02212;</mo><mn>1</mn></mrow></msup><msup><mi>H</mi><mrow><mo>&#x022A4;</mo></mrow></msup><mi>z</mi></mrow></math>This is the <strong>closed form</strong>: one linear solve, no learning rate, no local minimum. The term λ (Ridge) penalizes large weights; with λ close to 0, this is ordinary least squares.</li>
 <li><strong>The optimisation.</strong> The draw matters: two random layers are not equally good. We draw 100 of them, and for each one we try λ = 1, 10 and 25. Each pair is scored by temporal cross-validation: fit on the beginning of the training set, validate on the hours that follow, four times with a longer and longer fitting window. The pair with the smallest mean validation error is kept, then refitted on the whole training set. To optimise the number of inputs and of neurons as well, this search is repeated for each combination: this is the grid search.</li>
 <li><strong>The test.</strong> Training and optimisation use the first 80% of the series (32 days). The remaining 20% (8 days) are used only once, at the end. Negative forecasts are set to 0 and the night is set to 0. The nRMSE is the RMSE of daytime hours divided by the mean of daytime measurements.</li>
 </ol>
 
-<h2 id="observe">Five trials to run</h2>
+<h2 id="observe">Six trials to run</h2>
 <div class="el-wrap"><table class="el-try"><thead><tr><th>Setting</th><th>What you see</th><th>What it teaches</th></tr></thead><tbody>
 <tr><td>6 inputs, 5 neurons</td><td>Validation error from 77.3 to 203.6 W depending on the draw</td><td>With few neurons, chance weighs heavily: searching among 100 candidates is essential.</td></tr>
 <tr><td>6 inputs, 100 neurons</td><td>From 61.3 to 64.9 W; test nRMSE 0.198, against 0.196 with 25 neurons</td><td>With many neurons, the draws look alike. But four times more neurons do not improve the test.</td></tr>
 <tr><td>1 input, 100 neurons, no Ridge</td><td>Training nRMSE 0.200, test nRMSE 0.476 (persistence: 0.328)</td><td>Without regularization, the model learns noise: very good on training data, poor on the test set. With optimised Ridge: 0.187.</td></tr>
 <tr><td>24 inputs, 5 neurons</td><td>Test nRMSE 0.330 (persistence: 0.328)</td><td>More inputs are not enough: 5 neurons cannot summarize 28 inputs.</td></tr>
+<tr><td>6 inputs, 25 neurons, without the 4 clock inputs</td><td>Test nRMSE 0.229, against 0.196 with them</td><td>The sines and cosines give the model the time of day: it no longer has to guess it from the last values.</td></tr>
 <tr><td>All three on “optimise”</td><td>25 combinations; kept: 12 inputs, 100 neurons, λ = 1; test nRMSE 0.198</td><td>The grid picks the best validation (61.0 W, against 62.7 W for 6 inputs and 25 neurons). On the test set the difference is negligible: at equal performance, keep the smallest model.</td></tr>
 </tbody></table></div>
 
@@ -72,7 +76,7 @@
 <dt>nMAE, nMBE, R²</dt><dd>Mean absolute error and mean bias (forecast minus measurement), divided by the mean of the measurements; share of the variance of the measurements explained by the forecast.</dd>
 <dt>Temporal cross-validation</dt><dd>Validation always uses hours later than those of the fit, so the future is never used.</dd>
 <dt>Persistence</dt><dd>Reference forecast: the next value will equal the last measured one.</dd>
-<dt>nRMSE</dt><dd>Root mean square error divided by the mean of the measurements. Written as a fraction: 0.22 means 22% of the mean.</dd>
+<dt>nRMSE</dt><dd>Root mean square error (RMSE) divided by the mean of the measurements of the period. Written as a fraction: 0.22 means 22% of the mean. Two periods with different means cannot be compared by their nRMSE: on the example, RMSE is 85.4 W in training and 85.5 W in test, but nRMSE goes from 0.234 to 0.196, because the test days are sunnier.</dd>
 </dl>
 
 <h2 id="limits">Assumptions and limits</h2>
