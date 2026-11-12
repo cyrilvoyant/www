@@ -2652,7 +2652,7 @@ Teaching
  Most courses are in French; the English guide to the open courses describes each one, chapter by chapter.
  Forecasting the intermittent solar resource
  Mines Paris – PSL engineering curriculum, applied research project (teaching unit UE14) · 59 slides · English and French · CC BY 4.0
- One hour ahead, on the 2007 test year in Ajaccio, the daytime nRMSE (the root of the mean squared error, as a % of mean irradiance) is 22.0% for smart persistence (the forecast keeps the present gap to clear sky), 21.3% for an AR(2) (an autoregressive model: a combination of the last two values) and 20.5% for an ELM (Extreme Learning Machine: a small neural network whose output weights alone are estimated). On ten years of real measurements, the course teaches how to forecast irradiance (the solar power received per square meter, in W/m²) and how to tell whether a gain justifies the complexity.
+ One hour ahead, on the 2007 test year in Ajaccio, the daytime nRMSE (the root of the mean squared error, divided by mean irradiance) is 0.220 for smart persistence (the forecast keeps the present gap to clear sky), 0.213 for an AR(2) (an autoregressive model: a combination of the last two values) and 0.205 for an ELM (Extreme Learning Machine: a small neural network whose output weights alone are estimated). On ten years of real measurements, the course teaches how to forecast irradiance (the solar power received per square meter, in W/m²) and how to tell whether a gain justifies the complexity.
  The solar signal: geometry, clear sky (the irradiance you would get without clouds) and the difference to the clear-sky trend (measured irradiance minus clear-sky irradiance; denoted CSI in the course), what can and cannot be predicted.
  The data: ten years of hourly measurements, quality control, day and night.
  Autoregressive models (the forecast is a combination of the last values) fitted by least squares (minimizing the sum of squared errors), the model order (the number of past values used), the sliding window (the model is re-estimated on the most recent data).
@@ -2970,7 +2970,7 @@ How to evaluate a solar forecast against persistence
  AR(2), same year, same horizon, daytime: score +0.41 against simple persistence, +0.03 against smart persistence. Only the name of the reference has changed.
  Score = 1 − model nRMSE / reference nRMSE, on the same scope (hence the same mean). With smart persistence in daytime, the scores shown are those of the published table; otherwise they are computed here from the rounded nRMSE values (possible difference of 0.01).
  Published NICEΣ (against simple persistence, daytime): 0.59 for smart persistence, 0.58 for AR(2), 0.55 for the ELM, above 1 for clear sky alone. Source: solar forecasting course · table and code .
- With night hours, the nRMSE of AR(2) goes from 21.3 % to 30.1 %: its RMSE falls (from 79 to 56 W/m²; at night every forecast is right), but the mean observation is halved (from 372 to 186 W/m²). Against the same reference, the score barely moves. Hence: name the reference, and state the scope.
+ With night hours, the nRMSE of AR(2) goes from 0.213 to 0.301: its RMSE falls (from 79 to 56 W/m²; at night every forecast is right), but the mean observation is halved (from 372 to 186 W/m²). Against the same reference, the score barely moves. Hence: name the reference, and state the scope.
  NICE, a worked case
  NICE¹ = MAE / MAE p and NICE² = RMSE / RMSE p , where p is simple persistence at the same horizon. NICE³ uses the cube root of the mean cubed absolute error. NICEΣ combines the three.
  A useful predictor lies between 0 and 1. Above 1, the model does worse than the simplest predictor, or there is a numerical or other problem.
@@ -3180,7 +3180,7 @@ Which baseline must a solar model beat? When is deep learning worth it?
  Cyril Voyant · Mines Paris – PSL, Centre O.I.E. · 2 November 2026
  In brief
  Test in order: persistence, a reference that knows the cycle, an autoregression, a frugal learner, and only then a deep network.
- In Ajaccio, one hour ahead, each step gains little: daytime relative error of 22.0 % ( smart persistence ), 21.3 % (autoregression) then 20.5 % ( ELM ), while cost and data needs go up.
+ In Ajaccio, one hour ahead, each step gains little: daytime relative error of 0.220 ( smart persistence ), 0.213 (autoregression) then 0.205 ( ELM ), while cost and data needs go up.
  Keep a deep network if it does better on the same protocol, with its cost reported.
  Reading the quantities.
  MAE is mean absolute error; RMSE is root mean squared error and gives large errors more weight. nRMSE normalizes RMSE by the mean observation on the evaluated data.
@@ -3195,20 +3195,20 @@ Which baseline must a solar model beat? When is deep learning worth it?
  A frugal learner. An Extreme Learning Machine (Huang, Zhu and Siew, 2006) keeps a random hidden layer and fits its output weights analytically.
  A deep network. LSTM (long short-term memory, a network that remembers sequences), U-Net (a network designed to read images) or larger, under the same split, horizons and tuning budget (the number of settings tried).
  Two results: a teaching example and a published study
- Ajaccio, 2007 test year, one hour ahead (UE14, the solar forecasting course). The daytime nRMSE is 22.0 % for smart persistence (here the last gap to the clear-sky curve is carried forward, as in the course), 21.3 % for AR(2) (autoregression on the last two values) and 20.5 % for an ELM. The steps are small, and each is measured.
+ Ajaccio, 2007 test year, one hour ahead (UE14, the solar forecasting course). The daytime nRMSE is 0.220 for smart persistence (here the last gap to the clear-sky curve is carried forward, as in the course), 0.213 for AR(2) (autoregression on the last two values) and 0.205 for an ELM. The steps are small, and each is measured.
  The ladder of references. Daytime relative error (nRMSE, lower is better) one hour ahead, Ajaccio, 2007 test year (UE14 course). Select a step to see what it costs and what it gains.
  1 · Simple persistence
  It repeats the last measured value: no coefficient, no training. It is the floor; a model that does not beat it adds nothing.
- Daytime nRMSE: 36.4 %.
+ Daytime nRMSE: 0.364.
  2 · Smart persistence
  It carries forward the last gap to the clear-sky curve: it knows the solar cycle and fits nothing; one hour of data is enough. BLEND is another reference of this kind.
- Daytime nRMSE: 22.0 %. It divides the RMSE of simple persistence by 1.7: this is the highest step.
+ Daytime nRMSE: 0.220. It divides the RMSE of simple persistence by 1.7: this is the highest step.
  3 · AR(2)
- Two coefficients fitted by least squares, 6 ms to fit. One month of data is enough: with a one-month sliding window, nRMSE stays at 21.5 %.
- Daytime nRMSE: 21.3 %, 3 % better than smart persistence.
+ Two coefficients fitted by least squares, 6 ms to fit. One month of data is enough: with a one-month sliding window, nRMSE stays at 0.215.
+ Daytime nRMSE: 0.213, 0.7 percentage point lower than smart persistence.
  4 · ELM, 50 neurons
- 51 fitted coefficients (plus 150 drawn at random), 58 ms per draw. It needs several years of data: with one month only, nRMSE rises to 25.6 %.
- Daytime nRMSE: 20.5 %, 7 % better than smart persistence.
+ 51 fitted coefficients (plus 150 drawn at random), 58 ms per draw. It needs several years of data: with one month only, nRMSE rises to 0.256.
+ Daytime nRMSE: 0.205, 1.5 percentage points lower than smart persistence.
  5 · Deep network
  The course gives no figure for it. Keep a deep network if it goes below 20.5 % on the same test year, in daytime, one hour ahead, with its cost reported: parameters, training time, data needed.
  The more parameters a model has, the more data it needs: step 4 already shows this.
@@ -8138,7 +8138,7 @@ Solar forecasting course: forecasting the intermittent solar resource
  Every slide of the course, with its text, in the order it is taught. Use the arrow keys (← →) to move from slide to slide. On a phone, scroll or use the course outline.
  What the course contains
  Mines Paris – PSL engineering curriculum, applied research project (teaching unit UE14) · 59 slides · English and French · CC BY 4.0
- One hour ahead, on the 2007 test year in Ajaccio, the daytime nRMSE (the root of the mean squared error, as a % of mean irradiance) is 22.0% for smart persistence (the forecast keeps the present gap to clear sky), 21.3% for an AR(2) (an autoregressive model: a combination of the last two values) and 20.5% for an ELM (Extreme Learning Machine: a small neural network whose output weights alone are estimated). On ten years of real measurements, the course teaches how to forecast irradiance (the solar power received per square meter, in W/m²) and how to tell whether a gain justifies the complexity.
+ One hour ahead, on the 2007 test year in Ajaccio, the daytime nRMSE (the root of the mean squared error, divided by mean irradiance) is 0.220 for smart persistence (the forecast keeps the present gap to clear sky), 0.213 for an AR(2) (an autoregressive model: a combination of the last two values) and 0.205 for an ELM (Extreme Learning Machine: a small neural network whose output weights alone are estimated). On ten years of real measurements, the course teaches how to forecast irradiance (the solar power received per square meter, in W/m²) and how to tell whether a gain justifies the complexity.
  Goal
  Forecast irradiance one hour ahead and tell whether a model beats a simple reference.
  Prerequisites
@@ -8181,7 +8181,7 @@ Solar forecasting course: forecasting the intermittent solar resource
  Archived and citable on Zenodo, DOI 10.5281/zenodo.23620102
  In brief
  A 59-slide course on forecasting solar irradiance one hour ahead, taught in the UE14 applied research project of the Mines Paris – PSL engineering curriculum, built on ten years of hourly measurements from Ajaccio (Corsica).
- It goes from the solar signal and the difference to the clear-sky trend (denoted CSI in the course) to autoregressive models fitted by least squares, then to Extreme Learning Machines, online learning and frugality, every model judged against persistence; on the 2007 test year, the daytime nRMSE is 22.0 % for smart persistence, 21.3 % for AR(2) and 20.5 % for an ELM.
+ It goes from the solar signal and the difference to the clear-sky trend (denoted CSI in the course) to autoregressive models fitted by least squares, then to Extreme Learning Machines, online learning and frugality, every model judged against persistence; on the 2007 test year, the daytime nRMSE is 0.220 for smart persistence, 0.213 for AR(2) and 0.205 for an ELM.
  Course by Cyril Voyant, license CC BY 4.0, downloadable as PowerPoint and PDF; the worked example with equations and code is on cyrilvoyant.github.io.
  Vocabulary: the original slides call CSI = GHI − GHIcs a clear-sky index. It is a difference to the clear-sky trend, kept as is in the slides; the usual clear-sky index is the ratio to that trend, GHI/GHIcs. Removing a trend does not guarantee stationarity, which is why slide 22 checks it.
  Download the slides (PowerPoint, 3.5 MB) PDF (2.4 MB) Version française
@@ -8755,8 +8755,8 @@ Solar forecasting course: forecasting the intermittent solar resource
  over-fits if L grows large;
  needs a lot of data.
  At Ajaccio, 1 h ahead
- AR(2): 2 coefficients; nRMSE 21.3 %.
- ELM: 51 learnt + 150 random; nRMSE 20.5 %.
+ AR(2): 2 coefficients; nRMSE 0.213.
+ ELM: 51 learnt + 150 random; nRMSE 0.205.
  Skill score SS: +0.03 (AR) versus +0.07 (ELM).
  51 Online learning (1/2): the sliding window
  Text of the slide

@@ -40,7 +40,7 @@
       persistence.push(k[t-settings.h]);climatology.push(m);
     }
     var norm=mean(observed);
-    function metric(a){var ae=0,se=0;for(var i=0;i<a.length;i++){var e=a[i]-observed[i];ae+=Math.abs(e);se+=e*e;}return {mae:ae/a.length,rmse:Math.sqrt(se/a.length),nrmse:100*Math.sqrt(se/a.length)/norm};}
+    function metric(a){var ae=0,se=0;for(var i=0;i<a.length;i++){var e=a[i]-observed[i];ae+=Math.abs(e);se+=e*e;}return {mae:ae/a.length,rmse:Math.sqrt(se/a.length),nrmse:Math.sqrt(se/a.length)/norm};}
     return {k:k,cut:cut,mean:m,r1:r1,r2:r2,coeff:c,forecasts:forecasts,persistence:persistence,climatology:climatology,
       metrics:[metric(forecasts),metric(persistence),metric(climatology)],negative:negative,capped:capped,clipped:gen.clipped};
   }
@@ -68,12 +68,12 @@
       var reference=result.metrics[1].rmse;
       function nice(m){return reference===0?T('indéfini','undefined'):m.rmse/reference>1?'&gt; 1':fmt(m.rmse/reference,2);}
       $('[data-live-nice]').innerHTML=nice(result.metrics[0]);
-      $('[data-live-nrmse]').textContent=fmt(result.metrics[0].nrmse,1)+' %';
+      $('[data-live-nrmse]').textContent=fmt(result.metrics[0].nrmse,3);
       $('[data-live-mae]').textContent=fmt(800*result.metrics[0].mae,1)+' W/m²';
-      $('[data-table]').innerHTML='<table><caption>'+T('480 prévisions sur les mêmes cibles nouvelles','480 forecasts on the same new targets')+'</caption><thead><tr><th>'+T('Référence','Reference')+'</th><th>nRMSE</th><th>MAE<br>W/m²</th><th>NICE²</th></tr></thead><tbody>'+result.metrics.map(function(m,i){return '<tr><th>'+labels[i]+'</th><td>'+fmt(m.nrmse,1)+' %</td><td>'+fmt(800*m.mae,1)+'</td><td>'+nice(m)+'</td></tr>';}).join('')+'</tbody></table>';
+      $('[data-table]').innerHTML='<table><caption>'+T('480 prévisions sur les mêmes cibles nouvelles','480 forecasts on the same new targets')+'</caption><thead><tr><th>'+T('Référence','Reference')+'</th><th>nRMSE</th><th>MAE<br>W/m²</th><th>NICE²</th></tr></thead><tbody>'+result.metrics.map(function(m,i){return '<tr><th>'+labels[i]+'</th><td>'+fmt(m.nrmse,3)+'</td><td>'+fmt(800*m.mae,1)+'</td><td>'+nice(m)+'</td></tr>';}).join('')+'</tbody></table>';
       var sensitivity=[.01,.05,.1].map(function(R){return calculate(tables,{phi:state.phi,cycle:state.cycle,h:state.h,R:R,seed:state.seed});});
       var scores=sensitivity.map(function(z){return z.metrics[0].nrmse;});
-      $('[data-sensitivity]').textContent=T('Même série, autres tables : la nRMSE ARTU va de ','Same series, different tables: ARTU nRMSE ranges from ')+fmt(Math.min.apply(null,scores),3)+' %'+T(' à ',' to ')+fmt(Math.max.apply(null,scores),3)+' %'+T('. Si elle reste presque stable, ce n’est pas un bug : les poids changent sans modifier beaucoup les erreurs sur ce signal. R n’est pas une garantie de gain.','. If it stays nearly constant, that is not a bug: the weights change without greatly affecting errors on this signal. R is not a guarantee of improvement.');
+      $('[data-sensitivity]').textContent=T('Même série, autres tables : la nRMSE ARTU va de ','Same series, different tables: ARTU nRMSE ranges from ')+fmt(Math.min.apply(null,scores),5)+T(' à ',' to ')+fmt(Math.max.apply(null,scores),5)+T('. Si elle reste presque stable, ce n’est pas un bug : les poids changent sans modifier beaucoup les erreurs sur ce signal. R n’est pas une garantie de gain.','. If it stays nearly constant, that is not a bug: the weights change without greatly affecting errors on this signal. R is not a guarantee of improvement.');
       var best=result.metrics.reduce(function(b,m,i){return m.nrmse<result.metrics[b].nrmse?i:b;},0);
       $('[data-verdict]').textContent=T('Pour ce signal et cet horizon, la plus petite nRMSE est obtenue par ','For this signal and horizon, the lowest nRMSE belongs to ')+labels[best]+T('. Ce résultat simulé n’établit pas une supériorité générale d’ARTU.','. This simulated result does not establish ARTU’s general superiority.');
       $('[data-warnings]').textContent=T('Table R = ','Table R = ')+fmt(state.R,2)+T(' : hypothèse de bruit, pas un bouton qui ajoute du bruit à la série. Interpolation bilinéaire de K et α comme dans le code source. ',' : a noise assumption, not a control that adds noise to the series. Bilinear interpolation of K and α follows the source code. ')+(result.clipped?T('Générateur : ','Generator: ')+result.clipped+T(' valeurs bornées à [0,05 ; 1,15]. ',' values bounded to [0.05, 1.15]. '):'')+(result.negative?T('Attention : ','Warning: ')+result.negative+T(' prévisions négatives ; ce réglage ne convient pas à une irradiance physique sans garde-fou justifié. Aucune borne basse n’est ajoutée ici. ',' negative forecasts; this setting is unsuitable for physical irradiance without a justified safeguard. No lower clipping is added here. '):'')+(result.capped?result.capped+T(' prévisions plafonnées à β = 1,2.',' forecasts capped at β = 1.2.'):'');
